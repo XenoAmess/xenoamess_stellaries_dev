@@ -2,6 +2,10 @@
 
 本目录是 `xenoamess_stellaries_dev` 的文档知识库，用于沉淀 Stellaris 开发知识和本项目约定。
 
+## 文档索引
+
+- [迭代 1 需求文档](iteration-1-requirements.md)
+
 ## 知识归档原则
 
 - Stellaris 特有的语法、行为和实践记录在本目录。
