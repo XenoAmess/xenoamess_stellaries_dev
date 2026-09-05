@@ -5,6 +5,7 @@
 ## 文档索引
 
 - [迭代 1 需求文档](iteration-1-requirements.md)
+- [迭代 1：当前版本实机基线与回归夹具记录](iteration-1-current-version-baseline.md)
 
 ## 知识归档原则
 
