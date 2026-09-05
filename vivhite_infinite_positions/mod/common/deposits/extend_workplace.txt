@@ -1,0 +1,417 @@
+#############################################
+# 扩展工作场所 - 地块效果
+# 每个 mod_xxx 对应一个决策添加的永久地块
+# 包含：住房、区划、岗位、产出倍率等修正
+# 重构说明：合并所有格式塔帝国（荒野/蜂巢/机械）的岗位添加逻辑
+#############################################
+
+# ==================== 1. 城市区划地块 ====================
+mod_extend_urban_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 1200
+        planet_max_districts_add = 2
+        planet_amenities_add = 1200
+        planet_building_build_speed_mult = 0.20
+    }
+
+    # 非格式塔帝国：增加政治家
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_politician_add = 200
+            pop_cat_ruler_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 2. 行政地块 ====================
+mod_extend_unity_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+        planet_decision_enact_speed_mult = 0.20
+    }
+    country_modifier = {
+        empire_size_add = -20
+    }
+
+    # 非格式塔帝国：增加官僚
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_bureaucrat_add = 600
+            pop_bureaucrat_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加协调者
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_coordinator_add = 600
+            pop_coordinator_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 3. 执法者地块 ====================
+mod_extend_enforcer_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+        planet_stability_add = 5
+    }
+
+    # 非格式塔帝国：增加执法者
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_enforcer_add = 600
+            pop_enforcer_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加寻猎者子个体
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_patrol_drone_add = 600
+            pop_patrol_drone_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 4. 商业地块 ====================
+mod_extend_trade_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+    }
+
+    # 非格式塔帝国：增加商人
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_trader_add = 600
+            pop_trader_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加后勤子个体
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_logistics_drone_add = 600
+            pop_logistics_drone_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 5. 物理研究地块 ====================
+mod_extend_physics_res_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+    }
+
+    # 非格式塔帝国：增加物理学家
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_physicist_add = 600
+            pop_physicist_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加计算者-物理学家
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_calculator_physicist_add = 600
+            pop_calculator_physicist_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 6. 社会研究地块 ====================
+mod_extend_society_res_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+    }
+
+    # 非格式塔帝国：增加生物学家
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_biologist_add = 600
+            pop_biologist_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加计算者-生物学家
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_calculator_biologist_add = 600
+            pop_calculator_biologist_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 7. 工程研究地块 ====================
+mod_extend_engineering_res_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+    }
+
+    # 非格式塔帝国：增加工程师
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_engineer_add = 600
+            pop_engineer_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加计算者-工程师
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_calculator_engineer_add = 600
+            pop_calculator_engineer_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 8. 合金生产地块 ====================
+mod_extend_artisan_alloys_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+    }
+
+    # 非格式塔帝国：增加冶金师
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_foundry_add = 600
+            pop_foundry_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加制造者
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_fabricator_add = 600
+            pop_fabricator_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 9. 消费品生产地块 ====================
+mod_extend_artisan_consumer_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+    }
+
+    # 非格式塔帝国：增加工匠
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_artisan_add = 600
+            pop_artisan_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加工匠子个体
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_artisan_drone_add = 600
+            pop_artisan_drone_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 10. 电力生产地块 ====================
+mod_extend_generator_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+        planet_max_districts_add = 2
+        district_generator_max_add = 2
+    }
+
+    # 非格式塔帝国：增加技师
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_technician_add = 600
+            pop_technician_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加技师子个体
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_technician_drone_add = 600
+            pop_technician_drone_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 11. 矿物生产地块 ====================
+mod_extend_mining_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+        planet_max_districts_add = 2
+        district_mining_max_add = 2
+    }
+
+    # 非格式塔帝国：增加矿工
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_miner_add = 600
+            pop_miner_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加采矿子个体
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_mining_drone_add = 600
+            pop_mining_drone_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 12. 粮食生产地块 ====================
+mod_extend_agri_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+        planet_max_districts_add = 2
+        district_farming_max_add = 2
+    }
+
+    # 非格式塔帝国：增加农夫
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_farmer_add = 600
+            pop_farmer_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加农业子个体
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_agri_drone_add = 600
+            pop_agri_drone_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 13. 士兵地块 ====================
+mod_extend_soldier_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+        planet_orbital_bombardment_damage = -0.1
+        planet_storm_devastation_mult = -0.1
+    }
+
+    # 非格式塔帝国：增加士兵
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = no } }
+        modifier = {
+            job_soldier_add = 600
+            pop_soldier_bonus_workforce_mult = 0.1
+        }
+    }
+    # 格式塔帝国（含荒野）：增加战士子个体
+    triggered_planet_modifier = {
+        potential = { exists = owner owner = { is_gestalt = yes } }
+        modifier = {
+            job_warrior_drone_add = 600
+            pop_warrior_drone_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
