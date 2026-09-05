@@ -1,0 +1,200 @@
+{
+  "schema": "xenoamess.stellaris.mod-contract.v1",
+  "iteration": 1,
+  "workshop_id": "3710613857",
+  "game": {
+    "version": "4.4.6",
+    "codename": "Pegasus",
+    "base_checksum": "fdde",
+    "exe_sha256": "bc451c72d9654c8901f1bb0bee1dd78d76f415465c2fbf746e9f98ade333173a",
+    "runtime_dependencies": [
+      {
+        "name": "d3dx9_43.dll",
+        "bytes": 2401112,
+        "sha256": "84b900dbd7fa978d6e0caee26fc54f2f61d92c9c75d10b35f00e3e82cd1d67b4",
+        "source": "Steamworks Shared/_CommonRedist/DirectX/Jun2010/Jun2010_d3dx9_43_x64.cab"
+      }
+    ]
+  },
+  "mod": {
+    "tree_sha256": "a72b3de8cdfa9df627648bc226054f097ee7e8df9efcd5b490494408ea324f57",
+    "declared_version": "4.3",
+    "supported_version": "*",
+    "modded_checksum_observed": "b648"
+  },
+  "common_decision_contract": {
+    "owned_planets_only": true,
+    "enactment_days": 180,
+    "cost": {
+      "minerals": 1000
+    },
+    "ai_weight": 0
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "decision": "decision_00_extend_urban_workplace",
+      "deposit": "mod_extend_urban_workplace",
+      "title_zh_cn": "计划00：制定全域城市扩容方案",
+      "planet_modifiers": {
+        "planet_housing_add": 1200,
+        "planet_max_districts_add": 2,
+        "planet_amenities_add": 1200,
+        "planet_building_build_speed_mult": 0.2
+      },
+      "jobs": {
+        "non_gestalt": { "job_politician_add": 200, "pop_politician_bonus_workforce_mult": 0.1 },
+        "gestalt": null
+      }
+    },
+    {
+      "index": 1,
+      "decision": "decision_01_extend_unity_workplace",
+      "deposit": "mod_extend_unity_workplace",
+      "title_zh_cn": "计划01：优化帝国行政管理体系",
+      "planet_modifiers": { "planet_housing_add": 600, "planet_decision_enact_speed_mult": 0.2 },
+      "country_modifiers": { "empire_size_add": -20 },
+      "jobs": {
+        "non_gestalt": { "job_bureaucrat_add": 600, "pop_bureaucrat_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_coordinator_add": 600, "pop_coordinator_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 2,
+      "decision": "decision_02_extend_enforcer_workplace",
+      "deposit": "mod_extend_enforcer_workplace",
+      "title_zh_cn": "计划02：加强行星公共安全网络",
+      "planet_modifiers": { "planet_housing_add": 600, "planet_stability_add": 5 },
+      "jobs": {
+        "non_gestalt": { "job_enforcer_add": 600, "pop_enforcer_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_patrol_drone_add": 600, "pop_patrol_drone_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 3,
+      "decision": "decision_03_extend_trade_workplace",
+      "deposit": "mod_extend_trade_workplace",
+      "title_zh_cn": "计划03：激活联合星域贸易枢纽",
+      "planet_modifiers": { "planet_housing_add": 600 },
+      "jobs": {
+        "non_gestalt": { "job_trader_add": 600, "pop_trader_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_logistics_drone_add": 600, "pop_logistics_drone_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 4,
+      "decision": "decision_04_extend_physics_res_workplace",
+      "deposit": "mod_extend_physics_res_workplace",
+      "title_zh_cn": "计划04：扩建高能粒子对撞阵列",
+      "planet_modifiers": { "planet_housing_add": 600 },
+      "jobs": {
+        "non_gestalt": { "job_physicist_add": 600, "pop_physicist_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_calculator_physicist_add": 600, "pop_calculator_physicist_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 5,
+      "decision": "decision_05_extend_society_res_workplace",
+      "deposit": "mod_extend_society_res_workplace",
+      "title_zh_cn": "计划05：构建社会演化模拟系统",
+      "planet_modifiers": { "planet_housing_add": 600 },
+      "jobs": {
+        "non_gestalt": { "job_biologist_add": 600, "pop_biologist_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_calculator_biologist_add": 600, "pop_calculator_biologist_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 6,
+      "decision": "decision_06_extend_engineering_res_workplace",
+      "deposit": "mod_extend_engineering_res_workplace",
+      "title_zh_cn": "计划06：建造巨型结构实验平台",
+      "planet_modifiers": { "planet_housing_add": 600 },
+      "jobs": {
+        "non_gestalt": { "job_engineer_add": 600, "pop_engineer_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_calculator_engineer_add": 600, "pop_calculator_engineer_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 7,
+      "decision": "decision_07_extend_artisan_alloys_workplace",
+      "deposit": "mod_extend_artisan_alloys_workplace",
+      "title_zh_cn": "计划07：建立超合金材料生产线",
+      "planet_modifiers": { "planet_housing_add": 600 },
+      "jobs": {
+        "non_gestalt": { "job_foundry_add": 600, "pop_foundry_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_fabricator_add": 600, "pop_fabricator_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 8,
+      "decision": "decision_08_extend_artisan_consumer_workplace",
+      "deposit": "mod_extend_artisan_consumer_workplace",
+      "title_zh_cn": "计划08：优化日用消费品生产线",
+      "planet_modifiers": { "planet_housing_add": 600 },
+      "jobs": {
+        "non_gestalt": { "job_artisan_add": 600, "pop_artisan_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_artisan_drone_add": 600, "pop_artisan_drone_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 9,
+      "decision": "decision_09_extend_generator_workplace",
+      "deposit": "mod_extend_generator_workplace",
+      "title_zh_cn": "计划09：升级聚变发电网络系统",
+      "planet_modifiers": {
+        "planet_housing_add": 600,
+        "planet_max_districts_add": 2,
+        "district_generator_max_add": 2
+      },
+      "jobs": {
+        "non_gestalt": { "job_technician_add": 600, "pop_technician_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_technician_drone_add": 600, "pop_technician_drone_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 10,
+      "decision": "decision_10_extend_mining_workplace",
+      "deposit": "mod_extend_mining_workplace",
+      "title_zh_cn": "计划10：深采行星地幔富矿脉带",
+      "planet_modifiers": {
+        "planet_housing_add": 600,
+        "planet_max_districts_add": 2,
+        "district_mining_max_add": 2
+      },
+      "jobs": {
+        "non_gestalt": { "job_miner_add": 600, "pop_miner_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_mining_drone_add": 600, "pop_mining_drone_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 11,
+      "decision": "decision_11_extend_agri_workplace",
+      "deposit": "mod_extend_agri_workplace",
+      "title_zh_cn": "计划11：扩充立体农业生态塔群",
+      "planet_modifiers": {
+        "planet_housing_add": 600,
+        "planet_max_districts_add": 2,
+        "district_farming_max_add": 2
+      },
+      "jobs": {
+        "non_gestalt": { "job_farmer_add": 600, "pop_farmer_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_agri_drone_add": 600, "pop_agri_drone_bonus_workforce_mult": 0.1 }
+      }
+    },
+    {
+      "index": 12,
+      "decision": "decision_12_extend_soldier_workplace",
+      "deposit": "mod_extend_soldier_workplace",
+      "title_zh_cn": "计划12：建设行星防卫指挥堡垒",
+      "planet_modifiers": {
+        "planet_housing_add": 600,
+        "planet_orbital_bombardment_damage": -0.1,
+        "planet_storm_devastation_mult": -0.1
+      },
+      "jobs": {
+        "non_gestalt": { "job_soldier_add": 600, "pop_soldier_bonus_workforce_mult": 0.1 },
+        "gestalt": { "job_warrior_drone_add": 600, "pop_warrior_drone_bonus_workforce_mult": 0.1 }
+      }
+    }
+  ]
+}

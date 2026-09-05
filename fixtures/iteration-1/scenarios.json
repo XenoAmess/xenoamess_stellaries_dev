@@ -1,0 +1,68 @@
+{
+  "schema": "xenoamess.stellaris.scenarios.v1",
+  "iteration": 1,
+  "display_contract": {
+    "resolution": [2560, 1440],
+    "language": "l_simp_chinese",
+    "mode": "borderless_fullscreen",
+    "input_priority": ["physical_scan_code", "ocr_text", "fixed_coordinate_fallback"]
+  },
+  "baseline_run": {
+    "run_id": "20260905T205325Z",
+    "save_name": "iteration1_plan10.sav",
+    "save_bytes": 1601355,
+    "save_sha256": "eef04d10696a525892f1ca5fde0ba9890ad5cb5b294ef562cea3e0650ba8d4ea",
+    "local_artifacts": "_runtime/20260905T205325Z"
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "name": "精确单 Mod 加载",
+      "status": "failed",
+      "gate": "LOAD-GREEN",
+      "steps": ["prepare isolated userdir", "launch fixed executable", "enter main menu and a new game", "scan fresh logs"],
+      "assertions": ["only ugc_3710613857.mod is enabled", "modded checksum is visible", "no error attributable to this mod"],
+      "observed": {"entered_game": true, "modded_checksum": "b648", "failure": "Invalid supported_version in mod/ugc_3710613857.mod line 7"},
+      "evidence": ["frontend-ready.png", "error.log"]
+    },
+    {
+      "id": "S02",
+      "name": "普通帝国决议目录",
+      "status": "passed",
+      "steps": ["start United Nations of Earth", "open Earth decisions", "drag decision scrollbar through all pages"],
+      "assertions": ["decision_00 through decision_12 are visible", "each costs 1000 minerals", "each takes 180 days", "no fold entry is present"],
+      "observed": {"visible_decision_count": 13, "common_cost_minerals": 1000, "common_enactment_days": 180, "fold_entry_present": false, "mouse_wheel_reliable": false, "scrollbar_drag_reliable": true},
+      "evidence": ["decisions-page-1.png", "decisions-page-middle-a.png", "decisions-page-middle-b.png", "decisions-page-middle-c.png", "decisions-page-13.png"]
+    },
+    {
+      "id": "S03",
+      "name": "普通帝国计划10执行与持久化",
+      "status": "passed_with_followup",
+      "steps": ["record paused Earth baseline", "enact plan10", "advance at fastest speed until completion", "pause", "save as iteration1_plan10", "reload", "inspect UI and save gamestate"],
+      "assertions": ["1000 minerals are deducted", "180-day queue completes", "total district cap increases by 2", "mining district cap increases by 2", "deposit survives reload", "miner jobs increase by 600"],
+      "observed": {"mineral_cost_passed": true, "enactment_passed": true, "planet_base_size": 18, "district_cap_before": 18, "district_cap_after": 20, "mining_cap_before": 7, "mining_cap_after": 9, "housing_after": 720, "deposit_in_save": "mod_extend_mining_workplace", "persistence_passed": true, "miner_jobs_exact_ui_assertion": "followup_required"},
+      "evidence": ["earth-before-decision.png", "plan10-enacted-immediate.png", "plan10-completion-check.png", "plan10-persisted-after-reload.png", "identify-720-metric.png", "labor-jobs-after-reload.png", "iteration1_plan10.sav:gamestate"]
+    },
+    {
+      "id": "S04",
+      "name": "同一决议重复执行语义",
+      "status": "not_executed",
+      "steps": ["load completed S03 fixture", "enact plan10 again", "save and reload"],
+      "assertions": ["record whether decision remains selectable", "record whether add_deposit stacks or replaces", "freeze observed numeric behavior"]
+    },
+    {
+      "id": "S05",
+      "name": "政体岗位矩阵",
+      "status": "not_executed",
+      "variants": ["hive", "machine", "rogue_servitor", "nomad_or_ark"],
+      "assertions": ["correct job branch is selected", "no removed job key error is logged", "unsupported planet type is hidden or explains rejection"]
+    },
+    {
+      "id": "S06",
+      "name": "语言与长菜单",
+      "status": "partially_passed",
+      "variants": {"l_simp_chinese": "passed", "english": "not_executed"},
+      "assertions": ["all titles and descriptions are localized", "missing-English-key behavior is frozen", "all 13 entries remain reachable"]
+    }
+  ]
+}
