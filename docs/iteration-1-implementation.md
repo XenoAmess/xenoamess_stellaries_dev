@@ -2,7 +2,7 @@
 
 ## 实施顺序
 
-迭代 1 按需求编号逐项交付：`I1-001` → `I1-002` → `I1-003` → `I1-004` → `I1-005` → `I1-006`，最后执行 `I1-R01`、`I1-R02` 和完整验收矩阵。每一项独立完成设计、实现、静态验收、实机回归、文档更新和 Git 提交/推送；后续需求不得借用“计划实现”冒充当前需求已通过。
+迭代 1 按需求编号逐项交付：`I1-001` → `I1-002` → `I1-003` → `I1-004`，最后执行 `I1-R01`、`I1-R02` 和完整验收矩阵。`I1-005` 与 `I1-006` 已由用户明确决定不做。每一项独立完成设计、实现、静态验收、实机回归、文档更新和 Git 提交/推送；后续需求不得借用“计划实现”冒充当前需求已通过。
 
 ## I1-001 方舟舰与游牧帝国殖民地支持
 
@@ -124,3 +124,47 @@
 ### 结论
 
 `I1-002` 已交付。下一项是 `I1-003`，本次提交没有提前实现后续需求。
+
+## I1-003 机仆活体陈设岗位决议
+
+### 状态
+
+- 当前阶段：设计冻结，待实现、静态验收与实机回归。
+- 前置需求：沿用 `I1-001` 的载体兼容入口和 `I1-002` 的折叠菜单；不在本项提前完成全量英文本地化 `I1-004`。
+
+### 4.4.6 原版依据
+
+- 原版 `common/pop_jobs/00_other_jobs.txt` 定义的岗位键是 `bio_trophy`，对应岗位槽位 modifier 为 `job_bio_trophy_add`。岗位只允许非机器人、具有 `citizenship_organic_trophy`，且处于 `bio_trophy` 或 `bio_trophy_unemployment` 类别的人口填充。
+- 原版 `common/buildings/08_unity_buildings.txt` 的有机庇护所直接使用 `job_bio_trophy_add`；原版殖民地类型还使用 `pop_bio_trophy_bonus_workforce_mult` 调整该岗位效率，因此两项 modifier 均有 4.4.6 实例。
+- 失控机仆的 civic 键为 `civic_machine_servitor`。原版当前内容在需考虑 civic 有效性的入口使用 country-scope `has_valid_civic = civic_machine_servitor`；本决议从殖民载体通过 `owner` 链接进入 country scope。
+- 原版预设 `custodianship_machine_age`（界面名“地球监护者”）同时具有失控机仆 civic 和有机次要物种，适合作为执行及就业实机夹具；普通地球联合国和非机仆机械帝国用于反向可见性检查。
+
+### 参数决策
+
+需求中的数量、成本、工期和效率为待确认项。为保持本 Mod 当前 13 项岗位扩展的统一合同，本项采用：
+
+- 决议成本：1000 矿物。
+- 执行时间：180 天。
+- 活体陈设岗位：`+600`。
+- 活体陈设岗位效率：`+10%`。
+- 住房：`+600`，与其余单类岗位扩展 deposit 一致，避免新增岗位与现有扩展的住房口径分叉。
+- 重复执行：继续使用“决议执行 `add_deposit` 添加一个同名永久 deposit”的现有结构，不另加一次性 flag 或独立叠层机制；实机同时记录首次与重复执行行为，并与现有计划10的同名 deposit 规则对照。
+
+### 设计
+
+1. 新增 `decision_13_extend_bio_trophy_workplace` 和 `mod_extend_bio_trophy_workplace`，编号承接计划 00—12。
+2. 决议除公共载体 trigger 和菜单展开 flag 外，在 `potential` 中要求 `owner = { has_valid_civic = civic_machine_servitor }`；非失控机仆连入口都不显示。
+3. deposit 的岗位 modifier 再重复检查 owner 的有效 civic。即使通过控制台或其他 Mod 非正常添加 deposit，非机仆政体也不会获得无效活体陈设岗位。
+4. AI 权重、成本、工期、图标和 `add_deposit` 方式与现有功能决议一致。
+5. 简体中文为新增决议/deposit 提供完整文本。英文仅补齐访问本功能必需的展开/收起入口及本功能四个键；现有计划 00—12 的全量英文仍属于 `I1-004`。
+6. 描述符版本推进至 `4.4.6-i1.3`，并更新 Mod 树哈希、机器可读合同和场景夹具。
+
+### 验收标准与夹具
+
+- `I1-003-VISIBILITY`：地球监护者展开菜单后能看到计划13；普通帝国与非机仆机械帝国展开后看不到计划13。
+- `I1-003-EXECUTE`：地球监护者执行计划13，立即扣除 1000 矿物，180 天后 deposit 生效；岗位界面/提示显示新增活体陈设容量，合格有机人口可进入该岗位。
+- `I1-003-REPEAT`：首次完成后再次执行，记录同名 deposit 和岗位数是否叠加，并与计划10使用同一 `add_deposit` 语义；不得产生负岗位或脚本错误。
+- `I1-003-PERSISTENCE`：完成后的 deposit 与岗位状态跨存档重载保持。
+- `I1-003-LOCALISATION`：简体中文和英文环境均显示本功能可读的入口、决议名、决议说明、deposit 名和 deposit 说明，不显示这六个本功能/依赖键的原始 key。
+- 静态门禁：`open_kaishek` 对决议、deposit、scripted trigger 全部 `VALIDATED`；对错误 civic scope、拼错的 `job_bio_trophy_add`/`has_valid_civic` 保持 fail-closed。
+- 回归门禁：I1-001 方舟兼容、I1-002 折叠状态和计划 00—12 合同不退化；本轮日志无可归因于本功能的错误。
