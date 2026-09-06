@@ -1,5 +1,11 @@
 # 文档知识库
 
+## 验收语言范围
+
+- Stellaris 实机、UI、OCR、存档重载和运行时回归只覆盖简体中文（`l_simp_chinese`）。
+- 英文及其他语言只提供翻译并执行静态校验，不启动对应语言的游戏运行，不宣称其通过实机测试。
+- 静态校验覆盖本地化键完整性、文件头与编码、引用一致性、原始 key 泄漏风险和简体中文占位文本。
+
 本目录是 `xenoamess_stellaries_dev` 的文档知识库，用于沉淀 Stellaris 开发知识和本项目约定。
 
 ## 文档索引
@@ -8,6 +14,7 @@
 - [迭代 1：当前版本实机基线与回归夹具记录](iteration-1-current-version-baseline.md)
 - [迭代 1：Stellaris 实机回归方案](iteration-1-regression-plan.md)
 - [迭代 1 实施记录](iteration-1-implementation.md)
+- [Stellaris 验收夹具特性调研计划](stellaris-fixture-research-plan.md)
 - [Stellaris 实机自动化经验](stellaris-runtime-testing.md)
 
 ## 知识归档原则

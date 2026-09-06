@@ -9,15 +9,66 @@ Documents profile.
 from __future__ import annotations
 
 import argparse
+import ctypes
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
 import time
+import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
+
+
+def configure_dpi_awareness() -> dict[str, object]:
+    """Keep screenshot pixels and UI input coordinates in the same space."""
+    if sys.platform != "win32":
+        return {"requested": "not_applicable", "effective": "not_windows"}
+
+    requested = "per_monitor_v2"
+    request_succeeded = False
+    try:
+        setter = ctypes.windll.user32.SetProcessDpiAwarenessContext
+        setter.argtypes = [ctypes.c_void_p]
+        setter.restype = ctypes.c_bool
+        request_succeeded = bool(setter(ctypes.c_void_p(-4)))
+    except (AttributeError, OSError):
+        try:
+            setter = ctypes.windll.shcore.SetProcessDpiAwareness
+            setter.argtypes = [ctypes.c_int]
+            setter.restype = ctypes.c_long
+            request_succeeded = setter(2) == 0
+            requested = "per_monitor_v1"
+        except (AttributeError, OSError):
+            requested = "system_aware_fallback"
+            request_succeeded = bool(ctypes.windll.user32.SetProcessDPIAware())
+
+    effective = "unknown"
+    try:
+        get_context = ctypes.windll.user32.GetThreadDpiAwarenessContext
+        get_context.restype = ctypes.c_void_p
+        get_awareness = ctypes.windll.user32.GetAwarenessFromDpiAwarenessContext
+        get_awareness.argtypes = [ctypes.c_void_p]
+        get_awareness.restype = ctypes.c_int
+        effective = {
+            0: "unaware",
+            1: "system_aware",
+            2: "per_monitor_aware",
+        }.get(get_awareness(get_context()), "invalid")
+    except (AttributeError, OSError):
+        pass
+    return {
+        "requested": requested,
+        "request_succeeded": request_succeeded,
+        "effective": effective,
+    }
+
+
+# This must happen before importing screenshot and input libraries.
+DPI_AWARENESS = configure_dpi_awareness()
 
 import psutil
 import pyautogui
@@ -39,11 +90,12 @@ EXPECTED_EXE_SHA256 = (
     "bc451c72d9654c8901f1bb0bee1dd78d76f415465c2fbf746e9f98ade333173a"
 )
 EXPECTED_MOD_TREE_SHA256 = (
-    "a57b0feb7082199eec88ca470e4d268134f1af0eb26928a961a11ae745a5a18b"
+    "63a771dcad94b194f8bbeb62291ebfa774a6784b6212270c4d7378788c13e37f"
 )
 WORKSHOP_ID = "3710613857"
 STEAM_APP_ID = "281990"
 PROFILE_ID = "stellaris-4.4.6"
+SUPPORTED_LANGUAGES = ("l_simp_chinese", "l_english")
 RUNTIME_ROOT = ROOT / "_runtime"
 CURRENT_RUN = RUNTIME_ROOT / "current-run.json"
 DIRECTX_REDIST_CAB = Path(
@@ -81,6 +133,66 @@ def tree_manifest(root: Path) -> tuple[list[dict[str, object]], str]:
             "sha256": hashlib.sha256(payload).hexdigest(),
         })
     return files, digest.hexdigest()
+
+
+def inspect_save_file(path: Path, tokens: list[str]) -> dict[str, object]:
+    """Inspect one Stellaris ZIP save without extracting it or mutating the run."""
+    resolved = path.resolve()
+    if not resolved.is_file():
+        raise RuntimeError(f"save not found: {resolved}")
+    if not zipfile.is_zipfile(resolved):
+        raise RuntimeError(f"save is not a ZIP container: {resolved}")
+    if any(not token or "\r" in token or "\n" in token for token in tokens):
+        raise ValueError("save inspection tokens must be non-empty single-line strings")
+
+    with zipfile.ZipFile(resolved, "r") as archive:
+        members = archive.namelist()
+        if "gamestate" not in members:
+            raise RuntimeError(f"save has no gamestate member: {resolved}")
+        gamestate = archive.read("gamestate")
+    counts = {
+        token: gamestate.count(token.encode("utf-8"))
+        for token in tokens
+    }
+    return {
+        "schema": "xenoamess.stellaris.save-inspection.v1",
+        "save": str(resolved),
+        "bytes": resolved.stat().st_size,
+        "sha256": sha256(resolved),
+        "zip_members": members,
+        "gamestate_bytes": len(gamestate),
+        "gamestate_sha256": hashlib.sha256(gamestate).hexdigest(),
+        "token_counts": counts,
+        "inspected_at_utc": datetime.now(timezone.utc).isoformat(),
+    }
+
+
+def copy_seed_save(source: Path, save_root: Path) -> dict[str, object]:
+    """Validate and copy one frozen save into an isolated acceptance profile."""
+    source_inspection = inspect_save_file(source, [])
+    resolved_source = Path(source_inspection["save"])
+    if resolved_source.suffix.lower() != ".sav":
+        raise ValueError(f"seed save must use the .sav extension: {resolved_source}")
+
+    destination_dir = (save_root / "acceptance-fixtures").resolve()
+    destination_dir.mkdir(parents=True, exist_ok=True)
+    destination = destination_dir / resolved_source.name
+    shutil.copy2(resolved_source, destination)
+    copied_inspection = inspect_save_file(destination, [])
+    if (
+        source_inspection["bytes"] != copied_inspection["bytes"]
+        or source_inspection["sha256"] != copied_inspection["sha256"]
+    ):
+        raise RuntimeError("copied seed save differs from source")
+    return {
+        "source": str(resolved_source),
+        "copied": str(destination),
+        "bytes": copied_inspection["bytes"],
+        "sha256": copied_inspection["sha256"],
+        "zip_members": copied_inspection["zip_members"],
+        "gamestate_bytes": copied_inspection["gamestate_bytes"],
+        "gamestate_sha256": copied_inspection["gamestate_sha256"],
+    }
 
 
 def write_json(path: Path, value: object) -> None:
@@ -124,7 +236,45 @@ def ensure_runtime_dependencies() -> tuple[Path, list[dict[str, object]]]:
     }]
 
 
-def prepare() -> dict[str, object]:
+def render_pdx_settings(language: str) -> str:
+    if language not in SUPPORTED_LANGUAGES:
+        raise ValueError(f"unsupported acceptance language: {language}")
+    return (
+        '"game"={\n'
+        '\t"cloud_save"={ version=0 enabled=no }\n'
+        '}\n'
+        '"Graphics"={\n'
+        '\t"display_mode"={ version=0 value="borderless_fullscreen" }\n'
+        '\t"display_index"={ version=0 value="0" }\n'
+        '\t"fullscreen_resolution"={ version=0 value="2560x1440" }\n'
+        '}\n'
+        '"System"={\n'
+        f'\t"language"={{ version=0 value="{language}" }}\n'
+        '}\n'
+    )
+
+
+def render_scheduled_commands(entries: list[str]) -> str:
+    lines = []
+    for entry in entries:
+        date, separator, command = entry.partition("=")
+        date = date.strip()
+        command = command.strip()
+        if not separator or not re.fullmatch(r"\d{4}\.\d{2}\.\d{2}", date):
+            raise ValueError(
+                f"scheduled command must use YYYY.MM.DD=COMMAND: {entry}"
+            )
+        if not command or any(character in command for character in '\r\n"'):
+            raise ValueError(f"unsafe scheduled command: {entry}")
+        lines.append(f'{date} = "{command}"')
+    return "\n".join(lines) + ("\n" if lines else "")
+
+
+def prepare(
+    language: str,
+    scheduled_commands: list[str],
+    seed_save: Path | None = None,
+) -> dict[str, object]:
     if running_stellaris():
         raise RuntimeError("refusing to prepare while stellaris.exe is running")
     if not GAME_EXE.is_file():
@@ -163,19 +313,18 @@ def prepare() -> dict[str, object]:
         "disabled_dlcs": [],
     })
     (userdir / "pdx_settings.txt").write_text(
-        '"game"={\n'
-        '\t"cloud_save"={ version=0 enabled=no }\n'
-        '}\n'
-        '"Graphics"={\n'
-        '\t"display_mode"={ version=0 value="borderless_fullscreen" }\n'
-        '\t"display_index"={ version=0 value="0" }\n'
-        '\t"fullscreen_resolution"={ version=0 value="2560x1440" }\n'
-        '}\n'
-        '"System"={\n'
-        '\t"language"={ version=0 value="l_simp_chinese" }\n'
-        '}\n',
-        encoding="utf-8",
-        newline="\n",
+        render_pdx_settings(language), encoding="utf-8", newline="\n"
+    )
+    if scheduled_commands:
+        (userdir / "commands_at_date.txt").write_text(
+            render_scheduled_commands(scheduled_commands),
+            encoding="utf-8",
+            newline="\n",
+        )
+    seeded_save = (
+        copy_seed_save(seed_save, userdir / "save games")
+        if seed_save is not None
+        else None
     )
 
     source_files, source_tree_hash = tree_manifest(MOD_ROOT)
@@ -211,7 +360,9 @@ def prepare() -> dict[str, object]:
         "artifact_dir": str(artifact_dir),
         "launch_args": launch_args,
         "enabled_mods": [f"mod/ugc_{WORKSHOP_ID}.mod"],
-        "language": "l_simp_chinese",
+        "language": language,
+        "scheduled_commands": scheduled_commands,
+        "seeded_save": seeded_save,
         "display": {"mode": "borderless_fullscreen", "resolution": [2560, 1440]},
     }
     write_json(artifact_dir / "manifest.json", manifest)
@@ -227,6 +378,31 @@ def load_run() -> tuple[Path, Path, dict[str, object]]:
     userdir = Path(pointer["userdir"]).resolve()
     manifest = json.loads((artifact_dir / "manifest.json").read_text(encoding="utf-8"))
     return artifact_dir, userdir, manifest
+
+
+def inspect_save(save_name: str | None, tokens: list[str]) -> dict[str, object]:
+    artifact_dir, userdir, _ = load_run()
+    save_root = (userdir / "save games").resolve()
+    candidates = sorted(
+        (path.resolve() for path in save_root.rglob("*.sav") if path.is_file()),
+        key=lambda path: path.stat().st_mtime_ns,
+        reverse=True,
+    )
+    if save_name:
+        candidates = [
+            path for path in candidates
+            if path.name == save_name or path.stem == save_name
+        ]
+    if not candidates:
+        label = save_name or "latest *.sav"
+        raise RuntimeError(f"no matching save under isolated userdir: {label}")
+    if save_name and len(candidates) > 1:
+        raise RuntimeError(f"multiple isolated saves match {save_name}: {candidates}")
+
+    result = inspect_save_file(candidates[0], tokens)
+    safe_name = re.sub(r"[^A-Za-z0-9_.-]+", "_", candidates[0].stem)
+    write_json(artifact_dir / f"save-inspection-{safe_name}.json", result)
+    return result
 
 
 def windows_for_pid(pid: int) -> list[int]:
@@ -302,6 +478,8 @@ def capture(stage: str) -> dict[str, object]:
         "image": str(image_path),
         "image_sha256": sha256(image_path),
         "resolution": list(image.size),
+        "input_desktop_size": list(pyautogui.size()),
+        "dpi_awareness": DPI_AWARENESS,
         "ocr_seconds": round(float(output.elapse or 0), 3),
         "rows": rows,
     }
@@ -357,7 +535,9 @@ def click_point(x: int, y: int, stage: str) -> dict[str, object]:
     return action
 
 
-def scroll(clicks: int, x: int, y: int, stage: str) -> dict[str, object]:
+def scroll(clicks: int, x: int, y: int, stage: str, repeat: int) -> dict[str, object]:
+    if repeat < 1:
+        raise ValueError("scroll repeat must be at least one")
     artifact_dir, _, _ = load_run()
     record = process_record(artifact_dir)
     focus_pid(int(record["pid"]))
@@ -365,11 +545,14 @@ def scroll(clicks: int, x: int, y: int, stage: str) -> dict[str, object]:
     if not 0 <= x < width or not 0 <= y < height:
         raise ValueError(f"point outside desktop {width}x{height}: ({x}, {y})")
     pyautogui.moveTo(x, y)
-    pyautogui.scroll(clicks)
+    for _ in range(repeat):
+        pyautogui.scroll(clicks)
+        time.sleep(0.02)
     action = {
         "action": "scroll",
         "stage": stage,
         "clicks": clicks,
+        "repeat": repeat,
         "point": [x, y],
         "scrolled_at_utc": datetime.now(timezone.utc).isoformat(),
     }
@@ -494,32 +677,48 @@ def status() -> dict[str, object]:
     }
 
 
-def press(keys: list[str]) -> dict[str, object]:
+def press(keys: list[str], repeat: int) -> dict[str, object]:
+    if repeat < 1:
+        raise ValueError("key repeat must be at least one")
     artifact_dir, _, _ = load_run()
     record = process_record(artifact_dir)
     focus_pid(int(record["pid"]))
     if len(keys) == 1:
-        pyautogui.press(keys[0])
+        pyautogui.press(keys[0], presses=repeat, interval=0.05)
     else:
-        pyautogui.hotkey(*keys)
-    result = {"action": "press", "keys": keys, "at_utc": datetime.now(timezone.utc).isoformat()}
+        for _ in range(repeat):
+            pyautogui.hotkey(*keys)
+    result = {
+        "action": "press",
+        "keys": keys,
+        "repeat": repeat,
+        "at_utc": datetime.now(timezone.utc).isoformat(),
+    }
     write_json(artifact_dir / f"press-{int(time.time() * 1000)}.json", result)
     return result
 
 
-def press_scan_code(scan_code: int, stage: str) -> dict[str, object]:
+def press_scan_code(scan_code: int, stage: str, repeat: int) -> dict[str, object]:
     """Send a physical-key scan code to software that ignores virtual keys."""
     if not 0 <= scan_code <= 0xFF:
         raise ValueError(f"scan code outside one-byte range: {scan_code}")
+    if repeat < 1:
+        raise ValueError("scan-code repeat must be at least one")
     artifact_dir, _, _ = load_run()
     record = process_record(artifact_dir)
     focus_pid(int(record["pid"]))
-    win32api.keybd_event(0, scan_code, 0x0008, 0)
-    win32api.keybd_event(0, scan_code, 0x0008 | win32con.KEYEVENTF_KEYUP, 0)
+    for _ in range(repeat):
+        win32api.keybd_event(0, scan_code, 0x0008, 0)
+        time.sleep(0.05)
+        win32api.keybd_event(
+            0, scan_code, 0x0008 | win32con.KEYEVENTF_KEYUP, 0
+        )
+        time.sleep(0.03)
     result = {
         "action": "press_scan_code",
         "stage": stage,
         "scan_code": scan_code,
+        "repeat": repeat,
         "at_utc": datetime.now(timezone.utc).isoformat(),
     }
     write_json(artifact_dir / f"{stage}.action.json", result)
@@ -538,10 +737,12 @@ def press_scan_chord(scan_codes: list[int], stage: str) -> dict[str, object]:
     focus_pid(int(record["pid"]))
     for scan_code in scan_codes:
         win32api.keybd_event(0, scan_code, 0x0008, 0)
+        time.sleep(0.03)
     for scan_code in reversed(scan_codes):
         win32api.keybd_event(
             0, scan_code, 0x0008 | win32con.KEYEVENTF_KEYUP, 0
         )
+        time.sleep(0.03)
     result = {
         "action": "press_scan_chord",
         "stage": stage,
@@ -582,7 +783,21 @@ def stop(timeout: float) -> dict[str, object]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     commands = parser.add_subparsers(dest="command", required=True)
-    commands.add_parser("prepare")
+    prepare_parser = commands.add_parser("prepare")
+    prepare_parser.add_argument(
+        "--language", choices=SUPPORTED_LANGUAGES, default="l_simp_chinese"
+    )
+    prepare_parser.add_argument(
+        "--scheduled-command",
+        action="append",
+        default=[],
+        help="write a userdir commands_at_date entry as YYYY.MM.DD=COMMAND",
+    )
+    prepare_parser.add_argument(
+        "--seed-save",
+        type=Path,
+        help="copy one validated Stellaris .sav into the isolated profile",
+    )
     launch_parser = commands.add_parser("launch")
     launch_parser.add_argument("--timeout", type=float, default=180)
     launch_parser.add_argument("--via-steam", action="store_true")
@@ -600,6 +815,7 @@ def parse_args() -> argparse.Namespace:
     scroll_parser.add_argument("--x", type=int, default=1400)
     scroll_parser.add_argument("--y", type=int, default=600)
     scroll_parser.add_argument("--stage", default="scroll")
+    scroll_parser.add_argument("--repeat", type=int, default=1)
     drag_parser = commands.add_parser("drag")
     drag_parser.add_argument("x1", type=int)
     drag_parser.add_argument("y1", type=int)
@@ -613,14 +829,27 @@ def parse_args() -> argparse.Namespace:
     type_parser.add_argument("--stage", default="type-text")
     press_parser = commands.add_parser("press")
     press_parser.add_argument("keys", nargs="+")
+    press_parser.add_argument("--repeat", type=int, default=1)
     scan_parser = commands.add_parser("press-scan")
     scan_parser.add_argument("scan_code", type=lambda value: int(value, 0))
     scan_parser.add_argument("--stage", default="press-scan")
+    scan_parser.add_argument("--repeat", type=int, default=1)
     chord_parser = commands.add_parser("press-scan-chord")
     chord_parser.add_argument(
         "scan_codes", nargs="+", type=lambda value: int(value, 0)
     )
     chord_parser.add_argument("--stage", default="press-scan-chord")
+    save_parser = commands.add_parser("inspect-save")
+    save_parser.add_argument(
+        "--save",
+        help="exact filename or stem under the isolated userdir; defaults to latest",
+    )
+    save_parser.add_argument(
+        "--token",
+        action="append",
+        default=[],
+        help="count an exact UTF-8 token in the gamestate member",
+    )
     commands.add_parser("status")
     stop_parser = commands.add_parser("stop")
     stop_parser.add_argument("--timeout", type=float, default=30)
@@ -630,13 +859,21 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     arguments = parse_args()
     action = {
-        "prepare": lambda: prepare(),
+        "prepare": lambda: prepare(
+            arguments.language,
+            arguments.scheduled_command,
+            arguments.seed_save,
+        ),
         "launch": lambda: launch(arguments.timeout, arguments.via_steam),
         "capture": lambda: capture(arguments.stage),
         "click-text": lambda: click_text(arguments.target, arguments.stage),
         "click-point": lambda: click_point(arguments.x, arguments.y, arguments.stage),
         "scroll": lambda: scroll(
-            arguments.clicks, arguments.x, arguments.y, arguments.stage
+            arguments.clicks,
+            arguments.x,
+            arguments.y,
+            arguments.stage,
+            arguments.repeat,
         ),
         "drag": lambda: drag(
             arguments.x1,
@@ -649,11 +886,14 @@ def main() -> int:
         "type-text": lambda: type_text(
             arguments.text, arguments.submit, arguments.stage
         ),
-        "press": lambda: press(arguments.keys),
-        "press-scan": lambda: press_scan_code(arguments.scan_code, arguments.stage),
+        "press": lambda: press(arguments.keys, arguments.repeat),
+        "press-scan": lambda: press_scan_code(
+            arguments.scan_code, arguments.stage, arguments.repeat
+        ),
         "press-scan-chord": lambda: press_scan_chord(
             arguments.scan_codes, arguments.stage
         ),
+        "inspect-save": lambda: inspect_save(arguments.save, arguments.token),
         "status": lambda: status(),
         "stop": lambda: stop(arguments.timeout),
     }[arguments.command]

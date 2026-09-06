@@ -206,3 +206,18 @@ decision_12_extend_soldier_workplace = {
 	resources = { category = decisions cost = { minerals = 1000 } }
 	effect = { add_deposit = mod_extend_soldier_workplace }
 }
+
+# 13 - 活体陈设（失控机仆专属）
+decision_13_extend_bio_trophy_workplace = {
+	owned_planets_only = yes
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+		owner = { has_valid_civic = civic_machine_servitor }
+	}
+	enactment_time = 180
+	icon = decision_resources
+	ai_weight = { weight = 0 }
+	resources = { category = decisions cost = { minerals = 1000 } }
+	effect = { add_deposit = mod_extend_bio_trophy_workplace }
+}

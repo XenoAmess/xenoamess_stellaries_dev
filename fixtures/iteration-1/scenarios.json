@@ -134,6 +134,42 @@
           "evidence": ["i1002-carrier-earth-expanded-persisted.png", "i002-carrier-earth-expanded.sav", "i1002-carrier-ark-collapsed-persisted.png", "i002-carrier-ark-collapsed.sav"]
         }
       ]
+    },
+    {
+      "id": "I1-003",
+      "status": "implemented_static_pending_runtime",
+      "scenarios": [
+        {
+          "id": "I1-003-VISIBILITY",
+          "status": "not_executed",
+          "assertions": ["rogue servitor sees plan13 after expanding the menu", "ordinary and non-servitor machine empires do not see plan13"]
+        },
+        {
+          "id": "I1-003-EXECUTE",
+          "status": "not_executed",
+          "preset": "custodianship_machine_age",
+          "decision": "decision_13_extend_bio_trophy_workplace",
+          "assertions": ["cost is 1000 minerals", "enactment takes 180 days", "deposit is added", "bio-trophy job capacity increases by 600", "eligible organic population can fill the jobs"]
+        },
+        {
+          "id": "I1-003-REPEAT",
+          "status": "not_executed",
+          "assertions": ["repeat availability matches existing add_deposit decisions", "same-name deposit behavior is frozen from runtime evidence", "no negative or duplicate invalid job state"]
+        },
+        {
+          "id": "I1-003-PERSISTENCE",
+          "status": "not_executed",
+          "assertions": ["deposit and job state survive save reload"]
+        },
+        {
+          "id": "I1-003-LOCALISATION",
+          "status": "not_executed",
+          "runtime_languages": ["l_simp_chinese"],
+          "static_translation_languages": ["l_english"],
+          "assertions": ["Chinese runtime expand and collapse entries are readable", "Chinese runtime plan13 and its deposit have readable names and descriptions", "English translation has complete keys, valid header and encoding, consistent references, and no Chinese placeholders"],
+          "non_chinese_runtime": "out_of_scope"
+        }
+      ]
     }
   ],
   "scenarios": [
@@ -183,8 +219,10 @@
       "id": "S06",
       "name": "语言与长菜单",
       "status": "partially_passed",
-      "variants": {"l_simp_chinese": "passed", "english": "not_executed"},
-      "assertions": ["all titles and descriptions are localized", "missing-English-key behavior is frozen", "all 13 entries remain reachable"]
+      "runtime_variants": {"l_simp_chinese": "passed"},
+      "static_translation_variants": {"l_english": "pending"},
+      "non_chinese_runtime": "out_of_scope",
+      "assertions": ["Chinese runtime titles and descriptions are localized", "non-Chinese translations pass static localization checks", "all 13 entries remain reachable in Chinese runtime"]
     }
   ]
 }

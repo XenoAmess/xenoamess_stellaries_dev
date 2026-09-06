@@ -415,3 +415,29 @@ mod_extend_soldier_workplace = {
 
     drop_weight = { weight = 0 }
 }
+
+# ==================== 14. 活体陈设地块（失控机仆专属） ====================
+mod_extend_bio_trophy_workplace = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+    }
+
+    # 双重保护：非失控机仆即使被外部脚本添加本地块，也不会获得无效岗位。
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_machine_servitor }
+        }
+        modifier = {
+            job_bio_trophy_add = 600
+            pop_bio_trophy_bonus_workforce_mult = 0.1
+        }
+    }
+
+    drop_weight = { weight = 0 }
+}
