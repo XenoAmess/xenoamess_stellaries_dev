@@ -17,11 +17,13 @@
     ]
   },
   "mod": {
-    "tree_sha256": "d035b50d2e78523d49f34cbf6d8a258834c69979a8ac25ec622ac06b16e357c6",
+    "tree_sha256": "a57b0feb7082199eec88ca470e4d268134f1af0eb26928a961a11ae745a5a18b",
     "baseline_tree_sha256": "a72b3de8cdfa9df627648bc226054f097ee7e8df9efcd5b490494408ea324f57",
-    "declared_version": "4.4.6-i1.1",
+    "i1_001_tree_sha256": "d035b50d2e78523d49f34cbf6d8a258834c69979a8ac25ec622ac06b16e357c6",
+    "declared_version": "4.4.6-i1.2",
     "supported_version": "4.4.*",
-    "modded_checksum_observed": "89a6"
+    "modded_checksum_observed": "48c5",
+    "previous_tree_modded_checksum": "89a6"
   },
   "common_decision_contract": {
     "owned_planets_only": true,
@@ -36,6 +38,16 @@
     "ordinary_colony": { "owner_is_nomadic": false, "supported": true },
     "nomadic_arkship_colony": { "planet_class": "pc_ark", "supported": true },
     "unverified_future_nomad_colony": { "supported": false }
+  },
+  "menu_state_contract": {
+    "scope": ["planet", "ship"],
+    "flag": "vivhite_workplace_menu_expanded",
+    "default": "collapsed",
+    "expand_decision": "decision_extend_workplace_expand",
+    "collapse_decision": "decision_extend_workplace_collapse",
+    "toggle_cost": {},
+    "toggle_enactment_days": 0,
+    "functional_decisions_visible_when": "expanded"
   },
   "decisions": [
     {

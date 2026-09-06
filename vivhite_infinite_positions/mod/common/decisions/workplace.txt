@@ -1,9 +1,37 @@
 # 工作场所扩展决策（13个）
 
+# 展开/收起状态按殖民地保存。默认不设置 flag，因此只显示展开入口。
+decision_extend_workplace_expand = {
+	owned_planets_only = yes
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		NOT = { has_carrier_flag = vivhite_workplace_menu_expanded }
+	}
+	enactment_time = 0
+	icon = decision_resources
+	ai_weight = { weight = 0 }
+	effect = { set_carrier_flag = vivhite_workplace_menu_expanded }
+}
+
+decision_extend_workplace_collapse = {
+	owned_planets_only = yes
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
+	enactment_time = 0
+	icon = decision_resources
+	ai_weight = { weight = 0 }
+	effect = { remove_carrier_flag = vivhite_workplace_menu_expanded }
+}
+
 # 00 - 城市
 decision_00_extend_urban_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -14,7 +42,10 @@ decision_00_extend_urban_workplace = {
 # 01 - 行政
 decision_01_extend_unity_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -25,7 +56,10 @@ decision_01_extend_unity_workplace = {
 # 02 - 警察
 decision_02_extend_enforcer_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -36,7 +70,10 @@ decision_02_extend_enforcer_workplace = {
 # 03 - 商业
 decision_03_extend_trade_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -47,7 +84,10 @@ decision_03_extend_trade_workplace = {
 # 04 - 物理
 decision_04_extend_physics_res_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources	
 	ai_weight = { weight = 0 }
@@ -58,7 +98,10 @@ decision_04_extend_physics_res_workplace = {
 # 05 - 社会
 decision_05_extend_society_res_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources	
 	ai_weight = { weight = 0 }
@@ -69,7 +112,10 @@ decision_05_extend_society_res_workplace = {
 # 06 - 工程
 decision_06_extend_engineering_res_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources	
 	ai_weight = { weight = 0 }
@@ -80,7 +126,10 @@ decision_06_extend_engineering_res_workplace = {
 # 07 - 合金
 decision_07_extend_artisan_alloys_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -91,7 +140,10 @@ decision_07_extend_artisan_alloys_workplace = {
 # 08 - 消费品
 decision_08_extend_artisan_consumer_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -102,7 +154,10 @@ decision_08_extend_artisan_consumer_workplace = {
 # 09 - 电力
 decision_09_extend_generator_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -113,7 +168,10 @@ decision_09_extend_generator_workplace = {
 # 10 - 矿物
 decision_10_extend_mining_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -124,7 +182,10 @@ decision_10_extend_mining_workplace = {
 # 11 - 粮食
 decision_11_extend_agri_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }
@@ -135,7 +196,10 @@ decision_11_extend_agri_workplace = {
 # 12 - 士兵
 decision_12_extend_soldier_workplace = {
 	owned_planets_only = yes
-	potential = { vivhite_workplace_supported_colony = yes }
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
 	enactment_time = 180
 	icon = decision_resources
 	ai_weight = { weight = 0 }

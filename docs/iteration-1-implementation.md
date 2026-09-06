@@ -16,7 +16,7 @@
 
 以本机 4.4.6 游戏数据为准：
 
-- 方舟舰承载的殖民地是可殖民行星类 `pc_ark`，`district_set = nomad`，且通过 `ship` 链接到实际方舟舰船；它不是普通舰船 scope 上的岗位容器。
+- 方舟舰承载的殖民地使用 `pc_ark`、`district_set = nomad`，且岗位/区划界面链接到实际方舟舰船。I1-002 实机日志进一步确认：从该界面执行决议时 root scope 是 `ship`，不能把它等同于普通 `planet` scope；`is_planet_class = pc_ark`、`add_deposit` 等已实测能在这条方舟决议路径工作，但任何新增 opcode 都必须按 `ship` scope 重新验收。
 - 游牧帝国可由 country scope 的 `is_nomadic = yes` 识别。
 - 原版 `common/decisions/15_nomads_dlc_decisions.txt` 在方舟殖民地使用标准 `owned_planets_only = yes` 行星决议入口，说明 Mod 不需要另造舰船按钮。
 - 方舟区划通过原版 `jobs/technicians_add`、`jobs/miners_add`、`jobs/farmers_add` 等 inline script 添加普通岗位键；科研、行政、工业和军职也沿用现有基础岗位键。因此本需求不引入未经引擎定义的“方舟专属同名岗位”。
@@ -34,7 +34,7 @@
 
 ### 设计
 
-- 新增一个 Mod 命名空间内的 planet-scope scripted trigger，集中表达“非游牧帝国殖民地，或 `pc_ark` 方舟殖民地”。
+- 新增一个 Mod 命名空间内的载体 scripted trigger，集中表达“非游牧帝国普通殖民地，或 `pc_ark` 方舟殖民地”。该 trigger 会从普通殖民地的 `planet` scope 和方舟界面的 `ship` scope 调用。
 - 13 项决议的 `potential` 统一调用该 trigger；不在 13 处复制方舟判定。
 - 保持 `owned_planets_only = yes`，由引擎继续负责所有权入口过滤。
 - 更新迭代夹具中的 Mod 哈希、描述符合同及 `I1-001` 场景。
@@ -74,3 +74,53 @@
 ### 结论
 
 `I1-001` 已交付。下一项是 `I1-002`，本次提交没有提前实现后续需求。
+
+## I1-002 可折叠的决议菜单
+
+### 状态
+
+- 当前阶段：已通过静态验收与 Stellaris 4.4.6 普通殖民地/方舟实机回归。
+- 前置需求：`I1-001` 已通过；折叠入口必须沿用同一个载体兼容 trigger。
+
+### 4.4.6 原版依据
+
+- 原版 `common/decisions/13_cosmic_storms_decisions.txt` 使用一对 `enactment_time = 0` 决议，以互斥 `potential` 分别显示启用和停用入口，证明“两个即时决议切换同一状态”是 4.4.6 支持的模式。
+- 4.4.6 脚本提供 `has_carrier_flag`、`set_carrier_flag` 与 `remove_carrier_flag`，原版决议大量用它们保存殖民载体状态；它们是普通行星和方舟舰共同可用的状态原语。
+- 当前简体中文本地化已经预留 `decision_extend_workplace_expand` 与 `decision_extend_workplace_collapse` 两组键，但原脚本没有定义对应决议，描述文本也只是临时占位。
+
+### 设计
+
+1. 默认收起：没有 `vivhite_workplace_menu_expanded` carrier flag 时，只显示“展开岗位扩展计划”入口，13 项功能决议全部隐藏。
+2. 展开：执行零成本、零工期的 `decision_extend_workplace_expand`，设置上述 carrier flag；随后隐藏展开入口，显示收起入口与 13 项功能决议。
+3. 收起：执行零成本、零工期的 `decision_extend_workplace_collapse`，移除 carrier flag；随后恢复默认单入口状态。
+4. 13 项功能决议在原 `vivhite_workplace_supported_colony` 条件外增加 `has_carrier_flag` 条件，不改成本、工期或效果。
+5. 展开状态按殖民地保存，避免在一个殖民地操作却让所有行星菜单同时展开；普通殖民地和 `pc_ark` 使用相同实现。
+6. 两个入口均保持 `owned_planets_only = yes`、`ai_weight = { weight = 0 }`，AI 不主动操作纯 UI 状态。
+
+### 验收标准与夹具
+
+- `I1-002-DEFAULT-COLLAPSED`：新游戏普通地球和方舟各只显示一个 Mod 展开入口，不显示计划 00—12。
+- `I1-002-EXPAND`：点击展开后，展开入口消失，收起入口和计划 00—12 全部可访问。
+- `I1-002-COLLAPSE`：点击收起后，13 项功能入口立即隐藏，且只恢复一个展开入口；连续展开/收起不产生重复入口。
+- `I1-002-PERSISTENCE`：展开状态存档重载后保持；收起后再次存档重载也不会永久丢失展开入口。
+- 静态门禁：`open_kaishek` 识别 decisions 中的 `NOT`、`has_carrier_flag`、`set_carrier_flag` 和 `remove_carrier_flag`，并对旧的 planet-only flag 方案、拼错的 flag 操作/错误值形状保持 fail-closed。
+- 回归门禁：I1-001 的普通殖民地/方舟载体条件和 13 项决议功能合同不变，新日志无本功能脚本错误。
+
+### 首轮实机失败与设计修订
+
+- 验收运行 `20260906T041510Z` 的普通地球场景通过：新游戏默认只显示展开入口；展开后目录 00—12 全部可访问；收起后只剩展开入口；`i002-expanded.sav` 与 `i002-collapsed.sav` 分别证明两种状态均跨重载保持。
+- 同一运行进入原版预设“刚德森研究船团”的“首都方舟”后，默认收起入口可见，但点击展开无效。`error.log` 明确报告 `has_planet_flag` 和 `set_planet_flag` 的当前 scope 为 `ship`、支持 scope 仅为 `planet`；这不是 UI 自动化误判。
+- 首轮方案因此判定失败，不能交付。修订方案统一改用 carrier flag；它保持每个殖民载体独立，不退化为帝国级状态，同时覆盖普通 `planet` 与方舟 `ship` 两种决议 root scope。
+- `open_kaishek` 首轮只验证了 opcode 名称与声明 scope，没有把“该 Mod 的方舟可达决议”纳入 fail-closed 合同，因而产生静态假绿。按仓库规则，先在工具仓库撤销这组三个 planet-only flag 的放行、登记 carrier flag 形状和负例，再继续 Mod 修订。
+
+### 最终实机结果
+
+- 修订后验收运行：`20260906T053229Z`；游戏版本 `Pegasus 4.4.6`，Mod 校验和 `48c5`，Mod 树 SHA-256 为 `a57b0feb7082199eec88ca470e4d268134f1af0eb26928a961a11ae745a5a18b`。
+- 普通地球：默认态恰好一个展开入口；展开后恰好一个收起入口且计划 00—12 可访问；再次收起后计划全部隐藏。`i002-carrier-earth-expanded.sav`（1,014,854 字节，SHA-256 `4C8F88EE568151764F33B11664D1FC9334DDD024D67E1AB9B157928CC197FF29`）重载后仍保持展开。
+- 刚德森研究船团“首都方舟”：默认态、展开态和再次收起态均通过；展开目录从计划 00 遍历至计划 12。`i002-carrier-ark-collapsed.sav`（1,054,651 字节，SHA-256 `C269BD1F3A90D09FEE7DE8FBE8458AA165C40755E8D780AE5110A907E3B29F17`）重载后仍恰好显示一个展开入口，计划 00 与收起入口均不可见。
+- 两种载体各完成一次完整展开/收起循环，OCR 计数没有出现重复入口。运行日志没有 `carrier_flag`、`planet_flag`、scope、未知 trigger/effect 或 `vivhite_workplace` 相关错误；仅有与本 Mod 无关的已卸载 Workshop 项路径提示。
+- 关键截图与动作记录保存在本地 `_runtime/20260906T053229Z`；机器可读结论冻结到 `fixtures/iteration-1/scenarios.json`。
+
+### 结论
+
+`I1-002` 已交付。下一项是 `I1-003`，本次提交没有提前实现后续需求。

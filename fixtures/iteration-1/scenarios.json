@@ -23,6 +23,25 @@
     "save_sha256": "a31941ed239ced6634957706d1a15020aa072ece32625df077806663b637fdb8",
     "local_artifacts": "_runtime/20260906T021747Z"
   },
+  "i1_002_run": {
+    "run_id": "20260906T053229Z",
+    "mod_tree_sha256": "a57b0feb7082199eec88ca470e4d268134f1af0eb26928a961a11ae745a5a18b",
+    "modded_checksum": "48c5",
+    "attributable_error_count": 0,
+    "saves": {
+      "ordinary_colony_expanded": {
+        "save_name_observed": "i002-carrier-earth-expanded.sav",
+        "save_bytes": 1014854,
+        "save_sha256": "4C8F88EE568151764F33B11664D1FC9334DDD024D67E1AB9B157928CC197FF29"
+      },
+      "pc_ark_collapsed": {
+        "save_name_observed": "i002-carrier-ark-collapsed.sav",
+        "save_bytes": 1054651,
+        "save_sha256": "C269BD1F3A90D09FEE7DE8FBE8458AA165C40755E8D780AE5110A907E3B29F17"
+      }
+    },
+    "local_artifacts": "_runtime/20260906T053229Z"
+  },
   "implementation_requirements": [
     {
       "id": "I1-001",
@@ -62,6 +81,57 @@
           "assertions": ["static mineral cost remains 1000", "180-day enactment completes", "deposit is added once", "applicable district cap changes", "effect survives save reload"],
           "observed": {"enactment_days": 180, "district_cap_before": 9, "district_cap_after": 11, "deposit_in_save": "mod_extend_mining_workplace", "deposit_occurrences": 1, "persistence_passed": true, "exact_mineral_ui_delta": "not_asserted_due_rounded_debug_ui"},
           "evidence": ["ark-plan10-after-click.png", "ark-plan10-effect-view.png", "ark-after-reload.png", "ark-plan10-persisted.png", "i——001——.sav:gamestate"]
+        }
+      ]
+    },
+    {
+      "id": "I1-002",
+      "status": "passed",
+      "scenarios": [
+        {
+          "id": "I1-002-DEFAULT-COLLAPSED",
+          "status": "passed",
+          "carriers": ["ordinary_colony", "pc_ark"],
+          "assertions": ["expand entry is visible", "collapse entry is hidden", "decision_00 through decision_12 are hidden"],
+          "observed": {
+            "ordinary_colony": {"expand_entry_count": 1, "collapse_entry_count": 0, "functional_entry_count": 0},
+            "pc_ark": {"expand_entry_count": 1, "collapse_entry_count": 0, "functional_entry_count": 0}
+          },
+          "evidence": ["i1002-carrier-earth-default-valid.png", "i1002-carrier-ark-default.png"]
+        },
+        {
+          "id": "I1-002-EXPAND",
+          "status": "passed",
+          "carriers": ["ordinary_colony", "pc_ark"],
+          "assertions": ["expand entry disappears", "collapse entry is visible", "decision_00 through decision_12 are reachable"],
+          "observed": {
+            "ordinary_colony": {"expand_entry_count": 0, "collapse_entry_count": 1, "first_functional_index": 0, "unchanged_i1_001_catalog": true},
+            "pc_ark": {"expand_entry_count": 0, "collapse_entry_count": 1, "visible_decision_indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
+          },
+          "evidence": ["i1002-carrier-earth-expanded.png", "i1002-carrier-ark-expanded.png", "i1002-carrier-ark-expanded-bottom.png", "I1-001-NORMAL-CATALOG"]
+        },
+        {
+          "id": "I1-002-COLLAPSE",
+          "status": "passed",
+          "carriers": ["ordinary_colony", "pc_ark"],
+          "assertions": ["functional decisions disappear", "exactly one expand entry returns", "repeated toggles create no duplicate entry"],
+          "observed": {
+            "ordinary_colony": {"expand_entry_count": 1, "collapse_entry_count": 0, "functional_entry_count": 0},
+            "pc_ark": {"expand_entry_count": 1, "collapse_entry_count": 0, "functional_entry_count": 0},
+            "full_toggle_cycles_per_carrier": 1
+          },
+          "evidence": ["i1002-carrier-earth-collapsed-final.png", "i1002-carrier-ark-collapsed.png"]
+        },
+        {
+          "id": "I1-002-PERSISTENCE",
+          "status": "passed",
+          "state_scope": ["planet", "ship"],
+          "assertions": ["expanded state survives save reload", "collapsed state preserves a usable expand entry after save reload"],
+          "observed": {
+            "ordinary_colony_expanded_after_reload": {"expand_entry_count": 0, "collapse_entry_count": 1, "first_functional_index": 0},
+            "pc_ark_collapsed_after_reload": {"expand_entry_count": 1, "collapse_entry_count": 0, "functional_entry_count": 0}
+          },
+          "evidence": ["i1002-carrier-earth-expanded-persisted.png", "i002-carrier-earth-expanded.sav", "i1002-carrier-ark-collapsed-persisted.png", "i002-carrier-ark-collapsed.sav"]
         }
       ]
     }
