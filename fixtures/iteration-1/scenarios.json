@@ -137,37 +137,57 @@
     },
     {
       "id": "I1-003",
-      "status": "implemented_static_pending_runtime",
+      "status": "passed",
       "scenarios": [
         {
           "id": "I1-003-VISIBILITY",
-          "status": "not_executed",
-          "assertions": ["rogue servitor sees plan13 after expanding the menu", "ordinary and non-servitor machine empires do not see plan13"]
+          "status": "passed",
+          "assertions": ["rogue servitor sees plan13 after expanding the menu", "ordinary and non-servitor machine empires do not see plan13"],
+          "runtime_runs": {
+            "rogue_servitor": "20260906T105249Z",
+            "ordinary_empire": "20260906T152520Z",
+            "non_servitor_machine": "20260906T154208Z"
+          },
+          "observed": {
+            "rogue_servitor_plan13_visible": true,
+            "ordinary_last_mod_decision": "decision_12_extend_soldier_workplace",
+            "ordinary_plan13_visible": false,
+            "non_servitor_machine_last_mod_decision": "decision_12_extend_soldier_workplace",
+            "non_servitor_machine_plan13_visible": false
+          },
+          "evidence": ["zh3-plan13-ready.png", "ordinary-preset.png", "ordinary-list-end.png", "machine-preset-selected.png", "machine-list-end.png"]
         },
         {
           "id": "I1-003-EXECUTE",
-          "status": "not_executed",
+          "status": "passed",
           "preset": "custodianship_machine_age",
           "decision": "decision_13_extend_bio_trophy_workplace",
-          "assertions": ["cost is 1000 minerals", "enactment takes 180 days", "deposit is added", "bio-trophy job capacity increases by 600", "eligible organic population can fill the jobs"]
+          "assertions": ["cost is 1000 minerals", "enactment takes 180 days", "deposit is added", "bio-trophy job capacity increases by 600", "eligible organic population can fill the jobs"],
+          "observed": {"minerals_before": "5.2K", "minerals_after": "4.2K", "enactment_days": 180, "first_capacity_max": 2700, "deposit_instances": 1},
+          "evidence": ["zh3-plan13-first-enacted.png", "zh3-bio-workforce-bar-tooltip.png", "save-inspection-i1003_first.json"]
         },
         {
           "id": "I1-003-REPEAT",
-          "status": "not_executed",
-          "assertions": ["repeat availability matches existing add_deposit decisions", "same-name deposit behavior is frozen from runtime evidence", "no negative or duplicate invalid job state"]
+          "status": "passed",
+          "assertions": ["repeat availability matches existing add_deposit decisions", "same-name deposit behavior is frozen from runtime evidence", "no negative or duplicate invalid job state"],
+          "observed": {"deposit_instances": 2, "first_capacity_max": 2700, "repeated_capacity_max": 3300, "capacity_delta": 600},
+          "evidence": ["zh3-plan13-repeat-enacted.png", "zh3-repeat-bio-workforce-tooltip.png", "save-inspection-i1003_repeati1003_repeat.json"]
         },
         {
           "id": "I1-003-PERSISTENCE",
-          "status": "not_executed",
-          "assertions": ["deposit and job state survive save reload"]
+          "status": "passed",
+          "assertions": ["deposit and job state survive save reload"],
+          "observed": {"deposit_instances_after_reload": 2, "capacity_max_after_reload": 3300},
+          "evidence": ["zh3-reload-bio-workforce-tooltip.png", "save-inspection-i1003_repeati1003_repeat.json"]
         },
         {
           "id": "I1-003-LOCALISATION",
-          "status": "not_executed",
+          "status": "passed_chinese_runtime_english_static",
           "runtime_languages": ["l_simp_chinese"],
           "static_translation_languages": ["l_english"],
           "assertions": ["Chinese runtime expand and collapse entries are readable", "Chinese runtime plan13 and its deposit have readable names and descriptions", "English translation has complete keys, valid header and encoding, consistent references, and no Chinese placeholders"],
-          "non_chinese_runtime": "out_of_scope"
+          "non_chinese_runtime": "out_of_scope",
+          "evidence": ["zh3-plan13-ready.png", "zh3-bio-workforce-bar-tooltip.png", "tests/test_stellaris_acceptance.py"]
         }
       ]
     }

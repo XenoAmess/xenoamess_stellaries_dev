@@ -174,9 +174,18 @@ class FixtureTests(unittest.TestCase):
         }
         self.assertEqual("passed", implementation["I1-001"]["status"])
         self.assertEqual("passed", implementation["I1-002"]["status"])
+        self.assertEqual("passed", implementation["I1-003"]["status"])
+        i1003_statuses = {
+            entry["id"]: entry["status"]
+            for entry in implementation["I1-003"]["scenarios"]
+        }
+        self.assertEqual("passed", i1003_statuses["I1-003-VISIBILITY"])
+        self.assertEqual("passed", i1003_statuses["I1-003-EXECUTE"])
+        self.assertEqual("passed", i1003_statuses["I1-003-REPEAT"])
+        self.assertEqual("passed", i1003_statuses["I1-003-PERSISTENCE"])
         self.assertEqual(
-            "implemented_static_pending_runtime",
-            implementation["I1-003"]["status"],
+            "passed_chinese_runtime_english_static",
+            i1003_statuses["I1-003-LOCALISATION"],
         )
         scenario_statuses = {
             entry["id"]: entry["status"]
@@ -258,10 +267,17 @@ class I1001SourceContractTests(unittest.TestCase):
             .read_text(encoding="utf-8")
         )
         changelog = (acceptance.ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("1.0.0-rc.1", version)
+        self.assertEqual("1.0.0", version)
         self.assertIn(f'version="{version}"', descriptor)
         self.assertEqual(version, contract["mod"]["declared_version"])
         self.assertIn(f"## [{version}]", changelog)
+        self.assertEqual("3710613857", contract["upstream_workshop_id"])
+        self.assertNotIn('remote_file_id="3710613857"', descriptor)
+        release_workshop_id = contract["release_workshop_id"]
+        if release_workshop_id is None:
+            self.assertNotIn("remote_file_id=", descriptor)
+        else:
+            self.assertIn(f'remote_file_id="{release_workshop_id}"', descriptor)
         self.assertIn('supported_version="4.4.*"', descriptor)
 
 
