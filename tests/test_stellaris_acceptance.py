@@ -252,7 +252,16 @@ class I1001SourceContractTests(unittest.TestCase):
             encoding="utf-8-sig"
         )
 
-        self.assertIn('version="4.4.6-i1.3"', descriptor)
+        version = (acceptance.ROOT / "VERSION").read_text(encoding="utf-8").strip()
+        contract = json.loads(
+            (acceptance.ROOT / "fixtures" / "iteration-1" / "mod-contract.json")
+            .read_text(encoding="utf-8")
+        )
+        changelog = (acceptance.ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+        self.assertEqual("1.0.0-rc.1", version)
+        self.assertIn(f'version="{version}"', descriptor)
+        self.assertEqual(version, contract["mod"]["declared_version"])
+        self.assertIn(f"## [{version}]", changelog)
         self.assertIn('supported_version="4.4.*"', descriptor)
 
 

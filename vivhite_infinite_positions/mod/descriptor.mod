@@ -1,4 +1,4 @@
-version="4.4.6-i1.3"
+version="1.0.0-rc.1"
 tags={
 	"Balance"
 }
