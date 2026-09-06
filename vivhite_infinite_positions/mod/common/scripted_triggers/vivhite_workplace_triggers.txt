@@ -1,0 +1,8 @@
+# Planet scope. Keep the supported carrier list explicit so new Nomads
+# colony types cannot silently inherit jobs that have not been tested.
+vivhite_workplace_supported_colony = {
+	OR = {
+		owner = { is_nomadic = no }
+		is_planet_class = pc_ark
+	}
+}

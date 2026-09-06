@@ -17,10 +17,11 @@
     ]
   },
   "mod": {
-    "tree_sha256": "a72b3de8cdfa9df627648bc226054f097ee7e8df9efcd5b490494408ea324f57",
-    "declared_version": "4.3",
-    "supported_version": "*",
-    "modded_checksum_observed": "b648"
+    "tree_sha256": "d035b50d2e78523d49f34cbf6d8a258834c69979a8ac25ec622ac06b16e357c6",
+    "baseline_tree_sha256": "a72b3de8cdfa9df627648bc226054f097ee7e8df9efcd5b490494408ea324f57",
+    "declared_version": "4.4.6-i1.1",
+    "supported_version": "4.4.*",
+    "modded_checksum_observed": "89a6"
   },
   "common_decision_contract": {
     "owned_planets_only": true,
@@ -28,7 +29,13 @@
     "cost": {
       "minerals": 1000
     },
-    "ai_weight": 0
+    "ai_weight": 0,
+    "potential_trigger": "vivhite_workplace_supported_colony"
+  },
+  "carrier_compatibility": {
+    "ordinary_colony": { "owner_is_nomadic": false, "supported": true },
+    "nomadic_arkship_colony": { "planet_class": "pc_ark", "supported": true },
+    "unverified_future_nomad_colony": { "supported": false }
   },
   "decisions": [
     {

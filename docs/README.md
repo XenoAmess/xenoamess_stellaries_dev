@@ -7,6 +7,8 @@
 - [迭代 1 需求文档](iteration-1-requirements.md)
 - [迭代 1：当前版本实机基线与回归夹具记录](iteration-1-current-version-baseline.md)
 - [迭代 1：Stellaris 实机回归方案](iteration-1-regression-plan.md)
+- [迭代 1 实施记录](iteration-1-implementation.md)
+- [Stellaris 实机自动化经验](stellaris-runtime-testing.md)
 
 ## 知识归档原则
 

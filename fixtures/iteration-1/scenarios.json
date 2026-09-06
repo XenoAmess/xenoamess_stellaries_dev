@@ -14,6 +14,58 @@
     "save_sha256": "eef04d10696a525892f1ca5fde0ba9890ad5cb5b294ef562cea3e0650ba8d4ea",
     "local_artifacts": "_runtime/20260905T205325Z"
   },
+  "i1_001_run": {
+    "run_id": "20260906T021747Z",
+    "mod_tree_sha256": "d035b50d2e78523d49f34cbf6d8a258834c69979a8ac25ec622ac06b16e357c6",
+    "modded_checksum": "89a6",
+    "save_name_observed": "i——001——.sav",
+    "save_bytes": 1361596,
+    "save_sha256": "a31941ed239ced6634957706d1a15020aa072ece32625df077806663b637fdb8",
+    "local_artifacts": "_runtime/20260906T021747Z"
+  },
+  "implementation_requirements": [
+    {
+      "id": "I1-001",
+      "status": "passed",
+      "scenarios": [
+        {
+          "id": "I1-001-LOAD",
+          "carrier": "any",
+          "status": "passed",
+          "assertions": ["supported_version has no loader error", "no new mod script error"],
+          "observed": {"game_version": "Pegasus 4.4.6", "modded_checksum": "89a6", "attributable_error_count": 0},
+          "evidence": ["manifest.json", "game.log", "error.log", "debug.log"]
+        },
+        {
+          "id": "I1-001-NORMAL-CATALOG",
+          "carrier": "ordinary_colony",
+          "status": "passed",
+          "assertions": ["all 13 existing decisions remain reachable"],
+          "observed": {"visible_decision_indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]},
+          "evidence": ["normal-decisions-top-final.png", "normal-decisions-early.png", "normal-decisions-middle.png", "normal-decisions-late.png", "normal-decisions-bottom.png"]
+        },
+        {
+          "id": "I1-001-NOMAD-CATALOG",
+          "preset": "EMPIRE_DESIGN_humans3",
+          "carrier": "pc_ark",
+          "status": "passed",
+          "assertions": ["all 13 decisions are reachable on pc_ark"],
+          "observed": {"arkship": "GEM风信子", "colony": "首都方舟", "visible_decision_indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]},
+          "evidence": ["ark-decisions-after-track.png", "ark-decisions-early-view.png", "ark-decisions-plan05-view.png", "ark-decisions-middle-view.png", "ark-decisions-late-view.png", "ark-decisions-plan10.png", "ark-decisions-bottom-final.png"]
+        },
+        {
+          "id": "I1-001-NOMAD-EXECUTE",
+          "preset": "EMPIRE_DESIGN_humans3",
+          "carrier": "pc_ark",
+          "decision": "decision_10_extend_mining_workplace",
+          "status": "passed_with_cost_ui_limit",
+          "assertions": ["static mineral cost remains 1000", "180-day enactment completes", "deposit is added once", "applicable district cap changes", "effect survives save reload"],
+          "observed": {"enactment_days": 180, "district_cap_before": 9, "district_cap_after": 11, "deposit_in_save": "mod_extend_mining_workplace", "deposit_occurrences": 1, "persistence_passed": true, "exact_mineral_ui_delta": "not_asserted_due_rounded_debug_ui"},
+          "evidence": ["ark-plan10-after-click.png", "ark-plan10-effect-view.png", "ark-after-reload.png", "ark-plan10-persisted.png", "i——001——.sav:gamestate"]
+        }
+      ]
+    }
+  ],
   "scenarios": [
     {
       "id": "S01",
