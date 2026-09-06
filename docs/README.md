@@ -16,6 +16,7 @@
 - [迭代 1 实施记录](iteration-1-implementation.md)
 - [Stellaris 验收夹具特性调研计划](stellaris-fixture-research-plan.md)
 - [Stellaris 实机自动化经验](stellaris-runtime-testing.md)
+- [Steam 创意工坊发布方案](steam-workshop-release-plan.md)
 
 ## 知识归档原则
 
