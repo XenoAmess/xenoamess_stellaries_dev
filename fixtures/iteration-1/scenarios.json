@@ -190,6 +190,17 @@
           "evidence": ["zh3-plan13-ready.png", "zh3-bio-workforce-bar-tooltip.png", "tests/test_stellaris_acceptance.py"]
         }
       ]
+    },
+    {
+      "id": "I1-004",
+      "status": "passed_non_chinese_static_only",
+      "official_supported_languages": ["l_english", "l_braz_por", "l_german", "l_french", "l_spanish", "l_polish", "l_russian", "l_simp_chinese", "l_japanese", "l_korean"],
+      "runtime_languages": ["l_simp_chinese"],
+      "static_translation_languages": ["l_english", "l_braz_por", "l_german", "l_french", "l_spanish", "l_polish", "l_russian", "l_japanese", "l_korean"],
+      "key_count_per_locale": 60,
+      "assertions": ["all ten official Stellaris 4.4.6 interface languages have exact key parity", "all files have the matching language header, UTF-8 BOM, quoted values and unique keys", "non-Chinese values are readable translations rather than raw keys or copied Simplified Chinese placeholders", "plan 13 preserves both 600 values and the +10% effect in every language", "the runtime acceptance harness rejects every non-Chinese language"],
+      "non_chinese_runtime": "out_of_scope",
+      "evidence": ["localisation/languages.yml from local Stellaris 4.4.6", "Steam store supported language table", "tests/test_stellaris_acceptance.py"]
     }
   ],
   "regression_requirements": [
@@ -273,9 +284,9 @@
     {
       "id": "S06",
       "name": "语言与长菜单",
-      "status": "partially_passed",
+      "status": "passed_chinese_runtime_non_chinese_static",
       "runtime_variants": {"l_simp_chinese": "passed"},
-      "static_translation_variants": {"l_english": "pending"},
+      "static_translation_variants": {"l_english": "passed", "l_braz_por": "passed", "l_german": "passed", "l_french": "passed", "l_spanish": "passed", "l_polish": "passed", "l_russian": "passed", "l_japanese": "passed", "l_korean": "passed"},
       "non_chinese_runtime": "out_of_scope",
       "assertions": ["Chinese runtime titles and descriptions are localized", "non-Chinese translations pass static localization checks", "all 13 entries remain reachable in Chinese runtime"]
     }

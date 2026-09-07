@@ -19,7 +19,7 @@ class ManifestTests(unittest.TestCase):
     def test_frozen_mod_tree_matches_runtime_contract(self) -> None:
         files, tree_hash = acceptance.tree_manifest(acceptance.MOD_ROOT)
 
-        self.assertEqual(7, len(files))
+        self.assertEqual(15, len(files))
         self.assertEqual(acceptance.EXPECTED_MOD_TREE_SHA256, tree_hash)
         self.assertEqual(
             sorted(item["path"] for item in files),
@@ -34,13 +34,16 @@ class ManifestTests(unittest.TestCase):
             self.assertEqual('{\n  "label": "计划10"\n}\n', path.read_text(encoding="utf-8"))
 
     def test_runtime_settings_freeze_the_selected_supported_language(self) -> None:
+        self.assertEqual(("l_simp_chinese",), acceptance.SUPPORTED_LANGUAGES)
         for language in acceptance.SUPPORTED_LANGUAGES:
             settings = acceptance.render_pdx_settings(language)
             self.assertIn(f'value="{language}"', settings)
             self.assertEqual(1, settings.count('"language"='))
 
-        with self.assertRaisesRegex(ValueError, "unsupported acceptance language"):
-            acceptance.render_pdx_settings("english")
+        for language in ("english", *acceptance.STATIC_TRANSLATION_LANGUAGES):
+            with self.subTest(language=language):
+                with self.assertRaisesRegex(ValueError, "unsupported acceptance language"):
+                    acceptance.render_pdx_settings(language)
 
     def test_scheduled_commands_are_strict_and_newline_terminated(self) -> None:
         self.assertEqual(
@@ -190,7 +193,7 @@ class FixtureTests(unittest.TestCase):
         self.assertEqual("passed_with_followup", statuses["S03"])
         self.assertEqual("not_executed", statuses["S04"])
         self.assertEqual("not_executed", statuses["S05"])
-        self.assertEqual("partially_passed", statuses["S06"])
+        self.assertEqual("passed_chinese_runtime_non_chinese_static", statuses["S06"])
 
         implementation = {
             entry["id"]: entry for entry in self.scenarios["implementation_requirements"]
@@ -198,6 +201,9 @@ class FixtureTests(unittest.TestCase):
         self.assertEqual("passed", implementation["I1-001"]["status"])
         self.assertEqual("passed", implementation["I1-002"]["status"])
         self.assertEqual("passed", implementation["I1-003"]["status"])
+        self.assertEqual(
+            "passed_non_chinese_static_only", implementation["I1-004"]["status"]
+        )
         i1003_statuses = {
             entry["id"]: entry["status"]
             for entry in implementation["I1-003"]["scenarios"]
@@ -406,13 +412,152 @@ class I1003SourceContractTests(unittest.TestCase):
         localisation = next(
             item for item in i1003["scenarios"] if item["id"] == "I1-003-LOCALISATION"
         )
+        i1004 = next(
+            item
+            for item in scenarios["implementation_requirements"]
+            if item["id"] == "I1-004"
+        )
         s06 = next(item for item in scenarios["scenarios"] if item["id"] == "S06")
 
         self.assertEqual(["l_simp_chinese"], localisation["runtime_languages"])
         self.assertEqual(["l_english"], localisation["static_translation_languages"])
+        self.assertEqual(["l_simp_chinese"], i1004["runtime_languages"])
+        self.assertEqual(
+            list(acceptance.STATIC_TRANSLATION_LANGUAGES),
+            i1004["static_translation_languages"],
+        )
+        self.assertEqual(
+            list(acceptance.LOCALISATION_LANGUAGES),
+            i1004["official_supported_languages"],
+        )
         self.assertEqual({"l_simp_chinese": "passed"}, s06["runtime_variants"])
+        self.assertEqual(
+            set(acceptance.STATIC_TRANSLATION_LANGUAGES),
+            set(s06["static_translation_variants"]),
+        )
+        self.assertEqual(
+            {"passed"}, set(s06["static_translation_variants"].values())
+        )
         self.assertEqual("out_of_scope", localisation["non_chinese_runtime"])
+        self.assertEqual("out_of_scope", i1004["non_chinese_runtime"])
         self.assertEqual("out_of_scope", s06["non_chinese_runtime"])
+
+
+class I1004OfficialLocalisationTests(unittest.TestCase):
+    @staticmethod
+    def _parse_entries(path: Path) -> tuple[str, dict[str, str]]:
+        text = path.read_text(encoding="utf-8-sig")
+        lines = text.splitlines()
+        entries: dict[str, str] = {}
+        entry_pattern = re.compile(r'^\s+([A-Za-z0-9_]+):\s+"(.*)"\s*$')
+        for line in lines[1:]:
+            if not line.strip() or line.lstrip().startswith("#"):
+                continue
+            match = entry_pattern.fullmatch(line)
+            if match is None:
+                raise AssertionError(f"malformed localisation line: {line!r}")
+            key, value = match.groups()
+            if key in entries:
+                raise AssertionError(f"duplicate localisation key: {key}")
+            entries[key] = value
+        return lines[0], entries
+
+    def test_all_official_languages_have_complete_readable_key_parity(self) -> None:
+        localisation_root = acceptance.MOD_ROOT / "localisation"
+        chinese_path = localisation_root / "more_workplace_l_simp_chinese.yml"
+        chinese_header, chinese = self._parse_entries(chinese_path)
+
+        self.assertTrue(chinese_path.read_bytes().startswith(b"\xef\xbb\xbf"))
+        self.assertEqual("l_simp_chinese:", chinese_header)
+        self.assertEqual(60, len(chinese))
+
+        expected_files = {
+            f"more_workplace_{language}.yml"
+            for language in acceptance.LOCALISATION_LANGUAGES
+        }
+        self.assertEqual(
+            expected_files,
+            {path.name for path in localisation_root.glob("more_workplace_l_*.yml")},
+        )
+
+        script_patterns = {
+            "l_english": r"[A-Za-z]",
+            "l_braz_por": r"[A-Za-zÀ-ž]",
+            "l_german": r"[A-Za-zÀ-ž]",
+            "l_french": r"[A-Za-zÀ-ž]",
+            "l_spanish": r"[A-Za-zÀ-ž]",
+            "l_polish": r"[A-Za-zÀ-ž]",
+            "l_russian": r"[\u0400-\u04ff]",
+            "l_japanese": r"[\u3040-\u30ff\u3400-\u9fff]",
+            "l_korean": r"[\uac00-\ud7a3]",
+        }
+        cjk_forbidden = set(acceptance.STATIC_TRANSLATION_LANGUAGES) - {
+            "l_japanese",
+            "l_korean",
+        }
+
+        for language in acceptance.LOCALISATION_LANGUAGES:
+            path = localisation_root / f"more_workplace_{language}.yml"
+            header, entries = self._parse_entries(path)
+            with self.subTest(language=language):
+                self.assertTrue(path.read_bytes().startswith(b"\xef\xbb\xbf"))
+                self.assertEqual(f"{language}:", header)
+                self.assertEqual(set(chinese), set(entries))
+                self.assertEqual(60, len(entries))
+            if language == "l_simp_chinese":
+                continue
+            for key, value in entries.items():
+                with self.subTest(language=language, key=key):
+                    self.assertTrue(value.strip())
+                    self.assertNotEqual(key, value.strip())
+                    self.assertNotEqual(chinese[key], value)
+                    self.assertRegex(value, script_patterns[language])
+                    if language in cjk_forbidden:
+                        self.assertIsNone(re.search(r"[\u3400-\u9fff]", value))
+
+    def test_every_plan_has_decision_and_deposit_name_description_pairs(self) -> None:
+        for language in acceptance.LOCALISATION_LANGUAGES:
+            path = (
+                acceptance.MOD_ROOT
+                / "localisation"
+                / f"more_workplace_{language}.yml"
+            )
+            _, entries = self._parse_entries(path)
+
+            for index in range(14):
+                decision_prefix = f"decision_{index:02d}_extend_"
+                decision_names = [
+                    key
+                    for key in entries
+                    if key.startswith(decision_prefix) and not key.endswith("_desc")
+                ]
+                with self.subTest(language=language, plan=index):
+                    self.assertEqual(1, len(decision_names))
+                    self.assertIn(f"{decision_names[0]}_desc", entries)
+
+            deposit_names = [
+                key
+                for key in entries
+                if key.startswith("mod_extend_") and not key.endswith("_desc")
+            ]
+            with self.subTest(language=language):
+                self.assertEqual(14, len(deposit_names))
+            for key in deposit_names:
+                self.assertIn(f"{key}_desc", entries)
+
+    def test_plan13_numeric_effects_are_preserved_in_every_translation(self) -> None:
+        localisation_root = acceptance.MOD_ROOT / "localisation"
+        key = "decision_13_extend_bio_trophy_workplace_desc"
+        for language in acceptance.LOCALISATION_LANGUAGES:
+            _, entries = self._parse_entries(
+                localisation_root / f"more_workplace_{language}.yml"
+            )
+            with self.subTest(language=language):
+                self.assertGreaterEqual(entries[key].count("600"), 2)
+                if language == "l_simp_chinese":
+                    self.assertIn("提高10%", entries[key])
+                else:
+                    self.assertIn("+10", entries[key])
 
 
 if __name__ == "__main__":

@@ -90,12 +90,28 @@ EXPECTED_EXE_SHA256 = (
     "bc451c72d9654c8901f1bb0bee1dd78d76f415465c2fbf746e9f98ade333173a"
 )
 EXPECTED_MOD_TREE_SHA256 = (
-    "75753b3894d1288f37efaa151549b387507e36b9e7569c9b36959b07fc44f4c9"
+    "9a0e6189a86db3eb5bb118ccd35d26333154dc98034892ec557771490fc9040e"
 )
 WORKSHOP_ID = "3797257579"
 STEAM_APP_ID = "281990"
 PROFILE_ID = "stellaris-4.4.6"
-SUPPORTED_LANGUAGES = ("l_simp_chinese", "l_english")
+LOCALISATION_LANGUAGES = (
+    "l_english",
+    "l_braz_por",
+    "l_german",
+    "l_french",
+    "l_spanish",
+    "l_polish",
+    "l_russian",
+    "l_simp_chinese",
+    "l_japanese",
+    "l_korean",
+)
+STATIC_TRANSLATION_LANGUAGES = tuple(
+    language for language in LOCALISATION_LANGUAGES if language != "l_simp_chinese"
+)
+# This tuple controls actual game launches, not static localisation validation.
+SUPPORTED_LANGUAGES = ("l_simp_chinese",)
 RUNTIME_ROOT = ROOT / "_runtime"
 CURRENT_RUN = RUNTIME_ROOT / "current-run.json"
 DIRECTX_REDIST_CAB = Path(
