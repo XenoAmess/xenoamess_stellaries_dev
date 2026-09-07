@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import tempfile
@@ -318,6 +319,35 @@ class FixtureTests(unittest.TestCase):
         )
 
 
+class WorkshopDescriptionTests(unittest.TestCase):
+    def test_v110_bbcode_preserves_upstream_prefix_and_required_materials(self) -> None:
+        description_path = acceptance.ROOT / "workshop" / "description.bbcode"
+        description = description_path.read_text(encoding="utf-8")
+        marker = "[h1]原作、致谢与授权[/h1]"
+        upstream_prefix = description[:description.index(marker)].rstrip("\r\n")
+
+        self.assertEqual(
+            "fba343435856c0d04cfa9b1bc7ba53cb828f5ebefd0cbb6a890c151c6358ed54",
+            hashlib.sha256(upstream_prefix.encode("utf-8")).hexdigest(),
+        )
+        self.assertLessEqual(len(description.encode("utf-8")), 8000)
+        self.assertIn(
+            "[h1]Mod v1.1.0 更新补充｜Stellaris 4.4.6[/h1]",
+            description,
+        )
+        self.assertIn("id=3710613857", description)
+        self.assertIn("感谢原 Mod 作者", description)
+        self.assertIn("已获得原 Mod 作者授权进行二次开发与发布", description)
+        self.assertIn(
+            "[url=https://github.com/XenoAmess/xenoamess_stellaries_dev/]源码与问题反馈[/url]",
+            description,
+        )
+        self.assertIn("官方语言完整支持", description)
+        self.assertIn("其余 9 种语言只进行静态文本校验", description)
+        self.assertEqual(3, description.count("[img]"))
+        self.assertEqual(3, description.count("[/img]"))
+
+
 class I1001SourceContractTests(unittest.TestCase):
     def test_every_decision_uses_the_carrier_compatibility_trigger(self) -> None:
         decision_path = (
@@ -372,7 +402,7 @@ class I1001SourceContractTests(unittest.TestCase):
             .read_text(encoding="utf-8")
         )
         changelog = (acceptance.ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("1.0.1", version)
+        self.assertEqual("1.1.0", version)
         self.assertIn(f'version="{version}"', descriptor)
         self.assertEqual(version, contract["mod"]["declared_version"])
         self.assertIn(f"## [{version}]", changelog)
