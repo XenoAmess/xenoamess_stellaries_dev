@@ -205,6 +205,73 @@
   ],
   "regression_requirements": [
     {
+      "id": "I1-R01",
+      "status": "passed",
+      "closed_on": "2026-09-07",
+      "runtime_run_id": "20260907T063145Z",
+      "runtime_languages": ["l_simp_chinese"],
+      "environment": {
+        "profile": "stellaris-4.4.6",
+        "enabled_mods": ["mod/ugc_3797257579.mod"],
+        "preset": "伊科斯'伊达集合体",
+        "authority": "auth_hive_mind",
+        "carrier": "ordinary_capital",
+        "mod_tree_sha256": "9a0e6189a86db3eb5bb118ccd35d26333154dc98034892ec557771490fc9040e"
+      },
+      "assertions": [
+        "plans 01, 04, 05 and 06 complete through their actual decision paths",
+        "the hive-specific administrative and research jobs all have positive employed workforce",
+        "each research plan increases its target job capacity by exactly 600",
+        "the four deposits and resulting job state survive save reload",
+        "fresh logs contain no errors attributable to this mod"
+      ],
+      "observed": {
+        "completed_decisions": [
+          "decision_01_extend_unity_workplace",
+          "decision_04_extend_physics_res_workplace",
+          "decision_05_extend_society_res_workplace",
+          "decision_06_extend_engineering_res_workplace"
+        ],
+        "jobs": {
+          "coordinator": {"ui_name": "突触子个体", "current": 920, "maximum": 920},
+          "physics": {"ui_name": "物理脑部子个体", "before_maximum": 60, "current": 660, "maximum": 660},
+          "society": {"ui_name": "生物脑部子个体", "before_maximum": 60, "current": 660, "maximum": 660},
+          "engineering": {"ui_name": "工程脑部子个体", "before_maximum": 60, "current": 660, "maximum": 660}
+        },
+        "save": {
+          "name": "i1r01_hive_jobs.sav",
+          "bytes": 1490335,
+          "sha256": "ec2053765008766f7a120597ce8af6e997ff2ab641a46a5778ae8fc8cf21b8fe",
+          "deposit_occurrences": {
+            "mod_extend_unity_workplace": 1,
+            "mod_extend_physics_res_workplace": 1,
+            "mod_extend_society_res_workplace": 1,
+            "mod_extend_engineering_res_workplace": 1
+          }
+        },
+        "persistence_passed": true,
+        "attributable_error_count": 0
+      },
+      "evidence": [
+        "i1r01-hive-selected.png",
+        "i1r01-expanded.png",
+        "i1r01-plan01-queued.png",
+        "i1r01-plan04-queued.png",
+        "i1r01-plan05-queued.png",
+        "i1r01-plan06-queued.png",
+        "i1r01-plan01-workforce.png",
+        "i1r01-physics-workforce.png",
+        "i1r01-society-workforce.png",
+        "i1r01-engineering-workforce.png",
+        "i1r01-admin-name.png",
+        "i1r01-physics-name.png",
+        "i1r01-society-name.png",
+        "i1r01-engineering-name.png",
+        "save-inspection-i1r01_hive_jobs.json",
+        "i1r01-jobs-after-reload.png"
+      ]
+    },
+    {
       "id": "I1-R02",
       "status": "passed_baseline_no_third_party_guarantee",
       "closed_on": "2026-09-07",
@@ -242,12 +309,21 @@
     {
       "id": "S01",
       "name": "精确单 Mod 加载",
-      "status": "failed",
+      "status": "passed",
       "gate": "LOAD-GREEN",
       "steps": ["prepare isolated userdir", "launch fixed executable", "enter main menu and a new game", "scan fresh logs"],
-      "assertions": ["only ugc_3710613857.mod is enabled", "modded checksum is visible", "no error attributable to this mod"],
-      "observed": {"entered_game": true, "modded_checksum": "b648", "failure": "Invalid supported_version in mod/ugc_3710613857.mod line 7"},
-      "evidence": ["frontend-ready.png", "error.log"]
+      "assertions": ["only mod/ugc_3797257579.mod is enabled", "the runtime checksum is visible", "no error is attributable to this mod"],
+      "observed": {
+        "current_run_id": "20260907T063145Z",
+        "entered_game": true,
+        "enabled_mods": ["mod/ugc_3797257579.mod"],
+        "runtime_version": "Pegasus v4.4.6",
+        "ui_checksum_observed": "e10a",
+        "mod_tree_sha256": "9a0e6189a86db3eb5bb118ccd35d26333154dc98034892ec557771490fc9040e",
+        "attributable_error_count": 0,
+        "superseded_failure": "The 20260905T205325Z upstream baseline rejected ugc_3710613857.mod because its descriptor used an invalid supported_version. The maintained project descriptor fixed that defect."
+      },
+      "evidence": ["manifest.json", "i1r01-ingame-initial.png", "error.log", "baseline_run"]
     },
     {
       "id": "S02",
@@ -277,9 +353,20 @@
     {
       "id": "S05",
       "name": "政体岗位矩阵",
-      "status": "not_executed",
+      "status": "passed_by_linked_requirements",
       "variants": ["hive", "machine", "rogue_servitor", "nomad_or_ark"],
-      "assertions": ["correct job branch is selected", "no removed job key error is logged", "unsupported planet type is hidden or explains rejection"]
+      "assertions": ["correct job branch is selected", "no removed job key error is logged", "unsupported government or carrier is hidden"],
+      "observed": {
+        "variant_results": {
+          "hive": {"status": "passed", "source": "I1-R01", "runtime_run_id": "20260907T063145Z"},
+          "machine": {"status": "passed_negative_visibility", "source": "I1-003-VISIBILITY", "runtime_run_id": "20260906T154208Z"},
+          "rogue_servitor": {"status": "passed", "source": "I1-003-EXECUTE", "runtime_run_id": "20260906T105249Z"},
+          "nomad_or_ark": {"status": "passed", "source": "I1-001-NOMAD-EXECUTE", "runtime_run_id": "20260906T021747Z"}
+        },
+        "runtime_languages": ["l_simp_chinese"],
+        "attributable_error_count": 0
+      },
+      "evidence": ["I1-R01", "I1-003-VISIBILITY", "I1-003-EXECUTE", "I1-001-NOMAD-EXECUTE"]
     },
     {
       "id": "S06",

@@ -16,6 +16,11 @@ class ManifestTests(unittest.TestCase):
             acceptance.DPI_AWARENESS,
         )
 
+    def test_logical_scroll_clicks_use_windows_wheel_delta(self) -> None:
+        self.assertEqual(120, acceptance.windows_wheel_delta(1))
+        self.assertEqual(-720, acceptance.windows_wheel_delta(-6))
+        self.assertEqual(0, acceptance.windows_wheel_delta(0))
+
     def test_frozen_mod_tree_matches_runtime_contract(self) -> None:
         files, tree_hash = acceptance.tree_manifest(acceptance.MOD_ROOT)
 
@@ -185,15 +190,57 @@ class FixtureTests(unittest.TestCase):
             closure["third_party_ui_compatibility"],
         )
 
-    def test_scenarios_preserve_pass_fail_and_not_executed_states(self) -> None:
+    def test_i1r01_freezes_hive_employment_and_reload_evidence(self) -> None:
+        regressions = {
+            entry["id"]: entry
+            for entry in self.scenarios["regression_requirements"]
+        }
+        closure = regressions["I1-R01"]
+
+        self.assertEqual("passed", closure["status"])
+        self.assertEqual("20260907T063145Z", closure["runtime_run_id"])
+        self.assertEqual(["l_simp_chinese"], closure["runtime_languages"])
+        self.assertEqual(
+            "9a0e6189a86db3eb5bb118ccd35d26333154dc98034892ec557771490fc9040e",
+            closure["environment"]["mod_tree_sha256"],
+        )
+        self.assertEqual(
+            ["mod/ugc_3797257579.mod"], closure["environment"]["enabled_mods"]
+        )
+        jobs = closure["observed"]["jobs"]
+        self.assertEqual(
+            (920, 920),
+            (jobs["coordinator"]["current"], jobs["coordinator"]["maximum"]),
+        )
+        for job in ("physics", "society", "engineering"):
+            with self.subTest(job=job):
+                self.assertEqual(60, jobs[job]["before_maximum"])
+                self.assertEqual(660, jobs[job]["current"])
+                self.assertEqual(660, jobs[job]["maximum"])
+        deposits = closure["observed"]["save"]["deposit_occurrences"]
+        self.assertEqual({1}, set(deposits.values()))
+        self.assertEqual(4, len(deposits))
+        self.assertTrue(closure["observed"]["persistence_passed"])
+        self.assertEqual(0, closure["observed"]["attributable_error_count"])
+
+    def test_scenarios_preserve_current_execution_states(self) -> None:
         statuses = {entry["id"]: entry["status"] for entry in self.scenarios["scenarios"]}
 
-        self.assertEqual("failed", statuses["S01"])
+        self.assertEqual("passed", statuses["S01"])
         self.assertEqual("passed", statuses["S02"])
         self.assertEqual("passed_with_followup", statuses["S03"])
         self.assertEqual("not_executed", statuses["S04"])
-        self.assertEqual("not_executed", statuses["S05"])
+        self.assertEqual("passed_by_linked_requirements", statuses["S05"])
         self.assertEqual("passed_chinese_runtime_non_chinese_static", statuses["S06"])
+
+        s05 = next(
+            entry for entry in self.scenarios["scenarios"] if entry["id"] == "S05"
+        )
+        self.assertEqual(
+            {"hive", "machine", "rogue_servitor", "nomad_or_ark"},
+            set(s05["observed"]["variant_results"]),
+        )
+        self.assertEqual(["l_simp_chinese"], s05["observed"]["runtime_languages"])
 
         implementation = {
             entry["id"]: entry for entry in self.scenarios["implementation_requirements"]

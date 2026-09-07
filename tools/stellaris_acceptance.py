@@ -551,6 +551,11 @@ def click_point(x: int, y: int, stage: str) -> dict[str, object]:
     return action
 
 
+def windows_wheel_delta(clicks: int) -> int:
+    """Convert logical wheel clicks into the Windows wheel event unit."""
+    return clicks * win32con.WHEEL_DELTA
+
+
 def scroll(clicks: int, x: int, y: int, stage: str, repeat: int) -> dict[str, object]:
     if repeat < 1:
         raise ValueError("scroll repeat must be at least one")
@@ -561,13 +566,15 @@ def scroll(clicks: int, x: int, y: int, stage: str, repeat: int) -> dict[str, ob
     if not 0 <= x < width or not 0 <= y < height:
         raise ValueError(f"point outside desktop {width}x{height}: ({x}, {y})")
     pyautogui.moveTo(x, y)
+    delta = windows_wheel_delta(clicks)
     for _ in range(repeat):
-        pyautogui.scroll(clicks)
+        win32api.mouse_event(win32con.MOUSEEVENTF_WHEEL, 0, 0, delta, 0)
         time.sleep(0.02)
     action = {
         "action": "scroll",
         "stage": stage,
         "clicks": clicks,
+        "wheel_delta": delta,
         "repeat": repeat,
         "point": [x, y],
         "scrolled_at_utc": datetime.now(timezone.utc).isoformat(),
