@@ -228,10 +228,39 @@ class FixtureTests(unittest.TestCase):
 
         self.assertEqual("passed", statuses["S01"])
         self.assertEqual("passed", statuses["S02"])
-        self.assertEqual("passed_with_followup", statuses["S03"])
-        self.assertEqual("not_executed", statuses["S04"])
+        self.assertEqual("passed", statuses["S03"])
+        self.assertEqual("passed", statuses["S04"])
         self.assertEqual("passed_by_linked_requirements", statuses["S05"])
         self.assertEqual("passed_chinese_runtime_non_chinese_static", statuses["S06"])
+
+        s03 = next(
+            entry for entry in self.scenarios["scenarios"] if entry["id"] == "S03"
+        )
+        self.assertEqual(1, s03["observed"]["deposit_occurrences"])
+        self.assertEqual(1000, s03["observed"]["miner_capacity_after"])
+        self.assertEqual(1000, s03["observed"]["miner_capacity_after_reload"])
+        self.assertTrue(s03["observed"]["persistence_passed"])
+
+        s04 = next(
+            entry for entry in self.scenarios["scenarios"] if entry["id"] == "S04"
+        )
+        self.assertTrue(s04["observed"]["decision_selectable_after_first"])
+        self.assertEqual(2, s04["observed"]["deposit_occurrences_after_second"])
+        self.assertEqual(600, s04["observed"]["stable_capacity_delta"])
+        self.assertEqual(1600, s04["observed"]["miner_capacity_after_reload"])
+        self.assertEqual(
+            "delayed_until_save_reload",
+            s04["observed"]["immediate_job_ui_refresh"],
+        )
+        self.assertEqual(2, s04["observed"]["efficiency_source_occurrences_after_reload"])
+        self.assertTrue(s04["observed"]["persistence_passed"])
+
+        s0304_run = self.scenarios["s03_s04_run"]
+        self.assertEqual("20260907T093411Z", s0304_run["run_id"])
+        self.assertEqual(["l_simp_chinese"], s0304_run["runtime_languages"])
+        self.assertEqual(1, s0304_run["saves"]["after_first_execution"]["deposit_occurrences"])
+        self.assertEqual(2, s0304_run["saves"]["after_second_execution"]["deposit_occurrences"])
+        self.assertEqual(0, s0304_run["attributable_error_count"])
 
         s05 = next(
             entry for entry in self.scenarios["scenarios"] if entry["id"] == "S05"

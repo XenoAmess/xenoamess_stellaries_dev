@@ -42,6 +42,35 @@
     },
     "local_artifacts": "_runtime/20260906T053229Z"
   },
+  "s03_s04_run": {
+    "run_id": "20260907T093411Z",
+    "game_version": "Pegasus 4.4.6",
+    "runtime_languages": ["l_simp_chinese"],
+    "enabled_mods": ["mod/ugc_3797257579.mod"],
+    "preset": "地球联合国",
+    "carrier": "地球",
+    "mod_tree_sha256": "9a0e6189a86db3eb5bb118ccd35d26333154dc98034892ec557771490fc9040e",
+    "attributable_error_count": 0,
+    "saves": {
+      "after_first_execution": {
+        "name": "s03_plan10_once.sav",
+        "bytes": 1410172,
+        "sha256": "3d2e5fe7d8d79c14972c42de82af778c3f282df7e908fbf2e0cc7cbf3a7be2a0",
+        "gamestate_bytes": 21290525,
+        "gamestate_sha256": "c6491f023d2d878b29b80f961635bb26ce90164f091fd0a8c05491357a3378ef",
+        "deposit_occurrences": 1
+      },
+      "after_second_execution": {
+        "name": "s04_plan10_twice.sav",
+        "bytes": 1436824,
+        "sha256": "001b705889e512d60a77ab0b437cca66a6b1b10a758055e313293e0ee25f2be3",
+        "gamestate_bytes": 21471784,
+        "gamestate_sha256": "8fb01552c05109b03cec9de1ea1e50e985eb74f31b70d94e2d826c37610a8d42",
+        "deposit_occurrences": 2
+      }
+    },
+    "local_artifacts": "_runtime/20260907T093411Z"
+  },
   "implementation_requirements": [
     {
       "id": "I1-001",
@@ -337,18 +366,42 @@
     {
       "id": "S03",
       "name": "普通帝国计划10执行与持久化",
-      "status": "passed_with_followup",
-      "steps": ["record paused Earth baseline", "enact plan10", "advance at fastest speed until completion", "pause", "save as iteration1_plan10", "reload", "inspect UI and save gamestate"],
+      "status": "passed",
+      "runtime_run_id": "20260907T093411Z",
+      "steps": ["record paused Earth baseline", "enact plan10", "advance until the 180-day queue completes", "pause", "save as s03_plan10_once", "reload through the Chinese load-game UI", "inspect workforce tooltip and gamestate"],
       "assertions": ["1000 minerals are deducted", "180-day queue completes", "total district cap increases by 2", "mining district cap increases by 2", "deposit survives reload", "miner jobs increase by 600"],
-      "observed": {"mineral_cost_passed": true, "enactment_passed": true, "planet_base_size": 18, "district_cap_before": 18, "district_cap_after": 20, "mining_cap_before": 7, "mining_cap_after": 9, "housing_after": 720, "deposit_in_save": "mod_extend_mining_workplace", "persistence_passed": true, "miner_jobs_exact_ui_assertion": "followup_required"},
-      "evidence": ["earth-before-decision.png", "plan10-enacted-immediate.png", "plan10-completion-check.png", "plan10-persisted-after-reload.png", "identify-720-metric.png", "labor-jobs-after-reload.png", "iteration1_plan10.sav:gamestate"]
+      "observed": {"mineral_cost_passed": true, "enactment_days": 180, "district_cap_before": 18, "district_cap_after": 20, "mining_cap_before": 7, "mining_cap_after": 9, "miner_capacity_after": 1000, "miner_capacity_after_reload": 1000, "deposit_in_save": "mod_extend_mining_workplace", "deposit_occurrences": 1, "persistence_passed": true, "attributable_error_count": 0},
+      "evidence": ["s03-plan10-queued.png", "s03-after-second-run.png", "s03-miner-bar-tooltip.png", "save-inspection-s03_plan10_once.json", "s03-reloaded-confirmed.png", "s03-miner-tooltip-after-reload.png", "s03_plan10_once.sav:gamestate"]
     },
     {
       "id": "S04",
       "name": "同一决议重复执行语义",
-      "status": "not_executed",
-      "steps": ["load completed S03 fixture", "enact plan10 again", "save and reload"],
-      "assertions": ["record whether decision remains selectable", "record whether add_deposit stacks or replaces", "freeze observed numeric behavior"]
+      "status": "passed",
+      "runtime_run_id": "20260907T093411Z",
+      "steps": ["reload completed S03 fixture", "confirm plan10 remains selectable", "enact plan10 again", "wait for the 180-day queue", "record immediate UI", "save and reload through the Chinese load-game UI", "re-read stable workforce tooltip"],
+      "assertions": ["decision remains selectable", "the second rounded mineral cost is visible", "district modifiers stack by another 2", "two same-name deposits exist in the save", "miner capacity stacks by another 600 after reload", "two efficiency sources remain after reload", "freeze the immediate UI refresh delay as an engine behavior"],
+      "observed": {
+        "decision_selectable_after_first": true,
+        "minerals_before_second_rounded": "15K",
+        "minerals_after_second_rounded": "14K",
+        "enactment_days": 180,
+        "district_cap_before_second": 20,
+        "district_cap_after_second": 22,
+        "mining_cap_before_second": 9,
+        "mining_cap_after_second": 11,
+        "deposit_occurrences_before_second": 1,
+        "deposit_occurrences_after_second": 2,
+        "miner_capacity_before_second": 1000,
+        "miner_capacity_immediately_after_second": 1000,
+        "miner_capacity_after_reload": 1600,
+        "stable_capacity_delta": 600,
+        "efficiency_source_occurrences_after_reload": 2,
+        "effective_workforce_bonus_after_reload": 480,
+        "immediate_job_ui_refresh": "delayed_until_save_reload",
+        "persistence_passed": true,
+        "attributable_error_count": 0
+      },
+      "evidence": ["s04-plan10-visible.png", "s04-plan10-second-queued.png", "s04-completed-confirmed.png", "s04-miner-summary-tooltip.png", "save-inspection-s04_plan10_twice.json", "s04-reloaded-confirmed-2.png", "s04-earth-after-reload.png", "s04-miner-bar-tooltip-after-reload-2.png", "s04_plan10_twice.sav:gamestate"]
     },
     {
       "id": "S05",
