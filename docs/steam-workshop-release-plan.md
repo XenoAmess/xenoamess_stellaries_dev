@@ -119,7 +119,7 @@ Steam 返回的上游源说明是纯文本，没有现存 BBCode 标签。新物
 ## 工坊文案的仓库真源
 
 - 完整工坊说明必须保存在 `workshop/description.bbcode`；该文件由“官方 API 返回的上游原说明逐字前缀 + 两个换行 + 本文已审核追加 BBCode”组成，是后续网页编辑和远端逐字核验的唯一真源。
-- 仓库文本统一使用 LF；把上游返回的 CRLF 规范化为 LF 后，原说明前缀逐字符一致。v1.1.0 待发布完整文件为 3,711 个 Unicode code point、7,935 个 UTF-8 字节，SHA-256 为 `d369241bc666af8ea928c14f8f2111d0500ccd28a00ec44406dc9be193f9531f`，距 Steamworks 的 8,000 字节上限尚余 `65` 字节，且追加区块与本文代码块逐字符一致。
+- 仓库文本统一使用 LF；把上游返回的 CRLF 规范化为 LF 后，原说明前缀逐字符一致。v1.1.0 完整文件为 3,707 个 Unicode code point（3,711 个 UTF-16 code unit）、7,935 个 UTF-8 字节，SHA-256 为 `d369241bc666af8ea928c14f8f2111d0500ccd28a00ec44406dc9be193f9531f`，距 Steamworks 的 8,000 字节上限尚余 `65` 字节，且追加区块与本文代码块逐字符一致。
 - 页面标题必须与 `descriptor.mod` 一致为 `无限岗位（XenoAmess维护版）`。
 - 授权事实的项目内依据是用户于 2026-09-07 的明确确认；工坊文案必须同时包含原 Mod 可点击地址、对原作者劳动的感谢和已获授权进行二次开发与发布的说明。
 - v1.0.1 文案与命名准备完成后，仓库自动化测试 `21/21` 通过；`open_kaishek` 的 Stellaris 4.4.6 profile 对 decisions、deposits、scripted trigger 三个生产入口再次全部返回 `VALIDATED`。当前长期 shell 继承了环境变量更新前的 `PATH`，本轮以机器级 `JAVA_HOME` 下的 `java.exe` 显式执行；机器级 `JAVA_HOME`、`MAVEN_HOME` 及用户 PATH 条目仍然存在。
@@ -155,8 +155,11 @@ Steam Change Note 冻结为：
 [v1.1.0] 补齐 Stellaris 4.4.6 官方支持的全部 10 种界面语言，每种语言均完整覆盖折叠菜单和计划 00—13 的 60 个本地化键。简体中文已完成实机回归，其他 9 种语言通过静态校验；玩法数值与 Stellaris 4.4.* 兼容范围不变。
 ```
 
-## 审核时需要确认的内容
+## v1.1.0 实际发布结果
 
-- 是否保留“其他语言只做静态校验”的透明说明。
-- 是否需要在追加区块中放 GitHub 项目链接；当前草案未加入外链。
-- 标题已按用户决定改为 `无限岗位（XenoAmess维护版）`；标签和预览图沿用上游设置。
+- 2026-09-07 通过从 Steam 启动的 Paradox Launcher `2026.11` 更新维护版物品；上传表单自动回填并复核 Mod ID `3797257579`，成功页明确返回“您的 Mod 已上传”。物品保持公开，匿名详情接口返回 `result=1`、`visibility=0`，标题仍为 `无限岗位（XenoAmess维护版）`。
+- 远端完整说明包含原 Mod 地址、致谢、授权说明、项目 GitHub 地址 `https://github.com/XenoAmess/xenoamess_stellaries_dev/`、v1.1.0 更新说明和三张折叠菜单证据图。Steam 只去掉仓库真源末尾的一个 LF，因此远端为 `7,934` 个 UTF-8 字节，SHA-256 `882e4d25cb3635f46ad5a222bdebaaf95e30f3add05ad03743157f4a277da550`，与 `workshop/description.bbcode` 去掉末尾 LF 后逐字一致。
+- Launcher 上传产生的最新构建时间为 `1788791259`，文件大小 `719938` 字节。Steam“改动说明”页的同时间条目已写入并公开读回本文冻结的完整 `[v1.1.0]` Change Note；Paradox Launcher 本身没有 Change Note 输入框，因此发布后通过物品所有者页面补录。
+- 通过 Steam 控制台重新下载 manifest `2890725529084427628`，得到 15 个文件。十种本地化文件及其余 4 个非描述符文件均与仓库发布源逐字节一致；远端 `descriptor.mod` 正确包含 `version="1.1.0"`、`supported_version="4.4.*"`、维护版标题和 `remote_file_id="3797257579"`，唯一字节差异同样是 Steam 去掉末尾 LF。
+- 仓库自动化测试 `28/28` 通过；`open_kaishek` Stellaris 4.4.6 profile 对 decisions、deposits、scripted trigger 三个生产入口全部返回 `VALIDATED`。运行时验收仍只声明简体中文通过，其他 9 种语言只声明翻译与静态校验通过。
+- 匿名接口复核上游 `3710613857` 仍为标题 `无限岗位`、更新时间 `1783740925`、说明 SHA-256 `ba71a4e28e48ff6b466c0615cd271e3f7c9b9e868373b04b08ecfe29dde2ac76`，证明本次发布没有修改原物品。

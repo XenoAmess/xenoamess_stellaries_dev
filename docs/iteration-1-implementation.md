@@ -318,10 +318,10 @@ I1-R02 以 `passed_baseline_no_third_party_guarantee` 关闭：本 Mod 自身的
 - 保存界面默认勾选 Steam 云端，且中文输入法会让反复追加的英文存档名形成无效定位信息。夹具应显式关闭云端、聚焦文本框后连续退格清空，再输入 ASCII 名称；存档身份仍以绝对路径、ZIP 成员和 SHA-256 为准。
 - 关键证据为 `s03-plan10-queued.png`、`s03-after-second-run.png`、`s03-miner-bar-tooltip.png`、`save-inspection-s03_plan10_once.json`、`s03-miner-tooltip-after-reload.png`、`s04-plan10-visible.png`、`s04-plan10-second-queued.png`、`s04-completed-confirmed.png`、`save-inspection-s04_plan10_twice.json`、`s04-earth-after-reload.png` 与 `s04-miner-bar-tooltip-after-reload-2.png`。
 
-## 当前未完成事项（2026-09-07）
+## 迭代收口状态（2026-09-07）
 
-迭代 1 的实施与回归夹具均已收口：`S01`—`S04` 直接通过，`S05` 由蜂巢实机加 I1-001/I1-003 的机械、机仆、方舟证据收口，`S06` 以“简体中文运行时通过、9 种非中文翻译静态通过”收口。下一项工作是按独立版本规则抬升版本号、整理 changelog 并发布后续版本，不再属于迭代 1 功能缺口。
+迭代 1 的实施与回归夹具均已收口：`S01`—`S04` 直接通过，`S05` 由蜂巢实机加 I1-001/I1-003 的机械、机仆、方舟证据收口，`S06` 以“简体中文运行时通过、9 种非中文翻译静态通过”收口。
 
-Steam 发布不再是未完成项：v1.0.1 已于 2026-09-07 发布到新物品 `3797257579` 并设为公开；标题、完整 BBCode、三张折叠菜单实机图、Change Note、空缓存文件树和原物品只读状态均已核验。发布细节见 `docs/steam-workshop-release-plan.md`。
+正式交付版本 v1.1.0 已于 2026-09-07 发布到公开物品 `3797257579`；官方 10 种语言、含项目 GitHub 地址的完整 BBCode、三张折叠菜单实机图、Change Note、重新下载的 15 文件构建和原物品只读状态均已核验。发布细节见 `docs/steam-workshop-release-plan.md`。
 
 `I1-005` 与 `I1-006` 已明确标记为不做，不属于剩余工作或迭代完成阻塞项。
