@@ -112,6 +112,13 @@ Steam 返回的上游源说明是纯文本，没有现存 BBCode 标签。新物
 - 授权事实的项目内依据是用户于 2026-09-07 的明确确认；工坊文案必须同时包含原 Mod 可点击地址、对原作者劳动的感谢和已获授权进行二次开发与发布的说明。
 - v1.0.1 文案与命名准备完成后，仓库自动化测试 `21/21` 通过；`open_kaishek` 的 Stellaris 4.4.6 profile 对 decisions、deposits、scripted trigger 三个生产入口再次全部返回 `VALIDATED`。当前长期 shell 继承了环境变量更新前的 `PATH`，本轮以机器级 `JAVA_HOME` 下的 `java.exe` 显式执行；机器级 `JAVA_HOME`、`MAVEN_HOME` 及用户 PATH 条目仍然存在。
 
+## 折叠菜单实机图片物料
+
+- v1.0.1 公开页必须增加三张简体中文实机证据：默认折叠、展开后显示功能决议、再次收起。源证据分别为运行 `20260906T053229Z` 的 `i1002-carrier-earth-default-valid.png`、`i1002-carrier-earth-expanded.png`、`i1002-carrier-earth-collapsed-final.png`。
+- 发布副本保存为 `workshop/media/01_menu_default_collapsed.jpg`、`02_menu_expanded.jpg`、`03_menu_collapsed_again.jpg`。只允许保持原分辨率的确定性 JPEG 转码，不裁切、不重绘、不使用生成式图像修改；原始无损 PNG 继续留在运行证据目录。
+- 三张 JPEG 必须各自小于 Steam 实测的 2 MB 限制，并上传到物品图片栏。工坊说明同时用 `[img]` 引用固定到包含图片字节之 Git commit 的 GitHub raw URL；提交前验证响应为 `200`、MIME 为 `image/jpeg`、无重定向且允许跨域。
+- BBCode 中每张图必须带中文状态标题和一句断言，完整说明仍不得超过 Steamworks 的 8,000 UTF-8 字节上限。
+
 ## 审核时需要确认的内容
 
 - 是否保留“其他语言只做静态校验”的透明说明。
