@@ -159,6 +159,29 @@ class FixtureTests(unittest.TestCase):
             set(run["saves"]),
         )
 
+    def test_i1r02_closes_from_only_mod_baseline_without_overclaiming(self) -> None:
+        regressions = {
+            entry["id"]: entry
+            for entry in self.scenarios["regression_requirements"]
+        }
+        closure = regressions["I1-R02"]
+
+        self.assertEqual(
+            "passed_baseline_no_third_party_guarantee", closure["status"]
+        )
+        self.assertEqual("I1-002", closure["source_requirement"])
+        self.assertEqual(
+            self.scenarios["i1_002_run"]["run_id"], closure["runtime_run_id"]
+        )
+        self.assertEqual([], closure["environment"]["third_party_ui_mods"])
+        self.assertFalse(
+            closure["observed"]["named_reproducible_ui_conflict_available"]
+        )
+        self.assertEqual(
+            "not_tested_no_specific_reproduction_target",
+            closure["third_party_ui_compatibility"],
+        )
+
     def test_scenarios_preserve_pass_fail_and_not_executed_states(self) -> None:
         statuses = {entry["id"]: entry["status"] for entry in self.scenarios["scenarios"]}
 
