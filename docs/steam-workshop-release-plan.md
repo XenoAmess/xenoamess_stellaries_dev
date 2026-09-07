@@ -65,6 +65,16 @@ Steam 返回的上游源说明是纯文本，没有现存 BBCode 标签。新物
 [*]英文及其他语言如有翻译，只进行静态文本校验，不属于实机测试范围。
 [*]第三方 UI Mod 可能改变决议菜单的显示或交互；遇到菜单问题时，请先在仅启用本 Mod 的环境中复现。
 [/list]
+
+[h2]折叠菜单实机证据（简体中文）[/h2]
+[b]默认折叠：[/b]新殖民地只显示“展开岗位扩展计划”，计划列表不会占满决议面板。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/a3b1952b389a0bfcd5fb1457a016c982f827118c/workshop/media/01_menu_default_collapsed.jpg[/img]
+
+[b]展开后：[/b]入口切换为“收起岗位扩展计划”，并显示适用于当前殖民地的岗位扩建计划。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/a3b1952b389a0bfcd5fb1457a016c982f827118c/workshop/media/02_menu_expanded.jpg[/img]
+
+[b]再次收起：[/b]功能决议重新隐藏，只保留展开入口；该状态可随存档保持。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/a3b1952b389a0bfcd5fb1457a016c982f827118c/workshop/media/03_menu_collapsed_again.jpg[/img]
 ```
 
 ## Steam 更新说明草案
@@ -72,7 +82,7 @@ Steam 返回的上游源说明是纯文本，没有现存 BBCode 标签。新物
 该文本用于上传时独立的 Change Note 字段，不替代页面完整说明：
 
 ```text
-[v1.0.1] 将维护版名称统一为“XenoAmess维护版”；工坊说明补充原 Mod 链接、对原作者的致谢及已获授权进行二次开发与发布的说明。功能、数值和 Stellaris 4.4.* 兼容范围不变。
+[v1.0.1] 将维护版名称统一为“XenoAmess维护版”；工坊说明补充原 Mod 链接、对原作者的致谢、已获授权进行二次开发与发布的说明，以及折叠菜单的三张简体中文实机证据图。功能、数值和 Stellaris 4.4.* 兼容范围不变。
 ```
 
 ## 发布门禁
@@ -107,7 +117,7 @@ Steam 返回的上游源说明是纯文本，没有现存 BBCode 标签。新物
 ## 工坊文案的仓库真源
 
 - 完整工坊说明必须保存在 `workshop/description.bbcode`；该文件由“官方 API 返回的上游原说明逐字前缀 + 两个换行 + 本文已审核追加 BBCode”组成，是后续网页编辑和远端逐字核验的唯一真源。
-- 仓库文本统一使用 LF；把上游返回的 CRLF 规范化为 LF 后，原说明前缀逐字符一致。当前完整文件为 2,887 个 Unicode code point、6,725 个 UTF-8 字节，SHA-256 为 `c051f12bc91c9355b216bf21d4e82d995a1bf3b84c7ae7a82cc3edcf9cfa2685`，且追加区块与本文代码块逐字符一致。
+- 仓库文本统一使用 LF；把上游返回的 CRLF 规范化为 LF 后，原说明前缀逐字符一致。当前完整文件为 3,536 个 Unicode code point、7,612 个 UTF-8 字节，SHA-256 为 `53c7f838dd2b9f328665b6cca7384fa8bd479c4ec69b0e14ca09e2a4c82d5b02`，且追加区块与本文代码块逐字符一致。
 - 页面标题必须与 `descriptor.mod` 一致为 `无限岗位（XenoAmess维护版）`。
 - 授权事实的项目内依据是用户于 2026-09-07 的明确确认；工坊文案必须同时包含原 Mod 可点击地址、对原作者劳动的感谢和已获授权进行二次开发与发布的说明。
 - v1.0.1 文案与命名准备完成后，仓库自动化测试 `21/21` 通过；`open_kaishek` 的 Stellaris 4.4.6 profile 对 decisions、deposits、scripted trigger 三个生产入口再次全部返回 `VALIDATED`。当前长期 shell 继承了环境变量更新前的 `PATH`，本轮以机器级 `JAVA_HOME` 下的 `java.exe` 显式执行；机器级 `JAVA_HOME`、`MAVEN_HOME` 及用户 PATH 条目仍然存在。
@@ -118,6 +128,7 @@ Steam 返回的上游源说明是纯文本，没有现存 BBCode 标签。新物
 - 发布副本保存为 `workshop/media/01_menu_default_collapsed.jpg`、`02_menu_expanded.jpg`、`03_menu_collapsed_again.jpg`。只允许保持原分辨率的确定性 JPEG 转码，不裁切、不重绘、不使用生成式图像修改；原始无损 PNG 继续留在运行证据目录。
 - 三张 JPEG 必须各自小于 Steam 实测的 2 MB 限制，并上传到物品图片栏。工坊说明同时用 `[img]` 引用固定到包含图片字节之 Git commit 的 GitHub raw URL；提交前验证响应为 `200`、MIME 为 `image/jpeg`、无重定向且允许跨域。
 - BBCode 中每张图必须带中文状态标题和一句断言，完整说明仍不得超过 Steamworks 的 8,000 UTF-8 字节上限。
+- 2026-09-07 发布前复核：三个固定提交 URL 均直接返回 `200 image/jpeg`，`Access-Control-Allow-Origin: *`，长度分别为 `724333`、`725640`、`724706` 字节；完整说明为 `7,612` UTF-8 字节，距上限尚余 `388` 字节。
 
 ## 审核时需要确认的内容
 
