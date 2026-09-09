@@ -9,6 +9,20 @@ from pathlib import Path
 from tools import stellaris_acceptance as acceptance
 
 
+def root_declaration_bodies(text: str) -> dict[str, str]:
+    """Split a Paradox file at unindented named declarations."""
+    declarations = list(re.finditer(r"(?m)^([a-z0-9_]+) = \{$", text))
+    bodies: dict[str, str] = {}
+    for position, match in enumerate(declarations):
+        end = (
+            declarations[position + 1].start()
+            if position + 1 < len(declarations)
+            else len(text)
+        )
+        bodies[match.group(1)] = text[match.start():end]
+    return bodies
+
+
 class ManifestTests(unittest.TestCase):
     def test_windows_acceptance_process_is_per_monitor_dpi_aware(self) -> None:
         self.assertEqual(
@@ -398,11 +412,11 @@ class I1001SourceContractTests(unittest.TestCase):
 
         version = (acceptance.ROOT / "VERSION").read_text(encoding="utf-8").strip()
         contract = json.loads(
-            (acceptance.ROOT / "fixtures" / "iteration-1" / "mod-contract.json")
+            (acceptance.ROOT / "fixtures" / "iteration-2" / "mod-contract.json")
             .read_text(encoding="utf-8")
         )
         changelog = (acceptance.ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("1.1.0", version)
+        self.assertEqual("1.2.0-rc.1", version)
         self.assertIn(f'version="{version}"', descriptor)
         self.assertEqual(version, contract["mod"]["declared_version"])
         self.assertIn(f"## [{version}]", changelog)
@@ -575,7 +589,7 @@ class I1004OfficialLocalisationTests(unittest.TestCase):
 
         self.assertTrue(chinese_path.read_bytes().startswith(b"\xef\xbb\xbf"))
         self.assertEqual("l_simp_chinese:", chinese_header)
-        self.assertEqual(60, len(chinese))
+        self.assertEqual(64, len(chinese))
 
         expected_files = {
             f"more_workplace_{language}.yml"
@@ -609,7 +623,7 @@ class I1004OfficialLocalisationTests(unittest.TestCase):
                 self.assertTrue(path.read_bytes().startswith(b"\xef\xbb\xbf"))
                 self.assertEqual(f"{language}:", header)
                 self.assertEqual(set(chinese), set(entries))
-                self.assertEqual(60, len(entries))
+                self.assertEqual(64, len(entries))
             if language == "l_simp_chinese":
                 continue
             for key, value in entries.items():
@@ -630,7 +644,7 @@ class I1004OfficialLocalisationTests(unittest.TestCase):
             )
             _, entries = self._parse_entries(path)
 
-            for index in range(14):
+            for index in range(15):
                 decision_prefix = f"decision_{index:02d}_extend_"
                 decision_names = [
                     key
@@ -647,7 +661,7 @@ class I1004OfficialLocalisationTests(unittest.TestCase):
                 if key.startswith("mod_extend_") and not key.endswith("_desc")
             ]
             with self.subTest(language=language):
-                self.assertEqual(14, len(deposit_names))
+                self.assertEqual(15, len(deposit_names))
             for key in deposit_names:
                 self.assertIn(f"{key}_desc", entries)
 
@@ -664,6 +678,127 @@ class I1004OfficialLocalisationTests(unittest.TestCase):
                     self.assertIn("提高10%", entries[key])
                 else:
                     self.assertIn("+10", entries[key])
+
+    def test_plan14_numeric_effects_are_preserved_in_every_translation(self) -> None:
+        localisation_root = acceptance.MOD_ROOT / "localisation"
+        key = "decision_14_extend_population_development_desc"
+        for language in acceptance.LOCALISATION_LANGUAGES:
+            _, entries = self._parse_entries(
+                localisation_root / f"more_workplace_{language}.yml"
+            )
+            with self.subTest(language=language):
+                self.assertIn("600", entries[key])
+                self.assertIn("10", entries[key])
+
+
+class I2001I2002SourceContractTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        fixture_root = acceptance.ROOT / "fixtures" / "iteration-2"
+        cls.contract = json.loads(
+            (fixture_root / "mod-contract.json").read_text(encoding="utf-8")
+        )
+        cls.scenarios = json.loads(
+            (fixture_root / "scenarios.json").read_text(encoding="utf-8")
+        )
+        cls.decision_text = (
+            acceptance.MOD_ROOT / "common" / "decisions" / "workplace.txt"
+        ).read_text(encoding="utf-8")
+        cls.deposit_text = (
+            acceptance.MOD_ROOT / "common" / "deposits" / "extend_workplace.txt"
+        ).read_text(encoding="utf-8")
+        cls.decision_bodies = root_declaration_bodies(cls.decision_text)
+        cls.deposit_bodies = root_declaration_bodies(cls.deposit_text)
+
+    def test_habitat_capacity_mapping_matches_declared_contract(self) -> None:
+        conditional_pattern = re.compile(
+            r"triggered_planet_modifier\s*=\s*\{\s*"
+            r"potential\s*=\s*\{\s*uses_district_set\s*=\s*habitat\s*\}\s*"
+            r"modifier\s*=\s*\{(?P<modifiers>[^}]*)\}\s*\}",
+            re.DOTALL,
+        )
+        modifier_pattern = re.compile(
+            r"(?m)^\s*([a-z0-9_]+)\s*=\s*(-?(?:\d+(?:\.\d+)?|\.\d+))\s*$"
+        )
+
+        plans = self.contract["habitat_district_capacity"]["plans"]
+        self.assertEqual([4, 5, 6, 9, 10], [plan["index"] for plan in plans])
+        for plan in plans:
+            body = self.deposit_bodies[plan["deposit"]]
+            matches = list(conditional_pattern.finditer(body))
+            with self.subTest(plan=plan["index"]):
+                self.assertEqual(1, len(matches))
+                observed = {
+                    key: float(value) if "." in value else int(value)
+                    for key, value in modifier_pattern.findall(
+                        matches[0].group("modifiers")
+                    )
+                }
+                self.assertEqual(plan["modifiers"], observed)
+
+        self.assertEqual(5, self.deposit_text.count("uses_district_set = habitat"))
+        self.assertFalse(
+            (acceptance.MOD_ROOT / "common" / "districts").exists(),
+            "iteration 2 must not override or introduce district definitions",
+        )
+
+    def test_existing_normal_plan09_and_plan10_district_effects_are_preserved(self) -> None:
+        generator = self.deposit_bodies["mod_extend_generator_workplace"]
+        mining = self.deposit_bodies["mod_extend_mining_workplace"]
+
+        self.assertIn("planet_max_districts_add = 2", generator)
+        self.assertIn("district_generator_max_add = 2", generator)
+        self.assertIn("planet_max_districts_add = 2", mining)
+        self.assertIn("district_mining_max_add = 2", mining)
+
+    def test_plan14_decision_and_deposit_match_contract(self) -> None:
+        population = self.contract["population_development"]
+        common = self.contract["common_decision_contract"]
+        decision = self.decision_bodies[population["decision"]]
+        deposit = self.deposit_bodies[population["deposit"]]
+
+        self.assertIn("owned_planets_only = yes", decision)
+        self.assertIn(f'{common["potential_trigger"]} = yes', decision)
+        self.assertIn(f'has_carrier_flag = {common["menu_flag"]}', decision)
+        self.assertIn(f'enactment_time = {common["enactment_days"]}', decision)
+        self.assertIn(f'minerals = {common["cost"]["minerals"]}', decision)
+        self.assertIn(f'weight = {common["ai_weight"]}', decision)
+        self.assertIn(f'add_deposit = {population["deposit"]}', decision)
+
+        for modifier, value in population["planet_modifiers"].items():
+            rendered = str(value).rstrip("0").rstrip(".") if isinstance(value, float) else str(value)
+            self.assertIn(f"{modifier} = {rendered}", deposit)
+        self.assertNotIn("planet_pop_assembly_add", deposit)
+        self.assertNotIn("planet_pop_growth_add", deposit)
+        self.assertNotIn("monthly_pop_assembly", deposit)
+
+    def test_iteration2_fixtures_preserve_static_only_execution_boundary(self) -> None:
+        static_statuses = {
+            scenario["id"]: scenario["status"]
+            for scenario in self.scenarios["static_scenarios"]
+        }
+        self.assertEqual(
+            {
+                "I2-001-STATIC-MAPPING": "passed",
+                "I2-002-STATIC-CONTRACT": "passed",
+                "I2-LOC-STATIC": "passed",
+            },
+            static_statuses,
+        )
+        self.assertEqual(
+            {"deferred_no_game_launch_by_user"},
+            {
+                scenario["status"]
+                for scenario in self.scenarios["runtime_scenarios"]
+            },
+        )
+        policy = self.scenarios["execution_policy"]
+        self.assertFalse(policy["game_started_by_this_run"])
+        self.assertFalse(policy["launcher_started_by_this_run"])
+        self.assertFalse(policy["foreground_automation_used"])
+        self.assertEqual(["l_simp_chinese"], policy["runtime_languages"])
+        self.assertEqual("out_of_scope", policy["non_chinese_runtime"])
+        self.assertEqual([], self.scenarios["runtime_evidence"])
 
 
 if __name__ == "__main__":

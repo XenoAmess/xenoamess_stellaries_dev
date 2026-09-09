@@ -98,3 +98,13 @@ planet_pop_assembly_mult = 0.1
 - 本轮可以完成：需求落地、工具支持、Mod 代码、翻译、声明式夹具和静态验收。
 - 本轮不能宣称：Stellaris 实机通过、居住站 UI 数值已观察、人口增长/组装运行时已验证或可发布正式版。
 - `1.2.0-rc.1` 只作为未发布候选；后续实机通过、changelog 收口并收到发布指令后，才能抬升正式版本和上传 Steam。
+
+## 6. 实施记录（2026-09-09）
+
+- `open_kaishek` 已加入 `uses_district_set` 的 Stellaris 4.4.6 trigger 合同；本地 Maven、schema、CLI、合成夹具及确定性构建门禁通过，远端 `core-ci` 通过。
+- `open_kaishek` 远端通过记录：`https://github.com/XenoAmess/open_kaishek/actions/runs/34364148518`；随后使用同一构建产物检查本仓库生产 decisions、deposits、scripted trigger，三次均为 `VALIDATED`，语法与语义诊断均为 0。
+- 本地 Stellaris 4.4.6 原版脚本确认：`common/districts/03_habitat_districts.txt` 明确列出 `district_hab_energy_max_add`、`district_hab_mining_max_add` 与 `district_hab_science_max_add`；原版 deposits/buildings 也实际使用这些 modifier。
+- 本地原版脚本确认 `logistic_growth_mult` 与 `planet_pop_assembly_mult` 均为现役 modifier；本实现采用与原版一致的 `0.1` 数值形状。
+- Mod 代码及 10 种官方语言已经落地，生产 Mod 目录仍为 15 个文件，冻结树哈希为 `b6c9d7c69da87c8c8377ed456c8a5b3c13ffe545af0f63771bd62cc7c0c8585a`。
+- `py -m unittest discover -s tests -v` 共 33 项通过；迭代 2 三项静态场景据此标记为 `passed`，未来实机场景仍全部延期。
+- 本轮没有启动 Stellaris、Paradox Launcher 或前台自动化；所有运行时场景保持 `deferred_no_game_launch_by_user`。

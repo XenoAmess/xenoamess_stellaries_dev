@@ -16,7 +16,7 @@ Stellaris 兼容范围单独记录，例如 `supported_version="4.4.*"`，不得
 根目录 `VERSION` 是唯一版本源，只包含一行版本号。以下位置必须与它保持一致：
 
 1. `vivhite_infinite_positions/mod/descriptor.mod` 的 `version`。
-2. `fixtures/iteration-1/mod-contract.json` 的 `mod.declared_version`。
+2. 当前迭代 `fixtures/iteration-*/mod-contract.json` 的 `mod.declared_version`。
 3. 当前版本的 `CHANGELOG.md` 标题。
 4. 正式发布的 Steam Change Note 与 Git 标签。
 
@@ -25,7 +25,7 @@ Stellaris 兼容范围单独记录，例如 `supported_version="4.4.*"`，不得
 ## 当前版本线
 
 - 当前公开正式版本：`1.1.0`；Workshop 物品为 `3797257579`。
-- 当前没有待发布版本；下一次修改 Steam 远端内容前必须先递增版本号并建立新的 changelog 条目。
+- 当前开发候选版本：`1.2.0-rc.1`；只完成离线静态验收，尚未进行简体中文实机验收，也未上传 Steam。
 - `1.0.0` 已用于新 Workshop 物品的隐藏创建基线，不再复用；首次公开版本因标题、署名与授权说明修订推进为 `1.0.1`。
 - `1.0.0` 收录方舟/游牧殖民地支持、折叠式决议菜单、失控机仆计划 13，以及 Stellaris 4.4 兼容描述符修复。
 - I1-003 简体中文正反向实机门禁已经完成；`1.0.1` 已在静态门禁、仓库测试、空缓存内容复核和文案逐字校验通过后公开。

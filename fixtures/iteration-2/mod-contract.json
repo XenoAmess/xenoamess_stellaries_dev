@@ -1,0 +1,94 @@
+{
+  "schema": "xenoamess.stellaris.mod-contract.v2",
+  "iteration": 2,
+  "status": "implemented_static_runtime_deferred",
+  "upstream_workshop_id": "3710613857",
+  "release_workshop_id": "3797257579",
+  "game": {
+    "version": "4.4.6",
+    "supported_version": "4.4.*"
+  },
+  "mod": {
+    "declared_version": "1.2.0-rc.1",
+    "tree_sha256": "b6c9d7c69da87c8c8377ed456c8a5b3c13ffe545af0f63771bd62cc7c0c8585a"
+  },
+  "common_decision_contract": {
+    "owned_planets_only": true,
+    "enactment_days": 180,
+    "cost": {
+      "minerals": 1000
+    },
+    "ai_weight": 0,
+    "potential_trigger": "vivhite_workplace_supported_colony",
+    "menu_flag": "vivhite_workplace_menu_expanded",
+    "repeatable": true
+  },
+  "habitat_district_capacity": {
+    "scope_trigger": {
+      "opcode": "uses_district_set",
+      "value": "habitat"
+    },
+    "plans": [
+      {
+        "index": 4,
+        "deposit": "mod_extend_physics_res_workplace",
+        "modifiers": {
+          "planet_max_districts_add": 2,
+          "district_hab_science_max_add": 2
+        }
+      },
+      {
+        "index": 5,
+        "deposit": "mod_extend_society_res_workplace",
+        "modifiers": {
+          "planet_max_districts_add": 2,
+          "district_hab_science_max_add": 2
+        }
+      },
+      {
+        "index": 6,
+        "deposit": "mod_extend_engineering_res_workplace",
+        "modifiers": {
+          "planet_max_districts_add": 2,
+          "district_hab_science_max_add": 2
+        }
+      },
+      {
+        "index": 9,
+        "deposit": "mod_extend_generator_workplace",
+        "modifiers": {
+          "district_hab_energy_max_add": 2
+        }
+      },
+      {
+        "index": 10,
+        "deposit": "mod_extend_mining_workplace",
+        "modifiers": {
+          "district_hab_mining_max_add": 2
+        }
+      }
+    ],
+    "custom_districts_added": false,
+    "fictional_habitat_farming_modifier_added": false
+  },
+  "population_development": {
+    "index": 14,
+    "decision": "decision_14_extend_population_development",
+    "deposit": "mod_extend_population_development",
+    "planet_modifiers": {
+      "planet_housing_add": 600,
+      "logistic_growth_mult": 0.1,
+      "planet_pop_assembly_mult": 0.1
+    },
+    "flat_growth_or_assembly_added": false,
+    "repeatable": true
+  },
+  "localisation": {
+    "official_language_count": 10,
+    "key_count_per_locale": 64,
+    "runtime_languages": [
+      "l_simp_chinese"
+    ],
+    "non_chinese_runtime": "out_of_scope"
+  }
+}

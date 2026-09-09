@@ -1,0 +1,79 @@
+{
+  "schema": "xenoamess.stellaris.acceptance-scenarios.v2",
+  "iteration": 2,
+  "execution_policy": {
+    "game_started_by_this_run": false,
+    "launcher_started_by_this_run": false,
+    "foreground_automation_used": false,
+    "runtime_languages": [
+      "l_simp_chinese"
+    ],
+    "non_chinese_runtime": "out_of_scope"
+  },
+  "static_scenarios": [
+    {
+      "id": "I2-001-STATIC-MAPPING",
+      "status": "passed",
+      "assertions": [
+        "plans 04, 05 and 06 grant exactly two habitat total district slots and two habitat research district capacity",
+        "plan 09 grants exactly two habitat energy district capacity",
+        "plan 10 grants exactly two habitat mining district capacity",
+        "every new district modifier is guarded by uses_district_set = habitat",
+        "no custom district definition or fictional habitat farming modifier is introduced"
+      ],
+      "evidence": [
+        "open_kaishek stellaris-4.4.6 VALIDATED",
+        "tests/test_stellaris_acceptance.py"
+      ]
+    },
+    {
+      "id": "I2-002-STATIC-CONTRACT",
+      "status": "passed",
+      "assertions": [
+        "plan 14 preserves the common decision contract",
+        "the deposit grants 600 housing, 10 percent logistic growth and 10 percent pop assembly",
+        "no flat population growth or assembly is introduced"
+      ],
+      "evidence": [
+        "open_kaishek stellaris-4.4.6 VALIDATED",
+        "tests/test_stellaris_acceptance.py"
+      ]
+    },
+    {
+      "id": "I2-LOC-STATIC",
+      "status": "passed",
+      "assertions": [
+        "all ten official languages contain the same 64 keys",
+        "every localisation file is UTF-8 with BOM and has the expected language header",
+        "non-Chinese translations contain no Simplified Chinese placeholder text"
+      ],
+      "runtime_scope": "l_simp_chinese_only",
+      "evidence": [
+        "tests/test_stellaris_acceptance.py"
+      ]
+    }
+  ],
+  "runtime_scenarios": [
+    {
+      "id": "I2-001-HAB-E-M-S",
+      "status": "deferred_no_game_launch_by_user"
+    },
+    {
+      "id": "I2-001-SCOPE-REGRESSION",
+      "status": "deferred_no_game_launch_by_user"
+    },
+    {
+      "id": "I2-001-REPEAT-RELOAD",
+      "status": "deferred_no_game_launch_by_user"
+    },
+    {
+      "id": "I2-002-ORGANIC-MACHINE-DUAL",
+      "status": "deferred_no_game_launch_by_user"
+    },
+    {
+      "id": "I2-002-REPEAT-RELOAD",
+      "status": "deferred_no_game_launch_by_user"
+    }
+  ],
+  "runtime_evidence": []
+}

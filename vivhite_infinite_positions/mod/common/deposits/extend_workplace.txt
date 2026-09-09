@@ -140,6 +140,15 @@ mod_extend_physics_res_workplace = {
         planet_housing_add = 600
     }
 
+    # 居住站研究区划使用独立容量键；普通行星与方舟不获得这组区划修正。
+    triggered_planet_modifier = {
+        potential = { uses_district_set = habitat }
+        modifier = {
+            planet_max_districts_add = 2
+            district_hab_science_max_add = 2
+        }
+    }
+
     # 非格式塔帝国：增加物理学家
     triggered_planet_modifier = {
         potential = { exists = owner owner = { is_gestalt = no } }
@@ -171,6 +180,15 @@ mod_extend_society_res_workplace = {
         planet_housing_add = 600
     }
 
+    # 居住站研究区划使用独立容量键；普通行星与方舟不获得这组区划修正。
+    triggered_planet_modifier = {
+        potential = { uses_district_set = habitat }
+        modifier = {
+            planet_max_districts_add = 2
+            district_hab_science_max_add = 2
+        }
+    }
+
     # 非格式塔帝国：增加生物学家
     triggered_planet_modifier = {
         potential = { exists = owner owner = { is_gestalt = no } }
@@ -200,6 +218,15 @@ mod_extend_engineering_res_workplace = {
 
     planet_modifier = {
         planet_housing_add = 600
+    }
+
+    # 居住站研究区划使用独立容量键；普通行星与方舟不获得这组区划修正。
+    triggered_planet_modifier = {
+        potential = { uses_district_set = habitat }
+        modifier = {
+            planet_max_districts_add = 2
+            district_hab_science_max_add = 2
+        }
     }
 
     # 非格式塔帝国：增加工程师
@@ -297,6 +324,14 @@ mod_extend_generator_workplace = {
         district_generator_max_add = 2
     }
 
+    # 居住站反应堆区划使用独立容量键。
+    triggered_planet_modifier = {
+        potential = { uses_district_set = habitat }
+        modifier = {
+            district_hab_energy_max_add = 2
+        }
+    }
+
     # 非格式塔帝国：增加技师
     triggered_planet_modifier = {
         potential = { exists = owner owner = { is_gestalt = no } }
@@ -328,6 +363,14 @@ mod_extend_mining_workplace = {
         planet_housing_add = 600
         planet_max_districts_add = 2
         district_mining_max_add = 2
+    }
+
+    # 居住站航天采矿湾使用独立容量键。
+    triggered_planet_modifier = {
+        potential = { uses_district_set = habitat }
+        modifier = {
+            district_hab_mining_max_add = 2
+        }
     }
 
     # 非格式塔帝国：增加矿工
@@ -437,6 +480,22 @@ mod_extend_bio_trophy_workplace = {
             job_bio_trophy_add = 600
             pop_bio_trophy_bonus_workforce_mult = 0.1
         }
+    }
+
+    drop_weight = { weight = 0 }
+}
+
+# ==================== 15. 人口发展地块 ====================
+mod_extend_population_development = {
+    icon = "d_monument"
+    is_for_colonizable = yes
+    potential = { always = no }
+    should_swap_deposit_on_terraforming = no
+
+    planet_modifier = {
+        planet_housing_add = 600
+        logistic_growth_mult = 0.1
+        planet_pop_assembly_mult = 0.1
     }
 
     drop_weight = { weight = 0 }

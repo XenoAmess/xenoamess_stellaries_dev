@@ -1,4 +1,4 @@
-# 工作场所扩展决策（13个）
+# 工作场所扩展决策（15个）
 
 # 展开/收起状态按殖民地保存。默认不设置 flag，因此只显示展开入口。
 decision_extend_workplace_expand = {
@@ -220,4 +220,18 @@ decision_13_extend_bio_trophy_workplace = {
 	ai_weight = { weight = 0 }
 	resources = { category = decisions cost = { minerals = 1000 } }
 	effect = { add_deposit = mod_extend_bio_trophy_workplace }
+}
+
+# 14 - 人口发展
+decision_14_extend_population_development = {
+	owned_planets_only = yes
+	potential = {
+		vivhite_workplace_supported_colony = yes
+		has_carrier_flag = vivhite_workplace_menu_expanded
+	}
+	enactment_time = 180
+	icon = decision_resources
+	ai_weight = { weight = 0 }
+	resources = { category = decisions cost = { minerals = 1000 } }
+	effect = { add_deposit = mod_extend_population_development }
 }
