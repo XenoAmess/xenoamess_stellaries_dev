@@ -1,4 +1,4 @@
-version="1.2.0-rc.1"
+version="1.2.0"
 tags={
 	"Balance"
 }

@@ -4,9 +4,9 @@
   "execution_policy": {
     "runtime_authorized_on": "2026-09-10",
     "publication_authorized_after_runtime_pass": true,
-    "game_started_by_this_run": false,
+    "game_started_by_this_run": true,
     "launcher_started_by_this_run": false,
-    "foreground_automation_used": false,
+    "foreground_automation_used": true,
     "runtime_languages": [
       "l_simp_chinese"
     ],
@@ -58,24 +58,54 @@
   "runtime_scenarios": [
     {
       "id": "I2-001-HAB-E-M-S",
-      "status": "deferred_no_game_launch_by_user"
+      "status": "passed"
     },
     {
       "id": "I2-001-SCOPE-REGRESSION",
-      "status": "deferred_no_game_launch_by_user"
+      "status": "passed"
     },
     {
       "id": "I2-001-REPEAT-RELOAD",
-      "status": "deferred_no_game_launch_by_user"
+      "status": "passed"
     },
     {
       "id": "I2-002-ORGANIC-MACHINE-DUAL",
-      "status": "deferred_no_game_launch_by_user"
+      "status": "passed_with_declared_scope",
+      "scope_note": "the game resolved both percentage modifiers in Simplified Chinese; machine and dual-channel origin UI panels were not launched separately"
     },
     {
       "id": "I2-002-REPEAT-RELOAD",
-      "status": "deferred_no_game_launch_by_user"
+      "status": "passed"
     }
   ],
-  "runtime_evidence": []
+  "runtime_evidence": [
+    {
+      "run_id": "20260910T010503Z",
+      "game_version": "Pegasus v4.4.6",
+      "checksum": "6cd8",
+      "language": "l_simp_chinese",
+      "enabled_mods": [
+        "mod/ugc_3797257579.mod"
+      ],
+      "artifact_root": "_runtime/20260910T010503Z",
+      "manifest_sha256": "37cab3a8fe4adcb170c34dd5f4539d73a83335f306b01cc6adfee9da67ca8b08",
+      "save_name": "i2_runtime_final.sav",
+      "save_sha256": "a691f45553ccb79b02c333f9b9cbf61809e37ac3cb391257685d3f9d9380094b",
+      "final_habitat_ui": {
+        "reactor_district": "0/7",
+        "space_mining_bay": "0/12",
+        "research_district": "0/10",
+        "total_districts": "2/21"
+      },
+      "deposit_token_counts": {
+        "mod_extend_generator_workplace": 2,
+        "mod_extend_mining_workplace": 1,
+        "mod_extend_physics_res_workplace": 2,
+        "mod_extend_society_res_workplace": 1,
+        "mod_extend_engineering_res_workplace": 1,
+        "mod_extend_population_development": 2
+      },
+      "report": "docs/iteration-2-acceptance-report.md"
+    }
+  ]
 }

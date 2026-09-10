@@ -334,7 +334,7 @@ class FixtureTests(unittest.TestCase):
 
 
 class WorkshopDescriptionTests(unittest.TestCase):
-    def test_v110_bbcode_preserves_upstream_prefix_and_required_materials(self) -> None:
+    def test_v120_bbcode_preserves_upstream_prefix_and_required_materials(self) -> None:
         description_path = acceptance.ROOT / "workshop" / "description.bbcode"
         description = description_path.read_text(encoding="utf-8")
         marker = "[h1]原作、致谢与授权[/h1]"
@@ -346,7 +346,7 @@ class WorkshopDescriptionTests(unittest.TestCase):
         )
         self.assertLessEqual(len(description.encode("utf-8")), 8000)
         self.assertIn(
-            "[h1]Mod v1.1.0 更新补充｜Stellaris 4.4.6[/h1]",
+            "[h1]Mod v1.2.0 更新补充｜Stellaris 4.4.6[/h1]",
             description,
         )
         self.assertIn("id=3710613857", description)
@@ -357,6 +357,8 @@ class WorkshopDescriptionTests(unittest.TestCase):
             description,
         )
         self.assertIn("官方语言完整支持", description)
+        self.assertIn("新增计划 14——人口发展中心", description)
+        self.assertIn("补齐居住站区划", description)
         self.assertIn("其余 9 种语言只进行静态文本校验", description)
         self.assertEqual(3, description.count("[img]"))
         self.assertEqual(3, description.count("[/img]"))
@@ -416,7 +418,7 @@ class I1001SourceContractTests(unittest.TestCase):
             .read_text(encoding="utf-8")
         )
         changelog = (acceptance.ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("1.2.0-rc.1", version)
+        self.assertEqual("1.2.0", version)
         self.assertIn(f'version="{version}"', descriptor)
         self.assertEqual(version, contract["mod"]["declared_version"])
         self.assertIn(f"## [{version}]", changelog)
@@ -772,7 +774,7 @@ class I2001I2002SourceContractTests(unittest.TestCase):
         self.assertNotIn("planet_pop_growth_add", deposit)
         self.assertNotIn("monthly_pop_assembly", deposit)
 
-    def test_iteration2_fixtures_preserve_static_only_execution_boundary(self) -> None:
+    def test_iteration2_fixtures_record_chinese_runtime_acceptance(self) -> None:
         static_statuses = {
             scenario["id"]: scenario["status"]
             for scenario in self.scenarios["static_scenarios"]
@@ -785,20 +787,29 @@ class I2001I2002SourceContractTests(unittest.TestCase):
             },
             static_statuses,
         )
+        runtime_statuses = {
+            scenario["id"]: scenario["status"]
+            for scenario in self.scenarios["runtime_scenarios"]
+        }
+        self.assertEqual("passed", runtime_statuses["I2-001-HAB-E-M-S"])
+        self.assertEqual("passed", runtime_statuses["I2-001-SCOPE-REGRESSION"])
+        self.assertEqual("passed", runtime_statuses["I2-001-REPEAT-RELOAD"])
         self.assertEqual(
-            {"deferred_no_game_launch_by_user"},
-            {
-                scenario["status"]
-                for scenario in self.scenarios["runtime_scenarios"]
-            },
+            "passed_with_declared_scope",
+            runtime_statuses["I2-002-ORGANIC-MACHINE-DUAL"],
         )
+        self.assertEqual("passed", runtime_statuses["I2-002-REPEAT-RELOAD"])
         policy = self.scenarios["execution_policy"]
-        self.assertFalse(policy["game_started_by_this_run"])
+        self.assertTrue(policy["game_started_by_this_run"])
         self.assertFalse(policy["launcher_started_by_this_run"])
-        self.assertFalse(policy["foreground_automation_used"])
+        self.assertTrue(policy["foreground_automation_used"])
         self.assertEqual(["l_simp_chinese"], policy["runtime_languages"])
         self.assertEqual("out_of_scope", policy["non_chinese_runtime"])
-        self.assertEqual([], self.scenarios["runtime_evidence"])
+        evidence = self.scenarios["runtime_evidence"]
+        self.assertEqual(1, len(evidence))
+        self.assertEqual("20260910T010503Z", evidence[0]["run_id"])
+        self.assertEqual("i2_runtime_final.sav", evidence[0]["save_name"])
+        self.assertEqual(2, evidence[0]["deposit_token_counts"]["mod_extend_population_development"])
 
 
 if __name__ == "__main__":
