@@ -57,4 +57,4 @@ fresh `error.log` 中两条 `Wrong scope for effect 'add_deposit'` 来自验收�
 
 - `open_kaishek` 全量 Maven 构建通过；Stellaris 4.4.6 profile 对生产 decisions、deposits、scripted trigger 均返回 `VALIDATED`，语法和语义诊断均为 0。
 - 本仓库 `py -m unittest discover -s tests -v` 为 `33/33` 通过，`git diff --check` 通过。
-- 正式 v1.2.0 Mod 树为 15 个文件，SHA-256 为 `294f9a9834f2aef8cac597a4fc2cae7d7cff734abefda2ae965f38d7f872f1f9`；工坊 BBCode 为 7,973 字节，未超过 8,000 字节门禁。
+- 正式 v1.2.0 Mod 树为 15 个文件，SHA-256 为 `294f9a9834f2aef8cac597a4fc2cae7d7cff734abefda2ae965f38d7f872f1f9`；工坊 BBCode 为 7,427 字节（含末尾 LF），未超过 8,000 字节门禁。
