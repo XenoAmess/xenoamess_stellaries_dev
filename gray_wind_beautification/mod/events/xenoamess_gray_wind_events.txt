@@ -1,0 +1,40 @@
+namespace = xenoamess_gray_wind
+
+# Repairs portraits in saves that created Gray before this mod was enabled.
+country_event = {
+	id = xenoamess_gray_wind.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		OR = {
+			has_country_flag = gray_official_active
+			has_country_flag = gray_warship_active
+			has_country_flag = gray_army_active
+			has_country_flag = gray_reforming
+			any_owned_leader = { has_leader_flag = gray_leader }
+		}
+	}
+
+	immediate = {
+		every_owned_leader = {
+			limit = { has_leader_flag = gray_leader }
+			change_leader_portrait = xenoamess_gray_wind_portrait
+		}
+		if = {
+			limit = { exists = event_target:gray_official }
+			event_target:gray_official = {
+				change_leader_portrait = xenoamess_gray_wind_portrait
+			}
+		}
+		if = {
+			limit = { exists = event_target:gray_country }
+			event_target:gray_country = {
+				ruler = {
+					change_leader_portrait = xenoamess_gray_wind_portrait
+				}
+			}
+		}
+	}
+}

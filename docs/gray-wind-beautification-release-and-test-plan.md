@@ -109,6 +109,8 @@ SteamCMD 只读下载的上游 `2976454692` 同时覆盖了完整的旧版 `gray
 
 每个核心场景保存一张原始截图，并记录分辨率、UI 缩放、游戏 build、触发命令、时间与日志哈希。Workshop 的实机预览图只能使用这些实际运行截图，不用 AI 合成图冒充实机界面。
 
+实机自动化复用仓库已有 `tools/stellaris_acceptance.py` 的 DPI awareness、隔离 userdir、进程、截图、OCR 和物理扫描码能力；灰风发布根提供薄包装入口，只替换 Mod 根、本地 ID、树哈希和证据目录，不改变现有“无限岗位”夹具的冻结常量。
+
 ## 6. 发布方案
 
 发布前必须依次满足：
@@ -133,6 +135,7 @@ SteamCMD 只读下载的上游 `2976454692` 同时覆盖了完整的旧版 `gray
 
 - 2026-09-13：确认本机游戏基线为 `v4.4.6 (fdde)`；确认上游包不能整体继承，只能从当前原版做最小美术补丁。
 - 2026-09-13：本机当前没有 `D:` 盘，因此约定路径 `D:\workspace\open_kaishek` 不存在。实施阶段将先取得该工具的受控副本并阅读其仓库说明；在工具通过之前不会宣告 Mod 验收完成。
+- 2026-09-13：从 `https://github.com/XenoAmess/open_kaishek.git` 取得只读基线后，发现其 `stellaris-4.4.6` profile 尚未覆盖事件与 on_action。已按 fail-closed 要求在工具仓库补充灰风兼容切片并推送：文档提交 `86af4b6`，实现提交 `eb6d4de`。工具全套 `run_static_acceptance.py --online` 通过；目标包 6 个 `.txt` 共 107,981 bytes、0 parser error、corpus SHA-256 为 `a975e21d9c006979e03b36ec2665dea9e91cc2f509a3314b688b3e6a76762baa`；descriptor 与 `.gfx` 均 0 语法诊断并逐字节 round-trip；自有兼容事件与 on_action 均 0 profile diagnostic。
+- 2026-09-13：灰风包专项 Python 静态测试 6/6 通过。全仓库测试另复现一个与既有“无限岗位”冻结树哈希有关的失败（仓库常量 `294f…`、当前受 Git 跟踪且无 diff 的旧 Mod 树 `2a61…`）；该失败不由灰风文件引起，不修改旧 Mod 来掩盖结果。
 - 透明肖像已通过静态 alpha 初检，但最终结论以游戏内实际合成为准。
 - 回归图的腿部构图接近下边缘；需由 R6 实机截图判断是否需要重绘，不能仅凭源 PNG 宣告通过。
-
