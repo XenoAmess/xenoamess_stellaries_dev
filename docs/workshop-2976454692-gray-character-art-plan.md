@@ -117,6 +117,20 @@ Lighting/mood: cool blue rim light from the gate, warm gold accents on trim, mys
 Constraints: exactly one character; no extra face, duplicate, weapon, text, letters, logo, watermark, UI frame or clutter. No red line, blood, liquid, ribbon or magical strand at the mouth or face.
 ```
 
+## 2026-09-13 第一轮生成结果
+
+| ID | 结果 | 最终候选 | 静态结论 |
+| --- | --- | --- | --- |
+| `GRAY-PORTRAIT-01` | 尚未调用 EvoLink；本机进程环境和 Windows 用户环境均未发现 `EVOLINK_API_KEY`，因此没有发出请求或产生费用 | 待生成 | Prompt 和固定请求参数已归档到 `assets/workshop-2976454692/prompts/evolink/`；不能以 Codex 原生生成或事后抠图替代真实 Alpha 链路 |
+| `GRAY-FIRST-CONTACT-01` | Codex 原生 `attempt-01` | `gray-first-contact-attempt-01/candidate-450x150.png`，`450 × 150` RGB8，SHA-256 `753AC24D2365207F1069D5A4F5DE0A3BDC079BAD5268A23CCF3C51F8E81450F5` | 通过身份、首次发现语义、规格和禁项静态检查；人物比计划略靠画面中央，但小尺寸轮廓仍清楚 |
+| `GRAY-DEFEATED-01` | Codex 原生 `attempt-01` | `gray-defeated-attempt-01/candidate-450x150.png`，`450 × 150` RGB8，SHA-256 `BEC4C7EA74D1D2CC0B79366EB2138E3CC285EB7A5596269AADE1CF4C269C2024` | 通过身份、非血腥纳米解体语义、规格和禁项静态检查 |
+| `GRAY-RETURN-01` | Codex 原生 `attempt-01` | `gray-return-attempt-01/candidate-450x150.png`，`450 × 150` RGB8，SHA-256 `155747F3C5CE49D17DB1149728E650B97CB01D8053976FC3ACF81D6ACC82E9A4` | 身份、归来语义、规格和禁项通过；下腿和靴子被下缘截去，没有完全满足 Prompt 的完整重构轮廓，作为需用户取舍的静态候选 |
+| `GRAY-THUMBNAIL-01` | Codex 原生 `attempt-01` | `gray-thumbnail-attempt-01/candidate-351x313.png`，`351 × 313` RGB8，SHA-256 `BAACCACA753870319B003A1ED86E733A935EEA3BD4D3C5B7EDA21D6B25902A2C` | 通过身份、缩略图可读性、规格和主要禁项静态检查；服装保留了参考图式的装饰性伪字形，未形成可读单词，正式采用前由用户确认 |
+
+四个不透明候选均保留了未经后处理的生成原图、逐字 Prompt、请求事实、结果事实和独立检查报告，目录为 `assets/workshop-2976454692/generated/codex-native/2026-09-13/`。原图均为 RGB8 PNG 且没有 Alpha；最终候选只经过确定性中央裁切和 Lanczos 降采样。没有执行生成式扩图、事后补背景、Alpha 清理或文字擦除。
+
+本轮不把 `GRAY-RETURN-01` 的下缘裁切和 `GRAY-THUMBNAIL-01` 的参考式伪字形静默判为正式通过。这两个细节不会阻止交付静态候选，但在接线前应由用户决定是接受还是各做一次单变量重试。
+
 ## 生成、归档与验收
 
 - 每张语义素材独立使用 `attempt-01` 目录；原图、逐字 Prompt、可验证生成事实和检查结论只追加、不覆盖。
@@ -125,4 +139,3 @@ Constraints: exactly one character; no extra face, duplicate, weapon, text, lett
 - 透明肖像必须保留 EvoLink 原始 RGBA，检查 PNG、尺寸、四角 Alpha、`A>0/16/127` 包围盒，并真实 SourceOver 到黑、白和接近外交 UI 的蓝灰底色；不得阈值化、色键、收缩或清理 Alpha。
 - 第一轮达到身份、构图和消费规格即停止；失败时先归因为消费合同、Prompt、模型或验收问题，下一轮只验证一个主要假设，每个语义最多 8 次。
 - 本轮只能形成静态候选。只有完成 Mod 接线、`open_kaishek` 检查和简体中文 Stellaris 实机回归后，才可宣称验收完成。
-
