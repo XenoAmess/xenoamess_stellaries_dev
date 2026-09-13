@@ -20,6 +20,7 @@
 - [Mod 版本与发布规范](versioning-and-release.md)
 - [Workshop 2976454692 图片素材审计与翻新规格](workshop-2976454692-art-refresh-audit.md)
 - [Workshop 2976454692 小灰人物美术生成计划](workshop-2976454692-gray-character-art-plan.md)
+- [灰风美化独立 Mod：实现、验收与发布方案](gray-wind-beautification-release-and-test-plan.md)
 
 ## 知识归档原则
 
