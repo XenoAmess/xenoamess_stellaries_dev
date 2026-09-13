@@ -18,6 +18,7 @@
 - [Stellaris 实机自动化经验](stellaris-runtime-testing.md)
 - [Steam 创意工坊发布方案](steam-workshop-release-plan.md)
 - [Mod 版本与发布规范](versioning-and-release.md)
+- [Workshop 2976454692 图片素材审计与翻新规格](workshop-2976454692-art-refresh-audit.md)
 
 ## 知识归档原则
 
