@@ -18,7 +18,7 @@ acceptance.GAME_EXE = Path(
     r"C:\Program Files (x86)\Steam\steamapps\common\Stellaris\stellaris.exe"
 )
 acceptance.EXPECTED_MOD_TREE_SHA256 = (
-    "35609a568a8add1f12eb979b5e4a620f7469d06d0dbe5c6b600caf7255172c2d"
+    "5a3b29c31ab84ca7f08e88b962abd5bb0db971f80c982d2321846bee00d02350"
 )
 acceptance.WORKSHOP_ID = "xenoamess_gray_wind_beautification"
 acceptance.PROFILE_ID = "stellaris-4.4.6-gray-wind"
