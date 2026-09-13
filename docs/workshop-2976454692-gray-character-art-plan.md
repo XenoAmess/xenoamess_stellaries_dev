@@ -15,7 +15,7 @@
 
 | ID | 素材 | 消费合同 | 生成链 | 本轮结论 |
 | --- | --- | --- | --- | --- |
-| `GRAY-PORTRAIT-01` | 外交/领袖人物肖像 | 独立 Alpha 人物层；最终 `800 × 350` A8R8G8B8 DDS、straight alpha、无 mip | EvoLink 透明链，`16:9 / 2K / high / n=1` | 必做；本机尚未发现 `EVOLINK_API_KEY`，Prompt 与目录先冻结，密钥就绪后调用 |
+| `GRAY-PORTRAIT-01` | 外交/领袖人物肖像 | 独立 Alpha 人物层；最终 `800 × 350` A8R8G8B8 DDS、straight alpha、无 mip | EvoLink 透明链，`16:9 / 2K / high / n=1` | 必做；`attempt-03` 已形成 `800 × 350` RGBA 静态候选，待用户确认、DDS 转换、接线与运行时验收 |
 | `GRAY-FIRST-CONTACT-01` | “安静散步”首次发现图 | `disco_gray_cat` 与 `graygoo.400` 共用；最终 `450 × 150`，全幅不透明、无 mip | Codex 原生 | 必做；让原本只有飞船的通用图真正成为小灰专属初遇画面 |
 | `GRAY-DEFEATED-01` | `graygoo.511`“小灰已被击溃” | 最终 `450 × 150`，全幅不透明、无 mip | Codex 原生 | 推荐；以非血腥纳米解体表现人物状态 |
 | `GRAY-RETURN-01` | `graygoo.512`“小灰归来” | 最终 `450 × 150`，全幅不透明、无 mip | Codex 原生 | 推荐；与击溃图形成视觉上的解体/重构对照 |
@@ -121,11 +121,17 @@ Constraints: exactly one character; no extra face, duplicate, weapon, text, lett
 
 | ID | 结果 | 最终候选 | 静态结论 |
 | --- | --- | --- | --- |
-| `GRAY-PORTRAIT-01` | 尚未调用 EvoLink；本机进程环境和 Windows 用户环境均未发现 `EVOLINK_API_KEY`，因此没有发出请求或产生费用 | 待生成 | Prompt 和固定请求参数已归档到 `assets/workshop-2976454692/prompts/evolink/`；不能以 Codex 原生生成或事后抠图替代真实 Alpha 链路 |
+| `GRAY-PORTRAIT-01` | EvoLink `attempt-01` 因全画幅场景污染淘汰；`attempt-02` 消除场景但发冠触顶；`attempt-03` 通过静态检查 | `gray-portrait-attempt-03/candidate-800x350.png`，`800 × 350` RGBA8，SHA-256 `BEE88ED2DD5C9A7330777BE807D1D8310F514A3A6D2B19ABACDB1B1FD3490C4C` | 原生 Alpha、四角、三档 bbox、黑/白/外交蓝灰 SourceOver 和实际尺寸通过；待用户确认服装徽记后转 DDS 与接线 |
 | `GRAY-FIRST-CONTACT-01` | Codex 原生 `attempt-01` | `gray-first-contact-attempt-01/candidate-450x150.png`，`450 × 150` RGB8，SHA-256 `753AC24D2365207F1069D5A4F5DE0A3BDC079BAD5268A23CCF3C51F8E81450F5` | 通过身份、首次发现语义、规格和禁项静态检查；人物比计划略靠画面中央，但小尺寸轮廓仍清楚 |
 | `GRAY-DEFEATED-01` | Codex 原生 `attempt-01` | `gray-defeated-attempt-01/candidate-450x150.png`，`450 × 150` RGB8，SHA-256 `BEC4C7EA74D1D2CC0B79366EB2138E3CC285EB7A5596269AADE1CF4C269C2024` | 通过身份、非血腥纳米解体语义、规格和禁项静态检查 |
 | `GRAY-RETURN-01` | Codex 原生 `attempt-01` | `gray-return-attempt-01/candidate-450x150.png`，`450 × 150` RGB8，SHA-256 `155747F3C5CE49D17DB1149728E650B97CB01D8053976FC3ACF81D6ACC82E9A4` | 身份、归来语义、规格和禁项通过；下腿和靴子被下缘截去，没有完全满足 Prompt 的完整重构轮廓，作为需用户取舍的静态候选 |
 | `GRAY-THUMBNAIL-01` | Codex 原生 `attempt-01` | `gray-thumbnail-attempt-01/candidate-351x313.png`，`351 × 313` RGB8，SHA-256 `BAACCACA753870319B003A1ED86E733A935EEA3BD4D3C5B7EDA21D6B25902A2C` | 通过身份、缩略图可读性、规格和主要禁项静态检查；服装保留了参考图式的装饰性伪字形，未形成可读单词，正式采用前由用户确认 |
+
+`GRAY-PORTRAIT-01` 的 EvoLink `attempt-01` 随后已实际创建任务 `task-unified-1789282822-3w6ojxia` 并返回 `2736 × 1536` RGBA8 PNG。该图 Alpha extrema 为 `1–253`，`A>0` 包围盒覆盖全画布，黑、白和外交蓝灰三底 SourceOver 均显示完整太空港场景，因此作为独立人物叠层淘汰；不得通过阈值、色键或抠图修复。`attempt-02` 保持模型、API 参数、身份参考、画幅和人物构图不变，只加强“唯一可描绘对象为小灰本人、不得出现任何场景实体”的 Prompt 对象范围约束。
+
+`attempt-02` 已实际创建任务 `task-unified-1789283567-7gttlgx3` 并返回同尺寸 RGBA8 PNG。它消除了场景污染，四角 Alpha 均为 0，三底 SourceOver 只显示人物；但 `A>16` 人物包围盒为 `(979, 0, 2511, 1536)`，发冠触及顶边。`attempt-03` 因此只调整人物占比和顶部安全边，不改变对象、身份、姿态或 API 参数。
+
+`attempt-03` 已实际创建任务 `task-unified-1789284058-xrd0dcsi`。原图四角 Alpha 均为 0，`A>16` bbox 为 `(936, 20, 2146, 1536)`；使用固定顶对齐裁切 `(0, 0, 2736, 1197)` 和 Lanczos 缩放后得到 `800 × 350` RGBA8 候选。候选四角 Alpha 均为 0，三底 SourceOver 无场景残留或矩形光幕，状态为 `static_accepted_pending_runtime_and_user_review`。没有执行 Alpha 清理或生成式扩图。
 
 四个不透明候选均保留了未经后处理的生成原图、逐字 Prompt、请求事实、结果事实和独立检查报告，目录为 `assets/workshop-2976454692/generated/codex-native/2026-09-13/`。原图均为 RGB8 PNG 且没有 Alpha；最终候选只经过确定性中央裁切和 Lanczos 降采样。没有执行生成式扩图、事后补背景、Alpha 清理或文字擦除。
 
@@ -133,7 +139,7 @@ Constraints: exactly one character; no extra face, duplicate, weapon, text, lett
 
 ## 生成、归档与验收
 
-- 每张语义素材独立使用 `attempt-01` 目录；原图、逐字 Prompt、可验证生成事实和检查结论只追加、不覆盖。
+- 每张语义素材从独立 `attempt-01` 目录开始；需要重试时追加 `attempt-02`、`attempt-03` 等新目录，原图、逐字 Prompt、可验证生成事实和检查结论只追加、不覆盖。
 - Codex 原生结果不得臆造内部模型、seed 或隐藏请求字段；EvoLink 记录不得保存 API Key、Authorization、临时签名 URL或完整服务端响应。
 - 不透明原图必须检查为全幅场景、无透明像素、无文字/水印/重复人物，再做确定性中央裁切和 Lanczos 尺寸适配；不得生成透明人物后补背景。
 - 透明肖像必须保留 EvoLink 原始 RGBA，检查 PNG、尺寸、四角 Alpha、`A>0/16/127` 包围盒，并真实 SourceOver 到黑、白和接近外交 UI 的蓝灰底色；不得阈值化、色键、收缩或清理 Alpha。
