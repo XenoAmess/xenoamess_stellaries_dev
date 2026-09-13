@@ -8,7 +8,7 @@
 - 首个正式版本为 `1.0.0`；唯一版本源为 `gray_wind_beautification/VERSION`，其值必须与该 Mod 的 `descriptor.mod` 完全一致。
 - `supported_version` 表达为 `4.4.*`；实现与实机验收基线为 Steam 版 Stellaris `Pegasus v4.4.6 (fdde)`。
 - 新 Mod 必须创建新的 Steam Workshop 物品。上游物品 `2976454692` 和现有“无限岗位”物品 `3797257579` 都是只读对象，禁止作为上传目标。
-- 发布前描述文件不得含 `remote_file_id`；新建物品成功后，才把 Steam 返回的新 ID 写回本 Mod。
+- 发布内容目录中的 `descriptor.mod` 不携带 `remote_file_id`；新建物品成功后，把 Steam 返回的新 ID 写入仓库发布合同和本机外层描述符。后续原生 Steamworks 更新以受审计划中的 `target_item_id` 为唯一远端目标，避免把远端身份混入可移植 content folder。
 
 仓库是多个可发布物的综合管理仓库，因此灰风 Mod 的“Mod 根目录”是 `gray_wind_beautification/`。Git 标签使用带产品前缀的 `gray-wind-v1.0.0`，避免与仓库中现有的 `v1.0.0` 冲突。
 
@@ -83,7 +83,7 @@ SteamCMD 只读下载的上游 `2976454692` 同时覆盖了完整的旧版 `gray
 
 ### 5.1 静态与构建测试
 
-1. 独立性：包内标题、本地 ID、版本、目录和 Workshop ID 与“无限岗位”完全分离；包内禁止出现 `2976454692`、`3797257579` 或上游 `remote_file_id`。
+1. 独立性：包内标题、本地 ID、版本和目录与“无限岗位”完全分离；content folder 禁止出现 `2976454692`、`3797257579` 或任何 `remote_file_id`，新建物品 ID 只记录于仓库发布合同、本机外层描述符和发布证据。
 2. 资源：逐个解析 PNG/DDS 头，断言尺寸、像素格式、mipmap 数量、alpha 模式和 SHA-256；透明肖像执行四角透明、非空可见区和 SourceOver 暗边风险检查。
 3. 引用：每个新增 sprite、portrait 和本地化键只有一个定义，所有脚本引用均可解析；共享原版 sprite 未被重定义。
 4. 基线差异：当前 4.4.6 原版覆盖文件与 Mod 文件做结构化/规范化差异，允许差异只出现在第 3 节表格列出的目标点。
@@ -118,7 +118,7 @@ SteamCMD 只读下载的上游 `2976454692` 同时覆盖了完整的旧版 `gray
 1. `gray_wind_beautification/VERSION`、`descriptor.mod` 和 `CHANGELOG.md` 的 `1.0.0` 一致；Changelog 已记录新增、变更、修复、兼容范围、验收结果和已知限制。
 2. Steam Change Note 以 `[v1.0.0]` 开头，并由同版本 Changelog 提炼。
 3. 静态、`open_kaishek` 与简体中文实机测试全部通过，证据已落盘并回写本文档。
-4. 在 Steam 创建新物品，确认返回 ID 不等于 `2976454692`、`3710613857` 或 `3797257579`；再写回 descriptor 并上传 content folder。
+4. 在 Steam 创建新物品，确认返回 ID 不等于 `2976454692`、`3710613857` 或 `3797257579`；把 ID 写回发布合同和本机外层描述符。原生 Steamworks 上传显式接收目标 ID，因此已发布的 content folder 保持不含 `remote_file_id`。
 5. 如 Steam 要求接受 Workshop 法律协议，必须由用户本人完成；在协议完成前只可报告发布阻塞，不得代替用户接受。
 6. 上传后从 Workshop 页面和干净的 SteamCMD 缓存分别回读：核对标题、公开状态、说明、缩略图、版本、文件清单与关键哈希。
 7. 远端回读通过后，提交并推送仓库改动，再创建并推送 `gray-wind-v1.0.0` 标签。
@@ -161,3 +161,13 @@ SteamCMD 只读下载的上游 `2976454692` 同时覆盖了完整的旧版 `gray
 首次探索运行中的三类 scope 错误来自验收命令本身：直接触发 `graygoo.400` 时误给 fleet scope、脱离上下文单独触发 `graygoo.404` 时缺少 `gray_homeworld`、单独触发 `graygoo.501` 时缺少 `from`。随后均以有效上下文重测通过；探索日志单独归档，未与第二次干净启动日志混淆。
 
 `gray_wind_beautification/evidence/v1.0.0/` 保存筛选后的原始截图、OCR、日志和清单；`gray_wind_beautification/workshop/media/` 保存由同批 2560×1440 实机截图压制的工坊 JPEG，不使用合成界面图冒充实机截图。
+
+### 9.1 Steam 首发记录
+
+- 2026-09-13 14:45:21 UTC，通过原生 Steamworks UGC 接口创建并提交全新公开物品 `3800996999`；`CreateItem` 与 `SubmitItemUpdate` 均返回结果码 `1`，且 `legal_agreement_required=false`。
+- 匿名详情接口回读为 `result=1`、`visibility=0`、`banned=0`，标题为 `[XenoAmess的灰风美化]`，应用 ID 为 `281990`，标签为 `Graphics`、`Leaders`，远端内容大小为 2,277,240 bytes。
+- 主预览已由包内 `thumbnail.png` 上传；Workshop 说明已内嵌五张从同一轮实机验收截图压制的展示图，覆盖第一次接触、对话、战败、回归和官员场景。五个固定提交 URL 均回读为 `200 image/jpeg`，说明正文与仓库 UTF-8 文件逐字一致。
+- Steam“改动说明”页已公开读回 `[v1.0.0]` 和首行新增内容，确认同版本 Change Note 生效。
+- 发布操作使用的 content folder 是正式版包树 `5a3b29c31ab84ca7f08e88b962abd5bb0db971f80c982d2321846bee00d02350`；发布回执与匿名详情摘要归档于同版本 evidence 目录。
+- 以匿名 SteamCMD 从空缓存下载 manifest `738529756403192463`，得到 13 个文件、2,277,240 bytes；文件集合与每个文件 SHA-256 均和上传 staging 一致，缺失、额外及哈希差异均为 0。
+- 上游物品 `2976454692`、原“无限岗位”物品 `3710613857` 及其维护版物品 `3797257579` 均未作为更新目标。

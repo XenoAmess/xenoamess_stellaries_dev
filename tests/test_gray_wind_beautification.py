@@ -68,6 +68,7 @@ class GrayWindPackageTests(unittest.TestCase):
         self.assertIn('picture="thumbnail.png"', descriptor)
         self.assertNotIn("remote_file_id", descriptor)
         self.assertEqual("xenoamess_gray_wind_beautification", self.contract["local_mod_id"])
+        self.assertEqual("3800996999", self.contract["release_workshop_id"])
 
         mod_bytes = b"".join(
             path.read_bytes() for path in MOD_ROOT.rglob("*") if path.is_file()
