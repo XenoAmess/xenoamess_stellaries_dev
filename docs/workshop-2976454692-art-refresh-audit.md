@@ -41,6 +41,8 @@ steamcmd.exe +login anonymous +workshop_download_item 281990 2976454692 validate
 
 因此，当前需求按“一比一完整翻新并更新页面”估算，应向美术收取 **4 张成品**；其中真正进入游戏画面的新画为 **2 张**。
 
+这里的“4 张”只回答“逐文件翻新当前 Workshop 包体”，不能解释为“小灰在原版流程中的全部视觉触点”。下文对 Stellaris `4.4.6` 原版代码的补充审计确认：该 Mod 漏掉了首次发现事件图，后续通讯背景、重生事件图、旗帜、特质图标、陆军图标和战舰模型也仍使用原版共用素材。完整角色视觉翻新的工作量明显大于 4 张。
+
 ## 当前素材的精确规格
 
 ### 游戏内必需素材
@@ -79,16 +81,81 @@ Steam 官方文档确认主预览与 additional preview 是独立的 Workshop �
 - 一比一翻新只需要一张透明静态人物图，不需要绘制动画帧。
 - 若新需求确实包含眨眼、呼吸、发丝或 Live2D 式运动，这是新增功能，不能按现有素材替换估价；需要另立动画技术方案和验收标准。
 
-## 原版提供、无需重画的图片引用
+## 原版提供、当前 Mod 未重画的图片引用
 
 当前 Mod 的 `events/gray_goo_events.txt` 在创建灰蛊国家和小灰国家时引用：
 
 - `icon / special / gray_goo.dds`：原版灰蛊旗帜徽记；
 - `background / backgrounds / sinus.dds`：原版旗帜背景。
 
-两者均不在下载包体内，由 Stellaris 原版资源解析。法令图标 `GFX_edict_type_time`、房间选择器列出的其他房间，以及事件 UI 边框也来自原版。因此它们不属于一比一美术替换的必交素材。
+两者均不在下载包体内，由 Stellaris 原版资源解析。法令图标 `GFX_edict_type_time`、房间选择器列出的其他房间，以及事件 UI 边框也来自原版。因此它们不属于“逐文件翻新现有包”的必交素材，但旗帜属于“完整重塑小灰角色视觉”时应评估的触点。
 
-如果目标改为“玩家能看到的相关视觉全部原创”，则应额外设计灰蛊徽记和旗帜背景，并改用 Mod 自己的唯一文件名/类别，避免覆盖全局原版素材。旗帜徽记通常还要考虑默认、银河地图和小图三个尺寸变体；社区资料给出的传统规格是 `128 × 128`、`256 × 256`、`24 × 24`，但实施前必须再以目标 Stellaris 版本的原版文件复核，不能把旧 Wiki 当成 4.4 的唯一依据。
+如果目标改为“玩家能看到的相关视觉全部原创”，则应额外设计灰蛊徽记和旗帜背景，并改用 Mod 自己的唯一文件名/类别，避免覆盖全局原版素材。Stellaris 4.4.6 原版小灰使用的徽记实测包含默认 `256 × 256`、银河地图 `256 × 256` 和小图 `24 × 24` 三个文件变体，旗帜背景为 `400 × 400`；不能按旧 Wiki 的历史规格直接下单。
+
+## Stellaris 4.4.6 原版“小灰”视觉链审计
+
+本节以本机 Steam 原版 `Pegasus v4.4.6` 为基线，逐一追踪 `disco_gray_cat`、`graygoo.400`—`graygoo.512`、`create_gray_*`、`gray_army` 和 `NAME_Gray_Warship`。结论是：原版没有专用的“小灰人形立绘”；小灰以玩家物种外貌出现。Workshop Mod 新增的 `gray_01` 是自定义肖像 ID，并非原版素材。原版文本资源中不存在独立的精确 `gray_01` ID。
+
+### 首次发现事件图：确认漏改
+
+- `common/anomalies/95_anomaly_categories_distant_stars.txt:1712` 的 `disco_gray_cat` 异常类别使用 `picture = "GFX_evt_ship_in_orbit_2"`，成功后调用 `graygoo.400`。
+- `events/gray_goo_events.txt:2136` 的 `graygoo.400` 注释为 `Encountered Gray`，也使用同一个 `GFX_evt_ship_in_orbit_2`。简体中文标题实际是“安静散步”，并不字面叫“第一次接触”；它在功能上就是发现小灰、接入视频前的首次接触页。
+- `interface/eventpictures.gfx:2248` 将该 sprite 映射到 `gfx/event_pictures/ship_in_orbit_2.dds`，同时使用 `gfx/interface/situation_log/event_mask.dds` 作为显示蒙版。
+- 原图是飞船掠过星球、右侧强光的横幅，不直接画出小灰。实测规格为 `450 × 150`、旧式未压缩 `A8R8G8B8` DDS、全部 Alpha 为 255、无 mip 链、`270,128` bytes。
+- 当前 Mod 的 `graygoo.400` 仍引用这个原版 sprite；它从 `graygoo.401` 才将 `portrait` 和 `room` 改为 `gray_01` / `areta_005_room`，并且没有覆盖 `disco_gray_cat`。所以这是一个确定的遗漏点，同一张新图需要接到“异常卡片”和“异常完成事件”两个脚本位置。
+
+为避免连带修改其他使用 `GFX_evt_ship_in_orbit_2` 的原版事件，实现时应新增专用 sprite（例如 `GFX_evt_gray_first_encounter`）及专用 DDS，再将上述两个小灰入口指向它；不要原地覆盖原版共用文件。美术最终交付可按 `450 × 150`、3:1、无 mip 制作，建议母版至少 `1800 × 600`。
+
+### 小灰专属事件链的全部画面引用
+
+| 环节 | 原版画面引用 | 当前 Mod 状态 | 完整翻新判断 |
+| --- | --- | --- | --- |
+| `disco_gray_cat`、`graygoo.400` 首次发现 | `GFX_evt_ship_in_orbit_2` | 未改 | **确认漏改**；一张新事件横幅，两个代码接点 |
+| `graygoo.401`—`406` 初次对话 | `portrait = root.species`、`room = root` | 已改成 `gray_01`、`areta_005_room` | 已覆盖；六页复用同一立绘和房间 |
+| `graygoo.499` 创建小灰国家和首领 | 首领 `species = root`；旗帜 `gray_goo.dds` + `sinus.dds` | 给首领补了 `change_leader_portrait = gray_01`，旗帜未改 | 人物肖像已间接覆盖；旗帜仍是遗漏/可选扩展 |
+| `graygoo.500` 初始菜单 | `GFX_evt_mysterious_signal`；`portrait = from.ruler`；`room = root` | 肖像由 499 的持久改头像间接覆盖；事件图和房间未改 | **房间接点漏改**；是否另画事件图取决于 UI 实机显示与风格范围 |
+| `graygoo.501` 行政官形态菜单 | `GFX_evt_busy_spaceport`；`portrait = gray_official`；`room = root` | 重建领袖时会再次改成 `gray_01`；事件图和房间未改 | **房间接点漏改**；事件图为可选 |
+| `graygoo.502` 战舰形态菜单 | `GFX_evt_fleet_neutral`；小灰 ruler 肖像；`room = root` | 肖像间接覆盖；事件图和房间未改 | **房间接点漏改**；事件图为可选 |
+| `graygoo.503` 陆军形态菜单 | 同 `GFX_evt_fleet_neutral`；小灰 ruler 肖像；`room = root` | 肖像间接覆盖；事件图和房间未改 | **房间接点漏改**；事件图为可选 |
+| `graygoo.504` 重组中 | `room = no_video_feed_room`，没有人物 portrait | 未改 | 原版有意断开视频，不应默认判作漏洞；只有要做专属“离线/重构”画面时才扩展 |
+| `graygoo.511` “小灰已被击溃” | `GFX_evt_circuitry_modification` | 未改 | 完整叙事翻新时建议新增专属受损/重构事件图 |
+| `graygoo.512` “小灰归来” | `leader_story` 窗口；`GFX_evt_gray_gooed_planet`；小灰 ruler 肖像；`room = root` | 肖像间接覆盖；事件图和房间未改 | **房间接点漏改**；回归事件图建议专属化 |
+
+上述 `picture` 字段与外交窗口的 `picture_event_data` 同时存在时，具体哪一层在当前 UI 布局中可见，需要简体中文实机逐事件确认；但它们都是原版代码中真实存在、而当前 Mod 未替换的美术引用，不能从静态清单里删除。后续 `graygoo.500`—`503`、`512` 的 `room = root` 可以直接复用现有 `areta_005_room`，所以这里主要缺的是脚本接线，不一定要再画五张房间图。
+
+这些事件横幅的原版实测合同如下；全部为 `450 × 150`、无缩小 mip，sprite 均在 `interface/eventpictures.gfx` 中另挂事件蒙版：
+
+| 原版文件 | 被小灰流程引用的位置 | DDS 像素格式 |
+| --- | --- | --- |
+| `ship_in_orbit_2.dds` | 异常类别、`graygoo.400` | 未压缩 32-bit `A8R8G8B8` |
+| `mysterious_signal.dds` | `graygoo.500` | 未压缩 24-bit `B8G8R8` |
+| `busy_spaceport.dds` | `graygoo.501` | 未压缩 32-bit `A8R8G8B8` |
+| `fleet_neutral.dds` | `graygoo.502`、`503` | 未压缩 24-bit `B8G8R8` |
+| `circuitry_modification.dds` | `graygoo.511` | 未压缩 24-bit `B8G8R8` |
+| `gray_gooed_planet.dds` | `graygoo.512` | 未压缩 32-bit `A8R8G8B8` |
+
+### 事件窗口之外的遗漏点
+
+| 触点 | 原版解析链与实测规格 | 当前 Mod 状态 | 翻新建议 |
+| --- | --- | --- | --- |
+| 小灰国家旗帜 | `flags/special/gray_goo.dds`：`256 × 256` A8R8G8B8；`flags/special/map/gray_goo.dds`：`256 × 256` A8R8G8B8；`flags/special/small/gray_goo.dds`：`24 × 24` A8R8G8B8；背景 `flags/backgrounds/sinus.dds`：`400 × 400` 24-bit B8G8R8；均无 mip | 未改 | 若要求外交列表/旗帜也统一，交付 1 套徽记的 3 个文件变体及 1 张背景；使用专用文件名，不能覆盖共用原图 |
+| 小灰行政官专属特质图标 | `leader_trait_governor_gray` 实际复用 `GFX_leader_trait_psionic_chosen_one` → `psionic_chosen_one.dds`，`29 × 29` A8R8G8B8，共 5 级 mip | 未改 | 交付一枚专属 `29 × 29` 图标并定义新的 sprite；其他职业/等级特质是通用 UI，不算小灰身份素材 |
+| 小灰陆军图标 | `gray_army` 复用 `GFX_army_type_machine_assault`，即 `army_icon.dds` 第 11 帧；原图集 `578 × 34`、17 个横排 `34 × 34` 帧、A8R8G8B8，只有基底级 | 未改 | 美术交付有效画面为 `34 × 34`；实现为专用单帧 army sprite，不能直接覆盖整张通用陆军图集 |
+| 小灰战舰三维外观 | `NAME_Gray_Warship` → `gray_warship_key` → `gatebuilder_01_mothership_section_entity` → `gatebuilder_01_mothership.mesh` | 未改 | 这不是一张 2D 图；完整翻新要有专用 mesh/entity/material，或明确保留原版纳米舰 |
+| 战舰纹理 | mothership mesh 只直接引用 diffuse、normal、specular 三张纹理；均为 `2048 × 2048`、12 级 mip：diffuse 为 DXT1，normal/specular 为 DXT5 | 未改 | 若重做舰船，至少交付 1 个 mesh + 3 张贴图；原文件为灰蛊/门建者共用，不能原地覆盖 |
+| 小灰陆军运输舰 | `create_army_transport` 中专用 `graphical_culture` 行被注释，因此使用所属国/默认运输舰视觉 | 未改 | 完整“三种形态”翻新时另做专用运输舰接线；只做人物 2D 包时可明确排除 |
+
+原版 mothership mesh 实测为 `726,195` bytes；三张贴图依次为 `2,796,344`、`5,592,560`、`5,592,560` bytes。战舰模型同时服务其他灰蛊内容，因此直接覆盖 `gatebuilder_01_mothership_*` 会污染非小灰单位。
+
+### 不应误算成小灰人物素材的灰蛊/L 星团画面
+
+`GFX_evt_gray_goo`、`GFX_evt_gray_goo_ships`、灰蛊星球模型和 `pc_gray_goo` 天空等资源属于更宽泛的灰蛊危机/L 星团题材，不是“小灰这个人物”的专属素材。`graygoo.550`“进入空荡星团”使用 `ruined_system.dds`（`450 × 150`、A8R8G8B8、无 mip），它与小灰结局背景有关但还没有出现小灰，可放在主题扩展包而非角色基础包。`graygoo.555` 的 `gray_gooed_planet.dds` 则由 `gray_goo` 危机国家触发，不属于小灰同伴链。
+
+据此划分交付范围：
+
+1. **最低修漏版**：现有 4 张发布/包体素材之外，新增 1 张 `450 × 150` 首次发现事件图；并把已有房间接到 `graygoo.500`—`503`、`512`。游戏内原创成品由 2 张增至 **3 张**。
+2. **完整 2D 角色版**：在最低修漏版上，建议再做 1 张击溃/重构图、1 张归来图、1 枚 `29 × 29` 特质图标、1 枚 `34 × 34` 陆军图标、1 套旗帜徽记三变体及 1 张旗帜背景。后续菜单的三张通用 `picture` 是否单独绘制，应以实机确认其显示层级后决定。
+3. **完整三形态版**：再加入战舰专用 mesh + diffuse/normal/specular，以及专用运输舰视觉；这已经是 3D 舰船 Mod 工作，不应按“补几张图片”估价。
 
 ## 建议的新美术交付规格
 
@@ -115,8 +182,11 @@ Steam 官方文档确认主预览与 additional preview 是独立的 Workshop �
 
 依照仓库语言范围，只使用 `l_simp_chinese` 启动 Stellaris：
 
-- 检查小灰初次通讯及 `graygoo.401`—`graygoo.406` 的人物/背景合成。
+- 检查 `disco_gray_cat` 异常卡片和 `graygoo.400`“安静散步”是否都显示专属首次发现图，且没有污染其他使用原版 `GFX_evt_ship_in_orbit_2` 的事件。
+- 检查 `graygoo.401`—`graygoo.406` 初次通讯和 `graygoo.500`—`504` 形态菜单的人物/背景合成；`graygoo.504` 应保持预期的无视频信号状态。
+- 检查 `graygoo.511`“小灰已被击溃”和 `graygoo.512`“小灰归来”的事件图、肖像与房间层级。
 - 检查领袖列表、领袖详情、内阁席位与常见通知中的头像裁切。
+- 若纳入完整 2D 角色版，检查小灰国家旗帜的默认/地图/小图缩放、行政官特质图标和小灰陆军图标。
 - 在 100% UI 缩放和项目既定回归分辨率下确认头顶不截断、脸部不被 UI 遮挡、桌面/下沿不悬空。
 - 检查透明边缘、发丝和高亮处无黑边、白边、色带或异常闪烁。
 - 重新进入存档后确认 `gray_01` 仍解析到新图。
