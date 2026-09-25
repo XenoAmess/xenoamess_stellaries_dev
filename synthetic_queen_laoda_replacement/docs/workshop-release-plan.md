@@ -32,3 +32,4 @@
 - DDS SHA-256 `a35c0431498c6b8511bed0604517ba629695edad86e0556c277019d0bbbbf071`、肖像定义 SHA-256 `70c05b267415576635831cef640283f7df3c1d1f719e1fd8ba444bd7323e51b4`，均与实机候选包完全相同。`open_kaishek` `validate --profile stellaris-4.5.1` 为 `VALIDATED`、0 语法/语义诊断；描述符 `parse` 为 `PARSED`、0 诊断、`roundTrip=true`。
 - 新描述符缩略图 `351×313` PNG、83,701 字节。`01-children-returned.jpg` 与重启后 F12 截图逐字节相同，`2560×1440`、464,545 字节、SHA-256 `ff0a65dce629a69c1d2afcb1c1b35a84f57de8f619b2e9e9f8f50df4ec74fabf`；`02-first-dialogue.jpg` 与首轮 F12 截图逐字节相同，`2560×1440`、464,291 字节、SHA-256 `a3ab86f404718ec0a2259a152310eb816066922966bf5596eb9448022002a883`。第一张画面中的台词正是“孩子们，我终于回到了你们的身边”。
 - 发布工具及图片制作工具 `py_compile` 通过；缩略图已目视检查人物、球衣及广告，游戏截图未做重绘或压缩转换。
+- 正式包、两张图片与发布工具已由提交 `9d754e15718911f85b48a05f0541d9977ec4d930` 推送到 `origin/main`。BBCode 使用此不可变提交的图片 URL；两条 URL 均返回 `200 image/jpeg`，没有重定向，下载字节 SHA-256 与仓库截图相同。BBCode 为 2,248 UTF-8 字节，包含两组完整 `[img]` 标签。
