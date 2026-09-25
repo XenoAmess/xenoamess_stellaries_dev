@@ -27,3 +27,10 @@
 - 主缩略图和三张简体中文实机截图均在工坊图片栏可见，BBCode 中的固定 Git 图片链接均可读取。
 - 所有上传包文件来自已提交的 `mod/`；不包含参考图、生成请求、测试日志、其他 Mod 或上游 `remote_file_id`。
 - 发布记录诚实保留 R2/R4 未完成状态；本次不做灰风 Mod 并用测试。
+
+## 发布前实测记录
+
+- 正式版肖像 DDS 的 SHA-256 仍为 `5225d045670268844f539ef1ec21eec094149efcaf796af1667d82145a4732d4`，与 rc.2 实机图一致。
+- `open_kaishek` 的 `validate --profile stellaris-4.4.6` 对肖像定义返回 `VALIDATED`、语法和语义诊断均为 0；`parse` 对正式描述符返回 `PARSED`、0 diagnostics、`roundTrip=true`。
+- 缩略图为 351×313 PNG、134,780 字节；三张 2560×1440 JPEG 分别为 317,805、322,378、320,956 字节。均来自已归档的 rc.2 简体中文实机 PNG，没有裁切或重绘。
+- 图片及正式包已由提交 `68d672cbfa9a615e87e6183c8059be001f12b6c7` 推送到 `origin/main`。BBCode 为 2,437 UTF-8 字节，三张固定提交 raw URL 均返回 `200 image/jpeg`，内容 SHA-256 与仓库 JPEG 逐字节一致。

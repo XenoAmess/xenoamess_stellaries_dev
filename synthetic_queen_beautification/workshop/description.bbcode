@@ -1,0 +1,34 @@
+[h1]XenoAmess的合成女王美化[/h1]
+
+用用户提供的参考图重新设计《群星》合成女王（Cetana）人物肖像。人物图由 EvoLink 辅助生成，保留真实透明通道，已在简体中文游戏中检查外交对话与存档重载。
+
+[h2]本版内容[/h2]
+[list]
+[*]将原版 10 个合成女王肖像键统一替换为新的静态人物肖像。
+[*]透明人物边缘与游戏界面融合，已修复早期候选图的矩形背景边界。
+[*]不改动玩法、事件或数值。
+[/list]
+
+[h2]兼容与范围[/h2]
+[list]
+[*]适配 Stellaris 4.4.*；实机基线为 4.4.6。需要《机械纪元》DLC 才能看到合成女王内容。
+[*]这是独立 Mod。覆盖原版 21_portraits_cybernetics_synthqueen.txt；其他修改同一文件的 Mod 可能冲突。
+[*]人物由统一静态肖像显示；原版动画及按玩家物种变化的细微面部差异不再保留。
+[*]事件插画、对话背景、旗帜和图标仍使用原版，尚未纳入本次替换。
+[/list]
+
+[h2]实机截图[/h2]
+首次对话：透明肖像完整显示，人物画布没有旧版矩形背景。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/68d672cbfa9a615e87e6183c8059be001f12b6c7/synthetic_queen_beautification/workshop/media/01-dialogue.jpg[/img]
+
+对话第二页：同一人物图在后续台词中保持完整。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/68d672cbfa9a615e87e6183c8059be001f12b6c7/synthetic_queen_beautification/workshop/media/02-second-response.jpg[/img]
+
+退出并重启游戏后重新载入存档：人物仍正常显示。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/68d672cbfa9a615e87e6183c8059be001f12b6c7/synthetic_queen_beautification/workshop/media/03-after-restart.jpg[/img]
+
+[h2]当前验收边界[/h2]
+肖像定义静态校验、透明素材检查、中文对话和存档重载已通过。基础 synth_queen 肖像尚未取得独立界面证据；提前触发的结局测试虽然显示新人物，但伴随运行时错误，未验证自然结局。完整实机矩阵仍在补测，欢迎反馈具体场景与截图。
+
+[h2]来源[/h2]
+人物设计以委托方提供的参考图为依据，由 AI 辅助生成并经格式、透明边缘与游戏画面适配。项目源码与验收记录：[url=https://github.com/XenoAmess/xenoamess_stellaries_dev/tree/main/synthetic_queen_beautification]GitHub[/url]。
