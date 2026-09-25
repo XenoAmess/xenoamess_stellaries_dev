@@ -1,4 +1,4 @@
-"""Prepare the launcher thumbnail and original in-game Workshop screenshots."""
+"""Copy the user-supplied thumbnail and original in-game Workshop screenshots."""
 
 from __future__ import annotations
 
@@ -10,7 +10,8 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PORTRAIT = ROOT / "assets/generated/laoda-portrait-800x350.png"
+THUMBNAIL_SOURCE = ROOT / "assets/reference/thumbnail-v0.1.2.png"
+THUMBNAIL_SHA256 = "89269b3da6cea8a0071fbd61b285414e8e04ac69a4dcfad6545ed55399efc520"
 EVIDENCE = ROOT / "evidence/portrait-acceptance-rc1"
 MEDIA = ROOT / "workshop/media"
 SOURCE_IMAGES = (
@@ -24,16 +25,15 @@ def sha256(path: Path) -> str:
 
 
 def main() -> None:
-    with Image.open(PORTRAIT) as source:
-        if source.mode != "RGBA" or source.size != (800, 350):
-            raise ValueError("accepted portrait image changed")
-        crop = source.crop((200, 0, 600, 350)).resize((351, 313), Image.Resampling.LANCZOS)
-    canvas = Image.new("RGBA", (351, 313), (13, 18, 27, 255))
-    canvas.alpha_composite(crop)
+    if sha256(THUMBNAIL_SOURCE) != THUMBNAIL_SHA256:
+        raise ValueError("user-supplied thumbnail changed")
+    with Image.open(THUMBNAIL_SOURCE) as source:
+        if source.mode != "RGBA" or source.size != (800, 800) or source.getchannel("A").getextrema() != (255, 255):
+            raise ValueError("unexpected user-supplied thumbnail format")
     thumbnail = ROOT / "mod/thumbnail.png"
-    canvas.convert("RGB").save(thumbnail, format="PNG", optimize=True)
-    if thumbnail.stat().st_size >= 1_000_000:
-        raise ValueError("launcher thumbnail exceeds Workshop preview size")
+    shutil.copyfile(THUMBNAIL_SOURCE, thumbnail)
+    if thumbnail.stat().st_size >= 1_000_000 or sha256(thumbnail) != THUMBNAIL_SHA256:
+        raise ValueError("thumbnail copy differs from user file or exceeds preview size")
 
     MEDIA.mkdir(parents=True, exist_ok=True)
     for source_name, output_name in SOURCE_IMAGES:
