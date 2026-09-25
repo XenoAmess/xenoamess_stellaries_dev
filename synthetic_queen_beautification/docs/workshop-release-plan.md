@@ -46,3 +46,5 @@
 2026-09-25 重启 Steam 客户端后，连接日志仍显示 `Logged Off`；本地账号设置 `RememberPassword=1`、`WantsOfflineMode=1`。根据 [Steam 官方离线模式说明](https://help.steampowered.com/en/faqs/view/0E18-319B-B2C8)，离线模式不提供需要网络连接的工坊功能。下一步只将该账号的离线模式意图改为在线，再正常重启客户端；原配置在 Steam 目录留备份，不进入仓库。
 
 已正常关闭客户端、备份 `loginusers.vdf` 并只将该账号的 `WantsOfflineMode` 从 `1` 改为 `0`；重启后连接日志出现 `Logged On` 和登录响应 `OK`。Steam API 读回 `AppID=281990`、`BLoggedOn=true`。上传工具现在会在创建物品前验证这两个条件；待发布与远端核验完成后恢复原离线偏好。
+
+在线后第二次创建仍返回无效句柄。调查游戏自带 `steam_api64.dll` 的导出跳转表：`CreateItem` 跳至虚表第 40 槽，`ReleaseQueryUGCRequest` 跳至第 18 槽，而当前公开 UGC v017 头文件对应第 41、19 槽，说明它不匹配此 DLL。切换只读探针到 `STEAMUGC_INTERFACE_VERSION016` 后，`GetNumSubscribedItems=21` 与客户端工坊日志一致，UGC 查询句柄可正常释放。根因是绑定了过新的 UGC 接口版本；工具须改用 v016 后再重试创建。两次失败均未生成物品 ID 或上传状态文件。

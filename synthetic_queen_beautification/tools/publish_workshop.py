@@ -117,7 +117,7 @@ class Steam:
         interface = self.dll.SteamInternal_FindOrCreateUserInterface
         interface.argtypes = [C.c_int32, C.c_char_p]
         interface.restype = C.c_void_p
-        self.ugc = interface(user, b"STEAMUGC_INTERFACE_VERSION017")
+        self.ugc = interface(user, b"STEAMUGC_INTERFACE_VERSION016")
         self.utils = interface(user, b"SteamUtils009")
         self.user = interface(user, b"SteamUser020")
         if not self.ugc or not self.utils or not self.user:
