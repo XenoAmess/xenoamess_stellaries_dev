@@ -19,7 +19,7 @@
 2. `open_kaishek` 先验收生产 P 语言入口；复核 DDS 与源图哈希、描述符、图片尺寸和 JPEG 编码。新增缩略图后只需针对新增内容和发布包复核，既有运行时画面沿用 rc.2 同一 DDS 的证据。
 3. 先提交并推送图片与正式包，取得不可变 Git SHA；将该 SHA 写入 BBCode 图片 URL，再提交并推送说明。逐个验证 URL 返回图片、BBCode 不超过 Steamworks 限制，并冻结上传目录的文件树与哈希。
 4. 在已登录 Steam 客户端下使用 Steamworks UGC 首次 `CreateItem` 获取**新 ID**，调用 `StartItemUpdate` 设置标题、BBCode、内容目录、主预览图、三张附加预览、标签和公开可见性，再用同版本 Change Note `SubmitItemUpdate`。如首次创建返回需接受法律协议，停止公开步骤，交由用户亲自接受。
-5. 读取匿名工坊详情核对 ID、应用、标题、说明、可见性、图片数量、更新时间与变更说明；从空缓存下载公开包，逐文件对比上传目录哈希，并确认没有更新上游物品。记录回执、URL、哈希及未验收项到 `docs` 与 `evidence`，提交并推送；最后推送唯一产品标签 `synthetic-queen-v0.1.0`。
+5. 读取匿名工坊详情核对 ID、应用、标题、说明、可见性、图片数量、更新时间与变更说明；从空缓存下载公开包，逐文件对比上传目录哈希，并确认没有更新上游物品。记录回执、URL、哈希及未验收项到 `docs` 与 `evidence`，提交并推送；最后推送仓库规则要求的版本标签 `v0.1.0` 和区分产品的别名标签 `synthetic-queen-v0.1.0`，二者指向同一已核验提交。
 
 ## 完成标准
 
@@ -57,3 +57,4 @@
 - 独立 SteamCMD 以 `anonymous` 从空缓存下载新物品，取得 4 个文件、1,256,486 字节；与仓库 `mod/` 文件集合及逐文件 SHA-256 对比，缺失 0、额外 0、哈希差异 0。首次 SteamCMD 自更新时匿名会话超时，更新结束后重试成功；仅成功重试的文件计入远端包验收。
 - 发布后正常关闭 Steam、只将 `WantsOfflineMode` 改回原值 `1`，移除临时配置备份并重启；连接日志再次显示 `Logged Off`，原有离线偏好已恢复。
 - [创建与提交回执](../evidence/v0.1.0/publish-state.json)、[匿名页面与图片核验](../evidence/v0.1.0/workshop-publication.json)、[SteamCMD 逐文件比对](../evidence/v0.1.0/steamcmd-roundtrip.json)保留完整证据。**本次公开发布成功；R2/R4 仍未完成全矩阵实机验收，后续须继续补测。**
+- Git 正式版本标签 `v0.1.0` 与产品别名 `synthetic-queen-v0.1.0` 均指向包含上述回执的同一提交。
