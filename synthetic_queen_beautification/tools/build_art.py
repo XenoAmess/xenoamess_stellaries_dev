@@ -1,4 +1,4 @@
-"""Build a deterministic static Synthetic Queen DDS from the reviewed image."""
+"""Build a deterministic straight-alpha Synthetic Queen DDS from the reviewed image."""
 
 from __future__ import annotations
 
@@ -10,11 +10,16 @@ from PIL import Image
 
 
 MOD_ROOT = Path(__file__).resolve().parents[1]
-SOURCE = MOD_ROOT / "assets/generated/cetana-portrait-opaque-v1.png"
-SOURCE_SHA256 = "ED268792522A368C53F5DCF3CBF97CA346A6EE19178AF9DEC9A60CFB4395AFA2"
+SOURCE = (
+    MOD_ROOT
+    / "assets/generated/evolink-paid/2026-09-25/cetana-portrait-attempt-02/original.png"
+)
+SOURCE_SHA256 = "2DE5A76AC2974404381BE70EC7C4CA9F363F3FCEEB93E827C6FFAC261C8D5591"
 PREVIEW = MOD_ROOT / "assets/generated/cetana-portrait-800x350.png"
+PREVIEW_SHA256 = "5C873D7A43C725976B7315B3A4B0C50F2676CCBEF3AB4509B039BE5658CB0A9A"
 OUTPUT = MOD_ROOT / "mod/gfx/models/portraits/xenoamess_cetana_portrait.dds"
 SIZE = (800, 350)
+CROP = (0, 0, 2736, 1197)
 
 
 def sha256(path: Path) -> str:
@@ -53,13 +58,18 @@ def main() -> None:
         raise ValueError("Generated source image does not match the reviewed candidate")
 
     with Image.open(SOURCE) as source:
-        if source.size != (1896, 830) or source.mode != "RGB":
+        if source.size != (2736, 1536) or source.mode != "RGBA":
             raise ValueError(f"Unexpected source layout: {source.size} {source.mode}")
-        # The generation canvas matches 800:350 to within two source pixels.
-        resized = source.resize(SIZE, Image.Resampling.LANCZOS)
+        resized = source.crop(CROP).resize(SIZE, Image.Resampling.LANCZOS)
         resized.save(PREVIEW)
-        rgba = resized.convert("RGBA")
-        red, green, blue, alpha = rgba.split()
+        if sha256(PREVIEW) != PREVIEW_SHA256:
+            raise ValueError("Transparent preview does not match the reviewed candidate")
+        red, green, blue, alpha = resized.split()
+        if alpha.getextrema() != (0, 255) or any(
+            alpha.getpixel(point) != 0
+            for point in ((0, 0), (SIZE[0] - 1, 0), (0, SIZE[1] - 1), (SIZE[0] - 1, SIZE[1] - 1))
+        ):
+            raise ValueError("Generated source lost transparent corners")
         bgra = Image.merge("RGBA", (blue, green, red, alpha)).tobytes()
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

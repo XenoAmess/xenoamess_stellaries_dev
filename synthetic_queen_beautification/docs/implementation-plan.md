@@ -6,15 +6,16 @@
 
 第二阶段再制作资源清单中的 2 张事件图、1 张对话背景和 3 张旗帜；剧情奖励图标按实机画面决定是否纳入。人物阶段不能报告成全套图片已完成。通用 UI、银河地图和 3D 材质不在默认范围。
 
-当前候选版本为 `0.1.0-rc.1`，版本以根目录 `VERSION` 为唯一来源，`mod/descriptor.mod` 与其相同，游戏兼容范围由 `supported_version="4.4.*"` 表示。当前版本只供开发和验收；没有用户另行要求时，不创建或上传 Steam Workshop 物品。
+当前修复候选版本为 `0.1.0-rc.2`，版本以根目录 `VERSION` 为唯一来源，`mod/descriptor.mod` 与其相同，游戏兼容范围由 `supported_version="4.4.*"` 表示。当前版本只供开发和验收；没有用户另行要求时，不创建或上传 Steam Workshop 物品。
 
 ## 人物阶段设计
 
 1. 冻结 Stellaris `Pegasus v4.4.6 (fdde)` 的原版路径、尺寸、引用和肖像定义哈希。原版资源只读，不将游戏版权贴图提交到本仓库。
 2. 用户三视图存入 `assets/reference/`；使用图片生成能力制作单人、正面、横向肖像，保存提示词与源图。仅对选定源图进行确定性尺寸及 DDS 格式转换。
-3. 原版 10 张肖像 DDS 是动画网格的 UV atlas，普通人物画不能直接覆盖。人物阶段改用一张 800×350 深色不透明静态 DDS，覆盖原版 `gfx/portraits/portraits/21_portraits_cybernetics_synthqueen.txt`，使 10 个原版键都用 `texturefile` 指向它，保留 `greeting_sound`。不改危机事件、数值、触发器和声音。
-4. 覆盖定义文件需与原版结构化比较，并绑定原版文件哈希。每个键由原版的 `entity`、`character_textures`、服饰/附加件选择器和镜头位置缩放参数，改为 `texturefile` 与保留的问候声音。此方案会失去原版人物动画和因玩家物种变化的细微面部差异；深色矩形背景与外交房间的衔接需实机检查。修改同一原版定义文件的其他 Mod 可能冲突。
-5. 先用 `C:\workspace\open_kaishek` 校验 P 语言文件，再执行静态图像、引用和版本检查。简体中文实机验收重点是 `synth_queen`、一种 `cetana_*`、外交对话、后期 `cetana_empty`、存档重载及与灰风 Mod 并用。不能仅凭生成图预览宣称 Mod 已实机验收。
+3. 原版 10 张肖像 DDS 是动画网格的 UV atlas，普通人物画不能直接覆盖。人物阶段改用一张 800×350 静态 DDS，覆盖原版 `gfx/portraits/portraits/21_portraits_cybernetics_synthqueen.txt`，使 10 个原版键都用 `texturefile` 指向它，保留 `greeting_sound`。不改危机事件、数值、触发器和声音。
+4. 覆盖定义文件需与原版结构化比较，并绑定原版文件哈希。每个键由原版的 `entity`、`character_textures`、服饰/附加件选择器和镜头位置缩放参数，改为 `texturefile` 与保留的问候声音。此方案会失去原版人物动画和因玩家物种变化的细微面部差异；修改同一原版定义文件的其他 Mod 可能冲突。
+5. `0.1.0-rc.1` 实机已证明不透明画布形成突兀矩形边界。修复版按 [透明肖像方案](reference-art-plan.md)使用 EvoLink `gpt-image-2` 的 `background=transparent` 生成原生 RGBA，不用棋盘格、色键或后期抠图模拟 Alpha；构建 800×350 straight-alpha DDS 并检查真实游戏合成效果。
+6. 先用 `C:\workspace\open_kaishek` 校验 P 语言文件，再执行静态图像、引用和版本检查。简体中文实机验收重点是 `synth_queen`、一种 `cetana_*`、外交对话、后期 `cetana_empty` 与存档重载。不能仅凭生成图预览宣称 Mod 已实机验收。
 
 ## 后续图片阶段
 
