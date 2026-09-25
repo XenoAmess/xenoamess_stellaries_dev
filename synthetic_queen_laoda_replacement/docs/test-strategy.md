@@ -8,7 +8,7 @@
 | S2 | 真实透明度 | 原始图和 800×350 预览为 RGBA，四角 Alpha 为 0；记录 Alpha extrema 与 `A>0/16/127` 包围盒，在黑、白、蓝灰三底上无可见矩形场景。 |
 | S3 | DDS 与引用 | DDS 为 800×350 straight-alpha BGRA8；解码后与预览逐像素一致；10 个原版键均指向存在的新 DDS，问候音未变。 |
 | S4 | P 语言 | 先补齐并验证 `C:\workspace\open_kaishek` 中范围仅限合成女王原版肖像文件的 Stellaris 4.5.1 profile，并使其拒绝游戏不接受的 UTF-8 BOM；然后以该 profile 验收生产肖像入口：无 BOM、`VALIDATED`、0 语法/语义诊断；描述符解析 0 diagnostics、round trip。旧 4.4.6 profile 的已通过结果仅作回归参考。 |
-| S5 | 包隔离与版本 | `mod/` 文件白名单、`VERSION`/描述符/changelog 均为 `0.1.0-rc.1`；只启用本 Mod，不含其他 Mod 文件或 Workshop ID。 |
+| S5 | 包隔离与版本 | 候选版为 `0.1.0-rc.1`；正式发布版 `VERSION`/描述符/changelog 均为 `0.1.1`。正式 `mod/` 只新增缩略图，肖像定义与 DDS 不变；只启用本 Mod，不含其他 Mod 文件或旧 Workshop ID。 |
 
 ## 简体中文实机
 
