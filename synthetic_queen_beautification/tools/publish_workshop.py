@@ -117,10 +117,17 @@ class Steam:
         interface = self.dll.SteamInternal_FindOrCreateUserInterface
         interface.argtypes = [C.c_int32, C.c_char_p]
         interface.restype = C.c_void_p
-        self.ugc = interface(user, b"STEAMUGC_INTERFACE_VERSION021")
-        self.utils = interface(user, b"SteamUtils011")
-        if not self.ugc or not self.utils:
-            raise RuntimeError("Steamworks UGC or Utils interface unavailable")
+        self.ugc = interface(user, b"STEAMUGC_INTERFACE_VERSION017")
+        self.utils = interface(user, b"SteamUtils009")
+        self.user = interface(user, b"SteamUser020")
+        if not self.ugc or not self.utils or not self.user:
+            raise RuntimeError("Steamworks UGC, Utils, or User interface unavailable")
+        self.fn("SteamAPI_ISteamUtils_GetAppID", [C.c_void_p], C.c_uint32)
+        self.fn("SteamAPI_ISteamUser_BLoggedOn", [C.c_void_p], C.c_bool)
+        if self.dll.SteamAPI_ISteamUtils_GetAppID(self.utils) != APP_ID:
+            raise RuntimeError("Steamworks App ID does not match Stellaris")
+        if not self.dll.SteamAPI_ISteamUser_BLoggedOn(self.user):
+            raise RuntimeError("Steam client is in Offline Mode or the account is not logged on")
         self.fn("SteamAPI_ISteamUGC_CreateItem", [C.c_void_p, C.c_uint32, C.c_int32], C.c_uint64)
         self.fn("SteamAPI_ISteamUGC_StartItemUpdate", [C.c_void_p, C.c_uint32, C.c_uint64], C.c_uint64)
         for method in ("SetItemTitle", "SetItemDescription", "SetItemContent", "SetItemPreview"):

@@ -38,3 +38,11 @@
 - `open_kaishek` 的 `validate --profile stellaris-4.4.6` 对肖像定义返回 `VALIDATED`、语法和语义诊断均为 0；`parse` 对正式描述符返回 `PARSED`、0 diagnostics、`roundTrip=true`。
 - 缩略图为 351×313 PNG、134,780 字节；三张 2560×1440 JPEG 分别为 317,805、322,378、320,956 字节。均来自已归档的 rc.2 简体中文实机 PNG，没有裁切或重绘。
 - 图片及正式包已由提交 `68d672cbfa9a615e87e6183c8059be001f12b6c7` 推送到 `origin/main`。BBCode 为 2,437 UTF-8 字节，三张固定提交 raw URL 均返回 `200 image/jpeg`，内容 SHA-256 与仓库 JPEG 逐字节一致。
+
+## 首次 Steamworks 连接检查
+
+第一次 `--publish` 在 `CreateItem` 阶段返回无效句柄，没有生成物品 ID，也没有 `publish-state.json`。进一步读取 Steam 客户端日志发现该客户端自 2026-09-23 02:10 起处于 `Logged Off`；本机 Steam API 的 `BLoggedOn` 同样为 false。上传工具此前选用的过新 `SteamUtils011` 还导致 `GetAppID` 读数异常：安装的 DLL 内嵌 `SteamUtils009` 和 `SteamUser020`，实测 `SteamUtils009` 返回正确应用 ID `281990`。已将绑定改为 `SteamUtils009`、`SteamUser020` 和 Valve SDK 提供的 UGC v017，并在创建前显式检查登录和应用 ID。此阶段没有对上游或任何工坊物品提交更新。
+
+2026-09-25 重启 Steam 客户端后，连接日志仍显示 `Logged Off`；本地账号设置 `RememberPassword=1`、`WantsOfflineMode=1`。根据 [Steam 官方离线模式说明](https://help.steampowered.com/en/faqs/view/0E18-319B-B2C8)，离线模式不提供需要网络连接的工坊功能。下一步只将该账号的离线模式意图改为在线，再正常重启客户端；原配置在 Steam 目录留备份，不进入仓库。
+
+已正常关闭客户端、备份 `loginusers.vdf` 并只将该账号的 `WantsOfflineMode` 从 `1` 改为 `0`；重启后连接日志出现 `Logged On` 和登录响应 `OK`。Steam API 读回 `AppID=281990`、`BLoggedOn=true`。上传工具现在会在创建物品前验证这两个条件；待发布与远端核验完成后恢复原离线偏好。
