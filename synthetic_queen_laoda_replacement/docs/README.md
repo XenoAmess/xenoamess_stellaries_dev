@@ -1,6 +1,6 @@
 # XenoAmess的合成女王替换·牢大
 
-本目录记录独立 Stellaris Mod“XenoAmess的合成女王替换·牢大”的参考图、透明立绘制作、覆盖范围与验收。当前正式发布目标版本为 `0.1.1`；首次工坊发布与核验记录见发布计划。
+本目录记录独立 Stellaris Mod“XenoAmess的合成女王替换·牢大”的参考图、透明立绘制作、覆盖范围与验收。正式版本 `0.1.1` 已作为[独立 Steam 工坊物品 3807817109](https://steamcommunity.com/sharedfiles/filedetails/?id=3807817109)公开发布；实机截图作为主预览和附加图片，首次发布核验见发布计划。
 
 - [实施与透明图方案](implementation-plan.md)
 - [测试策略](test-strategy.md)

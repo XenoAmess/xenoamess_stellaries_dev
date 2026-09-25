@@ -15,7 +15,7 @@
 1. 本计划落盘后再改 Mod、图片和发布工具。缩略图、截图、正式版本先提交推送，取得不可变 Git SHA；随后将该 SHA 写入 BBCode 图片 URL，再提交推送说明。检查 raw URL 返回对应 JPEG 字节、说明长度和所有文件哈希。
 2. 先用 `C:\workspace\open_kaishek` 的 `stellaris-4.5.1` profile 验收正式 P 语言入口；检查 UTF-8 无 BOM、描述符解析、版本一致、DDS 与已通过实机的 SHA-256 一致，发布包只含四个白名单文件。因为肖像 DDS 与映射字节不变，沿用同一游戏画面实机证据；缩略图只做图片静态检查。
 3. 参考已成功的 Steamworks UGC v016 发布工具，制作独立、默认只读的本 Mod 上传工具。上传前要求干净 Git 工作树、Steam 登录和 App ID `281990`；仅 `--publish` 才调用 `CreateItem`，立刻持久化新 ID，遇到法律协议标志立即停下。对新 ID 设置标题、完整 BBCode、内容目录、上述“孩子们”实机主预览、另一张附加截图、标签和公开可见性，最后用同版本 Change Note 提交。
-4. 成功上传后，匿名读取新物品详情并核对新 ID、标题、公开状态、BBCode、图片数量与内容、Change Note；从空缓存重新下载并逐文件比对正式包。核对两个既有物品未被本次工具用作更新目标。将新 ID 和结果写回 docs、描述符及证据；远端已成功发布的 `0.1.1` 不得复用作任何后续更新。
+4. 成功上传后，匿名读取新物品详情并核对新 ID、标题、公开状态、BBCode、图片数量与内容、Change Note；从空缓存重新下载并逐文件比对正式包。核对两个既有物品未被本次工具用作更新目标。将新 ID 和结果写回 docs、`workshop/item-id.txt` 及证据；描述符保持与已上传包逐字节相同，避免发布后不递增版本却改变内容。远端已成功发布的 `0.1.1` 不得复用作任何后续更新。
 5. 回写与核验提交推送后，创建并推送 `v0.1.1` 标签；不移动已有 `v0.1.0`。另加产品别名标签以便区分两个 Mod。
 
 ## 已知验收边界
@@ -33,3 +33,14 @@
 - 新描述符缩略图 `351×313` PNG、83,701 字节。`01-children-returned.jpg` 与重启后 F12 截图逐字节相同，`2560×1440`、464,545 字节、SHA-256 `ff0a65dce629a69c1d2afcb1c1b35a84f57de8f619b2e9e9f8f50df4ec74fabf`；`02-first-dialogue.jpg` 与首轮 F12 截图逐字节相同，`2560×1440`、464,291 字节、SHA-256 `a3ab86f404718ec0a2259a152310eb816066922966bf5596eb9448022002a883`。第一张画面中的台词正是“孩子们，我终于回到了你们的身边”。
 - 发布工具及图片制作工具 `py_compile` 通过；缩略图已目视检查人物、球衣及广告，游戏截图未做重绘或压缩转换。
 - 正式包、两张图片与发布工具已由提交 `9d754e15718911f85b48a05f0541d9977ec4d930` 推送到 `origin/main`。BBCode 使用此不可变提交的图片 URL；两条 URL 均返回 `200 image/jpeg`，没有重定向，下载字节 SHA-256 与仓库截图相同。BBCode 为 2,248 UTF-8 字节，包含两组完整 `[img]` 标签。
+
+## `0.1.1` 首次公开发布与远端核验
+
+- 发布前只读预检针对已推送提交 `beebeb108906a7e0fc7353ae8fe793bd225a6d64` 通过：包内只有四个白名单文件，版本、描述符、DDS SHA、BBCode 长度及实机截图原始字节均符合计划。Steamworks 初次连接读到客户端处于离线模式，**没有创建物品**；原 `WantsOfflineMode=1` 已备份，临时切换在线并重启 Steam 后，`AppID=281990`、`BLoggedOn=true`。
+- 2026-09-25 14:07 UTC，Steamworks UGC v016 `CreateItem` 与 `SubmitItemUpdate` 均返回 `result=1`，新 ID 为 [`3807817109`](https://steamcommunity.com/sharedfiles/filedetails/?id=3807817109)，两个法律协议标志均为 false。发布代码的更新目标只取本次 `CreateItem` 返回值；既有 `3807768508` 和只读上游 `3710613857` 不在更新路径。回执在 `evidence/v0.1.1/publish-state.json`。
+- 匿名 Steam 详情接口返回 `result=1`、`visibility=0`、`banned=0`，游戏 App ID `281990`，标题逐字正确；远端说明与仓库 `workshop/description.bbcode` 逐字一致，SHA-256 `bf52dad7b935493c2ec8daef1583c318354974c9d213ea7b41cf57ee7cf80392`。公开页面返回 HTTP 200 并显示指定台词；公开 Change Note 页面返回 HTTP 200，包含本版 `[v0.1.1]` 更新说明**完整原文**。
+- Steam 图片服务器回读的**主预览**与 `workshop/media/01-children-returned.jpg` 字节完全一致（464,545 字节，SHA-256 `ff0a65dce629a69c1d2afcb1c1b35a84f57de8f619b2e9e9f8f50df4ec74fabf`）；Steamworks 详情查询报告恰好一张附加图片，其 URL 回读与 `02-first-dialogue.jpg` 字节完全一致（464,291 字节，SHA-256 `a3ab86f404718ec0a2259a152310eb816066922966bf5596eb9448022002a883`）。图片核验在 `evidence/v0.1.1/workshop-publication.json`。
+- 在全新的 SteamCMD 目录和空工坊缓存中以 `anonymous` 下载新物品，输出 `Success. Downloaded item 3807817109 (1205475 bytes)`；下载目录有四个文件，与正式包的文件名、总字节及逐文件 SHA-256 完全相同，缺失、额外和哈希差异均为 0。SteamCMD 首次运行同时两次自更新，包装进程最终退出码为 1；只有在看到下载成功并独立比较文件树后才确认远端包，通过证据见 `evidence/v0.1.1/steamcmd-roundtrip.json`。
+- 匿名查询另外两个物品：`3807768508` 的 `time_updated=1790338586`、内容句柄 `2663683297693942427` 与此前本仓库发布回执一致；`3710613857` 的 `time_updated=1783740925`、内容句柄 `3603172186605630693`，未因本次上传而变化。
+- 新物品 ID 保存在 `workshop/item-id.txt`，而发布包描述符维持与远端逐字节相同。下一次远端更新须使用新版本和新 changelog，不能复用 `0.1.1`。R2/R4 仍未完成全矩阵实机验收，工坊说明已如实披露。
+- 远端核验完成后正常关闭 Steam，使用此前备份逐字节恢复 `loginusers.vdf`，确认 `WantsOfflineMode=1` 并移除临时备份，再隐藏重启客户端；连接日志再次出现 `Logged Off`。后续重复读取社区 HTML 时遇到 HTTP 429 限流，不影响此前已取得的 HTTP 200 页面/完整 Change Note 检查，亦未执行任何重新上传。
