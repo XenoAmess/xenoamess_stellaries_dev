@@ -21,7 +21,7 @@
 - [Workshop 2976454692 图片素材审计与翻新规格](workshop-2976454692-art-refresh-audit.md)
 - [Workshop 2976454692 小灰人物美术生成计划](workshop-2976454692-gray-character-art-plan.md)
 - [灰风美化独立 Mod：实现、验收与发布方案](gray-wind-beautification-release-and-test-plan.md)
-- [合成女王美化独立 Mod：资源清单、实施计划与测试策略](../synthetic_queen_beautification/docs/README.md)
+- [合成女王美化独立 Mod：资源清单、验收与工坊发布](../synthetic_queen_beautification/docs/README.md)
 
 ## 知识归档原则
 

@@ -48,3 +48,12 @@
 已正常关闭客户端、备份 `loginusers.vdf` 并只将该账号的 `WantsOfflineMode` 从 `1` 改为 `0`；重启后连接日志出现 `Logged On` 和登录响应 `OK`。Steam API 读回 `AppID=281990`、`BLoggedOn=true`。上传工具现在会在创建物品前验证这两个条件；待发布与远端核验完成后恢复原离线偏好。
 
 在线后第二次创建仍返回无效句柄。调查游戏自带 `steam_api64.dll` 的导出跳转表：`CreateItem` 跳至虚表第 40 槽，`ReleaseQueryUGCRequest` 跳至第 18 槽，而当前公开 UGC v017 头文件对应第 41、19 槽，说明它不匹配此 DLL。切换只读探针到 `STEAMUGC_INTERFACE_VERSION016` 后，`GetNumSubscribedItems=21` 与客户端工坊日志一致，UGC 查询句柄可正常释放。根因是绑定了过新的 UGC 接口版本；工具须改用 v016 后再重试创建。两次失败均未生成物品 ID 或上传状态文件。
+
+## `0.1.0` 首发结果
+
+- 2026-09-25 12:16:26 UTC，Steamworks UGC v016 在当前账号下创建并提交了全新公开物品 [`3807768508`](https://steamcommunity.com/sharedfiles/filedetails/?id=3807768508)。`CreateItem` 与 `SubmitItemUpdate` 均返回 `result=1`、同一新 ID，两个法律协议标志均为 false。更新目标只取本次 `CreateItem` 的返回值，没有向只读上游 `3710613857` 提交更新。
+- 匿名公开详情回读 `result=1`、`visibility=0`、`banned=0`、应用 ID `281990`、标题与描述符完全一致，内容大小 1,256,486 字节，内容句柄 `2663683297693942427`。远端 BBCode 的 UTF-8 SHA-256 为 `41391c9cbf27cb37b033e5ddfa46da32f108305f9d193468a22a153977f1da78`，与仓库 `workshop/description.bbcode` 逐字一致；公开改动说明页面显示 `[v0.1.0]`。
+- 主缩略图从 Steam 图片服务器取回后与 `mod/thumbnail.png` 字节完全一致。工坊图片栏有 3 张附加截图，从 Steam 图片服务器取回均与 `workshop/media/` 对应 JPEG 字节完全一致。正文三张图片的固定 Git URL 亦返回 `200 image/jpeg`。
+- 独立 SteamCMD 以 `anonymous` 从空缓存下载新物品，取得 4 个文件、1,256,486 字节；与仓库 `mod/` 文件集合及逐文件 SHA-256 对比，缺失 0、额外 0、哈希差异 0。首次 SteamCMD 自更新时匿名会话超时，更新结束后重试成功；仅成功重试的文件计入远端包验收。
+- 发布后正常关闭 Steam、只将 `WantsOfflineMode` 改回原值 `1`，移除临时配置备份并重启；连接日志再次显示 `Logged Off`，原有离线偏好已恢复。
+- [创建与提交回执](../evidence/v0.1.0/publish-state.json)、[匿名页面与图片核验](../evidence/v0.1.0/workshop-publication.json)、[SteamCMD 逐文件比对](../evidence/v0.1.0/steamcmd-roundtrip.json)保留完整证据。**本次公开发布成功；R2/R4 仍未完成全矩阵实机验收，后续须继续补测。**
