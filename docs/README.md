@@ -23,6 +23,7 @@
 - [灰风美化独立 Mod：实现、验收与发布方案](gray-wind-beautification-release-and-test-plan.md)
 - [合成女王美化独立 Mod：资源清单、验收与工坊发布](../synthetic_queen_beautification/docs/README.md)
 - [合成女王替换·牢大：独立 Mod 实施与测试计划](../synthetic_queen_laoda_replacement/docs/README.md)
+- [Stellaris 4.5.1 合成女王肖像文件编码与静态验收](stellaris-4.5.1-cetana-portrait-encoding.md)
 
 ## 知识归档原则
 

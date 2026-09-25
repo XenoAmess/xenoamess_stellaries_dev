@@ -4,15 +4,17 @@
 
 | 编号 | 检查 | 通过标准 |
 | --- | --- | --- |
-| S1 | 参考与生成链 | ZIP 内唯一 JPG 的尺寸和 SHA-256 与计划一致；EvoLink 脱敏请求、Prompt、task ID 和原始 PNG 可追溯；人物与球衣保持参考图原样，胸前「冰红茶」「康师傅」广告文字、商标、图案及排版准确且未被重绘成伪文字；只移除蓝底与右下角水印；不泄漏密钥或签名 URL。 |
+| S1 | 参考与生成链 | ZIP 内唯一 JPG 的尺寸和 SHA-256 与计划一致；EvoLink 脱敏请求、Prompt、task ID、原始 PNG、图层坐标可追溯；人物与球衣保持参考图原样，胸前「冰红茶」「康师傅」广告文字、商标、图案及排版准确且未被重绘成伪文字；如使用原图 RGB 与 EvoLink Alpha 配准，记录对应关系并确认广告像素确实来自原图；只移除蓝底与右下角水印；不泄漏密钥或签名 URL。 |
 | S2 | 真实透明度 | 原始图和 800×350 预览为 RGBA，四角 Alpha 为 0；记录 Alpha extrema 与 `A>0/16/127` 包围盒，在黑、白、蓝灰三底上无可见矩形场景。 |
 | S3 | DDS 与引用 | DDS 为 800×350 straight-alpha BGRA8；解码后与预览逐像素一致；10 个原版键均指向存在的新 DDS，问候音未变。 |
-| S4 | P 语言 | 首先运行 `C:\workspace\open_kaishek` 的 Stellaris 4.4.6 profile：肖像入口 `VALIDATED`、0 语法/语义诊断；描述符解析 0 diagnostics、round trip。 |
+| S4 | P 语言 | 先补齐并验证 `C:\workspace\open_kaishek` 中范围仅限合成女王原版肖像文件的 Stellaris 4.5.1 profile，并使其拒绝游戏不接受的 UTF-8 BOM；然后以该 profile 验收生产肖像入口：无 BOM、`VALIDATED`、0 语法/语义诊断；描述符解析 0 diagnostics、round trip。旧 4.4.6 profile 的已通过结果仅作回归参考。 |
 | S5 | 包隔离与版本 | `mod/` 文件白名单、`VERSION`/描述符/changelog 均为 `0.1.0-rc.1`；只启用本 Mod，不含其他 Mod 文件或 Workshop ID。 |
 
 ## 简体中文实机
 
-沿用本仓库已冻结的合成女王危机对话种子、隔离用户数据目录与 Stellaris `Pegasus v4.4.6 (fdde)`；语言仅 `l_simp_chinese`。检查游戏实际加载的本 Mod 树哈希、存档哈希、截图、进程退出和 `error.log`。不会把旧 Mod 截图当作本 Mod 的实机证据。
+沿用本仓库已冻结的合成女王危机对话种子、隔离用户数据目录与当前 Stellaris `Cygnus v4.5.1 (358e)`；语言仅 `l_simp_chinese`。先核对旧种子存档是否能被 4.5.1 加载；若不兼容，记录阻塞并为当前版本制作新种子。检查游戏实际加载的本 Mod 树哈希、存档哈希、截图、进程退出和 `error.log`。不会把旧 Mod 截图当作本 Mod 的实机证据。
+
+本机 4.5.1 的 `ImageGrab` 抓桌面会得到过期的 Steam 画面，不能作为游戏截图。使用 Steam `F12` 截图取得实际 GPU 画面，按原文件字节复制到 `evidence/portrait-acceptance-rc1/` 作为精简证据；隔离运行产生的完整 `evidence/runtime/` 保留在本机并加入 `.gitignore`。截图须与本次进程、Mod 树哈希、操作时间及日志对应，不把桌面抓图冒充游戏画面。
 
 | 编号 | 场景 | 判定 |
 | --- | --- | --- |
