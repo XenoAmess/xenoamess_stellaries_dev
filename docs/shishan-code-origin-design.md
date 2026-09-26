@@ -173,7 +173,7 @@
 
 - 起源、两种物种特质、五阶段、局势进度明细、三种项目名称与成本、建筑/岗位、白绮身份/死亡/复活、四组对白、复发结果必须有简体中文可读文本；原始 key 不得泄漏。
 - 建议新 Mod 内按 `governments/civics`、`traits`、`situations`、`special_projects`、`buildings`、`pop_jobs`、`events`、`on_actions`、`script_values`、`scripted_effects`、`static_modifiers`、`localisation` 拆分，所有脚本与本地化键用 `shishan_code_` 前缀。目录名以实际 Stellaris 版本支持的路径为准。
-- 起源图、局势图、白绮肖像和图标需另立美术清单；设计阶段可以先用原版资源作占位，但正式发布前应完成版权与显示检查。
+- 起源、局势、项目、建筑、岗位、特质、白绮肖像与 Mod 封面的数量、尺寸参照和复用方案见[美术资源清单](shishan-code-origin-art-assets.md)；设计阶段可以先用原版资源作占位，正式发布前完成来源与显示检查。
 - 沿用本仓库语言规则：游戏、UI、OCR、存档回归只用 `l_simp_chinese`；其他官方语言如提供译文，只做键、编码、引用和简中占位泄漏静态校验，并明确写「静态校验通过／运行时不在范围内」。
 
 ## 8. 验收标准与实施前验证
