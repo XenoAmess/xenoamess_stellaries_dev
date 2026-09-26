@@ -13,6 +13,7 @@
 - [「屎山代码」独立 Mod：需求记录](shishan-code-origin-requirements.md)
 - [「屎山代码」独立 Mod：详细设计](shishan-code-origin-design.md)
 - [「屎山代码」起源：首轮平衡性评估](shishan-code-origin-balance-review.md)
+- [「屎山代码」独立 Mod：测试与验收方案](shishan-code-origin-acceptance-plan.md)
 - [迭代 1 需求文档](iteration-1-requirements.md)
 - [迭代 1：当前版本实机基线与回归夹具记录](iteration-1-current-version-baseline.md)
 - [迭代 1：Stellaris 实机回归方案](iteration-1-regression-plan.md)
