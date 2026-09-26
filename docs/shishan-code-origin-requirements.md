@@ -51,6 +51,8 @@
 - 持续优化触发局势复发时，移除「重构完成」并恢复「屎山代码」。
 - 研究所每颗星球不限建造数量。
 - 「屎山维护研究所」游戏开局即解锁；进度减速每 `100` 按岗位面板已分配劳动力计算。
+- 白绮**禁止玩家主动解雇**；意外死亡仍按既定费用与成长保留规则复活。
+- 独立 Mod 首版提供当前 Stellaris 全部官方语言的本地化。当前安装的 `localisation/languages.yml` 与目录列出 10 种：`l_english`、`l_braz_por`、`l_german`、`l_french`、`l_spanish`、`l_polish`、`l_russian`、`l_simp_chinese`、`l_japanese`、`l_korean`。仅简体中文进入实机回归，其余九种进行静态校验。
 
 ## 4. 需求出处与实施状态
 
