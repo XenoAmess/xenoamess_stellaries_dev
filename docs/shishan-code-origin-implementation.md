@@ -10,6 +10,8 @@
 
 验收标准：V2 成品左右发饰均与新设定图一致、清晰且在同一视觉水平线上；背景 alpha 真透明，发梢没有明显灰紫色软边。领袖列表和详情卡均显示连续的头肩与躯干，没有方块、分离肢体、丢脸或大幅裁切；开局事件创建白绮与复活后的肖像相同。静态检查与 `open_kaishek` 检查通过，再用简体中文实机截图验证。
 
+V2 图已从单图 ZIP 取出并核对。EvoLink `gpt-image-2.5-sunburst` 第一张输出存于 `assets/shishan-code-origin/generated/A10-attempt-03`，发饰对称性和五官基本符合目标；但 PNG 左下角 alpha 达 244，存在半透明背景残留。须再经 EvoLink Layerize 提取人物，检查四角 alpha 与发缘后方可接入 DDS。
+
 ## 目标与范围
 
 按[需求记录](shishan-code-origin-requirements.md)、[详细设计](shishan-code-origin-design.md)与[验收方案](shishan-code-origin-acceptance-plan.md)制作独立 Mod `shishan_code_origin`。交付起源、物种特质、五阶段局势、来源互斥的产出修正、重复科研项目、维护建筑与岗位、白绮事件与领袖、10 种官方语言文本及已归档美术的游戏内贴图。使用独立描述符、`VERSION` 和更新日志；不改现有「无限岗位」Mod，不发布 Steam。
