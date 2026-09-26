@@ -24,6 +24,10 @@ SOURCE_BASE = (
     "https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/"
     + SOURCE_COMMIT + "/assets/shishan-code-origin/generated/"
 )
+PORTRAIT_V2_URL = (
+    "https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/"
+    "7bcbbde/assets/shishan-code-origin/generated/A10-attempt-02/original.png"
+)
 SUBJECTS = {
     "A01": "the single complete central patched processor origin symbol, including all attached gold cables and floating violet circuit shards",
     "A03": "the single complete central broken robotic processor trait emblem, including its cracked ceramic shell and attached tangled cables",
@@ -47,16 +51,22 @@ def prompt_for(asset_id: str) -> str:
     )
 
 
-def attempt_dir(asset_id: str) -> Path:
-    return ART / "generated" / f"{asset_id}-layerize-01"
+def attempt_dir(asset_id: str, portrait_v2: bool = False) -> Path:
+    name = "A10-layerize-02" if portrait_v2 else f"{asset_id}-layerize-01"
+    return ART / "generated" / name
 
 
-def submit(asset_id: str) -> None:
-    attempt = attempt_dir(asset_id)
+def submit(asset_id: str, portrait_v2: bool = False) -> None:
+    if portrait_v2 and asset_id != "A10":
+        raise ValueError("--portrait-v2 is only valid for A10")
+    attempt = attempt_dir(asset_id, portrait_v2)
     if attempt.exists():
         raise RuntimeError(f"Attempt already exists: {attempt}")
-    input_url = SOURCE_BASE + f"{asset_id}-attempt-01/original.png"
-    prompt = prompt_for(asset_id)
+    input_url = PORTRAIT_V2_URL if portrait_v2 else SOURCE_BASE + f"{asset_id}-attempt-01/original.png"
+    prompt = (
+        (ART / "prompts" / "A10-vivhite-layerize-hair-edge-v2.txt").read_text(encoding="utf-8").strip()
+        if portrait_v2 else prompt_for(asset_id)
+    )
     public = {
         "endpoint": API + "/images/generations",
         "model": "doubao-seedream-5.0-pro-layerize",
@@ -107,8 +117,8 @@ def result_items(value: object) -> list[dict]:
     return []
 
 
-def poll(asset_id: str) -> str:
-    attempt = attempt_dir(asset_id)
+def poll(asset_id: str, portrait_v2: bool = False) -> str:
+    attempt = attempt_dir(asset_id, portrait_v2)
     status_file = attempt / "result.status.json"
     if status_file.exists():
         old = json.loads(status_file.read_text(encoding="utf-8"))
@@ -173,16 +183,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("action", choices=("submit", "submit-all", "poll", "poll-all"))
     parser.add_argument("asset_id", nargs="?", choices=ASSETS)
+    parser.add_argument("--portrait-v2", action="store_true")
     args = parser.parse_args()
     if args.action in ("submit", "poll") and not args.asset_id:
         parser.error("asset_id required")
+    if args.portrait_v2 and args.action in ("submit-all", "poll-all"):
+        parser.error("--portrait-v2 requires a single A10 task")
     if args.action == "submit":
-        submit(args.asset_id)
+        submit(args.asset_id, args.portrait_v2)
     elif args.action == "submit-all":
         for asset_id in ASSETS:
             submit(asset_id)
     elif args.action == "poll":
-        print(f"{args.asset_id}: {poll(args.asset_id)}", flush=True)
+        print(f"{args.asset_id}: {poll(args.asset_id, args.portrait_v2)}", flush=True)
     else:
         pending = set(ASSETS)
         deadline = time.monotonic() + 1800
