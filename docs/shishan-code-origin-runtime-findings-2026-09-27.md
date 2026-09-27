@@ -126,3 +126,9 @@ DirectX 诊断文件 `_runtime/shishan_code/dxdiag_20260927.txt` 报当前系统
 只读驱动清单补充：`pnputil /enum-drivers` 把当前 NVIDIA 显示驱动列为 `oem13.inf / nvmsoi.inf`，版本 `32.0.15.8180`，签名者为 `NVCleanstall Driver Modding Authority`；这解释了 DXDiag 报非 WHQL 签名，却不能证明白屏的成因。机器还有 Oray 虚拟显示驱动包，但当前 `Get-PnpDevice -Class Display` 只列出已启动的 RTX 4060。考虑到这台机器使用虚拟化 GPU 和远程桌面，替换显示驱动比单次适配器重启更可能使桌面不可用，因此必须按用户答复执行。
 
 同时只读复核了起源条件：本 Mod 的 `species_archetype = { value = MACHINE }` 与原版 4.5.1 `origin_post_apocalyptic_machines` 的机械主体物种条件一致；原版其他起源的 `swap_type` 明确把 `is_individual_machine` 与 `is_machine_empire` 放在同一机械使用路径。这个静态对照支持起源入口允许两类机械帝国的设计，但尚不能替代个体机械帝国建国界面的实机点击验收。
+
+下一项非侵入式图形对照：用系统自带 WPF/Direct3D 桌面组件显示一个纯色测试窗口并截图，再关闭该窗口。若它也无法绘制，说明故障可在 Stellaris 之外复现；若它绘制正常，只能说明一般桌面合成可用，不能据此判定 Stellaris 或 Mod 的根因。此测试不改驱动与游戏文件。
+
+WPF 默认渲染测试窗口实际只显示白色客户区，预期的紫色背景与“WPF RENDER TEST”文字均未出现，证据 `_runtime/shishan_code/wpf_probe.png`。这在独立于 Stellaris 的桌面应用上复现了“窗口边框可见、客户区内容不绘制”的同类症状。下一步将同一 WPF 测试显式切换为软件渲染，比较截图；若软件渲染正常而默认模式失败，可进一步定位到本机硬件图形呈现路径，但仍不能仅据此锁定具体驱动文件。
+
+软件渲染对照 `_runtime/shishan_code/wpf_probe_software.png` **正常显示紫色背景与白色文字**；同一个 WPF 程序的默认硬件渲染为白色。此独立于游戏的 A/B 对照把故障定位到当前 Windows 硬件图形呈现路径或其驱动/虚拟化链路，而不是 Stellaris Mod 脚本本身。它不能证明此前已运行中的旧 Stellaris 会话停止刷新与 Mod 毫无关系，但明确说明现在的全新原版与有 Mod 对照都不具备图形实机验收条件。待用户选择显示设备修复方式后，先重复 WPF 默认渲染，再测试无 Mod 游戏菜单；只有两者恢复，才继续 Mod 验收。
