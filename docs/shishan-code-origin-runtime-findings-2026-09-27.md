@@ -132,3 +132,7 @@ DirectX 诊断文件 `_runtime/shishan_code/dxdiag_20260927.txt` 报当前系统
 WPF 默认渲染测试窗口实际只显示白色客户区，预期的紫色背景与“WPF RENDER TEST”文字均未出现，证据 `_runtime/shishan_code/wpf_probe.png`。这在独立于 Stellaris 的桌面应用上复现了“窗口边框可见、客户区内容不绘制”的同类症状。下一步将同一 WPF 测试显式切换为软件渲染，比较截图；若软件渲染正常而默认模式失败，可进一步定位到本机硬件图形呈现路径，但仍不能仅据此锁定具体驱动文件。
 
 软件渲染对照 `_runtime/shishan_code/wpf_probe_software.png` **正常显示紫色背景与白色文字**；同一个 WPF 程序的默认硬件渲染为白色。此独立于游戏的 A/B 对照把故障定位到当前 Windows 硬件图形呈现路径或其驱动/虚拟化链路，而不是 Stellaris Mod 脚本本身。它不能证明此前已运行中的旧 Stellaris 会话停止刷新与 Mod 毫无关系，但明确说明现在的全新原版与有 Mod 对照都不具备图形实机验收条件。待用户选择显示设备修复方式后，先重复 WPF 默认渲染，再测试无 Mod 游戏菜单；只有两者恢复，才继续 Mod 验收。
+
+在等待显示设备操作授权时，尝试一个更窄、可撤销的替代方案：本机自带的 Microsoft DirectX Control Panel 可能允许**仅对 Stellaris 可执行文件**强制 WARP 软件光栅化。先检查当前控制面板设置并记下原值，再只添加 `stellaris.exe` 且只启用 `Force WARP`，使用新的无 Mod、低画质、窗口化隔离配置验证主菜单是否可见；测试结束无论结果均从控制面板移除这项覆盖并复核设置恢复。WARP 性能可能很低，若连原版菜单都不稳定或测试超时，不把它用于 Mod 实机验收，也不改动系统显示驱动。
+
+图形控制面板 `DXCpl.exe` 自身窗口客户区也只呈黑色，故改用微软同套工具 `d3dconfig.exe` 的命令行接口。初始状态是 `apps=<no apps>`、`force-warp=false`。仅登记 `stellaris.exe` 后启用 `force-warp=true`，并以 `1280×720`、窗口化、DX11、低画质、无 Mod 的新目录 `vanilla_warp_1280` 启动。进程约 90 秒完成初始化，CPU 累计约 671 秒（软件渲染明显繁重），但仍没有可见主菜单；截图 `_runtime/shishan_code/vanilla_warp_1280_80s.png` 为黑色桌面/窗口，游戏窗口实际位于 `(632,329)-(1928,1088)`。正常关闭游戏后，`d3dconfig apps` 再次为 `<no apps>`，`device` 中 `force-warp=false`、特性级别无限制，均恢复原值。WARP 不能作为本机实机验收替代路径；这也说明问题可能涉及窗口合成/呈现环节，而不只是 Stellaris 的 3D 光栅化。
