@@ -96,3 +96,29 @@ Steam 独立对照已由开发侧执行：`steam.exe -applaunch 281990` 正常�
 同日静态资源审计：原版 `common/strategic_resources/00_strategic_resources.txt` 的四种可持续产出稀有资源（活体金属、暗物质、纳米机器、文物）此前漏于本 Mod 的阶段修正；`logs/script_documentation/modifiers.log` 确认四个 `country_*_produces_mult` 修正键由引擎生成。先更新设计与 RS 验收清单，再在 I/III/IV/V 四阶段补齐数值。四个原版英文显示词条缺失，因此新增十种语言的显示键；九种外语由 MiniMax 候选生成，其中日语初稿出现简中字形“产出”，经 MiniMax 二次生成改为“生産量”。候选 JSON 保存在本机 `_runtime/shishan_code/resource_modifier_minimax*.json`；资源名占位保持原版 `$资源键$`。本次 `open_kaishek` 包级复检 `PASS`（19/19 脚本、13 DDS、164 本地化键），翻译审计八种非中英语言的英文残留与汉字占位均为零。四种资源的实际产出范围仍待游戏恢复后按 RS-02 实测。
 
 来源类别再核对：4.5.1 `economic_categories/00_common_categories.txt` 中 `planets`、`stations`、`megastructures` 和 `country_base` 是 `country` 后代；岗位、采集站、研究站分别通过 `planets` 或 `stations` 继承。`monthly_trades`、`subject_tax` 与 `trade_policy` 没有 `country` 父类；`defines/00_defines.txt` 把每月市场交易、附庸税指向前两者。这支持当前单键方案的来源隔离预期，但不等于引擎运行时已验证，尤其不能证明贸易协定是否完全排除。
+
+## 2026-09-27：重启后图形环境排查续篇
+
+目标是让无 Mod 原版重新绘制主菜单，以便继续简中实机验收。范围仅限本机图形环境和全新隔离游戏配置；不调整 Mod 玩法脚本。先分别关闭 Steam 的 Stellaris 游戏叠加界面与 NVIDIA 信息浮窗，用无 Mod 隔离配置启动；若仍空白，则恢复原设置。随后暂时移走 Steam 的 Stellaris 着色器缓存，用新的无 Mod 配置启动并观察主菜单、进程、日志；测试结束将原缓存原位恢复。若上述均失败，再测试 Stellaris 程序的 Windows“禁用全屏优化”兼容性标志，并在测试后恢复原注册表值。每轮验收标准为无 Mod 主菜单实际可见、至少能截取菜单画面；仅出现进程、窗口或启动计时结束均不算通过。所有配置恢复情况和剩余阻塞应记入本节。
+
+Steam Stellaris 专属叠加界面关闭后，原版仍未显示菜单。再关闭 NVIDIA 信息浮窗并用全新无 Mod 目录 `vanilla_no_overlays` 启动，`time.log` 报约 88 秒启动结束、进程增长至约 2.7 GB，窗口仍未绘制菜单；截图 `_runtime/shishan_code/vanilla_no_overlays.png`。NVIDIA 叠加进程在关闭设置后消失，但游戏进程仍加载 `nvspcap64.dll` 与 `gameoverlayrenderer64.dll`，因此这只能排除“关闭两个 UI 开关即可恢复”的简单情况。测试后 NVIDIA 信息浮窗和 Steam 游戏叠加界面均已恢复为开启，游戏进程已关闭。
+
+Steam 的 `steamapps/shadercache/281990` 原缓存先移动至同级备份，原版 `vanilla_fresh_steam_shadercache` 启动后生成了新缓存，仍未显示主菜单。新缓存移动到独立同级目录，原缓存已恢复到原路径，未删除任何旧缓存。NVIDIA `DXCache` 因访问被拒绝而未移动或改动。Windows 应用与系统事件日志在这些启动期间没有图形驱动复位或游戏崩溃记录。图形窗口前后顺序、焦点和命中测试证实 Stellaris 窗口存在并能成为前台，但屏幕截取显示下方 Steam 页面，`PrintWindow` 只得黑色；这表明“可见窗口”不能替代渲染验收。
+
+Windows 针对 `stellaris.exe` 的 `~ DISABLEDXMAXIMIZEDWINDOWEDMODE` 兼容标志也做了单次无 Mod 测试：全新隔离目录 `vanilla_fullscreen_opt_off` 在 `2560×1440`、DX11 下启动约 87 秒，仍未绘制主菜单，截图 `_runtime/shishan_code/vanilla_fullscreen_opt_off.png`。测试后原版进程正常关闭，该兼容标志已从当前用户注册表移除；原有 OneDrive 标志未动。
+
+DirectX 诊断文件 `_runtime/shishan_code/dxdiag_20260927.txt` 报当前系统为 Windows 10 19045、NVIDIA RTX 4060、驱动 `32.0.15.8180`、DirectX 12 和 D3D 11_0 及以上特性级别；同时报该显示驱动文件未经 WHQL 签名、设备虚拟化类型为 `Paravirtualization`。这两项是图形环境的诊断线索，**目前没有证明它们导致 Stellaris 白屏**；系统事件日志也未记录对应的驱动复位。下一项可逆对照是在正常退出 Steam 后直接启动一份新的无 Mod 配置，确认 Steam 进程与注入层是否影响窗口绘制，然后恢复 Steam 离线会话。成功标准仍是实际绘制主菜单。
+
+该无 Steam 进程对照 `vanilla_no_steam_process` 已执行：Steam 使用自身退出命令正常停止，游戏直接运行时未自动拉起 Steam；`time.log` 记录约 81.5 秒启动完成，但主菜单仍不可见，截图 `_runtime/shishan_code/vanilla_no_steam_process.png` 可见下方桌面应用。游戏已正常关闭，Steam 已重新打开且 UI 确认为离线模式。由此排除“Steam 进程正在运行”是这轮白屏的必要条件，不能排除安装文件或其他图形钩子问题。
+
+在等待用户对 Steam 上线完成官方文件验证的答复期间，补做一项**只读、离线、有限范围**的安装完整性调查：读取 Steam 本地 `appmanifest_281990.acf` 指向的已安装 depot manifest，按 [SteamTracking 的 manifest protobuf 定义](https://github.com/SteamTracking/Protobufs/blob/master/steam/content_manifest.proto) 提取至少 `stellaris.exe` 及关键启动资源文件的 SHA-1，与本地文件比对。若本地 manifest 的路径加密、缺失或内容不匹配，则如实记录；即使比对通过，也不能替代 Steam 完整文件验证或证明运行时能绘制菜单。调查脚本和结果保存在被忽略的 `_runtime` 目录，不改 Steam 文件。
+
+离线抽查成功解析当前 `appmanifest_281990.acf` 引用的基础游戏 depot `281991_4474190844677920248`（43905 项）和可执行文件 depot `281992_4855157871014382851`（19 项），文件名未加密。`stellaris.exe`、`PDXSDK.dll`、`steam_api64.dll`、`nakama-sdk.dll` 和 `checksum_manifest.txt` 五个关键文件 SHA-1 均与本地清单一致，结果 `_runtime/shishan_code/offline_manifest_check_result.json`。为排查资源文件局部损坏，进一步对这两个基础 depot 的**全部普通文件**执行只读 SHA-1 比对；跳过目录，严格限制清单路径在 Stellaris 安装目录内，记录匹配、缺失与不匹配的数量和样例。该离线比对仍只证明本地文件与本地缓存清单一致，不等于 Steam 向服务器核验，也不能证明图形驱动正常。
+
+全量离线复核在处理 Steam manifest 的零字节占位文件后完成：基础资源 depot 的 `42795/42795` 普通文件、可执行文件 depot 的 `16/16` 普通文件全部匹配，缺失 `0`、内容不一致 `0`，合计读取约 29.98 GB；原始结果 `_runtime/shishan_code/offline_full_depot_check_result.json`。首次脚本把 6 个清单 SHA 字段为全零的零字节占位文件误报为不匹配；这些本地文件也确实是零字节，修正规则后重跑得到全通过。本地安装损坏不再是目前有证据支持的白屏解释；Steam 仍离线，官方验证仍未执行，但不必为了排除这项而立即上线。
+
+接着在全新无 Mod 隔离配置中测试游戏的真正独占全屏模式（`fullScreen=yes`、`borderless=no`、`2560×1440@60Hz`、DX11），并在进程运行时检查窗口的可见性、扩展样式及 DWM cloaked 属性。目的在于区分边框无全屏合成异常与窗口自身被隐藏；验收依旧要求实际主菜单画面可见，测试后恢复原桌面显示模式并正常关闭游戏。
+
+独占全屏 `vanilla_exclusive_fullscreen` 的启动计时约 94 秒，仍未绘制主菜单；截图 `_runtime/shishan_code/vanilla_exclusive_fullscreen.png` 只见下方 Steam 页面。游戏窗口报告 `visible=1`、`DWM cloaked=0`、矩形为 `2560×1440`，没有窗口被系统隐藏的迹象；但全屏启动把桌面显示模式切到了 `1024×768`，与配置中的 `2560×1440` 不符。游戏正常关闭后，已用显示模式枚举结果将桌面恢复为 `2560×1440@60Hz`。不能据此断言驱动是根因，但独占全屏并未恢复可见游戏画面。
+
+当前无 Mod 对照在原分辨率、窗口化、无边框全屏、独占全屏、DX11 与替代渲染器配置、无 Steam 进程、覆盖层关闭、着色器缓存重建、禁用全屏优化以及重启 Windows 后均无法显示主菜单；42,811 个基础文件与本地 depot 清单全部匹配。后续若要重置显示适配器或安装官方驱动，可能中断桌面会话；已将选项和风险提交用户选择，未在答复前执行。
