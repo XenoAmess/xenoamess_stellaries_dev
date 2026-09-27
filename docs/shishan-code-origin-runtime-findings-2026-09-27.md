@@ -86,3 +86,5 @@ Windows 图形驱动重置快捷键执行后，原版窗口仍为纯白。后续
 重启后 `EventLog` 服务已恢复 `Running`，但无 Mod 原版在全新隔离目录 `postreboot_vanilla_20260927_174842` 仍停在 `Done creating device` 后，进程内存增长至约 2.8 GB 后 CPU 基本空闲，主菜单未出现。系统显示从重启前 `2560×1440` 变为 `1024×768`；再以明确写入的 `windowed`、`1024×768`、简体中文配置启动第二个无 Mod 对照 `postreboot_vanilla_1024_20260927_175205`，游戏窗口仍是纯白客户区，截图 `_runtime/shishan_code/postreboot_vanilla_1024_window.png`，日志同样停止在创建图形设备后。两次进程均已正常发送窗口关闭消息退出。Windows 应用事件日志没有记录本轮 Stellaris 崩溃，内存仍有约 22 GB 可用。重启修复了 Event Log 服务，却未恢复当前自动化启动路径的游戏画面；现在等待用户从 Steam 启动原版做独立对照。
 
 日志口径修正：较早已成功进入游戏的隔离会话 `20260927T230000Z`，其 `system.log` 末行也是 `Done creating device`。因此“日志最后写到创建图形设备”**不能单独定位白屏发生在哪个初始化步骤**；白屏结论依赖无 Mod 对照窗口的实际截图、持续不出现主菜单、进程进入低 CPU 状态等观察。当前无 Mod 对照的 `error.log` 仅含缺失的旧 Workshop 项目路径，未记录本 Mod 的加载错误。
+
+重启后又用先前成功实机相同的 `tools/shishan_code/launch_probe.py`、简中、`-debug_mode` 和全新隔离目录 `postreboot_mod_20260927_180200` 启动当前提交的 Mod 副本。游戏内存增长约 2 GB，但游戏窗口未绘制主菜单或局势画面，仍不能执行互动验收；进程已正常关闭。与重启后两组无 Mod 对照一致，不能仅凭这个结果归因于本 Mod。主机当前处于 `1024×768` 显示会话，用户已被请从 Steam 入口手动启动原版作独立对照。
