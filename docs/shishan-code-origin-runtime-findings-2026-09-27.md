@@ -88,3 +88,11 @@ Windows 图形驱动重置快捷键执行后，原版窗口仍为纯白。后续
 日志口径修正：较早已成功进入游戏的隔离会话 `20260927T230000Z`，其 `system.log` 末行也是 `Done creating device`。因此“日志最后写到创建图形设备”**不能单独定位白屏发生在哪个初始化步骤**；白屏结论依赖无 Mod 对照窗口的实际截图、持续不出现主菜单、进程进入低 CPU 状态等观察。当前无 Mod 对照的 `error.log` 仅含缺失的旧 Workshop 项目路径，未记录本 Mod 的加载错误。
 
 重启后又用先前成功实机相同的 `tools/shishan_code/launch_probe.py`、简中、`-debug_mode` 和全新隔离目录 `postreboot_mod_20260927_180200` 启动当前提交的 Mod 副本。游戏内存增长约 2 GB，但游戏窗口未绘制主菜单或局势画面，仍不能执行互动验收；进程已正常关闭。与重启后两组无 Mod 对照一致，不能仅凭这个结果归因于本 Mod。主机当前处于 `1024×768` 显示会话，用户已被请从 Steam 入口手动启动原版作独立对照。
+
+Steam 独立对照已由开发侧执行：`steam.exe -applaunch 281990` 正常打开 Paradox Launcher，播放集显示“无 Mod”；点击“开始游戏”后原版 `stellaris.exe` 进程内存增长至约 2.85 GB、CPU 随后闲置，但游戏窗口依然未绘制主菜单。进程已正常关闭。这个对照排除了“只有隔离 `-userdir` 启动路径白屏”的判断。按 [Steam 官方本地文件验证说明](https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB//) 在客户端启动 Stellaris 安装文件验证；Steam 处于离线模式，UI 长时间停在 `0%`，`content_log.txt` 仅记录 `Start validating appID 281990` 和 `Update Queued`，未完成文件检查。下载队列中的该项现已手动暂停在 `0%`，避免离线状态意外变化后自动执行；已向用户询问是否允许 Steam 上线继续验证。
+
+将 Windows 显示模式恢复为先前成功实机使用的 `2560×1440@60Hz` 后，又启动全新、无 Mod 的 `vanilla_2560_after_reboot` 对照。`time.log` 记录启动初始化用时约 `85.9` 秒并结束，游戏窗口占满屏幕、在系统中为前台且可响应窗口消息，进程工作集约 `2.7 GB`；但窗口没有绘制主菜单，屏幕截取仍可见窗口下面的 Steam 页面，证据 `_runtime/shishan_code/vanilla_2560_after_reboot_focused.png`。关闭该进程后，Windows 系统/应用事件日志没有对应的显示驱动重置或游戏崩溃记录。由此排除“仅重启后分辨率变成 1024×768”导致白屏，但不能判定渲染故障的根因。
+
+同日静态资源审计：原版 `common/strategic_resources/00_strategic_resources.txt` 的四种可持续产出稀有资源（活体金属、暗物质、纳米机器、文物）此前漏于本 Mod 的阶段修正；`logs/script_documentation/modifiers.log` 确认四个 `country_*_produces_mult` 修正键由引擎生成。先更新设计与 RS 验收清单，再在 I/III/IV/V 四阶段补齐数值。四个原版英文显示词条缺失，因此新增十种语言的显示键；九种外语由 MiniMax 候选生成，其中日语初稿出现简中字形“产出”，经 MiniMax 二次生成改为“生産量”。候选 JSON 保存在本机 `_runtime/shishan_code/resource_modifier_minimax*.json`；资源名占位保持原版 `$资源键$`。本次 `open_kaishek` 包级复检 `PASS`（19/19 脚本、13 DDS、164 本地化键），翻译审计八种非中英语言的英文残留与汉字占位均为零。四种资源的实际产出范围仍待游戏恢复后按 RS-02 实测。
+
+来源类别再核对：4.5.1 `economic_categories/00_common_categories.txt` 中 `planets`、`stations`、`megastructures` 和 `country_base` 是 `country` 后代；岗位、采集站、研究站分别通过 `planets` 或 `stations` 继承。`monthly_trades`、`subject_tax` 与 `trade_policy` 没有 `country` 父类；`defines/00_defines.txt` 把每月市场交易、附庸税指向前两者。这支持当前单键方案的来源隔离预期，但不等于引擎运行时已验证，尤其不能证明贸易协定是否完全排除。
