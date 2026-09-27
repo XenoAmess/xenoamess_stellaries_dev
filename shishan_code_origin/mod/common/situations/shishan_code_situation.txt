@@ -1,0 +1,20 @@
+situation_shishan_code = {
+	picture = GFX_shishan_situation
+	category = negative
+	progress_direction = monodirectional
+	initial_progress = 0
+	permanent = yes
+	situation_log_category = empire_concerns
+	abort_trigger = { owner = { NOT = { has_origin = origin_shishan_code } } }
+	stages = {
+		shishan_code_stage_1 = { end = 250 icon = GFX_situation_stage_1 icon_background = GFX_situation_stage_frame_green modifier = { shishan_code_stage_1 = 1 } }
+		shishan_code_stage_2 = { end = 500 icon = GFX_situation_stage_2 icon_background = GFX_situation_stage_frame_blue }
+		shishan_code_stage_3 = { end = 750 icon = GFX_situation_stage_2 icon_background = GFX_situation_stage_frame_red modifier = { shishan_code_stage_3 = 1 } }
+		shishan_code_stage_4 = { end = 950 icon = GFX_situation_stage_3 icon_background = GFX_situation_stage_frame_red modifier = { shishan_code_stage_4 = 1 } }
+		shishan_code_stage_5 = { end = 1000 icon = GFX_situation_stage_3 icon_background = GFX_situation_stage_frame_red modifier = { shishan_code_stage_5 = 1 } }
+	}
+	monthly_progress = {
+		base = 0
+		modifier = { add = value:shishan_code_monthly_progress desc = shishan_code_monthly_speed }
+	}
+}

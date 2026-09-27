@@ -1,0 +1,18 @@
+origin_shishan_code = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_shishan_code.dds"
+	picture = GFX_shishan_origin
+	flags = { custom_start_screen }
+	description = "origin_shishan_code_effects"
+	negative_description = "origin_shishan_code_warning"
+	possible = {
+		species_archetype = { value = MACHINE }
+		is_nomadic = no
+	}
+	traits = { trait = trait_shishan_code }
+	modifier = {
+		ROBOT_species_trait_points_add = -6
+		ROBOT_species_trait_picks_add = 3
+	}
+	random_weight = { base = 0 }
+}

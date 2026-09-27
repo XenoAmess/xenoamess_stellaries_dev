@@ -1,0 +1,52 @@
+shishan_code_maintenance_cost = {
+	base = 0
+	add = this.shishan_code_maintenance_count
+	mult = 1000
+	add = 2000
+}
+
+shishan_code_clean_cost = {
+	base = 0
+	add = this.shishan_code_maintenance_count
+	mult = 2000
+	add = 8000
+}
+
+shishan_code_optimization_cost = {
+	base = 0
+	add = this.shishan_code_maintenance_count
+	mult = 2000
+	add = 4000
+}
+
+shishan_code_maintainer_reduction = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		trigger_scope = owner
+		parameters = { job = shishan_code_maintainer }
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		trigger_scope = owner
+		parameters = { job = shishan_code_maintainer_drone }
+		mode = add
+	}
+	divide = 100
+	floor = yes
+	mult = 0.1
+}
+
+shishan_code_monthly_progress = {
+	base = 5
+	add = owner.shishan_code_maintenance_count
+	subtract = value:shishan_code_maintainer_reduction
+	min = 0.2
+}
+
+shishan_code_social_penalty_count = {
+	base = 0
+	add = this.shishan_code_maintenance_count
+	max = 28
+}

@@ -1,0 +1,119 @@
+# Stellaris 4.5.1 can_dismiss_leader rule copied verbatim except the final Vivhite guard.
+# Recheck and regenerate on game updates.
+can_dismiss_leader = {
+	if = {
+		limit = {
+			leader_class = commander
+			is_idle = no
+			# Rulers and heirs can't be dismissed any way and can be non-idle
+			is_ruler = no
+			is_heir = no
+			NOT = {
+				exists = planet
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_fleet_control"
+			exists = fleet
+			fleet = {
+				controller = {
+					is_same_value = prev.owner
+					is_same_value = prevprev.owner
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				is_heir = yes
+				is_ruler = yes
+			}
+		}
+		custom_tooltip = {
+			always = no
+			fail_text = "can_not_dismiss_rulers"
+		}
+	}
+
+	if = {
+		limit = {
+			leader_class = scientist
+		}
+		custom_tooltip = {
+			fail_text = "can_not_dismiss_rift_explorer"
+			NAND = {
+				exists = fleet
+				fleet = {
+					has_fleet_order = explore_astral_rift_fleet_order
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			leader_class = commander
+		}
+		custom_tooltip = {
+			fail_text = "no_dismissing_tacs"
+			NOT = { has_trait = leader_trait_tactical_algorithms }
+		}
+	}
+	if = {
+		limit = {
+			has_leader_flag = manifesti_divine_leader
+		}
+		custom_tooltip = {
+			fail_text = "manifesti_leader_tt"
+			NOT = { has_leader_flag = manifesti_divine_leader }
+		}
+	}
+	if = {
+		limit = {
+			has_leader_flag = nomadic_princess # The princess should not be dismissed before finishing her event chain
+			owner = {
+				has_country_flag = hired_nomadic_princess
+			}
+		}
+		custom_tooltip = {
+			fail_text = "nomadic_princess_tt"
+			NOT = {
+				has_leader_flag = nomadic_princess
+				owner = {
+					has_country_flag = hired_nomadic_princess
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_leader_flag = eternal_chorus_researcher
+			owner = {
+				has_event_chain = arkship_eternal_chorus_chain
+			}
+		}
+		custom_tooltip = {
+			always = no
+			fail_text = "leader_no_dismiss_tt"
+		}
+	}
+	if = {
+		limit = {
+			has_leader_flag = diplomatic_envoy_official
+			owner = {
+				has_event_chain = arkship_diplomatic_envoy_chain
+			}
+		}
+		custom_tooltip = {
+			always = no
+			fail_text = "leader_no_dismiss_tt"
+		}
+	}
+	if = {
+		limit = { has_leader_flag = shishan_code_vivhite }
+		custom_tooltip = {
+			always = no
+			fail_text = shishan_code_vivhite_no_dismiss
+		}
+	}
+}

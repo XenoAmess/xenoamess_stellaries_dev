@@ -1,0 +1,94 @@
+trait_shishan_code = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine negative special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	species_possible_merge_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_shishan_code.dds"
+}
+
+trait_shishan_refactored = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special pop_output }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	species_possible_merge_remove = { always = no }
+	modifier = { pop_bonus_workforce_mult = 0.25 }
+	icon = "gfx/interface/icons/traits/trait_shishan_refactored.dds"
+}
+
+trait_shishan_iteration_output = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	triggered_species_modifier = {
+		potential = { always = yes }
+		pop_bonus_workforce_mult = 0.01
+		mult = from.shishan_code_iteration_output
+	}
+	icon = "gfx/interface/icons/traits/trait_shishan_refactored.dds"
+}
+
+trait_shishan_iteration_energy = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	triggered_species_modifier = {
+		potential = { always = yes }
+		planet_pops_robotics_upkeep_mult = -0.01
+		mult = from.shishan_code_iteration_energy
+	}
+	icon = "gfx/interface/icons/traits/trait_shishan_refactored.dds"
+}
+
+trait_shishan_iteration_assembly = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	triggered_species_modifier = {
+		potential = { always = yes }
+		pop_housing_usage_mult = -0.01
+		mult = from.shishan_code_iteration_assembly
+	}
+	icon = "gfx/interface/icons/traits/trait_shishan_refactored.dds"
+}
+
+trait_shishan_iteration_experience = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	triggered_species_modifier = {
+		potential = { always = yes }
+		researcher_jobs_bonus_workforce_mult = 0.01
+		mult = from.shishan_code_iteration_experience
+	}
+	icon = "gfx/interface/icons/traits/trait_shishan_refactored.dds"
+}

@@ -1,0 +1,346 @@
+namespace = shishan_code
+
+country_event = {
+	id = shishan_code.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_origin = origin_shishan_code }
+	immediate = {
+		if = {
+			limit = { NOT = { has_country_flag = shishan_code_initialized } }
+			set_country_flag = shishan_code_initialized
+			set_variable = { which = shishan_code_maintenance_count value = 0 }
+			start_situation = { type = situation_shishan_code }
+			if = {
+				limit = { NOT = { has_special_project = SHISHAN_CODE_MAINTAIN } }
+				enable_special_project = { name = SHISHAN_CODE_MAINTAIN owner = root }
+			}
+			if = {
+				limit = { NOT = { has_special_project = SHISHAN_CODE_CLEAN } }
+				enable_special_project = { name = SHISHAN_CODE_CLEAN owner = root }
+			}
+			country_event = { id = shishan_code.2 days = 3 }
+		}
+	}
+}
+
+country_event = {
+	id = shishan_code.2
+	title = shishan_code.2.name
+	desc = shishan_code.2.desc
+	picture = GFX_shishan_event
+	is_triggered_only = yes
+	option = { name = shishan_code.2.a country_event = { id = shishan_code.3 days = 2 } }
+}
+
+country_event = {
+	id = shishan_code.3
+	title = shishan_code.3.name
+	desc = shishan_code.3.desc
+	picture = GFX_shishan_event
+	is_triggered_only = yes
+	option = { name = shishan_code.3.a country_event = { id = shishan_code.4 days = 2 } }
+}
+
+country_event = {
+	id = shishan_code.4
+	title = shishan_code.4.name
+	desc = shishan_code.4.desc
+	picture = GFX_shishan_event
+	is_triggered_only = yes
+	option = {
+		name = shishan_code.4.a
+		if = {
+			limit = { NOT = { has_country_flag = shishan_code_vivhite_recruited } }
+			set_country_flag = shishan_code_vivhite_recruited
+			owner_main_species = { save_event_target_as = shishan_code_main_species }
+			create_leader = {
+				species = event_target:shishan_code_main_species
+				event_leader = yes
+				class = official
+				tier = leader_tier_legendary
+				name = "NAME_shishan_code_vivhite"
+				skill = 5
+				immortal = yes
+				randomize_traits = no
+				skip_background_generation = yes
+				custom_catch_phrase = shishan_code_vivhite_catch_phrase
+				custom_description = shishan_code_vivhite_backstory
+				traits = { 0 = leader_trait_shishan_code_vivhite }
+				gender = female
+				hide_age = yes
+				effect = {
+					set_owner = root
+					set_leader_flag = shishan_code_vivhite
+					change_leader_portrait = shishan_code_vivhite
+					save_event_target_as = shishan_code_vivhite@root
+				}
+			}
+			shishan_code_refresh_vivhite_effect = yes
+		}
+	}
+}
+
+country_event = {
+	id = shishan_code.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } }
+	immediate = {
+		change_variable = { which = shishan_code_maintenance_count value = 1 }
+		every_situation = {
+			limit = { is_situation_type = situation_shishan_code }
+			set_situation_progress = 0
+		}
+		shishan_code_award_reward = yes
+		shishan_code_refresh_vivhite_effect = yes
+		country_event = { id = shishan_code.11 days = 1 }
+		country_event = { id = shishan_code.12 }
+	}
+}
+
+country_event = {
+	id = shishan_code.11
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } }
+			if = {
+				limit = { NOT = { has_special_project = SHISHAN_CODE_MAINTAIN } }
+				enable_special_project = { name = SHISHAN_CODE_MAINTAIN owner = root }
+			}
+			if = {
+				limit = { NOT = { has_special_project = SHISHAN_CODE_CLEAN } }
+				enable_special_project = { name = SHISHAN_CODE_CLEAN owner = root }
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = shishan_code_refactored }
+			if = {
+				limit = { NOT = { has_special_project = SHISHAN_CODE_OPTIMIZE } }
+				enable_special_project = { name = SHISHAN_CODE_OPTIMIZE owner = root }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = shishan_code.12
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { any_owned_leader = { has_leader_flag = shishan_code_vivhite } }
+			random_list = {
+				1 = { country_event = { id = shishan_code.120 } }
+				1 = { country_event = { id = shishan_code.121 } }
+				1 = { country_event = { id = shishan_code.122 } }
+				1 = { country_event = { id = shishan_code.123 } }
+				1 = { country_event = { id = shishan_code.124 } }
+				1 = { country_event = { id = shishan_code.125 } }
+				1 = { country_event = { id = shishan_code.126 } }
+				1 = { country_event = { id = shishan_code.127 } }
+			}
+		}
+		else = { country_event = { id = shishan_code.129 } }
+	}
+}
+
+country_event = {
+	id = shishan_code.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } }
+	immediate = {
+		set_country_flag = shishan_code_refactored
+		every_situation = {
+			limit = { is_situation_type = situation_shishan_code }
+			destroy_situation = this
+		}
+		owner_main_species = {
+			change_species_characteristics = {
+				remove_trait = trait_shishan_code
+				add_trait = trait_shishan_refactored
+			}
+		}
+		abort_special_project = { type = SHISHAN_CODE_MAINTAIN }
+		country_event = { id = shishan_code.11 days = 1 }
+		if = {
+			limit = { any_owned_leader = { has_leader_flag = shishan_code_vivhite } }
+			random_list = {
+				1 = { country_event = { id = shishan_code.200 } }
+				1 = { country_event = { id = shishan_code.201 } }
+				1 = { country_event = { id = shishan_code.202 } }
+				1 = { country_event = { id = shishan_code.203 } }
+				1 = { country_event = { id = shishan_code.204 } }
+				1 = { country_event = { id = shishan_code.205 } }
+				1 = { country_event = { id = shishan_code.206 } }
+				1 = { country_event = { id = shishan_code.207 } }
+			}
+		}
+		else = { country_event = { id = shishan_code.209 } }
+	}
+}
+
+country_event = {
+	id = shishan_code.30
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_country_flag = shishan_code_refactored }
+	immediate = {
+		change_variable = { which = shishan_code_maintenance_count value = 1 }
+		shishan_code_award_reward = yes
+		shishan_code_refresh_vivhite_effect = yes
+		random_list = {
+			90 = { country_event = { id = shishan_code.12 } }
+			10 = { country_event = { id = shishan_code.31 } }
+		}
+		country_event = { id = shishan_code.11 days = 1 }
+	}
+}
+
+country_event = {
+	id = shishan_code.31
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = shishan_code_refactored
+		owner_main_species = {
+			change_species_characteristics = {
+				remove_trait = trait_shishan_refactored
+				add_trait = trait_shishan_code
+			}
+		}
+		start_situation = { type = situation_shishan_code }
+		if = {
+			limit = { any_owned_leader = { has_leader_flag = shishan_code_vivhite } }
+			random_list = {
+				1 = { country_event = { id = shishan_code.310 } }
+				1 = { country_event = { id = shishan_code.311 } }
+				1 = { country_event = { id = shishan_code.312 } }
+				1 = { country_event = { id = shishan_code.313 } }
+				1 = { country_event = { id = shishan_code.314 } }
+				1 = { country_event = { id = shishan_code.315 } }
+				1 = { country_event = { id = shishan_code.316 } }
+				1 = { country_event = { id = shishan_code.317 } }
+			}
+		}
+		else = { country_event = { id = shishan_code.319 } }
+	}
+}
+
+country_event = {
+	id = shishan_code.40
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { from = { has_leader_flag = shishan_code_vivhite } }
+	immediate = {
+		remove_modifier = shishan_code_vivhite_base
+		remove_modifier = shishan_code_vivhite_engineering_step
+		remove_modifier = shishan_code_vivhite_society_step
+		set_variable = {
+			which = shishan_code_vivhite_backup_xp
+			value = from.trigger:has_experience
+		}
+		clone_leader = {
+			target = from
+			effect = {
+				set_immortal = yes
+				save_global_event_target_as = shishan_code_vivhite_backup@root
+				exile_leader_as = shishan_code_vivhite_backup@root
+			}
+		}
+		if = {
+			limit = { exists = event_target:shishan_code_vivhite_backup@root }
+			set_country_flag = shishan_code_vivhite_pending_reboot
+			country_event = { id = shishan_code.42 }
+		}
+	}
+}
+
+country_event = {
+	id = shishan_code.42
+	title = shishan_code.42.name
+	desc = shishan_code.42.desc
+	picture = GFX_shishan_event
+	is_triggered_only = yes
+	option = { name = shishan_code.42.a }
+}
+
+country_event = {
+	id = shishan_code.41
+	title = shishan_code.41.name
+	desc = shishan_code.41.desc
+	picture = GFX_shishan_event
+	is_triggered_only = yes
+	trigger = { has_country_flag = shishan_code_vivhite_pending_reboot }
+	option = {
+		name = shishan_code.41.a
+		trigger = {
+			resource_stockpile_compare = { resource = energy value >= 500 }
+			resource_stockpile_compare = { resource = alloys value >= 200 }
+			exists = event_target:shishan_code_vivhite_backup@root
+		}
+		add_resource = { energy = -500 alloys = -200 }
+		clone_leader = {
+			target = event_target:shishan_code_vivhite_backup@root
+			tier = leader_tier_legendary
+		}
+		last_created_leader = {
+			set_leader_flag = shishan_code_vivhite
+			change_leader_portrait = shishan_code_vivhite
+			save_event_target_as = shishan_code_vivhite@root
+		}
+		# add_experience is affected by the new leader's experience gain bonuses.
+		# Probe the current multiplier before restoring current-level experience.
+		if = {
+			limit = { check_variable = { which = shishan_code_vivhite_backup_xp value > 0 } }
+			last_created_leader = {
+				add_experience = 1
+				root = {
+					set_variable = {
+						which = shishan_code_vivhite_xp_gain_factor
+						value = prev.trigger:has_experience
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { which = shishan_code_vivhite_xp_gain_factor value > 0 } }
+				divide_variable = {
+					which = shishan_code_vivhite_backup_xp
+					value = shishan_code_vivhite_xp_gain_factor
+				}
+				change_variable = { which = shishan_code_vivhite_backup_xp value = -1 }
+				last_created_leader = { add_experience = root.shishan_code_vivhite_backup_xp }
+			}
+		}
+		event_target:shishan_code_vivhite_backup@root = {
+			remove_leader_flag = shishan_code_vivhite
+			kill_leader = { show_notification = no }
+		}
+		remove_country_flag = shishan_code_vivhite_pending_reboot
+		clear_variable = shishan_code_vivhite_backup_xp
+		clear_variable = shishan_code_vivhite_xp_gain_factor
+		shishan_code_refresh_vivhite_effect = yes
+	}
+	option = { name = shishan_code.41.b }
+}
+
+country_event = {
+	id = shishan_code.50
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_list = {
+			1 = { country_event = { id = shishan_code.500 } }
+			1 = { country_event = { id = shishan_code.501 } }
+			1 = { country_event = { id = shishan_code.502 } }
+			1 = { country_event = { id = shishan_code.503 } }
+			1 = { country_event = { id = shishan_code.504 } }
+			1 = { country_event = { id = shishan_code.505 } }
+			1 = { country_event = { id = shishan_code.506 } }
+			1 = { country_event = { id = shishan_code.507 } }
+		}
+	}
+}

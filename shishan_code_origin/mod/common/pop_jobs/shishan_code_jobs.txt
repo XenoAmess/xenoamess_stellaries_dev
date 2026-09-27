@@ -1,0 +1,44 @@
+shishan_code_maintainer = {
+	category = specialist
+	is_capped_by_modifier = yes
+	swappable_data = { default = { building_icon = building_shishan_code_institute icon = shishan_code_maintainer } }
+	tags = { research }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = { complex_specialist_job_check_trigger = yes }
+	resources = {
+		category = planet_biologists
+		produces = { society_research = 2 }
+		upkeep = { consumer_goods = 1.5 }
+		inline_script = "output/researcher_output"
+	}
+	weight = { weight = 10 }
+}
+
+shishan_code_maintainer_drone = {
+	category = complex_drone
+	is_capped_by_modifier = yes
+	swappable_data = { default = { building_icon = building_shishan_code_institute icon = shishan_code_maintainer } }
+	tags = { research }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	resources = {
+		category = planet_biologists
+		produces = { society_research = 2 }
+		upkeep = { energy = 3 }
+		inline_script = "output/researcher_output"
+	}
+	weight = { weight = 10 }
+}

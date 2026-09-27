@@ -1,0 +1,305 @@
+trait_shishan_compat_agrarian = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_agrarian.dds"
+	modifier = {
+		farmer_jobs_bonus_workforce_mult = 0.15
+	}
+}
+
+trait_shishan_compat_ingenious = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_ingenious.dds"
+	modifier = {
+		technician_jobs_bonus_workforce_mult = 0.15
+	}
+}
+
+trait_shishan_compat_industrious = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_industrious.dds"
+	modifier = {
+		miner_jobs_bonus_workforce_mult = 0.15
+	}
+}
+
+trait_shishan_compat_intelligent = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_intelligent.dds"
+	opposites = { "trait_nerve_stapled" "trait_erudite" "trait_enigmatic_intelligence_poor" }
+	modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.10
+	}
+}
+
+trait_shishan_compat_thrifty = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_thrifty.dds"
+	opposites = { "trait_cyborg_scarcity_algorithms" }
+	modifier = {
+		trader_jobs_bonus_workforce_mult = 0.25
+	}
+}
+
+trait_shishan_compat_natural_engineers = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_natural_engineers.dds"
+	opposites = { "trait_natural_physicists" "trait_natural_sociologists" "trait_nerve_stapled" "trait_recursive_learners" "trait_shishan_compat_natural_physicists" "trait_shishan_compat_natural_sociologists" }
+	modifier = {
+		engineer_jobs_bonus_workforce_mult = 0.15
+	}
+}
+
+trait_shishan_compat_natural_physicists = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_natural_physicists.dds"
+	opposites = { "trait_natural_engineers" "trait_natural_sociologists" "trait_nerve_stapled" "trait_camouflage" "trait_chromalogs" "trait_recursive_learners" "trait_shishan_compat_natural_engineers" "trait_shishan_compat_natural_sociologists" }
+	modifier = {
+		physicist_jobs_bonus_workforce_mult = 0.15
+	}
+}
+
+trait_shishan_compat_natural_sociologists = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_natural_sociologists.dds"
+	opposites = { "trait_natural_physicists" "trait_natural_engineers" "trait_nerve_stapled" "trait_recursive_learners" "trait_shishan_compat_natural_engineers" "trait_shishan_compat_natural_physicists" }
+	modifier = {
+		biologist_jobs_bonus_workforce_mult = 0.15
+	}
+}
+
+trait_shishan_compat_talented = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_talented.dds"
+	opposites = { "trait_nerve_stapled" "trait_syncretic_proles" }
+	modifier = {
+		negative_leader_traits_species = -1
+		leaders_upkeep_mult = -0.1
+	}
+}
+
+trait_shishan_compat_quick_learners = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_quick_learners.dds"
+	opposites = { "trait_slow_learners" "trait_syncretic_proles" }
+	modifier = {
+		species_leader_exp_gain = 0.10
+	}
+}
+
+trait_shishan_compat_traditional = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_traditional.dds"
+	opposites = { "trait_quarrelsome" }
+	modifier = {
+		bureaucrat_jobs_bonus_workforce_mult = 0.1
+	}
+}
+
+trait_shishan_compat_docile = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_docile.dds"
+	opposites = { "trait_unruly" }
+	modifier = {
+		species_empire_size_mult = -0.10
+	}
+}
+
+trait_shishan_compat_strong = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_strong.dds"
+	opposites = { "trait_weak" "trait_very_strong" "trait_hollow_bones" "trait_shishan_compat_very_strong" }
+	modifier = {
+		army_damage_mult = 0.20
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.025
+		soldier_jobs_bonus_workforce_mult = 0.10
+	}
+}
+
+trait_shishan_compat_very_strong = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_very_strong.dds"
+	opposites = { "trait_weak" "trait_strong" "trait_hollow_bones" "trait_shishan_compat_strong" }
+	modifier = {
+		army_damage_mult = 0.40
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.05
+		soldier_jobs_bonus_workforce_mult = 0.15
+	}
+}
+
+trait_shishan_compat_nomadic = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_nomadic.dds"
+	opposites = { "trait_sedentary" "trait_rooted" "trait_wilderness" }
+	modifier = {
+		pop_resettlement_cost_mult = -0.35
+	}
+}
+
+trait_shishan_compat_communal = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_communal.dds"
+	opposites = { "trait_solitary" "trait_shelled" "trait_spatial_mastery" }
+	modifier = {
+		pop_housing_usage_mult = -0.1
+	}
+}
+
+trait_shishan_compat_charismatic = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_charismatic.dds"
+	opposites = { "trait_repugnant" "trait_reavers" }
+	modifier = {
+		influential_jobs_bonus_workforce_mult = 0.20
+	}
+}
+
+trait_shishan_compat_resilient = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_resilient.dds"
+	opposites = { "trait_pc_ark_preference" }
+	modifier = {
+		army_defense_damage_mult = 0.5
+	}
+}
+
+trait_shishan_compat_conservational = {
+	cost = 0
+	category = robotic
+	allowed_archetypes = { ROBOT MACHINE }
+	tags = { machine positive special }
+	initial = no
+	randomized = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	icon = "gfx/interface/icons/traits/trait_conservational.dds"
+	opposites = { "trait_wasteful" "trait_hive_mind" }
+	modifier = {
+		planet_pops_consumer_goods_upkeep_mult = -0.10
+	}
+}

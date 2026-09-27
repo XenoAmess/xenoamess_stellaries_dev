@@ -1,0 +1,9 @@
+version="0.1.0-rc.1"
+tags={
+	"Origin"
+	"Events"
+	"Leaders"
+}
+name="屎山代码"
+picture="thumbnail.png"
+supported_version="4.5.*"
