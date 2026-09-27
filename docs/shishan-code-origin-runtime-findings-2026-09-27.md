@@ -138,3 +138,5 @@ WPF 默认渲染测试窗口实际只显示白色客户区，预期的紫色背�
 图形控制面板 `DXCpl.exe` 自身窗口客户区也只呈黑色，故改用微软同套工具 `d3dconfig.exe` 的命令行接口。初始状态是 `apps=<no apps>`、`force-warp=false`。仅登记 `stellaris.exe` 后启用 `force-warp=true`，并以 `1280×720`、窗口化、DX11、低画质、无 Mod 的新目录 `vanilla_warp_1280` 启动。进程约 90 秒完成初始化，CPU 累计约 671 秒（软件渲染明显繁重），但仍没有可见主菜单；截图 `_runtime/shishan_code/vanilla_warp_1280_80s.png` 为黑色桌面/窗口，游戏窗口实际位于 `(632,329)-(1928,1088)`。正常关闭游戏后，`d3dconfig apps` 再次为 `<no apps>`，`device` 中 `force-warp=false`、特性级别无限制，均恢复原值。WARP 不能作为本机实机验收替代路径；这也说明问题可能涉及窗口合成/呈现环节，而不只是 Stellaris 的 3D 光栅化。
 
 显示设备恢复执行顺序已预备，尚待用户选择：若选择“仅重启显卡设备”，先保存上述诊断结果并确认无游戏进程，再针对唯一已启动的 NVIDIA Display 设备实例 `PCI\VEN_10DE&DEV_28A0&SUBSYS_000010DE&REV_A1\4&31024D2F&0&0018` 执行 Windows 自带 `pnputil /restart-device <instance ID>`，**不附加** `/reboot`；如命令提示必须重启，不自动再次重启。待桌面恢复后首先运行 WPF 默认模式，要求紫色背景和文字可见，再运行无 Mod Stellaris 菜单对照。如果仍失败，停止这一轮设备操作，不重复切换。如果选择“安装官方驱动”，先核对 NVIDIA 官方驱动与当前虚拟化设备 ID 是否匹配、导出当前 `oem13.inf` 作为回退材料并建立可用的远程恢复路径；未经这些准备不得直接覆盖现有 NVCleanstall 驱动。若选择暂不改动驱动，记录硬件图形环境阻断并继续非实机工作。
+
+当前 `nvmsoi.inf` 进一步显示 RTX 4060 的 `DEV_28A0` 是无 `SUBSYS` 限制的通用匹配项，同时文件带有 `NVCleanstall_Added` 项；这提示虚拟化环境可能依赖自定义 INF 覆盖。即使用户允许安装官方驱动，也必须先核实目标包是否覆盖这个设备 ID，不能把普通笔记本驱动页面的产品名相同当作可安全替换的依据。
