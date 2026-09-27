@@ -78,3 +78,7 @@ Windows 图形驱动重置快捷键执行后，原版窗口仍为纯白。后续
 桌面启动诊断还需排除 `-debug_mode` 影响：在新的无 Mod、窗口化隔离配置中不传调试开关做最后一轮对照。若仍纯白，则当前可控的软件参数已不能恢复原版 UI；保留此环境阻塞，不继续反复启动同一配置。
 
 无调试开关的无 Mod 窗口化对照 `20260927T093000Z_vanilla_nodebug` 也在启动 CPU 峰值后停于纯白客户区，无主菜单。证据为 `_runtime/shishan_code/20260927T084700Z/vanilla_nodebug.png`。因此后续简中运行时 UI 回归因主机游戏渲染环境受阻；即使本 Mod 静态包级与先前部分实机场景通过，也不能宣称整体验收完成。
+
+补充主机诊断：`Get-CimInstance Win32_VideoController` 报 NVIDIA GeForce RTX 4060 驱动 `32.0.15.8180`，状态 `OK`；`Get-Service EventLog` 却显示 Windows Event Log 服务为 `Stopped`、启动类型 `Automatic`。`Get-WinEvent` 和 `wevtutil` 均因 RPC 服务不可用而不能读取系统事件。尝试正常启动该服务时短暂进入 `START_PENDING`，随后回到 `STOPPED`，`sc queryex EventLog` 报 Win32 退出码 `4201`。这说明主机诊断基础设施也异常，但目前没有证据能证明 Event Log 服务故障就是 Stellaris 白屏的原因。
+
+按用户要求又用全新隔离目录 `retry_vanilla_20260927_174022` 启动无 Mod 原版，进程 `17412`：`system.log` 再次停止于 `Done creating device`，切至游戏窗口后截图 `_runtime/shishan_code/vanilla_retry_taskbar_174022.png` 为纯黑客户区，没有主菜单。用户随后明确授权重启主机。重启前关闭本次原版进程并保存该日志与截图；重启后先检查原版主菜单，再运行本 Mod，不能把重启前的阻断直接视为已解除。
