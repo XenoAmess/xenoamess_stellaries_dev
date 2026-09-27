@@ -122,3 +122,7 @@ DirectX 诊断文件 `_runtime/shishan_code/dxdiag_20260927.txt` 报当前系统
 独占全屏 `vanilla_exclusive_fullscreen` 的启动计时约 94 秒，仍未绘制主菜单；截图 `_runtime/shishan_code/vanilla_exclusive_fullscreen.png` 只见下方 Steam 页面。游戏窗口报告 `visible=1`、`DWM cloaked=0`、矩形为 `2560×1440`，没有窗口被系统隐藏的迹象；但全屏启动把桌面显示模式切到了 `1024×768`，与配置中的 `2560×1440` 不符。游戏正常关闭后，已用显示模式枚举结果将桌面恢复为 `2560×1440@60Hz`。不能据此断言驱动是根因，但独占全屏并未恢复可见游戏画面。
 
 当前无 Mod 对照在原分辨率、窗口化、无边框全屏、独占全屏、DX11 与替代渲染器配置、无 Steam 进程、覆盖层关闭、着色器缓存重建、禁用全屏优化以及重启 Windows 后均无法显示主菜单；42,811 个基础文件与本地 depot 清单全部匹配。后续若要重置显示适配器或安装官方驱动，可能中断桌面会话；已将选项和风险提交用户选择，未在答复前执行。
+
+只读驱动清单补充：`pnputil /enum-drivers` 把当前 NVIDIA 显示驱动列为 `oem13.inf / nvmsoi.inf`，版本 `32.0.15.8180`，签名者为 `NVCleanstall Driver Modding Authority`；这解释了 DXDiag 报非 WHQL 签名，却不能证明白屏的成因。机器还有 Oray 虚拟显示驱动包，但当前 `Get-PnpDevice -Class Display` 只列出已启动的 RTX 4060。考虑到这台机器使用虚拟化 GPU 和远程桌面，替换显示驱动比单次适配器重启更可能使桌面不可用，因此必须按用户答复执行。
+
+同时只读复核了起源条件：本 Mod 的 `species_archetype = { value = MACHINE }` 与原版 4.5.1 `origin_post_apocalyptic_machines` 的机械主体物种条件一致；原版其他起源的 `swap_type` 明确把 `is_individual_machine` 与 `is_machine_empire` 放在同一机械使用路径。这个静态对照支持起源入口允许两类机械帝国的设计，但尚不能替代个体机械帝国建国界面的实机点击验收。
