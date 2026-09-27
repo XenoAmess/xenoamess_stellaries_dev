@@ -82,3 +82,7 @@ Windows 图形驱动重置快捷键执行后，原版窗口仍为纯白。后续
 补充主机诊断：`Get-CimInstance Win32_VideoController` 报 NVIDIA GeForce RTX 4060 驱动 `32.0.15.8180`，状态 `OK`；`Get-Service EventLog` 却显示 Windows Event Log 服务为 `Stopped`、启动类型 `Automatic`。`Get-WinEvent` 和 `wevtutil` 均因 RPC 服务不可用而不能读取系统事件。尝试正常启动该服务时短暂进入 `START_PENDING`，随后回到 `STOPPED`，`sc queryex EventLog` 报 Win32 退出码 `4201`。这说明主机诊断基础设施也异常，但目前没有证据能证明 Event Log 服务故障就是 Stellaris 白屏的原因。
 
 按用户要求又用全新隔离目录 `retry_vanilla_20260927_174022` 启动无 Mod 原版，进程 `17412`：`system.log` 再次停止于 `Done creating device`，切至游戏窗口后截图 `_runtime/shishan_code/vanilla_retry_taskbar_174022.png` 为纯黑客户区，没有主菜单。用户随后明确授权重启主机。重启前关闭本次原版进程并保存该日志与截图；重启后先检查原版主菜单，再运行本 Mod，不能把重启前的阻断直接视为已解除。
+
+重启后 `EventLog` 服务已恢复 `Running`，但无 Mod 原版在全新隔离目录 `postreboot_vanilla_20260927_174842` 仍停在 `Done creating device` 后，进程内存增长至约 2.8 GB 后 CPU 基本空闲，主菜单未出现。系统显示从重启前 `2560×1440` 变为 `1024×768`；再以明确写入的 `windowed`、`1024×768`、简体中文配置启动第二个无 Mod 对照 `postreboot_vanilla_1024_20260927_175205`，游戏窗口仍是纯白客户区，截图 `_runtime/shishan_code/postreboot_vanilla_1024_window.png`，日志同样停止在创建图形设备后。两次进程均已正常发送窗口关闭消息退出。Windows 应用事件日志没有记录本轮 Stellaris 崩溃，内存仍有约 22 GB 可用。重启修复了 Event Log 服务，却未恢复当前自动化启动路径的游戏画面；现在等待用户从 Steam 启动原版做独立对照。
+
+日志口径修正：较早已成功进入游戏的隔离会话 `20260927T230000Z`，其 `system.log` 末行也是 `Done creating device`。因此“日志最后写到创建图形设备”**不能单独定位白屏发生在哪个初始化步骤**；白屏结论依赖无 Mod 对照窗口的实际截图、持续不出现主菜单、进程进入低 CPU 状态等观察。当前无 Mod 对照的 `error.log` 仅含缺失的旧 Workshop 项目路径，未记录本 Mod 的加载错误。
