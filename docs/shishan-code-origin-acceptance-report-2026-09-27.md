@@ -85,3 +85,9 @@ SC-06 同一舰队、同一路线、同一 `2203.06.03` 基线出发，第二与
 此前隔离夹具从同一游戏状态把「优化迭代：岗位产出」计数从 `1` 推至 `2`，并在游戏重载后看到 `+2` 提示保持；对应截图已归档为 `iteration-output-plus1.jpg`、`iteration-output-plus2.jpg`、`iteration-output-plus2-reload.jpg`。现补充[计数 1 存档](../assets/shishan-code-origin/evidence/shishan_iteration_output1.sav)与[计数 2 存档](../assets/shishan-code-origin/evidence/shishan_iteration_output2.sav)；`gamestate` 变量分别是 `shishan_code_iteration_output=1/2`，SHA-256 分别为 `d616250a511d65e0fc7fd9fd1c36c31ddb9b0ec65541352fc03faeb3445753ec3`、`e71260494d13e97bf14275f258719392e5a682427944a3f9758ed8610b86cd3d`。这证明一类迭代增益的叠加及重载，其他三类的实际增益和完整奖励池层切换仍按 PR-05 验收标准逐项核对。
 
 两层奖励池耗尽的压力测试[终点存档](../assets/shishan-code-origin/evidence/shishan_reward_exhausted.sav)也已归档，SHA-256 `554504e65d4b14d70fd91be3cb66c434c7c232ea37c109e70b7e2ebe93f4fccf` 与既有[结构化审计](../assets/shishan-code-origin/evidence/reward-pool-exhaustion-2026-09-28.json)一致。该存档由直接调用正式奖励效果形成，未逐次完成项目，因此不充当项目完成次数与费用的证据。
+
+### 2026-09-28 兼容特质的实际岗位产出探针
+
+PR-05 追加一个同存档的受控数值对照：在主体机械物种上添加 `trait_shishan_compat_industrious`，核对矿工岗位产出，并对照其他岗位和维护费。4.5.1 正式特质定义使用 `miner_jobs_bonus_workforce_mult=0.15`；实机控制台执行特质添加后，存档 `gamestate` 确认主体物种仅出现一次该特质。直接观察的矿工岗位为 `880/800` 已分配劳动力，添加前后实时产出均为 `41.55`，因此该观察尚不能证明特质失效：岗位可能已达到产出容量上限，或需要日结算刷新。进一步临时增加采矿区后，矿工达到 `3147/3200`、产出 `149.14`，但超出行星容量的区划在日结算后被游戏清除，不能用作可重载对照。接下来使用原版 4.5.1 的 `random_owned_pop_group = { remove_pop_amount = 100 }` 在隔离存档中把星球人口缩至约 `3000`，保留合法采矿区容量 `1200`，再于稳定日期对比有无特质的实际矿工产出与维护费；基线和终点均须保留存档与截图。不能把当前数值判为通过。
+
+补充：原版人口组效果可在隔离存档中减至约 `1900` 人，并用 `create_pop_group` 恢复至约 `2600` 人；日结算后矿工 `346/1200`、无兼容特质产出 `16.87`。添加兼容特质后推进一天仍是 `346/1200`、`16.87`；再添加同样 `miner_jobs_bonus_workforce_mult=0.15` 的原版机械「采矿钻头」并推进一天，矿工劳动力仍为 `346`，产出 `16.35`。两种特质均没有在这一日结算对照中显示预期正增量，但岗位产出因其他每日变量发生了变化；这组观察不能单独锁定兼容特质定义。推进一个月后，人口岗位重新分配又使矿工 `1289/1200` 饱和。下一轮改用原版 `d_metal_boneyard` 提升合法采矿区上限，再增加区划，保持长期未满员；分别保存两种特质与无特质的同基线分支，跨月核算。此探针仅用于 PR-05，不进入正式 Mod。
