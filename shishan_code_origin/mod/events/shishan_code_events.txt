@@ -195,10 +195,23 @@ country_event = {
 		shishan_code_award_reward = yes
 		shishan_code_refresh_vivhite_effect = yes
 		random_list = {
-			90 = { country_event = { id = shishan_code.12 } }
+			90 = { country_event = { id = shishan_code.32 } }
 			10 = { country_event = { id = shishan_code.31 } }
 		}
 		country_event = { id = shishan_code.11 days = 1 }
+	}
+}
+
+country_event = {
+	id = shishan_code.32
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { any_owned_leader = { has_leader_flag = shishan_code_vivhite } }
+			country_event = { id = shishan_code.320 }
+		}
+		else = { country_event = { id = shishan_code.329 } }
 	}
 }
 

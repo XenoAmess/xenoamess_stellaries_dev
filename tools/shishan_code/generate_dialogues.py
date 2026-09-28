@@ -34,6 +34,9 @@ PHRASES = {
         "回到这里并不意味着一切白费。我们学到的东西还在。",
         "……我会留下。直到最后一道故障平息。",
     ),
+    32: (
+        "……这次的优化很顺利。新的代码运行得更稳了。谢谢你。",
+    ),
     50: (
         "这都是我的错。",
         "太迟了……那时我总是来得太迟。",
@@ -50,6 +53,7 @@ GENERIC = {
     129: ("shishan_code.12.name", "维护完成。旧核心的进度已归零，但白绮的席位暂时空着。", "shishan_code.12.a"),
     209: ("shishan_code.20.name", "旧核心已被新的架构取代。白绮的席位暂时空着，但她留下的记录见证了这一刻。", "shishan_code.20.a"),
     319: ("shishan_code.31.name", "深层裂缝重新打开，大厦将倾再度开始。白绮的席位暂时空着。", "shishan_code.31.a"),
+    329: ("shishan_code.32.name", "本轮持续优化已经完成。系统运行保持稳定，白绮的席位暂时空着。", "shishan_code.12.a"),
 }
 
 
@@ -61,7 +65,7 @@ def main() -> None:
             event_id = group * 10 + index
             desc_key = f"shishan_code.{event_id}.desc"
             title_key = f"shishan_code.{group}.name"
-            button_key = f"shishan_code.{group}.a"
+            button_key = "shishan_code.12.a" if group == 32 else f"shishan_code.{group}.a"
             event_lines.extend([
                 "country_event = {",
                 f"\tid = shishan_code.{event_id}",
