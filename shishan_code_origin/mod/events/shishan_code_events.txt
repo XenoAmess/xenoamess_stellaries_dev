@@ -154,6 +154,8 @@ country_event = {
 	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } }
 	immediate = {
 		set_country_flag = shishan_code_refactored
+		remove_modifier = shishan_code_refactored_jobs
+		add_modifier = { modifier = shishan_code_refactored_jobs days = -1 }
 		every_situation = {
 			limit = { is_situation_type = situation_shishan_code }
 			destroy_situation = this
@@ -205,6 +207,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		remove_modifier = shishan_code_refactored_jobs
 		remove_country_flag = shishan_code_refactored
 		owner_main_species = {
 			change_species_characteristics = {
@@ -227,6 +230,23 @@ country_event = {
 			}
 		}
 		else = { country_event = { id = shishan_code.319 } }
+	}
+}
+
+country_event = {
+	id = shishan_code.60
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_origin = origin_shishan_code }
+	immediate = {
+		if = {
+			limit = { has_country_flag = shishan_code_refactored NOT = { has_modifier = shishan_code_refactored_jobs } }
+			add_modifier = { modifier = shishan_code_refactored_jobs days = -1 }
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = shishan_code_refactored } has_modifier = shishan_code_refactored_jobs }
+			remove_modifier = shishan_code_refactored_jobs
+		}
 	}
 }
 

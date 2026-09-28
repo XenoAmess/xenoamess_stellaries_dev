@@ -49,3 +49,19 @@ SC-04—SC-06 的岗位维护费五阶段矩阵也已补齐：同一隔离帝国
 ### 2026-09-28 第五阶段自然清理
 
 PR-03 第五阶段清理终点已通过正常社会学研究月结算验证。隔离 Mod 副本的临时修正仅加快社会学产出；`2228.03.02` 弹出清理完成事件后，局势消失、主体物种仅保留一个「重构完成」、`n=0` 不变，下一项目展示为成本 `4000` 的「持续优化」。清除临时修正并删除夹具文件后，使用正式单 Mod 校验和 `cb18` 重新加载存档，局势及项目名称/成本仍正确。基线与终点存档、哈希、三张截图及夹具编码教训见[自然清理验收](shishan-code-origin-clean-natural-2026-09-28.md)。PR-03 的**早期阶段清理**、主物种岗位产出 `+25%` 的隔离实测及其余待测矩阵仍须执行；本次不据此把 PR-03 整行标为通过。
+
+### 2026-09-28 第二阶段清理与重构岗位对照
+
+PR-03 的第二阶段清理已通过游戏内真实项目完成效果复核：同一暂停日期 `2228.03.11` 的存档中，主物种「屎山代码」`1→0`、「重构完成」`0→1`，局势结束。相同岗位劳动力下，行星实时悬浮提示显示采矿产出 `40.83→50.11`，物理学产出 `2.07→2.55`；国家基础能源/矿物和采集站能源/矿物维持 `40/40`、`11/11`。原版 4.5.1 的物种劳动力效率修正也使物理学家岗位维护费 `2.64→3.09`，这是本轮识别出的口径风险，已记录在[重构岗位对照](shishan-code-origin-refactor-output-2026-09-28.md)。存档 `budget.current_month` 的岗位来源并未同步更新为 UI 实时值，不能作为这项即时对照的唯一依据。第五阶段自然清理与第二阶段效果清理各有独立证据；尚需核对是否按设计把维护费副作用保留在正式版。
+
+### 2026-09-28 全国岗位产出修订
+
+用户已确认将「重构完成」改为全帝国岗位产出 `+25%` 且岗位维护费不变；上段物种劳动力效率测试仅保留为旧方案问题证据。正式候选版移除物种 `pop_bonus_workforce_mult`，改在清理回调添加唯一、永久的国家 `planet_jobs_produces_mult=0.25` 修正，复发时移除；每月国家脉冲为旧存档补发缺失修正。
+
+第二阶段基线存档在正式候选版中通过真实清理项目完成回调，于暂停的 `2228.03.11` 同日观测：60 劳动力的物理学家产出 `2.07→2.57`，岗位维护费 `2.64→2.64`，并见到清理事件图与全国修正。完成后存档包含一个「重构完成」物种特质和一个 `shishan_code_refactored_jobs` 全国修正。旧方案的已清理存档 `clean_early_stage2_post_22280311.sav` 在正式候选版推进到 `2228.04.03` 后自动补齐该全国修正一次；实时岗位产出为 `2.57`、维护费为 `2.64`，重载存档仍只有一个全国修正。
+
+同一清理后存档受控触发复发回调，显示白绮复发台词；跨日后旧局势实例清理完毕，仅保留一个从零开始的「大厦将倾」。`2228.03.30` 复发存档里 `shishan_code_refactored_jobs` 与「重构完成」均为零个，局势为一个。此时第一阶段的产出加成同为 `+25%`，故物理学家产出仍为 `2.57`；岗位维护费因第一阶段独立的 `-25%` 变为 `2.14`。这不能误读为全国重构修正仍在。若调试控制台在暂停的同一日连续强制清理与复发，UI 曾短暂显示两个局势，跨过日结算后恢复一个；正常优化需研究，无法在同一暂停日连续完成两次。
+
+证据为[清理前物理学家](../assets/shishan-code-origin/evidence/refactor-country-before-physicist-2228.03.11.jpg)、[清理后物理学家](../assets/shishan-code-origin/evidence/refactor-country-after-physicist-2228.03.11.jpg)、[清理事件](../assets/shishan-code-origin/evidence/refactor-country-clean-event-2228.03.11.jpg)、[清理后存档](../assets/shishan-code-origin/evidence/refactor-country-post-2228.03.11.sav)、[旧存档迁移截图](../assets/shishan-code-origin/evidence/refactor-migration-physicist-2228.04.03.jpg)、[迁移后存档](../assets/shishan-code-origin/evidence/refactor-migration-2228.04.03.sav)、[复发事件](../assets/shishan-code-origin/evidence/refactor-country-relapse-event-2228.03.11.jpg)、[复发后帝国面板](../assets/shishan-code-origin/evidence/refactor-country-relapse-empire-2228.03.30.jpg)和[复发存档](../assets/shishan-code-origin/evidence/refactor-country-relapse-2228.03.30.sav)。后两份同日/复发存档 SHA-256 分别为 `6e584728bf1c5606fc2c5815983541a58664dc12f98d5b24dda17428a6786c19`、`e95797e34f1fdf2a7b9c4ff9cd3a312499eef9f28e56a71540c83fbfef1c8575`。
+
+本次修订后重新运行 `open_kaishek`，结果 `PASS`：19/19 脚本、13 DDS、165 本地化键，报告 `_runtime/shishan_code/accept_refactor_20260928.json`。九种非简中语言按要求仅做静态校验：键和格式检查通过，八种非中非英翻译的英文残留、汉字占位均为零；**静态校验通过，运行时不在范围内**。兼容特质映射 19 项通过；`git diff --check` 无错误。

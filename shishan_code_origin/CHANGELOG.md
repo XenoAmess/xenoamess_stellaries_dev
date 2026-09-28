@@ -13,6 +13,7 @@
 - Vivhite uses the revised V2 portrait with aligned hair ornaments and a static portrait texture in the leader UI; the A05 event art was regenerated from the V2 concept.
 - Both machine government types now receive the intended starting trait budget change of 6 fewer points and 3 more selectable traits.
 - Stage resource production now includes the independent monthly Trade resource; market orders remain separate from production.
+- Refactored completion now grants +25% empire-wide job output for all species without raising job upkeep. Old refactored saves receive the national modifier at the next monthly pulse; relapse removes it.
 
 ### Fixed
 
@@ -25,7 +26,7 @@
 
 ### Validation
 
-- `open_kaishek` package-level static acceptance passed: 19 scripts, 13 DDS assets, and 164 localisation keys.
+- `open_kaishek` package-level static acceptance passed: 19 scripts, 13 DDS assets, and 165 localisation keys.
 - The nine non-Chinese languages passed static checks; their runtime is outside the test scope.
 - Simplified Chinese runtime checks passed for the revised portrait, both machine empire starts, the five situation stages and ship attribute values, the five-stage job-upkeep matrix, maintenance project completion and cancellation, cleanup cancellation and natural fifth-stage completion, reward-pool transitions, Trade and rare orbital source isolation, a Dyson Sphere production sample, tributary tax and bilateral resource-transfer exclusion, and Vivhite's resurrection. The cleanup result persisted after removing the temporary research-speed fixture and reloading with the formal mod. The full scenario matrix remains incomplete.
 
