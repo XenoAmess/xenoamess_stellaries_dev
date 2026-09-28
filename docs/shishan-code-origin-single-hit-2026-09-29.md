@@ -64,7 +64,7 @@
 | IV | 750 | 5/0 | 37.5 | 25 | 7.5 | 0.50 |
 | V | 950 | 5/0 | 18.75 | 12.5 | 3.75 | 0.25 |
 
-第三阶段有一次未命中，所以用 `45/4=11.25` 而不是拿累计值与其他阶段直接比较。每阶段都使用相同原版武器组件模板、原版激光装甲倍率 `1.5`；目标站装甲起始值 `2735`，最多承受本表的 `93.75`，未耗尽。五个单次实际命中值恰好呈设计的 `+25/0/-25/-50/-75%` 阶段倍率，故 SC-06 的**实际武器伤害**五阶段矩阵通过。此表不替代同段实际航行时间验收。
+第三阶段有一次未命中，所以用 `45/4=11.25` 而不是拿累计值与其他阶段直接比较。每阶段都使用相同原版武器组件模板、原版激光装甲倍率 `1.5`；目标站装甲起始值 `2735`，最多承受本表的 `93.75`，未耗尽。五个单次实际命中值恰好呈设计的 `+25/0/-25/-50/-75%` 阶段倍率，故 SC-06 的**实际武器伤害**五阶段矩阵通过。亚光速真实移动已有同一路线、同日位移对照，见[舰船航行实测](shishan-code-origin-ship-runtime-2026-09-28.md)；本表只验证命中伤害。
 
 新增可重载[第一阶段存档](../assets/shishan-code-origin/evidence/sc06_red_fixed_stage1_jun13.sav)、[第三阶段存档](../assets/shishan-code-origin/evidence/sc06_red_fixed_stage3_jun13.sav)、[第四阶段存档](../assets/shishan-code-origin/evidence/sc06_red_fixed_stage4_jun13.sav)，SHA-256 依次为 `18ac9a1eee42d9d308f7ca1f17a3a8239599ff1eb2c31ed8782c7d2e1a0c38be`、`75988a1da55ee665db58fb7853f2fac2fdb183d2b180f5bbfd7d5973bd457b3e`、`e4c1891dec368a0680718b15dff84a32c490393ff6b96586e62bd46df459d549`。[第一阶段画面](../assets/shishan-code-origin/evidence/sc06-stage1-fixed-jun13.jpg)、[第三阶段画面](../assets/shishan-code-origin/evidence/sc06-stage3-fixed-jun13.jpg)、[第四阶段画面](../assets/shishan-code-origin/evidence/sc06-stage4-fixed-jun13.jpg)来自 Steam F12。控制台在重载后首次打开时有时会把切换键的 `~` 插入命令行，产生一次 `Unknown command`；只有随后明确回显「局势设定为 500/750」的有效命令才计入本表，未生效的中间尝试没有保存为验收结果。
 
