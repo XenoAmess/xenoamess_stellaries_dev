@@ -67,3 +67,21 @@ PR-03 的第二阶段清理已通过游戏内真实项目完成效果复核：�
 本次修订后重新运行 `open_kaishek`，结果 `PASS`：19/19 脚本、13 DDS、165 本地化键，报告 `_runtime/shishan_code/accept_refactor_20260928.json`。九种非简中语言按要求仅做静态校验：键和格式检查通过，八种非中非英翻译的英文残留、汉字占位均为零；**静态校验通过，运行时不在范围内**。兼容特质映射 19 项通过；`git diff --check` 无错误。
 
 白绮复活的后续压力验收发现两个旧实现差异，详情见[连续死亡与零经验倍率探针](shishan-code-origin-vivhite-revival-probe-2026-09-28.md)。其一，已消费的流放备份原先残留在存档；正式脚本现用 `kill_exiled_leader` 和 `clear_global_event_target` 清理，游戏内重载后无 `saved_leaders` 备份或待重启标记。其二，原先带 `317.52` 当前经验但经验获取归零的白绮复活后当前经验为 `0`。正式脚本新增绑定新领袖的三日恢复事件，`open_kaishek` 检查 `PASS`（19/19 脚本、13 DDS、167 本地化键）；简中实机 `vivhite-formal-xp-restore-2227.03.09.sav` 恢复为 `317.51909`，误差小于 `0.001`，临时特质、恢复变量、已消费备份与待复活标记皆为零。隔离副本的恢复中第二次死亡也保留相同经验和唯一白绮。**WH-03 边界现已通过；Mod 整体验收仍因其他场景未完成而不能判通过。**
+
+### 2026-09-28 航行实际位移
+
+SC-06 同一舰队、同一路线、同一 `2203.06.03` 基线出发，第二与第五阶段各推进 20 个游戏日。第二阶段实际位移 `145.35599`，第五阶段 `36.42911`，后者为前者的 `25.062%`，符合第五阶段亚光速 `-75%`。三份可重载存档、两张实机画面、哈希和坐标均记录于[舰船航行与实战伤害验收](shishan-code-origin-ship-runtime-2026-09-28.md)。SC-06 的航行子项由待测改为通过；受控战斗单次命中仍待测。
+
+### 2026-09-28 多舰受控战斗补充
+
+隔离夹具的 12 艘单红色激光护卫舰与 12 座无武器靶站已通过 `open_kaishek` 并在游戏中实际交战。保持同一舰队和原版武器，于第二阶段累计存档之后分别采集第五阶段 68 次命中、再切回第二阶段 65 次命中；合并护甲与船体的基础伤害后，每命中分别为 `4.74690` 与 `12.89077`。回到第二阶段的值与原第二阶段长期基线 `12.89404` 接近，说明阶段伤害变化可逆。第五阶段与第二阶段实战样本的比值为 `36.824%`，并非孤立的 `25%`；其他武器伤害加成按加法叠加是目前的推断，未逐项拆解。Mod 的第五阶段静态修正仍为 `ship_weapon_damage=-0.75`。原矩阵中“受控战斗单次命中仍待测”仍然适用于严格固定伤害的逐次命中验证；多命中统计已通过，详情与三份证据存档见[舰船实战记录](shishan-code-origin-ship-runtime-2026-09-28.md)。
+
+### 2026-09-28 白绮四组对白界面
+
+在同一暂停的简体中文游戏中，逐一直接触发各组中的一个纯展示事件 `shishan_code.500/.120/.200/.310`。四个弹窗依次显示「与白绮交谈」「维护完成」「清理屎山」「大厦将倾，再度开始」，对应台词「这都是我的错。」「……谢谢你……又替我争取了一点时间。」「……终于……结束了……」「……又回到了原点……」。四张 Steam F12 截图均显示完整 A05 事件图、正确简中标题、正文、按钮，未见原始 key、乱码或重叠弹窗：[交谈](../assets/shishan-code-origin/evidence/ui01-vivhite-talk-2205.04.26.jpg)、[维护](../assets/shishan-code-origin/evidence/ui01-vivhite-maintain-2205.04.26.jpg)、[清理](../assets/shishan-code-origin/evidence/ui01-vivhite-clean-2205.04.26.jpg)、[复发](../assets/shishan-code-origin/evidence/ui01-vivhite-relapse-2205.04.26.jpg)。这是**对白变体的界面与本地化验证**；直接触发不会执行项目完成效果，功能回调由前述 PR-02/03/04 路径另行验证。其余九种官方语言只完成静态校验，运行时不在范围内。
+
+### 2026-09-28 迭代增益存档证据归档
+
+此前隔离夹具从同一游戏状态把「优化迭代：岗位产出」计数从 `1` 推至 `2`，并在游戏重载后看到 `+2` 提示保持；对应截图已归档为 `iteration-output-plus1.jpg`、`iteration-output-plus2.jpg`、`iteration-output-plus2-reload.jpg`。现补充[计数 1 存档](../assets/shishan-code-origin/evidence/shishan_iteration_output1.sav)与[计数 2 存档](../assets/shishan-code-origin/evidence/shishan_iteration_output2.sav)；`gamestate` 变量分别是 `shishan_code_iteration_output=1/2`，SHA-256 分别为 `d616250a511d65e0fc7fd9fd1c36c31ddb9b0ec65541352fc03faeb3445753ec3`、`e71260494d13e97bf14275f258719392e5a682427944a3f9758ed8610b86cd3d`。这证明一类迭代增益的叠加及重载，其他三类的实际增益和完整奖励池层切换仍按 PR-05 验收标准逐项核对。
+
+两层奖励池耗尽的压力测试[终点存档](../assets/shishan-code-origin/evidence/shishan_reward_exhausted.sav)也已归档，SHA-256 `554504e65d4b14d70fd91be3cb66c434c7c232ea37c109e70b7e2ebe93f4fccf` 与既有[结构化审计](../assets/shishan-code-origin/evidence/reward-pool-exhaustion-2026-09-28.json)一致。该存档由直接调用正式奖励效果形成，未逐次完成项目，因此不充当项目完成次数与费用的证据。
