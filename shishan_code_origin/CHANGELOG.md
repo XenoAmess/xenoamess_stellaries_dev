@@ -27,7 +27,7 @@
 
 - `open_kaishek` package-level static acceptance passed: 19 scripts, 13 DDS assets, and 164 localisation keys.
 - The nine non-Chinese languages passed static checks; their runtime is outside the test scope.
-- Simplified Chinese runtime checks passed for the revised portrait, both machine empire starts, the five situation stages and ship attribute values, the five-stage job-upkeep matrix, maintenance project completion and cancellation, cleanup cancellation, reward-pool transitions, Trade and rare orbital source isolation, a Dyson Sphere production sample, tributary tax and bilateral resource-transfer exclusion, and Vivhite's resurrection. The full scenario matrix remains incomplete.
+- Simplified Chinese runtime checks passed for the revised portrait, both machine empire starts, the five situation stages and ship attribute values, the five-stage job-upkeep matrix, maintenance project completion and cancellation, cleanup cancellation and natural fifth-stage completion, reward-pool transitions, Trade and rare orbital source isolation, a Dyson Sphere production sample, tributary tax and bilateral resource-transfer exclusion, and Vivhite's resurrection. The cleanup result persisted after removing the temporary research-speed fixture and reloading with the formal mod. The full scenario matrix remains incomplete.
 
 ### Known limitations
 
