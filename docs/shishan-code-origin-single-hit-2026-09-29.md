@@ -45,3 +45,27 @@
 两条分支使用同一艘船、同一门武器、同一目标、同一日期和相同命中数。目标装甲从 `2735` 分别降至 `2660` 与 `2716.25`，均未耗尽。单次实际命中 `15` 与 `3.75` 的比值恰为 `4:1`；由于红色激光对装甲的原版倍率为 `1.5`，分别对应武器基础伤害 `10` 与国家阶段伤害倍率 `1.0/0.25`。这证明 SC-06 的第二/第五阶段实战武器伤害倍率精确生效，并补齐先前随机伤害比较不能说明的部分；其余阶段的实战单次命中不由这两份存档证明。
 
 可重载证据：[同一基线](../assets/shishan-code-origin/evidence/sc06_red_fixed_clean_pre.sav)、[第二阶段结果](../assets/shishan-code-origin/evidence/sc06_red_fixed_clean_stage2_jun13.sav)、[第五阶段结果](../assets/shishan-code-origin/evidence/sc06_red_fixed_clean_stage5_jun13.sav)。SHA-256 依次为 `55cbb459c704f99f776f6ebc9e3e13a475a1cbae1fe1e443eaf82194262c6bb0`、`9ff4dff7e0fb694e499930ed3717c9a5194485e9baff359efaac9fbbd2163636`、`53ee50f4794d98c9f3c73150e765e1eb06522bb5e7843afd8bb796812f3dd5e9`。隔离武器表的 SHA-256 为 `a39a34e823fee085dcb53e7f7c91e86fd2220a6a022a9b7d68170568e3aedd16`。此表和自定义战斗事件均未加入正式 Mod。
+
+## 剩余三个阶段的受控命中计划
+
+为满足验收方案的 I/III/IV 阶段完整矩阵，复用同一份接敌前存档与已归档的无 BOM 固定伤害 CSV。每次从相同暂停基线加载，分别把局势进度设为 `0/500/750`，自然推进相同的 10 日，在 `2203.06.13` 保存。检查同一目标装甲未耗尽、武器仍为同一原版红色激光、命中次数一致，并从存档 `fleet_stats.combat_stats` 算出每次命中的基础和实际装甲伤害。相对第二阶段每次实际命中 `15`，预计 I/III/IV 为 `18.75/11.25/7.5`；若命中次数不同，以累计伤害除以实际命中数，不能凭总伤害直接比较。先对重装夹具运行 `open_kaishek`，结束后移走 CSV，恢复正式单 Mod 文件一致性。
+
+隔离用户目录已有大量不同年份的验收存档，游戏加载菜单按日期排序，容易误选基线。执行该矩阵前，先退出游戏，把同一帝国文件夹内除接敌前基线以外的存档**逐文件**移入仓库忽略的 `_runtime/shishan_code/sc06_stage_save_archive_20260929`，写出原路径/归档路径清单；确保每个绝对路径都处于指定源和归档目录内。测试结束后逐文件还原，遇到同名新存档则保留新存档并另行处理，不覆盖旧证据。
+
+## 五阶段实战矩阵结果
+
+重新装入无 BOM 固定伤害 CSV 的隔离副本通过 `open_kaishek`（19/19 正式脚本、13 DDS、172 键；CSV 相对原版只改红色小型激光最小/最大伤害；报告 `_runtime/shishan_code/accept_sc06_stages_fixture_20260929.json`）。将原目录 97 份旧存档逐文件归档，留下唯一 `2203.06.03` 基线；在相同战斗夹具、同一日期分别将进度设为 `0/500/750` 并自然推进 10 日。每个阶段结束后保存 `2203.06.13` 存档，从玩家舰队对原版红色激光的 `fleet_stats.combat_stats` 读取装甲伤害与命中数。第二、第五阶段沿用先前同一基线的证据。
+
+| 阶段 | 进度 | 命中/未中 | 实际装甲总伤害 | 基础装甲总伤害 | 每次实际命中 | 相对第二阶段 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| I | 0 | 5/0 | 93.75 | 62.5 | 18.75 | 1.25 |
+| II | 300 | 5/0 | 75 | 50 | 15 | 1.00 |
+| III | 500 | 4/1 | 45 | 30 | 11.25 | 0.75 |
+| IV | 750 | 5/0 | 37.5 | 25 | 7.5 | 0.50 |
+| V | 950 | 5/0 | 18.75 | 12.5 | 3.75 | 0.25 |
+
+第三阶段有一次未命中，所以用 `45/4=11.25` 而不是拿累计值与其他阶段直接比较。每阶段都使用相同原版武器组件模板、原版激光装甲倍率 `1.5`；目标站装甲起始值 `2735`，最多承受本表的 `93.75`，未耗尽。五个单次实际命中值恰好呈设计的 `+25/0/-25/-50/-75%` 阶段倍率，故 SC-06 的**实际武器伤害**五阶段矩阵通过。此表不替代同段实际航行时间验收。
+
+新增可重载[第一阶段存档](../assets/shishan-code-origin/evidence/sc06_red_fixed_stage1_jun13.sav)、[第三阶段存档](../assets/shishan-code-origin/evidence/sc06_red_fixed_stage3_jun13.sav)、[第四阶段存档](../assets/shishan-code-origin/evidence/sc06_red_fixed_stage4_jun13.sav)，SHA-256 依次为 `18ac9a1eee42d9d308f7ca1f17a3a8239599ff1eb2c31ed8782c7d2e1a0c38be`、`75988a1da55ee665db58fb7853f2fac2fdb183d2b180f5bbfd7d5973bd457b3e`、`e4c1891dec368a0680718b15dff84a32c490393ff6b96586e62bd46df459d549`。[第一阶段画面](../assets/shishan-code-origin/evidence/sc06-stage1-fixed-jun13.jpg)、[第三阶段画面](../assets/shishan-code-origin/evidence/sc06-stage3-fixed-jun13.jpg)、[第四阶段画面](../assets/shishan-code-origin/evidence/sc06-stage4-fixed-jun13.jpg)来自 Steam F12。控制台在重载后首次打开时有时会把切换键的 `~` 插入命令行，产生一次 `Unknown command`；只有随后明确回显「局势设定为 500/750」的有效命令才计入本表，未生效的中间尝试没有保存为验收结果。
+
+测试结束后，三份新存档先复制到正式证据目录、原运行目录副本另移到忽略的 `_runtime/shishan_code/sc06_stage_new_results_20260929`；原 97 份存档依清单逐文件完整还原，无同名冲突。隔离 CSV 已在核对 SHA-256 后移走。当前用户目录的 64 个 Mod 文件与正式包逐字节一致且没有额外文件；正式包再跑 `open_kaishek` 为 `PASS`（19/19 脚本、13 DDS、172 键；报告 `_runtime/shishan_code/accept_sc06_stages_formal_restored_20260929.json`）。
