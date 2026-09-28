@@ -27,8 +27,8 @@
 
 - `open_kaishek` package-level static acceptance passed: 19 scripts, 13 DDS assets, and 164 localisation keys.
 - The nine non-Chinese languages passed static checks; their runtime is outside the test scope.
-- Simplified Chinese runtime checks passed for the revised portrait, both machine empire starts, the five situation stages and ship attribute values, maintenance project completion and cancellation, cleanup cancellation, reward-pool transitions, Trade and rare orbital source isolation, a Dyson Sphere production sample, tributary tax exclusion, and Vivhite's resurrection. The full scenario matrix remains incomplete.
+- Simplified Chinese runtime checks passed for the revised portrait, both machine empire starts, the five situation stages and ship attribute values, the five-stage job-upkeep matrix, maintenance project completion and cancellation, cleanup cancellation, reward-pool transitions, Trade and rare orbital source isolation, a Dyson Sphere production sample, tributary tax and bilateral resource-transfer exclusion, and Vivhite's resurrection. The full scenario matrix remains incomplete.
 
 ### Known limitations
 
-- Controlled combat damage, same-route travel time, commercial pact transfer exclusion, and long-range balance routes still require runtime checks. See `docs/shishan-code-origin-acceptance-report-2026-09-27.md`. This release candidate has not been uploaded to Steam.
+- Controlled combat damage, same-route travel time, commercial pact income, and long-range balance routes still require runtime checks. Bilateral monthly resource transfers were verified separately. See `docs/shishan-code-origin-acceptance-report-2026-09-27.md`. This release candidate has not been uploaded to Steam.

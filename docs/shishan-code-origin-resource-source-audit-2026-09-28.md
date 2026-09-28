@@ -108,3 +108,24 @@
 | 食物 | 25.64461 | 26.53138 | 1.0346 |
 
 [第二阶段存档](../assets/shishan-code-origin/evidence/subject-tax-stage2-2227.06.08.sav) SHA-256 `20b10bedb3efec1764eff5bef653b70818954fa2feabfb1e8605d0af89e7ba15`；[第五阶段存档](../assets/shishan-code-origin/evidence/subject-tax-stage5-2227.06.05.sav) SHA-256 `a5de5fe682e6ab5fd1350c7fea4d3986328f7325d5f3de66153b678433146327`。两个分支在同一次六月月结算后取得非零税收，同一来源均没有变成四分之一；几百分点以内的差异与朝贡国 AI 经济在分支中变化相容，故此证据可排除本起源对资源税施加 `-75%`，但不声称逐分固定属国的每项基础产出。游戏类别定义中 `subject_tax` 无 `parent`，与实测一致。
+
+### 双边每月资源交易（计划）
+
+用户此前所说的“贸易协定”在本验收中按**帝国之间的双边每月资源交换**解释；这与原版 `commercial_pacts`（商业协议）的影响力维护费及贸易额政策不同。通过游戏外交界面向已建立通讯的国家提出一份双方每月固定数量的资源交易，在双方同意后至少跨一个月，确认玩家预算出现实际交易收入及支出，保存为共同基线。随后只切换局势阶段并分别跨月结算，要求合同固定的月度交付数量不因生产倍率改变。若无法造出非零收款合同，保持待测，并在报告中区分商业协议与资源贸易合同。
+
+### 执行结果：双边固定月度交易
+
+从已建立朝贡关系的隔离局，在外交界面向马贡尼德同盟提出十年期交易：玩家每月交付 `10` 能量币，对方每月交付 `5` 矿物。AI 原本拒绝这份报价；为了构造非零收支样本，仅在该测试存档中临时打开控制台 `yesmen` 促成协议，随后再次执行 `yesmen` 关闭。游戏外交提示确认接受，且报价窗口明确显示双方交付数量与期限。此夹具只改测试存档，没有改正式 Mod。
+
+跨过下一次月结算后保存[第五阶段交易基线](../assets/shishan-code-origin/evidence/bilateral-trade-baseline-2227.08.06.sav)，SHA-256 `cdf81fb0ce7164feb2f519677b85c343cf712cf13033b4e038ac7e139b6e558b`。随后在同一局内依次将局势设为第二阶段进度 `300`、第五阶段进度 `1000`，各跨过一次月结算并保存[第二阶段](../assets/shishan-code-origin/evidence/bilateral-trade-stage2-2227.09.06.sav) SHA-256 `5567a2dab73fa4730d844cdf3ed354ed75a69e0acb8ee6d180900e5c7fc6a4cd` 和[第五阶段](../assets/shishan-code-origin/evidence/bilateral-trade-stage5-2227.10.06.sav) SHA-256 `a3980bef75d55344e878b7c93e52508efb00aeeaa1b10e3781fe07a419245eb0`。检查玩家国家 `budget.current_month`：
+
+| 项目 | 基线 V | II | 再回 V |
+| --- | ---: | ---: | ---: |
+| `trade_income.monthly_trades.minerals`（协议收款） | 5 | 5 | 5 |
+| `trade_expenses.monthly_trades.energy`（协议付款） | 10 | 10 | 10 |
+| `trade_income.monthly_trades.trade`（原有市场交易） | 20 | 20 | 20 |
+| `trade_expenses.monthly_trades.minerals`（原有市场交易） | 28 | 28 | 28 |
+| `income.country_base.energy` | 10 | 40 | 10 |
+| `income.country_base.minerals` | 10 | 40 | 10 |
+
+结论：双边月度资源合同与市场月单均归入 `monthly_trades` 的交易收支，实际固定数量未被本起源阶段生产倍率放大或缩小；国家固定产出则按局势切换。这里验证的是双边资源交易合同；原版 `commercial_pacts` 商业协议收入如需另行主张覆盖，仍须有非零商业协议样本。
