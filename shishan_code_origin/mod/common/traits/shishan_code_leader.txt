@@ -9,3 +9,16 @@ leader_trait_shishan_code_vivhite = {
 	immortal_leaders = yes
 	custom_tooltip = leader_trait_shishan_code_vivhite_effect
 }
+
+# Temporary bridge for a revived Vivhite whose normal experience gain is zero.
+# Removed by leader event shishan_code.45 after current-level XP is restored.
+leader_trait_shishan_xp_restore_boost = {
+	icon = {
+		layer = { icon = "GFX_leader_trait_shishan_code_vivhite" }
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+	notify_on_gained = no
+	self_modifier = { species_leader_exp_gain = 100 }
+}

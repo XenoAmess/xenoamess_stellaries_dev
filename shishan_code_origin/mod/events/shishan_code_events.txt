@@ -259,13 +259,20 @@ country_event = {
 		remove_modifier = shishan_code_vivhite_base
 		remove_modifier = shishan_code_vivhite_engineering_step
 		remove_modifier = shishan_code_vivhite_society_step
-		set_variable = {
-			which = shishan_code_vivhite_backup_xp
-			value = from.trigger:has_experience
+		if = {
+			limit = { from = { is_variable_set = shishan_code_vivhite_restore_goal } }
+			set_variable = { which = shishan_code_vivhite_backup_xp value = from.shishan_code_vivhite_restore_goal }
+		}
+		else = {
+			set_variable = { which = shishan_code_vivhite_backup_xp value = from.trigger:has_experience }
 		}
 		clone_leader = {
 			target = from
 			effect = {
+				remove_trait = leader_trait_shishan_xp_restore_boost
+				clear_variable = shishan_code_vivhite_restore_goal
+				clear_variable = shishan_code_vivhite_restore_factor
+				clear_variable = shishan_code_vivhite_restore_remaining
 				set_immortal = yes
 				save_global_event_target_as = shishan_code_vivhite_backup@root
 				exile_leader_as = shishan_code_vivhite_backup@root
@@ -334,17 +341,70 @@ country_event = {
 				change_variable = { which = shishan_code_vivhite_backup_xp value = -1 }
 				last_created_leader = { add_experience = root.shishan_code_vivhite_backup_xp }
 			}
+			else = {
+				last_created_leader = {
+					set_variable = { which = shishan_code_vivhite_restore_goal value = root.shishan_code_vivhite_backup_xp }
+					add_trait = leader_trait_shishan_xp_restore_boost
+					leader_event = { id = shishan_code.43 days = 1 }
+				}
+			}
 		}
 		event_target:shishan_code_vivhite_backup@root = {
 			remove_leader_flag = shishan_code_vivhite
-			kill_leader = { show_notification = no }
 		}
+		kill_exiled_leader = shishan_code_vivhite_backup@root
+		clear_global_event_target = shishan_code_vivhite_backup@root
 		remove_country_flag = shishan_code_vivhite_pending_reboot
 		clear_variable = shishan_code_vivhite_backup_xp
 		clear_variable = shishan_code_vivhite_xp_gain_factor
 		shishan_code_refresh_vivhite_effect = yes
 	}
 	option = { name = shishan_code.41.b }
+}
+
+leader_event = {
+	id = shishan_code.43
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_leader_flag = shishan_code_vivhite has_trait = leader_trait_shishan_xp_restore_boost }
+	immediate = {
+		add_experience = 1
+		leader_event = { id = shishan_code.44 days = 1 }
+	}
+}
+
+leader_event = {
+	id = shishan_code.44
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_leader_flag = shishan_code_vivhite has_trait = leader_trait_shishan_xp_restore_boost }
+	immediate = {
+		set_variable = { which = shishan_code_vivhite_restore_factor value = root.trigger:has_experience }
+		if = {
+			limit = { check_variable = { which = shishan_code_vivhite_restore_factor value > 0 } }
+			set_variable = { which = shishan_code_vivhite_restore_remaining value = root.shishan_code_vivhite_restore_goal }
+			divide_variable = {
+				which = shishan_code_vivhite_restore_remaining
+				value = shishan_code_vivhite_restore_factor
+			}
+			change_variable = { which = shishan_code_vivhite_restore_remaining value = -1 }
+			add_experience = root.shishan_code_vivhite_restore_remaining
+		}
+		leader_event = { id = shishan_code.45 days = 1 }
+	}
+}
+
+leader_event = {
+	id = shishan_code.45
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_leader_flag = shishan_code_vivhite has_trait = leader_trait_shishan_xp_restore_boost }
+	immediate = {
+		remove_trait = leader_trait_shishan_xp_restore_boost
+		clear_variable = shishan_code_vivhite_restore_goal
+		clear_variable = shishan_code_vivhite_restore_factor
+		clear_variable = shishan_code_vivhite_restore_remaining
+	}
 }
 
 country_event = {
