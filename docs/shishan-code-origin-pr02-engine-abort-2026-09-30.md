@@ -24,6 +24,12 @@
 
 2026-09-30 将正式版缺陷存档 `2229.11.12` 放入只启用 `0.1.3-rc.1` 的简中隔离目录，从游戏菜单加载并正常推进。`2229.12.04` 的原生存档显示维护 ID `7` 恢复为可研究且仅一个，清理 ID `6` 仍在社会学队首，已有 `56.67824` 研究点；UI 同时显示「清理屎山，研究中」和「维护屎山，可用」，维护费用保持 `4000` 社会学。之后自动保存的 `2230.01.01` 和手动保存的 `2230.03.28` 中，维护仍恰好为 ID `7`，没有每月重复创建，局势进度依次自然为 `28→35→49`。再次在暂停状态使用相同原版效果中断可用的维护 ID `7`，控制台再次输出「特殊项目维护屎山已终止」；推进至 `2230.04.11` 后项目恢复为唯一的 ID `8`，清理继续研究，局势为 `56`。
 
-[结构化审计](../assets/shishan-code-origin/evidence/pr02-engine-abort-audit-2026-09-30.json)对八份原生存档的 9 项断言全部通过，包含首次正式版缺陷复现、候选版月度幂等、再次中断恢复以及没有误发奖励。原生存档、首次与再次控制台截图、[第一次恢复 UI](../assets/shishan-code-origin/evidence/pr02-engine-abort-recovered-ui-2229.12.04.jpg)、[再次恢复 UI](../assets/shishan-code-origin/evidence/pr02-engine-reabort-recovered-ui-2230.04.11.jpg)均已入库，审计 JSON 记录 SHA-256。候选版 `open_kaishek` 为 `PASS`：19/19 脚本、13 DDS、173 个本地化键；其他九种官方语言**静态校验通过，运行时不在范围内**。隔离游戏 `error.log` 只有启动时对其他已订阅但未下载创意工坊目录的警告，没有本 Mod 解析或运行错误。
+[结构化审计](../assets/shishan-code-origin/evidence/pr02-engine-abort-audit-2026-09-30.json)对本路径八份原生存档的 9 项断言全部通过，包含首次正式版缺陷复现、候选版月度幂等、再次中断恢复以及没有误发奖励。原生存档、首次与再次控制台截图、[第一次恢复 UI](../assets/shishan-code-origin/evidence/pr02-engine-abort-recovered-ui-2229.12.04.jpg)、[再次恢复 UI](../assets/shishan-code-origin/evidence/pr02-engine-reabort-recovered-ui-2230.04.11.jpg)均已入库，审计 JSON 记录 SHA-256。候选版 `open_kaishek` 为 `PASS`：19/19 脚本、13 DDS、173 个本地化键；其他九种官方语言**静态校验通过，运行时不在范围内**。隔离游戏 `error.log` 只有启动时对其他已订阅但未下载创意工坊目录的警告，没有本 Mod 解析或运行错误。
 
 **结论：PR-02 原版引擎中断子项在尚未发布的 `0.1.3-rc.1` 候选版通过；公开 `0.1.2` 仍有该已知缺陷。** 本结果不替代 PR-02 的其他组合场景或整体 Mod 验收。
+
+## 新月度恢复逻辑的已重构分支回归方案
+
+新增 `.60→.11` 月度调用也会触达已重构国家，须从已归档[第二次优化正常完成存档](../assets/shishan-code-origin/evidence/pr01-optimize-n2-natural-post-2229.09.02.sav)在同一候选单 Mod 中加载并跨一次月脉冲。前后原生存档需满足：`n=2`、主物种「重构完成」和全国岗位修正各唯一、无「大厦将倾」局势、没有维护或清理项目、持续优化项目仍恰好一个且 ID 不变；白绮研究阶梯不变。截图确认简中项目仍显示「持续优化」。若月度检查重复建项目或误恢复局势，PR-02 修复候选不得发布。
+
+已在候选版从 `2229.09.02` 锚点加载，并正常推进七次月度结算至 `2230.04.25`。前后原生存档分别为[原锚点](../assets/shishan-code-origin/evidence/pr01-optimize-n2-natural-post-2229.09.02.sav)与[回归终点](../assets/shishan-code-origin/evidence/pr02-refactored-monthly-after-2230.04.25.sav)，简中情报日志的[前](../assets/shishan-code-origin/evidence/pr02-refactored-monthly-before-2229.09.02.jpg)/[后](../assets/shishan-code-origin/evidence/pr02-refactored-monthly-after-2230.04.25.jpg)均显示唯一「持续优化」、费用 `8000`。终点仍仅有优化 ID `5`，没有维护和清理；`n=2`、重构特质、全国岗位修正一层、白绮阶梯各两层、无局势，全部保持。加入该分支后[统一原生审计](../assets/shishan-code-origin/evidence/pr02-engine-abort-audit-2026-09-30.json)为十份存档、**10/10 PASS**；终点 SHA-256 `705985d7df656b751048b73b69189c20356ca4e819704cb970d01f838b834ef4`。

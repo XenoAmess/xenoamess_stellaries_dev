@@ -22,12 +22,16 @@ NAMES = {
     "candidate_next_month": "pr02-engine-abort-stable-2230.01.01.sav",
     "candidate_three_months": "pr02-engine-abort-stable-2230.03.28.sav",
     "candidate_reabort_restored": "pr02-engine-reabort-recovered-2230.04.11.sav",
+    "refactored_before": "pr01-optimize-n2-natural-post-2229.09.02.sav",
+    "refactored_after": "pr02-refactored-monthly-after-2230.04.25.sav",
 }
 SHOTS = {
     "first_abort_console": "pr02-engine-abort-console-2229.10.15.jpg",
     "first_restore_ui": "pr02-engine-abort-recovered-ui-2229.12.04.jpg",
     "second_abort_console": "pr02-engine-reabort-console-2230.03.28.jpg",
     "second_restore_ui": "pr02-engine-reabort-recovered-ui-2230.04.11.jpg",
+    "refactored_before_ui": "pr02-refactored-monthly-before-2229.09.02.jpg",
+    "refactored_after_ui": "pr02-refactored-monthly-after-2230.04.25.jpg",
 }
 REPORT = EVIDENCE / "pr02-engine-abort-audit-2026-09-30.json"
 
@@ -59,6 +63,8 @@ def audit() -> dict:
     next_month = states["candidate_next_month"]
     three_months = states["candidate_three_months"]
     reaborted_restored = states["candidate_reabort_restored"]
+    refactored_before = states["refactored_before"]
+    refactored_after = states["refactored_after"]
     invariant_fields = (
         "maintenance_count",
         "last_completed_project",
@@ -79,6 +85,8 @@ def audit() -> dict:
         "candidate_next_month": "2230.01.01",
         "candidate_three_months": "2230.03.28",
         "candidate_reabort_restored": "2230.04.11",
+        "refactored_before": "2229.09.02",
+        "refactored_after": "2230.04.25",
     }
     checks = {
         "expected_native_save_dates": all(
@@ -122,13 +130,37 @@ def audit() -> dict:
             and state["cleanup_project_instances"] == 1
             and state["queue"][0]["project_id"] == 6
             for key, state in states.items()
-            if key != "before"
+            if key != "before" and not key.startswith("refactored_")
         ) and [before["queue"][1]["project_id"], aborted["queue"][0]["project_id"]]
         == [6, 6],
         "no_rewards_or_vivhite_changes": all(
             all(state[field] == before[field] for field in invariant_fields)
             and not state["success_pending_flags"]
-            for state in states.values()
+            for key, state in states.items()
+            if not key.startswith("refactored_")
+        ),
+        "refactored_monthly_branch_stays_single_optimize": (
+            refactored_before["projects"]
+            == refactored_after["projects"]
+            == {"SHISHAN_CODE_OPTIMIZE": {"id": 5, "status": None}}
+            and refactored_before["maintenance_count"]
+            == refactored_after["maintenance_count"] == 2
+            and refactored_before["main_traits"] == refactored_after["main_traits"]
+            and refactored_before["situation_count"]
+            == refactored_after["situation_count"] == 0
+            and refactored_before["refactored_job_modifiers"]
+            == refactored_after["refactored_job_modifiers"] == [1]
+            and all(
+                refactored_before[field] == refactored_after[field]
+                for field in (
+                    "vivhite_base_modifiers",
+                    "vivhite_engineering_layers",
+                    "vivhite_society_layers",
+                )
+            )
+            and not refactored_after["success_pending_flags"]
+            and refactored_after["maintenance_project_instances"] == 0
+            and refactored_after["cleanup_project_instances"] == 0
         ),
     }
     screenshots = {}
