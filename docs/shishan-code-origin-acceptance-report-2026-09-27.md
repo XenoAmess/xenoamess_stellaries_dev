@@ -1,6 +1,8 @@
 # 「屎山代码」验收记录（2026-09-27 起）
 
-当前结论：**本地 v0.1.3-rc.1 候选版的 SC、RS、PR、WH、UI、SV 场景按现行 Stellaris Cygnus 4.5.1 验收方案通过；公开 v0.1.2 仍有维护项目被原版引擎中断后丢失的已知缺陷，正式版整体验收需待 v0.1.3 上传及远端包核验完成。** 简体中文实机只启用本 Mod 的隔离用户目录；其他九种语言仅静态校验。此前所谓“图形启动故障”已确认是桌面截图未捕获游戏画面，真实游戏画面由 Steam F12 取得。
+当前结论：**正式版 v0.1.3 的 SC、RS、PR、WH、UI、SV 场景按 Stellaris Cygnus 4.5.1 验收方案通过，并已发布及完成远端核验。** 项目原版引擎中断后丢失的维护项目已修复；十份原生存档审计 10/10 PASS，资源来源矩阵 26/26 PASS，奖励池 8/8 PASS，正式包 `open_kaishek` 19/19 脚本、13 DDS、173 键 PASS。创意工坊物品 `3810136486` 的公开 BBCode 与仓库逐字相同，正文保留 A02 插画及八张实机截图；匿名 SteamCMD 下载 64/64 文件逐字节一致。简体中文实机只启用本 Mod 的隔离用户目录；其他九种语言**静态校验通过，运行时不在范围内**。长期平衡和第三方 Mod 组合不在本版兼容性验收范围内。此前所谓“图形启动故障”已确认是桌面截图未捕获游戏画面，真实游戏画面由 Steam F12 取得。
+
+正式发布证据：[v0.1.3 发布记录](shishan-code-origin-release-v0.1.3-2026-09-30.md)、`shishan_code_origin/evidence/v0.1.3/workshop-verification.json`、`assets/shishan-code-origin/evidence/workshop-v013-a02-inline.png`、`assets/shishan-code-origin/evidence/workshop-v013-change-note.png`。下面保留各轮测试当时的历史记录；以本段和对应专项收口报告为当前结论。
 
 2026-09-30 更新：当前正式版本为 `0.1.2`，同一创意工坊物品 `3810136486` 的详细 BBCode 已加入玩家指定的 A02 起源插画及 8 张穿插实机截图，远端内容与仓库一致。发布记录见[页面改版](shishan-code-origin-workshop-page-v0.1.1-plan-2026-09-30.md)和[A02 追加](shishan-code-origin-workshop-a02-v0.1.2-plan-2026-09-30.md)。
 

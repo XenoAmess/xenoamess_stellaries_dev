@@ -16,7 +16,14 @@
 - 正式包已运行 `open_kaishek`：19/19 脚本、13 个 DDS、173 个本地化键均 PASS；报告保存在 `_runtime/shishan_code/accept_v013_20260930.json`。
 - 简中原生存档复核：项目引擎中断与已重构分支 10/10 PASS；资源来源矩阵 26/26，RS-01 至 RS-04 六项复核脚本全部 PASS；奖励池与迭代 8/8 PASS。具体证据见专项报告与总验收报告。
 - 其余九种官方语言静态校验通过，运行时不在范围内。发布脚本及验收脚本 Python 编译通过，`git diff --check` 无内容错误。
-- 页面 BBCode 为 5783 字节，含 A02 一张起源插画和八张实机截图；发布前清单将继续核对九张图片的来源与 SHA-256。
+- 页面 BBCode 为 5783 字节，含 A02 一张起源插画和八张实机截图；发布预检已核对九张图片的来源与 SHA-256。
+
+## 发布后执行记录
+
+- 正式源提交 `3cac77399a5fa7453346e1f1ddbfabf9888ba462` 已推送 `origin/main`；预检确认 64 个 Mod 文件、九张正文图片，其中 A02 一张插画及八张实机截图，BBCode 5783 字节。Steamworks 向自有物品 `3810136486` 提交返回 `result=1`、`legal=false`，回执见 `shishan_code_origin/evidence/v0.1.3/publish-state.json`。
+- Steam 客户端现场截图证明 A02 原图在详情正文显示，且紧接起源介绍及实机截图；截图见 `assets/shishan-code-origin/evidence/workshop-v013-a02-inline.png`。公开改动说明首项为 `[v0.1.3]`，截图见 `assets/shishan-code-origin/evidence/workshop-v013-change-note.png`。
+- 公开 API 核验：描述与仓库 BBCode 逐字相同，九张正文图片及八张画廊图保持，主预览字节一致，`[v0.1.3]` 改动说明在公开页面可读，上游只读物品 `3710613857` 未变。匿名 SteamCMD `validate` 下载 64/64 文件、1,142,827 字节与正式源码逐字节相同，缺失、额外、内容差异均为零。详细记录见 `shishan_code_origin/evidence/v0.1.3/workshop-verification.json`。
+- 线上核验后，Steam 客户端已切回离线模式；后续本地归档和 Git 提交不需要 Steam 在线。
 
 ## 验收标准
 
