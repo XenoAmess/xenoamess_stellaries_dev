@@ -49,6 +49,8 @@
 
 ## 日志归因
 
+- Stellaris 4.5.1 简中隔离局中，控制台 `event shishan_code.10` 会列出事件 `trigger` 的缺失国家旗标（红叉），却仍执行该事件的 `immediate`，造成维护次数和奖励变化。需要防止强制重复调用的结算事件，须在 `immediate` 效果体里用 `if/limit` 再检查一次性旗标；只在 `trigger` 检查不足。证据与修复过程见[特殊项目重复结算防护](shishan-code-origin-project-settlement-guard-2026-09-29.md)。
+
 - 隔离 userdir 仍可能从启用文件中看到已订阅但本机缺失的其他 Workshop 路径。只有当前被测 Mod 的加载、脚本或运行错误才使 `LOAD-GREEN` 失败。
 - `error.log` 的存档修复信息必须与重载后的 UI 数值和 `gamestate` 一起判断。若目标 deposit 仍唯一存在且效果保持，不能仅凭一次通用修复消息认定目标 deposit 丢失；该消息仍需记录并在后续回归中追踪。
 - 对允许同名叠加的场景，上述判断要把“唯一存在”推广为“期望计数保持”：计划13重复执行存档重载时虽出现一次通用修复消息，但两个目标 deposit 与 `3300` 容量都保持，因此被清理的不是目标实例。

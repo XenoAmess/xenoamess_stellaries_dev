@@ -85,17 +85,21 @@ country_event = {
 	id = shishan_code.10
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } }
+	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } has_country_flag = shishan_code_maintain_success_pending }
 	immediate = {
-		change_variable = { which = shishan_code_maintenance_count value = 1 }
-		every_situation = {
-			limit = { is_situation_type = situation_shishan_code }
-			set_situation_progress = 0
+		if = {
+			limit = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } has_country_flag = shishan_code_maintain_success_pending }
+			remove_country_flag = shishan_code_maintain_success_pending
+			change_variable = { which = shishan_code_maintenance_count value = 1 }
+			every_situation = {
+				limit = { is_situation_type = situation_shishan_code }
+				set_situation_progress = 0
+			}
+			shishan_code_award_reward = yes
+			shishan_code_refresh_vivhite_effect = yes
+			country_event = { id = shishan_code.11 days = 1 }
+			country_event = { id = shishan_code.12 }
 		}
-		shishan_code_award_reward = yes
-		shishan_code_refresh_vivhite_effect = yes
-		country_event = { id = shishan_code.11 days = 1 }
-		country_event = { id = shishan_code.12 }
 	}
 }
 
@@ -189,16 +193,20 @@ country_event = {
 	id = shishan_code.30
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_country_flag = shishan_code_refactored }
+	trigger = { has_country_flag = shishan_code_refactored has_country_flag = shishan_code_optimize_success_pending }
 	immediate = {
-		change_variable = { which = shishan_code_maintenance_count value = 1 }
-		shishan_code_award_reward = yes
-		shishan_code_refresh_vivhite_effect = yes
-		random_list = {
-			90 = { country_event = { id = shishan_code.32 } }
-			10 = { country_event = { id = shishan_code.31 } }
+		if = {
+			limit = { has_origin = origin_shishan_code has_country_flag = shishan_code_refactored has_country_flag = shishan_code_optimize_success_pending }
+			remove_country_flag = shishan_code_optimize_success_pending
+			change_variable = { which = shishan_code_maintenance_count value = 1 }
+			shishan_code_award_reward = yes
+			shishan_code_refresh_vivhite_effect = yes
+			random_list = {
+				90 = { country_event = { id = shishan_code.32 } }
+				10 = { country_event = { id = shishan_code.31 } }
+			}
+			country_event = { id = shishan_code.11 days = 1 }
 		}
-		country_event = { id = shishan_code.11 days = 1 }
 	}
 }
 

@@ -8,7 +8,10 @@ special_project = {
 	icon = "gfx/interface/icons/situation_log/shishan_maintain.dds"
 	event_scope = country_event
 	abort_trigger = { has_country_flag = shishan_code_refactored }
-	on_success = { country_event = { id = shishan_code.10 } }
+	on_success = {
+		set_country_flag = shishan_code_maintain_success_pending
+		country_event = { id = shishan_code.10 }
+	}
 	on_cancel = { country_event = { id = shishan_code.11 days = 1 } }
 }
 
@@ -36,6 +39,9 @@ special_project = {
 	icon = "gfx/interface/icons/situation_log/shishan_maintain.dds"
 	event_scope = country_event
 	abort_trigger = { NOT = { has_country_flag = shishan_code_refactored } }
-	on_success = { country_event = { id = shishan_code.30 } }
+	on_success = {
+		set_country_flag = shishan_code_optimize_success_pending
+		country_event = { id = shishan_code.30 }
+	}
 	on_cancel = { country_event = { id = shishan_code.11 days = 1 } }
 }
