@@ -52,3 +52,17 @@ PR-02 验收方案要求维护项目取消、中断或重复触发结算时不�
 - 撤除修正后正常推进六天，`pr02-stage5-maintain-followup-2229.11.08.sav`（SHA-256 `7629aeca109a60f4465da827c9ce3cc7d7f421d401ca5170a0e0c608693bd562`）显示新的维护项目 ID 7 已可用，`n=3`、进度 `0`、清理 ID 6 仍未研究，测试修正引用仍为 `0`。退出游戏并删除隔离副本唯一测试文件后，与仓库正式内容逐文件 SHA-256 比较为 `64/64` 相同、零差异；重新启动正式单 Mod，校验和恢复为 `fe44`，成功重载该存档。
 - 正式重载 UI 中局势处于第一阶段，阶段资源加成为 `+25%` 且月速 `+8`；「维护屎山」显示 `5000` 社会学，「清理屎山」显示 `14000` 社会学。截图为 `pr02-stage5-maintain-reload-stage1.jpg`、`pr02-stage5-maintain-reload-next-cost-5000.jpg`、`pr02-stage5-maintain-reload-next-clean-cost-14000.jpg`。正式包 `open_kaishek PASS`：19/19 脚本、13 DDS、172 本地化键；正式重载日志无本 Mod 脚本错误。
 - **PR-02 第五阶段正常科研完成维护子项通过。** 此测试的第五阶段起点由控制台设定，项目结束由游戏科研月结算自然触发；它不证明从开局不用控制台推进到第五阶段的全程平衡。清理项目自然完成已有独立证据，本轮没有执行该后续清理。
+
+## 后续实测方案：维护后排队清理的正常完成
+
+从上述正式单 Mod 重载终点 `pr02-stage5-maintain-followup-2229.11.08.sav` 出发，保持第一阶段、`n=3`、清理项目 ID 6 在社会学队列且下一次维护项目 ID 7 可用的状态。先保存无夹具基线，确认清理费用为 `14000`、社会学队列项目键与进度。随后只在隔离部署副本加入无 BOM 的社会学产出加速修正，不改项目成本、完成回调、特质或局势；重启并重载基线，临时提高科研产出，让清理通过正常月度科研结算完成。完成弹窗出现时暂停，撤销加速并保存；不得调用清理国家事件或特殊项目完成命令代替真实研究。
+
+检查清理完成后 `last_completed_special_project=SHISHAN_CODE_CLEAN`、`n=3` 不变、局势最终消失、主物种仅有「重构完成」而无「屎山代码」、全国岗位产出修正恰好一层、维护/清理项目清除、下一次优化费用为 `2×(2000+1000×3)=10000`；白绮阶梯仍各三层。跨过月结算并重载，确认没有重复结算、测试修正或残留旧项目。退出夹具进程，删除隔离测试文件，逐文件比较部署副本与正式 Mod 后以正式单 Mod 再次重载，并重跑 `open_kaishek`。这覆盖第一阶段且已有维护次数的自然清理和排队项目收尾；第五阶段自然清理的独立证据仍单独保留。
+
+### 第一阶段 `n=3` 自然清理结果
+
+- 正式单 Mod 基线 `pr02-stage5-maintain-followup-2229.11.08.sav` 中，`n=3`、第一阶段进度 `0`、清理 ID 6 在 `society_queue` 队首且进度 `0`，研究所耗为 `14000`；下一次维护 ID 7 仅可用。隔离部署副本新增无 BOM ASCII `shishan_test_society_boost = { country_society_research_produces_mult = 1000 }` 后重启。初次误用简写 `effect add_modifier=shishan_test_society_boost`，控制台只显示泛化效果文本而没有产出修正；游戏自然走到 `2230.04.02`，未完成项目。改用已有文档验证的 `effect add_modifier={modifier=shishan_test_society_boost days=-1}` 后，控制台明确回显社会学研究 `+100000%`，这一段误输入不计作加速成功。
+- 游戏在正常科研月结算日 `2230.05.02` 弹出简中「清理屎山」白绮对白与事件图；未调用项目完成命令或清理事件。截图为 [自然清理弹窗](../assets/shishan-code-origin/evidence/pr03-early-n3-natural-clean-event-2230.05.02.jpg)。关闭弹窗后游戏自动继续运行，至 `2230.07.03` 暂停并用 `effect remove_modifier=shishan_test_society_boost` 撤销修正。跨月已完成，故终点存档不能作为清理发生的精确即时日期，但可以验证后续没有重复结算。
+- 原生终点[存档](../assets/shishan-code-origin/evidence/pr03-early-n3-natural-clean-2230.07.03.sav)，SHA-256 `2c4afb3904ee4d0a01839cf7c779b0ff6e97692d2aabb301e3093e56813f7951`：`last_completed_special_project=SHISHAN_CODE_CLEAN`，`n=3` 未增加；原清理 ID 6 与维护 ID 7 已从项目表和社会学队列清除，只留下可用优化 ID 8；局势数 `0`；主物种只有一个 `trait_shishan_refactored`，不再有 `trait_shishan_code`；全国 `shishan_code_refactored_jobs` 恰一层；白绮基础修正一层，工程和社会学阶梯各三层；测试修正引用 `0`。隔离游戏 UI 展示「持续优化」费用 `10000`，见[费用截图](../assets/shishan-code-origin/evidence/pr03-early-n3-natural-optimize-cost-10000.jpg)。
+- 退出夹具进程并移除唯一测试文件后，部署副本与正式 Mod **64/64 文件哈希一致、零差异**。正式包 `open_kaishek PASS`：19/19 脚本、13 DDS、172 本地化键。以正式单 Mod 校验和 `fe44` 重启并重载终点存档，简中 UI 中局势仍未出现，仅有费用 `10000` 的「持续优化」且预计研究期回到正常速度的 `466` 个月，见[正式重载截图](../assets/shishan-code-origin/evidence/pr03-early-n3-natural-reload-optimize-10000.jpg)；正式重载 `error.log` 无本 Mod 脚本错误。
+- **PR-03 第一阶段且 `n=3` 的正常科研清理子项通过。** 本次科研等待时间使用隔离加速夹具，不代表正式经济节奏；同一路径仍需结合已归档的第五阶段自然清理、混合物种岗位产出和持续优化结果判断整行。整体验收的 RS 来源全组合、PR-05 奖励池逐项数值、UI/SV 指定状态等仍未全部完成。
