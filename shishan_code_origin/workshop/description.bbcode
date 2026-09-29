@@ -1,20 +1,44 @@
 [h1]屎山代码[/h1]
 
-一个具有挑战性的机械起源。创造者消失后，机器文明一边维持危险的底层代码，一边迈向太空。
+[b]具有挑战性的机械起源｜Stellaris 4.5.*｜简体中文等十种官方语言[/b]
+我们曾是为创造者服务的机器。原始代码里遍布低效而危险的逻辑，补丁又覆盖在补丁之上。许多年前，创造者消失了。如今只能由我们自己维持它，直到走向太空，也直到它再也无法维持。
 
-[h2]主要内容[/h2]
+[h2]开局：用未来换取眼前的力量[/h2]
+主体物种必须是机械物种；机械智能与个体机械帝国均可选择。主体物种获得「屎山代码」：可用特质点数少 6，可选特质上限多 3。开局即有「大厦将倾」局势、研究项目和「屎山维护研究所」建筑。局势不会自行消失。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/individual-machine-origin-selected.jpg[/img]
+
+[h2]大厦将倾：五个阶段[/h2]
+局势进度从 0 开始，阶段边界为 250 / 500 / 750 / 950；第五阶段会持续存在，直到完成清理。每一阶段同时改变持续生产资源、岗位维护费、舰船武器伤害和亚光速航速：
 [list]
-[*]仅机械主体物种可选；机械智能与个体机械帝国均可使用。
-[*]「大厦将倾」五阶段局势：早期强大，随后逐步崩坏。初始月进度 +5。
-[*]通过「维护屎山」重置局势进度、获得正面特质；通过「清理屎山」完成重构；重构后可继续优化，但存在复发风险。
-[*]「屎山维护研究所」及维护员岗位；岗位已分配劳动力能减缓局势。
-[*]传奇机械领袖「负疚者·白绮」及对话、意外死亡后的付费复活。
+[*]0–249：生产 +25%，岗位维护费 -25%，武器伤害和航速 +25%。
+[*]250–499：无阶段修正。
+[*]500–749：生产 -25%，岗位维护费 +25%，武器伤害和航速 -25%。
+[*]750–949：生产 -50%，岗位维护费 +50%，武器伤害和航速 -50%。
+[*]950 起：生产 -75%，岗位维护费 +75%，武器伤害和航速 -75%。
 [/list]
+「生产」覆盖岗位、采集站、巨构建筑和帝国固定产出等持续来源；同一笔岗位收入只吃一次阶段修正。贸易值等持续生产也在范围内。附庸上缴、贸易协定转移、每月市场交易和一次性收入不会被阶段修正放大。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/sv01-stage1-reload-situation-2230.10.17.jpg[/img]
+从早期优势滑入末期危机，需要主动选择何时争取时间、何时彻底重构。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/sv01-stage5-reload-situation-2229.10.15.jpg[/img]
 
-[h2]资源与难度[/h2]
-局势对持续生产资源的阶段修正按来源各应用一次，同一笔岗位产出不会因「岗位」和「月度收入」重复加成。附庸上缴、商业协议、每月市场交易和一次性奖励不属于阶段持续生产修正。
+[h2]用维护员延缓局势[/h2]
+月进度 = max(0.2，5 + 已完成维护/优化次数 - 0.1 × floor(全帝国已分配维护员劳动力 ÷ 100))。只有实际填满的岗位劳动力计数，空缺岗位没有减速效果。开局即能建造「屎山维护研究所」，每座提供 100 个维护员岗位，不限每星球建造数；岗位的基础社会学产出比相应原版社会学岗位少 1。建筑可为两类机械政体提供对应岗位。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/sc05-individual-maintainer-2203.07.17.jpg[/img]
 
-[h2]版本与测试[/h2]
-Mod v0.1.0，适配 Stellaris 4.5.*。简体中文单 Mod 实机已验证主要开局、阶段、项目与白绮路径；完整测试矩阵仍在收尾。其他九种官方语言静态校验通过，运行时不在范围内。高劳动力减速边界、部分奖励实机数值与长期平衡仍待进一步测试。
+[h2]两个研究项目：续命与重构[/h2]
+[b]维护屎山[/b]消耗 2000 + 1000×n 社会学研究；n 为此前完成维护或持续优化的总次数。完成后局势进度归零、n 加 1，下一次月进度和项目费用随之提高。每次获得一项适用的正面机械特质；该池用尽后抽取对机械物种确实生效的非机械正面特质；再用尽后改为随机小幅、可累积的「优化迭代」增益。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/pr02-stage5-maintain-reload-next-cost-5000.jpg[/img]
+[b]清理屎山[/b]消耗 8000 + 2000×n 社会学研究。完成后结束局势，主体物种的「屎山代码」改为「重构完成」，全帝国岗位产出 +25%，岗位维护费不因此提高。清理可在局势任一阶段研究，能否撑到完成是另一回事。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/clean-natural-event-2228.03.02.jpg[/img]
 
+[h2]重构之后：持续优化并非零风险[/h2]
+清理后，重复项目改名「持续优化」，费用为 4000 + 2000×n 社会学研究。它继续增加 n 并授予奖励，但每次完成有 10% 概率使「大厦将倾」从头复发，同时移除「重构完成」、恢复「屎山代码」。复发后仍可再次维护或清理。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/pr01-optimize-n2-next-cost-2229.09.02.jpg[/img]
+
+[h2]传奇领袖：负疚者·白绮[/h2]
+开局事件链可获得机械传奇行政官白绮。她不因年龄死亡，也不能被主动解雇。只要她存活并受雇，全国工程学研究速度 +10%，社会学研究速度 -5%；每完成一次维护或持续优化，分别再 +5% 和 -2.5%，社会学惩罚最低 -75%。首都决议可与她交谈，她会回应维护、重构和复发。若她意外死亡，可花费 500 能量币和 200 合金复活，保留等级、经验和已获特质。
+[img]https://raw.githubusercontent.com/XenoAmess/xenoamess_stellaries_dev/main/assets/shishan-code-origin/evidence/ui01-vivhite-talk-2205.04.26.jpg[/img]
+
+[h2]版本、语言与测试[/h2]
+Mod v0.1.1，适配 Stellaris 4.5.*。简体中文单 Mod 实机已覆盖机械开局、局势阶段、资源来源、项目、白绮对话与复活以及多种重载场景；完整验收矩阵仍在继续。其余九种官方语言静态校验通过，运行时不在范围内。长期平衡、部分边界组合和第三方 Mod 兼容性仍待扩大测试。
 [url=https://github.com/XenoAmess/xenoamess_stellaries_dev]源码、更新记录与问题反馈[/url]
