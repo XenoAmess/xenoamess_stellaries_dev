@@ -13,6 +13,7 @@ import re
 import subprocess
 import sys
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from synthetic_queen_laoda_replacement.tools.publish_workshop import (
     CreateItemResult,
     Steam,
