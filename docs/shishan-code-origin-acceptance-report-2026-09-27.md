@@ -2,13 +2,13 @@
 
 结论：**尚未完成整体验收**。`0.1.0` 已于 2026-09-29 按用户要求[发布到新创意工坊物品](shishan-code-origin-release-0.1.0-2026-09-29.md)，但发布不代表以下矩阵全部通过。静态包级检查通过，部分简体中文实机路径通过；此前所谓“图形启动故障”现已确定是桌面截图未捕获游戏画面，Steam F12 可正常截取原版和有 Mod 主菜单，剩余实机场景继续执行。目标游戏为 Stellaris Cygnus 4.5.1；只启用本 Mod 的隔离用户目录用于实机测试。
 
-2026-09-30 更新：当前正式版本为 `0.1.1`，同一创意工坊物品 `3810136486` 已换成详细 BBCode 和 8 张穿插实机截图，远端内容与仓库一致。发布记录见[页面改版](shishan-code-origin-workshop-page-v0.1.1-plan-2026-09-30.md)。
+2026-09-30 更新：当前正式版本为 `0.1.2`，同一创意工坊物品 `3810136486` 的详细 BBCode 已加入玩家指定的 A02 起源插画及 8 张穿插实机截图，远端内容与仓库一致。发布记录见[页面改版](shishan-code-origin-workshop-page-v0.1.1-plan-2026-09-30.md)和[A02 追加](shishan-code-origin-workshop-a02-v0.1.2-plan-2026-09-30.md)。
 
 ## 已通过的检查
 
 | 门槛 | 结果与证据 |
 | --- | --- |
-| P 语言工具 | `C:\workspace\open_kaishek` 的 `py tools/accept_stellaris_mod.py` 对当前正式 v0.1.1 Mod 为 `PASS`：19/19 脚本解析、13 个 Mod DDS、173 个本地化键。工具所需的本体 DDS 引用解析修复已在工具仓库提交并推送 `63997f2`。这是包级静态检查，不代表所有玩法路径已实机执行。 |
+| P 语言工具 | `C:\workspace\open_kaishek` 的 `py tools/accept_stellaris_mod.py` 对正式 v0.1.2 和本地候选 v0.1.3-rc.1 Mod 均为 `PASS`：19/19 脚本解析、13 个 Mod DDS、173 个本地化键。工具所需的本体 DDS 引用解析修复已在工具仓库提交并推送 `63997f2`。这是包级静态检查，不代表所有玩法路径已实机执行。 |
 | 其他官方语言 | `py tools/shishan_code/audit_translations.py`：八种非中文、非英文语言 0 个英语原文残留和 0 个汉字占位；英文及其余语言的键、文件头、编码、引用由包级工具检查。结论为**静态校验通过，运行时不在范围内**。 |
 | 机械兼容奖励 | `py tools/shishan_code/audit_compat_traits.py --game "C:\Program Files (x86)\Steam\steamapps\common\Stellaris"`：19 个映射的原版数值修正、机械谱系许可和十种语言的原版名称/描述引用通过。奖励实际发放与人口收益仍未实测。 |
 | 肖像与事件图 | 简中领袖列表、详情卡、存档重载截图证明 V2 静态肖像不再出现头身错位；A05 新事件图在实机中脸部完整。可共享证据为 `assets/shishan-code-origin/evidence/vivhite-leader-v2-stellaris-4.5.1.png`；生成提示词和原图保存在 `assets/shishan-code-origin/prompts` 与 `generated`。 |
@@ -43,6 +43,8 @@
 同日 PR-05 的一个关键数值子项通过：合法且未满员的 `2000` 矿工岗位中，兼容与原版两个 `+0.15` 特质、仅兼容特质、无两项特质的矿工有效劳动力依次 `1289/1158/1019`，岗位矿物产出依次 `60.66/54.50/47.95`；三组单位劳动力产出均约 `0.04706`。同存档特质计数依次 `1/1`、`1/0`、`0/0`，说明兼容特质实机生效。详细方法及六份截图/存档见[PR-05 兼容特质对照](shishan-code-origin-pr05-compat-runtime-2026-09-28.md)。PR-05 其他候选和四种迭代数值仍待测，不能据此宣告 PR-05 整体通过。
 
 ## 当前状态与后续验收
+
+2026-09-30 PR-02 原版引擎中断补测：正式 v0.1.2 在维护项目研究中执行 `abort_special_project` 后，不误发奖励，但跨月也不重建项目，属于真实可用性缺陷。文档先行修复候选 v0.1.3-rc.1 后，从该缺陷存档加载，下一次月脉冲恢复唯一维护项目；连续三个月保持唯一，再次引擎中断后仍恢复，清理研究队列、次数、局势自然推进与白绮修正不变。八份原生存档的[9 项审计](../assets/shishan-code-origin/evidence/pr02-engine-abort-audit-2026-09-30.json)全部通过，`open_kaishek` 亦 PASS。详见[专项记录](shishan-code-origin-pr02-engine-abort-2026-09-30.md)。**此子项仅在本地预发布候选版通过，公开 v0.1.2 尚有缺陷；PR-02 整行和 Mod 整体仍为 PENDING。**
 
 无 Mod 原版和简中隔离 Mod 均经 Steam F12 截得真实游戏菜单；原版校验和 `358e`，单 Mod 校验和 `64ec`。此前用桌面截图判断“游戏白屏、驱动故障”的结论已撤回：桌面截图没有捕获游戏的显示表面。Steam 官方联网本体及创意工坊校验均为 `No Error`，显示分辨率已恢复 `2560×1440@60Hz`，不再进行驱动操作。相关排查经过和纠正证据见[实机发现](shishan-code-origin-runtime-findings-2026-09-27.md)。
 2026-09-28 文件验证结束后曾遗漏切回离线。应用户提醒，已退出 Stellaris，并在 Steam 客户端菜单执行“进入离线模式”；客户端明确显示“当前处于离线模式”，证据为 `assets/shishan-code-origin/evidence/steam-offline-after-verification-2026-09-28.png`。此后本地实机验收保持离线。

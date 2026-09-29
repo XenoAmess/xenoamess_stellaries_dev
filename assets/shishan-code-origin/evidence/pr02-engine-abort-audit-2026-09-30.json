@@ -1,0 +1,483 @@
+{
+  "pass": true,
+  "checks": {
+    "expected_native_save_dates": true,
+    "baseline_maintenance_actively_researching": true,
+    "engine_abort_removes_maintenance_without_reward": true,
+    "published_version_defect_reproduced": true,
+    "candidate_restores_exactly_one_available_project": true,
+    "next_month_and_later_are_idempotent": true,
+    "second_abort_recovers_new_single_project": true,
+    "cleanup_queue_and_research_preserved": true,
+    "no_rewards_or_vivhite_changes": true
+  },
+  "states": {
+    "before": {
+      "path": "assets/shishan-code-origin/evidence/pr02-dual-projects-after35d-2229.10.15.sav",
+      "sha256": "161e7610835b7782b4cd3b395add38fd3957bdcb6d33eeeb960528bf96053340",
+      "date": "2229.10.15",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_MAINTAIN": {
+          "id": 5,
+          "status": "in_progress"
+        },
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 14.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 5,
+          "technology": null,
+          "progress": 28.33912
+        },
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 0.0
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 1,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    },
+    "abort_same_day": {
+      "path": "assets/shishan-code-origin/evidence/pr02-engine-abort-same-day-2229.10.15.sav",
+      "sha256": "4a69a4b96dd99c3e6a51a72d27289b53e6d733196255481bb79ddaefcafc8eea",
+      "date": "2229.10.15",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 14.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 0.0
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 0,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    },
+    "abort_after_six_days": {
+      "path": "assets/shishan-code-origin/evidence/pr02-engine-abort-after6d-2229.10.21.sav",
+      "sha256": "95cfa54bf46274b98f86f3cfcd3f4bc9ba3e760d32321a93d01cdc88cacc9bc9",
+      "date": "2229.10.21",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 14.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 0.0
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 0,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    },
+    "published_after_month": {
+      "path": "assets/shishan-code-origin/evidence/pr02-engine-abort-after-month-2229.11.12.sav",
+      "sha256": "094f6f972498458fa302464fb3a04a54285c64c2bfa5508fb9e31242d69e1211",
+      "date": "2229.11.12",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 21.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 28.33912
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 0,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    },
+    "candidate_restored": {
+      "path": "assets/shishan-code-origin/evidence/pr02-engine-abort-recovered-2229.12.04.sav",
+      "sha256": "c219bc7e9ed5438ddbf559a9219dff4c942e30d058b14037af42c611adbbd406",
+      "date": "2229.12.04",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        },
+        "SHISHAN_CODE_MAINTAIN": {
+          "id": 7,
+          "status": null
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 28.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 56.67824
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 1,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    },
+    "candidate_next_month": {
+      "path": "assets/shishan-code-origin/evidence/pr02-engine-abort-stable-2230.01.01.sav",
+      "sha256": "d148744bf9aa445002b4139dc9f59837b4dcb8fa6e3dbf6aeb1d03a304c3279e",
+      "date": "2230.01.01",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        },
+        "SHISHAN_CODE_MAINTAIN": {
+          "id": 7,
+          "status": null
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 35.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 56.67824
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 1,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    },
+    "candidate_three_months": {
+      "path": "assets/shishan-code-origin/evidence/pr02-engine-abort-stable-2230.03.28.sav",
+      "sha256": "c30e11448daeb91ad61cf27f8680c15ab986c81b016e41a04fb571aee719be0a",
+      "date": "2230.03.28",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        },
+        "SHISHAN_CODE_MAINTAIN": {
+          "id": 7,
+          "status": null
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 49.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 141.6956
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 1,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    },
+    "candidate_reabort_restored": {
+      "path": "assets/shishan-code-origin/evidence/pr02-engine-reabort-recovered-2230.04.11.sav",
+      "sha256": "c388caddadc7531dcded8003357bb176cca7e786b83c55797e75f7ee42d4587d",
+      "date": "2230.04.11",
+      "maintenance_count": 2,
+      "last_completed_project": "SHISHAN_CODE_OPTIMIZE",
+      "projects": {
+        "SHISHAN_CODE_CLEAN": {
+          "id": 6,
+          "status": "in_progress"
+        },
+        "SHISHAN_CODE_MAINTAIN": {
+          "id": 8,
+          "status": null
+        }
+      },
+      "society_queue_on_optimize": false,
+      "main_traits": [
+        "trait_machine_unit",
+        "trait_robot_streamlined_protocols",
+        "trait_robot_bulky",
+        "trait_robot_repurposed_hardware",
+        "trait_robot_high_maintenance",
+        "trait_cold_planet_preference",
+        "trait_robot_integrated_weaponry",
+        "trait_robot_artificial_engineers",
+        "trait_shishan_code"
+      ],
+      "situation_count": 1,
+      "situation_progress": 56.0,
+      "refactored_job_modifiers": [],
+      "vivhite_base_modifiers": [
+        1
+      ],
+      "vivhite_engineering_layers": [
+        2
+      ],
+      "vivhite_society_layers": [
+        2
+      ],
+      "temporary_boost_refs": 0,
+      "queue": [
+        {
+          "project_id": 6,
+          "technology": null,
+          "progress": 170.03472
+        },
+        {
+          "project_id": null,
+          "technology": "tech_planetary_unification",
+          "progress": 0.0
+        }
+      ],
+      "maintenance_project_instances": 1,
+      "cleanup_project_instances": 1,
+      "success_pending_flags": []
+    }
+  },
+  "screenshots": {
+    "first_abort_console": {
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\assets\\shishan-code-origin\\evidence\\pr02-engine-abort-console-2229.10.15.jpg",
+      "sha256": "4901bcd9d0d6f39904804a224c9405b4ddcfe8ee3d9c9e2a5ce98671cf5aec6e"
+    },
+    "first_restore_ui": {
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\assets\\shishan-code-origin\\evidence\\pr02-engine-abort-recovered-ui-2229.12.04.jpg",
+      "sha256": "33ca49eb26a3bd31f6c6b1fd5ebb4ae69da24127d208dd46d86c145e4346783e"
+    },
+    "second_abort_console": {
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\assets\\shishan-code-origin\\evidence\\pr02-engine-reabort-console-2230.03.28.jpg",
+      "sha256": "9f1d5d121fc92c0be5556a4be1145c13d66c9341e0f47d463fe3b28b2b554576"
+    },
+    "second_restore_ui": {
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\assets\\shishan-code-origin\\evidence\\pr02-engine-reabort-recovered-ui-2230.04.11.jpg",
+      "sha256": "7bedc78a72ccd4ec85f9afac021a2f3a4533cf329692ce6c67b2de718073d91c"
+    }
+  }
+}

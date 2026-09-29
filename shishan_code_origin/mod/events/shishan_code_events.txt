@@ -268,6 +268,13 @@ country_event = {
 			limit = { NOT = { has_country_flag = shishan_code_refactored } has_modifier = shishan_code_refactored_jobs }
 			remove_modifier = shishan_code_refactored_jobs
 		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = shishan_code_maintain_success_pending }
+				NOT = { has_country_flag = shishan_code_optimize_success_pending }
+			}
+			country_event = { id = shishan_code.11 }
+		}
 	}
 }
 
