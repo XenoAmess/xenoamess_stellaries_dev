@@ -19,4 +19,4 @@
 
 旧版失败画面归档为 `assets/shishan-code-origin/evidence/ui01-talk-pending-raw-flag-2203.06.03.jpg`。隔离简中单 Mod 校验和 `0305` 下，载入 `2203.06.03` 待复活原生存档后，决议仍不可用，悬停显示「白绮尚未归来，无法与她交谈。」且不泄漏内部旗标；点击该决议不触发弹窗，见 `ui01-talk-pending-fixed-2203.06.03.jpg` 与 `ui01-talk-pending-disabled-click-2203.06.03.jpg`。同日复活存档中决议可用且正常弹出「与白绮交谈」对话，见 `ui01-talk-revived-enabled-2203.06.03.jpg` 与 `ui01-talk-revived-dialogue-2203.06.03.jpg`。游戏 `error.log` 未检出本 Mod 相关错误。
 
-翻译沿用用户指定 MiniMax 工作流，两轮翻译原文、输出及提示上下文归档于 `assets/shishan-code-origin/evidence/ui01-talk-tooltip-minimax-2026-09-30.json`。简中及其余九种官方语言均新增同一键；非中文翻译静态校验通过，运行时不在范围内。正式包静态和发布核验见 v0.1.1 页面改版记录。
+翻译沿用用户指定 MiniMax 工作流，两轮翻译原文、输出及提示上下文归档于 `assets/shishan-code-origin/evidence/ui01-talk-tooltip-minimax-2026-09-30.json`。简中及其余九种官方语言均新增同一键；非中文翻译静态校验通过，运行时不在范围内。正式包 `open_kaishek PASS`（19/19 脚本、13 DDS、173 本地化键），v0.1.1 已发布并完成远端校验，见[页面改版与发布记录](shishan-code-origin-workshop-page-v0.1.1-plan-2026-09-30.md)。

@@ -22,4 +22,6 @@
 - `shishan_code_origin/workshop/description.bbcode` 已从五条概览扩为八段玩法说明：五阶段数值、生产来源、月进度公式、维护员岗位、两项动态研究费、三层奖励、重构、优化复发、白绮及复活费用均与现行脚本逐项核对。正文 UTF-8 为 5559 字节，低于现有发布工具的 8000 字节限制。
 - BBCode 依次穿插 8 张无测试控制台覆盖的既有简中实机图：起源选择、第一与第五阶段、维护员、维护项目、清理完成、持续优化、白绮对话；截图、URL、SHA-256 和字节数均记于 `shishan_code_origin/workshop/screenshots-v0.1.1.json`。8 个源文件已由 Git 跟踪，8 个公开原图 URL 均返回 HTTP 200 与 `image/jpeg`。同一组截图也列入创意工坊附加预览上传清单。
 - v0.1.1 正式 changelog 与以 `[v0.1.1]` 开头的 Change Note 已先于上传建立；发布源会在提交推送后冻结。简体中文待复活与复活后对话均完成实机正反向回归；正式 `open_kaishek PASS`：19/19 P 脚本、13 DDS、173 本地化键。八种非中文非英文的占位扫描全部为零；连同英文，共九种非中文语言**静态校验通过，运行时不在范围内**。
-- 创意工坊更新、公开页面图片实际呈现和空缓存下载核验待执行；在此之前不标记发布完成。
+- 从已推送的提交 `4694b88643945bf8487c495b97fae3c4ced02a80` 更新本项目物品 `3810136486`，Steamworks `SubmitItemUpdate` 返回成功码 `1`，无需新法律协议。匿名公开详情与入库 BBCode 逐字一致，公开状态正常，主预览逐字节一致；Steam 客户端页面实际显示 BBCode 段落中的图片与真机截图画廊，v0.1.1 Change Note 可见。对应页面截图为 `workshop-v011-inline.png`、`workshop-v011-gallery.png` 与 `workshop-v011-changenote.png`。
+- 隔离旧缓存后，匿名 SteamCMD 下载更新包 `1,142,610` 字节、`64` 文件；与提交源比较缺失、额外、哈希差异均为 `0`。只读上游 `3710613857` 的更新时间与说明 SHA-256 均与已归档基线一致。机器可读回执见 `shishan_code_origin/evidence/v0.1.1/publish-state.json` 与 `workshop-verification.json`。
+- 上传及核验后 Steam 已恢复离线模式，UI 与 Steamworks 离线检查均确认，截图为 `steam-offline-after-v011-2026-09-30.png`。本次发布已完成；按用户顺序，之后继续整体验收矩阵。
