@@ -19,4 +19,6 @@
 
 ## 执行记录
 
-本地原图为 `1727×911`、`2,919,312` 字节，SHA-256 `84153b8bd18a0e5010dd9f43f2258d4008b03756dcb69f8df21c8f7f358a4c60`。对应 GitHub Raw URL 的 HEAD 返回 HTTP `200`、`Content-Type: image/png`、`Content-Length: 2919312`；完整下载到隔离目录后字节数和 SHA-256 都与原图一致。BBCode 为 `5,771` 字节，九张正文图片与 `page-images-v0.1.2.json` 的顺序、来源及哈希全部一致，其中八张真机截图仍进入画廊。正式 v0.1.2 `open_kaishek PASS`（19/19 脚本、13 DDS、173 键），八种非英文非中文翻译的英语原文残留与汉字占位均为 `0`；九种非简中语言静态校验通过，运行时不在范围内。发布与远端显示结果待执行。
+本地原图为 `1727×911`、`2,919,312` 字节，SHA-256 `84153b8bd18a0e5010dd9f43f2258d4008b03756dcb69f8df21c8f7f358a4c60`。对应 GitHub Raw URL 的 HEAD 返回 HTTP `200`、`Content-Type: image/png`、`Content-Length: 2919312`；完整下载到隔离目录后字节数和 SHA-256 都与原图一致。BBCode 为 `5,771` 字节，九张正文图片与 `page-images-v0.1.2.json` 的顺序、来源及哈希全部一致，其中八张真机截图仍进入画廊。正式 v0.1.2 `open_kaishek PASS`（19/19 脚本、13 DDS、173 键），八种非英文非中文翻译的英语原文残留与汉字占位均为 `0`；九种非简中语言静态校验通过，运行时不在范围内。
+
+2026-09-30：冻结源提交 `ea2445ea7159750bafc2fff955b1522d95808b05` 已推送。Steamworks 成功更新本项目物品 `3810136486`，收据位于 `shishan_code_origin/evidence/v0.1.2/publish-state.json`。公开 API 返回的 BBCode 与入库正文逐字一致；Steam 客户端实际渲染了 A02 原图与“起源插画”图注，画廊及正文的八张真机截图仍在，证据为 `assets/shishan-code-origin/evidence/workshop-v012-a02-inline.png`。公开改动说明页显示与 `change-note-v0.1.2.txt` 完全一致的 `[v0.1.2]` 条目，客户端截图为 `assets/shishan-code-origin/evidence/workshop-v012-change-note.png`。匿名 SteamCMD 重新下载后，64 个文件、共 1,142,610 字节与冻结 Mod 逐文件一致；上游物品 `3710613857` 的更新时间与描述哈希仍等于既有基线。机器可复核结果见 `shishan_code_origin/evidence/v0.1.2/workshop-verification.json`，复核程序为 `shishan_code_origin/tools/verify_workshop_v012.py`。整体 Mod 测试仍继续，不以页面发布代替验收。
