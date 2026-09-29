@@ -29,3 +29,8 @@
 - 匿名公开详情返回标题「屎山代码」、`visibility=0`、`banned=0`、Stellaris App ID `281990`；正文与仓库 BBCode 逐字一致，主预览 PNG 逐字节一致，公开改动说明页面能读到完整 `[v0.1.0]` 文本。
 - 使用匿名 SteamCMD 在此前无该 ID 的缓存中下载 manifest `7139535691648194661`，得到 `64` 个文件、`1,141,347` 字节；与上传源比较，缺失、额外、哈希差异均为 `0`。只读上游 `3710613857` 的更新时间和说明 SHA-256 与既有基线一致。
 - 机器可读回执为 `shishan_code_origin/evidence/v0.1.0/publish-state.json` 与 `workshop-verification.json`。公开地址：`https://steamcommunity.com/sharedfiles/filedetails/?id=3810136486`。本次发布不等于整体验收矩阵通过；后续测试继续按[验收记录](shishan-code-origin-acceptance-report-2026-09-27.md)执行。
+
+## 发布后勘误与网络状态
+
+- 已发布的 `0.1.0` changelog 和公开说明把 `J=4800/5800` 最低月速边界列为待验，但该场景此前已在 `docs/shishan-code-origin-speed-4800-2026-09-29.md` 完成实机验收，验收矩阵 SC04 也已通过。这是发布说明遗漏核对的保守误列，不是脚本缺陷；已发布的 `0.1.0` 文字保持历史原样，下个新版本的发布说明应纠正，不复用版本号。
+- 发布及空缓存下载核验后，Steam 客户端已切回离线模式；界面截图归档于 `assets/shishan-code-origin/evidence/steam-offline-after-release-2026-09-29.png`。随后继续使用正式 `0.1.0` 单 Mod 进行简体中文隔离实机测试，详见项目结算防护记录。
