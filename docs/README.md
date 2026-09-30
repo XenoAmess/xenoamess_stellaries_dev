@@ -11,6 +11,7 @@
 ## 文档索引
 
 - [五个 Mod 的 Stellaris 最新正式版兼容检查（2026-09-30）](stellaris-latest-compatibility-2026-09-30.md)
+- [三个兼容维护版本逐个 Steam 发布（2026-09-30）](steam-compatibility-releases-2026-09-30.md)
 
 - [「屎山代码」独立 Mod：需求记录](shishan-code-origin-requirements.md)
 - [「屎山代码」独立 Mod：详细设计](shishan-code-origin-design.md)

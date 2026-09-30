@@ -24,7 +24,7 @@ Stellaris 兼容范围单独记录，例如 `supported_version="4.5.*"`，不得
 
 ## 当前版本线
 
-- 当前仓库兼容维护候选：`1.2.1-rc.1`，目标 `Cygnus v4.5.1 (358e)`；公开工坊仍为 `1.2.0`。旧 `fixtures/iteration-2` 保留历史发布证据，当前版本及树身份由 `fixtures/compatibility-4.5.1/mod-contract.json` 冻结，详细结果见 [全项目兼容检查](stellaris-latest-compatibility-2026-09-30.md)。
+- 当前仓库已准备兼容维护正式版 `1.2.1`，目标 `Cygnus v4.5.1 (358e)`；公开工坊更新状态见 [逐包发布记录](steam-compatibility-releases-2026-09-30.md)。旧 `fixtures/iteration-2` 保留历史发布证据，当前版本及树身份由 `fixtures/compatibility-4.5.1/mod-contract.json` 冻结，详细结果见 [全项目兼容检查](stellaris-latest-compatibility-2026-09-30.md)。
 
 - 当前公开正式版本：`1.2.0`；Workshop 物品为 `3797257579`。
 - `1.2.0` 已通过简体中文实机、`open_kaishek`、仓库测试、公开说明与空缓存内容核验；其他 9 种官方语言静态校验通过，运行时不在范围内。

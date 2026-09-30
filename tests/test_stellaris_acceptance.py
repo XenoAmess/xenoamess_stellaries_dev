@@ -418,7 +418,7 @@ class I1001SourceContractTests(unittest.TestCase):
             .read_text(encoding="utf-8")
         )
         changelog = (acceptance.ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("1.2.1-rc.1", version)
+        self.assertEqual("1.2.1", version)
         self.assertIn(f'version="{version}"', descriptor)
         self.assertEqual(version, contract["mod"]["declared_version"])
         self.assertIn(f"## [{version}]", changelog)
