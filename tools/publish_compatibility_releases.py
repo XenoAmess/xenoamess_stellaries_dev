@@ -264,7 +264,10 @@ def verify(package: str, download: Path, client_notes: Path | None = None) -> No
         "files": remote, "file_count": len(remote), "total_bytes": expected_bytes,
         "missing_files": [], "extra_files": [], "hash_mismatches": [],
     })
-    (folder / ("published-change-notes.txt" if client_notes else "published-change-notes.html")).write_text(notes, encoding="utf-8", newline="\n")
+    save(folder / "published-change-notes.json", {
+        "url": f"https://steamcommunity.com/sharedfiles/filedetails/changelog/{item_id}?l=schinese&insideClient=1",
+        "source": note_source, "text_sha256": digest(notes.encode("utf-8")), "text": notes,
+    })
     print(json.dumps({"verified": package, "version": version, "item_id": item_id, "files": len(remote), "bytes": expected_bytes}), flush=True)
 
 

@@ -35,7 +35,7 @@
 - 初始 HEAD 为 910b455，origin/main 一致；仅有用户未跟踪文件 console_history.txt。
 - Steam 初始离线，正常关闭后在 Steam config 目录保存原 loginusers.vdf 备份，只临时将唯一账号 WantsOfflineMode 从 1 改为 0，再正常启动；Steamworks 已读回在线登录。
 - 匿名 Steam Change Note 英文 URL 返回 HTTP 429；公开详情接口与 Steamworks 可用。发布前记录该限制并核对既有发布历史及远端内容身份。实际核验发现同一公开改动说明页的简中客户端展示 URL（l=schinese&insideClient=1）返回 HTTP 200，可匿名读回完整新版本说明，后续采用该公开页面逐字核验，不把本地发送文字当作远端读回证据。
-- 共享仓库已有 v0.1.1（其他包历史发布），合成女王采用 synthetic-queen-v0.1.1，灰风沿用 gray-wind-v1.0.2，无限岗位使用 v1.2.1；不覆盖任何历史标签。
+- 共享仓库已有 v0.1.1（其他包历史发布），合成女王采用 synthetic-queen-v0.1.1；灰风沿用 gray-wind-v1.0.2，并创建尚未占用的 v1.0.2；无限岗位使用 v1.2.1。不覆盖任何历史标签。
 - 当前兼容验收详情见 [全项目兼容报告](stellaris-latest-compatibility-2026-09-30.md)。
 - 正式包 open_kaishek 通过：无限岗位 4/4 P 文件、64 键十语言；灰风 8/8、4 DDS；女王 2/2、1 DDS。初次给美术包传入 content folder 而未提供外置 VERSION，报告 MOD_METADATA_MISSING；改用工具文档规定的 package root 后通过，没有修改工具或 Mod 内容。
 - 仓库现有测试 39/39 通过，发布脚本 py_compile 和 git diff --check 通过。发布前 snapshot 已记录三个候选包的全部文件哈希，非描述符文件与正式包逐字节相同。
@@ -49,3 +49,11 @@
 - 公开简中 Change Note 页返回 200，完整 [v1.2.1] 说明逐字匹配。需要正常浏览器 User-Agent、Accept-Language 与物品页 Referer；简中 URL 配合旧最小请求头仍可能返回 429。
 - 空缓存 SteamCMD 下载 15/15 文件、728585 字节与发布源完全相同，缺失、额外与哈希差异为零。主预览与原有三张画廊图保持，两个只读上游身份、更新时间、内容和说明未变。
 - 回执、完整公开更新说明与核验结果见 docs/evidence/steam-compatibility-releases-2026-09-30/vivhite_infinite_positions/。
+- 公开页面 HTML 自带行尾空白与混合缩进；为保留远端读取正文又符合仓库空白检查，页面归档改为 JSON 字符串（保留 HTML 文本及 SHA-256），不修改页面正文或重复上传。
+
+## 顺序 2：灰风美化 v1.0.2 已发布
+
+- 源提交 0905207 已推送后更新既有公开物品 [3800996999](https://steamcommunity.com/sharedfiles/filedetails/?id=3800996999)，Steamworks result=1、legal=false。
+- 公开说明与 BBCode 真源一致，完整 [v1.0.2] 更新说明在公开简中页面逐字匹配；主预览保持，原画廊为空且不额外增加重复图片。
+- 独立空缓存 SteamCMD 下载 13/13 文件、2277268 字节与正式源完全相同，缺失、额外与哈希差异为零；两个只读上游未变。
+- 回执及完整核验见 docs/evidence/steam-compatibility-releases-2026-09-30/gray_wind_beautification/。
