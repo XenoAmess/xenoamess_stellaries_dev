@@ -34,10 +34,18 @@
 
 - 初始 HEAD 为 910b455，origin/main 一致；仅有用户未跟踪文件 console_history.txt。
 - Steam 初始离线，正常关闭后在 Steam config 目录保存原 loginusers.vdf 备份，只临时将唯一账号 WantsOfflineMode 从 1 改为 0，再正常启动；Steamworks 已读回在线登录。
-- 匿名 Steam Change Note 网页返回 HTTP 429；公开详情接口与 Steamworks 可用。发布前记录该限制并核对既有发布历史及远端内容身份，发布后以 Steam 客户端同一公开改动说明页的截图和复制出的完整正文读回 Change Note，不把本地发送文字当作远端读回证据。
+- 匿名 Steam Change Note 英文 URL 返回 HTTP 429；公开详情接口与 Steamworks 可用。发布前记录该限制并核对既有发布历史及远端内容身份。实际核验发现同一公开改动说明页的简中客户端展示 URL（l=schinese&insideClient=1）返回 HTTP 200，可匿名读回完整新版本说明，后续采用该公开页面逐字核验，不把本地发送文字当作远端读回证据。
 - 共享仓库已有 v0.1.1（其他包历史发布），合成女王采用 synthetic-queen-v0.1.1，灰风沿用 gray-wind-v1.0.2，无限岗位使用 v1.2.1；不覆盖任何历史标签。
 - 当前兼容验收详情见 [全项目兼容报告](stellaris-latest-compatibility-2026-09-30.md)。
 - 正式包 open_kaishek 通过：无限岗位 4/4 P 文件、64 键十语言；灰风 8/8、4 DDS；女王 2/2、1 DDS。初次给美术包传入 content folder 而未提供外置 VERSION，报告 MOD_METADATA_MISSING；改用工具文档规定的 package root 后通过，没有修改工具或 Mod 内容。
 - 仓库现有测试 39/39 通过，发布脚本 py_compile 和 git diff --check 通过。发布前 snapshot 已记录三个候选包的全部文件哈希，非描述符文件与正式包逐字节相同。
 - 正式发布源、快照与静态证据先提交推送；随后按顺序更新既有物品。发布结果与下载比对待实施后写入。
 - 首次无限岗位预检发现：匿名接口的原作者正文用 CRLF，仓库 BBCode 用 LF。预检在提交远端前拒绝了这种字节前缀差异，没有上传。发送时保留远端原作者正文的 CRLF 原字节，再追加仓库 LF 的维护说明；核验按同一明确变换比较，避免把换行差异误报为原文被修改。最终传输文案须仍低于 8000 字节。
+- 无限岗位正式源 60f66b1 已推送后，Steamworks 更新返回 result=1、目标 3797257579、legal=false；空缓存 SteamCMD 下载 15 文件 / 728585 字节与源码逐字节一致。后续完整页面与预览核验结果记录在下方。
+
+## 顺序 1：无限岗位 v1.2.1 已发布
+
+- 既有公开物品 [3797257579](https://steamcommunity.com/sharedfiles/filedetails/?id=3797257579) 更新成功；完整 BBCode 与传输源一致，原作者正文的 CRLF 前缀逐字节保留。
+- 公开简中 Change Note 页返回 200，完整 [v1.2.1] 说明逐字匹配。需要正常浏览器 User-Agent、Accept-Language 与物品页 Referer；简中 URL 配合旧最小请求头仍可能返回 429。
+- 空缓存 SteamCMD 下载 15/15 文件、728585 字节与发布源完全相同，缺失、额外与哈希差异为零。主预览与原有三张画廊图保持，两个只读上游身份、更新时间、内容和说明未变。
+- 回执、完整公开更新说明与核验结果见 docs/evidence/steam-compatibility-releases-2026-09-30/vivhite_infinite_positions/。

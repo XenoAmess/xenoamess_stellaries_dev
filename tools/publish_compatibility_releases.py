@@ -10,6 +10,7 @@ import argparse
 import ctypes as C
 from datetime import datetime, timezone
 import hashlib
+import html
 import json
 from pathlib import Path
 import re
@@ -21,7 +22,7 @@ import urllib.error
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "synthetic_queen_laoda_replacement/tools"))
 from publish_workshop import Steam, SubmitItemUpdateResult
-from verify_workshop import additional_preview_urls, community_page, public_details
+from verify_workshop import additional_preview_urls, public_details
 
 APP_ID = 281990
 EVIDENCE = REPO / "docs/evidence/steam-compatibility-releases-2026-09-30"
@@ -50,6 +51,17 @@ def save(path: Path, data: dict) -> None:
 def fetch(url: str) -> bytes:
     with urllib.request.urlopen(url, timeout=30) as response:
         return response.read()
+
+
+def public_notes(item_id: int) -> tuple[int, str]:
+    url = f"https://steamcommunity.com/sharedfiles/filedetails/changelog/{item_id}?l=schinese&insideClient=1"
+    request = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36",
+        "Accept-Language": "zh-CN,zh;q=0.9",
+        "Referer": f"https://steamcommunity.com/sharedfiles/filedetails/?id={item_id}",
+    })
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return response.status, html.unescape(response.read().decode("utf-8", "replace"))
 
 
 def files(root: Path) -> dict:
@@ -85,7 +97,7 @@ def snapshot(package: str) -> None:
         raise RuntimeError("Snapshot already exists; do not overwrite the pre-release baseline")
     details = public_details(item_id)
     try:
-        _, notes = community_page(f"https://steamcommunity.com/sharedfiles/filedetails/changelog/{item_id}?l=english")
+        _, notes = public_notes(item_id)
         note_status = "public_html_read"
     except urllib.error.HTTPError as error:
         if error.code != 429:
@@ -223,7 +235,7 @@ def verify(package: str, download: Path, client_notes: Path | None = None) -> No
         raise RuntimeError("Public Workshop metadata/description does not match the release")
     note = (root / f"workshop/change-note-v{version}.txt").read_text(encoding="utf-8").strip()
     if client_notes is None:
-        _, notes = community_page(f"https://steamcommunity.com/sharedfiles/filedetails/changelog/{item_id}?l=english")
+        _, notes = public_notes(item_id)
         normalized = re.sub(r"<br\s*/?>", "\n", notes, flags=re.I)
         note_source = "anonymous public HTML"
     else:
@@ -246,6 +258,7 @@ def verify(package: str, download: Path, client_notes: Path | None = None) -> No
         "version": version, "item_id": item_id, "url": f"https://steamcommunity.com/sharedfiles/filedetails/?id={item_id}",
         "release_head": state["inputs"]["head"], "details": details, "description_exact": True,
         "complete_change_note_public": True, "change_note_readback_source": note_source,
+        "change_note_url": f"https://steamcommunity.com/sharedfiles/filedetails/changelog/{item_id}?l=schinese&insideClient=1",
         "primary_preview_unchanged": True, "gallery_unchanged": gallery,
         "readonly_upstreams_unchanged": list(upstream), "download_method": "isolated SteamCMD anonymous validate",
         "files": remote, "file_count": len(remote), "total_bytes": expected_bytes,
