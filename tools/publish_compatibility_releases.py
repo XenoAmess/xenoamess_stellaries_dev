@@ -64,6 +64,19 @@ def tree(root: Path) -> str:
     return result.hexdigest()
 
 
+def description_payload(package: str, before: dict) -> bytes:
+    """Retain the author's exact remote CRLF prefix and the committed appendix."""
+    root = RELEASES[package][2]
+    text = (root / "workshop/description.bbcode").read_text(encoding="utf-8")
+    if package == "vivhite_infinite_positions":
+        original = before["upstreams"]["3710613857"]["description"]
+        normalized = original.replace("\r\n", "\n")
+        if not text.startswith(normalized):
+            raise RuntimeError("Original author's description prefix must remain exact")
+        text = original + text[len(normalized):]
+    return text.encode("utf-8")
+
+
 def snapshot(package: str) -> None:
     item_id, version, root, _ = RELEASES[package]
     folder = EVIDENCE / package
@@ -117,16 +130,12 @@ def preflight(package: str) -> dict:
     changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
     if f"## [{version}]" not in changelog:
         raise RuntimeError("Formal changelog missing")
-    description = (root / "workshop/description.bbcode").read_bytes()
+    description = description_payload(package, before)
     note = (root / f"workshop/change-note-v{version}.txt").read_bytes().strip()
     if len(description) >= 8000 or not note.startswith(f"[v{version}]".encode("ascii")):
         raise RuntimeError("Description limit or Change Note prefix invalid")
     if f"v{version}" not in description.decode("utf-8") or "4.5.*" not in description.decode("utf-8"):
         raise RuntimeError("Formal description version/compatibility missing")
-    if package == "vivhite_infinite_positions":
-        original = before["upstreams"]["3710613857"]["description"]
-        if not description.decode("utf-8").startswith(original):
-            raise RuntimeError("Original author's description prefix must remain exact")
     current_files = files(mod)
     candidate = before["accepted_candidate_files"]
     if set(current_files) != set(candidate) or any(current_files[n] != candidate[n] for n in current_files if n != "descriptor.mod"):
@@ -172,7 +181,7 @@ def publish(package: str) -> None:
             raise RuntimeError("StartItemUpdate failed")
         state["stage"] = "started"
         save(path, state)
-        for method, value in (("SetItemDescription", (root / "workshop/description.bbcode").read_bytes()),
+        for method, value in (("SetItemDescription", description_payload(package, before)),
                               ("SetItemContent", str((REPO / package / "mod").resolve()).encode("utf-8"))):
             if not steam.call(method, handle, value):
                 raise RuntimeError(f"Steamworks {method} failed")
@@ -203,7 +212,7 @@ def verify(package: str, download: Path, client_notes: Path | None = None) -> No
     if not local or local != remote or local != state["inputs"]["content"]:
         raise RuntimeError("Downloaded package differs from frozen submitted source")
     details = public_details(item_id)
-    description = (root / "workshop/description.bbcode").read_text(encoding="utf-8")
+    description = description_payload(package, before).decode("utf-8")
     expected_bytes = sum(f["bytes"] for f in local.values())
     if (details.get("result") != 1 or details.get("title") != state["inputs"]["title"]
             or details.get("visibility") != 0 or details.get("banned") != 0
