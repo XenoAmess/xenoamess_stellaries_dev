@@ -4,6 +4,8 @@
 
 用户在完成五个 Mod 的兼容维护后明确要求“有更新的，都给我一个一个发布到steam”。本次只发布三个发生更新的包，按下列顺序更新既有公开物品，不新建重复物品：
 
+三个正式版本均已按顺序公开发布并完成远端核验。各包完成核验后才上传下一个；现有脚本与美术保持候选验收字节，Steam 公开兼容信息均为 4.5.*。
+
 | 顺序 | Mod | Workshop ID | 候选版本 | 正式版本 |
 | --- | --- | --- | --- | --- |
 | 1 | 无限岗位 | 3797257579 | 1.2.1-rc.1 | 1.2.1 |
@@ -39,7 +41,7 @@
 - 当前兼容验收详情见 [全项目兼容报告](stellaris-latest-compatibility-2026-09-30.md)。
 - 正式包 open_kaishek 通过：无限岗位 4/4 P 文件、64 键十语言；灰风 8/8、4 DDS；女王 2/2、1 DDS。初次给美术包传入 content folder 而未提供外置 VERSION，报告 MOD_METADATA_MISSING；改用工具文档规定的 package root 后通过，没有修改工具或 Mod 内容。
 - 仓库现有测试 39/39 通过，发布脚本 py_compile 和 git diff --check 通过。发布前 snapshot 已记录三个候选包的全部文件哈希，非描述符文件与正式包逐字节相同。
-- 正式发布源、快照与静态证据先提交推送；随后按顺序更新既有物品。发布结果与下载比对待实施后写入。
+- 正式发布源、快照与静态证据已先提交推送，随后按顺序更新既有物品；结果与下载比对见下方。
 - 首次无限岗位预检发现：匿名接口的原作者正文用 CRLF，仓库 BBCode 用 LF。预检在提交远端前拒绝了这种字节前缀差异，没有上传。发送时保留远端原作者正文的 CRLF 原字节，再追加仓库 LF 的维护说明；核验按同一明确变换比较，避免把换行差异误报为原文被修改。最终传输文案须仍低于 8000 字节。
 - 无限岗位正式源 60f66b1 已推送后，Steamworks 更新返回 result=1、目标 3797257579、legal=false；空缓存 SteamCMD 下载 15 文件 / 728585 字节与源码逐字节一致。后续完整页面与预览核验结果记录在下方。
 
@@ -57,3 +59,19 @@
 - 公开说明与 BBCode 真源一致，完整 [v1.0.2] 更新说明在公开简中页面逐字匹配；主预览保持，原画廊为空且不额外增加重复图片。
 - 独立空缓存 SteamCMD 下载 13/13 文件、2277268 字节与正式源完全相同，缺失、额外与哈希差异为零；两个只读上游未变。
 - 回执及完整核验见 docs/evidence/steam-compatibility-releases-2026-09-30/gray_wind_beautification/。
+
+## 顺序 3：合成女王美化 v0.1.1 已发布
+
+- 源提交 0240635 已推送后更新既有公开物品 [3807768508](https://steamcommunity.com/sharedfiles/filedetails/?id=3807768508)，Steamworks result=1、legal=false。
+- 完整 BBCode、公开 [v0.1.1] 更新说明及原主预览和三张画廊图均匹配；页面继续明确基础肖像独立界面与自然结局全流程未在本轮验收，不宣称完整危机矩阵通过。
+- 第三个独立空缓存 SteamCMD 下载 4/4 文件、1256486 字节与正式源完全相同，缺失、额外与哈希差异为零；两个只读上游未变。
+- 回执、页面与图片核验、完整下载文件清单见 docs/evidence/steam-compatibility-releases-2026-09-30/synthetic_queen_beautification/。
+
+## 最终收口
+
+- 三个正式包合计 32 个文件全部远端匹配，各物品 ID、SemVer、4.5.*、完整说明和 Change Note 一致。
+- 非中文翻译静态校验通过，运行时不在范围内；不新增其他语言实机或扩大原有实机结论。
+- 牢大、屎山代码生产包未改且不重复发布；两个只读上游没有发生变化。
+- 各包核验后的 Git 标签为 v1.2.1、gray-wind-v1.0.2（同时 v1.0.2）、synthetic-queen-v0.1.1，均对应已核验的正式版本；既有 v0.1.1 历史标签未覆盖。
+- 最终正式包、页面和回执证据完成归档；本次发布没有扩张原实机验收结论。Steam 已正常关闭并只恢复原 WantsOfflineMode=1，临时本地配置备份已移除；正常静默重启后 Steamworks BLoggedOn=false，原有离线偏好恢复通过。见 steam-preference-restoration.json。
+- 总结与全部生产文件身份见 docs/evidence/steam-compatibility-releases-2026-09-30/release-summary.json。用户文件 console_history.txt 未纳入提交。
