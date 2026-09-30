@@ -817,7 +817,7 @@ DISTAR_PHASE_CAT = {
 			modifier = {
 				add = 1
 				from = {
-					has_carrier_flag = phaseshifting_active
+					has_planet_flag = phaseshifting_active
 					has_modifier = phaseshifted
 					OR = {
 						NOT = { exists = space_owner }
@@ -836,7 +836,7 @@ DISTAR_PHASE_CAT = {
 			modifier = {
 				add = 1
 				from = {
-					has_carrier_flag = phaseshifting_active
+					has_planet_flag = phaseshifting_active
 					has_modifier = phaseshifted
 					exists = space_owner
 					space_owner = {
@@ -851,7 +851,7 @@ DISTAR_PHASE_CAT = {
 				add = 1
 				from = {
 					NOR = {
-						has_carrier_flag = phaseshifting_active
+						has_planet_flag = phaseshifting_active
 						has_modifier = phaseshifted
 					}
 				}
@@ -1363,7 +1363,7 @@ tomb_world_cat = {
 				is_planet_class = pc_barren
 				is_planet_class = pc_barren_cold
 			}
-			NOT = { has_carrier_flag = nuked_planet_anomalies_disabled }
+			NOT = { has_planet_flag = nuked_planet_anomalies_disabled }
 		}
 	}
 	on_success = {

@@ -65,7 +65,7 @@ class GrayWindPackageTests(unittest.TestCase):
         self.assertIn(f'version="{version}"', descriptor)
         self.assertIn('name="XenoAmess的灰风美化"', descriptor)
         self.assertNotIn('name="[XenoAmess的灰风美化]"', descriptor)
-        self.assertIn('supported_version="4.4.*"', descriptor)
+        self.assertIn('supported_version="4.5.*"', descriptor)
         self.assertIn('picture="thumbnail.png"', descriptor)
         self.assertNotIn("remote_file_id", descriptor)
         self.assertEqual("xenoamess_gray_wind_beautification", self.contract["local_mod_id"])
@@ -167,7 +167,7 @@ class GrayWindPackageTests(unittest.TestCase):
         for texture_ref in texture_refs:
             self.assertTrue((MOD_ROOT / texture_ref).is_file(), texture_ref)
 
-    @unittest.skipUnless(GAME_ROOT.is_dir(), "Stellaris 4.4.6 base files not installed")
+    @unittest.skipUnless(GAME_ROOT.is_dir(), "Stellaris base files not installed")
     def test_overridden_files_are_minimal_patches_of_current_base(self) -> None:
         event_mod = (MOD_ROOT / "events/gray_goo_events.txt").read_text(encoding="utf-8-sig")
         event_base = (GAME_ROOT / "events/gray_goo_events.txt").read_text(encoding="utf-8-sig")

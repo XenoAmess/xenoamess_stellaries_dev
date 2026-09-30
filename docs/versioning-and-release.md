@@ -9,20 +9,22 @@
 - `PATCH`：向后兼容的缺陷修复、兼容修正和本地化修正。
 - `-rc.N`：正式发布候选；默认不上传到公开创意工坊。
 
-Stellaris 兼容范围单独记录，例如 `supported_version="4.4.*"`，不得再把 `4.4.6` 拼进 Mod 自身版本号。
+Stellaris 兼容范围单独记录，例如 `supported_version="4.5.*"`，不得把游戏版本拼进 Mod 自身版本号。
 
 ## 唯一版本源
 
 根目录 `VERSION` 是唯一版本源，只包含一行版本号。以下位置必须与它保持一致：
 
 1. `vivhite_infinite_positions/mod/descriptor.mod` 的 `version`。
-2. 当前迭代 `fixtures/iteration-*/mod-contract.json` 的 `mod.declared_version`。
+2. 当前验收合同 `fixtures/compatibility-4.5.1/mod-contract.json` 的 `mod.declared_version`；已发布迭代合同保留各自历史版本。
 3. 当前版本的 `CHANGELOG.md` 标题。
 4. 正式发布的 Steam Change Note 与 Git 标签。
 
 自动化测试必须拒绝上述版本发生漂移。`supported_version` 是游戏兼容合同，不参与一致性比较。
 
 ## 当前版本线
+
+- 当前仓库兼容维护候选：`1.2.1-rc.1`，目标 `Cygnus v4.5.1 (358e)`；公开工坊仍为 `1.2.0`。旧 `fixtures/iteration-2` 保留历史发布证据，当前版本及树身份由 `fixtures/compatibility-4.5.1/mod-contract.json` 冻结，详细结果见 [全项目兼容检查](stellaris-latest-compatibility-2026-09-30.md)。
 
 - 当前公开正式版本：`1.2.0`；Workshop 物品为 `3797257579`。
 - `1.2.0` 已通过简体中文实机、`open_kaishek`、仓库测试、公开说明与空缓存内容核验；其他 9 种官方语言静态校验通过，运行时不在范围内。

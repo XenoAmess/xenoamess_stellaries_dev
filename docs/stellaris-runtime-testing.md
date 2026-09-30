@@ -2,6 +2,8 @@
 
 本文记录本项目在 Stellaris 4.4.6 上已经实测确认的 UI、存档和日志行为。它们属于 Stellaris 专有实践，不同步到 CK3 方言知识库。
 
+2026-09-30 的当前兼容基线已更新为 `Cygnus v4.5.1 (358e)`，详见 [五包兼容复测](stellaris-latest-compatibility-2026-09-30.md)。下述 4.4.6 记录保留为历史事实。4.5.1 实测 `save <name>` 控制台命令返回 Unknown command，当前回归改用菜单保存；不再依据下述定时控制台存档的历史方案宣告新版存档生成成功。当前机器 ImageGrab 返回旧桌面，采用 Steam 物理 F12 的实际 GPU 帧（1024×768 窗口模式），通过 ClientToScreen 转换点击坐标；运行清单中的 observed_display 标注了准备后调整的实际显示状态。4.5 新档的游戏元数据、容器哈希、目标 token、重载界面与日志必须联合核对。
+
 ## 语言范围
 
 - 后续所有实机、UI、OCR、存档重载和运行时回归只使用简体中文（`l_simp_chinese`）。

@@ -2,6 +2,8 @@
 
 ## 1. 目标与发布身份
 
+2026-09-30 当前兼容维护候选为 `1.0.2-rc.1`，`supported_version="4.5.*"`；三个覆盖文件重新对齐 4.5.1 原版，当前合同见 `fixtures/gray-wind/mod-contract.json`。本文件下述 1.0.0/1.0.1 的 4.4.6 记录属于历史发布证据；最新检查与实机证据见 [全项目兼容检查](stellaris-latest-compatibility-2026-09-30.md)。工坊未在本次任务更新。
+
 - 新建一个可单独启用、单独版本化、单独发布的 Stellaris Mod，不把任何灰风内容并入现有的“无限岗位（XenoAmess 维护版）”。
 - 游戏与 Steam 展示名称固定为 `XenoAmess的灰风美化`；方括号不是名称的一部分。
 - 本地 Mod ID 固定为 `xenoamess_gray_wind_beautification`。

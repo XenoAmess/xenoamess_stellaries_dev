@@ -1,8 +1,8 @@
-version="1.2.0"
+version="1.2.1-rc.1"
 tags={
 	"Balance"
 }
 name="无限岗位（XenoAmess维护版）"
 picture="thumbnail.png"
-supported_version="4.4.*"
+supported_version="4.5.*"
 remote_file_id="3797257579"

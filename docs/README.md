@@ -10,6 +10,8 @@
 
 ## 文档索引
 
+- [五个 Mod 的 Stellaris 最新正式版兼容检查（2026-09-30）](stellaris-latest-compatibility-2026-09-30.md)
+
 - [「屎山代码」独立 Mod：需求记录](shishan-code-origin-requirements.md)
 - [「屎山代码」独立 Mod：详细设计](shishan-code-origin-design.md)
 - [「屎山代码」起源：首轮平衡性评估](shishan-code-origin-balance-review.md)

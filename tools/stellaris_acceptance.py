@@ -1,4 +1,4 @@
-"""Isolated desktop harness for the iteration-1 Stellaris baseline.
+"""Isolated desktop harness for the current Stellaris compatibility baseline.
 
 The harness copies the unmodified production mod into a disposable userdir,
 starts the exact pinned game build, and records screenshots/OCR beside a
@@ -84,17 +84,17 @@ ROOT = Path(__file__).resolve().parents[1]
 MOD_ROOT = ROOT / "vivhite_infinite_positions" / "mod"
 GAME_EXE = Path(os.environ.get(
     "STELLARIS_EXE",
-    r"D:\Program Files (x86)\Steam\steamapps\common\Stellaris\stellaris.exe",
+    r"C:\Program Files (x86)\Steam\steamapps\common\Stellaris\stellaris.exe",
 )).resolve()
 EXPECTED_EXE_SHA256 = (
-    "bc451c72d9654c8901f1bb0bee1dd78d76f415465c2fbf746e9f98ade333173a"
+    "6fe06709f265e726722dc23f617c5fc4e5557629e2d43fe312016aba547c83e4"
 )
 EXPECTED_MOD_TREE_SHA256 = (
-    "294f9a9834f2aef8cac597a4fc2cae7d7cff734abefda2ae965f38d7f872f1f9"
+    "526710cb6924444ca19c53ae38a38c4068839def2a1256838ea56e8de1ea261a"
 )
 WORKSHOP_ID = "3797257579"
 STEAM_APP_ID = "281990"
-PROFILE_ID = "stellaris-4.4.6"
+PROFILE_ID = "stellaris-4.5.1"
 LOCALISATION_LANGUAGES = (
     "l_english",
     "l_braz_por",
@@ -115,7 +115,7 @@ SUPPORTED_LANGUAGES = ("l_simp_chinese",)
 RUNTIME_ROOT = ROOT / "_runtime"
 CURRENT_RUN = RUNTIME_ROOT / "current-run.json"
 DIRECTX_REDIST_CAB = Path(
-    r"D:\Program Files (x86)\Steam\steamapps\common\Steamworks Shared"
+    r"C:\Program Files (x86)\Steam\steamapps\common\Steamworks Shared"
     r"\_CommonRedist\DirectX\Jun2010\Jun2010_d3dx9_43_x64.cab"
 )
 pyautogui.FAILSAFE = True
@@ -347,7 +347,7 @@ def prepare(
     copied_files, copied_tree_hash = tree_manifest(copied_mod)
     if source_tree_hash != EXPECTED_MOD_TREE_SHA256:
         raise RuntimeError(
-            "production mod drifted from the iteration-1 baseline: "
+            "production mod drifted from the current compatibility baseline: "
             f"{source_tree_hash} != {EXPECTED_MOD_TREE_SHA256}"
         )
     if source_tree_hash != copied_tree_hash or source_files != copied_files:

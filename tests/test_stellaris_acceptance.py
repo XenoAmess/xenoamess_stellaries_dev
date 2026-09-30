@@ -407,18 +407,18 @@ class I1001SourceContractTests(unittest.TestCase):
         self.assertIn("is_planet_class = pc_ark", trigger_text)
         self.assertIn("OR = {", trigger_text)
 
-    def test_descriptor_targets_stellaris_4_4(self) -> None:
+    def test_descriptor_targets_current_stellaris_compatibility(self) -> None:
         descriptor = (acceptance.MOD_ROOT / "descriptor.mod").read_text(
             encoding="utf-8-sig"
         )
 
         version = (acceptance.ROOT / "VERSION").read_text(encoding="utf-8").strip()
         contract = json.loads(
-            (acceptance.ROOT / "fixtures" / "iteration-2" / "mod-contract.json")
+            (acceptance.ROOT / "fixtures" / "compatibility-4.5.1" / "mod-contract.json")
             .read_text(encoding="utf-8")
         )
         changelog = (acceptance.ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("1.2.0", version)
+        self.assertEqual("1.2.1-rc.1", version)
         self.assertIn(f'version="{version}"', descriptor)
         self.assertEqual(version, contract["mod"]["declared_version"])
         self.assertIn(f"## [{version}]", changelog)
@@ -429,7 +429,7 @@ class I1001SourceContractTests(unittest.TestCase):
             self.assertNotIn("remote_file_id=", descriptor)
         else:
             self.assertIn(f'remote_file_id="{release_workshop_id}"', descriptor)
-        self.assertIn('supported_version="4.4.*"', descriptor)
+        self.assertIn('supported_version="4.5.*"', descriptor)
 
 
 class I1002SourceContractTests(unittest.TestCase):

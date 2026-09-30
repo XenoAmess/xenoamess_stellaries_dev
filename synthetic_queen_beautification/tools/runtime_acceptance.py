@@ -18,10 +18,10 @@ acceptance.GAME_EXE = Path(
     r"C:\Program Files (x86)\Steam\steamapps\common\Stellaris\stellaris.exe"
 )
 acceptance.EXPECTED_MOD_TREE_SHA256 = (
-    "5b11638e90815b7487335f272ec1540fd4fa07057d818275803483edb41811ba"
+    "499651c47868f56051a97b9f29b9e91bf068b48500007f201eda364a7d012e76"
 )
 acceptance.WORKSHOP_ID = "xenoamess_synthetic_queen_beautification"
-acceptance.PROFILE_ID = "stellaris-4.4.6-cetana-static-portrait"
+acceptance.PROFILE_ID = "stellaris-4.5.1-cetana-static-portrait"
 acceptance.RUNTIME_ROOT = DIST_ROOT / "evidence" / "runtime"
 acceptance.CURRENT_RUN = acceptance.RUNTIME_ROOT / "current-run.json"
 acceptance.DIRECTX_REDIST_CAB = Path(

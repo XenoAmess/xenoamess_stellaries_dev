@@ -1,8 +1,8 @@
-version="1.0.1"
+version="1.0.2-rc.1"
 tags={
 	"Graphics"
 	"Leaders"
 }
 name="XenoAmess的灰风美化"
 picture="thumbnail.png"
-supported_version="4.4.*"
+supported_version="4.5.*"

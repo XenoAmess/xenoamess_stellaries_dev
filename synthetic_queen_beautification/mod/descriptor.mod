@@ -1,8 +1,8 @@
-version="0.1.0"
+version="0.1.1-rc.1"
 tags={
 	"Graphics"
 	"Leaders"
 }
 name="XenoAmess的合成女王美化"
 picture="thumbnail.png"
-supported_version="4.4.*"
+supported_version="4.5.*"
