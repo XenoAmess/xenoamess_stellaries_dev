@@ -2,6 +2,8 @@
 
 状态：已进入实现和验收；已确认规则见[需求记录](shishan-code-origin-requirements.md)，实施记录见[实现记录](shishan-code-origin-implementation.md)。初稿日期：2026-09-26。
 
+2026-10-04 更新：下文保留 0.1.x 历史设计；当前候选 `0.2.0-rc.1` 按 [反馈改版](shishan-code-origin-feedback-redesign-2026-10-04.md)与 [全特质机制](shishan-code-origin-trait-synergy-design-2026-10-04.md)覆盖相关旧数值和奖励规则。执行范围、实际加算回退与程序证据见 [本轮实施记录](../shishan_code_origin/docs/feedback-redesign-implementation-2026-10-04.md)，未进行本轮实机验收。
+
 对本设计数值的静态强度判断与假设见[首轮平衡性评估](shishan-code-origin-balance-review.md)；可执行的检查顺序、场景、预期和证据见[测试与验收方案](shishan-code-origin-acceptance-plan.md)。评估与方案均不改变下列已确认需求。
 
 ## 1. 目标、范围与交付

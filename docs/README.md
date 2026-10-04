@@ -15,8 +15,8 @@
 
 - [「屎山代码」独立 Mod：需求记录](shishan-code-origin-requirements.md)
 - [「屎山代码」独立 Mod：详细设计](shishan-code-origin-design.md)
-- [「屎山代码」用户反馈归纳与体验改版设计稿（2026-10-04，未实施）](shishan-code-origin-feedback-redesign-2026-10-04.md)
-- [「屎山代码」按特质数量无限成长：基于低内聚高耦合的旧时代集成服务架构（2026-10-04，未实施）](shishan-code-origin-trait-synergy-design-2026-10-04.md)
+- [「屎山代码」反馈改版设计与开发候选（2026-10-04，仅程序验证）](shishan-code-origin-feedback-redesign-2026-10-04.md)
+- [「屎山代码」全特质无限成长：基于低内聚高耦合的旧时代集成服务架构（原生加算候选）](shishan-code-origin-trait-synergy-design-2026-10-04.md)
 - [「屎山代码」Mod 文档入口与反馈改版测试方案](../shishan_code_origin/docs/README.md)
 - [「屎山代码」起源：首轮平衡性评估](shishan-code-origin-balance-review.md)
 - [「屎山代码」独立 Mod：测试与验收方案](shishan-code-origin-acceptance-plan.md)

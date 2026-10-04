@@ -10,6 +10,8 @@ country_event = {
 			limit = { NOT = { has_country_flag = shishan_code_initialized } }
 			set_country_flag = shishan_code_initialized
 			set_variable = { which = shishan_code_maintenance_count value = 0 }
+			shishan_code_reward_initialize_effect = yes
+			shishan_code_architecture_refresh_effect = yes
 			start_situation = { type = situation_shishan_code }
 			if = {
 				limit = { NOT = { has_special_project = SHISHAN_CODE_MAINTAIN } }
@@ -85,16 +87,17 @@ country_event = {
 	id = shishan_code.10
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } has_country_flag = shishan_code_maintain_success_pending }
+	trigger = { has_origin = origin_shishan_code has_country_flag = shishan_code_maintain_success_pending NOT = { has_country_flag = shishan_code_reward_pending } }
 	immediate = {
 		if = {
-			limit = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } has_country_flag = shishan_code_maintain_success_pending }
+			limit = { has_origin = origin_shishan_code has_country_flag = shishan_code_maintain_success_pending NOT = { has_country_flag = shishan_code_reward_pending } }
 			remove_country_flag = shishan_code_maintain_success_pending
 			change_variable = { which = shishan_code_maintenance_count value = 1 }
 			every_situation = {
 				limit = { is_situation_type = situation_shishan_code }
 				set_situation_progress = 0
 			}
+			set_country_flag = shishan_code_reward_ticket_ready
 			shishan_code_award_reward = yes
 			shishan_code_refresh_vivhite_effect = yes
 			country_event = { id = shishan_code.11 days = 1 }
@@ -111,7 +114,7 @@ country_event = {
 		if = {
 			limit = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } }
 			if = {
-				limit = { NOT = { has_special_project = SHISHAN_CODE_MAINTAIN } }
+				limit = { NOT = { has_special_project = SHISHAN_CODE_MAINTAIN } NOT = { has_country_flag = shishan_code_reward_pending } NOT = { has_country_flag = shishan_code_maintain_success_pending } NOT = { has_country_flag = shishan_code_optimize_success_pending } }
 				enable_special_project = { name = SHISHAN_CODE_MAINTAIN owner = root }
 			}
 			if = {
@@ -120,7 +123,7 @@ country_event = {
 			}
 		}
 		else_if = {
-			limit = { has_country_flag = shishan_code_refactored }
+			limit = { has_origin = origin_shishan_code has_country_flag = shishan_code_refactored NOT = { has_country_flag = shishan_code_reward_pending } NOT = { has_country_flag = shishan_code_maintain_success_pending } NOT = { has_country_flag = shishan_code_optimize_success_pending } }
 			if = {
 				limit = { NOT = { has_special_project = SHISHAN_CODE_OPTIMIZE } }
 				enable_special_project = { name = SHISHAN_CODE_OPTIMIZE owner = root }
@@ -155,8 +158,11 @@ country_event = {
 	id = shishan_code.20
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } }
+	trigger = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } has_country_flag = shishan_code_clean_success_pending }
 	immediate = {
+		if = {
+		limit = { has_origin = origin_shishan_code NOT = { has_country_flag = shishan_code_refactored } has_country_flag = shishan_code_clean_success_pending }
+		remove_country_flag = shishan_code_clean_success_pending
 		set_country_flag = shishan_code_refactored
 		remove_modifier = shishan_code_refactored_jobs
 		add_modifier = { modifier = shishan_code_refactored_jobs days = -1 }
@@ -164,12 +170,7 @@ country_event = {
 			limit = { is_situation_type = situation_shishan_code }
 			destroy_situation = this
 		}
-		owner_main_species = {
-			change_species_characteristics = {
-				remove_trait = trait_shishan_code
-				add_trait = trait_shishan_refactored
-			}
-		}
+		shishan_code_architecture_refactor_species_effect = yes
 		abort_special_project = { type = SHISHAN_CODE_MAINTAIN }
 		country_event = { id = shishan_code.11 days = 1 }
 		if = {
@@ -186,6 +187,7 @@ country_event = {
 			}
 		}
 		else = { country_event = { id = shishan_code.209 } }
+		}
 	}
 }
 
@@ -193,17 +195,21 @@ country_event = {
 	id = shishan_code.30
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_country_flag = shishan_code_refactored has_country_flag = shishan_code_optimize_success_pending }
+	trigger = { has_origin = origin_shishan_code has_country_flag = shishan_code_optimize_success_pending NOT = { has_country_flag = shishan_code_reward_pending } }
 	immediate = {
 		if = {
-			limit = { has_origin = origin_shishan_code has_country_flag = shishan_code_refactored has_country_flag = shishan_code_optimize_success_pending }
+			limit = { has_origin = origin_shishan_code has_country_flag = shishan_code_optimize_success_pending NOT = { has_country_flag = shishan_code_reward_pending } }
 			remove_country_flag = shishan_code_optimize_success_pending
 			change_variable = { which = shishan_code_maintenance_count value = 1 }
+			set_country_flag = shishan_code_reward_ticket_ready
 			shishan_code_award_reward = yes
 			shishan_code_refresh_vivhite_effect = yes
-			random_list = {
-				90 = { country_event = { id = shishan_code.32 } }
-				10 = { country_event = { id = shishan_code.31 } }
+			if = {
+				limit = { has_country_flag = shishan_code_refactored }
+				random_list = {
+					90 = { country_event = { id = shishan_code.32 } }
+					10 = { set_country_flag = shishan_code_relapse_pending country_event = { id = shishan_code.31 } }
+				}
 			}
 			country_event = { id = shishan_code.11 days = 1 }
 		}
@@ -227,15 +233,14 @@ country_event = {
 	id = shishan_code.31
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = { has_origin = origin_shishan_code has_country_flag = shishan_code_refactored has_country_flag = shishan_code_relapse_pending }
 	immediate = {
+		if = {
+		limit = { has_origin = origin_shishan_code has_country_flag = shishan_code_refactored has_country_flag = shishan_code_relapse_pending }
+		remove_country_flag = shishan_code_relapse_pending
 		remove_modifier = shishan_code_refactored_jobs
 		remove_country_flag = shishan_code_refactored
-		owner_main_species = {
-			change_species_characteristics = {
-				remove_trait = trait_shishan_refactored
-				add_trait = trait_shishan_code
-			}
-		}
+		shishan_code_architecture_relapse_species_effect = yes
 		start_situation = { type = situation_shishan_code }
 		if = {
 			limit = { any_owned_leader = { has_leader_flag = shishan_code_vivhite } }
@@ -251,6 +256,7 @@ country_event = {
 			}
 		}
 		else = { country_event = { id = shishan_code.319 } }
+		}
 	}
 }
 
@@ -258,22 +264,61 @@ country_event = {
 	id = shishan_code.60
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_origin = origin_shishan_code }
+	trigger = { OR = { has_origin = origin_shishan_code has_modifier = shishan_code_architecture_jobs } }
 	immediate = {
+		shishan_code_architecture_refresh_effect = yes
 		if = {
-			limit = { has_country_flag = shishan_code_refactored NOT = { has_modifier = shishan_code_refactored_jobs } }
-			add_modifier = { modifier = shishan_code_refactored_jobs days = -1 }
-		}
-		else_if = {
-			limit = { NOT = { has_country_flag = shishan_code_refactored } has_modifier = shishan_code_refactored_jobs }
-			remove_modifier = shishan_code_refactored_jobs
-		}
-		if = {
-			limit = {
-				NOT = { has_country_flag = shishan_code_maintain_success_pending }
-				NOT = { has_country_flag = shishan_code_optimize_success_pending }
+			limit = { has_origin = origin_shishan_code }
+			shishan_code_reward_initialize_effect = yes
+			shishan_code_reward_refresh_effect = yes
+			if = {
+				limit = { has_country_flag = shishan_code_clean_success_pending }
+				if = {
+					limit = { NOT = { has_country_flag = shishan_code_refactored } }
+					country_event = { id = shishan_code.20 }
+				}
+				else = {
+					set_country_flag = shishan_code_callback_state_invalid
+					remove_country_flag = shishan_code_clean_success_pending
+				}
 			}
-			country_event = { id = shishan_code.11 }
+			if = {
+				limit = { has_country_flag = shishan_code_maintain_success_pending NOT = { has_country_flag = shishan_code_reward_pending } }
+				country_event = { id = shishan_code.10 }
+			}
+			if = {
+				limit = { has_country_flag = shishan_code_optimize_success_pending NOT = { has_country_flag = shishan_code_reward_pending } }
+				country_event = { id = shishan_code.30 }
+			}
+			if = {
+				limit = { has_country_flag = shishan_code_relapse_pending }
+				if = {
+					limit = { has_country_flag = shishan_code_refactored }
+					country_event = { id = shishan_code.31 }
+				}
+				else = {
+					set_country_flag = shishan_code_callback_state_invalid
+					remove_country_flag = shishan_code_relapse_pending
+				}
+			}
+			shishan_code_refresh_vivhite_effect = yes
+			if = {
+				limit = { has_country_flag = shishan_code_refactored NOT = { has_modifier = shishan_code_refactored_jobs } }
+				add_modifier = { modifier = shishan_code_refactored_jobs days = -1 }
+			}
+			else_if = {
+				limit = { NOT = { has_country_flag = shishan_code_refactored } has_modifier = shishan_code_refactored_jobs }
+				remove_modifier = shishan_code_refactored_jobs
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = shishan_code_maintain_success_pending }
+					NOT = { has_country_flag = shishan_code_optimize_success_pending }
+					NOT = { has_country_flag = shishan_code_clean_success_pending }
+					NOT = { has_country_flag = shishan_code_relapse_pending }
+				}
+				country_event = { id = shishan_code.11 }
+			}
 		}
 	}
 }

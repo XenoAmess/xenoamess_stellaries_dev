@@ -29,3 +29,21 @@ decision_shishan_code_reboot = {
 	effect = { owner = { country_event = { id = shishan_code.41 } } }
 	ai_weight = { weight = 0 }
 }
+
+decision_shishan_code_architecture = {
+	owned_planets_only = yes
+	enactment_time = 0
+	resources = { category = planet_decisions cost = { energy = 0 } }
+	potential = { is_capital = yes owner = { has_origin = origin_shishan_code } }
+	effect = { owner = { country_event = { id = shishan_code.1001 } } }
+	ai_weight = { weight = 0 }
+}
+
+decision_shishan_code_reward = {
+	owned_planets_only = yes
+	enactment_time = 0
+	resources = { category = planet_decisions cost = { energy = 0 } }
+	potential = { is_capital = yes owner = { has_origin = origin_shishan_code has_country_flag = shishan_code_reward_pending } }
+	effect = { owner = { shishan_code_reward_open_window_effect = yes } }
+	ai_weight = { weight = 0 }
+}

@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "semantic_scope": "offline emitted-data contracts only; not engine acceptance",
+  "mod": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod",
+  "mod_tree_sha256": "df757dbb58c27354586b36c1f2ac004917851945c3bb1bf88a614127268e3b65",
+  "file_count": 90,
+  "checks": [
+    {
+      "name": "numeric_contract",
+      "status": "PASS",
+      "details": {
+        "monthly_examples": 22,
+        "cost_examples": 12,
+        "stage_resources": 22
+      }
+    },
+    {
+      "name": "architecture_data_contract",
+      "status": "PASS",
+      "details": {
+        "all_trait_keys_in_fixture": 10,
+        "weighted_average": "9",
+        "legacy_repeats": 23,
+        "highest_repeats_checked": 10001,
+        "domestic_template_scope": {
+          "clone_helpers": 3,
+          "country_state_entry_points": 2,
+          "engine_clone_behavior": "NOT RUN"
+        },
+        "economic_route": "explicit native additive rc fallback",
+        "independent_multiplication": "NOT IMPLEMENTED",
+        "engine_economic_effect": "NOT RUN"
+      }
+    },
+    {
+      "name": "localisation_contract",
+      "status": "PASS",
+      "details": {
+        "languages": [
+          "braz_por",
+          "english",
+          "french",
+          "german",
+          "japanese",
+          "korean",
+          "polish",
+          "russian",
+          "simp_chinese",
+          "spanish"
+        ],
+        "files": 50,
+        "keys_per_language": 268,
+        "full_name_keys": [
+          "shishan_code_architecture_jobs"
+        ],
+        "full_name_characters": 18,
+        "full_name_utf8_bytes": 54,
+        "references": 2050,
+        "script_localisation_keys": 153,
+        "vanilla_reference_scope": "checked",
+        "non_chinese_runtime": "out_of_scope"
+      }
+    }
+  ],
+  "not_run": [
+    "Stellaris",
+    "UI/OCR/long-name layout",
+    "save reload",
+    "natural playthrough",
+    "economic independent multiplication in engine",
+    "performance"
+  ],
+  "non_chinese_runtime": "out_of_scope",
+  "required_package_validator": "open_kaishek/tools/accept_stellaris_mod.py"
+}

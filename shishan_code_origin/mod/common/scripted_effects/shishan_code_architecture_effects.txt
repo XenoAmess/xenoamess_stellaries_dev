@@ -1,0 +1,236 @@
+# Country scope. Preserve the four legacy effects/counters; only their repeats migrate.
+shishan_code_architecture_migrate_counter_effect = {
+	if = {
+		limit = { is_variable_set = $COUNTER$ }
+		set_variable = { which = shishan_code_architecture_legacy_integer value = this.$COUNTER$ }
+		floor_variable = shishan_code_architecture_legacy_integer
+		if = {
+			limit = {
+				OR = {
+					check_variable = { which = $COUNTER$ value < 0 }
+					NOT = { check_variable = { which = $COUNTER$ value = this.shishan_code_architecture_legacy_integer } }
+				}
+			}
+			set_country_flag = shishan_code_architecture_legacy_invalid
+		}
+		if = {
+			limit = { check_variable = { which = $COUNTER$ value > 1 } }
+			set_variable = { which = shishan_code_architecture_legacy_extra value = this.$COUNTER$ }
+			change_variable = { which = shishan_code_architecture_legacy_extra value = -1 }
+			change_variable = { which = shishan_code_architecture_repeat_count value = this.shishan_code_architecture_legacy_extra }
+		}
+		clear_variable = shishan_code_architecture_legacy_integer
+		clear_variable = shishan_code_architecture_legacy_extra
+	}
+}
+
+shishan_code_architecture_migrate_effect = {
+	if = {
+		limit = {
+			has_origin = origin_shishan_code
+			NOT = { has_country_flag = shishan_code_architecture_migrated }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = shishan_code_architecture_repeat_count } }
+			set_variable = { which = shishan_code_architecture_repeat_count value = 0 }
+		}
+		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_output }
+		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_energy }
+		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_assembly }
+		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_experience }
+		set_country_flag = shishan_code_architecture_migrated
+	}
+}
+
+# Country scope. No trait carrier is created, so the internal trait exclusion list is empty.
+# Native iterator reads actual keys, including hidden, negative and zero-cost traits.
+# The same species can have several domestic pop groups; all use actual pop amount.
+shishan_code_architecture_refresh_effect = {
+	# Remove before reapplying: refreshes cannot stack instances, and origin loss cleans it up.
+	remove_modifier = shishan_code_architecture_jobs
+	if = {
+		limit = { has_origin = origin_shishan_code }
+		shishan_code_architecture_migrate_effect = yes
+		set_variable = { which = shishan_code_architecture_population value = 0 }
+		set_variable = { which = shishan_code_architecture_trait_weight value = 0 }
+		set_variable = { which = shishan_code_architecture_trait_average value = 0 }
+		set_variable = { which = shishan_code_architecture_total value = 0 }
+		set_variable = { which = shishan_code_architecture_bonus value = 0 }
+		set_variable = { which = shishan_code_architecture_multiplier value = 1 }
+		every_owned_pop_group = {
+			limit = {
+				is_same_species = prev
+				pop_amount > 0
+			}
+			set_variable = { which = shishan_code_architecture_group_traits value = 0 }
+			every_trait_of_species = {
+				prev = {
+					change_variable = { which = shishan_code_architecture_group_traits value = 1 }
+				}
+			}
+			set_variable = { which = shishan_code_architecture_group_population value = trigger:pop_amount }
+			set_variable = { which = shishan_code_architecture_group_weight value = this.shishan_code_architecture_group_traits }
+			multiply_variable = { which = shishan_code_architecture_group_weight value = this.shishan_code_architecture_group_population }
+			prev = {
+				change_variable = { which = shishan_code_architecture_population value = prev.shishan_code_architecture_group_population }
+				change_variable = { which = shishan_code_architecture_trait_weight value = prev.shishan_code_architecture_group_weight }
+			}
+			clear_variable = shishan_code_architecture_group_traits
+			clear_variable = shishan_code_architecture_group_population
+			clear_variable = shishan_code_architecture_group_weight
+		}
+		if = {
+			limit = { check_variable = { which = shishan_code_architecture_population value > 0 } }
+			set_variable = { which = shishan_code_architecture_trait_average value = this.shishan_code_architecture_trait_weight }
+			divide_variable = { which = shishan_code_architecture_trait_average value = this.shishan_code_architecture_population }
+			set_variable = { which = shishan_code_architecture_total value = this.shishan_code_architecture_trait_average }
+			change_variable = { which = shishan_code_architecture_total value = this.shishan_code_architecture_repeat_count }
+			set_variable = { which = shishan_code_architecture_bonus value = this.shishan_code_architecture_total }
+			multiply_variable = { which = shishan_code_architecture_bonus value = value:shishan_code_architecture_per_trait }
+			change_variable = { which = shishan_code_architecture_multiplier value = this.shishan_code_architecture_bonus }
+			# Native additive output only; never modifies workforce or any upkeep category.
+			add_modifier = {
+				modifier = shishan_code_architecture_jobs
+				days = -1
+				multiplier = this.shishan_code_architecture_total
+			}
+		}
+	}
+}
+
+# Caller must consume a successful project/reward receipt exactly once before this call.
+# This effect never runs from a monthly refresh and never increments the frozen old counters.
+shishan_code_architecture_award_repeat_effect = {
+	if = {
+		limit = { has_origin = origin_shishan_code }
+		shishan_code_architecture_migrate_effect = yes
+		change_variable = { which = shishan_code_architecture_repeat_count value = 1 }
+		shishan_code_architecture_refresh_effect = yes
+	}
+}
+
+# Country scope, with old/new local species event targets set by the clone helpers.
+# Never change the old shared species definition or any foreign population/leader.
+shishan_code_apply_domestic_template_effect = {
+	every_owned_pop_group = {
+		limit = {
+			is_exact_same_species = event_target:shishan_code_reward_old_species
+			pop_amount > 0
+		}
+		change_species = event_target:shishan_code_reward_new_species
+	}
+	every_owned_leader = {
+		limit = { is_exact_same_species = event_target:shishan_code_reward_old_species }
+		change_species = event_target:shishan_code_reward_new_species
+	}
+	if = {
+		limit = {
+			owner_main_species = {
+				is_exact_same_species = event_target:shishan_code_reward_old_species
+			}
+		}
+		change_dominant_species = {
+			species = event_target:shishan_code_reward_new_species
+			change_all = no
+		}
+	}
+}
+
+# Species scope. Caller must save the origin country as shishan_code_reward_country
+# and establish that this domestic, populated template can legally receive ADD_TRAIT.
+shishan_code_modify_domestic_template_effect = {
+	save_event_target_as = shishan_code_reward_old_species
+	modify_species = {
+		species = this
+		change_scoped_species = no
+		add_trait = $ADD_TRAIT$
+		effect = { save_event_target_as = shishan_code_reward_new_species }
+	}
+	event_target:shishan_code_reward_country = {
+		shishan_code_apply_domestic_template_effect = yes
+	}
+}
+
+# Species-scoped state swaps use clones as well, preserving foreign shared templates.
+shishan_code_architecture_refactor_template_effect = {
+	save_event_target_as = shishan_code_reward_old_species
+	modify_species = {
+		species = this
+		change_scoped_species = no
+		remove_trait = trait_shishan_code
+		add_trait = trait_shishan_refactored
+		effect = { save_event_target_as = shishan_code_reward_new_species }
+	}
+	event_target:shishan_code_reward_country = {
+		shishan_code_apply_domestic_template_effect = yes
+	}
+}
+
+shishan_code_architecture_relapse_template_effect = {
+	save_event_target_as = shishan_code_reward_old_species
+	modify_species = {
+		species = this
+		change_scoped_species = no
+		remove_trait = trait_shishan_refactored
+		add_trait = trait_shishan_code
+		effect = { save_event_target_as = shishan_code_reward_new_species }
+	}
+	event_target:shishan_code_reward_country = {
+		shishan_code_apply_domestic_template_effect = yes
+	}
+}
+
+# Country-scoped entry points. Exclude empty/unapplied templates explicitly.
+shishan_code_architecture_refactor_species_effect = {
+	if = {
+		limit = { has_origin = origin_shishan_code }
+		save_event_target_as = shishan_code_reward_country
+		every_owned_species = {
+			limit = {
+				is_same_species = prev
+				has_trait = trait_shishan_code
+				prev = {
+					any_owned_pop_group = {
+						is_exact_same_species = prevprev
+						pop_amount > 0
+					}
+				}
+			}
+			if = {
+				limit = { has_trait = trait_shishan_refactored }
+				event_target:shishan_code_reward_country = {
+					set_country_flag = shishan_code_architecture_state_invalid
+				}
+			}
+			shishan_code_architecture_refactor_template_effect = yes
+		}
+		shishan_code_architecture_refresh_effect = yes
+	}
+}
+
+shishan_code_architecture_relapse_species_effect = {
+	if = {
+		limit = { has_origin = origin_shishan_code }
+		save_event_target_as = shishan_code_reward_country
+		every_owned_species = {
+			limit = {
+				is_same_species = prev
+				has_trait = trait_shishan_refactored
+				prev = {
+					any_owned_pop_group = {
+						is_exact_same_species = prevprev
+						pop_amount > 0
+					}
+				}
+			}
+			if = {
+				limit = { has_trait = trait_shishan_code }
+				event_target:shishan_code_reward_country = {
+					set_country_flag = shishan_code_architecture_state_invalid
+				}
+			}
+			shishan_code_architecture_relapse_template_effect = yes
+		}
+		shishan_code_architecture_refresh_effect = yes
+	}
+}

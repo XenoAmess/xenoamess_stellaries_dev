@@ -35,18 +35,24 @@ shishan_code_maintainer_reduction = {
 	}
 	divide = 100
 	floor = yes
-	mult = 0.1
+	mult = 0.25
+}
+
+# Evaluated in country scope, before the situation adds its base progress.
+shishan_code_maintenance_progress_increase = {
+	base = 0
+	add = this.shishan_code_maintenance_count
+	mult = 0.25
 }
 
 shishan_code_monthly_progress = {
-	base = 5
-	add = owner.shishan_code_maintenance_count
+	base = 1
+	add = owner.value:shishan_code_maintenance_progress_increase
 	subtract = value:shishan_code_maintainer_reduction
 	min = 0.2
 }
 
-shishan_code_social_penalty_count = {
+shishan_code_society_bonus_count = {
 	base = 0
 	add = this.shishan_code_maintenance_count
-	max = 28
 }
