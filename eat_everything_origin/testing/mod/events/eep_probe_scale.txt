@@ -1,0 +1,44 @@
+# Controlled construction and callbacks only; excluded from production.
+namespace = eep_probe
+country_event = {
+    id = eep_probe.41
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { save_event_target_as = eep_probe_country eep_probe_galaxy_batch = { SIZE = 4 COUNT = 1 COMPLETE = yes } country_event = { id = eep_probe.18 } }
+}
+country_event = {
+    id = eep_probe.42
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { save_event_target_as = eep_probe_country eep_probe_galaxy_batch = { SIZE = 40 COUNT = 1 COMPLETE = yes } country_event = { id = eep_probe.18 } }
+}
+country_event = {
+    id = eep_probe.43
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { save_event_target_as = eep_probe_country eep_probe_galaxy_batch = { SIZE = 40 COUNT = 9 COMPLETE = yes } country_event = { id = eep_probe.18 } }
+}
+country_event = {
+    id = eep_probe.44
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { save_event_target_as = eep_probe_country eep_probe_galaxy_batch = { SIZE = 40 COUNT = 90 COMPLETE = yes } country_event = { id = eep_probe.18 } }
+}
+country_event = {
+    id = eep_probe.45
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { save_event_target_as = eep_probe_country eep_probe_galaxy_batch = { SIZE = 20 COUNT = 1 COMPLETE = no } country_event = { id = eep_probe.18 } }
+}
+country_event = {
+    id = eep_probe.46
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { save_event_target_as = eep_probe_country eep_probe_galaxy_batch = { SIZE = 20 COUNT = 9 COMPLETE = no } country_event = { id = eep_probe.18 } }
+}
+country_event = {
+    id = eep_probe.47
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { save_event_target_as = eep_probe_country eep_probe_galaxy_batch = { SIZE = 20 COUNT = 40 COMPLETE = no } country_event = { id = eep_probe.18 } }
+}

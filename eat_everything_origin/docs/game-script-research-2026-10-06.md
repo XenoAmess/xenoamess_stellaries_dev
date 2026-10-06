@@ -85,5 +85,7 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 | SRC-34 | 原版`common/scripted_loc/000_example.txt`；C60王庭阶段实际错误显示 | defined_text默认random=yes，在所有有效text间按权重随机选择；random=no按最高权重、同权重首项。固定阶段须用互斥条件或非随机选择，不能假定无条件兜底只在其它分支均失败时运行。候选同时互斥并显式random=no，中文重载仍需复验。 |
 | SRC-35 | [噬岩原生决议和日历归档](evidence/runtime-development/20261006T165559Z/findings.json) | 实际殖民地UI决议进入EEP后局势target序列化为Planet；其Q15/20/25按36/48/60真实月递增，次日完成且不重复发通用人口。原生存档区分物理Planet ID与Colony ID，不能混用。 |
 | SRC-36 | 同组native-at36及native-after36原生存档 | Q15结算前源星实际151人口，补消费后回迁351，母星从4981增至5332，G与制造0；两次默认噬岩人口分支各贡献100实际人口。原版损毁对象位于根deposit、星球deposits引用，其deposit_holder.type=0/id为物理星球；已建区划在根districts记录type和level。 |
+| SRC-37 | 铁心20261006T180749Z的purge-foreign-created／next-day／next-month原生存档 | 测试create_pop_group创建首次外族时，其category当日／次日尚未设置；原版月度更新后转为purge并实际减员。受控等待探针必须先保存真实肃清组，不把刚创建而尚未刷新职业的组当成已验证肃清；此事实不推定自然征服的刷新时序或CK3人口机制。 |
+| SRC-38 | 原版00_scripted_effects.txt:9067～9090；seed-refill-active原生人口和error.log | resettle_pop_group宏在目标create_pop_group的effect作用域执行transfer_pop_amount。AMOUNT传裸调用方变量时，变量在目标新人口组解析而报未设置；跨作用域动态数量应传已保存目标的完整变量引用。当前裸变量失败已复现，源星保存数量的修复尚待新候选实机；不能把宏展开等同于捕获调用方变量值。 |
 
 以上属于 Stellaris 的接口和本机运行经验，没有新增可无条件推广到 CK3 的共同脚本语法规则。

@@ -1,4 +1,49 @@
 # Controlled test construction only. Production never creates these worlds.
+eep_probe_galaxy_batch = {
+    while = {
+        count = $COUNT$
+        random_galaxy_planet = {
+            limit = {
+                has_owner = no is_star = no is_colony = no is_artificial = no
+                NOT = { is_planet_class = pc_gas_giant }
+                NOT = { has_planet_flag = eep_probe_constructed }
+                solar_system = { has_owner = no }
+            }
+            change_pc = pc_continental
+            set_planet_size = $SIZE$
+            clear_deposits = yes
+            create_colony = { owner = event_target:eep_probe_country species = event_target:eep_probe_country }
+            save_global_event_target_as = eep_probe_batch_source
+            set_planet_flag = eep_probe_constructed
+            event_target:eep_probe_country = {
+                event_target:eep_core@this = {
+                    random_owned_pop_group = {
+                        limit = { eep_founder_pop = yes pop_group_size >= 100 }
+                        resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_probe_batch_source AMOUNT = 100 }
+                    }
+                }
+            }
+            eep_begin = yes
+        }
+        if = {
+            limit = { always = $COMPLETE$ }
+            every_situation = {
+                limit = {
+                    is_situation_type = situation_eep_devouring
+                    eep_task_operational = yes
+                    target = { planet = { is_same_value = event_target:eep_probe_batch_source } }
+                }
+                set_variable = { which = eep_probe_progress value = 0 }
+                export_trigger_value_to_variable = { trigger = situation_progress variable = eep_probe_progress }
+                set_variable = { which = eep_probe_delta value = target.eep_months }
+                subtract_variable = { which = eep_probe_delta value = eep_probe_progress }
+                add_situation_progress = eep_probe_delta
+                situation_event = { id = eep.21 }
+            }
+        }
+    }
+}
+
 eep_probe_create_source = {
     capital_scope = {
         solar_system = {

@@ -84,8 +84,20 @@ eep_begin = {
                                 limit = { check_variable = { which = eep_move value > event_target:eep_source.eep_seed_need } }
                                 set_variable = { which = eep_move value = event_target:eep_source.eep_seed_need }
                             }
-                            event_target:eep_source = { subtract_variable = { which = eep_seed_need value = prev.eep_move } }
-                            resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_source AMOUNT = eep_move }
+                            # The native macro evaluates AMOUNT in the newly
+                            # created target pop group, not this source group.
+                            event_target:eep_source = { set_variable = { which = eep_seed_move value = prev.eep_move } }
+                            resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_source AMOUNT = event_target:eep_source.eep_seed_move }
+                            event_target:eep_source = {
+                                set_variable = { which = eep_seed_existing value = 0 }
+                                export_trigger_value_to_variable = {
+                                    trigger = count_owned_pop_amount
+                                    parameters = { limit = { eep_founder_pop = yes } }
+                                    variable = eep_seed_existing
+                                }
+                                set_variable = { which = eep_seed_need value = 100 }
+                                subtract_variable = { which = eep_seed_need value = eep_seed_existing }
+                            }
                         }
                     }
                 }
@@ -236,8 +248,11 @@ eep_report = {
             planet = { save_event_target_as = eep_report_core }
             set_variable = { which = eep_actual_pop value = 0 }
             set_variable = { which = eep_free_districts value = 0 }
-            export_trigger_value_to_variable = { trigger = count_owned_pop_amount parameters = { limit = { always = yes } } variable = eep_actual_pop }
-            export_trigger_value_to_variable = { trigger = num_free_districts parameters = { type = any } variable = eep_free_districts }
+            if = {
+                limit = { is_colony = yes }
+                export_trigger_value_to_variable = { trigger = count_owned_pop_amount parameters = { limit = { always = yes } } variable = eep_actual_pop }
+                export_trigger_value_to_variable = { trigger = num_free_districts parameters = { type = any } variable = eep_free_districts }
+            }
         }
     }
     set_variable = { which = eep_c_remainder value = eep_c }

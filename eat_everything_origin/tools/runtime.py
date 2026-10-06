@@ -179,7 +179,114 @@ def native_save(stage, expected_date):
     if result["date"] != expected_date:
         raise RuntimeError(f"native save date differs: {result['date']} != {expected_date}")
     harness.press_scan_code(0x01, stage + "-close-menu", 1)
+    save_root = (userdir / "save games").resolve()
+    history = (save_root / "eep-test-history" / source.name).resolve()
+    source.resolve().relative_to(save_root)
+    history.relative_to(save_root)
+    history.parent.mkdir(parents=True, exist_ok=True)
+    if source.resolve() != history:
+        if history.exists():
+            raise RuntimeError("refusing to overwrite a native history save")
+        source.replace(history)
+    if harness.sha256(history) != result["save_sha256"]:
+        raise RuntimeError("native history bytes differ from archived save")
+    harness.write_json(artifacts / (stage + ".native-save.json"), {
+        "written_at": str(source), "history": str(history), "archived": str(destination),
+        "sha256": result["save_sha256"], "date": result["date"],
+    })
     return result
+
+def native_load(save_name, stage):
+    """Select an existing unique save through native Chinese load UI.
+
+    The caller must audit a new native save after loading to verify state.
+    Missing or ambiguous OCR never falls back to a guessed slot.
+    """
+    import re
+    import audit_save
+    if not re.fullmatch(r"[A-Za-z0-9_-]{1,64}", stage):
+        raise ValueError("load stage must be a unique ASCII label")
+    artifacts, userdir, _ = harness.load_run()
+    paths = list((userdir / "save games").rglob(save_name + ".sav"))
+    if len(paths) != 1:
+        raise RuntimeError("requested load filename is missing or ambiguous")
+    source = paths[0]
+    source_audit = audit_save.audit(source)
+    def center(row):
+        return (round(sum(p[0] for p in row["box"]) / 4),
+                round(sum(p[1] for p in row["box"]) / 4))
+    def exact(frame, label):
+        rows = [r for r in frame["rows"] if r["text"] == label and r["score"] >= .8]
+        if len(rows) != 1:
+            raise RuntimeError("native load UI label is missing or ambiguous: " + label)
+        return rows[0]
+    for attempt in range(5):
+        frame = gpu_capture(f"{stage}-menu-{attempt}")
+        labels = {r["text"] for r in frame["rows"]}
+        if "读取存档" in labels and "存档：" in labels:
+            break
+        if "载入游戏" in labels:
+            # On an in-game menu this opens the load window; at the title
+            # screen it is the same native action.
+            gpu_click(*center(exact(frame, "载入游戏")), stage + "-open")
+            frame = gpu_capture(stage + "-load-window")
+            break
+        harness.press_scan_code(0x01, f"{stage}-esc-{attempt}", 1)
+    else:
+        raise RuntimeError("Chinese native load window did not open")
+    half = frame["resolution"][0] / 2
+    def scan_list(frame, suffix):
+        previous = None
+        for page in range(18):
+            right = [r for r in frame["rows"] if r["text"] == save_name and center(r)[0] > half and r["score"] >= .8]
+            if right:
+                return frame, right
+            signature = tuple(r["text"] for r in frame["rows"] if center(r)[0] > half and 350 <= center(r)[1] <= 600)
+            if signature == previous:
+                return frame, []
+            previous = signature
+            gpu_scroll(-1, round(half + 230), 530, f"{stage}-{suffix}-scroll-{page}", 12)
+            frame = gpu_capture(f"{stage}-{suffix}-page-{page}")
+        return frame, []
+    right = [r for r in frame["rows"] if r["text"] == save_name and center(r)[0] > half and r["score"] >= .8]
+    if not right:
+        import zipfile
+        def save_order(path):
+            with zipfile.ZipFile(path) as archive:
+                meta = audit_save.scalars(archive.read("meta").decode("utf-8-sig"))
+            return (tuple(int(part) for part in meta["date"].split(".")), path.stat().st_mtime_ns)
+        latest = max(source.parent.glob("*.sav"), key=save_order)
+        left = [r for r in frame["rows"] if r["text"] == latest.name and center(r)[0] < half and r["score"] >= .8]
+        if len(left) == 1:
+            # The filename sits above a native "load latest" action in the
+            # right part of the group card. Select the empire title at left.
+            _, file_y = center(left[0])
+            gpu_click(150, file_y - 14, stage + "-group")
+            gpu_scroll(1, round(half + 230), 530, stage + "-group-top", 100)
+            frame = gpu_capture(stage + "-group-selected")
+            if "读取存档" not in {r["text"] for r in frame["rows"]}:
+                raise RuntimeError("native group selection left the load window")
+            frame, right = scan_list(frame, "group")
+        else:
+            frame, right = scan_list(frame, "initial")
+    if len(right) != 1:
+        raise RuntimeError("requested native save row is not uniquely visible")
+    gpu_click(*center(right[0]), stage + "-row")
+    gpu_click(*center(exact(frame, "读取存档")), stage + "-load")
+    deadline = time.monotonic() + 45
+    while time.monotonic() < deadline:
+        time.sleep(1)
+        frame = gpu_capture(stage + "-loaded")
+        labels = {r["text"] for r in frame["rows"]}
+        if source_audit["date"] in labels and "正在载入存档" not in labels:
+            result = {"source": str(source), "source_sha256": source_audit["save_sha256"],
+                      "date": source_audit["date"], "ui_date_verified": True,
+                      "state_verified": False, "followup": "audit a newly saved native file",
+                      "loaded_at_utc": datetime.now(timezone.utc).isoformat()}
+            harness.write_json(artifacts / (stage + ".load.json"), result)
+            return result
+    raise RuntimeError("native load did not reach the saved date")
+
 
 vanilla = "--vanilla" in sys.argv
 quick = "--quick" in sys.argv
