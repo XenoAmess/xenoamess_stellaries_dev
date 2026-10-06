@@ -79,13 +79,14 @@ def audit(path):
     text = native.decode('utf-8-sig')
     roots = list(fields(text))
     containers = {key: value for key, value, obj in roots if obj and key in
-                  ('country', 'colony', 'planets', 'pop_groups', 'pop_jobs', 'situations', 'districts', 'zones')}
+                  ('country', 'colony', 'planets', 'pop_groups', 'pop_jobs', 'situations', 'districts', 'zones', 'deposit', 'species_db')}
     result = {'save': str(path.resolve()), 'save_sha256': hashlib.sha256(raw).hexdigest(),
               'gamestate_sha256': hashlib.sha256(native).hexdigest(), 'gamestate_bytes': len(native),
               'date': next(unquote(v) for k, v, obj in roots if k == 'date'),
               'required_dlcs': [unquote(t) for t, _, _ in tokens(block(text, 'required_dlcs'))],
               'event_targets': [], 'countries': {}, 'planets': {}, 'colonies': {},
-              'pop_groups': {}, 'pop_jobs': {}, 'situations': {}}
+              'pop_groups': {}, 'pop_jobs': {}, 'situations': {},
+              'deposits': {}, 'districts': {}, 'species': {}}
     for key, value, obj in roots:
         if key == 'saved_event_target' and obj:
             target = scalars(value)
@@ -132,10 +133,12 @@ def audit(path):
         record['variables'] = variables
         record['flags'] = flags
         record['modifiers'] = block(value, 'timed_modifier')
+        record['deposits'] = ids(block(value, 'deposits'))
         result['planets'][identity] = record
     colony_ids = {str(p['colony']) for p in result['planets'].values() if 'colony' in p}
     group_ids = set()
     job_ids = set()
+    district_ids = set()
     for identity, value, obj in fields(containers.get('colony', '')):
         if obj and identity in colony_ids:
             record = scalars(value)
@@ -146,6 +149,18 @@ def audit(path):
             result['colonies'][identity] = record
             group_ids.update(str(i) for i in record['pop_groups'])
             job_ids.update(str(i) for i in record['pop_jobs'])
+            district_ids.update(str(i) for i in record['districts'])
+    deposit_ids = {str(i) for p in result['planets'].values() for i in p['deposits']}
+    for identity, value, obj in fields(containers.get('deposit', '')):
+        if obj and identity in deposit_ids:
+            record = scalars(value)
+            record['deposit_holder'] = scalars(block(value, 'deposit_holder'))
+            result['deposits'][identity] = record
+    for identity, value, obj in fields(containers.get('districts', '')):
+        if obj and identity in district_ids:
+            record = scalars(value)
+            record['zones'] = ids(block(value, 'zones'))
+            result['districts'][identity] = record
     for identity, value, obj in fields(containers.get('pop_jobs', '')):
         if obj and identity in job_ids:
             result['pop_jobs'][identity] = scalars(value)
@@ -155,6 +170,15 @@ def audit(path):
             record['key'] = scalars(block(value, 'key'))
             record['current_month_growth_details'] = block(value, 'current_month_growth_details')
             result['pop_groups'][identity] = record
+    species_ids = {str(g['key']['species']) for g in result['pop_groups'].values() if 'species' in g['key']}
+    species_ids.update(str(c['native']['founder_species_ref']) for c in result['countries'].values() if 'founder_species_ref' in c['native'])
+    for identity, value, obj in fields(containers.get('species_db', '')):
+        if obj and identity in species_ids:
+            record = scalars(value)
+            record['name'] = scalars(block(value, 'name')).get('key')
+            record['traits'] = [unquote(v) for k, v, b in fields(block(value, 'traits')) if k == 'trait' and not b]
+            record['home_planet'] = scalars(block(value, 'home_planet'))
+            result['species'][identity] = record
     for identity, value, obj in fields(block(containers.get('situations', ''), 'situations')):
         if obj and 'situation_eep_devouring' in value:
             record = scalars(value)

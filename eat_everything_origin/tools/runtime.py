@@ -123,6 +123,64 @@ def physical_submit(value, submit, stage):
     return action
 harness.type_text = physical_submit
 
+def native_save(stage, expected_date):
+    """Save through Chinese native UI, then audit the newly written file."""
+    import re
+    import audit_save
+    if not re.fullmatch(r"[A-Za-z0-9_-]{1,64}", stage):
+        raise ValueError("save stage must be a unique ASCII filename")
+    artifacts, userdir, _ = harness.load_run()
+    destination = artifacts / (stage + ".sav")
+    if destination.exists():
+        raise RuntimeError("refusing to overwrite an archived native save")
+    before = {str(p): p.stat().st_mtime_ns for p in (userdir / "save games").rglob("*.sav")}
+    def exact(frame, label):
+        rows = [r for r in frame["rows"] if r["text"] == label and r["score"] >= .8]
+        if len(rows) != 1:
+            raise RuntimeError("native UI label is missing or ambiguous: " + label)
+        return rows[0]
+    def click_row(row, action):
+        return gpu_click(round(sum(p[0] for p in row["box"]) / 4),
+                         round(sum(p[1] for p in row["box"]) / 4), action)
+    for attempt in range(4):
+        frame = gpu_capture(f"{stage}-menu-{attempt}")
+        labels = {r["text"] for r in frame["rows"]}
+        if "恢复游戏" in labels and "载入游戏" in labels:
+            click_row(exact(frame, "保存游戏"), stage + "-open-save")
+            break
+        harness.press_scan_code(0x01, f"{stage}-esc-{attempt}", 1)
+    else:
+        raise RuntimeError("Chinese native main menu did not open")
+    dialog = gpu_capture(stage + "-save-dialog")
+    save_button = exact(dialog, "保存")
+    x = round(sum(p[0] for p in save_button["box"]) / 4)
+    y = round(sum(p[1] for p in save_button["box"]) / 4)
+    # The name edit and save button share a row in the original save window.
+    gpu_click(x - 240, y, stage + "-name-field")
+    harness.press(["ctrl", "a"], 1)
+    harness.type_text(stage, False, stage + "-name")
+    click_row(save_button, stage + "-save-click")
+    deadline = time.monotonic() + 15
+    source = None
+    while time.monotonic() < deadline:
+        changed = [p for p in (userdir / "save games").rglob(stage + ".sav")
+                   if p.stat().st_mtime_ns > before.get(str(p), 0)]
+        if changed:
+            source = max(changed, key=lambda p: p.stat().st_mtime_ns)
+            time.sleep(1)
+            break
+        time.sleep(.2)
+    if source is None:
+        gpu_capture(stage + "-save-not-written")
+        raise RuntimeError("native UI did not write the requested new save")
+    shutil.copyfile(source, destination)
+    result = audit_save.audit(destination)
+    harness.write_json(artifacts / (stage + ".audit.json"), result)
+    if result["date"] != expected_date:
+        raise RuntimeError(f"native save date differs: {result['date']} != {expected_date}")
+    harness.press_scan_code(0x01, stage + "-close-menu", 1)
+    return result
+
 vanilla = "--vanilla" in sys.argv
 quick = "--quick" in sys.argv
 if vanilla: sys.argv.remove("--vanilla")
@@ -130,6 +188,14 @@ if quick: sys.argv.remove("--quick")
 base_prepare = harness.prepare
 def prepared_variant(*args, **kwargs):
     data = base_prepare(*args, **kwargs)
+    # Windowed dimensions use the game's generated legacy graphics.size,
+    # independently of fullscreen_resolution in pdx_settings.txt.
+    legacy_settings = ('language="l_simp_chinese"\n'
+                       'graphics={ size={ x=1600 y=900 } gui_scale=1.0 '
+                       'fullScreen=no borderless=no renderer=1 }\n')
+    legacy_path = Path(data["userdir"]) / "settings.txt"
+    legacy_path.write_text(legacy_settings, encoding="utf-8", newline="\n")
+    data["window_settings_sha256"] = harness.sha256(legacy_path)
     data["display"] = {"requested_mode": "windowed", "fullscreen_resolution_setting": [1600, 900], "actual": "recorded by GPU capture/client rectangle"}
     if vanilla:
         data["enabled_mods"] = []

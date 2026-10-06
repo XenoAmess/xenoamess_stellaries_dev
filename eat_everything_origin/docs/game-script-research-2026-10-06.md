@@ -83,5 +83,7 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 | SRC-32 | 本机 EXE 原生选项表及 vanilla Chinese -quick 实际运行；Steam F12 帧 | -quick 自动生成原版新局；它不是新 Mod 指定预设已支持的证明。GDI／PrintWindow／DXGI 空帧并非本机游戏渲染失败，实际 GPU 帧由离线 Steam F12 生成，坐标从客户区转到屏幕。 |
 | SRC-33 | 2204.02.03 原生存档与 `capital_scope` / `capital_scope.planet` 控制台日志对照 | capital_scope 保存为 Colony，而数值变量实际保存于承载 Planet。直接本地化 Colony 变量为空，在 planet 子作用域读出5992/12；报告引用须归一到 Planet。新开局母星绑定采用 Planet，不把殖民地 ID 当作物理星球 ID。 |
 | SRC-34 | 原版`common/scripted_loc/000_example.txt`；C60王庭阶段实际错误显示 | defined_text默认random=yes，在所有有效text间按权重随机选择；random=no按最高权重、同权重首项。固定阶段须用互斥条件或非随机选择，不能假定无条件兜底只在其它分支均失败时运行。候选同时互斥并显式random=no，中文重载仍需复验。 |
+| SRC-35 | [噬岩原生决议和日历归档](evidence/runtime-development/20261006T165559Z/findings.json) | 实际殖民地UI决议进入EEP后局势target序列化为Planet；其Q15/20/25按36/48/60真实月递增，次日完成且不重复发通用人口。原生存档区分物理Planet ID与Colony ID，不能混用。 |
+| SRC-36 | 同组native-at36及native-after36原生存档 | Q15结算前源星实际151人口，补消费后回迁351，母星从4981增至5332，G与制造0；两次默认噬岩人口分支各贡献100实际人口。原版损毁对象位于根deposit、星球deposits引用，其deposit_holder.type=0/id为物理星球；已建区划在根districts记录type和level。 |
 
 以上属于 Stellaris 的接口和本机运行经验，没有新增可无条件推广到 CK3 的共同脚本语法规则。
