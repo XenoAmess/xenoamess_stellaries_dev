@@ -123,7 +123,7 @@ def physical_submit(value, submit, stage):
     return action
 harness.type_text = physical_submit
 
-def native_save(stage, expected_date):
+def native_save(stage, expected_date, country_ids=()):
     """Save through Chinese native UI, then audit the newly written file."""
     import re
     import audit_save
@@ -174,7 +174,7 @@ def native_save(stage, expected_date):
         gpu_capture(stage + "-save-not-written")
         raise RuntimeError("native UI did not write the requested new save")
     shutil.copyfile(source, destination)
-    result = audit_save.audit(destination)
+    result = audit_save.audit(destination, country_ids)
     harness.write_json(artifacts / (stage + ".audit.json"), result)
     if result["date"] != expected_date:
         raise RuntimeError(f"native save date differs: {result['date']} != {expected_date}")
