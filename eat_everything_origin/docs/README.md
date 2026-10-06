@@ -8,6 +8,7 @@
 - [Stellaris 4.5.2 游戏代码调查](game-script-research-2026-10-06.md)
 - [实施前探针与后续验收设计](acceptance-plan.md)
 - [女王·白绮：原设调查、肖像／立绘与事件 CG 方案](queen-baiqi-art-direction-2026-10-06.md)
+- [女王·白绮：玩法职责、王庭交互与事件合同](queen-baiqi-gameplay-design-2026-10-06.md)
 - [女王·白绮：透明审核稿与美术交付检查证据](evidence/queen-baiqi-art-check-2026-10-06.json)
 - [游戏和源码基线指纹](evidence/game-script-baseline-2026-10-06.json)
 - [本轮文档交付检查](evidence/design-document-check-2026-10-06.json)

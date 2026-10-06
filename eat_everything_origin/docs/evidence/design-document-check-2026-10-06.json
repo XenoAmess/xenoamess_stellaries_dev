@@ -8,7 +8,7 @@
     "new_markdown_no_bom": "PASS",
     "markdown_trailing_whitespace": "PASS",
     "local_markdown_links": {
-      "count": 92,
+      "count": 101,
       "status": "PASS"
     },
     "game_source_fingerprints": {
@@ -18,8 +18,8 @@
     },
     "unique_sequential_ids": {
       "SRC": 24,
-      "PROBE": 8,
-      "EAT": 27
+      "PROBE": 9,
+      "EAT": 33
     },
     "candidate_arithmetic": "PASS",
     "git_diff_check": {
@@ -27,7 +27,7 @@
     },
     "git_cached_diff_check": {
       "exit_code": 0,
-      "scope": "all 113 current-task files staged; unrelated files excluded"
+      "scope": "eight current-task document files staged; unrelated files excluded"
     },
     "remote_baseline_before_commit": {
       "local_ahead": 0,
@@ -39,23 +39,23 @@
   "documents": [
     {
       "path": "docs/README.md",
-      "bytes": 4335,
-      "sha256": "765cb60995f1343e22ec2d42fee30c0889ca31613c902144298e8e7a24345d28"
+      "bytes": 4490,
+      "sha256": "c51ba1413c17452e5b146c0464c13cfeca6c637c7b2028c5311aed6de7d3ac27"
     },
     {
       "path": "docs/eat-everything-origin-design-2026-10-06.md",
-      "bytes": 33711,
-      "sha256": "711acf3fa423dfc31b03f0ac9cf5de259ece99ce141b594db7b6fc5b5cfcdfad"
+      "bytes": 36017,
+      "sha256": "4b2c5a015fb0c2e3ed386dabcc8c93ff3b96776f587350be0463ea1d3817011c"
     },
     {
       "path": "eat_everything_origin/README.md",
-      "bytes": 834,
-      "sha256": "c63a02b31152502e911f11f3026af78b7c68c06cdfbb92b4f538c96af5694635"
+      "bytes": 946,
+      "sha256": "840a06fe6fc3ceaa253025548dc30d5eb7b9fd6e6fb0e9d945975509bec6b182"
     },
     {
       "path": "eat_everything_origin/docs/README.md",
-      "bytes": 1199,
-      "sha256": "cf5f2b9977759abfac573e429d29e37f07a3ceec7a025f079f19a7ba3c83e7f8"
+      "bytes": 1306,
+      "sha256": "b9075255c744716478db941d945e710a5310d58a553ce14cd1eb8d5662a12850"
     },
     {
       "path": "eat_everything_origin/docs/game-script-research-2026-10-06.md",
@@ -64,13 +64,13 @@
     },
     {
       "path": "eat_everything_origin/docs/acceptance-plan.md",
-      "bytes": 11306,
-      "sha256": "74b9caa8b11723bb1b4d9612d704b9f269d382076815b967eb61c19303486ca3"
+      "bytes": 13286,
+      "sha256": "154a4b16be3138abd3ba2d91d66cf46f4e3f020cd78bdbea9c204f4c882acf28"
     },
     {
       "path": "eat_everything_origin/docs/queen-baiqi-art-direction-2026-10-06.md",
-      "bytes": 17884,
-      "sha256": "44c1fb555c71eb8ae37fa027508d05e4858161520e1083b6c1143d0edd85b5cd"
+      "bytes": 18333,
+      "sha256": "ce6d7c65831c906035953ee28ebc5f609f53288592108ac9f823ec69e1e9c032"
     },
     {
       "path": "eat_everything_origin/assets/queen-baiqi/README.md",
@@ -86,6 +86,11 @@
       "path": "eat_everything_origin/assets/queen-baiqi/prompts/event-cg-directions-v2.md",
       "bytes": 5369,
       "sha256": "89e779fddb960342c3199f37c2203a068eed5a9d961c8cf504ae6bffb628b10c"
+    },
+    {
+      "path": "eat_everything_origin/docs/queen-baiqi-gameplay-design-2026-10-06.md",
+      "bytes": 10142,
+      "sha256": "0a62fdc881ae7e1868ad772a9007d6f09795ae614641d4a507b32ace46e32313"
     }
   ],
   "candidate_samples": [
@@ -272,5 +277,30 @@
     },
     "mod_acceptance": "not run; no new mod code",
     "status": "ARTIFACTS_CHECKED_AWAITING_USER_REVIEW"
+  },
+  "queen_gameplay_revision": {
+    "recorded_on": "2026-10-06",
+    "repository_baseline": "20ae70a93e305b359ab939ca7bd6c6745e2235f4",
+    "scope": "Queen Baiqi gameplay responsibilities, court report, stages, event contracts, homeworld failures and future acceptance cases",
+    "main_design_section": "1.2",
+    "detailed_design_document": "eat_everything_origin/docs/queen-baiqi-gameplay-design-2026-10-06.md",
+    "design_status": "candidate; not implemented or user-approved",
+    "checks": {
+      "utf8_no_bom_or_replacement_characters": "PASS",
+      "documents": 11,
+      "local_links": 101,
+      "unique_sequential_ids": {
+        "SRC": 24,
+        "PROBE": 9,
+        "EAT": 33
+      },
+      "git_diff_check_exit_code": 0,
+      "git_cached_diff_check_exit_code": 0,
+      "staged_task_document_files": 8
+    },
+    "economy_contract": "existing C/G/D, rewards, timings and ascension/crisis prerequisites remain the sole economic contract; Queen presentation does not issue extra rewards",
+    "runtime_or_mod_acceptance": "not run; documentation only",
+    "status": "PASS",
+    "errors": []
   }
 }

@@ -6,6 +6,7 @@ Mod 正式名称已由用户确认为「吞噬之心」，定位偏强爽玩。�
 
 - [完整设计案](../docs/eat-everything-origin-design-2026-10-06.md)
 - [女王·白绮：肖像／立绘审核与事件风味](docs/queen-baiqi-art-direction-2026-10-06.md)
+- [女王·白绮：玩法职责、王庭交互与事件合同](docs/queen-baiqi-gameplay-design-2026-10-06.md)
 - [项目文档入口](docs/README.md)
 
 本项目遵循仓库根目录 [AGENTS.md](../AGENTS.md)。
