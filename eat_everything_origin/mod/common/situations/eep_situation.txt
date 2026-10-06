@@ -1,0 +1,73 @@
+situation_eep_devouring = {
+    picture = GFX_eep_devouring
+    category = positive
+    situation_log_category = empire_concerns
+    complete_icon_frame = GFX_situation_outcome_frame_green
+    complete_icon = GFX_situation_exploding_planet
+    initial_progress = 0
+    total_progress = { base = 0 modifier = { add = target.eep_months } }
+    permanent = yes
+    stages = {
+        eep_digesting = {
+            section_weight = 1
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_green
+            custom_tooltip = eep_devour_effect
+        }
+    }
+    approach = {
+        name = eep_devour_approach
+        default = yes
+        on_select = { custom_tooltip = eep_devour_effect }
+        icon = GFX_situation_approach_amenities
+        icon_background = GFX_situation_approach_bg_green
+        ai_weight = { base = 10 }
+    }
+    approach = {
+        name = eep_cancel_approach
+        icon = GFX_situation_approach_influence
+        icon_background = GFX_situation_approach_bg_yellow
+        on_select = { abort_situation = this }
+        ai_weight = { base = 0 }
+    }
+    monthly_progress = {
+        base = 0
+        modifier = {
+            add = 1
+            desc = eep_monthly_ready
+            eep_task_operational = yes
+            target = { NOT = { has_planet_flag = eep_pending } }
+        }
+    }
+    on_progress_complete = {
+        target = { set_planet_flag = eep_pending }
+        eep_settle = yes
+    }
+    on_monthly = { events = { eep.20 } }
+    triggered_blocked_desc = {
+        trigger = { owner = { eep_core_available = no } }
+        text = eep_block_core
+    }
+    triggered_blocked_desc = {
+        trigger = { target = { OR = { is_occupied_flag = yes has_ground_combat = yes } } }
+        text = eep_block_combat
+    }
+    triggered_blocked_desc = {
+        trigger = {
+            target = {
+                has_planet_flag = eep_pending
+                any_owned_pop_group = { is_being_purged = yes }
+            }
+        }
+        text = eep_block_purge
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target.owner }
+            target = { NOT = { is_owned_by = prev.owner } }
+            owner = { NOT = { eep_qualified = yes } }
+            owner = { has_country_flag = eep_core_dead }
+        }
+    }
+    on_abort = { target = { eep_clear_task = yes } }
+}

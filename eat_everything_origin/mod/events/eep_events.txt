@@ -1,0 +1,238 @@
+namespace = eep
+
+country_event = {
+    id = eep.1
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { eep_initialize = yes }
+}
+
+country_event = {
+    id = eep.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_origin = origin_heart_of_devouring }
+    immediate = {
+        if = {
+            limit = { has_origin = origin_heart_of_devouring }
+            eep_initialize = yes
+            if = {
+                limit = {
+                    has_country_flag = eep_initialized
+                    NOT = { has_country_flag = eep_core_dead }
+                    OR = {
+                        NOT = { exists = event_target:eep_core@this }
+                        event_target:eep_core@this = { is_colony = no }
+                    }
+                }
+                set_country_flag = eep_core_dead
+                country_event = { id = eep.42 }
+            }
+            else_if = {
+                limit = { NOT = { has_country_flag = eep_core_dead } }
+                if = {
+                    limit = { eep_core_available = no NOT = { has_country_flag = eep_core_lost } }
+                    set_country_flag = eep_core_lost
+                    country_event = { id = eep.40 }
+                }
+                else_if = {
+                    limit = { eep_core_available = yes has_country_flag = eep_core_lost }
+                    remove_country_flag = eep_core_lost
+                    country_event = { id = eep.41 }
+                }
+                if = {
+                    limit = { has_country_flag = eep_notice_pending }
+                    remove_country_flag = eep_notice_pending
+                    eep_report = yes
+                    if = {
+                        limit = { NOT = { has_country_flag = eep_first_notice } }
+                        set_country_flag = eep_first_notice
+                        country_event = { id = eep.11 }
+                    }
+                    else_if = {
+                        limit = { check_variable = { which = eep_c value >= 200 } check_variable = { which = eep_stage value < 3 } }
+                        set_variable = { which = eep_stage value = 3 }
+                        country_event = { id = eep.13 }
+                    }
+                    else_if = {
+                        limit = { check_variable = { which = eep_c value >= 60 } check_variable = { which = eep_stage value < 2 } }
+                        set_variable = { which = eep_stage value = 2 }
+                        country_event = { id = eep.13 }
+                    }
+                    else_if = {
+                        limit = { check_variable = { which = eep_c value >= 20 } check_variable = { which = eep_stage value < 1 } }
+                        set_variable = { which = eep_stage value = 1 }
+                        country_event = { id = eep.13 }
+                    }
+                    # The first destruction also absorbs the highest reached milestone.
+                    if = { limit = { check_variable = { which = eep_c value >= 20 } check_variable = { which = eep_stage value < 1 } } set_variable = { which = eep_stage value = 1 } }
+                    if = { limit = { check_variable = { which = eep_c value >= 60 } check_variable = { which = eep_stage value < 2 } } set_variable = { which = eep_stage value = 2 } }
+                    if = { limit = { check_variable = { which = eep_c value >= 200 } check_variable = { which = eep_stage value < 3 } } set_variable = { which = eep_stage value = 3 } }
+                }
+                if = {
+                    limit = { has_finished_psionic_tradition = yes NOT = { has_country_flag = eep_psi_notice } }
+                    set_country_flag = eep_psi_notice
+                    country_event = { id = eep.30 }
+                }
+                if = {
+                    limit = {
+                        has_ascension_perk = ap_become_the_crisis
+                        OR = { has_crisis_level = crisis_level_2 has_crisis_level = crisis_level_3 has_crisis_level = crisis_level_4 has_crisis_level = crisis_level_5 }
+                        NOT = { has_country_flag = eep_fleet_notice }
+                    }
+                    set_country_flag = eep_fleet_notice
+                    eep_report = yes
+                    set_variable = { which = eep_fleet_stage value = eep_crisis }
+                    country_event = { id = eep.31 }
+                }
+                else_if = {
+                    limit = { has_ascension_perk = ap_become_the_crisis has_country_flag = eep_fleet_notice has_crisis_level = crisis_level_4 check_variable = { which = eep_fleet_stage value < 4 } }
+                    eep_report = yes
+                    set_variable = { which = eep_fleet_stage value = 4 }
+                    country_event = { id = eep.32 }
+                }
+                else_if = {
+                    limit = { has_ascension_perk = ap_become_the_crisis has_country_flag = eep_fleet_notice has_crisis_level = crisis_level_3 check_variable = { which = eep_fleet_stage value < 3 } }
+                    eep_report = yes
+                    set_variable = { which = eep_fleet_stage value = 3 }
+                    country_event = { id = eep.32 }
+                }
+            }
+        }
+    }
+}
+
+situation_event = {
+    id = eep.20
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        if = {
+            limit = { is_situation_type = situation_eep_devouring eep_task_operational = yes }
+            owner = { save_event_target_as = eep_actor }
+            situation_event = { id = eep.21 days = 1 }
+            if = { limit = { target = { has_planet_flag = eep_pending } } eep_settle = yes }
+            else = {
+                target = {
+                    if = {
+                        limit = { has_planet_flag = eep_native NOT = { has_planet_flag = recently_eaten_planet } }
+                        eep_native_consume = yes
+                    }
+                }
+            }
+        }
+    }
+}
+
+situation_event = {
+    id = eep.21
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        if = {
+            limit = { is_situation_type = situation_eep_devouring eep_task_operational = yes situation_progress >= target.eep_months }
+            target = { set_planet_flag = eep_pending }
+            eep_settle = yes
+        }
+    }
+}
+
+country_event = {
+    id = eep.10
+    title = eep.10.name
+    desc = eep.10.desc
+    picture = GFX_eep_core
+    is_triggered_only = yes
+    option = { name = eep.10.a }
+}
+country_event = {
+    id = eep.11
+    title = eep.11.name
+    desc = eep.11.desc
+    picture = GFX_eep_devouring
+    is_triggered_only = yes
+    option = { name = eep.11.a }
+}
+country_event = {
+    id = eep.13
+    title = eep.13.name
+    desc = eep.13.desc
+    picture = GFX_eep_growth
+    is_triggered_only = yes
+    option = { name = eep.13.a }
+}
+country_event = {
+    id = eep.30
+    title = eep.30.name
+    desc = eep.30.desc
+    picture = GFX_eep_psionic
+    is_triggered_only = yes
+    option = { name = eep.30.a }
+}
+country_event = {
+    id = eep.31
+    title = eep.31.name
+    desc = eep.31.desc
+    picture = GFX_eep_fleet
+    is_triggered_only = yes
+    option = { name = eep.31.a }
+}
+country_event = {
+    id = eep.32
+    title = eep.32.name
+    desc = eep.32.desc
+    picture = GFX_eep_fleet
+    is_triggered_only = yes
+    option = { name = eep.31.a }
+}
+country_event = {
+    id = eep.40
+    title = eep.40.name
+    desc = eep.40.desc
+    picture = GFX_eep_core
+    is_triggered_only = yes
+    option = { name = eep.40.a }
+}
+country_event = {
+    id = eep.41
+    title = eep.41.name
+    desc = eep.41.desc
+    picture = GFX_eep_core
+    is_triggered_only = yes
+    option = { name = eep.41.a }
+}
+country_event = {
+    id = eep.42
+    title = eep.42.name
+    desc = eep.42.desc
+    picture = GFX_eep_core
+    is_triggered_only = yes
+    option = { name = eep.42.a }
+}
+country_event = {
+    id = eep.100
+    title = eep.100.name
+    desc = eep.100.desc
+    picture = GFX_eep_core
+    is_triggered_only = yes
+    option = { name = eep.100.a }
+    option = {
+        name = eep.100.tasks
+        trigger = { any_situation = { is_situation_type = situation_eep_devouring } }
+        hidden_effect = {
+            every_situation = {
+                limit = { is_situation_type = situation_eep_devouring }
+                target = { save_event_target_as = eep_report_source }
+                owner = { country_event = { id = eep.101 } }
+            }
+        }
+    }
+}
+country_event = {
+    id = eep.101
+    title = eep.101.name
+    desc = eep.101.desc
+    picture = GFX_eep_devouring
+    is_triggered_only = yes
+    option = { name = eep.100.a }
+}

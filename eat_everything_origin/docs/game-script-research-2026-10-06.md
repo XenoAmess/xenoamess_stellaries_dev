@@ -66,3 +66,20 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 待验证：验收启动时的 DLC 实际加载状态、本起源 48 月进度的精度与日期边界、起源选择器资格、决议单键覆写优先级、国家→局势→目标作用域、动态容量乘子、旗标在各区划组的效果、造人口缺省 size 与模板权利、消化站搬运费用和原版迁移系统、末次补消费/销毁/天灾计数顺序、母星失守和重载恢复、超大行星 UI/经济/性能、灵飞与武灾实际组合。
 
 本轮确定的是 Stellaris 的特定脚本定义和设计依据，没有新增 CK3/Paradox 共通语法结论。全部游戏内问题仍在[后续验收设计](acceptance-plan.md)中保持未执行。
+
+## 6. 实施阶段补充（不追改历史调查）
+
+2026-10-06 后续已同步验收工具到 `522ac2d`，全仓工具回归通过；本 Mod 的最新包级报告为 [package-rc1.json](evidence/package-rc1.json)，16 个 P 文件、12 张 DDS、10 语言各 71 键静态检查通过。中文实机仍在实施中，进度 48 的失败开发探针见 [原生存档与日志](evidence/runtime-development/20261006T144810Z/findings.json)，不升级 EAT 用例状态。
+
+| ID | 原版／实机证据 | 已确认的 Stellaris 事实与边界 |
+| --- | --- | --- |
+| SRC-25 | `common/situations/99_README_SITUATIONS.txt:105`；本机首次及第二次启动 error.log | 4.5.2 支持 total_progress 与 section_weight；动态值必须放脚本值表达式，base 只能是字面数字。本候选为 base=0、modifier add=target.eep_months。动态终点的实际完成仍待最终回归。 |
+| SRC-26 | `events/unplugged_events.txt`／`common/scripted_effects/unplugged_effects.txt` 原版 ceiling_variable 用例；变量 README | 向上取整使用 ceiling_variable，检查变量是否存在使用 is_variable_set，不把 CK3 方言的猜测键搬入游戏。 |
+| SRC-27 | 原版 `common/deposits/02_special_deposits.txt:42` 与地貌 README；开发局地貌错误 | triggered_planet_modifier 的 potential 后直接写 modifier 字段。独立 UI 修正评估上下文中的 prev 索引不可依赖；Carrier 与当前 owner 绑定母星的直接比较在重载后不再产生 ERROR_FLAG_INDEX。产出数值仍需经济验证。 |
+| SRC-28 | 2200.01.01 及 2204.01.01 原生存档；create_colony 原版用例；实际迁移后日志 | 当前 create_colony 不自动造人口。真实迁入 100 后才构成有效殖民地；初始母星容量修正序列化为 multiplier=2，绑定母星为同一 Carrier。种子及完整回迁还需最终验收。 |
+| SRC-29 | 开发局真实 count_deposits 导出和 error.log | 零结果导出可能不建立未设置变量，使用前显式置零，避免把缺变量提示当成有效统计。 |
+| SRC-30 | situations README:66；真实 48 月进度和 pending=no；重载普通局势的 incorrectly ended 日志 | permanent=yes 不运行自动终点结束；普通局势若未成功结算会被引擎结束。本候选用持久局势，月度真实推进次日核验进度达到冻结 T 后手动结算，阻塞时保留；最终回归仍待执行。 |
+| SRC-31 | 4.5.2 国策、行星类别与原版触发器 | 机械复制国策实际键为 civic_machine_replication；突触凝练器类别为 pc_cosmogenesis_world。武灾玩家阶段使用 has_crisis_level，而非全局终局天灾 has_crisis_stage；灵飞完成使用 has_finished_psionic_tradition。 |
+| SRC-32 | 本机 EXE 原生选项表及 vanilla Chinese -quick 实际运行；Steam F12 帧 | -quick 自动生成原版新局；它不是新 Mod 指定预设已支持的证明。GDI／PrintWindow／DXGI 空帧并非本机游戏渲染失败，实际 GPU 帧由离线 Steam F12 生成，坐标从客户区转到屏幕。 |
+
+以上属于 Stellaris 的接口和本机运行经验，没有新增可无条件推广到 CK3 的共同脚本语法规则。

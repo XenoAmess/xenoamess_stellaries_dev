@@ -1,0 +1,12 @@
+defined_text = {
+    name = GetEEPCourtStage
+    text = { trigger = { check_variable = { which = eep_c value >= 200 } } localization_key = eep_stage_3 }
+    text = { trigger = { check_variable = { which = eep_c value >= 60 } } localization_key = eep_stage_2 }
+    text = { trigger = { check_variable = { which = eep_c value >= 20 } } localization_key = eep_stage_1 }
+    text = { localization_key = eep_stage_0 }
+}
+defined_text = {
+    name = GetEEPTaskPath
+    text = { trigger = { has_planet_flag = eep_native } localization_key = eep_path_native }
+    text = { localization_key = eep_path_generic }
+}

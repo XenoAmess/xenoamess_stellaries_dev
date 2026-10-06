@@ -1,0 +1,96 @@
+# Single-key adapter; non-EEP economic effects and AI weights are native.
+decision_lithoid_swarm_consume_world = {
+	icon = decision_burning_settlement
+	sound = event_structural_collapse
+	important = yes
+
+	#enactment_time = 360
+	resources = {
+		category = decisions
+	}
+	owned_planets_only = yes
+
+	potential = {
+		owner = {
+			is_lithoid_devouring_swarm = yes
+			is_nomadic = no
+		}
+		can_have_habitable_deposits = yes
+        OR = {
+            AND = { owner = { has_origin = origin_heart_of_devouring } NOT = { has_carrier_flag = eep_core } }
+            AND = { owner = { NOT = { has_origin = origin_heart_of_devouring } } is_capital = no }
+        }
+		NOT = {
+			has_planet_flag = being_devoured
+		}
+		NOT = { has_designation = col_nanotech_world }
+	}
+
+	allow = {
+        if = {
+            limit = { owner = { has_origin = origin_heart_of_devouring } }
+            custom_tooltip = { fail_text = eep_source_required eep_source_valid = yes }
+            custom_tooltip = { fail_text = eep_seed_required eep_seed_available = yes }
+            custom_tooltip = { fail_text = eep_material_required planet_size > value:eep_damage_count }
+        }
+    }
+    effect = {
+        if = {
+            limit = { owner = { has_origin = origin_heart_of_devouring } }
+            custom_tooltip = eep_devour_effect
+            hidden_effect = { eep_begin = yes }
+        }
+        else = {
+		custom_tooltip = decision_lithoid_swarm_consume_world_effect_desc
+		set_timed_planet_flag = {
+			days = 360
+			flag = recently_eaten_planet
+		}
+		hidden_effect = {
+			set_carrier_flag = colony_event
+			set_planet_flag = being_devoured
+			add_modifier = {
+				modifier = being_devoured_modifier
+				days = -1
+			}
+			export_trigger_value_to_variable = {
+				trigger = planet_size
+				variable = num_districts_terravore
+			}
+			export_trigger_value_to_variable = {
+				trigger = count_deposits
+				parameters = {
+					type = d_lithoid_devastation
+				}
+				variable = num_lithoid_blockers
+			}
+			if = {
+				limit = {
+					is_variable_set = num_lithoid_blockers
+				}
+				subtract_variable = {
+					which = num_districts_terravore
+					value = num_lithoid_blockers
+				}
+			}
+		}
+		owner = {
+			start_situation = {
+				type = situation_terravore_consume_planet
+				target = root
+			}
+		}
+	
+        }
+    }
+
+	ai_weight = {
+		weight = 5
+
+		# don't wreck worlds you want to keep
+		modifier = {
+			factor = 0
+			is_lithoid_devouring_swarm_consumption_world = no
+		}
+	}
+}

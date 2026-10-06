@@ -1,0 +1,271 @@
+# All economic effects guard themselves. A console-forced event cannot mint C/G.
+eep_initialize = {
+    if = {
+        limit = { eep_qualified = yes NOT = { has_country_flag = eep_initialized } exists = capital_scope }
+        set_country_flag = eep_initialized
+        set_variable = { which = eep_c value = 0 }
+        set_variable = { which = eep_g value = 0 }
+        set_variable = { which = eep_d value = 2 }
+        set_variable = { which = eep_made value = 0 }
+        set_variable = { which = eep_worlds value = 0 }
+        set_variable = { which = eep_stage value = 0 }
+        set_variable = { which = eep_last_capacity value = 0 }
+        set_variable = { which = eep_last_return value = 0 }
+        set_variable = { which = eep_last_manufactured value = 0 }
+        set_variable = { which = eep_fleet_stage value = 0 }
+        capital_scope = {
+            save_global_event_target_as = eep_core@owner
+            set_carrier_flag = eep_core
+            owner = { save_global_event_target_as = eep_core_actor@prev }
+            add_deposit = d_eep_core
+            eep_update_capacity = yes
+        }
+        country_event = { id = eep.10 days = 2 }
+    }
+    if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_last_capacity } } set_variable = { which = eep_last_capacity value = 0 } }
+    if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_last_return } } set_variable = { which = eep_last_return value = 0 } }
+    if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_last_manufactured } } set_variable = { which = eep_last_manufactured value = 0 } }
+    if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_fleet_stage } } set_variable = { which = eep_fleet_stage value = 0 } }
+}
+
+# Core Carrier scope. Physical capacity persists if the planet changes hands.
+eep_update_capacity = {
+    if = {
+        limit = { has_carrier_flag = eep_core exists = event_target:eep_core_actor@this }
+        set_variable = { which = eep_capacity_value value = event_target:eep_core_actor@this.eep_d }
+        remove_modifier = eep_capacity
+        add_modifier = { modifier = eep_capacity days = -1 multiplier = eep_capacity_value }
+        set_carrier_flag = uncapped_generator_districts
+        set_carrier_flag = uncapped_mining_districts
+        set_carrier_flag = uncapped_farming_districts
+    }
+}
+
+# Source Carrier scope. Founder seed comes from actual groups, never create_pop.
+eep_begin = {
+    if = {
+        limit = { eep_source_valid = yes eep_seed_available = yes }
+        save_event_target_as = eep_source
+        owner = {
+            save_event_target_as = eep_actor
+            event_target:eep_core@this = { save_event_target_as = eep_bound_core }
+        }
+        export_trigger_value_to_variable = { trigger = planet_size variable = eep_q }
+        set_variable = { which = eep_old_damage value = 0 }
+        export_trigger_value_to_variable = {
+            trigger = count_deposits
+            parameters = { type = d_lithoid_devastation }
+            variable = eep_old_damage
+        }
+        subtract_variable = { which = eep_q value = eep_old_damage }
+        if = {
+            limit = { check_variable = { which = eep_q value > 0 } }
+            set_variable = { which = eep_seed_existing value = 0 }
+            export_trigger_value_to_variable = {
+                trigger = count_owned_pop_amount
+                parameters = { limit = { eep_founder_pop = yes } }
+                variable = eep_seed_existing
+            }
+            set_variable = { which = eep_seed_need value = 100 }
+            subtract_variable = { which = eep_seed_need value = eep_seed_existing }
+            if = {
+                limit = { check_variable = { which = eep_seed_need value > 0 } }
+                event_target:eep_actor = {
+                    event_target:eep_core@this = {
+                        every_owned_pop_group = {
+                            limit = {
+                                eep_founder_pop = yes
+                                event_target:eep_source = { check_variable = { which = eep_seed_need value > 0 } }
+                            }
+                            export_trigger_value_to_variable = { trigger = pop_group_size variable = eep_move }
+                            if = {
+                                limit = { check_variable = { which = eep_move value > event_target:eep_source.eep_seed_need } }
+                                set_variable = { which = eep_move value = event_target:eep_source.eep_seed_need }
+                            }
+                            event_target:eep_source = { subtract_variable = { which = eep_seed_need value = prev.eep_move } }
+                            resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_source AMOUNT = eep_move }
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = { count_owned_pop_amount = { count >= 100 limit = { eep_founder_pop = yes } } }
+                set_variable = { which = eep_months value = eep_q }
+                multiply_variable = { which = eep_months value = 2.4 }
+                ceiling_variable = eep_months
+                set_planet_flag = eep_active
+                set_carrier_flag = colony_event
+                owner = { save_global_event_target_as = eep_task_actor@prev }
+                if = {
+                    limit = { owner = { is_lithoid_devouring_swarm = yes } }
+                    set_planet_flag = eep_native
+                    set_planet_flag = being_devoured
+                    set_timed_planet_flag = { flag = recently_eaten_planet days = 360 }
+                    add_modifier = { modifier = being_devoured_modifier days = -1 }
+                }
+                owner = { start_situation = { type = situation_eep_devouring target = event_target:eep_source } }
+            }
+        }
+    }
+}
+
+eep_clear_task = {
+    remove_planet_flag = eep_active
+    remove_planet_flag = eep_pending
+    remove_planet_flag = eep_native
+    remove_planet_flag = being_devoured
+    remove_modifier = being_devoured_modifier
+    # Native bites and seed relocation remain real costs; cancellation pays zero.
+}
+
+# Situation scope. Step flags are saved on the source, not on a temporary event.
+eep_settle = {
+    if = {
+        limit = { eep_task_ready = yes }
+        owner = {
+            save_event_target_as = eep_actor
+            event_target:eep_core@this = { save_event_target_as = eep_bound_core }
+        }
+        target = {
+            save_event_target_as = eep_source
+            if = {
+                limit = { has_planet_flag = eep_native NOT = { has_planet_flag = eep_bites_done } }
+                while = { count = value:eep_remaining_bites eep_native_consume = yes }
+                set_planet_flag = eep_bites_done
+            }
+            if = {
+                limit = { NOT = { has_planet_flag = eep_credit_done } }
+                owner = {
+                    set_variable = { which = eep_previous_capacity value = eep_d }
+                    change_variable = { which = eep_c value = prev.eep_q }
+                    if = {
+                        limit = { prev = { NOT = { has_planet_flag = eep_native } } }
+                        change_variable = { which = eep_g value = prev.eep_q }
+                    }
+                    set_variable = { which = eep_d value = eep_c }
+                    divide_variable = { which = eep_d value = 4 }
+                    floor_variable = eep_d
+                    change_variable = { which = eep_d value = 2 }
+                    set_variable = { which = eep_last_capacity value = eep_d }
+                    subtract_variable = { which = eep_last_capacity value = eep_previous_capacity }
+                    change_variable = { which = eep_worlds value = 1 }
+                }
+                set_planet_flag = eep_credit_done
+            }
+            event_target:eep_actor = { event_target:eep_core@this = { eep_update_capacity = yes } }
+            if = {
+                limit = { NOT = { has_planet_flag = eep_return_done } }
+                set_variable = { which = eep_return_amount value = 0 }
+                export_trigger_value_to_variable = {
+                    trigger = count_owned_pop_amount
+                    parameters = { limit = { eep_founder_pop = yes } }
+                    variable = eep_return_amount
+                }
+                owner = { set_variable = { which = eep_last_return value = prev.eep_return_amount } }
+                every_owned_pop_group = {
+                    limit = { eep_founder_pop = yes pop_group_size > 0 }
+                    resettle_pop_group = {
+                        POP_GROUP = this
+                        PLANET = event_target:eep_bound_core
+                        PERCENTAGE = 1
+                    }
+                }
+                set_planet_flag = eep_return_done
+            }
+            if = {
+                limit = { NOT = { has_planet_flag = eep_population_done } }
+                event_target:eep_actor = {
+                    set_variable = { which = eep_entitled value = eep_g }
+                    divide_variable = { which = eep_entitled value = 6 }
+                    floor_variable = eep_entitled
+                    multiply_variable = { which = eep_entitled value = 100 }
+                    set_variable = { which = eep_delta value = eep_entitled }
+                    subtract_variable = { which = eep_delta value = eep_made }
+                    set_variable = { which = eep_last_manufactured value = eep_delta }
+                    if = {
+                        limit = { check_variable = { which = eep_delta value > 0 } }
+                        event_target:eep_bound_core = {
+                            create_pop_group = { species = owner.owner_main_species size = owner.eep_delta }
+                        }
+                    }
+                    set_variable = { which = eep_made value = eep_entitled }
+                }
+                set_planet_flag = eep_population_done
+            }
+            if = {
+                limit = { NOT = { has_planet_flag = eep_crisis_done } }
+                event_target:eep_actor = {
+                    if = {
+                        limit = { has_ascension_perk = ap_become_the_crisis }
+                        complete_crisis_objective = crisobj_destroy_worlds
+                    }
+                }
+                set_planet_flag = eep_crisis_done
+            }
+            if = {
+                limit = { NOT = { has_planet_flag = eep_destroy_done } }
+                set_planet_flag = eep_destroy_done
+                destroy_colony = yes
+                change_pc = pc_shattered
+                clear_deposits = yes
+                eep_clear_task = yes
+            }
+        }
+        event_target:eep_actor = { set_country_flag = eep_notice_pending }
+        destroy_situation = this
+    }
+}
+
+# Country scope. Report snapshots change no economic state or message receipts.
+eep_report = {
+    save_event_target_as = eep_actor
+    if = {
+        limit = { exists = event_target:eep_core@this }
+        event_target:eep_core@this = {
+            save_event_target_as = eep_report_core
+            set_variable = { which = eep_actual_pop value = 0 }
+            set_variable = { which = eep_free_districts value = 0 }
+            export_trigger_value_to_variable = { trigger = count_owned_pop_amount parameters = { limit = { always = yes } } variable = eep_actual_pop }
+            export_trigger_value_to_variable = { trigger = num_free_districts parameters = { type = any } variable = eep_free_districts }
+        }
+    }
+    set_variable = { which = eep_c_remainder value = eep_c }
+    set_variable = { which = eep_chunks value = eep_c }
+    divide_variable = { which = eep_chunks value = 4 }
+    floor_variable = eep_chunks
+    multiply_variable = { which = eep_chunks value = 4 }
+    subtract_variable = { which = eep_c_remainder value = eep_chunks }
+    set_variable = { which = eep_g_remainder value = eep_g }
+    set_variable = { which = eep_chunks value = eep_g }
+    divide_variable = { which = eep_chunks value = 6 }
+    floor_variable = eep_chunks
+    multiply_variable = { which = eep_chunks value = 6 }
+    subtract_variable = { which = eep_g_remainder value = eep_chunks }
+    set_variable = { which = eep_tasks value = 0 }
+    set_variable = { which = eep_waiting value = 0 }
+    set_variable = { which = eep_core_state value = 0 }
+    if = { limit = { eep_core_available = no } set_variable = { which = eep_core_state value = 1 } }
+    if = { limit = { has_country_flag = eep_core_dead } set_variable = { which = eep_core_state value = 2 } }
+    every_situation = {
+        limit = { is_situation_type = situation_eep_devouring }
+        set_variable = { which = eep_snapshot_progress value = 0 }
+        export_trigger_value_to_variable = { trigger = situation_progress variable = eep_snapshot_progress }
+        owner = { change_variable = { which = eep_tasks value = 1 } }
+        if = { limit = { target = { has_planet_flag = eep_pending } } owner = { change_variable = { which = eep_waiting value = 1 } } }
+        target = {
+            set_variable = { which = eep_progress value = prev.eep_snapshot_progress }
+            set_variable = { which = eep_block_state value = 0 }
+            if = { limit = { owner = { eep_core_available = no } } set_variable = { which = eep_block_state value = 1 } }
+            if = { limit = { OR = { is_occupied_flag = yes has_ground_combat = yes } } set_variable = { which = eep_block_state value = 2 } }
+            if = { limit = { has_planet_flag = eep_pending any_owned_pop_group = { is_being_purged = yes } } set_variable = { which = eep_block_state value = 3 } }
+        }
+    }
+    set_variable = { which = eep_psi value = 0 }
+    if = { limit = { has_finished_psionic_tradition = yes } set_variable = { which = eep_psi value = 1 } }
+    set_variable = { which = eep_crisis value = 0 }
+    if = { limit = { has_crisis_level = crisis_level_1 } set_variable = { which = eep_crisis value = 1 } }
+    if = { limit = { has_crisis_level = crisis_level_2 } set_variable = { which = eep_crisis value = 2 } }
+    if = { limit = { has_crisis_level = crisis_level_3 } set_variable = { which = eep_crisis value = 3 } }
+    if = { limit = { has_crisis_level = crisis_level_4 } set_variable = { which = eep_crisis value = 4 } }
+    if = { limit = { has_crisis_level = crisis_level_5 } set_variable = { which = eep_crisis value = 5 } }
+}

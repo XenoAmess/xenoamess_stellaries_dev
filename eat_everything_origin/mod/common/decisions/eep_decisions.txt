@@ -1,0 +1,41 @@
+decision_eep_devour = {
+    icon = decision_burning_settlement
+    sound = event_structural_collapse
+    important = yes
+    owned_planets_only = yes
+    resources = { category = decisions }
+    potential = {
+        owner = {
+            eep_qualified = yes
+            is_lithoid_devouring_swarm = no
+        }
+        NOT = { has_carrier_flag = eep_core }
+        NOT = { has_planet_flag = eep_active }
+    }
+    allow = {
+        custom_tooltip = { fail_text = eep_source_required eep_source_valid = yes }
+        custom_tooltip = { fail_text = eep_seed_required eep_seed_available = yes }
+        custom_tooltip = {
+            fail_text = eep_material_required
+            planet_size > value:eep_damage_count
+        }
+    }
+    effect = { custom_tooltip = eep_devour_effect hidden_effect = { eep_begin = yes } }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_audience = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    resources = { category = decisions }
+    potential = {
+        has_carrier_flag = eep_core
+        owner = { eep_qualified = yes }
+        is_same_value = event_target:eep_core@owner
+    }
+    effect = {
+        custom_tooltip = eep_audience_effect
+        hidden_effect = { owner = { eep_report = yes country_event = { id = eep.100 } } }
+    }
+    ai_weight = { weight = 0 }
+}

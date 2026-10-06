@@ -1,0 +1,15 @@
+d_eep_core = {
+    is_for_colonizable = yes
+    category = deposit_cat_rare
+    icon = d_crystal_forest
+    potential = { always = no }
+    drop_weight = { weight = 0 }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { eep_qualified = yes }
+            is_same_value = event_target:eep_core@owner
+        }
+        planet_jobs_produces_mult = 0.10
+    }
+}

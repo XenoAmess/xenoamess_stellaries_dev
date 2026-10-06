@@ -1,0 +1,84 @@
+# Country scope. Current valid civic, rather than a later crisis perk.
+eep_qualified = {
+    has_origin = origin_heart_of_devouring
+    OR = {
+        has_valid_civic = civic_hive_devouring_swarm
+        has_valid_civic = civic_machine_terminator
+        has_valid_civic = civic_fanatic_purifiers
+        has_valid_civic = civic_scorched_earth
+        has_valid_civic = civic_hive_scorched_earth
+    }
+}
+
+# Country scope. Indexed global target survives capital changes and save/load.
+eep_core_available = {
+    NOT = { has_country_flag = eep_core_dead }
+    exists = event_target:eep_core@this
+    event_target:eep_core@this = {
+        is_colony = yes
+        is_owned_by = prev
+        is_occupied_flag = no
+        has_ground_combat = no
+    }
+}
+
+# Pop group scope. is_same_species includes modified templates of the founder.
+eep_founder_pop = {
+    is_being_purged = no
+    is_same_species = owner.owner_main_species
+}
+
+# Carrier scope. No resources or population are changed by these predicates.
+eep_source_valid = {
+    exists = owner
+    owner = { eep_qualified = yes eep_core_available = yes }
+    is_colony = yes
+    is_artificial = no
+    is_under_colonization = no
+    is_occupied_flag = no
+    has_ground_combat = no
+    NOT = { has_carrier_flag = eep_core }
+    NOT = { has_planet_flag = eep_active }
+    NOT = { has_planet_flag = being_devoured }
+    NOT = { has_designation = col_nanotech_world }
+    NOT = { is_planet_class = pc_cosmogenesis_world }
+    can_have_habitable_deposits = yes
+}
+
+eep_seed_available = {
+    OR = {
+        count_owned_pop_amount = {
+            count >= 100
+            limit = { eep_founder_pop = yes }
+        }
+        owner = {
+            event_target:eep_core@this = {
+                count_owned_pop_amount = {
+                    count > 100
+                    limit = { eep_founder_pop = yes }
+                }
+            }
+        }
+    }
+}
+
+# Situation scope. Completion uses the same guards as the regular monthly tick.
+eep_task_operational = {
+    exists = target.owner
+    target = {
+        has_planet_flag = eep_active
+        is_owned_by = prev.owner
+        is_occupied_flag = no
+        has_ground_combat = no
+    }
+    owner = { eep_qualified = yes eep_core_available = yes }
+}
+
+eep_task_ready = {
+    eep_task_operational = yes
+    situation_progress >= target.eep_months
+    target = {
+        has_planet_flag = eep_pending
+        NOT = { any_owned_pop_group = { is_being_purged = yes } }
+    }
+}

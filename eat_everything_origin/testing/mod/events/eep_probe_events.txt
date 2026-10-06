@@ -1,0 +1,63 @@
+namespace = eep_probe
+country_event = {
+    id = eep_probe.10
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        save_event_target_as = eep_probe_country
+        capital_scope = {
+            solar_system = {
+                random_system_planet = {
+                    limit = { is_star = no is_colony = no is_artificial = no NOT = { is_planet_class = pc_gas_giant } }
+                    change_pc = pc_continental
+                    set_planet_size = 20
+                    clear_deposits = yes
+                    create_colony = { owner = event_target:eep_probe_country species = event_target:eep_probe_country }
+                    set_name = "EEP-20"
+                    save_global_event_target_as = eep_probe_source
+                    event_target:eep_probe_country = {
+                        capital_scope = {
+                            random_owned_pop_group = {
+                                limit = { eep_founder_pop = yes pop_group_size >= 100 }
+                                resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_probe_source AMOUNT = 100 }
+                            }
+                        }
+                    }
+                    log = "EEP_PROBE source [This.GetName] colony created; beginning real task"
+                    eep_begin = yes
+                }
+            }
+        }
+        country_event = { id = eep_probe.11 }
+    }
+}
+country_event = {
+    id = eep_probe.11
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        log = "EEP_PROBE country [Root.GetName]: C=[Root.eep_c] G=[Root.eep_g] D=[Root.eep_d] manufactured=[Root.eep_made] worlds=[Root.eep_worlds]"
+        if = { limit = { eep_qualified = yes } log = "EEP_PROBE qualified=YES" }
+        else = { log = "EEP_PROBE qualified=NO" }
+        if = { limit = { eep_core_available = yes } log = "EEP_PROBE core_available=YES" }
+        else = { log = "EEP_PROBE core_available=NO" }
+        if = { limit = { exists = event_target:eep_probe_source } event_target:eep_probe_source = {
+            if = { limit = { is_variable_set = eep_q } log = "EEP_PROBE source Q=[This.eep_q] T=[This.eep_months]" }
+            if = { limit = { has_planet_flag = eep_active } log = "EEP_PROBE active=YES" }
+            else = { log = "EEP_PROBE active=NO" }
+            if = { limit = { is_planet_class = pc_shattered } log = "EEP_PROBE shattered=YES" }
+            else = { log = "EEP_PROBE shattered=NO" }
+        } }
+    }
+}
+country_event = {
+    id = eep_probe.12
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        eep_initialize = yes
+        eep_report = yes
+        country_event = { id = eep.100 }
+        country_event = { id = eep_probe.11 }
+    }
+}

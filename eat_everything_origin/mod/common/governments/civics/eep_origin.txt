@@ -1,0 +1,21 @@
+origin_heart_of_devouring = {
+    is_origin = yes
+    icon = "gfx/interface/icons/origins/eep_heart.dds"
+    picture = GFX_eep_origin
+    flags = { custom_start_screen }
+    description = origin_heart_of_devouring_effects
+    possible = {
+        is_nomadic = no
+        civics = {
+            OR = {
+                text = eep_requires_exterminator
+                value = civic_hive_devouring_swarm
+                value = civic_machine_terminator
+                value = civic_fanatic_purifiers
+                value = civic_scorched_earth
+                value = civic_hive_scorched_earth
+            }
+        }
+    }
+    random_weight = { base = 0 }
+}
