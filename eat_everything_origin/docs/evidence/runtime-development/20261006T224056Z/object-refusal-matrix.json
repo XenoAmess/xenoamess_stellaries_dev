@@ -1,0 +1,173 @@
+{
+  "status": "PASS_SUBCASES",
+  "date": "2200.01.01",
+  "language": "l_simp_chinese",
+  "scope": "controlled object preconditions and production eep_begin guards",
+  "cases": {
+    "mother": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-ready.sav",
+        "sha256": "f9639e7b857d3b51304d9cad5ca95b8fc1cca1b12f218d40aa8bea125043728b"
+      },
+      "after": {
+        "save": "objects-mother-rejected.sav",
+        "sha256": "637088e6ad59e69a39083c9369497688c137c91a0a6c3c5013e97f33c5879284"
+      },
+      "source_precondition": "pc_volcanic",
+      "actual_source_population_before": 100
+    },
+    "habitat": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-habitat-prepared.sav",
+        "sha256": "13533feb20bfc6ae6eb2c8e5cb334dea9e045ee732fcc87310b4e3cead550f05"
+      },
+      "after": {
+        "save": "objects-habitat-rejected.sav",
+        "sha256": "13533feb20bfc6ae6eb2c8e5cb334dea9e045ee732fcc87310b4e3cead550f05"
+      },
+      "source_precondition": "pc_habitat",
+      "actual_source_population_before": 100
+    },
+    "ringworld": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-ringworld-prepared.sav",
+        "sha256": "fa2b69073c32c9feb53a5c715caf8bd61743d4c98dfb1dffa27356f77aab0bc0"
+      },
+      "after": {
+        "save": "objects-ringworld-rejected.sav",
+        "sha256": "fa2b69073c32c9feb53a5c715caf8bd61743d4c98dfb1dffa27356f77aab0bc0"
+      },
+      "source_precondition": "pc_ringworld_habitable",
+      "actual_source_population_before": 100
+    },
+    "shattered": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-shattered-prepared.sav",
+        "sha256": "3a1831d586ee2171c407ed52d59465282c383f5dbea49a83e7cdb2661f52acf5"
+      },
+      "after": {
+        "save": "objects-shattered-rejected.sav",
+        "sha256": "3a1831d586ee2171c407ed52d59465282c383f5dbea49a83e7cdb2661f52acf5"
+      },
+      "source_precondition": "pc_shattered",
+      "actual_source_population_before": 0
+    },
+    "barren": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-barren-prepared.sav",
+        "sha256": "803d3d260724fb09294099b5bffad5860bf0f2c7e93ac4c1a84e98dbb0d82769"
+      },
+      "after": {
+        "save": "objects-barren-rejected.sav",
+        "sha256": "803d3d260724fb09294099b5bffad5860bf0f2c7e93ac4c1a84e98dbb0d82769"
+      },
+      "source_precondition": "pc_barren",
+      "actual_source_population_before": 0
+    },
+    "cosmogenesis": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-cosmogenesis-prepared.sav",
+        "sha256": "8c53d73b961bc24bfb9bd990b8111a9f5ac0148caefb3e3173f2448288206965"
+      },
+      "after": {
+        "save": "objects-cosmogenesis-rejected.sav",
+        "sha256": "8c53d73b961bc24bfb9bd990b8111a9f5ac0148caefb3e3173f2448288206965"
+      },
+      "source_precondition": "pc_cosmogenesis_world",
+      "actual_source_population_before": 100
+    },
+    "uncolonized": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-uncolonized-prepared.sav",
+        "sha256": "2afcb09dba3437f8d8a4af9f2ff88ad4a2e945888a1aa27e23b62bdc48c8d6dc"
+      },
+      "after": {
+        "save": "objects-uncolonized-rejected.sav",
+        "sha256": "2afcb09dba3437f8d8a4af9f2ff88ad4a2e945888a1aa27e23b62bdc48c8d6dc"
+      },
+      "source_precondition": "pc_volcanic",
+      "actual_source_population_before": 0
+    },
+    "depleted": {
+      "status": "PASS",
+      "checks": {
+        "ledger_equal": true,
+        "stockpile_equal": true,
+        "actual_pop_groups_equal": true,
+        "no_situation": true,
+        "no_active_source": true
+      },
+      "before": {
+        "save": "objects-depleted-prepared.sav",
+        "sha256": "6ea761f7c30d263f34d626d1920c1457387dfd47c3dd569bf19ccdbf24c0900b"
+      },
+      "after": {
+        "save": "objects-depleted-rejected.sav",
+        "sha256": "cc5415d6bed4b0da41e8d0a16fdf7ecc54afd9eeb32a9b7bf633c0603a4936d2"
+      },
+      "source_precondition": "pc_volcanic",
+      "actual_source_population_before": 100
+    }
+  },
+  "limitations": [
+    "Not the whole EAT-03 matrix",
+    "Native class conversion or destroy_colony precondition losses excluded from refusal effects",
+    "Native UI disabled explanations still in progress"
+  ]
+}

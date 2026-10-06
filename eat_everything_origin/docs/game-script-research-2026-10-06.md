@@ -69,6 +69,8 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 
 ## 6. 实施阶段补充（不追改历史调查）
 
+对象限制补充：本机 `common/planet_classes/00_planet_classes.txt:1704/:1726` 分别定义 `pc_broken` 与 `pc_shattered`，不存在 `pc_cracked`。错误的类别会在引擎加载 `change_pc` 时报告找不到对象；静态 P 解析通过不能替代游戏定义引用的运行检查。居住站、环世界和突触凝练器类别显式有 `is_artificial_planet=yes`，拒绝条件仍须实际存档验证。本项为 Stellaris 具体对象定义，不推定 CK3 同名类别。
+
 2026-10-06 后续已同步验收工具到 `522ac2d`，全仓工具回归通过；本 Mod 的最新包级报告为 [package-rc1.json](evidence/package-rc1.json)，16 个 P 文件、12 张 DDS、10 语言各 71 键静态检查通过。中文实机仍在实施中，进度 48 的失败开发探针见 [原生存档与日志](evidence/runtime-development/20261006T144810Z/findings.json)，不升级 EAT 用例状态。
 
 | ID | 原版／实机证据 | 已确认的 Stellaris 事实与边界 |
@@ -91,6 +93,8 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 | SRC-40 | 原版traits/16_infernals_traits.txt:1～84、species_classes/01_base_species_classes.txt:352～379、planet_classes/00_planet_classes.txt:430～463 | 炎灵基础人口维护使用合金，火山宜居+20%、火山生存底线+50%；INF物种类明确added_planet_types=pc_volcanic，因此不能只凭行星类starting_planet=no断言预设非法。测试炎灵源星用火山类型，保持原版饮食、岗位和维护；实际DLC／编辑器合法性仍需实机。武灾矿物舰不会取消炎灵人口或其它设施的合金成本。 |
 
 以上属于 Stellaris 的接口和本机运行经验，没有新增可无条件推广到 CK3 的共同脚本语法规则。
+
+- SRC-39补充实测：运行224056启动manifest的scheduled_commands为空，启动后在隔离userdir新增commands_at_date.txt，原生重载2200.01.01存档后2200.01.04命令实际执行并暂停在2200.01.05；恢复存档另经原生保存确认4800人口、C/G0/D2。因此本机4.5.2可以在原生重载后重新读取新增定时文件，不推定无需重载的即时热读取。
 
 
 - 4.5.2实机补充：母星真实空余区划需计入原版障碍。洁癖物理尺寸20、EEP额外D17、区划等级合10，还有d_decrepit_dwellings一个与d_failing_infrastructure两个（原版01_blocker_deposits.txt:898/967均planet_max_districts_add=-1），原生num_free_districts为24，不应仅减已建区划后误报27。
