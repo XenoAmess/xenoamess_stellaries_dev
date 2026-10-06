@@ -215,14 +215,15 @@ country_event = {
     desc = eep.100.desc
     picture = GFX_eep_core
     is_triggered_only = yes
+    immediate = { eep_report = yes }
     option = { name = eep.100.a }
     option = {
         name = eep.100.tasks
-        trigger = { any_situation = { is_situation_type = situation_eep_devouring } }
+        trigger = { any_situation = { is_situation_type = situation_eep_devouring target = { has_planet_flag = eep_active } } }
         hidden_effect = {
             every_situation = {
-                limit = { is_situation_type = situation_eep_devouring }
-                target = { save_event_target_as = eep_report_source }
+                limit = { is_situation_type = situation_eep_devouring target = { has_planet_flag = eep_active } }
+                target = { planet = { save_event_target_as = eep_report_source } }
                 owner = { country_event = { id = eep.101 } }
             }
         }

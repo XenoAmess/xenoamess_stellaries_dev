@@ -5,31 +5,86 @@ country_event = {
     is_triggered_only = yes
     immediate = {
         save_event_target_as = eep_probe_country
-        capital_scope = {
-            solar_system = {
-                random_system_planet = {
-                    limit = { is_star = no is_colony = no is_artificial = no NOT = { is_planet_class = pc_gas_giant } }
-                    change_pc = pc_continental
-                    set_planet_size = 20
-                    clear_deposits = yes
-                    create_colony = { owner = event_target:eep_probe_country species = event_target:eep_probe_country }
-                    set_name = "EEP-20"
-                    save_global_event_target_as = eep_probe_source
-                    event_target:eep_probe_country = {
-                        capital_scope = {
-                            random_owned_pop_group = {
-                                limit = { eep_founder_pop = yes pop_group_size >= 100 }
-                                resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_probe_source AMOUNT = 100 }
-                            }
-                        }
-                    }
-                    log = "EEP_PROBE source [This.GetName] colony created; beginning real task"
-                    eep_begin = yes
-                }
-            }
-        }
+        eep_probe_create_source = { SIZE = 20 TARGET = eep_probe_source START = yes }
+        event_target:eep_probe_source = { set_name = "EEP-Q20" }
+        set_country_flag = eep_probe_monitoring
         country_event = { id = eep_probe.11 }
     }
+}
+country_event = {
+    id = eep_probe.15
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        save_event_target_as = eep_probe_country
+        eep_probe_create_source = { SIZE = 15 TARGET = eep_probe_q15 START = yes }
+        eep_probe_create_source = { SIZE = 20 TARGET = eep_probe_source START = yes }
+        eep_probe_create_source = { SIZE = 25 TARGET = eep_probe_q25 START = yes }
+        event_target:eep_probe_q15 = { set_name = "EEP-Q15" }
+        event_target:eep_probe_source = { set_name = "EEP-Q20" }
+        event_target:eep_probe_q25 = { set_name = "EEP-Q25" }
+        set_country_flag = eep_probe_monitoring
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.16
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        save_event_target_as = eep_probe_country
+        eep_probe_create_source = { SIZE = 20 TARGET = eep_probe_source START = yes }
+        eep_probe_create_source = { SIZE = 20 TARGET = eep_probe_parallel START = yes }
+        event_target:eep_probe_source = { set_name = "EEP-Q20-A" }
+        event_target:eep_probe_parallel = { set_name = "EEP-Q20-B" }
+        set_country_flag = eep_probe_monitoring
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.17
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        save_event_target_as = eep_probe_country
+        eep_probe_create_source = { SIZE = 3 TARGET = eep_probe_q3 START = yes }
+        eep_probe_create_source = { SIZE = 5 TARGET = eep_probe_q5 START = yes }
+        event_target:eep_probe_q3 = { set_name = "EEP-Q3" }
+        event_target:eep_probe_q5 = { set_name = "EEP-Q5" }
+        set_country_flag = eep_probe_monitoring
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.18
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        log = "EEP_MONTH country=[Root.GetName] C=[Root.eep_c] G=[Root.eep_g] D=[Root.eep_d] made=[Root.eep_made] worlds=[Root.eep_worlds]"
+        every_situation = {
+            limit = { is_situation_type = situation_eep_devouring }
+            set_variable = { which = eep_probe_progress value = 0 }
+            export_trigger_value_to_variable = { trigger = situation_progress variable = eep_probe_progress }
+            target = {
+                set_variable = { which = eep_probe_real_progress value = prev.eep_probe_progress }
+                planet = { log = "EEP_MONTH source=[This.GetName] Q=[This.eep_q] T=[This.eep_months] progress=[This.eep_probe_real_progress]" }
+            }
+            if = { limit = { eep_task_operational = yes } log = "EEP_MONTH operational=YES" }
+            else = { log = "EEP_MONTH operational=NO" }
+            if = { limit = { eep_task_ready = yes } log = "EEP_MONTH ready=YES" }
+        }
+        if = { limit = { host_has_dlc = "Nemesis" } log = "EEP_DLC Nemesis=YES" }
+        else = { log = "EEP_DLC Nemesis=NO" }
+        if = { limit = { host_has_dlc = "Shadows of the Shroud" } log = "EEP_DLC Shroud=YES" }
+        else = { log = "EEP_DLC Shroud=NO" }
+    }
+}
+country_event = {
+    id = eep_probe.19
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = eep_probe_monitoring }
+    immediate = { country_event = { id = eep_probe.18 days = 2 } }
 }
 country_event = {
     id = eep_probe.11

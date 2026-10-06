@@ -17,7 +17,7 @@ decision_lithoid_swarm_consume_world = {
 		}
 		can_have_habitable_deposits = yes
         OR = {
-            AND = { owner = { has_origin = origin_heart_of_devouring } NOT = { has_carrier_flag = eep_core } }
+            AND = { owner = { has_origin = origin_heart_of_devouring } NOT = { planet = { is_same_value = event_target:eep_core@owner } } }
             AND = { owner = { NOT = { has_origin = origin_heart_of_devouring } } is_capital = no }
         }
 		NOT = {

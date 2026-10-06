@@ -71,7 +71,7 @@ def main():
     decision = decision[:effect_start] + replacement + decision[ai_start:]
     assert decision.count("\t\tis_capital = no") == 1
     decision = decision.replace("\t\tis_capital = no", """        OR = {
-            AND = { owner = { has_origin = origin_heart_of_devouring } NOT = { has_carrier_flag = eep_core } }
+            AND = { owner = { has_origin = origin_heart_of_devouring } NOT = { planet = { is_same_value = event_target:eep_core@owner } } }
             AND = { owner = { NOT = { has_origin = origin_heart_of_devouring } } is_capital = no }
         }""", 1)
     (ROOT / "mod/common/decisions/zz_eep_native_decision.txt").write_text(

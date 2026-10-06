@@ -9,7 +9,7 @@ decision_eep_devour = {
             eep_qualified = yes
             is_lithoid_devouring_swarm = no
         }
-        NOT = { has_carrier_flag = eep_core }
+        NOT = { planet = { is_same_value = event_target:eep_core@owner } }
         NOT = { has_planet_flag = eep_active }
     }
     allow = {
@@ -31,11 +31,11 @@ decision_eep_audience = {
     potential = {
         has_carrier_flag = eep_core
         owner = { eep_qualified = yes }
-        is_same_value = event_target:eep_core@owner
+        planet = { is_same_value = event_target:eep_core@owner }
     }
     effect = {
         custom_tooltip = eep_audience_effect
-        hidden_effect = { owner = { eep_report = yes country_event = { id = eep.100 } } }
+        hidden_effect = { owner = { country_event = { id = eep.100 } } }
     }
     ai_weight = { weight = 0 }
 }

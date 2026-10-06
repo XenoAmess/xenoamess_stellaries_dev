@@ -14,11 +14,13 @@ eep_initialize = {
         set_variable = { which = eep_last_manufactured value = 0 }
         set_variable = { which = eep_fleet_stage value = 0 }
         capital_scope = {
+          planet = {
             save_global_event_target_as = eep_core@owner
             set_carrier_flag = eep_core
             owner = { save_global_event_target_as = eep_core_actor@prev }
             add_deposit = d_eep_core
             eep_update_capacity = yes
+          }
         }
         country_event = { id = eep.10 days = 2 }
     }
@@ -45,7 +47,7 @@ eep_update_capacity = {
 eep_begin = {
     if = {
         limit = { eep_source_valid = yes eep_seed_available = yes }
-        save_event_target_as = eep_source
+        planet = { save_event_target_as = eep_source }
         owner = {
             save_event_target_as = eep_actor
             event_target:eep_core@this = { save_event_target_as = eep_bound_core }
@@ -222,7 +224,7 @@ eep_report = {
     if = {
         limit = { exists = event_target:eep_core@this }
         event_target:eep_core@this = {
-            save_event_target_as = eep_report_core
+            planet = { save_event_target_as = eep_report_core }
             set_variable = { which = eep_actual_pop value = 0 }
             set_variable = { which = eep_free_districts value = 0 }
             export_trigger_value_to_variable = { trigger = count_owned_pop_amount parameters = { limit = { always = yes } } variable = eep_actual_pop }
@@ -247,7 +249,7 @@ eep_report = {
     if = { limit = { eep_core_available = no } set_variable = { which = eep_core_state value = 1 } }
     if = { limit = { has_country_flag = eep_core_dead } set_variable = { which = eep_core_state value = 2 } }
     every_situation = {
-        limit = { is_situation_type = situation_eep_devouring }
+        limit = { is_situation_type = situation_eep_devouring target = { has_planet_flag = eep_active } }
         set_variable = { which = eep_snapshot_progress value = 0 }
         export_trigger_value_to_variable = { trigger = situation_progress variable = eep_snapshot_progress }
         owner = { change_variable = { which = eep_tasks value = 1 } }

@@ -1,0 +1,133 @@
+# Controlled callbacks only. These events are excluded from production.
+namespace = eep_probe
+country_event = {
+    id = eep_probe.20
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        save_event_target_as = eep_probe_country
+        save_global_event_target_as = eep_probe_original_country
+        eep_probe_create_source = { SIZE = 20 TARGET = eep_probe_source START = no }
+        event_target:eep_probe_source = { set_name = "EEP-UI-Q20" }
+        set_country_flag = eep_probe_monitoring
+        random_country = {
+            limit = { is_country_type = default NOT = { is_same_value = root } }
+            save_global_event_target_as = eep_probe_foreign
+        }
+        country_event = { id = eep_probe.11 }
+    }
+}
+country_event = {
+    id = eep_probe.21
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_probe_source = { eep_begin = yes }
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.22
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        every_situation = {
+            limit = { is_situation_type = situation_eep_devouring }
+            set_variable = { which = eep_probe_progress value = 0 }
+            export_trigger_value_to_variable = { trigger = situation_progress variable = eep_probe_progress }
+            set_variable = { which = eep_probe_delta value = target.eep_months }
+            subtract_variable = { which = eep_probe_delta value = eep_probe_progress }
+            if = {
+                limit = { check_variable = { which = eep_probe_delta value > 0 } }
+                add_situation_progress = eep_probe_delta
+            }
+            situation_event = { id = eep.21 }
+        }
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.23
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        every_situation = {
+            limit = { is_situation_type = situation_eep_devouring }
+            abort_situation = this
+        }
+        country_event = { id = eep_probe.11 }
+    }
+}
+country_event = {
+    id = eep_probe.24
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_probe_source = { eep_begin = yes }
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.25
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        if = {
+            limit = { exists = event_target:eep_probe_foreign }
+            event_target:eep_probe_source = { set_owner = event_target:eep_probe_foreign }
+        }
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.26
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        if = {
+            limit = { exists = event_target:eep_probe_foreign }
+            event_target:eep_core@this = { set_owner = event_target:eep_probe_foreign }
+        }
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.27
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_core@this = { set_owner = root }
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.28
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_probe_source = { set_capital = yes }
+        country_event = { id = eep_probe.11 }
+    }
+}
+country_event = {
+    id = eep_probe.29
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_core@this = { destroy_colony = yes change_pc = pc_shattered }
+        country_event = { id = eep_probe.18 }
+    }
+}
+country_event = {
+    id = eep_probe.30
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        every_situation = {
+            limit = { is_situation_type = situation_eep_devouring }
+            situation_event = { id = eep.21 }
+            situation_event = { id = eep.20 }
+        }
+        country_event = { id = eep_probe.18 }
+    }
+}

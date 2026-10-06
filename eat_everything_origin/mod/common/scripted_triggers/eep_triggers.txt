@@ -37,7 +37,7 @@ eep_source_valid = {
     is_under_colonization = no
     is_occupied_flag = no
     has_ground_combat = no
-    NOT = { has_carrier_flag = eep_core }
+    NOT = { planet = { is_same_value = event_target:eep_core@owner } }
     NOT = { has_planet_flag = eep_active }
     NOT = { has_planet_flag = being_devoured }
     NOT = { has_designation = col_nanotech_world }
