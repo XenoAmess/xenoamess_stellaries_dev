@@ -1,0 +1,30 @@
+{
+  "status": "STATIC_PASS",
+  "steam_initialized": false,
+  "online_download_executed": false,
+  "exports": [
+    "SteamAPI_GetHSteamPipe",
+    "SteamAPI_ManualDispatch_Init",
+    "SteamAPI_ManualDispatch_RunFrame",
+    "SteamAPI_ManualDispatch_GetNextCallback",
+    "SteamAPI_ManualDispatch_FreeLastCallback",
+    "SteamAPI_ISteamUGC_DownloadItem",
+    "SteamAPI_ISteamUGC_GetItemState",
+    "SteamAPI_ISteamUGC_GetItemInstallInfo"
+  ],
+  "callback_message_size": 24,
+  "download_result_size": 24,
+  "dll": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\steam_api64.dll",
+  "simulated_protocol_checks": {
+    "status": "PASS",
+    "cases": [
+      "other_app_item_callback_ignored_and_all_released",
+      "failed_eresult_rejected_and_released",
+      "short_structure_rejected_before_read_and_released",
+      "absent_callback_times_out"
+    ],
+    "count": 4,
+    "command": "python eat_everything_origin/testing/test_workshop_download.py -v",
+    "online_download_executed": false
+  }
+}

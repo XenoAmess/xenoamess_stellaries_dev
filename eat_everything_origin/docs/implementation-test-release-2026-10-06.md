@@ -36,6 +36,14 @@
 
 最终交付包含正式 Mod、测试报告、工坊链接、远端内容核验、提交与标签。无关工作树改动不纳入提交。当前尚无任何新 Mod 验收或发布 PASS。
 
+### 发布后实际下载核验入口
+
+目标是验证 Steam 远端实际包，不能将本地生产目录复制后冒充下载。仅扩展本项目 `tools/publish.py`：在正式验收及成功上传之后，对已记录的新物品调用官方 `DownloadItem`，低优先级且不订阅；使用独立进程的手动回调循环，等待同 App ID、同新物品 ID 的 `DownloadItemResult_t` 成功后再读取安装信息。禁止对只读上游调用上传或下载此流程，不修改玩家播放集。
+
+接口来源：[Steamworks UGC 文档](https://partner.steamgames.com/doc/api/ISteamUGC#DownloadItem)、Valve 官方 Proton 仓库的 [steam_api.h](https://github.com/ValveSoftware/Proton/blob/proton_10.0/lsteamclient/steamworks_sdk_161/steam_api.h)、[isteamugc.h](https://github.com/ValveSoftware/Proton/blob/proton_10.0/lsteamclient/steamworks_sdk_161/isteamugc.h) 和 [steam_api_internal.h](https://github.com/ValveSoftware/Proton/blob/proton_10.0/lsteamclient/steamworks_sdk_161/steam_api_internal.h)。下载回调为3406；Windows结构按8字节打包。手动回调不能与RunCallbacks混用，每次取回调后必须释放。现有上传流程不改用手动回调，下载在独立调用中处理。
+
+验收要求：先离线检查 DLL 导出、结构大小、命令入口，并用明确标识的模拟回调验证外国物品／外国App不被误接受、失败结果及短结构安全拒绝、每个回调均释放；模拟结果不算远端下载通过。最后在线阶段记录真实下载回调、安装路径、状态、字节数和时间；安装状态须完成且没有需要更新／下载中标记，路径不能指向生产目录。远端核验要求安装目录与冻结生产包逐文件SHA-256完全一致，并要求下载凭证存在；失败保留新ID重试，不重发已成功版本。测试期间不初始化在线Steam下载。
+
 ## 实施记录
 
 - 铁心本轮已离线结束并归档为[20261006T192819Z](evidence/runtime-development/20261006T192819Z/findings.json)：1480文件约80MB、35个原生存档快照，原始日志／GPU帧／动作保持字节并建立哈希清单。子用例通过记录补种、重载、高容量、50任务、原生暂停、Q3/Q5真实月历、实际建设与稳定只读报告、并行和失守恢复；整体仍PARTIAL，原版对照／自然经营／灵飞武灾和其余政体尚未完成。种族洁癖新运行20261006T202737Z已从完整独立配置启动，Steam保持离线，测试脚本与正式包分离。
@@ -190,3 +198,9 @@
 - 2026-10-06：工具全仓静态入口 `python tools/run_static_acceptance.py --online` 返回 0、`static acceptance: PASS`；包级工具 9 项正反回归通过，无需修改工具仓库。后续调用显式锁定本机 4.5.2 EXE SHA-256。
 - 2026-10-06：4.5.2 `99_README_SITUATIONS.txt` 的 105～127 行新增可脚本化 `total_progress` 与阶段 `section_weight`。实施改为总进度 T（月）、每有效月 +1，取代原设计 1000/T 浮点进度，避免 48 月累计舍入导致多等一个月；收益、消化期与阻塞合同保持。`ceiling_variable` 在本机 `unplugged_effects.txt` 有原版用例。
 - 2026-10-06：生产工具包括本子项目的 EvoLink 提交／归档、资源转换、静态合同、隔离实机与发布／核验入口；工具源码不进入 Mod 包。DirectXTex `texconv.exe` 来自 [Microsoft 官方 may2026 发行](https://github.com/microsoft/DirectXTex/releases/tag/may2026)，966,480 字节，SHA-256 `dcfdec10244e02cf5037fba089c55fb7e1326b1c8181742d77d15fa5cb5eef06`，只作 DDS 格式转换；原图保留，不以本地去背景替代 EvoLink。
+
+- 2026-10-07 04:38种族洁癖原生新局确认gov_purification_committee/auth_dictatorial、原版ruler、主体物种与4800真实人口保留；物理母星Planet7绑定一次，C/G/制造/世界0、D2。原生文明简介和女王王座事件简中显示正常。commands_at_date已真正执行：GPU控制台留有Date is 2200.01.04, running console command game_paused true及Toggled paused state to true；暂停后界面为2200.01.05（当日更新结束）。实验后再手动false会继续推进，不应误以后续日期否定定时暂停。后续节点必须看控制台实际执行及原生存档，同进程重载重复触发仍未证实。
+
+- 发布下载工具离线接口检查完成：本机游戏steam_api64.dll八个导出存在，两个Windows回调结构均24字节；外国App/物品/其他回调过滤、EResult失败、短结构拒绝及超时四项模拟协议检查通过，所有已取回调均释放。证据为workshop-download-offline-interface.json，未初始化Steam，未进行在线下载，不称远端验收通过。
+
+- 种族洁癖普通日历实测：从2200.01.01三个真实100种子、零进度开始；定时暂停2203.01.02后原生存档2203.01.03确认Q15已完成C/G15、D5、制造200、世界1，回迁203、母星4838，其余两任务进度恰36。Q20在48月完成，2204.01.03原生存档C/G35、D10、制造500、世界2、回迁211、母星5419，Q25进度48。没有设进度/日期/奖励，仅ticks1000加速真实日历；创建殖民地的成本是夹具前提，不算自然运营证据。女王首次事件和阶段1事件均真正展示并可关闭，女王面部/头冠完整、动态数值与已结算账本一致。同进程重载初始存档后2200.01.04定时暂停确实重新触发（控制台有两次实际执行记录）；不推定运行中修改定时文件生效。初始重载日志有原生清除1个无效地貌提示；母星全部14地貌（含d_eep_core）从初始到后续均原对象保留，EEP容量2/5/10按真实结算增长。未确定被修复的其他对象前不称全局零日志。
