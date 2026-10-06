@@ -213,3 +213,37 @@ country_event = {
         country_event = { id = eep_probe.18 }
     }
 }
+
+# Controlled lower bound only. Load the alien-only source baseline first.
+country_event = {
+    id = eep_probe.38
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_core@this = {
+            create_pop_group = { species = event_target:eep_probe_foreign.owner_main_species size = 100 }
+            every_owned_pop_group = {
+                limit = { is_same_species = root.owner_main_species }
+                kill_pop_group = { pop_group = this percentage = 1 }
+            }
+            create_pop_group = { species = root.owner_main_species size = 100 }
+        }
+        country_event = { id = eep_probe.18 }
+    }
+}
+
+# Actual half-seed transfer; no population is created by this probe.
+country_event = {
+    id = eep_probe.39
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_core@this = {
+            random_owned_pop_group = {
+                limit = { eep_founder_pop = yes pop_group_size >= 50 }
+                resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_probe_source AMOUNT = 50 }
+            }
+        }
+        country_event = { id = eep_probe.18 }
+    }
+}

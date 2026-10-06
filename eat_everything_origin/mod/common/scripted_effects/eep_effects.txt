@@ -84,19 +84,21 @@ eep_begin = {
                                 limit = { check_variable = { which = eep_move value > event_target:eep_source.eep_seed_need } }
                                 set_variable = { which = eep_move value = event_target:eep_source.eep_seed_need }
                             }
-                            # The native macro evaluates AMOUNT in the newly
-                            # created target pop group, not this source group.
-                            event_target:eep_source = { set_variable = { which = eep_seed_move value = prev.eep_move } }
-                            resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_source AMOUNT = event_target:eep_source.eep_seed_move }
-                            event_target:eep_source = {
-                                set_variable = { which = eep_seed_existing value = 0 }
-                                export_trigger_value_to_variable = {
-                                    trigger = count_owned_pop_amount
-                                    parameters = { limit = { eep_founder_pop = yes } }
-                                    variable = eep_seed_existing
+                            if = {
+                                limit = { check_variable = { which = eep_move value > 0 } }
+                                # AMOUNT resolves inside the new target group.
+                                event_target:eep_source = { set_variable = { which = eep_seed_move value = prev.eep_move } }
+                                resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_source AMOUNT = event_target:eep_source.eep_seed_move }
+                                event_target:eep_source = {
+                                    set_variable = { which = eep_seed_existing value = 0 }
+                                    export_trigger_value_to_variable = {
+                                        trigger = count_owned_pop_amount
+                                        parameters = { limit = { eep_founder_pop = yes } }
+                                        variable = eep_seed_existing
+                                    }
+                                    set_variable = { which = eep_seed_need value = 100 }
+                                    subtract_variable = { which = eep_seed_need value = eep_seed_existing }
                                 }
-                                set_variable = { which = eep_seed_need value = 100 }
-                                subtract_variable = { which = eep_seed_need value = eep_seed_existing }
                             }
                         }
                     }
