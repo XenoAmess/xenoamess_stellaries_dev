@@ -1,0 +1,86 @@
+# Controlled object preconditions only; each case starts from a native save.
+namespace = eep_probe
+
+country_event = {
+    id = eep_probe.50
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        save_event_target_as = eep_probe_country
+        eep_probe_create_source = { SIZE = 20 TARGET = eep_probe_source START = no }
+        event_target:eep_probe_source = { set_name = "EEP-OBJECT-Q20" }
+    }
+}
+
+country_event = {
+    id = eep_probe.51
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { event_target:eep_core@this = { eep_begin = yes } }
+}
+
+country_event = {
+    id = eep_probe.52
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { event_target:eep_probe_source = { change_pc = pc_habitat eep_begin = yes } }
+}
+
+country_event = {
+    id = eep_probe.53
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { event_target:eep_probe_source = { change_pc = pc_ringworld_habitable eep_begin = yes } }
+}
+
+country_event = {
+    id = eep_probe.54
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { event_target:eep_probe_source = { change_pc = pc_cracked eep_begin = yes } }
+}
+
+country_event = {
+    id = eep_probe.55
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { event_target:eep_probe_source = { change_pc = pc_barren eep_begin = yes } }
+}
+
+country_event = {
+    id = eep_probe.56
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { event_target:eep_probe_source = { change_pc = pc_cosmogenesis_world eep_begin = yes } }
+}
+
+country_event = {
+    id = eep_probe.57
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { event_target:eep_probe_source = { destroy_colony = yes eep_begin = yes } }
+}
+
+country_event = {
+    id = eep_probe.58
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_probe_source = {
+            while = { count = 20 add_deposit = d_lithoid_devastation }
+            eep_begin = yes
+        }
+    }
+}
+
+country_event = {
+    id = eep_probe.59
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_core@this = {
+            if = { limit = { owner = { is_hive_empire = yes } } change_pc = pc_hive }
+            else_if = { limit = { owner = { is_machine_empire = yes } } change_pc = pc_machine }
+        }
+    }
+}

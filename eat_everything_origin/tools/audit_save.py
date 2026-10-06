@@ -72,7 +72,7 @@ def ids(text):
     return [int(t) for t, _, _ in tokens(text) if re.fullmatch(r'\d+', t)]
 
 
-def audit(path):
+def audit(path, country_ids=()):
     raw = path.read_bytes()
     with zipfile.ZipFile(path) as archive:
         native = archive.read('gamestate')
@@ -92,12 +92,16 @@ def audit(path):
             target = scalars(value)
             if str(target.get('name', '')).startswith('eep'):
                 result['event_targets'].append(target)
+    requested_countries = {str(identity) for identity in country_ids}
+    owned_colony_ids = set()
     for identity, value, obj in fields(containers.get('country', '')):
         if not obj:
             continue
         variables = scalars(block(value, 'variables'))
         flags = scalars(block(value, 'flags'))
-        if not any(k.startswith('eep') for k in variables) and not any(k.startswith('eep') for k in flags):
+        if (identity not in requested_countries
+                and not any(k.startswith('eep') for k in variables)
+                and not any(k.startswith('eep') for k in flags)):
             continue
         native_country = scalars(value)
         budget = block(value, 'budget')
@@ -108,6 +112,9 @@ def audit(path):
                 categories = block(block(budget, period), direction)
                 budget_categories[period][direction] = {
                     name: scalars(resources) for name, resources, obj in fields(categories) if obj}
+        owned = ids(block(value, 'owned_planets'))
+        owned_colony_ids.update(owned)
+        tech_status = block(value, 'tech_status')
         result['countries'][identity] = {
             'name': scalars(block(value, 'name')).get('key'),
             'native': {k: v for k, v in native_country.items() if k in ('capital', 'founder_species_ref', 'type', 'personality', 'military_power', 'economy_power', 'tech_power', 'empire_size', 'num_sapient_pops', 'employable_pops', 'fleet_size', 'used_naval_capacity', 'ruler')},
@@ -118,17 +125,29 @@ def audit(path):
             'budget_categories': budget_categories,
             'stockpile': scalars(block(block(block(value, 'modules'), 'standard_economy_module'), 'resources')),
             'modules': block(value, 'modules'),
-            'owned_colonies': ids(block(value, 'owned_planets')),
+            'owned_colonies': owned,
+            'completed_technologies': [unquote(v) for k, v, obj in fields(tech_status)
+                                       if k == 'technology' and not obj],
+            'research_queues': {k: v for k, v, obj in fields(tech_status)
+                                if obj and k.endswith('_queue')},
+            'traditions': [unquote(t) for t, _, _ in tokens(block(value, 'traditions'))],
+            'ascension_perks': [unquote(t) for t, _, _ in tokens(block(value, 'ascension_perks'))],
             'crisis': block(value, 'crisis')}
+    missing = requested_countries - result['countries'].keys()
+    if missing:
+        raise ValueError('requested native country does not exist: ' + ', '.join(sorted(missing)))
     planet_data = block(containers.get('planets', ''), 'planet')
     for identity, value, obj in fields(planet_data):
         if not obj:
             continue
         variables = scalars(block(value, 'variables'))
         flags = {k: (scalars(v) if b else unquote(v)) for k, v, b in fields(block(value, 'flags'))}
-        if not any(k.startswith('eep') for k in variables) and not any(k.startswith('eep') for k in flags):
-            continue
         record = scalars(value)
+        owned = (record.get('colony') in owned_colony_ids
+                 and str(record.get('owner')) in result['countries'])
+        if (not owned and not any(k.startswith('eep') for k in variables)
+                and not any(k.startswith('eep') for k in flags)):
+            continue
         record['name'] = scalars(block(value, 'name')).get('key')
         record['variables'] = variables
         record['flags'] = flags
@@ -196,8 +215,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('save', type=Path)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--country', type=int, action='append', default=[],
+                        help='also audit this native country without requiring EEP markers')
     args = parser.parse_args()
-    result = audit(args.save)
+    result = audit(args.save, args.country)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'date': result['date'], 'countries': len(result['countries']),

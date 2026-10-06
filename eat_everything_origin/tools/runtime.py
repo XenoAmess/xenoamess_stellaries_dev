@@ -290,8 +290,22 @@ def native_load(save_name, stage):
 
 vanilla = "--vanilla" in sys.argv
 quick = "--quick" in sys.argv
+native_control_designs = "--native-control-designs" in sys.argv
+if native_control_designs:
+    sys.argv.remove("--native-control-designs")
+    if not vanilla:
+        raise ValueError("--native-control-designs requires --vanilla")
 if vanilla: sys.argv.remove("--vanilla")
 if quick: sys.argv.remove("--quick")
+rng_seed = None
+if "--rng-seed" in sys.argv:
+    position = sys.argv.index("--rng-seed")
+    if position + 1 >= len(sys.argv):
+        raise ValueError("--rng-seed requires a 32-bit unsigned integer")
+    rng_seed = int(sys.argv[position + 1])
+    if not 0 <= rng_seed <= 0xFFFFFFFF:
+        raise ValueError("--rng-seed must be between 0 and 4294967295")
+    del sys.argv[position:position + 2]
 base_prepare = harness.prepare
 def prepared_variant(*args, **kwargs):
     data = base_prepare(*args, **kwargs)
@@ -308,9 +322,28 @@ def prepared_variant(*args, **kwargs):
         data["enabled_mods"] = []
         data["role"] = "vanilla Chinese environment control"
         harness.write_json(Path(data["userdir"]) / "dlc_load.json", {"enabled_mods": [], "disabled_dlcs": []})
+    if native_control_designs:
+        fixture = json.loads((REPO / "_runtime/heart-of-devouring/current-fixture.json").read_text(encoding="utf-8"))
+        source = Path(fixture["root"]) / "mod/prescripted_countries/eep_probe_presets.txt"
+        text = source.read_text(encoding="utf-8").replace('origin = "origin_heart_of_devouring"',
+                                                         'origin = "origin_default"')
+        if "origin_heart_of_devouring" in text:
+            raise RuntimeError("native control design still contains the EEP origin")
+        destination = Path(data["userdir"]) / "user_empire_designs_v3.4.txt"
+        destination.write_text(text, encoding="utf-8", newline="\n")
+        data["native_control_designs"] = {"source": str(source),
+                                           "source_sha256": harness.sha256(source),
+                                           "destination": str(destination),
+                                           "destination_sha256": harness.sha256(destination),
+                                           "runtime_verified": False}
     if quick:
         data["launch_args"].append("-quick")
         data["experimental_quick"] = True
+    if rng_seed is not None:
+        argument = f"-rng_seed={rng_seed}"
+        data["launch_args"].append(argument)
+        data["rng_seed_request"] = {"value": rng_seed, "launch_argument": argument,
+                                    "actual_world_seed": "verify the native galaxy-generation log"}
     harness.write_json(Path(data["artifact_dir"]) / "manifest.json", data)
     return data
 harness.prepare = prepared_variant
