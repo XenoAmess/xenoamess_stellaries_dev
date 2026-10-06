@@ -12,6 +12,7 @@
 
 - [「吞噬之心」新独立 Mod：吞星供养母星的灭绝单球设计案（2026-10-06，未实现）](eat-everything-origin-design-2026-10-06.md)
 - [「吞噬之心」子项目：游戏代码研究与验收设计](../eat_everything_origin/docs/README.md)
+- [「吞噬之心」女王·白绮：原设调查、肖像／立绘审核与事件 CG 方案](../eat_everything_origin/docs/queen-baiqi-art-direction-2026-10-06.md)
 
 - [五个 Mod 的 Stellaris 最新正式版兼容检查（2026-09-30）](stellaris-latest-compatibility-2026-09-30.md)
 - [三个兼容维护版本逐个 Steam 发布（2026-09-30）](steam-compatibility-releases-2026-09-30.md)

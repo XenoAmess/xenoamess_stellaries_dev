@@ -1,0 +1,201 @@
+{
+  "recorded_on": "2026-10-06",
+  "current_art_direction": "Cold imperial Queen Baiqi; portrait V2, fresh frontal full-body V5",
+  "review_status": "assistant artifact and visual checks complete; awaiting user review; no candidate is user-approved",
+  "reference_manifest": "reference/manifest.json",
+  "current_candidates": {
+    "portrait": {
+      "version": "V2",
+      "user_review": "awaiting user review; not approved",
+      "file": "generated/QBA-01-layerize-03/layer-01.png",
+      "sha256": "e723bac4012dcb1eb366d4714f28e109ebe01dc409a110d4d292447aa77c2355",
+      "bytes": 8416372,
+      "width": 1824,
+      "height": 2272,
+      "mode": "RGBA",
+      "alpha": {
+        "range": [
+          0,
+          255
+        ],
+        "zero_fraction": 0.27855799820854954,
+        "opaque_fraction": 0.1007020053434643,
+        "corners": [
+          0,
+          0,
+          239,
+          243
+        ],
+        "nonzero_bbox": [
+          0,
+          0,
+          1824,
+          2272
+        ]
+      },
+      "external_background_samples": [
+        {
+          "pixel": [
+            10,
+            10
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1700,
+            30
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            20,
+            900
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1800,
+            900
+          ],
+          "alpha": 0
+        }
+      ],
+      "raw_generation": "generated/QBA-01-attempt-02/original.png",
+      "generation_task": "task-unified-1791288162-gvp5uafl",
+      "generation_request": "generated/QBA-01-attempt-02/original.request.json",
+      "generation_prompt": "prompts/QBA-01-portrait-v2.prompt.txt",
+      "transparent_provider": "EvoLink",
+      "layerize_task": "task-unified-1791289480-lyjwvb47",
+      "layerize_request": "generated/QBA-01-layerize-03/original.request.json",
+      "layerize_prompt": "prompts/QBA-01-layerize-v2.prompt.txt"
+    },
+    "full_body": {
+      "version": "V5",
+      "user_review": "awaiting user review; not approved",
+      "file": "generated/QBA-02-layerize-05/layer-01.png",
+      "sha256": "c2858dfc6529e346da84199944b84406d5004b7b67db6e75284712d513c44f0d",
+      "bytes": 7095701,
+      "width": 1673,
+      "height": 2498,
+      "mode": "RGBA",
+      "alpha": {
+        "range": [
+          0,
+          255
+        ],
+        "zero_fraction": 0.47260593890533825,
+        "opaque_fraction": 0.10924866611759222,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero_bbox": [
+          0,
+          0,
+          1673,
+          2498
+        ]
+      },
+      "external_background_samples": [
+        {
+          "pixel": [
+            50,
+            50
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1500,
+            200
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            50,
+            900
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1600,
+            900
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            900,
+            2485
+          ],
+          "alpha": 0
+        }
+      ],
+      "raw_generation": "generated/QBA-02-attempt-05/original.png",
+      "generation_task": "task-unified-1791290279-gffboldh",
+      "generation_request": "generated/QBA-02-attempt-05/original.request.json",
+      "generation_prompt": "prompts/QBA-02-fullbody-v5-frontal.prompt.txt",
+      "transparent_provider": "EvoLink",
+      "layerize_task": "task-unified-1791290616-rkmktjd5",
+      "layerize_request": "generated/QBA-02-layerize-05/original.request.json",
+      "layerize_prompt": "prompts/QBA-02-layerize-v5-frontal.prompt.txt"
+    }
+  },
+  "rejected_versions": [
+    {
+      "version": "V1",
+      "assets": [
+        "generated/QBA-01-attempt-01/original.png",
+        "generated/QBA-02-attempt-01/original.png",
+        "generated/QBA-02-layerize-01/layer-01.png"
+      ],
+      "rejection_source": "explicit user review",
+      "reason": "too gentle, too positive; user requires evil, indifferent, ruthless, contemptuous and regal authority"
+    },
+    {
+      "version": "full-body V2",
+      "assets": [
+        "generated/QBA-02-attempt-02/original.png",
+        "generated/QBA-02-layerize-02/layer-01.png"
+      ],
+      "rejection_source": "explicit user review",
+      "reason": "awkward overlapping legs and unclear center of gravity"
+    },
+    {
+      "version": "full-body V3",
+      "assets": [
+        "generated/QBA-02-attempt-03/original.png",
+        "generated/QBA-02-layerize-03/layer-01.png"
+      ],
+      "rejection_source": "explicit user review",
+      "reason": "leg incorrectly protrudes through continuous skirt panel; garment occlusion failed"
+    },
+    {
+      "version": "full-body V4",
+      "assets": [
+        "generated/QBA-02-attempt-04/original.png",
+        "generated/QBA-02-layerize-04/layer-01.png"
+      ],
+      "rejection_source": "explicit user review",
+      "reason": "crooked trouser crotch and waist/pelvis centerline; prior cloth-occlusion check missed anatomy alignment"
+    }
+  ],
+  "transparent_provider_requirement": "EvoLink only",
+  "event_cg_status": "directions only; no CG generated; waiting for character review",
+  "mod_integration": "not implemented; no runtime acceptance",
+  "historical_failures": [
+    {
+      "attempt": "generated/QBA-01-layerize-02",
+      "task": "task-unified-1791288648-q06unh27",
+      "failure": "generation_timeout; no layers returned",
+      "retry": "generated/QBA-01-layerize-03; re-extraction of same portrait, no portrait redraw"
+    }
+  ]
+}

@@ -8,7 +8,7 @@
     "new_markdown_no_bom": "PASS",
     "markdown_trailing_whitespace": "PASS",
     "local_markdown_links": {
-      "count": 50,
+      "count": 92,
       "status": "PASS"
     },
     "game_source_fingerprints": {
@@ -19,7 +19,7 @@
     "unique_sequential_ids": {
       "SRC": 24,
       "PROBE": 8,
-      "EAT": 26
+      "EAT": 27
     },
     "candidate_arithmetic": "PASS",
     "git_diff_check": {
@@ -27,7 +27,7 @@
     },
     "git_cached_diff_check": {
       "exit_code": 0,
-      "scope": "all eight task files staged"
+      "scope": "all 113 current-task files staged; unrelated files excluded"
     },
     "remote_baseline_before_commit": {
       "local_ahead": 0,
@@ -39,33 +39,53 @@
   "documents": [
     {
       "path": "docs/README.md",
-      "bytes": 4169,
-      "sha256": "4a53cf658ed61216aba9eebd8f8a1f0306f5df814b006a06770c4538cc13f81a"
+      "bytes": 4335,
+      "sha256": "765cb60995f1343e22ec2d42fee30c0889ca31613c902144298e8e7a24345d28"
     },
     {
       "path": "docs/eat-everything-origin-design-2026-10-06.md",
-      "bytes": 30039,
-      "sha256": "e5aaa6f6640a013d4f9e03baebd441724e41ef91de40cfebbfaf3abba6546425"
+      "bytes": 33711,
+      "sha256": "711acf3fa423dfc31b03f0ac9cf5de259ece99ce141b594db7b6fc5b5cfcdfad"
     },
     {
       "path": "eat_everything_origin/README.md",
-      "bytes": 573,
-      "sha256": "2b938e868f9408b66f0c611101e9eb48efd7f70fe5b749e8cbd9b7da97b115bf"
+      "bytes": 834,
+      "sha256": "c63a02b31152502e911f11f3026af78b7c68c06cdfbb92b4f538c96af5694635"
     },
     {
       "path": "eat_everything_origin/docs/README.md",
-      "bytes": 758,
-      "sha256": "a4c1882eccc58f84461dc72fbbcd26be4c5f7ea871de98320cc04d059138961e"
+      "bytes": 1199,
+      "sha256": "cf5f2b9977759abfac573e429d29e37f07a3ceec7a025f079f19a7ba3c83e7f8"
     },
     {
       "path": "eat_everything_origin/docs/game-script-research-2026-10-06.md",
-      "bytes": 13640,
-      "sha256": "e3db4f65d1d55b02306fe8c32d96398e736b064fb09ee0510908e63a42dea064"
+      "bytes": 14083,
+      "sha256": "f537d27d825dbf432ac4d6c541185b673a7cb7df2bafd07e353b20562a7c03a0"
     },
     {
       "path": "eat_everything_origin/docs/acceptance-plan.md",
-      "bytes": 10222,
-      "sha256": "a22e670052caba1cb5c2be96aaad550d5613ee5e220d7deaf4fca4427b679e1d"
+      "bytes": 11306,
+      "sha256": "74b9caa8b11723bb1b4d9612d704b9f269d382076815b967eb61c19303486ca3"
+    },
+    {
+      "path": "eat_everything_origin/docs/queen-baiqi-art-direction-2026-10-06.md",
+      "bytes": 17884,
+      "sha256": "44c1fb555c71eb8ae37fa027508d05e4858161520e1083b6c1143d0edd85b5cd"
+    },
+    {
+      "path": "eat_everything_origin/assets/queen-baiqi/README.md",
+      "bytes": 3987,
+      "sha256": "6ba7f7817f705a92002cddb8becac32cd6e23ca89a2ed36c6b98d3fe8615a7ae"
+    },
+    {
+      "path": "eat_everything_origin/assets/queen-baiqi/prompts/event-cg-directions-v1.md",
+      "bytes": 5003,
+      "sha256": "dd32f2397d9047d93e649746e85d465f5cf2f6f0dba758208eafa41bfac7dac8"
+    },
+    {
+      "path": "eat_everything_origin/assets/queen-baiqi/prompts/event-cg-directions-v2.md",
+      "bytes": 5369,
+      "sha256": "89e779fddb960342c3199f37c2203a068eed5a9d961c8cf504ae6bffb628b10c"
     }
   ],
   "candidate_samples": [
@@ -128,7 +148,26 @@
       "monthly_minerals": 20,
       "replenishment_months_at_net_100_minerals": 60
     },
-    "psi_corps_base_bonus_at_200_assigned_telepath_workforce": 0.1
+    "psi_corps_base_bonus_at_200_assigned_telepath_workforce": 0.1,
+    "mod_origin_duration_samples": [
+      {
+        "Q": 15,
+        "effective_progress_months": 36,
+        "years": 3.0
+      },
+      {
+        "Q": 20,
+        "effective_progress_months": 48,
+        "years": 4.0
+      },
+      {
+        "Q": 25,
+        "effective_progress_months": 60,
+        "years": 5.0
+      }
+    ],
+    "mod_origin_Q20_duration_months": 48,
+    "mod_origin_Q20_turnover_ratio_against_vanilla": 2.5
   },
   "not_run": [
     "open_kaishek mod acceptance",
@@ -153,5 +192,85 @@
     "gameplay_or_mod_acceptance": "not run; documentation-only revision",
     "status": "PASS",
     "errors": []
+  },
+  "preference_revision": {
+    "recorded_on": "2026-10-06",
+    "repository_baseline": "067b82f6f4db230be7139a12c3e402da87321f01",
+    "scope": "confirmed player preferences, design pacing, acceptance scenarios and document fingerprints",
+    "user_confirmed": {
+      "strength": "偏强爽玩",
+      "ordinary_world_digest_year_range": [
+        3,
+        5
+      ],
+      "owned_dlc": [
+        "Nemesis",
+        "Shadows of the Shroud"
+      ]
+    },
+    "design_default": {
+      "duration_formula": "ceil(12 * Q / 5) months",
+      "Q20_effective_progress_months": 48,
+      "timing_samples": [
+        {
+          "Q": 15,
+          "effective_progress_months": 36,
+          "years": 3.0
+        },
+        {
+          "Q": 20,
+          "effective_progress_months": 48,
+          "years": 4.0
+        },
+        {
+          "Q": 25,
+          "effective_progress_months": 60,
+          "years": 5.0
+        }
+      ],
+      "main_acceptance_dlc_enabled": [
+        "Nemesis",
+        "Shadows of the Shroud"
+      ]
+    },
+    "dlc_evidence": "ownership confirmed by user; actual enabled playset and engine loading not inspected",
+    "checks": {
+      "utf8_names_and_preferences": "PASS",
+      "local_links": 92,
+      "unique_sequential_ids": {
+        "SRC": 24,
+        "PROBE": 8,
+        "EAT": 27
+      },
+      "source_fingerprints": "PASS",
+      "duration_and_reward_arithmetic": "PASS",
+      "git_diff_check_exit_code": 0
+    },
+    "gameplay_or_mod_acceptance": "not run; documentation-only revision",
+    "status": "PASS",
+    "errors": []
+  },
+  "art_delivery_revision": {
+    "recorded_on": "2026-10-06",
+    "repository_baseline": "067b82f6f4db230be7139a12c3e402da87321f01",
+    "evidence_file": "queen-baiqi-art-check-2026-10-06.json",
+    "scope": "character research, cold imperial art direction, five event concepts and EvoLink transparent review images",
+    "current_candidates": {
+      "portrait": "V2",
+      "full_body": "V5 frontal body reconstruction"
+    },
+    "reference_images": 10,
+    "provider_attempts": 14,
+    "user_review": "awaiting user review; no image is user-approved",
+    "checks": {
+      "documents": 10,
+      "local_links": 92,
+      "utf8_and_no_replacement_characters": "PASS",
+      "source_and_result_fingerprints": "PASS",
+      "transparent_alpha": "PASS",
+      "credentials_absent_from_task_files": "PASS"
+    },
+    "mod_acceptance": "not run; no new mod code",
+    "status": "ARTIFACTS_CHECKED_AWAITING_USER_REVIEW"
   }
 }

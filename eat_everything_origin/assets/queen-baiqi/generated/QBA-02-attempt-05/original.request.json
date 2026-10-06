@@ -1,0 +1,33 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "size": "2:3",
+  "resolution": "2K",
+  "quality": "xhigh",
+  "background": "transparent",
+  "output_format": "png",
+  "n": 1,
+  "endpoint": "https://api.evolink.ai/v1/images/generations",
+  "provider": "EvoLink",
+  "prompt_file": "original.prompt.txt",
+  "edit_scope": "V5 fresh frontal body using current portrait identity and original frontal stance references; align torso, horizontal waistband, crotch junction and feet midpoint",
+  "image_urls": [
+    "<temporary-upload-url:generated/QBA-01-attempt-02/original.png>",
+    "<temporary-upload-url:reference/BV1N84y1L7mh.png>",
+    "<temporary-upload-url:reference/BV1gG4y1Y7vE.png>"
+  ],
+  "reference_fingerprints": [
+    {
+      "file": "generated/QBA-01-attempt-02/original.png",
+      "sha256": "88871a7e4f40f9b9367739c4f873da4e33db9964a0afc227b366219d19ea69a5"
+    },
+    {
+      "file": "reference/BV1N84y1L7mh.png",
+      "sha256": "a3f2e19eb243d0313360df644c1cdf397d891d42d8a53aabd38cca87b6f69d0e"
+    },
+    {
+      "file": "reference/BV1gG4y1Y7vE.png",
+      "sha256": "da0df24f8aa569a6093b6d0f3c7c7a492daa6622ad2e48f0afeae4b0438e8e7b"
+    }
+  ],
+  "temporary_url_redaction": true
+}

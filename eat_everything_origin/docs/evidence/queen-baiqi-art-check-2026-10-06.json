@@ -1,0 +1,199 @@
+{
+  "recorded_on": "2026-10-06",
+  "status": "ARTIFACTS_CHECKED_AWAITING_USER_REVIEW",
+  "scope": "Queen Baiqi references, prompt lineage and transparent review artifacts; not mod or runtime acceptance",
+  "reference_manifest": "../../assets/queen-baiqi/reference/manifest.json",
+  "reference_count": 10,
+  "all_originals_individually_viewed": true,
+  "current_candidates_asset_root": "eat_everything_origin/assets/queen-baiqi/",
+  "current_candidates": {
+    "portrait": {
+      "version": "V2",
+      "user_review": "awaiting user review; not approved",
+      "file": "generated/QBA-01-layerize-03/layer-01.png",
+      "sha256": "e723bac4012dcb1eb366d4714f28e109ebe01dc409a110d4d292447aa77c2355",
+      "bytes": 8416372,
+      "width": 1824,
+      "height": 2272,
+      "mode": "RGBA",
+      "alpha": {
+        "range": [
+          0,
+          255
+        ],
+        "zero_fraction": 0.27855799820854954,
+        "opaque_fraction": 0.1007020053434643,
+        "corners": [
+          0,
+          0,
+          239,
+          243
+        ],
+        "nonzero_bbox": [
+          0,
+          0,
+          1824,
+          2272
+        ]
+      },
+      "external_background_samples": [
+        {
+          "pixel": [
+            10,
+            10
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1700,
+            30
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            20,
+            900
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1800,
+            900
+          ],
+          "alpha": 0
+        }
+      ],
+      "raw_generation": "generated/QBA-01-attempt-02/original.png",
+      "generation_task": "task-unified-1791288162-gvp5uafl",
+      "generation_request": "generated/QBA-01-attempt-02/original.request.json",
+      "generation_prompt": "prompts/QBA-01-portrait-v2.prompt.txt",
+      "transparent_provider": "EvoLink",
+      "layerize_task": "task-unified-1791289480-lyjwvb47",
+      "layerize_request": "generated/QBA-01-layerize-03/original.request.json",
+      "layerize_prompt": "prompts/QBA-01-layerize-v2.prompt.txt"
+    },
+    "full_body": {
+      "version": "V5",
+      "user_review": "awaiting user review; not approved",
+      "file": "generated/QBA-02-layerize-05/layer-01.png",
+      "sha256": "c2858dfc6529e346da84199944b84406d5004b7b67db6e75284712d513c44f0d",
+      "bytes": 7095701,
+      "width": 1673,
+      "height": 2498,
+      "mode": "RGBA",
+      "alpha": {
+        "range": [
+          0,
+          255
+        ],
+        "zero_fraction": 0.47260593890533825,
+        "opaque_fraction": 0.10924866611759222,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "nonzero_bbox": [
+          0,
+          0,
+          1673,
+          2498
+        ]
+      },
+      "external_background_samples": [
+        {
+          "pixel": [
+            50,
+            50
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1500,
+            200
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            50,
+            900
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            1600,
+            900
+          ],
+          "alpha": 0
+        },
+        {
+          "pixel": [
+            900,
+            2485
+          ],
+          "alpha": 0
+        }
+      ],
+      "raw_generation": "generated/QBA-02-attempt-05/original.png",
+      "generation_task": "task-unified-1791290279-gffboldh",
+      "generation_request": "generated/QBA-02-attempt-05/original.request.json",
+      "generation_prompt": "prompts/QBA-02-fullbody-v5-frontal.prompt.txt",
+      "transparent_provider": "EvoLink",
+      "layerize_task": "task-unified-1791290616-rkmktjd5",
+      "layerize_request": "generated/QBA-02-layerize-05/original.request.json",
+      "layerize_prompt": "prompts/QBA-02-layerize-v5-frontal.prompt.txt"
+    }
+  },
+  "checks": {
+    "original_zip_and_10_reference_fingerprints": "PASS",
+    "EvoLink_requests_and_result_fingerprints": {
+      "status": "PASS",
+      "attempts": 14,
+      "all_provider_layers_archived": true
+    },
+    "submitted_prompts_match_archived_prompts": "PASS",
+    "real_rgba_alpha_and_external_background_samples": "PASS",
+    "credential_and_signed_url_absence_in_task_files": "PASS",
+    "utf8_markdown_and_local_links": {
+      "status": "PASS",
+      "documents": 10,
+      "local_markdown_links": 92
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    }
+  },
+  "assistant_visual_review": {
+    "images_inspected": [
+      "generated/QBA-01-layerize-03/layer-01.png",
+      "generated/QBA-02-attempt-05/original.png",
+      "generated/QBA-02-layerize-05/layer-01.png"
+    ],
+    "method": "manual view_image inspection; this is not automated anatomy validation or user approval",
+    "observations": [
+      "The V5 torso and pelvis face forward; the horizontal waistband, central buckle, trouser fly and crotch connect around the same body centerline.",
+      "Both black trouser legs remain continuous into separate boots; feet are separated on a common ground plane.",
+      "Front coat panels stay outside both legs; purple rear cape remains behind the legs. No continuous cloth panel intersects a visible leg in the inspected candidate.",
+      "Original character identity, cold closed-mouth expression, glasses, crown, heart jewel, hands, shattered planet and orbit ring remain visible.",
+      "Layerize removed the gray-purple background halo; the reviewed layer retains the regenerated stance and costume overlaps."
+    ],
+    "limitations": [
+      "Exact subject bounding-box crop is provider output; production game portrait padding/cropping is deferred until character approval.",
+      "Portrait and standing-art wardrobe details still require the user's approval and later consistency work before event CG production.",
+      "Only review artifacts and event prompt directions exist; no event scripts or CG scenes have been generated."
+    ]
+  },
+  "provider_attempt_count": 14,
+  "terminal_provider_failure_count": 1,
+  "mod_integration": "not implemented",
+  "game_runtime_acceptance": "not run",
+  "user_review": "pending",
+  "errors": []
+}
