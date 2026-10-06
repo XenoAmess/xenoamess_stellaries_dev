@@ -306,6 +306,15 @@ if "--rng-seed" in sys.argv:
     if not 0 <= rng_seed <= 0xFFFFFFFF:
         raise ValueError("--rng-seed must be between 0 and 4294967295")
     del sys.argv[position:position + 2]
+world_seed = None
+if "--world-seed" in sys.argv:
+    position = sys.argv.index("--world-seed")
+    if position + 1 >= len(sys.argv):
+        raise ValueError("--world-seed requires a nonnegative 31-bit integer")
+    world_seed = int(sys.argv[position + 1])
+    if not 0 <= world_seed <= 0x7FFFFFFF:
+        raise ValueError("--world-seed must be between 0 and 2147483647")
+    del sys.argv[position:position + 2]
 base_prepare = harness.prepare
 def prepared_variant(*args, **kwargs):
     data = base_prepare(*args, **kwargs)
@@ -344,6 +353,11 @@ def prepared_variant(*args, **kwargs):
         data["launch_args"].append(argument)
         data["rng_seed_request"] = {"value": rng_seed, "launch_argument": argument,
                                     "actual_world_seed": "verify the native galaxy-generation log"}
+    if world_seed is not None:
+        argument = f"-random={world_seed}"
+        data["launch_args"].append(argument)
+        data["world_seed_request"] = {"value": world_seed, "launch_argument": argument,
+                                      "actual_world_seed": "verify the native galaxy-generation log"}
     harness.write_json(Path(data["artifact_dir"]) / "manifest.json", data)
     return data
 harness.prepare = prepared_variant
