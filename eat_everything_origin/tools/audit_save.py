@@ -180,8 +180,10 @@ def audit(path):
             record['home_planet'] = scalars(block(value, 'home_planet'))
             result['species'][identity] = record
     for identity, value, obj in fields(block(containers.get('situations', ''), 'situations')):
-        if obj and 'situation_eep_devouring' in value:
-            record = scalars(value)
+        if not obj:
+            continue
+        record = scalars(value)
+        if str(record.get('country')) in result['countries']:
             record['target'] = scalars(block(value, 'target'))
             record['variables'] = scalars(block(value, 'variables'))
             result['situations'][identity] = record

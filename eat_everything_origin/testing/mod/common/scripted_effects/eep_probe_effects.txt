@@ -1,4 +1,20 @@
 # Controlled test construction only. Production never creates these worlds.
+eep_probe_relocate_seed = {
+    if = {
+        limit = { exists = event_target:eep_core@this }
+        event_target:eep_core@this = { save_event_target_as = eep_probe_seed_core }
+    }
+    else = {
+        capital_scope = { planet = { save_event_target_as = eep_probe_seed_core } }
+    }
+    event_target:eep_probe_seed_core = {
+        random_owned_pop_group = {
+            limit = { eep_founder_pop = yes pop_group_size >= 100 }
+            resettle_pop_group = { POP_GROUP = this PLANET = event_target:$TARGET$ AMOUNT = 100 }
+        }
+    }
+}
+
 eep_probe_galaxy_batch = {
     while = {
         count = $COUNT$
@@ -9,19 +25,18 @@ eep_probe_galaxy_batch = {
                 NOT = { has_planet_flag = eep_probe_constructed }
                 solar_system = { has_owner = no }
             }
-            change_pc = pc_continental
+            if = {
+                limit = { event_target:eep_probe_country = { owner_main_species = { has_trait = trait_infernal } } }
+                change_pc = pc_volcanic
+            }
+            else = { change_pc = pc_continental }
             set_planet_size = $SIZE$
             clear_deposits = yes
             create_colony = { owner = event_target:eep_probe_country species = event_target:eep_probe_country }
             save_global_event_target_as = eep_probe_batch_source
             set_planet_flag = eep_probe_constructed
             event_target:eep_probe_country = {
-                event_target:eep_core@this = {
-                    random_owned_pop_group = {
-                        limit = { eep_founder_pop = yes pop_group_size >= 100 }
-                        resettle_pop_group = { POP_GROUP = this PLANET = event_target:eep_probe_batch_source AMOUNT = 100 }
-                    }
-                }
+                eep_probe_relocate_seed = { TARGET = eep_probe_batch_source }
             }
             eep_begin = yes
         }
@@ -54,19 +69,18 @@ eep_probe_create_source = {
                     NOT = { is_variable_set = eep_q }
                     NOT = { has_planet_flag = eep_probe_constructed }
                 }
-                change_pc = pc_continental
+                if = {
+                    limit = { event_target:eep_probe_country = { owner_main_species = { has_trait = trait_infernal } } }
+                    change_pc = pc_volcanic
+                }
+                else = { change_pc = pc_continental }
                 set_planet_size = $SIZE$
                 clear_deposits = yes
                 create_colony = { owner = event_target:eep_probe_country species = event_target:eep_probe_country }
                 save_global_event_target_as = $TARGET$
                 set_planet_flag = eep_probe_constructed
                 event_target:eep_probe_country = {
-                    event_target:eep_core@this = {
-                        random_owned_pop_group = {
-                            limit = { eep_founder_pop = yes pop_group_size >= 100 }
-                            resettle_pop_group = { POP_GROUP = this PLANET = event_target:$TARGET$ AMOUNT = 100 }
-                        }
-                    }
+                    eep_probe_relocate_seed = { TARGET = $TARGET$ }
                 }
                 if = { limit = { always = $START$ } eep_begin = yes }
             }

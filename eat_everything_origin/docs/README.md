@@ -9,6 +9,7 @@
 - [实施前探针与后续验收设计](acceptance-plan.md)
 - [首版实施、测试与发布记录](implementation-test-release-2026-10-06.md)
 - [生产包静态检查](evidence/package-rc1.json)
+- [铁心运行证据：补种、高容量、50任务、余数、建设与恢复](evidence/runtime-development/20261006T192819Z/findings.json)（部分验收，全部用例未完成）
 - [女王·白绮：原设调查、肖像／立绘与事件 CG 方案](queen-baiqi-art-direction-2026-10-06.md)
 - [女王·白绮：玩法职责、王庭交互与事件合同](queen-baiqi-gameplay-design-2026-10-06.md)
 - [女王·白绮：透明审核稿与美术交付检查证据](evidence/queen-baiqi-art-check-2026-10-06.json)

@@ -16,6 +16,7 @@ PRESETS = [
     ("05-scorched", "EEP 05 焦土帝国", "INF", "inf9", "trait_infernal", "auth_dictatorial", "gov_despotic_hegemony", ["ethic_fanatic_xenophobe", "ethic_materialist"], ["civic_scorched_earth", "civic_efficient_bureaucracy"], "pc_volcanic"),
     ("06-scorched-hive", "EEP 06 焦土蜂巢", "INF", "inf9", "trait_infernal", "auth_hive_mind", "gov_hive_mind", ["ethic_gestalt_consciousness"], ["civic_hive_scorched_earth", "civic_hive_ascetic"], "pc_volcanic"),
     ("07-control", "EEP 07 普通帝国拒绝对照", "HUM", "human", "trait_organic", "auth_dictatorial", "gov_despotic_hegemony", ["ethic_fanatic_xenophobe", "ethic_materialist"], ["civic_efficient_bureaucracy", "civic_mining_guilds"], "pc_continental"),
+    ("08-native-terravore", "EEP 08 原版噬岩对照", "LITHOID", "lith11", "trait_lithoid", "auth_hive_mind", "gov_devouring_swarm", ["ethic_gestalt_consciousness"], ["civic_hive_devouring_swarm", "civic_hive_ascetic"], "pc_continental"),
 ]
 
 
@@ -34,7 +35,7 @@ def main():
     preset_file.parent.mkdir(parents=True)
     blocks = []
     for key, name, klass, portrait, trait, authority, government, ethics, civics, planet in PRESETS:
-        origin = "origin_default" if key.startswith("07") else "origin_heart_of_devouring"
+        origin = "origin_default" if key.startswith(("07", "08")) else "origin_heart_of_devouring"
         block = f'''eep_probe_{key.replace('-', '_')} = {{
     name = "{name}"
     adjective = "EEP"
