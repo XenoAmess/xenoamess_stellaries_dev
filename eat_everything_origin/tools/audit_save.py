@@ -126,7 +126,7 @@ def audit(path):
             continue
         variables = scalars(block(value, 'variables'))
         flags = {k: (scalars(v) if b else unquote(v)) for k, v, b in fields(block(value, 'flags'))}
-        if not any(k.startswith('eep') for k in variables) and 'eep_core' not in flags:
+        if not any(k.startswith('eep') for k in variables) and not any(k.startswith('eep') for k in flags):
             continue
         record = scalars(value)
         record['name'] = scalars(block(value, 'name')).get('key')

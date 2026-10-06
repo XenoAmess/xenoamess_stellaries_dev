@@ -191,12 +191,12 @@ def prepared_variant(*args, **kwargs):
     # Windowed dimensions use the game's generated legacy graphics.size,
     # independently of fullscreen_resolution in pdx_settings.txt.
     legacy_settings = ('language="l_simp_chinese"\n'
-                       'graphics={ size={ x=1600 y=900 } gui_scale=1.0 '
+                       'graphics={ size={ x=1024 y=768 } gui_scale=0.75 '
                        'fullScreen=no borderless=no renderer=1 }\n')
     legacy_path = Path(data["userdir"]) / "settings.txt"
     legacy_path.write_text(legacy_settings, encoding="utf-8", newline="\n")
     data["window_settings_sha256"] = harness.sha256(legacy_path)
-    data["display"] = {"requested_mode": "windowed", "fullscreen_resolution_setting": [1600, 900], "actual": "recorded by GPU capture/client rectangle"}
+    data["display"] = {"requested_mode": "windowed", "window_size_setting": [1024, 768], "gui_scale_setting": .75, "fullscreen_resolution_setting": [1600, 900], "actual": "recorded by GPU capture/client rectangle"}
     if vanilla:
         data["enabled_mods"] = []
         data["role"] = "vanilla Chinese environment control"

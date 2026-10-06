@@ -96,7 +96,11 @@ eep_begin = {
                 multiply_variable = { which = eep_months value = 2.4 }
                 ceiling_variable = eep_months
                 set_planet_flag = eep_active
-                set_carrier_flag = colony_event
+                if = {
+                    limit = { NOT = { has_carrier_flag = colony_event } }
+                    set_planet_flag = eep_owned_colony_event
+                    set_carrier_flag = colony_event
+                }
                 owner = { save_global_event_target_as = eep_task_actor@prev }
                 if = {
                     limit = { owner = { is_lithoid_devouring_swarm = yes } }
@@ -112,6 +116,11 @@ eep_begin = {
 }
 
 eep_clear_task = {
+    if = {
+        limit = { has_planet_flag = eep_owned_colony_event }
+        remove_carrier_flag = colony_event
+        remove_planet_flag = eep_owned_colony_event
+    }
     remove_planet_flag = eep_active
     remove_planet_flag = eep_pending
     remove_planet_flag = eep_native

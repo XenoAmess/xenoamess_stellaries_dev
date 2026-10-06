@@ -1,0 +1,154 @@
+{
+  "status": "PARTIAL",
+  "route": "determined exterminator",
+  "role": "native intro, native UI generic decision, cancellation defect, controlled original-core loss and recovery",
+  "duration_evidence": false,
+  "candidate_limitation": "predates ownership-aware colony_event cleanup",
+  "save_states": {
+    "machine-cancel.audit.json": {
+      "date": "2200.01.02",
+      "ledger": {
+        "eep_c": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "flags": {
+        "eep_initialized": 62808000,
+        "eep_probe_monitoring": 62808000
+      },
+      "actual_population_by_colony": {
+        "0": 4700,
+        "13": 100
+      }
+    },
+    "machine-core-lost.audit.json": {
+      "date": "2200.01.02",
+      "ledger": {
+        "eep_c": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "flags": {
+        "eep_initialized": 62808000,
+        "eep_probe_monitoring": 62808000,
+        "eep_core_lost": 62808024
+      },
+      "actual_population_by_colony": {
+        "0": 4700,
+        "13": 100
+      }
+    },
+    "machine-core-recovered-settled.audit.json": {
+      "date": "2200.01.02",
+      "ledger": {
+        "eep_c": 20,
+        "eep_d": 7,
+        "eep_delta": 300,
+        "eep_entitled": 300,
+        "eep_fleet_stage": 0,
+        "eep_g": 20,
+        "eep_last_capacity": 5,
+        "eep_last_manufactured": 300,
+        "eep_last_return": 100,
+        "eep_made": 300,
+        "eep_previous_capacity": 2,
+        "eep_stage": 0,
+        "eep_worlds": 1
+      },
+      "flags": {
+        "eep_initialized": 62808000,
+        "eep_probe_monitoring": 62808000,
+        "eep_notice_pending": 62808024
+      },
+      "actual_population_by_colony": {
+        "0": 5100,
+        "13": 0
+      }
+    },
+    "machine-initial.audit.json": {
+      "date": "2200.01.01",
+      "ledger": {
+        "eep_c": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "flags": {
+        "eep_initialized": 62808000
+      },
+      "actual_population_by_colony": {
+        "0": 4800
+      }
+    },
+    "machine-source-before-ui.audit.json": {
+      "date": "2200.01.02",
+      "ledger": {
+        "eep_c": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "flags": {
+        "eep_initialized": 62808000,
+        "eep_probe_monitoring": 62808000
+      },
+      "actual_population_by_colony": {
+        "0": 4700,
+        "13": 100
+      }
+    },
+    "machine-ui-active.audit.json": {
+      "date": "2200.01.02",
+      "ledger": {
+        "eep_c": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "flags": {
+        "eep_initialized": 62808000,
+        "eep_probe_monitoring": 62808000
+      },
+      "actual_population_by_colony": {
+        "0": 4700,
+        "13": 100
+      }
+    }
+  },
+  "cancel_result": "FAIL: colony_event absent before UI, added on start, left after cancellation; no awards",
+  "recovery_result": "controlled callbacks reach C/G20 D7 manufactured300 worlds1 only after physical original-core recovery; no duplicate award",
+  "runtime_language": "l_simp_chinese",
+  "steam_mode": "offline"
+}
