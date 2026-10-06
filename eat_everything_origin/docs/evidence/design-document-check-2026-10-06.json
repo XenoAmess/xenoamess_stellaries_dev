@@ -1,0 +1,141 @@
+{
+  "recorded_on": "2026-10-06",
+  "status": "PASS",
+  "scope": "design documents and read-only source evidence; not mod acceptance",
+  "repository_baseline": "05490258d332c7a329de5323d038852d090763bc",
+  "checks": {
+    "utf8_and_no_replacement_characters": "PASS",
+    "new_markdown_no_bom": "PASS",
+    "markdown_trailing_whitespace": "PASS",
+    "local_markdown_links": {
+      "count": 50,
+      "status": "PASS"
+    },
+    "game_source_fingerprints": {
+      "files": 36,
+      "anchors": 57,
+      "status": "PASS"
+    },
+    "unique_sequential_ids": {
+      "SRC": 24,
+      "PROBE": 8,
+      "EAT": 26
+    },
+    "candidate_arithmetic": "PASS",
+    "git_diff_check": {
+      "exit_code": 0
+    },
+    "git_cached_diff_check": {
+      "exit_code": 0,
+      "scope": "all eight task files staged"
+    },
+    "remote_baseline_before_commit": {
+      "local_ahead": 0,
+      "local_behind": 0,
+      "branch": "main",
+      "tracking_branch": "origin/main"
+    }
+  },
+  "documents": [
+    {
+      "path": "docs/README.md",
+      "bytes": 4169,
+      "sha256": "c389110df00c6123b807f9dbacc2095b6a494c4355a4e45548954d7ea1155aaa"
+    },
+    {
+      "path": "docs/eat-everything-origin-design-2026-10-06.md",
+      "bytes": 30001,
+      "sha256": "770d02d25f8965b592f152a7d85b215a6f229a99f1c9459afae8d269384c9b53"
+    },
+    {
+      "path": "eat_everything_origin/README.md",
+      "bytes": 536,
+      "sha256": "c8acda133dc2d0bca828819f71dbc75d1b40ccc198a07049e6266336f491a1ac"
+    },
+    {
+      "path": "eat_everything_origin/docs/README.md",
+      "bytes": 758,
+      "sha256": "771555c8859eff0279de04da4298795f3a32c2c5d6661e0b39e57258faa6f26b"
+    },
+    {
+      "path": "eat_everything_origin/docs/game-script-research-2026-10-06.md",
+      "bytes": 13640,
+      "sha256": "e3db4f65d1d55b02306fe8c32d96398e736b064fb09ee0510908e63a42dea064"
+    },
+    {
+      "path": "eat_everything_origin/docs/acceptance-plan.md",
+      "bytes": 10222,
+      "sha256": "d6a388fd998982fd3d8ce4fe9168df2994671c5558262eb207b6a1bfb4681bbb"
+    }
+  ],
+  "candidate_samples": [
+    {
+      "generic_worlds_size_20": 0,
+      "C": 0,
+      "D": 2,
+      "total_capacity_before_other_vanilla_effects": 22,
+      "manufactured_population": 0,
+      "population_substrate_remainder": 0
+    },
+    {
+      "generic_worlds_size_20": 1,
+      "C": 20,
+      "D": 7,
+      "total_capacity_before_other_vanilla_effects": 27,
+      "manufactured_population": 300,
+      "population_substrate_remainder": 2
+    },
+    {
+      "generic_worlds_size_20": 3,
+      "C": 60,
+      "D": 17,
+      "total_capacity_before_other_vanilla_effects": 37,
+      "manufactured_population": 1000,
+      "population_substrate_remainder": 0
+    },
+    {
+      "generic_worlds_size_20": 10,
+      "C": 200,
+      "D": 52,
+      "total_capacity_before_other_vanilla_effects": 72,
+      "manufactured_population": 3300,
+      "population_substrate_remainder": 2
+    }
+  ],
+  "additional_samples": {
+    "split_Q_3_5": {
+      "C": 8,
+      "D": 4,
+      "manufactured_population": 100
+    },
+    "native_Q20_then_generic_Q20": {
+      "C": 40,
+      "G": 20,
+      "D": 12,
+      "manufactured_population": 300
+    },
+    "parallel_generic_Q20_twice": {
+      "C": 40,
+      "G": 40,
+      "D": 12,
+      "manufactured_population": 600,
+      "population_substrate_remainder": 4
+    },
+    "source_Q20_duration_months": 120,
+    "unmodified_20_crisis_corvettes": {
+      "construction_minerals": 6000,
+      "monthly_energy": 20,
+      "monthly_minerals": 20,
+      "replenishment_months_at_net_100_minerals": 60
+    },
+    "psi_corps_base_bonus_at_200_assigned_telepath_workforce": 0.1
+  },
+  "not_run": [
+    "open_kaishek mod acceptance",
+    "Stellaris launch/runtime/UI/OCR/save regression",
+    "DLC entitlement verification",
+    "non-Chinese localization acceptance",
+    "Workshop publication"
+  ],
+  "errors": []
+}
