@@ -12,6 +12,7 @@
 - [基础数值、领袖与翻译实施](feedback-redesign-balance-implementation-2026-10-04.md)
 - [全特质计数、迁移与国内模板克隆](feedback-redesign-architecture-implementation-2026-10-04.md)
 - [离线脚本合同检查器与负例](feedback-redesign-programmatic-2026-10-04.md)
+- [交给另一台机器验收的困难与准备（2026-10-06）](acceptance-machine-handoff-assessment-2026-10-06.md)
 
 当前状态：`0.2.0-rc.1` 开发候选已实施，执行包级工具和离线程序检查；未启动游戏或操作屏幕。实机、UI、原生存档和自然体验保持 `NOT RUN`；九种非中文翻译只做静态校验，运行时不在范围内。
 
