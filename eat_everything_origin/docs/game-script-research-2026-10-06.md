@@ -1,5 +1,19 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-08：原生存档、市场和付费操作的实际字段
+
+215509简中离线原生回归确认：国家起源保存在 `country.<id>.government.origin`，不是国家顶层。无本起源蜂巢 country1 的自有首都不显示女王按钮；切换、查看和保存的37国／九组实际数据同日保持。
+
+原生建造订单索引为 `construction.item_mgr.items`，队列关联为 `construction.queue_mgr.queues`；本次queue0.location={type2,id1}指物理planet1，六订单buildable_district.planet=0指colony0。母星colony.districts解引用真实district对象，不按全局列表顺序或未定义的district.planet属性归属。正常下单会改变母星last_district_changed，但不会提前增加实际district.level或岗位劳动力。六240矿物地热订单、真实六队列与全部其它对象69项检查通过，第一年两座完工后劳动力900→1500且全部就业。
+
+4.5.2本次原生国内市场实际以trade库存交易：出售2750合金／5000矿物／10000食物／500异星天然气，正常购买8500能源，能源2460.80332→10960.80332而贸易4957.92942→760.92942。不能沿用旧版本“卖出资源即直接增加能源”的假设；成交价依真实交易与市场变化记录，未推导全游戏版本的价格算法。
+
+最后扩张传统的原生显示成本6155为取整，实际凝聚扣6154.89983。真实选择第五AP ap_hive_worlds；母星容量37由尺寸20、EEP16及原版扩张完成1组成。2299.03.12实际付10000能源启动 pc_hive 改造，物理planet1.terraform_process记录progress0／total7200、paid.energy10000、who0、initial_total_days7200及reroll_deposits=yes；新增has_terraformflag／volcanic_terraform为实际原生旗标，不作EEP结算或提前容量。
+
+两次正常飞升／改造付费操作都观察到三系科研库存下降（改造中520.56604／339.97529／227.49598→缺省0），原因未独立隔离；完整差异和初始严格断言FAIL保留，不宣称正常付费操作全库存保持，也不凭其它已隔离的原生奖励对照推断本次内部原因。本轮女王报告只读另有同日全库存严格对照，与此费用操作分开。
+
+以上均为本机Stellaris4.5.2实际存档／UI事实，不推广为CK3或所有Paradox版本共通接口。官方deposits/99_README_DEPOSITS.txt:25～28的should_swap_deposit_on_terraforming默认no只描述一般地貌交换开关；蜂巢世界reroll_deposits=yes的实际核心地貌结果仍须自然完成检查，不能仅凭默认开关预言保留。
+
 ## 2026-10-08：女王按钮非星球上下文的实际求值
 
 203412完整最终日志在05:32:11记录`Wrong scope for trigger is_owned_by`，生产eep_buttons.txt:19的allow当前作用域为country。并列is_scope_type=planet没有在这次UI调用中屏蔽行星专用条件，因此不能据此假定求值会短路；母星报告数据和经济只读通过不等于所有界面作用域日志通过。官方common/button_effects/example.txt:2～5明确This可能为选中对象或玩家country，From为玩家country；00_scripted_triggers.txt:3608～3623、3739之后提供trigger内if／limit／else的真实官方用例。rc.8仅在对象确为Planet时进入归属／绑定判断，否则明确always=no，运行时仍需新进程积极验证。这是本机Stellaris按钮上下文事实，不将其推广为Paradox通用短路规则或CK3方言。
