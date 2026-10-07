@@ -1,5 +1,9 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-08：非本起源原生局势进度的实际精度
+
+172235离线简中、origin_default的Q20通过原生决议开始，2200.01.02保存87724df…中situation_terravore_consume_planet进度0、source9.num_districts_terravore20／num_lithoid_blockers0；真实29日后2200.02.01保存92dbe853f46256a5a3c4df8d92e0a875996bc63e8c742ec8eb6be481a66a1a10实际progress与last_month_progress均8.5。官方00_script_values.txt:2463的terravore_progress是base6×target.num_districts_terravore、pow=-1、mult1000，数学表达约8.333333，但本机实际执行不能由数学浮点直接代替。原生界面也显示8.5；当前EEP生产只适配单个决议，未定义同名原生script_value或局势。后续记录117／118及119／120真实边界，并与真正无Mod环境核实；未完成无Mod积极对照前，不断言内部舍入算法或所有版本均118月。设计与验收表中的“原版120月”是制定时公式预测，尚未通过独立实测，不为凑该数字修改原生路径。这是Stellaris实际表达式执行事实，不推广CK3。
+
 ## 2026-10-08：真实AI、控制台国家引用与原生人口回迁
 
 物种类型前提补充：同国modify_species移除trait_lithoid、添加trait_organic并实际更新主体为47后，class仍LITHOID，Native is_lithoid_devouring_swarm仍yes；移除食性特质不等于改变原生物种类型。明确create_species为MAM／有机／蜂巢并change_dominant_species change_all=yes后，实际主体48、母星6037人口量保持，Native非噬岩且EEP资格有效。此人工控制用于混合账本测试，不证明合法自然改造可把石质种族转为有机，也不推广CK3。
@@ -58,7 +62,7 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 
 本轮没有读取实际 DLC 启用播放集，`has_shroud_dlc` / `has_nemesis` 分支存在只说明脚本条件，不能证明用户拥有、此次启用了 DLC 或某组合已经成功加载。
 
-2026-10-06 后续用户确认拥有 Nemesis 和「虚境之影」，设计据此将两项同时启用作为主验收配置。该确认来自用户，实际播放集与游戏加载仍待实施验收时核验。用户同时选定偏强爽玩与 3～5 年普通星球周期；设计专用局势改为默认 Q=20 用 48 月，下面 SRC-06 的原版 120 月结论保持不变。
+2026-10-06 后续用户确认拥有 Nemesis 和「虚境之影」，设计据此将两项同时启用作为主验收配置。该确认来自用户，实际播放集与游戏加载仍待实施验收时核验。用户同时选定偏强爽玩与 3～5 年普通星球周期；设计专用局势改为默认 Q=20 用 48 月，下面 SRC-06 的原版 120 月仅是公式名义结论，实际精度与完成边界以2026-10-08新实测及无Mod对照为准。
 
 ## 2. 可追溯的源码结论
 
