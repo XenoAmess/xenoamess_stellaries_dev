@@ -1,0 +1,86 @@
+{
+  "status": "PARTIAL",
+  "route": "EEP 06 Infernal Scorched Hive",
+  "native_gov": "gov_hive_mind",
+  "live_fixture": "20261006T224028Z",
+  "language": "l_simp_chinese",
+  "steam_mode": "offline throughout",
+  "controlled_triple_q20": {
+    "C": 60,
+    "G": 60,
+    "D": 17,
+    "manufactured": 1000,
+    "replay": "no duplicate",
+    "scope": "controlled source and endpoint callbacks; not natural calendar"
+  },
+  "natural_native_initial": {
+    "date": "2200.01.01",
+    "mother_population": 5300,
+    "C": 0,
+    "G": 0,
+    "D": 2
+  },
+  "natural_colony_devoured": {
+    "source": "physical planet84 / colony24",
+    "Q": 16,
+    "months": 39,
+    "completion": "2228.04.02",
+    "C": 16,
+    "G": 16,
+    "D": 6,
+    "manufactured": 200,
+    "returned": 531,
+    "worlds": 1
+  },
+  "native_paid_building_window": {
+    "ordered": "2228.04.02",
+    "completed_by": "2231.01.02",
+    "minerals": {
+      "hive_district": 450,
+      "unity_zone": 900,
+      "poly_district": 405
+    },
+    "actual_jobs": "hive13/geo2/melt6/poly3; housing18600; research/fabrication/coordinator/poly work filled"
+  },
+  "native_war": {
+    "id": 50331648,
+    "started": "2242.12.13",
+    "truce": "2253.08.22",
+    "result": "truce verified; winner not asserted"
+  },
+  "legal_psionic_progress": {
+    "AP": "Native UI third perk Mind Over Matter 2244.03.02",
+    "theory_completed_by": "2250.01.02",
+    "adopted": "2260.01.02",
+    "adoption_unity": 2677.12139,
+    "corps_tradition_unity": 2904.22846,
+    "corps_order_minerals": 450,
+    "corps_completed_by": "2261.02.12",
+    "actual_telepath_drone": 200,
+    "last_date": "2271.05.22",
+    "last_progress": 510,
+    "last_stage": 1,
+    "complete": false
+  },
+  "natural70": {
+    "date": "2270.01.02",
+    "mother_population": 12390,
+    "net_energy": 165.535,
+    "net_minerals": 145.8722,
+    "net_alloys": 40.3523,
+    "net_unity": 102.45668,
+    "net_volatile_motes": -1.58556,
+    "ledger": "C/G16 D6 made200 worlds1 stable"
+  },
+  "warnings": [
+    "Native empty MIA fleet ship_class none on loading colonizing save; vanilla strict reproduction not established",
+    "Native derived housing caches refresh on opening planet UI; use self-consistent native save pair"
+  ],
+  "limitations": [
+    "Controlled triple sources and the separate natural replay must remain distinct",
+    "No matched native world comparison",
+    "Full psionic and Nemesis mineral ship chain pending",
+    "New completion-gate production fix committed after frozen live fixture; this run does not verify that fix",
+    "No full EAT case or formal release PASS asserted"
+  ]
+}
