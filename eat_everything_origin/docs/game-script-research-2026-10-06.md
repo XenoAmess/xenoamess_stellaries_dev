@@ -1,6 +1,12 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-07：母星转交与岗位修正缓存
+
+本机官方`common/on_actions/00_on_actions.txt:3373`的`on_colony_transfer`对象为Colony，From为新owner，FromFrom为旧owner；`action.89`和`cyber.7015`用`carrier_event`处理，不使用虚构planet-owner钩子。`effects.log:549`可在物理Planet导出`planet_jobs_produces_mult`，但同日添加静态修正仍读旧缓存，必须积极对照真实次日；Colony同项读数不等于物理岗位修正。原子节的触发地貌修正在实时外国持有时仍0.10，而相同存档原字节重载后为0；原主取回、地貌重建及batch begin/end也未在真实次日恢复。原版`planetary_workshift_deployed`受控添加后真实次日物理读0.10、移除后真实次日0，原型幸福度-0.05不进入生产。rc.6将相同+0.10合同交给幂等静态`eep_court`，初始化／月度／真实转交同步，保留实体容量与王座地貌。新进程实际转交、取回和重载仍需验收；原始FAIL与INCONCLUSIVE均保留。本事实针对Stellaris 4.5.2 Carrier及其缓存，不推广为CK3语法。
+
 ## 2026-10-07 模板与国家主体引用前提
+
+134815实际复验补充：change_dominant_species之后founder_species_ref从3321888769变为48，独立owner_main_species目标也为48；旧子模板47及外国共享组仍保留。随后EEP制造300确实使用48，原子模板100回迁保留47／原类别，外国完整国家、殖民地、人口组及共享物种块严格保持，33项范围检查通过。由此更正“founder_species_ref固定不可变”的猜测：它在本次显式国家主体变更后改变；此前单独modify_species只换境内人口而没有改变它。
 
 本机原生effects.log:854的modify_species/change_scoped_species在country范围实际改变本国人口模板，但此夹具不更新国家主体引用：131538的母星4700已为48，国家founder_species_ref仍3321888769，按owner.owner_main_species制造的新300也为3321888769。多数人口采用的新模板不能直接等同owner_main_species；该次模板期望FAIL及原始SAV已保留，不单凭这一前提未成立的测试认定生产缺陷。
 

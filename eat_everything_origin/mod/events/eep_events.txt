@@ -1,5 +1,14 @@
 namespace = eep
 
+# Native on_colony_transfer: THIS Colony, FROM new owner, FROMFROM old owner.
+carrier_event = {
+    id = eep.3
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_carrier_flag = eep_core }
+    immediate = { planet = { eep_sync_court = yes } }
+}
+
 country_event = {
     id = eep.1
     hide_window = yes

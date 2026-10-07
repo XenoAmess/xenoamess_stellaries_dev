@@ -1,0 +1,48 @@
+{
+  "status": "FAIL",
+  "scope": "Controlled native static positive control. Original happiness side effect is test-only. Physical modifier export requires a real day; Colony export remained zero. Not production fix or full acceptance.",
+  "checks": [
+    {
+      "check": "native_physical_jobs_same_day_and_actual_next_day",
+      "actual": [
+        0,
+        0,
+        0.1,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0.1,
+        0
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "core_owner_preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "eep_ledger_preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "all_stockpiles_preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "popgroups_preserved",
+      "status": "FAIL"
+    },
+    {
+      "check": "capacity_preserved",
+      "status": "PASS"
+    }
+  ],
+  "saves": {
+    "rc5-core-own-full-dirty-batch-refresh-prototype": "02d4e4e717e7b91ec75770e84b2aa3f12cbde244265e22503f321c24f07c5948",
+    "rc5-core-static-jobs-modifier-positive-control": "59bf97e20b1a3c314c4f54ab4c79fe9efd187fcdf734430583578403f774ef48",
+    "rc5-core-static-positive-real-next-day": "0d4c97a7b5f7c2f45042e596331096ef161e3f2727086bf2ae5c7f34c03ab2d2",
+    "rc5-core-static-positive-removed-real-next-day": "64630af7a08c88f3d8910340c61ae0aefd033428dd4e30d8ed7938581bfa27d5"
+  }
+}

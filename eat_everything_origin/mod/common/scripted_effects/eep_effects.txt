@@ -28,6 +28,30 @@ eep_initialize = {
     if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_last_return } } set_variable = { which = eep_last_return value = 0 } }
     if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_last_manufactured } } set_variable = { which = eep_last_manufactured value = 0 } }
     if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_fleet_stage } } set_variable = { which = eep_fleet_stage value = 0 } }
+    if = {
+        limit = { exists = event_target:eep_core@this }
+        event_target:eep_core@this = { eep_sync_court = yes }
+    }
+}
+
+# Bound core Carrier scope. Idempotent and independent of physical capacity.
+eep_sync_court = {
+    if = {
+        limit = { has_carrier_flag = eep_core }
+        if = {
+            limit = {
+                is_colony = yes
+                exists = owner
+                owner = { eep_qualified = yes }
+                is_same_value = event_target:eep_core@owner
+            }
+            if = {
+                limit = { NOT = { has_modifier = eep_court } }
+                add_modifier = { modifier = eep_court days = -1 }
+            }
+        }
+        else = { remove_modifier = eep_court }
+    }
 }
 
 # Core Carrier scope. Physical capacity persists if the planet changes hands.

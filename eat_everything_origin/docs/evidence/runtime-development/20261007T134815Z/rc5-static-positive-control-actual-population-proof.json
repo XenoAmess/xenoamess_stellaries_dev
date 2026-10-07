@@ -1,0 +1,435 @@
+{
+  "status": "PASS",
+  "scope": "Controlled native static positive control. Original happiness side effect is test-only. Physical modifier export requires a real day; Colony export remained zero. Not production fix or full acceptance.",
+  "checks": [
+    {
+      "check": "native_physical_jobs_same_day_and_actual_next_day",
+      "actual": [
+        0,
+        0,
+        0.1,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0.1,
+        0
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "core_owner_preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "eep_ledger_preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "all_stockpiles_preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "capacity_preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "actual_population_by_colony_and_species_preserved",
+      "status": "PASS",
+      "actual": [
+        [
+          [
+            "(0, 3321888769)",
+            4800
+          ],
+          [
+            "(1, 16777219)",
+            2400
+          ],
+          [
+            "(1, 2)",
+            2400
+          ],
+          [
+            "(13, 2)",
+            1200
+          ]
+        ],
+        [
+          [
+            "(0, 3321888769)",
+            4800
+          ],
+          [
+            "(1, 16777219)",
+            2400
+          ],
+          [
+            "(1, 2)",
+            2400
+          ],
+          [
+            "(13, 2)",
+            1200
+          ]
+        ],
+        [
+          [
+            "(0, 3321888769)",
+            4800
+          ],
+          [
+            "(1, 16777219)",
+            2400
+          ],
+          [
+            "(1, 2)",
+            2400
+          ],
+          [
+            "(13, 2)",
+            1200
+          ]
+        ],
+        [
+          [
+            "(0, 3321888769)",
+            4800
+          ],
+          [
+            "(1, 16777219)",
+            2400
+          ],
+          [
+            "(1, 2)",
+            2400
+          ],
+          [
+            "(13, 2)",
+            1200
+          ]
+        ]
+      ]
+    }
+  ],
+  "saves": {
+    "rc5-core-own-full-dirty-batch-refresh-prototype": "02d4e4e717e7b91ec75770e84b2aa3f12cbde244265e22503f321c24f07c5948",
+    "rc5-core-static-jobs-modifier-positive-control": "59bf97e20b1a3c314c4f54ab4c79fe9efd187fcdf734430583578403f774ef48",
+    "rc5-core-static-positive-real-next-day": "0d4c97a7b5f7c2f45042e596331096ef161e3f2727086bf2ae5c7f34c03ab2d2",
+    "rc5-core-static-positive-removed-real-next-day": "64630af7a08c88f3d8910340c61ae0aefd033428dd4e30d8ed7938581bfa27d5"
+  },
+  "raw_popgroup_differences_retained": [
+    {},
+    {},
+    {
+      "33554432": {
+        "force_faction_evaluation": [
+          null,
+          "yes"
+        ],
+        "happiness": [
+          null,
+          0.5
+        ],
+        "power": [
+          null,
+          22
+        ],
+        "housing_usage": [
+          null,
+          2200
+        ],
+        "can_vote": [
+          null,
+          "yes"
+        ]
+      },
+      "16777217": {
+        "force_faction_evaluation": [
+          null,
+          "yes"
+        ],
+        "amenities_usage": [
+          null,
+          1200
+        ],
+        "happiness": [
+          null,
+          0.5
+        ],
+        "power": [
+          null,
+          12
+        ],
+        "housing_usage": [
+          null,
+          1200
+        ],
+        "can_vote": [
+          null,
+          "yes"
+        ]
+      },
+      "16777218": {
+        "crime": [
+          null,
+          24
+        ]
+      },
+      "33554435": {
+        "force_faction_evaluation": [
+          null,
+          "yes"
+        ],
+        "amenities_usage": [
+          null,
+          1400
+        ],
+        "happiness": [
+          null,
+          0.5
+        ],
+        "power": [
+          null,
+          14
+        ],
+        "housing_usage": [
+          null,
+          1400
+        ],
+        "can_vote": [
+          null,
+          "yes"
+        ]
+      },
+      "4": {
+        "crime": [
+          9.02,
+          7.0524
+        ],
+        "current_month_growth_details": [
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=2\n\t\t",
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=0\n\t\t"
+        ],
+        "size": [
+          902,
+          900
+        ],
+        "happiness": [
+          0.6082,
+          0.60821
+        ],
+        "power": [
+          22.55,
+          22.5
+        ],
+        "housing_usage": [
+          902,
+          900
+        ]
+      },
+      "27": {
+        "happiness": [
+          0.7082,
+          0.70821
+        ],
+        "crime": [
+          1.6,
+          1.1672
+        ]
+      },
+      "28": {
+        "amenities_usage": [
+          1272.04,
+          1274
+        ],
+        "size": [
+          1298,
+          1300
+        ],
+        "happiness": [
+          0.6582,
+          0.65821
+        ],
+        "power": [
+          45.43,
+          45.5
+        ],
+        "crime": [
+          11.682,
+          8.8868
+        ],
+        "current_month_growth_details": [
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=-2\n\t\t",
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=0\n\t\t"
+        ],
+        "housing_usage": [
+          1298,
+          1300
+        ]
+      }
+    },
+    {
+      "33554432": {
+        "crime": [
+          null,
+          22
+        ],
+        "force_faction_evaluation": [
+          null,
+          "yes"
+        ],
+        "happiness": [
+          null,
+          0.5
+        ],
+        "power": [
+          null,
+          22
+        ],
+        "housing_usage": [
+          null,
+          2200
+        ],
+        "can_vote": [
+          null,
+          "yes"
+        ]
+      },
+      "16777217": {
+        "crime": [
+          null,
+          12
+        ],
+        "force_faction_evaluation": [
+          null,
+          "yes"
+        ],
+        "amenities_usage": [
+          null,
+          1200
+        ],
+        "happiness": [
+          null,
+          0.5
+        ],
+        "power": [
+          null,
+          12
+        ],
+        "housing_usage": [
+          null,
+          1200
+        ],
+        "can_vote": [
+          null,
+          "yes"
+        ]
+      },
+      "16777218": {
+        "crime": [
+          null,
+          24
+        ]
+      },
+      "33554435": {
+        "crime": [
+          null,
+          14
+        ],
+        "force_faction_evaluation": [
+          null,
+          "yes"
+        ],
+        "amenities_usage": [
+          null,
+          1400
+        ],
+        "happiness": [
+          null,
+          0.5
+        ],
+        "power": [
+          null,
+          14
+        ],
+        "housing_usage": [
+          null,
+          1400
+        ],
+        "can_vote": [
+          null,
+          "yes"
+        ]
+      },
+      "4": {
+        "crime": [
+          9.02,
+          7.05222
+        ],
+        "current_month_growth_details": [
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=2\n\t\t",
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=0\n\t\t"
+        ],
+        "size": [
+          902,
+          900
+        ],
+        "happiness": [
+          0.6082,
+          0.60821
+        ],
+        "power": [
+          22.55,
+          22.5
+        ],
+        "housing_usage": [
+          902,
+          900
+        ]
+      },
+      "27": {
+        "happiness": [
+          0.7082,
+          0.70821
+        ],
+        "crime": [
+          1.6,
+          1.16716
+        ]
+      },
+      "28": {
+        "amenities_usage": [
+          1272.04,
+          1274
+        ],
+        "size": [
+          1298,
+          1300
+        ],
+        "happiness": [
+          0.6582,
+          0.65821
+        ],
+        "power": [
+          45.43,
+          45.5
+        ],
+        "crime": [
+          11.682,
+          8.88654
+        ],
+        "current_month_growth_details": [
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=-2\n\t\t",
+          "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=0\n\t\t"
+        ],
+        "housing_usage": [
+          1298,
+          1300
+        ]
+      }
+    }
+  ],
+  "original_full_cache_check": "rc5-static-modifier-real-day-positive-control-proof.json"
+}
