@@ -61,6 +61,13 @@ def main():
 '''
         if authority == "auth_hive_mind":
             block = block.replace(f'trait = "{trait}"', f'trait = "{trait}" trait = "trait_hive_mind"')
+        if key.startswith("10"):
+            block += '''    secondary_species = {
+        class = "HUM" portrait = "human" name = "EEP-Cyborg"
+        plural = "EEP-Cyborg" adjective = "EEP-Cyborg" name_list = "HUMAN1"
+        trait = "trait_organic" trait = "trait_cybernetic"
+    }
+'''
         block += "\n".join(f'    ethic = "{ethic}"' for ethic in ethics) + "\n}\n"
         blocks.append(block)
     preset_file.write_text("\n".join(blocks), encoding="utf-8", newline="\n")
