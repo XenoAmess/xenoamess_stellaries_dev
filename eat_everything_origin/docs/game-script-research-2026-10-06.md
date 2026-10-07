@@ -1,5 +1,15 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-08：真实AI、控制台国家引用与原生人口回迁
+
+物种类型前提补充：同国modify_species移除trait_lithoid、添加trait_organic并实际更新主体为47后，class仍LITHOID，Native is_lithoid_devouring_swarm仍yes；移除食性特质不等于改变原生物种类型。明确create_species为MAM／有机／蜂巢并change_dominant_species change_all=yes后，实际主体48、母星6037人口量保持，Native非噬岩且EEP资格有效。此人工控制用于混合账本测试，不证明合法自然改造可把石质种族转为有机，也不推广CK3。
+
+自然月历补充：2203.12.30实际进度47／未结算，真实一日到2204.01.01进度48／未结算，再一日到01.02结算，无额外等待月。资源完整比较发现三系库存85.2408／73.2408／91.2408归零；独立取消后真实日历保持库存且研究队列与结算分支相同，否定正常研究推进解释。随后同日以实际Situation上下文调用官方colony.190→consume_world，原生合金随机收益+100及损毁6→8时复现完全相同三系归零，研究队列不变，EEP C/G0D2未结算。此为本机4.5.2原生材料奖励的实测行为，不推断内部原因，不豁免未知差额，原始FAIL保持；本Mod保留原生收益渠道时也保留这一限制，不外推其它Paradox游戏。
+
+154144场的SAV国家完整引用16777218存在，但console的play 16777218明确返回Invalid country ID，原玩家仍country0；不能由SAV引用存在推断玩家切换成功。实测play 2成功，后续原生保存的根player为16777218，原country0的Native is_ai条件为yes。该结论只记录这份Stellaris存档的实际映射，不外推所有国家编码或CK3。
+
+第二受控终点试验同2200.01.04，Source为实际首都colony15，绑定母星physical8／colony0。母星实际5200→5400，国家实际人口净新增100，最终回迁账本100，G与通用制造均0；原生随机收益另有矿物400／合金500，外国完整国家和全部人口组相同。结合唯一原生人口分支、已核实AI条件和最终种子回迁100，推断新增100已由原生AI搬迁分支送绑定母星，而不是当前首都。此为明确实证推论，不称保存过原生人口分支的中间瞬间，也不把受控终点当自然48月。五轮重复请求后实际人口、库存、账本及容量保持；自然月历进度另行验证。
+
 ## 2026-10-07：母星转交与岗位修正缓存
 
 本机官方`common/on_actions/00_on_actions.txt:3373`的`on_colony_transfer`对象为Colony，From为新owner，FromFrom为旧owner；`action.89`和`cyber.7015`用`carrier_event`处理，不使用虚构planet-owner钩子。`effects.log:549`可在物理Planet导出`planet_jobs_produces_mult`，但同日添加静态修正仍读旧缓存，必须积极对照真实次日；Colony同项读数不等于物理岗位修正。原子节的触发地貌修正在实时外国持有时仍0.10，而相同存档原字节重载后为0；原主取回、地貌重建及batch begin/end也未在真实次日恢复。原版`planetary_workshift_deployed`受控添加后真实次日物理读0.10、移除后真实次日0，原型幸福度-0.05不进入生产。rc.6将相同+0.10合同交给幂等静态`eep_court`，初始化／月度／真实转交同步，保留实体容量与王座地貌。新进程实际转交、取回和重载仍需验收；原始FAIL与INCONCLUSIVE均保留。本事实针对Stellaris 4.5.2 Carrier及其缓存，不推广为CK3语法。

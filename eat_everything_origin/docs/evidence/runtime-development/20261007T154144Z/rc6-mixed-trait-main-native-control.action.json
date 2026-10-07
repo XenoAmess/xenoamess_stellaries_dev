@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "rc6-mixed-trait-main-native-control",
+  "text": "effect event_target:eep_probe_original_country={modify_species={species=owner_main_species remove_trait=trait_lithoid add_trait=trait_organic change_scoped_species=yes effect={save_global_event_target_as=eep_probe_mixed_main}} change_dominant_species={species=event_target:eep_probe_mixed_main change_all=no} owner_main_species={save_global_event_target_as=eep_probe_mixed_verified_main} if={limit={is_lithoid_devouring_swarm=no} log=EEP_RC6_MIXED_TRAIT_NONLITH_VERIFIED} else={log=EEP_RC6_MIXED_TRAIT_STILL_LITHOID}}",
+  "submitted": true,
+  "typed_at_utc": "2026-10-07T17:01:07.790938+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
