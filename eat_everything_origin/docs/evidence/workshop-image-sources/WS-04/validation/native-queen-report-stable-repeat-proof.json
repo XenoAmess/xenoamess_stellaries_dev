@@ -1,0 +1,31 @@
+{
+  "run_id": "20261007T031421Z",
+  "date": "2283.03.03",
+  "repeat_native_ui_decisions": 3,
+  "checks": {
+    "same_date": true,
+    "stockpile": true,
+    "variables": true,
+    "flags": true,
+    "pop_groups": true,
+    "pop_jobs": true,
+    "districts": true,
+    "situations": true
+  },
+  "saves": [
+    {
+      "name": "native-queen-report-stable-before",
+      "sha256": "e241998f1fcf58614098096d78cdf84f22f95d40dde772f35578a1df7f2bfd85"
+    },
+    {
+      "name": "native-queen-report-stable-after",
+      "sha256": "f56e1affb27a84ee4813665c473eb9ee63547888548f4ef500f5b233f8a1ecf8"
+    }
+  ],
+  "earlier_not_equal_comparison": {
+    "before": "native-psi-replay-after",
+    "after": "native-queen-report-open",
+    "society_research_delta": -13996.95861,
+    "cause": "not isolated; do not claim complete stockpile invariance for this earlier comparison"
+  }
+}

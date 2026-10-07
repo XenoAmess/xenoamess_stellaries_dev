@@ -1,0 +1,80 @@
+{
+  "evidence_kind": "native_ui_ritual_notification_reload_calendar_and_controlled_callback_replay",
+  "run_id": "20261007T031421Z",
+  "checks": {
+    "pending_event_exactly_once": true,
+    "pending_native_reload_events_preserved": true,
+    "pending_reload_stockpile_flags_variables_preserved": true,
+    "post_ack_26months_no_pending_eep_event": true,
+    "long_calendar_economy_ledger_unchanged": true,
+    "long_calendar_notice_flag_unchanged": true,
+    "five_same_date_monthly_callbacks_no_new_event": true,
+    "five_callbacks_same_date": true,
+    "five_callbacks_same_country_data": true,
+    "five_callbacks_same_core_pop_groups": true,
+    "five_callbacks_same_core_jobs": true,
+    "five_callbacks_same_situations": true
+  },
+  "states": {
+    "native-psi-queen-notice-pending": {
+      "date": "2281.01.01",
+      "save_sha256": "c99bb0aef154f5847cb9c23fa68fbf47a35b52a14c09bda8d47365efe45b35aa",
+      "core_pop_actual": 13396,
+      "pending_eep_events": [
+        {
+          "id": 536,
+          "event": "eep.30",
+          "date": "2283.04.01",
+          "country": 0
+        }
+      ],
+      "crisis": {
+        "path": "nemesis_path",
+        "level": "crisis_level_1"
+      }
+    },
+    "native-psi-queen-pending-restored": {
+      "date": "2281.01.01",
+      "save_sha256": "6ab401059ac35543b2e85e5a3278f1a3538aa6b6f019da1beb184954e4891dd0",
+      "core_pop_actual": 13396,
+      "pending_eep_events": [
+        {
+          "id": 536,
+          "event": "eep.30",
+          "date": "2283.04.01",
+          "country": 0
+        }
+      ],
+      "crisis": {
+        "path": "nemesis_path",
+        "level": "crisis_level_1"
+      }
+    },
+    "native-psi-ack-normal-calendar": {
+      "date": "2283.03.03",
+      "save_sha256": "55a76f7667c929930a1f83b7f1a75756826274cc4c4b5f2d398bcf6bdfd856ba",
+      "core_pop_actual": 13593,
+      "pending_eep_events": [],
+      "crisis": {
+        "path": "nemesis_path",
+        "level": "crisis_level_1"
+      }
+    },
+    "native-psi-replay-after": {
+      "date": "2283.03.03",
+      "save_sha256": "29ba1f28c558bb296606a69b97a25f63bbcd94ab79718b35291d63aecf5a87c9",
+      "core_pop_actual": 13593,
+      "pending_eep_events": [],
+      "crisis": {
+        "path": "nemesis_path",
+        "level": "crisis_level_1"
+      }
+    }
+  },
+  "limitations": [
+    "Acknowledgement did not remain on 2281.01.01. The later snapshot is 2283.03.03 and cannot prove same-date stockpile equality across the click.",
+    "Five event eep.2 commands are intentional controlled callback replay, not naturally elapsed months.",
+    "player_event.date is preserved raw and is not interpreted as the notification trigger date.",
+    "This proof is a scope-specific result, not all EAT cases PASS."
+  ]
+}

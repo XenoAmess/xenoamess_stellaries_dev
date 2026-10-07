@@ -13,6 +13,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+import workshop_images
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parent
@@ -149,6 +150,10 @@ def preflight():
     if not note.startswith(f"[v{version}]"):
         raise RuntimeError("Change Note version prefix mismatch")
     description = (WORKSHOP / "description.bbcode").read_text(encoding="utf-8")
+    images = workshop_images.local_images(ROOT, version)
+    gallery = [entry for entry in images if entry["role"] == "gallery"]
+    description += "\n[b]" + "\u56fe\u5e93\u8bf4\u660e" + "[/b]\n" + "\n".join(
+        f"{index}. {entry['caption']}" for index, entry in enumerate(gallery, 1)) + "\n"
     if len(description.encode("utf-8")) >= 8000:
         raise RuntimeError("Workshop description exceeds the accepted API limit")
     thumbnail = MOD / "thumbnail.png"
@@ -157,7 +162,8 @@ def preflight():
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=REPO):
         raise RuntimeError("commit task changes before publication")
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
-    return {"version": version, "head": head, "content": files, "description": description, "note": note}
+    return {"version": version, "head": head, "content": files, "description": description,
+            "note": note, "images": images, "gallery": gallery}
 
 
 def publish(inputs):
@@ -182,6 +188,7 @@ def publish(inputs):
             raise RuntimeError("read-only upstream ID is forbidden")
         if state.get("legal_agreement_required"):
             raise RuntimeError("the account must accept the Workshop agreement before public upload")
+        existing_previews = workshop_images.remote_previews(steam, item_id)
         update = steam.call("StartItemUpdate", APP_ID, item_id)
         if not update or update == 0xFFFFFFFFFFFFFFFF:
             raise RuntimeError("StartItemUpdate failed")
@@ -198,6 +205,7 @@ def publish(inputs):
         tags = native.StringArray(strings, 3)
         if not steam.call("SetItemTags", update, C.byref(tags)):
             raise RuntimeError("SetItemTags failed")
+        workshop_images.replace_previews(steam, update, existing_previews, inputs["gallery"], ROOT)
         state.update(inputs=inputs)
         write_json(STATE, state)
         result = steam.wait(steam.call("SubmitItemUpdate", update, inputs["note"].encode("utf-8")), native.SubmitItemUpdateResult, 3404)
@@ -227,6 +235,9 @@ def verify(download):
     with urllib.request.urlopen(req, timeout=30) as response:
         details = json.load(response)["response"]["publishedfiledetails"][0]
     expected = state["inputs"]
+    current_images = workshop_images.local_images(ROOT, expected["version"])
+    if current_images != expected["images"]:
+        raise RuntimeError("Workshop image manifest changed after upload")
     if any([details.get("result") != 1, details.get("consumer_app_id") != APP_ID, details.get("creator_app_id") != APP_ID, details.get("title") != TITLE, details.get("description") != expected["description"], details.get("visibility") != 0, details.get("banned") != 0]):
         raise RuntimeError("public Workshop metadata differs")
     with urllib.request.urlopen(details["preview_url"], timeout=30) as response:
@@ -239,7 +250,13 @@ def verify(download):
         raise RuntimeError("versioned Change Note not visible")
     if manifest(download) != expected["content"] or manifest(MOD) != expected["content"]:
         raise RuntimeError("download content differs from frozen production")
-    report = {"status": "PASS", "version": expected["version"], "item_id": item_id, "url": f"https://steamcommunity.com/sharedfiles/filedetails/?id={item_id}", "public_metadata_exact": True, "change_note_exact": True, "download_files": len(expected["content"]), "production_files": expected["content"], "verified_at_utc": datetime.now(timezone.utc).isoformat()}
+    steam = native.Steam()
+    try:
+        previews = workshop_images.remote_previews(steam, item_id)
+    finally:
+        steam.close()
+    gallery = workshop_images.verify_previews(previews, expected["gallery"])
+    report = {"status": "PASS", "version": expected["version"], "item_id": item_id, "url": f"https://steamcommunity.com/sharedfiles/filedetails/?id={item_id}", "public_metadata_exact": True, "change_note_exact": True, "download_files": len(expected["content"]), "production_files": expected["content"], "gallery_exact": True, "gallery": gallery, "verified_at_utc": datetime.now(timezone.utc).isoformat()}
     write_json(ROOT / "docs/evidence/workshop-verification.json", report)
     print(json.dumps({k: report[k] for k in ["status", "version", "item_id", "url", "download_files"]}))
 
