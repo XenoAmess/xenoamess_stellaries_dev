@@ -104,3 +104,5 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 
 - 4.5.2实机补充：母星真实空余区划需计入原版障碍。洁癖物理尺寸20、EEP额外D17、区划等级合10，还有d_decrepit_dwellings一个与d_failing_infrastructure两个（原版01_blocker_deposits.txt:898/967均planet_max_districts_add=-1），原生num_free_districts为24，不应仅减已建区划后误报27。
 - 4.5.2原生human_ai控制台已真正开启，洁癖玩家国家is_ai只读探针仍NO，不可以此代替需is_ai=yes的原版自动回迁分支验收。真实三年后舰队/系统基地/传统已增长；完成科技仍为31项，但F4原生UI显示蓝激光472/1375、基因图谱472/1100、纳米力学899/1650，三系已正常研究。审计必须区分完成项和当前研究进度，不能以完成数未变判断AI没有研究。
+
+后续灵能时序核对：原版common/scripted_variables/09_scripted_variables_shroud.txt:32–34将破入虚境三阶段终点设为500、750、1000；13_shroud_situations.txt:293起基础月增5，默认方案乘.75，凝聚方案会带原版凝聚产出代价。第二阶段需实际活跃通灵部队，第三阶段需Great Awakening传统，不用直接赋予进度绕过。common/traditions/01_psionics_shroud.txt:134起的Great Awakening在第二阶段可合法付费采纳，但仍有虚境局势相关tradition_swap/on_enabled分支；实际物种特性何时替换以原生SAV为准，不仅从按钮名称宣称完整灵飞。
