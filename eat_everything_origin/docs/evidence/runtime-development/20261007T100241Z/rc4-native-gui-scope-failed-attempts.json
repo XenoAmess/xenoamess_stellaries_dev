@@ -1,0 +1,24 @@
+{
+  "status": "FAILED_TEST_ATTEMPTS_RETAINED",
+  "scope": "Invalid UI action/overbroad expectation/OCR ambiguity; subsequent correct native actions checked separately. No full Mod PASS.",
+  "attempts": [
+    {
+      "attempt": "covered outliner fleet click",
+      "evidence": "rc4-scope-fleet-selection-button-hidden.jpg",
+      "actual": "Mother remained selected; pointer was covered by Mother construction pane",
+      "followup": "rc4-scope-actual-fleet-view.jpg explicitly shows fifth fleet and no Queen button"
+    },
+    {
+      "attempt": "expecting infrastructure button on management page",
+      "evidence": "rc4-native-mother-management-with-audience-button.jpg",
+      "actual": "Different native page; designed entry is infrastructure planet_summary",
+      "followup": "rc4-native-mother-button-infrastructure-restored.jpg"
+    },
+    {
+      "attempt": "devour title substring matches two rows",
+      "evidence": "rc4-natural-q23-devour-execution-guard.jpg",
+      "actual": "Guard refused action before execution; tooltip and actual row both matched",
+      "followup": "rc4-natural-q23-decision-row-region-guard.jpg limits actual row and native task saved"
+    }
+  ]
+}

@@ -1,0 +1,725 @@
+{
+  "status": "FAIL",
+  "scope": "Actual same surviving native cruiser upkeep docked, undocked487/480, after native one-ship disband and real one-day refresh471/480. Inventory and EEP ledger preserve; original same-day cache and closed-panel guard failure retained. No whole-country budget equality claim; restore/refit/full Mod acceptance are separate.",
+  "version": "0.2.0-rc.4",
+  "language": "l_simp_chinese",
+  "checks": [
+    {
+      "check": "rc4-cruiser-docked-individual-real-upkeep_one_native_upkeep_row",
+      "status": "FAIL",
+      "actual": 2,
+      "expected": 1
+    },
+    {
+      "check": "rc4-cruiser-docked-individual-real-upkeep_actual_displayed_two_resources",
+      "status": "PASS",
+      "actual": [
+        "1.98",
+        "1.98"
+      ],
+      "expected": [
+        "1.98",
+        "1.98"
+      ]
+    },
+    {
+      "check": "rc4-cruiser-undocked-overcap-real-upkeep_one_native_upkeep_row",
+      "status": "FAIL",
+      "actual": 2,
+      "expected": 1
+    },
+    {
+      "check": "rc4-cruiser-undocked-overcap-real-upkeep_actual_displayed_two_resources",
+      "status": "PASS",
+      "actual": [
+        "3.44",
+        "3.44"
+      ],
+      "expected": [
+        "3.44",
+        "3.44"
+      ]
+    },
+    {
+      "check": "rc4-cruiser-underlimit-same-day-real-upkeep_one_native_upkeep_row",
+      "status": "FAIL",
+      "actual": 2,
+      "expected": 1
+    },
+    {
+      "check": "rc4-cruiser-underlimit-same-day-real-upkeep_actual_displayed_two_resources",
+      "status": "PASS",
+      "actual": [
+        "3.44",
+        "3.44"
+      ],
+      "expected": [
+        "3.44",
+        "3.44"
+      ]
+    },
+    {
+      "check": "rc4-cruiser-underlimit-refreshed-real-upkeep_one_native_upkeep_row",
+      "status": "FAIL",
+      "actual": 2,
+      "expected": 1
+    },
+    {
+      "check": "rc4-cruiser-underlimit-refreshed-real-upkeep_actual_displayed_two_resources",
+      "status": "PASS",
+      "actual": [
+        "3.40",
+        "3.40"
+      ],
+      "expected": [
+        "3.40",
+        "3.40"
+      ]
+    },
+    {
+      "check": "rc4-native-cruiser-seven-underlimit-same-day_all_inventory_unchanged",
+      "status": "PASS",
+      "actual": {
+        "energy": 3309.12351,
+        "minerals": 9064.94375,
+        "food": 11353,
+        "physics_research": 256.66911,
+        "society_research": 1768.08133,
+        "engineering_research": 118.04705,
+        "influence": 1000,
+        "unity": 11817.71911,
+        "trade": 4208.62616,
+        "consumer_goods": 316,
+        "alloys": 3588.4251,
+        "volatile_motes": 666.58673,
+        "exotic_gases": 3217.12723,
+        "rare_crystals": 570.06411,
+        "sr_living_metal": 2,
+        "sr_zro": 2,
+        "sr_dark_matter": 114,
+        "minor_artifacts": 752.45,
+        "astral_threads": 331,
+        "menace": 5185
+      },
+      "expected": {
+        "energy": 3309.12351,
+        "minerals": 9064.94375,
+        "food": 11353,
+        "physics_research": 256.66911,
+        "society_research": 1768.08133,
+        "engineering_research": 118.04705,
+        "influence": 1000,
+        "unity": 11817.71911,
+        "trade": 4208.62616,
+        "consumer_goods": 316,
+        "alloys": 3588.4251,
+        "volatile_motes": 666.58673,
+        "exotic_gases": 3217.12723,
+        "rare_crystals": 570.06411,
+        "sr_living_metal": 2,
+        "sr_zro": 2,
+        "sr_dark_matter": 114,
+        "minor_artifacts": 752.45,
+        "astral_threads": 331,
+        "menace": 5185
+      }
+    },
+    {
+      "check": "rc4-native-cruiser-seven-underlimit-same-day_eep_variables_unchanged",
+      "status": "PASS",
+      "actual": {
+        "eep_c": 57,
+        "eep_c_remainder": 1,
+        "eep_chunks": 54,
+        "eep_core_state": 0,
+        "eep_crisis": 4,
+        "eep_d": 16,
+        "eep_delta": 400,
+        "eep_entitled": 900,
+        "eep_fleet_stage": 4,
+        "eep_g": 57,
+        "eep_g_remainder": 3,
+        "eep_last_capacity": 6,
+        "eep_last_manufactured": 400,
+        "eep_last_return": 105,
+        "eep_made": 900,
+        "eep_previous_capacity": 10,
+        "eep_psi": 1,
+        "eep_stage": 1,
+        "eep_tasks": 0,
+        "eep_waiting": 0,
+        "eep_worlds": 3
+      },
+      "expected": {
+        "eep_c": 57,
+        "eep_c_remainder": 1,
+        "eep_chunks": 54,
+        "eep_core_state": 0,
+        "eep_crisis": 4,
+        "eep_d": 16,
+        "eep_delta": 400,
+        "eep_entitled": 900,
+        "eep_fleet_stage": 4,
+        "eep_g": 57,
+        "eep_g_remainder": 3,
+        "eep_last_capacity": 6,
+        "eep_last_manufactured": 400,
+        "eep_last_return": 105,
+        "eep_made": 900,
+        "eep_previous_capacity": 10,
+        "eep_psi": 1,
+        "eep_stage": 1,
+        "eep_tasks": 0,
+        "eep_waiting": 0,
+        "eep_worlds": 3
+      }
+    },
+    {
+      "check": "rc4-native-cruiser-seven-underlimit-refreshed_all_inventory_unchanged",
+      "status": "PASS",
+      "actual": {
+        "energy": 3309.12351,
+        "minerals": 9064.94375,
+        "food": 11353,
+        "physics_research": 256.66911,
+        "society_research": 1768.08133,
+        "engineering_research": 118.04705,
+        "influence": 1000,
+        "unity": 11817.71911,
+        "trade": 4208.62616,
+        "consumer_goods": 316,
+        "alloys": 3588.4251,
+        "volatile_motes": 666.58673,
+        "exotic_gases": 3217.12723,
+        "rare_crystals": 570.06411,
+        "sr_living_metal": 2,
+        "sr_zro": 2,
+        "sr_dark_matter": 114,
+        "minor_artifacts": 752.45,
+        "astral_threads": 331,
+        "menace": 5185
+      },
+      "expected": {
+        "energy": 3309.12351,
+        "minerals": 9064.94375,
+        "food": 11353,
+        "physics_research": 256.66911,
+        "society_research": 1768.08133,
+        "engineering_research": 118.04705,
+        "influence": 1000,
+        "unity": 11817.71911,
+        "trade": 4208.62616,
+        "consumer_goods": 316,
+        "alloys": 3588.4251,
+        "volatile_motes": 666.58673,
+        "exotic_gases": 3217.12723,
+        "rare_crystals": 570.06411,
+        "sr_living_metal": 2,
+        "sr_zro": 2,
+        "sr_dark_matter": 114,
+        "minor_artifacts": 752.45,
+        "astral_threads": 331,
+        "menace": 5185
+      }
+    },
+    {
+      "check": "rc4-native-cruiser-seven-underlimit-refreshed_eep_variables_unchanged",
+      "status": "PASS",
+      "actual": {
+        "eep_c": 57,
+        "eep_c_remainder": 1,
+        "eep_chunks": 54,
+        "eep_core_state": 0,
+        "eep_crisis": 4,
+        "eep_d": 16,
+        "eep_delta": 400,
+        "eep_entitled": 900,
+        "eep_fleet_stage": 4,
+        "eep_g": 57,
+        "eep_g_remainder": 3,
+        "eep_last_capacity": 6,
+        "eep_last_manufactured": 400,
+        "eep_last_return": 105,
+        "eep_made": 900,
+        "eep_previous_capacity": 10,
+        "eep_psi": 1,
+        "eep_stage": 1,
+        "eep_tasks": 0,
+        "eep_waiting": 0,
+        "eep_worlds": 3
+      },
+      "expected": {
+        "eep_c": 57,
+        "eep_c_remainder": 1,
+        "eep_chunks": 54,
+        "eep_core_state": 0,
+        "eep_crisis": 4,
+        "eep_d": 16,
+        "eep_delta": 400,
+        "eep_entitled": 900,
+        "eep_fleet_stage": 4,
+        "eep_g": 57,
+        "eep_g_remainder": 3,
+        "eep_last_capacity": 6,
+        "eep_last_manufactured": 400,
+        "eep_last_return": 105,
+        "eep_made": 900,
+        "eep_previous_capacity": 10,
+        "eep_psi": 1,
+        "eep_stage": 1,
+        "eep_tasks": 0,
+        "eep_waiting": 0,
+        "eep_worlds": 3
+      }
+    },
+    {
+      "check": "same_day_fleet_removed_one",
+      "status": "PASS",
+      "actual": [
+        50332304
+      ],
+      "expected": [
+        50332304
+      ]
+    },
+    {
+      "check": "same_day_remaining_fleet_four",
+      "status": "PASS",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "check": "removed_native_ship_killed",
+      "status": "PASS",
+      "actual": "yes",
+      "expected": "yes"
+    },
+    {
+      "check": "removed_ship_fleet_invalid",
+      "status": "PASS",
+      "actual": 4294967295,
+      "expected": 4294967295
+    },
+    {
+      "check": "same_day_native_capacity_retains_old_cache",
+      "status": "PASS",
+      "actual": 487,
+      "expected": 487
+    },
+    {
+      "check": "next_real_day_capacity_refreshed",
+      "status": "PASS",
+      "actual": 471,
+      "expected": 471
+    },
+    {
+      "check": "same_day_date",
+      "status": "PASS",
+      "actual": "2296.07.12",
+      "expected": "2296.07.12"
+    },
+    {
+      "check": "next_real_day_date",
+      "status": "PASS",
+      "actual": "2296.07.13",
+      "expected": "2296.07.13"
+    },
+    {
+      "check": "same_surviving_ship_card_kept",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "docked_at_real_mother_starbase",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "undocked_has_no_starbase_orbit",
+      "status": "PASS",
+      "actual": false,
+      "expected": false
+    },
+    {
+      "check": "underlimit_does_not_replace_remaining_ship_designs",
+      "status": "PASS",
+      "actual": [
+        16777508,
+        83886103,
+        100663507,
+        50332302
+      ],
+      "expected": [
+        16777508,
+        83886103,
+        100663507,
+        50332302
+      ]
+    }
+  ],
+  "native_screenshots": [
+    {
+      "frame": "rc4-cruiser-docked-individual-real-upkeep",
+      "image_sha256": "bbe8351ec1a9cad65da204fcb9b0386d13548c3dcd53438e88c3f01f98170c7a",
+      "native_upkeep_rows": [
+        {
+          "text": "维护费：E1.981.98",
+          "score": 0.96197,
+          "box": [
+            [
+              155.0,
+              223.0
+            ],
+            [
+              269.0,
+              223.0
+            ],
+            [
+              269.0,
+              239.0
+            ],
+            [
+              155.0,
+              239.0
+            ]
+          ]
+        },
+        {
+          "text": "驻港舰船维护费：-42%",
+          "score": 0.99074,
+          "box": [
+            [
+              163.0,
+              478.0
+            ],
+            [
+              272.0,
+              478.0
+            ],
+            [
+              272.0,
+              495.0
+            ],
+            [
+              163.0,
+              495.0
+            ]
+          ]
+        }
+      ],
+      "interpreted_resources": [
+        "energy",
+        "minerals"
+      ],
+      "displayed": [
+        "1.98",
+        "1.98"
+      ]
+    },
+    {
+      "frame": "rc4-cruiser-undocked-overcap-real-upkeep",
+      "image_sha256": "92965404603cf7ebc9c583060bf8c428d2c2b0f2b22cf4055ff58383b5766864",
+      "native_upkeep_rows": [
+        {
+          "text": "维护费：E3.443.44",
+          "score": 0.96546,
+          "box": [
+            [
+              155.0,
+              253.0
+            ],
+            [
+              268.0,
+              253.0
+            ],
+            [
+              268.0,
+              270.0
+            ],
+            [
+              155.0,
+              270.0
+            ]
+          ]
+        },
+        {
+          "text": "驻港舰船维护费：-17%",
+          "score": 0.98288,
+          "box": [
+            [
+              164.0,
+              508.0
+            ],
+            [
+              273.0,
+              508.0
+            ],
+            [
+              273.0,
+              525.0
+            ],
+            [
+              164.0,
+              525.0
+            ]
+          ]
+        }
+      ],
+      "interpreted_resources": [
+        "energy",
+        "minerals"
+      ],
+      "displayed": [
+        "3.44",
+        "3.44"
+      ]
+    },
+    {
+      "frame": "rc4-cruiser-underlimit-same-day-real-upkeep",
+      "image_sha256": "d50c09dff4930c62362f2cab70d46485bafad598aa753ff031f7d136c1f4b55d",
+      "native_upkeep_rows": [
+        {
+          "text": "维护费：3.443.44",
+          "score": 0.99563,
+          "box": [
+            [
+              155.0,
+              284.0
+            ],
+            [
+              270.0,
+              284.0
+            ],
+            [
+              270.0,
+              301.0
+            ],
+            [
+              155.0,
+              301.0
+            ]
+          ]
+        },
+        {
+          "text": "驻港舰船维护费：-17%",
+          "score": 0.99632,
+          "box": [
+            [
+              163.0,
+              537.0
+            ],
+            [
+              273.0,
+              537.0
+            ],
+            [
+              273.0,
+              554.0
+            ],
+            [
+              163.0,
+              554.0
+            ]
+          ]
+        }
+      ],
+      "interpreted_resources": [
+        "energy",
+        "minerals"
+      ],
+      "displayed": [
+        "3.44",
+        "3.44"
+      ]
+    },
+    {
+      "frame": "rc4-cruiser-underlimit-refreshed-real-upkeep",
+      "image_sha256": "80fe36cb4dc7ee4a840439b2ae54453584c54f0ea31b246450d20291f901210b",
+      "native_upkeep_rows": [
+        {
+          "text": "维护费：3.403.40",
+          "score": 0.99682,
+          "box": [
+            [
+              154.0,
+              284.0
+            ],
+            [
+              269.0,
+              284.0
+            ],
+            [
+              269.0,
+              300.0
+            ],
+            [
+              154.0,
+              300.0
+            ]
+          ]
+        },
+        {
+          "text": "驻港舰船维护费：-17%",
+          "score": 0.99678,
+          "box": [
+            [
+              164.0,
+              538.0
+            ],
+            [
+              274.0,
+              538.0
+            ],
+            [
+              274.0,
+              555.0
+            ],
+            [
+              164.0,
+              555.0
+            ]
+          ]
+        }
+      ],
+      "interpreted_resources": [
+        "energy",
+        "minerals"
+      ],
+      "displayed": [
+        "3.40",
+        "3.40"
+      ]
+    }
+  ],
+  "native_fleet_states": {
+    "rc4-native-cruiser-built-overcap-docked": {
+      "fleet_ships": [
+        16777508,
+        83886103,
+        100663507,
+        50332302,
+        50332304
+      ],
+      "fleet_move_orbit": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t",
+      "fleet_current_order": "",
+      "removed_ship_native": {
+        "fleet": 16778514,
+        "reserve": 4,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.35639,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -2.342,
+        "forward_x": 0.71708,
+        "forward_y": -0.69699,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.06.18",
+        "maturation_date": "0.01.01"
+      }
+    },
+    "rc4-native-cruiser-undocked-overcap": {
+      "fleet_ships": [
+        16777508,
+        83886103,
+        100663507,
+        50332302,
+        50332304
+      ],
+      "fleet_move_orbit": "\n\t\t\t",
+      "fleet_current_order": "\n\t\t\tmove_to_system_point_order=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=216.48182\n\t\t\t\t\ty=240.55674\n\t\t\t\t\torigin=5\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=0\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t",
+      "removed_ship_native": {
+        "fleet": 16778514,
+        "reserve": 4,
+        "graphical_culture": "mammalian_01",
+        "speed": 11.91107,
+        "post_move_angle": -0.67912,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -0.67146,
+        "forward_x": 0.62209,
+        "forward_y": 0.78294,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.06.18",
+        "maturation_date": "0.01.01"
+      }
+    },
+    "rc4-native-cruiser-seven-underlimit-same-day": {
+      "fleet_ships": [
+        16777508,
+        83886103,
+        100663507,
+        50332302
+      ],
+      "fleet_move_orbit": "\n\t\t\t",
+      "fleet_current_order": "\n\t\t\tmove_to_system_point_order=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=216.48182\n\t\t\t\t\ty=240.55674\n\t\t\t\t\torigin=5\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=0\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t",
+      "removed_ship_native": {
+        "fleet": 4294967295,
+        "reserve": 1,
+        "graphical_culture": "mammalian_01",
+        "speed": 11.91107,
+        "post_move_angle": -0.67912,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -0.67146,
+        "forward_x": 0.62209,
+        "forward_y": 0.78294,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "killed": "yes",
+        "combat_action": 1,
+        "construction_date": "2296.06.18",
+        "maturation_date": "0.01.01"
+      }
+    },
+    "rc4-native-cruiser-seven-underlimit-refreshed": {
+      "fleet_ships": [
+        16777508,
+        83886103,
+        100663507,
+        50332302
+      ],
+      "fleet_move_orbit": "\n\t\t\t",
+      "fleet_current_order": "\n\t\t\tmove_to_system_point_order=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=216.48182\n\t\t\t\t\ty=240.55674\n\t\t\t\t\torigin=5\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=0\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t",
+      "removed_ship_native": {}
+    }
+  },
+  "saves": {
+    "rc4-native-cruiser-built-overcap-docked": {
+      "sha256": "c080cb74e798cb51b98bb300ffbd68d9349fb95e05d49ce8df925691ff39d752",
+      "date": "2296.07.02"
+    },
+    "rc4-native-cruiser-undocked-overcap": {
+      "sha256": "08fb59ac543ea1e8106396b3883d46fab96d50a63438ae0c24d5eb9517853ff9",
+      "date": "2296.07.12"
+    },
+    "rc4-native-cruiser-seven-underlimit-same-day": {
+      "sha256": "ed0abc3fed6c1c7c4e073a5ed9530dbbf81f5de6567433f76c77dc23c00b5fb2",
+      "date": "2296.07.12"
+    },
+    "rc4-native-cruiser-seven-underlimit-refreshed": {
+      "sha256": "087586b02a11db58631176097603d90e0d4d68a7c5ecfb86595b18f2d3a091db",
+      "date": "2296.07.13"
+    }
+  }
+}

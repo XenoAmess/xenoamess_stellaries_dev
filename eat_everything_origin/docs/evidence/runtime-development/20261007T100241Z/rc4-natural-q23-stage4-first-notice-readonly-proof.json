@@ -1,0 +1,294 @@
+{
+  "status": "PASS",
+  "scope": "Natural conquered Q23/56-month settlement and native stage4/monthly player notice/first same-date confirmation only. Pending reload and repeated callbacks, stage4 ships, remaining cases and full Mod acceptance are not covered.",
+  "version": "0.2.0-rc.4",
+  "language": "l_simp_chinese",
+  "checks": [
+    {
+      "check": "natural_settlement_eep_c",
+      "status": "PASS",
+      "actual": 23,
+      "expected": 23
+    },
+    {
+      "check": "natural_settlement_eep_g",
+      "status": "PASS",
+      "actual": 23,
+      "expected": 23
+    },
+    {
+      "check": "natural_settlement_eep_d",
+      "status": "PASS",
+      "actual": 6,
+      "expected": 6
+    },
+    {
+      "check": "natural_settlement_eep_made",
+      "status": "PASS",
+      "actual": 400,
+      "expected": 400
+    },
+    {
+      "check": "natural_settlement_eep_worlds",
+      "status": "PASS",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "check": "native_world_menace_once",
+      "status": "PASS",
+      "actual": 750,
+      "expected": 750
+    },
+    {
+      "check": "source_shattered",
+      "status": "PASS",
+      "actual": "pc_shattered",
+      "expected": "pc_shattered"
+    },
+    {
+      "check": "eep_q",
+      "status": "PASS",
+      "actual": 23,
+      "expected": 23
+    },
+    {
+      "check": "eep_months",
+      "status": "PASS",
+      "actual": 56,
+      "expected": 56
+    },
+    {
+      "check": "eep_last_return",
+      "status": "PASS",
+      "actual": 105,
+      "expected": 105
+    },
+    {
+      "check": "eep_seed_existing",
+      "status": "PASS",
+      "actual": 100,
+      "expected": 100
+    },
+    {
+      "check": "eep_seed_need",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "five_completion_receipts",
+      "status": "PASS",
+      "actual": {
+        "eep_destroy_done": 63638184,
+        "eep_population_done": 63638184,
+        "eep_crisis_done": 63638184,
+        "eep_return_done": 63638184,
+        "eep_credit_done": 63638184
+      },
+      "expected": {
+        "eep_destroy_done": 63638184,
+        "eep_population_done": 63638184,
+        "eep_crisis_done": 63638184,
+        "eep_return_done": 63638184,
+        "eep_credit_done": 63638184
+      }
+    },
+    {
+      "check": "source_task_reached_56",
+      "status": "PASS",
+      "actual": 56,
+      "expected": 56
+    },
+    {
+      "check": "completed_task_killed",
+      "status": "PASS",
+      "actual": "yes",
+      "expected": "yes"
+    },
+    {
+      "check": "post_month_owned_worlds",
+      "status": "PASS",
+      "actual": [
+        0
+      ],
+      "expected": [
+        0
+      ]
+    },
+    {
+      "check": "month_updates_crisis_display",
+      "status": "PASS",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "check": "month_updates_fleet_stage",
+      "status": "PASS",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "check": "post_month_active_task_display",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "next_month_does_not_repeat_economic_ledger",
+      "status": "PASS",
+      "actual": {
+        "eep_c": 57,
+        "eep_g": 57,
+        "eep_d": 16,
+        "eep_made": 900,
+        "eep_worlds": 3
+      },
+      "expected": {
+        "eep_c": 57,
+        "eep_g": 57,
+        "eep_d": 16,
+        "eep_made": 900,
+        "eep_worlds": 3
+      }
+    },
+    {
+      "check": "next_month_does_not_repeat_menace",
+      "status": "PASS",
+      "actual": 5185,
+      "expected": 5185
+    },
+    {
+      "check": "done_native_level4",
+      "status": "PASS",
+      "actual": [
+        "crisis_level_1",
+        "crisis_level_2",
+        "crisis_level_3",
+        "crisis_level_4"
+      ],
+      "expected": [
+        "crisis_level_1",
+        "crisis_level_2",
+        "crisis_level_3",
+        "crisis_level_4"
+      ]
+    },
+    {
+      "check": "done_player_queen32_count",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "pending_native_level4",
+      "status": "PASS",
+      "actual": [
+        "crisis_level_1",
+        "crisis_level_2",
+        "crisis_level_3",
+        "crisis_level_4"
+      ],
+      "expected": [
+        "crisis_level_1",
+        "crisis_level_2",
+        "crisis_level_3",
+        "crisis_level_4"
+      ]
+    },
+    {
+      "check": "pending_player_queen32_count",
+      "status": "PASS",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "check": "confirm_same_date",
+      "status": "PASS",
+      "actual": "2296.03.02",
+      "expected": "2296.03.02"
+    },
+    {
+      "check": "native_confirm_exact_countries",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_planets",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_colonies",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_pop_groups",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_pop_jobs",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_districts",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_situations",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_event_targets",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_species",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native_confirm_exact_deposits",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    }
+  ],
+  "saves": {
+    "task_start": {
+      "date": "2291.06.12",
+      "sha256": "5f9cd9a8b1f37cf52e953dfb385065406360db7c537693904a731cb25b2b5161"
+    },
+    "month37": {
+      "date": "2294.07.02",
+      "sha256": "f82f5685fb3d0d8234052145ebf754ec905c8577722c43187896706589c83e59"
+    },
+    "month56": {
+      "date": "2296.02.02",
+      "sha256": "2ee7fa449ff5b2e8520892f1e134c080c308ab2e7a9d4b995cdccf4dac55edc3"
+    },
+    "notice_pending": {
+      "date": "2296.03.02",
+      "sha256": "2c7c11dc50b58882e71fed3cf462d3b8112bdf6109d9359f8781f85b55b01d7f"
+    },
+    "notice_confirmed": {
+      "date": "2296.03.02",
+      "sha256": "67239321c3e20d85b0d32b7cc9122f763b04782e337ef46a34f7ead23f894b9e"
+    }
+  }
+}
