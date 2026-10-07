@@ -2,6 +2,14 @@
 
 ## 2026-10-08 首发顺序与同世界性能
 
+193619同世界对照完成并正常停止：[375项独立证明](evidence/runtime-development/20261007T193619Z/rc6-shared-world-performance-proof.json)核四支原字节零任务恢复、原42国／50源各100／母星700／全部库存、实际Q20T48与0→12有效月、C/G／制造0／D2。无Mod／0／1／10／50墙钟126.2729／125.8989／126.5116／125.3851／126.2446秒，单样本包括物理Enter及GPU/OCR轮询，不包含原生保存；不能从相近粗粒度读数推导零开销或固定RNG。原生零任务SHA796f…，50终点8e86a6fd9d88c70b98f13b0f055a7355cae5fc6ae86e784e1367298b04adbba4。完整506份44802668字节[原字节归档](evidence/runtime-development/20261007T193619Z/source-snapshot.json)，含启动器超时／所有原始采样／SAV／42国审计／正常stop／未过滤最终日志与配置；日志中的离线缓存Workshop路径告警保留。没有热改生产或夹具；EAT-25仍待两加载顺序冲突，焦土蜂巢完整范围未完成。
+
+同决议覆写冲突执行方案（实施前）：建立仅测试用第二Mod，`common/decisions/zz_eep_native_decision.txt`与生产适配器同相对路径，内容为从本机02_special_decisions.txt:1704按既有balanced scanner精确提取的原版decision_lithoid_swarm_consume_world完整块；保留源文件SHA，不复制其它决议或增加经济事件。版本读取本项目VERSION，独立descriptor／测试名，绝不进入生产包。先用open_kaishek检查这份控制包，通过后分别在全新隔离进程以两种enabled_mods顺序加载它与未改145023夹具；启动前记录两份实际Mod树、descriptor与dlc_load字节及SHA。
+
+两支均原字节恢复796f0fe3083641b413cae3e2f62674548da96e146e11760dd5211a10cfd11be5的同世界EEP零任务SAV，在同一实际Q20／100种子源从原生决议UI启动。检查原生局势类型、target／来源id、EEP活动凭证与Q／T、C/G／制造／D、母星绑定；原生真实第一有效月核原版8.5或EEP1／T48。较晚相对文件若覆写本Mod，则应进入原版吞岩局势而不产生EEP结算／容量；本Mod适配器实际获胜时进入EEP48月路径。以实际加载结果解释顺序，不靠描述假定。这个用例证明冲突路由和公开限制，不替代延期的原版117／118完整自然边界或全部噬岩路线验收。任何不同结果／守卫FAIL／日志均保留；共有冲突检查通过后更新工坊兼容说明，明确同决议与planet_view.gui修改的兼容边界。
+
+193619第一次经Steam-applaunch只打开Paradox Launcher，45秒未产生stellaris进程；原process记录与窗口图保留。关闭本次创建的启动器窗口后改用先前184149相同的direct入口，PID2928已成功，GPU/F12及隔离userdir／夹具指纹核实；始终离线，没有更改账户网络状态。这不是Mod或P工具缺陷。后续原生窗口焦点守卫一度失败且未采样，通过已有Alt恢复前台后重新取新帧，原失败不作为运行证据。EEP零任务冻结796f…仍真实5700人口／母星20／50源各100／原库存，C/G／制造0、D2及正确独立绑定；没有直接赋值任务进度、资源或人口。
+
 184149[整场归档](evidence/runtime-development/20261007T184149Z/source-snapshot.json)完成：250份原件20635090字节，全部失败／原始测量／SAV／42国审计及最终日志配置保留。[Git原字节核验](evidence/true-vanilla-shared-world-git-object-check-2026-10-08.json)通过252文件20727708字节；[90项基线证明](evidence/runtime-development/20261007T184149Z/true-vanilla-shared-world-baseline-proof.json)仅覆盖无ModWorld准备与单次360日测量，仍待Mod0／1／10／50比较和焦土蜂巢完整范围。
 
 184149已正常停止forced=false／running_after=false。真正无Mod准备与单次360日测量90/90范围检查通过，覆盖全部实际42国／源星50／总人口5700及无EEP状态，第二次从相同冻结字节恢复后实存日期2200.01.01→2201.01.01。确认墙钟126.2728905秒、游戏用户CPU40.328125／内核2.75秒；包含按键提交与GPU／OCR轮询，不含保存，单个样本不证明纯脚本耗时或完整性能通过。实际原生重载把缓存empire_size55重算1081，人口／源资产／库存保持；短缺局势和自然增长原样保留。首次大小写匹配错误已独立保留并排除比较。
