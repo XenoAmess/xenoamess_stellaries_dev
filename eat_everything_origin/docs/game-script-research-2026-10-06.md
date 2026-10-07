@@ -1,5 +1,11 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-08：同路径决议覆盖与查询零值告警
+
+通过open_kaishek的控制包仅从本机原版提取`decision_lithoid_swarm_consume_world`，与本Mod使用相同相对文件`common/decisions/zz_eep_native_decision.txt`。201344／202451全新离线简中进程的实际enabled_mods分别`[EEP, 控制包]`与`[控制包, EEP]`，从相同796f…原生SAV在physical1731／colony15／Q20／真实100种子“春天”经决议UI开始：前者实际原版局势，首月8.5；后者EEP局势，Q20/T48、首月1。C/G／制造0、D2和绑定保持，第一支21项／第二支18项范围证明通过，完整日志与初始guardFAIL保留。仅证明本机同路径双包的实际覆盖顺序，不推导所有不同文件／同键Mod的统一优先级或原版118月完整通过。公开说明应提示适配器若被覆盖，会回落原版流程而失去EEP结算；planet_view.gui覆盖须另作界面兼容处理。
+
+193619日志实际两次报`eep_old_damage is not set`，对应`eep_begin`旧损毁导出后的读取；前置set_variable=0不能据此宣称零导出后变量必存在，虽数值仍Q20/T48。后续对查询输出读取加is_variable_set守卫、缺省零不做减法，保留正旧损毁的真实减法和零／半／完整种子迁移实机回归。这是本机Stellaris导出／算术读取的实证与待验证修复，不把推断的引擎内部稀疏实现推广为Paradox通用规则。
+
 ## 2026-10-08：焦土蜂巢的合法蜂巢世界与轰炸条件
 
 本机`common/ascension_perks/00_ascension_perks.txt:2227`的ap_hive_worlds要求蜂巢、非游牧、非石质噬岩蜂巢且非荒野；possible要求tech_climate_restoration及至少两个已有飞升天赋。焦土蜂巢并未在此被禁止，不能把石质噬岩蜂巢的禁止条件套用给它。`common/terraform/02_special_terraform_links.txt:6083`附近的pc_volcanic→pc_hive链接要求owner有ap_hive_worlds，condition为tech_volcanic_terraforming；此文件的hiveCost=10000能源、hiveTime=7200日。实际自然焦土蜂巢2297.03.12保存中已研究tech_climate_restoration与tech_volcanic_terraforming，已有四个AP，扩张传统尚差一项；后续须通过实际传统／AP界面及付费改造取证，不能用受控改星球类型代替合法完成。
