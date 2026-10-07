@@ -83,7 +83,10 @@ eep_begin = {
             parameters = { type = d_lithoid_devastation }
             variable = eep_old_damage
         }
-        subtract_variable = { which = eep_q value = eep_old_damage }
+        if = {
+            limit = { is_variable_set = eep_old_damage }
+            subtract_variable = { which = eep_q value = eep_old_damage }
+        }
         if = {
             limit = { check_variable = { which = eep_q value > 0 } }
             set_variable = { which = eep_seed_existing value = 0 }
@@ -93,7 +96,10 @@ eep_begin = {
                 variable = eep_seed_existing
             }
             set_variable = { which = eep_seed_need value = 100 }
-            subtract_variable = { which = eep_seed_need value = eep_seed_existing }
+            if = {
+                limit = { is_variable_set = eep_seed_existing }
+                subtract_variable = { which = eep_seed_need value = eep_seed_existing }
+            }
             if = {
                 limit = { check_variable = { which = eep_seed_need value > 0 } }
                 event_target:eep_actor = {
@@ -121,7 +127,10 @@ eep_begin = {
                                         variable = eep_seed_existing
                                     }
                                     set_variable = { which = eep_seed_need value = 100 }
-                                    subtract_variable = { which = eep_seed_need value = eep_seed_existing }
+                                    if = {
+                                        limit = { is_variable_set = eep_seed_existing }
+                                        subtract_variable = { which = eep_seed_need value = eep_seed_existing }
+                                    }
                                 }
                             }
                         }
