@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "scope": "Exact whole SAV equality for UI-only source/fleet/native-menu views; natural existing-seed task start and 200 real days. Does not cover non-qualified country or fourth-stage ship; no full Mod acceptance. Native decision research stock changes retained.",
+  "saves": {
+    "rc4-normal-war91-restored-verified": {
+      "date": "2291.06.12",
+      "sha256": "adc60bb1455ffea7b4d4b8b9b187928a65ccd66572c9e288f731c4867df6f008"
+    },
+    "rc4-other-source-real-fleet-native-menu-scopes": {
+      "date": "2291.06.12",
+      "sha256": "adc60bb1455ffea7b4d4b8b9b187928a65ccd66572c9e288f731c4867df6f008"
+    },
+    "rc4-natural-q23-conquered-world-task-started": {
+      "date": "2291.06.12",
+      "sha256": "5f9cd9a8b1f37cf52e953dfb385065406360db7c537693904a731cb25b2b5161"
+    },
+    "rc4-native-war92-real200-checkpoint": {
+      "date": "2292.01.02",
+      "sha256": "3c1c28da24a96fb938a3ad793af0cf64f80167a905cb537a186ad07ce5f2007c"
+    }
+  },
+  "checks": [
+    {
+      "check": "GUI_scope_operations_entire_native_save_identical",
+      "actual": "adc60bb1455ffea7b4d4b8b9b187928a65ccd66572c9e288f731c4867df6f008",
+      "expected": "adc60bb1455ffea7b4d4b8b9b187928a65ccd66572c9e288f731c4867df6f008",
+      "status": "PASS"
+    },
+    {
+      "check": "task_start_economic_ledger",
+      "actual": {
+        "eep_c": 34,
+        "eep_g": 34,
+        "eep_d": 10,
+        "eep_made": 500,
+        "eep_worlds": 2
+      },
+      "expected": {
+        "eep_c": 34,
+        "eep_g": 34,
+        "eep_d": 10,
+        "eep_made": 500,
+        "eep_worlds": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "task_start_native_menace",
+      "actual": 3655,
+      "expected": 3655,
+      "status": "PASS"
+    },
+    {
+      "check": "real200_economic_ledger",
+      "actual": {
+        "eep_c": 34,
+        "eep_g": 34,
+        "eep_d": 10,
+        "eep_made": 500,
+        "eep_worlds": 2
+      },
+      "expected": {
+        "eep_c": 34,
+        "eep_g": 34,
+        "eep_d": 10,
+        "eep_made": 500,
+        "eep_worlds": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "real200_native_menace",
+      "actual": 3655,
+      "expected": 3655,
+      "status": "PASS"
+    },
+    {
+      "check": "task_start_Q",
+      "actual": 23,
+      "expected": 23,
+      "status": "PASS"
+    },
+    {
+      "check": "task_start_T",
+      "actual": 56,
+      "expected": 56,
+      "status": "PASS"
+    },
+    {
+      "check": "no_extra_seed",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "real200_progress",
+      "actual": 7,
+      "expected": 7,
+      "status": "PASS"
+    }
+  ]
+}
