@@ -1,0 +1,134 @@
+{
+  "scope": "Country0 restoration after isolated CN localization review; all country economic fields, owned jobs/pops, Mother districts and colony, all recorded situations/event targets; not full-world equality or Mod acceptance",
+  "status": "PASS",
+  "original_failure": "rc2-normal-continuation-restoration-proof.json",
+  "failure_cause": "reference audit selected country0 only; new audit explicitly selected country0 and16777219, so foreign capital35 districts66/96/100 were additionally included. Same-owned Mother selection used here; raw audits and failure retained.",
+  "checks": [
+    {
+      "check": "country_stockpile",
+      "status": "PASS"
+    },
+    {
+      "check": "country_variables",
+      "status": "PASS"
+    },
+    {
+      "check": "country_flags",
+      "status": "PASS"
+    },
+    {
+      "check": "country_native",
+      "status": "PASS"
+    },
+    {
+      "check": "country_government",
+      "status": "PASS"
+    },
+    {
+      "check": "country_ascension_perks",
+      "status": "PASS"
+    },
+    {
+      "check": "country_traditions",
+      "status": "PASS"
+    },
+    {
+      "check": "country_completed_technologies",
+      "status": "PASS"
+    },
+    {
+      "check": "country_research_queues",
+      "status": "PASS"
+    },
+    {
+      "check": "owned_pop_groups",
+      "status": "PASS"
+    },
+    {
+      "check": "owned_pop_jobs",
+      "status": "PASS"
+    },
+    {
+      "check": "situations",
+      "status": "PASS"
+    },
+    {
+      "check": "event_targets",
+      "status": "PASS"
+    },
+    {
+      "check": "all_mother_districts",
+      "status": "PASS",
+      "before": {
+        "1": {
+          "type": "district_hive",
+          "level": 15,
+          "zones": [
+            0,
+            2,
+            3
+          ]
+        },
+        "2": {
+          "type": "district_geothermal",
+          "level": 2,
+          "zones": [
+            44
+          ]
+        },
+        "3": {
+          "type": "district_melting",
+          "level": 6,
+          "zones": [
+            4294967295
+          ]
+        },
+        "41": {
+          "type": "district_polytechnic",
+          "level": 3,
+          "zones": [
+            59
+          ]
+        }
+      },
+      "after": {
+        "1": {
+          "type": "district_hive",
+          "level": 15,
+          "zones": [
+            0,
+            2,
+            3
+          ]
+        },
+        "2": {
+          "type": "district_geothermal",
+          "level": 2,
+          "zones": [
+            44
+          ]
+        },
+        "3": {
+          "type": "district_melting",
+          "level": 6,
+          "zones": [
+            4294967295
+          ]
+        },
+        "41": {
+          "type": "district_polytechnic",
+          "level": 3,
+          "zones": [
+            59
+          ]
+        }
+      }
+    },
+    {
+      "check": "mother_colony_full",
+      "status": "PASS"
+    }
+  ],
+  "reference_sha256": "eb13b86104381095114222605b99d3d5737d7d2904fa0dfef1613727042c510b",
+  "restored_sha256": "0fb2b6ea66d20eeceba0921f59120794c93b7deeb17656033af482d8affcf11c"
+}

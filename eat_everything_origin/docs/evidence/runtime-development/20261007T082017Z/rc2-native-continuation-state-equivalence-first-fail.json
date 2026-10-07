@@ -1,0 +1,150 @@
+{
+  "status": "FAIL",
+  "scope": "Initial full audited population/jobs equality after native load under rc2; original differences preserved for investigation",
+  "checks": {
+    "pop_groups": false,
+    "pop_jobs": false,
+    "districts": true,
+    "situations": true,
+    "country_stockpile": true,
+    "country_variables": true,
+    "country_flags": true,
+    "country_native": true,
+    "country_ascension_perks": true,
+    "country_traditions": true
+  },
+  "source_sha256": "2df3f8d36eb52f36553e852d2994cefe325c4f56eab7eb549c63026262dc5372",
+  "restored_sha256": "eb13b86104381095114222605b99d3d5737d7d2904fa0dfef1613727042c510b",
+  "differences": {
+    "pop_groups": {
+      "1862271175": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "size": {
+            "before": 1,
+            "after": 19
+          },
+          "current_month_growth_details": {
+            "before": "",
+            "after": "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=18\n\t\t"
+          }
+        }
+      },
+      "184549541": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "size": {
+            "before": 62,
+            "after": 44
+          },
+          "current_month_growth_details": {
+            "before": "\n\t\t\tkey=\"GROWTH_CAT_OTHER\"\n\t\t\tvalue=60\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=0\n\t\t",
+            "after": "\n\t\t\tkey=\"GROWTH_CAT_OTHER\"\n\t\t\tvalue=60\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=-18\n\t\t"
+          }
+        }
+      }
+    },
+    "pop_jobs": {
+      "16777372": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "workforce": {
+            "before": 0,
+            "after": 3
+          },
+          "bonus_workforce": {
+            "before": 0,
+            "after": 1.05
+          }
+        }
+      },
+      "16777373": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "workforce": {
+            "before": 2,
+            "after": 3
+          },
+          "bonus_workforce": {
+            "before": 0.3,
+            "after": 1.05
+          }
+        }
+      },
+      "33554584": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "workforce": {
+            "before": 1,
+            "after": 19
+          },
+          "bonus_workforce": {
+            "before": 0.05,
+            "after": 4.75
+          }
+        }
+      },
+      "33554581": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "workforce": {
+            "before": 60,
+            "after": 21
+          },
+          "bonus_workforce": {
+            "before": 21,
+            "after": 11.55
+          }
+        }
+      },
+      "16777440": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "workforce": {
+            "before": 0,
+            "after": 5
+          },
+          "bonus_workforce": {
+            "before": 0,
+            "after": 1
+          }
+        }
+      },
+      "33554583": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "workforce": {
+            "before": 0,
+            "after": 7
+          },
+          "bonus_workforce": {
+            "before": 0,
+            "after": 4.9
+          }
+        }
+      },
+      "16777371": {
+        "colony_before": null,
+        "colony_after": null,
+        "differences": {
+          "workforce": {
+            "before": 0,
+            "after": 5
+          },
+          "bonus_workforce": {
+            "before": 0,
+            "after": 1.75
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,11 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-07 首次报告决议与研究库存差异
+
+同一原生2283.03.03存档的简中A/B/C/D隔离：不打开母星、只打开母星及决议列表、直接诊断调用既有eep.100均保持全部库存；只有首次通过原生觐见女王决议执行后，物理研究10661.75204及工程研究5480.3411归零，社会研究37379.85079→23382.89218。科技队列、母星岗位／人口／区划及EEP经济账本保持。此为可重现运行差异，不以“原生缓存”先行解释，原始失败在082017归档中。
+
+Stellaris原版部分决议完全省略resources块（02_special_decisions.txt的decision_reorganize_leviathan_parade，05_ancient_relics_decisions.txt的decision_baol_life_seed）；另外一些免费决议保留只有category=decisions的resources块。当前证据只支持这两种语法存在，不足以判定引擎具体扣点原因。rc.3对只读报告移除空资源表作为修复候选，包级检查及新原生首次执行均需验证；不推广为CK3或所有Paradox游戏的共同规则。
+
 日期：2026-10-06。方法：只读本机游戏文件，结合仓库既有研究，并核对 Paradox 官方公告。未运行游戏或 Mod 验收。
 
 本研究为[设计案](../../docs/eat-everything-origin-design-2026-10-06.md)提供 Stellaris 专有事实，不从 CK3 文档推导 Stellaris 接口。文件路径均相对游戏根目录 `C:\SteamLibrary\steamapps\common\Stellaris`，行号只适用于本次指纹。

@@ -1,0 +1,2250 @@
+{
+  "status": "PASS",
+  "scope": "Native rc2 continuation: entire owned Mother population/jobs/colony, EEP binding/capacity/ledgers/flags, resources, Native government/AP/tech and task economics preserved. Not full-world raw-object equality.",
+  "original_failures": [
+    "rc2-native-continuation-state-equivalence-first-fail.json",
+    "rc2-native-continuation-state-equivalence-scoped-proof.json"
+  ],
+  "all_raw_differences": {
+    "planets": {
+      "53": {
+        "carrier_binary_flags": {
+          "before": 1,
+          "after": 3
+        }
+      },
+      "1": {
+        "carrier_binary_flags": {
+          "before": 1,
+          "after": 3
+        }
+      }
+    },
+    "colonies": {
+      "33": {
+        "binary_flags": {
+          "before": null,
+          "after": 24
+        }
+      },
+      "3": {
+        "free_housing": {
+          "before": 8499.452,
+          "after": 8501.872
+        },
+        "crime": {
+          "before": 0.2669,
+          "after": 0
+        },
+        "total_housing": {
+          "before": 8556.152,
+          "after": 8558.572
+        },
+        "stability": {
+          "before": 45.0804,
+          "after": 45.1029
+        },
+        "free_amenities": {
+          "before": 934.63712,
+          "after": 972.23441
+        },
+        "amenities": {
+          "before": 1491.33712,
+          "after": 1528.93441
+        }
+      },
+      "24": {
+        "binary_flags": {
+          "before": null,
+          "after": 24
+        }
+      }
+    },
+    "pop_groups": {
+      "184549541": {
+        "size": {
+          "before": 62,
+          "after": 44
+        },
+        "current_month_growth_details": {
+          "before": "\n\t\t\tkey=\"GROWTH_CAT_OTHER\"\n\t\t\tvalue=60\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=0\n\t\t",
+          "after": "\n\t\t\tkey=\"GROWTH_CAT_OTHER\"\n\t\t\tvalue=60\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=-18\n\t\t"
+        }
+      },
+      "1862271175": {
+        "size": {
+          "before": 1,
+          "after": 19
+        },
+        "current_month_growth_details": {
+          "before": "",
+          "after": "\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=18\n\t\t"
+        }
+      }
+    },
+    "pop_jobs": {
+      "16777371": {
+        "workforce": {
+          "before": 0,
+          "after": 5
+        },
+        "bonus_workforce": {
+          "before": 0,
+          "after": 1.75
+        }
+      },
+      "33554581": {
+        "workforce": {
+          "before": 60,
+          "after": 21
+        },
+        "bonus_workforce": {
+          "before": 21,
+          "after": 11.55
+        }
+      },
+      "16777373": {
+        "workforce": {
+          "before": 2,
+          "after": 3
+        },
+        "bonus_workforce": {
+          "before": 0.3,
+          "after": 1.05
+        }
+      },
+      "33554584": {
+        "workforce": {
+          "before": 1,
+          "after": 19
+        },
+        "bonus_workforce": {
+          "before": 0.05,
+          "after": 4.75
+        }
+      },
+      "33554583": {
+        "workforce": {
+          "before": 0,
+          "after": 7
+        },
+        "bonus_workforce": {
+          "before": 0,
+          "after": 4.9
+        }
+      },
+      "16777440": {
+        "workforce": {
+          "before": 0,
+          "after": 5
+        },
+        "bonus_workforce": {
+          "before": 0,
+          "after": 1
+        }
+      },
+      "16777372": {
+        "workforce": {
+          "before": 0,
+          "after": 3
+        },
+        "bonus_workforce": {
+          "before": 0,
+          "after": 1.05
+        }
+      }
+    }
+  },
+  "checks": [
+    {
+      "check": "same_owned_colonies",
+      "actual": [
+        0
+      ],
+      "expected": [
+        0
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "all_owned_pop_groups",
+      "actual": {
+        "2566914166": {
+          "can_procreate": "yes",
+          "can_vote": "yes",
+          "can_fill_drone_job": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 0,
+          "size": 2000,
+          "last_month_growth": 0,
+          "month_start_size": 2000,
+          "habitability": 1,
+          "happiness": 0.5,
+          "power": 20,
+          "crime": 20,
+          "amenities_usage": 900,
+          "housing_usage": 2000,
+          "key": {
+            "species": 105,
+            "category": "simple_drone"
+          },
+          "current_month_growth_details": ""
+        },
+        "855638018": {
+          "can_procreate": "yes",
+          "can_vote": "yes",
+          "can_fill_drone_job": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 0,
+          "size": 4692,
+          "last_month_growth": 7,
+          "month_start_size": 4692,
+          "habitability": 1,
+          "happiness": 0.5,
+          "power": 46.92,
+          "crime": 46.92,
+          "housing_usage": 4692,
+          "key": {
+            "species": 105,
+            "category": "maintenance_drone"
+          },
+          "current_month_growth_details": ""
+        },
+        "3825205353": {
+          "can_procreate": "yes",
+          "can_vote": "yes",
+          "can_fill_drone_job": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 0,
+          "size": 7833,
+          "last_month_growth": 0,
+          "month_start_size": 7833,
+          "habitability": 1,
+          "happiness": 0.5,
+          "power": 78.33,
+          "crime": 78.33,
+          "amenities_usage": 3524.85,
+          "housing_usage": 7833,
+          "key": {
+            "species": 105,
+            "category": "complex_drone"
+          },
+          "current_month_growth_details": ""
+        }
+      },
+      "expected": {
+        "2566914166": {
+          "can_procreate": "yes",
+          "can_vote": "yes",
+          "can_fill_drone_job": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 0,
+          "size": 2000,
+          "last_month_growth": 0,
+          "month_start_size": 2000,
+          "habitability": 1,
+          "happiness": 0.5,
+          "power": 20,
+          "crime": 20,
+          "amenities_usage": 900,
+          "housing_usage": 2000,
+          "key": {
+            "species": 105,
+            "category": "simple_drone"
+          },
+          "current_month_growth_details": ""
+        },
+        "855638018": {
+          "can_procreate": "yes",
+          "can_vote": "yes",
+          "can_fill_drone_job": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 0,
+          "size": 4692,
+          "last_month_growth": 7,
+          "month_start_size": 4692,
+          "habitability": 1,
+          "happiness": 0.5,
+          "power": 46.92,
+          "crime": 46.92,
+          "housing_usage": 4692,
+          "key": {
+            "species": 105,
+            "category": "maintenance_drone"
+          },
+          "current_month_growth_details": ""
+        },
+        "3825205353": {
+          "can_procreate": "yes",
+          "can_vote": "yes",
+          "can_fill_drone_job": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 0,
+          "size": 7833,
+          "last_month_growth": 0,
+          "month_start_size": 7833,
+          "habitability": 1,
+          "happiness": 0.5,
+          "power": 78.33,
+          "crime": 78.33,
+          "amenities_usage": 3524.85,
+          "housing_usage": 7833,
+          "key": {
+            "species": 105,
+            "category": "complex_drone"
+          },
+          "current_month_growth_details": ""
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "all_owned_pop_jobs",
+      "actual": {
+        "544": {
+          "type": "warrior_drone",
+          "automated_workforce": 0,
+          "workforce": 400,
+          "max_workforce": 400,
+          "bonus_workforce": 120,
+          "workforce_limit": 400,
+          "automated_workforce_limit": 399,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "63": {
+          "type": "event_purge",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "58": {
+          "type": "peasant_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "67": {
+          "type": "spawning_drone",
+          "automated_workforce": 0,
+          "workforce": 100,
+          "max_workforce": 100,
+          "bonus_workforce": 30,
+          "workforce_limit": 100,
+          "automated_workforce_limit": 99,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "50": {
+          "type": "fotd_protectors",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "72": {
+          "type": "fabricator",
+          "automated_workforce": 0,
+          "workforce": 2100,
+          "max_workforce": 2100,
+          "bonus_workforce": 630,
+          "workforce_limit": 2100,
+          "automated_workforce_limit": 2099,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "54": {
+          "type": "wilderness_maintenance_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "46": {
+          "type": "civilian",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "51": {
+          "type": "bio_trophy_unemployment",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "16778107": {
+          "type": "telepath_drone",
+          "automated_workforce": 0,
+          "workforce": 200,
+          "max_workforce": 200,
+          "bonus_workforce": 80,
+          "workforce_limit": 200,
+          "automated_workforce_limit": 199,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "48": {
+          "type": "crisis_purge",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "56": {
+          "type": "hunter_gatherer_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "57": {
+          "type": "peasant",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "65": {
+          "type": "disconnected_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "74": {
+          "type": "logistics_drone",
+          "automated_workforce": 0,
+          "workforce": 700,
+          "max_workforce": 700,
+          "bonus_workforce": 385,
+          "workforce_limit": 700,
+          "automated_workforce_limit": 699,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "75": {
+          "type": "mining_drone",
+          "automated_workforce": 0,
+          "workforce": 1400,
+          "max_workforce": 1400,
+          "bonus_workforce": 700,
+          "workforce_limit": 1400,
+          "automated_workforce_limit": 1399,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "68": {
+          "type": "coordinator",
+          "automated_workforce": 0,
+          "workforce": 1800,
+          "max_workforce": 1800,
+          "bonus_workforce": 720,
+          "workforce_limit": 1800,
+          "automated_workforce_limit": 1799,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "71": {
+          "type": "calculator_engineer",
+          "automated_workforce": 0,
+          "workforce": 360,
+          "max_workforce": 360,
+          "bonus_workforce": 180,
+          "workforce_limit": 360,
+          "automated_workforce_limit": 359,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "59": {
+          "type": "hive_sustenance_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "70": {
+          "type": "calculator_biologist",
+          "automated_workforce": 0,
+          "workforce": 760,
+          "max_workforce": 760,
+          "bonus_workforce": 380,
+          "workforce_limit": 760,
+          "automated_workforce_limit": 759,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "64": {
+          "type": "neural_chip",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "60": {
+          "type": "hive_sustenance_drone_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "69": {
+          "type": "calculator_physicist",
+          "automated_workforce": 0,
+          "workforce": 560,
+          "max_workforce": 560,
+          "bonus_workforce": 280,
+          "workforce_limit": 560,
+          "automated_workforce_limit": 559,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "55": {
+          "type": "hunter_gatherer",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "66": {
+          "type": "cruise_passenger_unemployment",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "52": {
+          "type": "squire",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "49": {
+          "type": "assimilation",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "62": {
+          "type": "hive_basic_agri_drone_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "53": {
+          "type": "maintenance_drone",
+          "automated_workforce": -1,
+          "workforce": 4691,
+          "max_workforce": -1,
+          "bonus_workforce": 1174,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "61": {
+          "type": "hive_basic_agri_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "76": {
+          "type": "technician_drone",
+          "automated_workforce": 0,
+          "workforce": 600,
+          "max_workforce": 600,
+          "bonus_workforce": 300,
+          "workforce_limit": 600,
+          "automated_workforce_limit": 600,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "47": {
+          "type": "servant",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "16777547": {
+          "type": "polytechnic_drone",
+          "automated_workforce": 0,
+          "workforce": 600,
+          "max_workforce": 600,
+          "bonus_workforce": 180,
+          "workforce_limit": 600,
+          "automated_workforce_limit": 599,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "73": {
+          "type": "patrol_drone",
+          "automated_workforce": 0,
+          "workforce": 253,
+          "max_workforce": 400,
+          "bonus_workforce": 75.9,
+          "workforce_limit": 253,
+          "automated_workforce_limit": 399,
+          "planet": 0,
+          "pop_group": 4294967295
+        }
+      },
+      "expected": {
+        "544": {
+          "type": "warrior_drone",
+          "automated_workforce": 0,
+          "workforce": 400,
+          "max_workforce": 400,
+          "bonus_workforce": 120,
+          "workforce_limit": 400,
+          "automated_workforce_limit": 399,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "63": {
+          "type": "event_purge",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "58": {
+          "type": "peasant_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "67": {
+          "type": "spawning_drone",
+          "automated_workforce": 0,
+          "workforce": 100,
+          "max_workforce": 100,
+          "bonus_workforce": 30,
+          "workforce_limit": 100,
+          "automated_workforce_limit": 99,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "50": {
+          "type": "fotd_protectors",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "72": {
+          "type": "fabricator",
+          "automated_workforce": 0,
+          "workforce": 2100,
+          "max_workforce": 2100,
+          "bonus_workforce": 630,
+          "workforce_limit": 2100,
+          "automated_workforce_limit": 2099,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "54": {
+          "type": "wilderness_maintenance_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "46": {
+          "type": "civilian",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "51": {
+          "type": "bio_trophy_unemployment",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "16778107": {
+          "type": "telepath_drone",
+          "automated_workforce": 0,
+          "workforce": 200,
+          "max_workforce": 200,
+          "bonus_workforce": 80,
+          "workforce_limit": 200,
+          "automated_workforce_limit": 199,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "48": {
+          "type": "crisis_purge",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "56": {
+          "type": "hunter_gatherer_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "57": {
+          "type": "peasant",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "65": {
+          "type": "disconnected_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "74": {
+          "type": "logistics_drone",
+          "automated_workforce": 0,
+          "workforce": 700,
+          "max_workforce": 700,
+          "bonus_workforce": 385,
+          "workforce_limit": 700,
+          "automated_workforce_limit": 699,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "75": {
+          "type": "mining_drone",
+          "automated_workforce": 0,
+          "workforce": 1400,
+          "max_workforce": 1400,
+          "bonus_workforce": 700,
+          "workforce_limit": 1400,
+          "automated_workforce_limit": 1399,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "68": {
+          "type": "coordinator",
+          "automated_workforce": 0,
+          "workforce": 1800,
+          "max_workforce": 1800,
+          "bonus_workforce": 720,
+          "workforce_limit": 1800,
+          "automated_workforce_limit": 1799,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "71": {
+          "type": "calculator_engineer",
+          "automated_workforce": 0,
+          "workforce": 360,
+          "max_workforce": 360,
+          "bonus_workforce": 180,
+          "workforce_limit": 360,
+          "automated_workforce_limit": 359,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "59": {
+          "type": "hive_sustenance_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "70": {
+          "type": "calculator_biologist",
+          "automated_workforce": 0,
+          "workforce": 760,
+          "max_workforce": 760,
+          "bonus_workforce": 380,
+          "workforce_limit": 760,
+          "automated_workforce_limit": 759,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "64": {
+          "type": "neural_chip",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "60": {
+          "type": "hive_sustenance_drone_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "69": {
+          "type": "calculator_physicist",
+          "automated_workforce": 0,
+          "workforce": 560,
+          "max_workforce": 560,
+          "bonus_workforce": 280,
+          "workforce_limit": 560,
+          "automated_workforce_limit": 559,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "55": {
+          "type": "hunter_gatherer",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "66": {
+          "type": "cruise_passenger_unemployment",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "52": {
+          "type": "squire",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "49": {
+          "type": "assimilation",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "62": {
+          "type": "hive_basic_agri_drone_lithoid",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "53": {
+          "type": "maintenance_drone",
+          "automated_workforce": -1,
+          "workforce": 4691,
+          "max_workforce": -1,
+          "bonus_workforce": 1174,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "61": {
+          "type": "hive_basic_agri_drone",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "76": {
+          "type": "technician_drone",
+          "automated_workforce": 0,
+          "workforce": 600,
+          "max_workforce": 600,
+          "bonus_workforce": 300,
+          "workforce_limit": 600,
+          "automated_workforce_limit": 600,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "47": {
+          "type": "servant",
+          "automated_workforce": -1,
+          "workforce": -1,
+          "max_workforce": -1,
+          "bonus_workforce": 1,
+          "workforce_limit": -1,
+          "automated_workforce_limit": -1,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "16777547": {
+          "type": "polytechnic_drone",
+          "automated_workforce": 0,
+          "workforce": 600,
+          "max_workforce": 600,
+          "bonus_workforce": 180,
+          "workforce_limit": 600,
+          "automated_workforce_limit": 599,
+          "planet": 0,
+          "pop_group": 4294967295
+        },
+        "73": {
+          "type": "patrol_drone",
+          "automated_workforce": 0,
+          "workforce": 253,
+          "max_workforce": 400,
+          "bonus_workforce": 75.9,
+          "workforce_limit": 253,
+          "automated_workforce_limit": 399,
+          "planet": 0,
+          "pop_group": 4294967295
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "mother_colony_full",
+      "actual": {
+        "kill_pop": "0.01.01",
+        "last_building_changed": "building_energy_grid",
+        "last_district_changed": "district_hive",
+        "army_build_queue": 1,
+        "governor": 33554514,
+        "pop_to_kill_from_devastation": 3825205353,
+        "stability": 82.78,
+        "crime": 0,
+        "amenities": 39873.75,
+        "amenities_usage": 4924.85,
+        "free_amenities": 34948.9,
+        "free_housing": 7375,
+        "total_housing": 21900,
+        "housing_usage": 14525,
+        "employable_pops": 14525,
+        "civilian": 4692,
+        "num_sapient_pops": 14525,
+        "manual_designation_changed_date": "2200.01.30",
+        "final_designation": "col_capital_hive",
+        "designation": "col_capital_hive",
+        "ascension_tier": 0,
+        "pop_groups": [
+          2566914166,
+          855638018,
+          3825205353
+        ],
+        "pop_jobs": [
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          16777547,
+          544,
+          16778107
+        ],
+        "districts": [
+          1,
+          2,
+          3,
+          41
+        ],
+        "buildings": [],
+        "actual_pop_sum": 14525
+      },
+      "expected": {
+        "kill_pop": "0.01.01",
+        "last_building_changed": "building_energy_grid",
+        "last_district_changed": "district_hive",
+        "army_build_queue": 1,
+        "governor": 33554514,
+        "pop_to_kill_from_devastation": 3825205353,
+        "stability": 82.78,
+        "crime": 0,
+        "amenities": 39873.75,
+        "amenities_usage": 4924.85,
+        "free_amenities": 34948.9,
+        "free_housing": 7375,
+        "total_housing": 21900,
+        "housing_usage": 14525,
+        "employable_pops": 14525,
+        "civilian": 4692,
+        "num_sapient_pops": 14525,
+        "manual_designation_changed_date": "2200.01.30",
+        "final_designation": "col_capital_hive",
+        "designation": "col_capital_hive",
+        "ascension_tier": 0,
+        "pop_groups": [
+          2566914166,
+          855638018,
+          3825205353
+        ],
+        "pop_jobs": [
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          16777547,
+          544,
+          16778107
+        ],
+        "districts": [
+          1,
+          2,
+          3,
+          41
+        ],
+        "buildings": [],
+        "actual_pop_sum": 14525
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "districts",
+      "actual": {
+        "1": {
+          "type": "district_hive",
+          "level": 15,
+          "zones": [
+            0,
+            2,
+            3
+          ]
+        },
+        "2": {
+          "type": "district_geothermal",
+          "level": 2,
+          "zones": [
+            44
+          ]
+        },
+        "3": {
+          "type": "district_melting",
+          "level": 6,
+          "zones": [
+            4294967295
+          ]
+        },
+        "13": {
+          "type": "district_generator",
+          "level": 6,
+          "zones": [
+            4294967295
+          ]
+        },
+        "14": {
+          "type": "district_mining",
+          "level": 2,
+          "zones": [
+            137
+          ]
+        },
+        "41": {
+          "type": "district_polytechnic",
+          "level": 3,
+          "zones": [
+            59
+          ]
+        },
+        "56": {
+          "type": "district_ark_city",
+          "level": 1,
+          "zones": [
+            45,
+            4294967295,
+            4294967295
+          ]
+        },
+        "16777296": {
+          "type": "district_city",
+          "level": 10,
+          "zones": [
+            10,
+            11,
+            16777228
+          ]
+        },
+        "107": {
+          "type": "district_ark_city",
+          "level": 8,
+          "zones": [
+            77,
+            4294967295,
+            4294967295
+          ]
+        }
+      },
+      "expected": {
+        "1": {
+          "type": "district_hive",
+          "level": 15,
+          "zones": [
+            0,
+            2,
+            3
+          ]
+        },
+        "2": {
+          "type": "district_geothermal",
+          "level": 2,
+          "zones": [
+            44
+          ]
+        },
+        "3": {
+          "type": "district_melting",
+          "level": 6,
+          "zones": [
+            4294967295
+          ]
+        },
+        "13": {
+          "type": "district_generator",
+          "level": 6,
+          "zones": [
+            4294967295
+          ]
+        },
+        "14": {
+          "type": "district_mining",
+          "level": 2,
+          "zones": [
+            137
+          ]
+        },
+        "41": {
+          "type": "district_polytechnic",
+          "level": 3,
+          "zones": [
+            59
+          ]
+        },
+        "56": {
+          "type": "district_ark_city",
+          "level": 1,
+          "zones": [
+            45,
+            4294967295,
+            4294967295
+          ]
+        },
+        "16777296": {
+          "type": "district_city",
+          "level": 10,
+          "zones": [
+            10,
+            11,
+            16777228
+          ]
+        },
+        "107": {
+          "type": "district_ark_city",
+          "level": 8,
+          "zones": [
+            77,
+            4294967295,
+            4294967295
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "situations",
+      "actual": {
+        "117440518": {
+          "country": 0,
+          "type": "situation_observation_insight",
+          "progress": 45,
+          "last_month_progress": 1,
+          "approach": "approach_study_insights",
+          "stage": 0,
+          "target": {
+            "type": "country",
+            "id": 0,
+            "opener_id": 4294967295
+          },
+          "variables": {}
+        }
+      },
+      "expected": {
+        "117440518": {
+          "country": 0,
+          "type": "situation_observation_insight",
+          "progress": 45,
+          "last_month_progress": 1,
+          "approach": "approach_study_insights",
+          "stage": 0,
+          "target": {
+            "type": "country",
+            "id": 0,
+            "opener_id": 4294967295
+          },
+          "variables": {}
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "event_targets",
+      "actual": [
+        {
+          "type": "planet",
+          "id": 1,
+          "opener_id": 4294967295,
+          "name": "eep_core0"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_core_actor1"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_task_actor84"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_task_actor53"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_task_actor112"
+        }
+      ],
+      "expected": [
+        {
+          "type": "planet",
+          "id": 1,
+          "opener_id": 4294967295,
+          "name": "eep_core0"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_core_actor1"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_task_actor84"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_task_actor53"
+        },
+        {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "name": "eep_task_actor112"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_owner",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_controller",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_colony",
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_planet_size",
+      "actual": 20,
+      "expected": 20,
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_planet_class",
+      "actual": "pc_volcanic",
+      "expected": "pc_volcanic",
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_variables",
+      "actual": {
+        "eep_actual_pop": 14504,
+        "eep_capacity_value": 10,
+        "eep_free_districts": 4
+      },
+      "expected": {
+        "eep_actual_pop": 14504,
+        "eep_capacity_value": 10,
+        "eep_free_districts": 4
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_flags",
+      "actual": {
+        "uncapped_mining_districts": 63574104,
+        "uncapped_farming_districts": 63574104,
+        "eep_core": 62808000,
+        "uncapped_generator_districts": 63574104
+      },
+      "expected": {
+        "uncapped_mining_districts": 63574104,
+        "uncapped_farming_districts": 63574104,
+        "eep_core": 62808000,
+        "uncapped_generator_districts": 63574104
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_modifiers",
+      "actual": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"thought_police_established\"\n\t\t\t\t\t\tdays=174\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=10\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t",
+      "expected": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"thought_police_established\"\n\t\t\t\t\t\tdays=174\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=10\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t",
+      "status": "PASS"
+    },
+    {
+      "check": "physical_mother_deposits",
+      "actual": [
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        1884
+      ],
+      "expected": [
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        1884
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "country_stockpile",
+      "actual": {
+        "energy": 10110.17716,
+        "minerals": 9862.18821,
+        "food": 14154,
+        "physics_research": 183.99772,
+        "society_research": 17536.7421,
+        "engineering_research": 105.99962,
+        "influence": 603.5,
+        "unity": 11581.51891,
+        "trade": 5006.64472,
+        "alloys": 2671.21864,
+        "volatile_motes": 277.8692,
+        "exotic_gases": 1995.9547,
+        "rare_crystals": 1035.14158,
+        "sr_dark_matter": 112,
+        "minor_artifacts": 765.2,
+        "astral_threads": 98.95,
+        "menace": 2095
+      },
+      "expected": {
+        "energy": 10110.17716,
+        "minerals": 9862.18821,
+        "food": 14154,
+        "physics_research": 183.99772,
+        "society_research": 17536.7421,
+        "engineering_research": 105.99962,
+        "influence": 603.5,
+        "unity": 11581.51891,
+        "trade": 5006.64472,
+        "alloys": 2671.21864,
+        "volatile_motes": 277.8692,
+        "exotic_gases": 1995.9547,
+        "rare_crystals": 1035.14158,
+        "sr_dark_matter": 112,
+        "minor_artifacts": 765.2,
+        "astral_threads": 98.95,
+        "menace": 2095
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "country_variables",
+      "actual": {
+        "eep_c": 34,
+        "eep_c_remainder": 2,
+        "eep_chunks": 30,
+        "eep_core_state": 0,
+        "eep_crisis": 3,
+        "eep_d": 10,
+        "eep_delta": 300,
+        "eep_entitled": 500,
+        "eep_fleet_stage": 3,
+        "eep_g": 34,
+        "eep_g_remainder": 4,
+        "eep_last_capacity": 4,
+        "eep_last_manufactured": 300,
+        "eep_last_return": 102,
+        "eep_made": 500,
+        "eep_previous_capacity": 6,
+        "eep_psi": 1,
+        "eep_stage": 1,
+        "eep_tasks": 1,
+        "eep_waiting": 0,
+        "eep_worlds": 2
+      },
+      "expected": {
+        "eep_c": 34,
+        "eep_c_remainder": 2,
+        "eep_chunks": 30,
+        "eep_core_state": 0,
+        "eep_crisis": 3,
+        "eep_d": 10,
+        "eep_delta": 300,
+        "eep_entitled": 500,
+        "eep_fleet_stage": 3,
+        "eep_g": 34,
+        "eep_g_remainder": 4,
+        "eep_last_capacity": 4,
+        "eep_last_manufactured": 300,
+        "eep_last_return": 102,
+        "eep_made": 500,
+        "eep_previous_capacity": 6,
+        "eep_psi": 1,
+        "eep_stage": 1,
+        "eep_tasks": 1,
+        "eep_waiting": 0,
+        "eep_worlds": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "country_flags",
+      "actual": {
+        "eep_initialized": 62808000,
+        "eep_first_notice": 63052800,
+        "eep_psi_notice": 63497760,
+        "eep_fleet_notice": 63540240
+      },
+      "expected": {
+        "eep_initialized": 62808000,
+        "eep_first_notice": 63052800,
+        "eep_psi_notice": 63497760,
+        "eep_fleet_notice": 63540240
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "country_native",
+      "actual": {
+        "military_power": 15935.20312,
+        "economy_power": 2269.98712,
+        "tech_power": 5270.0,
+        "fleet_size": 404,
+        "used_naval_capacity": 404,
+        "empire_size": 145,
+        "num_sapient_pops": 14525,
+        "capital": 0,
+        "founder_species_ref": 105,
+        "personality": "became_the_crisis",
+        "ruler": 167772189,
+        "type": "default",
+        "employable_pops": 14525
+      },
+      "expected": {
+        "military_power": 15935.20312,
+        "economy_power": 2269.98712,
+        "tech_power": 5270.0,
+        "fleet_size": 404,
+        "used_naval_capacity": 404,
+        "empire_size": 145,
+        "num_sapient_pops": 14525,
+        "capital": 0,
+        "founder_species_ref": 105,
+        "personality": "became_the_crisis",
+        "ruler": 167772189,
+        "type": "default",
+        "employable_pops": 14525
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "country_ascension_perks",
+      "actual": [
+        "ap_technological_ascendancy",
+        "ap_one_vision",
+        "ap_mind_over_matter",
+        "ap_become_the_crisis"
+      ],
+      "expected": [
+        "ap_technological_ascendancy",
+        "ap_one_vision",
+        "ap_mind_over_matter",
+        "ap_become_the_crisis"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "country_traditions",
+      "actual": [
+        "tr_discovery_adopt",
+        "tr_discovery_to_boldly_go",
+        "tr_discovery_databank_uplinks",
+        "tr_discovery_science_division",
+        "tr_discovery_polytechnic_education",
+        "tr_discovery_faith_in_science",
+        "tr_discovery_finish",
+        "tr_prosperity_adopt",
+        "tr_prosperity_administrative_operations",
+        "tr_prosperity_pursuit_of_profit",
+        "tr_prosperity_sct",
+        "tr_prosperity_public_works",
+        "tr_prosperity_interstellar_franchising",
+        "tr_prosperity_finish",
+        "tr_supremacy_adopt",
+        "tr_supremacy_master_shipwrights",
+        "tr_supremacy_fleet_logistical_corps",
+        "tr_supremacy_overwhelming_force",
+        "tr_supremacy_war_games",
+        "tr_supremacy_great_game",
+        "tr_supremacy_finish",
+        "tr_psionics_shroud_adopt",
+        "tr_psionics_shroud_psi_corps",
+        "tr_psionics_shroud_great_awakening",
+        "tr_psionics_shroud_telekinesis",
+        "tr_psionics_shroud_clairvoyance",
+        "tr_psionics_shroud_psychometry",
+        "tr_psionics_shroud_finish",
+        "tr_expansion_adopt",
+        "tr_expansion_colonization_fever"
+      ],
+      "expected": [
+        "tr_discovery_adopt",
+        "tr_discovery_to_boldly_go",
+        "tr_discovery_databank_uplinks",
+        "tr_discovery_science_division",
+        "tr_discovery_polytechnic_education",
+        "tr_discovery_faith_in_science",
+        "tr_discovery_finish",
+        "tr_prosperity_adopt",
+        "tr_prosperity_administrative_operations",
+        "tr_prosperity_pursuit_of_profit",
+        "tr_prosperity_sct",
+        "tr_prosperity_public_works",
+        "tr_prosperity_interstellar_franchising",
+        "tr_prosperity_finish",
+        "tr_supremacy_adopt",
+        "tr_supremacy_master_shipwrights",
+        "tr_supremacy_fleet_logistical_corps",
+        "tr_supremacy_overwhelming_force",
+        "tr_supremacy_war_games",
+        "tr_supremacy_great_game",
+        "tr_supremacy_finish",
+        "tr_psionics_shroud_adopt",
+        "tr_psionics_shroud_psi_corps",
+        "tr_psionics_shroud_great_awakening",
+        "tr_psionics_shroud_telekinesis",
+        "tr_psionics_shroud_clairvoyance",
+        "tr_psionics_shroud_psychometry",
+        "tr_psionics_shroud_finish",
+        "tr_expansion_adopt",
+        "tr_expansion_colonization_fever"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "country_government",
+      "actual": "\n\t\t\ttype=\"gov_hive_mind\"\n\t\t\tauthority=\"auth_hive_mind\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_hive_scorched_earth\"\n\t\t\t\t\"civic_hive_ascetic\"\n\t\t\t\t\"civic_hive_toxic_baths\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t67108892 67108893 33554466 36 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_psionic_supremacy_shroud\"\n\t\t\tcouncil_agenda_progress=7512\n\t\t\tcouncil_agenda_cooldowns=\n\t\t\t{\n\t\t\t\tcouncil_agenda=\"agenda_gestalt_purge_traits\"\n\t\t\t\tstart_date=\t\t\t\t\"2306.04.01\"\n\t\t\t}\n\t\t\tunlocked_civic_council_slots=4\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+      "expected": "\n\t\t\ttype=\"gov_hive_mind\"\n\t\t\tauthority=\"auth_hive_mind\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_hive_scorched_earth\"\n\t\t\t\t\"civic_hive_ascetic\"\n\t\t\t\t\"civic_hive_toxic_baths\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t67108892 67108893 33554466 36 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_psionic_supremacy_shroud\"\n\t\t\tcouncil_agenda_progress=7512\n\t\t\tcouncil_agenda_cooldowns=\n\t\t\t{\n\t\t\t\tcouncil_agenda=\"agenda_gestalt_purge_traits\"\n\t\t\t\tstart_date=\t\t\t\t\"2306.04.01\"\n\t\t\t}\n\t\t\tunlocked_civic_council_slots=4\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+      "status": "PASS"
+    },
+    {
+      "check": "country_completed_technologies",
+      "actual": [
+        "tech_solar_panel_network",
+        "tech_corvettes",
+        "tech_starbase_1",
+        "tech_starbase_2",
+        "tech_assault_armies",
+        "tech_ship_armor_1",
+        "tech_thrusters_1",
+        "tech_space_defense_station_1",
+        "tech_basic_industry",
+        "tech_mechanized_mining",
+        "tech_space_construction",
+        "tech_mass_drivers_1",
+        "tech_flak_batteries_1",
+        "tech_missiles_1",
+        "tech_space_exploration",
+        "tech_basic_science_lab_1",
+        "tech_fission_power",
+        "tech_reactor_boosters_1",
+        "tech_shields_1",
+        "tech_power_plant_1",
+        "tech_hyper_drive_1",
+        "tech_lasers_1",
+        "tech_pd_tracking_1",
+        "tech_planetary_defenses",
+        "tech_industrial_farming",
+        "tech_hydroponics",
+        "tech_colonization_1",
+        "tech_planetary_government",
+        "tech_hive_node",
+        "tech_mining_1",
+        "tech_genome_mapping",
+        "tech_space_mining_1",
+        "tech_physics_1",
+        "tech_power_plant_2",
+        "tech_doctrine_fleet_size_1",
+        "tech_space_mining_2",
+        "tech_power_hub_1",
+        "tech_planetary_unification",
+        "tech_mineral_purification_1",
+        "tech_space_science_1",
+        "tech_bio_reactor",
+        "tech_fusion_power",
+        "tech_mass_drivers_2",
+        "tech_eco_simulation",
+        "tech_automated_exploration",
+        "tech_powered_exoskeletons",
+        "tech_ground_defense_planning",
+        "tech_volatile_motes",
+        "tech_strike_craft_1",
+        "tech_reactor_boosters_2",
+        "tech_engineering_1",
+        "tech_colonial_centralization",
+        "tech_space_science_2",
+        "tech_missiles_2",
+        "tech_shields_2",
+        "tech_terrestrial_sculpting",
+        "tech_cold_fusion_power",
+        "tech_doctrine_navy_size_1",
+        "tech_integrated_cybernetics",
+        "tech_power_plant_3",
+        "tech_cultural_heritage",
+        "tech_sensors_2",
+        "tech_society_1",
+        "tech_space_mining_3",
+        "tech_administrative_ai",
+        "tech_adaptive_bureaucracy",
+        "tech_destroyers",
+        "tech_ftl_inhibitor",
+        "tech_cloning",
+        "tech_combat_computers_1",
+        "tech_space_whale_weapon_1",
+        "tech_starbase_3",
+        "tech_interstellar_fleet_traditions",
+        "tech_alloys_1",
+        "tech_physics_2",
+        "tech_rare_crystals",
+        "tech_volcano",
+        "tech_astral_harvesting",
+        "tech_deep_sinkhole",
+        "tech_gravity_wells",
+        "tech_mineral_purification_2",
+        "tech_vitality_boosters",
+        "tech_federation_code",
+        "tech_mass_drivers_3",
+        "tech_sensors_3",
+        "tech_doctrine_fleet_size_2",
+        "tech_global_defense_grid",
+        "tech_dyson_swarm",
+        "tech_mass_drivers_4",
+        "tech_doctrine_navy_size_2",
+        "tech_corvette_hull_1",
+        "tech_detection_array",
+        "tech_bio_reactor_2",
+        "tech_space_science_3",
+        "tech_auxiliary_fire_control",
+        "tech_arcane_deciphering",
+        "tech_cruisers",
+        "tech_gravity_snare_capacity_1",
+        "tech_torpedoes_1",
+        "tech_space_science_4",
+        "tech_corvette_hull_2",
+        "tech_deep_space_citadel",
+        "tech_pd_tracking_2",
+        "tech_cryostasis_1",
+        "tech_strike_craft_2",
+        "tech_lasers_2",
+        "tech_unity_of_purpose",
+        "tech_exotic_gases",
+        "tech_hyper_drive_2",
+        "tech_volcanic_terraforming",
+        "tech_basic_science_lab_2",
+        "tech_space_mining_4",
+        "tech_hive_cluster",
+        "tech_corvette_build_speed",
+        "tech_power_hub_2",
+        "tech_modular_engineering",
+        "tech_psionic_theory",
+        "tech_power_plant_4",
+        "tech_engineering_2",
+        "tech_society_2",
+        "tech_mine_rare_crystals",
+        "tech_basic_science_lab_3",
+        "tech_assembly_pattern",
+        "tech_lasers_3",
+        "tech_gene_tailoring",
+        "tech_mining_2",
+        "tech_afterburners_1",
+        "tech_ship_armor_2",
+        "tech_colonization_2",
+        "tech_hyper_relays",
+        "tech_autocannons_1",
+        "tech_physics_3",
+        "tech_mining_drone_weapon_1",
+        "tech_alloys_2",
+        "tech_mine_volatile_motes",
+        "tech_society_3",
+        "tech_housing_1",
+        "tech_plasma_1",
+        "tech_destroyer_build_speed",
+        "tech_assisted_detection",
+        "tech_ship_armor_3",
+        "tech_disruptors_1",
+        "tech_thrusters_2",
+        "tech_space_science_5",
+        "tech_orbital_arc_furnace",
+        "tech_shields_3",
+        "tech_experimental_subspace_navigation",
+        "tech_gravity_snare_capacity_2",
+        "tech_starbase_4",
+        "tech_crystal_armor_1",
+        "tech_engineering_3",
+        "tech_gravity_snare_capacity_3",
+        "tech_industrial_storm_protection",
+        "tech_self_aware_logic",
+        "tech_storm_prediction_1",
+        "tech_defense_platform_hull_1",
+        "tech_ship_hull_storm_breaker_1",
+        "tech_combat_computers_2",
+        "tech_advanced_metallurgy_1",
+        "tech_cloaking_1",
+        "tech_armor_hardeners_1",
+        "tech_plasma_2",
+        "tech_swarmer_missiles_1",
+        "tech_shield_rechargers_1",
+        "tech_ship_storm_weapons_1",
+        "tech_pd_tracking_3",
+        "tech_torpedoes_2",
+        "tech_cryostasis_2",
+        "tech_flak_batteries_2",
+        "tech_planetary_shield_generator",
+        "tech_advanced_industrial_storm_protection",
+        "tech_hyper_drive_3",
+        "tech_node_culling_1",
+        "tech_housing_2",
+        "tech_archaeostudies",
+        "tech_cloaking_2",
+        "tech_ship_storm_weapons_2",
+        "tech_shield_hardeners_1",
+        "tech_galactic_administration",
+        "tech_mining_3",
+        "tech_mine_zro",
+        "tech_mine_exotic_gases",
+        "tech_disruptors_2",
+        "tech_ship_hull_storm_breaker_2",
+        "tech_missiles_3",
+        "tech_wormhole_stabilization",
+        "tech_antimatter_power",
+        "tech_ecological_adaptation",
+        "tech_reactor_boosters_3",
+        "tech_alien_cloning",
+        "tech_improved_incubators",
+        "tech_storm_prediction_2",
+        "tech_storm_manipulation",
+        "tech_gene_banks",
+        "tech_shields_4",
+        "tech_battleships",
+        "tech_archaeo_mass_drivers",
+        "tech_metabolic_gases",
+        "tech_plasma_3",
+        "tech_controlled_mutations",
+        "tech_space_mining_5",
+        "tech_thrusters_bio_integration",
+        "tech_galactic_ambitions",
+        "tech_colonial_bureaucracy",
+        "tech_massive_glacier",
+        "tech_autocannons_2",
+        "tech_interstellar_campaigns",
+        "tech_colonization_3",
+        "tech_thrusters_3",
+        "tech_archaeoshield"
+      ],
+      "expected": [
+        "tech_solar_panel_network",
+        "tech_corvettes",
+        "tech_starbase_1",
+        "tech_starbase_2",
+        "tech_assault_armies",
+        "tech_ship_armor_1",
+        "tech_thrusters_1",
+        "tech_space_defense_station_1",
+        "tech_basic_industry",
+        "tech_mechanized_mining",
+        "tech_space_construction",
+        "tech_mass_drivers_1",
+        "tech_flak_batteries_1",
+        "tech_missiles_1",
+        "tech_space_exploration",
+        "tech_basic_science_lab_1",
+        "tech_fission_power",
+        "tech_reactor_boosters_1",
+        "tech_shields_1",
+        "tech_power_plant_1",
+        "tech_hyper_drive_1",
+        "tech_lasers_1",
+        "tech_pd_tracking_1",
+        "tech_planetary_defenses",
+        "tech_industrial_farming",
+        "tech_hydroponics",
+        "tech_colonization_1",
+        "tech_planetary_government",
+        "tech_hive_node",
+        "tech_mining_1",
+        "tech_genome_mapping",
+        "tech_space_mining_1",
+        "tech_physics_1",
+        "tech_power_plant_2",
+        "tech_doctrine_fleet_size_1",
+        "tech_space_mining_2",
+        "tech_power_hub_1",
+        "tech_planetary_unification",
+        "tech_mineral_purification_1",
+        "tech_space_science_1",
+        "tech_bio_reactor",
+        "tech_fusion_power",
+        "tech_mass_drivers_2",
+        "tech_eco_simulation",
+        "tech_automated_exploration",
+        "tech_powered_exoskeletons",
+        "tech_ground_defense_planning",
+        "tech_volatile_motes",
+        "tech_strike_craft_1",
+        "tech_reactor_boosters_2",
+        "tech_engineering_1",
+        "tech_colonial_centralization",
+        "tech_space_science_2",
+        "tech_missiles_2",
+        "tech_shields_2",
+        "tech_terrestrial_sculpting",
+        "tech_cold_fusion_power",
+        "tech_doctrine_navy_size_1",
+        "tech_integrated_cybernetics",
+        "tech_power_plant_3",
+        "tech_cultural_heritage",
+        "tech_sensors_2",
+        "tech_society_1",
+        "tech_space_mining_3",
+        "tech_administrative_ai",
+        "tech_adaptive_bureaucracy",
+        "tech_destroyers",
+        "tech_ftl_inhibitor",
+        "tech_cloning",
+        "tech_combat_computers_1",
+        "tech_space_whale_weapon_1",
+        "tech_starbase_3",
+        "tech_interstellar_fleet_traditions",
+        "tech_alloys_1",
+        "tech_physics_2",
+        "tech_rare_crystals",
+        "tech_volcano",
+        "tech_astral_harvesting",
+        "tech_deep_sinkhole",
+        "tech_gravity_wells",
+        "tech_mineral_purification_2",
+        "tech_vitality_boosters",
+        "tech_federation_code",
+        "tech_mass_drivers_3",
+        "tech_sensors_3",
+        "tech_doctrine_fleet_size_2",
+        "tech_global_defense_grid",
+        "tech_dyson_swarm",
+        "tech_mass_drivers_4",
+        "tech_doctrine_navy_size_2",
+        "tech_corvette_hull_1",
+        "tech_detection_array",
+        "tech_bio_reactor_2",
+        "tech_space_science_3",
+        "tech_auxiliary_fire_control",
+        "tech_arcane_deciphering",
+        "tech_cruisers",
+        "tech_gravity_snare_capacity_1",
+        "tech_torpedoes_1",
+        "tech_space_science_4",
+        "tech_corvette_hull_2",
+        "tech_deep_space_citadel",
+        "tech_pd_tracking_2",
+        "tech_cryostasis_1",
+        "tech_strike_craft_2",
+        "tech_lasers_2",
+        "tech_unity_of_purpose",
+        "tech_exotic_gases",
+        "tech_hyper_drive_2",
+        "tech_volcanic_terraforming",
+        "tech_basic_science_lab_2",
+        "tech_space_mining_4",
+        "tech_hive_cluster",
+        "tech_corvette_build_speed",
+        "tech_power_hub_2",
+        "tech_modular_engineering",
+        "tech_psionic_theory",
+        "tech_power_plant_4",
+        "tech_engineering_2",
+        "tech_society_2",
+        "tech_mine_rare_crystals",
+        "tech_basic_science_lab_3",
+        "tech_assembly_pattern",
+        "tech_lasers_3",
+        "tech_gene_tailoring",
+        "tech_mining_2",
+        "tech_afterburners_1",
+        "tech_ship_armor_2",
+        "tech_colonization_2",
+        "tech_hyper_relays",
+        "tech_autocannons_1",
+        "tech_physics_3",
+        "tech_mining_drone_weapon_1",
+        "tech_alloys_2",
+        "tech_mine_volatile_motes",
+        "tech_society_3",
+        "tech_housing_1",
+        "tech_plasma_1",
+        "tech_destroyer_build_speed",
+        "tech_assisted_detection",
+        "tech_ship_armor_3",
+        "tech_disruptors_1",
+        "tech_thrusters_2",
+        "tech_space_science_5",
+        "tech_orbital_arc_furnace",
+        "tech_shields_3",
+        "tech_experimental_subspace_navigation",
+        "tech_gravity_snare_capacity_2",
+        "tech_starbase_4",
+        "tech_crystal_armor_1",
+        "tech_engineering_3",
+        "tech_gravity_snare_capacity_3",
+        "tech_industrial_storm_protection",
+        "tech_self_aware_logic",
+        "tech_storm_prediction_1",
+        "tech_defense_platform_hull_1",
+        "tech_ship_hull_storm_breaker_1",
+        "tech_combat_computers_2",
+        "tech_advanced_metallurgy_1",
+        "tech_cloaking_1",
+        "tech_armor_hardeners_1",
+        "tech_plasma_2",
+        "tech_swarmer_missiles_1",
+        "tech_shield_rechargers_1",
+        "tech_ship_storm_weapons_1",
+        "tech_pd_tracking_3",
+        "tech_torpedoes_2",
+        "tech_cryostasis_2",
+        "tech_flak_batteries_2",
+        "tech_planetary_shield_generator",
+        "tech_advanced_industrial_storm_protection",
+        "tech_hyper_drive_3",
+        "tech_node_culling_1",
+        "tech_housing_2",
+        "tech_archaeostudies",
+        "tech_cloaking_2",
+        "tech_ship_storm_weapons_2",
+        "tech_shield_hardeners_1",
+        "tech_galactic_administration",
+        "tech_mining_3",
+        "tech_mine_zro",
+        "tech_mine_exotic_gases",
+        "tech_disruptors_2",
+        "tech_ship_hull_storm_breaker_2",
+        "tech_missiles_3",
+        "tech_wormhole_stabilization",
+        "tech_antimatter_power",
+        "tech_ecological_adaptation",
+        "tech_reactor_boosters_3",
+        "tech_alien_cloning",
+        "tech_improved_incubators",
+        "tech_storm_prediction_2",
+        "tech_storm_manipulation",
+        "tech_gene_banks",
+        "tech_shields_4",
+        "tech_battleships",
+        "tech_archaeo_mass_drivers",
+        "tech_metabolic_gases",
+        "tech_plasma_3",
+        "tech_controlled_mutations",
+        "tech_space_mining_5",
+        "tech_thrusters_bio_integration",
+        "tech_galactic_ambitions",
+        "tech_colonial_bureaucracy",
+        "tech_massive_glacier",
+        "tech_autocannons_2",
+        "tech_interstellar_campaigns",
+        "tech_colonization_3",
+        "tech_thrusters_3",
+        "tech_archaeoshield"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "country_research_queues",
+      "actual": {
+        "physics_queue": "\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=7438.09267\n\t\t\t\t\ttechnology=\"tech_cloaking_3\"\n\t\t\t\t\tdate=\t\t\t\t\t\"2284.07.02\"\n\t\t\t\t}\n\t\t\t",
+        "society_queue": "\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=676.49582\n\t\t\t\t\tspecial_project=30\n\t\t\t\t\tdate=\t\t\t\t\t\"2288.10.02\"\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=338.24791\n\t\t\t\t\ttechnology=\"tech_food_processing_1\"\n\t\t\t\t\tdate=\t\t\t\t\t\"2288.09.02\"\n\t\t\t\t}\n\t\t\t",
+        "engineering_queue": "\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=1483.9946\n\t\t\t\t\ttechnology=\"tech_mass_accelerator_1\"\n\t\t\t\t\tdate=\t\t\t\t\t\"2288.02.02\"\n\t\t\t\t}\n\t\t\t"
+      },
+      "expected": {
+        "physics_queue": "\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=7438.09267\n\t\t\t\t\ttechnology=\"tech_cloaking_3\"\n\t\t\t\t\tdate=\t\t\t\t\t\"2284.07.02\"\n\t\t\t\t}\n\t\t\t",
+        "society_queue": "\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=676.49582\n\t\t\t\t\tspecial_project=30\n\t\t\t\t\tdate=\t\t\t\t\t\"2288.10.02\"\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=338.24791\n\t\t\t\t\ttechnology=\"tech_food_processing_1\"\n\t\t\t\t\tdate=\t\t\t\t\t\"2288.09.02\"\n\t\t\t\t}\n\t\t\t",
+        "engineering_queue": "\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tprogress=1483.9946\n\t\t\t\t\ttechnology=\"tech_mass_accelerator_1\"\n\t\t\t\t\tdate=\t\t\t\t\t\"2288.02.02\"\n\t\t\t\t}\n\t\t\t"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "foreign_population_total",
+      "actual": 110,
+      "expected": 110,
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": "2df3f8d36eb52f36553e852d2994cefe325c4f56eab7eb549c63026262dc5372",
+  "restored_sha256": "eb13b86104381095114222605b99d3d5737d7d2904fa0dfef1613727042c510b",
+  "limits": [
+    "Private carrier_binary_flags1?3 and dead colony binary_flags24 have unconfirmed meanings. Full-world equality remains FAIL; no broad field equality claimed.",
+    "Foreign colony3 promotions/jobs/cache changes retained, its total population stays unchanged."
+  ]
+}
