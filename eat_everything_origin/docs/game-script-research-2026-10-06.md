@@ -1,5 +1,11 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-07 模板与国家主体引用前提
+
+本机原生effects.log:854的modify_species/change_scoped_species在country范围实际改变本国人口模板，但此夹具不更新国家主体引用：131538的母星4700已为48，国家founder_species_ref仍3321888769，按owner.owner_main_species制造的新300也为3321888769。多数人口采用的新模板不能直接等同owner_main_species；该次模板期望FAIL及原始SAV已保留，不单凭这一前提未成立的测试认定生产缺陷。
+
+同文档:1437～1439提供country的change_dominant_species，change_all额外替换境内对应物种；原版shroud_shadows_scripted_effects.txt:95／4088把它与后续每个人口组change_species分别调用。测试62补change_dominant_species={species=新模板 change_all=no}并另在实际owner_main_species范围保存验证目标，才能证明“当前主体模板”前提。保持旧子模板及外国共享组后复测；这是Stellaris国家／模板接口事实，不外推CK3。
+
 ## 2026-10-07 首次报告决议与研究库存差异
 
 原版免费decision_end_population_control_gestalt同源同日复现相同三系库存差额，科研队列不变；下一真实日亦未发现队列结转或新增科技。此结论只定位到决议执行路径，不认证引擎内部扣费／上限机制。官方common/button_effects/example.txt明确This为选中对象、From为玩家国，建议allow使用is_scope_type保护多面板作用域；本机fleet_view.gui使用effectbuttonType／buttonText／tooltipText／effect的实际原生接口。计划据此改只读报告入口，界面显示与库存须实机验证。open_kaishek旧入口遗漏.gui，已先修复、全量静态检查通过并推送80ec924，之后才恢复Mod验收；解析通过不等于界面运行时认证。
@@ -122,7 +128,7 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 
 - SRC-39补充实测：运行224056启动manifest的scheduled_commands为空，启动后在隔离userdir新增commands_at_date.txt，原生重载2200.01.01存档后2200.01.04命令实际执行并暂停在2200.01.05；恢复存档另经原生保存确认4800人口、C/G0/D2。因此本机4.5.2可以在原生重载后重新读取新增定时文件，不推定无需重载的即时热读取。
 - 4.5.2原生载入UI在当前1024×768／0.75缩放会把长文件名截成省略号；精确OCR不能据此识别完整分组名。实际失败hive-scorched-natural23-source-ready后，仅把原生SAV原字节复制为hs-natural23-base，SHA-256保持，重新打开列表即可按完整短名成功载入2223.01.02。此是文件名与UI可读性限制，后续快照尽量使用短名；副本不是新游戏状态，原始meta／gamestate不得重写。源／副本哈希及原生载入回显保留。
-- 4.5.2方舟Carrier接口补充（源码／原生接口文档已核实，拒绝夹具实机待执行）：nomads_effects.txt:321的原生create_ship使用NAME_Champions_Forge_Arkship全局设计，对应船型carries_colony=pc_ark；effects.log:361～374说明create_colony默认yes，只对携带殖民地的舰船生效，无殖民地Carrier舰会被原生日清理。nomad_assimilate_displaced_pops_effect在:3189使用resettle_pop_group的PLANET指向方舟capital_scope，说明该参数名不能解读为只允许物理星球。pc_ark定义is_artificial_planet=yes；真实ship、colony和物理planet的前提必须分别查存档，不用普通星球改类替代方舟作用域测试。
+- 4.5.2方舟Carrier接口补充（2026-10-07实机修正）：nomads_effects.txt:321使用NAME_Champions_Forge_Arkship设计，但本机该设计是military_arkship_champions_forge，没有carries_colony=pc_ark；旧推断错误，122536实际前提FAIL已归档。真正military_arkship_tier_3在29_nomads_dlc_ships.txt:1130声明carries_colony=pc_ark，125146四段实机确认真实方舟、人工对象、殖民地及本族种子，39项底层拒绝／独立100搬迁检查通过。本次创建路径初始1000人口另有仅创建SAV，不推广为其它船型通则。effects.log:361～374说明create_colony默认yes；nomad_assimilate_displaced_pops_effect:3189的PLANET指向方舟capital_scope，因此参数名并不限物理星球。pc_ark人工属性使生产源星触发器拒绝，但rc.4通用决议potential没有筛选而仍显示入口，实际UI FAIL须另修复，不能用底层拒绝替代。上述均为Stellaris Carrier具体事实，不外推CK3。
 - 焦土与火山改造条件补充：本机infernals_1_events.txt:147～177的infernals.20是烈焰风暴轰炸按真实舰队规模生成凝聚的原版路径；:217起infernals.30／31的熔炉自动改造明确要求is_world_forger_empire及has_anvil_building，不能归为所有焦土国策的免费能力。普通continental→volcanic改造在01_advanced_terraform_links.txt:2609起要求allow_terraforming_into_volcanic，此旗标在infernals_crisis_events.txt:207的原版银河高温阶段3事件设置。吞噬之心不赠送这些条件；兼容测试应核对实际合法入口，不用控制台改类冒充原版改造完成。
 
 

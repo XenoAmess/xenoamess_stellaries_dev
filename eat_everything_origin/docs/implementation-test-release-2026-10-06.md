@@ -2,6 +2,24 @@
 
 ## 2026-10-07 rc.5：方舟决议显示修复（实施前方案）
 
+131538已正常退出forced=false／running_after=false并[原字节完整归档](evidence/runtime-development/20261007T131538Z/source-snapshot.json)：369份21708423字节；[Git原字节检查](evidence/rc5-boundaries-template-fixture-run-git-object-check-2026-10-07.json)371文件21840818字节通过。包含29项UI／21项恒星PASS、两份模板原始前提FAIL及最终日志。已按方案修复仅62夹具，新134726快照通过[强制包级检查](evidence/rc5-dominant-species-fixture-package-check-2026-10-07.json)29/29脚本、12DDS、十语言71键。新离线简中运行134815、PID24028、指纹7c7c6bd9b1201948af7537eae64ffff8f730cfc18786ce4b14ec0ec5db12a8c9，以原字节3fed06b9f018d2064c26ec6bb5741487d9e15948158d56d38d12e0206c7f07d4为来源；生产rc.5未变，模板正式通过待复查。
+
+已定位第二次模板前提问题：61确实建立旧模板47及外国100共享组，62建立新模板48并改本国4700人口，但没有更新国家dominant species；原生完成实际回迁旧47的100、制造原始3321888769的300，总母星5100、C/G20、D7、制造300、世界1。不能依据多数现存人口的模板就认定owner_main_species已经改变，也尚不能把该结果定为生产缺陷。原始前后SAV3fed06b9f018d2064c26ec6bb5741487d9e15948158d56d38d12e0206c7f07d4／77ae1ae5966c2c8e72831c30db3f3ba6ca3c443c1075405be4e39e90f115151b保留。
+
+修复方案（仅测试夹具，实施前）：62在modify_species之后调用本机effects.log:1437的change_dominant_species，species指向新模板、change_all=no以保留旧子模板；随后实际owner_main_species作用域保存独立验证目标。原版shroud_shadows_scripted_effects.txt:95／4088明确将国家change_dominant_species与各人口change_species分开，支持这项必要前提。停止131538并完整归档全部原始UI／恒星PASS及模板前提FAIL，新建夹具执行open_kaishek强制检查，生产rc.5保持。新运行可原字节载入3fed已准备基准，再62落实真正主体引用；保存核对owner_main_species验证目标等于新模板、源星旧模板及外国共享组不变，之后22完成。通过标准仍是旧子模板回迁100、新当前主体制造300、外国完整组及物种保持和一次结算，不过滤失败或降低期望。
+
+模板隔离分支追加步骤说明：21真实搬入种子后，61／62准备两个模板，再用已有32仅删除源星外族，避免实际等待肃清混入模板回迁／制造隔离；这项受控删除不作为自然肃清耗时或收益证据。保存原生基准确认源星只剩100旧子模板、母星当前模板及外国100共享旧模板，再22受控达到终点。验收读取实际模板ID及base_ref关系、旧模板真实回迁量、当前模板新增300、外国原始组／物种完整块保持；不强写类别或权利以凑结果。
+
+模板首次前提FAIL已保留：seed原生源星13全部是1200外族肃清人口，没有本族组；先61时无匹配组，因此没有old_template目标或外国共享组。62虽真实创建47并把本国母星4800人口换成该模板，不能冒称整套模板准备通过。原生SAVcb95927c10473e8d6557051272632a26bcc1d2b6ccbcdf6e4dfc811cef44c8de及rc5-template-initial-alien-only-setup-precondition-failure.json保留。纠正既有测试步骤为原字节恢复seed、先21真实搬100并启动，再61仅改源星该组／构造外国共享组，最后62改当前主体；必须先保存确认两个实际模板、来源与外国组都存在，再完成。生产及测试夹具均不修改。country.founder_species_ref是原始基线引用，不能单凭该值推断当前owner_main_species；需要已有62实际保存的当前模板目标和真实人口组引用联查。
+
+恒星拒绝后SAVb21e767f3fa19d7dff28aece18701c4203bd215655b1cac0359450cfb8044203；rc5-real-star-native-refusal-proof.json为21/21 PASS，原生is_star日志恰一次、实际pc_g_star、十组完整审计保持、无新任务及C/G0、D2、制造0、世界0保持。没有声称该恒星有本族种子。随后原字节恢复seed分支继续已有61／62模板夹具：保留源星旧子模板与外国共享模板、核对国家当前主体改变后的真实引用，再通过21／22受控完成比较回迁／制造；受控改模板与完成进度不进入自然飞升／耗时结论，外国完整人口块必须保持，不只看数量。
+
+恒星65前提实际SAV31af899b88285bac3e86b87bfca5007886c7b82e5718ebe2b2b2bbfd0982320d：目标physical3／colony14、真实pc_g_star，原生改类已清空该殖民地pop_groups，实际人口0；旧缓存employable_pops仍100不能当实际人口。此分支只认证真实恒星对象拒绝及拒绝前后保持，不能声称有100本族种子的恒星，或单独隔离恒星类别谓词。继续66原生is_star前提日志与全部审计比较。
+
+rc.5真实方舟／合法源星／母星简中界面回归已通过29/29范围检查：方舟显示1.1K、规模9且决议无吞星，无女王按钮；普通EEP-UI-Q20显示吞星入口而无女王按钮；EEP-Core无吞星且有觐见女王按钮。前后两份独立原生保存SHA均为39ea7a58e7e791f7e0c1318d11aedb062fa16a7cfa5b67e697a52e859cf66d1a，全部十组审计及额外舰船／舰队／舰载殖民地／人口组完整块保持。原图／OCR、动作、SAV和rc5-real-ark-source-core-native-ui-proof.json均在131538运行，待正常退出后整体不可变归档。此为界面修复范围PASS，完整33项仍在继续。
+
+131538启动过渡期间一次F12未产生新图片，随后重试得到原版欢迎窗口并关闭。长来源名在原生载入列表截断，严格OCR守卫两次拒绝；复制同一原始SAV为短别名ark后，取消／重新开启列表刷新，原生载入成功且来源SHA仍为a007e322fe6c5e0be2007c753f79bd1c5a164ebeb762179200794c1382b24043。没有修改SAV、放宽守卫或用旧画面当新截图。七项rc.5候选图库本地来源／尺寸／哈希检查通过，状态仍COLLECTING，未初始化Steam。
+
 新候选已实现，两条筛选分别为is_artificial=no、can_have_habitable_deposits=yes。[生产强制包级检查](evidence/rc5-production-package-check-2026-10-07.json)18/18及[新夹具检查](evidence/rc5-fixture-package-check-2026-10-07.json)29/29脚本通过，两者12DDS、十语言71键；其它九语言静态校验通过，运行时不在范围内。[逐文件差异](evidence/rc5-production-file-delta-2026-10-07.json)确认41个生产文件中只修改通用决议及descriptor版本，其余39个原字节保持。新隔离简中离线运行131538，PID23292，夹具指纹ffa746a58d0b8ba4574f02ffce3d37fcd1f07c017c29a517cd08e73037e7224e，原字节来源为旧真实方舟拒绝后a007e322fe6c5e0be2007c753f79bd1c5a164ebeb762179200794c1382b24043；界面回归尚待执行。
 
 125146已正常离线退出，forced=false／running_after=false；[原字节完整快照](evidence/runtime-development/20261007T125146Z/source-snapshot.json)保留201份14708363字节，包含四段原生SAV、39/39数据PASS和真实方舟UI FAIL。[暂存Git原字节检查](evidence/rc4-ark-split-ui-failure-run-git-object-check-2026-10-07.json)203文件14782933字节通过。旧失败没有覆盖或改写。

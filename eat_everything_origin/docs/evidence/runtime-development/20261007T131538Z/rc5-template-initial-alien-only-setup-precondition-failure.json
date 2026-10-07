@@ -1,0 +1,46 @@
+{
+  "status": "FAIL",
+  "scope": "Template test setup prerequisites, not production failure",
+  "save_sha256": "cb95927c10473e8d6557051272632a26bcc1d2b6ccbcdf6e4dfc811cef44c8de",
+  "expected": "Source founder seed, saved old template and foreign shared old template before current-template completion",
+  "actual": "Original seed baseline source was alien-only; event61 before begin had no founder group and no old template target. Event62 created current47 but full template prerequisites were not met.",
+  "targets": [
+    {
+      "type": "country",
+      "id": 0,
+      "opener_id": 4294967295,
+      "name": "eep_probe_original_country"
+    },
+    {
+      "type": "planet",
+      "id": 6,
+      "opener_id": 4294967295,
+      "name": "eep_probe_source"
+    },
+    {
+      "type": "country",
+      "id": 1,
+      "opener_id": 4294967295,
+      "name": "eep_probe_foreign"
+    },
+    {
+      "type": "species",
+      "id": 47,
+      "opener_id": 4294967295,
+      "name": "eep_probe_current_template"
+    },
+    {
+      "type": "planet",
+      "id": 1,
+      "opener_id": 4294967295,
+      "name": "eep_core0"
+    },
+    {
+      "type": "country",
+      "id": 0,
+      "opener_id": 4294967295,
+      "name": "eep_core_actor1"
+    }
+  ],
+  "next": "Restore original seed; event21 first transfers real100 founder seed, then61 modifies source seed and creates foreign shared group, then62 current template. Validate actual native groups and targets before completion."
+}

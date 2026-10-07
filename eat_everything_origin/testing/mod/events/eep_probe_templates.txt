@@ -39,5 +39,12 @@ country_event = {
             change_scoped_species = yes
             effect = { save_global_event_target_as = eep_probe_current_template }
         }
+        change_dominant_species = {
+            species = event_target:eep_probe_current_template
+            change_all = no
+        }
+        owner_main_species = {
+            save_global_event_target_as = eep_probe_verified_current_main
+        }
     }
 }
