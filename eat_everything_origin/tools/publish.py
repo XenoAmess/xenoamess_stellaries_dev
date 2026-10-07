@@ -14,6 +14,7 @@ import time
 import urllib.parse
 import urllib.request
 import workshop_images
+import release_acceptance
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parent
@@ -133,23 +134,24 @@ def preflight():
         raise RuntimeError("descriptor differs from VERSION or title")
     if "remote_file_id" in descriptor or str(FORBIDDEN_ID) in descriptor:
         raise RuntimeError("production descriptor must not route to an existing upstream item")
-    if not re.search(rf"^## {re.escape(version)}\s", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
+    changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    heading = re.search(rf"^## {re.escape(version)}\s.*$", changelog, re.M)
+    if not heading:
         raise RuntimeError("formal changelog entry missing")
+    next_heading = re.search(r"^## ", changelog[heading.end():], re.M)
+    changelog_entry = changelog[heading.start():heading.end() + next_heading.start()] if next_heading else changelog[heading.start():]
     package = json.loads((ROOT / "docs/evidence/package-release.json").read_text(encoding="utf-8"))
     runtime = json.loads((ROOT / "docs/evidence/runtime-acceptance.json").read_text(encoding="utf-8"))
     files = manifest(MOD)
-    if package["status"] != "PASS" or runtime["status"] != "PASS" or runtime["production_files"] != files:
-        raise RuntimeError("acceptance is incomplete or production files drifted")
-    if runtime.get("language") != "l_simp_chinese":
-        raise RuntimeError("runtime must be Simplified Chinese")
-    if any(runtime["cases"].get(f"EAT-{number:02}", {}).get("status") != "PASS" for number in range(1, 34)):
-        raise RuntimeError("required runtime cases are incomplete")
+    if package["status"] != "PASS":
+        raise RuntimeError("package acceptance is incomplete")
     if any("eep_probe" in p or p.startswith("testing/") for p in files):
         raise RuntimeError("test fixtures leaked into production")
     note = (WORKSHOP / f"change-note-v{version}.txt").read_text(encoding="utf-8").strip()
     if not note.startswith(f"[v{version}]"):
         raise RuntimeError("Change Note version prefix mismatch")
     description = (WORKSHOP / "description.bbcode").read_text(encoding="utf-8")
+    acceptance = release_acceptance.validate_runtime(runtime, files, version, description, note, changelog_entry, ROOT)
     images = workshop_images.local_images(ROOT, version)
     gallery = [entry for entry in images if entry["role"] == "gallery"]
     description += "\n[b]" + "\u56fe\u5e93\u8bf4\u660e" + "[/b]\n" + "\n".join(
@@ -163,7 +165,7 @@ def preflight():
         raise RuntimeError("commit task changes before publication")
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
     return {"version": version, "head": head, "content": files, "description": description,
-            "note": note, "images": images, "gallery": gallery}
+            "note": note, "images": images, "gallery": gallery, "acceptance": acceptance}
 
 
 def publish(inputs):
