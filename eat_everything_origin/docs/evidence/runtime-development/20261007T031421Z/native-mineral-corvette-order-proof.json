@@ -1,0 +1,76 @@
+{
+  "date": "2285.01.02",
+  "before": {
+    "save": "native-mineral-corvette-before-order.sav",
+    "sha256": "ce78b7908aca7fb6d5b94793214fa4fbf1b45f5d5dc968b955df7ff89385f959"
+  },
+  "after": {
+    "save": "native-mineral-corvette-order-paid.sav",
+    "sha256": "759d7537906813a88a7df27fd92e5c297a097e2ef2ad1f5e1a7f7b8137559526"
+  },
+  "stockpile_delta": {
+    "physics_research": -176.1273,
+    "society_research": -261.9864,
+    "engineering_research": -106.11402,
+    "minerals": -300.0
+  },
+  "paid_minerals": 300,
+  "alloys_and_energy_unchanged": true,
+  "eep_ledger_unchanged": true,
+  "pop_groups_unchanged": true,
+  "construction_candidates": [
+    {
+      "id": "2046820352",
+      "fields": {
+        "queue": 3,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 30
+      },
+      "raw": "\n\t\t\t\tqueue=3\n\t\t\t\tpaying_country=0\n\t\t\t\tprogress=0\n\t\t\t\tprogress_needed=30\n\t\t\t\tresources=\n\t\t\t\t{\n\t\t\t\t\tminerals=300\n\t\t\t\t}\n\t\t\t\tbuildable_ship_reinforcement=\n\t\t\t\t{\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=184551602\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=201326594\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=0\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t"
+    },
+    {
+      "id": "1778384900",
+      "fields": {
+        "queue": 172,
+        "paying_country": 0,
+        "progress": 198,
+        "progress_needed": 360
+      },
+      "raw": "\n\t\t\t\tqueue=172\n\t\t\t\tpaying_country=0\n\t\t\t\tprogress=198\n\t\t\t\tprogress_needed=360\n\t\t\t\tresources=\n\t\t\t\t{\n\t\t\t\t\tminerals=900\n\t\t\t\t}\n\t\t\t\tbuildable_zone=\n\t\t\t\t{\n\t\t\t\t\tzone=\"zone_research\"\n\t\t\t\t\tplanet=33\n\t\t\t\t\tdistrict=104\n\t\t\t\t\tzone_slot=2\n\t\t\t\t}\n\t\t\t"
+    },
+    {
+      "id": "1845493770",
+      "fields": {
+        "queue": 12,
+        "paying_country": 0,
+        "progress": 132,
+        "progress_needed": 360
+      },
+      "raw": "\n\t\t\t\tqueue=12\n\t\t\t\tpaying_country=0\n\t\t\t\tprogress=132\n\t\t\t\tprogress_needed=360\n\t\t\t\tresources=\n\t\t\t\t{\n\t\t\t\t\tminerals=900\n\t\t\t\t}\n\t\t\t\tbuildable_zone=\n\t\t\t\t{\n\t\t\t\t\tzone=\"zone_foundry\"\n\t\t\t\t\tplanet=3\n\t\t\t\t\tdistrict=105\n\t\t\t\t\tzone_slot=2\n\t\t\t\t}\n\t\t\t"
+    },
+    {
+      "id": "1107296269",
+      "fields": {
+        "queue": 172,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 360
+      },
+      "raw": "\n\t\t\t\tqueue=172\n\t\t\t\tpaying_country=0\n\t\t\t\tprogress=0\n\t\t\t\tprogress_needed=360\n\t\t\t\tresources=\n\t\t\t\t{\n\t\t\t\t\tminerals=900\n\t\t\t\t}\n\t\t\t\tbuildable_zone=\n\t\t\t\t{\n\t\t\t\t\tzone=\"zone_energy\"\n\t\t\t\t\tplanet=33\n\t\t\t\t\tdistrict=89\n\t\t\t\t\tzone_slot=0\n\t\t\t\t}\n\t\t\t"
+    },
+    {
+      "id": "1275068439",
+      "fields": {
+        "queue": 2330,
+        "paying_country": 0,
+        "progress": 88,
+        "progress_needed": 360
+      },
+      "raw": "\n\t\t\t\tqueue=2330\n\t\t\t\tpaying_country=0\n\t\t\t\tprogress=88\n\t\t\t\tprogress_needed=360\n\t\t\t\tresources=\n\t\t\t\t{\n\t\t\t\t\talloys=75\n\t\t\t\t}\n\t\t\t\tbuildable_starbase_building=\n\t\t\t\t{\n\t\t\t\t\tstarbase_building=\"black_hole_observatory\"\n\t\t\t\t\tslot=1\n\t\t\t\t\tstarbase=135\n\t\t\t\t}\n\t\t\t"
+    }
+  ],
+  "limitations": [
+    "Research point stockpiles also decreased on the same saved date; this is not a complete stockpile invariance assertion. The source of those research differences has not been isolated."
+  ]
+}

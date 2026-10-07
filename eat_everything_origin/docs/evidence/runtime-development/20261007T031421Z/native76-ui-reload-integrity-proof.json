@@ -1,0 +1,27 @@
+{
+  "result": "PASS_WITH_NATIVE_FOREIGN_GROUP_RECLASSIFICATION",
+  "before_sha256": "5c08b391e8834a933ab2abfa9782e4b74ee67bb8eef9ce8191148f1c53521781",
+  "restored_sha256": "9355434ca631af54dd710b1a3d3cd0be7db6c1f9db5447816de5ee2b3f3f9adb",
+  "date": "2276.03.01",
+  "checks": {
+    "situations": true,
+    "event_targets": true,
+    "stockpile": true,
+    "variables": true,
+    "flags": true,
+    "mother_pop_groups_species_rights": true,
+    "foreign_colony_total": true
+  },
+  "foreign_assimilation_group_difference": {
+    "colony": 3,
+    "former_size": 13,
+    "original_receiving_group_size": 1897,
+    "receiving_group_after_size": 1910,
+    "total_population_unchanged": true
+  },
+  "limitations": [
+    "No whole-world pop_groups byte equivalence claim",
+    "Native foreign assimilation classification observed on load; no matched vanilla cause proof"
+  ],
+  "operation": "same-byte native load followed by newly written native save; no gamestate editing"
+}
