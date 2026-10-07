@@ -1,0 +1,82 @@
+{
+  "status": "FAIL",
+  "scope": "Controlled two-Mod same-file override; native decision UI and actual first month only. Does not claim native118 completion or full Terravore acceptance.",
+  "order": "eep-first",
+  "enabled_mods": [
+    "mod/ugc_eep-local.mod",
+    "mod/ugc_eep-conflict.mod"
+  ],
+  "source_id": "1731",
+  "actual_situation_type": "situation_terravore_consume_planet",
+  "actual_first_month_progress": 8.5,
+  "start_save_sha256": "f39b949ed66d5a845a2077f46cceb8233904219c3b7c6a633d5c52ab51840aaa",
+  "end_save_sha256": "6979220dd237a2572012aa37207057f7ecae74b2398fd003932d1a255898d0f1",
+  "checks_passed": 15,
+  "checks_total": 16,
+  "checks": [
+    {
+      "check": "actual enabled_mods matches manifest bytes",
+      "passed": true
+    },
+    {
+      "check": "primary fixture immutable",
+      "passed": true
+    },
+    {
+      "check": "second control immutable",
+      "passed": true
+    },
+    {
+      "check": "same zero source bytes loaded",
+      "passed": true
+    },
+    {
+      "check": "actual native decision clicked",
+      "passed": true
+    },
+    {
+      "check": "same actual source selected",
+      "passed": false
+    },
+    {
+      "check": "start date and free decision stocks",
+      "passed": true
+    },
+    {
+      "check": "2200.01.01 actual routed type/owner/target",
+      "passed": true
+    },
+    {
+      "check": "2200.01.01 no premature credit/manufacture",
+      "passed": true
+    },
+    {
+      "check": "2200.01.01 core binding same",
+      "passed": true
+    },
+    {
+      "check": "2200.01.01 source flags match route",
+      "passed": true
+    },
+    {
+      "check": "2200.02.01 actual routed type/owner/target",
+      "passed": true
+    },
+    {
+      "check": "2200.02.01 no premature credit/manufacture",
+      "passed": true
+    },
+    {
+      "check": "2200.02.01 core binding same",
+      "passed": true
+    },
+    {
+      "check": "2200.02.01 source flags match route",
+      "passed": true
+    },
+    {
+      "check": "actual first month progress",
+      "passed": true
+    }
+  ]
+}
