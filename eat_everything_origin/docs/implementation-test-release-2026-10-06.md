@@ -388,3 +388,17 @@
 - 2283.03.03母星／王庭取证：实际13593人口，15蜂巢、2地热、6岩浆、3热工，26容量／26实建；真实岗位画面与存档一致。第一次由世界界面经过母星岗位、原生决议到报告的对照，社会研究库存37379.85079→23382.89218，其它库存、人口组、岗位、区划与局势一致，原生tech_status及社会队列未变；EEP显示变量仅eep_psi和eep_crisis刷新为1。未隔离这项库存变化的来源，不能将该对照冒称完全只读通过，也不臆断为原版已支付研究。
 
 - 随后同一暂停日建立native-queen-report-stable-before基准，三次经原生母星决议开启／关闭王庭报告，native-queen-report-stable-after的库存、变量、旗标、人口组、岗位、区划与局势全部一致。native-queen-report-stable-repeat-proof.json保留八项断言及此前不一致对照。图库WS-03／04／05的原始JPEG、OCR、原生SAV、审计与字节哈希快照独立保存，当前仍为候选图库；矿物舰项未通过，完整验收与正式发布未完成。
+
+- 原生war85同字节重载成功，native-war85-restored为2285.01.02，本国资源、EEP变量／旗标、AP／传统与母星13770人口保持。crisis_progression实际有level1及level2，真实目标杀舰345／征服1000，合计1345。正常战争／经营续局实际已造出18个crisis_corvette舰船对象，最早存留船建于2284.10.21；不曾授予舰船或威胁值。当前舰容384/380、能源净负值仍需记载，不能将阶段2或AI实际建船冒称所有船型建造／维护已验收。
+
+- 4.5.2原生船型读取：舰船引用在ship_design_implementation.design及growth_stage，船型位于对应ship_design.growth_stages，不能用旧的船舶顶层ship_design／ship_size字段读取。此轮全部矿物护卫舰使用growth_stage0；多阶段生物船需按真实阶段索引，不能一概取设计首项。星基station仍为舰船引用，应沿舰船fleet及本国owned_fleets判归属。
+
+- 第二项目名称复核纠正：社会队列special_project29／progress628.75454实际是“与慷慨独存实体通灵”，5000社会研究，原生虚境契约项目；不是第二天灾项目。真正CRISIS_SPECIAL_PROJECT_PSIONIC_2为special_project28，原版源码成本6000／physics_technology；继续核对完整物理队列，实际早已原生启动，date2284.09.15／progress980.80130，中文“涌动暗潮”显示研究中、尚需21个月。先前仅读取社会队列就推断第二项目未启动亦不成立。必须按项目定义、引用和完整三系队列对应读取，不能只靠递增ID或“虚境”叙述判定。
+
+- 原生单船请求已下单：native-mineral-corvette-before-order→native-mineral-corvette-order-paid，同为2285.01.02，矿物3105.42856→2805.42856，实际扣300，能源／合金不变，EEP账本和人口组保持。真实construction2046820352在母星星基0／队列3，progress0/30，paying_country0，resources仅minerals300，buildable_ship_reinforcement引用design184551602／growth_stage0／fleet_template201326594。三系研究库存另减少176.12730／261.98640／106.11402，保留真实差异，不称全部库存不变。
+
+- 两颗真实征服源星已通过原生决议启动并存档：native-war85-two-worlds-devouring为2285.01.02，源53/Q20/T48与源112/Q18/T44，独立局势50331652和16777221均progress0，旧损毁0。原先有101／100本族人口，未从母星再搬种子，母星13770保持。第一任务使概览局势栏目展开，后续殖民地行位置改变；首次第二星球固定坐标落在母星，守卫未找到吞噬入口而中止，改按新鲜OCR的实际殖民地名称及菜单区域唯一行继续，未给错误星球执行决议。
+
+- 后续原生日历检查计划：沿已验证的commands_at_date.txt＋原生重载读取流程，新增2285.02.01船完工、2286.10／12项目、2288.08／09与12、2289.01两任务终点附近暂停；保留原定日期。先复制当前双任务原生SAV为短名q85，同字节重载并保存核对账本／人口／任务／舰船队列，才恢复正常日历。日期命令只暂停，不授予任何进度或资源。本轮误试observe_date命令得到Unknown command，未形成定时任务；不将其当作有效接口，使用随包官方示例已实证的用户目录文件。
+
+- 双任务q85原生重载后，本国库存／变量／旗标／AP／传统、人口组和两个局势保持，新增定时文件生效。原生日期到2285.02.02已暂停，native-mineral-corvette-built-month-one确认新舰船16779544／design184551602，construction_date2285.01.19，本国owned_fleets包含其fleet16778365，船坞原队列2046820352已移除。该设计在本国实际舰船对象18→19，界面舰容384→388；母星13777，两个吞噬局势各progress1，C/G16及制造200保持。新舰船省略original_owner字段，因此归属以实际本国舰队引用判定，不以省略字段臆断外国或默认所有者。
