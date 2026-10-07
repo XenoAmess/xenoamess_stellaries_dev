@@ -1,0 +1,14 @@
+# Runtime paired control only. This does not rerun galaxy generation, and it
+# deliberately retains the native starting origin's generated assets.
+namespace = eep_probe
+
+country_event = {
+    id = eep_probe.60
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        set_origin = origin_heart_of_devouring
+        eep_initialize = yes
+        log = "EEP_CONTROL origin switch initialized; generated starting assets retained"
+    }
+}

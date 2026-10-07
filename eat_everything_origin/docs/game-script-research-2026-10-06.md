@@ -94,7 +94,10 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 
 以上属于 Stellaris 的接口和本机运行经验，没有新增可无条件推广到 CK3 的共同脚本语法规则。
 
+- 4.5.2原生生成的effects.log:1395～1397记录country作用域`set_origin = <origin>`，并明确不会运行银河生成阶段效果。这提供受控运行对照接口，但不等于正常新局重新生成；原版开局人口、区划与起源临时修正必须另行记录。尚未把文档存在当作实机切换通过。
+
 - SRC-39补充实测：运行224056启动manifest的scheduled_commands为空，启动后在隔离userdir新增commands_at_date.txt，原生重载2200.01.01存档后2200.01.04命令实际执行并暂停在2200.01.05；恢复存档另经原生保存确认4800人口、C/G0/D2。因此本机4.5.2可以在原生重载后重新读取新增定时文件，不推定无需重载的即时热读取。
+- 焦土与火山改造条件补充：本机infernals_1_events.txt:147～177的infernals.20是烈焰风暴轰炸按真实舰队规模生成凝聚的原版路径；:217起infernals.30／31的熔炉自动改造明确要求is_world_forger_empire及has_anvil_building，不能归为所有焦土国策的免费能力。普通continental→volcanic改造在01_advanced_terraform_links.txt:2609起要求allow_terraforming_into_volcanic，此旗标在infernals_crisis_events.txt:207的原版银河高温阶段3事件设置。吞噬之心不赠送这些条件；兼容测试应核对实际合法入口，不用控制台改类冒充原版改造完成。
 
 
 - 4.5.2实机补充：母星真实空余区划需计入原版障碍。洁癖物理尺寸20、EEP额外D17、区划等级合10，还有d_decrepit_dwellings一个与d_failing_infrastructure两个（原版01_blocker_deposits.txt:898/967均planet_max_districts_add=-1），原生num_free_districts为24，不应仅减已建区划后误报27。

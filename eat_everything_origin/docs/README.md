@@ -8,6 +8,7 @@
 - [Stellaris 4.5.2 游戏代码调查](game-script-research-2026-10-06.md)
 - [实施前探针与后续验收设计](acceptance-plan.md)
 - [首版实施、测试与发布记录](implementation-test-release-2026-10-06.md)
+- [逐项离线实机验收进度与待补证据](runtime-acceptance-progress-2026-10-07.md)
 - [生产包静态检查](evidence/package-rc1.json)
 - [铁心运行证据：补种、高容量、50任务、余数、建设与恢复](evidence/runtime-development/20261006T192819Z/findings.json)（部分验收，全部用例未完成）
 - [女王·白绮：原设调查、肖像／立绘与事件 CG 方案](queen-baiqi-art-direction-2026-10-06.md)

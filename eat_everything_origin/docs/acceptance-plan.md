@@ -1,6 +1,6 @@
 # 吞噬之心：实施前探针与验收设计
 
-日期：2026-10-06。承接[设计案](../../docs/eat-everything-origin-design-2026-10-06.md)和[源码调查](game-script-research-2026-10-06.md)。以下是未来执行要求，当前全部游戏用例**未执行**，本轮只检查设计文档。
+日期：2026-10-06。承接[设计案](../../docs/eat-everything-origin-design-2026-10-06.md)和[源码调查](game-script-research-2026-10-06.md)。本文保留制定时的验收合同；制定时游戏用例未执行。2026-10-07已执行证据与待补项见[离线实机进度](runtime-acceptance-progress-2026-10-07.md)，完整验收与发布仍未完成。
 
 用户已确认偏强爽玩、普通星球吞噬 3～5 年，并拥有 Nemesis 和「虚境之影」。设计默认 `T = ceil(12 × Q / 5)` 个有效推进月，20 格无旧损毁为 48 月；尚无实机耗时或平衡结论。
 
@@ -80,4 +80,4 @@
 
 检查脚本为当次临时命令，没有新建自动化工具或游戏夹具。检查项及结果存入[文档检查 JSON](evidence/design-document-check-2026-10-06.json)：UTF-8/无替换字符、文件链接可解析、SRC/PROBE/EAT ID 唯一、源码指纹与锚点、候选算术与原版舰队样例、`git diff --check`。
 
-女王职责与上述新增用例的合同见[女王玩法方案](queen-baiqi-gameplay-design-2026-10-06.md)。这些结果不升级上述游戏用例的状态；当前 EAT-01 至 EAT-33、PROBE-01 至 PROBE-09 都未执行，没有工具 Mod PASS、中文实机或非中文翻译验收报告。
+女王职责与上述新增用例的合同见[女王玩法方案](queen-baiqi-gameplay-design-2026-10-06.md)。本节仅记录制定时的文档检查，不升级游戏用例状态。后续包级工具、中文实机与非中文静态翻译证据以[实施记录](implementation-test-release-2026-10-06.md)和[离线实机进度](runtime-acceptance-progress-2026-10-07.md)为准，尚无完整Mod验收或正式发布PASS。

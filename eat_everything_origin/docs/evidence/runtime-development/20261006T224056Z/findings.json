@@ -37,7 +37,6 @@
     "mineral_cost": 300,
     "days": 240,
     "geothermal_before": 2,
-    "after": 6600,
     "housing_before": 6400,
     "technician_workforce": 600,
     "max_workforce": 600,
@@ -48,7 +47,9 @@
       "consumer_goods": 2.50639,
       "unity": 11.63862
     },
-    "infernal_pop_alloy_upkeep": 15.815
+    "infernal_pop_alloy_upkeep": 15.815,
+    "geothermal_after": 3,
+    "housing_after": 6600
   },
   "queen_stage2_gpu": "scorched-stage2-native-event.jpg",
   "new_date_file_read_after_native_reload": "VERIFIED",
@@ -59,5 +60,10 @@
     "Psionic and Nemesis combinations pending",
     "Matched natural world control pending",
     "No full EAT case acceptance claimed"
-  ]
+  ],
+  "metadata_correction": {
+    "date": "2026-10-07",
+    "reason": "after incorrectly contained housing value; separated native district and housing fields",
+    "native_evidence_unchanged": true
+  }
 }
