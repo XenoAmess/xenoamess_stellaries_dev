@@ -4,6 +4,12 @@
 
 本研究为[设计案](../../docs/eat-everything-origin-design-2026-10-06.md)提供 Stellaris 专有事实，不从 CK3 文档推导 Stellaris 接口。文件路径均相对游戏根目录 `C:\SteamLibrary\steamapps\common\Stellaris`，行号只适用于本次指纹。
 
+## 2026-10-07 原生舰船建造与缓存补充
+
+4.5.2原生SAV的建造队列在`construction.queue_mgr.queues`，实际建造项目在`construction.item_mgr.items`，二者ID引用相连；不能把项目当作construction的直接子字段。驱逐舰真实三个550矿物／60基础工作项目及27日完工保留在031421原生存档，具体速度来自该局原版修正，不能把27日当全局固定工期。
+
+原生单舰解散会先移除舰队引用，当日国家`used_naval_capacity`及维护提示仍可保留旧缓存；本次11.12舰船已移出但舰容404，11.13真实一天后刷新396，UI404/399→396/399，剩余同型舰维护各1.82→1.80。必须核对实际对象和刷新日期，不能仅凭当日界面或缓存统计断言解散没有生效。解散前原字节重载已恢复三舰与原账本。
+
 ## 1. 环境和证据
 
 `launcher-settings.json` 报告 `Cygnus v4.5.2 (9776)`、`rawVersion=v4.5.2`、兼容标识 `4.5`。EXE SHA-256 为 `400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83`。版本字符串和校验和来自本地安装，不是新开局的运行时确认。
