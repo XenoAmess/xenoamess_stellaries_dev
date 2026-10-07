@@ -14,6 +14,8 @@ Stellaris原版部分决议完全省略resources块（02_special_decisions.txt�
 
 ## 2026-10-07 原生舰船建造与缓存补充
 
+方舟对象分类不能只看名字：29_nomads_dlc_ships.txt的military_arkship_tier_3在1130行明确carries_colony=pc_ark；1252行military_arkship_champions_forge没有此声明。原版NAME_Champions_Forge_Arkship全局设计使用后者，受控resettle_pop_group可给它形成100人口舰载殖民地，但实际is_planet_class=pc_ark仍为假。验证方舟拒绝必须检查真实船型、殖民地Carrier引用及pc_ark运行触发条件，不能以名字含Arkship或已经有殖民地代替。
+
 真实舰船设计的section内component为重复命名块，组件标量是slot和template；name.key仅为名称本地化引用，不是组件ID。巡洋舰真实LARGE_GUN_01槽对应template="LARGE_UV_LASER"。读取时须先按真实growth_stage选择阶段，再解析section／component和准确slot，不能搜索name.key或忽略多阶段结构。
 
 4.5.2原生SAV的建造队列在`construction.queue_mgr.queues`，实际建造项目在`construction.item_mgr.items`，二者ID引用相连；不能把项目当作construction的直接子字段。驱逐舰真实三个550矿物／60基础工作项目及27日完工保留在031421原生存档，具体速度来自该局原版修正，不能把27日当全局固定工期。

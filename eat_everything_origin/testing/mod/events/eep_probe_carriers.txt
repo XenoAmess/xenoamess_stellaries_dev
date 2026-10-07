@@ -13,7 +13,7 @@ country_event = {
                 set_owner = root
                 create_ship = {
                     name = "EEP-ARK-REFUSAL"
-                    design = NAME_Champions_Forge_Arkship
+                    design = "EEP-ARK-T3"
                     effect = { save_global_event_target_as = eep_probe_ark }
                 }
                 set_location = event_target:eep_probe_ark_location
@@ -42,6 +42,11 @@ country_event = {
         event_target:eep_probe_ark = {
             if = { limit = { is_planet_class = pc_ark } log = "EEP_ARK_PRECONDITION_PC_ARK" }
             if = { limit = { is_colony = yes } log = "EEP_ARK_PRECONDITION_COLONY" }
+            if = { limit = { is_artificial = yes } log = "EEP_ARK_PRECONDITION_ARTIFICIAL" }
+            if = {
+                limit = { count_owned_pop_amount = { count >= 100 limit = { eep_founder_pop = yes } } }
+                log = "EEP_ARK_PRECONDITION_FOUNDER_SEED100"
+            }
             eep_begin = yes
         }
     }

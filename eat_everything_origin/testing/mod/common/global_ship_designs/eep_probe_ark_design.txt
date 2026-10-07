@@ -1,0 +1,16 @@
+# Controlled refusal fixture only. Native tier 3 carries a real pc_ark colony;
+# Champion's Forge does not. Never include this design in the production mod.
+ship_design = {
+    name = "EEP-ARK-T3"
+    ship_size = military_arkship_tier_3
+    section = {
+        template = "military_arkship_tier_3_section"
+        slot = "mid"
+        component = { slot = "LARGE_GUN_01" template = "LARGE_RED_LASER" }
+    }
+    required_component = "JUGGERNAUT_COLD_FUSION_REACTOR"
+    required_component = "HYPER_DRIVE_3"
+    required_component = "COLOSSUS_SHIP_THRUSTER_3"
+    required_component = "SENSOR_3"
+    required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
