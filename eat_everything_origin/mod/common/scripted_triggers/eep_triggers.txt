@@ -10,6 +10,15 @@ eep_qualified = {
     }
 }
 
+# Country scope. Shroud DLC has a separate native ascension situation after the tree.
+eep_psionic_ascension_complete = {
+    has_finished_psionic_tradition = yes
+    OR = {
+        has_shroud_dlc = no
+        has_breached_shroud = yes
+    }
+}
+
 # Country scope. Indexed global target survives capital changes and save/load.
 eep_core_available = {
     NOT = { has_country_flag = eep_core_dead }

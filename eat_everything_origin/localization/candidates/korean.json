@@ -7,6 +7,7 @@
   "decision_eep_devour_desc": "비히테는 어느 세계에 대한 이족의 생물을 인정하지 않는다. 그것을 소화할 충분한 시조 인구를 남겨두고, 그 주민과 지각 그리고 용융된 핵심을 모성으로 가져오라.",
   "eep_devour_effect": "소화에는 남은 원자적 생물 질량 Q × 2.4 유효 월이 걸리며 반올림한다. 완료 시 적격 시조 인구를 반환하고 출처를 영구히 분쇄한다. 용량은 누적된 4 Q 단위로 교환된다; 일반 해체는 누적된 6 Q 단위당 100 인구를 생성하며, 나머지는 세계 간에 유지된다. 테라보어는 원본의 무작위 소비 보상을 유지한다. 모성 상실 또는 전투는 진행을 일시 중지한다; 최종 정착은 바닐라 숙청이 끝나기를 기다린다.",
   "eep_source_required": "모성 외의 자비로운 자연 식민지가 필요하며, 모성은 우리의 통제 하에 있어야 한다. 메가 구조, 방주, 링 세그먼트, 시냅스 반응 기계 및 나노 기술 세계는 제외된다.",
+  "eep_seed_required": "원천에는 최소 100명의 비숙청 창업 인구가 필요하며, 그렇지 않을 경우 모성에 100명 이상의 인구가 있어야 차액을 채울 수 있다. 모성의 마지막 인구는 절대 이주시키지 말라. 소화 작업자는 공짜로 생성되지 않는다.",
   "eep_material_required": "손상되지 않은 원자적 물질이 필요하다.",
   "decision_eep_audience": "여왕 비히테와의 알현",
   "decision_eep_audience_desc": "탐식의 핵심 법정에 입장하라. 비히테는 그녀의 왕좌로 돌아온 물질과 다음에 파괴될 세계를 심판한다.",
@@ -35,7 +36,9 @@
   "eep.10.desc": "비히테가 흑요석 법정에 서서 별자리표를 내려다본다.\\n\\n'경계?' 그녀의 목소리에는 온기가 없다. '나는 먹이 주위에 경계를 그리지 않는다.'\\n\\n이족에 대한 약속도, 자비도, 퇴각도 없다. 모든 것이 이 심장을 먹여야 한다. 정복된 세계는 생명, 지각, 그리고 핵심을 내줄 것이다. 여왕은 그것 중 어느 것에 대해서도 후회하지 않을 것이다.",
   "eep.10.a": "왕좌 너머, 모든 것은 탐식될 수 있다.",
   "eep.11.name": "한 세계의 재",
+  "eep.11.desc": "마지막 지각이 벗겨진다. 바다와 도시의 이름은 사라졌고, 모성으로 돌아온 물질의 양만 남는다.\\n\\n비비트는 즐거움도 없이 보고를 훑는다. 다음.\\n\\n섭취된 행성 수: [Root.eep_worlds]; 누적 원주민 물질: [Root.eep_c]; 추가된 모성 용량: [Root.eep_d]; 일반 해체로 제조된 인구: [Root.eep_made]. 이는 완료된 정착을 기록한다. 이 메시지는 추가 보상을 주지 않는다.\\n\\n왕정: [Root.GetEEPCourtStage]. 최근 행성: 추가된 용량 [Root.eep_last_capacity]; 창업 인구 반환 [Root.eep_last_return]; 일반 제조 [Root.eep_last_manufactured].",
   "eep.11.a": "재가 심장을 먹이게 하라.",
+  "eep.13.name": "[Root.GetEEPCourtStage]",
   "eep.13.desc": "모성의 책망이 다시 확장된다. 새로운 지구는 실제 주거와 직위를 지원하며, 공장, 하이브 챔버, 신경 허브는 계속 작동한다.\\n\\n비히테는 별자리표에서 이족 영토를 털어낸다. 그들의 조상의 토지는 단지 우리의 다음 토대일 뿐이다.\\n\\n누적 물질: [Root.eep_c]; 추가 용량: [Root.eep_d]; 제조된 인구: [Root.eep_made]. 여왕은 두 번째 경제 보상 없이 새로운 성장 단계를 기록한다.",
   "eep.13.a": "그들을 토대로 삼아라.",
   "eep.30.name": "저항할 수 없는 의지",
@@ -57,10 +60,6 @@
   "eep.100.a": "물러가라.",
   "eep.100.tasks": "소화 기록을 제출하라.",
   "eep.101.name": "소화 식민지: [eep_report_source.GetName]",
-  "eep_seed_required": "원천에는 최소 100명의 비숙청 창업 인구가 필요하며, 그렇지 않을 경우 모성에 100명 이상의 인구가 있어야 차액을 채울 수 있다. 모성의 마지막 인구는 절대 이주시키지 말라. 소화 작업자는 공짜로 생성되지 않는다.",
-  "eep.11.desc": "마지막 지각이 벗겨진다. 바다와 도시의 이름은 사라졌고, 모성으로 돌아온 물질의 양만 남는다.\\n\\n비비트는 즐거움도 없이 보고를 훑는다. 다음.\\n\\n섭취된 행성 수: [Root.eep_worlds]; 누적 원주민 물질: [Root.eep_c]; 추가된 모성 용량: [Root.eep_d]; 일반 해체로 제조된 인구: [Root.eep_made]. 이는 완료된 정착을 기록한다. 이 메시지는 추가 보상을 주지 않는다.\\n\\n왕정: [Root.GetEEPCourtStage]. 최근 행성: 추가된 용량 [Root.eep_last_capacity]; 창업 인구 반환 [Root.eep_last_return]; 일반 제조 [Root.eep_last_manufactured].",
-  "eep.13.name": "[Root.GetEEPCourtStage]",
-  "eep.100.desc": "왕좌로 돌아온 것만을 센다.\\n\\n결속된 모성: [eep_report_core.GetName]; 왕정: [Root.GetEEPCourtStage]\\n물질 C: [Root.eep_c]; 용량 잉여: [Root.eep_c_remainder]/4\\n범용 물질 G: [Root.eep_g]; 인구 잉여: [Root.eep_g_remainder]/6\\n총 추가 용량 D: [Root.eep_d]; 실제 여유 구역: [eep_report_core.eep_free_districts]\\n현재 모성 인구: [eep_report_core.eep_actual_pop]; 역사적 제조량: [Root.eep_made]\\n섭취된 행성 수: [Root.eep_worlds]; 활성 과제: [Root.eep_tasks]; 정산 대기 중인 최종 정착: [Root.eep_waiting]\\n최근 행성: 추가된 용량 [Root.eep_last_capacity], 반환된 인구 [Root.eep_last_return], 제조량 [Root.eep_last_manufactured]\\n왕좌 상태: [Root.eep_core_state] (0 가용, 1 연결 해제, 2 영구 종료)\\n합법적 사이오닉 전통 완성: [Root.eep_psi] (0 아니요, 1 예)\\n실제 네메시스 단계: [Root.eep_crisis] (2 초함대, 3 구축함, 4 순양함)\\n\\n읽기 전용 보고서. 구역, 주거, 일자리와 유지비는 정상적인 관리가 필요하다.",
   "eep.101.desc": "파괴는 면죄부가 아니다. 진척을 보고하라.\\n\\n원천: [eep_report_source.GetName]\\n경로: [eep_report_source.GetEEPTaskPath]\\n동결 물질 Q: [eep_report_source.eep_q]\\n실제 진척: [eep_report_source.eep_progress]/[eep_report_source.eep_months] 유효 월\\n차단: [eep_report_source.eep_block_state] (0 정상, 1 왕좌 연결 해제, 2 전투 또는 점령, 3 최종 숙청)\\n\\n상황 화면에서 방식을 변경하라. 취소나 소유권 상실은 완료 보상을 주지 않는다.",
   "eep_stage_0": "왕좌 수립",
   "eep_stage_1": "碎星之王冠",
@@ -69,5 +68,6 @@
   "eep_path_native": "테라보어: 바닐라 무작위 소비",
   "eep_path_generic": "범용 해체: 누적 물질로부터 인구 생성",
   "eep.32.name": "법정이 바라는 다음 칼날",
-  "eep.32.desc": "비브하이트(白绮)가 새로 해금된 함형을 살핀다. '그들의 저항은 지난 세계보다도 일찍 끝나야 한다.'\\n\\n실제 네메시스 단계: [Root.eep_crisis]. 3단계에서 $crisis_destroyer$ 해금, 4단계에서 $crisis_cruiser$ 해금. 함형, 장착 및 유지비는 바닐라 그대로. 이 메시지는 능력이나 보상을 부여하지 않습니다."
+  "eep.32.desc": "비브하이트(白绮)가 새로 해금된 함형을 살핀다. '그들의 저항은 지난 세계보다도 일찍 끝나야 한다.'\\n\\n실제 네메시스 단계: [Root.eep_crisis]. 3단계에서 $crisis_destroyer$ 해금, 4단계에서 $crisis_cruiser$ 해금. 함형, 장착 및 유지비는 바닐라 그대로. 이 메시지는 능력이나 보상을 부여하지 않습니다.",
+  "eep.100.desc": "나는 왕좌로 돌아온 것만을 센다.\\n\\n결속된 핵심: [eep_report_core.GetName]; 왕정: [Root.GetEEPCourtStage]\\n물질 C: [Root.eep_c]; 용량 잔여: [Root.eep_c_remainder]/4\\n범용 물질 G: [Root.eep_g]; 인구 잔여: [Root.eep_g_remainder]/6\\n총 추가 용량 D: [Root.eep_d]; 실제 빈 지구: [eep_report_core.eep_free_districts]\\n현재 핵심 인구: [eep_report_core.eep_actual_pop]; 역사적 제조: [Root.eep_made]\\n잠식된 행성: [Root.eep_worlds]; 활성 과제: [Root.eep_tasks]; 최종 정착 대기: [Root.eep_waiting]\\n최근 행성: 추가된 용량 [Root.eep_last_capacity], 귀환 인구 [Root.eep_last_return], 제조 [Root.eep_last_manufactured]\\n왕좌 상태: [Root.eep_core_state] (0 가용, 1 연결 해제, 2 영구 종료)\\n합법적 사이오닉 승천 완료: [Root.eep_psi] (0 아니오, 1 예)\\n실제 네메시스 단계: [Root.eep_crisis] (2 코벳, 3 구축함, 4 순양함)\\n\\n읽기 전용 보고서. 지구구획, 주거, 일자리와 유지비는 정상적인 관리가 필요하다."
 }

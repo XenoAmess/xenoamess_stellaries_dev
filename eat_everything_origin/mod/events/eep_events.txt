@@ -70,7 +70,7 @@ country_event = {
                     if = { limit = { check_variable = { which = eep_c value >= 200 } check_variable = { which = eep_stage value < 3 } } set_variable = { which = eep_stage value = 3 } }
                 }
                 if = {
-                    limit = { has_finished_psionic_tradition = yes NOT = { has_country_flag = eep_psi_notice } }
+                    limit = { eep_psionic_ascension_complete = yes NOT = { has_country_flag = eep_psi_notice } }
                     set_country_flag = eep_psi_notice
                     country_event = { id = eep.30 }
                 }

@@ -289,7 +289,7 @@ eep_report = {
         }
     }
     set_variable = { which = eep_psi value = 0 }
-    if = { limit = { has_finished_psionic_tradition = yes } set_variable = { which = eep_psi value = 1 } }
+    if = { limit = { eep_psionic_ascension_complete = yes } set_variable = { which = eep_psi value = 1 } }
     set_variable = { which = eep_crisis value = 0 }
     if = { limit = { has_crisis_level = crisis_level_1 } set_variable = { which = eep_crisis value = 1 } }
     if = { limit = { has_crisis_level = crisis_level_2 } set_variable = { which = eep_crisis value = 2 } }
