@@ -2,6 +2,8 @@
 
 ## 2026-10-07 首次报告决议与研究库存差异
 
+原版免费decision_end_population_control_gestalt同源同日复现相同三系库存差额，科研队列不变；下一真实日亦未发现队列结转或新增科技。此结论只定位到决议执行路径，不认证引擎内部扣费／上限机制。官方common/button_effects/example.txt明确This为选中对象、From为玩家国，建议allow使用is_scope_type保护多面板作用域；本机fleet_view.gui使用effectbuttonType／buttonText／tooltipText／effect的实际原生接口。计划据此改只读报告入口，界面显示与库存须实机验证。open_kaishek旧入口遗漏.gui，已先修复、全量静态检查通过并推送80ec924，之后才恢复Mod验收；解析通过不等于界面运行时认证。
+
 同一原生2283.03.03存档的简中A/B/C/D隔离：不打开母星、只打开母星及决议列表、直接诊断调用既有eep.100均保持全部库存；只有首次通过原生觐见女王决议执行后，物理研究10661.75204及工程研究5480.3411归零，社会研究37379.85079→23382.89218。科技队列、母星岗位／人口／区划及EEP经济账本保持。此为可重现运行差异，不以“原生缓存”先行解释，原始失败在082017归档中。
 
 Stellaris原版部分决议完全省略resources块（02_special_decisions.txt的decision_reorganize_leviathan_parade，05_ancient_relics_decisions.txt的decision_baol_life_seed）；另外一些免费决议保留只有category=decisions的resources块。当前证据只支持这两种语法存在，不足以判定引擎具体扣点原因。rc.3对只读报告移除空资源表作为修复候选，包级检查及新原生首次执行均需验证；不推广为CK3或所有Paradox游戏的共同规则。

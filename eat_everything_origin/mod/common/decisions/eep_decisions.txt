@@ -23,18 +23,3 @@ decision_eep_devour = {
     effect = { custom_tooltip = eep_devour_effect hidden_effect = { eep_begin = yes } }
     ai_weight = { weight = 0 }
 }
-
-decision_eep_audience = {
-    icon = decision_burning_settlement
-    owned_planets_only = yes
-    potential = {
-        has_carrier_flag = eep_core
-        owner = { eep_qualified = yes }
-        planet = { is_same_value = event_target:eep_core@owner }
-    }
-    effect = {
-        custom_tooltip = eep_audience_effect
-        hidden_effect = { owner = { country_event = { id = eep.100 } } }
-    }
-    ai_weight = { weight = 0 }
-}

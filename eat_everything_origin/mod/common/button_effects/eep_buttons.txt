@@ -1,0 +1,25 @@
+# Official effectbuttonType: This is selected object; From is player country.
+# Recheck scope and ownership in allow: other interfaces may change selection.
+eep_audience_button_effect = {
+    potential = {
+        is_scope_type = planet
+        from = {
+            eep_qualified = yes
+            exists = event_target:eep_core@this
+        }
+        is_owned_by = from
+        is_same_value = event_target:eep_core@from
+    }
+    allow = {
+        is_scope_type = planet
+        from = {
+            eep_qualified = yes
+            exists = event_target:eep_core@this
+        }
+        is_owned_by = from
+        is_same_value = event_target:eep_core@from
+    }
+    effect = {
+        from = { country_event = { id = eep.100 } }
+    }
+}
