@@ -20,6 +20,15 @@ country_event = {
                 save_global_event_target_as = eep_probe_ark_fleet
             }
         }
+        log = "EEP_CONTROL native pc_ark created; save before separate100 transfer"
+    }
+}
+
+country_event = {
+    id = eep_probe.67
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
         event_target:eep_core@this = {
             random_owned_pop_group = {
                 limit = { eep_founder_pop = yes pop_group_size >= 100 }
@@ -30,7 +39,7 @@ country_event = {
                 }
             }
         }
-        log = "EEP_CONTROL arkship constructed; audit carrier and real seed before attempt"
+        log = "EEP_CONTROL exact100 founder transfer to already-created pc_ark; audit before attempt"
     }
 }
 

@@ -34,6 +34,12 @@ ARK64原生前提失败：真实日志只有EEP_ARK_PRECONDITION_COLONY，没有
 
 已实现上述夹具修复并创建123851新快照；open_kaishek[强制包级检查](evidence/rc4-true-ark-fixture-package-check-2026-10-07.json)29/29脚本、12DDS、十语言71键PASS（非中文静态校验通过，运行时不在范围内）。生产rc.4没有变化。旧122536正常退出，forced=false／running_after=false；[原前提失败完整归档](evidence/runtime-development/20261007T122536Z/source-snapshot.json)保留150文件11382234字节，包括原始SAV、100人口实际转移、拒绝前后十组审计保持及pc_ark前提FAIL，不能据此宣告方舟通过。继续用新包复测真正pc_ark。
 
+124000真正方舟已满足pc_ark／is_colony／is_artificial／本族种子四项原生前提；实际ship1115／colony14。拒绝前后全部库存／十组审计及额外原始舰船、舰队、殖民地和人口组完全保持；首次33项检查31通过，两个FAIL为构造时人口假设不符：母星真实搬出100，但方舟1100，国家真实人口6000→7000。当前事件63把创建和搬迁放在同一即刻效果，无法用中间SAV严格隔离1000来源，不把差额直接称已证实的引擎赠送规则。
+
+下一夹具修复目标为拆分取证：63仅创建真正方舟，67单独复用原来的100人口搬迁；64继续原生前提与拒绝检查。生产包／版本不变，停止当前测试并保留完整33项原始FAIL和最终日志。新夹具先执行open_kaishek强制包级检查，重启新运行后分别保存原始基线、仅创建、搬迁后、拒绝后四份同日SAV；明确实际创建产生多少初始人口，再证明67母星恰减100、方舟恰加100、国家总量不变，拒绝仍不改所有库存／任务／经济与完整舰载块。只有这四段实证通过才归并ARK用例，不过滤两项失败成PASS。
+
+拆分夹具125112已完成[强制包级检查](evidence/rc4-true-ark-split-fixture-package-check-2026-10-07.json)，29/29脚本／12DDS／十语言71键PASS。新离线简中运行125146、PID18236、夹具指纹39e411fa419be400b7e704a38b05a2d7d21a04487b17cbb93e235ca8b1f6dfbd，继续同字节原始机器基线。124000已正常退出并[完整归档](evidence/runtime-development/20261007T124000Z/source-snapshot.json)：127文件11116327字节；[原字节Git检查](evidence/rc4-ark-combined-population-run-git-object-check-2026-10-07.json)129文件11162933字节通过。31/33的原始FAIL及真实1100数量继续保留，后续四段记录不覆盖它。
+
 2296.02.02原生存档rc4-natural-q23-month56-completion-pending，SHA-256 2ee7fa449ff5b2e8520892f1e134c080c308ab2e7a9d4b995cdccf4dac55edc3，真实征服planet1857／colony35在Q23／T56有效月完成：原星pc_shattered，五项完成凭证齐全，本次C/G+23、额外容量+6、制造+400、回迁105、世界+1、Native威慑+750。总账为C/G57、D16、制造900、世界3、menace5185；原生crisis_progression明确包含crisis_level_4，第三个12000社会研究项目此前自然完成。局势仍在容器中但killed=yes，不计为活动任务；通知显示缓存仍为3，尚不能写成女王第四阶段已展示。
 
 后续沿既有EAT-21／22／31／33合同执行：保留原字节短名q96用于正常续局恢复，不编辑SAV。维持human_ai关闭和ticks1，以真实30日日历至2296.03.02取得月度女王通知；原生保存待展示状态，再做同日确认、同字节重载和既有月度／完成回调防重复对照。严查全部库存、EEP经济凭证、人口组、岗位、实际区划与局势；任何差异保留原始FAIL，仅根据对照明确范围。C57未达到下一个C60成长门槛，不要求另发成长通知。
