@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "vanilla-shared-world-native-prepare50",
+  "text": "effect save_global_event_target_as = perf_country capital_scope = { planet = { save_global_event_target_as = perf_mother } } while = { count = 50 random_galaxy_planet = { limit = { has_owner = no is_star = no is_colony = no is_artificial = no NOT = { is_planet_class = pc_gas_giant } solar_system = { has_owner = no } } change_pc = pc_continental set_planet_size = 20 clear_deposits = yes create_colony = { owner = event_target:perf_country species = event_target:perf_country } save_global_event_target_as = perf_source set_planet_flag = perf_constructed event_target:perf_mother = { random_owned_pop_group = { limit = { pop_group_size >= 100 is_same_species = owner.owner_main_species } resettle_pop_group = { POP_GROUP = this PLANET = event_target:perf_source AMOUNT = 100 } } } } } event_target:perf_source = { set_name = \"Native-UI-Q20\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-07T19:07:53.609052+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
