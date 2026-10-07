@@ -2,6 +2,8 @@
 
 ## 2026-10-07 rc.5：方舟决议显示修复（实施前方案）
 
+新候选已实现，两条筛选分别为is_artificial=no、can_have_habitable_deposits=yes。[生产强制包级检查](evidence/rc5-production-package-check-2026-10-07.json)18/18及[新夹具检查](evidence/rc5-fixture-package-check-2026-10-07.json)29/29脚本通过，两者12DDS、十语言71键；其它九语言静态校验通过，运行时不在范围内。[逐文件差异](evidence/rc5-production-file-delta-2026-10-07.json)确认41个生产文件中只修改通用决议及descriptor版本，其余39个原字节保持。新隔离简中离线运行131538，PID23292，夹具指纹ffa746a58d0b8ba4574f02ffce3d37fcd1f07c017c29a517cd08e73037e7224e，原字节来源为旧真实方舟拒绝后a007e322fe6c5e0be2007c753f79bd1c5a164ebeb762179200794c1382b24043；界面回归尚待执行。
+
 125146已正常离线退出，forced=false／running_after=false；[原字节完整快照](evidence/runtime-development/20261007T125146Z/source-snapshot.json)保留201份14708363字节，包含四段原生SAV、39/39数据PASS和真实方舟UI FAIL。[暂存Git原字节检查](evidence/rc4-ark-split-ui-failure-run-git-object-check-2026-10-07.json)203文件14782933字节通过。旧失败没有覆盖或改写。
 
 rc.4运行125146的四段方舟数据／拒绝检查39/39通过，但独立简中界面检查失败：真正pc_ark、colony14、1100人口、规模9的方舟，其决议窗口仍列出“吞噬：献于唯一王座”。原始画面rc4-ark-ui-real-carrier-colony-panel.jpg及rc4-ark-ui-native-decisions-no-devour-no-audience.jpg保留；后者文件名是期望，不代表实际通过。母星觐见按钮没有出现在方舟，符合该部分要求。底层拒绝有效不能替代入口隐藏验收。
