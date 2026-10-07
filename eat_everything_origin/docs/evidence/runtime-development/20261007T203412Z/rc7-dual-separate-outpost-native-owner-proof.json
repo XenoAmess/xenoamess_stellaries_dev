@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "scope": "Read-only native outpost22 ownership via actual station ship, fleet, and country owned_fleets references. Separate system154 controlled fixture; not natural colonization.",
+  "version": "0.2.0-rc.7",
+  "checks": [
+    {
+      "check": "rc7-dual-separate-system-source-starbase-prepared:actual_starbase_fleet_owner",
+      "status": "PASS",
+      "actual": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          0
+        ]
+      },
+      "expected_owner": 0
+    },
+    {
+      "check": "rc7-dual-separate-starbase-source-owner33-native:actual_starbase_fleet_owner",
+      "status": "PASS",
+      "actual": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          33
+        ]
+      },
+      "expected_owner": 33
+    },
+    {
+      "check": "rc7-dual-separate-first-month-stable-owner33-native:actual_starbase_fleet_owner",
+      "status": "PASS",
+      "actual": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          33
+        ]
+      },
+      "expected_owner": 33
+    },
+    {
+      "check": "rc7-dual-separate-new33-settled-old0-isolated-native:actual_starbase_fleet_owner",
+      "status": "PASS",
+      "actual": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          33
+        ]
+      },
+      "expected_owner": 33
+    }
+  ],
+  "records": [
+    {
+      "save": "rc7-dual-separate-system-source-starbase-prepared",
+      "sha256": "db789d8f99b35afdcb13fb382a8af82fe8dd0a48c3533385885f52dca29d88bb",
+      "native": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          0
+        ]
+      }
+    },
+    {
+      "save": "rc7-dual-separate-starbase-source-owner33-native",
+      "sha256": "f7344a00550723baeb8a92fa32a9b537a1abd23cad0a536549a843099411772c",
+      "native": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          33
+        ]
+      }
+    },
+    {
+      "save": "rc7-dual-separate-first-month-stable-owner33-native",
+      "sha256": "b54020b0df26db3fe14b1b5cf2525d74940358bb90a1f5428e127a91b3e05f6b",
+      "native": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          33
+        ]
+      }
+    },
+    {
+      "save": "rc7-dual-separate-new33-settled-old0-isolated-native",
+      "sha256": "a5066cb16d580f540c9bbb0fbf7610b955a33057bda39c57094e4a6ca9a874fb",
+      "native": {
+        "base22_level": "starbase_level_outpost",
+        "station": 16778284,
+        "fleet": 16777445,
+        "actual_owned_fleet_countries": [
+          33
+        ]
+      }
+    }
+  ]
+}

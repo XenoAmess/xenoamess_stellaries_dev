@@ -1,5 +1,9 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-08：女王按钮非星球上下文的实际求值
+
+203412完整最终日志在05:32:11记录`Wrong scope for trigger is_owned_by`，生产eep_buttons.txt:19的allow当前作用域为country。并列is_scope_type=planet没有在这次UI调用中屏蔽行星专用条件，因此不能据此假定求值会短路；母星报告数据和经济只读通过不等于所有界面作用域日志通过。官方common/button_effects/example.txt:2～5明确This可能为选中对象或玩家country，From为玩家country；00_scripted_triggers.txt:3608～3623、3739之后提供trigger内if／limit／else的真实官方用例。rc.8仅在对象确为Planet时进入归属／绑定判断，否则明确always=no，运行时仍需新进程积极验证。这是本机Stellaris按钮上下文事实，不将其推广为Paradox通用短路规则或CK3方言。
+
 ## 2026-10-08：同路径决议覆盖与查询零值告警
 
 通过open_kaishek的控制包仅从本机原版提取`decision_lithoid_swarm_consume_world`，与本Mod使用相同相对文件`common/decisions/zz_eep_native_decision.txt`。201344／202451全新离线简中进程的实际enabled_mods分别`[EEP, 控制包]`与`[控制包, EEP]`，从相同796f…原生SAV在physical1731／colony15／Q20／真实100种子“春天”经决议UI开始：前者实际原版局势，首月8.5；后者EEP局势，Q20/T48、首月1。C/G／制造0、D2和绑定保持，第一支21项／第二支18项范围证明通过，完整日志与初始guardFAIL保留。仅证明本机同路径双包的实际覆盖顺序，不推导所有不同文件／同键Mod的统一优先级或原版118月完整通过。公开说明应提示适配器若被覆盖，会回落原版流程而失去EEP结算；planet_view.gui覆盖须另作界面兼容处理。
