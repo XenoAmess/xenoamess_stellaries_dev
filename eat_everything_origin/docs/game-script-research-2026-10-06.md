@@ -107,4 +107,7 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 
 后续灵能时序核对：原版common/scripted_variables/09_scripted_variables_shroud.txt:32–34将破入虚境三阶段终点设为500、750、1000；13_shroud_situations.txt:293起基础月增5，默认方案乘.75，凝聚方案会带原版凝聚产出代价。第二阶段需实际活跃通灵部队，第三阶段需Great Awakening传统，不用直接赋予进度绕过。common/traditions/01_psionics_shroud.txt:134起的Great Awakening在第二阶段可合法付费采纳，但仍有虚境局势相关tradition_swap/on_enabled分支；实际物种特性何时替换以原生SAV为准，不仅从按钮名称宣称完整灵飞。
 
-2026-10-07?????????SRC-31?has_finished_psionic_tradition????????????????????????????08_scripted_triggers_shroud.txt:67???finish?has_breached_shroud:1198??breached_shroud?shroud_situation_events.txt:4152?shroud.2800?after???breach_shroud???psionic_traditions_unlocked??????shroud_shadows_scripted_effects.txt:3??breached_shroud?????????????DLC?????????????????????DLC????????????????Stellaris??????CK3???
+2026-10-07灵能实机修正SRC-31：has_finished_psionic_tradition只证明传统已完成；拥有虚境之影DLC时还须has_breached_shroud才代表最终虚境仪式完成。本机原版08_scripted_triggers_shroud.txt、shroud_situation_events.txt的shroud.2800 after及shroud_shadows_scripted_effects.txt提供对应旗标／效果。实际蜂巢在传统完成、潜势／完整特质及局势954进度时均未发EEP完成通知；2280.12.23原生最终仪式结束，2281.01.01才实际通知。EEP完成守卫保留传统要求，DLC分支再检查已破入虚境；无该DLC不新增蜂巢／机械入口。这是Stellaris特有时序，不向CK3推广。此段修复先前PowerShell直接传中文造成的问号文本。
+
+- 4.5.2原生吞星终点保存补充：2288.09.02星球112已经破碎并完整结算，但其旧局势16777221仍序列化且killed=yes，随后原生清理，2288.10.02存档已无该对象。不能把所有序列化局势都计为活动任务，也不能凭暂留对象断言重复结算。源星完成凭证、killed状态与后续对象清理须联查。
+- 同场真实战争中的星球53在2288.10.02有ground_combat318767104，原生colony3引用同一战斗，攻击方leader16777219；EEP进度44、last_month_progress0、报告阻塞2、人口／容量未预发。owner和controller均为0不能独自证明没有地面战斗；阻塞月须与有效推进月分开记录。

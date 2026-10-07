@@ -1,0 +1,73 @@
+{
+  "scope": "Actual native mineral corvette upkeep and movement; not a constant-naval-capacity multiplier experiment",
+  "ship": 16779544,
+  "fleet": 16778365,
+  "samples": [
+    {
+      "save": "native-mineral-corvette-docked-before-move.sav",
+      "save_sha256": "2ef631f19056df321d1df92c17905c72a8bbb8ec2fc1be0d0ac8a6abf2aef231",
+      "date": "2285.02.02",
+      "image": "native-mineral-corvette-real-ship-upkeep-tooltip.jpg",
+      "image_sha256": "fe5a71638ebf00882d3883a998e56f24abea8a8d1c2d7e8ddec19b54c93cb872",
+      "quoted_upkeep": {
+        "energy": 0.52,
+        "minerals": 0.52,
+        "alloys": 0
+      },
+      "naval_capacity_ui": [
+        388,
+        380
+      ],
+      "actual_ship_design": {
+        "design": 184551602,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "actual_fleet_coordinate": {
+        "x": 18.95,
+        "y": -20.95,
+        "origin": 5
+      },
+      "actual_fleet_orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+      "tooltip_rows": [
+        "维护费：0.520.52",
+        "驻港舰船维护费：-42%"
+      ]
+    },
+    {
+      "save": "native-mineral-corvette-undocked-confirmed.sav",
+      "save_sha256": "e8f37114b9210bedea799fc04331f5808910d4cae59587ac77fcc76a95f67e15",
+      "date": "2285.02.12",
+      "image": "native-mineral-corvette-undocked-upkeep-verified.jpg",
+      "image_sha256": "2491b843b7ecce4d70842278560cea1bb05d46ebccda03b14cd20e04a1b5e3d3",
+      "quoted_upkeep": {
+        "energy": 0.9,
+        "minerals": 0.9,
+        "alloys": 0
+      },
+      "naval_capacity_ui": [
+        380,
+        399
+      ],
+      "actual_ship_design": {
+        "design": 184551602,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "actual_fleet_coordinate": {
+        "x": -129.31052,
+        "y": 60.20235,
+        "origin": 5
+      },
+      "actual_fleet_orbit_raw": "\n\t\t\t",
+      "tooltip_rows": [
+        "维护费：0.900.90",
+        "驻港舰船维护费：-17%"
+      ]
+    }
+  ],
+  "limitations": [
+    "Dock and undock samples have different native naval capacity and warfare losses. They do not isolate an over-capacity modifier.",
+    "The negative 17% docked-upkeep modifier is shown in the undocked tooltip but the actual quote is 0.90 each; no 0.75 fee is inferred."
+  ]
+}

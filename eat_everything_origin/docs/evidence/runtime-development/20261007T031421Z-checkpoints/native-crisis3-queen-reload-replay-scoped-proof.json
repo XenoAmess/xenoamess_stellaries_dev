@@ -1,0 +1,109 @@
+{
+  "scope": "Actual notices and replay: compare all situations except the one documented diagnostic variable added by the read-only monitor; preserve original failure report",
+  "date": "2288.10.02",
+  "saves": [
+    {
+      "file": "native-crisis3-queen-pending.sav",
+      "sha256": "e26bb20a8413d65129ad30775dfc3ed2b26fde79e961dc36d924812d0453581f"
+    },
+    {
+      "file": "native-crisis3-queen-restored.sav",
+      "sha256": "50bb6ce098b0860fa876907b6930918597177242bfad8e93e8249eb75250bca4"
+    },
+    {
+      "file": "native-crisis3-queen-acknowledged.sav",
+      "sha256": "f20f1851985366b2d58505127a911e885d927625cf80c64bc38843ce1028c07d"
+    },
+    {
+      "file": "native-crisis3-five-replays-after.sav",
+      "sha256": "c423c5e7eae7e3eeb3f011464de745d84a11e356c564c35c30310faf4e17e416"
+    }
+  ],
+  "assertions": {
+    "native-crisis3-queen-restored:stockpile": true,
+    "native-crisis3-queen-restored:variables": true,
+    "native-crisis3-queen-restored:flags": true,
+    "native-crisis3-queen-restored:ascension_perks": true,
+    "native-crisis3-queen-restored:traditions": true,
+    "native-crisis3-queen-restored:pop_groups": true,
+    "native-crisis3-queen-restored:pop_jobs": true,
+    "native-crisis3-queen-restored:districts": true,
+    "native-crisis3-queen-restored:situations": true,
+    "native-crisis3-queen-acknowledged:stockpile": true,
+    "native-crisis3-queen-acknowledged:variables": true,
+    "native-crisis3-queen-acknowledged:flags": true,
+    "native-crisis3-queen-acknowledged:ascension_perks": true,
+    "native-crisis3-queen-acknowledged:traditions": true,
+    "native-crisis3-queen-acknowledged:pop_groups": true,
+    "native-crisis3-queen-acknowledged:pop_jobs": true,
+    "native-crisis3-queen-acknowledged:districts": true,
+    "native-crisis3-queen-acknowledged:situations": true,
+    "native-crisis3-five-replays-after:stockpile": true,
+    "native-crisis3-five-replays-after:variables": true,
+    "native-crisis3-five-replays-after:flags": true,
+    "native-crisis3-five-replays-after:ascension_perks": true,
+    "native-crisis3-five-replays-after:traditions": true,
+    "native-crisis3-five-replays-after:pop_groups": true,
+    "native-crisis3-five-replays-after:pop_jobs": true,
+    "native-crisis3-five-replays-after:districts": true,
+    "native-crisis3-five-replays-after:situations": true,
+    "pending source has one growth notice and one stage3 notice": true,
+    "reload preserves pending event records": true,
+    "ack clears both notices": true,
+    "five completion and five monthly replays create no new notice": true
+  },
+  "pending_events": [
+    {
+      "save": "native-crisis3-queen-pending.sav",
+      "events": [
+        {
+          "id": 528,
+          "event": "eep.13",
+          "date": "2291.01.01",
+          "country": 0
+        },
+        {
+          "id": 529,
+          "event": "eep.32",
+          "date": "2291.01.01",
+          "country": 0
+        }
+      ]
+    },
+    {
+      "save": "native-crisis3-queen-restored.sav",
+      "events": [
+        {
+          "id": 528,
+          "event": "eep.13",
+          "date": "2291.01.01",
+          "country": 0
+        },
+        {
+          "id": 529,
+          "event": "eep.32",
+          "date": "2291.01.01",
+          "country": 0
+        }
+      ]
+    },
+    {
+      "save": "native-crisis3-queen-acknowledged.sav",
+      "events": []
+    },
+    {
+      "save": "native-crisis3-five-replays-after.sav",
+      "events": []
+    }
+  ],
+  "status": "PASS",
+  "limitation": "Scoped notification/settlement verification. Does not declare all EAT cases passed.",
+  "raw_comparison_report": "native-crisis3-queen-reload-replay-proof.json",
+  "raw_diagnostic_change": {
+    "situation": 50331652,
+    "added_variable": "eep_probe_progress",
+    "value": 44,
+    "source": "testing/mod/events/eep_probe_events.txt:66-67",
+    "all_other_situation_fields_equal": true
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "scope": "Actual native single-ship weapon refit and completion; no granted ships or instant upgrade",
+  "ship": 16779544,
+  "samples": [
+    {
+      "save": "native-corvette-refit-before-upgrade.sav",
+      "save_sha256": "ed2e7fd7b669eb7d72c522b0267e66e0cb5489825bcbf3bb00adb12ed0f0aab3",
+      "date": "2285.02.12",
+      "implementation": {
+        "design": 184551602,
+        "upgrade": 2676,
+        "growth_stage": 0
+      },
+      "actual_weapons": [
+        {
+          "index": 0,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_01"
+        },
+        {
+          "index": 1,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_02"
+        },
+        {
+          "index": 2,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_03"
+        }
+      ],
+      "fleet_current_order_raw": ""
+    },
+    {
+      "save": "native-corvette-refit-upgrade-actually-queued.sav",
+      "save_sha256": "de6edc69f04474cc7a699050d9e775b94ad3a8ce46030060b05699ec0951b1a4",
+      "date": "2286.03.22",
+      "implementation": {
+        "design": 184551602,
+        "upgrade": 2676,
+        "growth_stage": 0
+      },
+      "actual_weapons": [
+        {
+          "index": 0,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_01"
+        },
+        {
+          "index": 1,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_02"
+        },
+        {
+          "index": 2,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_03"
+        }
+      ],
+      "fleet_current_order_raw": "\n\t\t\tupgrade_design_at_orbitable_fleet_order=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tstatus=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tship=16779544\n\t\t\t\t\t\tupgrade_implementation=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdesign=2676\n\t\t\t\t\t\t}\n\t\t\t\t\t\tbuild_queue_item=4294967295\n\t\t\t\t\t\tvalue=0.04995\n\t\t\t\t\t\tstatus=upgrade_waiting\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t\tqueue=3\n\t\t\t\tself_upgrading=no\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\torbit_planet_order=\n\t\t\t\t\t{\n\t\t\t\t\t\torbitable=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tstarbase=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tstar=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tplanet=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tmerge_fleet=none\n\t\t\t\t\t\tsub_order=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmove_to_system_point_order=\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tcoordinate=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tx=18.95\n\t\t\t\t\t\t\t\t\ty=-20.95\n\t\t\t\t\t\t\t\t\torigin=5\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    {
+      "save": "native-refit-project86-pending.sav",
+      "save_sha256": "cfb85cc1010b57d614e736d7f9e0d85012d3909afa923f465e0e53b814ad74a3",
+      "date": "2286.08.05",
+      "implementation": {
+        "design": 2676,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "actual_weapons": [
+        {
+          "index": 3,
+          "template": "SMALL_UV_LASER",
+          "component_slot": "SMALL_GUN_01"
+        },
+        {
+          "index": 4,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_02"
+        },
+        {
+          "index": 5,
+          "template": "SMALL_AUTOCANNON_1",
+          "component_slot": "SMALL_GUN_03"
+        }
+      ],
+      "fleet_current_order_raw": ""
+    }
+  ],
+  "zero_cost_quote_ocr": "native-corvette-refit-actual-upgrade-quote.ocr.json",
+  "failed_first_order_identical_save_sha256": "ed2e7fd7b669eb7d72c522b0267e66e0cb5489825bcbf3bb00adb12ed0f0aab3",
+  "limitation": "No independent same-date pre-order save exists for the successful 2286.03.22 refit. Zero cost is reported from the actual native quote, not a fabricated currency-delta experiment."
+}
