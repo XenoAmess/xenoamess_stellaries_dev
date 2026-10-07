@@ -14,11 +14,17 @@ Stellaris原版部分决议完全省略resources块（02_special_decisions.txt�
 
 ## 2026-10-07 原生舰船建造与缓存补充
 
+真实舰船设计的section内component为重复命名块，组件标量是slot和template；name.key仅为名称本地化引用，不是组件ID。巡洋舰真实LARGE_GUN_01槽对应template="LARGE_UV_LASER"。读取时须先按真实growth_stage选择阶段，再解析section／component和准确slot，不能搜索name.key或忽略多阶段结构。
+
 4.5.2原生SAV的建造队列在`construction.queue_mgr.queues`，实际建造项目在`construction.item_mgr.items`，二者ID引用相连；不能把项目当作construction的直接子字段。驱逐舰真实三个550矿物／60基础工作项目及27日完工保留在031421原生存档，具体速度来自该局原版修正，不能把27日当全局固定工期。
 
 原版`common/scripted_variables/03_scripted_variables_ships.txt`的护卫舰能源／矿物基值各1.0，驱逐舰各2.0（65／67／96／98行）；`20_nemesis.txt`实际船型引用这些变量。当前国家设计显示0.90／1.80已包含帝国修正，图库口径改为“当前帝国修正后的设计维护”。原始截图不修改，不把修正后的设计值称全局基础维护。
 
 原生单舰解散会先移除舰队引用，当日国家`used_naval_capacity`及维护提示仍可保留旧缓存；本次11.12舰船已移出但舰容404，11.13真实一天后刷新396，UI404/399→396/399，剩余同型舰维护各1.82→1.80。必须核对实际对象和刷新日期，不能仅凭当日界面或缓存统计断言解散没有生效。解散前原字节重载已恢复三舰与原账本。
+
+rc.4巡洋舰复现同一刷新行为：实际八舰7200矿物付费并完成，舰容487/480；解散50332304后同日舰队引用只剩四艘已集结、三艘增援，原对象killed=yes／fleet4294967295仍暂留，国家缓存487与维护3.44保持；真实下一日变为471/480，剩余同型舰维护3.40。全库存与EEP经济凭证保持。存档里的killed对象及当日缓存不能被计作仍实际拥有的活动舰船。
+
+巡洋舰原版能源／矿物维护基值各4.0（同一变量文件114／116行），本局当前设计显示3.40，实际驻港1.98／离港超容3.44／低于上限刷新后3.40；三种数值必须区别标注。ship_design的船型位于匿名growth_stages条目中，实际ship_design_implementation还带growth_stage索引，不仅凭设计顶层标量查找船型。新舰可能省略original_owner，归属使用country.fleets_manager.owned_fleets的fleet引用与实际ship.fleet连接；三艘MIA增援仍由本国拥有，原生return_date及merge订单说明其状态，不能把未集结等同于未建造。以上为Stellaris 4.5.2存档与实机事实，不推广为CK3方言。
 
 ## 1. 环境和证据
 

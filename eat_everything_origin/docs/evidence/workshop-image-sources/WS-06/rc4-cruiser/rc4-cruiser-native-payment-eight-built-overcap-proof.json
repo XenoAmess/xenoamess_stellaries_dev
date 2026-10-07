@@ -1,0 +1,848 @@
+{
+  "status": "PASS",
+  "scope": "Natural native stage4 cruiser actual payment, eight queues/completed owned ships, naval increase and overcapacity HUD487/480. Five at Mother, three real reinforcement transit objects, not lost/unbuilt. Dock/undock/refit and full Mod acceptance are not covered.",
+  "version": "0.2.0-rc.4",
+  "language": "l_simp_chinese",
+  "stockpile_deltas": {
+    "alloys": 0.0,
+    "astral_threads": 0.0,
+    "consumer_goods": 0,
+    "energy": 0.0,
+    "engineering_research": -118.04705,
+    "exotic_gases": 0.0,
+    "food": 0,
+    "influence": 0,
+    "menace": 0,
+    "minerals": -7200,
+    "minor_artifacts": 0.0,
+    "physics_research": -256.66911,
+    "rare_crystals": 0.0,
+    "society_research": -524.8144200000002,
+    "sr_dark_matter": 0,
+    "sr_living_metal": 0,
+    "sr_zro": 0,
+    "trade": 0.0,
+    "unity": 0.0,
+    "volatile_motes": 0.0
+  },
+  "checks": [
+    {
+      "check": "payment_same_date",
+      "status": "PASS",
+      "actual": "2296.03.02",
+      "expected": "2296.03.02"
+    },
+    {
+      "check": "actual_mineral_payment",
+      "status": "PASS",
+      "actual": -7200,
+      "expected": -7200
+    },
+    {
+      "check": "payment_inventory_alloys",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_astral_threads",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_consumer_goods",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_energy",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_exotic_gases",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_food",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_influence",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_menace",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_minor_artifacts",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_rare_crystals",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_sr_dark_matter",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_sr_living_metal",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_sr_zro",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_trade",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_unity",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "payment_inventory_volatile_motes",
+      "status": "PASS",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "check": "eight_actual_paid_queues",
+      "status": "PASS",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "check": "each_actual_queue_cost",
+      "status": "PASS",
+      "actual": [
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900
+      ],
+      "expected": [
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900
+      ]
+    },
+    {
+      "check": "each_queue_starts_at_zero",
+      "status": "PASS",
+      "actual": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "check": "each_base_buildtime",
+      "status": "PASS",
+      "actual": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120
+      ],
+      "expected": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120
+      ]
+    },
+    {
+      "check": "all_eight_queues_removed_after_completion",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "check": "design_growth_stage_class",
+      "status": "PASS",
+      "actual": [
+        "crisis_cruiser"
+      ],
+      "expected": [
+        "crisis_cruiser"
+      ]
+    },
+    {
+      "check": "no_owned_cruiser_before_order",
+      "status": "PASS",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "check": "eight_actual_owned_cruisers_after_completion",
+      "status": "PASS",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "check": "native_naval_capacity_delta",
+      "status": "PASS",
+      "actual": 128,
+      "expected": 128
+    },
+    {
+      "check": "native_actual_naval_used",
+      "status": "PASS",
+      "actual": 487,
+      "expected": 487
+    },
+    {
+      "check": "five_cruisers_at_mother_fleet",
+      "status": "PASS",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "check": "remaining_three_reinforcements_have_native_return_dates",
+      "status": "PASS",
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "check": "no_new_eep_ledger_eep_c",
+      "status": "PASS",
+      "actual": 57,
+      "expected": 57
+    },
+    {
+      "check": "no_new_eep_ledger_eep_g",
+      "status": "PASS",
+      "actual": 57,
+      "expected": 57
+    },
+    {
+      "check": "no_new_eep_ledger_eep_d",
+      "status": "PASS",
+      "actual": 16,
+      "expected": 16
+    },
+    {
+      "check": "no_new_eep_ledger_eep_made",
+      "status": "PASS",
+      "actual": 900,
+      "expected": 900
+    },
+    {
+      "check": "no_new_eep_ledger_eep_worlds",
+      "status": "PASS",
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "check": "no_new_menace",
+      "status": "PASS",
+      "actual": 5185,
+      "expected": 5185
+    }
+  ],
+  "paid_queue_records": {
+    "2382364672": {
+      "native": {
+        "queue": 3,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=0\n\t\t\t\t\t}\n\t\t\t\t"
+    },
+    "2164260865": {
+      "native": {
+        "queue": 3,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=0\n\t\t\t\t\t}\n\t\t\t\t"
+    },
+    "1862270978": {
+      "native": {
+        "queue": 3,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=0\n\t\t\t\t\t}\n\t\t\t\t"
+    },
+    "1996488707": {
+      "native": {
+        "queue": 2435,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=45\n\t\t\t\t\t}\n\t\t\t\t"
+    },
+    "2097152004": {
+      "native": {
+        "queue": 2439,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=137\n\t\t\t\t\t}\n\t\t\t\t"
+    },
+    "1677721606": {
+      "native": {
+        "queue": 2439,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=137\n\t\t\t\t\t}\n\t\t\t\t"
+    },
+    "1979711495": {
+      "native": {
+        "queue": 3,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=0\n\t\t\t\t\t}\n\t\t\t\t"
+    },
+    "1660944392": {
+      "native": {
+        "queue": 3,
+        "paying_country": 0,
+        "progress": 0,
+        "progress_needed": 120
+      },
+      "resources": {
+        "minerals": 900
+      },
+      "buildable": "\n\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t{\n\t\t\t\t\t\tdesign=100666350\n\t\t\t\t\t\tupgrade=4294967295\n\t\t\t\t\t\tgrowth_stage=0\n\t\t\t\t\t}\n\t\t\t\t\tfleet_template=134217731\n\t\t\t\t\torbitable=\n\t\t\t\t\t{\n\t\t\t\t\t\tstarbase=0\n\t\t\t\t\t}\n\t\t\t\t"
+    }
+  },
+  "actual_owned_cruisers": {
+    "83886103": {
+      "native": {
+        "fleet": 16778514,
+        "reserve": 1,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.35639,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -2.35639,
+        "forward_x": 0.70697,
+        "forward_y": -0.70724,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.04.25",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 134217731,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 12000.0,
+        "military_power": 5105.0,
+        "diplomacy_weight": 5105.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none"
+      },
+      "fleet_orbit": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t",
+      "fleet_coordinate": {
+        "x": 18.95,
+        "y": -18.95,
+        "origin": 5
+      },
+      "fleet_current_order": ""
+    },
+    "100663507": {
+      "native": {
+        "fleet": 16778514,
+        "reserve": 2,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.35639,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -2.35639,
+        "forward_x": 0.70697,
+        "forward_y": -0.70724,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.04.25",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 134217731,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 12000.0,
+        "military_power": 5105.0,
+        "diplomacy_weight": 5105.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none"
+      },
+      "fleet_orbit": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t",
+      "fleet_coordinate": {
+        "x": 18.95,
+        "y": -18.95,
+        "origin": 5
+      },
+      "fleet_current_order": ""
+    },
+    "33554667": {
+      "native": {
+        "fleet": 16777331,
+        "reserve": 0,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": 0,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": 0,
+        "forward_x": 0,
+        "forward_y": 1,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.04.25",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 201326629,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "return_date": "2296.10.18",
+        "order_id": 1,
+        "hit_points": 2400.0,
+        "military_power": 1021.0,
+        "diplomacy_weight": 1021.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none",
+        "mia_type": "mia_reinforce"
+      },
+      "fleet_orbit": "\n\t\t\t",
+      "fleet_coordinate": {
+        "x": 12.88,
+        "y": 60.16,
+        "origin": 4294967295,
+        "randomized": "yes",
+        "visual_height": 3.65056
+      },
+      "fleet_current_order": "\n\t\t\tmerge_fleet_order=\n\t\t\t{\n\t\t\t\ttarget=16778514\n\t\t\t\tordered_by=0\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tfollow_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tfleet=16778514\n\t\t\t\t\t\tcoordinate=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tx=0\n\t\t\t\t\t\t\ty=0\n\t\t\t\t\t\t\torigin=4294967295\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=0\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "33554700": {
+      "native": {
+        "fleet": 150995532,
+        "reserve": 0,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": 0,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": 0,
+        "forward_x": 0,
+        "forward_y": 1,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.04.25",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 67108904,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "return_date": "2296.10.11",
+        "order_id": 1,
+        "hit_points": 2400.0,
+        "military_power": 1021.0,
+        "diplomacy_weight": 1021.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none",
+        "mia_type": "mia_reinforce"
+      },
+      "fleet_orbit": "\n\t\t\t",
+      "fleet_coordinate": {
+        "x": -12.36,
+        "y": 52.95,
+        "origin": 4294967295,
+        "randomized": "yes",
+        "visual_height": 3.65056
+      },
+      "fleet_current_order": "\n\t\t\tmerge_fleet_order=\n\t\t\t{\n\t\t\t\ttarget=16778514\n\t\t\t\tordered_by=0\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tfollow_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tfleet=16778514\n\t\t\t\t\t\tcoordinate=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tx=0\n\t\t\t\t\t\t\ty=0\n\t\t\t\t\t\t\torigin=4294967295\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=0\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "33554705": {
+      "native": {
+        "fleet": 167772865,
+        "reserve": 0,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": 0,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": 0,
+        "forward_x": 0,
+        "forward_y": 1,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.04.25",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 16777273,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "return_date": "2296.10.11",
+        "order_id": 1,
+        "hit_points": 2400.0,
+        "military_power": 1021.0,
+        "diplomacy_weight": 1021.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none",
+        "mia_type": "mia_reinforce"
+      },
+      "fleet_orbit": "\n\t\t\t",
+      "fleet_coordinate": {
+        "x": -12.36,
+        "y": 52.95,
+        "origin": 4294967295,
+        "randomized": "yes",
+        "visual_height": 3.65056
+      },
+      "fleet_current_order": "\n\t\t\tmerge_fleet_order=\n\t\t\t{\n\t\t\t\ttarget=16778514\n\t\t\t\tordered_by=0\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tfollow_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tfleet=16778514\n\t\t\t\t\t\tcoordinate=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tx=0\n\t\t\t\t\t\t\ty=0\n\t\t\t\t\t\t\torigin=4294967295\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=0\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "16777508": {
+      "native": {
+        "fleet": 16778514,
+        "reserve": 0,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.35639,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -2.35639,
+        "forward_x": 0.70697,
+        "forward_y": -0.70724,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.04.25",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 134217731,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 12000.0,
+        "military_power": 5105.0,
+        "diplomacy_weight": 5105.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none"
+      },
+      "fleet_orbit": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t",
+      "fleet_coordinate": {
+        "x": 18.95,
+        "y": -18.95,
+        "origin": 5
+      },
+      "fleet_current_order": ""
+    },
+    "50332302": {
+      "native": {
+        "fleet": 16778514,
+        "reserve": 3,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.35639,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -2.36939,
+        "forward_x": 0.69772,
+        "forward_y": -0.71638,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.06.18",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 134217731,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 12000.0,
+        "military_power": 5105.0,
+        "diplomacy_weight": 5105.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none"
+      },
+      "fleet_orbit": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t",
+      "fleet_coordinate": {
+        "x": 18.95,
+        "y": -18.95,
+        "origin": 5
+      },
+      "fleet_current_order": ""
+    },
+    "50332304": {
+      "native": {
+        "fleet": 16778514,
+        "reserve": 4,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.35639,
+        "hitpoints": 2400,
+        "shield_hitpoints": 1230,
+        "armor_hitpoints": 2247.1,
+        "max_hitpoints": 2400,
+        "max_shield_hitpoints": 1230,
+        "max_armor_hitpoints": 2247.1,
+        "rotation": -2.342,
+        "forward_x": 0.71708,
+        "forward_y": -0.69699,
+        "upgrade_progress": 0,
+        "next_weapon_index": 5,
+        "created_this_update": "no",
+        "combat_action": 1,
+        "construction_date": "2296.06.18",
+        "maturation_date": "0.01.01"
+      },
+      "design": {
+        "design": 100666350,
+        "upgrade": 285214214,
+        "growth_stage": 0
+      },
+      "fleet_native": {
+        "fleet_template": 134217731,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 12000.0,
+        "military_power": 5105.0,
+        "diplomacy_weight": 5105.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "original_merge_fleet_target": 16778514,
+        "commanding_armada": "none"
+      },
+      "fleet_orbit": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t",
+      "fleet_coordinate": {
+        "x": 18.95,
+        "y": -18.95,
+        "origin": 5
+      },
+      "fleet_current_order": ""
+    }
+  },
+  "construction_dates": [
+    "2296.04.25",
+    "2296.04.25",
+    "2296.04.25",
+    "2296.04.25",
+    "2296.04.25",
+    "2296.04.25",
+    "2296.06.18",
+    "2296.06.18"
+  ],
+  "native_ui_evidence": [
+    "rc4-native-cruiser-900-mineral-design-clean.jpg",
+    "rc4-cruiser-selected-eight-reinforce-quote.jpg",
+    "rc4-native-cruiser-built-overcap-docked-clean.jpg"
+  ],
+  "saves": {
+    "rc4-native-cruiser-before-order": {
+      "sha256": "9d7cad03ff228f42fb73f9a17b027a70f64a37c9fee060b8a8a7fd053c10dc4f",
+      "date": "2296.03.02"
+    },
+    "rc4-native-cruiser-eight-order-paid": {
+      "sha256": "119e615140f2d9e1cafd6ac7df887753cfa0f904440af4f351b237203d456ea2",
+      "date": "2296.03.02"
+    },
+    "rc4-native-cruiser-built-overcap-docked": {
+      "sha256": "c080cb74e798cb51b98bb300ffbd68d9349fb95e05d49ce8df925691ff39d752",
+      "date": "2296.07.02"
+    }
+  }
+}
