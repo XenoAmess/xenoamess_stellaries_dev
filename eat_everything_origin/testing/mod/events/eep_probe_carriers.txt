@@ -1,0 +1,71 @@
+# Controlled setup and independent attempts. Never included in production.
+namespace = eep_probe
+
+country_event = {
+    id = eep_probe.63
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        capital_scope = { save_event_target_as = eep_probe_ark_location }
+        create_fleet = {
+            name = "EEP-ARK-REFUSAL"
+            effect = {
+                set_owner = root
+                create_ship = {
+                    name = "EEP-ARK-REFUSAL"
+                    design = NAME_Champions_Forge_Arkship
+                    effect = { save_global_event_target_as = eep_probe_ark }
+                }
+                set_location = event_target:eep_probe_ark_location
+                save_global_event_target_as = eep_probe_ark_fleet
+            }
+        }
+        event_target:eep_core@this = {
+            random_owned_pop_group = {
+                limit = { eep_founder_pop = yes pop_group_size >= 100 }
+                resettle_pop_group = {
+                    POP_GROUP = this
+                    PLANET = event_target:eep_probe_ark
+                    AMOUNT = 100
+                }
+            }
+        }
+        log = "EEP_CONTROL arkship constructed; audit carrier and real seed before attempt"
+    }
+}
+
+country_event = {
+    id = eep_probe.64
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_probe_ark = {
+            if = { limit = { is_planet_class = pc_ark } log = "EEP_ARK_PRECONDITION_PC_ARK" }
+            if = { limit = { is_colony = yes } log = "EEP_ARK_PRECONDITION_COLONY" }
+            eep_begin = yes
+        }
+    }
+}
+
+country_event = {
+    id = eep_probe.65
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        save_event_target_as = eep_probe_country
+        eep_probe_create_source = { SIZE = 20 TARGET = eep_probe_source START = no }
+        event_target:eep_probe_source = { change_pc = pc_g_star set_name = "EEP-STAR-REFUSAL" }
+    }
+}
+
+country_event = {
+    id = eep_probe.66
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        event_target:eep_probe_source = {
+            if = { limit = { is_star = yes } log = "EEP_STAR_PRECONDITION_YES" }
+            eep_begin = yes
+        }
+    }
+}

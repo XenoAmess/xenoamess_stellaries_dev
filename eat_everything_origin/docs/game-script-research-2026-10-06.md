@@ -97,6 +97,8 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 - 4.5.2原生生成的effects.log:1395～1397记录country作用域`set_origin = <origin>`，并明确不会运行银河生成阶段效果。这提供受控运行对照接口，但不等于正常新局重新生成；原版开局人口、区划与起源临时修正必须另行记录。尚未把文档存在当作实机切换通过。
 
 - SRC-39补充实测：运行224056启动manifest的scheduled_commands为空，启动后在隔离userdir新增commands_at_date.txt，原生重载2200.01.01存档后2200.01.04命令实际执行并暂停在2200.01.05；恢复存档另经原生保存确认4800人口、C/G0/D2。因此本机4.5.2可以在原生重载后重新读取新增定时文件，不推定无需重载的即时热读取。
+- 4.5.2原生载入UI在当前1024×768／0.75缩放会把长文件名截成省略号；精确OCR不能据此识别完整分组名。实际失败hive-scorched-natural23-source-ready后，仅把原生SAV原字节复制为hs-natural23-base，SHA-256保持，重新打开列表即可按完整短名成功载入2223.01.02。此是文件名与UI可读性限制，后续快照尽量使用短名；副本不是新游戏状态，原始meta／gamestate不得重写。源／副本哈希及原生载入回显保留。
+- 4.5.2方舟Carrier接口补充（源码／原生接口文档已核实，拒绝夹具实机待执行）：nomads_effects.txt:321的原生create_ship使用NAME_Champions_Forge_Arkship全局设计，对应船型carries_colony=pc_ark；effects.log:361～374说明create_colony默认yes，只对携带殖民地的舰船生效，无殖民地Carrier舰会被原生日清理。nomad_assimilate_displaced_pops_effect在:3189使用resettle_pop_group的PLANET指向方舟capital_scope，说明该参数名不能解读为只允许物理星球。pc_ark定义is_artificial_planet=yes；真实ship、colony和物理planet的前提必须分别查存档，不用普通星球改类替代方舟作用域测试。
 - 焦土与火山改造条件补充：本机infernals_1_events.txt:147～177的infernals.20是烈焰风暴轰炸按真实舰队规模生成凝聚的原版路径；:217起infernals.30／31的熔炉自动改造明确要求is_world_forger_empire及has_anvil_building，不能归为所有焦土国策的免费能力。普通continental→volcanic改造在01_advanced_terraform_links.txt:2609起要求allow_terraforming_into_volcanic，此旗标在infernals_crisis_events.txt:207的原版银河高温阶段3事件设置。吞噬之心不赠送这些条件；兼容测试应核对实际合法入口，不用控制台改类冒充原版改造完成。
 
 
