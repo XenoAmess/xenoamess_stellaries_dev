@@ -235,10 +235,17 @@ def native_load(save_name, stage):
     else:
         raise RuntimeError("Chinese native load window did not open")
     half = frame["resolution"][0] / 2
+    def save_rows(frame):
+        files = [r for r in frame["rows"] if r["text"] == source.name
+                 and center(r)[0] > half and r["score"] >= .8]
+        if files:
+            return files
+        return [r for r in frame["rows"] if r["text"] == save_name
+                and center(r)[0] > half and r["score"] >= .8]
     def scan_list(frame, suffix):
         previous = None
         for page in range(18):
-            right = [r for r in frame["rows"] if r["text"] == save_name and center(r)[0] > half and r["score"] >= .8]
+            right = save_rows(frame)
             if right:
                 return frame, right
             signature = tuple(r["text"] for r in frame["rows"] if center(r)[0] > half and 350 <= center(r)[1] <= 600)
@@ -248,15 +255,11 @@ def native_load(save_name, stage):
             gpu_scroll(-1, round(half + 230), 530, f"{stage}-{suffix}-scroll-{page}", 12)
             frame = gpu_capture(f"{stage}-{suffix}-page-{page}")
         return frame, []
-    right = [r for r in frame["rows"] if r["text"] == save_name and center(r)[0] > half and r["score"] >= .8]
+    right = save_rows(frame)
     if not right:
-        import zipfile
-        def save_order(path):
-            with zipfile.ZipFile(path) as archive:
-                meta = audit_save.scalars(archive.read("meta").decode("utf-8-sig"))
-            return (tuple(int(part) for part in meta["date"].split(".")), path.stat().st_mtime_ns)
-        latest = max(source.parent.glob("*.sav"), key=save_order)
-        left = [r for r in frame["rows"] if r["text"] == latest.name and center(r)[0] < half and r["score"] >= .8]
+        parent_files = {path.name for path in source.parent.glob("*.sav")}
+        left = [r for r in frame["rows"] if r["text"] in parent_files
+                and center(r)[0] < half and r["score"] >= .8]
         if len(left) == 1:
             # The filename sits above a native "load latest" action in the
             # right part of the group card. Select the empire title at left.
