@@ -49,3 +49,5 @@
 每项原件路径与SHA见[正式运行时凭证](evidence/runtime-acceptance.json)，历史子项状态审阅见[来源审阅](evidence/first-release-matrix-source-review-2026-10-08.json)。生产冒烟见[整轮原件](evidence/runtime-development/20261008T081542Z/formal-production-smoke-proof.json)和[Git原字节核验](evidence/formal-full-run-20261008T081542Z-git-object-check.json)。
 
 下一步：离线发布preflight通过并提交推送后，才将Steam在线；创建新的工坊物品，上传正文／七张冻结图片／Change Note，独立下载全41文件及远端元数据与图片核验后提交发布回执和v0.2.0标签。随后恢复离线，继续四个未完成入口、石质／机械世界及真正无Mod117／118等测试与修复。
+
+16:50凭证字节复核发现：整轮389原件的Git字节保持，但三个顶层JSON被Git自动转换CRLF为LF，导致跨检出SHA引用与工作区原件不同。先给这些凭证以及最终运行时汇总显式binary属性并重新暂存原字节，再核全部141条引用的Git blob SHA；不改游戏内容、测试结果或原件，不以本机preflight通过代替跨检出完整性。
