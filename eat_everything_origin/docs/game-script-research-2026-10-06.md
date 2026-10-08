@@ -267,3 +267,7 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 群星4.5.2原生犯罪通知同日确认差异（2026-10-09）：crime_events.txt:692的crime.40 immediate已经添加永久criminal_underworld及criminal_underworld_appeared计时标记；普通选项只含tooltip，after:888正常移除criminal_underworld_event_up。真实2305.01.02确认前后物理母星唯一差异就是该显示标记删除，永久修正／计时和全部其它字段保持，不能把这一删除理解为消除犯罪或第二次应用修正。原SAV、真实UI和25项严格FAIL／27项精确补核分开留存，参见发布后验收文档。
 
 同轮辅助读取教训：open_player_event_selection_history.selected是匿名对象列表，每对象有player_event／human／option三字段；q.fields仅用于命名key=value，不能直接用在匿名列表上。用q.tokens按最外层花括号分组后才对单对象用q.scalars，须断言闭合、字段全集及旧history严格前缀，只追加预期human记录；这属于群星原生SAV结构，未推定其它Paradox游戏存档格式。原辅助异常字节与后续严格物理保持FAIL都保留，不通过重放真实选项消除。
+
+本机4.5.2国内市场实际使用trade付款：正常买1000矿物实扣1417贸易，能源及其它全部真实库存保持，不能按旧版本经验假定能源付款。原生传统节点会先打开购买确认框，点击实际“是”才付款，直接ESC会取消；灵能军团真实实扣16695.77881、显示ceil16696。本机母星默认建筑3×2位于大区划图右侧，升级箭头和建筑主体是不同控件；误升级800矿物／0天订单的正常左键取消已全额退款，右键未生效的原FAIL保留。这些是本机Stellaris原生UI及存档实证，不作为跨游戏通用规则。
+
+原生4.5.2建筑替换项目存档为construction.item_mgr.items.<id>.buildable_planet_replace_building，包含building／planet（殖民地ID）／zone／replace_building（原建筑ID）；灵能军团真实500矿物／480天。普通新建筑为buildable_planet_building，寺庙400矿物／360天；区划为buildable_district，采矿300矿物／240天。下单只记录last_building_changed／last_district_changed和真实支付，不提前变建筑／岗位；队列后项在前项完成之前progress0。当前实证仅已付费下单，实际完成及新增岗位必须独立核。
