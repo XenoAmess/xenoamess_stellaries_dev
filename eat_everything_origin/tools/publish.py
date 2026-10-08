@@ -4,7 +4,6 @@ from datetime import datetime, timezone
 import argparse
 import ctypes as C
 import hashlib
-import html
 import json
 import os
 import re
@@ -15,6 +14,7 @@ import urllib.parse
 import urllib.request
 import workshop_images
 import release_acceptance
+from change_note_html import exact_change_note
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parent
@@ -247,8 +247,8 @@ def verify(download):
             raise RuntimeError("remote preview differs")
     url = f"https://steamcommunity.com/sharedfiles/filedetails/changelog/{item_id}?l=english"
     with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30) as response:
-        page = html.unescape(response.read().decode("utf-8", "replace"))
-    if expected["note"] not in page:
+        page = response.read().decode("utf-8", "replace")
+    if not exact_change_note(page, expected["note"]):
         raise RuntimeError("versioned Change Note not visible")
     if manifest(download) != expected["content"] or manifest(MOD) != expected["content"]:
         raise RuntimeError("download content differs from frozen production")
