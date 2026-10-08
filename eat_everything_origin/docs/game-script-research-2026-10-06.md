@@ -1,5 +1,15 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+## 2026-10-08：自然转换与隔离星系的原生证据
+
+实际pc_volcanic→pc_hive队列在正常付10000能源后为total7200、initial_total_days7200、倍率1；真实五年／十年分别progress1800／3600，未提前完成或再次付款。2299.03.12起点到2309.03.12仍在同一母星physical1／colony0，核心地貌、容量16与court各一份、绑定和EEP五项账本保持；54项只读检查通过，不代表最终转换／真实容量UI通过。
+
+本机序列化timed_modifier.items是匿名对象列表；q.fields仅用于命名字段，直接传匿名列表会抛ValueError。恢复按令牌深度分块后才逐对象读标量，不修改SAV；原失败源码保留。这是当前Stellaris序列化和审计接口事实，不扩展成所有Paradox方言规则。
+
+真实源星隔离核对：原自然2223.01.02的母星1.coordinate.origin=5（EEP-Throne），殖民源84.coordinate.origin=78（Demivideau），两星系不同。galactic_object.<id>将planet序列化为多个重复标量字段，不能用q.scalars只取末个planet或把它当planet列表块读取；必须遍历全部字段。源colony24实际只有69本族，正式开始需补迁31；普通非格式塔外族候选实际country1／species2为MAM有机，不是蜂巢或机械人口的即时清除对照。
+
+快进回执在当前原生面板可裁为“Fast Forwarded 1800 D”；完整days精确匹配会在真实终点反复等待。恢复必须同时读取新鲜实际日期、暂停、正确完整／裁断天数行，并原生保存核真实进度，不只看日历。原监测失败和多等耗时保留，不计性能样本；后续联合判据辅助用独立恢复文件名。Windows本机Python默认GBK读取带中文OCR失败，审计／OCR文件明确UTF-8读取；这不是本地化内容或游戏运行失败。
+
 ## 2026-10-08：原生存档、市场和付费操作的实际字段
 
 215509简中离线原生回归确认：国家起源保存在 `country.<id>.government.origin`，不是国家顶层。无本起源蜂巢 country1 的自有首都不显示女王按钮；切换、查看和保存的37国／九组实际数据同日保持。
@@ -191,3 +201,8 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 
 - 4.5.2原生吞星终点保存补充：2288.09.02星球112已经破碎并完整结算，但其旧局势16777221仍序列化且killed=yes，随后原生清理，2288.10.02存档已无该对象。不能把所有序列化局势都计为活动任务，也不能凭暂留对象断言重复结算。源星完成凭证、killed状态与后续对象清理须联查。
 - 同场真实战争中的星球53在2288.10.02有ground_combat318767104，原生colony3引用同一战斗，攻击方leader16777219；EEP进度44、last_month_progress0、报告阻塞2、人口／容量未预发。owner和controller均为0不能独自证明没有地面战斗；阻塞月须与有效推进月分开记录。
+# 原生移动目标的殖民地／物理星球区别（2026-10-08）
+
+本机4.5.2在国境capital_scope保存事件目标时，原生SAV目标为type=colony／id0；auto_move_to_planet文档明确要求planet目标，直接传该殖民地目标后没有实际移动订单。须经capital_scope={ planet={ save_global_event_target_as=... } }取得physical1，再给现有舰队设置移动。首个无效尝试及一日原生SAV保留，不作为移动成功证据。这是Stellaris当前殖民地拆分规则，不推断其它Paradox方言。
+
+后续原生SAV确认经planet转换的目标为physical1，但本次玩家舰队仍未实际航行；不能把目标类型修正等同功能成功。官方000_fleet_action_examples.txt的queue_actions.orbit_planet在原生SAV真实生成actions.orbit_planet.planet=1／action_initialized，三个月后仍move_idle，原因尚未确定。这里只确认作用域类型和序列化事实，不推断所有舰队行为。
