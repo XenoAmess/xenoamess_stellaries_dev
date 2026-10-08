@@ -13,6 +13,7 @@
 - [焦土蜂巢31项首发验收结果与实际证据边界](first-release-acceptance-result-2026-10-08.md)
 - [0.2.0发布回执、远端核验与标签](publication-v0.2.0-2026-10-08.md)
 - [首发后离线验收与真正无Mod吞岩对照](post-release-acceptance-round-2026-10-08.md)
+- [兼容入口正式中文名、七条专项验收顺序与滚动排期](civic-acceptance-roster-2026-10-08.md)
 - [真正无Mod Q20第117／118月终点、完成选项及重载验收结果](post-release-vanilla-boundary-result-2026-10-08.md)（对照项通过，其它Mod路线继续验收）
 - [首发剩余实机检查顺序及真实母星转换检查点](first-release-remaining-runtime-round-2026-10-08.md)
 - [蜂巢改造清除王座地貌的原始失败与rc.9恢复方案](rc9-core-deposit-terraform-recovery-2026-10-08.md)
