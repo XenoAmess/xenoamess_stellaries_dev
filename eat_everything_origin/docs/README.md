@@ -1,6 +1,6 @@
 # 吞噬之心：设计与研究
 
-更新：2026-10-08。当前候选 `0.2.0-rc.9`，蜂巢改造后王座地貌修复的受影响回归已完成，正在继续焦土肃清等待等首发余项；中文运行时验收继续，公开发布尚未完成。用户已选择全部入口开放，完成焦土蜂巢及共有关键机制后首发、只推荐焦土蜂巢，发布后继续其它路线测试与修复。
+更新：2026-10-08。正式 `0.2.0` 已发布至[创意工坊新物品3815707212](https://steamcommunity.com/sharedfiles/filedetails/?id=3815707212)，全41文件、公开文案、Change Note与七张图片远端核验通过，Git标签v0.2.0已推送。完整实机验收仅焦土蜂巢；首发推荐焦土蜂巢；其它路线开放但未完成完整实机验收。Steam已恢复离线，继续测试与修复。
 
 已确认方向：偏强爽玩、普通星球吞噬 3～5 年。设计默认 20 格星球 4 年；用户拥有 Nemesis 与「虚境之影」，两项启用作为主验收配置，实机前核验实际加载状态。
 
@@ -10,6 +10,9 @@
 - [首版实施、测试与发布记录](implementation-test-release-2026-10-06.md)
 - [逐项离线实机验收进度与待补证据](runtime-acceptance-progress-2026-10-07.md)
 - [焦土蜂巢首发范围与公开披露合同](scorched-hive-first-release-2026-10-08.md)
+- [焦土蜂巢31项首发验收结果与实际证据边界](first-release-acceptance-result-2026-10-08.md)
+- [0.2.0发布回执、远端核验与标签](publication-v0.2.0-2026-10-08.md)
+- [首发后离线验收与真正无Mod吞岩对照](post-release-acceptance-round-2026-10-08.md)
 - [首发剩余实机检查顺序及真实母星转换检查点](first-release-remaining-runtime-round-2026-10-08.md)
 - [蜂巢改造清除王座地貌的原始失败与rc.9恢复方案](rc9-core-deposit-terraform-recovery-2026-10-08.md)
 - [生产包静态检查](evidence/package-rc1.json)

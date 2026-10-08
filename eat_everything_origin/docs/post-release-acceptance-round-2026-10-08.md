@@ -15,3 +15,9 @@
 ## 验收标准
 
 简中是唯一实机语言，实际enabled_mods／DLC／EXE指纹和原生世界身份必须留证。真正无Mod对照确认实际完成月与原版脚本一致，原始随机／损毁／冷却／一次最终补消费完整留存；非本起源没有任何EEP容量、制造或女王凭证。发现检查器／夹具问题先修辅助并保留原失败；发现open_kaishek缺陷必须暂停Mod验收，先修工具验证并提交推送。新发现Paradox共通规则才更新CK3知识库，不能把当前Stellaris特有进度精度当作共通规则。
+
+17:07具体前置：采用20261007T184149Z的vanilla-shared-world-native-initial.sav原件，SHA6c312b601b1bff74c6f66029e5a0e7faaeef9f8e76f8d68d9753496ff18db736。实际原生默认起源石质吞噬蜂群，主体LITHOID／trait_lithoid，2200.01.01单颗母星physical3／5700人口，EEP变量／旗标为空。使用该初始原件，不用此前50颗受控压力星球的存档。隔离新配置enabled_mods=[]，全部DLC启用，原生加载短别名vanilla-start并保存确认后，按已验证原生create_colony／resettle_pop_group受控建立一颗自然天体Q20，从母星实际搬100，不加载testing、不写进度或收益。新增准备／启动辅助只改变隔离配置和运行元数据，实际源与日历另有原生存档证据。
+
+17:13新RUN20261008T090850Z实际无Mod初始原生加载／保存10项通过，初始SHA31def47a0d168b47011f80283923ca538c945e111d250dcac53930f6589ee279。单源创建辅助在原生保存后误读审计字段pop_group.species而KeyError，实际审计字段为pop_group.key.species；原辅助与SAV保留。V2只从已保存的源SAV和审计文件重新核前置，使用原错误日志基线，不再创建或再次搬100；前置通过后才走真实一日／原生决议。
+
+17:16单源复核12项通过：physical1641／colony15，Q20自然大陆天体、实际本族100、母星5600、国总5700守恒，无损毁／任务／EEP，全部库存与初始一致，新error0；源原件SHA3cc29d44b044ea50c3892c13213d475a3e2a26ff6ab81261517b7309b948a3e9。已有原生月历辅助的无Mod变体只发fast_forward，要求真实暂停日期与原生日数回执吻合后保存；逐阶段记录源状态、局势原进度、损毁、原生库存和人口，不写任何进度／收益变量。当前真正无Mod完整117／118终点仍未完成，不能据前置宣布通过。首发后生产包open_kaishek18脚本／12DDS／十语言73键校验通过，结果见evidence/post-release-package-preflight-2026-10-08.json。
