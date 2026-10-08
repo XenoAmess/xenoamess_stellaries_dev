@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "rc9-external-star-controlled-prototype-1",
+  "text": "effect root = { create_ship_design = { design = \"NAME_Crisis_Star_Eater\" } add_ship_design = last_created_design create_fleet = { name = \"EEP-STAR-TEST\" settings = { spawn_debris = no can_change_composition = no uses_naval_capacity = no } effect = { set_owner = root create_ship = { name = \"EEP-Star-Eater\" design = \"NAME_Crisis_Star_Eater\" } set_location = { target = event_target:eep_external_star distance = 20 angle = 0 } set_fleet_stance = passive save_global_event_target_as = eep_external_star_fleet } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-08T03:14:41.619284+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
