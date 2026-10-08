@@ -206,3 +206,11 @@ Steam 的库配置将 281990 指向 `C:\SteamLibrary`；旧研究中 C 盘 Progr
 本机4.5.2在国境capital_scope保存事件目标时，原生SAV目标为type=colony／id0；auto_move_to_planet文档明确要求planet目标，直接传该殖民地目标后没有实际移动订单。须经capital_scope={ planet={ save_global_event_target_as=... } }取得physical1，再给现有舰队设置移动。首个无效尝试及一日原生SAV保留，不作为移动成功证据。这是Stellaris当前殖民地拆分规则，不推断其它Paradox方言。
 
 后续原生SAV确认经planet转换的目标为physical1，但本次玩家舰队仍未实际航行；不能把目标类型修正等同功能成功。官方000_fleet_action_examples.txt的queue_actions.orbit_planet在原生SAV真实生成actions.orbit_planet.planet=1／action_initialized，三个月后仍move_idle，原因尚未确定。这里只确认作用域类型和序列化事实，不推断所有舰队行为。
+
+## 真正无Mod吞岩精度与冷却补证（2026-10-08）
+
+首发后RUN20261008T090850Z的实际enabled_mods=[]、默认起源石质吞噬蜂群，Q20原生决议的第1月实际progress与last_month_progress均为8.5；第12／13月为102／110.5，第24／25月为204／212.5。它确认先前“数学1000/(6×20)”不能直接预测当前引擎序列化步长；尚未完成117／118月终点，不能提前宣告最终边界。
+
+`common/decisions/02_special_decisions.txt`和`common/scripted_effects/00_scripted_effects.txt`实际设置recently_eaten_planet的days=360。`events/colony_events_1.txt`的colony.190注释写Every 6 months，但运行合同应以实际脚本和存档为准。2200.01.02启动，第12月2201.01.02冷却已移除而损毁仍0，第13月2201.02.02损毁2并重设冷却359；第24月为损毁2／剩29日，第25月为损毁4／重设359。原生on_monthly和日计时的先后会形成这个观察边界，不能为了凑注释日期增发消费。此结论限本机Stellaris4.5.2，不推断CK3。
+
+源星的实际人口从100自然变为111、237等，包含默认迁徙和增长；实际100种子前置的守恒与后续自然人口不能混为同一断言。原生人口组审计中物种在key.species，误用顶层species的辅助失败与更正只读复核均保留。
