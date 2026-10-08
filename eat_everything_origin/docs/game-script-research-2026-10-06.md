@@ -260,3 +260,7 @@ RUN20261008T103147Z继承有机洁癖自然2281.01.11旧原件，第一次载入
 本机4.5.2待选消息为根部重复的`player_event={...}`，须逐项筛country0，不能只读取第一个同名块；它的date可能是未来到期时间，不是本次触发日期。选择历史位于`open_player_event_selection_history.selected`匿名对象列表，包含player_event／human／option；原生临时修正位于`country.<id>.timed_modifier.items`匿名对象列表。虚境调谐为`country.<id>.modules.standard_shroud_module.attunement`，本次shroud.2305正常option1使x=0→0.1125、y及其余模块保持，真实凝聚库存恰+2781。marauder.105的两次原生kill_single_pop在physical1672／colony40同一worker组772→572，实际减200；不是两个任意整组删除，也不是两个个体量。实际效果限本次原件，不跨版本或套用CK3。
 
 EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势运行时每月必然自动刷新。第三源星真实12月时任务进度12，而country变量全集仍等于开始原件，eep_tasks仍0；辅助若未经报告操作强制断言1会制造检查失败。守卫应分别验证实际局势与收益账本，不因这个报告缓存计数假定吞食没运行或有早期收益。原始失败和独立完整变量补核分别保留。
+
+本机4.5.2的destroy_colony／change_pc后，物理1679仍留colony38历史指针，SAV也保留actual_pop_sum0、pop_groups空的旧殖民地对象；实际owner／controller已无、owned_colonies移除38、星球破碎且存款空。审计逻辑销毁须检查这些真实活跃性字段，不能要求所有历史对象从文件物理删除。第三次结算09.01progress32时源星仍有1419同族，09.02真实回迁1419并造200，母星10144→11763、全国27419→27619、102／103逐物种守恒，D8→12含累计余数进位。
+
+本样本所有三系科研队列为空、真实F4速度各+13%。冶金限制次月、静观其变次月两个无EEP结算月及第三结算相邻日，实际tech_status.stored_techpoints增量均等于当月净研究×1.13按五位小数向零截断，完整科技其它字段保持；预算里的研究净额与实际闲置科技储备不能直接一比一。只确认这些空队列／相同速度原件，不将它用于正在研究、部分科技进度或不同加成的全部场景。三系入账与其他非科研库存保持分别核，原完整严格FAIL保留。
