@@ -1,0 +1,930 @@
+{
+  "schema": "heart-of-devouring-scoped-runtime-acceptance-v1",
+  "status": "PASS_SCOPED",
+  "acceptance_mode": "scorched-hive-first-release",
+  "scope": "scorched_hive_and_shared_mechanisms",
+  "version": "0.2.0",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "language": "l_simp_chinese",
+  "fully_accepted_civics": [
+    "civic_hive_scorched_earth"
+  ],
+  "open_civics": [
+    "civic_hive_devouring_swarm",
+    "civic_machine_terminator",
+    "civic_fanatic_purifiers",
+    "civic_scorched_earth",
+    "civic_hive_scorched_earth"
+  ],
+  "deferred_civics": {
+    "civic_hive_devouring_swarm": {
+      "status": "NOT_COMPLETE",
+      "remaining": "Complete independent organic/lithoid natural ascension, Nemesis, special mother worlds and native Terravore random yield/mixed route; true no-mod117/118 calendar boundary still pending."
+    },
+    "civic_machine_terminator": {
+      "status": "NOT_COMPLETE",
+      "remaining": "Complete independent natural psionic/Nemesis combinations, Machine-world conversion/jobs and long peace/economy; controlled shared stress is not full route acceptance."
+    },
+    "civic_fanatic_purifiers": {
+      "status": "NOT_COMPLETE",
+      "remaining": "Complete independent organic/lithoid natural ascension/Nemesis and special mother worlds, rights and long-term economy."
+    },
+    "civic_scorched_earth": {
+      "status": "NOT_COMPLETE",
+      "remaining": "Complete independent natural ascension/Nemesis and late-game special mother/economy; existing natural36/48/60 common formula checks do not complete this route."
+    }
+  },
+  "production_files": {
+    "common/button_effects/eep_buttons.txt": "cd36f8aa14712dc0ccc266f97fab1346ba83869840dd26d1312290ff17c9ddb3",
+    "common/decisions/eep_decisions.txt": "539c3ab8300932679939697db8649f6f4a2636f87ce1e8c90d92b95b8f32df84",
+    "common/decisions/zz_eep_native_decision.txt": "155adeb0ad4a0f4e3c1a81f6d14840e3d9a2f70883a10e7ed637c786407b2f72",
+    "common/deposits/eep_deposits.txt": "85131e640143201ac5a20fc29419b8b95e0d2840d042de060602db33fa370965",
+    "common/governments/civics/eep_origin.txt": "b55cf4f44066736069d8b7bed5183e782df616d9863bf7b99445b59fa9781268",
+    "common/on_actions/eep_on_actions.txt": "6fafe0596916d87483cf5cd2dee76172742388903350bce7d7b226fbca757303",
+    "common/script_values/eep_values.txt": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba",
+    "common/scripted_effects/eep_effects.txt": "03fd2ba55bd33f7b61cd2fdc1c5bbd1e6548ae967a1b464915812531ecb63df8",
+    "common/scripted_effects/eep_native_consume.txt": "47ee1a78bd40c14f6893fd47177e1138f9f2003ad3ca5d550b0b0c20ca4bb12e",
+    "common/scripted_loc/eep_loc.txt": "aece3efd0fa978438467ce16e4950fe9b8f7afc289be30af71d0e798408484af",
+    "common/scripted_triggers/eep_triggers.txt": "a80f5869f5d29b8c060047d3341dd9d35dbfafe2fce50a7638b2a25789446225",
+    "common/situations/eep_situation.txt": "64c9fc80f7d8b316b4948fb000fa45886b30be1ba4237589ac0676c6648d6d3e",
+    "common/static_modifiers/eep_modifiers.txt": "e296a1c88b7da5fe633195776d9c41c80868e6e5a5c5d473430434e745ba2d33",
+    "descriptor.mod": "fdd265bff97a7b7baac4e5ebb5049f36819a99c325b61f9f6b7e1cbe0b456c3a",
+    "events/eep_events.txt": "563b71b73f1606414dc0a27f54348929a889abdb8e0e9f007bcb259e902a14e2",
+    "gfx/event_pictures/eep_core.dds": "ccbf95e4f2058f563bbb20039b3c5bfbdafe56c3d3df5cbd7a7af73d53ed42a3",
+    "gfx/event_pictures/eep_devouring.dds": "1dfaa5fbd583075b7955aaacf23320b298553a0345d6e7e4028221bc01ee0c21",
+    "gfx/event_pictures/eep_fleet.dds": "89a59a46f265c29c039bbcb42946dc3d7e3db3d2885692e0f9cd9a84d96aca2b",
+    "gfx/event_pictures/eep_growth.dds": "2c7068ff0ef7f3250ddb789ef1f30104896706a6c4f7ef6f6cc00cdc5c065940",
+    "gfx/event_pictures/eep_psionic.dds": "068940d6e209d4e038c6aad6a4373fce8045d87ba43a30824267313e60344a50",
+    "gfx/interface/icons/modifiers/eep_capacity.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_add.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_mult.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/origins/eep_heart.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/origins/eep_origin.dds": "0b0efde9b1db8b9e528dd5f13095cd4d6ab40d6067775301ae8c1d7434a2d604",
+    "gfx/models/portraits/eep/eep_baiqi.dds": "fee48048257e630fe432f2e1cd9a8ea04c95a3213d9e5bb7bb5e6a0ac934d918",
+    "gfx/models/portraits/eep/eep_baiqi_full.dds": "31f854d06b16f1209f3d8257de89fb387f715a05ecbd12db21c099ce94db5235",
+    "gfx/portraits/portraits/eep_portraits.txt": "15e64490ae386c85806630aa0aed35a45374af64944795aecb7480137e0d1d09",
+    "interface/eep.gfx": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92",
+    "interface/planet_view.gui": "ff679013a87f64b4295650eeb7b490e20a2d388acf0d9a6d5d72e450f9e601ee",
+    "localisation/braz_por/eep_l_braz_por.yml": "d2e4df4014f71a89d7330a11e5c63162dbc9db85327b2ef46d87b977f6f87c65",
+    "localisation/english/eep_l_english.yml": "ce267a80a8cdc70555b82be63ff25ac9626fda73ca872dc0e1fffbc47e1ae48b",
+    "localisation/french/eep_l_french.yml": "21534ab1c1c0a7c9c152bbc945456bfd93122a6603255cccf7a5ad688e76119e",
+    "localisation/german/eep_l_german.yml": "5ed0f2bdcebde76cd11ad3ebe20560efcf8225bfc09b2125355fc032e820b8de",
+    "localisation/japanese/eep_l_japanese.yml": "2d954dad67d7ddf4ae06c637b5b16ff8339fa06390c0b3a5513b8baa9c3d6123",
+    "localisation/korean/eep_l_korean.yml": "ece24da5b345f623c7c726dd87754601b72d91af1168f89bb429c64fff3cc13d",
+    "localisation/polish/eep_l_polish.yml": "4c57692b167f984fdd2634635517372b0eac45307dd71609d46e5d674b84f716",
+    "localisation/russian/eep_l_russian.yml": "b22637dced87632c2626391165f8e2da73406bb4034e094ec671f017edcabb66",
+    "localisation/simp_chinese/eep_l_simp_chinese.yml": "fd112004943ae8d45d790d440ed2b6479c755d3e37319be5809aeb4d3f518979",
+    "localisation/spanish/eep_l_spanish.yml": "3b5a6a3fdf988d103a816e4e2d9098885f47182d4ab4c9af11dd9b814681eac5",
+    "thumbnail.png": "25c23dbb7aa5c6de0d5fb3051b52778aafbefe6ff9ba94b653b84bfcf1f7961c"
+  },
+  "cases": {
+    "EAT-01": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Legal natural Scorched Hive initial state and rewards; common non-origin/foreign isolation and final production initialization.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T215509Z/rc8-nonqualified-own-capital-proof.json",
+          "sha256": "debd9f079256bddf79a6f620ea6adbdbe380ed1c2ab60cadd33eee989df8e29e"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-native-creation-refusals-proof.json",
+          "sha256": "be5f991720c459c4d2a8cf98559ee09bd71f3a13e6c93d80da3c892043c6fcc3"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-initial-clean-identity.json",
+          "sha256": "3bd39d225aadae93f93d9c52c6562c44ea92b4a3db1c079cb9409fc9bfb7a170"
+        }
+      ]
+    },
+    "EAT-02": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Scorched Hive legal entrance; native ordinary and Assimilator disallowed creation UI. Other open routes remain incomplete.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-native-creation-refusals-proof.json",
+          "sha256": "be5f991720c459c4d2a8cf98559ee09bd71f3a13e6c93d80da3c892043c6fcc3"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-initial-clean-identity.json",
+          "sha256": "3bd39d225aadae93f93d9c52c6562c44ea92b4a3db1c079cb9409fc9bfb7a170"
+        }
+      ]
+    },
+    "EAT-03": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Native real ark/star and ground combat refusal; shared object eligibility, no seed/resources moved on refusal.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T131538Z/rc5-real-ark-source-core-native-ui-proof.json",
+          "sha256": "4b61dc3255c04ba572383f83e9859ad17669b1c1661ffb5706570879aa4e4d04"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T131538Z/rc5-real-star-native-refusal-proof.json",
+          "sha256": "36c800a5a03788af1e1778c2702de700e17fafd05a107e12e24f9eda63b66adb"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-ground-combat-start-refusal-restore-proof.json",
+          "sha256": "992c6858c1629c49e809cf7a9a5801aa2cd15a97a004831effdc18485b6f6af3"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T224056Z/findings.json",
+          "sha256": "c2aa5a311d86a103b416add43d2ffcc161cf1d4e219da1d513fbbd4d793920ca"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-zero-query-guard-partial-proof.json",
+          "sha256": "850e91bace9ae7c013e73482ed350116698a13b59c6aede31b60b74155f7b486"
+        }
+      ]
+    },
+    "EAT-04": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Actual 100 founder-pop transfer, conserved country population, insufficient-founder refusal; current native template preservation.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261008T074219Z/rc9-missing-shroud-compatibility-proof.json",
+          "sha256": "71ab3cbb7cab47c26d520e3792a2b60bd0891989a3c6056ed327717fcd60bed3"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-zero-query-guard-partial-proof.json",
+          "sha256": "850e91bace9ae7c013e73482ed350116698a13b59c6aede31b60b74155f7b486"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T134815Z/rc5-verified-current-main-old-template-return-foreign-proof.json",
+          "sha256": "fd1251c6a72308cb2042e2a1b07381bc98d244db61565572ba218474d9da2e8e"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T192819Z/findings.json",
+          "sha256": "9c561409fa5ff9525f28ab88b7af3a4d5c882084595d35ed4d7a708580af039d"
+        }
+      ]
+    },
+    "EAT-05": {
+      "status": "NOT_APPLICABLE",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "reason": "Scorched Hive uses the generic route; vanilla Terravore random yields and mixed Terravore route are deferred, not passed."
+    },
+    "EAT-06": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Controlled triple Q20 Scorched Hive ledger plus natural Q16 and current native Q8/Q12 final settlement. Controlled endpoints do not prove calendar.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-natural-source12-calendar-settlement-proof.json",
+          "sha256": "b67a285123ad8e52d7a727a9df93757e33195ae2be2656719172de00710ca386"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T074219Z/rc9-missing-shroud-compatibility-proof.json",
+          "sha256": "71ab3cbb7cab47c26d520e3792a2b60bd0891989a3c6056ed327717fcd60bed3"
+        }
+      ]
+    },
+    "EAT-07": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common native Q3/Q5 remainder subcases and controlled Scorched Hive triple Q20; native current small-world capacity/pop increment and replay.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T192819Z/findings.json",
+          "sha256": "9c561409fa5ff9525f28ab88b7af3a4d5c882084595d35ed4d7a708580af039d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T074219Z/rc9-missing-shroud-compatibility-proof.json",
+          "sha256": "71ab3cbb7cab47c26d520e3792a2b60bd0891989a3c6056ed327717fcd60bed3"
+        }
+      ]
+    },
+    "EAT-08": {
+      "status": "NOT_APPLICABLE",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "reason": "Scorched Hive uses the generic route; vanilla Terravore random yields and mixed Terravore route are deferred, not passed."
+    },
+    "EAT-09": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common native mid47 cancellation/restart, old damage and fixed-query/zero guard; no early payout.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T154144Z/rc6-natural-mid47-cancel-old-damage-restart-q14-proof.json",
+          "sha256": "9399f8a61cff850643467fea363ff9e228a983af09c58dd303215b733b0edae1"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-zero-query-guard-partial-proof.json",
+          "sha256": "850e91bace9ae7c013e73482ed350116698a13b59c6aede31b60b74155f7b486"
+        }
+      ]
+    },
+    "EAT-10": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common actual two qualified owners, distinct systems/cores and legal new-owner settlement; not full Purifier route acceptance.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-owner-separate-system-settlement-proof.json",
+          "sha256": "e24197eca69b425853c8874f55e9c4045d0bc7e51866097ade276289c3e34c78"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-separate-outpost-native-owner-proof.json",
+          "sha256": "9418b758ff6a218687d0a67d4cded118e6704d942d0647c9663074bef3cd6e93"
+        }
+      ]
+    },
+    "EAT-11": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Scorched Hive actual waiting endpoint, native extinction purge, reload and no duplicate completion.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-focus-wait39-reload-proof.json",
+          "sha256": "f2f5455a73d770d93fa602eb435f940960c362eeb5088dd089643cdd105f8afe"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-focus-wait39-replay-proof.json",
+          "sha256": "0d4a60fa5feafa5098785791eb5299e35fcab2e433926b4243cbaa76e4e2f34b"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-focus-native-purge-final-proof.json",
+          "sha256": "acf6c8b798aa1567cb6e9e3b3411e88928c6ed2479bf4f595c83615178599ff4"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-focus-native-purge-final-replay-proof.json",
+          "sha256": "85b833850689c254c194369a84333f033f1f3211d209cbdec135074af0204aa2"
+        }
+      ]
+    },
+    "EAT-12": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Actual bound-core transfer/retake, ownership payroll isolation and permanent-death negative with active tasks; no replacement capacity.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T145123Z/rc6-native-court-transfer-retake-reload-proof.json",
+          "sha256": "8ead44b9d4d6b26d0a498c442cc58f59d023d55e463d4fff655441ffd62afbbd"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T145123Z/rc6-new-court-active-task-permanent-death-proof.json",
+          "sha256": "07c7c7a6b8a8b3c5c0efac7f67207b8dd024908e643f3bc026d3490302712775"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-permanent-core-death-repair-negative-proof.json",
+          "sha256": "db6f73b6739201aff82e1819172f68068cd2cc997bf2a446b1efef8c68c99baf"
+        }
+      ]
+    },
+    "EAT-13": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common real AI migrated capital15 while bound core8 receives native return/manufacture; distinct cores and recoverable physical capacity, no opening reward duplication.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T154144Z/rc6-real-ai-native-population-bound-core-proof.json",
+          "sha256": "ae4243b22017cd811afbebdb17aaeb639a78fb1e00b933dc8ebb820a5e9e811f"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T154144Z/rc6-natural48-ai-five-replays-strict-proof.json",
+          "sha256": "7692a88b385e72ea572aa31b64f1b0e5a4880790f2bc48295cf5080c944492ef"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-owner-separate-system-settlement-proof.json",
+          "sha256": "e24197eca69b425853c8874f55e9c4045d0bc7e51866097ade276289c3e34c78"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T145123Z/rc6-native-court-transfer-retake-reload-proof.json",
+          "sha256": "8ead44b9d4d6b26d0a498c442cc58f59d023d55e463d4fff655441ffd62afbbd"
+        }
+      ]
+    },
+    "EAT-14": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Native waiting/reload/completion-message/repeated-callback states; exact all-resource, population and receipt conservation.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-focus-wait39-reload-proof.json",
+          "sha256": "f2f5455a73d770d93fa602eb435f940960c362eeb5088dd089643cdd105f8afe"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-focus-native-purge-final-replay-proof.json",
+          "sha256": "85b833850689c254c194369a84333f033f1f3211d209cbdec135074af0204aa2"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-native-first-queen-reload-proof.json",
+          "sha256": "8bb94145a7193dad37e1970baea0860ced22be7628130f667f7775e92abc8558"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-native-first-queen-five-replays-proof.json",
+          "sha256": "80edc6c959f042c05d567601c9a430d9244bb9f175952f9191179d73a6b9daf0"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-core-reports-notice-ten-callbacks-proof.json",
+          "sha256": "f58684c5d9de798be6d69b204c7f4cc57459e9a3cd3877fa3dee3906b80d8b36"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-native-report-readonly-proof.json",
+          "sha256": "06c5f315184462a901f6eb2716e418777a636f0e252c08646c1706a33c42b671"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-report-repeat-readonly-proof.json",
+          "sha256": "99a22d9f5b4c70a1b867babc28081de9b8c933dbddaed678145568137f1e099d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-native-month-stable-reloaded-proof.json",
+          "sha256": "719c062dac36f2e3eeeec96c6f329964c9a54f5e16bd9262c84de4b9a138bad4"
+        }
+      ]
+    },
+    "EAT-15": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common controlled same-country two Q20 same-day receipt subcase, not natural simultaneous conquest; triple Scorched Hive payout and current shared replay controls.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T192819Z/findings.json",
+          "sha256": "9c561409fa5ff9525f28ab88b7af3a4d5c882084595d35ed4d7a708580af039d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-core-reports-notice-ten-callbacks-proof.json",
+          "sha256": "f58684c5d9de798be6d69b204c7f4cc57459e9a3cd3877fa3dee3906b80d8b36"
+        }
+      ]
+    },
+    "EAT-16": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Current actual bombardment, return-abandonment, ordinary purge and native Star Eater world destruction; day/month and completion replays do not grant EEP rewards.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-abandon-completed-negative-replay-proof.json",
+          "sha256": "3987a8bedb65b591ebe785689bea7b1486ce607429a804fb3adcc69d39ad8c3a"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-purge-completed-negative-replay-proof.json",
+          "sha256": "7a1e49bc005f4009c05f8a9ae21b21d13fb4c3345d07c0603a764ec42995ed61"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-star-real-detonation-proof.json",
+          "sha256": "0600d16028449231a8e4475072502e1e8b1972fc61a4d3785e27138c973dc29d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-star-completed-negative-replay-proof.json",
+          "sha256": "4cacdd794c8298369e80d2628ff736a60a1ba9a23e127cb644b9faaf82c760ab"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-bombard-real-clearing-proof.json",
+          "sha256": "e6d5b97d55b8d17eaff116df5f7a1a9e2d32af7244b4252b5e917692cb59d954"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-bombard-completed-negative-replay-proof.json",
+          "sha256": "66f192a84198888a09ac8250c3e02558ac945b9b85f90377adcb6f3eefb50988"
+        }
+      ]
+    },
+    "EAT-17": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Natural Scorched Hive paid district/building workforce and housing; current paid Hive-world industry build completion; capacity alone creates no districts.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-native-heavy-industry-paid-scoped-proof.json",
+          "sha256": "1ba89ec92908d1948c4af7803d8b4204ca2d51b0c86fc560aac5d80dccd2c598"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-native-heavy-industry-completed-proof.json",
+          "sha256": "91f294ea8dd5544fddb3a70490399e8640770f1e7e25d08e03d0dc447fb3aa97"
+        }
+      ]
+    },
+    "EAT-18": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common native current founder template, preserved old subtemplate and foreign shared-template isolation; natural Hive psionic workforce completion.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T134815Z/rc5-verified-current-main-old-template-return-foreign-proof.json",
+          "sha256": "fd1251c6a72308cb2042e2a1b07381bc98d244db61565572ba218474d9da2e8e"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-psi-final-ritual-completed.audit.json",
+          "sha256": "7198ff9b8ea2320da293cd8177cce48cafa36aeb49b487d93f700758d897e093"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T154144Z/rc6-mixed-same-country-five-replays-all-foreign-proof.json",
+          "sha256": "51a3a67cb6e9a89e369fd45348da7533dfecc13cb7f686ad384698537dd3810d"
+        }
+      ]
+    },
+    "EAT-19": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Natural legal Scorched Hive full Shroud completion and two independently missing-DLC basic loops/AP previews; no other-route natural ascension claim.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-psi-queen-reload-calendar-replay-proof.json",
+          "sha256": "9f3a507da792ee3a8cfb7d448ff01440f37ae6d11aca6c1a7177c68ca27e7880"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-psi-final-ritual-completed.audit.json",
+          "sha256": "7198ff9b8ea2320da293cd8177cce48cafa36aeb49b487d93f700758d897e093"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T063908Z/rc9-missing-nemesis-compatibility-proof.json",
+          "sha256": "7d53a2ac38d69c185939ed603b2b07b4e55a06e1082d0602daf6704f857b6240"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T074219Z/rc9-missing-shroud-compatibility-proof.json",
+          "sha256": "71ab3cbb7cab47c26d520e3792a2b60bd0891989a3c6056ed327717fcd60bed3"
+        }
+      ]
+    },
+    "EAT-20": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common organic Hive same-job/pop additive court income and untouched inputs/non-job income; actual Scorched Hive native employment and ownership salary isolation.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T164008Z/findings.json",
+          "sha256": "b04c8e421d4be6627be482d56787fee427402449aa2bec47e06cb8fe5002b18c"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T145123Z/rc6-native-court-transfer-retake-reload-proof.json",
+          "sha256": "8ead44b9d4d6b26d0a498c442cc58f59d023d55e463d4fff655441ffd62afbbd"
+        }
+      ]
+    },
+    "EAT-21": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Natural legal Nemesis stages2/3/4, actual paid mineral hulls, zero-price exact-slot refits, dock/space/overcap upkeep; missing Nemesis denies AP.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-natural-source12-calendar-settlement-proof.json",
+          "sha256": "b67a285123ad8e52d7a727a9df93757e33195ae2be2656719172de00710ca386"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-mineral-corvette-order-proof.json",
+          "sha256": "0142bffaabf4d132e54162aa8bd5575462a937353b0ad752ea5f05559159d92d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-mineral-corvette-calendar-completion-proof.json",
+          "sha256": "9bdb9dd1197ce77502a8a255f8f479c9c35c9051cf70cf2951cb5141a702461d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-mineral-corvette-upkeep-movement-proof.json",
+          "sha256": "5cf0fdea49b28d2bd884e33f97925503f911dd0b3a2271b1619c52744aed6ac5"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-mineral-corvette-refit-proof.json",
+          "sha256": "dd87fe0e970d9475f56e76ac7e4d3167de5122fb2b664a36465aa08469fc2197"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-mineral-destroyer-order-upkeep-overcap-corrected-proof.json",
+          "sha256": "a8bb42215a2f3a6ae339a7c1c1afcb36abd09b275f6debc8efee905a4405550e"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-cruiser-native-payment-eight-built-overcap-proof.json",
+          "sha256": "56cd242c5546be7183288e740cd96006a78b4163727e6f84766444f5c161c9a2"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-cruiser-native-dock-undock-underlimit-exact-value-row-proof.json",
+          "sha256": "3984591aaf84166740a0b67c53387752ed9f7ff7eff5a1b4c2164a8f71dd5a41"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-cruiser-native-eight-zero-price-exact-component-slot-refit-proof.json",
+          "sha256": "9b4c1193adb15fb8cecff6ad8454950f7b1c4757cf458f297f81b8f58fc7cbf2"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T063908Z/rc9-missing-nemesis-compatibility-proof.json",
+          "sha256": "7d53a2ac38d69c185939ed603b2b07b4e55a06e1082d0602daf6704f857b6240"
+        }
+      ]
+    },
+    "EAT-22": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Native natural Q18/Q23 and current Q12 real world-menace objective exactly once, with completion replay and ordinary-war controls.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-world18-crisis3-settlement-proof.json",
+          "sha256": "9a387d61c1514385429fbe92e8c51cbe6817e9fddd8f65ff62eeb5527c36b88a"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-crisis3-queen-reload-replay-scoped-proof.json",
+          "sha256": "f74107293bc12e7b8c7a4d2319ae1ea4448979b3d7b6cfde746bc39833b2ef0d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-natural-q23-stage4-first-notice-readonly-proof.json",
+          "sha256": "3e0f36803919bebcd9afd5ce7810c90d24992fca4caf87d06e8c2d416573918f"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-natural-source12-calendar-settlement-proof.json",
+          "sha256": "b67a285123ad8e52d7a727a9df93757e33195ae2be2656719172de00710ca386"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-native-first-queen-five-replays-proof.json",
+          "sha256": "80edc6c959f042c05d567601c9a430d9244bb9f175952f9191179d73a6b9daf0"
+        }
+      ]
+    },
+    "EAT-23": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Controlled common Terminator 1/10/100 world pressure and current C4000/D1002 native UI first/repeat/stable reload. Not natural Hive high-pop affordability.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T192819Z/findings.json",
+          "sha256": "9c561409fa5ff9525f28ab88b7af3a4d5c882084595d35ed4d7a708580af039d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-highcap-native-current-report-pending-readonly-proof-v2.json",
+          "sha256": "5f29139e0c2178a930ced83d118bdcf748cb6860c503140b9a0c5cbbe328b5c5"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-highcap-native-repeat-report-pending-readonly-proof-v2.json",
+          "sha256": "f40ec2599aae417608282ffd5e99bb996222ac64e0700de53eb3663a032e41fe"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-highcap-native-stable-report-reloaded-readonly-proof-v3.json",
+          "sha256": "e6af812f429e035372f70e8d81282ae66b0b8c254d50f41d1588d2900729940e"
+        }
+      ]
+    },
+    "EAT-24": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Scorched Hive native volcanic jobs, daily bombardment unity/purge, actual 20-year paid Hive-world conversion and one core deposit. Machine worlds deferred.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-bombard-daily-unity-proof.json",
+          "sha256": "be28b3b807c49c08fdc734e325eee57cfea34f22abed12f7e2b0f135b705f1cf"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-external-bombard-real-clearing-proof.json",
+          "sha256": "e6d5b97d55b8d17eaff116df5f7a1a9e2d32af7244b4252b5e917692cb59d954"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-natural-terraform-checkpoints-6-2319-10-22-proof.json",
+          "sha256": "a520c0a496740ba86ad8630094954b8f5663839a62e079667189f2fd356b2e3c"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-old-missing-core-native-month-proof.json",
+          "sha256": "e06fa4e0cf658884ea0cfdaf3a66f17715239c4625412d124faec6eecdfce945"
+        }
+      ]
+    },
+    "EAT-25": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Actual no-mod control and matched-world0/1/10/50 task timing/CPU/save/logs; both competing decision load orders. Single-sample performance, not zero-cost or universal compatibility.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T193619Z/rc6-shared-world-performance-proof.json",
+          "sha256": "2e192aeb36b642796ec646a6792715a31b80589141167df334df8bba47f60e71"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T201344Z/conflict-eep-first-actual-source-route-proof.json",
+          "sha256": "54095dc3a20c3233b5d45324c6ac8da82f0b50b7f69cf863e16fe296b4132728"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T202451Z/conflict-eep-last-route-proof.json",
+          "sha256": "2a8093875f855a37f427a349f99578dc8d9bf0134c69061243ca6abf46c2c23f"
+        }
+      ]
+    },
+    "EAT-26": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Natural Scorched Hive truce2253 and uninterrupted peace to2270 preserve C/G16 D6 made200; positive main-resource net while volatile motes remain negative.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        }
+      ]
+    },
+    "EAT-27": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common unchanged Q formula natural Q15/20/25 at36/48/60 effective months from Scorched ordinary fixture; focus natural Q16/18/23 at39/44/56 and current Q8 at20. Does not claim separate focus Q20 natural campaign or true no-mod117/118 completion.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T224056Z/findings.json",
+          "sha256": "c2aa5a311d86a103b416add43d2ffcc161cf1d4e219da1d513fbbd4d793920ca"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-world18-crisis3-settlement-proof.json",
+          "sha256": "9a387d61c1514385429fbe92e8c51cbe6817e9fddd8f65ff62eeb5527c36b88a"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-native-gui-and-natural-q23-progress-proof.json",
+          "sha256": "38a85fc0a0fb6c0025fb48f0d6eddc5338d7f9b5769d3d4e35c99cd300b66125"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T074219Z/rc9-missing-shroud-compatibility-proof.json",
+          "sha256": "71ab3cbb7cab47c26d520e3792a2b60bd0891989a3c6056ed327717fcd60bed3"
+        }
+      ]
+    },
+    "EAT-28": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Actual separate qualified countries/cores and unchanged legal ruler/government/founder; natural focus Queen identity. Other governments full narrative combinations deferred.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-owner-separate-system-settlement-proof.json",
+          "sha256": "e24197eca69b425853c8874f55e9c4045d0bc7e51866097ade276289c3e34c78"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual33-native-report-reload-control-proof.json",
+          "sha256": "f6953701c213f3c09276338b55392cce636cef8b381876dbe55dc26106b0dc97"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-initial-clean-identity.json",
+          "sha256": "3bd39d225aadae93f93d9c52c6562c44ea92b4a3db1c079cb9409fc9bfb7a170"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-intro-ack-proof.json",
+          "sha256": "fdbad5d37b20c1794b08bf2d4a2d557df498b0d4ce77f83d59390dc3001e55c9"
+        }
+      ]
+    },
+    "EAT-29": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Actual focus report budget-history-isolated strict58, dual independent reports117, nonqualified hidden37, current highcap51 and final production GUI first/repeat.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-native-audience-budget-history-isolated-readonly-proof.json",
+          "sha256": "65c7fce18ee79f8f4860f8109c32512c04b872d9030a175369279b60525b75d6"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-core-reports-notice-ten-callbacks-proof.json",
+          "sha256": "f58684c5d9de798be6d69b204c7f4cc57459e9a3cd3877fa3dee3906b80d8b36"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T215509Z/rc8-nonqualified-own-capital-proof.json",
+          "sha256": "debd9f079256bddf79a6f620ea6adbdbe380ed1c2ab60cadd33eee989df8e29e"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-highcap-native-stable-report-reloaded-readonly-proof-v3.json",
+          "sha256": "e6af812f429e035372f70e8d81282ae66b0b8c254d50f41d1588d2900729940e"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-native-report-readonly-proof.json",
+          "sha256": "06c5f315184462a901f6eb2716e418777a636f0e252c08646c1706a33c42b671"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-report-repeat-readonly-proof.json",
+          "sha256": "99a22d9f5b4c70a1b867babc28081de9b8c933dbddaed678145568137f1e099d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-native-month-stable-reloaded-proof.json",
+          "sha256": "719c062dac36f2e3eeeec96c6f329964c9a54f5e16bd9262c84de4b9a138bad4"
+        }
+      ]
+    },
+    "EAT-30": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Common controlled exact thresholds0/19/20/59/60/199/200, focus controlled threshold merging and both current natural Q8 first notice; no economic award from message/report.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261006T164008Z/findings.json",
+          "sha256": "b04c8e421d4be6627be482d56787fee427402449aa2bec47e06cb8fe5002b18c"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T063908Z/rc9-missing-nemesis-compatibility-proof.json",
+          "sha256": "7d53a2ac38d69c185939ed603b2b07b4e55a06e1082d0602daf6704f857b6240"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T074219Z/rc9-missing-shroud-compatibility-proof.json",
+          "sha256": "71ab3cbb7cab47c26d520e3792a2b60bd0891989a3c6056ed327717fcd60bed3"
+        }
+      ]
+    },
+    "EAT-31": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Natural legal full Shroud and mineral stage2/3/4 Queen notifications, pending/reloaded/normal ACK/replay; missing-DLC prevents corresponding completion notice.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-psi-queen-reload-calendar-replay-proof.json",
+          "sha256": "9f3a507da792ee3a8cfb7d448ff01440f37ae6d11aca6c1a7177c68ca27e7880"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-native-first-queen-reload-proof.json",
+          "sha256": "8bb94145a7193dad37e1970baea0860ced22be7628130f667f7775e92abc8558"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-native-first-queen-ack-proof.json",
+          "sha256": "dffebf754f2214f5c86d16742ad80855499db199d2c81ea661be012d0edb09aa"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-crisis3-queen-reload-replay-scoped-proof.json",
+          "sha256": "f74107293bc12e7b8c7a4d2319ae1ea4448979b3d7b6cfde746bc39833b2ef0d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-natural-q23-stage4-first-notice-readonly-proof.json",
+          "sha256": "3e0f36803919bebcd9afd5ce7810c90d24992fca4caf87d06e8c2d416573918f"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-stage4-native-reloaded-confirm-five-callbacks-proof.json",
+          "sha256": "19bf2f45b013022aca655986c1204bf8a4a403a8d563d7cf433e417bbbe1dbe9"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T063908Z/rc9-missing-nemesis-compatibility-proof.json",
+          "sha256": "7d53a2ac38d69c185939ed603b2b07b4e55a06e1082d0602daf6704f857b6240"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T074219Z/rc9-missing-shroud-compatibility-proof.json",
+          "sha256": "71ab3cbb7cab47c26d520e3792a2b60bd0891989a3c6056ed327717fcd60bed3"
+        }
+      ]
+    },
+    "EAT-32": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Actual temporary original throne transfer/retake and notice/blocked tasks once; permanent death52/31 and current repair-negative no backup throne.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T145123Z/rc6-native-court-transfer-retake-reload-proof.json",
+          "sha256": "8ead44b9d4d6b26d0a498c442cc58f59d023d55e463d4fff655441ffd62afbbd"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T145123Z/rc6-new-court-active-task-permanent-death-proof.json",
+          "sha256": "07c7c7a6b8a8b3c5c0efac7f67207b8dd024908e643f3bc026d3490302712775"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T134815Z/rc5-active-task-permanent-core-death-exact-native-assembly-proof.json",
+          "sha256": "131999bba2ab9e8ea6b5f7c8c5febdd713fc6d75e69c9380f6982430794a86f2"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-permanent-core-death-repair-negative-proof.json",
+          "sha256": "db6f73b6739201aff82e1819172f68068cd2cc997bf2a446b1efef8c68c99baf"
+        }
+      ]
+    },
+    "EAT-33": {
+      "status": "PASS_SCOPED",
+      "scope": "scorched_hive_and_shared_mechanisms",
+      "actual_scope": "Independent narrative and economic receipts across dual-country callbacks, natural peace, stage2/3/4 normal acknowledgements and no repeated awards.",
+      "evidence": [
+        {
+          "path": "docs/evidence/runtime-development/20261007T203412Z/rc7-dual-core-reports-notice-ten-callbacks-proof.json",
+          "sha256": "f58684c5d9de798be6d69b204c7f4cc57459e9a3cd3877fa3dee3906b80d8b36"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261006T232907Z/findings.json",
+          "sha256": "8b315690c91ea461c15f3ca1d7744c574587ec2397467626ea2374ff654f9034"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T003349Z/rc9-stage2-native-first-queen-five-replays-proof.json",
+          "sha256": "80edc6c959f042c05d567601c9a430d9244bb9f175952f9191179d73a6b9daf0"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T031421Z/native-crisis3-queen-reload-replay-scoped-proof.json",
+          "sha256": "f74107293bc12e7b8c7a4d2319ae1ea4448979b3d7b6cfde746bc39833b2ef0d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261007T100241Z/rc4-stage4-native-reloaded-confirm-five-callbacks-proof.json",
+          "sha256": "19bf2f45b013022aca655986c1204bf8a4a403a8d563d7cf433e417bbbe1dbe9"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-native-report-readonly-proof.json",
+          "sha256": "06c5f315184462a901f6eb2716e418777a636f0e252c08646c1706a33c42b671"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-report-repeat-readonly-proof.json",
+          "sha256": "99a22d9f5b4c70a1b867babc28081de9b8c933dbddaed678145568137f1e099d"
+        },
+        {
+          "path": "docs/evidence/runtime-development/20261008T081542Z/formal-prod-native-month-stable-reloaded-proof.json",
+          "sha256": "719c062dac36f2e3eeeec96c6f329964c9a54f5e16bd9262c84de4b9a138bad4"
+        }
+      ]
+    }
+  },
+  "production_smoke": {
+    "status": "PASS",
+    "production_files": {
+      "common/button_effects/eep_buttons.txt": "cd36f8aa14712dc0ccc266f97fab1346ba83869840dd26d1312290ff17c9ddb3",
+      "common/decisions/eep_decisions.txt": "539c3ab8300932679939697db8649f6f4a2636f87ce1e8c90d92b95b8f32df84",
+      "common/decisions/zz_eep_native_decision.txt": "155adeb0ad4a0f4e3c1a81f6d14840e3d9a2f70883a10e7ed637c786407b2f72",
+      "common/deposits/eep_deposits.txt": "85131e640143201ac5a20fc29419b8b95e0d2840d042de060602db33fa370965",
+      "common/governments/civics/eep_origin.txt": "b55cf4f44066736069d8b7bed5183e782df616d9863bf7b99445b59fa9781268",
+      "common/on_actions/eep_on_actions.txt": "6fafe0596916d87483cf5cd2dee76172742388903350bce7d7b226fbca757303",
+      "common/script_values/eep_values.txt": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba",
+      "common/scripted_effects/eep_effects.txt": "03fd2ba55bd33f7b61cd2fdc1c5bbd1e6548ae967a1b464915812531ecb63df8",
+      "common/scripted_effects/eep_native_consume.txt": "47ee1a78bd40c14f6893fd47177e1138f9f2003ad3ca5d550b0b0c20ca4bb12e",
+      "common/scripted_loc/eep_loc.txt": "aece3efd0fa978438467ce16e4950fe9b8f7afc289be30af71d0e798408484af",
+      "common/scripted_triggers/eep_triggers.txt": "a80f5869f5d29b8c060047d3341dd9d35dbfafe2fce50a7638b2a25789446225",
+      "common/situations/eep_situation.txt": "64c9fc80f7d8b316b4948fb000fa45886b30be1ba4237589ac0676c6648d6d3e",
+      "common/static_modifiers/eep_modifiers.txt": "e296a1c88b7da5fe633195776d9c41c80868e6e5a5c5d473430434e745ba2d33",
+      "descriptor.mod": "fdd265bff97a7b7baac4e5ebb5049f36819a99c325b61f9f6b7e1cbe0b456c3a",
+      "events/eep_events.txt": "563b71b73f1606414dc0a27f54348929a889abdb8e0e9f007bcb259e902a14e2",
+      "gfx/event_pictures/eep_core.dds": "ccbf95e4f2058f563bbb20039b3c5bfbdafe56c3d3df5cbd7a7af73d53ed42a3",
+      "gfx/event_pictures/eep_devouring.dds": "1dfaa5fbd583075b7955aaacf23320b298553a0345d6e7e4028221bc01ee0c21",
+      "gfx/event_pictures/eep_fleet.dds": "89a59a46f265c29c039bbcb42946dc3d7e3db3d2885692e0f9cd9a84d96aca2b",
+      "gfx/event_pictures/eep_growth.dds": "2c7068ff0ef7f3250ddb789ef1f30104896706a6c4f7ef6f6cc00cdc5c065940",
+      "gfx/event_pictures/eep_psionic.dds": "068940d6e209d4e038c6aad6a4373fce8045d87ba43a30824267313e60344a50",
+      "gfx/interface/icons/modifiers/eep_capacity.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_add.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_mult.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/origins/eep_heart.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/origins/eep_origin.dds": "0b0efde9b1db8b9e528dd5f13095cd4d6ab40d6067775301ae8c1d7434a2d604",
+      "gfx/models/portraits/eep/eep_baiqi.dds": "fee48048257e630fe432f2e1cd9a8ea04c95a3213d9e5bb7bb5e6a0ac934d918",
+      "gfx/models/portraits/eep/eep_baiqi_full.dds": "31f854d06b16f1209f3d8257de89fb387f715a05ecbd12db21c099ce94db5235",
+      "gfx/portraits/portraits/eep_portraits.txt": "15e64490ae386c85806630aa0aed35a45374af64944795aecb7480137e0d1d09",
+      "interface/eep.gfx": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92",
+      "interface/planet_view.gui": "ff679013a87f64b4295650eeb7b490e20a2d388acf0d9a6d5d72e450f9e601ee",
+      "localisation/braz_por/eep_l_braz_por.yml": "d2e4df4014f71a89d7330a11e5c63162dbc9db85327b2ef46d87b977f6f87c65",
+      "localisation/english/eep_l_english.yml": "ce267a80a8cdc70555b82be63ff25ac9626fda73ca872dc0e1fffbc47e1ae48b",
+      "localisation/french/eep_l_french.yml": "21534ab1c1c0a7c9c152bbc945456bfd93122a6603255cccf7a5ad688e76119e",
+      "localisation/german/eep_l_german.yml": "5ed0f2bdcebde76cd11ad3ebe20560efcf8225bfc09b2125355fc032e820b8de",
+      "localisation/japanese/eep_l_japanese.yml": "2d954dad67d7ddf4ae06c637b5b16ff8339fa06390c0b3a5513b8baa9c3d6123",
+      "localisation/korean/eep_l_korean.yml": "ece24da5b345f623c7c726dd87754601b72d91af1168f89bb429c64fff3cc13d",
+      "localisation/polish/eep_l_polish.yml": "4c57692b167f984fdd2634635517372b0eac45307dd71609d46e5d674b84f716",
+      "localisation/russian/eep_l_russian.yml": "b22637dced87632c2626391165f8e2da73406bb4034e094ec671f017edcabb66",
+      "localisation/simp_chinese/eep_l_simp_chinese.yml": "fd112004943ae8d45d790d440ed2b6479c755d3e37319be5809aeb4d3f518979",
+      "localisation/spanish/eep_l_spanish.yml": "3b5a6a3fdf988d103a816e4e2d9098885f47182d4ab4c9af11dd9b814681eac5",
+      "thumbnail.png": "25c23dbb7aa5c6de0d5fb3051b52778aafbefe6ff9ba94b653b84bfcf1f7961c"
+    },
+    "evidence": [
+      {
+        "path": "docs/evidence/runtime-development/20261008T081542Z/formal-production-smoke-proof.json",
+        "sha256": "5d02b3cb9fe24d6bc78969f04d8f48ca94a102a8a8e3169ba3593af6916b28a0"
+      },
+      {
+        "path": "docs/evidence/formal-full-run-20261008T081542Z-git-object-check.json",
+        "sha256": "0aa10e7d29902854ce87d7df936d3ed77101b3dc9c480c5fb2b5e8a20f2a2da1"
+      },
+      {
+        "path": "docs/evidence/package-release.json",
+        "sha256": "764ade5d12dbbea4f5c8bf016d444ec12e948c1fdccaa7e4bc7b7081f4096b49"
+      }
+    ]
+  },
+  "review_evidence": {
+    "path": "docs/evidence/first-release-matrix-source-review-2026-10-08.json",
+    "sha256": "0d3e2cfa1fb37be5fb0ad067288273608bf7fbf12d0298f4e7241b29daf33208"
+  },
+  "production_equivalence_evidence": {
+    "path": "docs/evidence/formal-rc9-production-equivalence-2026-10-08.json",
+    "sha256": "45a5a067e5baea9b3cfba74ae363ed411373afd610ec99c7f57cc6d52db6f8cb"
+  },
+  "static_other_languages": "静态校验通过，运行时不在范围内",
+  "known_limitations": [
+    "Native no-fee decision/resource transactions may rebuild or initialize three research stock keys; queues preserved, no compensating grants.",
+    "Native first-load derived cache differences retained with original FAIL; strict second original-byte reload passed.",
+    "Decision and planet_view.gui overrides require compatibility; performance samples do not prove zero overhead.",
+    "Other civic routes and true no-mod117/118 completion are post-release acceptance."
+  ],
+  "accepted_at_utc": "2026-10-08T08:49:04.001644+00:00",
+  "workshop_published": false
+}
