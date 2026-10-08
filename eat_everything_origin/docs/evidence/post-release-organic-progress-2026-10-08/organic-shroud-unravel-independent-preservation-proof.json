@@ -1,0 +1,72 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "same_date": true,
+    "actual_unravel_approach": true,
+    "actual_situation_blocks_nonempty": true,
+    "raw_situation_changes_exactly_approach_flags": true,
+    "only_native_chaotic_flag_added": true,
+    "all_other_global_situations_held": true,
+    "raw_mirror_differences_only_three_research_fields": true,
+    "no_new_errors": true,
+    "effective_stockpile_held": true,
+    "research_stockpile_held": true,
+    "tech_status_held": true,
+    "variables_held": true,
+    "flags_held": true,
+    "traditions_held": true,
+    "ascension_perks_held": true,
+    "government_held": true,
+    "native_held": true,
+    "pop_groups_held": true,
+    "pop_jobs_held": true,
+    "colonies_held": true,
+    "planets_held": true,
+    "districts_held": true,
+    "deposits_held": true,
+    "species_held": true,
+    "event_targets_held": true
+  },
+  "before_sha256": "29e7c1739c5ac472b53cdfffdaaa317b7f324d90c9472d8231d8eccfacd97f0f",
+  "after_sha256": "69fd095a1c66f907ceb8cf7231586106de82edd27a0a9b7343b2b46f0eba7263",
+  "original_failed_proof_sha256": "25a730956cc4d8f667268c301200f91025d9c792f3ee17ea15e7935e419df4f3",
+  "raw_situation_changes": {
+    "flags": {
+      "before": [
+        "\n\t\t\t\tbreach_shroud_stage_1_started=63651864\n\t\t\t",
+        true
+      ],
+      "after": [
+        "\n\t\t\t\tbreach_shroud_stage_1_started=63651864\n\t\t\t\tchaotic_approach=63654024\n\t\t\t",
+        true
+      ]
+    },
+    "approach": {
+      "before": [
+        "\"approach_situation_breach_shroud_nothing\"",
+        false
+      ],
+      "after": [
+        "\"approach_situation_breach_shroud_unravel_thread\"",
+        false
+      ]
+    }
+  },
+  "raw_situation_before": "\n\t\t\tcountry=0\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\ttype=country\n\t\t\t\tid=0\n\t\t\t\topener_id=4294967295\n\t\t\t}\n\t\t\ttype=\"situation_breach_shroud\"\n\t\t\tprogress=11.25\n\t\t\tlast_month_progress=3.75\n\t\t\tapproach=\"approach_situation_breach_shroud_nothing\"\n\t\t\tstage_durations=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tstart=0\n\t\t\t\t\tend=500\n\t\t\t\t}\n\n\t\t\t\t{\n\t\t\t\t\tstart=500\n\t\t\t\t\tend=750\n\t\t\t\t}\n\n\t\t\t\t{\n\t\t\t\t\tstart=750\n\t\t\t\t\tend=1000\n\t\t\t\t}\n\t\t\t}\n\t\t\tstage_flags=\n\t\t\t{\n\t\t\t\tyes no no \n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\tbreach_shroud_stage_1_started=63651864\n\t\t\t}\n\t\t\tstage=0\n\t\t",
+  "raw_situation_after": "\n\t\t\tcountry=0\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\ttype=country\n\t\t\t\tid=0\n\t\t\t\topener_id=4294967295\n\t\t\t}\n\t\t\ttype=\"situation_breach_shroud\"\n\t\t\tprogress=11.25\n\t\t\tlast_month_progress=3.75\n\t\t\tapproach=\"approach_situation_breach_shroud_unravel_thread\"\n\t\t\tstage_durations=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tstart=0\n\t\t\t\t\tend=500\n\t\t\t\t}\n\n\t\t\t\t{\n\t\t\t\t\tstart=500\n\t\t\t\t\tend=750\n\t\t\t\t}\n\n\t\t\t\t{\n\t\t\t\t\tstart=750\n\t\t\t\t\tend=1000\n\t\t\t\t}\n\t\t\t}\n\t\t\tstage_flags=\n\t\t\t{\n\t\t\t\tyes no no \n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\tbreach_shroud_stage_1_started=63651864\n\t\t\t\tchaotic_approach=63654024\n\t\t\t}\n\t\t\tstage=0\n\t\t",
+  "raw_economy_mirror_differences": {
+    "engineering_research": [
+      13548.74766,
+      13571.37533
+    ],
+    "physics_research": [
+      18988.31554,
+      19019.85986
+    ],
+    "society_research": [
+      7180.06001,
+      7207.64122
+    ]
+  },
+  "scope": "Independent read-only verification of actual nonempty nested situation blocks and actual research banks; original driver failure and full raw mirror mismatch retained. No gameplay repeated."
+}
