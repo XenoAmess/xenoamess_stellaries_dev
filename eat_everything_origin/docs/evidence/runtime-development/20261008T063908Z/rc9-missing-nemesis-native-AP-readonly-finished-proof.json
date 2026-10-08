@@ -1,0 +1,41 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "same_date": true,
+    "all_root_stock_same": true,
+    "all_real_pop_groups_same": true,
+    "all_EEP_variables_same": true,
+    "all_EEP_flags_same": true,
+    "AP_empty_unchanged": true,
+    "traditions_no_purchase": true,
+    "technology_same": true,
+    "research_queues_same": true,
+    "all_colonies_same": true,
+    "all_physical_planets_same": true,
+    "districts_same": true,
+    "deposits_same": true,
+    "situations_same": true,
+    "global_targets_same": true,
+    "only_native_intro_and_first_swallow_messages_acknowledged": true,
+    "no_corresponding_notice": true,
+    "no_new_errors": true
+  },
+  "before_sha256": "521208d474710e604d96f205786316c65f29d2b9ddb620b0fc3a99fbcb63a0f5",
+  "after_sha256": "108d92e0a2b8c12ce4d781716982b9f05269fbfbe151b55a11aa624342fc699f",
+  "before_messages": [
+    {
+      "id": 1,
+      "event": "eep.10",
+      "date": "2202.04.03",
+      "country": 0
+    },
+    {
+      "id": 2,
+      "event": "eep.11",
+      "date": "2204.01.01",
+      "country": 0
+    }
+  ],
+  "after_messages": [],
+  "scope": "Native unavailable-inclusive AP preview and normal acknowledgement of intro/first swallow, with all economic state and no purchases/grants."
+}
