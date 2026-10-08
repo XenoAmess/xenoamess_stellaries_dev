@@ -30,7 +30,26 @@ eep_initialize = {
     if = { limit = { has_country_flag = eep_initialized NOT = { is_variable_set = eep_fleet_stage } } set_variable = { which = eep_fleet_stage value = 0 } }
     if = {
         limit = { exists = event_target:eep_core@this }
-        event_target:eep_core@this = { eep_sync_court = yes }
+        event_target:eep_core@this = { eep_repair_core_deposit = yes eep_sync_court = yes }
+    }
+}
+
+# Physical core only. Native hive terraforming clears even flavor deposits.
+eep_repair_core_deposit = {
+    if = {
+        limit = {
+            has_carrier_flag = eep_core
+            is_colony = yes
+            NOT = { has_deposit = d_eep_core }
+            exists = event_target:eep_core_actor@this
+            event_target:eep_core_actor@this = {
+                eep_qualified = yes
+                NOT = { has_country_flag = eep_core_dead }
+                exists = event_target:eep_core@this
+                event_target:eep_core@this = { is_same_value = prevprev }
+            }
+        }
+        add_deposit = d_eep_core
     }
 }
 

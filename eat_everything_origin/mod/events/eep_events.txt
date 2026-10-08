@@ -1,5 +1,14 @@
 namespace = eep
 
+# Native on_terraforming_complete: THIS Planet, FROM terraforming country.
+carrier_event = {
+    id = eep.4
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_carrier_flag = eep_core }
+    immediate = { planet = { eep_repair_core_deposit = yes } }
+}
+
 # Native on_colony_transfer: THIS Colony, FROM new owner, FROMFROM old owner.
 carrier_event = {
     id = eep.3

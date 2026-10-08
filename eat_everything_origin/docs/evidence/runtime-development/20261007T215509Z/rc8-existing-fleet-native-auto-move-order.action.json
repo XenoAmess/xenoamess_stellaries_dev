@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "rc8-existing-fleet-native-auto-move-order",
+  "text": "effect capital_scope = { save_global_event_target_as = eep_runtime_defense_target } every_owned_fleet = { limit = { fleet_power > 10000 } clear_fleet_actions = this auto_move_to_planet = { target = event_target:eep_runtime_defense_target clear_auto_move_on_arrival = yes } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-08T00:03:17.828047+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
