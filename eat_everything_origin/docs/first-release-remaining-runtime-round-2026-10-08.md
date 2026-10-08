@@ -1,5 +1,35 @@
 # 吞噬之心：首发剩余实机轮次
 
+firestorm原件归档已完成：[原件快照](evidence/runtime-development/20261008T003349Z-firestorm-completed/source-snapshot.json)于04:26:34 UTC保存597原件36584107字节、8报告112项范围通过；[Git原字节证明](evidence/rc9-completed-firestorm-git-object-check-2026-10-08.json)核599文件36810315字节通过。阶段完整未过滤error SHA ed0961bfec47508841f986a90874242ac7ea1014b83ddd6c222d62f7d8e4bf30，保留早前匿名console作用域失败，无EEP生产路径scope错误；不是全RUN最终日志或完整政体／首发PASS。此阶段在开始阶段二原件重载之前已冻结。
+
+firestorm外部清空分支完成：真实终点原玩家0恢复14项、同月每日凝聚9项、11项负例前提＋11项五次回调严格保持、终点／次日／次月三检查点30项范围通过。次日2224.09.30／ac5db4df747f170c5a20053be1c054fb604ad811f54fba262e965d4b00050536、次月2224.10.30／bf772957d52c2abf67142921869c85d0a7516581211761383cdc3ebfc994248f：源实际人口0／pc_volcanic、只拥有原母星、无live EEP任务／源任务旗标、零吞噬收益／通知、王座绑定及一份核心地貌保持；母星7683→7691为自然增长。独立负例4类至此均范围完成，不把受控免费攻击国／舰队叫作自然战争或付费建造。全RUN仍运行、最终完整日志及首次发布尚未完成。
+
+本阶段归档方案：归档全部bom/bombard前缀原件与各次失败／恢复、实际命令／GUI、每日及终点SAV、辅助原源代码、原字节基线别名收据，并保留阶段完整未过滤error.log；其中play整型ID失败、宣战MIA和检查器嵌套字段错误均不剔除。快照阶段明确只是firestorm分支，非全RUN最终日志。复制核SHA／字节，再等待git add完全结束后核每个暂存Git blob原字节，完成文档回写并只提交本任务到main／origin/main；之后继续阶段二自然原件，不能因中间提交结束任务。
+
+轰炸清空后5次回放已完成：11项外部丢失前提＋11项严格回放保持通过，前后SAV同为394e266895de85adab44d398509b2af1afedefbc8cf26132f53608279ffb9aae，双方库存、全部实际人口组、原国EEP变量／旗标、源／核心完整对象、全部目标及包含原生赤字的实际局势保持，error新增0。攻击国跨月预算实际含country_base凝聚10.2／月及采矿／研究站收入、舰船维护导致能源／合金赤字；不得把399.8累计凝聚全归因于轰炸或假称攻击国所有原版经济收入为零。仍需真实次日／次月，不能提前判整个分支通过。
+
+轰炸回放审计范围补充：攻击国原生能源／合金赤字局势仍存在（type分别situation_energy_deficit／situation_alloys_deficit），它们不是EEP任务，不得因审计包含双方就要求全局situations为空。原玩家返回保存包含0与16777244，独立bombard回放辅助也保持同样双方审计口径，比较全部实际局势、原国经济／EEP状态／原始世界／目标与攻击国库存不变；不覆盖原共用回放脚本或先前原件。次日／跨月按无live situation_eep_devouring及源任务旗标清空验收，原生赤字和跨月库存变化完整记录。
+
+真实轰炸累计270日终点2224.09.29／d9b0ced28d87d9d989f27b14b976171dcb581b61986544398673ed1944c61439已观察源人口0、原生弃置（原国仅母星0）、damage36.29395、last_bombardment2224.04.20、原10舰仍orbit84／firestorm、攻击国无殖民地且凝聚399.8。不把last_bombardment当作独立保存过的首次清空日期；实际清空检查点是9.29。EEP账本仍0／0／2／0／0，母星7683为真实经营／迁移变化。接下来按原生set_player反向切回原国0，保存实际player／双方库存及源全对象／原任务／王座保持，再执行已有bombard负例五次回放、真实下一日与跨月。此处尚未判分支完成；原准备免费测试船及实际原版清空均保留，不称自然战争／自然造舰。
+
+真实轰炸90日观察2224.03.29／855d2dd153cc0de8f3c08ea943dee6652474f03a79604ca554b11832f27d0735：原10舰持续actual orbit84、last_bombardment当日、damage26.3956，源100→79、母星7721→7634，攻击国凝聚254.6且仍无殖民地；EEP仍0／0／2／0／0。跨月原生经济变化不得用单日4乘90替代实际库存，更不能把母星人口变化当Mod回迁或人为补回。源尚79，不能判清空；随后实际180日到2224.09.29，保留源人口／荒废／原任务及实际预算变化，不直接杀人口或改终点。
+
+真实firestorm每日凝聚检查完成：相邻同月12.28／412c6281194d3528f53e2face73e0a42edb5495cb8c5e5a4089f842a2ebce512到12.29／02962e4844bbc9967fa6c98ec5cf25b5ea797b8b7130dbcdbadd5e4ecc603b4a，双方actual orbit84、原10舰、firestorm轰炸当日记录；凝聚12→16（4／日），荒废1.41405→1.8854且低于100，攻击国无殖民地、源100，EEP账本0／0／2／0／0未变。9项范围检查通过，与官方10×40×0.01公式一致；未直接导出trigger值，不用国家cached fleet_size=0代替舰队触发器。当前继续真实90日至2224.03.29检查人口／军队及清空条件；该收益检查不是外部清空负例或完整焦土通过。
+
+原生玩家切换恢复已通过9项准备：SAV288f044991e50946eb0ce3825a1b5abdb1426aa0f86c8188dd8da8b3fca3f2dd的真实player.country16777244、原10舰／firestorm／源订单、双方库存、原人口／EEP变量／任务保持，error新增0。正常推进到2223.12.28／412c6281194d3528f53e2face73e0a42edb5495cb8c5e5a4089f842a2ebce512后actual movement_manager.orbit.orbitable.planet84，当前订单空，source.last_bombardment=当日、damage1.41405，攻击国仍无殖民地且凝聚12；源100、原国账本0／0／2／0／0。该结果证实真实轨道／轰炸恢复，不是连续每日收益或清空完成；随后按同月真实一日到12.29保存核增量，再继续真实轰炸。
+
+玩家切换准备修正：原play 16777244返回原生“Invalid country ID!”，实际SAV0826104ac789d9b5a25cdc68457befd106eb9b027ec17f290ce9d2333b4d31a7的player.country仍0。原8项仅检查舰船／新行动／经济保持，未检查玩家切换，不能把该PASS_SCOPED扩为实际切换成功。完整命令截图和SAV保留，另记玩家前提失败。官方实际effects.log说明country作用域set_player将目标国玩家转至作用国，且clear_orders是fleet正常清订单；恢复用原已绑定eep_bombard_attacker／victim执行set_player，再对同一舰队clear_orders并排源轨道。新准备必须核真实player.country=16777244、目标和库存／人口／任务保持，不推测play参数含义，不以命令描述替代实际所有权。
+
+阶段二自然战争续测细化：既有原字节fleet2-war80源为2280.01.02／eacb80911cb167bb64b6900a3a256e07db7dce1a3b89fcd3b76175160b04d3d7，原国0主体种族105、合法AP4、第一项目已完成、杀舰威慑135／crisis_level_1且无eep_fleet_notice。只读原件发现战争1的实际敌国16777219、五颗殖民地；其physical660／colony37／system53是火山世界、3155人口及8支真实守军，本方原有第3舰队16778456已在同星系，真实28舰／6106战力／firestorm。11758是国家总战力不是舰队ID，后续不得照错误ID调船。本方原有运输舰队880在system125、真实陆军强度934.9335，可用正常航行／入侵配合；不制造免费军队，不瞬移、不赠威慑／AP／阶段。原生敌军总战力1032.77343不保证无损胜利。
+
+完成独立外部轰炸负例后恢复该原字节源，以新的原生SAV确认实际战争、舰队／星球／军队、库存、EEP账本及玩家代管关闭。按实际战争及舰队触发器保存目标后，以既有第3舰队普通轨道／中文UI攻击与运输入侵真实争夺660，再按真实威慑需要继续其它实际敌星；不直接调用危机目标奖励。官方common/crisis_objectives/00_crisis_objectives.txt的征服／毁星／肃清和杀舰奖励受星系数及宜居比例影响，不能预设一颗星保证到1000。达到真实第二階门槛时先保存玩家女王通知待确认状态、中文CG及舰船解锁实际字段，重载、确认、五次回放核幂等；当前阶段二首次玩家通知仍未验收通过。
+
+firestorm续测方案：2223.12.24真实存档7fb3524f12d33ffce446d8130fb0c8f57dd041009768cd0bdcdc6dd3e1d3e001已记录source84.last_bombardment=2223.12.23、damage=0.47135，攻击国16777244凝聚4、无殖民地且月预算空；源仍100、EEP账本未变。舰队随后实际被AI改为move_to_system_point_order到母星system5、orbit空，不能用此断续状态验证连续每日收益。按既定方案切换真实玩家控制到攻击国16777244，用原10艘战列舰重新排source84普通轨道订单，再真实推进并保存；切换／重新下令是受控准备，源国后续AI及原生日历经营变化如实记录，不改荒废、人口、军队、收益或任务终点。取得稳定轨道后选同月相邻两日比较凝聚／fleet_size和原生轰炸，随后持续至真正清空；清空后切回原国0，按实际零人口及任务清理验证次日、次月与五次EEP回调。
+
+2026-10-08 12:08进度补记：正常解除暂停的一日到2223.12.09（39b9e89eb8921be27e286078a04f393154d7be9095e49eb3d6c98f5e92dee3d6）已使原前哨站ship947真实disabled=yes、hit_points=1、last_combat_activity=2223.12.09，攻击舰队in_combat清空。舰队仍有指向source84的原生轨道订单，实际orbit尚空，源仍100／damage0，攻击国凝聚0；此处仅确认战斗结束，不称轰炸收益通过，也不把正常推进与快进的差别推断为引擎原因。
+
+本机原版舰队规模修正：common/scripted_variables/03_scripted_variables_ships.txt中battleship_size_multiplier=40，common/ship_sizes/00_ship_sizes.txt的fleet_slot_size=4是独立字段。10艘官方战列舰对应攻击国实际used_nav_capacity=400，不能沿用旧假设80。原版infernals.20按每支在轨舰队trigger:fleet_size×0.01每日给凝聚，仅在firestorm且荒废低于100时；预期须结合实际在轨、人口／荒废、每日存档和真实收益核实，暂不判4／日通过。
+
 本轮继续执行用户授权的焦土蜂巢首发顺序：五个入口开放，完成焦土蜂巢与共有关键机制后发布，公开只推荐该路线，发布后恢复离线继续其它政体。本文将剩余检查落实为执行顺序；不是验收结果，也不改变[首发范围合同](scorched-hive-first-release-2026-10-08.md)。所有实机仅简中，最终上传前Steam离线。
 
 ## 当前自然母星转换
@@ -119,7 +149,7 @@ rc.9受影响王座地貌修复回归已完成，继续以上焦土余项。只�
 
 实际30日2224.01.02／255e11477967bb6e32b8bc8ca6cfbdabde0cb95ae5a0217f43d62a9714161ac0：舰队移动到恒星位置0／0／origin78、visual_height10，真实订单planet_killer_weapon_windup_order为28／90。继续实际61日到2224.03.03／6282cd430cdbfdf890af4dfefd5dcf38634ae57e5128f422b5f91bd98f169362，订单89／90，中文原生截图“正在充能武器：98%”；吞星账本仍0／0／2／0／0。这只证明真实移动和充能，未发射完成；不能据此前回防未移动推断所有fast_forward都跳过舰队运动。
 
-firestorm独立受控负例方案：恢复同一已完成殖民的源69，正式补31至100后，创建不带本起源的新焦土蜂巢攻击国（auto_delete=no、同源实际主体种族、蜂巢权力／意识及合法焦土理念），保存真实所有权／非EEP资格。按本机官方NAME_Mindwarden_Battleship设计创建10艘原版battleship，受控放在source84附近；原生set_policy指定orbital_bombardment_devastation、set_fleet_bombardment_stance=firestorm，真实declare_war到原任务所有国，排普通orbit_planet订单。创建国／免费舰船／受控位置／战争均明示为准备，不称自然战争或付费造船；不改变源人口、荒废度、军队、任务、经济或轰炸奖励。不直接调用infernals.20、kill_pop或destroy_colony。保存准备前后人口／EEP账本／库存／王座和实际战争、舰队规模80、firestorm／位置／订单。真实推进先捕获轰炸低于100荒废时的日常凝聚与人口／军队下降，再保存清空终点、次日／次月及五次EEP回调，核外部轰炸无吞星奖。攻击国没有经营殖民地的每日凝聚增量结合实际fleet_size与原版0.01倍每日事件核对；任何额外原版经济／战争收益完整记录，不能预设全部库存保持。若AI取消订单或守卫拒绝，先保留失败，用同一真实舰队正常重新下令或切换实际玩家控制，不改完成结果或直接破坏源星。
+firestorm独立受控负例方案：恢复同一已完成殖民的源69，正式补31至100后，创建不带本起源的新焦土蜂巢攻击国（auto_delete=no、同源实际主体种族、蜂巢权力／意识及合法焦土理念），保存真实所有权／非EEP资格。按本机官方NAME_Mindwarden_Battleship设计创建10艘原版battleship，受控放在source84附近；原生set_policy指定orbital_bombardment_devastation、set_fleet_bombardment_stance=firestorm，真实declare_war到原任务所有国，排普通orbit_planet订单。创建国／免费舰船／受控位置／战争均明示为准备，不称自然战争或付费造船；不改变源人口、荒废度、军队、任务、经济或轰炸奖励。不直接调用infernals.20、kill_pop或destroy_colony。保存准备前后人口／EEP账本／库存／王座和实际战争、舰队规模（以本机原版实际fleet_size为准，不预设80）、firestorm／位置／订单。真实推进先捕获轰炸低于100荒废时的日常凝聚与人口／军队下降，再保存清空终点、次日／次月及五次EEP回调，核外部轰炸无吞星奖。攻击国没有经营殖民地的每日凝聚增量结合实际fleet_size与原版0.01倍每日事件核对；任何额外原版经济／战争收益完整记录，不能预设全部库存保持。若AI取消订单或守卫拒绝，先保留失败，用同一真实舰队正常重新下令或切换实际玩家控制，不改完成结果或直接破坏源星。
 
 实际2日2224.03.05／e881d670e55f1038195bdfbf6618eac4f00ab09f652f710b253017a1b0b5bf04，订单进入planet_killer_weapon_fire_order，fire1／fire_time30；中文图显示“正在准备发射武器：3%”。继续真实30日2224.04.05／cc80d33645f040980bc9a43bd9bab8b0d72ae234ef9fcdc08aa5c5d24a3eb385，16项碎星终点检查通过：star83 pc_black_hole、system78 sc_black_hole／star_cracked、source84 pc_shattered／真实人口0、只拥有原母星、任务及源任务旗标清空、原版暗物质3000／destroyed_stars_score10、原真实发射订单结束；EEP仍0／0／2／0／0，无首吞／奖励待展示／核心死亡，原母星类型／绑定／一份核心地貌保持。母星7710是原生日历经营／迁移变化，未伪称世界回迁。实际顺序与原版奖励共同证明真正碎星武器结果，不是直接调用destroy_star_system；仍不冒称自然第五阶解锁或付费生产。下一日／月度和五次回调完成后才判此分支完成。
 
@@ -134,3 +164,5 @@ firestorm独立受控负例方案：恢复同一已完成殖民的源69，正式
 上述[碎星快照](evidence/runtime-development/20261008T003349Z-star-cracker-completed/source-snapshot.json)03:47:24 UTC完成，374份原件22562417字节，376个Git文件22700790字节[原字节核验通过](evidence/rc9-completed-star-git-object-check-2026-10-08.json)，6报告91项范围通过。阶段未过滤error SHAed0961bfec47508841f986a90874242ac7ea1014b83ddd6c222d62f7d8e4bf30，无EEP生产路径scope错误，保留既有匿名console失败；阶段包含截止时间前的全局日志但不收正在写入的bombard原件，不称全局无错误或最终日志。
 
 从原字节bombard-task100恢复后按先宣战再放舰队执行，新SAV fe2907d7ccd1ec868173ee6e1aa6c2311649f0fe0877c99a30a4063ba380aa68，17项准备通过：实际攻击国16777244、不带EEP起源、舰队50331809拥有10战列舰、firestorm、非MIA且在system78、嵌套orbitable.planet84行动与真实战争；母星7721／源100、库存／EEP变量／原任务和核心绑定保持，新增error字节0。此结果不是实际轰炸或收益通过，下一步真实一日并保存双方审计，观察是否进入实际轨道与低荒废轰炸，再对一个不跨月的真实日比较凝聚增量。
+
+真实第一日2223.12.03／d0eb51439afb226432c3416145f9631bf47a0875a8072ddb528a407685c08fe9、第六日2223.12.08／4dbe0e7e6c784a4e9f0db7eea9bedee53a942ced8bbf775ce045bd894daa61c1已保存。双方审计证实攻击国存活且origin_default、scorching_infernals，第一日舰队与源系前哨站fleet210真实交战，实际orbit_planet_order.orbitable.planet84；第六日仍in_combat_with210、在前哨站位置、源人口100／bombardment_damage0／last_bombardment0.01.01、攻击国无凝聚库存，尚未轰炸，不判收益通过。新增正常日历辅助只在新鲜GPU确认暂停与当前日期后短时解除暂停，再原生暂停并据新鲜实际日期保存，读战斗、实际轨道、源伤害／人口和凝聚。原快进观察保留，不预设物理帧／快进原因；不改伤害、舰队／军队强度、资源、人口或结果。此正常推进是既有实际舰队的对照，不是新创建防御船或绕过轰炸。

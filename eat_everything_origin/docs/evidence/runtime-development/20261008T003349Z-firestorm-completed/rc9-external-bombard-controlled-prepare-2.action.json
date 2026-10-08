@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "rc9-external-bombard-controlled-prepare-2",
+  "text": "effect root = { event_target:eep_bombard_attacker = { create_fleet = { name = \"EEP-FIRESTORM-TEST\" settings = { spawn_debris = no can_change_composition = no uses_naval_capacity = no } effect = { set_owner = event_target:eep_bombard_attacker create_ship = { name = \"EEP-FIRE-0\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-1\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-2\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-3\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-4\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-5\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-6\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-7\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-8\" design = \"NAME_Mindwarden_Battleship\" } create_ship = { name = \"EEP-FIRE-9\" design = \"NAME_Mindwarden_Battleship\" } set_location = { target = event_target:eep_native_purge_source distance = 10 angle = 0 } set_fleet_stance = passive set_fleet_bombardment_stance = firestorm save_global_event_target_as = eep_bombard_fleet } } declare_war = { target = event_target:eep_bombard_victim attacker_war_goal = wg_end_threat } } event_target:eep_bombard_fleet = { queue_actions = { orbit_planet = event_target:eep_native_purge_source } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-08T03:39:29.003620+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

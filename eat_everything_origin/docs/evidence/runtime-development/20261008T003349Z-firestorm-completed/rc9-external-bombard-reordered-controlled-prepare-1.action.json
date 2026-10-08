@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "rc9-external-bombard-reordered-controlled-prepare-1",
+  "text": "effect root = { create_country = { name = \"EEP-FIRESTORM-ATTACKER\" type = default auto_delete = no default_ships = no ignore_initial_colony_error = yes authority = auth_hive_mind civics = { civic = civic_hive_scorched_earth civic = civic_hive_ascetic } ethos = { ethic = ethic_gestalt_consciousness } species = event_target:eep_bombard_species graphical_culture = \"mammalian_01\" effect = { save_global_event_target_as = eep_bombard_attacker set_policy = { policy = orbital_bombardment option = orbital_bombardment_devastation cooldown = no } create_ship_design = { design = \"NAME_Mindwarden_Battleship\" } add_ship_design = last_created_design declare_war = { target = event_target:eep_bombard_victim attacker_war_goal = wg_end_threat } } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-08T03:47:13.505747+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
