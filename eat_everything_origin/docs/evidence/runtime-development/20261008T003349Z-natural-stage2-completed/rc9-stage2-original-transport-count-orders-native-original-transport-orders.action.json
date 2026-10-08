@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "rc9-stage2-original-transport-count-orders-native-original-transport-orders",
+  "text": "effect root = { every_owned_fleet = { limit = { is_ship_class = shipclass_transport num_ships > 10 } save_global_event_target_as = eep_stage2_transport } if = { limit = { exists = event_target:eep_stage2_transport } event_target:eep_stage2_transport = { clear_orders = yes queue_actions = { orbit_planet = event_target:eep_stage2_enemy_world } } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-08T04:38:55.383791+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
