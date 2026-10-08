@@ -1,0 +1,112 @@
+{
+  "status": "PASS_SCOPED",
+  "auditor_sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad",
+  "schema_version": 2,
+  "original_auditor_sha256": "ab30b8ff43c5fdd3c498cc274f134be498904f18ac652f1d7cf75986209d04c0",
+  "original_failure_file_hashes": {
+    "_runtime\\heart-of-devouring\\runs\\20261008T103147Z\\organic-mother-factory-ordered-proof.json": "c4ed95006c70a26389b8c223038dc683aaf71d239e7609a98d628b2227e04166",
+    "eat_everything_origin\\docs\\evidence\\runtime-development\\20261008T090850Z\\postvanilla-native-begin-proof.json": "7864bb1412a27790b894d798b996314c46a2bd86dfdbdc6dc243322564d09cd4"
+  },
+  "factory": {
+    "checks": {
+      "same_actual_date": true,
+      "actual_minerals_paid400": true,
+      "all_other_effective_stock_held": true,
+      "native_three_research_banks_held": true,
+      "raw_tech_status_held": true,
+      "research_queues_held": true,
+      "per_tech_progress_held": true,
+      "only_expected_colony_last_building_changed": true,
+      "all_original_failure_bytes_held": true,
+      "variables_held": true,
+      "flags_held": true,
+      "completed_technologies_held": true,
+      "traditions_held": true,
+      "ascension_perks_held": true,
+      "government_held": true,
+      "pop_groups_held": true,
+      "pop_jobs_held": true,
+      "planets_held": true,
+      "districts_held": true,
+      "deposits_held": true,
+      "situations_held": true,
+      "species_held": true
+    },
+    "colony_changes": {
+      "0": {
+        "last_building_changed": [
+          "building_temple",
+          "building_factory_1"
+        ]
+      }
+    },
+    "actual_research_bank_before": {
+      "physics_research": 15718.74643,
+      "society_research": 4952.18763,
+      "engineering_research": 11249.79464
+    },
+    "actual_research_bank_after": {
+      "physics_research": 15718.74643,
+      "society_research": 4952.18763,
+      "engineering_research": 11249.79464
+    },
+    "raw_mirror_before": {
+      "physics_research": 15239.21964,
+      "society_research": 9918.04497,
+      "engineering_research": 10918.91875
+    },
+    "raw_mirror_after": {
+      "physics_research": 15718.74643,
+      "society_research": 4952.18763,
+      "engineering_research": 11249.79464
+    }
+  },
+  "true_no_mod_decision": {
+    "checks": {
+      "same_native_date": true,
+      "native_three_research_banks_held": true,
+      "complete_effective_stocks_held": true,
+      "raw_tech_status_held": true,
+      "cached_mirror_initialization_observed": true,
+      "no_EEP_variables_or_flags": true
+    },
+    "actual_research_bank": {
+      "physics_research": 12.73661,
+      "society_research": 12.73661,
+      "engineering_research": 15.79661
+    },
+    "original_begin_proof_status": "PASS_SCOPED",
+    "original_full_stock_check": "FAIL"
+  },
+  "original_saves": {
+    "organic-psionic-theory-month36": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\_runtime\\heart-of-devouring\\runs\\20261008T103147Z\\organic-psionic-theory-month36.sav",
+      "save_sha256": "667af7c59326824b14940a2bfdf009b121f5ebc788400d5def48fd2c12ed36d1",
+      "gamestate_sha256": "f740a081edeedd288d7859cec42ae7b57add0af58de40db8b7a11b2fcc593dae"
+    },
+    "organic-mother-factory-ordered": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\_runtime\\heart-of-devouring\\runs\\20261008T103147Z\\organic-mother-factory-ordered.sav",
+      "save_sha256": "1225a1fb39134c4f44edd7e03e542dfeab6f52590ad749cc5f4c75a4e3d215b5",
+      "gamestate_sha256": "d418d412627df3e62b1a25916b95df14f8692129b0c64e10e9901c4036178553"
+    },
+    "postvanilla-source-native-nextday": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\runtime-development\\20261008T090850Z\\postvanilla-source-native-nextday.sav",
+      "save_sha256": "b486cab08bdeb35f2fdf468cf554da47242833bf492bc67424cc1d9645727397",
+      "gamestate_sha256": "f08e5654fbe1c0b5e2fb5bc84f46e4920d5d87fefa9144e22731cbc0b3d2af3a"
+    },
+    "postvanilla-native-Q20-begun": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\runtime-development\\20261008T090850Z\\postvanilla-native-Q20-begun.sav",
+      "save_sha256": "3fc5a419135841820c90aedbf191ba8e183826fc579b79399736df35720af4c8",
+      "gamestate_sha256": "4fec0a97cc7f3a2b2e07232c16394ac66db5a7adb79eb7acd89a3ff0bc7a1d5a"
+    }
+  },
+  "scope": "Read-only re-audit of these two original pairs. No historical FAIL is overwritten or generalized to other pairs. No game mutation; published production unchanged.",
+  "unit_regression": {
+    "command": "python -m unittest test_audit_save_research -v",
+    "working_directory": "eat_everything_origin/tools",
+    "exit_code": 0,
+    "tests_passed": 6,
+    "malformed_input_subcases": 8,
+    "test_sha256": "536941164bcc8dd09952f05156526905f9cacb057d83538c77301155cbb18e87"
+  }
+}

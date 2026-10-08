@@ -234,3 +234,17 @@ RUN20261008T103147Z继承有机洁癖自然2281.01.11旧原件，第一次载入
 当前有机洁癖自然存档的主体species71带base_ref3321888769／HUM／trait_geleboric_mutations，是本族原生变体。4.5.2原版15_strange_worlds_traits.txt中该特质含寿命、增长与幸福度负修正以及biologist岗位加成；不能只看portrait变化就当作异族，当前是否合格仍须核原生模板／物种关系。
 
 4.5.2原生贡品事件marauder.101.a的能源成本由common/scripted_effects/marauder_tribute_effects.txt的tribute_cost_energy按旗标调用add_resource；本次悬停实际-250、真实能源3170.94638→2920.94638。虽然同日实际科技与研究队列、全部非科研库存／人口／世界集合保持，三系standard_economy_module.resources研究储备发生变化，完整库存比较FAIL保留，不能仅凭脚本只写energy便声称所有科研池保持；尚未证明内部原因，不作Mod补偿。随后原生外交响应与action.39现状和平空选项各16项同日保持通过。外交消息遮住控制台时要保留失败并正常确认或调整界面后核既有完整回执，不能重复发送已完成的fast_forward360。
+
+## 原生法令、建筑区域与灵能议程补证（2026-10-08）
+
+本机4.5.2的00_edicts.txt:884采矿补贴提供miner_jobs_bonus_workforce_mult=0.20，不是直接矿物产出固定乘法；正常撤销后母星miner基础400保持、bonus150→70。1264行敬奉圣人提供pop_bureaucrat_bonus_workforce_mult=0.05及唯心思潮吸引力0.25，实际母星bureaucrat基础840保持、bonus105→147。2290.03.02实际一次费用30.51、UI显示31；法令基金123/141等显示也随帝国规模和寺庙完工更新，不能把显示整数当底层完全整数或视为固定旧版Unity+20%。正常撤销／启用原件19／21项同日检查通过。
+
+4.5.2SAV的建筑位于顶层buildings容器，区域位于zones；区域的buildings是未命名ID列表。母星档案馆实际zone1、zone_research_unity；寺庙building_temple正常下单记录在construction的buildable_planet_building，包含planet=0（殖民地ID）、zone=1，不是物理天体7。实际费用400矿物、needed360，原件已有building2保持；完工后区域列表恰新增一座寺庙、官僚基础840→1040、建造队列清空。这个结构限本机Stellaris，不套用CK3建筑方言。
+
+原生心胜于物议程奖励常量@agenda_award_tech_progress在05_scripted_variables_paragon.txt:151为0.25；原生UI也显示灵能理论+25%。从0进度正常推进后，2291.12.02实际准备3293.83193，主按钮“点击启动议程”可用；旁边提前启动另收6500Unity，两者必须区分。正常点击成熟主按钮后全部库存／人口／世界／EEP完整保持，原生stored_techpoints_for_tech仅增加tech_psionic_theory=1929.19999，alternatives社会候选和标量always_available_tech新增该科技，government记录正常议程冷却至2294.12.02；完成科技集合仍无该科技。实际选择社会研究队列后UI1929/7716、预计37月，研究中不等于灵飞完成。
+
+普通运行中的自动暂停事件确认后，ESC菜单存在并不保证底层日历停住：同一RUN女王成长通知第一次确认保存实际漂移2290.02.01→2290.05.11，完整失败保留。原字节加载待选SAV恢复手动暂停基线后，同一物理选项点击／立即ESC方法23项同日保持检查通过。必须以实际SAV日期和暂停状态核实，不能仅凭菜单或事件自动暂停推断同日操作；这里没有重放事件或经济奖励。这个结论限该运行环境，不推断其它Paradox游戏。
+
+## 原生科研储备与经济镜像（2026-10-08）
+
+本机4.5.2原生SAV中`country.tech_status.stored_techpoints`为未命名三数列表，次序物理／社会／工程；`stored_techpoints_for_tech`是各科技既有部分进度，两者不能混用。`modules.standard_economy_module.resources`中的同名三系字段可能缺失或滞后，原生消费操作会同步它们，不能独用后者判额外科研奖励。实际有机社会研究36个月中科技储备下降而经济镜像累加；同日正常工厂下单只同步镜像，实际三系储备、完整科技系统保持。真正无Mod决议前后也见三系镜像从缺失初始化而实际储备保持。限已核原件，不推断其它版本／游戏或追认所有历史FAIL。详情和原件SHA见[科研储备审计修正](research-stock-audit-correction-2026-10-08.md)，旧原值与失败均保留。

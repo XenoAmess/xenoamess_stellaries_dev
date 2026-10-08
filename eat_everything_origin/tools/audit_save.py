@@ -2,11 +2,13 @@
 import argparse
 import hashlib
 import json
+import math
 import re
 import zipfile
 from pathlib import Path
 
 TOKEN = re.compile(r'\s+|#[^\n]*|"(?:\\.|[^"\\])*"|[{}=]|[^\s{}=\"]+')
+RESEARCH_RESOURCES = ('physics_research', 'society_research', 'engineering_research')
 
 
 def tokens(text):
@@ -72,6 +74,28 @@ def ids(text):
     return [int(t) for t, _, _ in tokens(text) if re.fullmatch(r'\d+', t)]
 
 
+def research_stocks(tech_status):
+    """Read the native research bank, never the economy module's cached mirror."""
+    stored = [(value, obj) for key, value, obj in fields(tech_status)
+              if key == 'stored_techpoints']
+    if not stored:
+        return None
+    if len(stored) != 1 or not stored[0][1]:
+        raise ValueError('stored_techpoints must be one unnamed three-number list')
+    values = [token for token, _, _ in tokens(stored[0][0])]
+    if len(values) != 3:
+        raise ValueError('stored_techpoints must contain exactly three numbers')
+    numbers = []
+    for value in values:
+        if not re.fullmatch(r'-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?', value):
+            raise ValueError('invalid stored_techpoints number: ' + value)
+        number = int(value) if re.fullmatch(r'-?\d+', value) else float(value)
+        if not math.isfinite(number):
+            raise ValueError('non-finite stored_techpoints number: ' + value)
+        numbers.append(number)
+    return dict(zip(RESEARCH_RESOURCES, numbers))
+
+
 def audit(path, country_ids=()):
     raw = path.read_bytes()
     with zipfile.ZipFile(path) as archive:
@@ -80,7 +104,9 @@ def audit(path, country_ids=()):
     roots = list(fields(text))
     containers = {key: value for key, value, obj in roots if obj and key in
                   ('country', 'colony', 'planets', 'pop_groups', 'pop_jobs', 'situations', 'districts', 'zones', 'deposit', 'species_db')}
-    result = {'save': str(path.resolve()), 'save_sha256': hashlib.sha256(raw).hexdigest(),
+    result = {'audit_schema_version': 2,
+              'audit_tool_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+              'save': str(path.resolve()), 'save_sha256': hashlib.sha256(raw).hexdigest(),
               'gamestate_sha256': hashlib.sha256(native).hexdigest(), 'gamestate_bytes': len(native),
               'date': next(unquote(v) for k, v, obj in roots if k == 'date'),
               'required_dlcs': [unquote(t) for t, _, _ in tokens(block(text, 'required_dlcs'))],
@@ -115,6 +141,8 @@ def audit(path, country_ids=()):
         owned = ids(block(value, 'owned_planets'))
         owned_colony_ids.update(owned)
         tech_status = block(value, 'tech_status')
+        stockpile = scalars(block(block(block(value, 'modules'), 'standard_economy_module'), 'resources'))
+        research_stockpile = research_stocks(tech_status)
         result['countries'][identity] = {
             'name': scalars(block(value, 'name')).get('key'),
             'native': {k: v for k, v in native_country.items() if k in ('capital', 'founder_species_ref', 'type', 'personality', 'military_power', 'economy_power', 'tech_power', 'empire_size', 'num_sapient_pops', 'employable_pops', 'fleet_size', 'used_naval_capacity', 'ruler')},
@@ -123,7 +151,14 @@ def audit(path, country_ids=()):
             'government': block(value, 'government'),
             'budget': budget,
             'budget_categories': budget_categories,
-            'stockpile': scalars(block(block(block(value, 'modules'), 'standard_economy_module'), 'resources')),
+            'stockpile': stockpile,
+            'stockpile_source': 'modules.standard_economy_module.resources',
+            'research_stockpile': research_stockpile,
+            'research_stockpile_source': 'tech_status.stored_techpoints',
+            'effective_stockpile': ({**stockpile, **research_stockpile}
+                                   if research_stockpile is not None else None),
+            'research_progress_by_tech': scalars(block(tech_status, 'stored_techpoints_for_tech')),
+            'tech_status': tech_status,
             'modules': block(value, 'modules'),
             'owned_colonies': owned,
             'completed_technologies': [unquote(v) for k, v, obj in fields(tech_status)
