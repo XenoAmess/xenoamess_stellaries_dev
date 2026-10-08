@@ -1,0 +1,76 @@
+{
+  "status": "REVIEWED",
+  "scope": "Human-authored review of observed tool/fixture failures, not an original engine log. Original artifacts retained and indexed.",
+  "records": [
+    {
+      "stage": "single-source native save",
+      "result": "HELPER_KEY_ERROR",
+      "reason": "pop_group.species was incorrectly read instead of pop_group.key.species",
+      "retained": [
+        "postrelease_vanilla_single_source.py",
+        "postvanilla-single-source-proof.json"
+      ],
+      "recovery": "Read-only recovery of already saved source; no repeated source creation or population transfer."
+    },
+    {
+      "stage": "month96 native save",
+      "result": "FAILED_STAGE",
+      "reason": "native UI did not write the requested new save",
+      "retained": [
+        "postvanilla-boundary-driver-result.json",
+        "postvanilla-q20-m096-save-not-written.jpg",
+        "postvanilla-q20-m096-calendar-receipt.json"
+      ],
+      "recovery": "Actual same save-dialog retry, no repeated calendar advance."
+    },
+    {
+      "stage": "first native reload",
+      "result": "FAIL",
+      "reason": "Native derived colony caches and carrier flags differ; all stocks and actual population groups preserved",
+      "retained": [
+        "postvanilla-first-reload-proof.json"
+      ],
+      "recovery": "Second original-byte stable reload passed22 checks."
+    },
+    {
+      "stage": "stable native reload first attempt",
+      "result": "UI_FOCUS_ERROR",
+      "reason": "SetForegroundWindow failed before native load while game remained responsive",
+      "retained": [
+        "postrelease_vanilla_final_state_check.py"
+      ],
+      "recovery": "Reuse verified identical alias and retry native UI; stable retry passed."
+    },
+    {
+      "stage": "normal calendar endpoint before human ACK",
+      "result": "FAIL",
+      "reason": "Premature no-live-task assertion: native task1000 waits for actual human completion option",
+      "retained": [
+        "postvanilla-normal-endpoint-proof.json"
+      ],
+      "recovery": "Actual colony.185 human option and next real day checked separately."
+    },
+    {
+      "stage": "first normal human ACK",
+      "result": "NATIVE_DATE_FAIL",
+      "reason": "Native completion auto-pause released and ordinary time ran before save;2210.03.09 differs from2209.11.01",
+      "retained": [
+        "postvanilla-normal-ack.sav",
+        "postvanilla-normal-ack.audit.json",
+        "postrelease_vanilla_final_state_check_v3.py"
+      ],
+      "recovery": "Restore original pending-event save, preserve native cache baseline, physically click then open native pause menu."
+    },
+    {
+      "stage": "same-day human ACK retry",
+      "result": "FAIL",
+      "reason": "Premature killed-immediately assertion:25 same-day invariants and actual human option0 passed, native task removed next actual day",
+      "retained": [
+        "postvanilla-normal-ack-retry-proof.json",
+        "postvanilla-native-completion-ack-readonly-proof.json",
+        "postvanilla-native-next-day-month-no-repeat-proof.json"
+      ],
+      "recovery": "Correct phase scope verified read-only, original FAIL retained."
+    }
+  ]
+}

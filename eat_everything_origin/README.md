@@ -11,5 +11,6 @@
 - [女王·白绮：玩法职责、王庭交互与事件合同](docs/queen-baiqi-gameplay-design-2026-10-06.md)
 - [项目文档入口](docs/README.md)
 - [实施、验收与发布记录](docs/implementation-test-release-2026-10-06.md)
+- [首发后无Mod吞岩终点对照结果](docs/post-release-vanilla-boundary-result-2026-10-08.md)
 
 本项目遵循仓库根目录 [AGENTS.md](../AGENTS.md)。

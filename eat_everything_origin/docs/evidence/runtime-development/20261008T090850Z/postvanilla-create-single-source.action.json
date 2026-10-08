@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "postvanilla-create-single-source",
+  "text": "effect root = { save_global_event_target_as = vanilla_country capital_scope = { planet = { save_global_event_target_as = vanilla_mother } } random_galaxy_planet = { limit = { has_owner = no is_star = no is_colony = no is_artificial = no NOT = { is_planet_class = pc_gas_giant } solar_system = { has_owner = no } } change_pc = pc_continental set_planet_size = 20 clear_deposits = yes create_colony = { owner = event_target:vanilla_country species = event_target:vanilla_country } save_global_event_target_as = vanilla_source set_planet_flag = vanilla_boundary_source set_name = \"Native-Q20-Boundary\" event_target:vanilla_mother = { random_owned_pop_group = { limit = { pop_group_size >= 100 is_same_species = owner.owner_main_species } resettle_pop_group = { POP_GROUP = this PLANET = event_target:vanilla_source AMOUNT = 100 } } } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-08T09:12:38.830964+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

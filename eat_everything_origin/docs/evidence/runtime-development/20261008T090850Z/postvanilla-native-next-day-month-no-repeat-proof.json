@@ -1,0 +1,78 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "day_source_shattered": true,
+    "day_source_unowned": true,
+    "day_source_empty": true,
+    "day_no_live_native_task": true,
+    "day_no_pending_completion": true,
+    "day_no_EEP_variables": true,
+    "day_no_EEP_flags": true,
+    "day_AP_empty": true,
+    "day_new_error_zero": true,
+    "month_source_shattered": true,
+    "month_source_unowned": true,
+    "month_source_empty": true,
+    "month_no_live_native_task": true,
+    "month_no_pending_completion": true,
+    "month_no_EEP_variables": true,
+    "month_no_EEP_flags": true,
+    "month_AP_empty": true,
+    "month_new_error_zero": true,
+    "actual_next_day": true,
+    "actual_next_month": true,
+    "day_all_stock_same": true,
+    "day_actual_population_same": true,
+    "month_native_population6365": true,
+    "two_branches_month_stock_same": true,
+    "two_branches_month_population_same": true,
+    "next_month_energy_native_budget_only": true,
+    "next_month_minerals_native_budget_only": true,
+    "next_month_alloys_native_budget_only": true,
+    "next_month_unity_native_budget_only": true,
+    "next_month_influence_native_budget_only": true,
+    "next_month_trade_native_budget_only": true
+  },
+  "ack_sha256": "70fbdad9bdc1fc21094c9d859893438f1fde0ecc53186cb5e97530fd05b6f1df",
+  "day_sha256": "6781b9e749694b7ee43e884d608b6ee93af7e20a62580f0da441a9f1e4350aed",
+  "month_sha256": "f695221a1a9192673fd1fd69645ccdb6bc7f34d71025d4d987d9129662919db1",
+  "budget_observations": {
+    "energy": {
+      "actual_delta": 45.2941,
+      "native_income": 87.3216,
+      "native_expenses": 42.0275,
+      "residual": 0.0
+    },
+    "minerals": {
+      "actual_delta": 10.1788,
+      "native_income": 118.4288,
+      "native_expenses": 108.25,
+      "residual": -0.0
+    },
+    "alloys": {
+      "actual_delta": 16.4804,
+      "native_income": 17.8304,
+      "native_expenses": 1.35,
+      "residual": -0.0
+    },
+    "unity": {
+      "actual_delta": 12.79856,
+      "native_income": 24.79856,
+      "native_expenses": 12,
+      "residual": 0.0
+    },
+    "influence": {
+      "actual_delta": 5.23448,
+      "native_income": 5.23448,
+      "native_expenses": 0,
+      "residual": -0.0
+    },
+    "trade": {
+      "actual_delta": 62.98714,
+      "native_income": 125.97428,
+      "native_expenses": 62.98714,
+      "residual": 0.0
+    }
+  },
+  "scope": "Actual next day/month after native human completion option; no repeat material rewards, native stock/population retained. Branch equality is limited to observed stocks and population."
+}
