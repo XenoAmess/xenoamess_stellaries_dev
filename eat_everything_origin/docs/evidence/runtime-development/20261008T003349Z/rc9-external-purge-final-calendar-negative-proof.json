@@ -1,0 +1,59 @@
+{
+  "status": "PASS_SCOPED",
+  "checkpoints": [
+    {
+      "audit": "rc9-external-purge-no-immigration-real120days.audit.json",
+      "date": "2224.04.02",
+      "save_sha256": "b8c6ed0c1677a5d08c2fd275364e351f8a9296abaa46f8ee308a32ecf70ffe4a",
+      "mother_actual_population": 7853,
+      "checks": {
+        "source_zero_population": true,
+        "only_original_mother_owned": true,
+        "tasks_cleared": true,
+        "source_task_flags_cleared": true,
+        "zero_eep_reward": true,
+        "no_first_or_pending_notice": true,
+        "original_core_target1": true,
+        "original_actor0": true,
+        "core_deposit_once": true
+      }
+    },
+    {
+      "audit": "rc9-external-purge-no-immigration-real-nextday.audit.json",
+      "date": "2224.04.03",
+      "save_sha256": "7d21a3ef92c137295621bd2bb226057ca7cfee55bc70ebe54cd6688d6a80bfb0",
+      "mother_actual_population": 7853,
+      "checks": {
+        "source_zero_population": true,
+        "only_original_mother_owned": true,
+        "tasks_cleared": true,
+        "source_task_flags_cleared": true,
+        "zero_eep_reward": true,
+        "no_first_or_pending_notice": true,
+        "original_core_target1": true,
+        "original_actor0": true,
+        "core_deposit_once": true
+      }
+    },
+    {
+      "audit": "rc9-external-purge-no-immigration-real-nextmonth.audit.json",
+      "date": "2224.05.03",
+      "save_sha256": "743ccd3f98f42f6d6fcbc9d5346db14367202865b737ab6eea29acd24aa9826e",
+      "mother_actual_population": 7861,
+      "checks": {
+        "source_zero_population": true,
+        "only_original_mother_owned": true,
+        "tasks_cleared": true,
+        "source_task_flags_cleared": true,
+        "zero_eep_reward": true,
+        "no_first_or_pending_notice": true,
+        "original_core_target1": true,
+        "original_actor0": true,
+        "core_deposit_once": true
+      }
+    }
+  ],
+  "checks_passed": 27,
+  "replay_proof": "rc9-external-purge-completed-negative-replay-proof.json",
+  "scope": "Native displacement purge to abandonment with UI-paid growth control and native founder migration control. No EEP reward; original invalid immigration premise retained."
+}

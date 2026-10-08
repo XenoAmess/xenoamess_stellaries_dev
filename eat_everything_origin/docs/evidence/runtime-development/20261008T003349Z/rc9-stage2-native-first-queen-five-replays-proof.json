@@ -1,0 +1,125 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "actual_same_date": true,
+    "all45_country_stock_same": true,
+    "all_actual_population_groups_same": true,
+    "root_all_eep_variables_same": true,
+    "root_eep_flags_same": true,
+    "root_AP_same": true,
+    "root_tech_same": true,
+    "root_research_queues_same": true,
+    "all_situations_same": true,
+    "all_event_targets_same": true,
+    "source_full_native_same": true,
+    "core_full_native_same": true,
+    "native_crisis_and_objectives_same": true,
+    "player_events_same_no_queen31_repeat": true,
+    "new_error_bytes_zero": true
+  },
+  "monthly_callbacks": 5,
+  "before_sha256": "2e9b47ba7a19371b2fb0910d5cad57d6e8753a578ba9fbcf2c522fe6cfb977c9",
+  "after_sha256": "2e9b47ba7a19371b2fb0910d5cad57d6e8753a578ba9fbcf2c522fe6cfb977c9",
+  "country_count": 45,
+  "population_groups": 186,
+  "before_raw": {
+    "player_events": [
+      {
+        "scalars": {
+          "id": 511,
+          "event": "paragon.571",
+          "date": "2284.10.08",
+          "country": 0
+        },
+        "scope": {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "random_allowed": "yes"
+        }
+      },
+      {
+        "scalars": {
+          "id": 518,
+          "event": "crisis.4145",
+          "date": "2286.08.05",
+          "country": 0
+        },
+        "scope": {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "random_allowed": "yes"
+        }
+      },
+      {
+        "scalars": {
+          "id": 520,
+          "event": "eep.13",
+          "date": "2286.09.01",
+          "country": 0
+        },
+        "scope": {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "random_allowed": "yes"
+        }
+      }
+    ],
+    "crisis_raw": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tlevel=\"crisis_level_2\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_enemy_ships\"\n\t\t\t\tprogress=435\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_conquer_worlds\"\n\t\t\t\tprogress=500\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_worlds\"\n\t\t\t\tprogress=750\n\t\t\t}\n\t\t",
+    "core_raw": "\n\t\t\tcolony=0\n\t\t\tplanet_class=\"pc_volcanic\"\n\t\t\tplanet_size=20\n\t\t\tcolonize_date=\t\t\t\"2016.05.09\"\n\t\t\toriginal_owner=0\n\t\t\tcarrier_binary_flags=3\n\t\t\tbuild_queue=0\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"EEP-Core\"\n\t\t\t}\n\t\t\tbinary_flags=201\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=49.186\n\t\t\t\ty=9.476\n\t\t\t\torigin=5\n\t\t\t}\n\t\t\torbit=50\n\t\t\tlast_bombardment=\t\t\t\"0.01.01\"\n\t\t\towner=0\n\t\t\tcontroller=0\n\t\t\tmoons=\n\t\t\t{\n\t\t\t\t2 \n\t\t\t}\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tbombardment_damage=0\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"thought_police_established\"\n\t\t\t\t\t\tdays=1804\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=9\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\tuncapped_mining_districts=63536664\n\t\t\t\tuncapped_farming_districts=63536664\n\t\t\t\teep_core=62808000\n\t\t\t\tuncapped_generator_districts=63536664\n\t\t\t}\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\teep_actual_pop=14024\n\t\t\t\teep_capacity_value=9\n\t\t\t\teep_free_districts=3\n\t\t\t}\n\t\t\tentity=1\n\t\t\tdeposits=\n\t\t\t{\n\t\t\t\t299 300 301 302 303 304 305 306 1884 \n\t\t\t}\n\t\t",
+    "source_raw": "\n\t\t\tsave_on_death=1\n\t\t\tcolony=37\n\t\t\tplanet_class=\"pc_shattered\"\n\t\t\tplanet_size=12\n\t\t\toriginal_owner=16777219\n\t\t\tcarrier_binary_flags=3\n\t\t\tbuild_queue=716\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"ART4_PLANET_gTilP-Tu\"\n\t\t\t}\n\t\t\tbinary_flags=580\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-91.88935\n\t\t\t\ty=-257.39872\n\t\t\t\torigin=53\n\t\t\t}\n\t\t\torbit=13\n\t\t\tlast_bombardment=\t\t\t\"2280.08.02\"\n\t\t\tmoon_of=659\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t\t0=33555694\n\t\t\t}\n\t\t\tbombardment_damage=23.85632\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"planet_luxuries_boost\"\n\t\t\t\t\t\tdays=2083\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=63514704\n\t\t\t\t\tflag_days=135\n\t\t\t\t}\n\t\t\t\teep_population_done=63536664\n\t\t\t\teep_crisis_done=63536664\n\t\t\t\teep_destroy_done=63536664\n\t\t\t\teep_return_done=63536664\n\t\t\t\teep_credit_done=63536664\n\t\t\t}\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\teep_months=29\n\t\t\t\teep_old_damage=0\n\t\t\t\teep_q=12\n\t\t\t\teep_return_amount=111\n\t\t\t\teep_seed_existing=102\n\t\t\t\teep_seed_need=-2\n\t\t\t}\n\t\t\tentity=0\n\t\t\tsurveyed_by=16777219\n\t\t"
+  },
+  "after_raw": {
+    "player_events": [
+      {
+        "scalars": {
+          "id": 511,
+          "event": "paragon.571",
+          "date": "2284.10.08",
+          "country": 0
+        },
+        "scope": {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "random_allowed": "yes"
+        }
+      },
+      {
+        "scalars": {
+          "id": 518,
+          "event": "crisis.4145",
+          "date": "2286.08.05",
+          "country": 0
+        },
+        "scope": {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "random_allowed": "yes"
+        }
+      },
+      {
+        "scalars": {
+          "id": 520,
+          "event": "eep.13",
+          "date": "2286.09.01",
+          "country": 0
+        },
+        "scope": {
+          "type": "country",
+          "id": 0,
+          "opener_id": 4294967295,
+          "random_allowed": "yes"
+        }
+      }
+    ],
+    "crisis_raw": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tlevel=\"crisis_level_2\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_enemy_ships\"\n\t\t\t\tprogress=435\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_conquer_worlds\"\n\t\t\t\tprogress=500\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_worlds\"\n\t\t\t\tprogress=750\n\t\t\t}\n\t\t",
+    "core_raw": "\n\t\t\tcolony=0\n\t\t\tplanet_class=\"pc_volcanic\"\n\t\t\tplanet_size=20\n\t\t\tcolonize_date=\t\t\t\"2016.05.09\"\n\t\t\toriginal_owner=0\n\t\t\tcarrier_binary_flags=3\n\t\t\tbuild_queue=0\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"EEP-Core\"\n\t\t\t}\n\t\t\tbinary_flags=201\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=49.186\n\t\t\t\ty=9.476\n\t\t\t\torigin=5\n\t\t\t}\n\t\t\torbit=50\n\t\t\tlast_bombardment=\t\t\t\"0.01.01\"\n\t\t\towner=0\n\t\t\tcontroller=0\n\t\t\tmoons=\n\t\t\t{\n\t\t\t\t2 \n\t\t\t}\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tbombardment_damage=0\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"thought_police_established\"\n\t\t\t\t\t\tdays=1804\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=9\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\tuncapped_mining_districts=63536664\n\t\t\t\tuncapped_farming_districts=63536664\n\t\t\t\teep_core=62808000\n\t\t\t\tuncapped_generator_districts=63536664\n\t\t\t}\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\teep_actual_pop=14024\n\t\t\t\teep_capacity_value=9\n\t\t\t\teep_free_districts=3\n\t\t\t}\n\t\t\tentity=1\n\t\t\tdeposits=\n\t\t\t{\n\t\t\t\t299 300 301 302 303 304 305 306 1884 \n\t\t\t}\n\t\t",
+    "source_raw": "\n\t\t\tsave_on_death=1\n\t\t\tcolony=37\n\t\t\tplanet_class=\"pc_shattered\"\n\t\t\tplanet_size=12\n\t\t\toriginal_owner=16777219\n\t\t\tcarrier_binary_flags=3\n\t\t\tbuild_queue=716\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"ART4_PLANET_gTilP-Tu\"\n\t\t\t}\n\t\t\tbinary_flags=580\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-91.88935\n\t\t\t\ty=-257.39872\n\t\t\t\torigin=53\n\t\t\t}\n\t\t\torbit=13\n\t\t\tlast_bombardment=\t\t\t\"2280.08.02\"\n\t\t\tmoon_of=659\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t\t0=33555694\n\t\t\t}\n\t\t\tbombardment_damage=23.85632\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"planet_luxuries_boost\"\n\t\t\t\t\t\tdays=2083\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=63514704\n\t\t\t\t\tflag_days=135\n\t\t\t\t}\n\t\t\t\teep_population_done=63536664\n\t\t\t\teep_crisis_done=63536664\n\t\t\t\teep_destroy_done=63536664\n\t\t\t\teep_return_done=63536664\n\t\t\t\teep_credit_done=63536664\n\t\t\t}\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\teep_months=29\n\t\t\t\teep_old_damage=0\n\t\t\t\teep_q=12\n\t\t\t\teep_return_amount=111\n\t\t\t\teep_seed_existing=102\n\t\t\t\teep_seed_need=-2\n\t\t\t}\n\t\t\tentity=0\n\t\t\tsurveyed_by=16777219\n\t\t"
+  },
+  "error_delta_bytes": 0,
+  "scope": "Completed natural first fleet notification and Q12 world settlement; no new rewards or messages on repeated callbacks."
+}
