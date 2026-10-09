@@ -1,5 +1,7 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+原生科研船自动调查存档事实：正常界面只启用“探索”“调查恒星系”后，fleet.current_order.automate_fleet_order实际settings_explore／settings_survey=yes，其它异常／裂隙／考古／捕获／特殊项目和三类站点建设均no；同日仅fleet1新订单，country全根、ships全根及全部真实经济／人口岗位保持。旧Planet164.planet_orbitals的0=1引用在下命令当日即被删除，即使实际movement_manager.coordinate仍未移动；因此“所有星球root必须raw恒等”的原始调查守卫会FAIL。精确八项补证绑定原唯一FAIL、原29true／原SHA，证明仅旧轨道引用删除，不笼统忽略星球变化，也不追认原30项PASS。舰队现有归属来自country.fleets_manager.owned_fleets的匿名fleet引用块，fleet对象自身没有owner标量；不能用不存在的fleet.owner过滤后错误报告本国没有星站。上述仅本机SAV结构和原生UI行为，不推广为CK3脚本语法。
+同调名称实机纠正：2221.01.02正常蜂巢的kinship_gestalt节点实际悬浮显示“同步昼夜节律”，来自wilderness_l_simp_chinese.yml:445的tr_synchronicity_kinship_wilderness，不是基础键的“同步代理”。原版00_synchronicity.txt中此tradition_swap只有name／inherit_icon／inherit_effects，没有trigger限制，故本局也实际采用该显示替换；效果仍为领袖维护−20%／人口帝国规模−5%／难民吸引+20%。后续报告以真实中文UI为准，存档与付费守卫仍要求基础tr_synchronicity_kinship_gestalt；不把基础本地化名当本局必然显示名，也不据此推定本族变成荒野政体。这是本机原版名称替换行为，生产Mod未覆盖该传统。
 2026-10-09蜂巢区划真实完工补证：正常450矿物／480基期订单在1.25速度下360日仍450/480，再30日建成。母星蜂巢4→5后coordinator1360→1400、三系calculator各156→180、fabricator400→500且全满，与20×5×1.2+60=180吻合；原建筑引用未新增或改变。再正常270矿物增建发电4，2218.12.02已实建5+10+4=19，大于原始planet_size18，EEP永久额外6后的总容量24真实可用，非仅UI上限。后完整30日采矿2000／发电800全满，实际E+28.943、M+20.133，八类预算按事前固定影响力上限核0残差。各类UI分别5/24、10/24、4/24共享星球总上限24，不能当三类各自独立可建24。
 
 同调官方简中及基础键：traditions_l_simp_chinese.yml:238／242／244／247／253／267为同调、克隆器官、同步代理、自发同调、集体思维、灵活思维。蜂巢自发同调为tr_synchronicity_integrated_preservation的名称替换；collective_reasoning要求它，harmonious_directives要求kinship_gestalt及cloned_organs。adopt普通蜂巢人口维护−10%，finish星球飞升效果+25%及一AP槽。category仅要求格式塔，不等同后续灵飞全合法。当前正式AP科技至上已正常获得，本机实际说明为重点研究政策及稀有科技机会+50%，不是全科研速度+10%。
@@ -343,3 +345,11 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 同日原生重载不能默认所有缓存raw恒等：本次首次待通知重载实际库存／bank、人口组岗位、EEP及事件保持，但government.unlocked_civic_council_slots0→4、部分预算／舒适度／civilian及carrier flags刷新；根因尚未无Mod独立对照，原严格FAIL必须保留。二次同日重载这些字段稳定，完整预算精确仅income_high_water_mark.length7→8，其它raw恒等；只证明二次重载的范围保持，不扩大为首轮或全路线严格重载通过。此为Stellaris4.5.2实证，不推广CK3存档。
 
 2026-10-09只读重查既有真正无Mod RUN20261008T090850Z的119月原件与首次重载：预算current贸易62.98714→63.07004、维护工蜂贸易46.40794→46.49084、人口矿耗63.59→63.65、income_high_water_mark.trade125.97428→126.14008／length2→3；母星amenities25787→25820、free_amenities22737→22770、住房及crime缓存也刷新，Planet3载体flag1→3。其government原文未变。这些原件支持同类预算／舒适度／载体刷新可发生于无Mod；不证明本轮所有数值差异和议会槽位0→4的原因。旧原FAIL与其稳定二次重载结果维持原结论，不改旧审计／scope。
+# 2026-10-09 待选事件日期补充
+
+噬岩者原生2223.01.02存档4c3b036515f35e5b997312ce2e7ce900adf9a98136000352cdb6506de3e11c9a的player_event60／toxoids.500写date=2224.12.11。同期简中实际GPU悬浮priority-synchronicity-terraform-alert-ui明确“系统将于2224.12.11自动选择默认选项”，点击可打开已经出现的待选。因此此条date应按自动默认截止期理解，不能以日期在未来排除待选；其它事件仍须具体UI／原件验证，不能据一条泛化所有日期字段。本轮原21项无待选FAIL应保留，正常确认另做独立同日守卫。
+# 2026-10-09 原生前哨与4.5.2经营调查
+
+本局第一笔前哨实际扣100合金／37影响力，订单build_orbital_station_order.resources同值；原版defines00_defines.txt:2042的EXPANSION_COST_BASE=75及02_gestalt_civics.txt:265国策影响力−0.5存在，但不能把计算37.5当真实付款。第二笔兹尔克菜单实际明确37／100，原截图保留。第一站完工原生关联是country0.owned_fleets新增477→fleet477.ships1415→starbase76.station1415→system145.starbases76，同时恒星53.controller0／orbital_defence477。starbase及ship对象没有直接owner，不从缺失字段推定归属；SAV字段关联规则只用于当前群星，不是CK3语法结论。
+
+4.5.2的synaptic_reinforcement（00_edicts.txt:654）效果为维护工蜂贸易产出+1，并要求tech_hive_cluster、凝聚力费用及维护，不能套旧版本传闻将其当即时增加凝聚。08_unity_buildings.txt的building_hive_node没有可直接逐座升级的upgrades块；building_hive_cluster是planet_limit1、需要升级首府的新建筑。当前zone_foundry的included_building_sets来自shared_industrial_foundry_zone，仅foundry／urban_automation／origin，不含unity；绿色空槽不证明可放突触节点。00_synchronicity.txt的integrated_preservation实际为自动迁移机会+0.3，collective_reasoning稳定+3／星球飞升费用−10%，不能按旧版本将前者当维护工蜂直接产凝聚。此轮仅只读调查，未启用该法令、改区划组或购买集群；实际经营选择仍须合法简中UI与付费核验。
