@@ -1,5 +1,19 @@
 # 吞噬之心：噬岩者防御续验与进度
 
+03:30 控制冻结165份源文件／11,343,731字节、暂存201个blob／11,448,642字节全部通过原SHA核验：[控制来源清单](evidence/priority-terravore-progress-2026-10-09/native-leader-trait-error-control/source-snapshot.json)、[正确舰队控制14项原证明](evidence/priority-terravore-progress-2026-10-09/native-leader-trait-error-control/leader13-control-fleet-error-reproduction-proof.json)、[暂存回执](evidence/priority-native-leader-trait-error-control-staged-verification-2026-10-09.json)。包括所有载入baseline及前次wrong-scope914字节原FAIL，不只截取成功144字节。
+
+03:29 正确舰队作用域控制14项全部PASS／实际退出0，helper SHA a19ca68d3bbc2b49b11fb9c3cfd9e94822421eee60f5e51c891803d2f1cfcfc5。前14db34c0…→后0c900fd64f5f918f28588731d6f93f5482364481bc3adbbee84291ca9973d45d，同2237.08.02、所有国家raw／人口／本国库存保持，leader仍原两特质。唯一新增144字节与生产整段只替换时间戳后完全相同，未有其它新错误；前次914字节wrong-scope失败保留。结论限于原版leader.13内阁特质拒绝不依赖活动EEP脚本，未识别生产自然触发者或证明纯原版世界生成根因。正在冻结控制原件，之后恢复原生产08.02，不为此覆盖原版事件或修改Mod。
+
+03:26 控制原14项实际11PASS／3FAIL、执行1保留：直接console `event leader.13 565`将第二参数构造成country565，报wrong scope等共914字节，没有复现生产144字节，不能归因通过。该前后所有国家raw／人口／本国库存／目标leader特质及归属保持。新原生舰队作用域方案（实施前）：保持当前控制分支和失败日志，新建`priority_leader13_control_fleet_effect.py`；先只读完整SAV所有leader/ship/owned_fleets，确认同时拥有cautious＋adaptable且实际舰队任职的commander仅50331733→ship1527→fleet565，另两位有同特质者均不在舰队（且特质≥3）。绑定原14项恰上述三错误比较失败／其余11true及实际退出1，空Mod／同日／原SHA／三原版源保持，再只执行一次`effect every_country = { every_owned_fleet = { limit = { exists = leader leader = { has_trait = leader_trait_cautious has_trait = leader_trait_adaptable } } fleet_event = { id = leader.13 } } }`。原版first_contact_dlc_effects.txt:2238和crisis_events_1.txt:1697等确认every_owned_fleet／fleet_event用法；不添加覆盖事件或安装诊断Mod。新同日SAV／error前后单独stage，914字节只作为已知控制输入错误baseline，不删日志。独立新舰队效果守卫14项核唯一命令／本国及所有国家和人口保持／同日及两SHA，比较本次新增是否恰与生产144字节一致。原控制FAIL不可改。恢复和生产限定补证只引用新舰队作用域证明及对应归档原件，原未执行helper的输入路径随之明确修改后再执行。
+
+生产错误限定补证方案（实施前）：若独立控制14项全部通过、实际执行0，先用现有快照工具把当前控制完整原件／未过滤载入baseline／事件前后log和两原SAV冻结到新目录native-leader-trait-error-control，逐份源SHA核验并提交推送。新`priority_terravore_native_leader13_error_supplement.py`只读绑定生产原21项恰无新error一FAIL／其余20PASS、原守卫退出1和日历实际退出0、生产两SHA；绑定归档控制14项PASS／执行0／空Mod配置／两SHA，所有原错误前缀完整，新增各144字节整段只归一化时间戳后必须相同且原版三源SHA保持。只补证已复现原版错误的限定归因，原21项FAIL不改，不能称原无新error通过、原始自然触发者确定或完整防御／路线通过。恢复后的实际生产重载另用既有严格reload工具，保留任何缓存FAIL及全部差异，再按具体原件决定补证，不直接放宽全对象比较。
+
+辅助文件命名核对（实施前）：现有v3其实已经用于可参数化基期的旧区划验收，不覆盖该源码。上段拟建v3改为唯一`priority_native_paid_district_current_log_guard.py`，从原v2派生且只改当前前件日志绑定和新输出名`paid-district-current-log-proof.json`；首次创建检测到重名后未写入任何已有helper。发电仍固定原生240工作、预期270矿物，全部其它v2标准保留。
+
+恢复后发电订单方案（实施前）：生产重载及错误限定补证通过后，先正常打开母星发电区划报价，按实拍价格购买一级，独立同日保存并核真实付款／唯一Colony0订单；不把下单当完工。原v2付费区划守卫仍绑定很早的postsettlement错误日志，不能用于已隔离原生错误并重启后的新基线。另建不可变v3，只把错误断言改为本次前件`before-error-after.log`与本次before/after完整字节三者恒等，其余27项标准／费用／原生240工作／旧订单保持／所有实际资源bank、人口岗位、EEP和政府保持沿用。每次全新v3结果，旧v2不改。当前预期优惠270矿物，须UI及真实队列同时证实；一次最多购买两级发电，待建成完整月实际能源／矿物净正才称恢复。新统帅诊断未完成时不执行生产购买。
+
+03:21 证据提交bdbefcd97f26123f0abedb62d86bfe6b92e47923：首次push连接重置实际退出1，未采用其误导性Everything up-to-date尾行；第二次同参数普通push实际退出0，ls-remote确认origin/main同SHA。生产PID12528已正常菜单退出／确认，当前隔离RUN20261009T192111Z／PID22524、实际空enabled_mods，源08.02 SAV原SHA保持；正在原生加载，未发诊断事件。生产pointer已独立备份，Steam保持离线。
+
 03:16 冻结实际完成：source-snapshot记录UTC19:14:44.842156、9,862份源文件／336,199,954字节；暂存核验9,897个blob／339,653,960字节全部匹配SHA。[暂停来源清单](evidence/priority-terravore-progress-2026-10-09/native-battle-repair-and-leader-trait-error/source-snapshot.json)、[暂存回执](evidence/priority-native-battle-repair-and-leader-trait-error-staged-verification-2026-10-09.json)。生产未改，后续正常退出／隔离诊断尚待执行。
 
 03:15 新错误暂停调查：07.02→08.02唯一30日日历实际退出0，后件`terravore-defense-post-battle-repair-month.sav` SHA d2daf0d4bc7cfd690abb5c573f657a7bd97121d4babaf7b703d3beeef7d69c6f。21项战斗边界守卫20项通过，唯一`unfiltered_error_bytes_held`失败／执行1原样保留：原2750字节完整前缀保持，仅新增144字节`Unable to add trait for [reason] councilor_trait_not_allowed [at] file: events/leader_events_1.txt line: 683`。实际14艘原付费护卫舰全部舰体250／护盾160／装甲250，母星8557→8562只出生5、无新增轰炸、毁坏降至24.84591；剩5份原付费订单。Theory657.19151＋专项650／2600=50.3%，EEP C37/G0/D11/made0/worlds2和永久容量11保持，能源净−7.3816仍需恢复。以上20项不构成原21项全通过或防御完整完成。
