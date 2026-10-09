@@ -469,4 +469,6 @@ cleared原生另存与435后件字节SHA均580d9344053ce71fed697384bc247bb8911aa
 
 实际全量归档完成：[source-snapshot](evidence/runtime-development/20261008T103147Z/source-snapshot.json)5944份原件、375044417字节，强停FAIL明确保留，续验档ZIP/SHA通过。[Git暂存原字节核验](evidence/priority-handover-staged-blob-verification-2026-10-09.json)5946文件／377190430字节通过（含snapshot和binary属性），snapshot SHA f4400f80094028e1d6859aaa577f6cb67c94c41f27eee273bf7a28d716eaf397。第一次核Git blob在git add尚未结束时FAIL missing，未改变原件／指数；等待实际git add返回exit0后按同一只读源文件再核通过，首个错误观察另存，不将第一次尝试改写通过。
 
+用户优先级调整及有机全量保真于0cc7a7e5提交并推送main。当前噬岩者合法新局、女王开局、首两月实际预算和玩家AI经营开关见[专门续验文档](priority-terravore-acceptance-round-2026-10-09.md)；尚未完整通过，不改变公开推荐。新前检报告发现Git换行导致原字节引用差异，修复binary属性并独立核原件，具体记录在该文档。
+
 正式噬岩者新RUN20261009T044016Z／PID23824已启动；实际prepare隔离PASS_PACKAGE_ISOLATION_ONLY、41文件tree ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7，包装exit0／stderr0。真实预设合法性与星系设置仍待UI／初始SAV，进程启动不当开局验收通过。当前日志只见21条原Steam Workshop缺失目录和一条刻意重定义decision_lithoid_swarm_consume_world的载入提示，记录为原启动基线2670字节，不称全局零日志或所有订阅Mod被载入。准备进度原件设计：精选复制manifest／完整原生设计来源／生成设计／辅助源码／原stdout-stderr-execution／隔离proof到独立preparation证据目录，每件绑定raw SHA；这是启动准备证据，完整新RUN仍在活动中，结束时另做全量归档。
