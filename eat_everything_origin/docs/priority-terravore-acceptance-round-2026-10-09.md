@@ -1,5 +1,54 @@
 # 吞噬之心：噬岩者优先续验
 
+23:05 [mom-launch-and-native-theory暂停快照](evidence/priority-terravore-progress-2026-10-09/mom-launch-and-native-theory/source-snapshot.json)实际完成于2026-10-09T15:03:17.813384Z，8594原件／294508861字节。[暂存逐字节核验](evidence/priority-mom-launch-and-native-theory-staged-verification-2026-10-09.json)实际PASS，8625 blobs／297506659字节。生产仍暂停e665b7dd…，此切点包含年度原错误、独立控制归因引用／生产恢复全原件与启动39项、撤队30项、选择30项，不包含随后研究等待、未执行的新wait helper或最终退出。当前提交推送这些相关证据与知识库／清单，之后继续原生科研。
+
+23:01 原生Theory选择30项全部PASS，helper4eaed3380aaaf7ec7135abb4db033033a9bfbbfdf4f80b9e1f47dcc6be28bf02，当前暂停2235.04.01／e665b7dd…；仅新增默认0的Theory队列，专项650和旧607.25288保持、其它全部raw与实际经济保持。研究尚未完成、未采纳灵能传统；原年度preFTL错误和两重载严格FAIL及所有限定补证均保留。现在执行已定`mom-launch-and-native-theory`暂停快照，截止此点不含随后科研等待／建设／最终退出。
+
+23:00 已选科技原件e665b7dde910508de2733768cea96a1db27136aee459fbd109dbde98fa03aaaf，无新增error。原始差异仅country0.tech_status新增society_queue匿名记录technology=tech_psionic_theory/date=2235.04.01，无progress标量（原生默认0），专项存储Theory650及旧607.25288均完全保持；不存在选择时额外赠点。独立选择守卫（实施前）精确只允许此新队列、绑定30项撤队PASS与唯一560,488点击，其余tech／country／全局raw严格保持、全部实际对象与bank0保持。通过后在暂停状态切出`mom-launch-and-native-theory`原始快照，纳入年度原FAIL、无Mod归因和生产恢复原FAIL／补证及本次启动／科研切换；按既有暂存blob核验通过再提交推送，不把快照称最终退出或整路线验收。
+
+启动后正常科研等待方案（新helper实施前）：新增独立priority_terravore_theory_wait_guard.py，沿用二源落账等待的真实日期回执、母星唯一／两源碎裂、C37G0D11世界2、矿电满员、库存非负与月矿电凝聚净值、真实bank／原始未过滤日志等约束；政府改为原生MOM已启动冷却、无当前议程，不能要求旧MOM仍选中。研究等待阶段保持未完成Theory且队列仍Theory、队列实际progress单调增长、专项650及旧607.25288保持、已完成科技不能倒退、其它两学科允许正常自动研究。每段最长360日、每段实际PASS才推进下一段；临近完成改按月并另设计完成核验，不以年度最后月收入代称全年预算闭合。第一段从2235.04.01到2236.04.01，完成归档／提交后才执行。
+
+22:59 撤队30项全部PASS（c2cfad47181b500a0fb2872997e39ec8ce14c21481eb3bd0769ae602bb900384），随后原生重开科技列表、560,488正常选择一次；实拍灵能理论已在社会队列650/2600、原生预计剩余84个月，仍暂停2235.04.01。正在另存选取端点，尚不推进日期。重开时一条`press f4 --stage`因CLI不支持参数在输入前退出1；后续星图190,325无效点击保留，不算科技选择，之后改用既有press-scan 0x3e成功打开F4并重新实拍、再正常操作。不得从此前失败推定窗口已打开，不删失败回执。
+
+22:56 研究列表当前同日SAV95f37c8fced9804572483c2804483514e5a4428fbaa6ad09de7cdaca441accb5，无新增error。只读精确差异：唯一顶层country／其中唯一country0.tech_status；原society_queue消失，专项进度原Theory650保持并追加tech_colonization_2=607.25288，auto_researching_society=yes→no，其它tech字段raw保持。因此旧科研进度实际完整转存，没有丢失。新增只读研究撤队守卫（实施前）绑定39项启动PASS及唯一334,366原生点击，精确核上述三字段，其它国家和全部其它顶层raw／所有实际经济与EEP、三bank、已掌握科技保持。通过后重新打开原生社会候选列表（保存操作可能关闭窗口），用新实拍坐标正常选择一次灵能理论；另存后选择守卫核Theory650在队列与专项存储之间的原生转移总量、旧607.25288仍完整转存、其它原始对象保持，不猜选取动作会免费增加研究。
+
+22:54 MOM启动独立39项全部PASS，helper76a72d1ba5bdb6e524204990d908205a19ef69f9d878afa7a5bcd9e4f54a0f6e；源51ed663a…／后件988631f5…同日2235.04.01。成熟3528正常主按钮一次、原生冷却到2238.04.01；Theory650/2600、旧三队列／bank0、全部实际经济／人口／岗位／区划／EEP保持；精确21舰队dirty标志、基地2048及focus1→2均通过，其它国家和全部其它顶层raw保持。此为议程启动分项通过，不是科技完成、虚境终点或整路线通过。下一步按已定研究切换方案保存当前列表状态。
+
+22:54 启动后原生科技列表实拍`terravore-theory-choice-bar-capture.jpg`（1f389fe46db5b2415829e0914923e63840897d8b7c06890206bc26fe8d5a18ed）清楚显示灵能理论650/2600；650恰为本局报价2600×原版议程0.25，并非直接完成。启动前后只读发现除已计划政府／科研／focus计数外，原生21个fleet的properties仅新增dirty_cloaking_strength=yes（ID 0,1,2,3,136,137,138,139,140,161,166,167,171,172,174,178,183,196,198,477,490），starbase0仅新增update_flag=2048，random_count6770866→6770869。新增启动guard必须精确核这些对象和新增字段及其它raw保持，不能忽略整个fleet／starbase根。原生focus.105与议程源文件、0.25变量文件和UI原图均绑定SHA。
+
+原生操作事实：F4社会研究的“更换研究”按钮334,366已经正常点击一次；打开列表同时撤下旧研究，界面左侧变“选择科技”，旧大气过滤仍显示607/900，社会自动科研图标也变色。不能把此点击描述成纯只读。接下来先完成独立MOM启动PASS，再同日保存`terravore-theory-choices-open`，严格比较原队列607.25288如何转存和自动科研字段真实变化；尚不选择新科技、不给资源、不推进日期。确认旧进度保留后再普通点击灵能理论一次，保存独立`terravore-psionic-theory-selected`并核队列、650专项进度、其它真实经济与EEP状态保持。任何意外变化先保留FAIL调查，研究等待使用新的启动后守卫，不复用要求MOM仍选中的旧守卫。
+
+22:36 正常最后月到2235.04.01，51ed663a70ffab1b77eda91c1bbe86305680a89d5bdc6f0b9db4e11b2ae7e48f，25项等待全部PASS／无新增error；MOM实际3528，人口8814。F2金色主按钮tooltip实际“启动议程／点击启动议程”、左侧正常费用0、启动效果“灵能理论+25%”，此前3456时未提前启动。下一步（实施前）仅普通点击主按钮502,410一次，捕捉响应并同日另存terravore-MOM-launched；不点击提前启动，不重复事件，不直接发科研。
+
+启动限定核验方案（新guard实施前）：绑定上述25项PASS及两SAV SHA、同日和唯一正常原生点击；核政府MOM current/progress移除、仅追加原版1080日冷却2238.04.01，所有其它政府字段保持。首个未掌握科技必须仍tech_psionic_theory、只增加该科技的原生stored_techpoints_for_tech部分进度和可研究候选／always_available_tech，不称科技完成；数值按原生UI报价和0.25源常量独立核。原其它实际科研队列、三个真实bank、全部库存、人口／岗位／区划／EEP账本及源状态、AP传统科技完成集合必须保持；原生focus_agendas_completed若正常+1须严格绑定focus.105原代码，其余国家变量不变。记录全部顶层／country0真实raw差异，除准确列出的原生议程及科技字段／合法callback计数外均保持。无新增error，任何异常先保留FAIL只读调查，不再启动一次。
+
+
+22:33 恢复日志独立4项全部PASS（236e0373d2d22c1e7a5b23f590e5634afc547a5ff3dfbaf383b49862052db0b8），实际恢复端点1fe1806c…可续推，原22项日志正则FAIL及两严格FAIL保留。随后唯一180日到2235.03.01、ffaf73106d1c0604118f6076be1217ce8ab9dec11ffe73218084379882456e88，25项灵能等待全PASS：MOM3024→3456、母星8808，EEP全部保持、无待选／新增error，M6972.43663净+15.871／E8241.89175净+29.0406／U3108.5543净+60.24817。F2实际3456/3500、每月72，界面却显示“还有0个月”，是显示取整不能当已成熟。按已定方案唯一30日到2235.04.01、stage terravore-MOM-mature-month，先同25项守卫，预期达到3500以上；实际免费主按钮／启动效果确认后才正常启动一次，不以0个月提前启动。
+
+
+22:30 恢复限定补证22项中21通过，原件保留；唯一80字节日志断言因我正则多要求第二个换行而失败。原真实增量repr仅一行CRLF：[22:20:55][gamestate.cpp:1839]: Repaired savegame, cleared 1 invalid deposits!\r\n。所有预算精确叶子／缓存转换、唯一全球无类型地貌清理及无Mod同对象对照、第二次完整状态保持等21项已经实际通过。新增priority_terravore_recovery_log_line_supplement.py（实施前）仅绑定原22项唯一该FAIL及其它21 true、原三SHA，读取真实未过滤前后日志并精确核完整前缀＋唯一上述一行80字节CRLF及第二次日志完全保持。输出独立补证，不改旧helper／FAIL，不改日志或状态。全部实际PASS才从1fe1806c…端点唯一180日到2235.03.01，正常MOM进度预期3456；该步骤仍先守卫后续推。
+
+
+22:27 第二次原字节重载23/24项通过，唯一budget原文FAIL保留，后件1fe1806c13d6ec20a923f09855118b1d78e2d339aeea7eadba90f408948a9a79。全真实集合及EEP、原生日志完整保持；budget_categories所有current／last月资源经济字段完全相同，原budget唯一income_high_water_mark.length1→2，其current／history原文保持。不能声称原严格24项全部PASS；也不再反复重载试图抹去统计计数。
+
+恢复限定补证方案（实施前）：新增priority_terravore_production_recovery_supplement.py，绑定首次24项恰四FAIL／其余20 true、第二次24项恰budget FAIL／其余23 true和三SHA；绑定年度972归因12项PASS。首次Colony只能上述0的三缓存实值及15／24的binary_flags24，planet集合只能7／124 carrier1→3，其余集合原文保持；八个当月预算叶子只允许已实读精确转换：后勤trade45.98765→46.07464、资源缺口trade±0.29162→±0.29837、石质矿物维护±78.876→±78.93、贸易政策income／expense63.09363→63.17387，其余current／last完整保持。收入历史块只允许空current初始化为已实读九资源值、length0→1，history raw保持；第二次仅length1→2，所有其它budget raw及完整budget_categories保持。核全球deposit对象集合不增不减、唯一无type218103836原holder1485→killed，母星1573不变；已提交无Mod载入同一源中变化恰218103836及缺失EEP1573，前者同样killed（不把无Mod缺失EEP1573当生产安全证明）。原80字节仅原生日志清无效地貌，第二次增量0；原year1旧进程3814字节保留。最后原单一生产包／母星实际8770／C37G0D11世界2／19区划及矿电满员／MOM3024核回。全部PASS后仅宣告限定实际状态恢复通过，再从真实1fe1806c…端点继续180日，原严格两FAIL和整路线未完成状态均保留。
+
+
+22:23 生产恢复首次严格24项中20通过、4失败原件保留（no_new_error／budget／colonies／planets），后件15608a01c1ed6882d7c02d0e1dd82ed3b7ecd7adccffaebdf7ae2a0633b8a80b。全部真实库存／bank／人口组／岗位、EEP变量flags、AP传统科研／政府MOM3024、区划地貌／任务及绑定保持。只读初查母星缓存amenities21244.8→21271.2、free_amenities15991.6→16018、civilian3172→3178；两已吞源空Col15／24新增binary_flags24，physical7／124 carrier_binary_flags1→3。原error2670→2750，唯一80字节“Repaired savegame, cleared 1 invalid deposits!”。
+
+全球原始deposit完整比较没有ID新增／消失，唯一218103836由“只有deposit_holder.type0/id1485、没有type”的无类型地貌对象变为killed=yes，同时从原生country29的physical1485列表移除。EEP母星d_eep_core1573及其它全部原始deposit对象保持；这不是母星EEP地貌丢失，仍需绑定无Mod载入同一无类型对象清理证据才能解释原80字节。没有过滤或删除日志。
+
+下一步原字节稳定重载方案（实施前）：从真实已保存15608a01…后件（不从原始year1重放）以新alias preftl-prod-stable再执行既有严格24项，after=terravore-production-resumed-stable。此检查保留首次四FAIL，目标是在已观察原生缓存／无类型原版地貌修复后的固定点检查真实资源／EEP状态和完整集合稳定；若仍失败继续只读调查，不推进日历。另建只读恢复补证时须限定上述精确缓存字段、全球唯一无类型地貌清理、80字节原生日志及已提交控制同一对象的清理，不能任意忽略所有planets／colonies／budget。
+
+
+22:20 生产年度错误独立归因补证方案（实施前）：新增priority_terravore_native_preftl_error_supplement.py，绑定原year1 25项唯一no_new_error FAIL及其余24 true、两原SAV SHA和原error前后完整前缀；绑定已提交控制快照中的原16项有效15、人口9项有效8及最终5项PASS和同一控制SHA／实际enabled_mods=[]。按原生country29的capital Col8／carrier physical1485读原前后age、政府原文及实际人口组，核非EEP origin／非五资格国策，原生产stone→bronze与目标人口200→300；再独立比较生产／控制两份972错误增量、仅移除时间戳后全部正文相同。输出限定PASS_SCOPED_NATIVE_PRE_FTL_ERROR_ATTRIBUTION，原年度FAIL不改，不以日志过滤代替证据，不宣告纯原版生成根因。该补证和恢复后的实际对象检查都完成，才允许从新的恢复SAV继续议程时间；下一阶段日志基线按新进程原始未过滤文件记录，不丢弃旧进程3814字节完整日志。
+
+
+22:19 控制归档提交6f623bd0156f1e93e88cdab8a58a23cfc160cf7b已push退出0并ls-remote核同SHA。控制PID24792通过实际菜单／退出确认正常结束，未发送terminate／kill；完整退出日志另存控制RUN。原production pointer已恢复，旧process.json保存在process-before-preftl-control.json，原生产PID23824的完整日志也保留在logs-before-preftl-control；新生产PID12528已启动。resume preflight仅原包通过：实际单一mod/ugc_eep-local.mod、正式41文件树ac802ed0…不变，恢复源仍4e5cbaa57e7f166803e83ab143f0a85a68be3d75b8fccf8683fcf9f2fa426bed／2234.09.01；尚未宣告载入或重载通过。
+
+恢复严格检查具体执行方案（实施前）：原生中文主菜单就绪后，沿用不可变priority_native_checkpoint_reload.py，以terravore-second-psionic-wait-year1为before，terravore-production-resumed为after、独立alias preftl-prod-return；只复制原SAV字节。完整24项原严格集合检查及实际差异原样记录，原有cached差异不自动豁免。如失败先做只读字段解释／必要时从真实后件第二次原字节稳定重载，不重放日历或事件；全部实际库存、人口、EEP账本／容量／区划／岗位、源碎裂状态、AP传统科研与MOM3024必须保持。恢复和年度972原版错误独立补证完成前不运行剩余180日。
+
+
 22:16 [native-preftl-error-control暂停快照](evidence/priority-terravore-progress-2026-10-09/native-preftl-error-control/source-snapshot.json)实际完成：2026-10-09T14:15:35.192734Z、137原件／9630291字节。[暂存blob逐字节核验](evidence/priority-native-preftl-error-control-staged-verification-2026-10-09.json)实际PASS，167 blobs／9723343字节；快照不包含后来控制退出、生产恢复。原生产年度25项FAIL及新wait helper位于原生产RUN，不冒称已包含本控制快照；后续随生产恢复切点归档。现在只提交本次控制证据及文档，保留历史错误与范围限制。
 
 
