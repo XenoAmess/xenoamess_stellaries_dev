@@ -1,0 +1,42 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "actual_enabled_mods_empty": true,
+    "bound_original_load6_PASS": true,
+    "original_SHA_pair": true,
+    "one_exact_native_event_receipt": true,
+    "same_actual_date": true,
+    "target29_original_stone_to_bronze": true,
+    "target29_original_government_raw_held": true,
+    "target29_original_hive_post_apocalyptic": true,
+    "target29_native_population200_to300": false,
+    "all_other_countries_raw_held": true,
+    "country0_actual_stocks_held": true,
+    "country0_actual_population_held": true,
+    "original_error_prefixes_preserved": true,
+    "exact972_error_increment_each": true,
+    "entire_error_body_same_after_timestamp_normalization": true,
+    "exact_two_native_errors_no_unrelated_increment": true
+  },
+  "before_sha256": "fe5927c08fdb925725ddb4fdc5199419153b43aa0f2307e5000518c54804f73b",
+  "after_sha256": "d277c0ba36da60921746df1f68485df904f84458c75f1364a5c478d44cf72732",
+  "production_error_delta_sha256": "9a8329ed3fa1b7c81f8ec8c3b45d9cf974e1d3a0ebf404d67ccfd3ece146df75",
+  "control_error_delta_sha256": "5f3983137e96f164fd632177db00a5234c498bcbd09258b5189199ef250509f8",
+  "error_increment_bytes": 972,
+  "native_sources": [
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_effects\\pre_ftl_scripted_effects.txt",
+      "sha256": "69c2bec1698871992447482a0e108af80cad645673a3e0c11d74b248d8cb802e"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\first_contact_dlc_situation_events.txt",
+      "sha256": "05d54f0b097ec86a8357d900cc0103943b18605b6645bf4426619b3e716fad50"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\governments\\civics\\00_origins.txt",
+      "sha256": "3787d01d84fb468fbf348997c388b2db8f444e51d575f97e137b9f30d53b15f9"
+    }
+  ],
+  "original_production_run": "D:\\workspace\\xenoamess_stellaries_dev\\_runtime\\heart-of-devouring\\runs\\20261009T044016Z",
+  "scope": "Same native error reproduced without enabled mods from unchanged native country29 in original-byte Mod-derived world by one explicit preftl.199 call. Proves active EEP scripts are unnecessary for this error; does not prove clean vanilla-origin world generation, certify load-baseline EEP missing-definition warnings or pass the original yearly no-new-error check."
+}

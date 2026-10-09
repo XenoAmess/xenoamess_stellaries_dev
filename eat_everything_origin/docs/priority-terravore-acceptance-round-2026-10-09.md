@@ -1,5 +1,36 @@
 # 吞噬之心：噬岩者优先续验
 
+22:16 [native-preftl-error-control暂停快照](evidence/priority-terravore-progress-2026-10-09/native-preftl-error-control/source-snapshot.json)实际完成：2026-10-09T14:15:35.192734Z、137原件／9630291字节。[暂存blob逐字节核验](evidence/priority-native-preftl-error-control-staged-verification-2026-10-09.json)实际PASS，167 blobs／9723343字节；快照不包含后来控制退出、生产恢复。原生产年度25项FAIL及新wait helper位于原生产RUN，不冒称已包含本控制快照；后续随生产恢复切点归档。现在只提交本次控制证据及文档，保留历史错误与范围限制。
+
+
+22:15 原生重复key/value独立补证5项全部PASS，87f5da57e638ea8976461589ff8c49546f3cd8705e32d51ee0f922c825305f88；与原16项有效15及人口9项有效8共同确认：同一原生country29、原政府／同日无Mod启用，preftl.199仍产生完全相同两条972字节错误，目标实际人口200→300，全部其它国家raw保持。结论范围只限“该错误不需要活动EEP脚本”，不推断invalid origin最初如何生成；原生产年度FAIL及控制两FAIL全部保留。
+
+控制归档方案（实施前）：当前控制暂停2233.09.01且无活动GUI／日历／保存命令，以native-preftl-error-control独立标签执行既有原字节快照与暂存blob校验，保留原源、两原FAIL、独立5项补证、完整载入基线和972字节增量；该切点是真实暂停控制分支，不含稍后正常退出或生产恢复。快照完成后按原生菜单正常退出，再恢复已备份production pointer，保留旧process.json再重新launch原包和原字节2234.09.01生产存档。归档和提交不改变原年度no_new_error失败，也不把控制人口奖励算入母星。
+
+
+22:14 人口补证实际8项通过、唯一OTHER类别读取失败，原件保留，helper25337d97839e718b84e319fd293aa68e119c2e25645d884207e992c75f458301。真实资本／carrier／owner、三个实际人口组总数、Colony统计及国家缓存均已独立通过；失败是我把原生current_month_growth_details的重复key/value平铺序列误当作嵌套对象遍历，不是引擎验收工具缺陷或Mod错误。类别原文已在rawCol8确认OTHER100／PROMOTION0。新增priority_preftl_control_growth_pairs_supplement.py（实施前）仅绑定该9项原FAIL及其它8项通过、两原SHA，按q.fields保留原始顺序严格核四个标量key/value字段，再核OTHER100／PROMOTION0；输出独立补证，不覆盖前两原FAIL，不重新调用事件。该SAV表示观察只写Stellaris知识库，不推广为通用脚本规则。
+
+
+22:13 无Mod隔离原生事件已实际复现同样972字节错误：RUN20261009T140522Z，启用Mod为空，原字节源58a0eb48…；控制载入六项PASS，载入后fe5927c08fdb925725ddb4fdc5199419153b43aa0f2307e5000518c54804f73b，唯一event preftl.199 29后d277c0ba36da60921746df1f68485df904f84458c75f1364a5c478d44cf72732／同日2233.09.01。原16项只读检查15通过，唯一人口断言失败保留：我把country29.num_sapient_pops缓存与当前人口混用，并假定country0范围audit包含其它国家colony8。原生country29.capital=8实际是Colony8，其carrier.reference=physical1485；原生国家缓存同帧仍200，但rawColony8和真实pop_groups合计200→300，原组32由200→100、新组69／70各100，current_month_growth_details.GROWTH_CAT_OTHER100。原版control不存在EEP脚本，不将该例推广为任意人口缓存均安全。
+
+新增人口独立补证工具priority_preftl_control_population_supplement.py（实施前）：绑定原16检查唯一人口FAIL／其它15 true、两SAV SHA及无Mod配置，直接读取raw country29资本Col8→carrier physical1485→owner/controller29，按该Colony原始pop_groups id取根pop_groups并核各自planet8及总数200→300；核原国家缓存200保持、Colony实际num_sapient_pops200→300及OTHER100。继承原错误增量完整逐正文相同、原政府held和其它国家raw held等15证据，不重调用事件、不推进日历、不覆盖原FAIL。全PASS后才结论为“无需启用EEP脚本可复现同一原生事件错误”；无Mod加载前缺失EEP提示仍为基线限制，不冒称纯原版正常起源世界。随后正常退出控制并原字节恢复生产。
+
+
+22:03 成熟等待年度原25项24通过、唯一no_new_error失败，原FAIL保留，SAV 4e5cbaa57e7f166803e83ab143f0a85a68be3d75b8fccf8683fcf9f2fa426bed／2234.09.01，MOM2160→3024，母星8770，账本／岗位／容量／库存检查保持；helper源c02f6db391e88907b066e9ee74dbd2a82b70604854f330c83e5311b491414b35。新增972字节为government_restrictions_solver及effect_impl对country29／甘拉瑞弗文明的preftl.199→set_pre_ftl_age_effect政府变更错误，origin_post_apocalyptic与auth_hive_mind无效组合。只读原前后country29原生政府完全相同，stone_age→bronze_age及人口200→300；该国不是EEP起源，生产Mod没有change_government／pre_ftl脚本，不能仅凭原版文件名宣告纯原版根因。
+
+原版隔离复现方案（新工具实施前）：保存原生产run pointer与当前2234.09.01原件，不再推进生产日历；正常退出并核forced=false、进程不存在、完整日志保留。建立独立中文vanilla userdir，实际enabled_mods=[]，将已验证2233.09.01原字节SAV复制为独立alias，不编辑SAV，不携带Mod脚本。该世界源自Mod局，加载缺失EEP定义所产生的错误全部作为控制基线保留；因此是“无Mod加载、同一原生country29的隔离事件复现”，不能冒称纯原版正常起源全世界。核原29仍primitive／hive／post_apocalyptic／stone_age后，仅在控制分支通过原生命令event preftl.199 29调用原版年龄事件一次，保存同日原生后件，比较两条错误的正文／源码行及29年龄转换、国家0人口库存未变。不把控制事件当生产自然验收或Mod奖励证据，实际代码／脚本SHA与全部错误增量归档。复现成功才另建独立原版错误归因补证，不覆盖年度FAIL；若未复现先保留失败调查。
+
+控制结束正常退出，恢复原production pointer／原mod包，仅加载2234.09.01生产原字节SAV并独立记录严格重载／真实差异，完成恢复检查后才继续180日等待。新prepare／load／event只用于这个独立分支，生产不接收控制分支存档或事件。Steam全程离线，正式0.2.0无改动；本阶段将顺延原MOM成熟节点。
+
+
+22:00 second-settlement-and-queen归档提交2d6a2e1b1faf583ab0242f133382034ba29c2978已成功推送，git ls-remote origin refs/heads/main实测同SHA。首轮push实际退出1／curl55连接重置，虽同时打印Everything up-to-date，但当时远端仍907a3eaf，未误判成功；保持提交不变正常重试后退出0并核远端。本轮私有灵能等待在快照之后，不包含于该归档／提交。
+
+
+21:55 心胜于物成熟等待方案（实施前）：2233.09.01原生F2／tooltip实拍2160/3500、每月72，界面显示约18个月；算术上19个月可达到3500，不把界面取整当实际完成。先从已过23项完整月端点唯一360日至2234.09.01，若守卫通过再180日至2235.03.01；之后检查实际进度和成熟按钮，再决定最后30日。不提前用凝聚力启动，不直接赠科技。
+
+新增只读priority_terravore_second_psionic_wait_guard.py：命令行前／后件、日期、日数及前置proof文件名；前置proof必须真实PASS、全部checks为true且after SHA绑定本次before SAV。沿用原月验的核心唯一永久capacity11、C37/G0/D11/made0/worlds2／完整EEP变量flags、19区划和矿2000／电800满员、两碎裂源无owner／人口／地貌、唯一母星、无新咬合或吞噬任务／待选、原AP传统／物种和全局绑定保持标准；核唯一已选agenda_mind_over_matter、政府类型／authority／origin不变、原生议程进度非减。允许原生出生及正常科研完成，记录所有科技新增、科研队列／真实bank和资源库存、月净收支；多年等待仅做非负与资源缺口检查，不把末月balance冒充全年累计精确核账。无pending和新增error，原生日历回执及两SHA必须符合。原生事件出现保留FAIL、先正常处理并独立证明后才继续，不重复日历。该工具只验成熟等待，不宣告启动、理论、长期经济或完整路线完成；不修改既有月验／v4工具源。
+
+
 21:54 第二结算快照暂存逐blob核验实际PASS：8006个Git blob、271427046字节，见[原字节校验回执](evidence/priority-second-settlement-and-queen-staged-verification-2026-10-09.json)。7977原件计数不含该快照元数据及本轮已暂存文档，两个计数不混用。实际校验退出0后追加本说明、正式提交并推送，原始FAIL／补证和候选图片全部保留。
 
 
