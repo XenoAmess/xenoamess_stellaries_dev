@@ -1,5 +1,9 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-09本局护卫舰原生完工边界：同一付费89.6订单首30日工作37.5／基准60，再18日恰好生成corvette，同日原订单item变none、队列首项移除，其余19单raw保持。真实新ship16777221的construction_date=2236.05.19、design67110548、fleet16777797；country0.fleets_manager.owned_fleets唯一追加该fleet，fleet.ships链接该ship，轨道orbitable.starbase0、系统0。fleet／ship本身没有owner标量，必须按国有集合和关联验证归属。UI默认舰队姿态实拍为被动：不主动向敌移动，仍会接近交战；不能将缺失aggressive字段或默认被动当成无敌。仅当前Stellaris4.5.2原件事实，不推广全舰型施工边界／句柄规则或跨游戏语法。
+
+2026-10-09原生批量造护卫舰的整数报价与真价：本局自动苏瑞克级设计67110548，UI90合金／48日，实际每个建设记录resources.alloys89.6／progress_needed60；正常20次点击合计真扣1792，并非取整90×20。船坞队列3的空items变20个原生buildable_ship，11个旧none句柄以原ID+16777216同槽下一代替换，另9个新槽；其它items／队列／mgr原文保持。购买动作还删除standard_economy_module.resources三科研镜像690.63101／588.33101／741.78101，真实tech_status三bank0、完整队列与专项研究原文保持；不能将镜像删除当损失或发科研掩盖。原41项唯一镜像raw FAIL与独立7项精确补证均保留。仅本机当前Stellaris存档与UI事实，不推广所有价格取整算法、句柄实现或共通P语法。
+
 2026-10-09原生科研切换SAV：社会“更换研究”按钮334,366实际立即删除旧society_queue，将tech_colonization_2进度607.25288完整追加stored_techpoints_for_tech，并把auto_researching_society从yes改no；不是仅打开只读列表。随后正常选择灵能理论仅新增匿名society_queue记录technology/date，无progress标量表示原生默认0，Theory专项650仍在原存储块，界面显示650/2600。两次独立各30项通过，其它全部顶层及国家字段raw保持，库存／bank0／EEP／人口不变。核研究总进度须同时理解队列和专项存储，不能只见queue无progress就说650丢失，也不能两处重复计入。仅本机Stellaris4.5.2观察，不推广其它游戏或版本。
 
 2026-10-09噬岩者正常成熟心胜于物议程：2235.04.01进度3528后免费主按钮一次，原生政府移除当前议程／进度、追加冷却2238.04.01；focus.105令focus_agendas_completed1→2。tech_status仅为首个未掌握灵能理论新增stored_techpoints_for_tech650、社会候选和always_available_tech，原三队列／真实bank0及已完成科技保持。原生列表实拍650/2600，与paragon的议程25%一致；不能用基础科技成本和局设置直接猜部分奖励。原始顶层另有21fleet.properties仅新增dirty_cloaking_strength=yes、starbase0新增update_flag2048、本对random_count+3，其它完整对象raw保持；39项独立启动核验通过。仅本次Stellaris原件／UI事实，不推广缓存标志或随机计数为共通P规则。
