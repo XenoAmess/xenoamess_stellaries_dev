@@ -1,5 +1,9 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-09繁荣正常经营实证：官方简中traditions_l_simp_chinese.yml:510／520／549／568／587分别为繁荣、预制建筑、几丁质建筑、效率本能、神经信号增强器；仍以基础key保存。00_prosperity.txt实际adopt为采集站产出+20%，sct为结构费用−10%／建造速度+25%，administrative_operations为结构维护−10%，pursuit_of_profit为岗位产出+5%，interstellar_franchising为岗位维护−5%，public_works蜂巢显示替换，finish另加采集站+25%并给飞升槽。当前四笔实付425.45052／520.66458／625.90113／740.95863，显示426／521／626／741；继续符合这几例向上整数显示，不推导所有UI通用舍入规则。正常采矿两单各实付270，原生progress_needed仍240，UI192日；真实90日首单进度112.5，第二单0，独立证明1.25建造进度，不把显示工期当原始基期。后续360日已建成采矿10、2000岗位满员，发电3／600满员；EEP容量仍额外6，原实际区划是付费建出。
+
+08_unity_buildings.txt:1093～1098的突触节点两座条件只限制AI（OR中玩家is_ai=no已经满足），正常玩家仍可增建；实拍中央zone_default允许突触节点，价格360／UI288日，维护能源1.80、新增200突触子个体岗位。不能因档案馆zone_research_unity三个槽已满就认定全星不可增建，也不能把重工业zone_foundry的绿色加号当档案馆第二排。实际原SAV母星district_hive1引用zones0／2／3，分别default／research_unity／foundry；建筑引用存在zones.buildings及全局buildings根，audit中colony.buildings空不表示母星无建筑。当前研究及节点原建筑38／16777251／41属于zone2，中央0／1／2为蜂巢首府／繁殖池／蜂巢养殖场。
+
 2026-10-09本机正常探索传统实价／时序：UI“超适应进化”203，实际凝聚扣202.98709；下一“突触营养池”UI267、实际266.19181。两例都是向上整数显示，原理论define公式不应直接当精确整数扣费或推导通用引擎舍入。真实付款须记录原SAV小数差，并按购买前固定的显示区间核验。基础key仍为tr_discovery_polytechnic_education／tr_discovery_faith_in_science，完成保存基础tr_discovery_finish；蜂巢中文显示替换不会把SAV键改成_hive。原生三系研究岗位并非140×1.2=168，本局实证各140→156；最终公式需合并各建筑／分区实际脚本，不能只乘显示百分比。正常采纳当日SAV尚未改岗位；首个30日已156满员，但该月预算仍按原140产出，第二30日预算产出才增加，两月实际库存逐月按current余额精确核账。科学家维护12→10.2和万众一心后的凝聚净24.71361→30.05021已实证；首月原严格产出FAIL与第二月独立PASS都保留。
 
 2026-10-09实际月账补充：2212.07.02→08.02的真实30日库存差八类精确等后件budget.current_month.balance，后件budget.last_month的全分类原文严格等前件current_month；原生增长6、无额外收入或EEP变化。本组证据不能无条件将名为last_month的SAV块当最新一次实际入账，之前这样要求的July1守卫原FAIL保留。前日July1→July2实际人口与岗位及全部真实库存不变，但人口组1的housing_usage2508→2514、crime／power25.08→25.14，缓存终值按既有组size2514及/100吻合；若要求这三项也raw恒等会误报“人口改变”。这不表示可以笼统忽略人口组字段，只在精确原SHA和已证缓存字段范围内补证。
