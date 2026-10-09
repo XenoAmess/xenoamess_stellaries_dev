@@ -376,8 +376,14 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 2026-10-09只读重查既有真正无Mod RUN20261008T090850Z的119月原件与首次重载：预算current贸易62.98714→63.07004、维护工蜂贸易46.40794→46.49084、人口矿耗63.59→63.65、income_high_water_mark.trade125.97428→126.14008／length2→3；母星amenities25787→25820、free_amenities22737→22770、住房及crime缓存也刷新，Planet3载体flag1→3。其government原文未变。这些原件支持同类预算／舒适度／载体刷新可发生于无Mod；不证明本轮所有数值差异和议会槽位0→4的原因。旧原FAIL与其稳定二次重载结果维持原结论，不改旧审计／scope。
 # 2026-10-09 待选事件日期补充
 
+2026-10-10新增原生统帅特质调查（复现待验）：本机4.5.2 events/leader_events_1.txt:633–689的leader.13为败退获得疾风，683行add_trait leader_trait_gale_speed；common/on_actions/00_on_actions.txt:2880–2907的on_emergency_ftl随机事件列入此项；common/traits/00_admiral_traits.txt:1131定义该特质为COUNCIL=yes／councilor_modifier。事件触发未明确要求内阁子职。本轮自然日历新增councilor_trait_not_allowed错误，原守卫FAIL保留，尚未以源文件路径代替无Mod复现。三源SHA分别4776bb309d910d1358f753c38ce3bd2a1fc90103cc4a18876b9f0ce1295bb5a0、7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306、cf3affe4627e04c00b7f47510cdfb21794331abc30e858e7a3486bd6f9e66703。SAV舰队统帅可从ship.leader及leader.location(type=ship,id)交叉关联到ship.fleet；不能因fleet无leader scalar认为没有统帅。特质是重复traits scalar，scalars字典只保留末个，完整列表须遍历fields。此为Stellaris当前事实，不推广CK3方言。
+
 噬岩者原生2223.01.02存档4c3b036515f35e5b997312ce2e7ce900adf9a98136000352cdb6506de3e11c9a的player_event60／toxoids.500写date=2224.12.11。同期简中实际GPU悬浮priority-synchronicity-terraform-alert-ui明确“系统将于2224.12.11自动选择默认选项”，点击可打开已经出现的待选。因此此条date应按自动默认截止期理解，不能以日期在未来排除待选；其它事件仍须具体UI／原件验证，不能据一条泛化所有日期字段。本轮原21项无待选FAIL应保留，正常确认另做独立同日守卫。
 # 2026-10-09 原生前哨与4.5.2经营调查
+
+2026-10-10原生造舰与战斗：星港新建舰在友军已交战时可以暂成另一独立本国舰队；本局06.02主舰队16777797实际11舰，另fleet593／ship16778402为同一付费批次6.01建成并参与同一幼虫战斗，country0.fleet_size60精确对应总12舰。只读取主舰队会误判丢舰／少造舰，必须通过owned_fleets汇总实际军事舰并核每个ship.fleet。SAV星港orbitals.0在原舰离泊交战后变4294967295，模块／建筑／其它字段保持；不要求跨战斗停泊引用恒等。原v2四FAIL及独立十项补核保留。
+
+本机`00_bombardment_stances.txt:356`的voidworm_invasion在planet_devastation>25时planet_damage因子0，但kill_pop_chance仍0.5、min_pops1000、kill_pop_amount0..200；不能因毁坏值约25停止增长，就认为人口安全。`grand_archive_events.txt:1325`的grand_archive.2200在该轰炸导致死亡时设置infected_by_voidworms并生成幼虫，非危机分支不增加EEP奖励；本局最后原生月分类BOMBARDMENT−202／GROWTH5、母星感染flag及实际幼虫舰队／combat记录独立留证。仅该末月有准确分类，不把六个月全国净−384直接等同全部死亡或EEP吞星损失，也不由脚本基数反推确切幼虫数量。
 
 2026-10-10月界更新不可混作同一时刻：本局2236.12.01实际新第五舰已建成、对应ships维护7.75E／1.875A及第二船坞starbase_modules支出2E已入账，八类库存增量等于本月真实净额、last_month完整等前current；社会研究队列仍462.58704。正常再推进一天到12.02才见Theory484.68777，真实bank／专项点保持，不能用“跨月必已科研增加”作为日1断言。同期人口组size3543不变，但power／crime35.38→35.43、housing_usage3538→3543；星港新增update_flag2048且其它raw字段保持，仅记录实际缓存刷新，不臆测比特语义。舰队新舰加入时旧舰的coordinate／target_coordinate／forward／rotation／speed正常可变化，实际design／hull／construction_date／fleet另核，不能把运动变化当舰体或付费订单丢失。原两份严格FAIL及精确补证分别保留。
 

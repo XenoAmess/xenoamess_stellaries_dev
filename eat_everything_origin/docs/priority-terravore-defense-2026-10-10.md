@@ -1,5 +1,39 @@
 # 吞噬之心：噬岩者防御续验与进度
 
+03:16 冻结实际完成：source-snapshot记录UTC19:14:44.842156、9,862份源文件／336,199,954字节；暂存核验9,897个blob／339,653,960字节全部匹配SHA。[暂停来源清单](evidence/priority-terravore-progress-2026-10-09/native-battle-repair-and-leader-trait-error/source-snapshot.json)、[暂存回执](evidence/priority-native-battle-repair-and-leader-trait-error-staged-verification-2026-10-09.json)。生产未改，后续正常退出／隔离诊断尚待执行。
+
+03:15 新错误暂停调查：07.02→08.02唯一30日日历实际退出0，后件`terravore-defense-post-battle-repair-month.sav` SHA d2daf0d4bc7cfd690abb5c573f657a7bd97121d4babaf7b703d3beeef7d69c6f。21项战斗边界守卫20项通过，唯一`unfiltered_error_bytes_held`失败／执行1原样保留：原2750字节完整前缀保持，仅新增144字节`Unable to add trait for [reason] councilor_trait_not_allowed [at] file: events/leader_events_1.txt line: 683`。实际14艘原付费护卫舰全部舰体250／护盾160／装甲250，母星8557→8562只出生5、无新增轰炸、毁坏降至24.84591；剩5份原付费订单。Theory657.19151＋专项650／2600=50.3%，EEP C37/G0/D11/made0/worlds2和永久容量11保持，能源净−7.3816仍需恢复。以上20项不构成原21项全通过或防御完整完成。
+
+只读定位：原版leader.13是紧急超光速逃逸中随机的“败退获得疾风”fleet_event；原版事件683行添加leader_trait_gale_speed，该特质为councilor_modifier且图标定义COUNCIL=yes。原事件限制default国家、现存commander、特质<3及无相斥特质，没有明确要求内阁子职。本国舰队无统帅；外国country16777219的fleet570／ship1533／leader33554502实际2特质trickster、capitalist、commander、default，满足所见原版触发前提，当前处于原生紧急跳跃失踪，return_date2239.01.05。不能据此断定生产具体触发者或宣告无Mod复现；生产common/events无对应leader／councilor／add_trait定义。
+
+隔离诊断方案（实施前）：先冻结生产全量暂停原件、所有FAIL／回执并提交推送；正常菜单退出，不强杀。新建唯一leader13控制分支及pointer备份，复制上述08.02 SAV原字节，以enabled_mods=[]、简中、同DLC加载。该世界来自Mod长局，缺失EEP定义载入日志单列baseline，不能称纯原版起源世界。新helper仅在核空Mod／原SHA／同日／fleet570→ship1533→leader33554502及原版触发前提保持后，一次`event leader.13 570`诊断，不推进日历、不改生产、不赠资源。独立保存核新增错误完整字节是否恰与生产144字节相同（只归一化时间戳）、原leader特质未成功添加、其它国家及本国经济人口保持；若AI未自动处理不冒称复现。原始FAIL始终保留。控制正常退出后恢复原生产pointer／原08.02 SAV，不导入控制存档；复现仅支持该原版事件错误不依赖活动Mod，不证明原始触发者或所有载入告警。生产恢复、限定错误补证分别通过才续正常经营。helper源／原始回执均归档。
+
+03:15 冻结方案：复用全量快照工具，新目录native-battle-repair-and-leader-trait-error；复制期间不操作GUI／日历，核源SHA和暂存blob，提交推送并核远端。生产41文件保持0.2.0。
+
+03:15 控制目标细化（实施前）：为避免失踪舰队缺少有效solar_system引入额外错误，采用当前真实在system45交战的fleet565→ship1527→leader50331733／country16777218；该原生default蜂巢commander有且仅有cautious、adaptable两特质、无内阁子职／疾风／相斥迟钝。仅控制分支调用一次`event leader.13 565`；此前570只是调查候选，不调用。加载守卫核这套关系、原版触发前提及非失踪／有效系统，原件保留完整leader／fleet和三源SHA。
+
+03:02 原合并守卫30项中29项通过，唯一`only_original593_598_owned_references_removed`失败／退出1保留。实际owned_fleets整个raw同日保持，593／598仍是该列表中的无效引用，但对象已ship_class=none、0舰／0战力，UI仅1支实际舰队；12艘真实ship.fleet全部16777797，所有人口／库存／科研／订单保持。前述“无国有引用”假设过早，不能把无效缓存引用当重复军舰。独立`priority_terravore_merge_reference_supplement.py`（实施前）只读绑定原30项恰该一FAIL／其余29PASS／执行1／两SHA，核owned_fleets全raw保持和两对象无实际舰／none／0战力、全部12舰实际归属。补核通过后才推进30日07.02→08.02／`terravore-defense-post-battle-repair-month`，复用21项战斗边界守卫及独立读取停泊／修复／母星无轰炸分类；原FAIL不改，不重做合并命令。
+
+03:01 合并／返港实际同日保存c00689a958024c7626867454d46cb8901e6ba8e1a0757fd2616f489e1387968e、无新增error；主舰队12舰／nav60／战力1053.40625，593和598只留原生ship_class=none／0舰0战力的无效对象，不是重复可用舰。返港真实current_order.return_fleet_order为home_base=yes、sub_order.orbit_planet_order.orbitable.starbase0，movement target19.61／−21.61／system0。新增`priority_terravore_merge_recall_guard.py`（实施前）绑定上段21PASS／执行0及该两SHA，同日核原三舰队总12舰等主舰队12、两旧舰队无国有引用和0舰、每舰真实design／建造日／舰体护盾装甲不变、原7订单整construction raw保持、nav60与正式返港目标；全实际库存／预算／科研／人口岗位区划地貌／EEP保持，无待选或新增error。这里只证明正常合并和下令，下一真实月才核抵港／维修／维护。
+
+02:56 简中战报已实拍，明确“战斗胜利”、本方1／11护卫舰损失、敌方2／9幼虫损失，原生消息reason=no_more_enemies，余敌撤离不冒称全歼。最初误点420,58实际为敌舰出现警报、仅改变镜头及打开外国舰面板，未执行外交或下令；随后经508,58悬浮正式“舰队战斗数据”再正确打开，误点与正确原图均保留。接下来主舰队已选，三支同系舰队可正常合并。新增单次`priority_native_shift_click.py`只持物理左Shift(0x2a)后点击已实拍outliner坐标，finally保证鼠标与Shift抬起，记录scan／位置／前台／时间；用于普通多选，不发日历或游戏命令。多选后先实拍合并按钮和正式tooltip再点击，不能按猜测快捷键发命令。
+
+02:54 06.02→07.02原生短段及新战斗守卫21项全部PASS／执行0（123ad1a829673d75fe5d2e852b910831ccdd6db409e736f39de362897e25d253），后件a180e437bc3953002d9b1396f93933f6ab66ec3e5e04100eca3373907ea3410d。实际新增原付费33555886／fleet598，旧33555667消失，净仍12舰／nav60；原combat_stats消息134明确06.21结束、reason=no_more_enemies、本国主舰队corvette11／lost1、两新舰队各1／lost0，敌方幼虫9／lost2。只能称击退／敌舰队退出，不称9只全歼。原生大虫fleet18已在system48，母星系0所有实际军舰都是本方，原幼虫fleet16777423对象消失。现存combat块仍有formation缓存但in_combat_with为空、start_date0.01.01，不能以combat块非空判战斗仍在继续。本月母星8551＋出生6＝8557，分类只有GROWTH6／PROMOTION0，无新轰炸；damage25.11228保持，last_bombardment仍05.19，未新发EEP奖励。净能−9.97267／储备8815.74446需后续恢复。
+
+正常UI战后方案（执行前）：先打开现有combat_stats通知查看正式简中战报并采GPU，核实际失舰与击退，不用事件重放。正常合并三支己方舰队（主16777797＋593＋598）并返回母港修复，以真实UI允许的合并流程为准，不能修改舰队SAV；同日另存，独立核12舰总数／真实design及建造日、所有资源／人口／科研／EEP账本保持、剩7订单不退款不重排，仅舰队归属／队列运动与战报读标志可变。后续短月再核无同系敌舰／新轰炸、正常出生、舰船修复／停泊维护与能源恢复；战报胜利本身不等于完整路线通过。
+
+02:48 12舰建设／原生交战补核10项全部PASS／执行0（8f15486bc04f72b8122d216b631d1411542f61945071f27e3b8eec9580992ebe），120已按实际无效果选项正常点击，正在同日另存待独立确认守卫。上一快照提交65e9d75960406d1c50740cd25593fbbb9cf66d0d已push退出0且ls-remote同SHA，继续离线验收。
+
+原生战斗短段方案（实施前）：信息确认守卫通过后，仅推进30日06.02→07.02，stage `terravore-defense-nymph-battle-month`。新不可变`priority_terravore_native_combat_boundary_guard.py`绑定每次前PASS／执行0、实际回执／SHA／30日历；按本国owned_fleets汇总所有实际军舰，不把主舰队独立于新舰队的合法建造当丢舰。原订单仅连续队首完成／剩项非progress字段保持；新军舰数和已完成原单对应，所有实际军舰设计／本国舰队关系正确，战斗中舰体允许0..max、实际损失逐ID输出并结合原生combat统计调查，不能要求战斗舰满状态或一律视作Mod缺陷。星港只核实际starport、双船坞／crew_quarters、两建设队列及本国归属，不要求战斗时停泊引用保持；EEP账本／capacity11／修正／两碎源／政府/AP/传统／真实bank专项点／母星绑定严格保持。完整报告自己与同系敌舰的舰体、护盾、装甲、战斗关联／时间、人口原生分类、damage、各实际库存和末月净额；无待选／新增error，主库存正。所有多月或战斗人口损失必须按实际原件单列，不把无全舰损失断言当胜利。每段最多60日，待幼虫战斗结束再正常合并／配统帅／反击大虫；最后敌军解除且后续正常月人口／经营稳定才计防御完成。
+
+02:46 180日原执行退出0，06.02后件d778e5ea1a34977a18ed3ea8d3fae0cda8f2305c7b40558751af121770eee30d。原v2的23项中4项FAIL保留：它只算主舰队11舰，漏掉新第2舰队593／ship16778402（6.01原单建成），实际本国12舰＋剩8原订单＝20且nav60；该舰队与主舰队均已原生进入和幼虫16777423的战斗，非简单待合并。星港只有update_flag删除与orbitals.0由主舰队变无效引用，其余raw保持，符合舰队已离泊交战。唯一待选120／first_contact.1／contact33／country17，stage tiyanki_stage_1，非新EEP事件。母星8935→8551，全国净−384，最后月原始分类BOMBARDMENT−202／GROWTH5／PROMOTION0（净−197），damage25.11228、infected_by_voidworms真实旗标；不得由末月分类外推整六个月准确总死亡数。原版grand_archive.2200明确在轰炸死人时设置感染并生成幼虫，当前主舰队05.24已经原生交战、敌方9幼虫已损1；不是手动生成敌人。能净−9.97267但储备8825.71713可约885个月按当前净额支撑，矿／凝聚／合金仍正，Theory614.36876＋650／2600＝48.6%，无新增error；防御仍未结束。
+
+独立180日精确补核方案（实施前）：新`priority_terravore_twelve_ships_combat_supplement.py`绑定原23项恰上述4FAIL、其余19PASS及原执行1／源SHA；严格核原军舰全部保持、原付费批次新增7舰（其中593独立一舰）全部真实原设计／日期／归属／满舰体、本国owned_fleets仅新593、总nav60、8剩原单；星港只允许update_flag／orbitals.0离泊两差异且其余raw／原模块保持；两己方舰队的combat.in_combat_with确为原生16777423，记录实际combat开始日和敌舰损失，唯一120待选精确绑定。补核只证明建设批次和原生交战状态，保留待选未确认与完整防御未通过，不能直接推进日历。之后正常处理120信息通知，另存并核只读确认。
+
+首次接触信息确认通用守卫方案（实施前）：新`priority_native_first_contact_info_ack_guard.py`从已有严格确认方案泛化为参数event_id／contact_id／原前件PASS文件与执行stage，只用于原版first_contact.1的无效果INTERESTING选项。核同日两SHA、前件确实PASS与执行0、唯一该信息待选→无待选、history只加human1／option0一次、对应当前event及至多一条对应消息移除，其余所有国家／其它顶层／contacts／全部审计世界与经济保持、error保持。当前用于120／33、日期2237.06.02，前件为上述建设补核；禁止把这个无效果守卫用在有奖励的接触阶段选项。
+
+02:39 下一防御建设边界（执行前）：完成上一暂停快照提交后，前件固定12.02／5bc02638…及v2的33项PASS／实际执行0，checked_v2唯一推进180原生日到2237.06.02，stage `terravore-defense-twelve-corvettes-ready`。按当前两个槽的16.25／1.25工作预计完成7艘、总12艘并剩8份原单；实际数量、日期、原单来源和各项进度均由v2独立守卫读取并交叉核。原生轰炸可能继续造成区划／人口损失与幼虫增生，只能按原生事件／地貌／增长分类解释，不能当EEP奖励或隐去；先读取实际敌军及本国舰队兵力再决定正常反击，不按预计1002战力宣称胜利。任何待选、error或未解释异常停止继续推进并处理。此段多月只报告真实末月净额和储备，不伪称六个月逐月精确核账。
+
 02:38 暂存原字节校验实际退出0，9,546个blob／327,664,272字节全部与源SHA一致，[暂存回执](evidence/priority-second-paid-shipyard-and-parallel-work-staged-verification-2026-10-09.json)。本轮生产41文件没有改动；提交只含当前三份文档、全新暂停快照及该暂存回执。随后继续正常离线防御验收。
 
 02:37 全量暂停快照实际完成，captured_at_utc=2026-10-09T18:37:12.593115Z，9,512份源文件／324,335,836字节，[来源清单](evidence/priority-terravore-progress-2026-10-09/second-paid-shipyard-and-parallel-work/source-snapshot.json)。本文02:38／02:40为书写时人工分钟估计，执行／冻结的准确时刻以原始UTC回执为准，未据此扩大验收范围。仍为活动暂停端点，非退出／重载或完整路线结果。
