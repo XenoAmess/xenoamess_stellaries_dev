@@ -376,6 +376,10 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 2026-10-09只读重查既有真正无Mod RUN20261008T090850Z的119月原件与首次重载：预算current贸易62.98714→63.07004、维护工蜂贸易46.40794→46.49084、人口矿耗63.59→63.65、income_high_water_mark.trade125.97428→126.14008／length2→3；母星amenities25787→25820、free_amenities22737→22770、住房及crime缓存也刷新，Planet3载体flag1→3。其government原文未变。这些原件支持同类预算／舒适度／载体刷新可发生于无Mod；不证明本轮所有数值差异和议会槽位0→4的原因。旧原FAIL与其稳定二次重载结果维持原结论，不改旧审计／scope。
 # 2026-10-09 待选事件日期补充
 
+2026-10-10当前无Mod对照重载缓存：原生产08.02 SAV d2daf0d4…加载到空Mod控制371390ff…与恢复生产a7cbbd55…，两后件整个colonies审计集合完全相等；同样housing8557→8562、舒适度／crime刷新、两废殖民对象binary_flags24及母星carrier1→3。真实人口始终8562，不能将住房缓存+5当再次出生／回迁。生产预算仅current及高水位刷新、旧last_month／实际库存保持，高水位length1→2和新current收入和另核，原24严格三FAIL保留，精确补证14项通过。此案例不是所有缓存的通用根因证明。
+
+2026-10-10战后付费发电实证：当前普通UI报价172日／240矿物，真实订单queue0／country0／district_generator／progress_needed240而非172；实际扣240另由28项核实。UI标准建造模板+25%和鎏金基础设施+15%不能当更改原基期，具体费率不靠旧报价270推断。180原生日后gen3→4、600→800满员，19艘原付费幸存舰及空队列、无新轰炸另核26项；完整30日八资源current净额残差0（仅影响力固定1000上限）及last_month=原current，11项通过。岗位收入、食性矿耗、舰船／组件维护使用当前4.5.2真实budget，不套旧版本单舰或人口单位。
+
 2026-10-10 03:29舰队作用域实测：空enabled_mods的RUN20261009T192111Z，从原字节Mod世界加载后，以原生effect every_country/every_owned_fleet筛唯一实际领舰commander50331733／fleet565并调用fleet_event leader.13，新增144字节councilor_trait_not_allowed与生产只归一化时间戳后全段一致，独立14项全部通过。所有国家raw／实际人口／本国库存及领袖原两特质保持，疾风添加失败。证明这一原版事件／特质拒绝不需要活动Mod；不证明自然原触发舰队、纯原版起源生成或缺失EEP载入baseline合理。错误console国家作用域的914字节FAIL另留，不合并计成功；依据见当前防御续验文档与独立控制原件。
 
 2026-10-10控制台作用域实证：`event leader.13 565`将565当作country，新增原版日志明确Firing fleet event ... wrong scope, got country以及owner/leader上下文切换失败；不能用可选数字直接指定舰队。此前preftl.199的country29调用仍正确，不泛化为任意对象ID。此次失败14项／11true保留，舰队事件改为原生effect迭代实际owned_fleets后在fleet作用域调用，唯一目标先读SAV交叉核；作用域正确性及实际144字节复现尚待新原件。此为Stellaris控制台，不作为CK3脚本规则。

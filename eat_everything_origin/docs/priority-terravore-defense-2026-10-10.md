@@ -1,5 +1,37 @@
 # 吞噬之心：噬岩者防御续验与进度
 
+03:53 主快照暂存10,180个blob／354,663,781字节匹配原SHA。尾件第一次暂存检查退出1，因为检查器扫描所有priority JSON、刚生成的主快照核验回执尚未加入index；先暂存该回执后重新检查尾件，未重写任何原游戏结果或已生成证明。尾件最终85个blob／6,346,854字节全部匹配，回执[生产快照](evidence/priority-native-leader-diagnosis-and-postwar-economy-restored-staged-verification-2026-10-09.json)与[退出尾件](evidence/priority-native-leader-trait-error-control-tail-staged-verification-2026-10-09.json)并存；准确数量以对应JSON原件为准。
+
+03:51 全量生产暂停快照实际完成：captured_at_utc19:51:16.172717，10,143份源文件／351,110,184字节，[来源清单](evidence/priority-terravore-progress-2026-10-09/native-leader-diagnosis-and-postwar-economy-restored/source-snapshot.json)。另补图库计划的当前候选说明，故本次精确暂存为四份相关文档、生产快照及控制退出尾件；仍非完整路线或最终退出。
+
+发布图库采集补充：2238.03.02普通简中母星概览已采fresh GPU `terravore-restored-core-gallery.jpg` SHA7f36267f0ecd22f7b6f5fea46414977f32a4e5d32b33d4047ca83050d50b9dfb，展示18尺寸／19实建区划／总上限29、本族单球8600、真实能源矿物正收入与19付费护卫舰。仅作未来图库候选，截图包含原生20%战损恢复状态，如采用须配如实说明；不是新版本上传或完整路线通过的宣传。
+
+当前生产里程碑冻结（执行前）：保持2238.03.02暂停，不再操作GUI或日历；复用全量工具到新目录`native-leader-diagnosis-and-postwar-economy-restored`，保留恢复严格24项FAIL及精确14项补证、控制原错误914／生产144归因原件引用、真实付款／180日建成／完整月全部结果和新图库原图。将新控制退出尾件、三份当前任务文档及该生产快照精确暂存，分别核blob、提交推送并核远端；之后继续首府与凝聚力设施，不在提交后结束任务。
+
+03:48 战后恢复分项完成：2238.03.02后件1469d80af1bd72a88e81a9cf5ed37a540804bd35141da57468555a577e7cde58，30日日历退出0、26项边界和11项完整月账均全部PASS／退出0（月账654399a90ceebe707bb0230909ab32769c13610a0c52a2f78eee3fd8e9a9a986）。人口8595＋原生出生5=8600、无新轰炸／失舰／待选／新增error；原19舰及空舰船／母星队列保持，矿2000电800满员。八类封顶后残差全0、last_month完整等前current；原生影响力上限1000导致未封顶原残差−6.4，按预定规则归0，不豁免其它资源。最新E8759.58871／净+2.63073、M7329.99114／+18.85676、U5213.92556／+55.48925、A7358.46141／+15.49485、trade20969.59825／+51.42819。真实ships维护18.25E／7.125A、组件10.1175E／1.72425A、双船坞2E、发电3.6E、建筑16.2E均单列；EEP C37/G0/D11/made0/worlds2和唯一容量11保持，Theory808.47751＋650／2600=56.1%。结论是击退原生幼虫／补足付费舰队与发电、完整正收支月的防御经营恢复，不是消灭大虫／全歼幼虫或完整噬岩者路线通过。下一步仍为完整虚境／武灾／蜂巢母星和长期回归。
+
+03:48 控制退出尾件已原样归档47份／6,279,217字节，核旧控制RUN143份原件全部SHA保持，新增含退出GUI／回执及最终未过滤日志：[退出尾件清单](evidence/priority-terravore-progress-2026-10-09/native-leader-trait-error-control-tail/source-snapshot.json)。原165份暂停证据不重写。
+
+03:46 180日实际退出0、后件7fcf2ab145f5dc48a0691bc694c8cc470726337e139843eca8eb98f4ea1135db／2238.02.02。新战后边界26项全部PASS／执行0（0d30be0b491a45dfd5440e07fe2a9d057fecd1cd92382eb59d8610f9e543e5c8），0新增原生错误也无未归因错误。第四发电完整建成、5蜂巢＋10采矿＋4发电=19区划、矿2000／电800满员、母星队列空；原余五舰全部由原单真实完成、舰船队列空，实际两舰队主18＋fleet602一舰共19、nav95，所有原舰无新损失。母星8562→8595、last_bombardment仍2237.05.19、毁坏24.84591→21.15771，无本国活动战斗。最新库存E8756.95798／净+2.48067、M7311.13438／+18.93534、U5158.43631／+55.20336、A7342.96656／+15.39338，Theory786.72173＋650／2600=55.3%；EEP完整保持。正在仅30日完整月核账，不把这半年末净额当半年逐月核账。
+
+退出尾件归档方案（实施前）：控制原165份暂停快照之后又正常退出并保存了logs-final-after-normal-exit，须补充源证据。新`priority_archive_leader13_control_tail.py`只读生产已记录的control-pointer和旧控制来源清单，确认旧控制RUN原件SHA全保持，只把新增的退出GUI／回执及未过滤最终日志复制到全新native-leader-trait-error-control-tail，列逐件源SHA／字节／范围；不重写旧165件、不切pointer、不操作游戏。该尾件与旧暂停快照联合说明正常退出，不将暂停快照scope改成最终退出。下一暂停生产checkpoint同时保留恢复／缓存FAIL、精确补证及真实发电／军舰建成、完整月结果。
+
+战后完整月核账方案（实施前）：建成边界独立通过且无待选后，checked_v2仅30日到2238.03.02／`terravore-postwar-restored-economy-month`，仍复用新战后边界守卫核全原舰／母星／EEP／空队列／实际矿2000电800满员。新`priority_terravore_postwar_month_guard.py`读取这次前后已通过的战后边界证明，核30日回执／SHA／前PASS执行0，沿原月账v3的八类current_month实际净额残差0（0.00005容差、仅影响力按原版固定1000封顶）、后last_month完整等前current。真实原生出生分类和实际人口增量一致，无新轰炸，母星两端区划与空队列、矿电真实满员保持；能源及矿物月净必须同时正，并单列军舰／组件／星港模块／区划／建筑的实际维护。只证明这一整月经营恢复，不称长期或飞升全路线。若科研等原生预算时点产生差异，保留原FAIL查原件，不改金额或重复日历。
+
+03:41 第四发电原生付款28项全部PASS／退出0，helper04ee4e21d28889fa2b84260b416b26d4f68959f728dd633e2013dbad00f7f980；后件beb4da3778fdeaa81cc0c60cf7d2cd47a4ad8580a8ad1443c5023ebc4907230c。矿物7436.27196→7196.27196真扣240，唯一母星订单67108874／queue0／country0／progress0／needed240，type district_generator；原所有其它实际资源bank、人口岗位、EEP保持，无新error。
+
+战后建成边界方案（实施前）：新`priority_terravore_postwar_boundary_guard.py`从已执行21项原战斗守卫派生，前后与预期发电级数作输入；只把短战斗60日上限改为正常经营360日上限，继续绑定原生日历receipt／前PASS／实际退出0、所有真实军舰和原付费队首订单关联、原design／bank／政府AP传统／EEP容量11／两碎源保持。增加无旧舰损失、当前己舰无活动combat、母星last_bombardment仍2237.05.19／毁坏不增／实际人口不减；本阶段固定采矿10、蜂巢5，发电按输入精确值且技工实际满员，母星队列空、区划增加恰已完成的原gen订单数。error保留完整前后原字节：若完全保持则0新增；若新增，只允许与已归档空Mod14项PASS证明的原版leader.13完整144字节段逐段精确相同（仅时间戳替换），必须同时核该控制执行0／三原版源SHA和前日志基线，独立报告重复次数，命名为“无未归因新错误”，不说无新增error；任何其它字节立即FAIL。旧21项及所有FAIL不改，首次诊断之外不反复重启世界。此新分项不替代完整月核账、20年或全路线。
+
+下一唯一180日：以付款28项PASS为前件，checked_v2从2237.08.02到2238.02.02，stage `terravore-postwar-generator4-complete`；预期发电3→4／技工600→800、唯一订单完成；余五艘原付费舰完成后应共19艘幸存（此前原生战斗损1，不声称20），对应舰船队列空。任何待选、非已复现错误或新轰炸／失舰都暂停处理，不重复日历。随后独立完整30日查八类预算及维护、出生和能源／矿物净正。
+
+03:39 恢复14项全部PASS／退出0（ba7fe731b8695332bb3d0e30606681b5fae18572748af0ddfd1fd63d7bf39791）；原24项缓存FAIL保留。母星普通UI发电建造悬浮已实拍，报价172日／240矿物、维护0.90E、+200技工子个体／+300住房、预计岗位产出14.15E，速度显示标准建造模板+25%和鎏金基础设施+15%，并列高能电容器。此前270价是旧阶段预期，当前按实拍240作为本次付款守卫输入，不使用旧报价；原生base工作仍预计240／实际订单核。接下来普通点击251,438一次购买一级发电，另存`terravore-postwar-generator4-paid`，源固定a7cbbd55…，同日独立核真实扣240／原生队列及所有其它保持，通过前不重复购买或推进日期。
+
+03:36 生产严格重载24项／21PASS、budget／colonies／planets三FAIL及实际退出1原样保留。后件a7cbbd55e44b5a6dacca1c9579b893dffafc4ab42596da41e8067598c649ea67，同08.02；完整实际资源、研究bank／tech_status、人口组／岗位、EEP／AP／传统／政府和所有其它21项保持，error前后2670字节不增。只读精确差异：母星housing_usage8557→8562、free_housing386.445→381.445、crime17.13→17.18、amenities15943.3817→15959.9158／free10860.1817→10876.7158；已碎源Colony15／24各新增binary_flags24；核心carrier_binary_flags1→3，其它审计星球字段保持。空Mod控制载入后的整个colonies审计集合与生产重载后完全相同（不是只比同一缓存名称），也有同一carrier1→3；未推定比特语义。
+
+重载精确补核方案（实施前）：新`priority_terravore_leader13_resume_supplement.py`绑定原24项恰上述三FAIL／其余21true及执行1、归档空Mod载入8项PASS与原SHA、生产原版错误限定11项PASS；核colonies仅上述五字段／两零人口flag变化，并与空Mod完整colonies相等，planets仅核心carrier1→3。预算仅current_month及income_high_water_mark变化，last_month和其它raw保持；current收入11个类别／支出9个类别的小幅更新按调查原件固定值核，其余类别完整保持，balance逐类别独立等income−expenses（允许原生5位小数累计0.00002），高水位length1→2、current逐资源等新收入和，其余高水位字段保持。人口矿耗77.013→77.058精确等住房缓存8557／8562×0.009，actual人口始终8562；不将预算刷新当实际新增／扣除库存，原完整库存保持。额外核付费军舰14、原设计／舰体满状态及construction完整raw不变。只证明此次核心状态保持及精确缓存差异，不追认严格24项PASS、不泛化预算根因或完整路线；通过后才按前述付费发电计划操作。
+
+03:32 控制证据提交8631cfe3655a263d3ee7acb5d06694ff2464027a已push实际退出0、ls-remote同SHA。控制PID22524正常退出，production pointer／原41文件SHA／源08.02 SAV已恢复，生产PID20440；不导入控制世界。生产限定归因11项全部PASS／执行0（bdf0197bf2908412414870e645a5ee15a38851af5d24f731aed1734be723348b），原21项FAIL保持。正在原生简中加载，尚未通过重载守卫或进行付费建设。
+
 03:30 控制冻结165份源文件／11,343,731字节、暂存201个blob／11,448,642字节全部通过原SHA核验：[控制来源清单](evidence/priority-terravore-progress-2026-10-09/native-leader-trait-error-control/source-snapshot.json)、[正确舰队控制14项原证明](evidence/priority-terravore-progress-2026-10-09/native-leader-trait-error-control/leader13-control-fleet-error-reproduction-proof.json)、[暂存回执](evidence/priority-native-leader-trait-error-control-staged-verification-2026-10-09.json)。包括所有载入baseline及前次wrong-scope914字节原FAIL，不只截取成功144字节。
 
 03:29 正确舰队作用域控制14项全部PASS／实际退出0，helper SHA a19ca68d3bbc2b49b11fb9c3cfd9e94822421eee60f5e51c891803d2f1cfcfc5。前14db34c0…→后0c900fd64f5f918f28588731d6f93f5482364481bc3adbbee84291ca9973d45d，同2237.08.02、所有国家raw／人口／本国库存保持，leader仍原两特质。唯一新增144字节与生产整段只替换时间戳后完全相同，未有其它新错误；前次914字节wrong-scope失败保留。结论限于原版leader.13内阁特质拒绝不依赖活动EEP脚本，未识别生产自然触发者或证明纯原版世界生成根因。正在冻结控制原件，之后恢复原生产08.02，不为此覆盖原版事件或修改Mod。
