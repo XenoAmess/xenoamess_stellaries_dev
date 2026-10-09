@@ -287,3 +287,9 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 本机4.5.2政府raw包含council_agenda_cooldowns匿名记录，与type／authority／civics／origin等同块；本轮真实跨年后仅删除agenda_evolving_society、start_date2309.02.01的完整冷却块，其余政府raw、传统AP与拥有殖民地保持。冷却日期位于真实前后日期之间，五项独立只读补核通过；只能记为与原生冷却到期一致，不能追认操作议程，也不能把整个政府raw的任何变化一概忽略。此为Stellaris本机原件，未推广到CK3。
 
 群星SAV字符串列表读取（2026-10-09）：government.civics是带引号的国策字符串列表，不能使用本项目q.ids（只筛纯数字引用）。噬岩者原生初始政府raw实际精确含civic_hive_devouring_swarm／civic_hive_ascetic，但用q.ids误得空并产生原26项中的单项FAIL；须q.tokens逐token解引号，和实际简中UI“噬岩者／禁欲主义”独立绑定。这里的工具API限制与Stellaris存档字段对应，不推广其它Paradox方言。
+
+噬岩者原生开局与灵飞资格（2026-10-09）：本机03_civic_governments.txt:784确有gov_devouring_swarm，正式新局原生government实际为该type／auth_hive_mind，国策石质显示替换为“噬岩者”，政府显示“噬杀蜂群”；星系预览出现unknown不能直接推断政府key无效，原生player.name也实际unknown，尚未单独证明预览字段来源。00_ascension_paths.txt:459起ap_mind_over_matter的非合成人路径要求num_ascension_perks>1并排除基因／义体／合成等互斥AP；有Shroud DLC时potential允许格式塔／机械，与无该DLC分支不同。00_soc_tech.txt:3883的tech_psionic_theory也在有Shroud DLC时允许格式塔，实际研究／传统／虚境终点仍需实机；不能把读到potential当作本路线已完成飞升。
+
+首年原生障碍清理：01_blocker_deposits.txt:1248的d_collapsed_burrows，原生base time120、费用energy300（不是矿物300），planet_max_districts_add=-1；on_cleared以owner主体执行create_pop_group。当前噬岩者第一年度确实删除原地貌271，同时EEP制造仍0、核心1573保持；本年人口总增171不能全算出生或EEP制造。实际付款时点／准确受修正费用未逐帧采集，不由base cost声称有独立实付300证据，也不因本年低矿物库存推断该障碍花费矿物。
+
+4.5.2殖民建立期间也存在真实Colony对象与少量人口：00_defines.txt:1939的COLONY_POPS_REQUIRED=100、:2034的COLONY_MONTHLY_GROWTH=3。当前噬岩者2204.03.02原生Planet90已owner0／colony15，colonize_date2204.01.21、人口6，Colony.last_month_growth_data的GROWTH_CAT_COLONIZATION为3，实际简中UI仍“正在殖民行星”。因此有owner／Colony和人口不等于已完成殖民；EEP入口另外要求is_under_colonization=no，不能仅用年度候选列表判可启动。此为Stellaris4.5.2原件，不套用CK3。
