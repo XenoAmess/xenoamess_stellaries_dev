@@ -1,5 +1,15 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-09蜂巢区划真实完工补证：正常450矿物／480基期订单在1.25速度下360日仍450/480，再30日建成。母星蜂巢4→5后coordinator1360→1400、三系calculator各156→180、fabricator400→500且全满，与20×5×1.2+60=180吻合；原建筑引用未新增或改变。再正常270矿物增建发电4，2218.12.02已实建5+10+4=19，大于原始planet_size18，EEP永久额外6后的总容量24真实可用，非仅UI上限。后完整30日采矿2000／发电800全满，实际E+28.943、M+20.133，八类预算按事前固定影响力上限核0残差。各类UI分别5/24、10/24、4/24共享星球总上限24，不能当三类各自独立可建24。
+
+同调官方简中及基础键：traditions_l_simp_chinese.yml:238／242／244／247／253／267为同调、克隆器官、同步代理、自发同调、集体思维、灵活思维。蜂巢自发同调为tr_synchronicity_integrated_preservation的名称替换；collective_reasoning要求它，harmonious_directives要求kinship_gestalt及cloned_organs。adopt普通蜂巢人口维护−10%，finish星球飞升效果+25%及一AP槽。category仅要求格式塔，不等同后续灵飞全合法。当前正式AP科技至上已正常获得，本机实际说明为重点研究政策及稀有科技机会+50%，不是全科研速度+10%。
+
+2026-10-09探索研究岗位140→156的完整本局来源已定位：zone_research_unity调用zone_researchers_add的AMOUNT=20，母星4级district_hive原给每系20×4=80；05_research_buildings.txt:76～80的唯一building_research_lab_1调用researchers_add、AMOUNT=building_static_jobs_3=60，故原每系80+60=140。zone_researchers_add:314起的格式塔普通星球faith_in_science分支是triggered_district_planet_modifier、mult=0.2，只追加区划那80的20%=16；researchers_add:18～28的实验室是普通triggered_planet_modifier，不包含这条区划增益，因此每系实际156=20×4×1.2+60，与原SAV满员值一致。不能把所有建筑科研岗位也乘1.2。正常第5级蜂巢集群悬浮已经显示每系+24，后续实际SAV另验；不会凭此悬浮宣告已经建成或已有实际+科研收入。
+
+2026-10-09正常建筑槽与区划扩张限制：common/zones/00_zones.txt:5的zone_default.max_buildings=6为固定值，不能假定继续增加district_hive等级就能多盖中央节点。zone_research_unity引用zone_unity_jobs_add（scaling_district_unity_4_jobs=40）及zone_researchers_add（researchers_4_jobs=20、LARGE_AMOUNT=60），星球modifier为zone_building_slots_add=3；具体每级真实岗位仍须结合内联脚本、探索完成修正和SAV，不把单一常量当完整岗位结论。正常district_hive基期480日，跟本局矿电240不同；后续如正常购买蜂巢区划必须单独按实际UI／订单核480基期，不能沿用固定240的矿电守卫。
+
+2026-10-09正常满仓月核：原版common/strategic_resources/00_strategic_resources.txt:132～136（SHA140dea921a77f76726f361eca99f59f0c7755e4e728dec4699d3b732457911a4）定义影响力固定上限1000。2215.01.02→02.02实证前后影响力均1000、current净+6.3，未经封顶库存残差−6.3；按实施前固定min(1000,before+net)后残差0，其它七类原残差均0、after.last全分类精确=before.current。不能把固定影响力溢出误报成经济丢失，也不能据此放宽其它未声明资源的核账。
+
 2026-10-09繁荣正常经营实证：官方简中traditions_l_simp_chinese.yml:510／520／549／568／587分别为繁荣、预制建筑、几丁质建筑、效率本能、神经信号增强器；仍以基础key保存。00_prosperity.txt实际adopt为采集站产出+20%，sct为结构费用−10%／建造速度+25%，administrative_operations为结构维护−10%，pursuit_of_profit为岗位产出+5%，interstellar_franchising为岗位维护−5%，public_works蜂巢显示替换，finish另加采集站+25%并给飞升槽。当前四笔实付425.45052／520.66458／625.90113／740.95863，显示426／521／626／741；继续符合这几例向上整数显示，不推导所有UI通用舍入规则。正常采矿两单各实付270，原生progress_needed仍240，UI192日；真实90日首单进度112.5，第二单0，独立证明1.25建造进度，不把显示工期当原始基期。后续360日已建成采矿10、2000岗位满员，发电3／600满员；EEP容量仍额外6，原实际区划是付费建出。
 
 08_unity_buildings.txt:1093～1098的突触节点两座条件只限制AI（OR中玩家is_ai=no已经满足），正常玩家仍可增建；实拍中央zone_default允许突触节点，价格360／UI288日，维护能源1.80、新增200突触子个体岗位。不能因档案馆zone_research_unity三个槽已满就认定全星不可增建，也不能把重工业zone_foundry的绿色加号当档案馆第二排。实际原SAV母星district_hive1引用zones0／2／3，分别default／research_unity／foundry；建筑引用存在zones.buildings及全局buildings根，audit中colony.buildings空不表示母星无建筑。当前研究及节点原建筑38／16777251／41属于zone2，中央0／1／2为蜂巢首府／繁殖池／蜂巢养殖场。

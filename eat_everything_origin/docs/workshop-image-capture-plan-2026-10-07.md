@@ -75,4 +75,6 @@ WS-TERRAVORE-02新增首次吞星通知候选：同一RUN的terravore-queen-noti
 
 两张新候选及绑定SAV／OCR／守卫现已按原字节归档到[first-swallow来源快照](evidence/priority-terravore-progress-2026-10-09/first-swallow/source-snapshot.json)：[局势画面](evidence/priority-terravore-progress-2026-10-09/first-swallow/priority-terravore-situation-gallery-clean.jpg)、[首次吞星通知](evidence/priority-terravore-progress-2026-10-09/first-swallow/terravore-queen-notice-reloaded-load-loaded.jpg)。该来源覆盖本轮31项首星结算、24项确认与19项下一月防重，同时保留原重载FAIL，不增加已发布图库或公开推荐范围。
 
+WS-TERRAVORE-03为2219.01.02母星扩容兑现候选：RUN20261009T044016Z的priority-terravore-capacity19-gallery-clean.jpg，真实GPU1024×768／SHA d9b4c71ed07461ed0eec5ca212a4d8c78e0df5b02bb41a121c0b44469b6d4607，已人工查看，无控制台／保存菜单或悬浮遮挡。UI原尺寸18、5蜂巢／4发电／10采矿共同上限24，实建相加19；绑定terravore-capacity19-month.sav SHA909a3af9e2440389ed432952c8f74a0d183d9a759a9385e9690cc9570215386b、此前两笔正常450／270矿物订单、三段21项建造等待、八项蜂巢实际岗位及20＋10项完整月守卫。画面同时显示实际正E/M收入；图说可用“吞星扩容后，母星正常付费建成19区划，超过原尺寸18”，不能写成免费区划或完整噬岩者路线已通过。原图／OCR与所有绑定原件通过second-ap-capacity活动快照归档并核Git原字节后保留；尚未上传或替换0.2.0已发布七图。
+
 rc.4报告入口改为母星按钮后，WS-04更新候选为同一2283.03.03原生待展示报告重载的清晰GPU原图，已经人工查看，无控制台／叠窗／鼠标提示。新来源保留首次点击前后、两次重复及待展示报告重载的实际SAV／审计、图片／OCR与包含预算历史长度差异的原始FAIL；待原生重载对照完成后补充严格范围proof，不修改旧图片来源。首次数值保持14种库存，报告真实显示C/G16、D6、制造200、人口13593、完整灵飞1／武灾1。新图在原字节来源快照与本地检查通过后才进入候选清单，仍不冻结或声称已发布。
