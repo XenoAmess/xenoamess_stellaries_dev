@@ -1,5 +1,13 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-09实际月账补充：2212.07.02→08.02的真实30日库存差八类精确等后件budget.current_month.balance，后件budget.last_month的全分类原文严格等前件current_month；原生增长6、无额外收入或EEP变化。本组证据不能无条件将名为last_month的SAV块当最新一次实际入账，之前这样要求的July1守卫原FAIL保留。前日July1→July2实际人口与岗位及全部真实库存不变，但人口组1的housing_usage2508→2514、crime／power25.08→25.14，缓存终值按既有组size2514及/100吻合；若要求这三项也raw恒等会误报“人口改变”。这不表示可以笼统忽略人口组字段，只在精确原SHA和已证缓存字段范围内补证。
+
+2026-10-09扩大只读原版对照范围：真正无Mod初始6c312b601b1bff74c6f66029e5a0e7faaeef9f8e76f8d68d9753496ff18db736（runtime-development/20261007T184149Z/vanilla-shared-world-native-initial.sav）到无Mod同日原生加载保存31def47a0d168b47011f80283923ca538c945e111d250dcac53930f6589ee279（20261008T090850Z/postvanilla-initial.sav），government原文精确只unlocked_civic_council_slots0→4；相应启用Mod列表确为空，已有postvanilla-original-initial-proof认证正常本族／origin_default。119月前件c876fb7ccdc6a6d7ac3448e6b2904d825deb9cbe6ec23208bcc4e614ab229175到同日重载c63a64ec9cfcbeb0e5aa6c2a330af3a42b352c18bb9759e255f667e0f91f7dc9的全colony根另有13／14／15 binary_flags缺失→24，以及colony3 civilian1450→1449；此前仅核审计拥有星球子集漏掉这些类别。它们证明同类字段原版也能刷新，不能单凭类别一致就证明本Mod母星civilian2498→2945的具体数值／经营影响均已独立复现。原4项严格重载FAIL保持；后续应区分资源／实际人口／EEP不变量和这些缓存，不宣告完整首次严格重载通过。
+
+2026-10-09建设续验确认：原生 message 的 date 与 end 应分别核对；本局最后5条吞星通知date2210.04.02、end2210.07.02，在2210.06.01→2211.06.01推进后自然从SAV删除，不能要求跨年原始消息列表恒等来证明没有新奖励。未来守卫只允许已到期旧消息删除，仍拒绝新消息或原消息被修改。已下单实际队列进度每原生日1，三笔300矿物／240日订单串行；第一360日只完成第一采矿，下一采矿120／240、发电0／240，容量加成自身没有生成免费实建区划。
+
+2026-10-09只读原版续查：00_discovery.txt 的完成效果为全科研速度+10%及一个飞升槽。00_ascension_perks.txt 的科技至上仅 rare_tech_draw_chance_mult0.5，万众一心凝聚+10%且排除机械帝国；不能把早期版本的科技至上科研+10%写到本机4.5.2。00_ascension_paths.txt 的ap_mind_over_matter要求已有>1个AP及空传统树等，本版本该AP块未要求tech_psionic_theory；有Shroud DLC时potential允许格式塔／机械，机械还有原生名称替换。后续传统／突破虚境的具体科研条件另按对应块核，不能由此断言整条灵飞不需要科研。发现树蜂巢中文“超适应进化”“突触营养池”逐字来自traditions_l_simp_chinese.yml:492／500；后者本机zone_physicists_add等实际按is_gestalt触发+20%对应分区岗位，旧中文说明文字不能单独当成实机岗位公式。这些结论仅适用当前Stellaris原版文件，不推广到CK3。
+
 ## 2026-10-08：自然转换与隔离星系的原生证据
 
 实际pc_volcanic→pc_hive队列在正常付10000能源后为total7200、initial_total_days7200、倍率1；真实五年／十年分别progress1800／3600，未提前完成或再次付款。2299.03.12起点到2309.03.12仍在同一母星physical1／colony0，核心地貌、容量16与court各一份、绑定和EEP五项账本保持；54项只读检查通过，不代表最终转换／真实容量UI通过。
@@ -317,3 +325,5 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 本次eep_report在国月脉冲按增长前的6470人口取快照，月首SAV实际6477；首次女王通知只显示最近回迁440等结算数，不是漏迁7人口。确认后的下一月原生增长7与全国人口净增精确相等，八类经济差等于真实last_month.balance，无EEP制造／重复奖励。
 
 同日原生重载不能默认所有缓存raw恒等：本次首次待通知重载实际库存／bank、人口组岗位、EEP及事件保持，但government.unlocked_civic_council_slots0→4、部分预算／舒适度／civilian及carrier flags刷新；根因尚未无Mod独立对照，原严格FAIL必须保留。二次同日重载这些字段稳定，完整预算精确仅income_high_water_mark.length7→8，其它raw恒等；只证明二次重载的范围保持，不扩大为首轮或全路线严格重载通过。此为Stellaris4.5.2实证，不推广CK3存档。
+
+2026-10-09只读重查既有真正无Mod RUN20261008T090850Z的119月原件与首次重载：预算current贸易62.98714→63.07004、维护工蜂贸易46.40794→46.49084、人口矿耗63.59→63.65、income_high_water_mark.trade125.97428→126.14008／length2→3；母星amenities25787→25820、free_amenities22737→22770、住房及crime缓存也刷新，Planet3载体flag1→3。其government原文未变。这些原件支持同类预算／舒适度／载体刷新可发生于无Mod；不证明本轮所有数值差异和议会槽位0→4的原因。旧原FAIL与其稳定二次重载结果维持原结论，不改旧审计／scope。
