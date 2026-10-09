@@ -91,3 +91,79 @@ checkpoint首次暂存核验FAIL保留：327原件／准备输入已逐件读取
 续验端点与下一步：在此暂停原件归档colonization-wait checkpoint并提交推送，保留本轮所有原始FAIL及逐项补证、不修改生产0.2.0或公开推荐。先审precursor_events_cosmic_storms.txt:1855的cstorms.205唯一“很迷人。”正常选项：原版增加社会研究储备并在from创建site_adakkaria_the_propaganda_station，不能按纯叙事零收益断言，也不能计作EEP奖励。实施前须记录实际from、原生奖励公式和真实科研库存／考古对象，然后正常确认一次、按实际日期与月界核资源及EEP；无待选后继续殖民等待，不重发已完成360日、不重放pending3或4。首个源星完成殖民后再从正常中文决议进入真实Q17／预计ceil(17*2.4)=41有效月路径，实际损毁及Q以启动原SAV复核。
 
 13:56[殖民等待暂停端点](evidence/priority-terravore-progress-2026-10-09/colonization-wait/source-snapshot.json)归档903份原件／35965936字节，完整保留被停止使用的时钟v1、异常确认日期FAIL、原16项FAIL／六项严格补证和当前年度待选FAIL及未过滤日志。[Git原字节核验](evidence/priority-colonization-wait-staged-verification-2026-10-09.json)923个blob／36324142字节通过；仍为活动端点快照，不是最终退出或完整路线验收。当前无活动GUI辅助，游戏PID23824暂停2205.05.01，玩家AI关闭，pending4尚未选择。
+
+14:10继续执行前核查：同一PID、原生2205.05.01暂停、实际UI仍“仁善信号”。原SAV pending4的root Ship1055／from Planet388，原版脚本cstorms.205正常选项给owner社会研究并在388生成site_adakkaria_the_propaganda_station；00_scripted_variables.txt:87～89为18倍月产、最低350／最高100000。当前真实社会研究储备0，预算月收入12.475，乘18=224.55低于下限，因此预期正常奖励350，必须以实际tech_status.stored_techpoints核实。
+
+正常选项与独立只读守卫方案（实施前）：新priority_terravore_precursor_ack.py只确认当前唯一“很迷人。”一次，实拍确认后的暂停日期，再按实际日期唯一原生保存；不预先假定同日。保存后严格绑定原SHA与原pending4／一次human1、option0历史，核社会研究储备仅增350、其余八类经济库存及另两系研究不变、完整EEP与人口组岗位／核心／AP传统／政府保持，完整原SAV的考古集合仅新增指定类型且在Planet388、原考古对象保持，日志原字节保持。允许真实日期为05.01或05.02但不跨月，若任何额外变化先保留FAIL再调查，不重放选项。确认成功后沿用现有真实360日到2206年同月同日、再180日的殖民等待，每段检查实际pending／人口及殖民UI；不修改存档或授予科技、人口、资源。
+
+原版事件实际24项独立守卫全通过：仍2205.05.01、后件4b5d90b878d5e8b512c9a8631953ac88bb91ccfad22ad4f2713b0830133e727f；仅一次pending4／human1／option0、社会研究真实储备0→350、指定Planet388新增考古对象4，旧对象及EEP、人口岗位、核心、政体与其它实际库存严格保持，新error0。之前年度no_pending的原FAIL不修改，此处独立证明待选已正常清除。
+
+母星付费经营方案（实施前）：真实UI检查可用空建筑槽，优先正常购买突触节点／研究实验室，目标使用维护工蜂剩余劳力而非授予科研或凝聚。原版building_hive_node和building_research_lab_1均base360日、minerals400，实际价格／时长以UI与订单为准；当前已完成tech_hive_node和tech_basic_science_lab_1。新通用priority_native_paid_building_guard.py只读绑定每次购买前后原生SAV，断言同日唯一新订单、真实扣矿及其它库存保持、paid_country0／正确母星colony0和指定zone／类型／进度、原EEP及AP传统／人口保持、无新增error；每次购买分别留证，不把排队当建成。建成后另核实际岗位、维护、月预算与EEP不变；如能源／矿物维护转负，使用正常区划或市场经营修正并记录付费证据。
+
+第一座突触节点实际已购：2205.05.01／957d8a65ad2d6855de59d7e5acbf23cce907d4a4eb21be6d9a4619ff754ec274，矿物1985.086→1585.086，唯一母星zone2订单正确、0／360且无新error。原27项守卫26true、colonies_held一项FAIL：完整对比精确仅colony0新增last_building_changed="building_hive_node"，为本次真实建筑操作的原生记录，并非人口／核心／产出变化。保留原v1和FAIL，新增独立v2只读守卫明确要求母星此字段等于本次building，并仅在整殖民地严格比较时排除此字段；其它所有colony字段及原26项仍严格核。v2使用新proof文件，先补核同一SAV，不重购。随后按实际UI继续同zone2正常排研究实验室与第二突触节点，各自原生保存与独立v2核账。
+
+14:17三笔真实付费订单分别28项v2守卫通过，原v1单项FAIL保留：突触节点1、研究实验室1、突触节点2，每笔400矿物／0进度／360基期、country0／colony0／zone2、原队列前缀及其它对象／EEP保持。第二后件263e28a95919903bfb7287d0532dd29caba6594f419fb9170740e29f16373c95，第三70ffb768742e065f9ac0e9dcf6a4230c8f9e74f27e5fa0684a1dcba59a22bc3a；总1200矿物实际扣除，剩785.086，不当作三建筑已完工。接着按既有殖民等待方案唯一360日至2206.05.01，逐项核源星人口／pending及首建筑实际完成。
+
+不足一年等待的守卫方案（实施前）：新priority_terravore_natural_days_guard.py复用年度守卫的全部20项原标准，但将CLI加入days参数（1～360）、日期及真实回执严格绑定实际这段天数，验实际日期差也必须等于days；不能让180日流程冒充360日通过。其它初始EEP／国策／物种／核心／无待选／无新日志／非负库存保持；不强求殖民完成时人口仍每月只增3，完成端点的真实新人口与原版初始化按SAV和中文UI另核。此通用守卫只适用于EEP尚未启动，启动后不得继续套初始账本。
+
+14:21第二段360日殖民等待完成，2206.05.01／97e76d0c5432fd30b56a78bb7d7e69319750c64fd172ba7a460389117bfd9ef5。母星5860／源星84；首突触节点实际building38、zone2，后续实验室及节点仍0进度排队，不能称全部完成。新增tech_power_plant_2／tech_planetary_unification／tech_mass_drivers_2，完成35项，当前三研究队列已空，须正常续选。凝聚净17.43599、矿物4.808／库存894.55、能源6.429。20项年度守卫19true，仅无待选FAIL：pending5/first_contact_critters.80与6/first_contact.1，EEP初始账本、核心、物种／合法政府保持、新error0。
+
+第一次接触处理方案（实施前）：只经F1情报日志→“发现”→“显示第一次接触”访问真实待选，不用console event。当前实际window为first_contact_critters.80“活的星际碎片？”、唯一“我们一定搞错了什么……”；first_contact_NPC_country_types_events.txt:1070的正常option0将当前接触改为void_clouds_stage_2并after解锁调查，没有资源奖励。first_contact_events.txt:13的first_contact.1唯一INTERESTING没有经济effect。逐项实际UI确认一次，各自实拍，最后同日原生另存；新priority_native_first_contacts_guard.py只读核原pending5/6均清除、history仅相应正常option0各一次、实际FirstContact0阶段／解锁、其它接触对象保持、全国家真实库存科研／EEP／人口／核心／政体与科技保持、原日志字节保持。待选顺序按实际UI记录，不凭左侧选中条目猜对应pending；任何差异保留原FAIL，不重放事件。
+
+14:27两项正常接触确认27项守卫全部通过，后件8237081441c8e38e00671d150e7f9ec9cdb563824364c8a687ab3359ece8ed5c。仍2206.05.01、无待选；contact0仅stage1→2／locked→in_progress／clues7→0、追加同日stage1完成历史及移除已选event，contact1仅移除已选event，所有其它接触和完整country0原文／EEP／人口／核心／库存科研保持、新error0。这是正常确认，尚未完成这些接触的全阶段。
+
+原生研究自动化方案（实施前）：本机00_phys_tech.txt:7～18的起始tech_space_exploration已经提供unlocks_auto_research，不需要历史版本的后期科技；F4三系右下原生齿轮可正常自动选研究。保持human_ai关闭，先关闭当前研究候选面板，再分别点击物理／社会／工程的原生自动研究按钮，逐步实拍其启用状态；同日唯一保存后核实际自动化字段／真实研究队列、已完成科技未凭空增加、三系bank及经济库存／EEP／人口／核心保持、新error0。新只读priority_native_research_automation_guard.py按实际SAV字段严格核这三项开关和新队列，不能把自动研究冒充AP／传统自动化或免费研究。后续若自然刷到灵能理论，可正常接管社会研究；不靠科研grant追赶。
+
+14:30三系原生自动研究23项守卫通过，后件6b4a7a3a74336742395bd807559b1067821e4849a10e2ebd81a98b742745ea04。完整country0原文精确仅tech_status.auto_researching_physics／society／engineering三个no→yes，真实经济与三系bank、已完成35科技、EEP、全部己方人口和核心等保持；当前暂停同日队列仍空，实际选题须看后续日历，不宣称已在开关当日投入研究。接续唯一180日到2206.11.01，独立days守卫与殖民UI确认后决定首星启动。
+
+14:32真实180日已到2206.11.01，cc711e4695e9fe08d8bd45ce7b2f145d773bec548de8fc262518beddc21684ce，20项days守卫全部通过／无待选／新error0。母星5897，源星102；实际中文UI已是完整殖民地、殖民时间2206.11.01，Q17／1个蜂巢区划，不再“正在殖民”。三系正常自动选题始于05.02，真实进度物理117.593／社会150.955／工程144.664，社会储备440.972，不是免费研究。矿物920.242／净3.968、能源1499.364／净6.149，EEP初始账本仍保持。
+
+首颗自然吞星启动方案（实施前）：在新特洛伊正常决议选原版“吞噬星球”，使用生产单key适配器，不用通用决议／console event，不造人口。启动前源星102本族已满足100种子，不应从母星迁入；原Q17且无d_lithoid_devastation，T=ceil(17×2.4)=41。正常确认并同日唯一另存，新priority_terravore_native_start_guard.py只读核同日原SHA、唯一EEP situation／owner0／目标source、progress0与Q17／T41、native／active／being_devoured及360日冷却、唯一母星绑定和C/G0／D2／made0／worlds0保持、真实两星人口组／种子无免费增加、库存三系bank及政体AP传统／科技保持、新error0。source载体记录或临时变量允许新增仅已读eep_begin字段，不能把启动当原版咬合或最终奖励。完成后单独实拍局势与吞星风味用于工坊素材候选，再按有效月逐段推进，12／24／36和40／41月边界独立核。
+
+14:33真实“吞噬星球”点击后立即执行，未出现额外确认对话框；列表移除此项且源星出现被吞噬图标。此前stage名priority-devour-confirm-ui仅为预期名，实际原图是启动后的决议列表，不称其为已存在的确认弹窗；没有重复点击。正在同日另存首任务，按实际SAV核Q/T及原始收益保持后才推进。
+
+14:39启动后件0f3445bc5eed268eadca3f6bafccbe10f082ecc92854c61646ffb355283aee88，30项独立守卫全部通过。唯一局势16777223，source Planet90、progress0、Q17/T41；源星102、母星5897保持，未迁入种子、未结算或制造。实际真实经济库存及三系bank保持；经济模块中的科研缓存镜像发生刷新，不能把该缓存当真实科研储备或宣称整模块不变。首张局势画面有鼠标提示遮挡CG，不作为干净图库来源。
+
+有效月与原生咬合方案（实施前）：使用现有scroll命令的0滚轮量将鼠标移到右下空白，重新GPU实拍并人工查看；不点击取消方案。正常关日志后先唯一推进1日到2206.11.02（进度仍0），再分别360日到2207／2208／2209.11.02，对应12／24／36月，随后120日到2210.03.02为40月，30日到2210.04.02为41月结算；每段先检查完整原生日历回执、实际SAV和新日志／待选，再允许下一段，不重发已经完成的日历。新priority_terravore_active_month_guard.py只读绑定前后SHA、实际日差及回执，核指定有效进度、Q17/T41、唯一原任务／目标／合法石质蜂巢政体及物种、原母星绑定／核心／D2、C/G/made/worlds仍0和未提前通知、原AP传统保持；核源星真实d_lithoid_devastation数量，按一年一次预计12／24／36月为2／4／6、40月仍6，实际不符保留FAIL后查时序，不修改期望伪造通过。记录真实两星人口、岗位、原版吞噬消息、矿物／合金／科研及月预算，不能凭总人口变化推断纯自然增长或把原版随机人口计为EEP制造。结算另用独立守卫验证C17/G0、D6／增4、made0、worlds1、全部实际本族回迁、源星破碎及任务清理；本段活动期守卫不能套用结算。女王通知正常显示／确认与重载防重另留独立证据，不把首颗吞星完成当全路线验收。
+
+14:45首日及第12月各26项活动期检查全通过：2206.11.02／aa747f2e86dc493280364268c34deddb6b7c6cd2d3c58ab9fe64a3fdd82a4b22仍progress0、无损毁；2207.11.02／2297a4a04d2fc11af99ead055673580b523d98a4d37a35d5fac0f88e249e8947实际progress12、source新增2个原版损毁地貌，冷却刷新359日、毁坏19.97882，EEP仍C/G0／D2／made0／worlds0且无待选／新error0。两星实际母星5848／源星227、总6075；不从这一个年端点推断确切自然增长、迁移或原版随机奖人口。自然完成tech_bio_reactor并自动续选tech_genome_mapping。矿物889.318／净−7.202、能源1541.292／净1.689、凝聚1125.17168／净22.59726，短期库存足够下一年与首吞结算，但矿物维护为负，不能称经济闭环；首星完成后必须正常付费补矿物生产并核稳定预算。继续按既有计划唯一360日第24月，不授予资源或额外收益。
+
+14:49第24月实际2208.11.02／aadbd45b0ec57810673c058b0f3cdd74000f18c5c7ad12358a276458fafa2fab，进度24／原版损毁4／EEP未提前结算，活动守卫25true，仅无待选FAIL保留：pending13／first_contact_critters.85，root接触0／from国家20（虚空之云），正常UI唯一“远观而不要玩。”。矿物774.70136／净−11.877、能源1524.37736／净−4.216、凝聚1445.58018／净30.54359，母星5920／源星233；库存仍足首星剩17月，负维护如实保留，不宣称经营验收完成。
+
+原生虚空之云接触完成方案（实施前）：first_contact_NPC_country_types_events.txt:1094的非唯心选项内部index1，启用母星CLOUDS_PROJECT并执行finish_first_contact_effect，不能当零收益叙事。first_contact_effects.txt:167与:773的效果包括first_contact_completed20／void_clouds_encountered原生flags、接触结束／情报及调查技能、正常影响力奖励；当前政策first_contact_attack_allowed，使用00_scripted_variables.txt:118～123的6个月收入、20～80上下限，当前6.1753预计37.0518。只正常选择一次、按实拍暂停日期唯一保存，读取真实影响力／项目／接触完成状态，原选项history仅pending13一次human1/index1；新priority_terravore_cloud_ack_guard.py只读核相应真实变化、其它全部实际库存科研／EEP变量flags／任务24进度／两星人口岗位与核心／科技AP传统严格保持、无新日志及待选。原第24月FAIL保留，不能重放日历或选项。接触完成后以新端点续推第36月。
+
+14:53正常选项后仍2208.11.02／1888c8eef092ab6ca2a8887054bd383763ce0308a876cb92d30a28011dd9d5ce，pending13/index1/human1仅一次、项目启用、contact0.status=finished、全部EEP及真实其它库存科研／两星状态保持、新error0。27项中26true，原影响力精确小数预测FAIL：实际634.66874→671.66874，即+37整数，与未取整预测37.0518相差0.0518。不能把实际值改写37.0518，也不能由单个案例推定引擎通用向下取整规则。新增独立priority_terravore_cloud_ack_corrections.py只读绑定同一SHA及原FAIL精确仅此项，其余26true；核真实+37、位于原版20～80上下限、距离当前6月公式不足1且为整数、正常finished及项目source为母星Colony0。不追认原小数公式检查通过，仅补证真实原生整数奖励与EEP隔离，旧FAIL不改、不重放奖励。随后可从无待选真实端点继续第36月。
+
+首星结算与真实边界进一步设计（实施前）：第40月端点先从完整SAV保存源星全部人口组及物种、本族原生岗位、两星last_month/current_month_growth_data、完整country0 budget和原版消息；第41月后新priority_terravore_first_settlement_guard.py绑定两个原件及30日日历回执，必须核C17/G0、D6/last_capacity4、made/last_manufactured0、worlds1、source eep_return_amount与国家eep_last_return相等且为真实本族数、源星pc_shattered/无殖民/无人口/无地貌、所有结算防重标志、active/native/being_devoured及对应modifier移除、原局势消失、唯一母星／尺寸18／永久容量6／王庭／核心地貌保持，母星人口接收与全国净变化结合真实增长及原版随机人口消息独立解释。原生咬合最终补齐6次（此前3年共6损毁，剩11槽需要ceil(11/2)=6）；最终清空地貌后不能由零损毁误称没执行原版效果。确切随机奖励数额和人口组变更若不能从原件严格归因，单列未完成项，不把EEP变量自报当独立经济证据。第41月可能只设置eep_notice_pending，按实际SAV决定是否再自然推进到下一国月脉冲显示eep.11，不用console触发。结算前后原生重新载入与通知确认防重须另存，未经完成不得写完整首吞回归通过。
+
+边界隔离细化（实施前，替代最后一次整30日）：既有有机路线曾在月首达到进度、次日eep.21才结算；本次不预设相同时序，第40月之后改为28日至2210.03.30、1日至2210.04.01、1日至2210.04.02，总日数仍30。每次唯一保存并只读核实际进度／是否结算／待选及真实增长预算。如果04.01尚未结算，使用它作为结算前原生相邻日基线，独立核源星实际人口加最终原版随机奖励、母星精确接收和真实库存差；若04.01已经结算，则按实证保留包含月结的范围，不伪称次日隔离。原活动守卫仅允许progress<41，不能将它套在最终月首；这里新增边界观察仅记录实际，不用临时修改生产脚本强制结算时机。
+
+14:59第36／40月各26项全部通过、无待选／新增error0。第36月2209.11.02／3ad1e817ba52ec52d7cabe30e199743e5231588d6f2cc261e1af7424751afe9a，损毁6、母星5997／源星339；完成tech_automated_exploration／tech_engineering_1／tech_genome_mapping。第40月2210.03.02／2af7b7efdfb31b1d2ac2885eb026a6964a8fa7736fb96c36121a16727fae6260仍损毁6、进度40，母星6024／源星340、EEP初始账本完整保持。新只读boundary_observation保存两星原始growth块、真实库存／预算、各物种人口及原版咬合消息，明确为观察、不单独作为结算PASS；按上述28+1+1日实际边界继续。
+
+15:02月末2210.03.30／8fea6bb708761a304d74d35a37c9534b2b76973fabf4371aaa8aea73d6dd9d6b的26项守卫通过，仍progress40。月首2210.04.01／065fdc3fd989159b9dae0144bfc9cdbaa1c0a1b8cf195aeba05ee29e56a5581d实际progress41但未结算，EEP仍全部初始账本、无eep_pending／女王待选，源星340／母星6030。真实月结母星+6、矿物−13.92604／能源−2.75594／合金+18.473等已独立留证。该月首可作下一日结算前基线；继续唯一1日至04.02。独立结算人口核对使用本次真实原版POP消息数×100加月首源星340，对照实际return_amount和母星／全国净增，不凭EEP自报造人；原版合金／矿物消息与真实库存差逐项记录，非相关经济库存应保持，科研每月在2日正常投入需单列实际队列变化。
+
+15:04结算观察2210.04.02／d44daf85c33e488e82bb70050d12f1d2c2c341466deed607ee2e19a3cf7b889e：C17/G0、D6／增4、made0、worlds1，return440、母星6470；原版最终POP消息1条／合金2条／矿物2条，均日期04.02／target90，真实库存+100人口／+200合金／+997矿物，其余实际库存含三系bank差0。此前“剩11槽补6次”为漏算原生已有区划和障碍的预测，已被真实5条咬合消息否定，不能照抄为结算结果：月首size17、损毁6、d_toxic_kelp原版−1、仍有1级district_hive，按剩9槽ceil(9/2)=5，与消息吻合。最终一槽的矿物分支value3、其余一次矿物分支value5，原收入124.588，623+374=997与两项逐笔四舍五入到整数相符；这里只作本例计算复现，不凭两个案例宣称通用引擎取整定律。独立结算守卫将核消息顺序／数目／日期、真实人口与库存差及这项公式复现。
+
+原生清理语义补充（守卫实施前）：源星已无owner/controller、pc_shattered、地貌空、active/native/being_devoured及modifier已清，任务原对象带killed=yes。本机仍保留source.colony=15缓存引用与零人口Colony15对象（无拥有关系、pop_groups空、actual0）；不能用“Colony对象物理消失”作错误验收条件，也不伪称引用已移除。守卫要求country0拥有列表精确去掉15、任何实际source人口为0、全部六个结算防重标记完成、任务无active、母星原实建区划完整保持。后续重载／月脉冲继续验证这些原生残留不导致再结算。
+
+15:07首星相邻日结算31项独立守卫全部通过：真实原版5消息与人口守恒／库存、C17/G0／D6／made0、原实建区划未自动增加及唯一核心均核实，仍不算完整路线通过。接续29日至2210.05.01，预期eep.2清除eep_notice_pending、设置eep_first_notice／触发eep.11；只读核实际事件与生产eep_report新增显示变量，不预先用“所有变量原文恒等”拒绝正常显示刷新。
+
+女王待通知重载与确认方案（实施前）：新priority_native_checkpoint_reload.py仅封装既有r.native_load与r.native_save，把唯一已归档通知SAV原字节复制到新短别名后从原生简中读取、同日唯一另存；要求载入别名SHA与原件一致，全部真实库存bank、EEP账本／flags、AP传统／科技／政府、实际人口组岗位／母星及源星地貌区划、事件targets和原pending/history保持，记录完整未过滤日志、UI/OCR及所有原始差异。无工具grant、无重放日历或选项。正常通知唯一按钮确认前实拍，确认一次并同日另存；新priority_terravore_queen_notice_guard.py核原pending=eep.11仅一项被删除、history对应human1/option0仅一次、除待选与历史外所有上述真实游戏状态／经济保持。任何原始FAIL保留并严格补证，不能通过删去未知差异泛化通过。确认后的下一自然月另核无重复通知／EEP收益及真实负维护；正式经营仍待正常建设修正。
+
+15:10待通知重载原严格24项中20true、4项FAIL，原件与全部差异保留。原件27a858a6f8239645aeb1fae162ee369ae88d05333d0bbc36ad1eafdb25cae968，载入别名SHA相同，后件5533ebff66daac20e33f301601b67585d049a869f5d8270c17693d9c4e84e368；同日2210.05.01、eep.11/pending18与选择历史、真实库存及bank／全部人口组岗位／EEP账本flags／AP传统科技／区划地貌核心保持、无新error。4项差异精确为：government.unlocked_civic_council_slots0→4；budget current_month部分贸易／维护工蜂及人口矿耗刷新、income_high_water_mark.trade100.62353→111.036／length6→7；母星amenities17341.2→19308、free_amenities13465→15431.8、civilian2498→2945，残留Colony15新增binary_flags24；Planet7及90的carrier_binary_flags1→3。预算矿耗64.70→64.77与月首新增7人口一致，但尚未独立证明所有刷新和议会槽位变化的引擎来源，不能统称已证实的原版警告或强行放宽后报严格重载PASS。当前仅可确认无二次发奖、待通知保存；全路线重载仍未通过。
+
+同日二次重载对照方案（实施前）：从上述真实后件再次原生加载唯一短别名tpqueen2，复用不可变同一个24项严格辅助；没有选择pending18、不推进日历或重演收益。核实际gov／planet／colony及当前经济预算是否稳定，所有差异／原FAIL仍保留。如仅income_high_water_mark历史计数变化，也须记录确切路径与值、独立补证而不改原24项结果；如继续出现贸易／舒适度／实物资源或人口变化，则停止后续日历并按实际异常调查。此对照只定位重复性，不代替无Mod根因对照，不能因此宣布第一重载严格通过。
+
+15:14二次重载后件3d9d717a0b0edd96a7bf2695e20b5962946618325e683061bd5b391fd8960241，原24项23true、budget一项FAIL保留；gov／舒适度／civilian／planet flags及全部实际库存／人口／EEP与通知均完全稳定。预算完整原文精确仅income_high_water_mark.length7→8，current_month／last_month及该high_water_mark的其它所有字段不变。新priority_terravore_second_reload_supplement.py只读绑定原FAIL精确此项及原SHA，核该唯一字段、整个budget其它原文严格恒等、原23项仍true、无二次奖励；不抹去两次原严格FAIL，不将首轮缓存／议会槽位变化追认成已根因证明。正常女王通知已有实拍唯一“余烬归于吞噬之心。”，允许从此第二真实端点确认一次再作24项同日保持核账。
+
+15:15二次重载八项严格范围补证通过；首次缓存／槽位根因对照仍待补。正常确认女王pending18／option0／human1一次后仍2210.05.01，433682d68e5ba6a0791bff24e3682b21acc7bd8db6d82925c4135fb245f4d3fc，24项确认保持全部通过，真实预算／库存／两星对象和全部EEP不变，无二次发奖／新error0。
+
+通知后首月方案（实施前）：从该真实确认端点唯一30日至2210.06.01，新priority_terravore_postsettlement_month_guard.py只读绑定实际日历和SHA，核C17/G0／D6／made0／worlds1及全部EEP变量flags严格保持、无待选／新EEP任务／新咬合消息、源星仍无拥有关系及实际人口、唯一原始母星核心／容量／实建区划保持。读取原生mother.last_month_growth_data的实际growth，独立要求母星与全国人口净变化精确等于此正常增长，不凭自报EEP变量排除造人；八类经济库存差与本次实际last_month.balance逐项核对，三系bank及科技／AP传统实证记录，不能将转正缓存或单月库存足够当长期经济闭环。若预算残差或通知／收益重复，保留原FAIL再调查，不跳过进入后续日历。完成这个稳定暂停端点后归档本轮首星全原件、更新清单并提交推送；后续仍优先修正真实矿物维护和继续噬岩者完整路线，铁心灭绝者保持下一优先级。
+
+15:18通知后完整30日到2210.06.01／97b61a787f4fdde1c72452babc5410199af4fe2574de49b022117999dd814382，19项全部通过。真实母星6477→6484，等于原版last_month_growth_data的month_start6477／growth7；C17/G0／D6／made0／worlds1、flags、容量与核心保持，无新待选／通知／任务／咬合消息，八类预算残差全0／新error0。矿物1538.84734／净−11.682、能源1475.06106／净3.289、合金1908.616／净18.473、凝聚1995.41426／净24.71361；只证明本月真实预算闭合，矿物维护仍负，不是长期单球运营闭环。
+
+当前稳定接续端点为上述terravore-postsettlement-month，玩家AI关闭／三系原生自动研究开启、无待选，生产0.2.0未修改、Steam持续离线。首星自然吞噬／女王确认与次月防重已完成分项，首次严格重载根因、真实付费增矿／能源岗位、正常传统与前两AP、完整灵飞／武灾／蜂巢母星及长期回归仍待做；不切换铁心灭绝者抢先验，不改变公开仅推荐纵火本能的范围。按既有归档工具生成first-swallow checkpoint，保存本轮所有原图、OCR、原SAV、执行源码、原stdout/stderr/rc、原FAIL和未过滤日志；此为活动暂停快照，不是正常退出或完整路线归档。
+
+15:20[first-swallow活动暂停快照](evidence/priority-terravore-progress-2026-10-09/first-swallow/source-snapshot.json)已归档2256份原件／82771784字节；两张新增工坊候选、两轮重载原FAIL、原生事件及所有范围补证均保留。归档时没有活动GUI辅助，PID23824暂停于2210.06.01；未正常退出，不以本快照声称正常退出或最终运行归档。继续按原字节暂存核验后提交推送，生产文件／版本／changelog无改动，无Steam在线或UGC操作。
+
+15:22[Git暂存原字节核验](evidence/priority-first-swallow-staged-verification-2026-10-09.json)2277个blob／83587983字节通过，范围包含本checkpoint、准备原件和既有顶层priority凭证；git diff --cached --check通过。原始失败与其后独立补证保持各自原文件，不通过改hash或覆写结果追认通过。

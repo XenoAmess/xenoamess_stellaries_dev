@@ -69,4 +69,10 @@ WS-06已采集并人工查看实际威慑级护卫舰设计界面：真实第二
 
 WS-06补充验证快照：实际新舰17日完工、驻港与离港维护、原生单武器改装／完工。停泊／离港及改装新补22文件存于validation，原字节与来源核对；前后舰容不同和改装缺少成功下单前的独立同日SAV等局限写入proof，设计图说明区分基础造价和帝国修正后设计维护。自然进入第三阶段的女王通知另采原图，因同时有两条待展示窗口，先作为验收材料，不用叠窗图替换清晰图库。
 
+2026-10-09新增噬岩者候选WS-TERRAVORE-01：RUN20261009T044016Z的priority-terravore-situation-gallery-clean.jpg，原生1024×768／SHA fa421da71c17ab44a5684559a6c4b96006a9e118e3b7a22df1e9707487556352，已经人工查看，无控制台／保存菜单／遮挡提示。来源为正式0.2.0、简中、Steam离线，“吞噬 新特洛伊”正常局势与女王CG；绑定terravore-native-devour-start.sav SHA0f3445bc5eed268eadca3f6bafccbe10f082ecc92854c61646ffb355283aee88及30项启动守卫、对应OCR，源星Q17/T41、102自然建立人口、局势progress0。图中绿色1.0是每月速度，不是已完成进度；效果区包含通用制造规则，实际噬岩者G不增长、EEP制造0，图说须明确原生噬岩收益与母星扩容，不能宣传额外通用造人。原始JPEG／OCR／SAV／proof将在本轮活动暂停checkpoint一并按原字节归档并做Git核验；不覆盖已发布七图，不将新候选加入冻结发布清单，不宣称本路线完整通过。此前带鼠标提示的priority-terravore-situation-gallery.jpg继续作为测试原件保留。
+
+WS-TERRAVORE-02新增首次吞星通知候选：同一RUN的terravore-queen-notice-reloaded-load-loaded.jpg／SHA b032bc3001da7788db70f64b46dba5f9a31904b201b7871eb978512de52852e2，真实GPU1024×768，已人工查看、无控制台／菜单／遮挡提示。原生“一颗世界的余烬”与女王CG，清楚显示C17、总额外容量6、最近增4、回迁440、通用制造0，图说强调噬岩者保留原版收益且女王通知不再发奖。它来自原生读取待通知存档后的画面，绑定原输入27a858a6f8239645aeb1fae162ee369ae88d05333d0bbc36ad1eafdb25cae968、读取后件5533ebff66daac20e33f301601b67585d049a869f5d8270c17693d9c4e84e368及其原24项严格重载FAIL；真实库存／人口／EEP与事件保持，但预算／舒适度等缓存和议会槽位差异尚未根因对照，不能用这张图宣称严格重载或整条噬岩者通过。与WS-TERRAVORE-01一起保存在本轮完整活动checkpoint，候选不替换已发布图库。
+
+两张新候选及绑定SAV／OCR／守卫现已按原字节归档到[first-swallow来源快照](evidence/priority-terravore-progress-2026-10-09/first-swallow/source-snapshot.json)：[局势画面](evidence/priority-terravore-progress-2026-10-09/first-swallow/priority-terravore-situation-gallery-clean.jpg)、[首次吞星通知](evidence/priority-terravore-progress-2026-10-09/first-swallow/terravore-queen-notice-reloaded-load-loaded.jpg)。该来源覆盖本轮31项首星结算、24项确认与19项下一月防重，同时保留原重载FAIL，不增加已发布图库或公开推荐范围。
+
 rc.4报告入口改为母星按钮后，WS-04更新候选为同一2283.03.03原生待展示报告重载的清晰GPU原图，已经人工查看，无控制台／叠窗／鼠标提示。新来源保留首次点击前后、两次重复及待展示报告重载的实际SAV／审计、图片／OCR与包含预算历史长度差异的原始FAIL；待原生重载对照完成后补充严格范围proof，不修改旧图片来源。首次数值保持14种库存，报告真实显示C/G16、D6、制造200、人口13593、完整灵飞1／武灾1。新图在原字节来源快照与本地检查通过后才进入候选清单，仍不冻结或声称已发布。
