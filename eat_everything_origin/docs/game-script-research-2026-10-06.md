@@ -379,6 +379,12 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 噬岩者原生2223.01.02存档4c3b036515f35e5b997312ce2e7ce900adf9a98136000352cdb6506de3e11c9a的player_event60／toxoids.500写date=2224.12.11。同期简中实际GPU悬浮priority-synchronicity-terraform-alert-ui明确“系统将于2224.12.11自动选择默认选项”，点击可打开已经出现的待选。因此此条date应按自动默认截止期理解，不能以日期在未来排除待选；其它事件仍须具体UI／原件验证，不能据一条泛化所有日期字段。本轮原21项无待选FAIL应保留，正常确认另做独立同日守卫。
 # 2026-10-09 原生前哨与4.5.2经营调查
 
+2026-10-10月界更新不可混作同一时刻：本局2236.12.01实际新第五舰已建成、对应ships维护7.75E／1.875A及第二船坞starbase_modules支出2E已入账，八类库存增量等于本月真实净额、last_month完整等前current；社会研究队列仍462.58704。正常再推进一天到12.02才见Theory484.68777，真实bank／专项点保持，不能用“跨月必已科研增加”作为日1断言。同期人口组size3543不变，但power／crime35.38→35.43、housing_usage3538→3543；星港新增update_flag2048且其它raw字段保持，仅记录实际缓存刷新，不臆测比特语义。舰队新舰加入时旧舰的coordinate／target_coordinate／forward／rotation／speed正常可变化，实际design／hull／construction_date／fleet另核，不能把运动变化当舰体或付费订单丢失。原两份严格FAIL及精确补证分别保留。
+
+2026-10-10原生日历与舰船维护：本局暂停后唯一`fast_forward 13`从2236.05.19实际到2236.06.02，控制台13日回执／SAV日期及模块13工作互证；按每月30日、每年360日计算，不能按公历月长写目标。最初错传6.01使原helper24次观察后退出1，不能重复13日；仅观察原命令另存恢复、37项独立月维护检查通过，原FAIL保留。实际首艘护卫舰维护使原生ships支出4E变4.75E＋0.375A；八资源当月预算桥接残差0，影响力按1000上限，真实bank保持。此为Stellaris实机与SAV规则，不推定CK3日历／存档。
+
+2026-10-10原生轰炸毁区划：本机`common/districts/00_DOCUMENTATION.txt:25`说明`ruined_deposit`是轰炸摧毁区划时放置的地貌，默认d_ruined_district（源SHA0f18219b65f9e3dfcff20dce4352d23886a37f1b730f35351efa215b88813adc）。`common/deposits/01_blocker_deposits.txt:819`实际定义时间200、清除费300E、最大区划−1，没有直接恢复已毁区划的on_cleared。噬岩者2236.06.02→11.19在voidworm_invasion轰炸中generator4→3，新添唯一33554567／d_ruined_district并精确指向Planet7，实际发电岗800→600、剩余满员；EEP永久容量11／账本不变。证据符合原生轰炸损毁，未对这一次损毁做无Mod独立复现，也不能声称清除障碍会自动复建发电区划。
+
 本局第一笔前哨实际扣100合金／37影响力，订单build_orbital_station_order.resources同值；原版defines00_defines.txt:2042的EXPANSION_COST_BASE=75及02_gestalt_civics.txt:265国策影响力−0.5存在，但不能把计算37.5当真实付款。第二笔兹尔克菜单实际明确37／100，原截图保留。第一站完工原生关联是country0.owned_fleets新增477→fleet477.ships1415→starbase76.station1415→system145.starbases76，同时恒星53.controller0／orbital_defence477。starbase及ship对象没有直接owner，不从缺失字段推定归属；SAV字段关联规则只用于当前群星，不是CK3语法结论。
 
 4.5.2的synaptic_reinforcement（00_edicts.txt:654）效果为维护工蜂贸易产出+1，并要求tech_hive_cluster、凝聚力费用及维护，不能套旧版本传闻将其当即时增加凝聚。08_unity_buildings.txt的building_hive_node没有可直接逐座升级的upgrades块；building_hive_cluster是planet_limit1、需要升级首府的新建筑。当前zone_foundry的included_building_sets来自shared_industrial_foundry_zone，仅foundry／urban_automation／origin，不含unity；绿色空槽不证明可放突触节点。00_synchronicity.txt的integrated_preservation实际为自动迁移机会+0.3，collective_reasoning稳定+3／星球飞升费用−10%，不能按旧版本将前者当维护工蜂直接产凝聚。此轮仅只读调查，未启用该法令、改区划组或购买集群；实际经营选择仍须合法简中UI与付费核验。
