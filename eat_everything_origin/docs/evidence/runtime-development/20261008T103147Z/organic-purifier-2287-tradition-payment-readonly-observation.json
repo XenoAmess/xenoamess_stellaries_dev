@@ -1,0 +1,46 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "same_date": true,
+    "other_nonresearch_stock_same": true,
+    "expected_traditions_only": true,
+    "original_AP_only": true,
+    "EEP_variables_same": true,
+    "actual_pop_groups_same": true,
+    "owned_colonies_same": true,
+    "technology_same": true,
+    "research_queues_same": true,
+    "species_same": true,
+    "no_free_districts_built": true,
+    "deposits_same": true,
+    "EEP_situations_same": true,
+    "no_new_errors": true,
+    "actual_positive_unity_payment": true,
+    "display_ceil_matches_observed_deduction": true,
+    "original_actual_affordability": true,
+    "actual_displayed_cost_13172": true
+  },
+  "actual_unity_deduction": "13171.18720",
+  "before_sha256": "68d2f7e828323525d43954c0146b62c90afa0ab462d3da9e6ecf93352cc671b8",
+  "after_sha256": "2f6a00ac1c09e88ec2863a9cc27d970d5a880ad29ac72d2fc595ed5e18449073",
+  "original_integer_cost_and_research_FAIL_retained": true,
+  "excluded_failure_checks": [
+    "actual_unity_payment_13172",
+    "research_pools_same"
+  ],
+  "research_differences": {
+    "society_research": {
+      "before": 2553.46213,
+      "after": 2825.95962
+    },
+    "engineering_research": {
+      "before": 4423.02955,
+      "after": 4688.04847
+    },
+    "physics_research": {
+      "before": 6525.55972,
+      "after": 6849.30516
+    }
+  },
+  "scope": "Read-only actual native tradition payment observation and displayed ceiling consistency only; not a reconstruction of internal float price or full research-pool invariance."
+}

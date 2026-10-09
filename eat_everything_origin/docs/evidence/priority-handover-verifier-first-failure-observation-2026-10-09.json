@@ -1,0 +1,9 @@
+{
+  "status": "FAIL_INDEX_NOT_YET_UPDATED",
+  "source": "Tool-result observation; original raw stdout stream was not captured.",
+  "command": "python _runtime/heart-of-devouring/verify_priority_archive_git_blobs.py",
+  "exit_code": 1,
+  "error": "AssertionError: index blob :eat_everything_origin/docs/evidence/runtime-development/20261008T103147Z/archive_priority_handover_run.py missing",
+  "cause": "git add session 34055 was still active. Repeated read-only verification only after actual staging completion passed.",
+  "subsequent_result": "priority-handover-staged-blob-verification-2026-10-09.json"
+}

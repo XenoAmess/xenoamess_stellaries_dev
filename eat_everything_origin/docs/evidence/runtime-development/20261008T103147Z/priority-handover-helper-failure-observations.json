@@ -1,0 +1,20 @@
+{
+  "scope": "Observations preserved from tool-call result text; not original process stdout streams.",
+  "failures": [
+    {
+      "command": "runtime.py screenshot --stage organic-priority-handover-final-paused",
+      "exit_code": 1,
+      "error": "invalid choice: screenshot"
+    },
+    {
+      "command": "runtime.py capture --stage organic-priority-handover-final-paused",
+      "exit_code": 1,
+      "error": "unrecognized arguments: --stage"
+    },
+    {
+      "command": "archive_priority_handover_run.py",
+      "exit_code": 1,
+      "error": "AssertionError at assert not dest.exists() while copying existing native_selected_history.py"
+    }
+  ]
+}

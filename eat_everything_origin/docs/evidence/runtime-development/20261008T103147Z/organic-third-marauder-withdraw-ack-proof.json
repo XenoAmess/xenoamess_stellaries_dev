@@ -1,0 +1,69 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "same_actual_date": true,
+    "no_new_errors": true,
+    "only_expected_pending_removed": true,
+    "expected_human_history_once": true,
+    "all_effective_stocks_held": true,
+    "raw_native_shroud_module_held": true,
+    "research_stockpile_held": true,
+    "tech_status_held": true,
+    "variables_held": true,
+    "flags_held": true,
+    "traditions_held": true,
+    "ascension_perks_held": true,
+    "government_held": true,
+    "native_held": true,
+    "pop_groups_held": true,
+    "pop_jobs_held": true,
+    "planets_held": true,
+    "districts_held": true,
+    "deposits_held": true,
+    "species_held": true,
+    "situations_held": true,
+    "all_colony_population_held": true
+  },
+  "before_sha256": "4ec326ba441d1c223797dc52df28d691642d75183de285244334df2ff5e087d9",
+  "after_sha256": "54e0602122fcc0be165c313c509c6bb4747ab3c034aeb58f8d41e5bdf745c775",
+  "actual_effective_stock_delta": {},
+  "native_shroud_module_before": "\n\t\t\t\tattunement=\n\t\t\t\t{\n\t\t\t\t\tx=0.1125\n\t\t\t\t\ty=0\n\t\t\t\t}\n\n\t\t\t\tpatron_relations=\n\t\t\t\t{\n\t\t\t\t\t8 9 10 11 12 13 14 15 \n\t\t\t\t}\n\t\t\t\tlast_delve_date=\t\t\t\t\"0.01.01\"\n\t\t\t\tmonth_start_attunement=\n\t\t\t\t{\n\t\t\t\t\tx=-0.13\n\t\t\t\t\ty=-0.02\n\t\t\t\t}\n\n\t\t\t\tlast_month_attunement_offset=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t}\n\n\t\t\t",
+  "native_shroud_module_after": "\n\t\t\t\tattunement=\n\t\t\t\t{\n\t\t\t\t\tx=0.1125\n\t\t\t\t\ty=0\n\t\t\t\t}\n\n\t\t\t\tpatron_relations=\n\t\t\t\t{\n\t\t\t\t\t8 9 10 11 12 13 14 15 \n\t\t\t\t}\n\t\t\t\tlast_delve_date=\t\t\t\t\"0.01.01\"\n\t\t\t\tmonth_start_attunement=\n\t\t\t\t{\n\t\t\t\t\tx=-0.13\n\t\t\t\t\ty=-0.02\n\t\t\t\t}\n\n\t\t\t\tlast_month_attunement_offset=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t}\n\n\t\t\t",
+  "pending_before": [
+    {
+      "id": 404,
+      "event": "marauder.101",
+      "date": "2303.04.10",
+      "country": 0
+    },
+    {
+      "id": 406,
+      "event": "marauder.105",
+      "date": "2303.11.27",
+      "country": 0
+    },
+    {
+      "id": 408,
+      "event": "marauder.111",
+      "date": "2303.12.17",
+      "country": 0
+    }
+  ],
+  "pending_after": [
+    {
+      "id": 404,
+      "event": "marauder.101",
+      "date": "2303.04.10",
+      "country": 0
+    },
+    {
+      "id": 406,
+      "event": "marauder.105",
+      "date": "2303.11.27",
+      "country": 0
+    }
+  ],
+  "colonies_raw_equal": true,
+  "raw_economy_mirror_delta": {},
+  "scope": "Actual existing native event selection, with same-date payment/effect preservation; no replay or console grant."
+}

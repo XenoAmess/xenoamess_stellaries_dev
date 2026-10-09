@@ -422,3 +422,51 @@ crime.40处理实施前：原版crime_events.txt:692～837证明这是犯罪≥3
 余波到期边界后续方案（实施前）：真实360日至2309.05.02，寺庙预期129.15／360、余波171日、源星31、虚境+45；通过守卫后再真实170日至2309.10.22，寺庙188.65、余波1日、源星36／虚境再+18.75。然后独立真实1日至10.23验证原生到期。到期当天建筑／修正调度先后尚未实证，独立v2允许且仅允许该一天订单增0.35或1，要求旧modifier确实1日、新modifier确实消失、前后真实日期恰1日、原生日历receipt明确days1、其它订单原文仅精确progress变化及全部原21项范围守卫保持；记录实际调度结果，不提前选一种作为事实。紧接独立再真实1日须明确增1、天气保持消失，才按实测剩余寺庙工期安排完工；不削弱其它阶段精确进度断言，原v1与已有结果不改。
 
 04:22精选进度原件已扩至162个，逐个核与活动RUN字节及manifest SHA相同；包括原320日回执FAIL、原点击前坐标异常、正常拒绝／回复保持、领袖顺序严格FAIL及独立补核、原320回执补证、采矿边界／完工与首月真实预算和辅助原源码。完整RUN仍在正常活动中，未冒称已归档整个运行或完整有机路线。生产0.2.0和公开首发推荐保持。
+
+04:24本轮162原件及文档已提交推送3557dd32。360日新端点poll12确见暂停2309.05.02，但又有原生“信号传输接入”与Debug View遮住Fast Forwarded360Da行尾，精确回执仍未通过；不重发一年。恢复方案沿用已证明流程：重新核唯一calendar子Python命令行必须含formal_production_native_calendar.py及organic-temple-storm-year1，仅在仍活动时停止该纯轮询子进程，记录包装原返回码／stderr（不停止游戏或包装）；若已自行退出按实际结果记。包装结束后正常关闭控制台与可见Debug View，独立stage原生保存2309.05.02，绑定原calendar的error-before与当前error-after、读真实pending与队列／天气／源星；按每条实际原生脚本正常处理，补读旧完整360回执，再核本轮天气端点，全部合格后才走170日。原回执失败与正常恢复不互相覆盖。
+
+实际仅停止确认过命令行的calendar子Python18292，包装原返回4294967295／stdout1020字节／stderr空，游戏PID8280保持。新原生待选存档b2934cce69c82d1b5cdd5c7b48ee0134f8c0672e16e915edb8bc420133770fd4，真实2309.05.02／error0，待选为435／marauder.104、437／cstorms.1735、438／marauder.111。母星余波171日、源星31／虚境622、Unity7387.08521／矿物1259.92805。当前显示438撤退外交，正常选项“赶快滚！”只移除该pending／history恰human1／option0，全部实际资源／科技／EEP／人口世界／领袖／队列及完整原生flags保持；独立v4沿用v3正常选择和保持守卫，加入该已核原生空effect分支及后续435分支，不改变旧结果。
+
+435资源掠夺通知处理方案：marauder_events.txt:5425选项按marauder_tribute_1～6@国家12扣资源，但撤退原生marauder.110:5773已经删除这些flags。当前完整country0.flags已核所有tribute／raid字段为空，所以本次晚选择的435预计不再次扣任何资源，不能按之前flag预设-200或把无损说成Mod抵消掠夺。先正常确认438再处理其它当前窗口，435选择前重新严格确认六档12标记均不存在、根scope确为planet1672，然后选择官方“那帮混账。”一次，同日全保持和历史恰435／human1／option0。437“死火山”原生选项另有实际矿物／科技／存款变化，须单独方案和精确核，不能套无效果通知守卫。
+
+438正常撤退确认后件f8809bb304dbadeaf0a34babfd3694b8a1a84252ece7f1ff70b00cc1d5481a0e，28项同日保持／error0通过，435／437原pending保持、仅human438／option0一次。当前原生“死火山”437／物理1672窗口已正常显示，hover选项“很迷人。”的原始F12明确承诺移除晓上的活火山、矿物1000.0、增加“地壳深部工程”研究选项和+25%科技进度。来源为cosmic_storms_events_1.txt:3173：d_active_volcano删除、矿物6个月且100～1000钳位、add_tech_option_or_research_effect(tech_volcano,0.25,society)，after只清八类affected_by_*_storm flags；本星当前仅affected_by_nexus_storm，deposit1428为对应火山，阻塞原生-2区划。tech_volcano尚未完成／没有研究选项或partial，tech_colonization_1前置已完成，实际三系队列为空。
+
+437正常选择实施前：同日仅选一次并原生保存，严格核仅移除437／历史human437 option0，矿物精确+1000、所有其它真实库存含三系储备保持，EEP／母星／源星／队列及全部人口岗位保持；只允许物理1672的deposits移除1428和原生affected_by_nexus_storm标记删除，其它世界和存款保持，已删除存款的历史对象若保留须与前件相同且不再被星球引用。tech_status完整其它字段保持，仅限定新tech_volcano partial／该实际研究选项和last_increased_tech，相关potential／alternatives只允许同一tech_volcano条目的移动，原其它选项／partial／已完成科技／真实储备保持。保留完整raw差异；原生新增partial先作为待F4实际总成本核25%的分项，不以任意正值冒称25%已验证；随后同日F4读取实际科技总成本并对账。不是EEP免费矿物或自行发科技，不能将它纳入Mod收益账本。
+
+12:19续轮检查：游戏仍为同一2309.05.02暂停端点，未追加日历。437正常原生选择后件1359cbf3960dddfacaf512c6056bbf3a333380d634e58697b35789f9a923747c，原34项中33项通过／1项FAIL留存：错误预设add_tech_progress会改last_increased_tech，实际该字段仍为tech_psionic_theory。矿物精确+1000、真实三系储备及全部其它库存保持，tech_volcano恰新增1116 partial与一个always_available_tech；星球1672仅移除活火山1428和affected_by_nexus_storm，全部人口岗位／殖民地与母星／源星／队列及EEP保持，历史human437／option0一次，435仍待选。只读补核方案重新绑定SAV SHA、原其余33项全true，并将tech_status许可收窄为仅该partial块和该always_available_tech一行，要求包括last_increased_tech／potential／alternatives在内全部其它字段严格保持。F4实际科技成本25%对账仍必须完成，不重放事件。
+
+第一次只读tech范围补核6项中5项通过／1项FAIL也保留：新增研究选项同时写入alternatives.society列表，漏计这一已经在最初方案允许的原生引用。全字段差异只读复核实际恰三处：partial新增tech_volcano1116、always_available_tech新增一行、alternatives.society新增同一行；potential与last_increased_tech原文均保持。独立v2补核只允许从新alternatives原文精确删这一行后等于旧原文、原其它全字段（含potential／last_increased_tech）保持，不笼统忽略整个alternatives。原FAIL和执行输出不覆盖，没有新的游戏选项。
+
+435按实际已清除贡赋标记的正常选项确认28项保持通过，后件580d9344053ce71fed697384bc247bb8911aa3806170d113051b92a51f33dbb2，真实2309.05.02／error0／待选空，历史恰435／human1／option0一次；矿物2260附近实际库存未再次减少，原生劫掠通知不能作为Mod额外收益。接下来只读F4核“地壳深部工程”的实际总科研成本与1116／25%关系，并补读旧360完整回执。
+
+死火山科技范围v2七项补核通过，原34项与首个6项FAIL各自保持。实际F4只打开社会学研究选项列表，未点选任何科技；新F12在同张“地壳深部工程”卡片明确显示1116／4464，1116÷4464=25%，与事件原tooltip及脚本一致。后续独立收尾辅助核原UI图SHA／卡片和实际SAV partial，关闭F4、只打开控制台读旧Fast Forwarded360Days完整行并关控制台／可见Debug View，禁止输入任何日历命令；另存cleared端点2309.05.02，核与435后件全部实际库存／完整科技／EEP／人口世界／领袖／原始建设和历史严格保持、待选空／error0，再执行寺庙21项天气守卫（129.15／360、171日／源星31、虚境622）。范围通过后才继续既定170日，不将原生矿物奖励算EEP制造收益或全路线验收。
+
+cleared原生另存与435后件字节SHA均580d9344053ce71fed697384bc247bb8911aa3806170d113051b92a51f33dbb2，28项只读UI／完整保持检查及25%实证通过；旧完整Fast Forwarded360Days已读到，没有重发一年。端点21项寺庙检查20项通过／1项严格FAIL保留：把整个government raw跨年要求恒等，实际唯一差异是原council_agenda_cooldowns块（agenda_evolving_society，记录日期2309.02.01）在端点已移除；实际type净化委员会／authority独裁制、civics／origin／council positions／slots／picked types原文全部保持，AP／传统／owned_colonies各自保持。寺庙129.15、余波171日、源星31／实际2632、虚境622、母星12087、通灵200／矿工1000／祭司1040、EEP全账本均符合。冷却记录日期确实被该实际年度跨过，此变化与原生冷却到期一致，不追认本轮曾启动议程或改变政体。
+
+只读独立冷却补核实施前：保留原21项FAIL，须其余20项全true并绑定原前后SHA，AP／传统／拥有殖民地独立保持，前件恰上述一块／该日期在实际前后日期之间、后件无冷却块；只从前件政府raw删掉这一完整块后，其余原文严格等于后件，不宽泛忽略政府变化。原计划通过后继续170日，现被下述用户优先级调整取代；尚未执行170日。后续以无冷却块的真实cleared件为基线，原寺庙v1／v2守卫不改写以消除历史失败。
+
+## 2026-10-09用户调整验收优先级：噬岩者、铁心灭绝者
+
+只读独立冷却补核实际五项通过，原21项中的政府raw严格FAIL保留；原本其它20项全true，唯一差异为跨日期消失的原生议程冷却块，不推定曾操作议程。已清全部本国待选，正常原生续验档organic-temple-year1-cleared.sav，SHA580d9344053ce71fed697384bc247bb8911aa3806170d113051b92a51f33dbb2，2309.05.02暂停。寺庙129.15/360、余波171日，第四源星711进度31／Q22/T53／实际2632／原seed2516，虚境622，C/G40／D12／made600／worlds3；实际母星12087、通灵200／矿工1000／祭司1040。矿物净-8.94114仍单列；此端点不是完整有机路线通过。
+
+用户明确要求原路线4“噬岩者／蜂巢思维、石质”优先，随后原路线6“铁心灭绝者／机械智能”，其它未完成路线顺延。目标与范围：保存上述有机原件和所有失败、正常停止当前游戏，再切换到正式0.2.0的合法噬岩者新局；不推进有机原计划170日，不覆盖有机续验档，不改变生产41文件、公开推荐或已发布版本。最新顺序为：已完成纵火本能；噬岩者→铁心灭绝者→有机种族洁癖→石质种族洁癖→噬杀蜂群→炙热星球先驱。详见排期清单，窗口为滚动复核目标，非保证通过期限。
+
+切换实施与验收标准（实施前）：先用open_kaishek现有accept_stellaris_mod.py入口重跑正式0.2.0前检并记录唯一report、输入生产树与精确exe身份；仅静态通过后开始新路线。当前游戏用正常退出流程，须确认PID退出、stop.forced=false，不使用强制终止作为合格收尾；复用既有archive_normally_stopped_formal.py保存整个20261008T103147Z RUN、未过滤最终日志和userdir配置，绑定原续验SAV SHA。补保存历史辅助依赖源码时标注为归档时捕获，不冒称原执行时已经绑定。Git逐文件核raw blob SHA后提交推送，完整归档只是保真证明，不将原FAIL改PASS。
+
+噬岩者新局设计（实施前）：独立生产userdir、Steam继续离线、简体中文，只加载正式0.2.0生产Mod。可从已有EEP原生帝国预设文件抽取合法石质蜂巢／噬岩者帝国设计到user_empire_designs_v3.4.txt；此文件只是原生帝国外观／资格设置，不启用probe测试Mod、事件、收益或预置源星。以UI核实际统治形式／正式国策／石质物种／吞噬之心起源，科技倍率0.5、传统倍率0.25采用既有已授权自然经营方案并明确披露。先保存2200年正常开局、正常女王通知确认、原生母星模板与食性／维护；后续源星依赖真实殖民与正常付费搬运／吞噬决议，不赠资源、科技、人口、AP、威慑或危机等级。完整灵飞／武灾、特殊母星、自然吞星／成长、长期经营与严格重载均按实际原件逐项验收，未完成项继续列待验。
+
+工具约束（实施前）：切换辅助仅封装现有正常退出／prepare／launch和原生帝国文件抽取，每次调用保留独立stdout、stderr、源码及执行身份；新归档检查如使用git cat-file --batch，仅只读核已暂存blob与source-snapshot SHA，单次进程读完整列表，任何缺失或不一致停止提交。禁止重放已确认的有机年度日历和原生事件；保存原21项FAIL及五项补核原JSON，原辅助未执行的天气到期v2仍明确未执行。
+
+12:34实际正式工具前检PASS，18/18 P脚本、12DDS、73键通过，报告priority-terravore-package-preflight-2026-10-09.json；本报告只认证语法／包结构，各非中文语言只静态校验。切换过程中两个capture CLI调用因不正确子命令／参数在调用GUI之前返回exit1，随后按帮助的capture位置参数成功，原错误另存切换调用记录，不把它们当工具引擎缺陷。
+
+12:35收尾失败：先在暂停2309.05.02正常打开退出菜单、点击“退出到桌面”，实拍确认框后点击“退出游戏”；随后PID8280仍存在。操作者错误地立即调用现有stop --timeout 1，触发该辅助的terminate回退。原stop.json实际forced=true／running_after=false，原样保留；不能将此轮记录为正常退出合格，也不推定原正常退出已完成或崩溃。未调用正常归档辅助（其forced=false前提不满足），不改写原stop或回放事件消除失败。
+
+失败后归档修正方案（实施前）：新增独立archive_priority_handover_run.py，以实际stop和已保存续验SAV为输入，必须PID已退出、原stop完整保留，逐字节核organic-temple-year1-cleared SHA和ZIP读取；将整个RUN、未过滤最终日志、userdir配置保存到同名全量证据目录。source-snapshot明确exit_acceptance=FAIL_FORCED_STOP、scope只是完整证据保真／局部续验端点，不套正常退出或整路线PASS。历史依赖源码补捕获标记为归档时，原已执行辅助源文件不覆盖。使用独立只读批量Git blob核验辅助检查所有manifest原件；一切合格仅表示归档与原存档完整。后续有机续验要重新原生加载这个稳定端点、核无待选和账本再继续，不能把本次强停算作重载通过；现在按用户要求优先噬岩者新局。
+
+归档v1在复制辅助源文件时FAIL：native_selected_history.py实际已经存在RUN，禁止覆盖断言正常阻止；此时未创建正式证据目录、未操作游戏／存档，前两份辅助来源已拷入RUN。原v1源码保留。v2实施前：发现已有依赖则只核原字节与当前来源相等、记录为此前已存在且本次只验证；缺失才按新名复制，捕获时点不追认历史。新增切换错误观察JSON明确来自工具调用结果，未伪称原stdout流。其它强停／ZIP／全量保真前提不变，不删失败原件。
+
+新路线执行记录包装实施前：record_current_helper.py只运行指定辅助一次，绑定调用前完整辅助源码SHA，捕获原stdout/stderr；辅助结束后读取实际current-run并把包装源、辅助源和独立stage执行JSON保存到该RUN。准备新userdir的辅助会改变current-run，须记录调用前后RUN，不硬编码有机旧RUN；包装不重试、不发送游戏命令、不吞原返回码。新prepare_priority_terravore.py从固定20261008T003321Z预设原件只抽第一条合法石质噬岩者，外层ID改为eep_priority_terravore、自定义帝国名改为“吞噬之心·噬岩者”；其余资格不变，原文件和生成文件SHA均保存。无seed_save／定时命令、无probe Mod；实际设置和初始状态由后续原生UI/SAV证明，不单靠预设文字声明合法。
+
+实际全量归档完成：[source-snapshot](evidence/runtime-development/20261008T103147Z/source-snapshot.json)5944份原件、375044417字节，强停FAIL明确保留，续验档ZIP/SHA通过。[Git暂存原字节核验](evidence/priority-handover-staged-blob-verification-2026-10-09.json)5946文件／377190430字节通过（含snapshot和binary属性），snapshot SHA f4400f80094028e1d6859aaa577f6cb67c94c41f27eee273bf7a28d716eaf397。第一次核Git blob在git add尚未结束时FAIL missing，未改变原件／指数；等待实际git add返回exit0后按同一只读源文件再核通过，首个错误观察另存，不将第一次尝试改写通过。
+
+正式噬岩者新RUN20261009T044016Z／PID23824已启动；实际prepare隔离PASS_PACKAGE_ISOLATION_ONLY、41文件tree ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7，包装exit0／stderr0。真实预设合法性与星系设置仍待UI／初始SAV，进程启动不当开局验收通过。当前日志只见21条原Steam Workshop缺失目录和一条刻意重定义decision_lithoid_swarm_consume_world的载入提示，记录为原启动基线2670字节，不称全局零日志或所有订阅Mod被载入。准备进度原件设计：精选复制manifest／完整原生设计来源／生成设计／辅助源码／原stdout-stderr-execution／隔离proof到独立preparation证据目录，每件绑定raw SHA；这是启动准备证据，完整新RUN仍在活动中，结束时另做全量归档。

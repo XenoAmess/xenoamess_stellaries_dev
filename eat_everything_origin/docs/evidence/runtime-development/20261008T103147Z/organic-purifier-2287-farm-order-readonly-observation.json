@@ -1,0 +1,39 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "same_date": true,
+    "actual_mineral_payment_300": true,
+    "all_other_stock_same": true,
+    "EEP_variables_same": true,
+    "native_empty_to_one_order": true,
+    "native_item_on_mother": true,
+    "native_recorded_cost": true,
+    "native_progress_zero_needed_240": true,
+    "farm_not_completed_early": true,
+    "completed_technologies_same": true,
+    "research_queues_same": true,
+    "traditions_same": true,
+    "ascension_perks_same": true,
+    "government_same": true,
+    "pop_groups_same": true,
+    "pop_jobs_same": true,
+    "planets_same": true,
+    "districts_same": true,
+    "deposits_same": true,
+    "situations_same": true,
+    "species_same": true,
+    "no_new_errors_since_2287": true,
+    "actual_last_district_changed_transition": true,
+    "all_colonies_except_exact_expected_metadata_same": true
+  },
+  "before_sha256": "2c80b6159a8f206c26d12a602dd9698f3b3f521c168e15b0ad1e34edca505b15",
+  "after_sha256": "f22678425287993edc1170777638c3274846febae155daed56aa267b9f7a52f9",
+  "original_strict_colonies_FAIL_retained": true,
+  "expected_native_metadata_change": {
+    "colony": 0,
+    "field": "last_district_changed",
+    "before": "district_generator",
+    "after": "district_farming"
+  },
+  "scope": "Read-only actual native farm order observation with exactly one expected order metadata transition; not completed construction or full civic acceptance."
+}

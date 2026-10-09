@@ -1,0 +1,28 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "source_alias_original_bytes": true,
+    "restored_same_date": true,
+    "all_stock_same": true,
+    "EEP_ledger_same": true,
+    "EEP_flags_same": true,
+    "actual_species_population_same": true,
+    "pending_same_growth_identity": true,
+    "AP_same": true,
+    "tech_queue_same": true,
+    "no_new_errors": true
+  },
+  "before_sha256": "4220626c2122bb97eded15dd19287fe9472e379a9d7153321c7574f867da558c",
+  "after_sha256": "a552925e85429a79a6813de7d641409b5464aaef87f3cfd222f2c1095ca4de22",
+  "raw_collection_same": {
+    "pop_groups": false,
+    "pop_jobs": false,
+    "colonies": false,
+    "planets": false,
+    "districts": true,
+    "deposits": true,
+    "situations": true,
+    "species": true
+  },
+  "scope": "Original pending growth event recovery/native load; does not replace old full raw reload FAIL or failed May ACK branch."
+}

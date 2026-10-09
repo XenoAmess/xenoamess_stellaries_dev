@@ -1,0 +1,21 @@
+import json,logging,shutil,subprocess,sys
+from pathlib import Path
+from decimal import Decimal
+sys.stdout.reconfigure(encoding='utf-8');sys.path.insert(0,'eat_everything_origin/tools');sys.argv=['runtime']
+import runtime as r
+import audit_save as q
+logging.disable(logging.INFO);h=r.harness;run,user,m=h.load_run();shutil.copyfile(Path(__file__),run/Path(__file__).name)
+start='organic-psionic-theory-selected';original=json.loads((run/(start+'.audit.json')).read_text(encoding='utf-8'));base=original['countries']['0'];rows=[]
+for month,date,days in ((1,'2292.01.02',30),(12,'2292.12.02',330),(24,'2293.12.02',360),(36,'2294.12.02',360)):
+ stage='organic-psionic-theory-month'+str(month);result=subprocess.run([sys.executable,'_runtime/heart-of-devouring/formal_production_native_calendar.py',start,date,stage,str(days)],capture_output=True,text=True,encoding='utf-8');(run/(stage+'-driver-output.txt')).write_text(result.stdout+'\n'+result.stderr,encoding='utf-8')
+ if result.returncode:
+  h.write_json(run/'organic-psionic-theory-calendar-result.json',{'status':'FAILED_STAGE','stage':stage,'completed':rows,'returncode':result.returncode});print(result.stdout+result.stderr,flush=True);raise RuntimeError('Calendar stopped, do not repeat days')
+ a=json.loads((run/(stage+'.audit.json')).read_text(encoding='utf-8'));c=a['countries']['0'];mother=a['planets']['7'];core=[i for i in mother['deposits'] if a['deposits'].get(str(i),{}).get('type')=='d_eep_core'];eb=(run/(stage+'-error-before.log')).read_bytes();ea=(run/(stage+'-error-after.log')).read_bytes();new=ea[len(eb):] if ea.startswith(eb) else ea;completed='tech_psionic_theory' in c['completed_technologies'];queue=c['research_queues'].get('society_queue','')
+ checks={'actual_date':a['date']==date,'EEP_ledger_same':c['variables']==base['variables'],'AP_same':c['ascension_perks']==base['ascension_perks'],'core_once':len(core)==1,'farm5_kept':a['districts']['3']['level']==5,'culture_jobs1040_filled':a['pop_jobs']['19']['workforce']==a['pop_jobs']['19']['max_workforce']==1040,'source_shattered':a['planets']['1855'].get('planet_class')=='pc_shattered','no_EEP_task':not any(v.get('type')=='situation_eep_devouring' and not v.get('killed') for v in a['situations'].values()),'primary_stocks_positive':all(c['stockpile'].get(k,0)>0 for k in ('food','consumer_goods','minerals','energy','unity')),'theory_selected_or_native_complete':completed or 'tech_psionic_theory' in queue,'no_new_EEP_errors':b'eep.' not in new and b'eep_' not in new}
+ bud=c['budget_categories']['current_month'];nets={k:sum((Decimal(str(v.get(k,0))) for v in bud['income'].values()),Decimal(0))-sum((Decimal(str(v.get(k,0))) for v in bud['expenses'].values()),Decimal(0)) for k in ('energy','minerals','food','consumer_goods','alloys','unity')};row={'status':'PASS_SCOPED' if all(checks.values()) else 'FAIL','month':month,'date':date,'save_sha256':a['save_sha256'],'checks':checks,'stockpile':c['stockpile'],'budget_nets':{k:str(v) for k,v in nets.items()},'society_queue':queue,'theory_completed':completed,'new_error_bytes':len(new)}
+ if month==1:
+  prior=json.loads((run/(start+'.audit.json')).read_text(encoding='utf-8'))['countries']['0']['stockpile'];row['first_month_primary_stock_residuals']={k:str(Decimal(str(c['stockpile'][k]))-Decimal(str(prior[k]))-v) for k,v in nets.items()};checks['first_month_six_stock_budget_residuals_zero']=all(Decimal(v)==0 for v in row['first_month_primary_stock_residuals'].values());row['status']='PASS_SCOPED' if all(checks.values()) else 'FAIL'
+ h.write_json(run/(stage+'-proof.json'),row);rows.append(row);print(json.dumps(row),flush=True);h.write_json(run/'organic-psionic-theory-calendar-result.json',{'status':'IN_PROGRESS' if all(checks.values()) else 'FAILED_GUARD','completed':rows});assert all(checks.values()),'Original theory calendar guard FAIL retained';start=stage
+ if completed:
+  h.write_json(run/'organic-psionic-theory-calendar-result.json',{'status':'NATIVE_TECH_COMPLETED','completed':rows,'scope':'Actual native technology completion only; ascension tradition and Shroud endpoint still pending.'});break
+else:h.write_json(run/'organic-psionic-theory-calendar-result.json',{'status':'COMPLETED_36MONTH_SCOPE','completed':rows,'scope':'Actual theory research through month36; adjacent-month endpoint pending.'})

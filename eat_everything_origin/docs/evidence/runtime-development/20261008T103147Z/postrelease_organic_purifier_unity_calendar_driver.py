@@ -1,0 +1,17 @@
+import json,logging,shutil,subprocess,sys
+from pathlib import Path
+sys.stdout.reconfigure(encoding='utf-8');sys.path.insert(0,'eat_everything_origin/tools');sys.argv=['runtime']
+import runtime as r
+import audit_save as q
+logging.disable(logging.INFO);h=r.harness;run,user,m=h.load_run();assert m['role']=='Post-release organic Fanatic Purifier natural continuation';shutil.copyfile(Path(__file__),run/Path(__file__).name)
+start='organic-purifier-day-reload';records=[]
+for year in range(2282,2287):
+ stage='organic-purifier-unity-'+str(year);date=str(year)+'.01.12'
+ result=subprocess.run([sys.executable,'_runtime/heart-of-devouring/formal_production_native_calendar.py',start,date,stage,'360'])
+ if result.returncode:
+  h.write_json(run/'organic-purifier-unity-calendar-driver-result.json',{'status':'FAILED_STAGE','year':year,'completed':records,'exit_code':result.returncode});raise RuntimeError('Native year stage failed')
+ a=json.loads((run/(stage+'.audit.json')).read_text(encoding='utf-8'));state=json.loads((run/(stage+'-state.json')).read_text(encoding='utf-8'));c=a['countries']['0'];capital=c['native']['capital'];mothers=[p for p in a['planets'].values() if p.get('colony')==capital and p.get('owner')==0];core_count=sum(a['deposits'].get(str(i),{}).get('type')=='d_eep_core' for p in mothers for i in p['deposits'])
+ checks={'actual_date':a['date']==date,'legal_purifier_origin':'civic_fanatic_purifiers' in c['government'] and q.scalars(c['government']).get('origin')=='origin_heart_of_devouring','original_AP_only':c['ascension_perks']==['ap_one_vision','ap_consecrated_worlds'],'original_ledger':all(c['variables'].get(k)==v for k,v in {'eep_c':16,'eep_g':16,'eep_d':6,'eep_made':200,'eep_worlds':1,'eep_psi':0,'eep_fleet_stage':0}.items()),'one_actual_capital_core':len(mothers)==1 and core_count==1,'food_not_exhausted':c['stockpile'].get('food',0)>0,'consumer_goods_not_exhausted':c['stockpile'].get('consumer_goods',0)>0,'energy_not_exhausted':c['stockpile'].get('energy',0)>0,'minerals_not_exhausted':c['stockpile'].get('minerals',0)>0}
+ delta=(run/(stage+'-error-after.log')).read_bytes()[len((run/(stage+'-error-before.log')).read_bytes()):];checks['no_new_EEP_errors']=b'eep_' not in delta and b'eat_everything_origin' not in delta
+ v={'status':'PASS_SCOPED' if all(checks.values()) else 'FAIL','checks':checks,'date':date,'save_sha256':a['save_sha256'],'stockpile':c['stockpile'],'actual_total_population':state['population'],'mother_population':a['colonies'][str(capital)]['actual_pop_sum'],'new_error_bytes':state['new_error_bytes'],'new_error_text':delta.decode('utf-8-sig',errors='replace'),'scope':'Native natural organic Purifier resource accumulation and original ledger guard only; not AP payment, strict reload or full civic acceptance.'};h.write_json(run/(stage+'-natural-resource-proof.json'),v);records.append(v);h.write_json(run/'organic-purifier-unity-calendar-driver-result.json',{'status':'IN_PROGRESS' if all(checks.values()) else 'FAIL','completed':records});print(json.dumps({k:v for k,v in v.items() if k!='new_error_text'}),flush=True);assert all(checks.values()),'Original year FAIL retained';start=stage
+h.write_json(run/'organic-purifier-unity-calendar-driver-result.json',{'status':'CALENDAR_SCOPED_PASS','completed':records,'scope':'Five actual native years and ledger/resource checks only; Unity affordability and legal AP payment still pending.'});print('FIVE_NATIVE_RESOURCE_YEARS_FINISHED',flush=True)

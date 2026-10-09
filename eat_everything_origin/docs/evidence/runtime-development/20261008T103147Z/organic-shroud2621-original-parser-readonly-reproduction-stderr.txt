@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\postrelease_organic_shroud2621_observe.py", line 23, in <module>
+    before='organic-shroud-unravel-year-2301';stage='organic-shroud2621-observed';b=json.loads((run/(before+'.audit.json')).read_text(encoding='utf-8'));bp,bh,bm=metadata(before);ev=next(v for v in bp if v['event']=='shroud.2621');assert ev['id']==397;eb=(user/'logs/error.log').read_bytes()
+                                                                                                                                                                  ~~~~~~~~^^^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\postrelease_organic_shroud2621_observe.py", line 20, in metadata
+    history=objects(q.block(t,'open_player_event_selection_history'))
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\postrelease_organic_shroud2621_observe.py", line 9, in objects
+    assert tok=='{';depth=1;stop=None
+           ^^^^^^^^
+AssertionError

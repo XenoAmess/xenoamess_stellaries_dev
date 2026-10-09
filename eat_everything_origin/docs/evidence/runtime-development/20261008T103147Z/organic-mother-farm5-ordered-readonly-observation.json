@@ -1,0 +1,49 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "same_actual_date": true,
+    "actual_minerals_300_paid": true,
+    "EEP_ledger_same": true,
+    "farm_level4_not_early_complete": true,
+    "empty_to_one_queue": true,
+    "native_order_mother": true,
+    "native_cost_300": true,
+    "native_progress_zero_240_days": true,
+    "no_new_errors": true,
+    "completed_technologies_same": true,
+    "research_queues_same": true,
+    "traditions_same": true,
+    "ascension_perks_same": true,
+    "government_same": true,
+    "pop_groups_same": true,
+    "pop_jobs_same": true,
+    "colonies_same": true,
+    "planets_same": true,
+    "districts_same": true,
+    "deposits_same": true,
+    "situations_same": true,
+    "species_same": true,
+    "all_nonresearch_other_stock_same": true
+  },
+  "stock_differences": {
+    "society_research": [
+      5550.43254,
+      5813.22313
+    ],
+    "physics_research": [
+      10074.78069,
+      10403.08479
+    ],
+    "minerals": [
+      3210.37154,
+      2910.37154
+    ],
+    "engineering_research": [
+      7339.92931,
+      7593.52851
+    ]
+  },
+  "before_sha256": "6e98e09f072a3c73ba86b85d3af6283b0a2fa700b703ba83cc0b050990440d0c",
+  "after_sha256": "f18f00632bd108f331b388740bb71fd01130528eb2f7fc572c023ab8d0eb3862",
+  "scope": "Read-only exact 300 mineral payment/queue/population/EEP guards. Original all other stock FAIL is retained; research changes excluded and not compensated."
+}
