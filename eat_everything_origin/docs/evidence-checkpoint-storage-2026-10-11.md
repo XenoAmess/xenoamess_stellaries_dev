@@ -65,3 +65,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 使用既有不可变archive_priority_delta_checkpoint.py与verify_priority_delta_checkpoint_git.py；完整源逐条绑定既有冻结原字节或新复制原字节，独立git暂存blob校验必须PASS/actual0。归档及字节核验独占期间不进行GUI／日历／RUN写入。仅本次四任务docs、新切点、独立回执纳入提交；push后独立核远端main完整SHA，再继续唯一三日开工边界。不得修改旧切点或把暂停归档称正常退出/重载验收。
 
 第九切点归档actual0，冻结2026-10-10T22:15:53.323192Z；23055完整源项／907084528字节，复用22674，新增381／16384728字节。独立暂存原字节核验PASS／actual0，23121唯一blob／933569806字节；[独立回执](evidence/priority-native-yomon-paid-outpost-and-early-transit-delta-staged-verification-2026-10-11.json)。仅四任务docs及本新切点／回执提交推送，既有冻结原件保持。下一仍须独立核远端后才派唯一三日开工边界。
+
+### 第十切点实施前计划
+待当前最后两艘付费护卫舰的唯一idle16及V26独立核验全部PASS/actual0后，在2269.11.07暂停端点归档；若异常则先调查，不为取得计划端点重跑日历。新唯一标签native-yomon-percent-construction-second-mine-and-final-paid-births，基线native-yomon-paid-outpost-and-early-transit／f38cb76077001394cf8051eeb0abc746edca4a1d。范围包含抵达初始化V25首43PASS、实际施工1→2%及简中UI证据、V26/V15固定源码/真实退出、第二矿完工满员住房和末对付费出生，以及本轮用户整路线约60%的低把握工作量/12—24小时排期说明。不得把工程估算替代合同通过率或扩大工坊推荐。
+沿用既有完整manifest复用及独立暂存blob检查，两个工具actual0且回执PASS才提交。冻结/核验期间不动GUI/日历/RUN；仅五任务docs、新切点与独立回执提交推送并核远端。旧切点及生产41文件0.2.0保持。之后继续当前殖民预测完成前日2269.12.30边界，再单独一日核实际殖民完成，不强跑旧still_colonizing观察器。
+
+第十切点归档actual0，冻结2026-10-10T22:33:37.292074Z；完整23269源项／916952535字节，复用23055、新复制214／9868007字节。独立暂存原字节核验PASS／actual0，23336唯一blob／943782397字节；[独立回执](evidence/priority-native-yomon-percent-construction-second-mine-and-final-paid-births-delta-staged-verification-2026-10-11.json)。五任务docs及新切点／回执提交推送并核远端后，再继续唯一idle17；原件冻结后不追加写入。
