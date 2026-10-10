@@ -1,0 +1,125 @@
+# 噬岩者：战后凝聚力建设与飞升续验
+
+## 目标与当前边界
+
+当前已推进至2239.11.02，原生首府升级及其完整月分项完成。存档terravore-ascension-capital-month.sav SHA3a56fa804b5dc6720ac50cf58f286f0b300d77f81a4f7eef6ee558ce619f17f0；32项边界／14项独立月账全部PASS、实际退出0，全部原版待选已正常处理，无新增error。实际母星8713、20个已付费区划、协调1500／后勤500／矿2000／电1000满员；能源9104.06978／净20.18766、矿6965.2998／净10.74518、凝聚6394.78425／净66.74943、合金7689.65765／净17.52336，八类核账残差0。Theory队列1253.6379＋专项650／2600，仍未完成。19原舰／EEP C37/G0/D11/made0/worlds2／唯一容量11保持。下面2238.03.02等较早节点保留为本轮起点，不能替代此最新端点；整条路线仍未通过。
+
+继续用户已授权的离线完整验收，顺序保持噬岩者→铁心灭绝者→其它路线。此前战后分项已完成，不能据此宣布整条噬岩者路线通过。当前生产为简体中文、0.2.0原41文件，RUN `20261009T044016Z`、暂停2238.03.02，前件 `terravore-postwar-restored-economy-month.sav` SHA `1469d80af1bd72a88e81a9cf5ed37a540804bd35141da57468555a577e7cde58`；战后边界26项和完整月11项均PASS、实际退出0。完整证据已提交并推送 `cea4bc923320d5275e12447b884f3cf1ffb3cafd`，远端main同SHA。
+
+实际母星人口8600，5蜂巢／10采矿／4发电；矿工2000、技工800、协调者1400均满员。能源8759.58871／月净+2.63073、矿物7329.99114／+18.85676、凝聚5213.92556／+55.48925、合金7358.46141／+15.49485。19艘实际付费护卫舰存活，船坞及母星队列均空，无本国活动战斗。EEP C37/G0/D11/made0/worlds2、母星唯一容量11保持。灵能理论当前808.47751＋专项650／2600，尚未完成；不能把专项点当已完成科技。
+
+## 原生建设设计与范围
+
+先增加发电余量，再升级首府、把母星第3专精区的重工业改为行政中心，按实际预算分批补突触节点。所有操作只用正常简中UI真实付款、原生队列和时间；不得增加资源、科技、传统、飞升、灾飞进度、舰船或修改SAV。每次点击前采实际报价，点击一次后同日另存、独立核支付；通过后才推进日期。首府/专精区/建筑的实际对象从SAV的zones/buildings读取，不能用审计中旧式空的colony.buildings数组代替。
+
+最新实际1400协调者的planet_bureaucrats成本为22.92659能源和矿物，不能沿用旧960协调者估计。新增1200协调者约需19.65能源，三节点建筑约5.4、首府增量约1.8；第五发电的净增约15.9，因此全建设可能还需第六发电。此前防御文档自定最多两级发电不是用户限制；本阶段根据真实维护预算允许第六级，以避免盲目排满凝聚力建筑造成赤字。每批建成后读取实际净额再决定下一批，不把估计当验收结果。
+
+当前已完成tech_hive_node、tech_power_hub_1、tech_colonial_centralization。首府候选building_hive_major_capital原生基价600矿／480工作、人口前置2500；行政中心转换原生基价1000矿／360工作；building_hive_node原生基价400矿／360工作。上述只是源代码参考，实际折扣、UI报价及订单工作量必须分别取证；未完成tech_hive_cluster，不直接建高级突触建筑。首府升级预计协调者200→300、物流200→500；五级蜂巢的专精区转换预计500制造者→500协调者，须用实际岗位和真实维护验证。
+
+## 付款、建成与回归验收方案（实施前）
+
+第五发电复用已执行的current_log区划付款28项守卫；其固定原生工作240，价格取当前UI，不覆盖旧helper。完工且没有其它母星订单时可以复用战后26项守卫的expected_generator=5，并随后独立完整月核账。
+
+首府升级新增不可变只读付款守卫：绑定同日原SAV与前件PASS/退出0，核唯一追加订单、付款国/queue0、价格和目标building对象、旧订单raw保持、旧首府及其它zones/buildings仍未提前替换、其它实际库存／全部人口岗位／科研bank／EEP／政府AP传统保持、未过滤error字节保持。升级完成使用新的只读建设边界守卫，按实际原队首连续完工核订单、首府type原生替换及新增岗位、旧建筑关系和其它原生对象的明确合法变化；不套用只支持新增建筑的旧守卫。
+
+专精区转换和普通节点建设同样先记录当前原生订单结构，再建立相应只读付款守卫：严格核真实扣款、唯一正常UI订单或即时转换的实际差异，禁止先假设所有建设都生成同类订单。若与预期不符，保留原FAIL和源件，调查后记录精确补证方案再实施；不得重点击或重走日期掩盖失败。
+
+建设边界新守卫允许预先授权的发电、首府、专精区、节点原生队列变化，核实际完工类型／数量／目标与原付费订单关联、原19军舰及设计/建造日期保持、矿2000与当期技工实际满员、母星无新增轰炸/人口损失、EEP C37/G0/D11及唯一容量和两碎源保持、真实bank及专项不丢、灵能理论选题及进度不退、无未处理待选。日历仍复用checked_v2，一段不超过360原生日；每段必须绑定前PASS和执行0，不能重复fast_forward。理论完成或其它通知时，停止并正常选择/确认，再为新的阶段定义守卫，不坚持旧“理论尚未完成”断言。
+
+未过滤日志只允许前后完全保持，或按已归档空Mod控制14项PASS的完整144字节原版leader.13错误及本轮33项控制PASS的完整255字节原版coordinator错误逐段精确匹配、仅归一化时间戳，分别明确报告次数；任何其它新增错误FAIL。旧所有原始FAIL不改，不把归因通过称为零新增错误。
+
+每次经济扩建后需要独立完整30日核八类实际库存与current_month净额、last_month桥接、原生出生分类、能源和矿物正收益。仅影响力按原版1000封顶，其它差异不得豁免。继续自然完成完整虚境／女王通知、武灾矿船、蜂巢母星和长期运行/存档重载，才可计整条路线通过。图库继续采代表单球扩容、女王、吞星及后续路线特色的普通UI画面，保留原生战损等实际背景；不把候选图描述为新发布或已完整通过。
+
+## 证据与交付
+
+10:00实际git add退出0后，三个逐blob校验全部PASS／退出0：协调者控制204 blobs／11,952,997字节、正常退出尾件78／6,117,365、完整生产切点10,875／387,797,469（均包含固定准备证据及已有priority收据，所以大于源件计数）。每次新receipt均先暂存再验下一个；旧FAIL不改，三个PASS回执随本轮提交。生产仍暂停2239.11.02，Mod原41文件没有修改，Steam仍离线。
+
+09:59全量生产暂停快照已完成：10,834原件／383,998,563字节，captured_at_utc=2026-10-10T01:58:17.870748，范围仍为活动暂停切点，不能称正常最终退出。首次git add尚在运行时提前调用三个Git blob校验，因相应文件尚未入index而失败；两次尝试暂存尚未生成的校验receipt也被现存index.lock拦截。未删除lock、未改证据、未生成PASS回执；等待原git add实际退出0后，按顺序重新校验各快照并逐次暂存新receipt。此为交付步骤先后错误，不是游戏或P工具缺陷。
+
+09:56首府完整月32＋14项全部PASS／实际退出0，出生6、8713人口、八资源残差0，真实建筑能源维护18.9，末月正收支见当前边界。正常母星图库候选terravore-capital-month-core-gallery.jpg人工查看通过：1024×768、187975字节、SHA0afc0855cc82b98aac3307957d1c6b9657b66a85e26814db5508e7c3d45385bf，无控制台／菜单／tooltip；母星原生轰炸恢复毁坏8%可见，不隐瞒。下一步全量冻结当前生产RUN及未过滤日志到native-capital-upgrade-and-coordinator-diagnosis，与新协调者控制及正常退出尾件共同stage，逐原件及Git blob校验，再仅提交本轮文档/证据并推送main，核远端SHA。归档时暂停无GUI/日历/助手写入；提交后继续原生专精区转换，不把提交当任务完成。
+
+09:54最后教程135确认26项全部PASS／实际退出0；后件ccc5bcdb0ee7ebb1ab7e302dcea92191515bf54ec7e9f18ca19ebc3807d97199，同2239.10.02，无country0待选、无新error、全部实际经济/科研/EEP保持。依据既定方案，唯一推进30原生日至2239.11.02，输出terravore-ascension-capital-month；以前述26项PASS作前置，随后执行capital_completion_v2边界及capital_month完整核账，不重复付款或时间输入。
+
+09:53通知处理进展：敌对问候30项全部PASS／退出0；progress.4原26项仅选项索引FAIL，精确option3四项补证全部PASS／退出0，原FAIL保留。首个教程137/tutorial.63同日后件479123aeaf4e35ad2b7b57f4527c4722b12ae8db1cf746f11d002a6b3bca00d4，26项全部PASS／退出0，唯一新增tutorial_63=63151464，其它状态完整保持；剩135/tutorial.63已经普通点击“明白了”，正在保存核验。所有本次正常通知操作零新增error，未赠送资源或科研。
+
+09:50进展通知的原26项检查实际25PASS，仅history选项索引FAIL：正常点击实际选中progress.4.d／索引3，事先误写索引5。原始history准确追加141／human1／option3，其它顶层、全部国家、人口岗位、经济科研及EEP均保持；不重放点击。当前政府确为gov_devouring_swarm，原版has_devouring_swarm_government定义同时列has_government=gov_devouring_swarm及gov_blood_forest，不能凭国策替代本次实际显示选项判定；生产没有覆盖该触发器。新增只读priority_native_progress_option_supplement.py绑定原26项恰history一FAIL／其余25true、原退出1和两SHA，读取progress.4的实际option3，核其只有name/trigger且name=progress.4.d，核真实history仅追加3。只更正本次选项识别，不推断完整原版触发器运行规律，不修改游戏或Mod；独立输出补证。
+
+通知效果调查补充（实施前）：敌对问候后件396727d993e5eac147acad975ddfe1725f4107388213f60785ba00b75df13bf0，同2239.10.02、无新error。完整重复字段分组比较只有country、spy_networks、last_event_id、message、player_event、history变化。原action.1公共after会触发progress.4，后者immediate新增first_contact_event=63151464；实际新增141/progress.4，last_event_id140→141。country1→0关系仅追加-50／decay=yes／当日opinion_hostile_first_comms_greeting，原其它关系字段保持；唯一既有谍报网16777376(owner0,target1)新增first_comms_hostility_preparations／5400天。其它国家字段和其它谍报网完整保持。notice_effect助手据此精确核全部变化，并扩展progress.4/option5（当前“他们……不一样。”500,515）：该蜂巢噬杀选项无效果，公共after只对非格式塔非嗜杀授予研究选项，本国不满足，实际应全部经济与国家保持。之后两tutorial.63仍逐条确认，最后必须无待选。
+
+04:46转发v2共30项全部PASS／实际退出0，原28项FAIL保留。新增只读priority_native_notice_effect_guard.py（实施前）：合并两类已查源的正常通知效果核对，输入原前后stage、ID、event、option及前PASS。action.1/140/option2对应当前中文“我们感知到了猎物。”（约680,485），仅允许country1对country0原生opinion_hostile_first_comms_greeting及既有本国→country1谍报网的原生修正；tutorial.63/option0仅允许country0.flags的tutorial_63新增或同日相同值保持。正常单击后分别同日另存，读取完整有序顶层差异和涉及国家原文，逐项确认源效果，没有谍报网就必须整根保持。其它国家/其它字段、资源、人口岗位、科研bank、EEP、建设和日志必须保持；只移除对应pending/message并准确追加history，其它待选完整保持。若出现未知差异先保留FAIL调查，不重放点击。输出独立notice-effect-proof，未处理完全部待选不推进日期。
+
+通讯转发检查更正（实施前）：原28项实际27PASS，只有all_other_top_level_raw_held失败，原证明及退出1保留。此前“其它顶层只有三根变化”的调查只比较对象字典，遗漏顶层标量last_event_id由139变140；完整有序287字段的只读比较确认其它字段逐字保持。新增priority_native_contact_forward_guard_v2.py，仅把last_event_id列为单独精确139→140检查，保留其余27项，并绑定原28项恰此一FAIL／退出1及两SHA。新证明单独输出，不重放UI、不改原件。该全局ID增长与新增140/action.1一致，不涉及经济或Mod逻辑。
+
+04:42通讯转发同日后件26c682b3ed8378f3e6bf19de18c8c66c05dc7e2779a133be6d9f21037b23c496，无新增error；只读完整顶层变化仅player_event/history/message，全国家根raw不变。136/action.13移除、唯一新增140/action.1，原137/135教程待选raw保持；旧136消息换为当前140消息，选择history仅追加136/option0。新增action.1的scope中contact_empire与contact_speaker都指country1。
+
+priority_native_contact_forward_guard.py精确实施：从空效果确认结构派生，只允许action.13/option0，查原版该选项hidden_effect.country_event.id=action.1；输入child140，核唯一新action.1/本国及上述两目标，余待选raw保持，旧对应消息仅删一/新对应消息仅加一、其它messages raw保持。全部国家及其它顶层/经济/实际对象仍raw保持，前件必须为已通过行商确认，原两SHA/同日/history/error严格核；不把新action.1当已经问候完成。
+
+原生建筑ID更正工具方案（实施前）：已执行首府v1与32项四FAIL原件不改。新增priority_terravore_capital_completion_guard_v2.py仅把母星首府识别改为zone0.buildings中position0且type为蜂巢首府/蜂巢枢纽的唯一实际对象，升级时核旧引用→唯一新引用、其它母星建筑/zone原文保持；before已完成时要求同ID/type/raw与空队列保持。保留所有其它旧32项尤其no_country0_pending，不把待选放行。输出capital-completion-v2-proof.json。尚未执行的capital_month助手据此改绑定v2证明，并按该唯一position0首府关系核前后raw和新type，不固定ID0；月账其它标准不变。仅在所有原版待选逐条通过且最后SAV实际无country0 player_event后推进30日到2239.11.02／terravore-ascension-capital-month。
+
+04:38天然虫洞139/apoc.5/option0及行商138/cara.3020/option3分别28项全部PASS／实际退出0，后件依次753039d1…与5c32a503ad6f5941e28cf209ea035557d75bb6a01600af3732d55de5f3996cfd。前后全国家及其它实际根raw保持，只有各原生待选/消息/history及准确关联contact.event移除；无新error。现剩137、135/tutorial.63与136/action.13，日期仍2239.10.02。
+
+原生通讯后续方案（实施前）：先普通点击当前“通讯已建立／真是有趣”500,500，仅一次，正常另存terravore-capital-contact-forward同日。此action.13首选hidden_effect会原生触发action.1，后者immediate正常调用tutorial.2006/2007与anomaly.4016并保存contact_speaker；不把它当空效果确认。只读读取实际新增待选/旗标/目标/联系人及全部经济差异，保留源SHA，然后为priority_native_contact_forward_guard.py定义精确许可变化；资源/人口/科研bank/EEP/原生建设不得变。如有后续外交选项，按噬岩者正常可用的敌对问候选择并核实际意见/谍报修正，不发动console战争、不送危机进度或忽略事件效果。
+
+两次tutorial.63选项会set_country_flag=tutorial_63，第一笔应仅新增该原生flag、第二笔至多刷新同日相同值；需单独教程确认守卫绑定正常history和除该flag外的全部国家/经济/实际对象保持，不能套用空效果守卫。原版通知处理完且无待选后才允许进入完整月核账。
+
+04:32原生360日实际退出0，2239.10.02／b2a43a5d7f42b0eb8b67639d7fd73eb5a31f5b7bb5b7ec977df33c1616cbb3dd，人口8707、毁坏8.86371、19原舰及EEP保持，零新增error。原建成32项实际28PASS／4FAIL：新首府不是原ID0改type，而是原0退役、zone0首引用0→33554466，新对象type=building_hive_major_capital／position0；其它8座实际母星建筑完整raw、zone2/3完整raw保持。协调1500和后勤500均满员、巡逻max200、原480订单真实完工且队列空均已通过。末月E9083.88212／净19.96626、M6954.55462／10.88688、U6328.03482／66.43987、A7672.13429／17.42189，Theory1230.92547＋650／2600。
+
+另外存在真实5条待选：137/tutorial.63、135/tutorial.63、136/action.13、138/cara.3020、139/apoc.5；GPU当前最上层“天然虫洞”，底层行商首次接触。不能把player_event中的未来date当成尚未待选或据此忽略。新增只读priority_terravore_capital_new_object_supplement.py绑定原32项恰no_pending及三建筑ID假设FAIL／其它28true与退出1、原两SHA／原日历退出0；核原建筑0=none、新33554466仅原生type/position、zone0只替换首引用、其它母星建筑与zone2/3 raw保持、完整母星建筑数量不变；五个原版待选ID/类型精确列出。输出“建成分项、仍有待选、calendar_ready=false”，不得凭此推进日期。
+
+无效果通知确认助手方案（实施前）：新增priority_native_empty_event_ack_guard.py，仅允许已查源的apoc.5/option0与cara.3020/option3（嗜杀独占退出）两种空效果选项，不用于tutorial.63或action.13。绑定前PASS/退出0和同日原两SHA、正常唯一选择history，精确仅对应player_event/至多一条对应消息移除，其余全部pending raw保持；全部国家raw、实际经济/人口岗位/EEP/建筑根及其它顶层raw保持。first_contacts只允许owner0且原event.player_event精确对应被确认ID的当前event字段移除，所有其它contact字段/raw保持；没有该联系则全根保持。读取原版对应事件option字段，除了name/trigger/exclusive_trigger/custom_gui/default_hide_option不允许效果字段，并记录源SHA。其它两类有实际flag或转发事件的通知，另查源、另立方案，不混用空效果守卫。
+
+首府建成完整月助手方案（实施前）：新增priority_terravore_capital_month_guard.py沿已通过战后完整月11项，仅将绑定证明改为capital-completion及其实际退出0；保留八类库存残差／影响力固定1000封顶、last_month完整桥接、30日回执／原SHA、母星矿电等级和空队列／实际满员／原生出生／能源矿物净正。增加前后均building0=building_hive_major_capital／原文保持、协调者1500与后勤500实际满员，以及其它建筑未变时planet_buildings实际能源维护应16.2＋2.7=18.9。若出现其它真实原生维护变化则保留FAIL调查，不调整库存或重走日期。
+
+首府守卫复用范围补充（实施前）：后续完整30日月账可以复用同一只读建成边界。before首府仍旧type时必须唯一原480升级订单且实际完成；before已是新type时必须前后母星队列均空、首府raw保持。两种情况after均须同一新首府、相同母星zones/其它建筑及满员岗位；不接受任意其它建设。独立月账后再核资源桥接，不因空队列跳过经济验收。
+
+04:27恢复v2的15项全部PASS／实际退出0（63c0d44914953e85eded325c2df44821542acf388600a8bc216a620e95fea05e），原严格24及补证v1 FAIL均保留。接续唯一360日，前件8f9e6f0b…、前PASS resume-supplement-v2，目标2239.10.02／terravore-ascension-capital-complete；按原生1.4速度，343UI日的既付首府订单应完成，不再付款。
+
+新增priority_terravore_capital_completion_guard.py从已执行战后26项边界派生：全部原舰/原设计/船坞/EEP/母星无新轰炸/政府AP传统/真实bank/专项及未完成Theory继续要求保持，无待选。母星5蜂巢/10采矿/5发电等级完整保持、矿2000/电1000满员，原唯一0/480首府订单完成而非新增发电，after母星队列空；原母星zones0/2/3完整raw保持，原建筑0仅type从building_hive_capital变building_hive_major_capital、position0及其它字段保持，所有其它母星建筑raw保持。原生协调者max/workforce1500、后勤500且满员、巡逻max200按实际核验；不要求巡逻满员或自然增长人口组缓存恒等。日志以两个独立已复现原件作严格逐段解析，仅允许完整144字节leader.13或完整255字节coordinator（仅时间戳归一化）并分别计数、绑定各控制PASS/退出0/原版SHA；任意其它字节FAIL。零新增时明确报告零，不把有已归因错误称零。此分项仍不替代首府建成后完整月账、虚境/武灾/全路线。
+
+04:26精确恢复补核v1实际13PASS／1FAIL、退出1：从旧助手派生时绑定33项付费控制证明却错误保留PASS_COORDINATOR_CONTROL_LOAD_ONLY状态名，原控制实际正确状态为PASS_SCOPED_NO_MOD_NATIVE_COORDINATOR_ERROR；不是游戏或P引擎工具缺陷。其余精确缓存、预算、19舰及construction/建筑/zone原文保持均通过。原v1源码和结果不改；新priority_terravore_coordinator_resume_supplement_v2.py仅更正该状态常量，新增绑定原14项恰此一FAIL／其它13true和实际退出1，输出全新resume-supplement-v2.json，不再载入/付款/推进日期。
+
+04:25严格重载24项实际21PASS／budget、colonies、planets三FAIL，实际退出1，原证明保留；后件8f9e6f0b2e4e6491cd9ff742c5dd16fab5ff56f921d288ac8aa389035615ee7c，同2238.10.02。所有实际库存／人口组／岗位／科研／EEP／政府AP传统及其余21项保持，原生付费订单50331667的construction全raw、zones/buildings全raw也保持，fresh error前后2670字节不增。
+
+只读精确差异：母星housing_usage8632→8638、total_housing10467.5→10470、free_housing1835.5→1832、crime17.88→17.94、amenities16567.1216→16593.19104、free_amenities11143.9216→11169.99104；零人口旧源Colony15/24各新增binary_flags24，核心carrier_binary_flags1→3。生产后件整个colonies审计与空Mod控制真实付费后件e2e37d02…完全相同，不是只比同名字段。预算仅current_month与income_high_water_mark，last_month/其它raw保持；current收入11个资源类别单元及支出11单元变化，矿物人口维护77.688→77.742精确等缓存住房8632/8638×0.009。
+
+精确补核实施前：新增priority_terravore_coordinator_resume_supplement.py沿既有14项恢复补核结构，绑定原24项恰上述3FAIL／其它21true/退出1、原两SHA、生产11项日志归因及归档空Mod33项PASS/退出0。固定核上述六缓存字段／两零人口flag与整个控制colonies相等、核心唯一carrier变动，其余受检对象不放宽；固定本次11收入/11支出具体差异，其它单元raw保持、balance逐类别等income−expenses。highwater原生length4→5、history及其它字段raw保持；当前各资源精确等max(前current,新收入总和)，trade保留106.36745高水位而新收入总和更低，不能照旧helper要求全部等新收入。原生19舰设计/日期/满舰体保持，construction与母星zones/buildings完整保持，fresh2670日志不增。此补证只解释当前具体重载，不追认原24项全通过或泛化缓存语义。
+
+04:23恢复准备实际退出0、生产原pointer／41文件tree及b5deb05a…SAV已核保持，生产PID23712；原付款错误限定归因11项全部PASS／退出0（19a44fa894c1d9d995d6920c4e9d9dc33777406be7b529fab9ec26447cbff5b7），原30项FAIL仍保留。控制正常退出尾件已冻结38份／6,051,815字节，并核旧143份RUN原件SHA全保持；未改原165份暂停快照。生产严格24项重载仍在进行，尚不推进日期。
+
+控制退出尾件方案（实施前）：新增priority_archive_coordinator_control_tail.py沿既有leader13尾件只读工具，仅更换控制pointer、RUN20261009T201140Z与native-coordinator-capital-payment-error-control目录；核旧RUN所有已归档原件SHA未变，只复制新增正常退出GUI/回执、失败恢复前置回执及final未过滤日志到新的…-tail。旧165件暂停快照不改，不切pointer、不操作游戏。生产限定归因priority_terravore_coordinator_error_supplement.py沿既有11项归因结构，改为原30项/其它29有效、生产保存退出0而非日历、归档控制33项PASS/退出0、两255字节仅时间戳归一化全文匹配和本次单个原版岗位源SHA；输出独立coordinator补证，不覆盖原付款FAIL。
+
+恢复准备首次实际退出1：正常退出确认后立即执行，进程尚在原生退出收尾，no-running前置断言阻止了pointer/文件/启动变更；原失败回执保留。随后只读Get-Process确认Stellaris已完全退出，以全新execution stage重试同一未改源码，既不再次点击退出，也不强杀或重放游戏操作。
+
+04:20独立控制33项全部PASS／实际退出0，helper992c13857be2b4be63402cbb6c553ec424ab55aba29126d35567aaa48bb554d1；控制后件e2e37d02d665faefd34d818966f06d3416400401c954dfa977644981b117b766。同日真实480付款，唯一正确0/480升级订单，全部其它受检状态保持；生产/控制255字节仅时间戳不同。控制全量暂停快照已生成165份／11,846,862字节，captured_at_utc20:19:18.621421，目录native-coordinator-capital-payment-error-control；此时仍暂停，退出尾件须另保留，不能改旧scope。
+
+恢复实施方案明确文件：新增priority_coordinator_production_resume_prepare.py沿既有恢复准备器，核控制33项PASS及空Mod／正常退出无游戏进程，保存退出final日志，恢复另存的生产pointer；必须核0.2.0原41文件tree ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7、唯一启用ugc_eep-local及原b5deb05a…SAV。只重启生产原世界。新增priority_coordinator_production_resume_load.py仅等原生简中主菜单后调用已有严格checkpoint_reload，输入terravore-ascension-capital-paid，输出terravore-ascension-capital-resumed、唯一alias coordinator-resume-source，保留所有严格24项结果和完整缓存差异，不重复付款或日历。之后新增只读限定归因补证绑定原30项仅日志FAIL、归档控制33项PASS/实际退出0及两完整255正文/源SHA；它只解释原日志分项，原严格FAIL不变。重载若有变化，按原件再记录精确补核方案，不能提前把所有缓存放行。
+
+04:17控制真实付费后日志已出现同一255字节正文，连random={0 3991148998}也相同，故不需要随机值归一化。尚待保存/独立证明实际退出。新增priority_coordinator_control_error_guard.py只做只读检查：绑定生产严格30项恰1日志FAIL及实际退出1／原两SHA，控制load8项PASS与执行0、hover整SAV原字节相同且零新error、paid唯一点击与执行0／原两SHA；核同日真实480扣矿、其它库存/人口/岗位/区划/科研/政府AP传统/EEP保持、原zones/buildings完整raw保持、唯一原生0/480指定升级订单及唯一last_building_changed更新。对生产与控制各完整前缀及255字节增量，仅替换时间戳后全文精确相等、无其它新增字节；原版岗位文件SHA9469c178efbaa2d8e5bce43545ee6d5a184ee0e764336e85170795d0cc6820ad必须保持。只证明此原生付费升级错误在空Mod可复现，不断言内部引擎根因、不宣称纯原版生成世界或原严格付款检查通过。
+
+04:16控制载入8项全部PASS／退出0，原source字节、全部实际人口身份/数量、库存、区划、首府和升级科技保持；缺失EEP载入基线3122字节单独保留。单纯悬浮probe实际退出0／零增error，前后SAV均edad7ca2b1305d42f5dee79a771402c503c8be5c640422920a29055c6a4b169a，完整字节相同；不能据此宣称复现。按既定第二stage新增priority_coordinator_control_paid.py：绑定load PASS及hover原字节相同/执行0，记录新error基线，正常打开母星、悬浮采当前343日/480矿升级报价、仅普通点击151,335一次，再正常同日保存coordinator-control-paid。只使用原生资源付款，仍不推进日期；之后独立核精确升级订单、真实480扣款及错误全文。
+
+04:12首府严格付款30项中仅unfiltered_error_original_bytes_held失败，29项PASS／实际退出1，原证明及源码b94058e3750c8ff350c38449a95e137a1a9b004427be1fdbc972f793eb059c26已固定。正常GUI退出PID20440后，独立控制RUN20261009T201140Z／PID24916已启动、空Mod/同DLC/简中配置已核。源仍原字节4371182e…，生产当前已付订单b5deb05a…不被控制替代。
+
+控制首个probe具体实施：新增priority_coordinator_control_hover.py绑定控制载入8项PASS及实际退出0，记录当前完整error基线；普通点击母星904,233、悬浮151,335并GPU截图，然后正常Esc/保存同日coordinator-control-hover端点，记录新error完整字节及两SHA。仅悬浮和正常保存，不点击升级、不推进日历；无复现才按既定独立付费stage继续。控制load助手实施前核审计pop_groups的身份实际在key内，未执行源码相应改用planet/size/key比较，不假设不存在的顶层species。
+
+04:08新错误暂停：首府付款后件b5deb05a847f7463e2cf64c7cd1e3f15fc04381245bfe74f07bbbeda85f0f53c，同10.02、实际扣480、唯一订单50331667／0/480，buildable_planet_upgrade_building指向building_hive_major_capital／planet0／zone0／upgrade_building0，原zones和buildings完整raw保持，仅last_building_changed正常更新。保存期间error2670→2925，新增255字节：原版common/pop_jobs/04_gestalt_jobs.txt:562，Invalid context switch [colony] from [colony]，invalid id4294967295。只读源确认是coordinator.triggered_planet_modifier.potential中的colony.has_active_building=building_league_offices；尚不判定触发原因或Mod无责。
+
+先实施只读priority_native_capital_upgrade_payment_guard.py：绑定此前完整月PASS/执行0、两SHA、同日正常升级点击；核实际480扣矿及其它有效库存不变、唯一上述订单0/480与原空队列/物理Planet7、原建筑0为building_hive_capital／zone0含0、完整zones/buildings不变、last_building_changed唯一变化、全部人口岗位区划地貌/政府AP传统/科研bank/EEP不变。严格error仍要求原字节保持，预期此一项FAIL也必须生成原证明、实际退出1；不得把255直接加入白名单。
+
+隔离复现方案（实施前）：正常GUI退出生产并冻结退出日志，创建全新空Mod简中控制RUN；生产pointer另存唯一priority-coordinator-production-pointer.json，原字节前件4371182e…作为控制输入，enabled_mods=[]、同DLC，不导入控制SAV到生产。新prepare助手沿既有隔离准备流程，只用于诊断，世界源于Mod，不声称纯原版生成。新load助手正常载入/保存2238.10.02，核原别名SHA、真实所有人口和实际库存、原首府/区划/zone0及已掌握科技保持，缺失EEP定义日志单独记录为载入基线。
+
+控制中正常开母星、悬浮同一升级按钮并fresh GPU，再同日另存；若单纯悬浮未复现，可在独立stage正常单击付费升级一次并另存，不使用effect或事件赋予资源。控制只读错误守卫绑定空Mod/载入证明/实际退出0、两原SAV/日志前缀，核新增255整段只归一化时间戳及原生random值后的结构，并单列随机数差异，要求原版文件与行号/invalid context/id精确一致、无其它新增错误；如果实际正文随机数也相同则完整时间戳归一化精确比较，不额外泛化。再核实际资源/人口/日期与对应悬浮或真实480付款的唯一变化。未复现则保留FAIL继续调查，不能直接归因。
+
+通过后归档完整控制原件与原FAIL、正常退出控制，恢复生产原41文件和b5deb05a…原字节；生产限定补证只解释此次255原版UI/付款阶段错误，不追认严格付款检查PASS、不放宽全部原版错误。严格重载及缓存差异另行验证。恢复成功后才继续343日升级建成；所有后续准许日志签名要绑定本次独立控制证明及原版源SHA，次数独立报告。
+
+04:06第五发电完整月11项全部PASS／退出0，26项边界也全部PASS，后件4371182e222afb2b0ad278c0b1e06f8b767ac28049ad39d1edccf6f6e10b6214／2238.10.02，人口8632＋原生出生6=8638。八类封顶后残差0、last_month完整桥接，能源8815.24348／净20.24318、矿物7219.70776／18.28882、凝聚5610.35106／57.48955、合金7469.7652／16.20485；真实发电维护4.5E，军舰与组件维护保持。无新轰炸／待选／新增error，EEP保持。
+
+首府普通UI升级指示151,335实拍正式名称“蜂巢枢纽”、343日／480矿物，基础维护5／当前4.50；已经单击一次并进行同日唯一terravore-ascension-capital-paid保存，尚未宣称付款守卫或建成通过。首次151,335悬浮时面板尚未打开、随后100,350实际为蜂巢区划图片，两个原图保留；正常开母星后151,335才取得升级报价，没有在错误位置购买其它项目。
+
+04:04第五发电建成26项全部PASS／实际退出0，2238.09.02／1df9117274785511667b7466b27a131feac1255b6c4ce06d28563605b50f8071。5蜂巢＋10采矿＋5发电=20区划、电1000矿2000满员，原19舰保持、无新轰炸／待选／新增error，人口8632、毁坏16.85481，EEP完整保持。末月E8795.0003／净20.00825、M7201.41894／18.36738、U5552.86151／57.20366、A7453.56035／16.10337，Theory940.01665＋650／2600。正在独立30日到10.02查完整月，不把180日末月净额当半年逐月核账。
+
+进一步核原版00_capital_buildings.txt与scripted_variables：首府建筑基础能源维护2→5，按当前−10%为净增2.7，修正此前粗估1.8；协调者及物流岗位新增维护另算。不会用粗估替代真实月账。
+
+04:01第五发电实付已通过28项／实际退出0：前1469d80a…→后ade685e83d1e54071fe5c2cd1e5878999161c0d38db2a8ae2da74a769365ab37，同2238.03.02，矿物7329.99114→7089.99114恰扣240；唯一原生queue0／paying_country0、0/240订单、district_generator／planet0，其它库存、原全部人口岗位／科研／EEP保持且error零增。报价GPU SHA429cace200d07f36e865b3177fd18a6fa3c1681f259a42f23c7c718f646c8885，172日／240矿物、0.90能源维护、预计14.67能源岗位产出。已唯一启动180原生日到2238.09.02，stage terravore-ascension-generator5-complete；日历尚待实际退出及独立建成守卫，不提前称完工。
+
+运行助手通过既有record_current_helper保存不可变执行副本、SHA、stdout/stderr及实际退出码；每个stage唯一，不覆盖已执行源码或原证明。阶段完成暂停后全量归档RUN、未过滤日志、SAV/GPU与配置，逐件核源SHA及Git blob，按本任务文件提交推送并核远端SHA。Steam继续离线，本阶段不上传版本、不复用已发布0.2.0号。

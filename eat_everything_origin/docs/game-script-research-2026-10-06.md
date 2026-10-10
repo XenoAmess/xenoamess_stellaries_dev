@@ -1,5 +1,11 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-10本局蜂巢枢纽原生升级完工的实际对象关系：原building0成为none，zone0.buildings首引用0被33554466替换，新建筑type=building_hive_major_capital且position=0，其余字段与旧首府保持，其他8座母星建筑和zone2/3完整原文保持。不能要求升级必须保留原建筑ID，验收应按母星zone与position/type关联定位唯一首府；协调者1500与物流子个体500实际满员，巡逻容量200但不要求满员。仅本局Stellaris存档观察，不推导所有升级或跨游戏对象句柄规则。[本轮方案、原FAIL及补证](priority-terravore-ascension-economy-2026-10-10.md)。
+
+2026-10-10正常蜂巢首府升级的新隔离证据：原生UI蜂巢枢纽343日／480矿物，对应building_hive_major_capital基础600矿／480工作，当前成本−20%、建速+40%；真实queue0订单buildable_planet_upgrade_building指向planet0／zone0／upgrade_building0。付款当日原building0仍building_hive_capital，完整zones/buildings不变，只有last_building_changed及实际扣480改变。建筑能源维护基础2→5，当前−10%后1.8→4.5，不能只算协调者岗位维护。
+
+该正常升级及随后保存产生完整255字节原版错误，common/pop_jobs/04_gestalt_jobs.txt:562为coordinator.triggered_planet_modifier.potential中的colony.has_active_building=building_league_offices，报Invalid context switch [colony] from [colony]／id4294967295。空enabled_mods独立进程加载原字节同世界后，单纯悬浮及保存零新增error且前后SAV字节完全相同；正常480矿付费升级再保存则复现全文相同255字节，连random值也相同、仅时间戳不同，33项独立核验PASS。生产严格30项唯一error FAIL保留，独立11项限定归因通过；原版岗位源SHA9469c178efbaa2d8e5bce43545ee6d5a184ee0e764336e85170795d0cc6820ad。[完整控制快照](evidence/priority-terravore-progress-2026-10-09/native-coordinator-capital-payment-error-control/source-snapshot.json)与[退出尾件](evidence/priority-terravore-progress-2026-10-09/native-coordinator-capital-payment-error-control-tail/source-snapshot.json)保留未过滤载入baseline及正常退出。结论仅为活动EEP脚本并非该错误必要条件，不推定引擎内部根因或原始世界生成无缺陷，不把CK3方言引入此处。
+
 2026-10-09本局护卫舰原生完工边界：同一付费89.6订单首30日工作37.5／基准60，再18日恰好生成corvette，同日原订单item变none、队列首项移除，其余19单raw保持。真实新ship16777221的construction_date=2236.05.19、design67110548、fleet16777797；country0.fleets_manager.owned_fleets唯一追加该fleet，fleet.ships链接该ship，轨道orbitable.starbase0、系统0。fleet／ship本身没有owner标量，必须按国有集合和关联验证归属。UI默认舰队姿态实拍为被动：不主动向敌移动，仍会接近交战；不能将缺失aggressive字段或默认被动当成无敌。仅当前Stellaris4.5.2原件事实，不推广全舰型施工边界／句柄规则或跨游戏语法。
 
 2026-10-09原生批量造护卫舰的整数报价与真价：本局自动苏瑞克级设计67110548，UI90合金／48日，实际每个建设记录resources.alloys89.6／progress_needed60；正常20次点击合计真扣1792，并非取整90×20。船坞队列3的空items变20个原生buildable_ship，11个旧none句柄以原ID+16777216同槽下一代替换，另9个新槽；其它items／队列／mgr原文保持。购买动作还删除standard_economy_module.resources三科研镜像690.63101／588.33101／741.78101，真实tech_status三bank0、完整队列与专项研究原文保持；不能将镜像删除当损失或发科研掩盖。原41项唯一镜像raw FAIL与独立7项精确补证均保留。仅本机当前Stellaris存档与UI事实，不推广所有价格取整算法、句柄实现或共通P语法。
