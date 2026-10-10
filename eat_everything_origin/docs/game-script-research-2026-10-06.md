@@ -524,3 +524,7 @@ idle11首步单日日历实际0（14原生日06.05→06.19），SAV667fb7568b8d0
 之后新driver V13从V12只更新观察器/source/proof引用；仍单步14日／批42日／三步上限及全部停止条件。V22通过才从当前06.19新唯一idle12继续到预计第12对07.13（24原生日、最多两步），不得重用已失败idle11任何stage。
 
 Stellaris4.5.2原生前哨建造订单序列化实测：本次constructor2的build_orbital_station_order在2269.10.04→10.05的progress1→2，cost=0/in_progress=no均不变、无sub_order；简中工程船提示明确正在建造亚蒙恒星基地2%。因此本订单progress是当前UI百分比，cost0/no不能单独当未施工，base_buildtime360不能直接套成此百分比字段总工作量。仅一日观察+1个百分点，后续日速严格验证；不推广到其它建造/升级订单。精确SAV、图片SHA及后续方案见priority-terravore-nemesis-2026-10-10.md。此为Stellaris运行时序列化事实，非Paradox共通语法，不据此修改CK3方言文档。
+
+Stellaris4.5.2紧急撤退字段实测：788在2270.01.07仍return_date=同日、origin4294967295；01.10已无return_date且origin97有效、order_id1，但mia_type=mia_emergency_ftl仍序列化。33555013在01.10仍return_date=同日/无有效星系，01.12亦无return_date且origin97，但旧mia_type仍在。因此日期相等或单独mia_type不能证明回返已发生/尚未发生；按实际有效坐标/返回日期清除/实物守恒交叉核验，不推广其它舰船字段。精确回返瞬间未逐日采样，不能写成01.08/01.11。两SAV和独立守卫见priority-terravore-nemesis-2026-10-10.md。本条为Stellaris序列化事实，非Paradox共通语法。
+
+Stellaris4.5.2本次前哨99%→实体完成：01.12原付费模板201326648，01.13新base158/fleet849/ship1931/实体设计117442392。实体设计与模板完整有序字段/嵌套词元只差auto_gen_design=yes被移除，原模板未改；不能以设计ID不同认定组件改变。原constructor订单清空、原100合金/37影响力支付与实际归属链通过44项/actual0；该观察只适用此次原生outpost实体化，不推广其它舰船。详见priority-terravore-nemesis-2026-10-10.md。
