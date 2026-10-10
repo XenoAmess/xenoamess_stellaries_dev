@@ -1,0 +1,124 @@
+"""Native paid capital completion and actual jobs; original full logs retained."""
+import json,logging,re,shutil,sys,zipfile
+from pathlib import Path
+from decimal import Decimal as D
+before,after,expected_generator,raw_rate=sys.argv[1:];expected_generator=int(expected_generator);monthly_rate=float(raw_rate);assert 0<monthly_rate<=40;sys.stdout.reconfigure(encoding='utf-8');sys.path.insert(0,'eat_everything_origin/tools');sys.path.insert(0,'_runtime/heart-of-devouring');sys.argv=['runtime']
+import runtime as r,audit_save as q
+from formal_production_native_calendar_checked_v2 import validate_native_interval
+logging.disable(logging.INFO);h=r.harness;run,user,m=h.load_run();dest=run/Path(__file__).name
+if dest.exists():assert dest.read_bytes()==Path(__file__).read_bytes()
+else:shutil.copyfile(__file__,dest)
+def obj(t):return {k:v for k,v,o in q.fields(t) if o}
+def read(st):
+ a=json.loads((run/(st+'.audit.json')).read_text('utf-8'))
+ with zipfile.ZipFile(run/(st+'.sav')) as z:t=z.read('gamestate').decode('utf-8-sig')
+ fs=list(q.fields(t));rt={k:v for k,v,o in fs if o};return a,fs,rt,obj(rt['fleet']),obj(rt['ships'])
+def omit(t,keys):return [(k,v,o) for k,v,o in q.fields(t) if k not in keys]
+def owned(rt):return [int(x) for x in re.findall(r'\bfleet\s*=\s*(\d+)',q.block(q.block(q.block(rt['country'],'0'),'fleets_manager'),'owned_fleets'))]
+def military(rt,fs):return {i:q.ids(q.block(fs[str(i)],'ships')) for i in owned(rt) if q.scalars(fs[str(i)])['ship_class']=='shipclass_military'}
+def queue(rt):return q.block(q.block(q.block(rt['construction'],'queue_mgr'),'queues'),'3')
+def items(rt):return obj(q.block(q.block(rt['construction'],'item_mgr'),'items'))
+def progress(c):return q.scalars(q.block(c['tech_status'],'society_queue').strip()[1:-1])
+b,bf,br,bfl,bsh=read(before);a,af,ar,afl,ash=read(after);bc,ac=b['countries']['0'],a['countries']['0']
+receipt=json.loads((run/(after+'-calendar-receipt.json')).read_text('utf-8'));days=receipt['days'];validate_native_interval(b['date'],a['date'],days)
+pre=json.loads((run/receipt['prior_proof_file']).read_text('utf-8'));ex=json.loads((run/(receipt['prior_execution_stage']+'-execution.json')).read_text('utf-8'))
+bm,am=military(br,bfl),military(ar,afl);bs=[s for ss in bm.values() for s in ss];ass=[s for ss in am.values() for s in ss];new=[i for i in ass if i not in bs];lost=[i for i in bs if i not in ass]
+bids,aids=[q.ids(q.block(queue(rt),'items')) for rt in [br,ar]];bi,ai=items(br),items(ar);removed=len(bids)-len(aids)
+sb,sa=[q.block(q.block(rt['starbase_mgr'],'starbases'),'0') for rt in [br,ar]];core=a['planets']['7'];nets={k:sum(v.get(k,0) for v in ac['budget_categories']['current_month']['balance'].values()) for k in ['energy','minerals','unity','alloys','trade']}
+control=Path('eat_everything_origin/docs/evidence/priority-terravore-progress-2026-10-09/native-leader-trait-error-control')
+cp=json.loads((control/'leader13-control-fleet-error-reproduction-proof.json').read_text('utf-8'));ce=json.loads((control/'leader13-control-fleet-error-guard-execution.json').read_text('utf-8'))
+eb=(run/(after+'-error-before.log')).read_bytes();ea=(run/(after+'-error-after.log')).read_bytes();known=(control/'leader13-control-fleet-effect-error-after.log').read_bytes()[len((control/'leader13-control-fleet-effect-error-before.log').read_bytes()):];delta=ea[len(eb):];normalize=lambda v:re.sub(rb'\[\d{2}:\d{2}:\d{2}\]',b'[TIME]',v)
+known_count=len(delta)//144;error_ok=eb==(run/(before+'-error-after.log')).read_bytes() and ea.startswith(eb) and len(known)==144 and len(delta)%144==0 and normalize(delta)==normalize(known)*known_count and cp['status']=='PASS_SCOPED_NO_MOD_LEADER13_ERROR_REPRODUCTION' and len(cp['checks'])==14 and all(cp['checks'].values()) and ce['returncode']==0 and all(h.sha256(Path(s['path']))==s['sha256'] for s in cp['native_sources'])
+coord_control=Path('eat_everything_origin/docs/evidence/priority-terravore-progress-2026-10-09/native-coordinator-capital-payment-error-control')
+ccp=json.loads((coord_control/'coordinator-control-paid-error-proof.json').read_text('utf-8'));cce=json.loads((coord_control/'coordinator-control-error-guard-execution.json').read_text('utf-8'))
+ck=(coord_control/'coordinator-control-paid-error-after.log').read_bytes()[len((coord_control/'coordinator-control-paid-error-before.log').read_bytes()):]
+base_control_valid=cp['status']=='PASS_SCOPED_NO_MOD_LEADER13_ERROR_REPRODUCTION' and len(cp['checks'])==14 and all(cp['checks'].values()) and ce['returncode']==0 and all(h.sha256(Path(v['path']))==v['sha256'] for v in cp['native_sources'])
+coord_control_valid=ccp['status']=='PASS_SCOPED_NO_MOD_NATIVE_COORDINATOR_ERROR' and len(ccp['checks'])==33 and all(ccp['checks'].values()) and cce['returncode']==0 and h.sha256(Path(ccp['native_source']['path']))==ccp['native_source']['sha256']=='9469c178efbaa2d8e5bce43545ee6d5a184ee0e764336e85170795d0cc6820ad'
+remaining=delta;known_count=0;coordinator_count=0;segments_valid=True
+while remaining:
+ if len(known)==144 and normalize(remaining[:144])==normalize(known):known_count+=1;remaining=remaining[144:]
+ elif len(ck)==255 and normalize(remaining[:255])==normalize(ck):coordinator_count+=1;remaining=remaining[255:]
+ else:segments_valid=False;break
+error_ok=eb==(run/(before+'-error-after.log')).read_bytes() and ea.startswith(eb) and base_control_valid and coord_control_valid and segments_valid
+
+checks={
+ 'bound_actual_prior_PASS_execution_zero':pre['status'].startswith('PASS') and all(v is True for v in pre['checks'].values()) and pre['after_sha256']==b['save_sha256'] and ex['returncode']==0,
+ 'original_SHA_pair':h.sha256(run/(before+'.sav'))==b['save_sha256'] and h.sha256(run/(after+'.sav'))==a['save_sha256'],
+ 'actual_bounded_native_days_receipt_execution_zero':1<=days<=360 and receipt['status']=='CALENDAR_CONFIRMED' and receipt['start_date']==b['date'] and receipt['date']==a['date'] and json.loads((run/(after+'-observe-execution.json')).read_text('utf-8'))['returncode']==0,
+ 'paid_orders_contiguous_completion_other_fields_held':removed>=0 and aids==bids[removed:] and all(omit(bi[str(i)],{'progress'})==omit(ai[str(i)],{'progress'}) and 0<=q.scalars(ai[str(i)])['progress']<60 for i in aids),
+ 'actual_new_ships_equal_paid_completed_orders':len(new)==removed,
+ 'actual_all_owned_military_ship_relations_and_design':len(ass)==len(set(ass)) and all(q.scalars(ash[str(i)])['fleet']==fid and q.scalars(q.block(ash[str(i)],'ship_design_implementation'))['design']==67110548 and 0<q.scalars(ash[str(i)])['hitpoints']<=q.scalars(ash[str(i)])['max_hitpoints'] for fid,ss in am.items() for i in ss),
+ 'old_surviving_real_design_and_construction_dates_held':all(q.scalars(q.block(bsh[str(i)],'ship_design_implementation'))['design']==q.scalars(q.block(ash[str(i)],'ship_design_implementation'))['design'] and q.scalars(bsh[str(i)])['construction_date']==q.scalars(ash[str(i)])['construction_date'] for i in set(bs)&set(ass)),
+ 'total_naval_size_matches_all_actual_owned_corvettes':q.scalars(q.block(ar['country'],'0'))['fleet_size']==5*len(ass),
+ 'actual_native_shipyard_modules_and_crews_held':q.scalars(q.block(sb,'modules'))==q.scalars(q.block(sa,'modules'))=={'0':'shipyard','1':'shipyard'} and q.block(sb,'buildings')==q.block(sa,'buildings') and all(q.scalars(sb)[k]==q.scalars(sa)[k] for k in ['level','type','build_queue','shipyard_build_queue','station']),
+ 'EEP_ledger_and_only_first_psi_notice_flag':bc['variables']==ac['variables'] and ac['flags']==dict(bc['flags'],eep_psi_notice=63315600) and 'eep_psi_notice' not in bc['flags'] and all(ac['variables'][k]==v for k,v in {'eep_c':37,'eep_g':0,'eep_d':11,'eep_made':0,'eep_worlds':2}.items()),
+ 'unique_core_owned_capacity11_original_modifiers':sum('eep_core' in p['flags'] for p in a['planets'].values())==1 and core['owner']==core['controller']==0 and core['colony']==0 and core['planet_size']==18 and core['variables']['eep_capacity_value']==11 and b['planets']['7']['modifiers']==core['modifiers'],
+ 'both_sources_unowned_shattered_no_actual_pop':all(a['planets'][i].get('owner') is None and a['planets'][i].get('controller') is None and a['planets'][i]['planet_class']=='pc_shattered' and not a['planets'][i]['deposits'] for i in ['90','124']) and not any(p['planet'] in [15,24] and p['size']>0 for p in a['pop_groups'].values()),
+ 'only_mother_owned_no_active_EEP_task':bc['owned_colonies']==ac['owned_colonies']==[0] and not any(s.get('type')=='situation_eep_devouring' and s.get('killed')!='yes' for s in a['situations'].values()),
+ 'government_core_and_AP_traditions_held':omit(bc['government'],{'council_agenda_progress','council_agenda_cooldowns'})==omit(ac['government'],{'council_agenda_progress','council_agenda_cooldowns'}) and bc['ascension_perks']==ac['ascension_perks'] and bc['traditions']==ac['traditions'],
+ 'Theory_complete_native_auto_research_only':all('tech_psionic_theory' in c['completed_technologies'] and not q.block(c['tech_status'],'society_queue').strip() and q.scalars(c['tech_status'])['auto_researching_society']=='no' for c in [bc,ac]) and set(bc['completed_technologies'])<=set(ac['completed_technologies']),
+ 'old_special_held_idle_society_bank_monotonic':bc['research_progress_by_tech']==ac['research_progress_by_tech']=={'tech_colonization_2':607.25288} and all(v>=0 for v in ac['research_stockpile'].values()) and ac['research_stockpile']['society_research']>=bc['research_stockpile']['society_research'],
+ 'all_primary_actual_stocks_positive':all(ac['effective_stockpile'][k]>0 for k in nets),
+ 'unique_202_EEP30_pending_country0':len([v for k,v,o in af if k=='player_event' and o and q.scalars(v).get('country')==0])==1 and all(q.scalars(v)=={'id':202,'event':'eep.30','date':'2261.01.01','country':0} and q.scalars(q.block(v,'scope')).get('type')=='country' and q.scalars(q.block(v,'scope')).get('id')==0 for k,v,o in af if k=='player_event' and o and q.scalars(v).get('country')==0),
+ 'unfiltered_errors_held_or_exact_known_native_leader13_only':error_ok,
+}
+def planet_queue(rt):return q.block(q.block(q.block(rt['construction'],'queue_mgr'),'queues'),'0')
+levels=lambda v:{v['districts'][str(i)]['type']:v['districts'][str(i)]['level'] for i in v['colonies']['0']['districts']}
+bl,al=levels(b),levels(a);bpo,apo=[q.ids(q.block(planet_queue(rt),'items')) for rt in [br,ar]]
+checks['no_old_paid_ship_losses']=not lost
+checks['no_actual_player_fleet_combat']=all(not q.block(q.block(afl[str(fid)],'combat'),'in_combat_with').strip() for fid in am)
+checks['mother_no_new_bombardment_or_population_loss']=core['last_bombardment']==b['planets']['7']['last_bombardment']=='2237.05.19' and core['bombardment_damage']<=b['planets']['7']['bombardment_damage'] and a['colonies']['0']['actual_pop_sum']>=b['colonies']['0']['actual_pop_sum']
+checks['exact_mother_districts_hive5_mining10_generator6']=al=={'district_hive':5,'district_mining':10,'district_generator':6} and bl=={'district_hive':5,'district_mining':10,'district_generator':6} and expected_generator==6
+checks['actual_generator_and_mining_full_workers']=all(j['workforce']==j['max_workforce']==({'technician_drone':expected_generator*200,'mining_drone':2000}[j['type']]) for j in a['pop_jobs'].values() if j['planet']==0 and j['type'] in ['technician_drone','mining_drone'])
+for k in ['species','event_targets']:checks[k+'_held']=b[k]==a[k]
+def mother_buildings(rt,audit):
+ zids=[str(z) for d in audit['colonies']['0']['districts'] for z in audit['districts'][str(d)]['zones'] if z!=4294967295]
+ zones={i:q.block(rt['zones'],i) for i in zids}
+ buildings={str(i):q.block(rt['buildings'],str(i)) for z in zones.values() for i in q.ids(q.block(z,'buildings'))}
+ return zones,buildings
+bz,bb=mother_buildings(br,b);az,ab=mother_buildings(ar,a)
+bcaps=[i for i,v in bb.items() if q.scalars(v).get('position')==0 and q.scalars(v).get('type') in ['building_hive_capital','building_hive_major_capital']];acaps=[i for i,v in ab.items() if q.scalars(v).get('position')==0 and q.scalars(v).get('type') in ['building_hive_capital','building_hive_major_capital']];assert len(bcaps)==len(acaps)==1;bcid,acid=bcaps[0],acaps[0];bcap,acap=q.scalars(bb[bcid]),q.scalars(ab[acid])
+bd,ad=q.block(br['districts'],'1'),q.block(ar['districts'],'1');bzids,azids=q.ids(q.block(bd,'zones')),q.ids(q.block(ad,'zones'));bzone,azone=bzids[2],azids[2];bzt,azt=q.scalars(bz[str(bzone)]).get('type'),q.scalars(az[str(azone)]).get('type')
+bnids=q.ids(q.block(bz[str(bzone)],'buildings'));anids=q.ids(q.block(az[str(azone)],'buildings'));newbuild=set(ab)-set(bb);done=len(bpo)-len(apo)
+
+def replacement(v):return q.scalars(v).get('progress_needed')==480 and q.scalars(v).get('paying_country')==q.scalars(v).get('queue')==0 and q.scalars(q.block(v,'resources'))=={'minerals':400} and q.scalars(q.block(v,'buildable_planet_replace_building'))=={'building':'building_psi_corps','planet':0,'zone':0,'replace_building':45}
+checks['exact_paid_replacement_complete_or_completed_empty']=not apo and ((bpo==[285212696] and replacement(bi['285212696']) and '285212696' not in ai) or (not bpo and not apo))
+bdefault=q.ids(q.block(bz['0'],'buildings'));adefault=q.ids(q.block(az['0'],'buildings'))
+psi=[i for i,v in ab.items() if q.scalars(v).get('type')=='building_psi_corps']
+checks['one_psi_native_slot3_replaces45']=len(psi)==1 and q.scalars(ab[psi[0]])=={'type':'building_psi_corps','position':3} and adefault==[33554466,1,2,int(psi[0]),46,48] and ((bpo and bdefault==[33554466,1,2,45,46,48] and set(ab)==set(bb)-{'45'}|set(psi) and q.scalars(q.block(br['buildings'],'45'))=={'type':'building_hive_node','position':3} and q.scalars(ar['buildings']).get('45')=='none') or (not bpo and bdefault==adefault and set(ab)==set(bb) and all(ab[i]==v for i,v in bb.items())))
+checks['all_other_zone_and_district_relations_held']=bzids==azids==[0,2,61] and bd==ad and all(bz[i]==az[i] for i in ['2','61']) and omit(bz['0'],{'buildings'})==omit(az['0'],{'buildings'})
+checks['unique_native_capital_same_raw_held']=bcid==acid and acap.get('type')==bcap.get('type')=='building_hive_major_capital' and bb[bcid]==ab[acid]
+checks['all_other_actual_mother_buildings_raw_held']=all(ab.get(i)==v for i,v in bb.items() if not (bpo and i=='45'))
+def job(kind):
+ js=[j for j in a['pop_jobs'].values() if j['planet']==0 and j['type']==kind];assert len(js)==1;return js[0]
+checks['actual_coordinator2400_logistics500_telepath200_full']=all(job(k)['workforce']==job(k)['max_workforce']==n for k,n in [('coordinator',2400),('logistics_drone',500),('telepath_drone',200)])
+checks['before_coordinator_corresponds_actual_replacement_stage']=len([j for j in b['pop_jobs'].values() if j['planet']==0 and j['type']=='coordinator' and j['workforce']==j['max_workforce']==(2600 if bpo else 2400)])==1
+checks['no_positive_native_fabricator_after_conversion']=not any(j['planet']==0 and j['type']=='fabricator' and (j['workforce']>0 or j['max_workforce']>0) for j in a['pop_jobs'].values())
+checks['native_patrol_capacity200']=job('patrol_drone')['max_workforce']==200
+
+
+checks['native_breach_completed_at_bound_start']=b['situations']['16777221']['progress']==1000 and b['situations']['16777221'].get('killed')=='yes' and set(b['situations'])=={'16777221'} and not a['situations']
+checks['native_full_breach_held_first_notice_only']=bc['variables']['eep_psi']==ac['variables']['eep_psi']==0 and all(q.scalars(q.block(q.block(rt['country'],'0'),'flags')).get(k)==63314904 for rt in [br,ar] for k in ['breached_shroud','psionic_traditions_unlocked'])
+checks['one_full_psionic_lithoid_hive_species_old66_rights_held']=set(a['species'])=={'73'} and a['species']['73']['traits']==['trait_lithoid','trait_hive_mind','trait_pc_continental_preference','trait_psionic'] and ac['native']['founder_species_ref']==73 and q.block(br['species_db'],'66')==q.block(ar['species_db'],'66') and q.block(q.block(q.block(q.block(br['country'],'0'),'modules'),'standard_species_rights_module'),'primary')==q.block(q.block(q.block(q.block(ar['country'],'0'),'modules'),'standard_species_rights_module'),'primary')
+
+checks['actual_one_month_after_breach']=days==30 and b['date']=='2258.09.02' and a['date']=='2258.10.02'
+bsi,asi=[q.block(q.block(rt['situations'],'situations'),'16777221') for rt in [br,ar]]
+checks['native_killed_breach_raw_cleaned']=q.scalars(bsi).get('killed')=='yes' and not asi
+
+home=0
+fleet_details={i:{'ship_ids':q.ids(q.block(f,'ships')),'scalars':q.scalars(f),'position':q.scalars(q.block(q.block(f,'movement_manager'),'coordinate')),'combat':q.block(f,'combat'),'owned_by_player':int(i) in owned(ar)} for i,f in afl.items() if (q.scalars(q.block(q.block(f,'movement_manager'),'coordinate')).get('origin')==home or int(i) in am) and q.scalars(f).get('ship_class')=='shipclass_military'}
+source=h.GAME_EXE.parent/'common/situations/13_shroud_situations.txt';monthly=q.block(q.block(source.read_text('utf-8-sig'),'situation_breach_shroud'),'monthly_progress');mods=[v for k,v,o in q.fields(monthly) if k=='modifier'];speed_keys=['tr_psionics_shroud_telekinesis','tr_psionics_shroud_clairvoyance','tr_psionics_shroud_psychometry']
+checks['native_three_unique_mult105_source_conditions']=all(len([v for v in mods if q.scalars(v)=={'mult':1.05,'desc':key} and q.scalars(q.block(v,'owner'))=={'has_tradition':key}])==1 for key in speed_keys)
+checks['all_five_psionic_traditions_and_finish_actually_paid']=all(key in bc['traditions'] and key in ac['traditions'] for key in speed_keys+['tr_psionics_shroud_psi_corps','tr_psionics_shroud_great_awakening','tr_psionics_shroud_adopt','tr_psionics_shroud_finish'])
+eep=Path.cwd()/'eat_everything_origin/mod/events/eep_events.txt';trig=Path.cwd()/'eat_everything_origin/mod/common/scripted_triggers/eep_triggers.txt'
+ev=[v for k,v,o in q.fields(eep.read_text('utf-8-sig')) if o and q.scalars(v).get('id')=='eep.2'];assert len(ev)==1
+def walk(t):
+ for k,v,o in q.fields(t):
+  if o:
+   yield k,v
+   yield from walk(v)
+cases=[v for k,v in walk(ev[0]) if k=='if' and q.scalars(q.block(v,'country_event')).get('id')=='eep.30'];assert len(cases)==1
+checks['EEP_monthly_source_first_notice_gate_no_reward']=q.scalars(q.block(cases[0],'limit'))=={'eep_psionic_ascension_complete':'yes'} and q.scalars(q.block(q.block(cases[0],'limit'),'NOT'))=={'has_country_flag':'eep_psi_notice'} and q.scalars(cases[0])=={'set_country_flag':'eep_psi_notice'} and [(k,o) for k,v,o in q.fields(cases[0])]==[('limit',True),('set_country_flag',False),('country_event',True)]
+gate=q.block(trig.read_text('utf-8-sig'),'eep_psionic_ascension_complete');checks['EEP_full_tree_and_breach_source_gate']=q.scalars(gate)=={'has_finished_psionic_tradition':'yes'} and q.scalars(q.block(gate,'OR'))=={'has_shroud_dlc':'no','has_breached_shroud':'yes'}
+p={'status':'PASS_TERRAVORE_FIRST_PSI_NOTICE_BOUNDARY_COMPONENT' if all(checks.values()) else 'FAIL','checks':checks,'before_sha256':b['save_sha256'],'after_sha256':a['save_sha256'],'days':days,'native_speed_source':{'path':str(source),'sha256':h.sha256(source)},'completed_zone61_nodes':len(anids),'remaining_node_orders':apo,'actual_psi_ids':psi,'actual_telepath':job('telepath_drone'),'known_native_leader13_error_count':known_count,'known_native_coordinator_error_count':coordinator_count,'actual_capital_id':acid,'actual_capital_raw':ab[acid],'actual_coordinator':job('coordinator'),'actual_logistics':job('logistics_drone'),'actual_district_levels':al,'actual_owned_military_fleets':am,'actual_new_paid_ship_ids':new,'actual_lost_ship_ids_requires_native_combat_review':lost,'remaining_paid_orders':aids,'front_order_progress':[q.scalars(ai[str(i)])['progress'] for i in aids[:2]],'actual_own_ship_states':{i:q.scalars(ash[str(i)]) for i in ass},'actual_home_system_military_fleets':fleet_details,'actual_population_before':b['colonies']['0']['actual_pop_sum'],'actual_population_after':a['colonies']['0']['actual_pop_sum'],'last_month_native_growth_raw':q.block(q.block(ar['colony'],'0'),'last_month_growth_data'),'native_bombardment_damage':core['bombardment_damage'],'actual_stocks':ac['effective_stockpile'],'current_month_nets':nets,'Theory_queue':q.block(ac['tech_status'],'society_queue'),'native_research_queues':ac['research_queues'],'native_research_bank_before_after':[bc['research_stockpile'],ac['research_stockpile']],'newly_completed_technologies':sorted(set(ac['completed_technologies'])-set(bc['completed_technologies'])),'native_situations':a['situations'],'eep_sources':[{'path':str(v),'sha256':h.sha256(v)} for v in [eep,trig]],'scope':'First actual month after native full breach. Only202 EEP30 and first notice flag; existing real economic state and workforce preserved. Separate full month ledger and normal Queen ACK required.'}
+out=run/(after+'-psi-notice-boundary-proof.json');assert not out.exists();h.write_json(out,p);print(json.dumps(p),flush=True);assert all(checks.values()),'Original native combat boundary FAIL retained'
