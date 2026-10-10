@@ -1,0 +1,52 @@
+{
+  "status": "PASS_NATIVE_COMPLETED_BUILDING_AND_JOBS_COMPONENT",
+  "checks": {
+    "original_SHA_pair": true,
+    "bound_wait20_PASS": true,
+    "same_original_mother_zones": true,
+    "all_original_mother_buildings_raw_held": true,
+    "exact_one_new_requested_building_in_zone": true,
+    "other_mother_zone_raw_held": true,
+    "target_zone_other_fields_held": true,
+    "only_prepaid_requested_order_and_empty_final_queue": true,
+    "coordinator_capacity_increased_and_full": true
+  },
+  "before_sha256": "e525327c267b039367856c9add13de71be5eca73dc4bfe90f2ab157f365a39b4",
+  "after_sha256": "ce7c23f694d51cdaec6527832e22fd79982f1f49a892b0106f358e2cecfadbbe",
+  "new_mother_buildings": [
+    [
+      "0",
+      "48",
+      "\n\t\ttype=\"building_hive_node\"\n\t\tposition=5\n\t"
+    ]
+  ],
+  "coordinator_before_after": [
+    {
+      "type": "coordinator",
+      "automated_workforce": 0,
+      "workforce": 1160,
+      "max_workforce": 1160,
+      "bonus_workforce": 116,
+      "workforce_limit": 1160,
+      "automated_workforce_limit": 1159,
+      "planet": 0,
+      "pop_group": 4294967295
+    },
+    {
+      "type": "coordinator",
+      "automated_workforce": 0,
+      "workforce": 1360,
+      "max_workforce": 1360,
+      "bonus_workforce": 136,
+      "workforce_limit": 1360,
+      "automated_workforce_limit": 1359,
+      "planet": 0,
+      "pop_group": 4294967295
+    }
+  ],
+  "actual_population_before_after": [
+    6924,
+    7002
+  ],
+  "scope": "One normally prepaid native building actually completed and coordinator jobs filled. Unity income and full civic route need separate verification."
+}
