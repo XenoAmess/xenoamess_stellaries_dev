@@ -1,6 +1,14 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
-2026-10-10噬岩者原版不支持“蜂巢星球”：00_ascension_perks.txt:2227的ap_hive_worlds.potential明确is_lithoid_devouring_swarm=no，00_scripted_triggers.txt:1397实际条件为石质帝国＋有效civic_hive_devouring_swarm＋非origin_wilderness；00_soc_tech.txt:1917将其tech_terrestrial_sculpting抽取权重乘0。正式简中名为“蜂巢星球”／“地表塑造”／“气候复苏”，出处及源SHA见[本轮原生限制记录](priority-terravore-psi-corps-and-breach-2026-10-10.md)。因此噬岩者EAT-23应采原生拒绝／不可用证据，不能把其它蜂巢的可转换性套到本分支，也不通过授予科技／AP改变资格；目前源码已确认，具体UI证据待补。仅当前Stellaris4.5.2规则，不是共通P语法。
+2026-10-10 大觉醒延迟实证：第二阶段普通支付UI3058／实际3057.14634后，country0.modules.standard_event_module.delayed_event仅追加enclave.7000剩649日，scope/from均country0；原paragon.999剩599日原文保持。该事件不在SAV顶层，不能只遍历顶层含event的key断言“没有延迟事件”。源未破境交换仅在stage3转主体完整灵能，当前原stage1仍潜势；原15项付款＋16项精确raw补核全部PASS／实际0。enclave.7000本身trigger.NOR含is_homicidal=yes（overlord_enclaves_events.txt:12710），因此“排定延迟事件”不能据此保证届时产生可见通知；未来到期仍按实际原件记录，不提前算作通知验收。
+
+2026-10-10 本局破境原生第二阶段：2251.03.02→04.02，496.25→501.25，stage0→1，同时 stage_flags 从 yes no no 变 yes yes no，新增 breach_shroud_stage_2_started=63250800，其余局势原文保持。唯一181/shroud.2760 scope指向situation16777221；已有实建军团的蜂巢选项正式文本是“我们相信灵能军团。”，该事件无immediate、唯一option仅tooltip。第一阶段守卫恰三项阶段／待选失败，其余37项通过；补证首版漏检stage_flags导致唯一失败，原件保留，新13项精确检查全部通过／退出0。这是当前Stellaris存档对象的两种阶段表示，不推广为共通P语法。后续原生传统的正式中文名由shroud_l_simp_chinese.yml:2585／2592／2596提取为“念力”“预知未来”“心灵测量”。
+
+2026-10-10噬岩者原生拒绝现有简中实机互证：母星“环境改造”纯悬浮显示“我们是石质噬杀蜂群！我们以星球为食！”，main_2_l_simp_chinese.yml:4013原键requires_actor_not_devouring_swarm_lithoid；00_rules.txt:1002的can_terraform_planet独立要求root.is_lithoid_devouring_swarm=no并引用同一fail_text。源条件、当前实际物种／政府、原生AP／科技禁用、GPU/OCR和前完整月15项独立核验PASS／实际0；该路线应记原生拒绝通过，不把其它可改造蜂巢的成功范围套入。
+
+2026-10-10原生调谐不能只查country.variables：本局shroud.2420第二项正常实付1000能源、加十年psionic_painkillers_gestalt（凝聚产出+0.1），真实bank／预算／国家variables／局势均保持，但country0.modules.standard_shroud_module.attunement实际{x0,y0}→{x0,y0.15}。原38项只因未预期该模块变化失败，原件／退出1保留；新40项精确补入此坐标及其它Shroud模块raw保持、绑定原FAIL后全部PASS／实际0。源码add_attunement instrument请求150与实际坐标变化分别记录，不泛化所有调谐换算或引擎机制；此前仅查variables而否认其它调谐存储变化的推断已撤回，详见[原调查及更正](priority-terravore-psi-corps-and-breach-2026-10-10.md)。
+
+2026-10-10噬岩者原版不支持“蜂巢星球”：00_ascension_perks.txt:2227的ap_hive_worlds.potential明确is_lithoid_devouring_swarm=no，00_scripted_triggers.txt:1397实际条件为石质帝国＋有效civic_hive_devouring_swarm＋非origin_wilderness；00_soc_tech.txt:1917将其tech_terrestrial_sculpting抽取权重乘0。正式简中名为“蜂巢星球”／“地表塑造”／“气候复苏”，出处及源SHA见[本轮原生限制记录](priority-terravore-psi-corps-and-breach-2026-10-10.md)。该蜂巢星球专项属于EAT-24的母星分支，噬岩者应采原生拒绝／不可用证据，不能把其它蜂巢的可转换性套到本分支，也不通过授予科技／AP改变资格；后续简中UI及15项互证已通过，见本文件顶部。此前写EAT-23为编号误记，EAT-23超大母星是另一个合同，不能凭本拒绝分项替代。仅当前Stellaris4.5.2规则，不是共通P语法。
 
 2026-10-10组织冥想真实年度进度101.25→161.25，last_month_progress5，确认原生5/月；150阈值shroud.2200只新增social旗标并产生本例shroud.2625“灵能病”。正常“把这种疾病武器化。”使唯一实际同族复杂子个体组3892→3692，母星9147→8947，并加十年weaponized_psionics_gestalt_modifier；真实库存／bank／EEP与其它受检raw保持。首个后续月出生6，实际8953，原生月初仍9147／growth=-194、明细GROWTH+6／OTHER-200／PROMOTION0；该累计-200不是第二次死亡。再一稳定月8953→8959，八资源残差0、岗位满员，原生牺牲与Mod结算应分开记账。
 
