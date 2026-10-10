@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\priority_shroud2780_control_load_v2.py", line 25, in <module>
+    p={'status':'PASS_NATIVE2780_CONTROL_LOAD_ONLY' if all(checks.values()) else 'FAIL','checks':checks,'after_sha256':a['save_sha256'],'original_seed_sha256':m['original_seed']['sha256'],'load_error_bytes':len((user/'logs/error.log').read_bytes()),'scope':m['scope']};h.write_json(run/'shroud2780-control-loaded-proof.json',p);print(json.dumps(p),flush=True);assert all(checks.values()),'Control load original FAIL retained'
+                                                                                                                                                                                                                                                                                                                                                                               ~~~^^^^^^^^^^^^^^^^^
+AssertionError: Control load original FAIL retained

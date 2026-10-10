@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\tools\stellaris_acceptance.py", line 456, in focus_pid
+    win32gui.SetForegroundWindow(hwnd)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+pywintypes.error: (5, 'SetForegroundWindow', '拒绝访问。')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\priority_shroud2780_control_load.py", line 7, in <module>
+    try:f=r.gpu_capture('shroud2780-title-ready-'+str(n))
+          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\eat_everything_origin/tools\runtime.py", line 45, in gpu_capture
+    harness.press_scan_code(0x58, stage + "-f12", 1)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\tools\stellaris_acceptance.py", line 732, in press_scan_code
+    focus_pid(int(record["pid"]))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\tools\stellaris_acceptance.py", line 459, in focus_pid
+    win32gui.SetForegroundWindow(hwnd)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+pywintypes.error: (0, 'SetForegroundWindow', 'No error message is available')
