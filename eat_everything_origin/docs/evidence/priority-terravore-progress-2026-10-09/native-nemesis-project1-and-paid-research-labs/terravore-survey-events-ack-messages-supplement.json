@@ -1,0 +1,19 @@
+{
+  "status": "PASS_EXACT_ACKNOWLEDGED_TWO_NOTICE_REMOVAL",
+  "checks": {
+    "bound_exact_original_one_FAIL_other26_true": true,
+    "bound_original_SHA_pair": true,
+    "same_actual_date": true,
+    "all_other_top_level_fields_raw_held": true,
+    "exact_two_original_event_notices": true,
+    "all_other_messages_exact_held": true,
+    "two_confirmed_event_notices_absent": true
+  },
+  "before_sha256": "4c3b036515f35e5b997312ce2e7ce900adf9a98136000352cdb6506de3e11c9a",
+  "after_sha256": "f0049d290d93bd0bf0790ad2b64f5e0daf1b5e005381eadb551e2bdd87672508",
+  "removed_original_messages": [
+    "\n\ttype=\"EVENT_MESSAGE_TYPE\"\n\ttext=\"\u0011H反常情况\u0011!\"\n\treceiver=0\n\tcoordinate=\n\t{\n\t\tx=0\n\t\ty=0\n\t\torigin=4294967295\n\t}\n\tdate=\t\"2222.03.28\"\n\tevent=54\n\tmessage_type=none\n",
+    "\n\ttype=\"MESSAGE_TERRAFORM_CANDIDATE_FOUND\"\n\ttext=\"\u0011H发现剧毒环境改造候选\u0011!\"\n\treceiver=0\n\tcoordinate=\n\t{\n\t\tx=0\n\t\ty=0\n\t\torigin=4294967295\n\t}\n\tdate=\t\"2222.09.11\"\n\tevent=60\n\tmessage_type=none\n"
+  ],
+  "scope": "Original FAIL retained; exact informational notice removal only, no replay or full route."
+}
