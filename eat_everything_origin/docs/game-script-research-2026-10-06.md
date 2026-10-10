@@ -1,5 +1,7 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-11 原生防御平台订单实证：11.25正常两次543合金点击，queue2.location={type0,id0}对应基地0，buildable_defense_platform含starbase0与ship_design_implementation={design150995587,upgrade4294967295,growth_stage0}。实际两单needed60、串行；11.26首单1、次0，此后11.29首4，独立付款27项／首V13 33项／常规32项全PASS／实际0。现有护卫舰队列的1.58／日与starbase_defensive_war_ship_build_speed_mult=0.33不能套到平台；平台本局实际1／日。平台class为shipclass_military_station，区别于护卫舰shipclass_military；预览3000船体不等于已完成对象实际船体。付款仅资源alloys变化、两旧none句柄+16777216复用、唯一fleet807 dirty_cloaking_strength缓存增加，RNG及其它top保持。仅Stellaris本局实证，不推广CK3。[设计和原件](priority-terravore-native-defense-platforms-2026-10-11.md)。
+
 2026-10-11 上述国家舰容在11.18实际刷新45→40，独立V12常规30项PASS／实际0，死亡缓存余额5→0，八军舰保持。该样本是判死11.16、对象移除11.17、国家舰容刷新11.18的三端点序列；不能推广为固定月初更新或所有死亡都恰两日。本结论来自原生SAV及无新增error的独立检查，原始失败保留。[结果](priority-terravore-paid-industry-expansion-2026-10-11.md)。
 
 2026-10-11 已杀清理后国家舰容缓存：11.17正常推进一日，50332132对象及全部舰队引用已移除，战报同战死亡仍1；舰队67109603缓存已回270船体／129.34375战力／killed0，但country.fleet_size仍45，实际八艘5尺寸护卫舰合计40。因此舰队自身缓存与国家舰容可在不同时间刷新，不能据此判幽灵舰仍活着。V11精确舰容单项FAIL／实际1保留，其余29项通过；后续以已证实移除死亡的5点余额逐步核原生刷新，当前尚未确认具体刷新周期，不预设月初。仅Stellaris本局存档实证，不推广CK3。[过程及限制](priority-terravore-paid-industry-expansion-2026-10-11.md)。
