@@ -20,6 +20,8 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 
 ## 结果
 
+03:13 第三个v2切点 native-killed-cleanup-naval-cache-and-sixth-paid-pair 冻结于2026-10-10T19:10:27.975682Z，完整21013源项／816259775字节，复用20644项、新增369项／17809061字节。独立暂存原字节校验PASS／实际0，核21073唯一blob／840383057字节，[回执](evidence/priority-native-killed-cleanup-naval-cache-and-sixth-paid-pair-delta-staged-verification-2026-10-11.json)。V10与V11各原单项FAIL、V11／V12／V5全部源码和实际退出、死亡三端点与第六对出生SAV及两简中过程图完整纳入；基线a61b13c1／其v2清单精确绑定。当前五相关docs／新切点／回执提交推送，远端待核；暂停11.25不等于全路线完成。
+
 02:49 第二个v2切点 native-three-paid-mines-and-v10-defense 已冻结于2026-10-10T18:47:15.657627Z，完整20644源项／798450714字节；复用20168项，新复制476项／22684137字节。独立暂存原字节校验PASS／实际0，核20703唯一blob／822085830字节，含已冻结复用原件、基线清单、准备输入及历史回执；[回执](evidence/priority-native-three-paid-mines-and-v10-defense-delta-staged-verification-2026-10-11.json)。新增三矿付款、V10／V4源码和逐日原件均在清单，旧切点不变；当前五相关docs及本切点／回执进入提交推送，远端待核。游戏仍在2268.11.13暂停，未把切点校验宣称为全路线验收。
 
 02:08 四docs／新切点／回执共413暂存路径及cached diff check实际0，已提交6e1c37d0cecacbcca81d378b84117300b9fdc245；push实际0、独立ls-remote实际0／远端main完整SHA一致。首个v2切点已交付，后续可用本已提交manifest作为新基线继续平铺复用；不再更改本冻结目录。生产Mod与公开0.2.0保持，后续游戏观察仍独立验收。
