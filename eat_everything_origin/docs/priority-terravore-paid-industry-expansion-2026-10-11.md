@@ -112,3 +112,28 @@ V20 SHA 8e15a5df446dad53d98080c23ddacec3ca9632ea09005f91d72037ac523d25ec，同�
 ### 首矿区通过后受限续推方案
 下一私有driver V12从冻结V11派生，绑定V21源码SHA25a72330367ddb31328665dd068d47c0e8e05b2f8c1fb4d46388be44a894b173、同一包装器和日历。仍单步≤14原生日／批≤42日／≤3步；每步必须V21独立全PASS且actual0才派下步。读取真实剩余矿单，空队列时不索引旧对象；矿区完成数量增加即停止批次供人工核查。其它敌军回返/殖民预测/平台/后方/新出生/战损/待选/战斗/基地下降边界保持；护卫舰队列为空时仅视为无下次出生，仍受其它全部限制，不能失去30笔付款守恒检查。
 本切点提交核远端后，拟唯一idle10从05.01到预计第11对出厂06.05，最多三步34原生日；逐端仍核17现存舰、余10订单以及真实变化。新出生应停止；不预报实际出生成功。后续逐批到第二矿区预计10.23／殖民预测2270.01.01／第三矿区预计2270.04.15，各日期仅计划，实际SAV与独立检查为准。月初缓存未同步的原件保留，后续逐端记录；任何新未解释变化先停止并调查，不自动重试日历。
+
+05:12 首矿与后方切点已提交2a2afa5778ef9f64f86f765814e887277cd7140e，push实际0、独立ls-remote实际0同完整SHA。现在执行既定V12／V21唯一idle10，05.01→06.05最多三步34原生日；V12源码SHA c02a68f9110aeb24ae0a289803db1389b2b19bae9e50a6be63ba17532d7cf581。
+
+idle10-step1已核2269.05.15，V21常规39项全PASS／actual0，第二矿19.6／240、第三0；17军舰存活，无新出生／战损／战斗／待选。首端月初住房使用缓存差异未导致人口凭空增加；继续既定批次，下步逐端复核，不称整月稳定已通过。
+
+05:16 idle10实际0，34原生日至2269.06.05，三端V21常规39项全PASS／actual0，stop=new_paid_birth；第11对1909/1910真实出厂，累计22paid出生／7死／15活，原8中4活，总19军舰／舰容95，余8单。第二矿47.6／240、第三0，母星10776／殖民72；端点E29.05695／M25.52395／A10.331正净值。SAV15a97e2ab03112419c72557fb081205cfa9f95fd16741006d415ab18318e063b。基地船体13414.02056，仍本国、无新战斗或损失。下一唯一idle11至预计第12对07.13，38原生日／最多三步，仍V12/V21；实际出生或异常即停，不重跑既有日历。
+
+### 2269.06.19 原生新统帅特质错误：调查与续验方案
+idle11首步单日日历实际0（14原生日06.05→06.19），SAV667fb7568b8d0d04c04a5c2b708dfadd518bad254481e91fb990006efaebb310；V21常规39项中仅unfiltered_error2670_exact_held失败，38项通过、actual1；外层V12 actual1停止，后两步未派出。日志原2670字节前缀完整保持，仅增144字节：effect_utils.cpp:96／Unable to add trait for [reason] councilor_trait_not_allowed [at] file: events/leader_events_1.txt line:110。未重复日历。
+原版leader_events_1.txt:12起country_event leader.1“新统帅”，110行create_leader的traits首项leader_trait_gale_speed，另两项aggressive/eager；00_admiral_traits.txt:1131疾风为COUNCIL=yes／councilor_modifier。新增唯一leader16777279于2269.06.12创建、class commander／level2／country=creator16777219（AI，非本国），实际traits恰aggressive/eager，没有gale_speed。生产Mod未定义leader.1或此trait/add_trait/create_leader。本国38项仍保持，19军舰存活、无新出生/战损/待选。源码归因足以解释这项原生错误，但不声称已经无Mod复现本次leader.1创建分支。
+已有不可变native-leader-trait-error-control中leader.13的无活动Mod舰队作用域14项PASS／actual0，只证明同一gale_speed引擎拒绝可独立于Mod发生；证明SHA696015f50a82abc3ce82a78eada44362d376329286067e744dc25bdb4ed43dbd，助手SHAa19ca68d3bbc2b49b11fb9c3cfd9e94822421eee60f5e51c891803d2f1cfcfc5。新line110与旧line683不同，不能写成仅时间戳归一化全段相同。三原版源SHA仍为4776bb309d910d1358f753c38ce3bd2a1fc90103cc4a18876b9f0ce1295bb5a0／7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306／cf3affe4627e04c00b7f47510cdfb21794331abc30e858e7a3486bd6f9e66703。
+实施前：从冻结V21另建V22，只把严格2670不变改成精确已说明2814 baseline（SHA df43a78778ff981c9add0382adb3fd127128adbc6006d6bfd7db6a194c6056eb）；首端必须原2670前缀+唯一准确line110的144字节错误，首后以后完整日志逐字节保持2814，不通配放行新错误。新增原版三源/既有无Mod14项的固定原件核验；首端另绑定V21原39唯一FAIL、V12 actual1、两SAV及新领袖来源/日期/两特质。所有38项游戏状态条件保持，固定首矿锚点仍显式V21，不误绑V22自身。验收为同现有SAV独立组件PASS／actual0并保留原严格FAIL；它只允许继续有界验收，不宣称零原版错误或leader.1无Mod复现。生产Mod和P工具不修改；未知错误仍停止。
+之后新driver V13从V12只更新观察器/source/proof引用；仍单步14日／批42日／三步上限及全部停止条件。V22通过才从当前06.19新唯一idle12继续到预计第12对07.13（24原生日、最多两步），不得重用已失败idle11任何stage。
+
+V22首41项40通过／actual1，仅first_native_leader1_exact144_original_V21_single_error_FAIL_driver1_and_foreign_created_leader_bound失败；原件保留。调查实际日志增量repr以CRLF（\r\n）结束，助手误把终端显示换行写作CRCRLF（\r\r\n）；这是补证助手字节常量错误，不是新游戏错误，未推进日历。先记录修正方案：新V23仅修正常量，并在首端新增绑定V22原41唯一FAIL/actual1/同SAV/源码e03be7b268a37932585c025b47bb874a47a86033a8321b95cbe1b71745a8654d及实际CRLF证据。其余40项保持；新V13改绑定V23。验收仍同现有SAV全PASS／actual0，不改日志、不重跑日历。已有原版leader.13无Mod复现和本次leader.1源码归因范围不扩大。
+
+V23 SHA d86eb948e3fddfb8502fa2de83cc931f088ab316ab86af941a87e6163eeb2763，现有06.19 SAV首42项全PASS／actual0；原V21严格日志FAIL、V22常量FAIL和V12外层actual1全部保留。新V13 SHA bca2b2e2e80de654058966013944b58b214bc206c2c472b111f7f7579e3233f8，仅绑定V23；现在按既定唯一idle12，从06.19到07.13最多两步24原生日。
+
+### 首矿区后单预算周期核账：实施前方案
+只读调查05.01→06.05（34原生日、跨唯一06.01月界）的真实effective_stockpile差额与06.05 current_month预算：E/M/F/CG/A/unity六项残差精确0，last_month等于05.01 current_month。影响力前后1000、正净7，贸易前后50000、正净94.55669，因此未入库存分别7与94.55669，不能把封顶损失称经济残差未知或虚构库存收益。原版00_strategic_resources.txt:132影响力fixed_max_amount=yes／max1000；:160贸易base max50000（并非fixed），文件SHA140dea921a77f76726f361eca99f59f0c7755e4e728dec4699d3b732457911a4；待当前批次结束再简中UI核实际贸易容量，不能仅从base推断所有国家上限。
+拟新增只读priority_terravore_first_mine_budget_cycle_guard.py，固定绑定首矿V21 40PASS/actual0与三个idle10 V21常规39PASS/actual0、V12外层actual0、每段日历/两SAV链、总34日且只有一次月界。六库存精确预算残差容限0.00005；两封顶资源独立核真实前后值及实际容量UI/原生源指纹，不声称产生被截断收入。核实际矿工满岗2600、矿工产矿193.05／矿区能源维护11.7、住房13200/正空位、稳定80/零犯罪、正舒适、C37/D11和原builds保持。无新error的原样2670日志绑定该既有05.01→06.05区间，本轮06.19已说明原生错误单列，不混改旧证据。此分项只称首矿后一个实际预算周期，不替代三矿全部完成后的稳定30日或整路线验收。
+
+实际07.13简中贸易提示已人工看图，明确“已存储：50000/50000”；terravore-trade-cap-exact-visible.jpg SHA a75d109f58197435b1ef8d25a380383c7d2e90d2d1031b6059a41e9fb529e0d6，OCR同图匹配。首次悬浮坐标落到战略资源，仅调查不算贸易容量；两图原件均保留。单预算助手将绑定这张当前实际容量图，明确该UI日期不是05.01/06.05原端点。
+
+首矿后预算周期独立17项全PASS／actual0，助手SHA a55abf82f48ad5ad36885265d22d1072d3d92e324aa772c011b4bdca4c692be7；六资源账闭合，两已封顶收入明确截断。idle12实际0，24日至2269.07.13，两端V23常规40项PASS／actual0；第12对16779086/33556237真实出生，累计24paid出厂／7死／17活，原舰4活，共21军舰／舰容105，余6订单。SAV bfa31e7947f7d9389232ae94dc193458c53bc792a29e4e1be7fb069cc1bcf4fd；第二矿100.8／240、第三0，母星10783／殖民76仍殖民中。原版错误完整2814基线保持，未新增。下一先冻结本轮全部原件并提交，再按V13/V23唯一idle13至预计第13对08.21，38日／最多三步；重工业仍待三矿。
