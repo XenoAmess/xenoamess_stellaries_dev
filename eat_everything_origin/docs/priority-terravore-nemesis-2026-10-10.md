@@ -26,6 +26,70 @@ crisis.4140“星海战栗”的immediate开始事件链；正常“这是我们
 
 ## 结果
 
+10月11日00:36 暂存原字节核验PASS／实际0，共19223 blob／734435979字节，独立回执priority-native-vigilance-mother-defense-and-rear-starport-staged-verification-2026-10-09.json。归档原件、准备输入及历史priority回执逐个SHA与Git暂存内容一致；当前仅三相关docs／本完整切点／新回执待提交推送，尚未声明远端成功。
+
+10月11日00:34 完整切点归档实际0，冻结UTC16:34:00.940442，19168份源文件／727714052字节；含最后筑防付款、合法戒心永存、更新战报及全部原始FAIL／后续补核、125合金后方升级、至09.01的27项观察和全部未筛日志／原图／配置。源清单source-snapshot.json已形成，此时不称已暂存校验或远端成功。下一逐blob检查再仅提交三docs／本切点／回执；生产41文件、VERSION、CHANGELOG及Workshop均未改，本切点仍非会战胜利、殖民完成或整路线通过。
+
+10月11日00:31 唯一3日实际0至2268.09.01，SAVaf2b5b718608daa885fac7f1c86b1f137f7cd967157608b6f78be2b4a648a534；V7的27项全PASS／实际0。基地1680.78173仍本国并交战，敌12引用，七军舰幸存但均无活动combat，累计原四／paid三损；母星24单前二47.4／60，后方升级27／360。母星10719／殖民41仍在殖民中，威慑105／level1、PSIONIC_1及完整灵能／EEP保持，无待选／新增error。端点E47.82928／M12.10628／A15.95／U163.00689／trade97.09840，不称独立整月闭账。冻结全RUN及原始未筛日志／配置到native-vigilance-mother-defense-and-rear-starport，逐blob核原字节后只提交三份相关docs／新切点／回执并推送；冻结时不动GUI／日历／活动RUN。归档和本地提交固定后可在独立push期间继续下一轮GUI，但不能改本冻结切点或并行新提交。下一唯一3日至09.04／terravore-war1-defense-three-days11，绑定本27项／实际0；预期09.09下一两舰完工仅待核，不能提前计舰。
+
+10月11日00:29 08.28 SAV2aa659e53373adbf42e507ae931113d833e97b1be2cc54f6dc3c167b2caada02，V7的27项PASS／实际0。基地1819.22199，敌12引用、威慑105，无新增舰损；最后援舰100664127已脱离实际combat，当前军舰均不在战，活动关系只0／166对825（166仍mia_return_home科研舰，不能计武装防守）。母星24单前二42.66，后方22.5／360，无待选／error。下一唯一3日至09.01／terravore-war1-defense-three-days10，绑定本27项及实际0；31日式公历不适用，本引擎08.28＋3=09.01，按原生30日月核准。
+
+10月11日00:27 08.25 SAV5c8457bf46e4c59e47867cc1b4c0a1b3669235a9a3592937d1217f723f65dc14；V7的27项PASS／实际0。基地1906.35423，敌825由13→12引用且实际损失核准，威慑仍105；本段无己方新增舰损，六MIA及一参战援舰保持，母星24单前二37.92、后方18／360，error／待选零增。当前船体消耗比前段减缓，但不据此推定胜利或不会失守。下一唯一3日至08.28／terravore-war1-defense-three-days9，绑定本27项及实际0；低于1000则转1日观察。
+
+10月11日00:25 08.22 SAVa56491f3a8ac78ccbfbc6d8448f64934606e7128096f42cb4c8d332bb2bc0c97，V7的27项全PASS／实际0，无新增己舰损／待选／error。基地1992.76118，敌13引用、一援舰仍交战，母星24单前二33.18、后方升级13.5／360，威慑105。只读源码确认eep_core_available需要本国母星未占领／无地面战，eep.2按月负责lost／recovered通知；这里只是静态边界核对，本局尚未实际触发母星失控或恢复。下一唯一3日至08.25／terravore-war1-defense-three-days8，绑定本27项／实际0。
+
+10月11日00:23 08.19 SAVc0d3a2c0549e36c2a3236aeda2c6119ba3e4384e6bc2d9a76945ba66513b7c06，V7的27项PASS／实际0，无新己舰损／待选／error；基地2332.80003，敌13舰引用保持，剩一paid仍交战，六MIA保持，威慑105。母星24单前二28.44，后方升级9／360，均按真实工作推进。下一唯一3日至08.22／terravore-war1-defense-three-days7，绑定本27项／实际0；如基地接近1000，进一步缩短至1日，不能跨失守边界称防御安全。
+
+10月11日00:21 08.16 SAV203d452d6683bbe536bf41e2a5bcc8f9d28136e4be50c710a02f0e18457b00c2，V7的27项全PASS／实际0，源码f51472626d0ec58f5a6fea2225df96fff6a63ba4abf7543a94c861d366919841。后方153升级真实4.5／360，原非progress字段／本国哨站身份保持，未完工。母星基地2755.80783；paid50333420真实损失且原生同战舰队累计损数精确支持，累计原四／paid三损，现六MIA＋一参战paid67110639。敌825剩13引用／新增一损，威慑仍105；24单前二23.7，人口与EEP／PSIONIC／错误保持、无待选。下一唯一3日至08.19／terravore-war1-defense-three-days6，绑定本27项及实际0；继续短步核基地，失守另存真实结果。
+
+10月11日00:20 后方125合金付款独立20项全部PASS／实际0，源码a8a52e34638492a7fe0c1a317c54cd9d5238a1192c2d2abf119fe785ec5aa8cf；母星24订单、全部实际舰船、战争／研究／EEP及其它真实库存保持，原完整差异精确闭合。已按既定方案开始唯一3日至08.16，before为本付款存档，前置付款20项及实际0；V7只添加后方付费源绑定和未完工升级进度核验，仍保留原V6的25项。
+
+10月11日00:17 后方升级保存实际0／2268.08.13／SAV2a3381a6d47c8105714fe2379c6d0a859f35ae5f90f74ce1e0ec3218a3aebee3，2368.02084→2243.02084恰付125合金。完整只读差异仅country0.modules经济alloys镜像同额扣款、construction队列2278新增唯一234881044、fleet16778043.properties只追加dirty_cloaking_strength、camera_focus改变；random_count及其余top raw保持。新订单paying_country0／queue2278／progress0／needed360／resources{alloys125}／buildable_starbase_upgrade{starbase153,starport}，旧空槽218103828=none被原生替换为新234881044键，不能当额外旧付费订单被取消：该旧单此前08.01已完工，母星仍24单完整raw保持。base153仍outpost，未完工、未有船坞。
+
+独立priority_terravore_rear_starport_payment_guard.py实施前：按上述完整差异逐项核，只允许construction.queue_mgr.queues的2278增加准确单项，item_mgr.items只替换已为none的旧218103828为空进度新234881044；其余manager／有序对象全raw保持。country0仅经济合金镜像扣125，其它模块／country字段、其它国家／fleet和所有舰船／母星／殖民／EEP／战争／科研／真实其它库存与bank均保持，16778043只允许该单缓存键；camera仅视图变化。绑定最新25项PASS实际0、正常点击(415,376)／保存实际0、UI报价图SHA、原版基地等级／船型源码，完整error及无待选，继承精确四原损／两paid损／六累计paid舰元数据。
+
+付款全PASS后V7观察器从V6仅新增后方升级约束：绑定该付款证明与实际0／助手SHA、原始125付费SAV／新订单；base153仍原outpost／station67109591／fleet804本国、队列2278与订单234881044完整非progress字段保持、工作按实际1.5／日增量核，且未达360时不得宣称星港完成。其余V6的25项保留，独立v7输出；第一唯一3日至08.16的before改为本付款存档，前置为付款独立证明，后续依据每段V7结果继续。真实完工／战斗结束等边界另行精确核，不放宽整个construction。
+
+10月11日00:14 后方UI已亲自查看：约得本姆空间站／哨站，下一等级“星港”，正常可点升级，真实报价125合金／240日（terravore-war1-rear-upgrade-price-visible.jpg）。原版ship_sizes/00_starbases.txt:135星港base_buildtime360，本局采用筑防使升级加速；修正后240日以UI和后续原件核实，不能按假定200合金付款。按前方案正常唯一(415,376)点击，同日保存后先只读完整差异，再将精确新订单字段／价格125／母星24单保持等落实到独立守卫，未全PASS实际0不推进日历。搜索旧查询首次追加／Ctrl+A未清除的原图及退格清空重输回执保留；首次runtime key命令不支持／实际1且无GUI动作，已按现有press-scan正确执行，无工具改动。
+
+10月11日00:08 08.13 SAV2df1b4e9abcee8d7b7b6dacd6278fa69253f12bb1b04f1c9306c4adc38bec22c；V6的25项PASS／实际0，无新己方舰损／待选／error。基地船体3393.29558，敌14舰、六MIA及两新舰仍保持，余24付费单前二18.96，威慑105。先暂停日历调查后方97／base153能否正常升级；母星下一批仍未完工，不能按余量预支援舰。
+
+后方正常经营方案：只读原版基地等级／升级成本／时长与当前已付前哨153对象、UI报价和可用按钮；若可正常升级，仅按真实UI付费一次并同日保存terravore-war1-rear-starport-paid。实施前按现场差异定义独立付款守卫，绑定当前25项PASS／实际0和原41文件生产树、前后SHA／正常点击与保存；真实合金扣款恰UI价格，只有153升级订单及精确原生缓存变化可变，母星船坞24单／全部ship实际状态／母星与殖民／EEP／PSIONIC／战争／威慑应保持。升级之后尚需实际完工、独立月账与另行正常付款建船坞，不能当已具造舰能力。若不可升级只记录原因，日历恢复唯一3日至08.16／terravore-war1-defense-three-days5；付款若成功则先全PASS实际0再按同终点观察并精确核后方升级进度，原有母星战斗约束仍保留。此经营不保证守住或战胜，不回档、不授予资源科技舰船。
+
+10月11日00:05 08.10 SAV854fcd9bf8e3ce7b12ac99413fdd2d7b85ebc0f5c191d7a6f086494b40c09235；V6常规25项全PASS／实际0，无新损失／待选／error。基地4160.33413／18300，敌14舰引用保持；新两军舰船体仍270，50333420甲仅37.10090、67110639甲250，余24单前二14.22。母星会战干净简中图terravore-war1-defense-three-days3-visible.jpg已亲自查看，仅为真实过程证据、不是胜利或矿物舰宣传图。下一唯一3日至08.13／terravore-war1-defense-three-days4，绑定本25项／实际0；之后仍按真实状态短步核准。
+
+10月11日00:03 V6补核26项全部PASS／实际0，源码8fb7ccb67c97ec9e979f894736e409d11806eeaf7ae6e0eceb7af2bf51ac2ab4；原V5单FAIL完整保持。真实敌舰16779066消失及原生累计lost+1支持一次15威慑，目标进度与真实库存同增且仍level1；母星与付费援舰等原23项保持。正在执行已记录唯一3日至08.10。新原始事件／目标／tiny场景文件已随只读守卫复制到活动RUN供下一切点冻结，不改游戏原版。
+
+10月11日00:03 08.07观察V5的24项23真，唯native_finished_PSIONIC1_full_breach_level1_menace90_held为FAIL／实际1，原件保持。只读核实危机path／level1及已完成项目2 raw不变，仅唯一crisobj_destroy_enemy_ships.progress90→105，真实menace同步90→105；敌825再少16779066，其ship对象已移除，原生累计护卫损1→2；己方仍八军舰／无新增损失，基地HP5049.61108。events只有旧残骸id3的days_left102→99，定时旗标仅正常−3日，非本失败原因。不能豁免整个crisis_progression块，也不能把本次收益称作已解锁等级2。
+
+V6实施前：从已执行V5派生独立priority_terravore_war1_battle_observer_v6.py，仅将crisis_progression的全raw保持改为path／level及其它字段保持、所有objective有序保持，唯一已有crisobj_destroy_enemy_ships只允许progress增加，且增量严格等于真实menace增量。新增敌825前后实际ship引用集合差、所有失踪对象无实体／无任何fleet引用、原生累计lost差恰等失踪数的核验；威慑增加须为本局15整数倍且不超过15×敌舰真实新增损数，0增量时目标进度也保持。该约束保留固定基地击杀可能无威慑的原生区别，不伪造击毁者身份。本机tiny场景num_stars200、目标base3000／星系数及min3／round规则与当前一次+15互证；不由201个galactic_object键数反推奖励。
+
+V6另绑定原版目标e5caaa…与真正事件文件nemesis_crisis_menace_objective_events.txt的f38d1c9291767ea4b1845214198fd2d84686db9e3a89d3e49180d6a6d2f2b261（crisis.4025位于此文件，不在nemesis_crisis_events.txt）。首08.07新增绑定原24项恰上述一FAIL／实际1／V5源码47d2f7…／两SAV、准确90→105及16779066一损，其余原23项保持，独立v6输出、不重走3日。全PASS后唯一3日至08.10／terravore-war1-defense-three-days3，绑定V6实际0，仍核基地边界。
+
+23:57 3日实际0至2268.08.04／SAV101cbfb15947ca209b72617cd6b4a139a47cebc78f1d4d6043414a8063938c54；V5的24项全PASS／实际0，无新增己方舰损／待选／error。基地HP5590.67628、敌15舰、己新两舰仍交战，六MIA保持，余24单前二4.74。下一唯一3日至08.07／terravore-war1-defense-three-days2，仍绑定最新24项与实际0；如失守停止原防御守卫后续，先保存失败并核实际所有权和原生战报，不回档。
+
+23:56 唯一10日实际0至2268.08.01，SAVcaec96c5b360921f9f898e578c7aae656751a08901e32207a8e1adc6977a850b；V5常规24项全部PASS／实际0，无待选／error新增。两付费援舰50333420／67110639恰当日完工、实际270满血及原付费设计，fleet100664127已原生与825交战；原六军舰仍MIA、累计原四／paid两损，余24订单前二0。基地HP降至6702.93468／18300，无盾甲；敌825当前引用15舰（原16），不把引用变化或reason文字直接当胜利或威慑奖励，实际仍90威慑。母星10713／殖民37，端点E44.37055／M12.25305／A14.698／U162.88353。下一步仅唯一3日至2268.08.04／terravore-war1-defense-three-days1，绑定本24项及实际0；按当前基地损耗缩短观察，仍先保存并核实真实控制权／订单／战损，不能继续以10或14日跨越潜在失守边界。
+
+23:53 V5的25项全部PASS／实际退出0，助手47d2f746067431ed6c51f14f8301ed6f68cd4d9f79d86dc2d513f28f653c448e。已精确核准更新后的209汇总战报对paid50333423的唯一新增损失，累计原四损／paid两损、六艘MIA、基地18300上限与13137.96873现血、26付费订单保持，未重走日历或修改原V4 FAIL。唯一10日观察现已开始至2268.08.01，绑定本25项及实际0；预期下一批完工仅作为待核目标，不提前计入军舰。
+
+23:47 第二14日实际0至2268.07.21，SAVc485f24f2ca383fa19cedfb1484ac0a064175ed91f6afdd4bc62b32d65ae2a00，母星10707／殖民34、EEP保持，error2670无新增。基地max18300实测兑现、HP13137.96873，盾甲均耗尽；六幸存军舰全部紧急撤退途中，paid50333423=none／其83886911=none，累计paid两损（另一67110094）、原四损。余26单前二44.24/60，敌825仍16条ship引用，无更多威慑。V4的24项23真，唯all_missing_ships_exact_native_same_battle_loss_counts失败／实际1，19e4801213bab14c9a3149fafd5df5562917662ad633bdc7563d00585f53485e原件保持。
+
+只读COMBAT_STATS原件核准：同一通知209／message.date07.03现被原生更新为combat_stats.date06.14／reason=we_destroyed，fleets匿名数组为788原4损1、33555013原1损0、33555034原5损3、83886911原2损2，enemy含country1／825原2驱9护4雷1巡各损0。不能把message.date当最新一舰损失日期，也不能由reason名字推定我方获胜；敌18是记录内历史条目，非当前新增参战。援舰自身battle.start06.23并不等于汇总战报date06.14，V4因要求完全同日起点且只允许we_escaped而漏读本原生记录。
+
+V5实施前：从V4只扩展读后战报的精确分支，允许已实际出现的we_escaped／we_destroyed，须含country0／目标fleet及country1／825；汇总date必须等于该舰前战斗起点或仍在交战的敌825实际combat.start_date，并按相同舰队原count_lost与后汇总count_lost差额恰等失踪ID数，所有失踪仍须无实际ship对象／无任何fleet引用。其它23项保持，首当前V5额外绑定原24项恰单FAIL／实际1／源SHA／两SAV与准确50333423一损、六幸存、26单／44.24，累计原四＋paid两损明确记录。通过后唯一10日至2268.08.01／terravore-war1-defense-ten-days1，按两槽各1.58正常工作接近下一批完工边界，仍不得回档或断言基地守住；新战斗结果与失守另查。
+
+23:41 戒心永存有效确认及selected2保存均实际0，SAV7a9e7d08a39265359a253ce26774d928b4bf18de976c31b651fb5fc1263f4798／2268.07.07。原四AP末尾精确追加ap_eternal_vigilance；只读两完整原件差异仅country0.ascension_perks与顶层random_count+1，其它所有top对象／全部ships与fleet raw保持，全部真实库存／bank／人口岗位／EEP保持。基地0 HP/max仍15800，AP修正尚未在ships上限刷新；UI第五槽已是盾图标，先前空槽与错误确认／失败保存原件完整保留。
+
+AP精确守卫实施前：新增priority_terravore_vigilance_ap_guard.py，绑定完整筑防18项PASS实际0、源助手4aaa6e…、原版AP099258…与筑防b1a5e8…源码、前后SHA、实际第五槽／AP可选截图及真正(588,433)确认回执；只允许上述两个原字段变化，全部其它有序top raw及countries／country0字段逐项保持，原四AP与完整筑防先取得证明、第五只加戒心永存，真实库存与母星／殖民等摘要也独立恒等，无待选与error2670保持。首失败保存实际1／无SAV不计成功且保留。继承累计四原损／一paid损与四paid已造元数据；仅PASS／实际0后推进既定14日至07.21，before改selected2。战斗新增V4从V3仅将base0的已取得AP条件／HP上限改为18300，并额外绑定此前AP源证据，保留所有母星、建造、战损、研究与日志检查；若新的战斗失败／失守或事件不能解释仍暂停调查，不视作AP保守卫必胜。
+
+23:39 戒心永存首确认坐标错误：我沿用传统确认(630,417)，而该AP弹窗实际“是”中心(588,433)，第一次未采纳。随后首保存terravore-war1-vigilance-selected在四次Esc后才打开主菜单、未进入保存，实际1／RuntimeError Chinese native main menu did not open，无SAV／audit／observation，不计AP成功。fresh简中F3证据第五槽仍空；已正常重新打开相同合法AP并移走tooltip，亲自核准清晰确认弹窗，唯一有效确认用(588,433)，另存terravore-war1-vigilance-selected2。保留首失败所有回执和截图，不修改保存工具、不重购传统、不推进时间。后续AP守卫绑定真实有效点击、首失败无存档及最终五AP追加，不能靠selected命名推定完成。
+
+23:33 警戒思维过程真实付款完成存档fd7941632f479ec470f6461a41c1e6b18b7dd7575eee73d1a569cf44c0b351c6；V4十八项PASS／实际0核准实扣5793.83398／UI5794、余额9056.90785→3263.07387。前条即时汇报的5793.11492是口算错误，以本精确存档差额更正；不能用06.23余额代替07.07经正常月产出后的真实前值。实际传统序列追加基础tr_unyielding_fortress_doctrine与自动tr_unyielding_finish，保留原四AP。原生random_count精确+2，对应两次追加，不是先前单节点的+1；执行前将未运行V4的该断言改为len(addition_list)，其余保持。fleet33555034仅附加hit_points缓存236.24133→193.19485，实际原两舰HP153.36473＋39.83015＝193.19488且ships raw保持；按原0.00005容差独立核，无额外真实损失。其余19舰队仅dirty_cloaking_strength缓存，基地0 update2048；付款已独立核准，随后查AP。
+
+23:31 单次push实际0，独立ls-remote实际0、远端main为4aef638a92005df7c157dfe34eb3a7c856cd6aa6；完整694849199字节切点已交付，后续未归档新原件留下一轮。第五筑防节点在蜂巢＋Nemesis实际显示“警戒思维过程”（tr_unyielding_fortress_doctrine_hive_nemesis引用hive，简中704／706），不是基础版本“堡垒学说”；UI价5794、明确允许购买，已正常打开确认弹窗。按原方案唯一确认并同日保存terravore-war1-fortress-paid，原key与自动finish实际序列先读原件核定再运行已准备V4；不凭显示替换推定新增存档key。
+
+23:30 切点三docs／原件／回执已本地提交4aef638a92005df7c157dfe34eb3a7c856cd6aa6，18450暂存路径范围核验与cached diff check均实际0；单次push仍在运行，不称远端成功、不重发第二次push。归档已完整冻结且本地提交固定，后续GUI只写活动RUN和下一轮docs，故调整前文“等待推送完再经营”为此时即可独立继续经营，远端待该进程实际结果及独立ls-remote核验；不改现有冻结切点、无下一次提交／发布与本push争用。开始按23:24正常查看堡垒学说及第五AP资格。
+
 23:26 本切点暂存原字节校验PASS／实际0，共18498 blob／701316065字节，独立回执priority-native-mother-battle-and-paid-defense-traditions-staged-verification-2026-10-09.json。仅相关三docs、完整切点及新回执进入本轮提交；无生产代码、VERSION、CHANGELOG或Workshop元数据变动，提交推送与远端一致性待下步实际核验。
 
 23:25 全量暂停切点native-mother-battle-and-paid-defense-traditions已于UTC2026-10-10T15:22:42.950808Z冻结，18444源文件／694849199字节，涵盖2268.07.07和24项战斗V3、所有正常防御付款、原始FAIL与完整未过滤日志；该切点之后的经营／AP尚未执行，不声称在原件中。Git暂存实际0，正在逐blob原字节校验；完整切点不再改写，生产41文件0.2.0未改。

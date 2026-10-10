@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\priority_native_empty_ack_guard.py", line 35, in <module>
+    out=run/(after+'-empty-ack-proof.json');assert not out.exists();h.write_json(out,p);print(json.dumps({'status':p['status'],'checks':len(checks),'failed':[k for k,v in checks.items() if v is not True]}),flush=True);assert all(checks.values()),'Original native ACK FAIL retained'
+                                                                                                                                                                                                                                 ~~~^^^^^^^^^^^^^^^^^
+AssertionError: Original native ACK FAIL retained

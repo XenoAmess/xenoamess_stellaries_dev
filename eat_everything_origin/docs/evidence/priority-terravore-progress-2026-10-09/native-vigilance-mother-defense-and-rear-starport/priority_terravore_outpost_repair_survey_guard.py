@@ -1,0 +1,53 @@
+"""Actual paid outpost, original fleet repaired, known-system survey; contact pending."""
+import sys,json,logging,shutil,zipfile,re
+from pathlib import Path
+from decimal import Decimal as D
+sys.stdout.reconfigure(encoding='utf-8');sys.path[:0]=['eat_everything_origin/tools'];sys.argv=['runtime']
+import runtime as r,audit_save as q
+logging.disable(logging.INFO);h=r.harness;run,user,m=h.load_run();dest=run/Path(__file__).name
+if dest.exists():assert dest.read_bytes()==Path(__file__).read_bytes()
+else:shutil.copyfile(__file__,dest)
+before='terravore-native-forge-full-month';after='terravore-outpost-repair-survey360'
+def read(st):
+ a=json.loads((run/(st+'.audit.json')).read_text('utf-8'))
+ with zipfile.ZipFile(run/(st+'.sav')) as z:t=z.read('gamestate').decode('utf-8-sig')
+ fs=list(q.fields(t));return a,fs,{k:v for k,v,o in fs if o}
+def objs(t):return {k:v for k,v,o in q.fields(t) if o}
+def omit(t,ks):return [(k,v,o) for k,v,o in q.fields(t) if k not in ks]
+def projects(rt):return {q.scalars(v)['id']:v for k,v,o in q.fields(q.block(q.block(rt['country'],'0'),'events')) if k=='special_project' and o}
+b,bf,br=read(before);a,af,ar=read(after);bc,ac=b['countries']['0'],a['countries']['0'];bcr,acr=[q.block(rt['country'],'0') for rt in [br,ar]]
+bfl,afl=objs(br['fleet']),objs(ar['fleet']);bsh,ash=objs(br['ships']),objs(ar['ships']);pre=json.loads((run/(before+'-forge-full-month-proof.json')).read_text('utf-8'));ex=json.loads((run/(before+'-guard-execution.json')).read_text('utf-8'));rc=json.loads((run/(after+'-calendar-receipt.json')).read_text('utf-8'))
+survivors=[33556208,33556207,50332878,1807,1810];own=list(map(int,re.findall(r'\bfleet\s*=\s*(\d+)',q.block(q.block(acr,'fleets_manager'),'owned_fleets'))));mil={i:q.ids(q.block(afl[str(i)],'ships')) for i in own if q.scalars(afl[str(i)])['ship_class']=='shipclass_military'}
+holders=lambda cr:re.findall(r'\{\s*type=(\d+)\s+id=(\d+)\s*\}',q.block(cr,'surveyed_deposit_holders'));bh,ah=holders(bcr),holders(acr)
+bp,ap=projects(br),projects(ar);co=a['colonies']['0'];base=q.block(q.block(ar['starbase_mgr'],'starbases'),'153');mp=objs(q.block(ar['planets'],'planet'));nets={k:sum(D(str(v.get(k,0))) for v in ac['budget_categories']['current_month']['balance'].values()) for k in ['energy','minerals','alloys','unity']}
+chain=[]
+for st in ['terravore-postdrone-outpost-paid','terravore-native-forge-completion90']:
+ au,fs,rt=read(st);chain.append((st,au,rt))
+checks={
+ 'original_SHA_pair_actual_dates':b['date']=='2264.03.17' and a['date']=='2265.03.17' and a['save_sha256']=='44a832c75a734272cafee81738a16005a289627cbb025b354acf29f860567de8' and all(h.sha256(run/(st+'.sav'))==au['save_sha256'] for st,au in [(before,b),(after,a)]),
+ 'prior24_forge_full_month_PASS_actual0':pre['status']=='PASS_TERRAVORE_NATIVE_FORGE_FULL_MONTH_LEDGER_COMPONENT' and len(pre['checks'])==24 and all(v is True for v in pre['checks'].values()) and pre['after_sha256']==b['save_sha256'] and ex['returncode']==0 and ex['helper_sha256']=='8d135e1161f33adb107d6a5c5db889551f39ed326577debc77d8a8ade127cf56',
+ 'unique360_calendar_actual0':rc['status']=='CALENDAR_CONFIRMED' and rc['days']==360 and rc['start_date']==b['date'] and rc['date']==a['date'] and json.loads((run/(after+'-calendar-execution.json')).read_text('utf-8'))['returncode']==0,
+ 'actual_paid_outpost153_system97_station_fleet804_country0':q.ids(q.block(q.block(ar['galactic_object'],'97'),'starbases'))==[153] and q.scalars(base)['level']=='starbase_level_outpost' and q.scalars(base)['station']==67109591 and q.ids(q.block(afl['804'],'ships'))==[67109591] and 804 in own and q.scalars(mp['1078'])['controller']==0 and q.scalars(mp['1078'])['orbital_defence']==804,
+ 'new_outpost_native_date_health_and_design':q.scalars(ash['67109591'])['construction_date']=='2264.07.24' and q.scalars(ash['67109591'])['hitpoints']==6250 and q.scalars(q.block(ash['67109591'],'ship_design_implementation'))=={'design':201328266,'upgrade':4294967295,'growth_stage':0},
+ 'native_built_design_copy_only_auto_gen_flag_removed':omit(q.block(ar['ship_design'],'201326648'),{'auto_gen_design'})==list(q.fields(q.block(ar['ship_design'],'201328266'))) and q.scalars(q.block(ar['ship_design'],'201326648'))['auto_gen_design']=='yes',
+ 'original_constructor2_arrived97_alive_no_order':q.ids(q.block(afl['2'],'ships'))==[2] and q.scalars(ash['2'])['hitpoints']==375 and q.scalars(q.block(q.block(afl['2'],'movement_manager'),'coordinate'))['origin']==97 and not q.block(afl['2'],'current_order').strip(),
+ 'all_original8_military_ships_no_active_combat':mil=={788:[1816,1817],33555013:[33555519],33555034:survivors} and all(bfl[i]==afl[i] for i in ['788','33555013']) and q.scalars(acr)['fleet_size']==40 and all(not q.block(q.block(afl[str(i)],'combat'),'in_combat_with').strip() for i in own),
+ 'original_five_survivors_repaired270_each_design_dates_held':all(q.scalars(ash[str(i)])['hitpoints']==270 and q.block(bsh[str(i)],'ship_design_implementation')==q.block(ash[str(i)],'ship_design_implementation') and q.scalars(bsh[str(i)])['construction_date']==q.scalars(ash[str(i)])['construction_date'] for i in survivors) and q.scalars(afl['33555034'])['hit_points']==1350,
+ 'main_actual_home0_repair_order_finished':q.scalars(q.block(q.block(afl['33555034'],'movement_manager'),'coordinate'))=={'x':19.61,'y':-19.61,'origin':0} and not q.block(afl['33555034'],'current_order').strip(),
+ 'known80_all14_actual_surveys_science_alive_order_finished':set(('0',str(v)) for k,v,o in q.fields(q.block(ar['galactic_object'],'80')) if k=='planet' and not o)<=set(ah) and len([v for k,v,o in q.fields(q.block(ar['galactic_object'],'80')) if k=='planet' and not o])==14 and q.scalars(ash['1'])['hitpoints']==375 and not q.block(afl['1'],'current_order').strip(),
+ 'exact5_new_holders_no_removal_no_new_habitable':len(bh)==282 and len(ah)==287 and set(bh)<=set(ah) and [v for v in ah if v not in bh]==[('0',str(i)) for i in [915,918,919,920,921]] and [q.scalars(mp[str(i)])['planet_class'] for i in [915,918,919,920,921]]==['pc_toxic','pc_barren_cold','pc_barren','pc_frozen','pc_frozen'],
+ 'known1085_alpine12_still_uncolonized':('0','1085') in ah and q.scalars(mp['1085'])['planet_class']=='pc_alpine' and q.scalars(mp['1085'])['planet_size']==12 and 'colony' not in q.scalars(mp['1085']) and ac['owned_colonies']==[0],
+ 'all_mother_buildings_zones_districts_held':all(q.block(br['zones'],i)==q.block(ar['zones'],i) for i in ['0','2','61']) and all(q.block(br['districts'],i)==q.block(ar['districts'],i) for i in ['1','2','3']) and all(q.block(br['buildings'],str(i))==q.block(ar['buildings'],str(i)) for zid in ['0','2','61'] for i in q.ids(q.block(q.block(ar['zones'],zid),'buildings'))),
+ 'all_original_workers_plus_fabricator200_full':all(len([j for j in a['pop_jobs'].values() if j['planet']==0 and j['type']==kind and j['workforce']==j['max_workforce']==n])==1 for kind,n in [('fabricator',200),('coordinator',2000),('logistics_drone',500),('telepath_drone',200),('calculator_physicist',300),('calculator_biologist',300),('calculator_engineer',300),('mining_drone',2400),('technician_drone',1200)]),
+ 'native_population10454_last_month6_positive_housing':co['actual_pop_sum']==10454 and q.scalars(q.block(q.block(q.block(ar['colony'],'0'),'last_month_growth_data'),'growth_and_size'))=={'month_start_size':10448,'growth':6} and co['free_housing']==2446 and co['free_amenities']==20283.5 and co['stability']==80 and co['crime']==0,
+ 'EEP_species_targets_unique_core_capacity_fullpsi_held':bc['variables']==ac['variables'] and bc['flags']==ac['flags'] and b['species']==a['species'] and b['event_targets']==a['event_targets'] and b['planets']['7']['modifiers']==a['planets']['7']['modifiers'] and not a['situations'] and [k for k,v,o in q.fields(q.block(ar['planets'],'planet')) if o and 'eep_core' in q.scalars(q.block(v,'flags'))]==['7'],
+ 'mother_no_new_bombardment_or_damage':a['planets']['7']['bombardment_damage']==b['planets']['7']['bombardment_damage']==0 and a['planets']['7']['last_bombardment']==b['planets']['7']['last_bombardment']=='2261.07.03',
+ 'native_project1_2_events_raw_held_debris_countdown360':set(bp)==set(ap)=={1,2,3} and bp[1]==ap[1] and bp[2]==ap[2] and q.scalars(ap[2])['status']=='completed' and q.scalars(ap[3])=={'id':3,'days_left':1319,'debris':318767104},
+ 'independent_previous90_correct_project_container_and_SHAs':all(h.sha256(run/(st+'.sav'))==au['save_sha256'] and projects(rt)[1]==bp[1] and projects(rt)[2]==bp[2] for st,au,rt in chain) and [au['save_sha256'] for st,au,rt in chain]==['9f85a96d9485b62cb207a8be96e3a06a9a0052306d689e84487dbb3b660dd0db','cbb0c6cf70e9d49d56b1aa8dc9e6e0c007ad2a405166bd631eeb81d6b9a1f5a2'],
+ 'native_crisis1_menace90_completion_flags_held':q.block(bcr,'crisis_progression')==q.block(acr,'crisis_progression') and ac['effective_stockpile']['menace']==90 and all(q.scalars(q.block(acr,'flags')).get(k)==q.scalars(q.block(bcr,'flags')).get(k)==63355224 for k in ['crisis_special_project_1_complete','first_special_project_finished']),
+ 'positive_actual_endpoint_nets_not12_month_ledgers':nets=={'energy':D('37.440'),'minerals':D('15.6355'),'alloys':D('12.050'),'unity':D('149.88550')},
+ 'exact_first_contact238_pending_contact57':[(q.scalars(v)) for k,v,o in af if k=='player_event' and o and q.scalars(v).get('country')==0]==[{'id':238,'event':'first_contact.1','date':'2266.10.25','country':0}] and q.scalars(q.block(q.block(q.block(ar['first_contacts'],'contacts'),'57'),'event'))['player_event']==238,
+ 'unfiltered2670_errors_exact_held':(run/(before+'-error-after.log')).read_bytes()==(run/(after+'-error-before.log')).read_bytes()==(run/(after+'-error-after.log')).read_bytes() and len((run/(after+'-error-after.log')).read_bytes())==2670,
+}
+checks={k:bool(v) for k,v in checks.items()};p={'status':'PASS_TERRAVORE_PAID_OUTPOST_REPAIRED_FLEET_COMPLETE_SURVEY_COMPONENT' if all(checks.values()) else 'FAIL','checks':checks,'before_sha256':b['save_sha256'],'after_sha256':a['save_sha256'],'actual_outpost':{'system':97,'base':153,'ship':67109591,'fleet':804,'construction_date':'2264.07.24'},'actual_full_health_survivors':survivors,'actual_endpoint_nets':{k:str(v) for k,v in nets.items()},'calendar_ready':False,'scope':'Actual paid outpost and original fleet repairs, known80 survey complete. Contact238 pending; no colony, level2 or12 monthly ledger/full-route claim. Earlier90-day project1/2 true-container state independently supplemented.'}
+out=run/(after+'-outpost-repair-survey-proof.json');assert not out.exists();h.write_json(out,p);print(json.dumps({'status':p['status'],'checks':len(checks),'failed':[k for k,v in checks.items() if v is not True]}),flush=True);assert all(checks.values()),'Original outpost/repair/survey FAIL retained'
