@@ -20,6 +20,12 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 
 ## 结果
 
+04:34 第六v2切点独立暂存原字节校验PASS／实际0，完整22046源项、22109唯一blob／888851729字节（含复用原件／基线／历史回执）均核准，[回执](evidence/priority-native-two-platform-completions-and-order-generation-reuse-delta-staged-verification-2026-10-11.json)。仅七任务docs／本切点／回执进入提交推送；远端核准前仍暂停，生产Mod与既有冻结原件不变。
+
+04:32 第六v2切点`native-two-platform-completions-and-order-generation-reuse`归档实际退出0，冻结2026-10-10T20:31:37.702059Z。完整22046源项／863570073字节，复用21600、新复制446／19749240字节；基线fd7720055428de96701108b5ec8376b23a2ad8e5及manifest SHAb185391dd77ea56c41ae0977bee16005f7d9e3b7d41b52a2a2da373331476d12。含两实际付费平台、原V16单FAIL／V9actual1、V17／V10全部源码及退出、正常第八九对出厂和简中平台／殖民UI。当前2269.03.25暂停，独立暂存原字节校验待执行；七任务docs／新切点／回执提交推送、核远端后才推进后方完工前日。生产Mod和旧冻结原件不变。
+
+04:07 第五切点及七份任务 docs／回执共 284 路径已提交 fd7720055428de96701108b5ec8376b23a2ad8e5；cached diff check／commit／push／独立 ls-remote 均实际 0，远端 main 同完整 SHA。冻结原件不再改写，后续 RUN 新增属于下个切点。
+
 04:05 第五切点独立暂存原字节校验 PASS／实际退出 0，21600 源项、21662 唯一 blob／868686121 字节全部核准（含复用原件、基线与历史回执），[独立回执](evidence/priority-native-battle-retreat-and-postbattle-paid-birth-delta-staged-verification-2026-10-11.json)。当前七份任务 docs、新切点和回执准备提交推送；生产文件不变，暂停快照不等于重载或完整路线验收。
 
 04:03 第五个 v2 切点 `native-battle-retreat-and-postbattle-paid-birth` 已生成完整 manifest，归档进程已结束；冻结时间 2026-10-10T20:00:07.225799Z，21600 源项／843820833 字节，复用 21326 项、新复制 274 项／12537515 字节。基线为已核远端的 d97fc617310d343c4ed2664e418e8ad9b6c45a9c。本次覆盖战斗撤退、原 V13 单项 FAIL、V14／V15／V8、战后第七对付费护卫舰及简中战报图片。下一步独立校验暂存原字节；在校验结束前不写 RUN、不操作游戏。原归档调用输出在上下文切换时丢失，不能据此补称其进程退出码；以已生成清单和独立逐字节检查作为交付依据。
