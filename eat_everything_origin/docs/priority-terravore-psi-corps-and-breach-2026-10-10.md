@@ -1,0 +1,105 @@
+# 噬岩者：灵能军团建筑与原生破境续验
+
+## 目标和输入
+
+继续已授权的简中离线实机验收，输入为2243.07.02的terravore-unity-nodes-month.sav（SHA2d23ea4225666390d72e1c947abbcc30380edb56ced981c9fa7629ef286f08fa）；38项边界和16项完整月均PASS／实际退出0。此前灵能军团仅指已真实付费的传统，尚无对应建筑；原生破境16777221进度52.5／1000、stage0、默认方案3.75每月，潜势石质蜂巢模板66保持，EEP灵能奖励0。生产0.2.0的41文件不改，不重发已发布版本。
+
+## 实施前设计
+
+原版zone_default的max_buildings=6，实际zone0六槽已满；增加蜂巢区划不能解决该上限。building_psi_corps只属government/urban建筑集合，不能建在zone61行政中心的专精槽。采用普通UI替换zone0一座既有building_hive_node（候选45/46/48，先确认实际槽位），保留首府、繁殖池、蜂巢居所及其它专精区建筑。先普通点击/悬浮检查替换菜单与实际报价，再且仅一次正常支付确认，同日另存，不拆除后凭空重建、不用资源/科技/传统/事件或舰船授予、不改SAV。
+
+新增只读付款守卫priority_native_paid_psi_replace_guard.py：读取前后原SAV、真实审计与正常UI输入回执；要求同日、真实矿物扣款等报价、其它库存完全保持、原母星空队列仅新增一个付款国0／queue0的订单。订单类型、替换目标和工作量先取实际原生结构，不套用新增建筑360工作的假设；旧建筑及zone关系在付款帧不得提前变，last_building_changed只允许原生新类型记录。前后全部人口、岗位、区划、地貌、政府AP传统、物种、科研bank/专项、EEP及破境状态保持，原舰及其它建设原文保持，未过滤日志应保持；任何差异FAIL留原件，先调查，不重复购买。
+
+新增只读完工守卫priority_terravore_psi_corps_completion_guard.py：绑定本次真实付款PASS及实际退出0、原两SHA、日历回执，不超过360原生日一段。只有已付替换订单正常进展/完成，精确核旧目标退役、新军团对象、相同槽位和zone0单一引用替换，所有其它母星建筑/专精区原文保持；协调者预期2600→2400、真实灵能子个体岗位200，取实际原生岗位键和满员情况，不将缓存当人口。实际21区划／共享29／矿2000电1200、19原舰设计、EEP容量11及两碎源保持，实际人口只允许原生增长、无新轰炸、无待选。破境同一局势且第一阶段按原生方案自然增加，不提前奖励EEP，不将年度末月净额当年度逐月核账。原生自动研究完成可记录，社会旧殖民专项607.25288不得丢失，真实bank非负。
+
+军团完工后新增独立完整30日月账守卫：八普通资源与last_month桥接、仅影响力1000封顶、原生出生；取实际新建筑能源维护与灵能岗位维护，协调2400、灵能岗位200实际满员。全国能源／矿物净额若转负，先按真实预算记录并正常经营修复；不修改库存或放宽残差。合金已是-3.84925、母星本地存在矿缺口，这些均须如实报告。
+
+原版破境阶段阈值500/750/1000；第二阶段需要有效军团建筑，第三阶段需要大觉醒。先保证军团实建、月账与正常存档，再按正常UI选择可负担方案与后续传统；每一阶段和大觉醒物种变化另记录精确许可及验收标准，不能沿用只允许潜势不变的旧守卫。允许普通UI选题／传统／议程，不把灵能霸权议程误写成加速破境（其源码没有breach_speed修正）。
+
+## 证据标准
+
+12:16暂存原字节核验实际PASS／退出0，12547 blobs／458793147字节，覆盖本新快照、前检输入及原priority报告：[独立staged回执](evidence/priority-native-psi-corps-meditation-and-sacrifice-staged-verification-2026-10-09.json)。此次检查明确发生在git add实际退出0之后；当前新快照仅到321.25，随后已启动的唯一30日跨325写入活动RUN，未改冻结快照。提交及推送尚须分别读实际结果。
+
+12:14:56暂停快照实际完成／退出0：[native-psi-corps-meditation-and-sacrifice全原字节清单](evidence/priority-terravore-progress-2026-10-09/native-psi-corps-meditation-and-sacrifice/source-snapshot.json)，截止2026-10-10T04:14:56.458689Z，12504份源文件／454410179字节。截止端点仍2248.04.02／321.25，不含随后325事件、正常退出或重载；原FAIL及全部限定补证均保留。现在仅暂存本任务五份文档及该新快照，之后独立核staged blob SHA；不得把复制完成当作Git核验或推送成功。
+
+12:13安全端点2248.04.02／2de341302d24530b9df370498a809c2fe6564aa4640c2a59ea6897649a885bd8，180日后40项全PASS／实际退出0，人口9155、破境321.25，待选0、error零增。已暂停并启动native-psi-corps-meditation-and-sacrifice原字节快照，复制期间不操作游戏或写RUN。
+
+12:14源码发现与范围更正：原版00_ascension_perks.txt:2227的ap_hive_worlds.potential直接要求is_lithoid_devouring_swarm=no；00_scripted_triggers.txt:1397定义为石质帝国＋有效civic_hive_devouring_swarm且非origin_wilderness，本局实际石质蜂巢符合。00_soc_tech.txt:1917的tech_terrestrial_sculpting.weight_modifier又对该条件factor0。因此本路线EAT-23应补“原生禁止／拒绝证据”，不要求正常完成蜂巢转换；此前待办笼统写“蜂巢母星”不准确，现更正，不能赠科技／AP或取消国策绕过。正式中文名取traditions_l_simp_chinese.yml:1160“蜂巢星球”、technology_l_simp_chinese.yml:761“地表塑造”及:767“气候复苏”。源SHA分别AP0992582948a3ca199b30ab646720091e0207e2e58b688171d9cc501f266a720c、社会科技4bfb400930c457280157b5a2900c74f0d43d44f4dabe18825208a63552bbb21c、触发器57b23a9c3875c28b935020dd5c13bd49ed173c424afe2da6afd3bdc0a1757273、传统简中5fc44fc65e81478b859e75552623cac8871a6269c44e771dbe322fc1fe3bb743。当前只称源码限制确认，实际UI拒绝／缺项证据尚待补，不把这段调查写为整路线通过；也是Stellaris专有规则，不更新CK3方言知识。
+
+12:10第二独立年度2247.10.02／cfbb974ec590d2ace0ca751d156baecc9457bb37473d22d4809ef74c93090a49，40项全PASS／实际退出0、人口9116、破境291.25／月5。原生自动物理正常完成tech_plasma_1，其它社会闲置bank及旧专项约束保持；全国末月E18.7075／M20.76／U121.37141／A-3.84925。已唯一正常推进180日至2248.04.02／预期321.25，未跨325。
+
+下一暂停归档方案（实施前）：上述180日边界若全部通过且无待选，暂停原生进程，使用既有archive_priority_checkpoint.py新标签native-psi-corps-meditation-and-sacrifice，原字节复制当前RUN全部文件、未过滤日志与隔离配置，包含本次全部原始FAIL、补证、军团付费／完工／稳定月、牺牲和外交、真实日历／SAV、GPU/OCR和新助手。复制期间不运行GUI／日历或其它RUN写入，实际完成后记录准确数量与UTC。仅暂存本任务五份相关文档及新快照，等待git add实际0，再运行既有Git blob SHA检查并暂存其新回执；提交、普通push与远端SHA分别核实际结果，不force／amend、不复用发布版本、不上传工坊。该档只代表活动暂停端点，不声称正常退出、重载、完整虚境或整路线通过；冻结后后续原生事件写入下一切点，不回写旧快照。
+
+12:06独立年度2246.10.02／09365cecfdcf71521cdd24633e4ad085ea28eaef77f7a618995d6957448c3e78，40项全部PASS／实际退出0，破境171.25→231.25／last_month5、实际人口8959→9037，EEP／21区划／满员／19舰／原科研专项保持、待选0、error零增。全国库存E10748.34275／M6265.66732／U10310.79733／A7544.80209，年度末月净E18.7075／M21.471／U121.37141／A-3.84925，仅称末月净额；下一唯一360日已按前40项绑定开始，到2247.10.02再独立核验。
+
+325阈值验收设计（实施前）：321.25安全端点全PASS且无待选后，唯一30日到2248.05.02／terravore-native-attunement1-pending，预计326.25。先执行原40项严格边界，原件若因待选及原生局势旗标变化失败应完整保留；新增只读事件补证绑定原FAIL／实际退出码、日历0和两SHA。精确验证shroud.2200移除stage_1_started及social_event_triggered、保留beneficial_approach，且新增实际被选事件的*_fired旗标；实际事件必须属于源00_on_actions的对应原生beneficial／balanced／chaotic池且trigger适用。本阶段2500／2520须>=750而不可默认合法，2325需要尚未取得的clairvoyance。逐个核实际事件scope、source SHA及immediate效果，不将任何任意原生待选/旗标作为豁免；补证calendar_ready=false。随后读正式简中选项／效果，文档定义该具体选择及原生调谐、资源/修正/人口影响，再正常点击一次、同日保存另证；全部待选正常处理且独立PASS／退出0后才续推。若本段出现其它差异，停止并调查，不能预写特定随机事件已发生。
+
+12:02稳定月2245.10.02／ce73681339340d74d77a90830d057fbbd0f4d8ea7ee85b80b4c703786b64a7e7，40项边界＋17项月账全部PASS／实际退出0；月账助手3b10aabb6665a8c8aec2b385e0c91f5597c4adc3e635ed14d14dfa5bd4564f9d。月初8953／自然出生6／实际8959，八资源残差0、last_month桥接保持；全国E10523.85275／净18.7075、M6004.19932／22.173、U8843.94041／122.67141、A7590.99309／-3.84925、贸易27425.96967／77.58156，真实社会bank993.81055。建筑27E、灵能岗位2.375E、协调57E／57M、六发电区维护5.4E；实际满员、EEP、舰队、无待选和零新增error通过。组织冥想实际破境171.25／月5；唯一360日至2246.10.02已经开始，尚未把预期当结果。
+
+12:02正常打开母星并移开提示后采集terravore-native-psi-core-gallery.jpg，1024×768／192521字节／SHAbc50dea95c544217d920f1f8d4142e803ee9f27e362ebe30374484d2240c9bed，已人工查看，无控制台、菜单、遮挡tooltip或原始key。绑定本段SAV及40＋17项PASS，画面真实8.9K本族／29共享容量／21付费区划／灵能军团，母星本地产出与全国收支分开，合金负净额如实可见；仅候选，不上传或扩大路线通过范围。
+
+12:00牺牲后首月40项全部PASS／实际退出0，2245.09.02端点9d7759083390be8ce3a542bde928bc8f1d86ed8816133440cd0fa496a8debeea，实际人口8947→8953，仅正常出生6，协调2400／灵能200／后勤500与矿电满员。原生last_month_growth准确记录月初9147、growth=-194、GROWTH+6／OTHER-200／PROMOTION0；-200已在选择帧发生，不能据本月累计再扣一次。EEP和两碎源／原舰保持、待选0、error零增；破境166.25／月5。已唯一正常推进到2245.10.02，准备稳定月份40项边界＋17项完整月账。
+
+后续阶段1日历设计（实施前）：若上述稳定月全PASS且无待选，先分别唯一360日至2246.10.02与2247.10.02，预计破境171.25→231.25→291.25；每段先校验前段真实PASS／退出0，再普通推进、正常保存、执行原40项守卫。随后只推进180日至2248.04.02／321.25，仍低于原生325调谐事件阈值。每段任何新待选、原生日志、人口或建设差异即停止后续日历并保留原FAIL，不能自动跨过事件。越过325的下一30日需单独定义原生事件许可、先读取源码再实施；不凭预计进度宣告阶段通过。
+
+11:55重复问候更正32项全部PASS／实际退出0，helperc1cb9a97d909d02e695a19010d486e8c65daac3979bd0d354ba9ab7360c79557；原30项唯一旧ID断言FAIL保留。当前端点6b8f650618765aeecf050ae861bbd1fc0093baacbfb8c69583ced5a5a75fcd5c、无待选，已唯一正常推进30日至2245.09.02检查牺牲后的自然配岗，未重选外交或重走任何日期。
+
+11:53重复问候30项实际29PASS／1FAIL，原helper140646fce4823ffc55d77d3af404d7334abbc93c681e29a803e34a0e24d685c6、原证明与退出1保留。失败仅global_event_ID140_to141：派生脚本的字符串替换误以为该断言写在字典内，实际是checks[...]赋值，未替换成功而保留旧140→141；是私有检查助手错误，不是Mod或P引擎工具缺陷。其余29项已实证：166待选清空、唯一option2、target16777218意见-50／当日衰减，既有网络16777548新增5400日原生修正，所有其它实际状态raw保持。
+
+更正实施前：新增不可变priority_native_repeat_hostile_contact_guard_v2.py，仅把该赋值精确改为前后last_event_id均166，并新增绑定原30项恰此一FAIL、原执行退出1及原两SHA；输出全新notice-effect-v2-proof，不覆盖原件、不重放点击或日期。必须新32项全true且实际退出0才把该端点用于下一日历；原FAIL文件的calendar_ready字段只是待选为空，不构成有效PASS或日历许可。
+
+牺牲后月界设计（实施前）：165事件发生在2245.08.02、原生current_month_growth_details已记OTHER-200，因此第一笔30日到2245.09.02／terravore-native-disease-restaffed只验40项冥想边界及自然配岗。该月last_month_growth可能从原月初9147计算，不能要求其month_start_size必须等同选择后实际8947，也不能把本月累计OTHER-200重算一次死亡。读取真实GROWTH／OTHER／类别迁移明细，按原件记录，不放宽实际人口不得继续丢失、满员及EEP检查。边界通过再唯一30日到2245.10.02／terravore-native-meditate-month，进行已稳定月份完整核账。
+
+新增priority_terravore_meditate_month_guard.py（实施前）沿军团17项月账，只改绑定本轮40项冥想边界及其实际退出0、保持原生27E建筑／2.375E岗位费用记录、2400协调／200灵能／500后勤和21区划满员；八资源残差0、last_month完整桥接、原生当月出生及真正月初人口精确对应仍严格保留。只有第一笔配岗边界和无待选通过后才执行第二笔30日；年度/本次同日事件不替代完整月。
+
+11:49通讯转发30项全部PASS／退出0，helper11fbc7ed7c37fbdcdfb533ba07878e648c6edd75319f0cda3084cc109d8f8aaf。当前166/action.1正常显示，敌对选项仍为“我们感知到了猎物。”，约680,485。正常选此option2一次同日保存terravore-native-repeat-hostile-ack；此前first_contact_event早已设定，不能套旧首个问候必再生progress.4的断言。
+
+重复敌对问候守卫设计（实施前）：新增priority_native_repeat_hostile_contact_guard.py沿已有notice_effect的原生意见／谍报核对，绑定本30项/退出0/前后SHA。父166恰移除、唯一human1/option2历史，无新本国待选；target16777218→country0只追加原生opinion_hostile_first_comms_greeting／-50／decay=yes／当日。country0全部raw（含既有first_contact_event）及其它国家raw保持，target除关系保持；当前已有本国→target网络16777548则只正常新增十五年first_comms_hostility_preparations，不新造网络。真实日期、库存/科研/全部人口岗位/EEP/建设/物种/破境、所有其它有序顶层保持，日志零增。原生公共after仍尝试调用progress.4/5/6/9，须按这些事件各自trigger与当前旗标判断实际新待选，不能声称after本身含first_contact_event判断；任何新事件或缓存差异保留检查结果另查。通过且无待选才接续完整30日。
+
+11:47通讯转发保存110cbc1249f4dd5488103eeaeaf85b4890f718b6f3ec26ecbbac3ee87b87b2b9，同2245.08.02、零新error。真实仅父162替换为本国166/action.1、last_event_id165→166、random_count84508773→84508774、对应message与human1/option0历史；所有其它有序顶层及全部国家raw保持，没有可观察的外方新增待选或 lasting国家效果，不能仅凭源码宣称已生成外方167事件。166.scope实际继承CommSpreader=1、contact_empire=contact_speaker=16777218。
+
+转发守卫实施前精确化：沿旧contact_forward_v2仅保留同日父/子/历史/消息/原国家经济与全部受检raw保持架构，去掉针对旧139→140和旧28项FAIL的限定断言，改本次165→166和上述random_count恰增1；允许原生option0的custom_tooltip与hidden_effect，核其两个源码调用分别action.1及contact_empire内communications_spread.2，实际端点严格只166待选。源SHA记录且calendar_ready=false；旧原件/helper不改。
+
+11:45武器化37项全部PASS／实际退出0，helpera5ff5dab3417d5a4ecd6c1c4d59869aa9388727a63f1c43d7999f9f02de2124f。原生200人口牺牲、十年modifier、国家全部其它raw／真实库存科研预算EEP／建筑舰船破境、完整其它顶层及限定缓存均独立通过；162通讯仍在，因此不推进日期。
+
+通讯扩散处理设计（实施前）：正常确认当前162/communications_spread.3的唯一选项，先采图/正式文字后普通点击一次、同日保存terravore-native-communications-forward。其原生hidden_effect生成本国action.1，且对contact_empire16777218触发communications_spread.2；不能沿用只生成单一action.1且没有外国产生事件的旧action.13守卫。新增priority_native_communications_forward_guard.py据实际原生子ID和本国/外国产生事件结构精确核父通知移除、唯一human1/option0历史、scope中的contact_empire16777218与CommSpreader1继承、国家真实库存/人口岗位/EEP/科研/全部建设舰船保持，未过滤日志零增；last_event_id按真实新事件数量核，外方通讯事件/AI问候如有实际效果则另查源列明，不放宽所有国家raw。正常敌对问候另核意见/谍报修正。所有待选清空后才独立30日检查牺牲后的自然配岗与实际资源收支。
+
+11:42疾病武器化正常保存退出0，后件7c93afdac9d7d7f0ee5b053cf6f624a0558a559a7572086e91bbc2ea925a3d24，同2245.08.02、零新error；实际人口9147→8947，唯一组14／复杂子个体同族66／planet0的size3892→3692，新增current_month_growth_details={key=GROWTH_CAT_OTHER value=-200}及空factions/wanted_factions。母星employable_pops／num_sapient_pops同步8947、species_information.66.num_pops8947；其它原生住房刷新housing_usage9140→9147／free_housing4660→4653。current_month_growth_data只追加相同OTHER-200详细记录，其growth_and_size仍month_start9147／growth0，不能用这个尚未刷新字段否认实际人口损失。
+
+疾病守卫精确实施补充（实施前）：country0全raw除唯一新增timed_modifier外保持，原无timed_modifier，后items唯一weaponized_psionics_gestalt_modifier／days3600；国家原生num_sapient_pops/employable_pops缓存仍9147，与实际母星/人口组不同，不能把国家缓存当即时人口。其它顶层仅已列pop_groups、colony、country、21舰队dirty标记、星港0新增2048、对应message/player_event/唯一历史变化；random_count保持。母星raw除上述四标量、species_information及current_month_growth_data外保持，species_information除66.num_pops保持，growth除新增详细OTHER-200保持；组14除size/OTHER记录/两空faction块保持，其余全部组raw保持。所有实际岗位审计在选择帧保持，不把它称下个完整月已重新配岗通过。此前疾病分项9项已通过／退出0，源码833b903dfd5a994ff9884c5f82b205adf4b2ed8368a8e93ce3676a5ea11e4e9b。
+
+11:37唯一360日实际退出0，2245.08.02／87c386b918867250ac343d2cd1e4669291cb77ceb5b9235eb8aa32cf306fd278，人口9147、破境101.25→161.25／last_month5，已实证组织冥想5/月；全国末月E18.7075／M20.49／U123.97141／A-3.84925。年度40项实际38PASS／2FAIL（no_country0_pending、all_native_breach_raw_except_progress_held），helper6db30d68759782d0df1379f37177f27a13a7f8a474454cea24dcea6fcb4cbfe9及退出1保留。真实待选162/communications_spread.3、165/shroud.2625；破境旗标仅新增breach_shroud_social_event_triggered=63200400，源shroud.2200在阶段1进度>=150且<325首次触发原生social on_action，符合源分支，无新增error，不判Mod bug。
+
+新增只读priority_terravore_meditate_social_supplement.py（实施前）：绑定原40项仅上述2FAIL／其余38true、原实际退出1与两SHA／日历退出0；核唯一社会旗标新增、其它破境raw除进度保持，精确两待选ID/类型/scope分别country0与situation16777221。核shroud.2200与on_action包含shroud.2625、其organic条件符合石质蜂巢且事件没有immediate效果；源SHA入证。仅输出带calendar_ready=false的边界分项，不据此推进日期，原FAIL不改。
+
+原生灵能病选择设计（实施前）：当前正常UI顶层“灵能病”，选项“优先进行治疗。”或“把这种疾病武器化。”。为验证明确原生牺牲不污染EEP账本，普通选择第二项一次（option1，约510,579），其源码在非荒野帝国随机本国人口组kill_pop_group amount200，并添加weaponized_psionics_gestalt_modifier十年／军队伤害和士气伤害各+50%；不赠资源、人口或危机进度。先采悬浮效果，再点击一次同日保存terravore-native-psi-disease-weaponized。
+
+新增只读priority_terravore_psi_disease_guard.py（实施前）：绑定上述事件边界分项及实际退出0、原前后SHA、唯一正常历史165/human1/option1，精确仅165待选和对应message移除、162及其它pending raw保持。核全国实际人口恰-200、仅一个原有同族人口组size减少200、无新组/新身份或跨星球迁移，实际EEP账本/永久容量/两碎源全保持，原始库存/科研bank、政府AP传统、建设/区划/建筑/舰船/破境进度保持。精确十年原生modifier新增与其它国家修正保持；人口造成原生住房/维护/岗位缓存差异须列明原件后补核，不用旧“无人口损失”年度守卫追认选择帧。仍有162通讯时calendar_ready=false；正常通讯转发action.1及其真实后续敌对问候，另按源定义新guard，不套空效果确认。
+
+11:33组织冥想35项全部PASS／实际退出0，helper72c6bf0da9bd82dc5c002be9a4acf6c36e736a55a8abe8286164df712faaccb1，所有上述限定raw变化独立通过；真实库存、bank、预算、人口岗位EEP保持。正常UI tooltip把此方案速度写“不变”，仍以原版nothing的0.75因子和真实后续月进度验证，不单凭UI文案宣称速度实证。下一唯一360日至2245.08.02／terravore-native-meditate-year1，绑定本35项/退出0。
+
+年度守卫实施前：新增priority_terravore_meditate_year_guard.py沿军团38项边界，仅将approach改为已选组织冥想，并增加真实进度增量=days/30×5、last_month_progress=5，以及破境完整raw除progress/last_month_progress外保持（包括beneficial_approach和所有阶段旗标）。仅在days为30整倍数、第一阶段<500内复用；任何原生随机事件、额外进度或阶段跨越须保留FAIL另查，不能把随机奖励假定为定速增长。实际经济末月记录、人口/满员/19舰/EEP/建设/原生科研和精确日志边界保持不降；年度不替代完整月账。
+
+11:31方案后件6def80c461a6c480db5879d20c7c2b842a6bd65fd02cd50a033fa9880e815207，仍2244.08.02、零新error。只读全有序顶层差异仅starbase_mgr／country／fleet／random_count／situations。唯一破境只改approach和新增beneficial_approach=63193224，原progress101.25／last_month3.75／stage0保持；真实库存/科研bank全部保持、预算完全未重算。standard_economy_module.resources的P43.4368与E46.5368镜像键移除，S632.32212→真实643.86552，其它资源不变、tech_status完整raw保持；不能称科研点丢失。
+
+付款方案守卫精确范围补充（实施前）：星港0仅新增update_flag=2048，其余starbase_mgr全raw保持；fleet恰21对象[0,1,2,136,137,138,139,140,161,166,167,171,172,178,183,196,198,477,490,16777797,602]的properties只新增dirty_cloaking_strength=yes，其余全部舰队raw及全部ships保持；random_count恰72047020→72047021。只记录该UI操作的实际差异，不推断标记或随机计数的引擎根因、不推广任何缓存白名单。其它有序顶层全raw保持，country除上述经济resources外全raw保持（含其它国家），原生破境除精确方案/flag外全raw和其它局势全raw保持；真实经济、人口/岗位/EEP另核。执行新助手时全部条目必须独立true。
+
+11:28军团完工后的独立30日到2244.08.02／c165e0a96295ed9d31edcb83cf12c4859443a8485e9552f1c6c287ed2f883fcb，38项边界＋17项完整月全部PASS／实际退出0；月账helper378ae7c599241bfe2b347c42551a8e5ef26f3bdba635028a7bfcf3a5b88f1287。八资源残差0、出生6，实际建筑27E、planet_telepaths维护2.375E、协调维护57E／57M。全国E10261.94775／净18.7075、M5710.13932／21.174、U7109.64067／152.01191、A7644.88259／-3.84925、贸易26307.93517／78.97237；社会bank643.86552。破境101.25，原生UI显示101.2。正式中文方案为“组织冥想”，不是自译“冥想”；先取其说明图，再正常选择444,235一次、同日保存，真实状态独立核验后才继续。
+
+11:23正常360日完成2244.07.02／e2394605c8c6e7136d57054b082897622d1b60363ccda34058f652a758517e63，完工38项全部PASS／实际退出0，helperdc7ddbeecda97c6c3123dd298cfb25236cbf500daad766138aab51d7d02d53c0。原45已退役，新军团33554454／position3；协调2400／后勤500／telepath_drone200均满员，灵能岗位原生bonus_workforce50、协调600如实另列，不混作人口。母星9064／21实建区划、矿电满员、19舰／EEP保持，无待选／新增error。破境97.5／月3.75、社会bank619.005／旧专项607.25288保持。末月全国E净13.0895、M17.954、U139.29823；尚未用年度末月数字称完整月核账。已唯一推进30日到2244.08.02／terravore-native-psi-corps-month，绑定该38项及执行0。
+
+后续方案切换设计（实施前）：军团完工和完整月均通过后，正常打开破境局势、采“冥想”正式中文UI和产出代价，再普通选择一次、同日另存terravore-native-breach-meditate。新增priority_terravore_breach_meditate_guard.py绑定前完整月及退出0，核同日同一16777221局势只改approach为approach_situation_breach_shroud_meditate、实际beneficial_approach旗标原生新增；progress／stage／目标不变。原生on_select仅flag与tooltip、modifier为country_unity_produces_mult=-0.25，真实库存不得即时扣款，全部人口岗位区划建筑舰船、科研bank／专项、EEP／政府AP传统保持。原生预算缓存若同帧重算，先精确列出受影响类别并记录，不以笼统“缓存”豁免；未过滤日志零增、无待选。新年度守卫仅把默认approach替换为已真实选择的冥想、要求原生进度实际增量对应当前方案，并继续完整原生岗位/建设/EEP/物种/舰船边界；第一阶段内停止在<500，跨阶段另检查事件及变化，不重复日期。
+
+完整月助手实施细节（实施前）：新增priority_terravore_psi_corps_month_guard.py沿三节点16项月账，只改绑定为本轮军团完工边界及退出0、协调2400／后勤500／灵能子个体200满员；建筑能源维护预期24.3−旧节点1.8＋军团4.5=27。加查唯一军团position3实际对象及其原文保持，八资源残差、last_month、真实原生出生和原发电5.4E不变；新的岗位费用按真实预算完整记录，不先假定类别名称。此助手只能在军团已真实完工、前后队列空的独立30日使用。
+
+原版后续传统研究事实：telekinesis与clairvoyance均要求great_awakening，psychometry又要求前两项，故不能在当前第一阶段提前支付三个加速传统。大觉醒的未破境tradition_swap实际只在stage3立即调用turn_main_species_to_psionic；stage2采纳时可能仍为潜势，必须按实际源和SAV验证，不提前期待全部人口瞬间变为完整灵能。
+
+11:19替换付款37项全部PASS／实际退出0，helper SHA8b6b6ef98ddcbf6a0bcfffd7962d1336cbc078167f1c4dd2d3d0c49ba4eb33a3，实际矿物5930.02332→5530.02332；全部旧建筑/zone、原人口岗位科研EEP及破境保持、日志零增。唯一推进360原生日到2244.07.02／terravore-native-psi-corps-complete，绑定此付款证明及执行0；预计343UI日足以完工，若未完工不重输日历。完工守卫沿38项原生节点边界，仅把节点新增段换成付款替换订单285212696／480完工、zone0 position3单引用替换／旧45退役、新军团200灵能子个体、协调2400／后勤500满员；zone2/61、首府及其它所有旧建筑raw保持。允许在军团已完成、前后队列空时复用同一守卫进行下一独立30日月账；不允许其它新建设或破境跨阶段。
+
+11:18正常选择直接扣款，无第二确认窗。后件75c8969704e398760adc166b010ec2c1f93f196ec3c13e2351aac55b77d68b2d、同2243.07.02，原空母星队列唯一订单285212696，queue/paying_country0、progress0／progress_needed480、resources.minerals400；buildable_planet_replace_building精确为building_psi_corps／planet0／zone0／replace_building45。付款守卫据此精确核480和替换对象45，绑定前完整月16项及terravore-unity-nodes-month-ledger退出0、真实UI点击回执；增加所有原建设订单raw与其它queue保持、母星queue除items保持、全部舰船raw、无待选及原版建筑/变量文件SHA，不能沿用新增建筑360断言。尚未宣称独立付款通过。
+
+11:16正常UI确认zone0的position3／建筑45为突触节点，替换菜单按“政府”筛选后正式中文名“灵能军团”；实际报价400矿／343预计日／4.50能源维护，原版@b2_time=480、@b2_upkeep=5。将仅正常选择此建筑一次，若有确认窗则采图后确认一次，同日保存terravore-native-psi-replace-paid；先读真实订单字段，再实施已记录付款守卫。此前检查菜单和筛选均未付款或推进日期。
+
+执行助手仍使用record_current_helper保存不可变源码、SHA及实际退出码；付款、完工、月账分开证明。旧原始FAIL保留，新补证不能追认旧检查全通过。此轮未过滤日志只允许零增；如出现已控制的原版144/255字节错误，须另绑定已有独立控制、精确整段归因并计次数，不直接放行其它错误。
+
+阶段证据写回本文件并按仓库规则提交推送，清晰原生UI图作为后续图库候选；不能凭分项通过宣告完整噬岩者、其它政体或全Mod通过。

@@ -1,5 +1,17 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-10噬岩者原版不支持“蜂巢星球”：00_ascension_perks.txt:2227的ap_hive_worlds.potential明确is_lithoid_devouring_swarm=no，00_scripted_triggers.txt:1397实际条件为石质帝国＋有效civic_hive_devouring_swarm＋非origin_wilderness；00_soc_tech.txt:1917将其tech_terrestrial_sculpting抽取权重乘0。正式简中名为“蜂巢星球”／“地表塑造”／“气候复苏”，出处及源SHA见[本轮原生限制记录](priority-terravore-psi-corps-and-breach-2026-10-10.md)。因此噬岩者EAT-23应采原生拒绝／不可用证据，不能把其它蜂巢的可转换性套到本分支，也不通过授予科技／AP改变资格；目前源码已确认，具体UI证据待补。仅当前Stellaris4.5.2规则，不是共通P语法。
+
+2026-10-10组织冥想真实年度进度101.25→161.25，last_month_progress5，确认原生5/月；150阈值shroud.2200只新增social旗标并产生本例shroud.2625“灵能病”。正常“把这种疾病武器化。”使唯一实际同族复杂子个体组3892→3692，母星9147→8947，并加十年weaponized_psionics_gestalt_modifier；真实库存／bank／EEP与其它受检raw保持。首个后续月出生6，实际8953，原生月初仍9147／growth=-194、明细GROWTH+6／OTHER-200／PROMOTION0；该累计-200不是第二次死亡。再一稳定月8953→8959，八资源残差0、岗位满员，原生牺牲与Mod结算应分开记账。
+
+本局communications_spread.3普通确认仅可观察到新增本国action.1及ID165→166、random_count恰+1，所有国家raw保持，不能从源码同时调用外方事件就编造外方待选。本次敌对问候option2只产生目标对本国-50且正常衰减的原生意见与既有谍报网络5400日修正，其它精确raw保持、last_event_id166不变，无新progress.4待选；公共after仍调用后续事件，实际生成取决于各子事件trigger。所有这些均为Stellaris4.5.2当前具体端点事实，不推广为跨游戏P语法或缓存豁免。[方案、原始FAIL及补证](priority-terravore-psi-corps-and-breach-2026-10-10.md)。
+
+2026-10-10原生灵能军团替换实证：zone_default max_buildings=6，zone_unity专精槽不含government/urban；本局zone0六槽满，通过正常UI“替换→政府→灵能军团”真实支付400矿／预计343日，原生订单buildable_planet_replace_building={building=building_psi_corps planet=0 zone=0 replace_building=45}，工作0/480。完工原45退役为none、新33554454仍position3、zone0单引用替换，其他实际建筑/专精区raw保持；协调2600→2400、telepath_drone200真实满员。独立30日八资源残差0、last_month桥接通过，建筑维护24.3−1.8＋4.5=27E、灵能岗位2.375E单列，不能将基础维护5或UI岗位估计1.90当实际已入账费用。[方案与独立证明](priority-terravore-psi-corps-and-breach-2026-10-10.md)。
+
+原生组织冥想on_select仅设置beneficial_approach及tooltip、country_unity_produces_mult=-0.25；本局同日普通选择后真实库存/科研bank及预算保持，方案旗标精确新增。经济resources科研镜像刷新为真实bank、21 fleet.properties只新增dirty_cloaking_strength=yes、星港0仅update_flag2048、random_count恰增1，其余受检raw保持；35项限定核验通过。这是具体UI端点的观察，不推断各缓存标记根因或推广豁免。默认nothing在原版monthly_progress的0.75因子和meditate无该因子意味着基础3.75与5差别，此后的真实360日101.25→161.25和两个独立30日各+5已互证；UI组织冥想tooltip写“局势速度：不变”不能单独替代真实月账。
+
+原版tr_psionics_shroud_telekinesis/clairvoyance均要求great_awakening，psychometry要求前两项。未破境great_awakening_situation交换定义只在stage3立即turn_main_species_to_psionic，故stage2采纳不能预设人口即时全部完整灵能；后续原生阶段事件与实际物种另验。本轮全部是Stellaris4.5.2源码和SAV事实，不作为CK3语法结论。
+
 2026-10-10本局蜂巢枢纽原生升级完工的实际对象关系：原building0成为none，zone0.buildings首引用0被33554466替换，新建筑type=building_hive_major_capital且position=0，其余字段与旧首府保持，其他8座母星建筑和zone2/3完整原文保持。不能要求升级必须保留原建筑ID，验收应按母星zone与position/type关联定位唯一首府；协调者1500与物流子个体500实际满员，巡逻容量200但不要求满员。仅本局Stellaris存档观察，不推导所有升级或跨游戏对象句柄规则。[本轮方案、原FAIL及补证](priority-terravore-ascension-economy-2026-10-10.md)。
 
 2026-10-10正常蜂巢首府升级的新隔离证据：原生UI蜂巢枢纽343日／480矿物，对应building_hive_major_capital基础600矿／480工作，当前成本−20%、建速+40%；真实queue0订单buildable_planet_upgrade_building指向planet0／zone0／upgrade_building0。付款当日原building0仍building_hive_capital，完整zones/buildings不变，只有last_building_changed及实际扣480改变。建筑能源维护基础2→5，当前−10%后1.8→4.5，不能只算协调者岗位维护。
