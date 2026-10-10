@@ -441,6 +441,12 @@ EEP的eep_tasks／eep_waiting是eep_report重算的报告字段，不是局势�
 
 # 2026-10-09 原生前哨与4.5.2经营调查
 
+2026-10-10第二次蠕虫袭击实证：2261.07.02原始航行端点只有zone61的突触节点83新增ruined=yes，灵能建筑33554454及三个付费研究实验室原文保持，协调岗位2000→1800，不能由组合检查失败推定灵能建筑已毁。fleet18的轰炸字段是ground_support_stance=voidworm_invasion。正常攻击保存为follow_order={fleet=18 attack_when_in_range=yes can_reach=yes ...}，不是凭英文操作名推定attack_fleet_order。正常下令界面预计07.19，实际原生combat_stats从07.03已开始，母星last_bombardment也停在07.03；预计日期不能代替交战原件。08.02主力18→12，六艘具体旧ID消失与原生ship_size_count18／lost6、双方combat互指对应，第二舰队1及基地0同时参战。fleet.hit_points缓存10099.02227不同于ship44实时hitpoints9976.32553，船体生命须读实际ships对象。实际本月母星人口10177→10183，增长分类GROWTH6／PROMOTION0、无BOMBARDMENT，仅这30日可精确排除轰炸人口损失，不能推广此前一年。
+
+同轮原生paragon.571“蜂巢永存”：events/paragon_events.txt:3958～3990的正常蜂巢选项增加五年paragon_death_the_hive_endures，after对from死亡领袖克隆调用kill_leader。同日SAV实际只把克隆150995190.leader_flags450→482，并未立即删除记录；timed_modifier.items末追加该修正／days1800、旧shroud_suppression／days1860原文保持。static_modifiers/16_static_modifiers_paragon.txt:354定义领袖池+1／领袖经验+25%，不是EEP收益。20个己方舰队仅新增dirty_cloaking_strength标记、基地0新增update_flag2048，其它原文保持，36项确认独立通过；不将延后清理标志臆测为通用引擎比特语义。原生破境flags应直接读取SAV country.flags；当前audit.flags只提取eep_*，从该摘要找不到breached_shroud不能判定旗标丢失。
+
+本轮调查证据区分：正常约得本姆调查命令实际路径0→103→151→188→139→171→70→30→80→97，原预计2262.01.16而一年端点2261.07.02已经抵达；本国surveyed_deposit_holders从263→266，唯一新增1081／1083／1086，下一月唯一新增1078。因此必须同时核原科研舰与科学家／当前位置／实际调查条目，不能把原订单消失当缺陷，也不能只凭路径或当前progress宣称整个星系调查完成。first_contact.1初始待选可由F1“发现”→对应第一次接触条目→“显示第一次接触”打开，空效果INTERESTING确认只清除该pending／contact.event及对应消息、加一次选择历史；没有派遣特使也不算接触研究完成。
+
 2026-10-10原生造舰与战斗：星港新建舰在友军已交战时可以暂成另一独立本国舰队；本局06.02主舰队16777797实际11舰，另fleet593／ship16778402为同一付费批次6.01建成并参与同一幼虫战斗，country0.fleet_size60精确对应总12舰。只读取主舰队会误判丢舰／少造舰，必须通过owned_fleets汇总实际军事舰并核每个ship.fleet。SAV星港orbitals.0在原舰离泊交战后变4294967295，模块／建筑／其它字段保持；不要求跨战斗停泊引用恒等。原v2四FAIL及独立十项补核保留。
 
 本机`00_bombardment_stances.txt:356`的voidworm_invasion在planet_devastation>25时planet_damage因子0，但kill_pop_chance仍0.5、min_pops1000、kill_pop_amount0..200；不能因毁坏值约25停止增长，就认为人口安全。`grand_archive_events.txt:1325`的grand_archive.2200在该轰炸导致死亡时设置infected_by_voidworms并生成幼虫，非危机分支不增加EEP奖励；本局最后原生月分类BOMBARDMENT−202／GROWTH5、母星感染flag及实际幼虫舰队／combat记录独立留证。仅该末月有准确分类，不把六个月全国净−384直接等同全部死亡或EEP吞星损失，也不由脚本基数反推确切幼虫数量。
