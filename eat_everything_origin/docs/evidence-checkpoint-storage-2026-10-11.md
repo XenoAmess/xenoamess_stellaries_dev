@@ -20,6 +20,12 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 
 ## 结果
 
+04:05 第五切点独立暂存原字节校验 PASS／实际退出 0，21600 源项、21662 唯一 blob／868686121 字节全部核准（含复用原件、基线与历史回执），[独立回执](evidence/priority-native-battle-retreat-and-postbattle-paid-birth-delta-staged-verification-2026-10-11.json)。当前七份任务 docs、新切点和回执准备提交推送；生产文件不变，暂停快照不等于重载或完整路线验收。
+
+04:03 第五个 v2 切点 `native-battle-retreat-and-postbattle-paid-birth` 已生成完整 manifest，归档进程已结束；冻结时间 2026-10-10T20:00:07.225799Z，21600 源项／843820833 字节，复用 21326 项、新复制 274 项／12537515 字节。基线为已核远端的 d97fc617310d343c4ed2664e418e8ad9b6c45a9c。本次覆盖战斗撤退、原 V13 单项 FAIL、V14／V15／V8、战后第七对付费护卫舰及简中战报图片。下一步独立校验暂存原字节；在校验结束前不写 RUN、不操作游戏。原归档调用输出在上下文切换时丢失，不能据此补称其进程退出码；以已生成清单和独立逐字节检查作为交付依据。
+
+03:36 第四v2切点及六相关docs／回执共322路径已提交d97fc617310d343c4ed2664e418e8ad9b6c45a9c，push实际0、独立ls-remote实际0且远端main同完整SHA。冻结目录不再改写；后续新原生日历属于下一切点。
+
 03:35 第四个v2切点native-two-paid-platforms-and-bounded-three-day-defense冻结于2026-10-10T19:32:43.150080Z，完整21326源项／831283318字节，复用21013、新复制313项／15023543字节。独立暂存原字节校验PASS／实际0，核21387唯一blob／855807903字节，[回执](evidence/priority-native-two-paid-platforms-and-bounded-three-day-defense-delta-staged-verification-2026-10-11.json)。覆盖两平台正常付款27项、V13首33项／常规32项、V6／V7源码及所有端点／战损／UI／日志，基线d3b4e1a9及清单精确绑定；当前六相关docs／本切点／回执提交推送，远端待核。生产Mod和旧冻结原件不变。
 
 03:14 第三个v2切点和五相关docs／回执共377路径已提交d3b4e1a994f2ec077b72b17baeb368fbace2233a，push实际0，独立ls-remote实际0且远端main完整SHA一致。冻结目录保持不变；后续正常经营调查与日历属于下一切点，未改公开0.2.0或完整推荐范围。

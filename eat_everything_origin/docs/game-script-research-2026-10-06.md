@@ -1,5 +1,7 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-11 战斗结束、撤退与报告分段：12.15敌825的fleet_stats.date从06.14重置0.01.01、combat.in_combat_with为空，mia_type=mia_emergency_ftl／return_date2270.07.07，真实12舰ID全保持，巡洋舰1495.28786仍存活。本国COMBAT_STATS211为reason=no_more_enemies／battle.date06.14／message.date12.14，最终敌损[0,3,0,0]与早先210的[0,1,0,0]共同对应结束前实时[0,4,0,0]；本日真实新对象消失0／威慑0。不能将统计重置当新增死亡、把结算分段3当本日击毁数，或将GUI“战斗胜利”当整场war1结束。原32项单FAIL保留，独立34／36项和同两SAV／原始报告互证PASS／实际0。[精确证据与战后边界](priority-terravore-native-battle-disengagement-2026-10-11.md)。此为Stellaris本局原生状态，不推广CK3。
+
 2026-10-11 原生防御平台订单实证：11.25正常两次543合金点击，queue2.location={type0,id0}对应基地0，buildable_defense_platform含starbase0与ship_design_implementation={design150995587,upgrade4294967295,growth_stage0}。实际两单needed60、串行；11.26首单1、次0，此后11.29首4，独立付款27项／首V13 33项／常规32项全PASS／实际0。现有护卫舰队列的1.58／日与starbase_defensive_war_ship_build_speed_mult=0.33不能套到平台；平台本局实际1／日。平台class为shipclass_military_station，区别于护卫舰shipclass_military；预览3000船体不等于已完成对象实际船体。付款仅资源alloys变化、两旧none句柄+16777216复用、唯一fleet807 dirty_cloaking_strength缓存增加，RNG及其它top保持。仅Stellaris本局实证，不推广CK3。[设计和原件](priority-terravore-native-defense-platforms-2026-10-11.md)。
 
 2026-10-11 上述国家舰容在11.18实际刷新45→40，独立V12常规30项PASS／实际0，死亡缓存余额5→0，八军舰保持。该样本是判死11.16、对象移除11.17、国家舰容刷新11.18的三端点序列；不能推广为固定月初更新或所有死亡都恰两日。本结论来自原生SAV及无新增error的独立检查，原始失败保留。[结果](priority-terravore-paid-industry-expansion-2026-10-11.md)。
