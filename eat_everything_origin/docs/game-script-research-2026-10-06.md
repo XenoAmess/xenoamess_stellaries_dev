@@ -1,5 +1,7 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-11 原生存档命令调查：在本局暂停2268.10.18只读执行help save，terravore-native-save-help-visible实图仅列check_save与save_detail_ai_build_plan；该帮助结果未提供可用的命名游戏保存步骤，验收继续沿用已验证的简中UI保存、唯一文件名、真实SAV字节和日期核验。未试执行未知保存命令，也不把这一次过滤帮助输出推广为所有游戏版本均不存在保存命令。帮助、关闭控制台动作及后续27项PASS／实际0已保留到11.01完整源清单的[复用切点](evidence/priority-terravore-progress-2026-10-09/native-low-hull-daily-recovery-and-delta-proof/source-snapshot.json)。本条仅Stellaris本机调查，不推广CK3。
+
 2026-10-11 基地失能／占领／转移须区分：本机common/on_actions/00_on_actions.txt（SHA7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306）:1504的on_starbase_destroyed及:1520的on_starbase_disabled中This为starbase对象（不是ship）、From为造成该结果的fleet；:1531的on_starbase_occupied中This改为占领country、From为变更controller的starbase，且注释明确结束占领恢复控制时不触发；:4184的on_starbase_transfer则This为基地ship、From为旧country。这些回调scope不能混用，不能仅见低HP推定触发哪个回调或国家转移。原生控制权、对象保留、队列及母星所有权仍须实际SAV证明；当前10.17基地仍归本国，此条仅预备只读源码结论，不宣告失守或自动修复机制，不推广CK3。
 
 2026-10-11 连续战报再补充：通知210的message.date=2268.08.26、combat_stats.date=08.01均保持，但end10.11→11.15，旧己方100664127与敌825条目完整不变，仅追加后加入的67109687。08.01汇总起点既不是敌825全局06.14，也不是新援军09.09；识别同场更新需核唯一通知身份、旧条目、实际交战关系与新条目，不可只匹配其中任一起点。五类damage／hit_ratio／targetables累计统计也随合并更新，不能要求原文保持；本对原件按模板与完整设计身份分组后，最终各计数均至少为旧报告与前SAV新增舰队统计之和，无新身份，全部fleet_index=0。此处不推断index一般映射，也不将该下界当完整伤害守恒公式。原生新舰队count2／lost2减此前lost1恰一新损，真实67110636及全fleet引用消失。V7／V8失败保留、V9独立29项PASS／实际0；仅Stellaris本局序列化实证，不推广CK3。[连续更新、累计检查与原件](priority-terravore-nemesis-2026-10-10.md)。
