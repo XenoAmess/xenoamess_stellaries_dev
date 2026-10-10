@@ -20,6 +20,10 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 
 ## 结果
 
+02:49 第二个v2切点 native-three-paid-mines-and-v10-defense 已冻结于2026-10-10T18:47:15.657627Z，完整20644源项／798450714字节；复用20168项，新复制476项／22684137字节。独立暂存原字节校验PASS／实际0，核20703唯一blob／822085830字节，含已冻结复用原件、基线清单、准备输入及历史回执；[回执](evidence/priority-native-three-paid-mines-and-v10-defense-delta-staged-verification-2026-10-11.json)。新增三矿付款、V10／V4源码和逐日原件均在清单，旧切点不变；当前五相关docs及本切点／回执进入提交推送，远端待核。游戏仍在2268.11.13暂停，未把切点校验宣称为全路线验收。
+
+02:08 四docs／新切点／回执共413暂存路径及cached diff check实际0，已提交6e1c37d0cecacbcca81d378b84117300b9fdc245；push实际0、独立ls-remote实际0／远端main完整SHA一致。首个v2切点已交付，后续可用本已提交manifest作为新基线继续平铺复用；不再更改本冻结目录。生产Mod与公开0.2.0保持，后续游戏观察仍独立验收。
+
 02:00 已完成两个独立助手，当前游戏在2268.11.01暂停、27项检查PASS／实际0，开始首个native-low-hull-daily-recovery-and-delta-proof切点；基线固定为上述6d9aa5f9与manifest SHA。尚未声称归档或暂存校验通过。
 
 02:01 归档实际退出0，冻结时间2026-10-10T18:00:58.031647Z。完整源清单20168项／775766577字节；复用19762项，实际新增406项／19464086字节，数量及完整字节总和一致。当前仍暂停，下一步独立校验全部实际暂存blob（含复用原件），未宣告校验或远端成功。

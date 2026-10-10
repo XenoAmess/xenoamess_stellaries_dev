@@ -1,5 +1,9 @@
 # Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+2026-10-11 三采矿订单的对象与缓存实证：11.09正常三次240矿点击，真实库存10649.53427→9929.53427，queue0.location={type2,id7}指物理母星7，buildable_district.planet=0指其colony0；两个字段不能都按物理planet解读。三个先前none句柄恰+16777216复用为1006632966／1207959563／905969668，原其它订单保持；本次RNG恰+9，colony raw完全保持。物理／工程旧资源镜像29.2595／30.8095被清，社会镜像5962.49932刷新为真实bank5971.13195，但真实三系bank前后均0／5971.13195／0；唯一fleet835仅增加dirty_cloaking_strength=yes，全部实际ships保持。独立29项付款及11.10原27项＋新增施工互证30项PASS／actual0，首单实际1.4工作，仍mining12。仅为Stellaris本局原生序列化与缓存实证，不推广CK3。[设计、原件及付款核验](priority-terravore-paid-industry-expansion-2026-10-11.md)。
+
+2026-10-11 战斗移动不能只读move_idle：fleet67109603在10.17出生及11.04原生movement_manager.state均为move_idle，coordinate却由(13.61915,−24.61276)变为(−35.23308,−49.09928)，同时fleet_stats新增三武器的实际伤害／命中统计，MISSILE_1甲伤311.43172、另两武器盾伤626.6169及226.73188。需要联核坐标、真实combat关系和累计火力，不能按普通航行state给参战舰队判“静止／未交火”。两舰270／250／160完整仍可实际输出；此为本局Stellaris战斗状态实证，不推广CK3。[原件与只读核对](priority-terravore-nemesis-2026-10-10.md)。
+
 2026-10-11 原生存档命令调查：在本局暂停2268.10.18只读执行help save，terravore-native-save-help-visible实图仅列check_save与save_detail_ai_build_plan；该帮助结果未提供可用的命名游戏保存步骤，验收继续沿用已验证的简中UI保存、唯一文件名、真实SAV字节和日期核验。未试执行未知保存命令，也不把这一次过滤帮助输出推广为所有游戏版本均不存在保存命令。帮助、关闭控制台动作及后续27项PASS／实际0已保留到11.01完整源清单的[复用切点](evidence/priority-terravore-progress-2026-10-09/native-low-hull-daily-recovery-and-delta-proof/source-snapshot.json)。本条仅Stellaris本机调查，不推广CK3。
 
 2026-10-11 基地失能／占领／转移须区分：本机common/on_actions/00_on_actions.txt（SHA7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306）:1504的on_starbase_destroyed及:1520的on_starbase_disabled中This为starbase对象（不是ship）、From为造成该结果的fleet；:1531的on_starbase_occupied中This改为占领country、From为变更controller的starbase，且注释明确结束占领恢复控制时不触发；:4184的on_starbase_transfer则This为基地ship、From为旧country。这些回调scope不能混用，不能仅见低HP推定触发哪个回调或国家转移。原生控制权、对象保留、队列及母星所有权仍须实际SAV证明；当前10.17基地仍归本国，此条仅预备只读源码结论，不宣告失守或自动修复机制，不推广CK3。
