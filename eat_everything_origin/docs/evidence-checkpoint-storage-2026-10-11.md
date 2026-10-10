@@ -58,3 +58,10 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 05:30 第七切点348相关路径已提交2a2afa5778ef9f64f86f765814e887277cd7140e，push／独立ls-remote实际0、远端main同完整SHA。下一第八唯一v2标签native-paid-births-budget-cycle-survey-and-leader1-error，基线native-rear-starport-and-first-paid-mining-completion／2a2afa5778ef9f64f86f765814e887277cd7140e；目标覆盖V12/idle10、idle11原V21日志FAIL/外层actual1、V22换行常量FAIL、V23首42PASS、V13/idle12、首矿预算17PASS、真实贸易容量UI与亚蒙中文源。仍完整源manifest与独立暂存blob核验；归档/核验期间不动GUI/日历/RUN。所有新原件及五任务docs提交推送后核远端，再继续预计08.21边界，不能修改冻结旧切点或宣称完整路线。
 
 05:33 第八切点归档actual0，冻结2026-10-10T21:32:00.959582Z，22675源项／890708108字节，复用22385、复制290／13183205字节。独立暂存原字节检查PASS／actual0，22740唯一blob／916810368字节；[独立回执](evidence/priority-native-paid-births-budget-cycle-survey-and-leader1-error-delta-staged-verification-2026-10-11.json)。五任务docs及新切点／回执提交推送，旧原件保持；不宣称严格零原版错误或完整路线通过。
+
+
+### 第九切点实施前计划（10月11日06:14）
+第八切点已提交27e1ce458bc65870eb67f0491279295ca1d6632b，push与独立ls-remote均actual0、远端main同完整SHA。新唯一标签native-yomon-paid-outpost-and-early-transit，基线native-paid-births-budget-cycle-survey-and-leader1-error／上述commit。目标为2269.10.01暂停端点固化完整源manifest，范围包括idle13全系调查／第13对舰、正常报价图及唯一支付、付款V1异常/V2准备失败/V2原FAIL/V3独立22PASS、V24与V14、09.29第14对出生及10.01的42PASS、原始日志和全部实际退出。私人助手缺陷与原生错误原件一并保留，不据此宣称整路线完成。
+使用既有不可变archive_priority_delta_checkpoint.py与verify_priority_delta_checkpoint_git.py；完整源逐条绑定既有冻结原字节或新复制原字节，独立git暂存blob校验必须PASS/actual0。归档及字节核验独占期间不进行GUI／日历／RUN写入。仅本次四任务docs、新切点、独立回执纳入提交；push后独立核远端main完整SHA，再继续唯一三日开工边界。不得修改旧切点或把暂停归档称正常退出/重载验收。
+
+第九切点归档actual0，冻结2026-10-10T22:15:53.323192Z；23055完整源项／907084528字节，复用22674，新增381／16384728字节。独立暂存原字节核验PASS／actual0，23121唯一blob／933569806字节；[独立回执](evidence/priority-native-yomon-paid-outpost-and-early-transit-delta-staged-verification-2026-10-11.json)。仅四任务docs及本新切点／回执提交推送，既有冻结原件保持。下一仍须独立核远端后才派唯一三日开工边界。

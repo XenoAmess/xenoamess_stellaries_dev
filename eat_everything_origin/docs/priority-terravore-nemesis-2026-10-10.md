@@ -678,3 +678,37 @@ V18目标是保留V17其它检查，仅把后方未完工条件改为正常已�
 06.05已调查该系14天体中的11，剩520/521/529；科研船1为evasive、自动探索/调查开启、特殊项目/异常等关闭，正在实际survey520、progress24.15。工程船2位于系统97且存活375。先等待原生全系调查；完成后简中UI核归属/可达/前哨报价，再记录具体付款设计与同日守卫方案，才正常下单；不得依据未调查天体或预期报价提前扣款。未来正常殖民与吞星收益仍待实际完成，不预发Menace或C/D。
 
 07.13新端点21军舰／余6已付单，母星10783／殖民76，第二矿100.8／240；V23两端常规40PASS／actual0，6.19新增原版leader.1特质错误按[精确限定说明](priority-terravore-paid-industry-expansion-2026-10-11.md)保留并单列，不能冒称零原版错误或新分支无Mod复现。亚蒙正式中文源完整复制native-yomon-survey-random_names_l_simp_chinese.yml，SHA be0c0ddf3ca0000e994328e5473397dc423c24617c6c82883c2fb1843682733e；仍先原生调查完该系再核报价，不提前下前哨单。
+
+### 亚蒙原生前哨实施前方案
+idle13实际0，38日至2269.08.21，三端V23常规40项PASS／actual0，第13对67110506/117440993真实出厂；26paid累计出生／7死／19活，加原4舰共23军舰，余4单。母星10789／殖民80仍殖民中，第二矿154／240，基地满18300，两平台保持；SAV56519c3409b7a4fefcb6b68cbde0ad3dc874339f6102a3d73c41c3a62674d70a。原生2814已说明日志基线保持。
+现限定本国surveyed_deposit_holders核system37的14天体[518..531]全部已调查，未调查数0；科研船自动去其它已知目标508。热带523/13格仍未殖民。下一只用正常简中F搜索“亚蒙”、选工程船2、右键星系菜单调查前哨报价，先核无所有者/无前哨、可达和费用；不凭相邻航道预设75影响力或100合金。
+报价明确后正常一次下单、同日另存唯一terravore-yomon-outpost-paid。新只读付款助手绑定08.21 V23常规40PASS/actual0/源码/两SAV与点击/报价原图/原生保存回执；只允许工程船2的新前哨订单和来源明确的移动字段、真实合金/影响力扣款及已知原生科研镜像刷新。原军事舰船/战争/平台/矿区队列/EEP/人口岗位/真实科研bank不变；工程船其它字段、外国国家和top对象保持，unknown差异FAIL保存后调查，不能重复购买。准确目标system37/star518、设计/工作/成本均读实际对象，未完工前不称拥有该系，不提前殖民。付款后有界施工检查须保留此前全部约束并核新前哨订单进度与实物出生；不能直接把新付款端点交给假定前哨未变的旧日历守卫。
+
+05:42 已人工核银河模式亚蒙菜单，工程船2已选、建造恒星基地（哨站）可用，原生报价100合金／37影响力（UI取整），报价图SHA 29b574d5365fce6b92e7d55e9df631c692e2b8d268646c9a90a987c155634db7。下一正常唯一点击(626,457)后同日保存terravore-yomon-outpost-paid，不再用旧225影响力报价；精确影响力以本次真实订单resources与库存实扣双向核定，必须落在UI取整[37,38)范围，不能擅填37。星系37已全调查、无前哨，目标星518；源V23常规40项及actual0绑定。保留完整日志before/after；原2814 baseline不应变化。
+
+实际唯一点击与保存均actual0，08.21新SAV d753ea1c9faacd7d289653b5facc6d3a4593734ca575581c1b303d57e2402e57。原生订单resources恰influence37/alloys100，实际库存1000→963、1308.00076→1208.00076，真实科研bank与其它库存保持。target type0/id518，design201326648，progress0/cost0/in_progress=no/class shipclass_starbase/can_reach=yes/order_id12，移动目标(18.27902,-24.18672,system37)。全top只country/fleet/camera_focus/random_count变化；唯一fleet2的order_id/movement_manager/current_order变化、唯一country0的modules变化，RNG+2。新付款助手按这些已调查准确差异实施，不强套旧约得本姆的成本、旧坐标或旧科研镜像。仍待独立全PASS，未称前哨完工。
+
+首次付款检查actual1，源码SHA16c8414cf4a54b58798fc380ed467b8baf99071e7fe3fc1b1be94c351e30c50d，在构造checks时KeyError:'523'，尚未输出proof，不能称20项单FAIL。该audit_save摘要只包含本国自有planet，未拥有的已调查目标523必须从gamestate.planets.planet原始对象读取；前述只读调查本来使用原始对象，误用摘要属于新私有助手缺陷，不是P引擎工具缺陷或Mod错误。原源码/stdout空/stderr/actual1保留。
+修正方案先记录：派生payment_guard_v2仅改目标523读取路径并新增绑定首次actual1／原助手SHA／精确KeyError／原proof未生成；同现有SAV输出独立payment-v2-proof。其它付款/目标/全局/军事/EEP/日志条件不变。不得重复购买或保存原stage；验收为全部PASS／actual0后才后继日历。
+
+V2第一次生成操作因替换定位checks={匹配两处而assert退出1，文件未生成；同一外层shell随后包装器读缺失源FileNotFoundError退出1，未执行helper、未形成执行回执／proof／游戏操作。现精确定位checks={换行已成功创建新V2，使用全新执行stage guard-v2-observed，不复用该缺源stage。
+
+V2助手SHA17915f936576e2501ca570f751f61a6ff730463f9cc51cb4d01d62db8f51d3f3，21项20通过／actual1，唯一one_order_id_increment_original_idle_constructor失败。实际前端工程船current_order为空、movement state=move_idle、order_id12，UI同样无指令；后端order_id13／新订单order_id12准确。助手误沿用旧约得本姆付款前orbit_planet_order，原V2 FAIL保留，不是原生下单失败。
+实施前V3方案：仅把旧orbit前提改为精确空current_order且旧move_idle，保留递增和全部20通过条件；首端新增绑定V2原21唯一FAIL/actual1/源码/SAV对及精确旧空订单，输出独立payment-v3-proof。同现有SAV再核全部PASS／actual0，不能重复输入或付款。
+
+V3付款助手SHA4b10c2d68e938a3d42ff98261a856e4fb800a26b60a6463d06efc5f87e6189fa，22项全PASS／actual0，保留首次异常、缺源预检和V2原21单FAIL。真实扣100合金／37影响力，尚在旅行、progress0/in_progress=no，未建成星系。
+后继实施前：从冻结V23派生V24，只新增固定V3付款22PASS/actual0/源码/原SAV绑定以及工程船2→ship2存活满375、同一target518/design201326648/resources/order_id12的未施工订单。原订单除sub_order外完整有序raw保持，progress0/cost0/in_progress=no，system37两端仍无前哨；真实旅行子订单/位置单列观察。原军事/三矿/平台/后方/PSI/EEP/殖民/2814日志全部条件保留；固定矿区锚点仍显式V21。本机00_starbases.txt规定outpost base_buildtime360；当前0进度仅指未开始施工，不能当卡死；施工开始/订单撤销/前哨出生不在本V24范围，必须停止后先调查并另立精确方案。
+下一唯一14原生日08.21→09.05／terravore-yomon-outpost-transit1，使用V3付款proof及actual0后才日历；完成后V24独立全PASS／actual0才继续，不重跑付款或日历、不提前称殖民可用。实际未来施工工速待原生观察，不照搬星港升级1.5或护卫舰1.58。
+
+首14日历及V24均actual0，09.05 SAV 547bc04b699b7567ce23df6f4cb55c06980877377faf30e137701a309917d98e，42项全PASS；工程船未开工旅行中，实际坐标{'x': 137.57688, 'y': 108.79692, 'origin': 97}，原付费target/design/resources完整保持、system37仍无前哨。23军舰存活／余4单、第二矿173.6／240，母星10795／殖民84；原生2814基线保持。V24实际源码SHA366092d56ffe94a6f8b155e7ccb885c99be4a290b2d0f0f3c9064844fb8f18a8（实施前尚未执行时将输出旅行标记改为真实检查布尔，而非恒定True）。
+
+V14 driver实施前方案：从冻结V13只更新V24源码／proof／包装执行引用，新增validate要求actual_yomon_unstarted_transit=true；仍14日单步／42日批次／最多三步及原全部停止条件。原订单进入施工或失去目标时V24必须停止并调查，不继续把未开工范围套到已施工。下一唯一idle14从09.05到预计第14对09.29，最多两步24原生日，各步42项全PASS／actual0才派后步。
+
+idle14实际0，24日至2269.09.29，两端V24常规42项全PASS／actual0；第14对1915/1916真实出厂，28paid出生／7死／21活，原4活，共25军舰／舰容125，余2单；第二矿207.2／240、第三0，母星10795／殖民84。SAV21e293288a3a480bd9c2c49ac6266e2824e38b502566eb062df04537bafdf76a。工程船已到system37，实际(-26.00965,-52.05649)，目标(18.27902,-24.18672)；订单仍progress0/cost0/in_progress=no，尚未施工。
+施工临近的方案先记录：下一唯一两原生日到10.01／terravore-yomon-outpost-arrival-boundary1，绑定09.29 V24 42PASS／actual0；之后先只读实际native order/cost/progress/in_progress与船坐标，再决定观察器。仍未开工才运行V24；若原生已开工则不强跑旧未开工守卫，按原始360 base_buildtime和实际序列另立V25施工约束／原支付绑定，后续一日复核真实工速与原生施工起点。不可凭距离或base_buildtime预判实际开工日期／完工日期，也不把订单0进度当卡死。第二矿下一预计10.23、最后护卫舰对预计11.07仍分别对齐，不覆盖开工边界。
+
+
+### 10月11日06:14已核端点与下一边界
+唯一两原生日实际0，2269.10.01 SAV ec3f9b13139b288bea20b43685ddac285d9a87a2f67f6b2b7dca39f8ebad0d07；V24独立42项全部PASS，包装回执returncode=0、源码SHA366092d56ffe94a6f8b155e7ccb885c99be4a290b2d0f0f3c9064844fb8f18a8。母星10801／现有殖民88仍殖民中，第二矿210／240、第三0；付费护卫舰28／30出生（7已损失），总25军舰存活，余订单42/43；两平台和后方星港实际完工。工程船2位置(-4.36156,-38.43388,system37)，原前哨单仍0/cost0/in_progress=no，未开工、未拥有亚蒙。无新交战／战损／待选／2814基线外错误。生产41文件0.2.0未改。
+用户本轮百分比汇报：完整路线1／7=14.3%，不是整体开发完成率；噬岩者虚境终点和女王相关分项已通过，防御平台＋后方星港3／3完成；护卫舰28／30=93.3%，矿区1／3=33.3%，第二矿210／240=87.5%。完整推荐仍仅纵火本能，铁心灭绝者下一。北京时间滚动目标06:35前证据固化并检查开工边界、07:00—07:30第二矿／最后护卫舰实际完工检查、08:00—09:00现有殖民完工／下一原生吞星衔接；异常调查可顺延，不承诺整路线完成日期。Steam继续离线。
+下一实施顺序：先执行第九完整原字节复用切点并提交推送核远端，期间不动GUI／日历／RUN；之后唯一三原生日10.01→10.04，阶段terravore-yomon-outpost-start-boundary1，前件为本42PASS/actual0。先读实际订单，仍未开工才用V24；若已开工，先记录原生字段／本次观察日期并另立V25设计，再只读核同一SAV，不强跑已知不适用的旧守卫。开工日／工速／完工日不由距离推算，不把10.04观察日冒称精确开工日。全部原支付和现有军舰／矿区／EEP／PSI／殖民／错误约束保持。
