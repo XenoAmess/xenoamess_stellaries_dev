@@ -20,6 +20,8 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 
 ## 结果
 
+04:35 第六切点及七任务docs／回执共456路径已提交af0fbce1ee913f5edeb0aabf70175c57d89556bb，cached diff check／commit／push／独立ls-remote均实际0，远端main同完整SHA。旧冻结原件保持不变，后续后方升级观察及RUN新回执属于下一切点。
+
 04:34 第六v2切点独立暂存原字节校验PASS／实际0，完整22046源项、22109唯一blob／888851729字节（含复用原件／基线／历史回执）均核准，[回执](evidence/priority-native-two-platform-completions-and-order-generation-reuse-delta-staged-verification-2026-10-11.json)。仅七任务docs／本切点／回执进入提交推送；远端核准前仍暂停，生产Mod与既有冻结原件不变。
 
 04:32 第六v2切点`native-two-platform-completions-and-order-generation-reuse`归档实际退出0，冻结2026-10-10T20:31:37.702059Z。完整22046源项／863570073字节，复用21600、新复制446／19749240字节；基线fd7720055428de96701108b5ec8376b23a2ad8e5及manifest SHAb185391dd77ea56c41ae0977bee16005f7d9e3b7d41b52a2a2da373331476d12。含两实际付费平台、原V16单FAIL／V9actual1、V17／V10全部源码及退出、正常第八九对出厂和简中平台／殖民UI。当前2269.03.25暂停，独立暂存原字节校验待执行；七任务docs／新切点／回执提交推送、核远端后才推进后方完工前日。生产Mod和旧冻结原件不变。
@@ -47,3 +49,8 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 02:01 归档实际退出0，冻结时间2026-10-10T18:00:58.031647Z。完整源清单20168项／775766577字节；复用19762项，实际新增406项／19464086字节，数量及完整字节总和一致。当前仍暂停，下一步独立校验全部实际暂存blob（含复用原件），未宣告校验或远端成功。
 
 02:04 独立暂存字节校验PASS／实际0，20168源项完整核准，20226个唯一blob／794351331字节（含准备输入、基线manifest及历史回执），[独立回执](evidence/priority-native-low-hull-daily-recovery-and-delta-proof-delta-staged-verification-2026-10-11.json)。另独立枚举当前暂停RUN／日志／四配置，实际20168路径与manifest的20168原始source路径集合完全一致，未列出／缺失均0、实际退出0。首轮同时覆盖原件复用与新增复制，未改旧原件；现在只提交四相关docs／本新切点／回执，推送与远端核验待下步。
+
+### 后方星港与首付费矿区切点：实施前范围
+拟新唯一标签native-rear-starport-and-first-paid-mining-completion，基线native-two-platform-completions-and-order-generation-reuse／已核远端af0fbce1ee913f5edeb0aabf70175c57d89556bb。目标冻结所有活动RUN、日志和配置，包括后方04.13真实完工、V18缩进误比原FAIL、V19成功、V11后续、首矿05.01真实完工、V20内部刷新标记原FAIL、V21首40PASS与简中UI原图。仅使用现有delta归档/暂存字节核验助手；无Mod改动。整个归档与独立暂存检查期间暂停GUI/日历/RUN写入。验收为完整manifest逐源SHA、独立暂存所有blob PASS/actual0、仅相关文档/新原件提交推送、独立核远端SHA；暂停切点不代替退出重载或完整路线。
+
+05:11 第七v2切点冻结于2026-10-10T21:09:57.298110Z，22386源项／877527573字节，复用22046、新复制340／13957500字节；归档actual0。独立暂存原字节校验PASS／actual0，22450唯一blob／903265846字节，见[独立回执](evidence/priority-native-rear-starport-and-first-paid-mining-completion-delta-staged-verification-2026-10-11.json)。所有后方／首矿完成证据、两次私有观察器原FAIL和修正成功及中文UI保留；相关五docs／新切点／回执准备提交推送。后续新V12及续推原件进入下轮切点。

@@ -647,6 +647,20 @@ AP守卫精确实施前：priority_terravore_nemesis_ap_guard.py绑定前44＋17
 
 ### 后方星港完工的下一边界（实施前方案）
 
+04:52简中UI已亲自核“约得本姆空间站”／“星港”，两空模块槽、一空建筑槽、升级下一档“星垒”与空施工队列；防御页0／17，没有免费平台／船坞。指令页图terravore-rear-completed-command-visible.jpg／179916字节／SHA474b6a696d015d6084186fc7fa576da0a3ea17af25670558bdc49b2b19d38dac，防御页图terravore-rear-completed-base-visible.jpg／149915／a3aa886b77ac86f22b86435d6389da8b7d402cb110345353dabdcf892848834f及所有搜索／导航回执保留。搜索框Ctrl+A未清空旧字符串，32次正常Backspace后输入正式“约得本姆”成功；两次未清空截图亦留原件，未据空结果盲点。正常关闭星港实际0，开始唯一idle8，V11／V19绑定首40项PASS／actual0，从04.13到预计第十对04.27（14日），常规38项全通过才续。
+
+04:46 V19源b057f107d87a752030f58c0157e85ab2e3f3d7739f996bc57aec8e1e06744f90，同04.12／13固定SAV独立首40项全PASS／actual0，原V18单FAIL／actual1保留，无重跑日历。V11源23319ea77037303bd0cea90a0aa3056a43bee733aab0fb65526f81eda285f3c6，编译与差异审查通过：仅改绑V19／proof、后方360完成后的边界处理及殖民01.01裁剪，14／42日和原全部停止条件保持。先用既有正常搜索／双击导航查看简中后方星港，留图并正常关闭，再唯一idle8至预计第十对出生04.27；观察器常规38项全PASS／actual0才续。
+
+04:43 首V18源c9eb6aa204d63ea71c5f40315dee8f697622901253c0cc283b7fbe58f24d4c8b，39项仅rear153_paid_upgrade_exact_serial_work_same_station_and_order_completion FAIL／actual1，原件保留；其余38项全通过，日历不重跑。只读定位为其内部ship与base两个不同嵌套位置的ship_design_implementation raw缩进不同，完整有序词元及三个字段值均完全相同。私人观察器错误使用跨上下文raw相等，实际升级／归属／订单／属性正常，不是生产Mod或open_kaishek缺陷。
+
+V19实施前：从不可变V18另建，只将上述跨上下文设计实现比较改为完整有序词元恒等，并额外严格要求词元恰为design=201328266、upgrade=4294967295、growth_stage=0的全部三个字段，不能忽略未知字段／嵌套。其它38项原检查不变；首追加绑定原39项精确单FAIL／actual1／源c9eb6aa2、同前cacc0aa8与后3f0eb621固定SAV SHA、一原生日。预计首40项／常规38项；后续固定完成锚改为本V19首40项PASS／actual0／原源码及同完成SAV。全PASS／actual0后才另建V11调度器，改绑V19、后方360完成后不再裁剪，保留其它边界且加入殖民2270.01.01预测边界；先只到第十对预计04.27，之后到首矿完工前04.30，矿区完工另建组件。
+
+04:40完成只读实证：唯一单日历实际0，2269.04.13 SAV3f0eb62159dd9bf0c0bfb519baa349fb6f219d7c1f3a41bb0a9fddf230e2d26e。base153仅level由outpost→starport，其余原文保持；station67109591／fleet804／system97、原construction_date2264.07.24、design201328266／growth0／upgradeinvalid均保持。该同设计ID的原生设计正文已生成starbase_starport／STARPORT_STARBASE_SECTION，不能要求升级前outpost设计正文不变。实际站体18300、甲5125、盾4320均满；queue2278变为空且其余字段保持，原234881044为none；shipyard_build_queue仍4294967295，未生成船坞或额外舰船。
+
+V18精确实施：保留V17其它35项，后方施工检查改为工作0–360按每日1.5守恒且完成后保持360；level可outpost→starport单向，基地除level原文全保持，未完成订单原付款raw非progress保持，完成handle无任何队列引用且可none或更高代同槽位。真实station／fleet804／本国所有权和system97、构造日期／implementation保持，outpost时上限9150／3125／1440、完成后18300／5125／4320，船体正、甲盾范围正确，新完工全满。完成设计正文固定为本次真实starport设计，后续绑定本首PASS／actual0／固定SAV与源V18，并要求设计正文及真实上限保持；不把正常已付款升级当免费科技升级。另核已归档两原版源SHA，首端点绑定04.12 V17 36项PASS／actual0／源d24a25a4、两固定SAV SHA、一原生日和358.5→360／空队列。预计首39项、常规38项；任何其它变化原FAIL停留，同日不重复日历。
+
+04:38实测：idle7实际0，14＋3日到2269.04.09／04.12，两端V17常规36项全PASS／actual0、stop=date_limit；后SAVcacc0aa82564e7f95eddacef3e766d5fb07a3b590346f2c31de9432d3725d1ab。后方恰358.5／360、首矿214.2／240，两平台保持。按本方案开始唯一`terravore-war1-rear-starport-complete`单日历到04.13；不运行只验未完工的V17，先调查实际完成对象再精确实现V18。完工前后方station67109591／fleet804／system97，outpost实测9150船体／1440盾／3125甲，construction_date2264.07.24／design201328266；升港实际设计、船体、级别和队列仍须从新SAV确认。
+
 待两付费平台完成切点交付后，继续既有原生时间到后方订单234881044完工前一日，预计2269.04.12 progress358.5／360；先全PASS／actual0，再唯一一日到04.13，不在已知完工日执行只允许outpost／未完成的V17。先只读SAV和简中UI核实际level、station、设计／船体、原队列、舰队归属和新增通知，再补准确许可并另建不可变V18。
 
 V18目标是保留V17其它检查，仅把后方未完工条件改为正常已付款升级的精确完成：绑定125合金付款20项PASS／实际0和原单target153／starport／360工作；剩余订单进度仍恰+1.5／原生日，完成边界正好消耗余工作，旧订单不可仍为对象或队列引用，允许已实证的none／同槽位更高代身份。实际后方基地必须属本国，在原系统97，level从outpost到starport，station及拥有舰队引用闭合，所有新增模块／队列／实际设计变化逐项按原生结果核准；无真实已付款船坞不得称后方造舰能力已具备。源00_starbase_levels.txt／00_starbases.txt归档并绑定SHA，级别／模块槽位规则不能替代真实实例。
