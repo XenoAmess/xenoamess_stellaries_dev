@@ -759,3 +759,35 @@ idle18唯一11日actual0至2269.12.30，V26独立43PASS/actual0，SAV77163851e99
 
 V27首完工独立44项全PASS/actual0，实际执行源码SHA10f5f86929511f8ea3180df1e38cd34515029dc2d4123460a2ef92fe1b188753（首次执行前将初稿无意义自比较改为精确六字段schema，初稿未执行、无FAIL回执）。最新母星10820／殖民99、第三矿112/240、27军舰存活、原C37/D11/PSI/威慑105/两平台/后方与2814日志保持；523仍未殖民。工程工作量仍约60%、完整路线未通过。先冻结第十一切点、独立核暂存字节并提交核远端。
 下一driver V16实施前：从冻结V15只更新V27源码/证明/执行引用以及actual_yomon_outpost_complete=true，去掉施工99%裁剪与停止条件；其余单步14日/批42日/三步及全部原停止条件保持。殖民预界限更新为当前UI预测前日2270.01.30，不能把02.01预测当完成。下一唯一idle19从01.13→01.30，最多两步17原生日；V27每端44项全PASS/actual0才下一步，新的正常建造订单尚未下达。到01.30后单独唯一一日到02.01，先实际读取殖民字段/pending/设施；若已完成则先立完成守卫，不强跑旧still_colonizing。若预测仍顺延则据新实际状态继续正常核验，不授予完成。
+
+第十一切点373相关路径已提交99b3e6097b0e0b919df8bbf6aba8af2b726c3370，push/独立ls-remote均actual0、远端main同完整SHA。按既定方案已实现V16，源码SHA09150e1c93d1dd0906c25c6ec868de0b90505d2424ca36c2ea5eff11b89dff87；只绑定V27/actual_outpost_complete并移除已不适用的99%施工裁剪，殖民预测前界限01.30，其余全部停止条件和14/42/3上限保持，validate还严格要求44项。现唯一idle19从01.13到01.30最多两步17原生日，逐端全PASS/actual0才下一步；不下达新正常生产订单、不跨已知殖民完成界限。
+
+idle19两步17原生日actual0至2270.01.30，两端V27均44PASS/actual0；SAV2b9bac27bd0fe02ceeba67997143100999badc1c481146ed68c974cf8830bde3，第三矿135.8/240、殖民99、原其它约束保持。现按既定方案唯一一日到2270.02.01（terravore-colony1085-completion-boundary2），先读实际colony字段/源星/初始岗位建筑/本国pending及简中PlanetView或原生提示；不能仅依预测或某个历史序列化字段判完成。完成则先按实际raw/UI立精确完成守卫，未完成则刷新当前预测、仍按实际状态续推；不强跑已知不适用的旧守卫，也不提前点击吞星。
+
+### 现有殖民实际完成与V28实施前方案
+唯一单日日历actual0至2270.02.01，SAVae5c07eb6112d217a7e9163c4b1ed8f4610083a8700ede82b73527c9b357202f；前01.30 SAV2b9bac27bd0fe02ceeba67997143100999badc1c481146ed68c974cf8830bde3/V27 44PASS/actual0。colony37.colonizing_species移除，physical1085.colonize_date更新为2270.02.01（先前2267.10.12为殖民阶段起点），仍owner/controller0/colony37/pc_alpine/size12。源真实人口99→103，colony.last_month_growth_data明确月初99+增长4；母星10820→10826，真实合计增10，均原生增长，无EEP奖励。新源popgroup402653219/species73/complex_drone替换旧335544348，其last_month_growth=103是新分组初始化值，不能当103新生人口。
+区划68/level1/type district_hive和zone16777291在完成前已存在；zone建筑130→33554455，两建筑完整内容同为building_hive_capital/position0，逻辑三个岗位保持但实例16777369/94/95→812/814/813。当前coordinator812 workforce103/max200、logistics814 0/max200、patrol813 0/max100；不是额外新增蜂巢区划。审计摘要colonies.buildings只读colony直接字段（为空），不代表没有建筑，应沿district→zone→building原始链读取；现有解析器具备该读取能力，不是open_kaishek缺陷。新源住房用量暂0/总2300，原生新分组缓存尚未刷新，不强设当帧住房用量=103。
+已亲见正常简中PlanetView“殖民地总览”、殖民时间2270.02.01/规模12/103人口/1区划；图terravore-colony1085-completed-planet-visible.jpg/SHAa87f16c2c9060051c0bfa1a764e6c4f347ea3a65d761f8ed97d9fd617b645b19，正常打开动作actual0。无本国pending、error仍2814；本国全部变量/flags/政府/AP/传统、物种及全局event_targets保持。
+新增不可变V28从冻结V27派生，只把仍殖民条件替换为上述实际已完成的源归属/日期/全本族人口及原zone/区划/首都建筑语义链，保留其余43项全部约束。首端再加固定完成锚点：准确两SAV/唯一1日/前44PASS/actual0/SHA10f5...、旧colonizing73→清除、源99+4/母星10820+6的原生月记录、合计仅+10、原建筑/岗位实例的对应语义、旧popgroup不再被自有殖民引用、新103全species73及上述正常UI原图/动作/日期绑定。后续显式绑定本V28首45PASS/actual0/固定源文件和SAV，不误绑派生自身。当前完成组件不启动吞星、不称完整经济闭环或整路线通过。验收同现有SAV独立全PASS/actual0，不重跑日历。
+### 当前正常经营缺口与后续安排
+本端真实月净E−8.92767/M+38.92593/A−2.29024；实际库存E16828.55894/M10293.94925/A1226.96476。如实记录临时负净值，不称全资源正经济；原组件只要求真实库存正并报告净值，不能改日志或补钱。下一先正常检查/启动已完成1085的吞星决议，source103本族已足100种子，实际Q/T、bank与账本仍逐项独立核验。正常建设修复与吞星计时并行：先核母星清障/发电报价和实际可用槽位再下单，原三付费矿单仍继续，重工业转换等全三矿与稳定月后单独核。
+只读原版01_blocker_deposits.txt核母星272/273的d_failing_infrastructure各−1可用区划、基础E300/120日，swap_type实际d_fertile_lands；33554567/d_ruined_district为E300/200日、−1区划。先用简中UI核折扣/可用/实际时间，优先普通基础设施清理释放发电槽，不选会新增人口的d_hibernating_lithoids。不得把基础定义当实际付款/完工，不提前取消或替换原三矿；新付款与新增非军事队列须另立精确守卫，不能交给只核原三矿/原30军事单的旧观察器。没有生产Mod改动或P工具缺陷。
+
+### V28原始单FAIL及V29实施前修正
+V28首次45项中44通过，actual1；唯一FAIL为实际完成锚点。只读逐项求值确认唯一错误假设是要求旧建筑130完全消失：原生实际保留 type=building_hive_capital / killed=yes / position=0。新33554455的完整内容与旧130完成前相同，zone16777291只引用新33554455；其它原生人口、语义岗位、UI、SAV/源SHA均通过。原V28源fc8e6e6e1b92aacfbeaf34af479c78594c6dce7fcc3a24c271eb0bcf6f7ea790及首次proof/actual1保留不改，不重跑日历或GUI。
+新不可变V29只把旧对象不存在条件改为精确三字段 killed=yes 保留体，并要求所有当前zone均不再引用130；新增第46项绑定原V28恰45项/该唯一FAIL/actual1/固定源及准确两SAV。后续完成固定锚点改为V29首46PASS/actual0，不引用失败V28作通过锚点。其它44项保持。验收为同原SAV独立46全PASS/actual0；仍不称全经营闭环或整路线通过。
+
+V29同原两SAV独立46项全PASS/actual0，源码7643c09fc6e6b1cce4dbb04c4ec1a4ce9ac6b3a8aaa6b2d052bf6c3d3014e35d。原旧对象 killed=yes / zone不再引用均实核，原V28单FAIL与实际1保留。接下来正常打开1085决议并采集实际合法吞噬报价/提示；尚不宣称已执行。
+
+### 第三颗源1085吞噬启动实施前
+已亲见简中决议列表唯一合法“吞噬星球”，原生石质蜂群入口已接EEP效果，描述明确Q×2.4月、完成迁回本族/永久破碎、Q累计容量与每Q6制造100。来源已完成/非母星/103本族，Q12无毁损，预期T29有效月；母星人口不必迁出，seed_need允许100−103=−3。计划本暂停日期正常左击该条目(790,170)，若有确认先检查；随后唯一同日期存档terravore-colony1085-devour-started，不重复输入。此前源无EEP变量/active，已有C37/D11/worlds2/Menace105均应保持，不能提前兑付。
+新启动检查应绑定V29完成46PASS/actual0/源/SAV及本真实输入回执，原生冷却360、active/native/being_devoured与唯一EEP situation目标1085进度0、任务actor0、source Q12/T29/seed103/need−3；没有原版重复吞噬situation；同日全部实有人口/岗位/区划/付费订单/军舰/平台/后方/前哨与其它星球保持。精确新eventtarget、flag与modifier按脚本及实际raw核，不豁免无关变化。实际资源和三科研bank逐项检查，若原生免费决议重置bank则保留原始差异并按已知限制精确记录，不补资源、不假称全部经济保持。错误仍严格2814完整基线，无unknown error。先读取真实差异再实施不可变专用守卫，不能将仍静态EEP的旧V29直接用于新任务。
+
+实际启动SAVe030634f1d921a002869cff7a5a3639e0aae56fb9b5a93455d4158572b10281a，同日期2270.02.01；唯一任务100663299/EEP/target1085/progress0/approach eep_devour_approach，真实Q12/T29/seed103/need−3，新增actor1085。全部真实资源与科研bank均保持（社会6458.22177），没有bank重置或损失；仅经济模块显示镜像清除物理87.7785/工程92.4285、社会6467.11601刷新为6458.22177。源新增精确六flag和永久being_devoured_modifier，原其它物理字段/殖民/实有人口/岗位不变，source carrier/binary flags保持3/581。顶层只变planets/country/saved_event_target/random_count/situations；country0仅events新增situations=[100663299]、modules仅resources科研镜像刷新，所有fleet完全保持，error仍2814。
+据此实施专用不可变priority_terravore_third_native_start_guard.py：除前述语义检查，完整raw核所有顶层其它字段、全部舰船/舰队/工程队列/星港/设计/战争/殖民/岗位/区划/物种、其它国家与其它星球；country0仅放行准确新增situation引用和上述已调查显示镜像，其它完整有序字段保持；真实库存完全保持。核真实UI点击/存档actual0及精确source hashes，proof独立全部PASS后才新正常订单。任何未知差异FAIL保留。
+
+首次执行前静态修正：匿名modifier项使用完整词元比对（named fields解析器不接受匿名列表）；零值物理/工程显示字段实际为缺省，按精确缺省schema比较，不把缺省镜像当储备变化。原始只读探针ValueError已保留终端，无游戏修改；助手草稿此前未执行，没有覆盖既有执行证据。正式助手额外绑定三份生产入口/效果/局势定义的SHA。
+
+第三启动守卫V1首次34项/33通过actual1，唯一source_other_physical_raw_held失败；只读精确diff显示新增永久吞噬修正的底层字段叫timed_modifier，审计摘要名为modifiers。原V1源码70625ea29f657a3628329eec25035a6909b2345f970273003bdffbeeec371b2a/proof/actual1保留。新V2只将该完整raw排除字段改为timed_modifier，仍由既有精确永久修正词元检查约束；新增35项绑定原34单FAIL/actual1/源/准确两SAV。其它33项保持、不重复决议/存档/日历，不改生产Mod或P工具。验收同现有SAV35全PASS/actual0。
+
+第三源启动V2独立35全PASS/actual0，源码801ddc424c827482d5b3f2bdf5c0f312da784d1215ecb501b74c1ab1bc8fe4b6；实际库存和科研bank均保持，原V1单FAIL/actual1保留。现在暂停正常打开母星清障报价，不动日历，不重复吞噬；原矿905969668进度137.2/240继续等待。

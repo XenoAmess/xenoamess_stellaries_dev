@@ -528,3 +528,7 @@ Stellaris4.5.2原生前哨建造订单序列化实测：本次constructor2的bui
 Stellaris4.5.2紧急撤退字段实测：788在2270.01.07仍return_date=同日、origin4294967295；01.10已无return_date且origin97有效、order_id1，但mia_type=mia_emergency_ftl仍序列化。33555013在01.10仍return_date=同日/无有效星系，01.12亦无return_date且origin97，但旧mia_type仍在。因此日期相等或单独mia_type不能证明回返已发生/尚未发生；按实际有效坐标/返回日期清除/实物守恒交叉核验，不推广其它舰船字段。精确回返瞬间未逐日采样，不能写成01.08/01.11。两SAV和独立守卫见priority-terravore-nemesis-2026-10-10.md。本条为Stellaris序列化事实，非Paradox共通语法。
 
 Stellaris4.5.2本次前哨99%→实体完成：01.12原付费模板201326648，01.13新base158/fleet849/ship1931/实体设计117442392。实体设计与模板完整有序字段/嵌套词元只差auto_gen_design=yes被移除，原模板未改；不能以设计ID不同认定组件改变。原constructor订单清空、原100合金/37影响力支付与实际归属链通过44项/actual0；该观察只适用此次原生outpost实体化，不推广其它舰船。详见priority-terravore-nemesis-2026-10-10.md。
+
+### 2026-10-11：Stellaris 4.5.2 原生殖民完成与实例保留
+噬岩者实机1085/colony37于2270.01.30→02.01完成：colonizing_species清除，physical colonize_date从2267.10.12殖民阶段起点重写为2270.02.01完成日；普通简中PlanetView同步显示殖民时间。原district68/zone16777291在殖民期间已存在，完成未新增区划，而是将首都building130替换为33554455、逻辑岗位实例重建。旧建筑130仍存在且精确 killed=yes，当前zone只引用新建筑；不能要求旧对象立刻被删除。旧popgroup335544348由新402653219替换，source99→103的真实增长以colony.last_month_growth_data的99+4为准，新group.last_month_growth=103是初始化而非103新生人口。新源住房usage暂0不等于丢人口；实有人口/归属/语义链及后续缓存须分开核。
+证据：RUN20261009T044016Z，01.30 SAV2b9bac27bd0fe02ceeba67997143100999badc1c481146ed68c974cf8830bde3、02.01 SAVae5c07eb6112d217a7e9163c4b1ed8f4610083a8700ede82b73527c9b357202f；V28原45单FAIL/actual1完整保留，V29仅精确保留体和无zone引用修正后46PASS/actual0。该结论限Stellaris实例序列化，不推广CK3，也非P工具缺陷。
