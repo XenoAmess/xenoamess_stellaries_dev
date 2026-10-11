@@ -330,3 +330,13 @@ CUT38实际结果：freeze2026-10-11T21:34:52.618875Z，34379源/2565838499B，r
 
 
 CUT39实际结果：freeze2026-10-11T22:18:18.673838Z，34695源/2638130907B，reused34379、新316/72292408B；独立Git暂存原字节核验PASS/actual0，34793唯一blob/2678023500B，根回执evidence/priority-native-outpost188-capture-and-normal-main-stop-delta-staged-verification-2026-10-11.json。原V7 oneFAIL/actual1与22true、capture V1异常/stop V1失败及两独立V2实际PASS、源24/32和主力正常停止原件完整保留；V8仅源码/静态通过尚未执行。仅暂停证据，非整体验收/重载通过。只提交本cut/五任务docs/rootreceipt并推送main、核远端全SHA后继续。
+
+
+## CUT40 方案：源37四舰真实战损与短段实战观察
+
+当前2278.06.29暂停、全部helpers结束。唯一label native-source37-four-losses-and-short-battle-watch，固定基线CUT39 native-outpost188-capture-and-normal-main-stop/已推送5c60ab1e4dc4c73f5e88950e414445bd3adf5de9。保存CUT39后Git原回执、唯一90日/六观察/V8原24三FAILactual1及21true、原277/四ship none/三dead fleet entries/完整双方国家、fleet825、源母/两war/army原文、三MIA原identity/design/date、source37 guard V1一FAILactual1和独立V2 sourcefa51…12PASS0/INV SHA c8f6f43d08e3a737079fece93f8b30e66035374aba66d997d071ea51e1f88a31、新review source57ac…10PASS0及五个V3准确1+7+7+7+7日/各SAV/六观察/V9 sourcec590…25PASS0。保留全部原始失败、私有解析/调查错误及更正，不补舰、不回放、不把21存活写成原25全存活。生产41/0.2.0/tree未改、无确认新Mod/P引擎bug，仍非整条噬岩者/重载验收。
+
+同既有协议archive实际0→仅stage新cut+五任务docs→独立verify新复用Git原字节PASS0→写计数/根receipt/scope/diff→commit/push main/独立ls-remote完整SHA。冻结期间不写RUN/不操作GUI或日历，不删证据，D空余1060036608B/C21281083392B。最新SAV02ac402c69ec80348e90e98fb0b07806d2b360596dbfa25962111ddb9a45a390、source28/32/母11403源389/21military/三MIA/已核activecombat/error保持。切点后下一仍先最新同SAV review06 10PASS/0，仅7日到2278.07.06，再六观察/V9全25/actual0及boundary；任何新实战报告/死亡/源占领/错误立即停止，最终9.30/10.01/女王另按真实日期核。
+
+
+CUT40实际结果：freeze2026-10-11T22:45:55.039869Z，35004源/2747623531B，reused34695、新309/109492624B；独立Git暂存原字节核验PASS/actual0，35103唯一blob/2787895481B，根回执evidence/priority-native-source37-four-losses-and-short-battle-watch-delta-staged-verification-2026-10-11.json。原V8三FAIL1/21true、四真实阵亡/三MIA/原277/全局舰船与双方war/sourceguard V1原FAIL及V2 12PASS0、新独立review与五段V9 25PASS0原件完整保存。仅暂停证据，不代表整体路线或重载验收。按scope/diff提交推送/独立核main完整SHA后继续review06限定7日。

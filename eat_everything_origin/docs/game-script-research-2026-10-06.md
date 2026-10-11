@@ -659,3 +659,6 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-12 原生前哨接收与正常停止命令实证：2278.02.29战报276/no_more_enemies/双方lost0后，既存enemy前哨67110520和同system188两矿站50332983/50333076、一研究站50333335的原fleet从country1转为0，ID/ship_design_implementation/construction_date保持；空间站仍disabled/repair，HP与HP上限采接收国家属性变化，不能等同免费出生或付费升级。正常Stop会移除fleet.current_order字段，并将movement_manager.state变move_idle、清空path.node/target.invalid，而path.date历史值仍可能保留；不能凭path.date单独判仍有航路。完整只读capture11及same-day stop9 PASS/actual0/原FAIL保留，详见验收记录。COMBAT_STATS中的fleets/enemy原SAV为匿名对象列表，私有q.fields只用于key=value，匿名列表必须按已有tokens层级解析；是本机Stellaris序列化读取事实，不是新P语言或CK3语法结论。
+
+
+2026-10-12 源37原生战斗存档辨析：真实四ship死亡在ships根为scalar none，但原fleet788整体无该字段，另两个空fleet仍scalar none；须同时核原生COMBAT_STATS277 lost4、owned身份差集及完整global entries，不能硬要求空fleet全部同一种序列化。in_combat_with同时含fleet=825和debris=33554436；q.ids会汇总两数字，判断敌舰应读具名fleet字段，不能把debris当不存在的新fleet。原生疲劳触发war1.defender_force_peace=yes/date2280.04.15不等于当天和平，真实双方/目标仍保持。源37三MIA与四阵亡、12项独立核验及随后五个25核心PASS端点全保留；属于Stellaris4.5.2存档读取与原生事件实证，不推广CK3。

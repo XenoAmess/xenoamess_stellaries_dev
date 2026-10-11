@@ -1210,3 +1210,48 @@ stop V2/source d633642788d3e0caf8272917be922817b42b20fa26f7dbed7a5725470af05a93 
 
 
 CUT39实际结果：freeze2026-10-11T22:18:18.673838Z，34695源/2638130907B，reused34379、新316/72292408B；独立Git暂存原字节核验PASS/actual0，34793唯一blob/2678023500B，根回执evidence/priority-native-outpost188-capture-and-normal-main-stop-delta-staged-verification-2026-10-11.json。原V7 oneFAIL/actual1与22true、capture V1异常/stop V1失败及两独立V2实际PASS、源24/32和主力正常停止原件完整保留；V8仅源码/静态通过尚未执行。仅暂停证据，非整体验收/重载通过。只提交本cut/五任务docs/rootreceipt并推送main、核远端全SHA后继续。
+
+
+CUT39已提交推送5c60ab1e4dc4c73f5e88950e414445bd3adf5de9，commit/push/独立ls-remote实际0且远端main同完整SHA。当前2.30仍暂停，按已记录新V3普通前置/stop9PASS0执行唯一90日到2278.05.30，随后六观察和V8重新复算。
+
+
+CUT39后唯一90日已实际到2278.05.30，SAV42b50583432e04a42fcf734d0f2928492fbfb10d4a6a147973c342f5bf1aea7e，calendarV3实际0/业务预检true、observerV2六PASS/0。V8/sourceca50c10766845fedea8594ed264c02f0d393dac4580a3360132217d2a6cf0d69原24恰三FAIL/actual1（owned身份25存活、war1原forcepeace字段、capture锚定当前25军事）；其余21核心true。boundaries为active_combat/MIA/war_battle_history_changed，已停止所有日历。源27/32/母11397源389总11786/C49 D14 worlds3 PSI1 stage1 Menace885仍保持、原error未增，没有新确认生产Mod/P引擎bug或代码变动。
+
+只读原生277 COMBAT_STATS/date2278.04.14/start4.06/reasonwe_escaped：fleet33555034/ship1807与fleet100664127/ship67110639各lost1，fleet788/ships1895/1896 lost2；原四global ships均scalar none，确实死亡，不能以strictFAIL泛放为失能/接收，也不能补舰。fleet33555013/ship33555519 lost0、原生mia_emergency_ftl/return_date2280.01.03；constructor2/ship2 return2280.03.16、colony33555278/50333369 return2281.06.27，同为原生emergency MIA，正常90日前它们均实际在源37，而非先前更早母星位置。原main18仍188 idle，原25军舰现在21（含原逃生一舰）。source37 base158/station1931仍我方HP9509.90237；science166/1049/leader74仍375/125/295.45547、与原敌825交战。敌825现8艘/power1101.67187，不能用之前15舰/P3119判当前；33554436为in_combat_with中的debris ID，不是fleet ID，必须以fleet=具名字段读取，不能用通用q.ids把残骸数字当敌舰。war1仍双方/原目标/开始相同，只新增defender_force_peace=yes/date2280.04.15（疲劳触发），战报原文另保存。一次只读临时调查假定audit有armies键报KeyError，已改读真实SAV roots而非将其判缺失游戏对象。
+
+新增source37_native_battle组件方案先于实现：严格绑定本原V8源码/24恰三FAIL/actual1和21核心true、当前真实两SAV/六观察/source44c…/calendarV3/sourcec0…actual0；完整保存两端country0/1/全部owned fleet/ship、原四死船/三死fleet的scalar none、原277报告及双方全局fleet825、system37/base158/planet523/colony38和两war/armies原文。独立核新增owned空/removed恰四、四ship原样none且与277匿名报告lost4对应、现21military=原25减四且所有survivor正HP/设计不变；三原MIA身份/精确return日期/实际设计、当前active恰science166+base849仅typed enemyfleet825（debris另留原文）且base和science正HP/源母控制权0；war1只新增两forcepeace字段/允许自然fatigue和实际battle，其余字段原样；当前所有Mod核心由同SAV的原21true绑定/no新增error。原V8三FAIL保持，输出独立PASS组件与完整INV，boundaries保持明确，不普通ready。
+
+短段review方案先于实现：独立新source37 battle review只接受上述新组件真正全true/actual0/source固定SHA及最新同SAV；本已核三MIA/return日期、原21身份/设计/源母owner和原825实战不允许新损失、其他敌fleet或未知pending。当前下一准确1日5.30→6.01（360日历），之后每次最新同SAV核验≤7日，不跨9.30最终cap；review status PASS_REVIEWED_NATIVE_BOUNDARY/准确SAV/start/end/days/max和boundaries集合。calendarV3只在review实际0/完整绑定后执行。不手动撤退或重放战斗、不免费生产/和平；若base丢失或新的战损/源占领/经济异常，原strict必须FAIL停调查。
+
+独立waitV9方案先于实现：复制V8保留全部24核心/所有历史消费迁移/撤退返航/capture/stop原件锚定。当前25恒存活断言只在未来精确比较known21集合=原25减本四已证死亡；新原source37组件固定SHA及两SAV/原24三FAIL/actual1/277/SAV none作第25检查，旧capture25仅作历史锚定不要求四死船现在复生。仅允许本三个原MIA身份/precise日期不变，science166仍正HP/leader74；新war1.forcepeace两字段已核后未来仍保持，其他war规则不松。typed combat字段读fleet而非debris；known战斗保持boundary、普通readyfalse，V3经每次review才能1–7日。原V8及所有source/FAIL不改。组件/review/V9各先静态0、独立实际alltrue/0后才准后续GUI日历。未完成最终吞噬/女王通知，不保证路线无bug。
+
+
+source37 battle V1/sourceca99b7757b78c15dc77cef50a5022c0bcd7b14085030d113a46f11b374f18a05静态0后11项一FAIL/actual1、其余10true。原四dead ship都确实none，但dead fleet788在全局fleet根无该字段（entry=[]），另外33555034/100664127为scalar none；原断言误要求三个fleet全部none，不能把序列化空位表现差异当未死亡。新V2方案先于实现：仅改为本固定三fleet精确entries={788:[],33555034:[none,false],100664127:[none,false]}，四dead ship仍全部严格none/removedexactfour/277lost4；另增加V1原源码/一FAIL/actual1及同两SAV锚定。保存V1全部原证明/源码/流，不重跑旧stage；V2独立proof/exec后缀v2、静态0后同SAV复算，后续review/V9只接受其真实PASS固定SHA。未推进游戏，无生产Mod或P引擎缺陷。
+
+
+source37 battle V2/sourcefa51dd4f8fcec3d01c24d9ada472f9973b7cd5a53541703a98eb634781d15bec compile/pyflakes0后12PASS/actual0，完整INV/proof SHAc8f6f43d08e3a737079fece93f8b30e66035374aba66d997d071ea51e1f88a31，严格原24三FAIL1/21true及四真实阵亡/三真实MIA/原277全部保存。V9未来逐段1–7日，只要三已核MIA身份/精确return_date不变，不把它们再次当未知MIA boundary；有任何第四个MIA或原三发生不同变化则立即新boundary/FAIL。原生战斗仍保持active boundary/ordinaryreadyfalse。首次review承认本固定组件中已核277导致的历史变动边界；后续V9若有新的war历史变动则拒绝旧review，先另调查，不能泛放。sourceguard当前12PASS和未来V9 25PASS的两个来源及不同边界集合须分别固定，不能接受随意PASS文件。当前第一次仅一原生日5.30→6.01，以同SAV精确review后V3执行。
+
+
+独立V9源码固定SHAc590fc6fdb32728faf83629a842ea158bfd967bb12cc9b3e533d1e556f1fe5b7，active combat只按具名fleet=检测，不把debris当fleet；source37 review只固定接受sourceguardV2/fa51…或本V9固定SHA，不接受任意动态变更helper。静态通过才执行第一次review/current5.30→6.01/唯一1日。
+
+
+source37 review/source57ac88e594f5db982ebd4a572ff90e75d0b5fd6055d7136e04f6247d7ff160ea compile/pyflakes0后10PASS/actual0，唯一1日到2278.06.01，SAVdd15c4f6eab874e0c31ea8050e4c08eda7c56a505b7e828ec2c6236c61cf579c；V3/六观察actual0/V9 sourcec590fc6fdb32728faf83629a842ea158bfd967bb12cc9b3e533d1e556f1fe5b7独立25PASS/actual0，progress28/32，母11403源389总11792，原EEP/四死亡/21存活及三MIA/date/error保持，只有active_combat boundary/ordinaryreadyfalse。下一仍同当前SAV先独立review02 10PASS/0，只允许7日到6.08；若新战报/死亡/控制权或未知boundary立即保留strictFAIL并停。
+
+
+source37 review02 10PASS0后唯一7日到2278.06.08/SAV275bf21935c121fa21c42aab0db71bdeeafd3371e6dbb1a3a54345feb9b72c6a，日历/六观察/V9 25全PASS/actual0，progress28/32及原EEP/21survivors/三MIA/error保持，仅known active_combat boundary。按同已核方案下一review03后≤7日到6.15；出现新战报/其他boundary仍停。
+
+
+source37 review03 10PASS0→唯一7日6.08→6.15，SAV2a954e52632cfd92eaddd2b0c4f114301f8e7cde6aa4c0335609c9a46ce62b93；V3/六观察/V9 25均全PASS/actual0，仅known active_combat，progress28及经济人口/EEP/error保持。继续已核同SAV review04后≤7日到6.22；其他新增boundary或strict FAIL即停，不因已核战斗放行新损失。
+
+
+source37 review04 10PASS0→唯一7日到2278.06.22/SAV17465338a61375122cb2cbf1e54b6e6cee67c8175b60e8304cf1a9286f829558，V3/六观察/V9 25项均全PASS/actual0，仍仅known active combat/progress28/32，无新原生报告/损失或error，生产无改动。下一仍先独立review05后≤7日到6.29，保留全部原件，不自动跨新实战结果。
+
+
+## CUT40 方案：源37四舰真实战损与短段实战观察
+
+当前2278.06.29暂停、全部helpers结束。唯一label native-source37-four-losses-and-short-battle-watch，固定基线CUT39 native-outpost188-capture-and-normal-main-stop/已推送5c60ab1e4dc4c73f5e88950e414445bd3adf5de9。保存CUT39后Git原回执、唯一90日/六观察/V8原24三FAILactual1及21true、原277/四ship none/三dead fleet entries/完整双方国家、fleet825、源母/两war/army原文、三MIA原identity/design/date、source37 guard V1一FAILactual1和独立V2 sourcefa51…12PASS0/INV SHA c8f6f43d08e3a737079fece93f8b30e66035374aba66d997d071ea51e1f88a31、新review source57ac…10PASS0及五个V3准确1+7+7+7+7日/各SAV/六观察/V9 sourcec590…25PASS0。保留全部原始失败、私有解析/调查错误及更正，不补舰、不回放、不把21存活写成原25全存活。生产41/0.2.0/tree未改、无确认新Mod/P引擎bug，仍非整条噬岩者/重载验收。
+
+同既有协议archive实际0→仅stage新cut+五任务docs→独立verify新复用Git原字节PASS0→写计数/根receipt/scope/diff→commit/push main/独立ls-remote完整SHA。冻结期间不写RUN/不操作GUI或日历，不删证据，D空余1060036608B/C21281083392B。最新SAV02ac402c69ec80348e90e98fb0b07806d2b360596dbfa25962111ddb9a45a390、source28/32/母11403源389/21military/三MIA/已核activecombat/error保持。切点后下一仍先最新同SAV review06 10PASS/0，仅7日到2278.07.06，再六观察/V9全25/actual0及boundary；任何新实战报告/死亡/源占领/错误立即停止，最终9.30/10.01/女王另按真实日期核。
+
+
+CUT40实际结果：freeze2026-10-11T22:45:55.039869Z，35004源/2747623531B，reused34695、新309/109492624B；独立Git暂存原字节核验PASS/actual0，35103唯一blob/2787895481B，根回执evidence/priority-native-source37-four-losses-and-short-battle-watch-delta-staged-verification-2026-10-11.json。原V8三FAIL1/21true、四真实阵亡/三MIA/原277/全局舰船与双方war/sourceguard V1原FAIL及V2 12PASS0、新独立review与五段V9 25PASS0原件完整保存。仅暂停证据，不代表整体路线或重载验收。按scope/diff提交推送/独立核main完整SHA后继续review06限定7日。

@@ -1,5 +1,8 @@
 ﻿# 吞噬之心：兼容入口与验收排期清单
 
+最新核验 2026-10-12 06:44：噬岩者2278.06.29暂停，第四吞噬28/32、Q13/月32，母11403/源389/总11792、C49/D14/worlds3/PSI1/stage1/Menace885保持。CUT39后90日末端V8 24恰三FAIL/actual1保留、21 Mod核心true；原生277战报4.14/we_escaped核实源37四艘护卫舰真实死亡（1807/1895/1896/67110639）、三舰队MIA精确日期（33555013→2280.01.03、2→2280.03.16、33555278→2281.06.27）。独立source37 battle V2/sourcefa51dd4f…12PASS/actual0，原25现21均正HP/原设计，无免费补舰；source base158/station1931仍我方HP7386.18579、science166/1049/leader74仍存活，与原825交战。war1只是新defender_force_peace/date2280.04.15，未终战。随后独立每段review10 PASS0→V3仅1+7+7+7+7日→新六观察全PASS0→V9/sourcec590fc6f…25核心各全PASS/actual0，仅known active_combat boundary/ordinaryreadyfalse。原V8三FAIL/私有deadfleet788缺字段而非scalar none的V1断言失败及V2更正全部保留，debris33554436不能当敌fleet。没有确认新增生产Mod/open_kaishek缺陷，生产41/0.2.0/tree未改，不保证无bug。最终第四结算/女王C60与更高通知、天灾矿物舰/最后重载仍未完成；完整仅纵火本能1/7=14.3%，噬岩者约65%仅工程估计。下一铁心灭绝者。Steam离线/实机仅简中，其他九语言静态校验通过、运行时不在范围内。CUT39 5c60ab1e4dc4c73f5e88950e414445bd3adf5de9已推送，本轮CUT40冻结后继续准确短段review。
+
+
 最新核验 2026-10-12 06:17：噬岩者2278.02.30暂停，第四吞噬24/32、Q13/月32，母11378/源388/总11766、C49/D14/worlds3/PSI1/stage1/Menace885保持。原生前哨188战2.29结束/276 COMBAT_STATS/双方lost0，原两采矿站、一研究站与前哨同ID/设计/建造日期从country1转为0；原V7 23恰owned资产一FAIL/actual1保留，其余22核心true。独立capture V2 source3e75588b…11PASS/actual0、原25军事身份/生命保持；唯一正常停止主力后同日SAV1dac57e4…，stop V2 sourced6336427…9PASS/actual0，除main移动/current_order删除外整个原生世界/audit完全相同。原calendarV3正向1+7+7+7+7日及新六观察已实测通过，保留stage冲突GUI前拒绝、capture匿名列表解析错误与stop V1断言遗漏的私有错误原件；均非已确认Mod/open_kaishek缺陷。无生产Mod变动，41文件/0.2.0/tree保持；不保证无bug。V8已按文档独立建立/静态通过，尚未执行新90日日历或其24核心，不预写通过。最终第四结算/女王C60及更高通知、后续天灾矿物舰/最终重载仍未完成；完整仅纵火本能1/7=14.3%，噬岩者约65%仅工程估计。下一铁心灭绝者。Steam离线/实机仅简中，其他九语言静态校验通过、运行时不在范围内。CUT38 c994be7bdb0c6b20090474e3670deed7b6c2ad18已推送；本轮CUT39冻结后按新V3业务ready/max前置继续普通90日。
 
 
