@@ -630,3 +630,6 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-12 噬岩者原生殖民证据：11.26殖民开始，11.28 colony38为0pop；12.19其last_month_growth_data/GROWTH_CAT_COLONIZATION=3且中文UI仍“正在殖民行星”/预计2276.02.01。因此4.5.2原生殖民阶段可先有pop_group及增长，owner/colony/首府/区划/正人口都不是独立完成证据，需结合中文UI及阶段。正式Mod eep_source_valid已要求is_under_colonization=no，此轮未发现该限制失效。前线system37原starbase ID158，station ship1931/fleet849，build_queue2285；不要把站舰ID当starbase。正常星港125合金/工作360，21日进度31.5/每天1.5，对应UI240日；不能套殖民船建造速度1.33。原pending264/grand_archive.2800在date2273.12.20自动记录human-1/option0并completed cutholoids_stage_1，仅此事件的实际证据，不推广所有player_event.date语义。以上是Stellaris原生状态/存档事实，不是通用Paradox脚本语法，无CK3变更。
+
+
+2026-10-12 原生MIA实机日期证据：fleet100664127/ship67110639，return_date2274.04.07当日仍mia=yes，4.8实际返回；33555013/33555519为4.15→4.16；788/1895,1896为4.19→4.20；33555034/1807为5.4→5.5。原完整SAV/6观察/20核心/source558c…与四次reviewed_native_MIA_returns身份绑定；不能仅凭日期字段宣称返航。仅四例MIA结果，不推广其他date字段。前线base158/站舰1931原升级work235.5（5.5）→358.5（7.27）→7.28完成；125合金唯一订单、240实际天、同原站舰满18300/5125/4320，空模块与空建设队列，满血与等级变化来自正常原生升级，不是免费造舰或Mod经济奖励。7.28殖民地38已有29pop、中文UI仍colonizing，再次证明正人口不是完成证据。上述均Stellaris原生状态事实，无通用Paradox语法新结论，不更新CK3。
