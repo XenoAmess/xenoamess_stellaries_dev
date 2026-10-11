@@ -318,3 +318,151 @@ V4/source f073f567f3729a7d86a5ba69f3c2c13aff6b8f1f05d881b6108c50c1e81f613c静态
 EEP C37D11G0made0worlds2PSI1/Menace135、核心容量与区划/建筑/非技工岗位上限保持；第三原Q12/T29/seed103/need-3/沉积不变，局势22→23（仅1.1月tick），无原版重复吞噬局势/提前奖励。两个已证源计时器与两个残骸项目精确减30且为正，源荒废度仅非负自然恢复；原生正常人口增长按两殖民地last_month_growth_data原始记录和actual_pop_sum差核，不认作EEP迁人。
 经济：以after原生budget_categories.current_month.balance核E/M/F/CG/A/U真实库存差，残差各<=0.00005；trade50000与influence1000按实际cap丢弃收入，Menace135保持，其他无收支资源保持。原last_month滚动before current；发电岗位正常填满1400及维护/采矿/铸造/科研原生月预算必须记录，不以旧缓存推算新净值。物理/社会无普通队列且auto=no、工程仍yes/原蜂群导弹项目未完成；科研月实际增量和工程进度按当月原生科研收入与已证正常研究速度系数1.33核，允许原生五位小数截取误差<=0.00005，特定科技235.08678保留、全部已完成科技/其它队列状态保持。若实际核出不同原生刷新机制，保留FAIL/退出和原两SAV，先只读调查再新版本，绝不重放日历或广泛忽略预算/项目差异。
 本段全PASS/actual0后才准备1.23→1.30完成前年界、2.1单日年度吞咬与工程科技完成独立边界。证据继续完整实时保存，后续归档以实际重要边界或新缺陷修复为切点，避免每个普通月端重复全量检查阻碍完整验收；任何游戏未知事件/新错误/损舰都立即暂停检查，不凭批处理跳过。
+
+
+### 首跨月原件两断言修正（V2实施前，2026-10-11）
+唯一30日12.23→2272.01.23 calendar/保存均actual0、SAV fc01ed3a3a679f6173fdc6f9db699d11eb032b30cbb5d1da730d0d339ca40a7f，错误零增。原month observer/source43a9ba0dbd1d4a4d3f209daac6dfada8728c85f7767a96984db3e4a34f5cf449静态0/26项仅only_original_inactive264_pending_contact_history_held及two_colonies_population_growth_exact_native_records_no_EEP_transfer两FAIL/actual1，其余24PASS。独立原SAV调查terravore-generator7-first-budget-month-failure-investigation.json确认pending264完整原文/contact16777275均原文保持，无新本国pending；全局selection_history完整旧序列保持前缀，仅增加[{player_event:266,human:-1,option:0},{player_event:267,human:-1,option:-22}]。这些是存档中非手动选择记录，本组件只精确接受这两条，不推测已销毁记录的事件类型/不泛放行新本国通知/不声称任何人工确认。
+母星实际10789→10795恰+6，原生growth_and_size start10789/growth6、GROWTH6/PROMOTION0完全吻合；源287→287、start287/growth0，而零增长原生不写current_month_growth_details（空），此前强求四行是私人假设错误。母原生类别维护3137→2943（−194）和简单4200→4400（+200）解释发电岗位正常转岗、净增长仍6，非EEP迁入。
+新V2只把原pending检查的全局history raw相等拆成独立精确旧前缀+上述两固定非手动记录，pending/contact/history其他结构保持；人口正增长仍四行明细精确核、零增长要求空。新增原26恰两FAIL/actual1/source/同before及after SHA锚；其它24逐字保持。先新source pyflakes0，再同两原SAV唯一实际执行V2，28全PASS/actual0后才继续年界，不改原V1/重放日历。真实月净E35.36355/M41.59561/A23.98015/U96.68931、物理bank+39.18113/社会+34.79213/工程bank0，全部资源月账和科研1.33系数原已PASS，施工42/360及殖民54.53/360、28军舰/第三23/29/C37D11worlds2PSI1/Menace135保持；未发现新Mod/P工具缺陷。
+
+
+### 第二年度前最后七日（实施前）
+首月V2/source900e994fa2ea31c320cd3ec529aae0284e557457e4aaaffc6700c403d25ba47c静态0/28全PASS/actual0已核。新preannual observer仅用于1.23→1.30/7日/stage terravore-third-pre-second-annual，绑定该28PASS和fc01ed3a…原SHA/实际0；施工物理42→51.8、殖民54.53→63.84，第三23/29不变，recently_eaten8→1和superior/debris精确-7。全部28军舰/原殖民船/EEP/区划建筑岗位上限/目标523保持，允许已证自然修复与源荒废恢复；不跨月，真实库存/科研bank/tech状态及两殖民地实际人口保持，2814日志不增/本国inactive264原文保持。
+全局selection_history属于全局消息处理记录，后续有限段仅要求完整旧序列原文前缀、没有新手动human=1选择，新记录必须仅三scalar且human=-1/ID正整数/option整数，并将新增原记录逐条输出供核查；不要求无关非手动消息的数量永远0。该范围不放宽本国pending/contact/EEP事件、资源、危机或战斗守卫，任何新本国待选/新错误仍停止；不能将human=-1凭空归因为某具体AI事件。新source/static0/全部实际PASS后才允许下一单日2.1年度，不重放月历。
+年度准备需修正此前过度预断：eep.20冷却允许时调用eep_native_consume，其中奖励是原版随机分支（人口/矿/合金），年度不保证仍为上次100A。后继独立年度守卫须按新实际原生MESSAGE_TERRAVORE_CONSUME_WORLD的localization与源码分支精确核真实奖励、沉积及荒废度，区别正常月账和EEP最终结算，不人为指定随机结果或提前声称通过。
+
+
+### 第二年度吞咬单日方案（实施前）
+仅在1.30原生七日和preannual observer实际全部23PASS/actual0后，唯一1日2272.01.30→2272.02.01/stage terravore-third-second-annual，继续既有checked_v2/source663822…/原PASS锚。预期源recently_eaten=1冷却到期，eep.20调用eep_native_consume一次、重设360日冷却；局势23→24/29、EEPC37D11worlds2PSI1/Menace135仍无最终结算；发电7/母住房14100/原容量11和三实验室/28军舰/原殖民船/目标523保持，物理施工51.8→53.2、后方殖民63.84→65.17仍未出生。本国pending若新增立即先查实际通知，不自行确认或越过；错误零增。
+原版随机分支先从原SAV新增MESSAGE_TERRAVORE_CONSUME_WORLD/receiver0/target1085/date2.1的localization识别人口、矿或合金，不能事先选择结果。独立只读调查必须保留两原SHA/源deposits类型原文/荒废度/冷却/母源原生增长记录/真实库存和新月income-expenses/net、全部新消息/本国pending/建设队列/危机项目及实际军舰身份。然后docs回写实测分支，再实现新独立年度守卫/static0/同原SAV全部PASS/actual0。正常两毁损沉积与+20破坏（或仅一空格分支一沉积/+10）按实际前free district和源码核；资源奖励由真实库存差减原生当月net分离，核原生消息对应唯一资源及100..1000合法clamp/实际月收入，人口奖励按源真实增加减原生增长分离、主物种/100且母没有重复赠送。科研月tick在2.2，因此本端true bank/原科技队列保持，不误算2.1镜像刷新为科研消耗。不能先给资源/换随机种子/重放失败日历。
+此年度仅证明尚未最终完成的源合法吞咬；女王高阶通知、矿物舰及整路线仍待。成功后下一单日2.2独立验收工程完成及真实科研tick，再按新来源推进第三吞噬终点之前；任何实际native结构变化先精确调查，原失败与退出保留。
+
+
+### 第二年度实际分支与守卫实现范围（实施前，2026-10-11）
+preannual source5d60d9ea5e294327f087cd59ff483e86948658f600e4d30f7cd314e0350e5ea8静态0/23全PASS/actual0；1.30→2.1唯一calendar/保存actual0，SAV6cf8a269cc22f38a2e9aab26822b3fd7e7f89b366310a096bae1e30af709dde3，原错误零增。完整只读terravore-third-second-annual-native-investigation.json实际新增唯一MESSAGE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT/receiver0/target1085/date2272.02.01/end05.01/notification248；真实M增1042.35460，原生当月净42.35460，奖励恰1000。源原版月总矿收入283.75×5=1418.75被min100/max1000夹到1000，符合原生add_monthly_resource_mult官方effect文档与本桥接源；不能以月净41.59561×5计算奖励，亦不能称随机100A。E35.33372/A23.98015/U96.74041恰原生新月净值，trade/influence上限保持。
+实际源荒废10.84191→30.8164=旧+20−0.02551当日自然恢复；原沉积原文保持，仅新增33554918/16777703两d_lithoid_devastation/holder0:1085，总毁损四块，源城市区划原文保持。冷却原{flag_date63422160,days1}→{63430800,360}，superior精确−1；Q12/T29/seed103/need−3、EEP未结算保持，局势24/29。母10795→10801原生growth6/源287不变growth0，无人口额外奖励/迁入，源200协调+87巡逻/0后勤预期仍实核；物理53.2/360、后方殖民65.17/360。
+新priority_terravore_second_annual_observer.py从已执行23项前年度守卫派生，仅替换本单日日期/原23PASS/source/SHA锚、真实两施工工作、年度源两新沉积/荒废+20−恢复/新360冷却/进度24、原生正常增长、当月库存差=原生net+唯一1000矿奖励（gross×5 clamp官方100..1000）、科研bank及原tech状态保持。独立新增唯一原生矿奖励消息/完整source与game变量SHA绑定、无提前EEP奖励/源岗位原生全部就业；其余军力/区划建筑/危机项目/原pending/未过滤错误仍保持。先static0，再同两原SAV实际全PASS/actual0，不重做年度随机或日历。该结果只证明第二年度吞咬，不称第三最终或完整路线。
+
+
+年度守卫执行前只读复核修正：首稿source4de23993baea4fcd43322fef4f098d3fbc2856aaf7e5c2fe619a0f0c875feb8c已静态0但尚未执行，先读两原audit发现源在1.30及2.1均实际200协调/58巡逻/29后勤（max200/100/200），单一EEP73 complex_drone组402653219/size287，总就业287；此前200/87/0是过期分配假设，不能称本年新转岗或人口变化，也不说实际FAIL已发生。保留原首稿/静态回执不变，新V2仅将这条预期改为上述两端实际同分配/上限与全部287就业；其余24检查不改，另新source/static0后实际运行V2。原生岗位分配可以变化，不能从源小于300推出后勤必为0，不涉及Mod/P工具修复。
+
+
+### 年度端住房缓存差异（V3实施前）
+年度V2/source d7a4d12f9fd05b7cb839d30a189ac66a38be84c4ac9f70734838dfee8dddebbf静态0/25项仅housing14100_positive_amenities_no_crime一FAIL/actual1，其余24（含奖励1000M/两沉积/年度冷却/源200+58+29就业/真实月账/科研保持/军力/EEP）全PASS。只读terravore-third-second-annual-housing-cache-investigation.json确认1.30实际人口/usage10795、housing14100/free3305；2.1实际人口及employable/num_sapient10801而usage仍10795/free3305、舒适20850.3/crime0保持，free=total−usage原生缓存内部一致。不是住房被扣6或多迁入6；真正人口差已由growth6原记录解释。下一2.2必须单独核住房缓存刷新，不在此提前声称刷新完成或新增Mod/P工具缺陷。
+V3仅将年度单端住房断言改为总14100/free3305/usage=before实际10795、after实际−usage=本月growth6且employable/num_sapient=实际10801、正舒适/零crime；其余24逐字保持，新增原25恰住房一FAIL/actual1/source/同SAV锚。新source/static0/26全PASS/actual0后仅允许已规划下一单日2.2研究及缓存刷新检查，原失败/原件不改，不重放年度。
+
+
+### 年度后研究日与住房缓存单日方案（实施前）
+仅在年度V3/sourcefe7ddd8f8f7af8e3dcb5dba75b7909d04d5bd16736b4bf4f10cd9bc6b90fd631/static0/26全PASS/actual0之后，唯一1原生日2272.02.01→02.02/stage terravore-second-annual-research-day，绑定同原SAV6cf8a269…/checked_v2。目标核正常科研月tick，物理/社会bank按当月gross×1.33增加，工程蜂群导弹原1477.95168/约1505达到成本后正常完成及自动下一项目；具体native完成科技/下一工程队列/工程溢出/候选与设计upgrade引用只读逐字段实测记录后精确守卫，不预设新科技名、bank或免费升级。所有原舰实际设计/建造日/max/数量应保持，只能当前合法设计升级引用改变，尚未付费升级，不能将设计库更新说成船已经升级。
+住房目标核2.1 usage10795/free3305缓存能否在次日跟随实际10801刷新，总住房14100不变；如果未刷新如实保留未知，不用旧缓存冒充实际人口。真实非科研资源不再重复获得1000矿/月收入，母源人口应保持10801/287、核心C37D11worlds2PSI1/Menace135/第三24保持，源4毁损沉积及冷却359/自然荒废恢复；施工物理53.2→54.6、殖民65.17→66.5，仍未出生。28军舰/原殖民船/目标523/母星建筑岗位上限保持，无新本国pending/错误。先唯一实际calendar/保存0、完整只读调查写docs，再新增独立只读守卫/static0/实际全PASS；不重复年度随机、正常科研或日历。
+后续拟创建有界普通月份驱动，首2.2精确守卫通过后逐30日观察、最晚6.30/第三最终7.1之前停止；每段仍原SAV/原生日历/actual0与新专用守卫PASS才派发下一段，遇损舰/新本国通知/错误/实际科技完成或施工完工等未知边界立即停。目的减少非必要全量切点开销，不能绕过年度/第三最终/物理特化/殖民出生的独立验收。该驱动及普通月守卫具体范围另docs先行。
+
+
+### 2.2实际科研/工程船变化与守卫范围（实施前）
+年度V3/sourcefe7ddd8f8f7af8e3dcb5dba75b7909d04d5bd16736b4bf4f10cd9bc6b90fd631静态0/26全PASS/actual0。唯一2.2 calendar/保存actual0、SAV0f6750bad9d2bc033e7a29398b30394aac1cf6bd9d58931d71af68aec11de837/人口11088/错误零增。完整只读terravore-second-annual-research-day-native-investigation.json及civilian-design-investigation.json确认：仅新增完成tech_swarmer_missiles_1/level1（正式“蜂群导弹”），自动下一engineering_queue={technology:tech_mass_drivers_3,date:2272.02.02}无progress（0），正式中文“轨道炮”取technology_l_simp_chinese.yml:291，先前口述“三级电磁炮”自行译名纠正。物理bank39.18113→78.36226/社会7293.23289→7328.02502，恰gross×1.33；工程bank0、新队列0，未宣称已单独精确核原科技成本/溢出。原stored_techpoints_for_tech含冷核235.08678保持；原全部已完成科技保持仅新增一项，原auto P/S no、E yes。
+军舰28身份/设计/max保持，仅1916原受伤船继续修复；原殖民船16779140仍保持。所有本国船原差只有科学船1旋转/朝向、工程船2四字段、1916 HP/甲。工程船2实际旧design167773698/BULWARK_BATTLEWRIGHT_SECTION→184551252/DEFAULT_CONSTRUCTION_SECTION、armor/max250→125，原两盾/其余必需组件保持，新分段少一SMALL_ARMOR_2；不是军舰升级、不是新出生船、不改实际付款。原版00_ship_sizes.txt:667—677 constructor明定is_civilian=yes/is_designable=no/auto_upgrade=yes，colonizer:765—775同类。该auto设计在本唯一研究日实测，原特殊分段被通用分段替换原因未做无Mod独立复现，不将其擅称Modbug或已修复；完整前后设计/护甲都保留，后续不能再拿旧工程船250上限当不可变常数。
+住房usage10795/free3305在2.2仍未刷新、total14100/实际10801/employable10801保持，差6仍为2.1原生growth6。本单端只核该固定缓存差一致，不声称次日刷新成功；后续推进至2.23再查，最终报告前须明确其实际更新状态。country flags原生5计时器精确−1（entered_war_as_defender、recent_first_contact_process_started、recent_cara_3010、discovered_site、was_recently_targeted_by_voidworms）；完整永久EEP flags与所有账本保持，events仅两原残骸−1、standard_event_module既有paragon.999剩296→295，均非新本国pending。物理54.6/殖民66.5、第三24/源荒废30.79089/冷却359、四毁损沉积保持，矿奖励未重发。
+新priority_terravore_post_annual_research_observer.py从23项前年度观察器派生：新26PASS/同SAV/source锚和2.1→2.2单日；不跨资源月账、所有非科研true stocks保持；核P/S实际bank+gross×1.33、仅一项合法新工程科技/自动轨道炮0/其它科技字段限定变化，存量军舰及其它所属船仅上述精确民船/修复差；工程船源auto_upgrade及完整旧新分段/合法设计/护甲125固定绑定；住房固定未刷新状态输出pending，不充当长期通过。源冷却/残骸/5country计时器精确−1、两建设工速、母源人口/EEP/危机/原pending/错误约束不变。新source/static0/全PASS/actual0后才创建普通月份有界驱动，原年度失败与source不改，不重放日历。
+
+
+### 第三最终之前的普通月份守卫与有界驱动（实施前）
+2.2科研日source330181084c43f53ba2f8845ae48a7386b0d6462248a2c89280c164ffd11f5249静态0/28全PASS/actual0已核，同原SAV0f6750ba…。新priority_terravore_interannual_build_observer.py只覆盖2272.02.02之后至06.30，单段1..30日且资源月1日和科研月2日tick数量须相等且0或1；首先唯一21日至02.23/stage terravore-interannual-first-check，检住房缓存真实刷新，再依次03.23/04.23/05.23/06.23/06.30（30/30/30/30/7日），绝不跨最终07.01。前一步原SAV/proof/all检查PASS/实际退出0/原source/static0/完整2814日志必须绑定，任一FAIL、错误增长、新本国待选、新战斗/损舰/未知科技完成或建设完成立即不派下一段，不自动重试或回滚。
+观察器继承2.2军力/原殖民船/目标523/母capacity11/区划7/15/5/三实验室/全部相关建筑和岗位上限/危机level1/EEP C37D11worlds2PSI1/Menace135/原inactive264/源Q12T29seed103need−3四毁损沉积约束。当前工程船2已换型新184551252/甲125作为本段真实基线，后续不重套250；其它民用船/基地只允许已知朝向变化，其余字段与身份保持。原五country timer、两debris、两源flag与paragon.999严格减本段days且正，源荒废仅非负单调恢复；源岗位类型及上限200/100/200保持，分配允许原生变化但各0..cap且总就业=实际源人口，不能继续假定后勤0。
+物理单1258291211以12.23零工的累计日差×1.4、殖民83886124以12.12零工累计日差×1.33核，均<360，身份/成本/设计/全部本国队列不变。第三progress按月起点精确24/25/26/27/28；无重复原版局势/提前EEP奖励。0月tick时所有真实资源/bank/tech和母源实际人口保持；1月tick时六非封顶资源库存差=after原生current_month.net、trade50000/influence1000丢弃收入、其他资源保持，旧current→last滚动，P/S bankΔ=原生gross×1.33，工程轨道炮原同队列progressΔ=工程gross×1.33/无额外科技完成，其余tech_status除stored/progress原文保持。人口仅以两殖民地last_month_growth_data/start/growth/正增长明细或零增长空明细解释，非EEP转移。
+所有after端23日或30日必须实际住房usage=母实际人口、free=14100−usage/舒适正/零crime；因此首02.23不能凭2.2已知缓存lag6放行，未刷新则保留真实FAIL先查。成功才把housing_cache_refresh_pending=false。正E/M/A/U净值按实际月预算报告，不把旧缓存数字当刚到账。新源先static0，再唯一首21日+实际全部PASS/actual0，之后才实现/执行有界月份驱动；每步独立calendar和observer回执/完整原件保存，driver验证前步专用interannual_build_calendar_ready及maximum_days_to_final_boundary。最晚06.30停止，07.01最终另文档/独立守卫；不使用本普通段证明矿物舰/女王高阶/后方殖民或完整路线。
+
+
+### 普通月份首段民船/站武器实例断言修正（V2实施前）
+2.2→2.23唯一21日calendar/保存actual0、SAV57ade9e32e50f00a6ea07c4eddda2f5fa366a5a21709bcb316180512aa0680a1，住房cache实际已刷新usage=actual10801/free3299/total14100，其余施工84/94.43、EEP/24吞噬/28军舰/研究与库存保持等28检查PASS。原interannual source99e128cc109b62b1c49f74ec289839cf6e0828402e0a6bf1dbd3003d4031ff55/静态0/29仅all_other_civilian_and_station_ships_held_only_science_rotation一FAIL/actual1；并未派后续月份。
+完整只读own-ships-investigation及science-station-full-sections-investigation确认科学船1既有fleet1/外order63/内自动order61、AUTOMATION_EXPLORE+SURVEY保持，自动survey目标1727→1728、同system163内部正常移动/停泊，HP375/0战力/所有实体与设计/max保持，并非新手动航行。首简化调查将重复section转dict而覆盖前面sections，不能宣称它列出的last section就是全部武器差；后继保留所有完整section列表及完整站raw，不修改原调查/SAV。这是私人调查表现问题，audit_save.fields与P工具本身一直保留重复项。
+已证母base站0/rear站67109591 next_weapon_index75→78/17→20，亚蒙站1931原唯一MEDIUM_PLASMA_1实例index2→3、next3→4；完整sections将全部实例编号拿掉后必须逐组件slot/template/targeting_module/其它字段完全一致，舰船设计/全部最大属性/健康不变，无新战斗、war1.battles不增，不能把编号变化当新武器或允许template变化。1916只已证自然修复。与先前原生船坞完成时V58已精确核过的武器实例换号同类，非Mod/P工具缺陷。
+新V2只替换原失败的民船/站raw断言：科学船1仅坐标/目标坐标/旋转/朝向/post_move_angle允许随既有自动survey/explore变化，其余ship1 raw保持，fleet1外order63/自动设置及除sub_order的内自动61结构保持；不放行新人工指令/设计/健康或pending。仅固定三站[0,1931,67109591]允许next_weapon_index单调增加与section.weapon.index换号，原section数量/槽位/完整其余weapon字段均逐项归一后严格保持、每站weapon index唯一且小于next、所有其它ship字段raw保持；其它民船/平台raw保持。新增原29恰单FAIL/actual1/source/同SAV锚。其余28检查保持，新静态0/30全PASS/actual0后才用V2及其新静态来源派后续月份，原日历/失败不重放。V2后继前步source/static绑定改为本V2文件和专属静态回执，不能冒充旧source99…通过。
+
+
+### 首段完整武器分段复核补正（V2仍未实施）
+上述“去掉index后其余weapon字段完全一致”并不符合完整母站0原件，不能直接照此放行。完整只读science-station-full-sections-investigation/source SHA ce1b0f8a8684486855011ae19db6d1ded389a504c96c5ff949f288c7de8a8248确认母站三个MEDIUM_BLUE_LASER分别index72/73/74→75/76/77，原目标1901/83887745/83887745、shots_fired8178893/8178897/8178895及第二/三武器cooldown4.42105/1.42105全部随实例重建清空，after每件严格仅index/template/component_slot/空targeting_module。其余两站仅index变化，原武器其它字段一致。原母站HP/设计/max、战斗日期2271.12.01、所属fleet无在战、war1.battles保持，未发生新战斗。
+因此V2固定首段母站0特例必须将完整before/after ship raw分别逐字绑定此调查中的原件，且绑定调查SHA和原SAV两SHA；不泛化忽略targeting_module/shots_fired/cooldown。其余站及所有后续普通月份仍只允许index换号，完整section列表/各weapon其他字段严格相等；任一新目标/射击/冷却变化停止调查。科学船既有自动探索范围仍按前节限定。保留原29一FAIL，新增锚后仍为30检查；先新static0/同原SAV全PASS/actual0再推进。
+
+
+### 首段V2通过与五步驱动实施边界
+2.2→2.23的V2/source0a69dbf9b60852782356db4a01df3572c88d7bad3e64307003bf1b3cbfcf5978静态0，实际30全PASS/退出0；原V1一FAIL及退出1未改。住房cache pending已实际关闭，usage10801/free3299；本段未跨月，真实库存/bank保持，最新预算E35.33372/M42.35460/A23.98015/U96.74041为2.1已到账月净，不能再称首发电月旧数为当前净。下一开始有界driver priority_terravore_interannual_months_driver.py，固定从terravore-interannual-first-check及observer-v2真实回执开始；仅派03.23/04.23/05.23/06.23/06.30五段30/30/30/30/7原生日，目标stage terravore-interannual-months1-step1..5。
+驱动先验证自身及calendar663822…/observerV2 0a69…静态来源、起点原SHA、30全PASS/actual0、专属interannual_build_calendar_ready与days<=maximum_days_to_final_boundary；所有未来stage尚不存在。每一步独立wrapper记录calendar原stdout/stderr/actual0，再唯一运行V2并要求30全PASS/actual0/原source/新SAV SHA及日期一致；立即写逐步receipt再派下一段。任一调用异常/实际非0/专属ready或hash/check失败即输出driver FAIL与已完成列表，不派后继、不重试、不回滚。最终只接受06.30、ready=false/max0，输出五端原件清单；不在driver中推进07.01，不处理新事件/战斗/科技完成或施工完工。源通过静态0后才能执行。
+
+
+### 普通月份第一段原殖民船实际损失（V3实施前）
+五步driver/source961e9b39fc23c8cfdc3c462886ecb7d736f4415a40a5e54172b5aaa5b442ed8a静态0，唯一首30日2.23→3.23 calendar/保存actual0、SAV36f22230ee0a24aa7c8ea4f7c39c40788d0037a233a0024eb62573dd20ee562a，原错误零增。随后V2/source0a69…因ash['16779140']缺失在构造checks时KeyError实际退出1，尚未生成当端checks/proof，不能描述“30项某几FAIL”；driver按约实际退出1/完成0，不曾派第二段。原异常/原始stdoutstderr/source/static及两SAV保留，不能重放月份。
+只读missing-original-colonizer-investigation/SHA e6d86c83c77f5fd25ec51a4f51eb1824fe938dfebf5a2538f2d4fc3631330378确认本国唯一减少原colship16779140/fleet16778062，没有新船/28军舰仍在，本国pending仍唯一inactive264，目标523原native raw未殖民（audit未请求它而缺key，不能把audit.get None当星球不存在）。新增唯一规避通知FLEET_EVADE_HOSTILE_MESSAGE_TYPE/receiver0/target_fleet16778062/date2272.02.30/end04.30/notification250。
+完整colonizer-native-attack-investigation/SHA5ae461fe1bc54d7a2d774a564e1d1558eee2264476a91cf4d44281e2076b0632保留原生ships中16779140=none、fleet16778062=none；敌country1/fleet825的9船[67109342,117441693,16778802,16778809,16778851,16778905,50333407,1808,33556283]各last_combat_activity2272.02.30，武器target type0/id16779140，before无此目标。该原12舰敌825与之前母星战后仅剩两船的另一敌舰队不能混为一谈。war1新增唯一system151/date02.30/type ships记录，却写attackers{0}/defenders{1}/attacker_victory=yes/attacker_losses0/defender_losses1，与本国殖民船实际移除的归属方向不一致，完整原文保留；不能据此称本国赢了/击毁敌舰或增加威慑。实体/目标/规避消息共同证明本国实际损失，Menace135不增。原375M150A为真实沉没成本，后方83886124是另付新单，禁止称原任务恢复/原船重生/退款。
+同端科学船1正常自动移动新增speed字段，坐标/旋转变化，唯一军舰1916只HP/甲自然修复。V3专门适配此固定原生战损边界：原全部28military集合/设计/健康守卫保持，只准ownedfleets序列恰删除16778062、全部船集合恰删除16779140；固定原规避消息与敌825九船目标/2.30日期和原始调查/SAV/source锚必须一致。war1只允许上述唯一新原文且旧记录完整前缀，当前无本国在战，不从错误方向推出胜利。目标523 native raw保持，原船/原fleet字段必须none且不在任何owned集合；后续普通月两端持续none、所有其它owned集合保持，不泛化允许新损失。科学船只在既有自动order63/61下新增允许运动speed，其余ship/fleet原限制不变；非军用其他船比较排除已严格验证的原死亡船。
+其余27原检查保持，新增V2实际异常1/source/原traceback及两SAV锚、敌原生攻击证据锚，合计32检查。新V3/static0/同两原SAV全PASS/actual0后，才另建剩余四步驱动（此旧五步不重试），不会宣称原五步通过/原殖民船恢复。后方新殖民出生/直接97→37航路仍须独立正常UI/实机检查；当前并非新Mod或P工具缺陷。
+
+
+### 原殖民船损失端通过与剩余四步实施前
+V3/source83647aef996eb655c26d932ab6831093b58c8fca2529a64e7b35088c122e07d7静态0，唯一同2.23/3.23两原SAV实际32全PASS/退出0；此PASS明确包含本国原殖民船的既成损失，并非无损或原任务恢复。28军舰保持、真实月净E37.08388/M42.57438/A23.98015/U94.90342、P/S储备+39.18113/+34.79213；工程轨道炮正常进度/第三25/29、物理126/殖民134.33、母住房cache实际跟人口，原错误零增，无新本国pending。
+下一新priority_terravore_interannual_months_driver_v2.py仅从此已核3.23/SAV36f22230…/observer-v3实际0开始，source/static绑定83647…与32项。剩余四步04.23/05.23/06.23/06.30（30/30/30/7），新stage terravore-interannual-months2-step1..4、driver terravore-interannual-months2-driver；首driver原961e…的实际1不重试/不修改。其余派发前ready/max/原SAV SHA、每步实际calendar0与observer32全PASS/退出0后才下一步、所有未来stage不存在、末端readyfalse/max0和任一FAIL停止约束保持。只在新static0后执行，不把本已损失原colship继续写成151待命。
+
+
+### 第三吞噬阈值与次日终结的独立边界方案（实施前）
+剩余四步仅在每端32PASS/actual0后到06.30停止。此前把07.01直接称“第三最终”只是候选，不是确定完成日：既有第二Q20/T48实例是在2233.07.01达到48仍未结算、07.02 eep.21才实际终结；本生产situation permanent=yes/on_monthly eep.20会排1日eep.21，不能忽略这一已证延迟。下一严格唯一06.30→07.01/1日，stage terravore-third-threshold29；绑定四步driver实际PASS/exit0、末端32PASS/source83647…/静态0/SAV原SHA和原2814日志，再完整只读检查进度29是否仍active、country EEP账、源/母人口与growth原记录、资源预算/月账与随机消息、全部pending、源沉积/荒废/冷却/区划、危机威慑、建设队列及28军舰。不会在此先声称结算或跳过确认。
+若07.01只是29阈值且C37D11/worlds2仍未记账，建立独立阈值守卫：跨资源月1 tick而科研月2 tick未发生，真实非封顶库存差=原生新月net，P/S/工程true bank与tech状态保持，工程下一研究月在07.02；物理/新殖民工作+1.4/+1.33未完工。母/source真实增长以原生growth记录解释，住房cache若只在该月初暂未刷新必须按实际差值记录，不称已经全量刷新。所有EEP未提前结算、源recently旗标仍未到年度360故不再原生年度吞咬，存量源flag/debris/country/paragon timer严格−1；28military不损、原殖民船仍none、目标523未殖民、新本国pending或错误增长立即停。静态0/实际全PASS0后才另唯一07.02/1日stage terravore-third-settlement-native。
+终结端先观察原件再精确守卫，不能重放随机结果：目标Q12使C37→49/D11→14/worlds2→3，G/made0；原生补完remaining_bites依实际free slots和所有沉积/区划计算，逐新增POP/MINERALS/ALLOYS消息独立核资源奖励（gross income倍率与100..1000clamp），真实返还=终结前源实际本族人口+新POP100×次数再考虑当日原生增长。母人口变化要同时分离科研日正常月增长/返还，EEP制造应0；真实总国人口只增原生POP奖励与已证正常growth，不允许凭空补船/人口。旧年度消息不能重算；clear全部沉积/源pc_shattered/原colony37空与不归属/局势killed/步旗只一次，母唯一core容量14（原size18、paid区划27保持、上限32）及EEP court/deposit保持；原生complete_crisis_objective使Menace135→885为候选，实际必须源码/原crisis账核证，未达level2的1000不提前解锁。
+第三C49本身未跨下一女王阈值60，原eep_stage1保持时不预期高阶eep.13；原代码eep_notice_pending在下一国家月报eep.2消化/刷新eep_report，是否新增可见通知应按实际，不能为凑截图强制事件。高阶女王仍待下一合法Q13星球使C62或首次武灾2的eep.31；矿物舰/等级3与4eep.32仍待。实际终结PASS后采碎裂源与母容量/人口收益的干净简中UI候选，按原image/SHA/OCR保存，不将普通舰当矿舰。
+
+
+第三边界只读记录实现名priority_terravore_third_boundary_observation.py：CLI before/after/expected_date/days，仅读取已存在两原SAV和calendar/实际执行回执；一次保留完整top fields、多值原生messages/pending、country0完整原文/tech/crisis与预算、母0/源37殖民raw及growth、源1085/母7/目标523原文、源全部deposit和district、situations、construction及全部本国ship/fleet原文/身份集合与设计注册原文。记录真实资源差、按物种和殖民地的实际人口、每条新原生吞咬消息及其它新本国消息；观察状态只用OBSERVED_NATIVE_TERRAVORE_THIRD_BOUNDARY，不把观察成功当终结PASS。检查日期/360日差、两个SAV SHA、calendar source/actual0、前置PASS实际0和原SHA、生产41同树/简中及原2814日志；新static0后唯一执行同两原SAV，不输入GUI、不改存档。阈值或终结精确guard另根据此记录/生产源建立，绝不重做随机吞咬。
+
+
+### 6.23原生新接触/科学船规避边界（V4与正常ACK实施前）
+四步driverV2/source0b0d0db25081616592f7b4a250471a403bdd34a24885541d60aef13a0c43a734静态0，04.23/05.23两端各32全PASS/actual0；唯一第三30日06.23 calendar/保存actual0、SAVb80940f77b462638309c8b282a70e3c49c2a2cadaeb0a334f2558e2643e384ca，V3/source83647…32项仅pending、五country timer、science三个FAIL/退出1，driver实际1、完成2、未派最后7日。第三28/29/EEP C37D11/worlds2/PSI1/Menace135、28军舰/原colship none、施工/真实月账/科研和住房等其它29检查全PASS，无新错误。
+已文档化的边界只读observer sourcea11ed89e421e5fc177130377cb322dcf4d96fb9b7c900bca24af411f750ec801静态0/实际6项观察PASS/退出0（状态OBSERVED，非终结验收）。实际05.29新MESSAGE_FIRST_CONTACT_DISCOVERED/target_first_contact60/notification252及fleet1规避253、06.17 AUTO_EXPLORE_FALLBACK/254；本国新增268 first_contact.1，scope contact60/from country25、contact60 location39/stage crystals_stage_1，原inactive264及contact16777275原文保持。recent_first_contact_process_started由{63428184,6979}→{63433632,7176}；原版first_contact_events.txt:107即时set_first_contact_starting_stage及common/scripted_effects/first_contact_effects.txt:31—37 years20解释05.29重设7200、到06.23余7176，非EEP旗标错误。
+科学船仍ship1/design150995038/同construction_date、HP375/甲125/max375/125/320、旧last_damage/last_combat_activity2240.03.24保持，真实shield320→136，不能称全健康完全不变；完整before/after原raw保留，原因不擅猜为特定攻击/环境脚本。fleet1 outerorder63→64，内自动order61/EXPLORE+SURVEY设置保持，已从39规避回163且当前idle，无新本国在战；不能假定外order63永不变化。对这一已记录固定边界只接受完整ship1/fleet1两端raw与观察原件一致，不泛化允许科学船新伤或手动命令。
+新priority_terravore_interannual_contact_boundary_observer.py从V3派生，仅本05.23→06.23段：原32恰三FAIL/source/exit1/同SAV/原观察来源SHA锚为新第33项；原pending检查限定before仅264、after仅264+268且原contact不变，country四其它timer仍精确−30、仅recent_contact上述固定20年刷新，science1完整两端raw精确绑定，其余29不变。输出PASS_NATIVE_TERRAVORE_INTERANNUAL_CONTACT_BOUNDARY_COMPONENT、calendar_ready=false/interannual_ready=false，只授权正常处理268，不许有pending时派最后7日。新source/static0/33全PASS actual0后才唯一正常UI空效果ACK。
+原版first_contact.1仅一个option={name=INTERESTING}，source SHA17e6402267e019f25b65a419cb2d8afd6666ebb362f9020e747c57551648ca46，没有资源或接触完成效果。先普通F1/消息/接触面板导航并采新简中GPU/OCR核对应country25/contact60/268，不能点原inactive264；只点一次INTERESTING正式简中选项，保持暂停06.23，唯一save terravore-third-contact268-ack。新专用ACK guard在实施前按实际点击坐标明确绑定，要求268只消失/264原文保持、history只追加{player_event268,human1,option0}一次、contact60只清活动event、所有国家/真实资源/EEP/科技/建设/人口与其它top原文保持及无新错误；相机导航变化另独立记录，不放宽经济状态。ACK source/static0/实际全PASS0后才能末7日，不能复用旧211/214专用guard冒充268已验。
+
+
+接触边界source045d589c5bffb52b62b3a54d7da125a24464edef9edc45a73dbbae6ac5b174c3静态0/实际33全PASS actual0，仅允许处理268、calendar_ready仍false。正常F1→正式简中“贝特外星人”→“显示第一次接触”导航各实际0；新图terravore-third-contact268-option-current.jpg显示同贝特外星人/奇拉system，唯一选项正式文本“真是有趣。”，client[374,546]。下一只点此一次、保持暂停06.23并唯一save terravore-third-contact268-ack；新priority_native_contact268_ack_guard.py基于既有原生empty-option规则，去除不适用的211/214专用相机条件，改为本实际268/前置33PASS原SHA/source/正常click[374,546]与实际save退出0。其它全top raw严格保持，若camera_focus因正常导航变化需如实记录原单FAIL后再独立限字段补证，不提前放行任意相机状态。
+
+
+### 268 ACK原生舰队缓存单差异（ACK V2实施前）
+唯一正常click[374,546]实际0、同日save实际0/SAV6aaa71c99bbd91a7e78b9aec240284864422717055e9fb535f778068b0b5bd01；原ACK sourcee250ca6cd2aab1645694e58f6db56c4eab8332e02736e78bb838ef29159a8508静态0/30仅all_other_top_level_raw_held单FAIL actual1，其余29包括268移除/264保持/history只一次/所有国家/经济/人口/科技/建设保持均PASS。完整top-level-difference-investigation/SHA2d07ec79712f03270ba8f25d8dbccc3731deff181177d6da7f0ad6412ceefb29确认唯一区别top fleet，不是相机；不得将整个fleet忽略。
+独立fleet64-cache-investigation/SHA9939e2a5f78f5a6a0a6bc520f74f3b07d2feb560f0ec49062cfb199faea80931确定唯一fleet64的properties从weapon/mobile/valid_for_combat三yes增加dirty_cloaking_strength=yes；其余fleet64原文及所有其它fleet原文一致。该舰队实际owner country13/name NAME_Caravaneer_Fleet2_fleet，是无关商队，不是新晶体country25，不凭空归因为空选项有经济效果。两原件相机、所有国家/实际船/预算/资源均保持。
+新priority_native_contact268_ack_guard_v2.py只将全top比较的fleet拆成独立精确“仅fleet64.properties新增此cache标记”守卫，严格其它全部fleet/64其余原文、before三yes/after四yes及完整两端fleet64原件绑定；额外原30恰单FAIL/source/actual1/同SAV锚，合计32项。新static0/同两原SAV全PASS/actual0后才进入最后7日；原失败不改，不重新点击/保存/日历，当前并非Mod/P工具修复。
+
+
+### ACK完成后最后七原生日（实施前）
+ACK V2/sourceaa4432beed199822e050462bea8049465b8e9cc36d0a512825cd08e9ff2751d8静态0/32全PASS/actual0，唯一正常选择268已核、只余原inactive264、全国家/资源/科技/人口/施工保持，原舰队64缓存单FAIL完整保留。当前06.23/SAV6aaa71c9…；不重试原四步driver，改唯一7日到06.30/stage terravore-third-pre-final，前置绑定本ACK32PASS/原SAV/source/实际0及checked_v2。
+新priority_terravore_pre_final_seven_days_observer.py从V3独立派生，仅此7日，两端原colship none/28military/EEP未结算/第三28/29/物理及殖民原单推进且<360、无月tick真实库存/bank/科技/人口保持、住房cache一致与原日志/264/目标523保持等约束不变。科研船1从已核6.23真实状态出发：outerorder64/内auto61及设置保持，只允许既有自动移动字段与shield136<=after<=max320的正常再生，HP375/甲125/max/设计/旧战斗日期等其余raw保持；新受伤/新order/pending仍停止。五country timer从重设后真实基线精确−7，不再套5.23旧date。前置来源改ACK V2实际32PASS/sourceaa443…，其余不重套原V3月前来源；新静态0后唯一日历/保存0，独立实际32全PASS0才允许另单日07.01阈值。输出PASS_NATIVE_TERRAVORE_PRE_FINAL_SEVEN_DAYS_COMPONENT，普通月份readyfalse/max0，不能借此跨终结。
+
+
+第三阈值派发前事实更新：四步driver原实际FAIL不冒充PASS；其第三端三个变化已独立33PASS/source045d…，唯一268正常ACK32PASS/sourceaa443…，最后独立七日32PASS/sourcec344b780cde8208a9b7d92eb0434d738c47e76b9b3fa8a3b65917f6e52da5243/static0/actual0完成06.30。SAVc78b1e56e022ab06050ec50b256218a05f727c6ef730d371ba4b5f79a5237192、第三28/29、母10827/source289、source冷却211/荒废27.01541、源四毁损+一d_massive_glacier/一hive区划，当前全资源/bank保持、原错误零增。下一仅用此七日真实32PASS/actual0/原source/SAV锚唯一1日06.30→07.01 stage terravore-third-threshold29，取代此前尚未发生的“四步driverPASS”前提；普通月ready=false不意味着授权跳过阈值调查。原边界observer a11ed…静态0随后唯一只读记录这对SAV，再按实际29阈值/是否结算决定精确guard，未先称最终。
+
+
+### 第三29阈值实测与精确守卫（实施前）
+唯一07.01 calendar/保存actual0/SAV1c51e8c1e95e497273029fad8f3a30f2672e9d43e983ec252b4ff8b3f8601087，原生日/六项只读观察a11ed…实际0，观察JSON SHAe6377cb102c165747147c3c91da95bd87da4a94bdcf58e6f482e446171570a52。局势确为29/29但仍active，EEP C37D11/worlds2/Menace135无结算/无新增吞咬或本国消息，source289/冷却210/荒废正常恢复；母10827→10834精确原生growth7，sourcegrowth0空明细。母住房total14100/usage10827/free3273仍月初旧缓存，actual/employable/num_sapient10834，差7；与旧年度缓存模式相同，不能提前称全刷新。science1shield192→200恰本日8再生，outer64/auto61保持；真实E37.23651/M42.46683/A23.98015/U94.58414只新月net、P/S/Eng true bank全0差，科研7.2尚未发生。
+新priority_terravore_third_threshold29_observer.py从已过32项七日源派生，只替换前置32PASS/sourcec344…/SAVc78…、日期6.30→7.1单日/资源1科研0ticks、第三28→29仍active无结算、当月原生增长/库存差=net、住房固定上述cache差7、科学船本日192→200；五country/源/debris/paragon计时器精确−1与所有28military/原colship none/EEP/区划建筑/队列/岗位上限/原264/错误约束保持。另新增观察6项/source/原SHA/actual0锚与零新增原生吞咬/本国消息，合计34项。先static0，再同两原SAV实际全PASS/actual0，才以专属third_settlement_day_ready唯一再推进07.02；不重做7.1资源月或把29阈值当最终验收。
+
+
+第三阈值source08bfc8bc12d3e9c84fd63dc48ad06ea860bd46cae4faa591aed5eed09bb72932静态0/34全PASS/actual0，专属third_settlement_day_ready=true；当前原SAV1c51e8c1…/29仍active且EEP未结算。本阶段唯一下一1日07.01→07.02/stage terravore-third-settlement-native，以该34PASS/实际0/原source/SAV为前置，按此前终结方案完整只读观察，随后才对实际随机消息/科研月tick/返还与销毁结果建立精确守卫。不会重放7.1、随机奖励或跳过新通知。
+
+
+### 第三次吞星7.2实际结算与独立守卫方案（实施前）
+2272.07.01→07.02唯一原生日历/保存actual0，SAV010da3f958056fac1b5de8c065c6bc6497fdc38763c7c353f7ecfd7175868352；完整只读边界观察source a11ed89e421e5fc177130377cb322dcf4d96fb9b7c900bca24af411f750ec801、6项均真/actual0，观察JSON SHA13cc045a091e5804876d1b86b031e2df3a52295e6ea1928accb66e3d57b3c115。此时仅为已观察实际结算，独立验收尚未通过；不得重放日历或随机奖励。
+实际仅新增3条原生吞噬消息，顺序合金/矿物/合金，notification255/256/257，同日同源1085，无人口奖励。源size12减4个毁损沉积、1个巨大冰川阻塞、1个蜂巢区划=6自由槽，ceil(6/2)=3次普通吞咬；不属于奇数末口分支。原生当期矿物gross283.75×5封顶1000，合金gross43.325×3=129.975，本次实际每次130、两次260；只验证此取值，不从本例推导普遍舍入规则。真实库存差M+1000/A+260/Menace+750，其余非科研库存不变；P+39.18113/S+34.79213及轨道炮progress+41.37563恰为独立7.2研究tick，无第二次资源月收入。
+母星10834+源289=11123，母星实际/可就业/有智慧人口11123，源实际0、空pop_groups，本日无额外自然增长或制造人口。住房总14100/usage10827/free3273仍旧缓存，差296=7月增长7+返还289，刷新待查，不将旧usage当真实人口。源colony37壳及其pop_jobs旧缓存仍在，但已无实际人口/所有权；最后district70/district_city仅是死殖民地残留，不能声称新建了可用城市或源岗位仍在运营。
+EEP仅C37→49/D11→14/worlds2→3、last_capacity3/previous11/return289，G/made/delta保持0、PSI1/stage1/fleetstage0。唯一母核7/原d_eep_core身份保持，永久capacity倍率14、实体size18、实际付费区划仍7发电/15采矿/5蜂巢=27，上限32。核心旧报告actual_pop9969/free_districts5尚未月刷新。母星解禁flag重置日期63434424，原eep_core日期不变；新增eep_notice_pending，7.2未出现女王高阶通知，C49仍低于60。
+源1085转pc_shattered、无owner/controller、沉积与修正清空，荒废26.9899→86.9899（三次+20），局势100663299 killed=yes。六个结算done旗均63434424；superior倒计时2730→2729，recently_eaten重新360；active/native/being_devoured/colony_event等已清理。原空源planet队列2105和army队列2284仅owner0→4294967295，items仍空；其余本国队列不变。源4支防御军16777366/33554561/33554528/50331796移除，其余原12军保持；作为原生殖民地销毁清理精确检查，不套用全队列/全军不变断言。
+Nemesis仍level1，原毁敌舰目标135保持，仅新增毁星目标750、真实威慑885，距1000还115；不得写成已解锁矿物舰。原28军舰、全所属舰船/舰队身份保持、无新本国战斗；原殖民船死亡状态保持。科学船护盾200→208为本日8再生，原自动探索设置/外64内61保持；1916只自然修复。物理订单263.2→264.6/360、后方新殖民船264.67→266/360，均正常施工未完成。
+新增独立priority_terravore_third_settlement_observer.py，只读同两SAV及观察原件，至少40项有实际业务意义的检查：前置34PASS/actual0/source/SHA、原生日历/观察6项/静态来源、41文件生产树与简中、2814错误原文零增；三次普通吞咬及奖励独立计算/消息，真实经济与研究单tick；人口守恒/死殖民地归属/住房缓存待查；EEP精确增量/六done/局势终止/唯一母核及容量/无免费区划岗位；源空队列与防御军定向清理、原舰队无战斗/原殖民船仍死亡；Nemesis目标与真实Menace、无高阶通知/原264待选、施工进度/未出生、原生计时器/模块。需要读取额外原生armies与construction原文时同样只读并保存精简全字段调查，避免仅凭消息或汇总数字验收。先静态UndefinedName/UndefinedLocal零错，再唯一实际执行；失败保留原件，仅可用新版本守卫复核同SAV，绝不重放结算。
+通过后正常UI采集简中源碎星/母星容量与人口、入候选清单；任何住房刷新或女王通知必须后续实测。然后按CUT25既有方案冻结完整增量、独立staged验证、提交推送，再继续9月物理特化完工/后方殖民船出生、普通殖民与第四吞星/真实矿物舰验收。此阶段不修改Mod生产代码、不增加公开推荐政体，也不重复发布0.2.0。
+
+第三结算守卫source97bcc09b4f2474b1c75d7863988d03eea67718ef0e9c193b8d46b0ecf462587f静态零错。首次wrapper调用误给仅文件名，仓库cwd找不到文件、actual1，发生在读取source/启动子进程之前，尚未执行守卫或写proof，也无游戏输入；错误单独保留invocation-path-error.json。改为完整路径和新执行stage再实际执行同一未执行过的source，不重放日历。额外原生调查确认死殖民地last_district_changed为district_city，而实际残留district70类型是district_ark_city；仅记存档事实，不声称新增可用城市。
+
+第三结算守卫实际source97bcc09b4f2474b1c75d7863988d03eea67718ef0e9c193b8d46b0ecf462587f静态零错；完整路径新stage observer-fullpath唯一实际执行51全PASS/actual0，proof SHA497095533ad297645ee7351a44ba1c77d69430158ef7ca5d4b884a7eb02bd42e。原首次路径错误未启动child与全部既往FAIL/原SAV保持，不重放日历/随机奖励。第三结算组件通过，不等于整路线验收；住房缓存差296/女王月报仍pending。
+正常UI已采两张简中F12母星/碎星候选，逐张目视核验；manifest terravore-third-settlement-workshop-gallery-candidates.json逐图绑定SHA和原SAV/proof。总览栏仍显示已killed局势图标0.0，完整源SAV已确认终止/不再所属，先保留显示待刷新事实，后续8月月刷新再核，不直接断言新Mod缺陷或已修复。source消息原文和原截图保留，没有用AI图/合成图冒充实机矿物舰。公开七图与生产仍不改。
+
+
+### 第三结算后首月刷新与建设前沿方案（实施前）
+仅在CUT25归档/独立staged验证/提交推送及完整远端SHA核验全部actual0之后继续。起点7.2/第三结算51PASS source97bcc…/actual0、原SAV010da3…；先唯一29原生日到2272.08.01/stage terravore-third-post-settlement-month，不跨9月完工。复用checked_v2和既有完整边界观察sourcea11…读取原SAV，不把观察6项当组件验收。实际观察后新增独立post-settlement observer，先静态零错再只读执行，检查库存只一次月net/无吞咬重复收益、P/S/轨道炮在29天中只8.2之前的7月研究tick已在起点执行所以本段不再科研tick；母星正常growth及住房刷新时序必须按原last_month_growth_data/真实pop_groups核，不能预设月初usage必等于growth后的actual。7.2至7.30之间旧usage10827应先刷新到迁入后的11123；8.1若再自然growth7，允许且必须精确解释仅新的增长缓存差，不能仍放行旧返还289缓存。视实际月末/2日再独立检查全部刷新。
+EEP事件eep.2源码62—89明确：有eep_notice_pending才移除并eep_report；已first_notice且C49/stage1未过60，所以本月不应出现eep.11/13，灵能通知已见、危机仍level1也不应出现eep.30/31/32。报告允许刷新实际人口、free slots、eep_crisis0→1及除法余数快照，不允许制造经济收益、改C49D14/worlds3或重复返还。报告人口取值与月增长时序以实际原件解释，不强行拿缓存当实际；唯一旧264待选/新事件阻断、总览局势已killed图标刷新必须实际UI检查。
+原28军舰/舰队、原colship死亡none、目标523未殖民、母星18+14与付费7/15/5/所有建筑岗位上限、唯一d_eep_core、源碎星清理和六done保持；真实Menace885、nemesis_level1/两目标不变，实际建设按1.4和1.33推进但均未完成（8.1候选物理305.2/360、新殖民304.57/360）。原生5country计时器/两个残骸/paragon均精确减29，源superior与recently_eaten也仅自然倒计时；科学船既有自动探索允许空间/朝向/护盾恢复，新的接触/战斗/未知设计或出生必须立即停查并保留FAIL。
+首月通过后再唯一8.2科研日/8.30月末刷新（具体间隔与前PASS、实际日期先校验），随后9.1月账/9.2科研、9.10完工前；9.11物理特化完工、9.13新殖民出生目前仅根据原生速度推算的候选，不能预先写通过。实际完工/出生各自独立源码与订单身份、成本不重扣、新舰完整实体与正确species/design/base/实际操作可用、合法岗位转换及无免费建筑的验收；待各实际观察后先回写设计再实施对应守卫。随后从后方97到相邻37正常付费殖民亚蒙IIIa/目标523，先用正常已知UI确认安全路线与目标、不要复活原损失船或采用15站长途旧路线。Steam继续离线。

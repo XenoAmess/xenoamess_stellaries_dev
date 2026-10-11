@@ -596,3 +596,6 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 后方殖民船同日native-save实际0/SAV97b5e5820a11a8c97f2b799c21354af1836fd56ef8ceee83d9b7f82f58eb66b1，top只country/construction；真实只M375/A150，唯一83886124（退休none67108908+16777216换代）/2287/base153/design150995039/EEP73/work0/360。原付款helper/sourcec97324c1b1026415601d05719a21a1065a3c941bf800c72e7b80989c582655c0静态0但实际1 KeyError ship_size，未生成proof。实际设计150995039全原文已独立保存：ship_size="colonizer"位于growth_stages匿名阶段，不在设计根；是私人读取结构假设错误，不是原生订单或Mod缺陷。V2只将该直接scalar读取改为全设计中唯一ship_size精确colonizer（沿用既有护卫舰证明的单字段正则方法），新增原KeyError实际1/source/无原proof绑定，其他15检查逐字保持。新source/static0/全部实际PASS才继续；没有重新点击买船/保存/日历。
+
+
+2026-10-11补充：本机4.5.2 common/ship_sizes/00_ship_sizes.txt的constructor:667—677与colonizer:765—775设is_civilian=yes、is_designable=no、auto_upgrade=yes。2272.02.02原生工程科技完成日，同一既有工程船2实际自动设计167773698→184551252，特殊BULWARK_BATTLEWRIGHT_SECTION→DEFAULT_CONSTRUCTION_SECTION，少一SMALL_ARMOR_2、护甲250→125，未发生新造船/手工升级付款，28军舰设计不变。具体特段替换尚未无Mod独立复现；验收只能接受这一原件支持的固定民船变化，不能泛放行所有舰型/最大属性变化或把民船自动换型视为所有军舰已免费升级。证据见本项目priority-terravore-paid-industry-expansion-2026-10-11.md的2.2段及原完整INV/设计，此为Stellaris原生特有规则，未迁移到CK3方言。

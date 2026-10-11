@@ -164,3 +164,12 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 
 
 第二十四切点归档actual0，冻结2026-10-11T08:18:10.109812+00:00；完整28272源项/1140821375字节，复用27593、新复制679/32885451字节。首独立暂存原字节校验PASS/actual0，28355唯一blob/1173293629字节；[独立回执](evidence/priority-native-rear-colonizer-physics-preparation-and-generator-completion-delta-staged-verification-2026-10-11.json)。原退款camera FAIL/殖民读取KeyError/首工两计时器FAIL/发电住房FAIL与后继精确通过均保留，生产未改。后续首30日方案已先写docs，独立校验期间没有RUN写入或GUI操作，核远端后执行。
+
+
+### 第二十五切点实施前计划
+基线第二十四native-rear-colonizer-physics-preparation-and-generator-completion/e98514b7599855d3158dafa7fb5a4f2435228c54已push与独立完整远端SHA实际0核验。新唯一标签native-second-annual-and-third-terravore-settlement；在当前有界月份驱动及后续阈值/终结guard实际结束、游戏暂停后冻结，不预设07.01或07.02必通过。覆盖自CUT24以来所有原件：首发电月原history/零增长两FAIL与28PASS、前年度23PASS、第二年度1000矿/两沉积/原V1未执行draft与住房缓存单FAIL及V3 26PASS、2.2研究日蜂群导弹/轨道炮/原生民用constructor换型/未刷新住房及28PASS、2.23缓存实际刷新/科学船和站完整分段/原29单FAIL及V2 30PASS、首30日原colship被敌825攻击/实际none与方向不一致战争原文/唯一KeyError1及五步driver1/同SAV V3 32PASS、剩余四步driver新source/static/所有实际calendar与32check结果（含任何新异常）、第三阈值与终结完整调查/守卫/失败/源码/全部SAV/GPU/OCR/未过滤错误/stdoutstderr/实际退出。原colship真实损失不删除，不复活、不称恢复；公开生产41/0.2.0不改。
+冻结与暂存blob独立核验独占期间不动GUI/日历/不写RUN。沿用完整manifest复用；仅新切点git add -f等actual0（包含原始pycache）、所有本轮五任务docs及现存evidence根priority回执明确暂存等0后才验证，不在验证期间创建未暂存priority JSON。archive actual0及独立PASS actual0后补实际计数/receipt/文档、核任务范围、提交推送并独立ls-remote完整SHA。新调查与测试证据当前完整留RUN；归档前核D盘剩余约2GB，不删任何旧证据，空间不足则先按已授权保留原件方式处理。切点后继续真正物理特化/后方新殖民/矿物舰/女王高阶，不以归档代替路线验收。
+
+CUT25实际冻结前补全范围：第三阈值29独立34PASS、7.2原生结算完整观察6项/source及独立51PASS/source97bcc…/actual0、首次wrapper路径错误actual1但未启动child、额外源防御军原文调查、全部正常UI/候选截图/目视审核manifest与住房/月报/局势图标待刷新状态均完整收录。现游戏暂停7.2，不再输入GUI或写RUN直至归档与独立staged核验结束。D盘可用字节以归档前实测记录，保持所有旧证据。
+
+第二十五切点归档actual0，冻结2026-10-11T10:15:29.557482+00:00；完整28934源项/1209093162字节，复用28271、新复制663/68281408字节。首独立staged原字节校验PASS/actual0，29018唯一blob/1242364633字节；[独立回执](evidence/priority-native-second-annual-and-third-terravore-settlement-delta-staged-verification-2026-10-11.json)。包括所有原始失败、原殖民船真实损失/异常、第三51PASS和两候选截图；生产Mod未改。归档/校验期间无GUI输入和RUN写入，冻结前D盘剩余1996947456字节。提交推送与完整远端SHA核验后继续已记录8月刷新及9月建设边界，不把切点校验当完整路线通过。
