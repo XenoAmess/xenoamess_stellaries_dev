@@ -1,4 +1,4 @@
-# Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
+﻿# Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
 2026-10-11 战斗结束、撤退与报告分段：12.15敌825的fleet_stats.date从06.14重置0.01.01、combat.in_combat_with为空，mia_type=mia_emergency_ftl／return_date2270.07.07，真实12舰ID全保持，巡洋舰1495.28786仍存活。本国COMBAT_STATS211为reason=no_more_enemies／battle.date06.14／message.date12.14，最终敌损[0,3,0,0]与早先210的[0,1,0,0]共同对应结束前实时[0,4,0,0]；本日真实新对象消失0／威慑0。不能将统计重置当新增死亡、把结算分段3当本日击毁数，或将GUI“战斗胜利”当整场war1结束。原32项单FAIL保留，独立34／36项和同两SAV／原始报告互证PASS／实际0。[精确证据与战后边界](priority-terravore-native-battle-disengagement-2026-10-11.md)。此为Stellaris本局原生状态，不推广CK3。
 
@@ -605,3 +605,9 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-11补证（Stellaris 4.5.2 原生SAV，不是P语言语法）：zone特化替换可生成带代数handle并回收旧空槽。本次zone107=none→条目消失，新zone16777323=2^24+107由无条目→physics实体，原旧zone2→none，district1引用同步替换；building注册表独立，building16777323仍是保留实验室，不能因数字相同误认zone实体。完整SAV与107补证见本日paid-industry文档/12c488…调查。验收需按注册表、具体已确认生命周期及所有原引用验证，不能只比较zone对象或要求所有none永久存在；不推出其它游戏采用相同handle表示。
+
+
+2026-10-11原生SAV战损清理补证（Stellaris运行时，非通用P语法）：同一帧护卫舰可已killed=yes、HP为负、COMBAT_STATS已记本国损失，但ship/fleet实体仍在owned注册表且naval缓存未降；is_being_repaired=yes也可与killed并存。存活统计必须排除killed与非正HP，再另验下一日实体/缓存清理。此例117441817于2272.09.14已死，注册28仅27正HP，不能用集合长度冒称28存活；war1胜负/损失方向再次与具体本国战报不一致，须同时记录原战争文和实体/战报，不能凭方向字段推算Menace。具体原件见当日paid-industry文档。
+
+
+2026-10-11补证：Stellaris4.5.2死亡分段清理：9.14 killed=yes/负HP的117441817仍在owned集合，9.15仅该舰及16778073队退出集合，country.fleet_size仍140旧缓存；不能据仍注册或naval缓存判断存活，也不预设清理后即时135。新殖民船combat仍含旧825时已原生evade_hostiles_order/sub_order/move_to_system_point_order到37并连续移动/满血；UI紧急跃迁14天锁与自动规避分别核证。nomads.510/on_fleet_exit_battle原生定义母星同名60天标记，实际60→59；原事件有arkship/default条件，尚未证明蜂巢实际触发路径。完整源码/同原SAV/36和28PASS在CUT27留证，属Stellaris运行时事实，不推广为CK3或共通P语言规则。

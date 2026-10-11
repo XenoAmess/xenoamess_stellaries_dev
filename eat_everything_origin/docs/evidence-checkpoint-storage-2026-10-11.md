@@ -1,4 +1,4 @@
-# 离线验收证据切点的原字节复用
+﻿# 离线验收证据切点的原字节复用
 
 ## 目标与范围
 
@@ -190,3 +190,13 @@ CUT26归档actual0：冻结2026-10-11T11:41:24.050533+00:00，29457源项/129099
 
 
 CUT26首次独立staged原字节验证PASS/actual0：29542唯一blob/1324981617字节，完整29457源项/1290995960字节，复用28933、新524/81912804。回执[priority-native-third-month-refresh-and-physics-colonizer-completion-delta-staged-verification-2026-10-11.json](evidence/priority-native-third-month-refresh-and-physics-colonizer-completion-delta-staged-verification-2026-10-11.json)。命令级longpaths重试git add实际0；原第一次路径长度失败保留文档，未改原件路径。暂存范围核531项仅本切点526原件/manifest属性与五任务docs，diff --cached --check通过，独立期间无GUI或RUN写入。补回执/本段后立即提交、推送当前main并独立核完整远端SHA；不会把此原字节验证当整路线验收。
+
+
+### 第二十七切点实施前计划
+
+基线CUT26 `native-third-month-refresh-and-physics-colonizer-completion` / `1671975bfbf4b59427817d7e04c6c01d4fa0dcda`已push及独立完整远端SHA实际0核验。新唯一标签`native-rear-loss-evasion-and-reinforcement-contact`，暂停2272.09.15/cleanup source84ab…静态零错/28全PASS实际0，马上冻结。
+范围包括CUT26后所有原件/Git退出日志：正常战争UI未提交和平，Ctrl未多选真实动作和GPU/OCR，四普通攻击订单/同日save/6项完整观察/两调查/22PASS；唯一9.14calendar/SAV/6+4观察/原35单母星flagFAIL/完整调查/两原生全文件与manifest/V2静态和36PASS；唯一9.15calendar/SAV/6+4观察/有效完整差异调查/cleanup静态及28PASS，全部错误/stdoutstderr/源码/pycache/实际退出。首次只读内联差异调查重复解析耗时、只停止已核25104子进程/actual1空输出/未写artifact，事实设计文档已记录。所有原失败和战损保留。
+归档与独立staged核验独占不写RUN/不动GUI；核D盘后既有完整manifest复用，archive实际0，再命令级longpaths git add -f新切点/五任务docs/全部现有priority根JSON实际0，再独立blob校验PASS actual0，补真实计数/回执、核task-only范围/diff check、提交push main和独立ls-remote完整SHA。生产41/0.2.0保持，不当完整政体验收；之后继续正常脱战殖民和闭环。
+
+
+CUT27归档实际0，冻结2026-10-11T12:38:58.273452Z；29688源项/1335926213字节，复用29457，新231/44930253字节。独立暂存原字节校验首轮PASS/实际0，29774唯一blob/1370372365字节；回执[priority-native-rear-loss-evasion-and-reinforcement-contact-delta-staged-verification-2026-10-11.json](evidence/priority-native-rear-loss-evasion-and-reinforcement-contact-delta-staged-verification-2026-10-11.json)。冻结与独立校验期间未写RUN或动GUI；五任务docs与本切点原件/现有priority回执提交推送main并核完整远端SHA后继续。
