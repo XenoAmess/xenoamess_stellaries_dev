@@ -556,3 +556,10 @@ Stellaris4.5.2本次前哨99%→实体完成：01.12原付费模板201326648，0
 ### 原生源星年度后后勤优先级（2026-10-11）
 2271.02.16→03.16实机两SAV：源1085人口282/complex_drone本族同group保持，协调200，巡逻82→0、后勤0→82，舒适度−110.936→331.72714。原版common/pop_jobs/04_gestalt_jobs.txt logistics_drone为complex_drone，free_amenities<0且空后勤时weight factor10，额外舒适500；完整文件SHA9469c178efbaa2d8e5bce43545ee6d5a184ee0e764336e85170795d0cc6820ad。年度20破坏改变产出/住房，自动岗位选择不能沿用“先巡逻再后勤”固定公式。源检查应验证既有三岗容量/真实就业守恒/原生选择，母星核心岗位效益条件仍独立严格验收；不由此推断所有来源500人口已实测。
 候选调查必须使用country0.surveyed_deposit_holders/type0与实体交集，planet.surveyed_by标量不是可直接匹配country0id的列表；星堡归属通过station→ship→fleet与本国owned_fleets，不能要求不存在的starbase.owner标量。当前346已调查holders交集仅亚蒙523为未殖民宜居候选。星图最短8跳不等原生实际避让航线，现殖民船11系统路径预测2274.07.01；预测不代表抵达。以上均Stellaris4.5.2保存格式/运行事实，无新增Paradox共通语法规则。
+
+### 4.5.2简中实机：实际区划特化完工与后方船坞（2026-10-11）
+本轮同0.2.0原41文件/tree ac802ed0...，母星2271.05.03重工转换实际完工（源SAVc72e7f.../独立V47 72PASS）：hive district1保持level5；zone61/三hive_node对象退休，新zone104仅zone_foundry；fabricator200→700满岗/coordinator2000→1500满岗/住房13800保持。当天cached预算仍旧负能源/合金，故岗位变化和同日资源不变不能替代新月及30日经济验收。旧已消耗构造对象16777257槽41在后来购买船坞时换代为33554473，新的buildable_starbase_module不能当重工订单复活；检查要同时追踪新对象类型、队列引用及旧同槽generation，而不是只看低位槽号。
+原有殖民船2271.05.02超空间阶段无current_order，05.03抵151后仍无任务；正常简中殖民菜单既列出现船，又提示无可用路线。尝试现船选项使order_id1→2但没有实际current_order，不能以订单计数变更宣称任务恢复。已知路线上80存在敌对采矿无人机858/6舰/816战力，33有缇扬奇驻军；仅是实际阻断候选，未证明所有不可达原因，未归因为Mod缺陷/通用FTL序列化规则。
+原版common/starbase_modules/00_starbase_modules.txt shipyard: construction_days180、alloys50、energy upkeep1、capacity1/on_finished设置原生starbase_shipyard。全文SHA edeaa...（完整edeaad451ff4aa5656650a51c94197fdb693cfb241f84dcb2be2a17149d023a5）已按字节留原件；后方已完成星港153正常购买一座slot0，SAVae6065...真实扣50且其它truebanks不变，独立付款19PASS/actual0。首原生日05.04进度1/180/975e44...，V48独立75PASS/actual0，仅证实当前本局1工作/日，不按旧星港升级1.5速度假设模块同速。本组为Stellaris特定对象生命周期/实机事实，不是新确认的Paradox共通语法，不更新CK3方言文档。
+
+补充实际首新月06.01：重工完工日协调1500是本样本暂时缓存，首刷新为900满岗；结构/建筑三完整top raw不变，维护岗接收600和6自然出生。原版hive_node经unity_jobs_add为非普通帝国添加@building_static_jobs=200，三退休节点600与实际岗位差一致。该样本支持「退休对象与岗位缓存刷新有时序差」的限定结论，不能推广所有建筑必然延迟一月；后续守卫在实际日期界点精确改为900，不任意放宽。首新月能源/合金净额+3.06824/+24.26431，完整30日台账尚待。

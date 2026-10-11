@@ -941,4 +941,71 @@ V44目标/范围/方案：继承V43全部原65项，源岗位校验改为既有�
 完整原生岗位来源SHA 9469c178efbaa2d8e5bce43545ee6d5a184ee0e764336e85170795d0cc6820ad。
 V44实际执行源SHA e280ebe5d2ce063a6de475b719e7f9be9d32b2317c2e37bad32e17fa05b5d57f。
 
-V44独立67全PASS/actual0，源e280ebe5d2ce063a6de475b719e7f9be9d32b2317c2e37bad32e17fa05b5d57f；原生舒适度岗位再分配及原两FAIL完整绑定。现暂停2271.03.16冻结第十六切点，之后先V26/idle30最多两步47日至重工预计出厂前2271.05.02，沿用每步≤30日/实际67PASS/原全部停止条件，第二年度前01.30裁剪保持，岗位100..500仅容量守恒而非500已测；5月实际人口/岗位由逐端核。重工预计完成日05.03只在前端67PASS后唯一一日实核，不强跑旧未出厂约束。
+V44独立67全PASS/actual0，源e280ebe5d2ce063a6de475b719e7f9be9d32b2317c2e37bad32e17fa05b5d57f；原生舒适度岗位再分配及原两FAIL完整绑定。现暂停2271.03.16冻结第十六切点，之后先V26/idle30最多两步46日至重工预计出厂前2271.05.02，沿用每步≤30日/实际67PASS/原全部停止条件，第二年度前01.30裁剪保持，岗位100..500仅容量守恒而非500已测；5月实际人口/岗位由逐端核。重工预计完成日05.03只在前端67PASS后唯一一日实核，不强跑旧未出厂约束。
+
+第十六切点提交da7f04ea5e388790c5603b975b6fba7b7da91428，push及独立ls-remote实际0/同完整SHA核准。V26实施前精确范围：从冻结V25绑定V44/sourcee280.../67检查，源100..500容量守恒/原生巡逻后勤选择；移除已校准旧300分配之前03.30限界，保留第二年度01.30/重工1.4出厂前裁剪和全部原停止条件。当前03.16→05.02实际46日（30+16），不是先前文字47；47日是达到360的出生计算。唯一idle30最多两步/逐端67PASS及actual0，出现未知状态立即停止；不能重复idle29-step2原阶段。之后单日05.03只实读重工实际完成，旧要求原zone61/节点/岗位的守卫不能强跑到已替换设施的新端。
+V26实际执行源SHA 47455c9c93775291f3c94a71d5efd3299d8e4d793d45e76ad6ffcf931212ae4b。
+
+### 重工出厂前端的殖民舰FTL存档状态与V45实施前
+idle30首端2271.04.16独立V44 67PASS/actual0、重工337.4/360、源283；第二16日calendar actual0到2271.05.02/SAV379a85177156926689706d58ea963379fef006feaa5aa198fb35b5f194f1bdd3，V44 67项仅新殖民舰合并项FAIL/actual1，driveractual1且停止。重工实际359.8/360，原其它66条件通过。新殖民舰仍ship16779140/fleet16778062本国满625/125/320、species73/design150995039、无MIA/交战/重复舰；订单已消费none、无重复扣款。movement_manager.state=move_galaxy，coordinate.origin=4294967295，last_ftl_jump.from.origin103/to151/fleet16778062/jump_hyperlane，103实际hyperlane列表含151；target_coordinate仍(-47.2722,110.9877,origin37)，path仅正常下一跳151且预测2274.05.25。整个原始SAV没有colonize_planet_order，fleet仅order_id1，无current_order。不能只因FTL origin无效或暂时无当前订单判舰队失踪，也不能尚未实测恢复就断言原任务一定自动恢复。
+V45目标/范围/方案：从冻结V44，仅将殖民船航行条件分为系统内原目标523有名/可达订单，及严格FTL待恢复状态：move_galaxy/无current_order/origin invalid/同fleet合法hyperlane from→to/下一路径节点到同to/正常jump_hyperlane/目标37与坐标保持/完整唯一同种族设计船/无MIA战斗；FTL状态标记colony523_order_recovery_pending=true并将short_idle_war_calendar_ready=false，禁止driver继续批量。新增准确两SAV/前67PASS/实际16日及本首FTL结构锚点（后续绑定V45 69PASS）；另绑定原67单FAIL/observer与driveractual1/原来源/原始stderr。原66其他军事/重工/源/EEP/PSI/error条件保持，69项同原两SAV全部PASS/actual0仅允许下一唯一一日05.03核重工实际完工；此组件不声称殖民订单已恢复、航程成功或FTL重载通过。再逐日有界验证直至实际进入系统且订单恢复；如不恢复，先查原生行为与正常重新下达的实际成本，不能默认为Mod问题或跳过调查。
+V45实际执行源SHA 740eecfa684fd136cfcd1267444416547091eece55c5cda3a27e88ceecfc39d1。
+
+V45首次只读执行actual1、proof输出前NameError:mm未定义。生成稿清理草稿行时意外连同movement_manager及派生变量定义整行删除，属于私人检查脚本实现错误；原stderr SHA74fa171075518e43ba32946d7deb1baaa33a8567d5f446b7e8c0ccb94c9c99cc、源740eec...、执行回执保留，游戏未推进/重放。V46只补回真实mm/mv/jump/jv/jfrom/jto/targetpos定义，原FTL条件不变；原首成功锚改为V46 70项并增加V45原actual1来源绑定。验收同原两SAV全部70PASS/actual0，随后仍只允许既定单日校准。
+为避免继续遗漏定义，实施前增加私人观察器静态检查：pyflakes固定3.4.0仅安装_runtime/heart-of-devouring/lintdeps，使用其AST checker检查新增私有观察器的UndefinedName；完整保存版本/源码hash/消息和实际退出，不因旧文件unused提示修改冻结源。该检查只验私有Python变量定义，不能替代P工具或实机。先静态actual0再首次运行新V46，后续新私有观察器沿用此检查；不改生产Mod/P工具/用户环境变量。原包来源依pip实际安装结果记录，失败则停查，不执行新游戏命令。
+V46实际执行源SHA 7010916383bce3f867de5a56d86c437cfa509e5425e076cae78d53fbb1b77b9e，pyflakes3.4.0未定义变量静态检查通过/actual0，完整包原件与源hash清单已保存；这不是Mod验收声明。
+
+V46独立70全PASS/actual0，源7010916383bce3f867de5a56d86c437cfa509e5425e076cae78d53fbb1b77b9e；殖民订单待恢复标记true、bulk ready=false保持，未宣布航程成功。按已记录唯一一日05.03/terravore-mother-heavy-completed-boundary先读实际区划特化/建筑生命周期/岗位住房/资源，旧V46要求未完工设施保持不运行。FTL待恢复及所有失败/静态检查原件随第十七完整切点冻结，当前只允许按日校准，不追加批量driver。
+
+### 重工业实际完工及殖民订单未恢复：V47实施前
+唯一一日actual0至2271.05.03/SAVc72e7f7036e47c2326cff3e07abce631b33b4ae46469eaf70a5fdca167f09d77。重工item16777257→none/queue0清空；hive district1仍level5，zones[0,2,61]→[0,2,104]，旧zone61=none，新zone104仅type zone_foundry；三旧突触节点83/16777258/86=none。其它zones0/2和区划2/3保持。实际fabricator16777402/max=workforce700（原200），coordinator22/max=workforce1500（原2000），其它原满岗保持；住房13800不变/实10744/free3056、稳定80/犯罪0/舒适正。全真实库存及科研bank相对05.02保持；当天cached current_month净E−15.12689/M+51.00994/A−3.11069/U+167.98772仍旧预算，不得把当日岗位完成直接宣称月账正经济。
+殖民船此一日已在system151/state move_idle，完整625/125/320/本国种族设计保持，但仍无current_order，仅order_id1；151 fleet_presence只有本艘，本国无待选、无新message/战报，暂未找到敌舰阻断证据，不能强定原因或称自动恢复。已读取简中暂停UI。一次capture命令先误指不存在的_runtime/runtime.py而actual2、无游戏动作/文件；正确现有eat_everything_origin/tools/runtime.py capture唯一成功actual0，原截图保留。此为调用路径错误，不是工具缺陷。
+V47目标/范围/方案：从冻结V46仅适配重工施工→实际新zone104/旧zone61及三节点none/岗位700与1500/住房保持，完整原所有其它设施/三矿/源/军事/EEP/PSI/2814约束保留。两端重工状态机：施工端仍原14PASS单/1.4工速/小于360，完成端原订单全队列不引用且none或严格同槽更高代，新特化及被替换旧对象生命周期严格；清障已完成的queue0条件随重工完成变空。新增首实际359.8→消耗/一日/前70PASS/actual0/两SAV/真实库存bank保持锚点（后续引用首V47 72PASS），另一项记录本精确SAV下殖民舰151空闲无订单/唯一满血/无敌舰与pending，并强制标记待恢复、bulk ready=false。只对此精确原始SHA允许idle待恢复，其余端仍原系统殖民订单或严格FTL待恢复，不能通用放行空闲。pyflakes未定义名静态通过后首次执行同两SAV，72PASS只认证重工完工与已知待恢复状态，不认证殖民航程恢复或正经济。
+通过后先正常UI选择现有殖民舰并调查目标523右键/殖民菜单，不能新买殖民船或盲目重复付款；读取实际指令前后同日SAV，另建精确命令守卫，只允许同一艘原生订单恢复及相应正常cache变化，真实资源/人口/科研/EEP和全部已完成设施保持。成功后才恢复日历，首单日实际移动及30日新预算分别核准；若命令不可达则继续只读查合法路径/安全状态，不切攻击姿态冲入未知敌区、不跳过问题。
+V47实际执行源SHA 4e3e07a0e52eec4872db56faa273d15a21c0f1776208c39d079578d2940637fa，pyflakes3.4.0未定义名静态检查通过/actual0。两个新增检查为新特化原对象完整生命周期及首完工准确边界锚；本精确SHA空闲待恢复约束合并进原殖民状态项，仍共72项。
+
+V47首72全PASS/actual0、源4e3e07a0e52eec4872db56faa273d15a21c0f1776208c39d079578d2940637fa，原完整设施/军事检查保持，殖民空闲待恢复与bulk=false核准。现仅正常界面选择现有舰、查看523殖民菜单，不动日历；恢复指令及同日原SAV另验。一次只读rg带引号模式导致范围意外扩大，已终止该自有exec会话actual1，未修改任何文件/游戏状态，改用精确文件普通文本读取。
+
+### 暂停界面恢复调查（2026-10-11 10:48，实施前下一步）
+原菜单截图 recover-quote-visible 已识别同一现有 EEP波斯波利斯城；点击现有船选项后的 recover-existing-option-visible 明确提示「殖民船没有可用路线以到达该行星」，按钮未启用，尚未重新下单。此前说明可使用现船仅指菜单识别，不能据此声称恢复成功。所有操作仍在2271.05.03暂停，无购买/日历。接下来只读核对151→37已知航道和正常阻断原因，保持原回避姿态，不强闯未知敌区；合法路线恢复前不推进批量日历。若目标受真实战争航道阻断，先明确证据及正常护航/清路方案，再执行并另验，不能改SAV/授予通行。
+另一次只读源文件读取误写不存在的观察器文件名，actual1/无写入，已用rg定位真实priority_terravore_war1_battle_observer_v47.py。原始游戏行为及Mod不受影响。
+只读候选记录：当前国家0已测绘地块持有者与已知未殖民宜居目标交集仅523；已发现敌国1殖民星1578/colony30位于system147（Rathadore，pc_ocean14），图上距母星3跳，未由国家0测绘。仅作为后续正常UI核查候选，未下战争/登陆命令，不能把未公开地图信息当玩家已知可征服目标。
+
+### 通路清理与后方船坞方案（实施前，2026-10-11 10:56）
+只读记录terravore-colony523-route-blocker-investigation.json绑定当前c72e7f...SAV：80阿斯威利有hostile矿工无人机858/6舰/战力816.84375；另有中立行商65/6881.10937，不能攻击行商。近路33缇扬奇驻军70战力4779.64062且还有其它驻群；74已由玩家限制、虚空之云4807.64843，不解禁闯入。原路线151→188→139→171→70→30→80→97→37中80是已证实敌对无人机候选阻断，但尚未单独证实它是全部原因。97现有四支舰队7舰总战力808.98437，不足以稳妥直接清理816无人机；母星20舰需长途航行，优先正常建设后方船坞补充舰只。
+目标/范围：在已付费完成的97星港153空模块槽正常UI查看船坞报价；原版00_starbase_modules.txt shipyard construction_days180/cost50alloys/upkeep1energy/capacity1。确认原生UI合法及实际报价后只购买一座船坞，并同日保存、以实际付款/唯一订单/完整原母星源及军力未变守卫验收；不新增另一艘殖民船。新船坞完工前保持殖民船151暂停无指令，明确为战争航道阻断待清理，不宣称殖民恢复。修改后续观察器前另记实际原生订单及工速；有界每30日检查母星新月预算、真实库存、源任务/冷却、原军舰与无人机和殖民船状态，无新战斗或错误才继续。船坞完工后按正常报价购买至多6艘与已验收设计相同的护卫舰，先以实际报价和战力决定所需数量；额外海军容量/维护须进入真实预算。待后方战力足以清理6无人机，再正常UI只向敌对无人机进攻，停在首战边界独立核对损失/战报/Menace，不沿用无战斗约束跨新战斗。
+验收：所有成本来自现存资源、原生日历、无改档/效果授予；每个新付款/工速/完工/战斗独立原始SAV与实际0证据。殖民原船和原付款链保留，清路后重新检查同目标523合法订单与真实航行；任一新未知状态立即停止该批次，先调查修复。此正常经营调整不等于生产Mod修复，当前仍0.2.0同41文件同tree。母星投产正经济仍待新月+30日真实台账。
+只读调查末尾曾误以q.scalars读取含匿名数字的区块而actual1；发生在所有读取输出后，未写游戏/助手。现只读调查已使用正确限定字段保存独立JSON/actual0。
+
+### 后方船坞实际付款与独立守卫实施前（时钟实际10:57）
+唯一正常购买50合金/180基础工作，保存actual0，2271.05.03不变，新SAV ae606587d8731ed5ddc940c9c86cd835b27bbe544d1f77ec567f0e2cbd296454。rear2278从空追加唯一33554473，payer0/progress0/need180/resources alloys50/buildable_starbase_module shipyard/slot0/base153。重工旧none16777257原槽41换代为33554473，未复活或重复施工。基地153/舰船/所有母星与源设施原始不变；真实合金1130.30441→1080.30441，其它真实库含科研全保持。UI操作产生fleet64与原殖民船16778062的唯一dirty_cloaking_strength=yes缓存，其余舰队字段原样。三个改变的顶层块仅country/construction/fleet。
+新私人priority_terravore_rear_shipyard_payment_guard.py：绑定前R47首72PASS/actual0/source4e3.../原SAV及同日新SAV、正常报价图和唯一点击/保存actual0；精确扣50、其它truebank/所有国家/国0非经济资源原文不变、其它top与所有世界/舰/源/EEP原文不变；只允许两具体fleet dirty字段追加；仅2278一订单追加、41槽none换代、其余所有构造字段保持。原生模块源完整SHA保存绑定。验收全部独立PASS/actual0并pyflakes未定义名检查0，才唯一一日至05.04读实际工速，再另建观察器。本守卫不能证明完工或殖民恢复。
+一次只读付款diff在保存子进程仍运行时过早启动，FileNotFoundError/actual1，未写入任何文件、未重试支付/保存。现先等待该实际0退出后完成同原SAV调查。后续必须等依赖进程实际0后再读取新SAV。以上实施前小节的10:56为手工估计分钟，准确时钟02:55:12UTC时购买保存已完成；行动顺序由原执行JSON的UTC为准。
+
+船坞付款首V1 18项仅only_exact_two_fleet_dirty_cache_append失败/actual1，原source a4a59f47b69976b5c8eab5fe46d3c95799edb30728f98451cfd7073c85f3c7be及proof/stderr保留。精确子项调查：其他所有舰队raw保持，64仅dirty追加；殖民船16778062除了dirty追加还order_id1→2，current_order仍无、movement_manager完整不变。即先前尝试现船殖民选项虽UI报告不可达，原生仍增加订单计数，不能把这一变化称为已恢复任务。新V2只允许该具体原船order_id精确1→2并绑定现船选项正常点击actual0，原其余字段包括无current_order/idle坐标完全保持；其余17约束不变，增加原18单FAIL/actual1/SHA/相同两SAV绑定。pyflakes通过后执行同SAV对，不能重复付款/命令/保存。先前只读汇总只比较了fleet的对象子块而漏报scalar订单计数，本次以全字段差异纠正。
+
+后方船坞付款V2 19项全部独立PASS/actual0，源d7f7446f9f4428fa74b9610d73c552c5ad2ddc92f7e770bc89dc0ed4b3581c0b，原18单FAIL保留。按既定仅一日校准，2271.05.03→05.04/terravore-rear-shipyard-first-work，绑定此19PASS与实际0；先读取船坞真实进度与殖民船无指令、原完整军力、母星投产岗位，再为该真实工速编写V48，旧无后方建设的V47不直接跑新端。未有殖民恢复、完工、经济闭环声明。
+
+### 后方船坞首工作与V48实施前
+唯一一日2271.05.04/975e445ba2b52fd7378d50bbef413a06251ca4864f3a715c350bd82dd2203703/calendar actual0：33554473进度0→1/180，即当前1工作/原生日；全truebanks相对付款端保持，殖民船仍151原坐标/full625/125/320/order_id2/无current_order。尚未完工或恢复殖民。
+V48从冻结V47只适配已记录的后方建设：rear2278允许唯一33554473，同时旧升级订单仍保持已消耗、基地153原设计和设施不变；每端严格与19PASS付款原订单nonprogress字段相同，progress=自2271.05.03原生日、0..小于180，每段差=days，原槽41换代事实继续保留。原殖民idle待恢复只扩展到此实际船坞建设期间（05.03起且进度<180），固定同坐标/order_id2/无任务和MIA/完全原船、151无敌舰；严格绑定已保存阻断候选858六舰完整原HP/位置/system80及无新交战，同时保持bulk-ready=false，不给无界空闲放行。新增付款19PASS/source/实际0锚点、首一日0→1/准确SAV/无truebank变化与原生模块源锚点。原其它72检查保留（rear状态和殖民idle条件按上述替换），未变化完整历史FAIL来源均保持。pyflakes0先行，同原两SAV全部PASS/actual0才允许人工有界下一段27日到2271.06.01；不是绕过殖民问题，而是完成已付费后方清路准备和母星新月预算。仍禁止批量driver跨任一新战斗/源第二年度/船坞完工；新月/完整30日ledger另验。
+
+V48首工速75项全部独立PASS/actual0，source2b3519194b1e37a42afcacafc08d671069e71a9b2b093affb79811b43dc7e355，pyflakes检查0。按已记方案唯一27日2271.05.04→06.01/terravore-heavy-first-new-month，绑定本75PASS/actual0，暂不跨完工/新战斗/第二年度。原生预算更新后先核新month净额与实际库存差，不把新预算直接当完整30日台账验收。独立观察器包装仍运行时读取其尚未生成的stdout文件曾actual1，无写入/游戏动作；后续轮询必须先确认exit_code存在，再读包装输出，不能再以文件暂不存在当原检查失败。
+
+### 重工首新月岗位刷新：V49实施前
+唯一27日actual0到2271.06.01/SAV6f5642e55fd35ea04fd08fe6dca2e1d06d245357b2307664ec02c74c26793e54；V48 75项仅mother_paid_mining_full_jobs_capacity_housing_and_native_population_records失败/actual1，其余74通过，原件保留，不重跑日期。真实新月E+3.06824/M+27.00574/A+24.26431/U+134.88118，恰等于05.04→06.01库存delta；last_month完整等于前cached current，原生库存I1000/trade50000仍封顶。月刷新协调22实际1500/bonus525→900/bonus315，满岗/limit900/auto0；维护无人机2491→3097，母星实际人口10744→10750（+6），无失业/额外人口授予。建筑/districts/zones三整个原始顶层块完全相同、三个退休节点仍none、zone104/三矿/其它固定岗位不变；源284已自动回到patrol84/logistics0，原生自主分配仍在既定守卫范围。
+原版08_unity_buildings.txt building_hive_node通过jobs/unity_jobs_add AMOUNT=@building_static_jobs给非普通帝国coordinator，100_scripted_variables_zones.txt该常量=200；三个已拆hive_node合计600，与本次1500→900一致。应记录本样本岗位缓存晚于建筑对象退休在月刷新才减少的实际时序，不能把完工日1500当稳定产能。没有生产Mod缺陷证据。
+V49仅把原协调岗精确值改为完工后首月刷新前1500、2271.06.01起900（未完成旧2000分支保留），其余原75检查原样。新增绑定原75单FAIL/source/actual1/准确SAV pair与27日；再新增首刷新固定900/315/900/auto0、维护增606/人口增6、整个三结构raw相同/原生三来源全文SHA/新月六资源库存对账与两封顶资源。首端通过后后续引用该首77PASS锚点，不能将协调岗任意范围放宽。pyflakes0先行，执行同原两SAV77全PASS/actual0才唯一30原生日06.01→07.01完整经营台账；原第十七切点仍同标签，增加该完整月账后冻结，游戏继续暂停到归档核验与push完成。两次只读调查先误用不存在的audit buildings键/未存在的原版文件路径，actual1/无写入；已改为原始top buildings与rg定位真实08_unity_buildings.txt，原game状态不受影响。
+
+首新月V49独立77全PASS/actual0，sourcee2c6ef5c01e1550c90bf843c5bbe61195e8281355031a125303818d48f480ca8，pyflakes0。按既定唯一30原生日06.01→07.01/terravore-heavy-full-budget-month，绑定本77PASS/actual0；与相同V49逐端核验后另建真实预算台账守卫，不把27日首结算与当前正数当完整周期。重工稳定900协调/700铸造，原舰27/源吞噬/原生2814/后方1work/日约束保持；任何FAIL先停。随后暂停完成第十七完整切点归档/独立暂存原字节核验/提交推送核远端，不抢先追加游戏日期。
+
+### 重工完整30日预算台账守卫实施前
+唯一30原生日06.01→07.01 actual0，SAV6f5642e...→cbe2bed75f87370687b7ca46da759a400b0fba8dbaa86395e44c057243657d3a，原V49两端各77PASS/actual0。当前月净E18.42840/M43.43325/A24.26431/U94.39504，food/CG0，与两端真实库存delta六项逐个精确相等；I1000/trade50000丢弃封顶收入7.1/93.02406。last_month完整等于前current；新current和上月current并不相同，须以结算端实际budget对账，不能称预算完全静态或用06.01的+3.07要求07.01也固定。协调900/铸造700/矿工3000保持，源284实际巡逻84→0/后勤0→84、全就业，本族；母星10750→10757，原生growth7、源growth0，未发EEP通用人口。后方船坞58/180，未完工，原舰27和C37/D11/worlds2/Menace105保持。
+新私人priority_terravore_heavy_budget_cycle_guard.py目标/范围：完整30日经营分项，固定两SAV/date/唯一calendar实际0及前后两77PASS/source；六未封顶资源按current实际净额逐项对账，两个封顶资源收入丢弃单列；last_month与前current一致；700/900/3000/1200固定满岗、三结构链/住房13800/稳定80/犯罪0/正舒适、自然增长7和0/EEP不提前发奖、真实科研bank不下降、付费船坞28→58/未恢复殖民原船/已知原军力及2814原日志。源原生岗位月度重排不误报生产缺陷。pyflakes0后执行同原SAV，全部PASS/actual0才能把经营分项15/15、噬岩者工程估计约65%（非用例通过率）写入排期；完整路线仍1/7，不能把此经营分项当整路线验收。工坊候选采集正常母星投产UI，禁止把普通护卫舰宣传成矿物舰。随后第十七切点独占冻结核验提交推送。
+
+预算台账首V1 15项仅paid_rear_work29_to59_colony_still_parked_and_no_new_combat失败/actual1，其余14（含全部六资源残差/正经济/人口/设施/真实科研）通过。源d7940f0ca423ef91b8b663291deea3e9718a3328d5bb9ba1d5db5534a1259572与原proof保留。准确前后V49 proof船坞为28→58/180，不是手工工作笔记29→59；05.03→06.01是28天，05.04首1再27天=28。前文未核进度的两处工作笔记已纠正，并在此保留纠错链，原游戏SAV和V49日速公式一直正确。新V2只改该精确对账28→58，绑定原15单FAIL/actual1/源SHA/两SAV，增加1项共16；pyflakes0后执行相同原SAV，不重跑日期或购买。
+
+重工完整月台账V2独立16全PASS/actual0/source67f22d6b7ee78c8999152d8db3a4d3959fcdc557bbe5d94a00217ca485147b5e，原15项单FAIL完整保留，pyflakes0。经营分项15/15，噬岩者约65%为工程工作量估计（基础25/25、灵能20/20、经营15/15、武灾5/25、最终0/15），不是独立守卫数量百分比；整路线仍1/7/14.3%覆盖、推荐仅纵火本能，下一铁心灭绝者。仍需第三源真正结算/Queen通知、恢复目标523原船合法任务、天灾2/3/4与矿物舰正常付费出厂/维护/升级、最终长跑重载；不得用本分项正经济扩大工坊推荐。当前Steam离线、生产41文件0.2.0同tree，无新Mod代码缺陷或P工具缺陷。
+当前本轮切点暂停2271.07.01，后方船坞58/180。母星原生简中投产UI已采（5蜂巢/6发电/15采矿，重工业、总容量29、10.7K人口、正资源），正常鼠标移出悬浮提示后再采清洁原图。仅工坊候选，不上传；普通护卫舰不得作为天灾矿物舰展示。完整切点归档与独立暂存核验期间不动GUI/日历/RUN，提交推送及远端SHA核准后继续船坞/后方补兵/清路，未来补兵后维护需重新验收。
+
+母星工坊候选两图均已亲自检查；优先清洁原图terravore-heavy-gallery-clean-visible.jpg/SHA808e1d30adeac43ececcff6af63482bac0cd0d3c5ca9f7407e15c6c4f7eaab9a，原图terravore-heavy-gallery-mother-visible.jpg/SHAf3b87444b6e73aee51b1bc63f59c27f5cc3be0faf518efb5c102d3217a50dd45。均与各自原OCR image_sha一致，候选manifest terravore-heavy-workshop-gallery-candidates.json绑定实际07.01SAV。展示原生29容量/5蜂巢6发电15采矿/重工业和正资源，未上传工坊。现在开始第十七完整切点，独占期间不写RUN或动游戏。

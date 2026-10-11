@@ -107,3 +107,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 沿用完整manifest原字节复用与独立暂存blob检查；归档/校验期间不动GUI/日历/RUN。两个工具实际0且PASS回执后，仅五任务docs/新切点/独立回执提交推送核远端，旧冻结原件和生产41文件0.2.0保持。之后再实施V26并继续重工业出厂前推进，不缩减完整路线/语言范围或扩大工坊推荐。
 
 第十六切点归档actual0，冻结2026-10-11T02:13:14.557007+00:00；完整25350源项/1012376797字节，复用25213、新复制137/6588709字节。独立暂存原字节校验PASS/actual0，25423唯一blob/1041706904字节；[独立回执](evidence/priority-native-colonyship-born-and-postannual-job-reallocation-delta-staged-verification-2026-10-11.json)。当前只读失败/后继成功原件均完整保留，提交推送并核远端后再推进。
+
+### 第十七切点实施前计划
+基线第十六切点native-colonyship-born-and-postannual-job-reallocation/da7f04ea5e388790c5603b975b6fba7b7da91428，已push及独立完整SHA核验。新标签native-heavy-completed-and-rear-shipyard-paid。重工真实完成，殖民任务未自动恢复，UI不可达；目前正常付费一座后方船坞，尚未完工。待首工速及首新月预算独立检查完成后暂停冻结（若出现需先处理未知FAIL则提前冻结），保留V26/idle30各端和原FTL单FAIL/原V45 NameError及V46/V47、固定pyflakes包与全部源manifest/静态退出、全部恢复UI尝试及原生不可达、当前route blocker只读JSON、后方50A实际付款/首18单FAIL与19PASS及全部后续原始SAV/日历/未过滤错误/源码/退出，不能漏失败或把当前殖民路线称恢复。
+沿用全manifest原字节复用/独立暂存Git blob检查；归档与校验期间不动GUI/日历/RUN。actual0及独立PASS后只提交五任务docs/该新完整切点/回执，push后独立ls-remote完整SHA，再继续真实船坞完工和后方正常军事补充。生产仍同41文件0.2.0，完整路线仍1/7，当前变更仅经营验收和证据，不称Mod修复或追加工坊发布。
+
+第十七切点归档actual0，冻结2026-10-11T03:17:33.946849+00:00；完整25886源项/1031039110字节，复用25350、新复制536/18662313字节。独立暂存原字节核验PASS/actual0，25960唯一blob/1060761738字节；[独立回执](evidence/priority-native-heavy-completed-and-rear-shipyard-paid-delta-staged-verification-2026-10-11.json)。本轮全部原始失败/后继成功/静态包与图像候选均已冻结，生产未改；提交推送并独立核远端后才继续已记录的一格发电报价。
