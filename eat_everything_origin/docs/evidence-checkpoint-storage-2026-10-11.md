@@ -125,3 +125,13 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 沿用完整manifest原字节复用与独立暂存Git blob检查，归档/校验独占期间不动GUI/日历/RUN；两个actual0及独立PASS后仅本轮五任务docs/新切点/回执提交推送核远端，再执行唯一正常采用。旧冻结原件和生产41文件0.2.0保持，本轮非Mod修复、非完整路线。
 
 第十九切点归档actual0，冻结2026-10-11T04:15:13.719437+00:00；完整26430源项/1055805438字节，复用26035、新复制395/18147215字节。独立暂存原字节校验PASS/actual0，26506唯一blob/1086247791字节；[独立回执](evidence/priority-native-second-outpost-capture-and-supremacy-quote-delta-staged-verification-2026-10-11.json)。原零字段FAIL/后继83PASS、真实失守FAIL/后继85PASS与正常至高报价均完整保留，尚未购买；提交推送核远端后继续。
+
+### 第二十切点实施前计划
+基线第十九切点native-second-outpost-capture-and-supremacy-quote/c3d2662c1bd0cb641555b5f9e956f4013ccaa6d4，已push及独立完整SHA核验。新唯一标签native-paid-supremacy-capacity-and-inner-outpost-battle。待当前唯一10.13诊断日实际结束并暂停、原V54和pending调查保存后，完整冻结：两Git原退出；至高正常点击/确认/单笔6466.21278/19PASS/原源静态/原生135131 UI与首单日85PASS；全civics/source；新双建设driverV2/source/static/首30日85PASS与第二30日原三FAIL/driver1/未派发step3；103实际battle调查、旧1090原生恢复/report到期、V54源静态/原87PASS；两假小行星pending原scope与首次截图/原版完整来源/正常一次选择265、36PASS及所有导航/无第二选项/仍pending264；本唯一诊断日实际结果，包括任何FAIL或未知变化，不预设通过或原生重复已消除。全部SAV/UI/OCR/未过滤错误/命令原stdoutstderr/实际退出和私有静态草稿回执均不漏。
+沿用全manifest原字节复用/独立暂存Git blob校验；归档与校验独占期间不操作GUI/日历/不写RUN，两个actual0且独立PASS后仅五任务docs、新切点、回执提交推送并独立ls-remote核完整SHA。生产41文件0.2.0保持，未新增Mod或P工具缺陷；完成切点后继续103逐日战斗、后方船坞出厂补兵清路、第三吞噬/真正武灾矿物舰与长期重载，非完成路线/非新公开发布。
+
+第二十归档actual0，首独立校验actual1：新RUN内native_selected_history import产生__pycache__/native_selected_history.cpython-314.pyc已纳入完整manifest，但默认git add受忽略规则影响未暂存该原件。该轮验证还在git add子进程实际退出前启动，流程顺序失误须纠正；不能凭启动调用当完成。原失败和完整报错另存回执。先确认git add实际0，再仅对本唯一新切点目录git add -f，等待实际0，然后重新执行只读独立校验并保存实际结果；不是重跑GUI/购买/日历，也不改原失败。所有manifest原件都必须进索引，不删pycache或缩范围绕过。
+
+补齐切点pycache并等待git add -f实际0后，第二校验actual1指出新建的首失败回执本身尚未暂存。只读核源码确认校验器还遍历evidence根目录所有priority-*.json，因此新增任何任务回执均须先暂存。第二原失败另存，先明确暂存本轮五docs和两失败回执、确认实际0，再第三次独立只读校验；期间不新增未暂存回执、不动GUI/RUN。两次均为本任务归档执行顺序/暂存遗漏，不能写成Mod或P验收工具缺陷。
+
+第二十切点归档actual0，冻结2026-10-11T04:58:47.256812+00:00；完整26758源项/1069588391字节，复用26429、新复制329/13792435字节。补齐两次暂存遗漏后第三次独立原字节校验PASS/actual0，26837唯一blob/1100461470字节；[独立回执](evidence/priority-native-paid-supremacy-capacity-and-inner-outpost-battle-delta-staged-verification-2026-10-11.json)。原暂存失败回执一并保留；未重复游戏日历或购买，生产未改。提交推送核远端后继续已记录V55与第三战短步。
