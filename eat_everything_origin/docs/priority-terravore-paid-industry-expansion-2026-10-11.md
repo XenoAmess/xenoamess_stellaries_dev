@@ -189,3 +189,19 @@ V23 SHA d86eb948e3fddfb8502fa2de83cc931f088ab316ab86af941a87e6163eeb2763，现�
 重工业付款独立14项全PASS/actual0，源码SHA5e44523f27ccd53a4c32338039e1ca0743fee37e5e3b1763b9f0ae3be30bdd53；只扣800矿、清障后追加360工作订单，旧建筑/岗位/住房完全保持。现按前述唯一一日日历到2270.05.16／terravore-dual-civilian-first-work，绑定本付款proof与guard actual0，只读校准殖民船首日实际工作，清障应30→31、重工业尚0。之后新活动观察器按实际工速实施，不重复日历。
 
 idle23两步50原生日actual0至2270.07.06，两端V33各56PASS/actual0。末SAVc1d92b58c32b2743f589fa81ac5f82317eb1fd17a4dc90e3e9732b85e8a6d541；母星10776/源184，清障81/120、殖民船67.83/360、重工业仍0/360排队，第三吞噬5/29。27军舰/原平台/后方/前哨/EEP C37/D11/Menace105与2814日志保持。真实端点月净{'energy': '-14.52332', 'minerals': '51.97903', 'alloys': '-3.11069', 'unity': '168.64106', 'trade': '84.39842'}，仍不称经济恢复或整路线完成。下一按第十四切点方案冻结本轮完整原件并独立核暂存，提交推送核远端后才唯一单日核敌返场实际状态。
+
+重工业后续完成检查的原版来源补证：普通格式塔星球zone_foundry调用shared_industrial_foundry_zone→jobs/zone_foundry_add，job_fabricator_add=$AMOUNT$，当前五蜂巢区划/尺度100对应预期新增500岗位，仍以实际完工值为准；zone也调用shared_city_non_urban_zone_modifiers，不把绝对住房修正当转换相对差。保存以下完整原始源码及SHA到RUN的native-heavy-completion前缀供后续绑定，禁止提前当作投产验收：[('common/zones/00_zones.txt', 'ce48f6aea3b5a5a30dabe15b46b5a32ac9149389b3d412d7f0cccf7f1562dcaa'), ('common/inline_scripts/zones/shared_industrial_foundry_zone.txt', '355351b6e6b151e1ff1f6bbf22b72977acc850870f907abe0231362b74137d95'), ('common/inline_scripts/jobs/zone_foundry_add.txt', '76a0376e41fa879774ada460893a3dafe1ea349166d076143e08f2b72a516d88'), ('common/inline_scripts/zones/shared_city_non_urban_zone_modifiers.txt', 'fe613595b2109be9f38738b225ef0d57a8c8e1cbd2928363c4e4c5cb2001b397'), ('common/scripted_variables/100_scripted_variables_zones.txt', 'f67b8c2d1d53c5b392ae60d0b89d069b581e59dee52f8102a2a47c430b216155')]。
+
+### 2270.08.15清障实际完成与V36实施前
+唯一单日actual0/SAVa01e644c43e6a5124c8caebfc8f4d76573e289038c9f2a81c0a83732a88c181b；前08.14/14386cc37408a93ebb99f0ac4c4cc6a38d31a78a7d52e4d2b11d5e23fb03e92b为clear119。实际item1224736779→none、queue0[clear,heavy]→[heavy16777257]，heavy仍0/360。deposit272保持同ID/holder physical7，type d_failing_infrastructure+swap_type d_fertile_lands→仅type d_fertile_lands/原holder，母星完整deposit ID列表未变。三矿15/3000满岗、住房13800及旧工业建筑/岗位保持；所有真实库存与三科研bank保持，无再次扣费/新增人口区划住房，错误2814。
+新增不可变V36从冻结V35派生，仅将原清障工作中约束替换为实际完成状态机：完成前仍原付费raw/精确逐日工作且<120，完成后clear不被任何原生队列引用且none或严格同槽更高代复用、原272精确fertile/holder7、队列仅heavy、工作语义120完成。两端可由未完→已完或已完→已完，不能倒退；原17PASS付款锚点和所有三矿/母星设施条件保持。重工业两端完整raw仍原付款/0，仅队列按是否clear完成分别核两项/一项。新增第58项绑定本唯一119→消耗一日/准确两SAV/前V35 57PASS/actual0/source02e.../原native blocker定义SHA、同ID deposit swap与库存bank保持；后续固定引用本首V36 58PASS/actual0/SAV。其它56条件保持，原首工速锚点继续固定V32，不用派生自身。验收同原两SAV独立58全PASS/actual0；不提前认定重工业开工或完成。通过后唯一一日08.16／terravore-heavy-first-work，再实际校准转换工速、原建筑尚在与库存，不将UI258日套成未知工速。
+
+V36源生成首次在执行助手前中止：内联生成器把原行误记为clear_b,clear_a=bi[...]，实际冻结V35写作列表推导式。生成器assert替换前提失败/终端actual1，原工具调用及Traceback保留；V36文件未写、未执行助手/形成proof/GUI/日历，前述实施方案已先记录。现仅修正未执行生成稿的匹配行，原游戏08.15原SAV保持，不重跑任何游戏操作。此为私人源生成错误，不是Mod或open_kaishek缺陷。
+
+清障实际完成V36独立58全PASS/actual0，执行源码SHA01d294c5566a20771d71fb95072640d4ef64062fbeadb665f891af2e1f09d589；原同ID fertile swap/订单消耗/无重复付款已核。现在按前述唯一一日至08.16／terravore-heavy-first-work，绑定本58PASS/actual0，实际读首工作，不把0守卫强跑到已施工状态。
+
+### 重工业首工作日与V37实施前
+唯一一日actual0至2270.08.16/SAVe390ea18fafcc5e913db5795e261c71ea445a82d203b916e69c37b4cb67c7b48，转换16777257实际0→1.4/360，殖民121.03/360。旧zone61仍zone_unity/建筑83、16777258、86完整三节点，原岗位包括协调2000/铸造200/矿工3000保持，住房13800/人口10766和源200保持，真实资源及科研bank不变、error2814。
+新不可变V37从冻结V36派生，仅把重工业0等待约束改为原14PASS订单全部nonprogress raw保持、唯一queue0转换单、两端progress=1.4×自08.15起原生日且每段+1.4×days、0..小于360；母星旧特化/建筑/岗位条件仍保持，不把施工当投产。新增首工速锚点绑定唯一准确两SAV/08.15→16一日/前V36 58PASS/actual0/source01d.../0→1.4/真实bank保持，后续固定本V37首60PASS/source/SAV；再新增一项绑定已保存五份原版重工业/岗位/住房/尺度完整源码SHA与本机当前相同。原其它57约束保持、清障完成固定V36锚点不误绑自己。验收同原两SAV独立60全PASS/actual0；之后稳定采样仍先到08.30，9月源超过200的真实分配另读，不预设副岗公式。
+
+2271.02.02后年度独立V41 63PASS/actual0：清障完成保持、重工原订单233.8/360、殖民船341.81/360，原岗位/住房保持。源首年度100合金奖励不能算重工业投产收益；实际E/A仍负，待转换真正出厂后再验收月账并决定是否追加发电。殖民船预计02.16出厂仅是当前1.33工速计算，须单日实际确认。

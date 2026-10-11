@@ -95,3 +95,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 沿用现有完整source manifest复用与独立暂存blob原字节校验；归档/校验独占期间不动GUI/日历/RUN。两个工具actual0且PASS回执后，仅五相关docs、新切点/回执提交推送并核远端；原冻结原件、生产41文件0.2.0保持。远端核准后，再唯一单日核敌舰预计2270.07.07返场实际状态，不将预测当返场、不强跑旧MIA守卫。
 
 第十四切点归档actual0，冻结2026-10-11T00:54:21.081447+00:00；完整24547源项/973863649字节，复用24298、新复制249/11533327字节。独立暂存原字节核验PASS/actual0，24618唯一blob/1002182068字节；[独立回执](evidence/priority-native-yomon-colony-and-heavy-conversion-paid-delta-staged-verification-2026-10-11.json)。原冻结文件未追加；仅本轮五相关docs/切点/回执提交推送并独立核远端后继续原生单日。
+
+### 第十五切点实施前计划
+第十四切点已提交178848862fa2c3737793cdf1d7634514fbb9234f并push及独立ls-remote实际0/完整SHA核准。新唯一标签native-first-annual-consumption-clear-completed-and-heavy-work，基线native-yomon-colony-and-heavy-conversion-paid/该commit。待首年度下一日独立PASS/actual0后冻结，若未知FAIL需调查则先冻结失败。完整保存敌825实际预测日期仍MIA/次日返场、源人口200/216及岗位分配、清障272真实swap/重工首日1.4、V34以后全部观察/驱动/逐月SAV/原始日志退出、年度12/29/两毁损/20破坏度/100合金与科研单端账、V39 target路径TypeError原actual1及V40 65PASS，下一日科研/破坏恢复实际结果；不重复原生日历/订单，也不扩大推荐范围。
+沿用现有完整source manifest原字节复用和独立暂存blob校验；归档/核验独占期间不动GUI/日历/RUN。两个工具实际0且PASS回执后，仅五相关docs、新切点和独立回执提交推送核远端，旧冻结文件及生产41文件0.2.0保持。远端核准后再适配后年度预出厂阶段，殖民船出生边界须单独核准。
+
+第十五切点归档actual0，冻结2026-10-11T01:53:58.862445+00:00；完整25214源项/1005796939字节，复用24546、新复制668/31942003字节。独立暂存原字节校验PASS/actual0，25286唯一blob/1034652438字节；[独立回执](evidence/priority-native-first-annual-consumption-clear-completed-and-heavy-work-delta-staged-verification-2026-10-11.json)。旧原件未追加，下一先提交推送并核远端，再执行已记录的唯一殖民船出厂前边界。
