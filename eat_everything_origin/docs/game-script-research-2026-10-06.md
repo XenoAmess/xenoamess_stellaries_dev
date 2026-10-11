@@ -576,3 +576,6 @@ Stellaris4.5.2本次前哨99%→实体完成：01.12原付费模板201326648，0
 
 本机4.5.2实测至高采用UI6467，对应真实凝聚6466.21278；整数UI只可ceil核价。采用后次日实际舰容135/131，不能将源码base_add20直接冒称最终显示只增加20。第三场原生103前哨战10.09开始，1061/178与同敌825交战；已被俘1090仍国家1所有，10.12恢复hull331并移除disabled，精确支持5000*enable_at_health0.05阈值候选，不能把另处战斗当夺回181。
 原版grand_archive.2800具有非空set_first_contact_starting_stage效果；first_contact_effects.txt设20年recent_first_contact_process_started冷却并按cutholoids选路径，on_first_contact_started再经action.635延迟story.7一天。此次同scope16777275存在pending264/265；正常选择实际265后，接触stage base_contact_set→cutholoids_stage_1/difficulty2→3，active event264移除而events副本/pending264保留，未有第二次选项。原版UI显示阶段2/80日/需要特使；不将cutholoids_stage_1这个内部阶段名与UI阶段2误判矛盾。首ACK36PASS只证明该实际转移与全经济/舰队/建设保持，重复pending生成根因未定位，不能归为Mod缺陷或谎称已清除。只另准一个原生日诊断并独立检查，不泛白名单其他pending。以上为Stellaris本机原生源码/存档机制，不未经验证向CK3移植。
+
+第三战103同样实证原前哨capture：10.23站1061/fleet178从0归1、同建造日期2202.02.02/同设计184549404，hull1/disabledyes/max9150→5000；报告245外date10.22/start10.09/we_disabled/本方count1lost0/敌count[2,5,4,1]lost0。原27军舰与Menace105保持，不能把前哨失能当军舰死亡。完整调查与原89三FAIL/91后继PASS按次保留。上述已解释边界仅本机Stellaris机制，未将CK3方言套用。
+至高实际采用后09.12→10.12完整30日，原27舰两月维护categories ships/ship_components E合46.92536/A15.11652保持，采用前E57.99735/A19.06069；同时基地维护7→6，不能把所有E净增长单归因舰容。真实六库存差额与after.current_month净值一致、after.last_month等于before.current_month；库存封顶1000影响力/50000贸易收入丢弃须单列，不报告为账差。15项独立专项actual0，新增六舰维护仍未测试。

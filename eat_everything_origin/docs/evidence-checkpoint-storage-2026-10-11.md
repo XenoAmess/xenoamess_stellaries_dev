@@ -135,3 +135,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 补齐切点pycache并等待git add -f实际0后，第二校验actual1指出新建的首失败回执本身尚未暂存。只读核源码确认校验器还遍历evidence根目录所有priority-*.json，因此新增任何任务回执均须先暂存。第二原失败另存，先明确暂存本轮五docs和两失败回执、确认实际0，再第三次独立只读校验；期间不新增未暂存回执、不动GUI/RUN。两次均为本任务归档执行顺序/暂存遗漏，不能写成Mod或P验收工具缺陷。
 
 第二十切点归档actual0，冻结2026-10-11T04:58:47.256812+00:00；完整26758源项/1069588391字节，复用26429、新复制329/13792435字节。补齐两次暂存遗漏后第三次独立原字节校验PASS/actual0，26837唯一blob/1100461470字节；[独立回执](evidence/priority-native-paid-supremacy-capacity-and-inner-outpost-battle-delta-staged-verification-2026-10-11.json)。原暂存失败回执一并保留；未重复游戏日历或购买，生产未改。提交推送核远端后继续已记录V55与第三战短步。
+
+### 第二十一切点实施前计划
+基线第二十切点native-paid-supremacy-capacity-and-inner-outpost-battle/1b2c2dcabc77d93f3104c255a75288194af505d6，已push及独立完整SHA实际0核验。新唯一标签native-inner-outpost-capture-and-capacity-ledger。待当前唯一10.24校准实际结束/暂停且V56实际结果保存后，完整冻结：两Git原退出；V55未执行SyntaxError草稿与最终静态0/原89PASS；第三战3单日89PASS/原driver/source/static、健康3日校准89PASS/单日critical1三段89PASS、原capture单日89三FAIL/driver1/未派发下一日；完整103归属/report245原调查/同原SAVV56 91PASS/原源静态/单日10.24实际结果；真实至高后30日维护/月账15PASS及完整源码/静态/执行；所有SAV/UI/OCR/原未过滤错误/stdoutstderr/实际退出及原生来源。任何新FAIL/未知边界也完整记录，不预设10.24通过或全路线完成。
+归档/校验独占期间不动GUI/日历/不写RUN。沿用完整manifest复用与独立Git blob校验；从一开始仅对本新切点目录git add -f（包含被忽略的原始pycache），等实际0后再暂存全部本轮任务docs及存在的新priority回执，等实际0才启动独立校验，期间不创建新的未暂存priority回执。两个actual0且独立PASS后补回执/五docs、检查任务范围、提交推送并独立核远端。旧切点原件不改，生产41文件0.2.0/Steam离线保持；核远端后继续船坞11.03候选真实出厂与补兵清路，不能以归档替代后续验收。
+
+第二十一切点归档actual0，冻结2026-10-11T05:27:46.309721+00:00；完整27133源项/1087127457字节，复用26758、新复制375/17539066字节。按顺序force仅本切点并暂存五docs后，首独立原字节校验PASS/actual0，27213唯一blob/1118417033字节；[独立回执](evidence/priority-native-inner-outpost-capture-and-capacity-ledger-delta-staged-verification-2026-10-11.json)。本轮未重复购买/日历，原89三FAIL与91后继PASS、真实30日维护均保留；提交推送核远端后继续已记录V3建设边界。
