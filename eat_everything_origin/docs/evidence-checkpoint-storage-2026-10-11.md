@@ -173,3 +173,20 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 CUT25实际冻结前补全范围：第三阈值29独立34PASS、7.2原生结算完整观察6项/source及独立51PASS/source97bcc…/actual0、首次wrapper路径错误actual1但未启动child、额外源防御军原文调查、全部正常UI/候选截图/目视审核manifest与住房/月报/局势图标待刷新状态均完整收录。现游戏暂停7.2，不再输入GUI或写RUN直至归档与独立staged核验结束。D盘可用字节以归档前实测记录，保持所有旧证据。
 
 第二十五切点归档actual0，冻结2026-10-11T10:15:29.557482+00:00；完整28934源项/1209093162字节，复用28271、新复制663/68281408字节。首独立staged原字节校验PASS/actual0，29018唯一blob/1242364633字节；[独立回执](evidence/priority-native-second-annual-and-third-terravore-settlement-delta-staged-verification-2026-10-11.json)。包括所有原始失败、原殖民船真实损失/异常、第三51PASS和两候选截图；生产Mod未改。归档/校验期间无GUI输入和RUN写入，冻结前D盘剩余1996947456字节。提交推送与完整远端SHA核验后继续已记录8月刷新及9月建设边界，不把切点校验当完整路线通过。
+
+### 第二十六切点实施前计划
+基线第二十五native-second-annual-and-third-terravore-settlement/b5a7d85ae53d9371f6be02dbe47aa8a885eb3587已push与独立完整SHA实际0核验。新唯一标签native-third-month-refresh-and-physics-colonizer-completion。待当前有界9月建设与完工/出生实际结束、游戏暂停后冻结，不预设9.11特化/9.13出生必通过；若未知边界则如实冻结所有实际结果。
+完整范围包括两Git原退出，原8.1calendar唯一29输入/11原轮询/子进程有意停止actual4294967295及wrapper1/恢复清面板新OCR日期与29回执/正常同日save0；恢复观察source/static/9项全部真；首月41单死亡墓碑格式FAIL、完整原死亡条目回收/目标保持调查、V2静态/42PASS与8.2/8.30全部原件；8.30原42单全局NPC历史FAIL及完整247→248调查/V3静态/43PASS；后续所有实际单日/月账/科研/建设前沿/完工与新船出生的观察/精确守卫/任何新失败/原生来源/全部SAV/GPU/OCR/候选图/未过滤错误/stdoutstderr/actual exits。原死船不复活，不能把新船说成旧航线恢复或矿物舰。
+归档与独立staged blob验证独占期间不动GUI/日历/不写RUN，沿用完整manifest复用；新切点git add -f等actual0，再五任务docs和所有现有priority根回执暂存等actual0，再独立验证（期间不新建未暂存priority JSON）。archive actual0+独立PASS actual0后补真实计数/回执/核任务范围、提交推送/独立ls-remote完整SHA。核剩余D盘空间、不删旧证据。之后继续正常后方新殖民/第四吞星与真正矿物舰/女王高阶/长期重载，Steam离线/生产41文件0.2.0保持。
+
+
+CUT26追加实际范围：9.10原43四战斗FAIL/actual1、完整enemy825/12舰与正确rear153父路径两调查；rear97首版original_owner KeyError/实际1/未生成proof及V2/source/static/45PASS；唯一9.11 calendar/SAV/观察6/source/INV、physics首44单zone槽位FAIL/actual1、完整107→16777323换代两调查和V2/source/static/45PASS；唯一9.12 calendar/观察6/新rear97 native inventory4及精确prebirth43PASS；唯一9.13 calendar和所有实际出生/战损/命令UI调查与精确守卫（未预设成功）。必须完整保留所有失败、输出、源码/pycache、原始错误日志和SAV，不把原始调查读取错误或新舰当Mod修改/原死船复活。D盘此时实测剩余1809223680字节，正式冻结前再核；Steam离线、生产树不变。
+
+
+CUT26正式冻结前：新增出生首45两FAIL与V2/source/static/46PASS/actual0、所有设计缩进/基地orbitals补证、新船战斗UI与14日不可退却悬浮、正常面板操作及新母星展示原图/F12/OCR/manifest全部纳入。当前暂停9.13，新船未脱战，不能称安全殖民或路线完成。现在归档及独立staged核验独占，不再写RUN/操作GUI直到完成；源码和所有既有失败/日志均不改。
+
+
+CUT26归档actual0：冻结2026-10-11T11:41:24.050533+00:00，29457源项/1290995960字节，复用28933、新复制524/81912804字节。首次git add -f实际1，因本切点label与原始长文件名组合超过Git for Windows默认路径长度（terravore-third-post-settlement-month-recovered-original-colonizer-target-investigation.json）；归档原件未损坏/未改名。后续仅该命令使用git -c core.longpaths=true add -f同一切点（不改变仓库永久配置），等actual0再明确暂存任务五docs/现有root receipts；独立原blob验证未开始，归档期间不动GUI/不写RUN继续保持。提交/检查同样使用该命令级选项，保持原始证据路径完整，不删除或缩短原件。
+
+
+CUT26首次独立staged原字节验证PASS/actual0：29542唯一blob/1324981617字节，完整29457源项/1290995960字节，复用28933、新524/81912804。回执[priority-native-third-month-refresh-and-physics-colonizer-completion-delta-staged-verification-2026-10-11.json](evidence/priority-native-third-month-refresh-and-physics-colonizer-completion-delta-staged-verification-2026-10-11.json)。命令级longpaths重试git add实际0；原第一次路径长度失败保留文档，未改原件路径。暂存范围核531项仅本切点526原件/manifest属性与五任务docs，diff --cached --check通过，独立期间无GUI或RUN写入。补回执/本段后立即提交、推送当前main并独立核完整远端SHA；不会把此原字节验证当整路线验收。

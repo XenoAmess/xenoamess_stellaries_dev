@@ -599,3 +599,9 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-11补充：本机4.5.2 common/ship_sizes/00_ship_sizes.txt的constructor:667—677与colonizer:765—775设is_civilian=yes、is_designable=no、auto_upgrade=yes。2272.02.02原生工程科技完成日，同一既有工程船2实际自动设计167773698→184551252，特殊BULWARK_BATTLEWRIGHT_SECTION→DEFAULT_CONSTRUCTION_SECTION，少一SMALL_ARMOR_2、护甲250→125，未发生新造船/手工升级付款，28军舰设计不变。具体特段替换尚未无Mod独立复现；验收只能接受这一原件支持的固定民船变化，不能泛放行所有舰型/最大属性变化或把民船自动换型视为所有军舰已免费升级。证据见本项目priority-terravore-paid-industry-expansion-2026-10-11.md的2.2段及原完整INV/设计，此为Stellaris原生特有规则，未迁移到CK3方言。
+
+### Stellaris 4.5.2：已死亡舰船SAV条目会回收
+本次真实噬岩者存档已确认原殖民船16779140于2272.02.30被原生敌舰击毁，7.2仍保留ships下ID=none，而8.1不再含该ID；对应fleet16778062仍none、实际全部owned舰船/舰队身份保持、目标523全文保持。两原SAV/完整调查f17c37fb575bcc0a8651606e78b8061dee8c76389f2233274444135b1f1893f9与原严格守卫41单FAIL均保留。死亡回归应核该完整ID没有对象、只有缺席或单一标量none且不在owned集合，不能要求none墓碑永久保留，不能将条目回收称复活或将缺键KeyError当Mod缺陷。仅本游戏原生SAV实测结论，不外推CK3或P脚本方言语义。
+
+
+2026-10-11补证（Stellaris 4.5.2 原生SAV，不是P语言语法）：zone特化替换可生成带代数handle并回收旧空槽。本次zone107=none→条目消失，新zone16777323=2^24+107由无条目→physics实体，原旧zone2→none，district1引用同步替换；building注册表独立，building16777323仍是保留实验室，不能因数字相同误认zone实体。完整SAV与107补证见本日paid-industry文档/12c488…调查。验收需按注册表、具体已确认生命周期及所有原引用验证，不能只比较zone对象或要求所有none永久存在；不推出其它游戏采用相同handle表示。
