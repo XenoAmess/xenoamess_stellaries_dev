@@ -101,3 +101,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 沿用现有完整source manifest原字节复用和独立暂存blob校验；归档/核验独占期间不动GUI/日历/RUN。两个工具实际0且PASS回执后，仅五相关docs、新切点和独立回执提交推送核远端，旧冻结文件及生产41文件0.2.0保持。远端核准后再适配后年度预出厂阶段，殖民船出生边界须单独核准。
 
 第十五切点归档actual0，冻结2026-10-11T01:53:58.862445+00:00；完整25214源项/1005796939字节，复用24546、新复制668/31942003字节。独立暂存原字节校验PASS/actual0，25286唯一blob/1034652438字节；[独立回执](evidence/priority-native-first-annual-consumption-clear-completed-and-heavy-work-delta-staged-verification-2026-10-11.json)。旧原件未追加，下一先提交推送并核远端，再执行已记录的唯一殖民船出厂前边界。
+
+### 第十六切点实施前计划
+第十五切点f3e33a7bc4f6d5f257bb78acfd54de8c00fa0cb9已push及独立ls-remote实际0/完整SHA核准。新唯一标签native-colonyship-born-and-postannual-job-reallocation，基线native-first-annual-consumption-clear-completed-and-heavy-work/该commit。暂停2271.03.16、V44首67PASS/actual0；因年度后首次未知岗位分配提前冻结，完整保存出生前359.1/订单none/新舰和原生航线、V42 raw名字缩进单FAIL/V43首65PASS、V25与首月65项2FAIL/实际1/未派发第二步、原生后勤factor10完整源/同282人口岗位重分配/V44首67PASS、两轮Git实际退出、所有原始日志/源码/SAV/原始错误，不遗漏失败，不把正常殖民舰宣传成矿物舰。
+沿用完整manifest原字节复用与独立暂存blob检查；归档/校验期间不动GUI/日历/RUN。两个工具实际0且PASS回执后，仅五任务docs/新切点/独立回执提交推送核远端，旧冻结原件和生产41文件0.2.0保持。之后再实施V26并继续重工业出厂前推进，不缩减完整路线/语言范围或扩大工坊推荐。
+
+第十六切点归档actual0，冻结2026-10-11T02:13:14.557007+00:00；完整25350源项/1012376797字节，复用25213、新复制137/6588709字节。独立暂存原字节校验PASS/actual0，25423唯一blob/1041706904字节；[独立回执](evidence/priority-native-colonyship-born-and-postannual-job-reallocation-delta-staged-verification-2026-10-11.json)。当前只读失败/后继成功原件均完整保留，提交推送并核远端后再推进。
