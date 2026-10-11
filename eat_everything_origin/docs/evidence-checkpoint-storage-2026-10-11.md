@@ -284,3 +284,11 @@ CUT33归档实际0，冻结2026-10-11T18:17:08.799520Z；32591源项/2104378490B
 
 
 CUT34实际结果：freeze2026-10-11T19:04:06.662379Z；source32940文件/2201056712B，reused32590、新350/96688770B。独立Git暂存原字节核验PASS_STAGED_RAW_PRIORITY_DELTA_CHECKPOINT/实际0，33033唯一blob/2238743967B；回执evidence/priority-native-research-transition-and-paid-colonizer-return-delta-staged-verification-2026-10-11.json。全部原件含失败、复核、SAV、日志和源码已保存；仍为暂停证据，不代表完整验收或重载通过。现在只提交本cut、根回执与五份文档，推送后独立核远端完整SHA。
+
+
+## CUT35 方案：敌返航、原生殖民完成与第四吞噬启动
+
+当前全部helper结束，2276.02.01暂停。唯一新label native-colony38-completion-and-fourth-devour-start，固定已推送基线CUT34 native-research-transition-and-paid-colonizer-return/7b6f4ce6f3f498d60424232ce4c1ebf336d40155。完整冻结CUT34后Git原回执、敌825 9.5/9.6/9.7六船MIA返航原始库存V5、两段殖民等待、1.30中文预计UI/2.1实际完成UI与SAV、原V6一FAIL及实际1、独立完成32PASS/实际0源码/原证明、唯一原生决议点击及正常同日SAV、独立启动14PASS/实际0、所有raw日志/配置。依既有复用归档与独立Git逐blob校验协议，archive实际0→只stage新cut+五文档→verify全部新/复用原字节PASS/实际0→写实际计数/根回执、scope/diff→commit/push main/独立远端全SHA。冻结期间不写RUN、不推进游戏，不删任何失败/旧证据，不改变Mod版本或Workshop。仍为暂停证据，不是退出重载或整条路线完成。
+
+
+CUT35实际结果：freeze2026-10-11T19:43:47.353245Z；source33300文件/2290836580B，reused32940、新360/89779868B；独立Git原字节校验PASS/实际0，33394唯一blob/2328962688B，根回执evidence/priority-native-colony38-completion-and-fourth-devour-start-delta-staged-verification-2026-10-11.json。全部原始失败、返航、完成与启动证明原件保留，不代表整条路线或重载验收。提交推送后第一段仅30日2276.02.01→03.01，验证situation50331660首月progress1/仍Q13/32月、源码规定的月度eep.20/延期eep.21行为；未到原生360日随机消耗日期，不应把自然人口增长当噬岩奖励。先执行既有日历与六项观察，独立局势等待组件方案/验收记录后实现，核心全PASS/实际0才继续≤90日、最迟首年原生360日消耗前2277.01.30暂停。未知消息/待选/战斗/工程完成/资源人口异常仍立即停止调查，当前不预宣称女王C60。

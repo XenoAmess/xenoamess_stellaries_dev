@@ -963,3 +963,48 @@ CUT33实际提交3cf40ed104cfe29946eb7cdcc0486dbce25b94ba/main、push实际0与�
 
 
 CUT34实际结果：freeze2026-10-11T19:04:06.662379Z；source32940文件/2201056712B，reused32590、新350/96688770B。独立Git暂存原字节核验PASS_STAGED_RAW_PRIORITY_DELTA_CHECKPOINT/实际0，33033唯一blob/2238743967B；回执evidence/priority-native-research-transition-and-paid-colonizer-return-delta-staged-verification-2026-10-11.json。全部原件含失败、复核、SAV、日志和源码已保存；仍为暂停证据，不代表完整验收或重载通过。现在只提交本cut、根回执与五份文档，推送后独立核远端完整SHA。
+
+
+### 敌825返航只读库存V5方案（先于实现）
+
+既有rear97_native_inventory_v4的固定日期上限2275.08.30/单对≤30日不足以读取已知敌返航日期9.6，不能调用后把固定范围失败误称生产bug。新增独立priority_terravore_rear97_native_inventory_v5.py，仅从原V4复制并将只读固定范围延至2275.09.07、单对≤32日，输出新后缀v5；不改原V4、不推进游戏、不编辑SAV、不新增判定原生舰只应死亡或返航的规则。保持两个SAV/audit真实SHA、完整敌825/fleet及全部12历史舰ID原始entry与存活引用、country1归属、后方base153、war1、construction/zones全量原文，状态仍OBSERVED，不能作为战斗胜负或政体验收PASS。先compile/pyflakes0、wrapper保存源码SHA/rawstreams/实际退出，再用于8.3→9.5、9.5→9.6及必要9.6→9.7；每个日历/六观察/V6必须先实际0，遇未知战斗停下。验收标准为只读4项基础核验全true、原文原件完整保留/实际0及事实回写docs。
+
+
+CUT34已完成提交推送，独立远端完整SHA7b6f4ce6f3f498d60424232ce4c1ebf336d40155一致/实际0。随后唯一32日有界调度到2275.09.05，六观察与25核心全PASS/实际0，SAVacd4d309fb4e5b21e53c1dd8ae5446c7680e666b56d05a253b022c924052af3b；无新消息/本国战斗、EEP及母星保持。只读库存V5/source57861c7c40f51aad2f09d7647720509172a2df9a2d8f42212decd9fe9228cbc4 compile/pyflakes0、基础4核全true/实际0；原敌六船数6→6，仍MIA，war1 battles原文保持。原始库存540d6910cc1099a0dec50ffafb530d3c7a03f60fcfe95307ff267a7ade1345b5完整保留。现在按已记方案仅9.06单日核返航日期，不据日期预称已经返航。
+
+
+2275.09.06敌825仍properties.mia=yes/return_date9.6，原六船及war1 battles保持；日历、六观察、V6 25核心及库存V5四基础核验均实际0。9.07实际非MIA，properties weapon/mobile/valid_for_combat=yes、return_date消失、同六原舰ID，movement origin99，current_order为正常return_fleet_order前往本地starbase129/planet1093，不是原前线37或后方97攻击命令。war1 battles保持，本国active_combat为空；native combat历史块保留不代表正在战斗。9.07 SAV6aedb716f152baae4ed49031645d2a43816e72eaad6179456b18174affbb01d8，日历/六观察/25核心/库存4核全true与实际0完整保留。母星11368/新colony38原生殖民人口83、C49/D14/worlds3/PSI1/Menace885保持，原error未增，无新Mod/P工具bug或生产修改。
+
+下一段依已记殖民等待方案：只复用既有bounded_driver_v2/source2fbafdda…及V6/source012b72c3…，唯一新label terravore-colonization-near-completion-wait，9.07最多两段90+53日到2276.01.30（原生30日月）。每段日历/六观察/25核心实际0且无未知边界才续；任何新增本国战斗、舰损、待选或工程变化立即停，不提交和平/投降。到1.30后必须先读取简中UI实际殖民阶段/预计日期，不自动越过2.01，亦不据人口或正净收声称完成。该方案不改Mod/P工具/原存档。
+
+
+殖民近完成有界调度90+53日各日历/六观察/V6 25项全PASS/实际0，driver实际0，端点2275.12.07 SAV14bbe54e0e83040e5ecd43a2c7141e55a7b5868adab3139d4ebea92cae69de91，2276.01.30 SAVcd6ed6cf0a39d2b79be1b475543f2904db989282060b5ddacacef6934a44df68。1.30简中实际UI仍“正在殖民行星”，tooltip明确2276.02.01完成，截图terravore-colony38-precompletion2276-progress-tooltip-ui.jpg SHA187e00336e4c4e3e039c37c589eef356a001b38c9ac320b37e29ed219d766e50，旧7.28估计得到当前UI再次确认，不以人口判完。
+
+下一仅已知殖民边界唯一1原生日1.30→2.01，调用既有日历及六观察/V6，保留所有实际退出与阶段边界。新殖民完成必须实际简中UI及SAV核对colonizing_species阶段字段/原生殖民领地与人口/母星EEP全保持，未知失败停下；原V6若只报告已知阶段改变也不覆盖原件，新增独立完成组件须先记录其方案、绑定实际原SAV/源码/原始phase边界后才实现，不直接伪造旧PASS。第四吞噬尚未启动，不先宣称女王C60通过。
+
+
+### 2276.02.01实际殖民完成与独立组件方案（先于实现）
+
+唯一单日SAVed8e4bee8bf6924ea713b0ac5338c2528e913d74822f72735b7fe88f1bec92d0、六观察实际0/6全true。原等待V6/source012b72c3…25项恰actual_target523_owned_colony38_native_founding一FAIL/实际1，其他24true，唯一boundary native_colony38_colonizing_species_phase_changed；原件不改写。只读存档显示物理523.colonize_date从原开工2273.11.26更新为完成2276.02.01；owner/controller0、colony38、size13保持，增加save_on_death1。colony38.colonizing_species73消失，殖民人口98→102/全部species73，新增原生TYPE_FINISH_COLONIZE_PLANET通知268/receiver0/date2.01/变量COLONY亚蒙-I、SYSTEM亚蒙。母星11393→11399自然+6，全部EEP变量保持，无pending，无新Mod消息或error。实际简中UI消除进度条、出现决议按钮，正式显示殖民时间2276.02.01及人口102；图terravore-colony38-native-completion2276-ui.jpg SHA68af7ecaf838e3a8e95764c4a34c9f8b67c7ba04d00914889c4a77458d0c2db8。决议面板原生“吞噬星球”已可见，图a336c3e7a19d74e4a1c27a77506726114920ff7aff97713f8a58fb78bd83a3ba。当前尚未点击执行吞噬。
+
+新增独立priority_terravore_fourth_colony_completion_guard.py，目标只验证本对已观察SAV原生殖民完成，保留原25/一FAIL/实际1。实施绑定原V6 source012b…与恰一FAIL/其余24true/唯一phase边界/两SAV固定SHA，复用原24成功核心项，另核六观察/sourcee725…实际0与两SAV、从实际原SAV读colony38旧colonizing_species73→无/102species73与原建船消耗不复生、planet523原13size/owner/controller0/colony38且日期恰开工→完成、唯一原生完成通知268及原中文变量、中文完成图原SHA与OCR完成日期/决议UI。不得泛放任意date改动，不把完成殖民当吞噬结算，不改生产代码/旧V6/P工具。compile/pyflakes0、独立证明全true/实际0且所有原件一致才允许继续第四原生吞噬；新helper证明包含当前SAV/日期与paid_births用于下一原生阶段，不自动推进日历。
+
+
+独立殖民完成组件source879e33c3c82ae67249d62d9588df71e4712eeca044932b9f7858b7f7d1b29d22 compile/pyflakes0，同一原SAV32项全PASS/实际0，原V6一FAIL/实际1保持。当前仅证明完成殖民，无第四吞噬结算。正常悬停原生“吞噬星球”tooltip：剩余Q×2.4月向上取整，母星失联/战斗暂停，噬岩者保留原版随机消费收益；无红色阻断，截图terravore-colony38-native-devour-decision-tooltip-ui.jpg SHA7a4578755f27caf606431e70003ec35d2b01f10d124db66dd596cd2ef0cf0222。
+
+### 第四次吞噬启动方案与验收（先于操作/自动化实现）
+
+仅对本国已完成殖民的物理523/colony38/亚蒙-I，2276.02.01暂停状态，使用当前正常决议UI，点原生吞噬星球行，若有确认界面先检查再唯一执行；禁止脚本触发、effect、SAV编辑、补船/人口/资源。之前32项完成组件实际0与原SAVed8e…为唯一前置。剩余size13且无旧噬岩损害，应捕获eep_q13、eep_months32、eep_active/eep_native/being_devoured/原生recently_eaten_planet360日与being_devoured_modifier、恰一个新增situation_eep_devouring/owner0/target523/progress0。现有源102本族人口已≥100，应无额外母星种子迁移；启动不结算C/D/worlds，不预记C62/D17或女王C60。
+
+执行后先用既有priority_native_save.py/source19fea261969af27e547860acead4fa010e90612d8b6d2904b1b6b11ba49ee82e唯一同日原生存档，保存原始error前后、源码依赖/实际退出与简中UI。然后独立新启动组件读取前后原SAV/audit，绑定完成32项实际0/源码/SAV与正常存档实际0；核母星11399/源102本族人口及已有全部EEP结算变量/核心结构/27付费区划岗位保持，true bank/库存同日无扣费/赠送，政府/AP/传统/危机状态保持，owned ships/fleets集合及实际舰设计数量不变，无新增战斗或未知待选、production41/SemVer0.2.0/简中树与原error2814B/SHA保持。保留前后全部目标planet/colony/situation与country原文。任何未知差异先调查，原件不覆盖；只在启动组件全true/实际0后进入≤90日有界局势等待，遇原生年噬岩随机收益、新阶段/通知或战斗等边界先核验，不直接套殖民等待V6。生产Mod与P工具不改。
+
+
+第四次原生吞噬实际启动：正常UI唯一点行立即执行、无确认窗，无脚本触发。2276.02.01同日SAV53c2273f3686e57c8270446a5e2e3fca8b259cfb4e11c31a134660cca91dbec2，原生存档实际0/new_error0。新situation50331660 type situation_eep_devouring/country0/target planet523/progress0/approach eep_devour_approach；source变量eep_q13/eep_months32/eep_old_damage0/eep_seed_existing102/eep_seed_need-2（已有102超过100，因此无需种子迁移，负2为正常算术，非错误）。eep_active/eep_owned_colony_event/colony_event/eep_native/being_devoured与recently_eaten_planet360日、being_devoured_modifier均实际存在。独立启动source091aa3d3db0c131f96d4ca8f051e67b0d143055d5c4240cd8b46152a8c367411 compile/pyflakes0，14项全PASS/实际0：母星11399/源102本族、所有EEP结算变量、true bank/有效库存、核心结构27付费等级/岗位、原25军舰/原全部舰及设计保持，无新增待选/消息/战斗或error，生产41树/0.2.0保持。尚未结算、女王C60未触发，不能宣称其通过。
+
+
+## CUT35 方案：敌返航、原生殖民完成与第四吞噬启动
+
+当前全部helper结束，2276.02.01暂停。唯一新label native-colony38-completion-and-fourth-devour-start，固定已推送基线CUT34 native-research-transition-and-paid-colonizer-return/7b6f4ce6f3f498d60424232ce4c1ebf336d40155。完整冻结CUT34后Git原回执、敌825 9.5/9.6/9.7六船MIA返航原始库存V5、两段殖民等待、1.30中文预计UI/2.1实际完成UI与SAV、原V6一FAIL及实际1、独立完成32PASS/实际0源码/原证明、唯一原生决议点击及正常同日SAV、独立启动14PASS/实际0、所有raw日志/配置。依既有复用归档与独立Git逐blob校验协议，archive实际0→只stage新cut+五文档→verify全部新/复用原字节PASS/实际0→写实际计数/根回执、scope/diff→commit/push main/独立远端全SHA。冻结期间不写RUN、不推进游戏，不删任何失败/旧证据，不改变Mod版本或Workshop。仍为暂停证据，不是退出重载或整条路线完成。
+
+
+CUT35实际结果：freeze2026-10-11T19:43:47.353245Z；source33300文件/2290836580B，reused32940、新360/89779868B；独立Git原字节校验PASS/实际0，33394唯一blob/2328962688B，根回执evidence/priority-native-colony38-completion-and-fourth-devour-start-delta-staged-verification-2026-10-11.json。全部原始失败、返航、完成与启动证明原件保留，不代表整条路线或重载验收。提交推送后第一段仅30日2276.02.01→03.01，验证situation50331660首月progress1/仍Q13/32月、源码规定的月度eep.20/延期eep.21行为；未到原生360日随机消耗日期，不应把自然人口增长当噬岩奖励。先执行既有日历与六项观察，独立局势等待组件方案/验收记录后实现，核心全PASS/实际0才继续≤90日、最迟首年原生360日消耗前2277.01.30暂停。未知消息/待选/战斗/工程完成/资源人口异常仍立即停止调查，当前不预宣称女王C60。
