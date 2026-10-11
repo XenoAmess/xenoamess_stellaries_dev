@@ -532,3 +532,7 @@ Stellaris4.5.2本次前哨99%→实体完成：01.12原付费模板201326648，0
 ### 2026-10-11：Stellaris 4.5.2 原生殖民完成与实例保留
 噬岩者实机1085/colony37于2270.01.30→02.01完成：colonizing_species清除，physical colonize_date从2267.10.12殖民阶段起点重写为2270.02.01完成日；普通简中PlanetView同步显示殖民时间。原district68/zone16777291在殖民期间已存在，完成未新增区划，而是将首都building130替换为33554455、逻辑岗位实例重建。旧建筑130仍存在且精确 killed=yes，当前zone只引用新建筑；不能要求旧对象立刻被删除。旧popgroup335544348由新402653219替换，source99→103的真实增长以colony.last_month_growth_data的99+4为准，新group.last_month_growth=103是初始化而非103新生人口。新源住房usage暂0不等于丢人口；实有人口/归属/语义链及后续缓存须分开核。
 证据：RUN20261009T044016Z，01.30 SAV2b9bac27bd0fe02ceeba67997143100999badc1c481146ed68c974cf8830bde3、02.01 SAVae5c07eb6112d217a7e9163c4b1ed8f4610083a8700ede82b73527c9b357202f；V28原45单FAIL/actual1完整保留，V29仅精确保留体和无zone引用修正后46PASS/actual0。该结论限Stellaris实例序列化，不推广CK3，也非P工具缺陷。
+
+### 2026-10-11：原生清障队列与殖民后的自动迁移
+母星physical7/colony0的清障item1224736779与district建设同处planet queue0/simultaneous1。实际300E付款后按[第三矿905969668,清障1224736779]串行，不会立刻清障；UI120日不含排队。矿区2270.04.15完工后04.16清障实际0→1/120，05.15达30/120，工速1/原生日；不同于同星采矿1.4，不能混用。清障单buildable_clear_deposit_blocker.planet=0指colony0，deposit272；旧已消费1207959563=none墓碑仅被低24位11同槽+1世代新ID替换，所有其它原item raw保持。该差异是Stellaris实例实现，不是P工具缺陷或CK3规则。
+新殖民完成后自动迁移有真实增长分类：2270.03.01母星10826→10816（EMIGRATION16/GROWTH6），源103→119（IMMIGRATION16），全国净增6；05.15继续同来源模式。source吞噬启动时同日无需手动迁种的结论，不排除之后原生自动迁移；不能把母星下降视作EEP丢人或把源迁入视作制造奖励。原birth/group/colony真实账本与flags须结合读，不能仅凭单星人口差推效果。

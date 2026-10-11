@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\priority_terravore_war1_battle_observer_v30.py", line 676, in <module>
+    clear_b,clear_a=[q.block(raw,'1224736779') for raw in [bi,ai]]
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\eat_everything_origin/tools\audit_save.py", line 70, in block
+    return next((value for name, value, obj in fields(text) if name == key and obj), '')
+  File "D:\workspace\xenoamess_stellaries_dev\eat_everything_origin/tools\audit_save.py", line 70, in <genexpr>
+    return next((value for name, value, obj in fields(text) if name == key and obj), '')
+                                               ~~~~~~^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\eat_everything_origin/tools\audit_save.py", line 25, in fields
+    for key, _, _ in iterator:
+                     ^^^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\eat_everything_origin/tools\audit_save.py", line 15, in tokens
+    for match in TOKEN.finditer(text):
+                 ~~~~~~~~~~~~~~^^^^^^
+TypeError: expected string or bytes-like object, got 'dict'

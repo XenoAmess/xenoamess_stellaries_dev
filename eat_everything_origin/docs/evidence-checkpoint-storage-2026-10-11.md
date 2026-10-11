@@ -83,3 +83,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 沿用既有完整manifest原字节复用与独立暂存blob校验，归档/核验期间禁止GUI/日历/RUN写入。两个工具actual0且回执PASS后，仅五相关docs、新切点和独立回执提交推送并核远端。旧冻结原件与生产41文件0.2.0保持。不把暂停切点当重载验收，不扩大推荐或完整路线数。远端核准后才继续正常母星清障报价与订单。
 
 第十二切点归档actual0，冻结2026-10-10T23:44:35.055566+00:00；23837完整源项／942951756字节，复用23633、新复制204／8795937字节。独立暂存原字节校验PASS／actual0，23906唯一blob／970468897字节；[独立回执](evidence/priority-native-colony-completed-and-third-devour-started-delta-staged-verification-2026-10-11.json)。全部首次失败与后继成功原件保留；仅五相关docs、新切点和回执提交推送核远端，当前生产0.2.0未改。
+
+### 第十三切点实施前计划
+第十二切点27af1de8d9dc08807c48934887348511b981c1f6已push及独立ls-remote实际0/远端SHA核准。新唯一标签native-three-mines-budget-clear-work-and-colony-quote，基线native-colony-completed-and-third-devour-started／该commit。暂停2270.05.15，冻结清障300E付款V1墓碑误报原FAIL/V2 17PASS、V30 raw类型异常/实际1/V31 49PASS、V17/18调度与三矿实际全完工、吞噬首14日/月时序、原生自动迁移、清障工速V32 50PASS/V19、全三矿30日预算16PASS、白绮吞噬CG原图候选、亚蒙正常物种375M150A报价、全部原始日志/退出和完整源manifest。下一殖民尚未付款，不把报价图当订单。
+沿用既有delta完整原字节复用与独立暂存blob校验；归档/核验期间不进行GUI/日历/RUN写入。两个工具actual0且回执PASS后，仅五相关docs、新切点/独立回执提交推送并核远端，之后才正常点击殖民。旧冻结原件/生产0.2.0不改，当前非完整路线/重载验收。
+
+第十三切点归档actual0，冻结2026-10-11T00:22:49.143818+00:00；完整24298源项／962330322字节，复用23837、新复制461／19378566字节。独立暂存原字节核验PASS／actual0，24368唯一blob／990236193字节；[独立回执](evidence/priority-native-three-mines-budget-clear-work-and-colony-quote-delta-staged-verification-2026-10-11.json)。旧原件保持，五相关docs/本新切点/回执提交推送并核远端后，才继续同暂停日期下一正常殖民。
