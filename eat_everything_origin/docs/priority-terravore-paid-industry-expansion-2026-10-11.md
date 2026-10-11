@@ -923,3 +923,43 @@ V5源码06a94ec539a277698254163315d6de0f21adb953cbb9ef77134a5d578669b554，静�
 
 
 CUT33归档实际0，冻结2026-10-11T18:17:08.799520Z；32591源项/2104378490B，复用31948、新643/188796613B。首次独立Git index原字节校验PASS/实际0，32683 blobs/2141459080B；根回执evidence/priority-native-MIA-returns-and-paid-starport-complete-delta-staged-verification-2026-10-11.json。四支原MIA军舰舰队/五船实际返回、唯一125合金付费星港完成与23核心检查通过，仍未完成殖民或第四吞噬。原失败和边界保留；无已确认新Mod/P工具bug、无生产修改。现精确提交本cut/五任务docs/rootreceipt、push main并独立核完整远端SHA。
+
+
+CUT33实际提交3cf40ed104cfe29946eb7cdcc0486dbce25b94ba/main、push实际0与独立ls-remote完整SHA匹配实际0；全部原证据/五任务docs已提交。本轮截至7.28仍无已确认新Mod/P工具bug、生产41/0.2.0未改。
+新增有界殖民等待调度实施方案：复用原生calendar/source6638…、完整6观察/sourcee725…、V5/source06a94ec5…/23核心；起7.28，单段≤90日，最多5端点，绝对上限2275.08.01（已知原付费MIA殖民船8.2前一日）。实际预期10.28/2275.1.28/4.28/7.28/8.1，不提前称目标完成。每个前置须实际PASS/0、源码与SAV吻合、native_colonization_calendar_ready真/边界空，才可按其最大日数推进；任何pending/战斗/Menace阈值/新Mod通知/殖民阶段/失败/原日志或生产变化，或max0，立即停止，不自动越过已知日期。各子调用按既有wrapper保留全原streams/source/实际退出，静态0后启动。调度只串联既有检查，无新Mod代码、注入或地图改写，达到批上限也不是全路线通过。未来相同调度可按另行先记录的更早边界复用；硬限单批≤6段、总日数≤段数×90且绝对日期不晚于2276.01.30，任何未知边界仍停下。
+
+
+### 原生工程研究完成与自动设计边界（实施前）
+
+殖民年度批/source0a6f32c5…实际1停在第三段；前10.28/2275.1.28两段各23核心/6观察全PASS/实际0。第三唯一90日至2275.04.28日历与6观察均实际0，SAVf8c4f5eb1c6eaa64ab3ba07c0b7d23726f4c77827920e19fb24f746b76d29875；V5/source06a94ec5…原23仅两FAIL（true_P_S_bank_nondecreasing_original_Eng_queue、no_unpaid_new_owned_ship_original_ship_designs_held）、21通过，边界仅native_engineering_queue_changed。保留原FAIL/实际1及调度退出1，未继续第四或第五段。EEP全部变量/母星结构岗位/25军舰/真实预算端点与原error均保持。
+
+完整调查hash0fc0dea9a13683c9f91c3da572dbef43011008f300fc96870d5fa185e8f9d1c0与原生源码补证hash1a2af952470aa3d8fe66e3db56e949eab58bde65dd4349da69d558858fa56d7f：已研究科技85→86，仅新增tech_mass_drivers_3/level1；原工程队列“轨道炮”→tech_starbase_4“星堡”（原生简中technology_l_simp_chinese.yml:291/100），新队列date2275.02.02/progress65.55756。真实物理bank2412.54957→2633.25522、社会8305.03777→8383.62361、工程0保持。原生alternatives/potential/last_increased_tech更新和科技表新增与完成相符，不能冻结旧队列/选项或假定原tech永远不完成。
+
+没有新增或移除owned ship。七艘军舰的actual design/growth_stage均保持，仅upgrade候选134219607→301991672，候选corvette组件SMALL_MASS_DRIVER_2→SMALL_MASS_DRIVER_3，未实际付费升级军舰。工程船2实际自动设计184551252→251660011，原fleet2/原舰身份保持，375船体/320盾保持、甲125→250；新constructor的BULWARK_BATTLEWRIGHT_SECTION在原版overlord.txt:1624定义为constructor/4个小通用槽，没有国家或臣属限定，不据名字推定国家变为戍卫。原版00_ship_sizes.txt:645 constructor明确auto_upgrade=yes/is_designable=no/components_add_to_cost=no，:101注释说明自动保持设计并升级现存移动船；因此工程船原生自动更新与额外装甲有原版依据。正式Mod无ship_design/create_ship/overlord/bulwark/change_government脚本，EEP状态全保持，目前未确认新Mod或P工具bug。原生领袖升级通知也保留，不当作女王新阶段通知。
+
+独立等待V6方案：保持全部原件和原23两FAIL；绑定原FAIL恰两项/21true/实际1/source06a94…/两SAV及完整调查/源码补证哈希。确认原85科技级别全部保持且仅追加轨道炮level1，下一原生工程队列为星堡；物理/社会bank正常、工程bank仍0。只在这个已核具体日期/SAV边界允许科技选项/已研究表刷新，未来无新完成时要求新队列类型/日期及已研究表保持、progress单调；新未知科技变化仍停下。只在这个原生边界允许军舰upgrade候选刷新而actual design保持，以及原船2按原生constructor自动升级；具体变化须完整原INV逐舰匹配、候选属于本国自动设计，无新增船/真实付费操作。未来普通等待仍要求原实现保持（原付费站舰1931按已核范围），不能泛化为任意免费战舰更新。V6新文件/static0/独立同SAV证明/实际退出保留，确认PASS才恢复后续日历；不改生产代码或P工具。随后只剩最多两段90+3日至已知MIA殖民船返航前2275.08.01，新调度仅更新已核V6来源绑定、上限及所有停止规则保持；不重跑此前三个日历。
+
+
+独立V6/source012b72c3d3981840c21bcea0f3b1ea6d9cbabf3686a1c84d53fa4961ca2bf650 compile/pyflakes0、同一原SAV25全PASS/实际0。已绑定原23恰两FAIL/21true/实际1和完整两调查源、原生constructor auto_upgrade规则与唯一新增轨道炮level1、军舰实际设计保持/仅候选刷新、原船2自动设计更新，无新舰。当前4.28母星11335、C49D14worlds3PSI1/Menace885保持，原error未增，无新Mod/P工具bug/无生产改动。后续同一有界调度新增V2仅将guard/源码/证明后缀绑定V6，其他cap/最多6段/≤90日/全部停止规则保持；从4.28最多2段到2275.08.01，按原生每月30日计算为90+3日，先前草案+4已更正，不使用公历天数。静态0后执行新label，禁止重放前三个日历。
+
+
+有界殖民续批V2/source2fbafdda…实际0结束，唯一90+3日分别7.28/8.1、6观察及V6核心25全PASS/实际0；最终SAVef53a594414f66a987704849195c55f1c7ecaa4e8c750982a55045eddd342312，母星11362、殖民地38人口79，C49/D14/worlds3/PSI1/Menace885保持，原error未增。当前max_days0恰已知原付费MIA殖民船50333369/fleet33555278/return_date2275.08.02前一日。现按既有已知返航范围只执行唯一8.2单日观察；若8.2仍MIA（参照四原军舰实测含当日）允许再唯一8.3单日，实际变为非MIA且原身份/species73/设计/健康与数量验证通过才称返回。不重放任何旧日历、不生成新船或退款，未知边界立即停；不是第四殖民或吞噬完成。
+
+
+## 2026-10-12 03:02 原付费殖民船返航与当前状态
+
+2275.08.02单日原付费殖民船50333369/fleet33555278仍mia=yes，8.03实际非MIA；两端原始日历、6项观察及V6/source012b72c3d3981840c21bcea0f3b1ea6d9cbabf3686a1c84d53fa4961ca2bf650各25项全PASS/实际0。实际返回记录明确fleet33555278/ships[50333369]/original_return_date2275.08.02/actual_observed_date2275.08.03；原舰身份/species73保留，无免费补船或退款。当前stage terravore-original-paid-colonizer2-native-return-following-day，SAV2dc37d43e655d4a12b4ff51aabfe81cedf134832d6329527dd87f3835467ae88。当前proof无boundaries/ready=true/max90，但此业务上限只含本国MIA，不能据此越过已知敌825返航日期。
+
+母星11362/新殖民地79、C49/D14/worlds3/PSI1/Menace885/25军舰与原error保持。殖民等待续批90+3日实际0、原殖民船8.2及8.3单日各实际0；只证明这些端点状态，不称第四吞噬、女王C60或整条路线验收。当前未确认新的生产Mod或P工具bug，未改生产代码；原阶段误判FAIL及独立组件PASS分开保存，不覆盖原FAIL。
+
+下一段验收方案（先CUT34提交推送再执行）：只复用既有有界调度V2/source2fbafddacde25103bf3d23d268b429d810b5efa1fcfd6065933bfe6e8c1f7956、V6及既有日历/观察器，最多一段32原生日8.03→9.05，停在已知敌825 return_date2275.09.06前一日；不得盲用guard max90跨过敌返航。敌舰日期当天及必要的次日各单日观察，保留敌825/country1原身份、六船与MIA/位置/战斗/原生消息完整SAV只读核验；发生战斗或未知状态立即停下调查，不提交和平、投降，不生成船或修改存档。此段仍不是殖民完成。其后继续各≤90日且遇边界停，最迟2276.01.30核中文殖民UI，预计2.01必须实际确认殖民完成后才按原生决议开始第四吞噬。
+
+
+## CUT34 方案：原生研究边界与原付费殖民船返航
+
+2026-10-12 03:02当前所有helper结束、2275.08.03暂停。唯一新label为native-research-transition-and-paid-colonizer-return，基线CUT33 native-MIA-returns-and-paid-starport-complete，固定已推送commit3cf40ed104cfe29946eb7cdcc0486dbce25b94ba。完整冻结当前RUN/userdir日志/四配置，包括CUT33之后Git提交推送远端回执、V5两FAIL及实际1、两完整原生源码调查、独立V6及实际0、两新有界调度源与实际退出、所有后续SAV/六观察/25项证明、8.2仍MIA与8.3原舰返回证据。禁止覆盖原失败、旧冻结文件或并行写RUN/推进游戏。
+
+依既有archive_priority_delta_checkpoint.py与独立verify_priority_delta_checkpoint_git.py，先归档实际0，暂存唯一新cut及本次五份文档，独立逐Git blob校验含全部复用原件PASS/实际0，再记实际计数、暂存新根回执/五文档，核scope和diff，提交推送当前main并独立完整SHA核远端。生产Mod、VERSION、Workshop均保持。该切点仍为暂停运行证据，不代替退出重载或完整路线验收。
+
+
+CUT34实际结果：freeze2026-10-11T19:04:06.662379Z；source32940文件/2201056712B，reused32590、新350/96688770B。独立Git暂存原字节核验PASS_STAGED_RAW_PRIORITY_DELTA_CHECKPOINT/实际0，33033唯一blob/2238743967B；回执evidence/priority-native-research-transition-and-paid-colonizer-return-delta-staged-verification-2026-10-11.json。全部原件含失败、复核、SAV、日志和源码已保存；仍为暂停证据，不代表完整验收或重载通过。现在只提交本cut、根回执与五份文档，推送后独立核远端完整SHA。

@@ -633,3 +633,12 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-12 原生MIA实机日期证据：fleet100664127/ship67110639，return_date2274.04.07当日仍mia=yes，4.8实际返回；33555013/33555519为4.15→4.16；788/1895,1896为4.19→4.20；33555034/1807为5.4→5.5。原完整SAV/6观察/20核心/source558c…与四次reviewed_native_MIA_returns身份绑定；不能仅凭日期字段宣称返航。仅四例MIA结果，不推广其他date字段。前线base158/站舰1931原升级work235.5（5.5）→358.5（7.27）→7.28完成；125合金唯一订单、240实际天、同原站舰满18300/5125/4320，空模块与空建设队列，满血与等级变化来自正常原生升级，不是免费造舰或Mod经济奖励。7.28殖民地38已有29pop、中文UI仍colonizing，再次证明正人口不是完成证据。上述均Stellaris原生状态事实，无通用Paradox语法新结论，不更新CK3。
+
+
+## 2026-10-12 原生研究完成、升级候选和工程船自动更新
+
+噬岩者2275.01.28→04.28原已研究科技85→86，仅追加tech_mass_drivers_3/level1；本机原版简中technology_l_simp_chinese.yml:291正式名为“轨道炮”，下一工程队列tech_starbase_4:100为“星堡”，新队列date2275.02.02/progress65.55756。真实stored_techpoints物理/社会非递减、工程0，原生alternatives/potential/last_increased_tech刷新。不能要求研究完成后旧队列或已研究表原文不变。
+
+七艘军舰actual design/growth_stage保持，仅upgrade候选134219607→301991672刷新（候选corvette SMALL_MASS_DRIVER_2→_3）；候选变化不能称实际免费军舰升级。工程船2/fleet2原身份保持、实际自动设计184551252→251660011，hull375/shield320保持，armor125→250。原版common/ship_sizes/00_ship_sizes.txt:645 constructor明确auto_upgrade=yes/is_designable=no/components_add_to_cost=no，:101注释说明自动更新现存移动船。section_templates/overlord.txt:1624 BULWARK_BATTLEWRIGHT_SECTION属于constructor/4小通用槽，无国家或臣属条件，不据模板名推断国家成为戍卫；实际country0无overlord/specialization。完整原生调查0fc0dea9a13683c9f91c3da572dbef43011008f300fc96870d5fa185e8f9d1c0及源码补证1a2af952470aa3d8fe66e3db56e949eab58bde65dd4349da69d558858fa56d7f保留，原V5两FAIL/实际1不改写，独立V6只绑定此已核具体边界，未来未知研究变化仍停；同原SAV25PASS/实际0及后续端点通过。
+
+原付费殖民船50333369/fleet33555278在2275.08.02 return_date当天仍MIA，8.03实际返回；与此前四原军舰例一致，但仅记录已观察对象，不推广所有日期字段。新殖民地79人口仍不代表完成；is_under_colonization/no及中文UI须分别核实。以上为本机Stellaris原生配置和SAV事实，未确认Mod/P工具缺陷，无共通P语言新语法结论，不更新CK3方言文档。

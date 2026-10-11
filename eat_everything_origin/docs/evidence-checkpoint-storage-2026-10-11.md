@@ -274,3 +274,13 @@ CUT32归档实际0，冻结2026-10-11T17:40:13.409552Z；31949源项/1915592289B
 
 
 CUT33归档实际0，冻结2026-10-11T18:17:08.799520Z；32591源项/2104378490B，复用31948、新643/188796613B。首次独立Git index原字节校验PASS/实际0，32683 blobs/2141459080B；根回执evidence/priority-native-MIA-returns-and-paid-starport-complete-delta-staged-verification-2026-10-11.json。四支原MIA军舰舰队/五船实际返回、唯一125合金付费星港完成与23核心检查通过，仍未完成殖民或第四吞噬。原失败和边界保留；无已确认新Mod/P工具bug、无生产修改。现精确提交本cut/五任务docs/rootreceipt、push main并独立核完整远端SHA。
+
+
+## CUT34 方案：原生研究边界与原付费殖民船返航
+
+2026-10-12 03:02当前所有helper结束、2275.08.03暂停。唯一新label为native-research-transition-and-paid-colonizer-return，基线CUT33 native-MIA-returns-and-paid-starport-complete，固定已推送commit3cf40ed104cfe29946eb7cdcc0486dbce25b94ba。完整冻结当前RUN/userdir日志/四配置，包括CUT33之后Git提交推送远端回执、V5两FAIL及实际1、两完整原生源码调查、独立V6及实际0、两新有界调度源与实际退出、所有后续SAV/六观察/25项证明、8.2仍MIA与8.3原舰返回证据。禁止覆盖原失败、旧冻结文件或并行写RUN/推进游戏。
+
+依既有archive_priority_delta_checkpoint.py与独立verify_priority_delta_checkpoint_git.py，先归档实际0，暂存唯一新cut及本次五份文档，独立逐Git blob校验含全部复用原件PASS/实际0，再记实际计数、暂存新根回执/五文档，核scope和diff，提交推送当前main并独立完整SHA核远端。生产Mod、VERSION、Workshop均保持。该切点仍为暂停运行证据，不代替退出重载或完整路线验收。
+
+
+CUT34实际结果：freeze2026-10-11T19:04:06.662379Z；source32940文件/2201056712B，reused32590、新350/96688770B。独立Git暂存原字节核验PASS_STAGED_RAW_PRIORITY_DELTA_CHECKPOINT/实际0，33033唯一blob/2238743967B；回执evidence/priority-native-research-transition-and-paid-colonizer-return-delta-staged-verification-2026-10-11.json。全部原件含失败、复核、SAV、日志和源码已保存；仍为暂停证据，不代表完整验收或重载通过。现在只提交本cut、根回执与五份文档，推送后独立核远端完整SHA。
