@@ -567,3 +567,9 @@ Stellaris4.5.2本次前哨99%→实体完成：01.12原付费模板201326648，0
 ### 2271.08.02退休建筑槽复用与外围战斗实证（2026-10-11）
 吞噬之心噬岩者原生SAV9ea73b2817d8ec732a117d907fab1b761b4418e4f50ad4ea3869ee56f2d87819中，母星已拆除的83/16777258/86先前为none，现原key消失，分别出现16777299/33554474/16777302，均同低24位槽、更高代，引用来自zone10/33554462/9，建筑为foundry1/stronghold/engineering_facility1。旧zone61仍none，母星hive5/[0,2,104]/zone_foundry不变。此为该Stellaris存档对象句柄实证，不能将固定none当永久约束，也不能只凭旧id缺失就放行；须核唯一新代、实际新对象和全部旧引用消除。未由此推导CK3方言规则。
 同SAV显示敌825在2271.07.26与本国哨站fleet198/station1090于181开战，combat双向关系、start_date与coordinate均一致。ship1090满hull9150但盾172.30582/1440、甲2925.43118/3125、活动/受伤日期08.02；本国27军舰未损，Menace105、无新完成战报。V50原80项三FAIL正确阻止继续调度（其中建筑固定none假设需适配），V51针对同原SAV对82PASS/actual0并保留全部原失败。未发生新的Mod代码/P工具修复，不能把已知战斗观察通过写成胜利。
+
+2271.08.03后续原SAV22a846...：哨站盾甲降至0时，ship1090原文不再保存shield_hitpoints/armor_hitpoints字段，max_*仍有值9150/3125/1440；读当前值须允许原生省略零值，不能默认-1报负数。私有V51默认值错误导致82项仅两FAIL，V52仅修该解码并补精确失败/两SAV锚点，同原存档83PASS/actual0；不是生产Mod或P工具缺陷，原失败保留。
+另核本机4.5.2 crisis.4025触发：fromfrom（击毁方ship1）要求非shipclass_starbase，或fleet.is_mobile（移动舰队例外）；被杀方国家类型无default限制。因此基地自身击杀与本国机动军舰击杀不能默认同样获得该船杀目标，须实际核Menace账；crisis.4010另以击毁方fleet.owner发基地目标。同一文件SHA f38d1c9291767ea4b1845214198fd2d84686db9e3a89d3e49180d6a6d2f2b261。源码中的旧注释与现行排除条件需区分，以实际触发代码和运行时账为准；无人机清路预期只作候选，不预记收益。
+
+第二战外围capture实证：08.11原SAV3c809d...所见report238（外层date08.10/start07.26/reason we_disabled）记本国outpost198一座、lost0，敌825[2,5,4,1]/lost全0。fleet198实际从owned0转owned1，station1090同id/original_owner0/construction2204.10.27/disabledyes/hull1，max_hull9150→5000，base21/设计保持；失能与军舰击毁计数必须区分，不能把前哨capture记成一艘本国军舰死亡。27军舰和Menace105保持。V52两FAIL正确阻止未知战果，V53同原SAV85PASS，仅认证精确状态与报告，不认证胜利。
+原版00_supremacy.txt采用country_naval_cap_add20/army_damage_mult0.20；tr_supremacy_fleet_logistical_corps_hive通过inherit_effects继承-0.10舰维护/0.20舰容倍率，正式简中「营养方舟」。源码SHA e27f8d40e752a0a03ad0883031812b7c5c5384c12e0c2c918290006667e27ee6完整冻结。F3传统与F4科技为本环境当前实景键位，不能凭旧日志stage名字反推。传统UI价6467仍要用实际扣款decimal验证，既有原生203/202.98709经验不可忘记。
