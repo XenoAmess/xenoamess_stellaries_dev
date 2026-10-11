@@ -1,0 +1,26 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "http.version=HTTP/1.1",
+    "-c",
+    "http.postBuffer=524288000",
+    "push",
+    "origin",
+    "HEAD:main"
+  ],
+  "returncode": 0,
+  "outputs": [
+    {
+      "file": "git-push-mia-mother-replacement-attempt2-stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "git-push-mia-mother-replacement-attempt2-stderr.txt",
+      "sha256": "627b4fa80a744073bae7626a38db413aab04ebb95a756c8245dd7e72219e54f9",
+      "bytes": 99
+    }
+  ],
+  "scope": "Command-local HTTP settings only; retained original attempt1 failure; no repo config changed."
+}

@@ -614,3 +614,9 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-11新增Stellaris原生补证：仅mia_type=mia_emergency_ftl不能判当前MIA；9.27新殖民船真实MIA还同时properties.mia=yes、return_date2275.08.02、movement origin invalid/idle、mia_from97、无当前命令/无in_combat_with，恰从9.13进入战斗过14天，玩家未点击。原移动path date2273.01.30可残留，但不能作MIA后有效航行ETA。新船HP/甲保留，原始war新增零损失退出记录不等于整个战场获胜。另physical planet ID、colony注册表ID、star system ID独立：target523在system37未殖民，colony37实际carrier physical1085旧源；audit只含请求的7/90/124/1085，不能猜有523。母星新建订单100663340复用已退休83886124+2^24，原NONE槽消失并非复制；同日正常camera_focus变化需要独立视图动作锚，与Mod状态分开核。全原SAV/源码/12、16、26PASS及原异常在CUT28保留，属Stellaris事实，不作为共通P语言或CK3规则。
+
+
+2026-10-11 噬岩者原版战场与虚境旁支：当地4.5.2四原生全文见terr...first-research-native-source-manifest（SHAd91eb082ace75e5319eb32df325cdbe7ee253b393857e5b7a4d15b4b9d8da183）。common/patrons/deeds/00_deeds.txt的deed_destroy_ship给attunement0.5；patron_types的the_eater_of_worlds坐标(-1,0)。2272.10.2原native shroud仅x降低0.005/y保持，与该方向/幅度一致，但无直接回调追踪不可断言本次归因。原crisis.4025/fromfrom条件明确固定星港击杀排除Menace目标，不可根据敌舰注册减少直接判定天灾奖励缺失。通知必须按notification ID与类型识别更新：同259 COMBAT_STATS延后end不算新Mod通知，255—257到end10.2删除不算消息丢失。country人口缓存可比母星实际人数晚一天刷新。均为Stellaris特有原生行为，不写成P语言共性。
+
+
+2026-10-11 原生基地归属引用：starbase_mgr.starbases.<id>没有直接owner字段，galactic_object.<id>使用starbases匿名ID数组（不是starbase单字段）。正确只读链为country的owned fleet→base.station对应ship.fleet→base ID，再与system.starbases交集确定控制星系。本次原0/153/1931对应system0/97/37；用不存在字段的首调查空集合无效，V2原件SHA0e7a5d…已校正并保留首件。当前原生战斗结束时双方都可以有剩余舰进入MIA；必须以properties.mia/return_date/no_live_combat判定，不以fleet名册数量变少直接认定全歼或战争胜利。

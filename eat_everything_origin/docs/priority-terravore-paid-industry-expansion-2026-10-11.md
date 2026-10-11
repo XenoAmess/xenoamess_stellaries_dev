@@ -675,3 +675,57 @@ MIA V2/sourcec48beb964e5cefa0ab0486d385f0d1f0a135d4eec44249e4c3fed2b34fe4608c静
 
 
 9.30 pre-month guard/source005dbcecc139e3df338eaa8666dc31e8b357fbc915d194716b7e25d518598e64静态零错、26全PASS/实际0，无新boundary。先暂停9.30归档CUT28，再按该专属native_month_boundary_ready/max1与原实际0唯一10.1，独立核月预算/增长/三bank与工程真实研究、原单5.32预期和后方战斗，不重复三日。当前无新Mod/P工具缺陷，生产41/0.2.0，Steam离线。
+
+
+CUT28提交177137bb2a78e5c4eb13d7a956ebb04835e17f9a。首次push HTTP408/actual1，独立ls-remote actual0但仍旧c2e90…/matchfalse，均完整留原stdoutstderr/execution，未称成功；第二次仅命令级HTTP1.1/postBuffer设置重试actual0，独立远端完整SHA核验匹配actual0（不改永久Git配置）。这些原日志进入下一切点，当前可继续。
+下一唯一1日9.30→10.1/stage terravore-mother-colonizer3-first-month，前置 terravore-mother-colonizer3-pre-month-mia-build-pre-month-proof.json / terravore-mother-colonizer3-pre-month-mia-build-guard实际0/source005d…/专属month_ready max1。沿用construction observer6及INV V4只读4实际0，调查真实八资源月预算桥接、自然增长与住房缓存、原订单5.32预期、原生工程研究/三bank与后方健康/实体/战报；根据既有原生规则月预算/增长在day1，科研tick在day2，不能预设10.1银行已到账。月边界独立守卫全部PASS0后才唯一10.2核首完整特化科研；未付款新单/未送资源、不重放月首。
+
+
+### 10.1 月预算/自然增长实测及首科研日组件（实施前）
+
+唯一9.30→10.1已经完成，calendar/完整construction观察6项/native库存V4四项均真实退出0。SAV bd9975ed3677b6708b62b2cbe89e4141524cfea6b82c8994c0a03c3ac9278d32。完整预算增长调查已保存于 terravore-mother-colonizer3-first-month-budget-growth-exact-investigation.json：E+52.09254/M+39.43050/A+25.30508/U+72.71875，逐项等于真实current_month balance；trade50000/影响力1000已封顶故实际增量0，不把上限截断误报产出缺失。last_month准确承接原current_month。母星11137→11143，原生last_month_growth_data明确GROWTH6/PROMOTION0，不能沿用前月固定增长7。住房原生缓存仍11137、14100总量/2963余量，六人口增量待下一次刷新；岗位7维护子个体workforce+6/bonus+1.2，岗位28后勤子个体bonus123→125，其他岗位字段保持。EEP全部变量保持C49/D14/worlds3/PSI1/stage1，三科研bank保持，工程进度保持，符合科研在10.2结算。原母星唯一订单100663340工作3.99→5.32/360；27舰/敌12/原战报保持，后方基地18300/502.68579/790.24704。未发现新的Mod或P工具bug。
+
+新增独立 priority_terravore_mia_mother_first_month_guard.py，从已验证9.30 pre-month守卫派生，仅覆盖9.30—10.2这一实际首月/科研日组件。放行已核原生月预算、增长/岗位劳动力/住房缓存及country月度AI/关系缓存，不豁免EEP核心、母星区划/建筑/区划容量、已有付费订单、原设计/船籍、真实科研及Menace核对。预算用八资源原生balance与Decimal桥接，封顶资源明确核上限；自然增长用存档分类与实际种群和核算，不固定增长值。科研按真实day2 tick与三研究收入及已验证1.33难度倍率核对：P/S入真实bank，工程入原tech_mass_drivers_3进度、工程bank仍0；10.1应无科研增量。原单按每日1.33工作核，无第二次扣款或无偿船。仅同原10.1全部PASS/真实退出0，才授予唯一10.2 max1；10.2结果另核后再制定长段在建计划。不凭该组件声称第四吞噬/女王高阶通知或全政体验收完成。
+
+
+首月守卫/sourcebbaa787…静态零错，同原10.1实际30项中2FAIL/退出1，无boundary，未推进10.2。完整差异调查SHA44a6c5cf60ba53a321733c9f0e7f326be9f1fa06e3c4d702d9f565a6af80a410：districts/zones/buildings完整保持，本国16个设计保持，species保持；仅全局12个NPC矿藏实体变化，母星16个矿藏必须按本星引用检查，不能以全球矿藏根相等冒称本星不变。岗位0—6/8—20的workforce前后均为原生-1（停用/自动计算哨兵），不是负人口；只有岗位7劳动力/bonus与岗位28bonus按已述原生变化。内联调查首调用因只加入_runtime而遗漏eat_everything_origin/tools导入路径退出1/无artifact，补路径后只读调查完成，不影响游戏。
+实施独立V2：仅将deposit全局比较改母星前后引用的全部原矿藏实体比较，停用岗位仅允许前后同为-1（不放行新增负数）；增加首版真实30恰2FAIL/actual1/原源码与完整INV SHA锚，31项。原源码/失败proof/streams保留不覆盖，同10.1重核不重放日历，全部PASS且真实0才唯一10.2。上述均属私有检查脚本误报，非Mod或P工具缺陷。
+
+
+首月V2/sourceb3ed33bc39af326a30b4233eae97f519ae8bd00ea4dc1693cabebfcf401eaef1静态零错，同原10.1实际31全部PASS/退出0，无boundary；原30项2FAIL/actual1保留。下一按该专属native_research_day_ready/max1执行唯一10.1→10.2/stage terravore-mother-colonizer3-first-research-day；原两只读观察实际0后同V2核真实P/S银行及工程进度，未重放月首。
+
+
+### 10.2 首科研到账及原生战场边界（实施前）
+
+唯一10.1→10.2/calendar实际0/SAV1e1fbb8ccd9b86a2bf463ef36d6aec2897ec3b56992b31124ad903fb47e6b30b；完整观察6项与INV V4四项全真/实际0。P银行352.63017→426.19872（+73.56855），S7571.56993→7597.76521（+26.19528），工程原tech_mass_drivers_3进度289.62941→322.40819（+32.77878），均等于当前真实月科研收入×1.33，Engbank0；资源实际无第二次月度收入、人口11143保持/EEP保持/Menace885保持/母星建造工作6.65/360。
+V2在这一天实际31项中2FAIL/退出1，三个原生边界保留，未继续日历。完整战场/消息调查SHA85deff4d87c6af39a7de87b57ed86c0812799b7c5ebeef03e42f7770e3a15c9e：敌825原12→11、67110618原实体退出现注册；旧12条战报全部保持，只追加10.1/system97/双方损0一条。不能把注册移除或零损战报直接宣称全战胜利/击杀得分。消息255—257恰到end10.2原生到期删除；259是原9.14 COMBAT_STATS同一notification，仅end10.29→11.16刷新，不是新增吞噬/女王通知。后方基地仍18300且仍交战，不能声称安全路线。
+完整两个FAIL调查SHA4df20247e36de01c707062eb37cd38deaec2b42bf480fdc1bfe0e1938a555115：项目仅原4/5倒计时-1；module除paragon999计时外，standard_shroud_module仅attunement.x -0.3305→-0.3355/y0.235保持，所有其他虚境字段保持；country另有已独立通过的tech_status科研进度、人口缓存11137→11143与victory_score1273.46491→1273.58491。仍属检查范围未包含的原生变化，未确认Modbug。原生四全文代码已复制/manifest SHAd91eb082ace75e5319eb32df325cdbe7ee253b393857e5b7a4d15b4b9d8da183，00_deeds的deed_destroy_ship attunement0.5、patron_types的吞世者position(-1,0)与本次x负向增量一致；具体击杀归因没有直接事件追踪，报告为一致性推断。crisis.4025明确fromfrom固定starbase且不移动的击杀排除得分，因此战场敌实体减少不能直接预期Menace必增；当前不确认哪艘舰造成最后伤害。
+新增独立首科研V3，只对这一已经实际调查的10.1→2放行上述确切虚境x/y、country科研（另独立严格验）、六人口缓存及0.12胜利分刷新。保留原31项/actual1/source/两个完整INV/原生源manifest锚。原三个boundary仍记录，仅在原样匹配已复核边界时给首科研组件PASS，绝不抹去战报或改成无边界，也不称全战或全流程通过；不授予长段ready，后续有界在建方案另写。先静态零错/同原10.2全部PASS actual0，不重放10.2。
+
+
+首科研V3/source5ae6411742bf5b314b0ffe181105feebc8b5698a2353c3e87e3e47eb4dbca9a7静态零错，同原10.2实际34全部PASS/退出0，原三个已复核战场边界如实保留；没有长期calendar ready。当前未发现新增Mod/P工具缺陷，生产41/0.2.0未改。
+
+### 在建期间按月检查 Mod 核心（实施前）
+
+目标：从已核10.2至母星付费订单接近完成，验证连续离线运行的真实预算/科研/自然增长、唯一母星扩容与岗位、原订单工作和无免费补船；原版战争的每次攻击、NPC矿藏变化、自动过期计时器不作为Mod功能验收。完整SAV/6项observer/4项原生库存仍每段保留，可追查全部原生变化。新增独立 priority_terravore_mother_build_monthly_core_guard.py，先同原10.1→2校准且锚34PASS/actual0/source与两个原FAIL调查；后续前置必须为自己真实PASS/实际0/原SAV及生产源。
+范围：每段最多30日且至多一个预算tick及一个科研tick；母星唯一73种群、C49/D14/worlds3/PSI1/stage1/现有27付费区划与32总容量、3实验室/特化科研岗位上限、完整本星district/zone/building/deposit引用实体保持；无新EEP/native吞噬局势/新增Mod通知。全部本国原设计保持，已有船仍属原设计，不允许无付款新增本国船；母星原20军舰不得因未知原因失踪或受损。后方原版战斗损失、战报、敌舰增减、MIA移动/维修只记录原生事实，不把它们当作Mod失败或全战通过。后方基地仍需本国归属/HP>6000，归属或危险边界即停。EEP变量/母星归属容量/原军队12/设计和原MIA船身份、原目标523保持；订单仅原100663340/queue3/work按1.33每日增加/360前不出生、其余11队列保持无新成本。
+预算与科研仍用上面严格Decimal公式；自然增长使用月原生分类，不预设每月6或7；住房允许原生正常刷新，岗位前后结构/上限保持、已有-1哨兵保持，不把正常劳动力或bonus随人口调整误报。Menace允许原版战斗获得的非负变化但到1000/原crisis阶段变化立即停止单列天灾检查；不宣称具体击杀得分正确，原生进度/库存/战报全留证。新pending、实际新的Mod通知、后方基地危险、订单完工边界、已知native delayed_event到期均停止长段，不能让等待建造跨过需交互事件。就当前paragon999还有55日，第一段可30日，下一最多24日至事件前一天；每次按真实timer重新定max。
+实施最多两段有界驱动，只在本组件专属monthly_build_calendar_ready和max允许时正常fast_forward/保存，再并行只读6+4观察、等待实际0，再运行该guard并记真实结果；任何FAIL或专属ready=false停止不重放。首轮batch terravore-mother-monthly-build-batch1，最多推进至2272.11.26（具体timer以原文为准）。下一次原生事件到期需另行正常UI核，不直接放行。此范围是Mod核心长期检查，绝不把未核战争、第四吞噬、女王高阶、矿物舰队、虚境终点视为通过。全部源码新文件/static零错/实际退出留证，生产Mod不改。
+
+
+按月core守卫/sourceb3804211f7f95c0bb47b81437c2a6cac70f0c32ebb82c45cc3a626e9b207fb9f静态零错，同原10.2实际24全PASS/退出0，专属max30，原34科研证据保持。新有界monthly driver/source62377f380e380fcafb77d9a8e53da48c71de3e69844bcb708563887a17b248a9静态零错，按既有方案最多两段/不超过11.26，首起点terravore-mother-colonizer3-first-research-day，唯一batch1。生产不改。
+
+
+monthly batch1/source62377f…实际两段30+24日，至11.2/SAVabba638a99305dd3f49ffdd7ad91f37e156d4b1f0cf00154aed9fbe042a9800e和11.26/SAV58c06dbf0850ecf64698bad4d4c74a8f8a5562dc22bc236bf34d2a67d5fafffe，各calendar/6+4观察/24项core全部PASS且真实0，driver按已知delay=1停止/实际0。母星11143→11150正常+7；付费单6.65→46.55→78.47/360无免费补船；首段后方原1810/1816阵亡（军舰27→25），第二段无新损失，母星20完整保持。后方基地18300→17214.153→14935.12499，目前仍属本国，不能称后方胜利。长段ready=false是原paragon999 delay1的有意边界，未跨过事件。
+
+合法目标只读调查：第一内联误将planet_classes中的匿名变量数组当class处理，ValueError/无artifact；过滤pc_定义后首artifact错误从不存在的base.owner/system.starbase推导出空集合，不是有效无目标结论，原件保留。V2按已验证country→owned fleet→station ship→starbase，以及galactic_object 中实际 starbases 数组核对，原本国基地0/153/1931和系统0/97/37完整一致；SHA0e7a5d60338df2119781cce3983034bad0ddda88f8ef8611d39a918ce7f9372e，仅原物理523/system37/pc_tropical/size13是本国控制系统中尚未殖民的原生colonizable候选，不能假设母星旁另有便捷目标。surveyed_by字段空不证明未调查，UI资格仍以正常游戏为准。全部只读，无资源/星系/行星/外交修改。
+
+下一独立原生事件到期方案：已知11.26的24项核心PASS/sourceb380/实际0且delay恰1，仅执行唯一1日到11.27/stage terravore-mother-paragon999-native-due-day，再6+4观察实际0，核原delayed_event消失或真实重排、新pending/消息及无新成本、Mod核心保持。这与monthly driver停止相容：只授权已核计时器的单日事件观察，不根据monthly ready=false继续长段；不修改前置proof或假造ready。若有待处理原生事件，先正常简中UI阅读再合法处理，另保存/核成本。无pending且core通过后才恢复按月在建。旧首科研/失败和新战损均保留，不回档、不复活军舰。
+
+
+11.27唯一原生到期日/calendar/6+4观察/24项core均实际0且全PASS，SAVe5554ff227ad54cdf148a09f2ee4429d2a2c2f0796580846de6efe1c81abfe8b；paragon999 delayed_event从days1正常消失，无新pending/消息/成本，人口11150/工作79.8/360保持。当前专属monthly max30恢复。原生当前接触完整调查SHA9eca287e8c12c39d36f561c0f7b06c793f6cb4ce9661dec3e26aa38dd4ebf2da：后方base153/f804已无in_combat_with，HP14980.87499/甲51.25/盾1460.42714；敌825剩6舰properties.mia=yes/return2275.09.06/no_combat/origininvalid。己方后方剩5舰也已MIA（各返回2274.04—05），两舰1810/1816死亡已登记，母星20完整。当前接触已结束不等于整个战争胜利；Menace仍885。可后续正常UI核后方船坞空队列/安全程度并另付一艘后方殖民船，以缩短8跳母星路线；本切点之前尚未下新单，母星旧单保留且不退款/不改资源。
+
+当前噬岩者没有确认新增Mod/P工具bug；实际改动为docs与私有验收辅助脚本/证据，生产41文件/0.2.0/treeac802…保持。工程进度约65%仅工作量估计，完整政体仍1/7=14.3%；第四完整吞噬/C60女王高阶/危机后续/矿物舰队/最终重载尚未验完，不作无bug保证。先暂停11.27归档CUT29，再核后方造船与下一段方案。
+
+
+CUT29首次独立Git blob验证PASS/实际0（30664sources、30380复用/284新增），当前11.27暂停与24项core原件保持。按仓库默认规则提交推送本次五docs及完整增量原证据；下一仍从当前合法native存档核后方船坞，未改Mod/未增加资源/未开始新发布。
