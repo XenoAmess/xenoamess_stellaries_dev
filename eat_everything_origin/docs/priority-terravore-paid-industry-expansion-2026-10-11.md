@@ -609,3 +609,69 @@ V2 source `d8afe1952bc336559f137a0d0fd86c6023b0337364cbe24e81ae80609bf53ac3` 静
 
 
 9.15 cleanup guard source `84ab88455f270281cb33afee35658085984f0311f0431cfebea5c442faf87148` 静态零错误，同原SAV实际28项全通过/退出0；准备CUT27完整原件冻结、独立暂存blob校验和提交推送，游戏暂停。后续普通战斗日使用有界通用守卫，不把重复固定每日伤害替代Mod功能验收。
+### 后方原生战斗有界通用观察（CUT27后，实施前）
+
+CUT27提交 `c2e90e1e33f7576256802ba262ccd586b2894e09` 已push并独立ls-remote完整SHA/actual0核验。当前仍暂停9.15。后续目标是正常推进既有战斗/自动规避，而不是为每一天维护固定伤害断言；保持完整原件与关键Mod不变量，遇实际新边界立即停。
+
+新增 native inventory V3，从已执行V2复制为新文件，仅日期范围改为9.14—27、每段1—3天，完整已知敌12实体条目/基地/war/建设/zones读取与SAV SHA锚不变。新增通用rear battle observer读取完整construction observation和native inventory V3；绑定两真实SAV、实际calendar/原前置PASS与退出、全部源码SHA、生产41文件/0.2.0/简中/原2814 error。核心变量/母星住房人口/完整colony/岗位/区划建筑沉积/研究预算库存/原船设计付款及本国12空队列保持；仅国家/源/母星已知计时器按实际天数下降、原生舰队集合清理与naval140或135缓存、已确认后方7军舰/基地/敌825战斗和新船自动规避的运动/健康变化属于原生战斗观察。
+
+通用检查必须保留每艘原设计、完整原始健康/位置/归属/战斗/战争/消息证据。母星20军舰保持，允许1916既有自然修复；后方战斗允许有界正常伤害/修复，不能把健康变化逐日当新Mod bug。新增本国/敌舰死亡或移除、任何新战报/消息/pending、战争新结算、基地归属变化、殖民船非满血或到达37/改路线、母星参战、基地HP降至6000等任一边界，生成真实观察结果并停止日历；不能把仅OBSERVED状态当PASS继续。当前9.14→15原件可作同原件校准，唯一已知原本就killed的117清理不算新损失，不推进日期；其他规则不豁免。
+
+静态零错误/同原9.15校准实际全部通过后，新增最多四段驱动，从9.15至最晚9.27，每段最多3天且只在基地HP>=12000、殖民船满血/仍97/原evade37、无新损失/边界、前置专属ready且实际0时推进。基地HP6000—12000改为最多1天；任何失败/边界立即保留最后实际存档，不重放。不跨9月月末，前三个研究/经济tick不在此观察范围。驱动执行既有calendar与6项完整observer，并行只读native INV后等待两者实际退出，再精确观察；每段写实际摘要。结束后核真实边界再正常UI殖民/战场调整。所有新helper遵守docs-first、源码不覆盖、静态检查与实际退出留证；生产Mod不改。
+
+
+通用rear observer首版source fe6ca2d224246ef938d607050af6133493ee1a817f1dc9f41c4546bb60f01e62静态零错，同9.15校准构建checks时因敌舰无护盾而读取省略的max_shield_hitpoints抛KeyError/实际1/无proof，未推进日期。完整敌零cap调查SHA6f4a4935757324afa14b3c88cb2b9b9693ed0fe4116bca5fa02fa1db1fee6d71确认11艘敌舰前后都同时省略current/max shield，其余健康完整原文已保留。V2仅将缺省cap按0读取，仍要求当前值0—cap，缺cap而正健康不能通过；新增原异常actual1/source/无proof及调查原SHA锚，共24检查，其他23保持。新源码/static/同原9.15全部通过actual0前不推进；这是私人验收脚本错误，非Mod/P工具缺陷。
+
+
+通用V2/source73358a47fc6afcede8653d7e231942c48914ac87913c87d863fa7e710ac52bc1静态零错，同原9.15校准实际24全PASS/退出0，无新boundary/27军舰/基地18300/新船满血仍97；native inventory V3/sourcecdd192…实际4全真/退出0。下一新bounded rear driver实施：最多4段、每段基于专属ready和基地健康选择1或3日，当前起点terravore-rear97-loss-cleanup-day，唯一batch标签terravore-rear97-short-battle-batch1；至最晚9.27不跨月，校验24PASS实际0/source733/SAV、生产/语言前置。正常calendar结束actual0后才并行两只读观察、等各actual0再运行通用V2，任一真实新boundary立刻停止/保留当前SAV与完整结果，不把OBSERVED继续日历。静态零错后运行，失败不重放。
+
+
+首次batch driver/source db9c…在唯一9.15→18三日后按真实变化停止：calendar/6项观察/4项库存实际0，通用V2实际24中3FAIL/退出1，driver实际1，未再推进。SAV以原calendar与proof原SHA为准；殖民船护盾320→257.8198，HP625/armor125仍满、evade37仍97；基地HP18300/armor1311.5897/shield2507.00743，七增援均活，仅1895盾145.2876，其余满；敌12仍活，无新战报/结算/威慑。海军fleet_size/used_naval_capacity140→135、military_power3372.50781→3270.61718原生缓存更新。
+三FAIL完整调查SHA92e8894a051ccea6afb513d48843c78187a4f829ce566335904266b14c7e4039：母星标记59→56和其余原文保持，EEP变量/人口住房/完整pop_jobs字典保持；colony0仅amenities27310.5→27751.5/free22469.9→22910.9同步+441，全部其他colony字段保持。全局ship_design变动为NPC新设计和墓碑回收，本国ship_design_collection完整保持，必须比较本国16设计实体/所有实际舰设计，不把全局NPC变化当本国修改。第三FAIL仅军力及used_naval缓存未被允许。当前GUI已实际核战场/暂停9.18，未额外下命令。
+实施通用V3：仅放行同步原生amenities/free缓存刷新（完整colony其他字段/pop_jobs/人口住房仍核），用本国design_collection及其全部原实体比较替代全局设计根相等，允许上述军力/海军缓存且used_naval仍140或135；新增原24恰3FAIL/actual1/driver1/完整调查SHA锚，共25检查。对已经实际核实的原生盾伤继续正常自动规避，殖民船HP/armor须仍满、shield严格在原cap内；任何船体/装甲伤、新损失/敌损/消息/归属/到37仍停。由于殖民船已有盾伤且基地甲低，后继最大单日，不再3日跨进。静态零错/同9.18原SAV25全PASS actual0后，新driverV2只替换守卫source/proof名/count并绑定原driver失败；最多四个单日、终点不超过9.27，唯一batch2，不重放三日。
+
+
+通用V3/source8b7e7e212bedfebb7bc9bc441f6b4a8bcd66aded9e79d3505581c65e7d92e68f静态零错，同9.18原件25项全PASS/实际0，专属max1day；只允许已核原生盾伤，殖民船船体与装甲仍满，无新实体损失/结算。新driverV2以原9.18 V3实际0为前置，batch2最多4单日，原driver1完整保留，不重放9.15→18。
+
+
+batch2/source660b2c…静态零错，9.19/20/21/22四唯一单日均calendar/6项观察/4项库存/通用V3 25全PASS实际0，driver实际0。最新SAVb87057299d48d6e4937ef7385ee3a0ecc38156ab5a1bfdf77f2932aac617bda9；27军舰仍活/无新战报损失，基地HP18300/armor1105.57483/shield1887.3614，新殖民船仍evade37且97，核心EEP/人口住房/经济保持。下一仅复用已验证driverV2最多四段，唯一batch3从9.22至最多9.26，仍按实际专属max1逐日、任何边界立即停；不覆盖原batch2，不重放日期。
+
+
+batch3四单日9.23—26各25全PASS/所有真实退出0，driver0。最新SAVa9f66e96d5a3e97c27c139b73d0f17ce2c20c9afde269b67f977e14eee83486c；27舰无新损失/敌12无结算，基地HP18300/armor763.52367/shield1411.93536，新殖民船625/125/235.3176持续盾恢复，位置80.30895,46.22771/system97，evade37正常path原生预计到2273.01.30系统中心，未称已脱战。下一复用driverV2唯一batch4 limit1到9.27后停，正常GUI只读检查新船/紧急跃迁可用性及战场；不预先点击撤退、不跨月。长期航行/跨月经济方案另写后实施。
+
+
+### 9.27 新船原生自动紧急跃迁/MIA与合法补船（实施前）
+
+batch4唯一9.26→27所有calendar/6+4观察/V3的25核心检查实际0且全部真；V3按预定三个boundary返回OBSERVED、driver实际0并停止，未当PASS续推进。SAVd73af65431a2c2a182afdd40281a4d4ee38404821473ab00818ab3107b9407ea。完整退出调查SHA5fac080e55d511e2c36fdbeee57e4a927665c11003bf72985d09af6bdcba51fc：col50333369仍625/125/236.9176、fleet33555278保留本国归属，但properties.mia=yes、mia_type=mia_emergency_ftl、return_date2275.08.02，current_order清空、move_idle/coordinate.origin4294967295随机银河位置、mia_from83.01962,49.1954/system97，combat不再in_combat_with。玩家没有撤退点击，恰9.13开始战斗后14天原生自动紧急跃迁；先前到37中心2273.01.30路径ETA作废，不能把origin invalid当已到37。新增war唯一9.27/system97记录双方损0，未新消息/Menace，旧11完整保持，不称后方全战获胜；基地及七增援仍交战、27舰存活。
+母星starbase0实际已有两shipyard/crew_quarters，队列3；完整原生调查SHA841d349e7115568d3dd0b78f3228082b66a93767bbb60626a9b0a1178bc3c367。原hyperlane内联调查误把匿名数组q.scalars解析、ValueError1/无artifact/无状态变化，改逐匿名entry读取后完整拓扑调查SHA59d32c3cabf50b8cc6e96d60b7cf4d0b9995f28e10d52ea3ce26ace939629a71，最短拓扑0→103→151→188→139→171→33→97→37，忽略外交通行，绝非安全路线证明。母星补船比MIA三年等待更快的可能性需UI真实ETA再核，不预设。
+下一新增精确MIA守卫只读绑定当前25全true/实际0/source、driver停止0/实际三boundary、上述原SAV和完整退出INV/原生战报无损失/原健康设计/无资源退款及全原核心检查。生成限定MIA组件PASS，不能称安全到达/殖民；之后通过正常UI检查母星船坞报价并最多付一艘新殖民船（预计375矿150合金，须以UI为准），正常同日save，独立付款守卫核实际唯一新增订单/原设计物种/真实扣款和其他全状态保持。原MIA船不取消、不复活、不退费，所有旧失败完整保留；新订单验证前不推进。若母星路线不适合则重新选择合法目标/等待，不能瞬移或删除敌人。后续跨月与在建正常经营单列预算/增长验证，不能借当前同日/MIA组件冒称宏观经济通过。
+
+
+母星正常UI调查：概览/舰船tab、母星行星/定位/关闭、点击星旁可见label均只读；最后105,619选中的是母星采矿站而非造船星港，未下单/未推进。为识别正确母星星港，正常关闭采矿站面板，并在空白星系视图滚轮缩小3格后GPU复核；该输入仅视图/选中变化，复用既有harness pyautogui/焦点与GPU能力，记录滚轮动作原件，不新增复用工具或修改Mod。确认星港名称/两个shipyard与真实报价后才付款。
+
+
+普通视图滚轮动作原件已保留，GPU显示没有明显缩放，不把输入成功当视图成功；下一仅正常中键拖曳平移(400,400)→(700,220)，确保finally释放中键/GPU核正确星港label，不推进或下单。
+
+
+MIA首guard/sourcefe6357…静态零错，构建checks时读audit.planets.523抛KeyError/实际1/无proof，未付款/推进。audit只选择7/90/124/1085，不能假设有523；且colony37原文carrier明确physical1085旧源，不是星系37或target523。完整原生目标调查SHA69060680c3665c40522444e16e199a96eb13c1d01c38dbad76e7bfa5b242d68e。V2仅替换目标项为native physical523完整raw保持且无owner/colony根字段，另锚旧异常actual1/source/无proof及该完整INV，合计12项；先静态零错/同9.27实际全部PASS0再付款。不是P工具/Mod缺陷，原件保留。
+母星星港UI已确认正确EEP-Throne空间站、两个船坞、空舰船队列，殖民船真实报价375矿150合金、270日（原工作360乘修正-25%）。下一仅按原计划付一艘，不能把报价时间当已出厂。
+
+
+MIA V2/sourcec48beb964e5cefa0ab0486d385f0d1f0a135d4eec44249e4c3fed2b34fe4608c静态零错、当前9.27原件12全部PASS/退出0。正常UI已打开母星殖民船物种选择，唯一EEP石质物种73、陆地星球，报价375M150A/270日保持。下一仅点击一次该物种行502,269确认唯一新单，再关闭母星基地面板、正常同日保存stage terravore-mother-colonizer3-paid；独立同日完整观察绑定当前MIA12PASS/actual0及正常付款动作/save源，不推进日历。
+
+
+9.27母星新殖民单唯一确认动作actual0，正常同日save实际0/SAV02ba2c61e4238d4b704c26e83cad61daf008f086a47de0398cefaedd51df05e2/原error保持。UI报价270但入队显示271，仍须以原生工作360和实际速度核，不认定270日已出厂。新增只读same-day payment observation，从既有same-day order read派生，前置改MIA12PASS/sourcec48/actual0/两SAV/日期9.27；补全部country原文、母星base0原文、原设计150995039实体，保留全部construction/舰队舰船/核心/target523/war/messages/pending/有序顶层SHA完整调查。六基础检查只声明OBSERVED，实际退出0后核唯一新订单和全部变化再建立精确付款守卫。
+
+
+母星付款完整同日观察source789a…静态零错/6项全真/actual0；完整实际差异调查SHA0ea104d918e4a55ec1075a56eef3c0ff316f3c97caf894a36df9e13333e3ff1a。恰扣375M/150A，其余库存及三真实bank保持，所有owned舰队/舰船raw保持；唯一新订单100663340/queue3/base0/species73/design150995039/work0/360，旧83886124唯一none墓碑回收且new=old+2^24，该旧单是第二付费殖民船的已退休订单，不是复制新单。queue3原空/simultaneous2/owner0/ships保持，新唯一item；母星base0原文保持。顶层仅country/construction/camera_focus变化，camera由玩家正常定位母星发生，所有其他顶层按有序位置与SHA保持。economy镜像也仅M/A变化，没有科研退款。
+付款精确guard从既有rear殖民付款V2派生为新文件，不保留与本次无关旧refund/旧异常断言；前置MIA12PASS/sourcec48/actual0/实际SAV对，绑定正常两点击源/坐标和真实UI报价OCR图，严格核上述唯一订单/句柄代际/原生设计与物种/所有其它队列和country/顶层（仅排除已核camera_focus）、生产/error/实际save0。17项独立组件通过actual0后，允许最多3日到9.30的首个在建短段；已有同原设计、同建造倍率360工作/1.33每日的验收证据，不为重复已验证建造机制逐日制造新用例。任何新增战损或完工仍独立核。9.30后仅唯一10.1月边界，需要另行真实预算桥接/自然增长，不以付款证明长期经济通过。
+
+
+母星付款guard/source d23166b05da6ea19baa562a0809b989546174d33835e853c63e27bc6e35ba56a静态零错，实际16项全部PASS/退出0（此前设计预计17，实际去除无关旧异常项后为16，以proof为准）。下一唯一3日9.27→9.30/stage terravore-mother-colonizer3-pre-month，前置同付款proof/actual0/short_building_interval_ready。先原完整construction6观察；native INV V4仅从V3扩展只读日期到9.27—2275.08.30、每段1—30日，原12敌原文/条目与SAV锚不变、独立新文件/new output、不改已执行源码，先静态零错。两只读观察实际0后核原单进度（预计3.99但以原生为准）、MIA状态/敌我战斗和真实全部差异，再建立精确首段/跨月ready守卫。不会先跨月/跨完工，也不预设本战无损或获胜。
+
+
+9.30唯一3日calendar实际0/SAV7683c8b7b76a1eb279efd05f10bfd5b11c52f41bb47b3aafd1e4c88bb4318105；完整6项观察/sourcee725实际0、native INV V4/sourcee6e8…4全真/actual0/SHA94d2a0f0ff62b2702db1b460f659de907670b2d5ef09baea83fa18fdf41d3039。原新单100663340仅progress0→3.99/360；27舰/原12敌实体集合保持/无新战报与战争结算，基地HP18300/armor500.12329/shield768.64704，MIA船原身份/return仍保持（在MIA也继续原生属性更新，不要求全文不变）。母完整pop_jobs和EEP/库存/科研bank/人口11137/住房14100保持。
+新增pre-month guard从已验证通用V3派生，前置改原母星付款16PASS/source d231/actual0、INV V4/date9.27→30，殖民船条件改为原生MIA properties/type/return/no_live_combat/HP625/armor125/盾合法，任何MIA提前结束仍停；原12空队列约束改为本国queue3只保留原100663340工作3.99/360、唯一原设计物种/原付款和其他11空队列保持。其他25版未受影响核心/计时器/经济/人口/设计/无新损失结算约束保持，新增MIA身份项合26检查。先静态零错/同9.30全部PASS实际0才给10.1唯一月边界ready/max1；跨月经济/出生/长期路线不在当前组件PASS范围。
+
+
+9.30 pre-month guard/source005dbcecc139e3df338eaa8666dc31e8b357fbc915d194716b7e25d518598e64静态零错、26全PASS/实际0，无新boundary。先暂停9.30归档CUT28，再按该专属native_month_boundary_ready/max1与原实际0唯一10.1，独立核月预算/增长/三bank与工程真实研究、原单5.32预期和后方战斗，不重复三日。当前无新Mod/P工具缺陷，生产41/0.2.0，Steam离线。

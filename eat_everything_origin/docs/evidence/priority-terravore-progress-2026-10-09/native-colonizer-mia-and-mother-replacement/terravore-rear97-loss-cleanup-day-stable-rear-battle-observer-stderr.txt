@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\runs\20261009T044016Z\priority_terravore_rear97_stable_battle_observer.py", line 82, in <module>
+    'survivors_native_HP_armor_shield_within_original_design_caps':all(health_valid(v) for i,v in a['owned_ships_raw'].items() if int(i) in am or i in {'50333369','67109591'}) and all(health_valid(v) for v in ea['enemy825_ships_raw'].values() if v),
+                                                                                                                                                                                    ^^^
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\runs\20261009T044016Z\priority_terravore_rear97_stable_battle_observer.py", line 82, in <genexpr>
+    'survivors_native_HP_armor_shield_within_original_design_caps':all(health_valid(v) for i,v in a['owned_ships_raw'].items() if int(i) in am or i in {'50333369','67109591'}) and all(health_valid(v) for v in ea['enemy825_ships_raw'].values() if v),
+                                                                                                                                                                                        ~~~~~~~~~~~~^^^
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\runs\20261009T044016Z\priority_terravore_rear97_stable_battle_observer.py", line 50, in health_valid
+    return v.get('killed')=='yes' or all(-0.001<=v.get(key,0)<=v[maxkey]+0.001 for key,maxkey in [('hitpoints','max_hitpoints'),('armor_hitpoints','max_armor_hitpoints'),('shield_hitpoints','max_shield_hitpoints')])
+                                     ^^^
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\runs\20261009T044016Z\priority_terravore_rear97_stable_battle_observer.py", line 50, in <genexpr>
+    return v.get('killed')=='yes' or all(-0.001<=v.get(key,0)<=v[maxkey]+0.001 for key,maxkey in [('hitpoints','max_hitpoints'),('armor_hitpoints','max_armor_hitpoints'),('shield_hitpoints','max_shield_hitpoints')])
+                                                               ~^^^^^^^^
+KeyError: 'max_shield_hitpoints'

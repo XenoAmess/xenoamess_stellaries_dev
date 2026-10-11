@@ -200,3 +200,13 @@ CUT26首次独立staged原字节验证PASS/actual0：29542唯一blob/1324981617�
 
 
 CUT27归档实际0，冻结2026-10-11T12:38:58.273452Z；29688源项/1335926213字节，复用29457，新231/44930253字节。独立暂存原字节校验首轮PASS/实际0，29774唯一blob/1370372365字节；回执[priority-native-rear-loss-evasion-and-reinforcement-contact-delta-staged-verification-2026-10-11.json](evidence/priority-native-rear-loss-evasion-and-reinforcement-contact-delta-staged-verification-2026-10-11.json)。冻结与独立校验期间未写RUN或动GUI；五任务docs与本切点原件/现有priority回执提交推送main并核完整远端SHA后继续。
+
+
+### 第二十八切点实施前计划
+
+基线CUT27 native-rear-loss-evasion-and-reinforcement-contact / c2e90e1e33f7576256802ba262ccd586b2894e09 已push并独立完整远端SHA实际0核验。新唯一标签 native-colonizer-mia-and-mother-replacement；当前暂停9.30/source005d…26全PASS实际0。D盘冻结前可用1343209472字节，保留全部旧证据，不删除。
+范围完整覆盖CUT27后Git原执行日志、native INV V3/4源码静态与实际，通用observer首zero-cap KeyError1/完整INV/V2 24校准PASS，首batch三日的原24三FAIL和driver1/有效三差调查/V3 25PASS，batch2/3全部八个单日、batch4唯一MIA边界OBSERVED/停止0和完整退出/母星base/拓扑两调查（首次匿名数组ValueError无artifact的事实文档保留）、MIA首target audit KeyError1/原目标identity INV/V2 12PASS，全部正常UI/GPU/OCR/无效滚轮和有效中键平移/母星真实quote/唯一付款/同日save/完整same-day6观察/差异INV/16PASS，以及9.30三日calendar/SAV/6+4观察/26PASS。包含所有原始源码/pycache/错误/stdoutstderr/实际退出/SAV/图，失踪船/真实战损不删除、不追认原失败。
+归档和独立staged原blob核验独占期间不动GUI/日历/不写RUN。archive实际0后longpaths命令级git add -f新切点，再五任务docs/全部现有priority根JSON实际0，独立PASS actual0后补真实计数/receipt、核task-only范围/diff check、提交push main并独立ls-remote完整SHA。生产41文件0.2.0/Steam离线不变，归档不当完整政体验收。之后唯一10.1月账、合法替代船建设/安全航线和剩余闭环继续。
+
+
+CUT28归档实际0，冻结2026-10-11T13:40:16.484753Z；30380源项/1523810137字节，复用29688、新692/187883924。首次独立staged原blob校验PASS/实际0，30467唯一blob/1558815143字节；回执[priority-native-colonizer-mia-and-mother-replacement-delta-staged-verification-2026-10-11.json](evidence/priority-native-colonizer-mia-and-mother-replacement-delta-staged-verification-2026-10-11.json)。独占期间无GUI/日历/RUN写入。现补实际回执/五任务docs、核范围/diff check，提交push main并独立核完整远端SHA后唯一10.1，生产未改。

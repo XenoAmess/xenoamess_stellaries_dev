@@ -611,3 +611,6 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-11补证：Stellaris4.5.2死亡分段清理：9.14 killed=yes/负HP的117441817仍在owned集合，9.15仅该舰及16778073队退出集合，country.fleet_size仍140旧缓存；不能据仍注册或naval缓存判断存活，也不预设清理后即时135。新殖民船combat仍含旧825时已原生evade_hostiles_order/sub_order/move_to_system_point_order到37并连续移动/满血；UI紧急跃迁14天锁与自动规避分别核证。nomads.510/on_fleet_exit_battle原生定义母星同名60天标记，实际60→59；原事件有arkship/default条件，尚未证明蜂巢实际触发路径。完整源码/同原SAV/36和28PASS在CUT27留证，属Stellaris运行时事实，不推广为CK3或共通P语言规则。
+
+
+2026-10-11新增Stellaris原生补证：仅mia_type=mia_emergency_ftl不能判当前MIA；9.27新殖民船真实MIA还同时properties.mia=yes、return_date2275.08.02、movement origin invalid/idle、mia_from97、无当前命令/无in_combat_with，恰从9.13进入战斗过14天，玩家未点击。原移动path date2273.01.30可残留，但不能作MIA后有效航行ETA。新船HP/甲保留，原始war新增零损失退出记录不等于整个战场获胜。另physical planet ID、colony注册表ID、star system ID独立：target523在system37未殖民，colony37实际carrier physical1085旧源；audit只含请求的7/90/124/1085，不能猜有523。母星新建订单100663340复用已退休83886124+2^24，原NONE槽消失并非复制；同日正常camera_focus变化需要独立视图动作锚，与Mod状态分开核。全原SAV/源码/12、16、26PASS及原异常在CUT28保留，属Stellaris事实，不作为共通P语言或CK3规则。
