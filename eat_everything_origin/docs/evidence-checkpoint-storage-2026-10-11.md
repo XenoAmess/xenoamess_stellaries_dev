@@ -300,3 +300,13 @@ CUT35实际结果：freeze2026-10-11T19:43:47.353245Z；source33300文件/229083
 
 
 CUT36实际结果：freeze2026-10-11T20:12:52.668397Z；source33584文件/2361286479B、reused33299、新285/70460717B；独立Git逐blob校验PASS/实际0，33679唯一blob/2399807650B，根回执evidence/priority-native-devour-first-year-and-internal-migration-delta-staged-verification-2026-10-11.json。完整原始失败与复核/迁移双UI/四端点原件齐全；仅暂停切点，不代替整路线或重载。按本任务scope提交推送并独立核远端完整SHA后执行既定唯一2.01单日观察。
+
+
+## CUT37 方案：首次原生矿物噬岩、后方失能占领与科研船正常撤退
+
+当前2277.11.16暂停，全部helpers结束。唯一新label native-mineral-bite-and-rear97-capture-retreat，基线CUT36 native-devour-first-year-and-internal-migration/固定已推送4a8d9aa1bd52985e611c4d1455acade919614755。完整归档CUT36后Git原回执、首次原生矿物bite原SAV/六观察/INV6f632442…与全部源码、独立V3 20PASS/实际0、driverV2原流/前两端PASS及第三原20一FAIL/实际1和停止、全局原station/825/166/双war/273完整原文、简中tooltip/撤退UI/唯一正常点击及同日SAV、capture V1原源码/两FAIL/实际1/静态非零事实与V2独立13PASS/实际0、主力唯一正常移动命令/原18/原航路/SAV/10PASS/实际0、后续15日全部SAV/六观察/V4 21PASS/实际0。首次只读临时调查误用fleets复数导致KeyError已纠正为真实fleet单数，属于私有调查错误而非生产或P工具缺陷。原始失败不删不改。
+
+继续既有archive实际0→仅stage新cut+五任务docs→独立verify全新及复用Git原字节PASS/实际0→记录实际计数及根receipt/scope/diff→commit/push main/独立ls-remote全SHA。冻结期间不写RUN、不推进游戏、不改任何已执行helper或Mod版本/Steam。新组件只读SAV；源13size/Q13及C49/D14不预写结算。主力原生path.date2279.06.26、途经敌占97，不能声称及时抵达或已支援成功。CUT37只是暂停证据，不是退出重载或完整路线验收。
+
+
+CUT37实际结果：freeze2026-10-11T21:01:19.474093Z，33955源文件/2441138750B，reused33584、新371/79852271B；独立Git暂存原字节核验PASS/实际0，34051唯一blob/2480067965B，根回执evidence/priority-native-mineral-bite-and-rear97-capture-retreat-delta-staged-verification-2026-10-11.json。所有原失败、源码、两SAV/原生战报与撤退/移动/新15日核验原件完整保留。仅当前暂停证据，不代表路线或退出重载完成。只stage本cut/五任务docs/根回执后scope及diff、commit/push main/独立核远端全SHA；随后继续V4限定≤15日观察。Steam仍离线，不改Mod生产代码/版本。

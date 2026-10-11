@@ -1040,3 +1040,60 @@ V2修复方案（先于实现）：新增priority_terravore_fourth_native_devour
 
 
 CUT36实际结果：freeze2026-10-11T20:12:52.668397Z；source33584文件/2361286479B、reused33299、新285/70460717B；独立Git逐blob校验PASS/实际0，33679唯一blob/2399807650B，根回执evidence/priority-native-devour-first-year-and-internal-migration-delta-staged-verification-2026-10-11.json。完整原始失败与复核/迁移双UI/四端点原件齐全；仅暂停切点，不代替整路线或重载。按本任务scope提交推送并独立核远端完整SHA后执行既定唯一2.01单日观察。
+
+
+首次360日原生噬岩已实际发生于2277.02.01：日历/六观察实际0/6全true，SAVa5bb89bca2a0a05a68f8ebed35bacd322be76e5269e16b45c5b70bc576b54243，progress11→12。新增d_lithoid_devastation 16778039/16778185，deposit_holder type0/id523；源bombardment_damage20，原尺寸13/Q13/month32保持；recently_eaten_planet原date63465360/剩1→新date63474000/360。唯一原生MESSAGE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT/notification269/receiver0/target_planet523/date2.01/中文PLANET亚蒙-I，expiry5.01；矿物库存总delta1031.0985，E46.3/A27.068/U85.51209，research银行同日未变、menace0delta。源人口281→282/母11292→11298、总+7，未抽到人口奖励。C49/D14/worlds3/全部EEP变量保持、无pending/newerror。
+
+实际源唯一hive district71仍level1/zone108，不能写成已删除区划；原版consume_world与Mod eep_native_consume第一个随机移除区划block逐token相同，本次未确认Mod缺陷，不推测最后hive为何保留。两完整原脚本/原生变量文件SHA与实际前后源/district/deposits/消息/库存已经另存native-mineral-bite-investigation.json。原版变量tier1materialmin100/max1000，矿物分支5倍月产出并clamp；总stockdelta含日常预算，不冒称1031.0985全为奖励或精确每月账本（旧缓存与月初更新有小数差）。
+
+### 已核原生消耗与后续等待V3方案（先于实现）
+
+不调用范围止1.30的旧V2到2.01，不改写旧证明。新增独立wait_guard_v3，沿用V2的19核心与全部原件/来源/迁移逻辑，仅将已知首矿物消耗按完整INV固定SHA/两实际SAV/六观察源码实际0/原生两沉积类型及owner523/唯一269消息/原source flag更新/相同Q与变量、全帝国仅+7且无人口奖励、原生源码SHA与移除block相同做独立锚定。只在本对1.30→2.01允许其实际deposits新增2和flag重置，其他核心重新核，不携旧PASS代替当前检查；新Mod/consume消息仅此已核269清除边界，未知任何新消息仍停。新增永久原生消耗锚定检查，核本段或未来普通等待所依据的实际first-bite原件，保留rawsource和所有失败。
+
+后续普通等待只允许deposits与before一致、flag_date保持已核新date63474000/剩余随实际days倒数且从本2.01原360计算；source Q13/month32/active/native/source102seed快照保持、母星与所有19核心仍按V2。前source whitelist增加原V2/4ba206…供本次跨已知边界；输出独立v3后缀。范围硬cap延到第二原生360日之前2278.01.30，每段≤90日/max按实际剩余flag_days−1/上限90，nativeprogress仍精确月数且<32；不自动越过下次年度奖励或结算。compile/pyflakes0，同一2.01独立全核心PASS/实际0后才可恢复有界等待；生产Mod/P工具/Steam均不改。
+
+
+V3/sourceff8e46d30640ff1e49ad0fa3bb6297d4cf1073ee12e6535e379b0e2dd3342813 compile/pyflakes0，首次原矿物消耗同SAV20项全PASS/实际0，progress12、reviewed_native_bite=true、无boundary/ready=true/max90。完整INV6f632442d020e94ee3a951f271cd877622f101c6199f778d58731bbbd625a063及原生所有来源哈希绑定，原19核心重核通过；原旗标/沉积变化仅本次已核固定对允许，未来仍以新flag_date63474000的剩余360倒数及deposits保持核验，不泛放新消费。
+
+后续有界调度V2方案（先于实现）：从已核native_devour_bounded_driver/source03899bdf…复制新priority_terravore_native_devour_bounded_driver_v2.py，只更新guard源码/哈希为V3/ff8e46…、proof/exec后缀v3、cap2278.01.30，其余≤90日/1–6段/唯一label/每步实际0/未知边界立即停原规则保持。compile/pyflakes0后，从本2.01以唯一label terravore-fourth-devour-pre-second-bite-year-wait最多4段90+90+90+89原生日到2278.01.30；所有日历/六观察/20核心实际0且无boundary才继续，不自动过第二次原生消费或最终结算。driver PASS仅调度结果，无新增Mod代码/Steam发布。
+
+
+### 第二年度等待中的原生占领边界与科研船撤退方案（先于新实现/命令）
+
+有界driver V2/sourcebe8f0b23…从2277.02.01执行90日三段到05.01、08.01、11.01，前两端20PASS/实际0，progress15/18；第三端日历及六观察实际0，progress21、母11358/源287/总11645。V3原20检查恰一FAIL/实际1：all_owned_ship_identity_designs_and_original25_military_alive；其余19true。driver实际1立即停止，未执行第四段，不重写任何失败原件。
+
+只读实际SAV核失去owned记录仅后方station ship67109591/fleet804/base153/system97，它仍为同一个全局对象、hitpoints1/disabled=yes，fleet804已归country1。原生2277.10.22 COMBAT_STATS notification273/reasonwe_disabled/我方starbase1 lost0；不是舰船被删除或新造。原25军舰全部仍存活。敌舰队825从6艘原舰自然增援到15艘、power2738.71093。science166/ship1049/leader74仍在97战斗，自10.08开始；两国实际所有权和完整战报须存入独立调查，不用war1_battles未变冒称所有战争无变化。原生两个war完整participants/fields亦独立保留。母星7及源523/system37仍owner/controller0，吞噬Q13/32月/progress21/C49/D14/worlds3/PSI1/Menace885及原error未增；截至本端没有确认新生产Mod/P工具bug，没有生产代码修改。
+
+实际简中科研船界面42f154d1…确认EEＰ德雷克/阿西莫夫级375/375、armor125/125、shield320/320；紧急超光速跃迁tooltip55be7faf…按钮可用。原生COMBAT_BASE_DAYS_UNTIL_EMERGENCY_FTL14（日历实际已23日）；NUM_DAYS_BEFORE_RETREAT30是陆战而非舰队。下一步只对这艘原science166正常点击紧急跃迁一次，若出现原生确认则阅读并正常确认，暂停同日正常保存唯一stage terravore-rear97-science-native-emergency-retreated，不编辑SAV/传送/加资源/补舰/复活/提交和平。
+
+独立新只读调查/组件方案：绑定原第三端SAV、六项观察/sourcee725…/实际0、V3源码ff8e46…/原20恰此一FAIL/实际1与driver源码be8f0b…/实际1；保存所有before/after native ship/fleet/starbase/country ownership/双战争/273完整原文及来源SHA。重新检查同日正常SAV/error、所有EEP变量/母星源星人口/局势/真实研究银行/库存/owned identities/实际设计保持；允许的唯一舰队原生状态变化是science166退出combat并MIA及原生scheduled return、按实际记录其HP/leader，不能把未来返航或受损修复写成已经发生。失能station的所有权仅按已核原生报告说明，不改原strict检查、不把PASS组件当路线通过。compile/pyflakes0、所有独立检查true/实际0后，恢复最短战斗观察段而非90日盲跨；下一次原生消费及局势最终结算仍分别停边界。所有图/失败/原流/源码/实际退出均保留，Steam保持离线。
+
+
+原正常紧急跃迁已唯一点击，未出现确认框；同日正常SAV a291c0d0d9dfc4c7b38877440d3347f08316993e9b3c20b2c067f862fd07fd26/实际0/error+0，原science166/1049仍375/125/320、leader74保留，properties.mia=yes/mia_type=mia_emergency_ftl/return_date2278.01.06。只是安排返航，未宣称返航完成。
+
+新capture_retreat_guard V1/source57646b9e…原12检查两FAIL/实际1，10true；static compile通过、pyflakes因未使用Path导入实际1。本次静态非零后误接了动态执行，是流程失误；保留源码、原stdout/stderr/实际1，日历未推进。两动态FAIL只读定位为正常撤退副作用而非Mod：leader74唯一experience2901.25→2908（+6.75），其他字段逐字相同；war1新增唯一2277.11.01/system97舰船战斗记录、attacker0/defender1、双方损失0/疲劳0。war16777216与我们无关（16777219对16777218），保持；war1是country1对country0并保留force_peace_date2278.01.02。station失能战报273有0lost且是we_disabled，不代表一次所有权变化必写新war battle。无新message/pending，国别资源/真实银行/全部EEP变量、母星源星人口/局势21/区划岗位、全部owned identities和25军舰等10项已独立true。
+
+V2方案先行：保留V1完全不改，新独立v2删除未用导入并要求compile/pyflakes实际0后才能执行。按两SAV原文精确核leader74仅经验+6.75（不泛允改traits/归属/位置），双wars除war1.battles逐字保持；war1所有旧battle原文按序完整前缀，唯一新增battle标量必须恰system97/colony4294967295/日期11.01/type ships/attacker_victoryyes/双方loss0与exhaustion0、attackers[0]/defenders[1]。并显式解析273我方804/count1/lost0；其他10检查保持，同原SAV不重放命令，新增V1原检查两FAIL/source/actual1/原proofSHA e0d303c0448d20e7645bf572d39650acdcee310b8b0618712df7acd0d205a51a绑定检查。新输出v2后缀，独立全部true/实际0才能继续。纠正私有检查假设不是放过未知舰船损失。
+
+
+capture_retreat_guard V2/sourcea4f1c1002256671f34923a7b4198b98cf25cc47526f9a16cc90c1413bf95f297 compile/pyflakes0后执行，13检查全PASS/实际0，同日正常SAV a291c0d0…；原V1两FAIL/实际1保留，273 lost0、唯一经验+6.75与原战斗记录已按精确原文核清。只是当前核心/占领/撤退组件，非路线完成。
+
+前线防御命令方案（先于操作）：当前敌825后97/power2738.71093；源37现有5军舰合计622.875与base158约1.6K，母星主力fleet83886903（第7舰队）18艘/power2185.3125，可正常通过超空间航线调往源37友方空间站附近支援。先只读GUI核第7舰队，再只对它正常下达一次移动/进入环绕37/base158命令；保留母星其余两艘与3.4K星港，不新造/免费升级/传送。若出现菜单先读后选正确移动，不假设已到达。同日正常保存唯一stage terravore-source37-native-mainfleet-reinforcement-ordered，独立核原18身份/未变实际设计/队列目的system37、资源人口EEP/局势21/全部owned身份无变。之后每段最多15原生日观察敌舰与主力原生路径、是否战斗/MIA及source所有权；发生实战立即停并按实际损失记录，不按旧25必存活假设掩盖正常伤亡，未知Mod异常仍暂停调查。不得自动跨war1强制和平日期2278.01.02或science返航2278.01.06，也不提交和平。
+
+
+主力第7舰队GUI80694e5b…确认18/18、HP4860/4860、power2185；唯一正常right-click601423后实际简中UI a8d42847…显示正在前往亚蒙星系。只是下达命令，未宣称抵达。新增reinforcement-order只读组件方案（先于实现）：以前一步13PASS/actual0/sourcea4f1c100…/原SAV为基线，核同日正常save/actual0/source19fea…、全部country0审计字段/母源/situation/structure/pop/jobs资源保持、所有owned船身份实际设计与生命保持；fleet83886903恰原18、只新增正常movement order，目标origin37，其他fleet166仍原紧急MIA日期2278.01.06；完整保存实际原order/paths/sourceSHA并要求全true/actual0。不得把排队当抵达，前线实际战斗另停。
+
+等待V4方案（先于实现）：复制独立V3保留全部20核心、SAV/error/正式0.2.0中文tree/原生年度消费及内部迁移INV锚定；仅新增已核native_capture_retreat_v2 13PASS/sourcea4f1c100…/两SAV/唯一native撤退事实锚定，允许仅原science166/1049保持mia_emergency_ftl/return_date2278.01.06且全部owned设计身份未变。任何其他MIA/新战斗/war1.battles变化/消息/pending/资源结构异常仍stop。前组件source whitelist只增加已核reinforcement-order新源码固定SHA；范围只到war1强制和平日期前2278.01.01，每段1–15日，ready/max至15且硬cap前。重新核每段20+新锚定检查，不携之前PASS代替本段；V3及所有strict FAIL完全保留。静态0及当前前置全true/actual0后，先执行唯一2277.11.01→11.16/15日，再六原观察和新V4；不得自动跨2278.01.02/科研船返航/第二消费/最终结算。不改生产Mod/P验收引擎，不发布新版本。
+
+
+V4源码076a8a11c7ec69bb675c7d1205faf54e6777d78b10b604d84f56f77c2b359bec compile/pyflakes0，11.16独立21PASS/实际0；SAV2885c7c196593511e52867251070d74babe22292642d82130ce89aef7016ad84、无boundaries/max15，母源人口/C49等保持、未新增error。
+
+
+## CUT37 方案：首次原生矿物噬岩、后方失能占领与科研船正常撤退
+
+当前2277.11.16暂停，全部helpers结束。唯一新label native-mineral-bite-and-rear97-capture-retreat，基线CUT36 native-devour-first-year-and-internal-migration/固定已推送4a8d9aa1bd52985e611c4d1455acade919614755。完整归档CUT36后Git原回执、首次原生矿物bite原SAV/六观察/INV6f632442…与全部源码、独立V3 20PASS/实际0、driverV2原流/前两端PASS及第三原20一FAIL/实际1和停止、全局原station/825/166/双war/273完整原文、简中tooltip/撤退UI/唯一正常点击及同日SAV、capture V1原源码/两FAIL/实际1/静态非零事实与V2独立13PASS/实际0、主力唯一正常移动命令/原18/原航路/SAV/10PASS/实际0、后续15日全部SAV/六观察/V4 21PASS/实际0。首次只读临时调查误用fleets复数导致KeyError已纠正为真实fleet单数，属于私有调查错误而非生产或P工具缺陷。原始失败不删不改。
+
+继续既有archive实际0→仅stage新cut+五任务docs→独立verify全新及复用Git原字节PASS/实际0→记录实际计数及根receipt/scope/diff→commit/push main/独立ls-remote全SHA。冻结期间不写RUN、不推进游戏、不改任何已执行helper或Mod版本/Steam。新组件只读SAV；源13size/Q13及C49/D14不预写结算。主力原生path.date2279.06.26、途经敌占97，不能声称及时抵达或已支援成功。CUT37只是暂停证据，不是退出重载或完整路线验收。
+
+
+CUT37实际结果：freeze2026-10-11T21:01:19.474093Z，33955源文件/2441138750B，reused33584、新371/79852271B；独立Git暂存原字节核验PASS/实际0，34051唯一blob/2480067965B，根回执evidence/priority-native-mineral-bite-and-rear97-capture-retreat-delta-staged-verification-2026-10-11.json。所有原失败、源码、两SAV/原生战报与撤退/移动/新15日核验原件完整保留。仅当前暂停证据，不代表路线或退出重载完成。只stage本cut/五任务docs/根回执后scope及diff、commit/push main/独立核远端全SHA；随后继续V4限定≤15日观察。Steam仍离线，不改Mod生产代码/版本。
