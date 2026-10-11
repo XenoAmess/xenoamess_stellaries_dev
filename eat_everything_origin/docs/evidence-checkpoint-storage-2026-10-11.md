@@ -113,3 +113,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 沿用全manifest原字节复用/独立暂存Git blob检查；归档与校验期间不动GUI/日历/RUN。actual0及独立PASS后只提交五任务docs/该新完整切点/回执，push后独立ls-remote完整SHA，再继续真实船坞完工和后方正常军事补充。生产仍同41文件0.2.0，完整路线仍1/7，当前变更仅经营验收和证据，不称Mod修复或追加工坊发布。
 
 第十七切点归档actual0，冻结2026-10-11T03:17:33.946849+00:00；完整25886源项/1031039110字节，复用25350、新复制536/18662313字节。独立暂存原字节核验PASS/actual0，25960唯一blob/1060761738字节；[独立回执](evidence/priority-native-heavy-completed-and-rear-shipyard-paid-delta-staged-verification-2026-10-11.json)。本轮全部原始失败/后继成功/静态包与图像候选均已冻结，生产未改；提交推送并独立核远端后才继续已记录的一格发电报价。
+
+### 第十八切点实施前计划
+基线第十七切点native-heavy-completed-and-rear-shipyard-paid/0a9e8555d10ae1df5f40ba7632d7160da3f8297d，已push及独立完整SHA核验。新唯一标签native-generator-paid-and-second-war-battle-boundary。暂停2271.08.02且首V51独立82PASS/actual0，冻结两Git原退出、七发电正常单次付款/后置报价按钮误解记录/18PASS、首1.4日V50 80PASS、双建设driver原源/静态/首30日calendar0/80三FAIL/driver1/未派发step2、全新战斗与退休建筑换代JSON、V51原源/静态/82PASS、所有原始SAV/UI/OCR/未过滤错误/stdout/stderr/退出与完整source manifest。生产41文件0.2.0保持，不称新Mod修复或完整验收。
+沿用既有完整manifest原字节复用和独立暂存Git blob检查；归档/校验期间不动GUI/日历/RUN。两个actual0且独立PASS后仅本轮五任务docs/新切点/回执提交推送，并独立ls-remote完整SHA；之后才执行已记录唯一一日08.03校准，不重启旧双建设批量driver或重复任何购买/日历。旧冻结原件保持。
+
+第十八切点归档actual0，冻结2026-10-11T03:44:01.396132+00:00；完整26035源项/1037658223字节，复用25885、新复制150/6628101字节。独立暂存原字节校验PASS/actual0，26110唯一blob/1067778649字节；[独立回执](evidence/priority-native-generator-paid-and-second-war-battle-boundary-delta-staged-verification-2026-10-11.json)。原80三FAIL和新82PASS均完整冻结，提交推送并核远端后再执行唯一单日。

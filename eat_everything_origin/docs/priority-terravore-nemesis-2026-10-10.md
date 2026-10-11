@@ -1009,3 +1009,28 @@ V49仅把原协调岗精确值改为完工后首月刷新前1500、2271.06.01起
 当前本轮切点暂停2271.07.01，后方船坞58/180。母星原生简中投产UI已采（5蜂巢/6发电/15采矿，重工业、总容量29、10.7K人口、正资源），正常鼠标移出悬浮提示后再采清洁原图。仅工坊候选，不上传；普通护卫舰不得作为天灾矿物舰展示。完整切点归档与独立暂存核验期间不动GUI/日历/RUN，提交推送及远端SHA核准后继续船坞/后方补兵/清路，未来补兵后维护需重新验收。
 
 母星工坊候选两图均已亲自检查；优先清洁原图terravore-heavy-gallery-clean-visible.jpg/SHA808e1d30adeac43ececcff6af63482bac0cd0d3c5ca9f7407e15c6c4f7eaab9a，原图terravore-heavy-gallery-mother-visible.jpg/SHAf3b87444b6e73aee51b1bc63f59c27f5cc3be0faf518efb5c102d3217a50dd45。均与各自原OCR image_sha一致，候选manifest terravore-heavy-workshop-gallery-candidates.json绑定实际07.01SAV。展示原生29容量/5蜂巢6发电15采矿/重工业和正资源，未上传工坊。现在开始第十七完整切点，独占期间不写RUN或动游戏。
+
+第十七切点及五任务docs已提交0a9e8555d10ae1df5f40ba7632d7160da3f8297d，push实际0、独立ls-remote实际0且远端main完整SHA一致（原始两transcript保留RUN，进入下一切点）。工作树干净。按已记录一发电方案，现只读正常UI报价，游戏仍2271.07.01暂停。
+
+按一格发电范围正常UI按钮直接下单：误把建设按钮当报价入口，已立即停止继续点击，实际后置原生报价/唯一队列已见240矿/240work/172预测日，未开工。准确保存和付款守卫下一执行，详见经营设计文档；不伪造前置报价，不重复支付。
+
+第七发电付款守卫18全PASS/actual0，源c083419c037e9bfe517601360c2742833d6341f4e1a06426333330cdc639a907，pyflakes0。准确单扣240矿/唯一788529161/原truebank及整个fleet保持、仅last_district和原生random+3/科研显示镜像刷新均已核。按既定唯一1日07.01→07.02/terravore-generator7-first-work，绑定本18PASS/actual0，先读实际双队列工速，不在有新发电订单的新端强跑旧queue0空约束的V49。
+
+### 双队列首日与V50实施前
+07.02唯一一日actual0/SAV088772c169cc3d97c0531c67b5bcfe5d81a85aa0fa923202141a8f2b3c44908f：发电788529161进度1.4/240、后方船坞33554473为59/180。原生常规库存保持；社会真实bank7049.68798→7084.48011（+34.79213）为既有月科研次日tick，不把它当额外施工奖励或要求research全不变。gen6/原结构及岗位保持，未完成。
+V50从冻结V49只把queue0原清障/重工已完成时的空队列约束改为唯一已付费发电788529161；保留原退休订单不存在及same-slot换代验证。新增18PASS付款源c083.../actual0/准确SAV锚点；新增双端发电原订单所有nonprogress raw保持、progress=自07.01原生日×1.4、0≤work<240/每段差1.4×days，母星gen6/技工1200保持；新增首单日0→1.4/准确SAV/前18PASS/actual0/常规库存保持及社会bank真实次日+34.79213锚点，后续引用本首80PASS/source。其余77项（除上述两queue0条件）完整保留，原生船坞仍1/day/<180、殖民idle pending/原6无人机阻断候选保持、source第二年度前/所有军力/EEP/PSI/2814保持。pyflakes0后首80全部PASS/actual0才继续按≤30日真实段；原generic idle driver仍被colony pending阻止，若需专用双建设调度必须另先写文档/限定首完成边界，不解除不可达殖民的pending。
+
+V50首双队列80全PASS/actual0/source2fa9fac6b7010d9756a65a13f5bb54ca0021159412b513e15dd99586193b5da9，pyflakes0。新专用priority_terravore_dual_construction_driver.py实施前：只调度此双付费建设、原殖民151停泊/已知阻断候选保持阶段，不复用被pending禁止的generic idle driver，也不宣称殖民正常。入口必须当前V50全80PASS/actual0/source exact及bounded_construction_calendar_ready=true、short_idle=false、pending无待选/无交战，生产02/简中；每步先重核这些实际proof/执行和SAV SHA，再独立执行唯一正常calendar和同V50、等实际0/完整80PASS才派发下一步。最多三步/每步≤30/总≤90原生日，按船坞179之前、发电240之前、源第二年度前和目标日期裁剪；任意新FAIL/未知状态保留原件、记录已完成步骤与实际非0并停止，不重复calendar/购买。独立检查通过即继续是针对此有界准备建设的新ready标志，原殖民pending与旧bulk=false保持，不能用新驱动跨船坞完工/新战斗/发电完工/第二年度。
+首唯一批次terravore-dual-build1，从07.02到10.02最多90日三步30；预期末船坞149/180、发电127.4/240仅是裁剪计算，实际必须逐端读取。工具源经pyflakes0后首次执行；若生成/静态失败不能执行驱动。此期间不归档RUN，所有步骤/源码/原始stdoutstderr/退出进入下个完整切点；满90即暂停审核，不无界快进。
+
+### 双建设首30日新战争边界调查与V51实施前
+专用driver source75c9454d012e5eabccd4f8178eede3fec1cfebb771a208fc836ee6334d03d791静态0后首次执行；唯一step1 calendar实际0，07.02→08.02/SAV9ea73b2817d8ec732a117d907fab1b761b4418e4f50ad4ea3869ee56f2d87819。V50原80项仅3 FAIL/actual1：heavy_actual_zone_chain_building_lifecycle_original_native_before_or_done、native_enemy825_actually_returned_same_positive12_no_new_kills_or_menace、all_owned_ship_activity_damage_and_native_reports_no_new_battle_after_end_anchor。driver实际1、未派发step2；其result days0指0个已验证通过步骤，不是游戏未过30天，实际唯一calendar30已执行必须保留。所有27本国军舰仍在/无新损失/Menace105/无待选；母星0基地主体18300/5125/4320未损。
+真实新战斗：敌825同原12舰/总hull10930/power2875.72656，07.26在system181与本国outpost base21/fleet198/ship1090开战；双向combat为198↔825、同origin181/start2271.07.26。当前1090 hull9150仍满、shield172.30582/1440、armor2925.43118/3125，last_damage/last_combat_activity均08.02；无新COMBAT_STATS成战报或Menace，尚未结束。母星三军舰组仍0原位置/20舰/总战力2436.0625，加母星原基地和两平台；保持现有防御，不盲调母星离开。原no-new-battle守卫正确触发停止，不是Mod故障。
+另一个FAIL是私人固定none对象假设：zone61仍none、new104/母hive5未变，但退休建筑83/16777258/86的none槽已被引擎重用为更高代16777299(foundry1)/33554474(stronghold)/16777302(engineering_facility1)。新handle不是原退休建筑复活，原旧id不在任何zone建筑引用。必须接受严格同槽更高代且唯一/具体新对象可由新zone引用、母星完整新zone104保持；不允许任意missing/换代无来源。原source/liveSAV事实独立追踪，不改生产Mod或P工具。
+V51目标/范围：在此准确新战斗端点重新建立有界防御观察分项，保留其余77条件与双建设工速/EEP/PSI/全部原舰损失账本。只适配退休对象none或严格higher generation；敌825仍同12positive/noMIA/no新损失/Menace不增，允许且仅允许上述198↔825/181/07.26新战斗；owned_ship_activity仅给原station1090在07.26..当前date的damage/activity例外，其余自上次战斗截止2268.12.14保持，旧战报不改。新增首准确30日/原80三FAIL及driver实际1/无step2/前80PASS/同SAV锚点，再新增退休三none同槽换代和具体新zone引用首事实锚点；首82PASS后后续固定此锚，不把未完成战争算成功或放宽其它新战斗。pyflakes0后同原两SAV首82全PASS/actual0才单独记录下一唯一一日校准；原双建设driver不在交战期重启，暂不能推进批量或跨任何战果边界。新战争边界全部原件在第十八完整切点冻结后继续。
+只读原版crisis.4025与crisis_objectives核查：shipkill目标触发不限制被杀国家为default；本局200系统杀舰基准15。能否从实际采矿无人机清路得Menace仍需实战原始账证明。crisobj_conquer_worlds基准100000/num_galaxy_systems/宜居倍率，不能忽略正常征服也可积累Menace；已发现候选system147原版正式简中「拉萨多尔」（random_names_l_simp_chinese.yml:1518），其殖民1578仍未正常入侵，保持未来候选。
+
+V51同原07.02/08.02 SAV对独立82全PASS/actual0，源f9d3d1102c6fd7b040712746491a93a1f7a5a6966b59ac154c2450b595493c19；pyflakes3.4.0未定义名静态检查actual0。原80项三FAIL及driver1完整保留，未重演日历。严格验证退休建筑原id未引用、同24位槽唯一更高代、新对象由其他有效zone/district引用；原zone61仍none/母星zone104保持。已知战斗只允许181的198与825、07.26起始；仅station1090允许新损伤，其他本国舰/历史战报不变。原27军舰/12敌舰均存活，Menace105/无待选，船坞89/180、发电43.4/240尚未完成，第三吞噬18/29。新proof明确bulk construction ready=false、colony pending=true，不能用82PASS宣称战斗结束或殖民恢复。
+下一步实施前方案：先完成第十八全原件切点、独立暂存字节检查及提交推送核远端，然后唯一正常一日08.02→08.03（terravore-second-battle-one-day），绑定当前82PASS/actual0，继续同V51核损伤、原船/敌舰/核心与双建设。仅此一日已授权，不自动重启90日driver；新战报/舰船死亡/归属变化/待选/日志增量均停止调查，保留实际结果。之后依据实际损伤另记录短步方案，不跨未知战果。Steam保持离线，生产41文件0.2.0同tree，未发现新Mod或P工具缺陷。
+
+只读原SAV额外核实：本国16支陆军全部defense_army（母星12/源37四支、满475），没有现成可运输进攻军，不能将它们当可直接登陆的现有部队。未来正常征服必须先在简中UI核实已知目标/敌防御及正常招募成本，另记录方案后购买，不能用存档隐藏信息或直接修改军队。
