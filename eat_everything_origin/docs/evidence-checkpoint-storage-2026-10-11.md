@@ -89,3 +89,9 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 沿用既有delta完整原字节复用与独立暂存blob校验；归档/核验期间不进行GUI/日历/RUN写入。两个工具actual0且回执PASS后，仅五相关docs、新切点/独立回执提交推送并核远端，之后才正常点击殖民。旧冻结原件/生产0.2.0不改，当前非完整路线/重载验收。
 
 第十三切点归档actual0，冻结2026-10-11T00:22:49.143818+00:00；完整24298源项／962330322字节，复用23837、新复制461／19378566字节。独立暂存原字节核验PASS／actual0，24368唯一blob／990236193字节；[独立回执](evidence/priority-native-three-mines-budget-clear-work-and-colony-quote-delta-staged-verification-2026-10-11.json)。旧原件保持，五相关docs/本新切点/回执提交推送并核远端后，才继续同暂停日期下一正常殖民。
+
+### 第十四切点实施前计划
+基线第十三切点native-three-mines-budget-clear-work-and-colony-quote／959f20ef0623bb61b472bacde64d501319106611已push及独立核远端actual0。新唯一标签native-yomon-colony-and-heavy-conversion-paid。待当前唯一idle23全部独立核验后暂停（若异常，先调查、保留原始FAIL，不重跑）；冻结亚蒙523原生375M150A实际付款17PASS、母星800M实际重工业付款14PASS、两次正常确认/新订单/none槽换代/科研镜像与住房解释、双民用首工作1.33/1日V33 56PASS/V20及后续逐端全部原件。该切点不包含未实际完成的重工业/殖民，不扩大推荐或完整路线数。
+沿用现有完整source manifest复用与独立暂存blob原字节校验；归档/校验独占期间不动GUI/日历/RUN。两个工具actual0且PASS回执后，仅五相关docs、新切点/回执提交推送并核远端；原冻结原件、生产41文件0.2.0保持。远端核准后，再唯一单日核敌舰预计2270.07.07返场实际状态，不将预测当返场、不强跑旧MIA守卫。
+
+第十四切点归档actual0，冻结2026-10-11T00:54:21.081447+00:00；完整24547源项/973863649字节，复用24298、新复制249/11533327字节。独立暂存原字节核验PASS/actual0，24618唯一blob/1002182068字节；[独立回执](evidence/priority-native-yomon-colony-and-heavy-conversion-paid-delta-staged-verification-2026-10-11.json)。原冻结文件未追加；仅本轮五相关docs/切点/回执提交推送并独立核远端后继续原生单日。
