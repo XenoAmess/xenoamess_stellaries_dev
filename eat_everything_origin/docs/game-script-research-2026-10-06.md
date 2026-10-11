@@ -645,3 +645,8 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-12 原生殖民完成日期语义补证：同一物理523在colonizing_species73存在时colonize_date2273.11.26，实际完成2276.02.01后colonizing_species消失、planet.colonize_date更新为2276.02.01，新增save_on_death1、原生TYPE_FINISH_COLONIZE_PLANET通知268。102正数人口及简中UI完成状态共同验证；不能把开工日期固定到完成后。原25一FAIL/实际1保留，独立32项组件PASS/实际0。随后源已有102本族，eep_begin的100−existing得到eep_seed_need=-2，不进入>0迁移分支，无额外母星人口迁移；源Q13计算ceil13×2.4=32月，实际situation50331660/target planet523/progress0，原生消耗标记360日。仅本机Stellaris字段/现有Mod效果实证，无共通Paradox新语法或CK3方言结论。
+
+
+2026-10-12 原生自动迁移与SAV剩余日数补证：第四吞噬启动后首月2276.02.01→03.01，母星11399→11390，源102→118，总11501→11508。实际简中管理UI母星自然+7/移民-16/组装0，源自然0/移民+16/组装0，正好解释净-9/+16；维护子个体原3507→3498，核心complex3492/simple4400保持。原生defines:1951 RESETTLE_UNEMPLOYED_BASE_RATE10注明每月自动迁移人口基数，01_gestalt_drones.txt:87 maintenance_drone允许resettlement；只确认本次16，不反推未知加成。首次原生噬岩360日期未到、无native consume消息/新deposits，不能将这次源+16称吞噬奖励，也不能用母星单体必增断言丢人口。后续未噬岩阶段应核本国所有活跃殖民地总量、母星岗位结构和原生迁移证据，非冻结所有群体/单体数。完整INV81d4a76dba287f2e657aa6fb9fa96c924d314ee03fe38564424893fca338e9a2与双图75dee285…/2bdc37a9…保留。
+
+同一原SAV：audit.colonies包含原旧EEP源15/24/37零人口记录，本国真正owned_colonies=[0,38]；readonly audit保留历史源不是工具错误，活跃属地应以国家owned_colonies判定。recently_eaten_planet.flag_date63465360保持、flag_days360→330恰30日，flag_days为剩余日数；不可冻结为初始360。独立V1两FAIL/实际1保留，V2/source4ba206f6…19项全PASS/实际0。情况50331660首月progress1、delayed_event eep.21/days1/scope situation50331660；原代码仅progress>=32才设pending/结算，当前1<32，所以这一个具体月度延迟不当作未知结算；其他延迟不泛放过。以上为Stellaris存档/本机UI与脚本配置实证，未确认新Mod/P工具bug，无共通P语言新语法结论，不推广CK3。

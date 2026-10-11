@@ -1008,3 +1008,35 @@ CUT34已完成提交推送，独立远端完整SHA7b6f4ce6f3f498d60424232ce4c1eb
 
 
 CUT35实际结果：freeze2026-10-11T19:43:47.353245Z；source33300文件/2290836580B，reused32940、新360/89779868B；独立Git原字节校验PASS/实际0，33394唯一blob/2328962688B，根回执evidence/priority-native-colony38-completion-and-fourth-devour-start-delta-staged-verification-2026-10-11.json。全部原始失败、返航、完成与启动证明原件保留，不代表整条路线或重载验收。提交推送后第一段仅30日2276.02.01→03.01，验证situation50331660首月progress1/仍Q13/32月、源码规定的月度eep.20/延期eep.21行为；未到原生360日随机消耗日期，不应把自然人口增长当噬岩奖励。先执行既有日历与六项观察，独立局势等待组件方案/验收记录后实现，核心全PASS/实际0才继续≤90日、最迟首年原生360日消耗前2277.01.30暂停。未知消息/待选/战斗/工程完成/资源人口异常仍立即停止调查，当前不预宣称女王C60。
+
+
+### 首月原生自动迁移调查与后续局势组件方案（先于实现）
+
+CUT35 b61395277ecd4d92eeee2170fa80b75162cc0ada已提交推送/独立核远端。唯一30日到2276.03.01，日历及六观察全true/实际0，SAV1684120e5962f61016b471acb1e36824310caf701e6c68d908fb7f97811ec7ad，progress0→1/last_month_progress1，sourceQ13/months32/seed102/need-2与360日标记保持、无新consume消息/EEP结算变化/error。实际母星11399→11390/源102→118，总11501→11508；不能照搬殖民等待“母星必单增”假设。独立实际简中管理页确认母星自然增长+7、移民-16、组装0（图75dee2858c68f639ab8a092deeda23631e9751c1eb58373ef2361424e213fc10）；源星增长0、移民+16、组装0（图2bdc37a9b539450a230e78727fb71b94ae96571438f2b5773ffc5f6c6f44d263），完全解释母星-9/源+16/总+7。原生defines:1951 RESETTLE_UNEMPLOYED_BASE_RATE10表示每月自动迁移基数，01_gestalt_drones.txt:87维护子个体allow_resettlement=always。只证实本次实际16，不凭基数反推未知加成公式。母星maintenance_drone组3507→3498，complex3492/simple4400均保持，源complex102→118。当前无噬岩出生奖励、无新Mod/P工具bug/生产修改。
+
+完整调查native-auto-migration-investigation.json保存两SAV/人口组、源旗标、双实际UI/OCR、原生定义/Mod源码SHA及原始消息；第一次误标为source截图885321…实际上仍母星，因为原面板遮住outliner，原件保留不用作源星证据。关闭面板后重新正常打开实际亚蒙-I管理页，采用2bdc…实际图。
+
+新增priority_terravore_fourth_native_devour_wait_guard.py：仅针对已正常启动的situation50331660/target523/colony38/Q13/32月，在首年原生消费前2277.01.30以内，每段1–90日，以已核启动14项实际0/source091aa3…/固定起始SAV及六观察6项实际0/sourcee725…/日历663822…/前组件实际0锚定原件。核局势progress按实际月初数增长、原源人口≥100/species73、Q/月数/源原13size与所有active/native旗标/无新损害保持；母星所有结构/27付费等级/岗位及C49/D14/worlds3/PSI1/全部EEP结算变量保持。人口按全帝国本族总量粗界0–10/每月核对，仅本国两colony0/38、母星仍≥10000且住房/舒适度正、crime0，保存母星/源独立delta；不再把原生内部迁移认作损失，也不固定未来每月恰16。核端点E/M/A/U净正且库存不减、true P/S bank不减/工程0、工程星堡队列类型/已研究表保持及progress不减；所有owned ship身份/实际设计及25军舰存活、gov/AP/传统/危机1保持。任何新Mod/consume消息、未知pending/延迟、战争战报变化、owned战斗/MIA或工程完成/menace≥1000立即停边界；不泛放过随机收益。记录known eep.21月度延迟时仅在原代码条件progress<32明确无结算且scope为原情况的情形允许，未知延迟仍停。绑定本次自动迁移完整调查与双UI哈希，不能据此允许跨帝国迁出或总人口无故下降。新组件compile/pyflakes0、首月独立核心全true/实际0，随后每段同标准才能恢复有界等待，不能使用旧殖民V6或自动跨360日/结算。
+
+
+首月局势等待V1/source92936c5fe86d5f6ff3ae0de06ed13942244758b75c68161dbe0133262c23b4b8 compile/pyflakes0、原19检查恰2FAIL/实际1，17true：only_two_original_colonies_all_species73_empire_coarse_growth、active_native_flags_original360_and_modifier_held。未继续日历。只读定位为新增私有检查自身错误：audit因保留EEP旧源引用还包含已毁15/24/37的0人口记录，实际country0.owned_colonies明确[0,38]且所有人口仅0/38；不能用audit.colonies总键判活跃属地。recently_eaten_planet保持原flag_date63465360，flag_days原360→330恰本段30日；该字段是剩余日数，不是固定初始时长。实际总人口+7/迁移双UI、源Q13/32月/progress1/原生modifier均符合预期，无新Mod/P工具bug/生产修改。
+
+V2修复方案（先于实现）：新增priority_terravore_fourth_native_devour_wait_guard_v2.py，保留原V1/source/19两FAIL/实际1和全部原件，只改拥有殖民地口径为country0.owned_colonies集合[0,38]、总人口亦只和这些实际owned colony求和，所有实际人口组须仍属于这两殖民地/species73；原生timed flag核原flag_date保持、前剩余天数−后剩余天数恰实际日历days，后剩余天数=初始360−从实际开始2276.02.01已过日数且>0。独立新v2输出后缀，其他17核心/边界/≤90日/首年cap/来源及迁移调查规则保持，首月同一SAV重新执行独立19项检查/实际退出，不重放日历。compile/pyflakes0且19全true/实际0后才可有界续行。这是私有检查两处修正，不是放宽原生任意旗标或遗失人口，不改P验收引擎。
+
+
+独立等待V2/source4ba206f675ee1b5689bc29b49be4c6edc0cb994db4061fd5af32449da6791262 compile/pyflakes0，首月同原SAV19项全PASS/实际0，progress1/32，无boundaries/ready=true/max90；原V1两FAIL/实际1保持。人口迁移与timed flag剩余语义已据实际原件核清，不是生产Mod或P引擎缺陷。
+
+新增有界吞噬等待调度方案（先于实现）：从既有colonization_bounded_driver_v2/source2fbafdda…复制独立priority_terravore_native_devour_bounded_driver.py，仅将helper/source绑定为已核wait_guard_v2/4ba206…、proof和execution后缀为native-devour-wait-v2/native-devour-wait-guard-v2、业务ready/max字段改为devour版本、硬cap改为2277.01.30并保存实际progress/母星/源人口，不改已冻结旧调度。保持唯一label、1–6段、每段≤90日、全部原日历→六观察→19核心实际0/source/SAV绑定，max0或未知boundary停止，不能自动跨首360日/结算，不重放已执行首月。静态0后从2276.03.01唯一label terravore-fourth-devour-pre-bite-year-wait最多四段90+90+90+59日到2277.01.30；按原生日历实际计算，任何停下均记录实际已执行段与日期，不能将driver PASS当完整业务通过。生产代码/Steam/原生存档不改。
+
+
+首年有界调度source03899bdf5fa5629f0c99fdfed08310ff2fe4a9a26ebb2338dbd226a31e3a19dd compile/pyflakes0、实际0，四段90/90/90/59日按计划执行，分别2276.06.01(progress4/母11360/源166)、09.01(7/11331/214)、12.01(10/11302/264)、2277.01.30(11/11292/281)。每端日历/六观察/19核心全PASS/实际0，无未知boundary，首360旗标remaining1，业务ready=false/max0因下一日即消耗到期，不能据driver PASS继续长跨。最终SAV45fae66645034b98c23a73e65a9380f53203285167b4d88c91fc72960f69eb4c；总人口11573、C49/D14/worlds3/PSI1/stage1/Menace885保持，E/M/A/U端点净正且库存不减，true P/S bank不减、工程原星堡队列保持。母星原27付费等级结构/岗位与25军舰保持，原error未增；无新Mod/P工具bug/生产修改。四段后续只做粗全帝国自然增长核验，不假定始终每月恰迁移16或源增长0。
+
+下一边界方案：CUT36核验提交推送后，只执行唯一1原生日2277.01.30→02.01，前置本19PASS/实际0/原SAV；既有日历和六观察先实际0。只读核source13/Q13/month32、progress应12、原360旗标到期或重置、所有source districts/deposits/population/menace/原生MESSAGE_TERRAVORE_CONSUME_WORLD及完整随机收益、country0母星/源人口和库存差额、source owner及native战争/舰船状态。原版随机噬岩可能删除源区划/加灾害沉积/出生人口或发资源，不能套原等待“无deposits变化/无奖励”要求。当前未声称发生；若2.01实际未消费，保留真实阶段并只在记录方案/独立核验后到最近已知月度或单日边界，禁止盲跨360日。原生消费后的独立组件必须先记录实际原件/方案再实现，不改旧V2或生产代码，不预计女王C60。
+
+
+## CUT36 方案：第四吞噬首年与原生内部迁移
+
+当前全部helper结束、2277.01.30暂停。唯一新label native-devour-first-year-and-internal-migration，基线CUT35 native-colony38-completion-and-fourth-devour-start/固定已推送b61395277ecd4d92eeee2170fa80b75162cc0ada。完整保存CUT35后Git原回执、首月SAV/六观察、双实际中文迁移UI与完整INV81d4a76d…、误标源图原件及说明、原V1 19恰两FAIL/实际1及源码、V2独立19PASS/实际0及源码、新有界driver静态/原流/实际0、四段全部原SAV/六观察/19证明及未过滤日志/配置。既有archive实际0→只stage新cut+五文档→独立verify新及全部复用Git原字节PASS/实际0→实际计数根回执/scope/diff→commit/push main/独立核全SHA。冻结期间不写RUN、不推进游戏、不删除任何失败或旧证据，不改生产Mod/版本/Steam。仅暂停证据，不代表重载或完整路线验收。
+
+
+CUT36实际结果：freeze2026-10-11T20:12:52.668397Z；source33584文件/2361286479B、reused33299、新285/70460717B；独立Git逐blob校验PASS/实际0，33679唯一blob/2399807650B，根回执evidence/priority-native-devour-first-year-and-internal-migration-delta-staged-verification-2026-10-11.json。完整原始失败与复核/迁移双UI/四端点原件齐全；仅暂停切点，不代替整路线或重载。按本任务scope提交推送并独立核远端完整SHA后执行既定唯一2.01单日观察。

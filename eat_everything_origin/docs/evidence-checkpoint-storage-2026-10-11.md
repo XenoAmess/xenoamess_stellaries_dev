@@ -292,3 +292,11 @@ CUT34实际结果：freeze2026-10-11T19:04:06.662379Z；source32940文件/220105
 
 
 CUT35实际结果：freeze2026-10-11T19:43:47.353245Z；source33300文件/2290836580B，reused32940、新360/89779868B；独立Git原字节校验PASS/实际0，33394唯一blob/2328962688B，根回执evidence/priority-native-colony38-completion-and-fourth-devour-start-delta-staged-verification-2026-10-11.json。全部原始失败、返航、完成与启动证明原件保留，不代表整条路线或重载验收。提交推送后第一段仅30日2276.02.01→03.01，验证situation50331660首月progress1/仍Q13/32月、源码规定的月度eep.20/延期eep.21行为；未到原生360日随机消耗日期，不应把自然人口增长当噬岩奖励。先执行既有日历与六项观察，独立局势等待组件方案/验收记录后实现，核心全PASS/实际0才继续≤90日、最迟首年原生360日消耗前2277.01.30暂停。未知消息/待选/战斗/工程完成/资源人口异常仍立即停止调查，当前不预宣称女王C60。
+
+
+## CUT36 方案：第四吞噬首年与原生内部迁移
+
+当前全部helper结束、2277.01.30暂停。唯一新label native-devour-first-year-and-internal-migration，基线CUT35 native-colony38-completion-and-fourth-devour-start/固定已推送b61395277ecd4d92eeee2170fa80b75162cc0ada。完整保存CUT35后Git原回执、首月SAV/六观察、双实际中文迁移UI与完整INV81d4a76d…、误标源图原件及说明、原V1 19恰两FAIL/实际1及源码、V2独立19PASS/实际0及源码、新有界driver静态/原流/实际0、四段全部原SAV/六观察/19证明及未过滤日志/配置。既有archive实际0→只stage新cut+五文档→独立verify新及全部复用Git原字节PASS/实际0→实际计数根回执/scope/diff→commit/push main/独立核全SHA。冻结期间不写RUN、不推进游戏、不删除任何失败或旧证据，不改生产Mod/版本/Steam。仅暂停证据，不代表重载或完整路线验收。
+
+
+CUT36实际结果：freeze2026-10-11T20:12:52.668397Z；source33584文件/2361286479B、reused33299、新285/70460717B；独立Git逐blob校验PASS/实际0，33679唯一blob/2399807650B，根回执evidence/priority-native-devour-first-year-and-internal-migration-delta-staged-verification-2026-10-11.json。完整原始失败与复核/迁移双UI/四端点原件齐全；仅暂停切点，不代替整路线或重载。按本任务scope提交推送并独立核远端完整SHA后执行既定唯一2.01单日观察。
