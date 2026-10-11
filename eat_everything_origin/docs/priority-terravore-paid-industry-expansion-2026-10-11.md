@@ -234,3 +234,12 @@ V36源生成首次在执行助手前中止：内联生成器把原行误记为cl
 新增只读priority_terravore_supremacy_budget_cycle_guard.py，绑定两个原SHA、两端原85/87PASS与actual0及准确版本源、唯一30日calendar实际0、至高原19PASS付款实际0/source050...、生产同41文件树/l_simp_chinese，精确六库存残差/两封顶丢弃/lastmonth滚动/实际正净/两期舰维护保持与采用前变化、原27军舰账保持/核心C37D11worlds2PSI1及Menace105无提前结算、全部错误原字节保持；先pyflakes0再执行不动游戏。此为已有月份的真实维护台账组件，不是新六舰维护、殖民路线恢复、武灾矿物舰或整路线通过，原85三FAIL/87后继PASS均保留不覆盖。
 
 至高后既有完整30日专项15全PASS/actual0/source86f6bad69a73c229a1d3a57bbabea6fe4815e842dd4b773d7c5b61c20f5525bb，pyflakes0；六真实库存差额与当期E30.41085/M41.94451/A28.20848/U96.51796净值精确闭合，封顶两项单列丢弃。已确认原27军舰维护的完整周期，仍未认证新增六舰维护或矿物舰。
+
+后续科研仅盘点未执行：2271.10.21社会真实bank7188.8565、物理/工程bank0；原生current_month预算为country_base三科各10、轨道P3.3/E4.95、planet_physicists/biologists/engineers各16.1595科研且各投入15.39M。岗位类型是physicist/biologist/engineer，不能因为按research子串查岗位为空就宣称无研究岗位。更高灵能危机项目仍需真实6000P/12000S；今后可在正常UI积累研究储备或合法增建科研设施，但截至本盘点未停止物理/工程自动研究、未购买新科研设施、未给科研或项目进度。须单独设计/实际报价/付款/岗位/预算和项目台账，不预记完成。
+
+后方清路舰队实际报价与付款实施前：11.03原生造舰页「苏瑞克级」护卫舰，当前合法设计134219607（原30paid舰385877628不同），单价UI102A/部件74+舰体28、base work60、列表37日；有1237.72278A可负担最多六舰/UI上限612。完整设计/截图/OCR/quote manifest已保留，尚未付款；组件基础105及舰体40/−25%噬杀+−5%标准化原型只作来源，不预断实际整数扣款102或实际造速。
+正常付款范围：原94PASS/actual0为before，保持11.03暂停，在同已核row CLIENT566,403唯一正常六次左击（每个独立action/实际执行0，任一失败立即停，不重试），native-save terravore-rear-clearing-six-paid/11.03；若中途失败则唯一partial另存并按实际单数核。六舰用于后方80阻路无人机，母星20军舰/两平台防御保持；没有下达出港/攻击/殖民命令。
+新增独立付款守卫须先静态0：绑定原94PASS/source4c25.../实际0/原SAV、quote原设计与GPU/OCR、六独立正常点击/保存0、原queue2287空→恰6唯一native订单/owner0/原base153/design134219607/进度0/need60；真实单笔扣款正且ceil102/六单同价/总<=612，并列精确小数，其他真实库存/科研bank/所有core/pop/jobs/army/war/ships/fleets/design/source/two-capture/原pending均保持。仅原生队列分配/被更高代合法替换的none handles及econo镜像刷新按实际逐字段核；没有新船/提前naval增长/重复50A/修改资源或武灾船型，不泛放行未知变更。付款成功后另唯一11.04校准前工作0→真实增量，再新源观察六订单的合法出生与维护，不能从UI37当实际60/37造速或凭排单称六舰已就役。
+
+V61/source9091b615cca2f187d188a32270511c77b8dacd353067eca95436644d72d79f87静态0、同已发生11.03→04原SAV对99全PASS/actual0；首日六单工作1.58/余五0，naval135/原27军舰raw保持/无新战斗，原殖民船仍待命151/目标523未殖民，第三吞噬21/29及核心C37D11worlds2PSI1/Menace105保持。原V59 KeyError1及V60单FAIL1保留；不是新Mod修复，生产41文件0.2.0未改。
+六舰真实付款28PASS/actual0，单笔101.5A/总609；原始两private helper失败均与新99PASS分开保留。新增六舰尚未出生，因此真实维护/清路/殖民恢复仍待，不挪用原27舰至高后15PASS月账充作新六舰维护。

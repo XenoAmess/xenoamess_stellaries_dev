@@ -579,3 +579,8 @@ Stellaris4.5.2本次前哨99%→实体完成：01.12原付费模板201326648，0
 
 第三战103同样实证原前哨capture：10.23站1061/fleet178从0归1、同建造日期2202.02.02/同设计184549404，hull1/disabledyes/max9150→5000；报告245外date10.22/start10.09/we_disabled/本方count1lost0/敌count[2,5,4,1]lost0。原27军舰与Menace105保持，不能把前哨失能当军舰死亡。完整调查与原89三FAIL/91后继PASS按次保留。上述已解释边界仅本机Stellaris机制，未将CK3方言套用。
 至高实际采用后09.12→10.12完整30日，原27舰两月维护categories ships/ship_components E合46.92536/A15.11652保持，采用前E57.99735/A19.06069；同时基地维护7→6，不能把所有E净增长单归因舰容。真实六库存差额与after.current_month净值一致、after.last_month等于before.current_month；库存封顶1000影响力/50000贸易收入丢弃须单列，不报告为账差。15项独立专项actual0，新增六舰维护仍未测试。
+
+后方船坞完成前只读源确认：common/starbase_modules/00_starbase_modules.txt SHAedeaad451ff4aa5656650a51c94197fdb693cfb241f84dcb2be2a17149d023a5，shipyard construction_days180/cost50alloys/名义energy upkeep1，station_modifier starbase_shipyard_capacity_add1，on_finished调用set_ship_construction_type=starbase_shipyard。实际新shipyard queue/模块/设计变化仍待11.03原SAV核，不能把源码名义维护1当国家实际已扣1或将未完成订单当可造舰。该opcode为此本机Stellaris starbase-module scope来源，未向CK3推定共通语法。
+
+#### 4.5.2后方船坞护卫舰报价与实际工作（2026-10-11）
+原生简中苏瑞克级当前设计134219607，11.03 UI合金102（部件74/舰体28）与列表37日；正常六次单击实际每单101.5A、总609A，六个付款订单每个progress_needed60；唯一11.04原生日第一项0→1.58、其余0。故报价取整与精确扣款须分别记录，列表天数也不能当原始工作量或保证出生日期；以实际队列逐日累加判定完成，当前首舰候选38个原生日。完整native设计/quote/GPU/OCR/28付款与首日SAV保存在第二十二切点。尚未武灾矿物舰，不把普通合金护卫舰误称危机舰；原生变量和实际工作只确认Stellaris4.5.2，本段不推出CK3共有语法。

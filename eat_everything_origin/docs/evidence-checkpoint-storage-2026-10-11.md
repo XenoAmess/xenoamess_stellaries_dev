@@ -141,3 +141,11 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 归档/校验独占期间不动GUI/日历/不写RUN。沿用完整manifest复用与独立Git blob校验；从一开始仅对本新切点目录git add -f（包含被忽略的原始pycache），等实际0后再暂存全部本轮任务docs及存在的新priority回执，等实际0才启动独立校验，期间不创建新的未暂存priority回执。两个actual0且独立PASS后补回执/五docs、检查任务范围、提交推送并独立核远端。旧切点原件不改，生产41文件0.2.0/Steam离线保持；核远端后继续船坞11.03候选真实出厂与补兵清路，不能以归档替代后续验收。
 
 第二十一切点归档actual0，冻结2026-10-11T05:27:46.309721+00:00；完整27133源项/1087127457字节，复用26758、新复制375/17539066字节。按顺序force仅本切点并暂存五docs后，首独立原字节校验PASS/actual0，27213唯一blob/1118417033字节；[独立回执](evidence/priority-native-inner-outpost-capture-and-capacity-ledger-delta-staged-verification-2026-10-11.json)。本轮未重复购买/日历，原89三FAIL与91后继PASS、真实30日维护均保留；提交推送核远端后继续已记录V3建设边界。
+
+### 第二十二切点实施前计划
+基线第二十一切点native-inner-outpost-capture-and-capacity-ledger/6ddf14f0b8e24d5f9a151dfc98bd9482354b14eb，push与独立完整SHA实际0已核。新唯一标签native-rear-shipyard-completed-and-six-clearing-ships-paid。待当前V60首日观察实际退出并暂停后，冻结：两Git原退出；V3/source/static与原唯一前缀拒绝actual1/无GUI/新label4实际8日91PASS；原11.03船坞完整native差异/source/退休订单与section武器重排调查、V57两FAIL实际1/同原SAV V58 94PASS；正常打开船坞/护卫舰真实报价截图OCR/当前完整设计与quote manifest；六正常click各actual0/唯一同日SAV/101.5每单609总付款/原28PASS；首11.04原生日实际0/所有原始SAV/UI/OCR/1.58工作/发电172.2；V59 UndefinedName静态0但原KeyError actual1且未生成proof、V60新源静态及实际结果，不预设其通过。原全部stdoutstderr/退出/未过滤错误及新source原件一并保留。
+归档与校验独占期间不动GUI/日历/不写RUN；沿用完整manifest复用与独立暂存Git blob原字节校验，先仅对新切点git add -f并等待实际0，再暂存全部本轮五docs及存在的新priority回执并等待actual0才验证；期间不新建未暂存priority JSON。archive actual0及独立PASS actual0后补最终计数、提交推送/独立ls-remote核完整SHA。生产41文件0.2.0不变/Steam离线；此为船坞完成、六单真实付款与首日造速证据，尚未六舰出生/维护、清路殖民恢复或真正武灾矿物舰，不能提升为整路线通过。切点核远端后继续首舰出生前观察及新出生边界验收。
+
+第二十二范围追加：首日V60原98单prior-SHA FAIL/actual1与V61分离ledger_pre后新source/static/实际结果一并冻结；不得遗漏后发现失败或把V59/V60写成通过。当前游戏仍同一11.04，未再推进。
+
+第二十二归档actual0，冻结2026-10-11T06:14:22.940412+00:00；完整27379源项/1096762986字节，复用27133、新复制246/9635529字节。首次独立暂存原字节核验PASS/actual0，27460唯一blob/1128420774字节；[独立回执](evidence/priority-native-rear-shipyard-completed-and-six-clearing-ships-paid-delta-staged-verification-2026-10-11.json)。原V57两FAIL、V59 KeyError、V60单SHA FAIL与最终V61 99PASS及六付款28PASS均完整冻结；未重放游戏操作/未改生产Mod。提交推送并核远端后继续已记录首出生前30日观察。
