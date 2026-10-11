@@ -149,3 +149,10 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 第二十二范围追加：首日V60原98单prior-SHA FAIL/actual1与V61分离ledger_pre后新source/static/实际结果一并冻结；不得遗漏后发现失败或把V59/V60写成通过。当前游戏仍同一11.04，未再推进。
 
 第二十二归档actual0，冻结2026-10-11T06:14:22.940412+00:00；完整27379源项/1096762986字节，复用27133、新复制246/9635529字节。首次独立暂存原字节核验PASS/actual0，27460唯一blob/1128420774字节；[独立回执](evidence/priority-native-rear-shipyard-completed-and-six-clearing-ships-paid-delta-staged-verification-2026-10-11.json)。原V57两FAIL、V59 KeyError、V60单SHA FAIL与最终V61 99PASS及六付款28PASS均完整冻结；未重放游戏操作/未改生产Mod。提交推送并核远端后继续已记录首出生前30日观察。
+
+### 第二十三切点实施前计划
+基线第二十二切点native-rear-shipyard-completed-and-six-clearing-ships-paid/98a2f5be1e0436b720694e01f858c9e1fc469148，push及独立完整SHA实际0核验。新唯一标签native-mother-defense-and-first-rear-corvette-birth。待当前唯一12.12原生日及V65实际结束并暂停后冻结：两Git退出；首30日12.04 calendar0/原V61 99六FAIL1；母星防御报告247原文/4→2敌实体/两MIA/目标30/war1真实battle enemy2损/16本国军raw调查；V62静态/101单FAIL1及V63静态/103PASS、12.05单日/12.10五日全部实际结果；首12.11单日原生出生/唯一117441817/fleet16778073/原订单none/5余单/归属/真实140naval/库存未重扣的完整调查；V64原105两FAIL1/V65新source/static/106PASS、所有实际校准结果（不预设本12.12通过），全部SAV/GPU/OCR/未过滤错误/source/stdoutstderr/实际退出及任何新异常完整保留。
+归档与独立校验独占期间不动GUI/日历/不写RUN。沿用完整manifest复用及独立暂存Git原字节校验：新切点git add -f等actual0、五docs和存在的所有priority根回执暂存等actual0、才独立验证；期间不创建未暂存priority JSON。archive actual0+独立PASS actual0后记录最终计数/提交推送并独立ls-remote核完整SHA。生产41文件0.2.0/Steam离线保持，本轮未修Mod或P工具。之后继续发电完成/年度/后方清路与真正矿物舰；另先只读核后方直接殖民和真实科研扩建是否能减少原殖民船长途受阻/物理研究储备等待，未先假定新航线可达、未购买或取消现有订单。
+
+
+第二十三切点归档actual0，冻结2026-10-11T07:00:00.175128+00:00；完整27593源项/1107935924字节，复用27379、新复制214/11172938字节。首次独立暂存原字节核验PASS/actual0，27675唯一blob/1139869494字节；[独立回执](evidence/priority-native-mother-defense-and-first-rear-corvette-birth-delta-staged-verification-2026-10-11.json)。原V61六FAIL/V62一FAIL/V64两FAIL及最终V65 106PASS、真实母星两敌损/首普通舰出生/次日1.58均冻结；无生产Mod修改。提交推送核完整远端SHA后继续已记录只读经营优化。
