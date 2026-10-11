@@ -1155,3 +1155,58 @@ V7/source37d12272fcac8675760799068fa9836163e0af61e7c94810fd3405bebc8eb327 compil
 
 
 CUT38实际结果：freeze2026-10-11T21:34:52.618875Z，34379源/2565838499B，reused33954、新425/124711103B；独立Git逐blob核验PASS/actual0，34476唯一blob/2605269768B，根回执evidence/priority-native-second-bite-science-return-and-calendar-preflight-delta-staged-verification-2026-10-11.json。完整原失败、跨交战1日的流程错误、后续23核心PASS与业务阻止、预检9PASS及实CLI无GUI拒绝、原生POP提示与science返回原件均保留。仅暂停切点，不代表路线完成；按scope/diff提交推送/独立核main完整SHA后继续已核交战的独立review，不自动忽略其业务boundary。
+
+
+CUT38已推送c994be7bdb0c6b20090474e3670deed7b6c2ad18，push/ls-remote实际0、远端main同完整SHA，工作区clean。当前2.01仍暂停。
+
+正常前哨交战独立review方案先于实现：新增只读priority_terravore_native_outpost_battle_review.py，输入当前stage/准确end/native days/唯一review execution stage。读取本次实际23PASS/actual0/V7 source37d12272…、原SAV及原六观察（旧或已核新source），独立解析真实global fleets/ships/country owned fleets；业务boundary必须仅native_owned_active_combat，所有我方active combat必须仅主力83886903/system188、敌列表恰33555300。敌原country1/前哨ship67110520仍存在且非disabled，主力恰原18身份/实际设计、总25军舰仍正HP；源523/母7 owner/controller0、situation24/32仍运行、EEP核心和error已由同一SAV的V7全23核验。绑定原第二消费INV/两原始交战fleet/sourceSHA，禁止新增未核敌舰/其他战斗/未知消息/pending。review输出status PASS_REVIEWED_NATIVE_BOUNDARY、全部checks、before/after同currentSAV SHA、准确start/end/days、允许boundary集合、execution_stage，与新calendarV3 receipt/source/actual0共同核验。
+
+先只允许1日2278.02.01→02.02实测V3正向接线；成功后同reviewhelper可每次重新核最新23PASS/SAV/实际双方，允许1–7日短段，不跨9.30最终结算cap（月初由V7精确月份核验）；这是明示已核原生军事战斗观察，不把普通readyfalse变true，不泛放任何未知boundary。若前哨失能/占领或任何新伤亡/新我方owned station，旧strict检查必须原样FAIL/停，另只读核原生battle与所有权转换后再设计组件；不得直接把新船当付费出生、重放或补资源。首次review静态0/全部true/actual0→新V3仅1日→新observerV2六项actual0→V7重新所有核心actual0及明确业务边界，才可后续短段。Steam仍离线，不提交和平/免费战果。
+
+
+前哨review/source d7959d08a7932aac6fe5c22218ce2a8edb24d40285b6a970ff32f09538460892 compile/pyflakes0，当前10检查全PASS/actual0，精确绑定2.01→2.02/1日/原SAV与唯一原生战斗。首次新V3调用在GUI前actual1，原因stage前缀terravore-native-outpost188-battle-day01与新review文件day01-review冲突，旧唯一stage保护正确拒绝；无console/action/SAV，未推进。这是调用命名错误，保留原件，不修改已执行calendar/review源码。改用全新无重叠前缀terravore-native-outpost188-reviewed-step01，仍同一2.01→2.02/1日/同原独立review，不重放任何GUI输入。
+
+
+新V3正向接线已实际通过：独立review10PASS/0→仅1原生日2.01→2.02、V3/sourcec0bd2c1…实际0/receipt.business_preflight=true/精确review SHA及原SAV绑定→新observerV2/source44c27824…六项全PASS/0→V7/source37d12272…重新23PASS/0。当前SAVaf19e2a6710f3aeefb96a20a8d742589882f4a611a282fafa5306d7335e00888，progress24/32/POP总11766/原EEP变量/舰船身份/error保持，native_owned_active_combat边界仍明确/普通readyfalse。此时可以宣称observerV2与V3正向日历实际接线通过，不宣称前哨战获胜。后续仍每次先最新同SAV独立review10PASS/0，单段≤7日；前缀review02与reviewed-step02分离，不复用原失败stage。下一段只到2.09，不盲跨战果或final。
+
+
+review02/source d7959d08…10PASS/actual0后唯一7日2.02→2.09、V3/sourcec0bd2c1…actual0/business_preflight+准确review绑定、新observer/source44c27824…六PASS/actual0、V7/source37d12272…23全PASS/actual0。SAV7ea5c4a84c323445d40d98fd4a0b356aa43f896d5abb9251ae43aca64bb51772，progress24/32/总11766/EEP及原error保持，仍只有已核前哨active_combat业务边界，无新Mod缺陷/生产修改。下一仍先独立review03后≤7日到2.16，胜负及capture不预写。
+
+
+review03 10PASS/0→2.09→2.16唯一7日新V3实际0→新六观察全PASS/0→V7 23PASS/0；SAV827a1c627b949776085e58505abc97abc9adab1a9a6535d5d1d641634c97a53c，原24/32/母11378源388/总11766/EEP与error保持，仅原前哨交战边界。只读敌原ship67110520仍HP5000，shield已0/armor610.85394/原maxarmor3125，原主力hit_points4860，双方仍互为原敌fleet，不能因护盾0判station已失能或胜利。后续仍复核当前同SAV后≤7日到2.23，不跨已核业务scope。
+
+
+review04/05各10PASS/actual0后，以新calendarV3分别推进2.16→2.23、2.23→2.30，每段7日；新observerV2各六PASS/actual0。2.23 SAV134df22353d41ebfa742ba8e1834287601756146bfbbf266f3227555225cfce9、V7 23PASS/0；2.30 SAVc96af5aa83534d977dec8dc0ed235d33bccb528ac3b1c55acd8d85409670ca29，原V7 23项恰一FAIL/actual1（all_owned_ship_identity_designs_and_original25_military_alive），其余22项true，已经停止，无后续日历。原FAIL/source/实际1完整保留，不改写通过。
+
+只读核新增owned ship恰50332983、50333076、50333335、67110520，原step04全局均存在、属于country1，step05同ID/同fleet/同ship_design_implementation转为country0；前二为shipclass_mining_station，第三shipclass_research_station，第四原前哨shipclass_starbase。没有owned ship移除；原25军事船集合两端相等且均正HP。原主力18无战损，原生COMBAT_STATS notification276/receiver0/date2278.02.29/system188/reason no_more_enemies记录原敌前哨1、lost0与我方18、lost0。当前station67110520 disabled=yes/is_being_repaired=yes，生命24.705/max9150，construction_date2274.06.14；采矿科研站2000→2500及前哨5000→9150上限随接收国家原生属性变化，不能称Mod免费造舰或付费升级。母11378/源388/总11766、Q13/32/24、C49/D14/worlds3/PSI1/stage1/Menace885/error原2814B均保持。目前无确认生产Mod/open_kaishek缺陷、无生产Mod改动。只读临时调查一次误在with之外再次使用已关闭ZipFile，报ValueError后纠正为先保存完整gamestate；这是临时调查错误，不是游戏缺陷。
+
+下一组件设计（先于实现）：新增只读outpost188_capture_guard，固定绑定本原V7/source37d12272…23项恰一FAIL/actual1、其余22true、原两SAV及新六观察/source44c27824…/actual0、新calendarV3/sourcec0bd2c1…/actual0/review05/source d7959d08…10PASS/0。完整保存两SAV的country0/1、system188/base160/四asset fleets/ships、两war及原276；核恰四既存敌stations原设计/建造日期转为0，无其他出生/消失，原25军舰集合/设计/正HP、主力18与276 lost0一致，当前无owned combat/MIA/pending、源母和EEP保持、error原字节未增。该独立组件通过才可处理下步，不把原strict FAIL变PASS或补资源。输出同currentSAV的独立PASS证明、paid_births、无业务boundary及普通日历权限（仅已核不再交战时），保留原FAIL引用/SHA。
+
+后续正常命令设计先于操作：先正常GUI选择第7舰队，悬停实际“停止”控制并保存简中tooltip，核实后只下达一次停止移动，不解散、不传送、不造舰/退款/和平。当前原生长路径预计2279.06.26抵达37，晚于本源32月结算，因此停止避免无关后续前哨交战，源37五船/星港既有防御继续保持。正常同日save后独立stop组件须核capture原件/source/actual0、全部owned IDs和实际设计/原25生命、资源/人口/结构/科技/EEP/局势完全同日保持，唯一fleet83886903正常moveorder删除/速度停止，其他fleet命令未变。只有该组件actual0/全true且无boundary可恢复calendarV3。
+
+新waitV8方案先于实现：独立复制V7保留其23核心和原POP/mineral/migration/retreat/return/war1锚定，只新增固定本capture/stop证明来源与原SAV锚定、明确接受已核四station现已属于0；未来owned IDs仍逐段严格相等，不泛允许任意新船。普通范围当前2.30至2278.09.30、每段≤90日，calendarV3必须readytrue/boundaries空/max足够，未知实战、MIA、消息、资源人口/EEP或科技变化仍停。V7所有源码/原失败不改。compile/pyflakes实际0后才执行新helper；生产41文件0.2.0/tree未变，复用此前open_kaishek已通过原生产验收，不为私有只读helpers伪称新生产验收。最终10.01/10.02/C60女王事件仍待实际日界调查及UI采图，不提前写结算通过。
+
+
+outpost_capture私有V1/source5b0f230d5b658c0c75f6f56c0cabe9ac3860378bd6477ba08c3e82537f740b4c静态0后实际1：解析COMBAT_STATS.fleets匿名对象列表误用只适用于key=value的q.fields，原stderr为unexpected delimiter at field boundary；未输出capture证明/未调用GUI/未推进。原源码/原流实际1保留。这是新写私有只读调查组件的解析错误，不是Mod或open_kaishek缺陷。新V2先于实现方案：独立复制V1，仅匿名列表以q.tokens花括号深度读取顶层对象内容，其他核验原样保持；新增原V1源码SHA/actual1/stderr异常及未有V1证明绑定。V2独立文件/proof/exec后缀v2，compile/pyflakes0后同原两SAV复算；V1不改。所有后续capture/stop/V8锚定改指实际通过的V2固定SHA，不绕过任何原失败。
+
+
+outpost_capture V2/source3e75588b16c42cfcc3469311885bd7fd136bb0dd980df32b2b13960bc91e5598，compile/pyflakes0后11检查全PASS/actual0；固定两SAV/原V7一FAIL/actual1/22true、四既存敌station同design/建造日期/转交fleet所有权及原276战报已独立核验。原V1匿名列表解析错误源码/原流实际1保留；当前依然2.30暂停。下步按已记录正常停止主力方案先选择/悬停核真实中文控制，尚未下停止命令。
+
+
+正常停止已实际执行：简中tooltip图b87ca53998c2363b6c5abf9a07b0cee7202d59605e0815872237fb8887c08e3c清楚显示“停止/停止并移除选中舰队的全部命令/快捷键H”，唯一正常click69,64/actual0。2.30同日正常保存1dac57e441620825cc9829689bd12edae7eaefe9c7f109e6fea4db76c2bc825d、save/source19fea…actual0/no新error。只读audit除save路径/SHA/字节元信息均相等；原main只movement_manager变化，state=move_idle、target.origin4294967295/path无node，当前coordinate188保持。current_order块两端均空，不能写成由非空删除；path.date仍2279.04.05为历史字段，不代表仍在移动。独立stop核验具体标准：两SAV除fleet根外全顶层字段（含重复message）顺序值原样相等；全部fleet身份原样，只有83886903的movement_manager允许上述准确stop变化，其他fleet整块及全部ships整根原样；同日audit排除四个save元字段完全相等。capture V2/11PASS/source3e75588b…actual0及原captureSAV、GUI输入原source801941…actual0/坐标、实际tooltipSHA、native-save依赖/SHA/error全部固定绑定，输出独立PASS_STOP及ready/max90。先静态0再执行，不因只读目测直接放行日历。
+
+
+stop V1/source1e5c52febfc07604dc72c0c37ac2c181b1e3b4887c9e8adb7dccd3ca267ae29d静态0后8项恰一FAIL/actual1，其余7true：all_fleets_original_ids_other_fleets_exact_raw_only_main_movement_changed。只读完整前后字段核清只有83886903变化，其他fleet整块完全相同；main原current_order含move_to_system_point_order/targetorigin37/can_reachyes/order_id0，停止后current_order字段整个移除，此外仅movement_manager正常move_idle变化。纠正上段“current_order两端均空”的调查结论：前次仅打印后端块且差异枚举只遍历后端字段遗漏被移除项，不能据此推断前端不存在；原FAIL与错误结论保留并在此更正。新V2方案先于实现：独立复制V1，仅main comparison排除movement_manager/current_order，新增严格核原current_order唯一move_to_system_point_order目标37且after该字段完全不存在，其他所有fleet/世界/audit仍完全相等；另核原V1源码/一FAIL/actual1/原证明SHA固定。无新GUI/日历。V2独立proof/exec后缀v2、静态0后同两SAV复算，后续V8来源只接受真正通过的V2。此为私有停止命令断言修正，未发现Mod或P引擎bug。
+
+
+stop V2/source d633642788d3e0caf8272917be922817b42b20fa26f7dbed7a5725470af05a93 compile/pyflakes0后独立9PASS/actual0，原main current_order唯一move_to37正常删除，move_idle，无其他world/fleet/ships/audit变化；原stop V1一FAIL/actual1保留。capture V2 proof SHA3609d0974077533f380ffd43dc92d34c41994280bc47a949c9361c8d9f51c42d，stop V2 proof SHA7d2c5cd7465383da1876c7be15c7a9e8e21b189e86db6f0ae0469ca65384eeed。V8永久anchor固定这两原证明/SAV/source/11+9检查actual0、capture四station身份/实际设计与原25军事集合，当前source和mother/EEP仍保持。只增加来源stop V2/source d633…，普通范围2.30→9.30/≤90日；旧V7不改。下一唯一普通90日目标2278.05.30，前置stop9PASS/actual0/readytrue/boundaries空/max90，新V3业务预检必须再次检查；末端新六观察与V8全部24项全true/actual0且无boundary才能下一段。新Mod/原生未知业务变化仍先停调查，最终settlement另按实际日界。
+
+
+## CUT39 方案：卡兹比斯原生前哨接收与主力正常停止
+
+当前2278.02.30暂停、所有helpers已结束。唯一label native-outpost188-capture-and-normal-main-stop，固定基线CUT38 native-second-bite-science-return-and-calendar-preflight/已推送c994be7bdb0c6b20090474e3670deed7b6c2ad18。完整保存CUT38后Git回执、独立review10及五段newV3实正向SAV/六观察/V7 23 PASS或最新一FAILactual1、首次stage前缀冲突的GUI前拒绝、原native276/两国/四station原文与captured原设计和construction_date、capture V1解析异常实际1及独立V2 11PASS0/source3e75588b…、真实简中Stop tooltip/唯一正常click69,64/同日SAV、stop V1一FAILactual1及V2 9PASS0/sourced6336427…、新V8文档/静态0源码（尚未执行业务，不能称其24核心已通过）。所有原失败/错误调查结论及明确更正保留。无Mod生产/P工具改动，无新版本或Steam操作。
+
+沿既有协议archive实际0→仅stage新cut+五任务docs→独立verify所有新复用Git原字节PASS0→写计数/根receipt/scope/diff→commit/push main/ls-remote完整SHA。冻结期间不写RUN/不执行GUI或日历，不删证据，D空余1172180992B/C21405102080B。该切点不是整条噬岩者或重载验收。后续新V3以stop9PASS/0/readytrue/max90为普通前置，唯一90日到2278.05.30；六观察和V8须实际全true/0且无boundary才继续，最终结算另停。
+
+
+CUT39实际结果：freeze2026-10-11T22:18:18.673838Z，34695源/2638130907B，reused34379、新316/72292408B；独立Git暂存原字节核验PASS/actual0，34793唯一blob/2678023500B，根回执evidence/priority-native-outpost188-capture-and-normal-main-stop-delta-staged-verification-2026-10-11.json。原V7 oneFAIL/actual1与22true、capture V1异常/stop V1失败及两独立V2实际PASS、源24/32和主力正常停止原件完整保留；V8仅源码/静态通过尚未执行。仅暂停证据，非整体验收/重载通过。只提交本cut/五任务docs/rootreceipt并推送main、核远端全SHA后继续。

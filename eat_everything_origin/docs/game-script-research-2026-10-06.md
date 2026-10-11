@@ -656,3 +656,6 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-12 原生紧急跃迁返航实证补充：science166/1049在return_date2278.01.06仍properties.mia=yes，1.07实际返到system37，原ship/leader74/375125320保留，properties.mia及return_date移除，但mia_type=mia_emergency_ftl历史字段继续存在。不能以单一mia_type判断仍失踪；需核properties/原身份/实际坐标。只证本次日界更新，不推广所有MIA必延迟一天。第二噬岩POP100实际合并已有源人口群，new_pop_groups为空而源总人口+100并有原生275消息，不能把无新ID判未出生；母星只自然+7、其回迁是后续完整吞噬结算。均为Stellaris4.5.2本次原SAV实证，不推广CK3。[原件与独立23PASS](priority-terravore-paid-industry-expansion-2026-10-11.md)。
+
+
+2026-10-12 原生前哨接收与正常停止命令实证：2278.02.29战报276/no_more_enemies/双方lost0后，既存enemy前哨67110520和同system188两矿站50332983/50333076、一研究站50333335的原fleet从country1转为0，ID/ship_design_implementation/construction_date保持；空间站仍disabled/repair，HP与HP上限采接收国家属性变化，不能等同免费出生或付费升级。正常Stop会移除fleet.current_order字段，并将movement_manager.state变move_idle、清空path.node/target.invalid，而path.date历史值仍可能保留；不能凭path.date单独判仍有航路。完整只读capture11及same-day stop9 PASS/actual0/原FAIL保留，详见验收记录。COMBAT_STATS中的fleets/enemy原SAV为匿名对象列表，私有q.fields只用于key=value，匿名列表必须按已有tokens层级解析；是本机Stellaris序列化读取事实，不是新P语言或CK3语法结论。
