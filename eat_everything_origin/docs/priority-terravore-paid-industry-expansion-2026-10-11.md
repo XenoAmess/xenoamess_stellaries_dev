@@ -729,3 +729,75 @@ monthly batch1/source62377f…实际两段30+24日，至11.2/SAVabba638a99305dd3
 
 
 CUT29首次独立Git blob验证PASS/实际0（30664sources、30380复用/284新增），当前11.27暂停与24项core原件保持。按仓库默认规则提交推送本次五docs及完整增量原证据；下一仍从当前合法native存档核后方船坞，未改Mod/未增加资源/未开始新发布。
+
+
+CUT29已提交383a7c0d77c90831ca019db7e2f685df742f05a1/main并首次push实际0，独立ls-remote实际0/完整SHA匹配；Git原stdoutstderr/execution保留进入下一切点。后续GPU只读捕获已经成功保存图/OCR/action，内联打印误把dict返回值当对象属性导致AttributeError/实际1；未重复F12，已直接读取原图，原生游戏未推进。属于调用显示错误，不是Mod/P工具bug。
+
+### 后方脱战后合法付费殖民船（实施前）
+
+目标：后方system97现已脱战/敌MIA至2275.09.06，正常从后方船坞另付一艘殖民船，避免只依赖母星8跳航行或原MIA到2275.08.02。母星已付订单继续，不取消、不退款；本次另付完整真实375矿150合金（以实际UI报价为准）并验证新增唯一订单与已有两者不复制。原本国base153/rear shipyard queue2287应空，需正常UI再确认。星系正式简中名由游戏random_names_l_simp_chinese.yml:596提取Yodd_Bem=约得本姆；只用正常F查找/Unicode输入/正常星系定位及星港面板，任何输入只记实际动作成功，实际视图与报价另用GPU/OCR核实。
+先正常UI查询约得本姆与船坞状态，不推进/付款；确认归属、本国原EEP石质物种73/原设计、空队列与报价后才最多新下一艘。同日11.27正常保存新唯一stage，新增独立同日观察/付款守卫按完整原SAV差异核真实M/A支出、唯一新后方订单/原母星订单保持、其他经济/科研/EEP/舰队/目标/战报/种群保持，原相机定位允许但不豁免经济。新工具/校验改动必须另写实际差异方案后新文件/static零错/实际退出留证。付款通过前不推进日历；随后在建守卫扩展为两笔已有真实付款订单，并分别停在其完工前，未获证据不能宣称出厂或到达。若UI不满足则不下单，重新按合法经营方案处理。生产Mod无改动，Steam继续离线。
+
+
+后方正常UI已核约得本姆空间站/base153：船坞数1（不能从母星2坞推定后方亦2）、舰船队列空，原殖民报价375矿150合金/270日，物种选择只有EEP/原石质种群73/陆地适性，原设计保持。当前仍暂停11.27/尚未新下单。查找过程中虚拟Ctrl+A/backspace输入没有改变文本，Unicode确实追加；既有harness.press_scan_code(0x0e,repeat10)物理退格后清空并正确输入。F结果定位银河并不更改原本系统选择，E曾返回母星；重新正常查找与点入97后第二次点中残骸打开只读日志，关闭后已GPU确认正确97及base153船坞。所有输入/GPU/OCR保留，无日期、资源或舰队命令改变，未归为工具/Modbug。
+现在按既有方案仅点击一次物种行502,269完成后方第4付费殖民订单，正常关闭船坞并同日保存terravore-rear-colonizer4-paid。新增 priority_terravore_rear_colonizer4_same_day_payment_observation.py 仅从789a…完整同日观察派生，前置改当前11.27/sourceb380的24项monthly core PASS/实际0/原SAV、before terravore-mother-paragon999-native-due-day；保留全部原6基础检查/完整countries/base0/rear153/设计/顶层有序SHA/全部本国船队及原文。该工具只OBSERVED不冒称付款PASS；完整真实差异调查后另写精确付款guard，再继续。
+
+
+11.27后方唯一确认与关闭实际0，正常同日save实际0/SAV317ba823fd8420e760d7d9d3f4bc8ebc028d30e545ad97b5fbd73ffac51de086/原error无增量；同日完整观察source93a88391a79b86764091b871a3a38fe06dc2a71bc445bda36b165fc12ce702ab静态零错/6项全真/实际0。完整差异调查SHAa32094920cb4087c34c133fdc4221e22d83dff92728f81b84229c146f682ef34：只扣375M/150A，其他资源/科研bank保持；本国所有舰队舰船raw/母星base0/rear153/设计保持。唯一新订单50331690/queue2287/base153/species73/design150995039/work0/360；恰回收old33554474 none墓碑，新ID=old+2^24，所有其他item（含母星100663340/79.8）保持，其他queue保持，顶层只有country/construction/camera_focus变化，country仅modules内M/A镜像。完整原件无免费补船、退款、殖民或瞬移。
+新增独立 priority_terravore_rear_colonizer4_payment_guard.py 从d231…母星付款guard派生，只替换真实原SAV对/当前monthly24前置/source/日期、当前两正常点击/input执行记录/真实后方报价图、以上新item/旧none代际、queue2287/base153；所有原16付款/顶层/设计/费用/原生save/error核心检查保留，另加6项同日OBS actual0/source与完整INV SHA锚，共18项。旧母星订单由all-other-items原文保持明确验证，不能覆盖或复用原付款源码。静态零错/原11.27实际全部PASS0后，只允许首3日到11.30以实际进度校准两笔订单，未宣称出厂。下一双订单/等待阶段方案另写后实施。
+
+
+后方付款首guard/source70cf73159b1f6a9f7e2fa879bc696c02811a74dfc3d9af8f6b70f6f8a3404252静态零错，18项实际恰1FAIL economy_only_two_resources_true_research_held/退出1，未推进。完整module调查SHA3ff670c1f0de878f709a3e8e058dceee2d54def7a7f617d4eaa06a8082f71672：唯一本国module变化仍只有standard_economy_module.resources，其他module原文保持；其中M/A为真实付款，科研镜像从P463.25957/S7610.96133/Eng49.2914刷新为P499.76727/S7623.96049/Eng省略0。三个真实科研bank前后保持499.76727/7623.96049/0，完整tech_status/工程进度前后保持；因此是资源付款时刷新非权威科研镜像，而不是额外发放/科研丢失。旧母星付款时镜像刚好已对齐，不能推定每次付款前都对齐。不是Mod/P工具缺陷。
+实施独立V2：仅在economy镜像比较中排除三research key的旧缓存，仍要求after镜像三值（省略值0）精确等于真实bank；真实bank/全部tech_status/其他country/top/费用约束保持，新增原18恰单FAIL/source70cf/actual1/完整module INV SHA锚，共19项。原源码/失败proof/streams保留不覆盖，同原11.27重核不重放或重新付款，全部PASS actual0后才首3日在建校准。
+
+
+后方付款V2/sourcec518ac30d9953b3c1652faf104fe6e406aab0bb2d86d6790c2d74e24bed9f2e7静态零错，同原11.27实际19全PASS/退出0；原18恰科研镜像单FAIL/actual1保留，三真实bank及科技原文保持，无新的Mod/P工具缺陷。母星100663340/79.8和后方50331690/0两笔真实已付款订单各自原设计/物种/基地保留。
+
+下一首3日11.27→11.30/stage terravore-dual-colonizers-pre-month，前置后方19付款V2 PASS/实际0/专属short_building_interval_ready max3；先原construction观察6与原生INV V4四项各实际0，再用独立 priority_terravore_dual_colonizer_monthly_core_guard_v2.py，基于b380…24项core只将唯一queue3/order约束改两原queue3/2287、原item100663340/50331690各按1.33日工作且均<360/其余10空队列保持/母星旧工作79.8延续。新增原后方19付款PASS/source/SAV锚，共25项；预算/真科研/自然增长/岗位/本星实体/无免费舰/母星20/已有MIA/政府/原生危机和危险边界保持。前置允许后方付款c518或该新source本身的真实PASS/实际0；不修改旧b380源码。
+先静态零错/同实际新11.30全部PASS0，再最多2日到12.2验证两订单建造下首月预算及真实科研到账；后续按原生delay/完工/危机门槛限定的月段推进，任何FAIL、归属危险或新pending/Mod通知均停止不重放。双订单组件仍不等于出厂/殖民/第四吞噬通过。生产Mod继续不改。
+
+
+双订单首3日/calendar/6项观察/4项库存均实际0；dual core V2/source8679416504ec89347ed3e6f870679afd7854a4deb2461e87d7f310179caccd10静态零错、25全部PASS/实际0。当前11.30/SAV3c051ba2646dd0214ea38bbcc091a26a7ab5c4bf7e815490c6ea09ba58296200；母星工作79.8→83.79/360，后方0→3.99/360，各真实1.33每日；母星11150/25军舰/原MIA/后方基地15118.12499仍保持，无新边界。下一只执行唯一2日到12.2/stage terravore-dual-colonizers-first-full-month，按同25项前置PASS/actual0/专属ready max30，6+4观察后再同V2严格核跨月预算/自然增长/科研与两单工作。
+
+
+双订单首完整月12.2/calendar/6+4观察/dual25项全部PASS且实际0，无新boundary。SAV1b9d640c0b55eba99e7168b9f26e3b0547f8f69fced207e13d3a18506d595082，母星人口11150→11156正常+6，原生分类核对通过；工作母86.45/360、后6.65/360，无额外费用/免费舰，后方基地15209.62499继续恢复，25舰与各MIA身份保持。严格预算/科研bank/工程原科技均通过，未确认新增Mod或P工具缺陷。
+下一新独立 priority_terravore_dual_colonizer_bounded_monthly_driver_v2.py，沿用62377…有界monthly驱动，仅将守卫改867941…dual25/source/执行proof后缀，limit改最多4段、终点最多2273.06.26（母星完工前保守边界，实际仍按原工作与max定段），原6+4只读工具保持。每段最多30日/先确认当前专属ready与max、正常calendar/save/两只读观察分别实际0后才dual25；任一FAIL、新pending/Mod通知、危险或专属readyfalse即停/不重放。首起点terravore-dual-colonizers-first-full-month，唯一batch terravore-dual-colonizers-monthly-batch1，最多4段至4.2；首段跨原生新年，仍按真实预算/研究/增长核。该驱动只验证已付在建的Mod核心连续运行，不能宣称出生、第四殖民或完整政体通过。源码先static零错再执行，原helpers不覆盖，生产不变。
+
+
+Dual monthly batch1/source32b1814cf3e5e63ad81332182548cc5c97684137b6c9b1ca55637888fc2de9dc completed four 30-day intervals through 2273.04.02; calendar, 6+4 observations, all 25 core checks and driver returned actual 0 at every step. Final SAV8ec0f4f8623137edeac628108578fcb76f5bdf9b235f3732061846b719665c2a; population11182, mother work246.05/360 and rear166.25/360, alive military25, baseHP18300. No new boundary or confirmed Mod/P-tool defect. Native first-year budget, research and growth checks passed. Next reuse this unchanged driver/source with unique batch terravore-dual-colonizers-monthly-batch2, start batch1-step4, limit4 but existing hard stop2273.06.26; expected at most 30+30+24 days. Only real PASS/actual0 and monthly ready permits each calendar step; stop on any failure/boundary. Mother ship birth is a separate component requiring a new documented guard; this batch does not claim birth or full acceptance.
+
+
+### 双笔已付订单出厂与后续等待组件（实施前）
+
+目标：在已有dual25连续月度PASS的基础上，验证母星100663340/queue3/base0及后方50331690/queue2287/base153分别正常完工；不再复制针对原版战争全部状态的旧46项守卫。新增独立 priority_terravore_paid_colonizers_lifecycle_core_guard.py，沿用dual25的真实预算、科研、增长、母星结构岗位、原EEP变量/原MIA身份、政府危机、原20母星军舰、基地归属及错误日志检查。前置只接受原dual25/source867941…或该新工具自身实际PASS/实际0/原SAV/source；保留原34首科研和后方19真实付款锚。
+
+在建阶段每笔订单仅原queue/base/design150995039/species73/360工作，真实每日1.33；两个实际付款成本375矿150合金保持可追溯。所有其余本国队列不得出现额外订单。生命周期允许且仅允许以下明确转移：原订单继续未完工；原359.1/360订单经唯一正常1日完工、队列移除该订单、item为原生none墓碑并生成唯一原设计/物种殖民船及唯一所属新fleet；已核出厂船保持同一ship/fleet/物种/设计并仍为本国，无再生成。新船需满625/125/320、出生日期为真实after、舰队evasive/无MIA/无战斗/无订单、坐标origin对应base所在母星0或后方97、orbit归属原starbase。原设计内部字段按解析有序结构比较而不比较缩进；0容量字段可省略依既有原生规则。两笔订单出生映射写入独立proof供后段前置核验，不预设新ship/fleet编号。所有其他新增本国船均FAIL；已核出生船不允许自动丢失或另付费复制。仅正常出生通知可保留，新增EEP/吞噬或待选事件仍停止。
+
+首次先执行已准备batch2至6.26并核实际25PASS/0，再仅1日到6.27，用原dual25检查母星应359.1/360、后方原单继续、ready因下日完工变false。该false为已知单一出厂边界，不放行长段；另单独且唯一1日到6.28，绑定原PASS/actual0及真实原订单阈值，6+4完整观察后运行新生命周期guard。没有改写旧proof/ready，任何FAIL保存原件并停、先真实调查再新版本，不重放付款或时间。
+
+母星出厂通过后仅按后方订单和原生计时器允许的每段最多30日继续，停后方完工前；后方亦以原359.1/360单日出厂、同样检查。新guard给出的max只允许尚在建订单完工前，出生当天另外检查，不把自然出厂等同殖民或第四吞噬。全部旧执行源码/FAIL/完整SAV与原生库存保留；工具源码先静态零错，再实际检查。生产Mod无修改，运行时仅简中，Steam离线。
+
+Lifecycle guard/source33f1451bde1d8997787971928a77ae687d8c97bf247d694ae1dea41297715364 compiled and pyflakes3.4.0 returned zero messages. Before any birth, calibrate read-only against already completed batch1-step3 to batch1-step4 (2273.03.02 to04.02), original observation/calendar/SAV retained, unique lifecycle proof/execution only, no native time or UI. All 25 original core invariants plus paid-order lifecycle must pass; calibration does not grant full acceptance.
+
+Batch2 actual0/date_limit after 30+30+24 days through2273.06.26; each calendar/6+4/dual25 actual0 and allPASS. SAVb000c9215d69bc60ba4580a75fab53cdc916e93f231c53658fa07ef1cbc1999f, population11196, mother357.77/360/rear277.97/360, no new boundary/loss/Mod defect. Lifecycle guard read-only calibration at original04.02 completed all25PASS/actual0. Proceed documented unique1day prebirth to06.27 under original dual25 ready/max1, then 6+4 observations and same dual25; no other calendar until actual outcomes known.
+
+After actual mother-birth lifecycle25 PASS/actual0, implement priority_terravore_paid_colonizers_lifecycle_bounded_driver.py from existing source32b181...; change only guard/proof/execution names and pinned lifecycle source33f145..., date cap2273.08.27, preserve limit<=4 and per-step<=30, 6+4 independent observations and strict actual return codes. First planned unique batch terravore-rear-colonizer4-final-build-batch1, start actual mother birth, expected at most30+29 days. Do not execute until mother birth and all checks actually pass. Stop on any boundary/failure, no retry/calendar past08.27; rear birth is a separate one-day component. No production change.
+
+First unexecuted lifecycle driver static inspection/sourcebf09b6f1cf3de3738b542dca2e2f045026ea74b6869df6bc2a1d0e5f56339628 found only unused pathlib.Path import (compile successful, static assertion exit1). Original source/static retained; no game action occurred. New independent *_bounded_driver_v2.py removes only that import, same documented lifecycle/date/return-code bounds. This private lint cleanup is not a Mod/P-tool defect. Run its zero-message static inspection before any invocation.
+
+Actual06.27 prebirth/calendar/6+4/dual25 allPASS and actual0, SAV61a22eacc50ee60659dff7b6a3a8f778eaba887955e9fac58b96889016013d43, mother359.1/rear279.3, max0/readyfalse exactly documented native completion boundary. Now execute only unique1day06.28/stage terravore-mother-colonizer3-native-birth, under original PASS/actual0/verified precompletion work; no long-interval authorization from readyfalse, no altered proof. Then complete6+4 observations/actual0 and lifecycle25/source33f145... before proceeding. Lifecycle bounded driverV2/sourceff59b47eb3bea5468a25751a4f918ca58d5b316221e0b43d3ff08af02d7042da static zero messages; still not invoked.
+
+Actual mother birth06.28/calendar/6+4/lifecycle25 allPASS/actual0. SAV4338d30beb27eacc5546869edf1457e97f7bd28488ef8f954be69492d0032803, only new paid ship50333283/fleet33555294/origin0/base0, original design/species and full625/125/320; original order retired, rear280.63/360, population11196, no new error/boundary/loss. No Mod/P-tool bug.
+Before longer waiting, account for already established native retired-handle garbage collection: a paid birth already validated by prior actual PASS may have its old completed order entry remain none or disappear later; keeping that tombstone forever is not a Mod invariant. New independent lifecycle_core_guard_v2.py only allows absent-or-none for previously validated births, still requires exact none on the actual one-day birth, unchanged unique ship/fleet/design/species/position and no new orders/unpaid ships. Accept pinned original lifecycle33f145... as additional actual prior source. All original25 checks and first-day constraints retained. No actual previous lifecycle failure; this is a documented prevention of a known native-cache false positive, not a Mod fix.
+New lifecycle_bounded_driver_v3.py follows unexecuted V2 ff59b4... and invokes only new guardV2; its original-start proof may be from pinned33f145... or new guard source, each must match actual recorded command source and exit0. All limit4/per-step30/datecap08.27/6+4/allchecks/stop bounds retained. Compile/lint both before invocation. Prior sources/static retained. Begin unique rear final-build-batch1 only after static zero and actual birth PASS verification.
+
+Target physical523/system37 native name is Yomon III a; official Chinese star Yomon=亚蒙 from native random_names_l_simp_chinese.yml:1864. Target raw says surveyed_by=1 (not player0), so survey/UI eligibility requires verification; previous empty surveyed-field summary was not a confirmed survey state. First latest-status insertion used wrong PowerShell stdin encoding and was immediately replaced with verified UTF-8 Chinese, preserving all older paragraphs; no game changes.
+
+Rear final-build batch1/source7c1b268978f23e92d8e4e50c5cc14b37df9f4d1d62fd814bb15a1823a7ccbdba completed30+29days through08.27; each calendar/6+4/lifecycleV2/sourcefd10fb3ae79d1bc45c11a2ea17ad703a5572689cfd10855463f2437ea2990564 and driver actual0/all25PASS. Final SAVd4072635889977613225eb674a08eeb239a129585be143c140032ae290220247/pop11209/rear359.1, mother paid ship retained,25military/no loss or boundary. Driver correctly stopped readyfalse at original known completion. Execute only unique08.28 one-day rear birth now, bound verified359.1/360 and originalPASS/actual0, not long-calendar permission; sequential calendar then parallel6+4/actual0 then same lifecycle25, stop at any failure and retain actual outcome. Native sciencefleet166/ship1049 idle in97 has original scientist74; official name HUMAN1_SHIP_Drake=??? at native name_list_HUMAN1_l_simp_chinese.yml:1121. No survey/move order yet.
+
+
+后方08.28唯一出厂/calendar/6项观察/4项库存实际0；生命周期V2/sourcefd10fb3ae79d1bc45c11a2ea17ad703a5572689cfd10855463f2437ea2990564实际25项恰1FAIL/退出1：rear_base153_still_owned_original_station。完整原proof/streams/SAV保留，未继续日历。其余24项（含唯一原订单正常退休、唯一原设计/物种满血新船16779032/fleet863、母星原出厂船保持、无额外费用/免费船/新error）全部真。
+只读完整基地差异调查SHA10a3bd9b3da5dea8d0e484f94cce18b1cbe0785bd681e51936abb0f331b9ce0f证明base153唯一变化为orbitals映射0从4294967295空槽变为863，即已核新殖民船fleet；所有其他字段/归属站舰/健康保持。属于已确认的原生出生停泊登记，原core整块raw恒等过严，不是Mod/P工具缺陷。
+新增独立生命周期guardV3仅将基地raw恒等换成精确出生登记检查：无后方出厂则保持原全raw恒等；本次唯一后方出厂则除orbitals全部原有序字段保持、旧唯一0为空哨兵、新唯一0恰新付费船fleet，原舰队ownerchain/HP约束保持。新增原25单FAIL/sourcefd10/实际1/原SAV对及完整调查SHA锚，共26项；同原08.28重核不重放、不付款、不推进。使用新V3 proof和execution后缀，所有原件保持。静态零错且26项全部PASS/实际0后才冻结下一切点，再正常UI核目标殖民条件。
+
+后方出生V3/source98c2c63a0c409f3bb8670f102d8bcfd3ee0fce8eb24561506dd3222e0165a43a静态零错、同原08.28实际26全部PASS/退出0，SAV456b1c2f10ab0e71fb8c258d6ed4dd262f79f79ec4e897b16a86cc7ff8859c39；新后方船16779032/fleet863满625/125/320/origin97/base153，原母星出生船保持，两单均正常退休无额外费用。母星11209/25军舰/基地满状态，C49/D14/worlds3/PSI1/Menace885保持，无新增Mod/P工具缺陷。现在仅冻结CUT30，不操作GUI或写RUN直至独立原blob校验完成；之后先核第四目标正常UI资格，出生组件不等同第四殖民/吞噬通过。

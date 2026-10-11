@@ -221,3 +221,19 @@ CUT28实际commit177137bb2a78e5c4eb13d7a956ebb04835e17f9a；原push1 HTTP408实�
 
 
 CUT29冻结2026-10-11T14:37:15.961131Z，30664原source/1599351311B，复用30380、新284/75541174B。独立Git index blob核验首次PASS/实际0，30752 blobs/1634952936B；root独立receipt已建立，原失败/新原件均未删除。本次仍仅分项证据检查/1政体完整通过，不把仓库归档成功当噬岩者全路线通过。只stage CUT29新路径、当前五任务docs与本次rootreceipt，diff--cached--check通过后按默认规则提交并推送main，再独立核完整远端SHA；Git提交/网络原日志进入下一切点。
+
+
+### CUT30 native-paid-colonizer-lifecycle（归档前）
+
+基线CUT29 native-monthly-economy-and-first-research / 383a7c0d77c90831ca019db7e2f685df742f05a1已push并独立核完整远端SHA。当前2273.08.28暂停，后方出生V3/source98c2c63a…26全PASS/实际0；两笔真实付费船出厂保持，生产Mod41/0.2.0/treeac802…未改，Steam离线。
+完整冻结RUN/userdir，复用30664项原前序；新label native-paid-colonizer-lifecycle，增量包含CUT29 post-freeze Git全部退出/streams、正常中文后方定位/无效Ctrl与有效物理退格/F定位差异/GPU/OCR与真实一船坞报价/唯一后方付费375M150A、同日完整6项观察与首18科研镜像FAIL/真实bank差异调查/19PASS；两笔订单首3日/首完整月/七月段dual25全部原件、母星prebirth与唯一出生25PASS、生命周期first driver静态unused-import失败及所有未执行源码/静态/后续V2和V3、已知墓碑GC范围说明、后方30+29日/唯一出生25单orbitalsFAIL/完整调查/26PASS；全部SAV/raw/error/stdoutstderr/actual0或1/源/static/pycache/UI图保留。
+归档与独立Git index原blob校验独占期间不写RUN/不动GUI/日历；archive实际0，再命令级longpaths精确stage新cut与五任务docs/本次rootreceipt，独立PASS/actual0后补真实计数与receipt，核task-only范围/diff-check，提交push当前main/独立ls-remote完整SHA，不改永久Git配置。当前D盘约0.67GB，正式archive前重核，不删除任何历史证据。该切点不等于全路线验收；第四吞噬/女王高阶/后续危机/矿物舰及最终重载仍未通过。
+
+
+CUT30归档实际0/冻结2026-10-11T16:06:01.202161Z，31505原source/1823567403B、复用30664、新841/224216092B；首次独立Git index原字节校验PASS/实际0，31594 blobs/1859854959B，root回执priority-native-paid-colonizer-lifecycle-delta-staged-verification-2026-10-11.json。独占期间未写RUN或操作GUI。现补实际回执并精确提交五任务docs/本cut新原件/rootreceipt、推送main及独立完整SHA核验；不是全路线验收通过。
+
+### 活跃验收证据盘迁移方案（实施前）
+
+CUT30后D盘实测仅剩370049024B，后续完整SAV/观察及Git归档将继续增长；C盘仍24GB以上。为继续保留全部证据，提交推送与独立远端核验完成后，在游戏暂停、所有辅助进程结束且无RUN写入时，把唯一活跃原证据目录D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\runs\20261009T044016Z的物理数据迁至专用C:\Users\1\AppData\Local\xenoamess_stellaries_dev\artifacts\20261009T044016Z；D原逻辑路径建立NTFS目录联接，current-run指针/所有历史引用/原始文件名与字节保持。游戏userdir本来已在C盘，不移动；不移动生产Mod、Git元数据或归档证据。
+
+验收标准及安全顺序：先验证源真实绝对路径恰上述工作区目录、非重解析点，目标恰命名C目录且尚不存在，C空间足够，备用路径恰源父目录下20261009T044016Z.storage-migration-backup且不存在。复制全部数据并逐文件相对路径/字节数/SHA256完整对照通过；再仅在D源父目录内重命名源为备用、建立原逻辑路径至C目标联接；再次完整核对D逻辑路径文件集合/字节/SHA与备用一致、原指针/末SAV/源码hash可读及目标路径正确；通过后才删除已验证的D备用副本释放空间，所有原证据均继续存在于C目标与已核Git归档。任一步失败保留完整副本、停止日历，修复联接/恢复原逻辑路径后才能继续，不丢弃证据或生产文件。文件移动/删除只用同一PowerShell的LiteralPath和明确核过的绝对目录，未核copy不能删源。保留迁移全文件清单/真实退出与检查结果，结果回写本文件并随下一切点提交推送。

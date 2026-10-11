@@ -620,3 +620,6 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-11 原生基地归属引用：starbase_mgr.starbases.<id>没有直接owner字段，galactic_object.<id>使用starbases匿名ID数组（不是starbase单字段）。正确只读链为country的owned fleet→base.station对应ship.fleet→base ID，再与system.starbases交集确定控制星系。本次原0/153/1931对应system0/97/37；用不存在字段的首调查空集合无效，V2原件SHA0e7a5d…已校正并保留首件。当前原生战斗结束时双方都可以有剩余舰进入MIA；必须以properties.mia/return_date/no_live_combat判定，不以fleet名册数量变少直接认定全歼或战争胜利。
+
+
+2026-10-11 原生资源付款可刷新standard_economy_module.resources内三科研镜像。11.27同日殖民船付款前缓存P463.25957/S7610.96133/Eng49.2914，付款后P499.76727/S7623.96049/Eng省略0；真实tech_status.stored_techpoints前后仍499.76727/7623.96049/0，工程科技原文保持。仅缓存刷新不能报告科研得失，应优先审计true research_stockpile及科技队列；可独立要求付款后镜像对齐true bank。完整module调查SHA3ff670c…及原SAV/18项单FAIL均保留。Stellaris原生存档行为，不扩写成Paradox语言共性。
