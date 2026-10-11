@@ -156,3 +156,11 @@ verify_priority_delta_checkpoint_git.py独立读取新manifest，核所有源条
 
 
 第二十三切点归档actual0，冻结2026-10-11T07:00:00.175128+00:00；完整27593源项/1107935924字节，复用27379、新复制214/11172938字节。首次独立暂存原字节核验PASS/actual0，27675唯一blob/1139869494字节；[独立回执](evidence/priority-native-mother-defense-and-first-rear-corvette-birth-delta-staged-verification-2026-10-11.json)。原V61六FAIL/V62一FAIL/V64两FAIL及最终V65 106PASS、真实母星两敌损/首普通舰出生/次日1.58均冻结；无生产Mod修改。提交推送核完整远端SHA后继续已记录只读经营优化。
+
+
+### 第二十四切点实施前计划
+基线第二十三native-mother-defense-and-first-rear-corvette-birth/8a5fb5a0d0049d29409d416f504c2c7c3273ba1b已push及独立完整SHA实际0核验。新唯一标签native-rear-colonizer-physics-preparation-and-generator-completion。暂停2271.12.23，冻结两Git原退出、全部正常UI调查/报价/GPU/OCR、五取消实际0/507.5退款/原16单camera FAIL及V2 18PASS、殖民付款原KeyError及V2 17PASS、物理停止30PASS与特化14PASS、12.13首工作原24两计时器FAIL及V2 27PASS/12.22 27PASS、12.23发电V3住房单FAIL及V4 29PASS、全部原生完整源/静态/只读调查中的失败/源码/日历/SAV/未过滤错误/stdoutstderr/实际退出。不得漏失败或重做游戏操作，不能把普通舰/原殖民船未恢复/未出生后方船称矿物舰或闭环完成。
+归档与独立暂存blob验证期间不动GUI/日历/不写RUN。沿用完整manifest复用，先仅新切点git add -f等实际0，再暂存五任务docs及全部已存在根priority回执等0，再启动独立验证（期间不创建未暂存回执）。两actual0和独立PASS后补真实计数/回执、核任务范围、提交推送并独立ls-remote完整SHA。生产41文件0.2.0保持；核远端后继续新跨月/第三年度/特化和殖民出生，非停止验收。
+
+
+第二十四切点归档actual0，冻结2026-10-11T08:18:10.109812+00:00；完整28272源项/1140821375字节，复用27593、新复制679/32885451字节。首独立暂存原字节校验PASS/actual0，28355唯一blob/1173293629字节；[独立回执](evidence/priority-native-rear-colonizer-physics-preparation-and-generator-completion-delta-staged-verification-2026-10-11.json)。原退款camera FAIL/殖民读取KeyError/首工两计时器FAIL/发电住房FAIL与后继精确通过均保留，生产未改。后续首30日方案已先写docs，独立校验期间没有RUN写入或GUI操作，核远端后执行。
