@@ -623,3 +623,5 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-11 原生资源付款可刷新standard_economy_module.resources内三科研镜像。11.27同日殖民船付款前缓存P463.25957/S7610.96133/Eng49.2914，付款后P499.76727/S7623.96049/Eng省略0；真实tech_status.stored_techpoints前后仍499.76727/7623.96049/0，工程科技原文保持。仅缓存刷新不能报告科研得失，应优先审计true research_stockpile及科技队列；可独立要求付款后镜像对齐true bank。完整module调查SHA3ff670c…及原SAV/18项单FAIL均保留。Stellaris原生存档行为，不扩写成Paradox语言共性。
+
+2273.08.28当前保留的原生player_event264键grand_archive.2800，游戏events/grand_archive_events.txt:2686起定义为Cutholoids的first_contact_event，first_contact=yes；正常唯一选项grand_archive.2800.a调用set_first_contact_starting_stage=yes，after触发on_first_contact_started。原文件SHA256 1e3f769c1693d1cee3c137708f84eafebbbfedd726bc730eb41999b49f1c5ccf。这是原生首次接触事件，不是EEP女王通知；SAV日期字段用途本次未独立证明，不能仅由date=2273.12.20推定为首次弹出时间或可忽略到该日。后续须以真实简中UI和原生事件状态判断是否需处理，不能误称Mod缺陷。仅Stellaris原生事件代码确认，不推广到CK3。
