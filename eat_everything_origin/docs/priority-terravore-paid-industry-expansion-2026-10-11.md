@@ -1097,3 +1097,61 @@ V4源码076a8a11c7ec69bb675c7d1205faf54e6777d78b10b604d84f56f77c2b359bec compile
 
 
 CUT37实际结果：freeze2026-10-11T21:01:19.474093Z，33955源文件/2441138750B，reused33584、新371/79852271B；独立Git暂存原字节核验PASS/实际0，34051唯一blob/2480067965B，根回执evidence/priority-native-mineral-bite-and-rear97-capture-retreat-delta-staged-verification-2026-10-11.json。所有原失败、源码、两SAV/原生战报与撤退/移动/新15日核验原件完整保留。仅当前暂停证据，不代表路线或退出重载完成。只stage本cut/五任务docs/根回执后scope及diff、commit/push main/独立核远端全SHA；随后继续V4限定≤15日观察。Steam仍离线，不改Mod生产代码/版本。
+
+
+CUT37已提交推送d1d7f404ae93ffd2e66d3ac898deb8341766922c，push/ls-remote实际0且main同完整SHA。后续front-watch-02唯一15日到2277.12.01，SAV70d57f33bfe1a9e3a7fb38eb470ecddcd21fb869fd4960848e57e6d1af00ce95，日历/六观察/21核心全PASS/实际0，无boundary/max15，progress22/32、母11364/源288/总11652、EEP/设计/25军舰/error保持；当前仍无已确认Mod/P工具新缺陷。只读11.16实际825 movement targetorigin77/path.date2279.08.28，当前坐标97/power3119.23437，不能再假设一定下一步攻击源37；完整原SAV保留，不预判AI下一行为。后续继续同已核V4每15日，到2278.01.01停止且不跨1.02强制和平边界。
+
+
+front-watch-03到2277.12.16/SAVc13780cd5f9725075a15545536ce7fca535fb6b0a8500b7c1b948950f17a82e9及04到2278.01.01/SAVc2b1469941255a344210c842d4de3cf2534fc9da2b9f6ed7954690e2b6a16685，均日历/六观察/V4 21全PASS/实际0；progress22→23，母11371/源288/总11659，C49等/25军舰/原error保持。04 ready=false/max0因计划强制和平边界，不能盲跨。
+
+下步设计先行：从04原21PASS/实际0唯一推进1日到2278.01.02，以原六观察保存实际状态。不假设attacker_force_peace_date当天自动结束战争；只是原生字段日期。新增V5从V4独立复制，前source仅补已核V4/076a8a11…，业务范围仅2278.01.01→01.06/每段≤15日且max到1.06。在两真实SAV完整读取wars，新增只核war1存在、attackers/defenders/双方war goals/开始时间/强制和平标记日期及除battles和双方exhaustion外字段保持；允许原生疲劳自然增长，完整原文仍保存，不允许未知war结束/参加者/目标变更。原war1战报变化边界仍stop，其他21核心/来源/已核science166 MIA保持，1.06仅原安排返航日期不预判实际返航。V5只在其新22项全true/actual0后可逐日至返航日期；若1.02发生原生和平/战争终结则保留FAIL并另行调查，不自行放过。compile/pyflakes0后使用新组件，原V4范围不变。任何未知Mod问题先暂停，Steam离线/Mod生产不动。
+
+
+2278.01.02原生日已核：SAV12509ca774e22b14da7142d60f40861219d9e8cf23c707623989bbc824736fd4，六观察实际0/全true，V5/sourceedbec82764f39bd4b120fc82d4f9d2df84af577c04ff68c8b8a24eef7bb64a11 compile/pyflakes0、22项PASS/实际0；war1仍存在、双方/目标/开始与force_peace字段保持，无新war1战报/消息/pending/核心变量及error变化。只证实当天未自动终战，不推断将来AI不强制和平。ready/max4，只继续到原science return_date2278.01.06，停止核实际MIA状态；若当天仍MIA按既有原生返航经验再单日观察，不宣称未来返回。
+
+
+原安排返航日期2278.01.06已实际到达，SAVd7acd15f5b19ca893e07d1ab08a9d5b5c00ebc28b5c95924f8076245a12c9bab；日历/六观察/22项V5全PASS/实际0。原166/1049当天仍properties.mia=yes/同return_date01.06，未宣称回来；core/源23/32/原error保持。下一唯一1日到01.07用此前22PASS前置，仅保存原生SAV/六观察，独立核同原1049/166/leader74/实际HP/设计及坐标、MIA是否移除/新原生messages及orders，不套范围止1.06或要求MIA不变的旧V5。若实际返回再据真实原件记录新返回组件方案后实现，不因日期到达推算状态，不重放撤退或补舰；若仍MIA保留事实并按最短日界观察。
+
+
+2278.01.07实际正常返回：SAVde24b675e5f54f06088d81c8a1dead3fb42d699d7e8df0d4d0a786a993e452d1，单日历与六观察全true/实际0。原166/1049/leader74保留，375/125/320及原design150995038，properties.mia不再存在、return_date移除、坐标origin37，in_combat_with空；mia_type=mia_emergency_ftl历史字段仍保留，不能单看该字段当仍MIA。原核心人口/EEP/局势23/32/库存/true banks/25军舰/error保持，无新消息/pending。这是当前原生紧急撤退返航实证，不推广为所有MIA必+1日。
+
+新增等待V6方案先于实现：从V5复制独立源码，范围2278.01.06→01.30、每段≤15日、cap为第二年度噬岩前1.30；前source仅新增已核V5/edbec827…，其他来源及20原核心/war1额外检查保持。以本固定实际返回两SAV d7acd15f…→de24b675…、原六观察/sourcee725…/actual0和前22PASS/sourceedbec…/actual0独立锚定，核原source MIA yes/同return_date1.06→实际MIA移除/return_date移除/原ship1049/f166/leader74/满375125320/原design/coordinate37；只为已发生的实际返回作永久原件证据。原capture13及retreat事实保持，后续science原身份仍在/leader74/HP正、MIA未再次发生；任何新MIA/实战/新war1战报/未知消息/源控制权/经济结构异常仍立即停。原V5不在1.07重跑，避免套旧MIA或旧cap。新V6 compile/pyflakes0，同本1.07全部检查true/actual0才恢复15+8日到1.30；不跨年度随机奖励/最终结算。新proof后缀v6，原各版本/失败/原流完整保留。
+
+
+实际返回同SAV V6/sourceb993c11c6e8c098e58805483a58a6088751108464a855837492a9de72483e4bf compile/pyflakes0、22PASS/实际0，无boundary/max15。前22原MIA证明与六观察/原返回两SAV已完整绑定，原design/leader/HP保持；未把旧mia_type历史字段视为仍MIA。按本方案唯一15+8日到2278.01.30观察，第二年度噬岩2.01只在前置全true/actual0后单日执行；年度原生随机收益变动须据实际完整消息/前后存档单独核验，不能默认仍矿物分支或把总stockdelta全算奖励。第二消费消息出现后、任何正常确认前采实际简中UI/OCR画面，用原r.gpu_capture保存，作为Workshop候选需说明其分支/Mod结算和未完成状态；不能伪造原始游戏画面或提前写入未发生的C60。
+
+
+1.30新原生战斗边界与一次调度流程错误：V6 22项核心PASS/实际0但boundaries=[native_owned_active_combat]/ready=false；手动组合调度仅检查进程actual0，未先检查业务boundaries，已多执行既定年度单日到2.01。原SAV/证明/实际日志保留，停止所有后续日历，不撤回/重放。根因是root编排未按既有规则单独读取businessready及boundaries，并非Mod或P验收引擎问题。必须先在下一次推进前补私有日历预检，未知业务boundary一律拒绝，不能仅有process0。
+
+只读1.30战斗为原主力83886903/system188 卡兹比斯，敌country1/fleet33555300/shipclass_starbase/5000HP/power338.21875单前哨，自1.30交战；母星主力原18/4860HP仍在，power1767.23437，不把战力变化直接判丢舰。2.01实际同主力HP4860及全部原25军舰保持，源/母星控制权无异常；尚未宣称赢得前哨或无未来损失。需原生双方/ship/root/base完整只读调查后按实战边界再逐日，不能V6普通wait自动继续。
+
+第二年度噬岩2.01已实际发生，SAV9705ffcd1700af3093b518060aa93348d1544cace1a991cf6f1184f7c161dbd4，六观察actual0/6true。原生唯一MESSAGE_TERRAVORE_CONSUME_WORLD_POP_TEXT/notification275/target523/receiver0/date2.01/end5.01，源人口288→388恰+100，母11371→11378自然+7，总+107；不能把107全算噬岩，也不能宣称原生人口直接生成母星。源Q13/月32/size13保持，progress23→24；两个新d_lithoid_devastation 16778179/16778181均holder type0/id523，旧两损害保留，timed flag新date63482640/360，source district71仍1level，bombardment_damage前11.18→31.18（首年20期间正常衰减后本次+20）。C49/D14/worlds3/PSI1/stage1/Menace885/true banks/库存普通月delta/原error2814B未增；未最终结算/女王C60。初始UI cd018331…保存；误指leader tooltip2e92b624…原件保留不用作原生消费图，另读实际message图。
+
+下一私有实施方案先于实现：新增独立native population bite+active battle只读INV，将本前后完整两SAV/六观察、原V6 core22和业务battle边界/原源码/实际0、全部新popgroup与沉积/source/district/全局双方舰队船/base/国家所有权/双war和原275消息、本mod与原生consume源SHA、实际中文人口消费tooltip图逐一保存绑定。独立业务组件复算20核心并只对已核本对允许source+100、两新损害与flag重置和唯一275；主力交战作为显式known boundary仍不允许普通等待ready=true，不泛放任何未知伤亡。日历预检新v3必须先拒绝任何boundary，再允许只有已记录known date cap且无boundary的1日审批计划；已知battle单日需另独立reviewproof绑定双方/原船/source当前SHA及最多1日，才能推进，不把ordinary PASS0当业务ready。
+
+
+实际275中文tooltip图585bfd1df94811ad580f3f1977923fa9f245fe4ac92148f943be54ad8da094ac已目视确认“吞噬星球/吞噬亚蒙-I为石群提供人口产出”；前误指leader图不作为消费证据。当前2.01暂停/没有后续日历。
+
+日历私有V3预检具体方案先于实现：复制原checked_v2保持所有正常console日历/原save/来源/SAV/error检查，新增纯函数validate_business_interval(pre,start,end,days,review=None)，在首次GUI前调用。原pre.status/allchecks/actual0仍强制；普通业务须boundaries空、native_devour_calendar_ready=true、days≤maximum_days。若ready=false或boundaries非空，必须有独立review JSON：status PASS_REVIEWED_NATIVE_BOUNDARY、非空全true checks、before_sha256与pre.after_sha256一致、start/end/days恰本次、allowed_boundaries恰当前集合；不能单传布尔跳过。review来源文件及SHA写回calendar receipt。未提供review的未知battle即使prechecks全true也必须fail before GUI；cap readyfalse的已知年度1日也须同样独立review。预检测试只导入纯函数、不启动runtime/游戏，覆盖普通15日允许、超过业务max拒绝、PASS0但native_owned_active_combat拒绝、cap readyfalse无review拒绝、review source或日期或集合不符拒绝、严格匹配独立review允许。这是私有调度防错修正，不是生产Mod或open_kaishek缺陷，不改旧V2源码/回执。compile/pyflakes0及这些fail-closed检查全通过后才用于后续实际日历。
+
+
+独立只读INV 0e3f4364f62bfbcbb3e4b4a742a0db612f2775d0975780c557be2784e1e45cd1保存第二消费两完整SAV/六观察/22原证明/全部原生源码SHA、源/两个新沉积/人口群/275/实际tooltip585bfd1…以及双方舰队/ships/双war/基地/国家原文。源新增100已合并原人口群，new_pop_groups={}；不能要求create_pop_group必出新ID。敌前哨原station ship67110520/fleet33555300/owner1/system188，2.01仍交战，本组件不宣称捕获或胜利。
+
+新六观察V2适配方案先于实现：从原observation/sourcee725…独立复制，仅将checked_native_calendar来源接受原固定V2/663822…或新V3实际源码SHA且必须receipt.business_preflight=true（独立review若存在另核其source/actual0/SAV/准确区间），其他六项/SAV/source/旧日志/raw库存不变。所有历史原observer源码不改。V3预检pure checks9全PASS/actual0/sourcebff8345e…，仅纯函数/未实际日历；新V3执行前仍需业务独立review。
+
+V7第二年度POP及交战组件方案先于实现：从V6复制独立guard，保留原始全部核心/第一年度INV/原capture与science返回锚定/war1额外检查；新增固定本INV0e3f4364…及原两SAV/六观察actual0/原source/唯一275/两个deposit owner523/POP源+100/母+7/全部species73/原Q13size13月32和当前progress24锚定。仅本精确对允许粗增长扣除原生100、源新增两沉积/flag重置63482640/360和已核275消息；之后普通等待source沉积与before相同、flag剩余按本2.01倒数，未知奖励仍停。当前主力交战保持boundary，不允许普通业务ready。白名单只补前V6/b993c11…及两确定observer/calendar新源码哈希，输出v7独立后缀，旧source/FAIL不改。范围至2278.09.30（最终32月边界前），无交战/未知boundary时可≤90日；有交战只由独立原件review指定短段，不能以guard PASS当ready。原25military和owned身份实际设计严格保持，若前哨捕获新增owned station须另实际核所有权转换，不能泛允许未付费新船。compile/pyflakes0，当前2.01同SAV重新复算所有核心全true/actual0后才允许新V3+明确review的日历。
+
+
+V7/source37d12272fcac8675760799068fa9836163e0af61e7c94810fd3405bebc8eb327 compile/pyflakes0；同2.01/SAV9705ffcd…独立23项全PASS/actual0、progress24/32、reviewed_second_bite=true/native_POP_reward100，但boundaries=[native_owned_active_combat]/readyfalse/max0。原奖励及20核心+原返回/战争锚定重算通过，尚未finalC62/女王C60；当前无确认Mod/P工具bug及生产修改。
+
+日历V3实接线拒绝检查方案先于执行：使用当前2.01实际V7 23PASS/actual0/原SAV，传入唯一negative stage native-calendar-v3-reject-unreviewed-active-combat、end2.02/days1且不提供review。预期进程actual1在首次GUI之前报Business boundary…requires independent review；无该stage console/save/gpu/action工件、当前2.01原SAV不变。保存原stdout/stderr/source及actual1，这是预期拒绝而非游戏/Mod失败，不重试输入或推进。纯函数9PASS已完成，此检查只证实真实CLI调用串联预检。通过后新V3用于未来经独立review的真实日历，当前没有计划或授权自动忽略战斗。
+
+
+## CUT38 方案：第二年度POP、科研船返航与业务日历预检
+
+当前2278.02.01暂停，所有helpers已结束。唯一label native-second-bite-science-return-and-calendar-preflight，固定基线CUT37 native-mineral-bite-and-rear97-capture-retreat/已推送d1d7f404ae93ffd2e66d3ac898deb8341766922c。保存CUT37后Git回执、每15日/强制和平日期/实际science返回全SAV/六观察/21或22证明及V5/V6源码原流、第二年度275人口+100/两损害/原生完整双war及双方舰船/源结构/源码/SAV/实际tooltip/误指leader原图/INV0e3f4364…、独立V7 23PASS/0及其业务active_combat边界、新calendarV3/sourcec0bd2c1…/pure9PASS和真实CLI预期拒绝actual1/无GUI核验、新observerV2源码44c27824…静态0（尚未执行新V3正向日历，不能宣称适配已实测）、实际Workshop候选未上传。保留曾跨新交战边界1日的流程失误，不能删原证明或改写失败。
+
+同既有协议archive0→仅stage新cut+五任务docs→独立verify全新及复用Git原字节PASS/0→写实际计数及根回执/scope/diff→commit/push main/ls-remote同全SHA。冻结期间不写RUN、不推进游戏，不删任何旧证据。当前无生产Mod变动/新版本/Steam操作；只是暂停原件切点，非路线或退出重载验收。后续必须先独立review当前原生前哨交战，才可用V3短段推进，原Mod core23PASS不能代替business ready。
+
+
+CUT38实际结果：freeze2026-10-11T21:34:52.618875Z，34379源/2565838499B，reused33954、新425/124711103B；独立Git逐blob核验PASS/actual0，34476唯一blob/2605269768B，根回执evidence/priority-native-second-bite-science-return-and-calendar-preflight-delta-staged-verification-2026-10-11.json。完整原失败、跨交战1日的流程错误、后续23核心PASS与业务阻止、预检9PASS及实CLI无GUI拒绝、原生POP提示与science返回原件均保留。仅暂停切点，不代表路线完成；按scope/diff提交推送/独立核main完整SHA后继续已核交战的独立review，不自动忽略其业务boundary。

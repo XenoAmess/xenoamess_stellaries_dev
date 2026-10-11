@@ -310,3 +310,13 @@ CUT36实际结果：freeze2026-10-11T20:12:52.668397Z；source33584文件/236128
 
 
 CUT37实际结果：freeze2026-10-11T21:01:19.474093Z，33955源文件/2441138750B，reused33584、新371/79852271B；独立Git暂存原字节核验PASS/实际0，34051唯一blob/2480067965B，根回执evidence/priority-native-mineral-bite-and-rear97-capture-retreat-delta-staged-verification-2026-10-11.json。所有原失败、源码、两SAV/原生战报与撤退/移动/新15日核验原件完整保留。仅当前暂停证据，不代表路线或退出重载完成。只stage本cut/五任务docs/根回执后scope及diff、commit/push main/独立核远端全SHA；随后继续V4限定≤15日观察。Steam仍离线，不改Mod生产代码/版本。
+
+
+## CUT38 方案：第二年度POP、科研船返航与业务日历预检
+
+当前2278.02.01暂停，所有helpers已结束。唯一label native-second-bite-science-return-and-calendar-preflight，固定基线CUT37 native-mineral-bite-and-rear97-capture-retreat/已推送d1d7f404ae93ffd2e66d3ac898deb8341766922c。保存CUT37后Git回执、每15日/强制和平日期/实际science返回全SAV/六观察/21或22证明及V5/V6源码原流、第二年度275人口+100/两损害/原生完整双war及双方舰船/源结构/源码/SAV/实际tooltip/误指leader原图/INV0e3f4364…、独立V7 23PASS/0及其业务active_combat边界、新calendarV3/sourcec0bd2c1…/pure9PASS和真实CLI预期拒绝actual1/无GUI核验、新observerV2源码44c27824…静态0（尚未执行新V3正向日历，不能宣称适配已实测）、实际Workshop候选未上传。保留曾跨新交战边界1日的流程失误，不能删原证明或改写失败。
+
+同既有协议archive0→仅stage新cut+五任务docs→独立verify全新及复用Git原字节PASS/0→写实际计数及根回执/scope/diff→commit/push main/ls-remote同全SHA。冻结期间不写RUN、不推进游戏，不删任何旧证据。当前无生产Mod变动/新版本/Steam操作；只是暂停原件切点，非路线或退出重载验收。后续必须先独立review当前原生前哨交战，才可用V3短段推进，原Mod core23PASS不能代替business ready。
+
+
+CUT38实际结果：freeze2026-10-11T21:34:52.618875Z，34379源/2565838499B，reused33954、新425/124711103B；独立Git逐blob核验PASS/actual0，34476唯一blob/2605269768B，根回执evidence/priority-native-second-bite-science-return-and-calendar-preflight-delta-staged-verification-2026-10-11.json。完整原失败、跨交战1日的流程错误、后续23核心PASS与业务阻止、预检9PASS及实CLI无GUI拒绝、原生POP提示与science返回原件均保留。仅暂停切点，不代表路线完成；按scope/diff提交推送/独立核main完整SHA后继续已核交战的独立review，不自动忽略其业务boundary。

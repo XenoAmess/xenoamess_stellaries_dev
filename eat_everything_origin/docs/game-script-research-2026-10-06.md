@@ -653,3 +653,6 @@ V65对真实12.11→12.12原SAV 106PASS/actual0；六普通护卫舰串行首舰
 
 
 2026-10-12 噬岩者原生空间站失能/占领与撤退证据：2277.10.22 notification273 COMBAT_STATS/reasonwe_disabled，station67109591在全局ships仍存在、HP1/disabledyes且fleet804转归country1；country0 owned少此station不能直接判对象丢失或死亡，ship_size_count1/lost0互证。随后正常science166紧急跃迁在同日11.01使combat.enemies清空、properties.mia=yes/原生return_date2278.01.06，原ship1049及leader74仍存活/375船体保持。原combat.start_date仍可能保留，不能仅以start_date存在判断仍交战；应核in_combat_with/enemies及MIA属性。正常撤退令leader74经验+6.75，war1新增system97双方loss0的单条battle，不能要求退出战斗必然不改经验或war历史。两war须核实际participants：war1为country1对country0，war16777216为另外两国；不能凭任选一个war无变化推出全局无战斗。本次只证实Stellaris4.5.2原SAV，不推广CK3；完整前后原文/失能报告/13PASS实际0、原失败均保留于当前独立capture_retreat_v2证明及[验收记录](priority-terravore-paid-industry-expansion-2026-10-11.md)。
+
+
+2026-10-12 原生紧急跃迁返航实证补充：science166/1049在return_date2278.01.06仍properties.mia=yes，1.07实际返到system37，原ship/leader74/375125320保留，properties.mia及return_date移除，但mia_type=mia_emergency_ftl历史字段继续存在。不能以单一mia_type判断仍失踪；需核properties/原身份/实际坐标。只证本次日界更新，不推广所有MIA必延迟一天。第二噬岩POP100实际合并已有源人口群，new_pop_groups为空而源总人口+100并有原生275消息，不能把无新ID判未出生；母星只自然+7、其回迁是后续完整吞噬结算。均为Stellaris4.5.2本次原SAV实证，不推广CK3。[原件与独立23PASS](priority-terravore-paid-industry-expansion-2026-10-11.md)。
