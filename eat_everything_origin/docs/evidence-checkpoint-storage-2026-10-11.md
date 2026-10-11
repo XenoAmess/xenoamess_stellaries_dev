@@ -245,3 +245,13 @@ First migration launch was blocked before executing its body by default PowerShe
 
 活跃证据迁移实际0，robocopy退出1表示复制成功；前后两次完整SHA核验均PASS：31495文件/1817848190B，首检查2026-10-11T16:17:31.964550Z，原D路径联接检查16:18:13.500865Z，最终16:18:27.0732537Z。D逻辑路径现在指向专用C artifacts，原SAV456b1c…/wrapper7058…校验通过，D备用在双核通过后才移除；全部原件仍保留，D可用402116608→2266771456B，无生产/游戏状态变化。
 立即独立保存本次迁移任务原件至evidence/priority-runtime-evidence-storage-migration-2026-10-12：两源码、完整前后逐文件SHA清单、最终receipt、static与第一次执行策略阻止、CUT30之后三Git命令全部原stdout/stderr/execution。建立此任务文件manifest并逐项核原字节，再仅stage此任务目录和实际修改的三docs，独立核Git index全部新原件SHA、diff-check、提交推送main/独立远端完整SHA。此独立提交是存储任务结案，不替代下一完整运行切点；通过后才继续GUI。
+
+
+### CUT31 native-target523-colonization-begin（归档前）
+
+基线CUT30 native-paid-colonizer-lifecycle / a43ec83c07342c4058b7ecb03dc9a2125ac7bab0已独立原blob PASS/已push核远端；当前main另有已push核远端的迁移独立提交1db3856c957a3b14e6320e943faff24d494bf8af。新cut标签native-target523-colonization-begin。当前11.28/独立殖民开始11PASS/source3e60…/actual0，原travel19阶段5FAIL保留；未完成第四吞噬，生产41/0.2.0不变。
+本次全量冻结逻辑RUN及原userdir，RUN物理C目录联接已双核且原逻辑路径不变。完整范围含CUT30后Git原退出、迁移static/首次策略阻止/源脚本/31495项两完整SHA清单及最终receipt/独立迁移Git日志、所有正常F查找/required-repeat和CLI-int调用在输入前失败的文档、实际中文亚蒙定位/全原生体调查/UI资格和已有舰菜单/确认默认命名、同日SAV及完整差异调查/首unused-import static1与V2/source/16PASS、唯一90日calendar/SAV/6观察/19五FAIL/完整原生colony38调查及UI完成估计/11PASS。所有source/static/stdoutstderr/actual0或1/SAV/未过滤error/UI/OCR/action和原件不删、不追认旧FAIL。
+归档独占不写RUN/不操作GUI或日历；复用CUT30源31505项，archive实际0后命令级longpaths精确stage新cut/五docs/本次rootreceipt，再独立Git index所有原blob PASS/actual0，补真实计数、核task-only范围/diff-check、提交push main/独立ls-remote完整SHA。原迁移独立证据目录不需重复stage、不移Git/生产或旧归档。D盘迁移后约2.2GB，正式归档前重核；此切点仅为实际分项证据，完整政体仍1/7。
+
+
+CUT31实际冻结2026-10-11T17:11:21.844460Z；31730源项/1853793384B，复用31505、新225/30225981B。首次独立Git index原字节校验PASS/实际0，31820 blobs/1890408954B；根回执evidence/priority-native-target523-colonization-begin-delta-staged-verification-2026-10-11.json。原travel19五FAIL与新殖民开始11PASS分别保留，未完成第四吞噬，未发现已确认的新Mod缺陷，生产未改。仅精确提交本cut/五任务docs/rootreceipt并push main、独立核完整远端SHA。

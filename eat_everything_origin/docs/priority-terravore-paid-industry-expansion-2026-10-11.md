@@ -810,3 +810,43 @@ Rear final-build batch1/source7c1b268978f23e92d8e4e50c5cc14b37df9f4d1d62fd814bb1
 若UI要求我方调查，使用原科研船EEP 德雷克/ship1049/fleet166、原科学家74、当前97空闲，通过正常舰队选择和目标右键调查；只下原生可达命令，真实路径/ETA/调查完成以SAV和UI为准。若允许现有舰殖民则直接用现有后方船下正常命令，保存独立同日stage，核真实唯一舰队命令、原设计/物种/原付款、目标523、可达/原生路线ETA、无新付款或扩张计划下单、真经济/科研bank/人口/EEP C49D14worlds3保持；相机与正常离轨登记只按真实完整差异精确核，不能照搬旧raw恒等误报。正常下命令不等同到达、殖民成功或吞噬完成。
 
 出生检查结束后原生命周期ready=false只是没有剩余在建订单，不作为继续航行/殖民的自动放行。实际UI与同日命令独立通过后，另设计仅覆盖Mod核心和该正常航行/原生殖民阶段的守卫：日历遵守真实到达/事件/危险边界，保留完整SAV和未过滤错误；不再为了正常原版战争/NPC缓存冻结所有全局状态，也不把未逐月核过的预算称为精确月账通过。未知 pending、女王/吞噬通知、舰损/MIA或母星核心变化需先核，第四吞噬必须独立验证实际C/D返还/单次世界计数/女王C60及天灾威慑，未到该点不得提升完整路线通过率。
+
+Storage task committed/pushed/independent remote full SHA1db3856c957a3b14e6320e943faff24d494bf8af actual0. Normal GPU capture through original D logical path succeeds/actual0, game remains2273.08.28/约得本姆. Outliner visibly lists new rear EEP克诺索斯城 and science EEP德雷克 in97. Native names HUMAN1_SHIP_Knossos=克诺索斯城 (:1093), HUMAN1_SHIP_India=印度 (:1058) from original name_list_HUMAN1_l_simp_chinese.yml. Follow documented read-only 亚蒙 target UI lookup now; no new colony/survey command or calendar yet.
+
+First normal-F call omitted required repeat argument and raised TypeError before input/capture, no game action. Existing harness signature press_scan_code(scan,stage,repeat) now called with repeat1; invocation misuse only, not Mod/P-tool defect.
+
+First Yomon input orchestration passed integer coordinates directly to subprocess and failed in Popen before any child/input, no side effects. Correct existing helper invocation uses stringified CLI arguments; original action stages had not been created. No new Mod/P-tool defect.
+
+正常简中UI已核亚蒙IIIa/热带星球/13格/当前EEP100%宜居，殖民按钮可用；原SAV仅surveyed_by=1不能据此断言UI不允许殖民。正常选择已付款EEP克诺索斯城（满625/125/320、物种EEP、无指令）后，右键目标打开原生菜单，明确有可用“殖民该星球”与“进入轨道”。因此本次不下调查命令、不新造船；仅正常点击唯一“殖民该星球”，若有命名确认则保留默认名确认一次。同日另存并独立核只有原舰正常命令/原生星球登记等已证变化，实际库存及母星EEP保持，确认前不推进日历。
+
+Native colonization dialog explicitly lists only EEP/100%/existing ship EEP Knossos (16779032), no new-ship resource quote; default auto-designation selected, existing-ship row selected. Confirm native Colonize button804,603 once, retain default designation/name. Original native colony orders/true cost then independently inspect same-day save; no calendar until original-state guard passes.
+
+
+08.28现有舰殖民命令正常保存实际0/SAV7b01568d2ee040befbdcfb2bd17cbf394bd35798026829f08afff38081665887，未过滤error仍原2814/df43…无增量。完整只读差异调查SHA274aa962bcb9ccac441e48d94f2de9d798d262ea6fdb008da9f3ae7470bef80b：全部country根/全部ships/全部planets/construction/真实库存/科研bank原文保持，唯一fleet863变化current_order/order_id/movement_manager；基地仅153.orbitals的0从863变为空哨兵4294967295；random_count258374446→258374450，相机97→37。命令确为唯一colonize_planet_order/planet523/progress0/can_reach=yes，原船物种73设计150995039保持；native path真实97→37→37、ETA2274.01.29，仍是估计不等于到达。命名保留原生NEW_COLONY_NAME_1/Yomon，未重新付款/造船/调查或殖民完成。
+
+实施独立priority_terravore_fourth_colonization_order_guard.py：绑定原出生26PASS/source98c2…/实际0/SAV456b…及新原生save/source19f…/实际0/原SAV7b0…，完整INV SHA和正常五步已有舰选择/右键/殖民/确认/默认名输入source8019…/真实0。按上述完整差异精确核全部country/ships/planets/construction和原母星资源人口EEP保持，仅863三字段、153精确离轨登记、原4随机数与相机定位变化；单一原付费船、可达523/原生路径与命名明确验证。原舰实际还在97/满血/无MIA/无战斗，不能声称航线抵达。新增源码先compile/pyflakes零错，实际全项PASS/0后才有单独travel ready。
+
+后续正常航行组件不再逐月重验已连续核过的原版预算桥接：允许每段最多90日，但止于实际原生路径到达前一天、任何已知future pending date前一天或delayed_event前一天的最早者；完整SAV/6项既有observer仍留证。新守卫只验Mod核心、已付船身份/真实可达命令及目标、母星原结构岗位上限/合法自然增长与住房、实际终点资源和预算正净收入、设计/舰队安全、错误和新Mod通知/待选边界；多月段只称终点经济检查，不称逐月账精确通过。遇真实到达、殖民开始、原生待选变化、战损/MIA或核心变化则停止长段并独立核实。新增travel工具要另写实际输入/source/完整范围后实施，出生ready=false不影响已独立合法下令的travel组件，不能伪改旧proof。
+
+Initial unexecuted order guard/sourcea20c03b264abeab8b2a3cfb5b561c58ad2003c406f99dc1fbdd4ae388388e94f compiled successfully but static zero-message assertion returned1 for unused pathlib.Path only. Original source/static retained. Independent *_guard_v2.py removes only unused import, no logic change; must pass zero-message static before original08.28 checks, not a Mod/P-tool defect.
+
+
+第四殖民命令guardV2/source413cafbe0f55610cc5e70f8d38d2429a8e1519d426674dd88b974e08719d506e静态零错/实际16项全部PASS/退出0，原SAV7b015…保持，travel专属ready=true/max90，实际ETA2274.01.29。生产Mod无修改。
+实施priority_terravore_fourth_colonizer_travel_core_guard.py，输入before/after，使用既有construction观察6项/sourcee725…与原calendar/source6638…实际0/原SAV对；不依赖限制30日的旧native INV4，完整SAV/observer已保留本国全舰和原生原文。前置只允许上述16项order组件/source413…或自己真实PASS/actual0/source/原SAV。锚原16付款与命令链、production41/tree、原error2814。
+每段1..90日且最多3个原生月tick；保持EEP全variables与eep_ flags、母星唯一核心/种群73/18+D14容量/原27付费区划和3实验室及本星实际结构/岗位上限，允许正常workforce/bonus和已知-1哨兵；实际增长只作粗边界0..10*月tick（前九月每月6或7），住房实际正盈余/罪犯0，明确不是逐月增长记账。真库存E/M/A/U非下降且终点正净收入、真P/Sbank非下降、工程原mass_drivers3继续；保留实际全部差额，不能宣称多月精确预算桥接。
+两已付出生船身份/设计/物种保持；母星备用船仍在0/无令，后方原16779032/fleet863满血/无MIA/无战斗，当前唯一可达colonize523命令保持且progress0，到达前不允许出现新殖民或免费船。正常原生航行坐标不冻结；真实路径目标37/剩余节点仅97或37、到达估计记录并在其前一天停。全本国设计保持、无新本国船/军舰损失、母星20军舰完整，后方原基地153/站舰804归属链和HP>6000，原MIA船50333369返回2275.08.02不变。原政府/AP/危机1保持，威慑到1000或EEP/吞噬新消息/new pending/战斗危险停止；已知pending264只允许原文保持，不由其date推断原生调度语义，但保守停在该未来日期前一天。max=min90/实际arrival-1/已知future pending date-1/delayed_event-1；任何FAIL/边界readyfalse不继续长段。首次仅90日至2273.11.28，6项原观察后新guard实际PASS/0才能下一段；首次超过30日不得表述为精确逐月账。静态零错后执行，正常日历仍用原checked工具/source/完整回执，不改旧proof。
+
+Travel core/sourcef5f3ebf4e8fc327394edf3b10c12cdae95f3070b637df2de5b125746514bb2f7 compiled/pyflakes zero messages. Execute the documented first unique90days08.28 to11.28/stage terravore-fourth-colonizer-native-travel-first90 from actual order16PASS/0/max90. Sequential original calendar/source6638 then full observation6/sourcee725 then new19-check travel component; require each actual0, retain any failure and do not retry time. No precise monthly ledger/full-route claim.
+
+
+首90日实际11.28/calendar/6项观察均0，SAVb49e98ee96d7105be8ded1923fc22ba61cc2c220da90515b283112f152bd0476；travel19项实际恰5FAIL/退出1：原“仍单殖民地”“全部岗位同集合”“新船仍存在”“到达前目标保持”“本国舰集合相等”五条件，原14项仍真、原proof/sourcef5f3…/streams全保留，不重放日历、不追认19PASS。完整调查SHAf631c55aa58f7904ef7e50618fc815d0c17f9462f0a8f1e60681c3af27af07dc：实际在2273.11.26已开始殖民523，唯一colony38/owner0/controller0，原paid ship16779032与fleet863正常为none墓碑，唯一已付船消耗，无新本国船；新38仅0人口和三个原生初始岗位/1蜂巢区划。先前path.date估计1.29不是实际到达硬保证，因此90日检查点已跨入新原生阶段，必须独立补证而非忽略变化。
+
+只读复核：EEP variables与eep_ flags完全保持，母星原全部区划/zone/building/deposit结构完全保持、原母星岗位ID及全部结构上限保持；只新增38的logistics200/patrol100/coordinator200三个零劳动力岗位，未删除原岗位。母星11209→11229自然+20，住房盈余2871，C49/D14/worlds3/PSI1/Menace885和25军舰/满后方基地保持，真经济/科研/原危机检查皆原14真。不是已确认的Mod/P工具缺陷。
+原生简中UI明确“正在殖民行星”，悬浮显示预计2276.02.01完成；当前0pop/该界面仍显示殖民进度，尚未独立核决议资格，不把占有和区划初始化当殖民完成。目标原生queue2095空，colony38原始colonizing_species=73，carrier引用523、district71/zone108/building33554504=building_hive_capital，原生初始化数据完整留证。
+
+新增独立priority_terravore_fourth_colonization_begin_guard.py：绑定原19恰五FAIL/sourcef5f3…/actual1/两原SAV、原16命令PASS/source413…actual0、完整INV SHA；旧14真仍作为原实际证据保留。独立核唯一38由原native paid colonization产生/物种73/0pop、仅原付费ship/fleet退休/无新舰与原16设计及母星备用船保持、母星唯一核心结构和仅母星岗位保持、恰三个38原生零岗初始化、EEP变量/flags无重复吸收返还/C49D14worlds3保持、原pending与Mod消息保持，SAV/生产/错误源再次核原件。新proof仅说明合法开始殖民，不宣称完成或吞噬通过。通过实际0后新colonization专属ready，只允许最多21日至已知pending date前一天12.19；未知事件必须先正常UI核，不假造旧travel ready，不使用路径过时ETA。之后新在殖民期间检查方案另文档先行；原预计2.1仅当前UI估计，需独立实际完成检查。
+
+独立殖民开始guard/source3e60e32cdb3494d2ad710337498f1a87253098fc818706a19ec575b3dc5846ca静态零错/实际11全PASS/退出0，原19五FAIL与原14真保留。真实SAVb49e98…/当前11.28，0人口colony38，母星11229/EEP C49D14worlds3PSI1/Menace885/25军舰保持。UI预计2276.02.01，未完成吞噬或女王高阶；下一21日至已知pending日期前一日的专属ready有效但本切点前不执行。先冻结CUT31/独立原blob验证/提交push，再正常UI核前方37基地升级报价和必要防御：敌原MIA返回2275.09.06早于殖民完成，不能忽略保护需求；先只读报价，若正常付费升级须另记录实际费用/订单设计与验收方案，不免费补防。
+
+
+CUT31实际冻结2026-10-11T17:11:21.844460Z；31730源项/1853793384B，复用31505、新225/30225981B。首次独立Git index原字节校验PASS/实际0，31820 blobs/1890408954B；根回执evidence/priority-native-target523-colonization-begin-delta-staged-verification-2026-10-11.json。原travel19五FAIL与新殖民开始11PASS分别保留，未完成第四吞噬，未发现已确认的新Mod缺陷，生产未改。仅精确提交本cut/五任务docs/rootreceipt并push main、独立核完整远端SHA。
