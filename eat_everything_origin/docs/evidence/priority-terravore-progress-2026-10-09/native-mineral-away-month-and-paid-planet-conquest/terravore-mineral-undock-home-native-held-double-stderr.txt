@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\priority_native_ui_double_click_v2.py", line 11, in <module>
+    threshold=h.win32api.GetDoubleClickTime();delta=events[2]['at']-events[0]['at'];assert delta*1000<threshold and all(events[i+1]['at']-events[i]['at']>=.07 for i in [0,2]);assert h.win32gui.GetForegroundWindow()==w
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'win32api' has no attribute 'GetDoubleClickTime'

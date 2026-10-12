@@ -697,3 +697,13 @@ crisis.4145正常option0的after=refresh_auto_generated_ship_designs会新增自
 
 
 2026-10-12噬岩者原生实机补充：六艘正常225矿物付费矿物护卫舰施工完成后，2280.03.13与原舰共七艘，used_naval_capacity133/简中UI上限131。原舰原生tooltip显示0.76能量+0.76矿物，无合金；此为即时UI读数，不能据此声称已经通过超舰容完整月账。官方concepts_l_simp_chinese.yml401/510明确超过海军容量提升舰船维护，未公开具体闭源公式；需把实际月账与旧普通舰/组件费用分别核对，不能将全局惩罚增加的旧合金舰费用归因于矿物舰有合金维护。原主舰队在146于2280.03.06与已存在敌fleet825五舰开战，是正常航行触发，不是新增Mod战斗事件。
+
+
+2026-10-12原生维护核算：4.01→5.01完整30日，真实七矿物舰舰容133/131，ships能量29.65054/矿物5.33008/合金10.66023，components能量19.38267/合金3.29466精确保持。原生普通护卫舰21艘有合金底费及组件费，矿物护卫舰components_add_to_cost=no；两原防御平台另有组件费，现已选ap_eternal_vigilance明确ship_military_station_small_upkeep_mult=-.5。base0 crew_quarters使用orbit_modifier ship_orbit_upkeep_mult=-.25，仅真实orbitals舰队享受泊靠减费，不能把友境自动当泊靠。组件闭源中间运算未精确复原；逐组件5位金额与倍率舍入的有界算术区间包含真实账，完整后续月再要求真实账精确不变，不能把有界计算误称通用精确公式。
+原生UI本次实例：fast_forward后游戏长时间暂停时，F搜索/舰队双击/Q定位虽然收到输入但镜头未变；正常Space运行约1.35秒再暂停（实际2280.05.01→05.02）后矿物舰关注镜头真实转到母星system0。该事实由新鲜简中F12原图与原生手动SAV绑定，只说明本次实时刷新有效，未定位根因，不宣称暂停或fast_forward的通用bug。Ctrl+A在本搜索框没有全选效果，实际原生Backspace多次可清空；原生GetDoubleClickTime用user32而非win32api，实际按下161ms间隔低于500ms并不能单独证明游戏已定位。
+
+
+原生维护及UI事实（2026-10-12）：同舰容133/131时七艘原型威慑级护卫舰在crew_quarters停泊月ships费用29.65054E/5.33008M/10.66023A；同七舰正常解除泊靠后的首次月结算为31.42728E/7.10682M/10.66023A，组件19.38267E/3.29466A均保持。唯一矿舰能源和矿物增量各1.77674，与每艘.76144→1.01526相符，矿舰不增合金维护。只是这些固定原设计/精确舰容的实际账，不能推广到其它全部参数。原生领袖paragon999蜂巢分支只能10%尝试1045而1045要求ROBOT/MACHINE；本局十名owned leader全species73/LITHOID，2280.6.1剩14日至6.15自然移除，实际无消息/pending，除正常经验外全部本国leader字段保持，无Mod奖励。正常手动保存会关闭舰队面板，后续右键需要重新选中舰队；输入成功返回不代表游戏已下单，必须核current_order和原泊位。
+
+
+2026-10-12原生登陆与征服实例：defines LANDING_TIME_DAYS=10；舰队实际10.21到达/11.01仍在登陆令，11.02三原突击军移入colony30/ground_combat150994944，三原运输壳条目none，11.03零守军征服后原三army同ID/330健康/200士气自动重建三运输并合并新fleet，不能把运输壳变化当新军队或复活。源种族61=27/2=366守恒，原pop_group合并并重建ID/转purge；守恒须按实际species.size而非冻结group ID。源owner/controller1→0时原旧base舰33556087/f673同建造日与设计转本国；不是新生舰。原版crisis conquer_worlds根据本局参数给500Menace，吞星destroy_worlds是另一个原生目标，不能混记Mod奖励。原生和平提案超时可在次日产生ACTION_OFFER_PEACE_PROPOSAL_FAILED_RECIPIENT/自动拒绝且war完整raw不变，不代表签订和平。到达日期是动态预计，不可仅据旧预计日期保证下月仍行军；应依据实际轨道和订单停在边界。以上仅Stellaris本局存档/原源实例，不推广为CK3语法或共通P规则。

@@ -1,0 +1,550 @@
+# Add global variables here that will be available in all script files.
+# @something = 42
+# They can be overridden in each normal script file.
+
+#Nomadic Total War (Displace) Variables
+@nomad_displace_assimilation_percentage = 20
+
+#Paladin Variables
+@paladin_super_shield_cooldown = 360
+@paladin_super_shield_cost = 5000
+@paladin_thunderclap_cooldown = 360
+@paladin_thunderclap_cost = 5000
+@paladin_recall_cooldown = 720
+@paladin_recall_cost = 1000
+@paladin_air_superiority_cooldown = 270
+@paladin_air_superiority_cost = 7500
+@paladin_plan_b_cooldown = 270
+@paladin_plan_b_cost = 7500
+@paladin_sudden_strike_cooldown = 270
+@paladin_sudden_strike_cost = 7500
+@paladin_field_repairs_cooldown = 270
+@paladin_field_repairs_cost = 7500
+@paladin_taunt_cooldown = 270
+@paladin_taunt_cost = 7500
+@paladin_hold_the_line_cooldown = 270
+@paladin_hold_the_line_cost = 7500
+@paladin_for_the_order_cooldown = 270
+@paladin_for_the_order_cost = 7500
+@paladin_teamwork_cooldown = 360
+@paladin_teamwork_cost = 10000
+@paladin_leadership_cooldown = 360
+@paladin_leadership_cost = 10000
+@paladin_field_testing_cooldown = 360
+@paladin_field_testing_cost = 10000
+@paladin_spike_damage = 9000
+
+#############################
+# Festival / Celebration    #
+#############################
+
+@festival_cooldown_days_1800 = 1800			# 5 years between Festivals
+@celebration_duration_months_6 = 6			# A Festival lasts 6 months
+@festival_tent_duration_days_180 = 180		# Tent ambient objects last the whole Festival (6 months); keep in sync with @celebration_duration_months_6
+
+###############
+# Waystations #
+###############
+
+# Time
+@waystation_build_time_180								= 180
+@waystation_build_time_360								= 360
+@waystation_build_time_720								= 720
+
+# Costs
+@waystation_cost_alloys_50								= 50
+@waystation_cost_alloys_100								= 100
+@waystation_cost_alloys_150								= 150
+@waystation_cost_alloys_250								= 250
+@waystation_cost_alloys_500								= 500
+@waystation_cost_alloys_1500							= 1500
+
+@waystation_cost_influence_50							= 50
+@waystation_cost_influence_100							= 100
+@waystation_cost_influence_tithe_50						= 50
+
+@waystation_cost_minor_artifacts_45						= 45
+@waystation_cost_zro_100								= 100
+@waystation_cost_exotic_gases_50						= 50
+@waystation_cost_food_200								= 200
+
+# Upkeep
+@waystation_upkeep_energy_1								= 1
+@waystation_upkeep_energy_2								= 2
+@waystation_upkeep_energy_4								= 4
+@waystation_upkeep_energy_20							= 20
+
+@waystation_upkeep_trade_2								= 2
+@waystation_upkeep_trade_4								= 4
+@waystation_upkeep_trade_5								= 5
+@waystation_upkeep_trade_8								= 8
+@waystation_upkeep_trade_10								= 10
+@waystation_upkeep_trade_50								= 50
+
+@waystation_upkeep_exotic_gases_1						= 1
+@waystation_upkeep_exotic_gases_2						= 2
+@waystation_upkeep_food_10								= 10
+@waystation_upkeep_zro_1								= 1
+
+# Defenses
+@waystation_evasion_negative_1							= -1
+@waystation_hp_5000										= 5000
+@waystation_hp_10000									= 10000
+@waystation_hp_20000									= 20000
+@waystation_armor_2000									= 2000
+@waystation_armor_5000									= 5000
+@waystation_armor_10000									= 10000
+
+# Stockpile Capacity
+@waystation_stockpile_75								= 75
+@waystation_stockpile_125								= 125
+@waystation_stockpile_250								= 250
+@waystation_stockpile_375								= 375
+@waystation_stockpile_500								= 500
+@waystation_stockpile_1000								= 1000
+@waystation_stockpile_2500								= 2500
+@waystation_stockpile_5000								= 5000
+@waystation_stockpile_10000								= 10000
+
+# Upgrades
+@waystation_modules_2									= 2
+@waystation_modules_4									= 4
+@waystation_modules_6									= 6
+
+# AI build weight is divided by 1 plus this times the capacity used over 100%.
+@waystation_capacity_penalty_scale						= 100
+
+# Modifiers
+@waystation_modifier_mult_1_percent						= 0.01
+@waystation_modifier_mult_5_percent						= 0.05
+@waystation_modifier_mult_10_percent					= 0.10
+@waystation_modifier_mult_20_percent					= 0.20
+@waystation_modifier_mult_25_percent					= 0.25
+@waystation_modifier_mult_40_percent					= 0.40
+@waystation_modifier_mult_50_percent					= 0.50
+@waystation_modifier_mult_100_percent					= 1.0
+@waystation_modifier_negative_mult_5_percent			= -0.05
+@waystation_modifier_negative_mult_20_percent			= -0.20
+@waystation_modifier_negative_mult_25_percent			= -0.25
+
+# Module Resource Production
+@waystation_module_resource_add_1						= 1
+@waystation_module_resource_add_3						= 3
+@waystation_module_resource_add_5						= 5
+@waystation_module_resource_add_10						= 10
+
+# Sacred Path: Joyous Enlightenment
+@waystation_joyous_path_add_2							= 2
+@waystation_joyous_path_add_3							= 3
+@waystation_joyous_path_add_4							= 4
+@waystation_joyous_path_add_10							= 10
+
+# Sacred Path: Middle Path
+@waystation_middle_path_add_1							= 1
+@waystation_middle_path_add_2							= 2
+@waystation_middle_path_add_5							= 5
+
+# Sacred Path: Middle Path Sacred Site
+@waystation_sacred_site_add_2							= 2
+@waystation_sacred_site_add_4							= 4
+@waystation_sacred_site_add_10							= 10
+
+# Module Specific Values
+@waystation_module_sensor_range_7						= 7
+@waystation_module_sensor_range_10						= 10
+@waystation_module_hyperlane_range_14					= 14
+@waystation_module_hyperlane_range_20					= 20
+@waystation_module_cloaking_strength_1					= 1
+@waystation_module_cloaking_strength_negative_6			= -6
+@waystation_module_damage_reduction_30_percent			= 0.3
+@waystation_module_damage_reduction_90_percent			= 0.9
+@waystation_module_leader_pool_1						= 1
+@waystation_module_constructor_limit_1					= 1
+
+############
+# Arkships #
+############
+
+# Time
+@arkship_build_time_720		= 720
+@arkship_build_time_900		= 900
+@arkship_build_time_1080	= 1080
+
+# Costs
+@arkship_cost_alloys_5000		= 5000
+@arkship_cost_alloys_10000		= 10000
+
+@arkship_cost_influence_250		= 250
+@arkship_cost_influence_500		= 500
+
+# AI stops building new Arkships at this many, and only reserves Arkship build budget while below it.
+@ai_arkship_build_cap			= 8
+
+# Upkeep
+@arkship_upkeep_alloys_1_5		= 1.5
+@arkship_upkeep_alloys_3		= 3
+@arkship_upkeep_alloys_4_5		= 4.5
+
+@arkship_upkeep_energy_1_5		= 1.5
+@arkship_upkeep_energy_3		= 3
+@arkship_upkeep_energy_4_5		= 4.5
+
+@arkship_upkeep_logistics_0		= 0
+
+# Defenses
+@arkship_hp_2500	= 2500
+@arkship_hp_5000	= 5000
+@arkship_hp_10000	= 10000
+
+@arkship_armor_1250		= 1250
+@arkship_armor_2500		= 2500
+@arkship_armor_5000		= 5000
+@arkship_armor_20000	= 20000
+
+@arkship_shield_1250	= 1250
+@arkship_shield_2500	= 2500
+@arkship_shield_5000	= 5000
+@arkship_shield_20000	= 20000
+
+@arkship_shield_regen_4_375		= 4.375
+@arkship_shield_regen_8_75		= 8.75
+@arkship_shield_regen_17_5		= 17.5
+@arkship_shield_regen_70		= 70
+
+@arkship_evasion_5	= 5
+
+# Combat
+@arkship_size_80	= 80
+@arkship_size_100	= 100
+@arkship_size_120	= 120
+
+@arkship_slot_size_8	= 8
+@arkship_slot_size_16	= 16
+@arkship_slot_size_32	= 32
+
+# Movement
+@arkship_acceleration_20_percent	= 0.2
+@arkship_collision_radius_4			= 4
+@arkship_construction_offset_2		= 5
+@arkship_construction_offset_3		= 5
+@arkship_construction_offset_4		= 5
+@arkship_disengage_chance_2			= 2
+@arkship_formation_priority_4		= 4
+@arkship_max_speed_100				= 100
+@arkship_rotation_speed_15_percent	= 0.15
+
+# Ship-Specific
+@arkship_innate_mult_5_percent	= 0.05
+@arkship_innate_mult_10_percent	= 0.1
+@arkship_innate_mult_15_percent	= 0.15
+
+# Economy
+@arkship_collection_rate_add_125	= 125
+@arkship_collection_rate_add_375	= 375
+@arkship_collection_rate_add_625	= 625
+
+@arkship_max_districts_add_0	= 0
+@arkship_max_districts_add_9	= 9
+@arkship_max_districts_add_18	= 18
+
+@arkship_starbase_building_capacity_add_4	= 4
+@arkship_starbase_building_capacity_add_8	= 8
+@arkship_starbase_building_capacity_add_12	= 12
+
+@arkship_starbase_module_capacity_add_2		= 2
+@arkship_starbase_module_capacity_add_4		= 4
+@arkship_starbase_module_capacity_add_7		= 7
+
+###################
+# Arkship Modules #
+###################
+
+@arkship_spinal_mount_build_time	= 1800
+
+# Zone + module synergy soldier jobs
+@arkship_module_jobs		= 50
+
+# Weapon damage granted per soldier job by the Ordnance Engineering weapon zones
+@arkship_zone_weapon_damage_from_soldiers	= 0.01
+
+# Granted per soldier job by the Shipwright Bays zone
+@arkship_zone_naval_cap_from_shipwright			= 2
+@arkship_zone_build_speed_from_shipwright		= 0.015
+
+# Granted per metallurgist job by the Void Forges zone
+@arkship_zone_armor_from_metallurgists			= 0.02
+@arkship_zone_hardening_from_metallurgists		= 0.01
+
+# Alloys
+@arkship_cost_alloys_50		= 50
+@arkship_cost_alloys_65		= 65
+@arkship_cost_alloys_85		= 85
+@arkship_cost_alloys_100	= 100
+@arkship_cost_alloys_120	= 120
+@arkship_cost_alloys_150	= 150
+@arkship_cost_alloys_175	= 175
+@arkship_cost_alloys_200	= 200
+@arkship_cost_alloys_225	= 225
+@arkship_cost_alloys_250	= 250
+@arkship_cost_alloys_300	= 300
+@arkship_cost_alloys_340	= 340
+@arkship_cost_alloys_500	= 500
+@arkship_cost_alloys_550	= 550
+@arkship_cost_alloys_825	= 825
+
+# Food
+@arkship_cost_food_250	= 250
+
+# Strategic resources
+@arkship_cost_strategic_25	= 25
+@arkship_cost_strategic_45	= 45
+@arkship_cost_strategic_65	= 65
+@arkship_cost_strategic_100	= 100
+@arkship_cost_strategic_150	= 150
+@arkship_cost_strategic_250	= 250
+@arkship_cost_strategic_300	= 300
+@arkship_cost_strategic_350	= 350
+@arkship_cost_strategic_500	= 500
+
+# Rare resources
+@arkship_cost_rare_25	= 25
+@arkship_cost_rare_75	= 75
+@arkship_cost_rare_100	= 100
+@arkship_cost_rare_125	= 125
+@arkship_cost_rare_150	= 150
+@arkship_cost_rare_250	= 250
+@arkship_cost_rare_265	= 265
+@arkship_cost_rare_400	= 400
+@arkship_cost_rare_500	= 500
+
+# Other costs
+@arkship_cost_influence_25	= 25
+@arkship_cost_unity_500		= 500
+
+# Upkeep
+@arkship_upkeep_energy_1	= 1
+@arkship_upkeep_energy_2	= 2
+@arkship_upkeep_energy_5	= 5
+@arkship_upkeep_energy_10	= 10
+@arkship_upkeep_energy_15	= 15
+
+@arkship_upkeep_strategic_1	= 1
+@arkship_upkeep_strategic_2	= 2
+
+@arkship_upkeep_trade_4	= 4
+
+###################
+# Arkship Actions #
+###################
+
+@arkship_deep_scan_required_progress_base	= 90
+@arkship_deep_scan_cooldown					= 0
+@arkship_deep_scan_cost						= 500
+@deep_scan_station_intel_high				= 10
+@deep_scan_station_intel_mid				= 5
+@deep_scan_station_intel_low				= 2.5
+
+@arkship_harvest_resources_required_progress	= 90
+@harvest_resources_cooldown						= 0
+@harvest_resources_cost							= 0
+@arkship_harvest_resources_duration				= 120		# Duration for the amount harvested in months.
+@arkship_harvest_resources_duration_doubled		= 240		# Duration for the modifier in months.
+@arkship_harvest_resources_station_penalty		= -0.75
+@arkship_harvest_resources_opinion_penalty		= -75
+
+@logistic_harvest_resources_required_progress	= 90
+@logistic_harvest_resources_duration			= 120		# Duration for the amount harvested in months.
+@logistic_harvest_resources_duration_doubled	= 240		# Duration for the modifier in months.
+
+@arkship_harvest_resource_from_deposit_normalization_factor		= 120
+@arkship_harvest_resource_from_deposit_scaling_factor			= 50
+@arkship_harvest_resource_from_planet_primary_scaling_factor	= 25
+@arkship_harvest_resource_from_planet_secondary_scaling_factor	= 25
+@arkship_mining_tech_harvest_bonus								= 0.5
+
+# Per Harvester job bonuses
+@arkship_harvester_job_harvest_bonus	= 0.025
+@arkship_harvester_job_action_speed		= 0.0125
+
+@arkship_strip_mine_required_progress	= 180
+@arkship_strip_mine_cooldown			= 0
+@arkship_strip_mine_cost				= 500
+@arkship_strip_mine_duration			= 300			# Duration for the amount harvested in months.
+@arkship_strip_mine_duration_doubled	= 600			# Duration for the modifier in months.
+@arkship_strip_mine_opinion_penalty		= -150
+
+@arkship_reprocess_planet_required_progress		= 720
+@arkship_consume_world_required_progress		= 1000000	# Intentionally absurd just to make sure the action lasts longer than the situation
+@arkship_reprocess_planet_cooldown				= 1800
+@arkship_reprocess_planet_cost					= 5000
+@arkship_reprocess_planet_duration				= 1200		# Duration for the amount harvested in months.
+@arkship_reprocess_planet_duration_doubled		= 2400		# Duration for the modifier in months.
+@arkship_reprocess_planet_opinion_penalty		= -300
+@arkship_nanite_consume_world_opinion_penalty	= -100
+
+@arkship_knights_detox_required_progress		= 720
+@arkship_knights_detox_energy_cost				= 5000
+@arkship_knights_detox_exotic_gases_cost		= 500
+
+@arkship_subspace_image_required_progress_base	= 120
+@arkship_subspace_image_cooldown				= 1800
+@arkship_subspace_image_cost					= 10000
+
+@arkship_stellar_ignition_required_progress	= 180
+@arkship_stellar_ignition_cooldown			= 1800		# Five years
+@arkship_stellar_ignition_energy_cost		= 5000
+@arkship_stellar_ignition_dark_matter_cost	= 500
+@stellar_ignition_mod						= 1			# +100% output
+@stellar_ignition_hab_penalty				= -0.05
+
+@arkship_exodus_jump_required_progress	= 60
+@arkship_exodus_jump_cooldown			= 1800
+@arkship_exodus_jump_cost				= 10000
+@arkship_exodus_jump_opinion_penalty	= -300
+
+@arkship_settle_required_progress	= 360
+@arkship_settle_cooldown			= 0
+@arkship_settle_cost				= 250
+
+@arkship_scuttle_recovery_percentage	= 0.1
+@arkship_subject_settle_outpost_range	= 4
+
+#############################
+# Scripted Action AI Weights #
+#############################
+
+@ai_action_weight_1				= 1
+@ai_action_weight_5				= 5
+@ai_action_weight_10			= 10
+@ai_action_weight_15			= 15
+@ai_action_weight_20			= 20
+@ai_action_weight_25			= 25
+@ai_action_weight_30			= 30
+@ai_action_weight_40			= 40
+@ai_action_weight_100			= 100
+@ai_action_weight_9999			= 9999
+@ai_action_weight_factor_0_05	= 0.05
+@ai_action_weight_factor_0_1	= 0.1
+@ai_action_weight_factor_0_25	= 0.25
+
+# Nomad Deterrence Reputation
+@arkship_raid_purge_pops_reputation				= -100
+@arkship_raid_relocate_pops_reputation			= -40
+@arkship_raid_strip_districts_reputation		= -15
+@arkship_raid_do_no_harm_reputation				= 20
+
+# Nomad Deterrence Cross-Empire Reactions
+@arkship_raid_purge_xenophile_penalty			= -50
+@arkship_raid_purge_fanatic_xenophile_penalty	= -100
+@arkship_raid_purge_xenophobe_bonus				= 20
+@arkship_raid_purge_fanatic_xenophobe_bonus		= 40
+
+# Nomad Deterrence Per-Incident Grievance
+@arkship_raid_purged_incident					= -200
+@arkship_raid_conscripted_incident				= -75
+@arkship_raid_stripped_incident					= -40
+@ai_action_weight_factor_0_5					= 0.5
+@ai_action_weight_factor_2						= 2
+@ai_action_weight_factor_3						= 3
+@ai_action_weight_factor_5						= 5
+@ai_low_resource_stockpile						= 1000	# Stockpile threshold below which harvest weight is boosted
+@ai_low_resource_harvest_factor					= 5		# Harvest weight multiplier when stockpile is below threshold
+
+##################
+# Event Director #
+##################
+
+@extremely_short_arkship_event_delay_days	= 180	# 6 Months
+@very_short_arkship_event_delay_days	= 1080	# 3 Years
+@very_short_arkship_event_delay_random	= 720	# 2 Years (range: 3-5 years)
+@short_arkship_event_delay_days			= 2520	# 7 Years
+@short_arkship_event_delay_random		= 1080	# 3 Years (range: 7-10 years)
+@medium_arkship_event_delay_days		= 3600	# 10 Years
+@medium_arkship_event_delay_random		= 1800	# 5 Years (range: 10-15 years)
+@long_arkship_event_delay_days			= 5400	# 15 Years
+@long_arkship_event_delay_random		= 1800	# 5 Years (range: 15-20 years)
+
+#############
+# Contracts #
+#############
+
+@contract_time_short	= 900
+@contract_time_base		= 1800
+@contract_time_long		= 2700
+
+@opinion_contract_small			= 50
+@opinion_contract_regular		= 100
+@opinion_contract_large			= 150
+@opinion_failed_contract_small	= -75
+@opinion_failed_contract_regular	= -125
+@opinion_failed_contract_large	= -175
+
+@arkship_drop_off_prisoners_required_progress	= 15
+@arkship_drop_off_prisoners_cooldown			= 0
+
+@collect_waystation_stockpile_required_progress	= 30
+@collect_waystation_stockpile_cooldown			= 0
+
+##################
+# Forever Cruise #
+##################
+
+@cruise_contract_mult	= 5
+@cruise_contract_add	= 0.5
+@cruise_contract_sub	= -0.5
+
+###############################
+# Arkship Readiness Checklist #
+###############################
+
+@nomad_checklist_reward_years	= 20
+
+###################
+#  Misc Content   #
+###################
+
+@defence_drones_stability	= 0.10
+@trait_plunderer_amt		= 25
+@trait_plunderer_2_amt		= 50
+
+###################
+# Nomadic Economy #
+###################
+
+@nomadic_minerals_to_strategic_ratio	= 0.1
+
+###################
+# Council Agendas #
+###################
+
+@nomadic_agenda_cost		= 7000		# Same as base_agenda_cost
+@nomadic_agenda_cooldown	= 1800		# 5 Years
+
+@nomadic_agenda_weight	= 100
+
+@arkship_agenda_mult	= 0.05
+@arkship_agenda_static	= 5
+@arkship_mastery_mult	= 0.10
+@arkship_mastery_static	= 10
+@arkship_mastery_sensor	= 2
+
+#############
+# Dyson Gun #
+#############
+
+# This duration is determined by the ambient object's animation.
+# Only change it if the animation itself is changed.
+@dyson_gun_impact_duration	= 145
+
+########################
+# Operational Reserves #
+########################
+
+@nomad_reserves_base				= 15000
+@nomad_reserves_per_tier_1			= 5000
+@nomad_reserves_per_tier_2			= 7500
+@nomad_reserves_per_tier_3			= 10000
+# Civilian Arkships grant additional reserve capacity scaling with their Tier (+2500 per Tier).
+@nomad_reserves_civilian_per_tier_1	= 2500
+@nomad_reserves_civilian_per_tier_2	= 5000
+@nomad_reserves_civilian_per_tier_3	= 7500
