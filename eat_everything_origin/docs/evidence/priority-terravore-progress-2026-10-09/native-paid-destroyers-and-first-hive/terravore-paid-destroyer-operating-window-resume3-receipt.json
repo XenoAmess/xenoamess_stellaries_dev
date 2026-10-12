@@ -1,0 +1,34 @@
+{
+  "status": "STOP_NONZERO",
+  "at_utc": "2026-10-12T22:59:01.430710+00:00",
+  "last_original_stage": "terravore-native-psionic304-ack-22850101",
+  "last_business_proof": "terravore-native-psionic304-ack-22850101-empty-native-ack-v2-proof.json",
+  "last_business_execution": "terravore-native-psionic304-ack-22850101-empty-native-ack-guard-v2",
+  "steps": [
+    {
+      "stage": "terravore-native-psionic304-ack-22850101-operating-month-review-v2",
+      "returncode": 0,
+      "wrapper_returncode": 0,
+      "helper_sha256": "a678ff892ee35e8290b740000e3416297f86cf460d57a0b903e624614aa19084"
+    },
+    {
+      "stage": "terravore-paid-destroyer-operating-22850201-calendar",
+      "returncode": 0,
+      "wrapper_returncode": 0,
+      "helper_sha256": "659c34fe713d76de674b97d2f455278034efb51a125d291f32fa2a4cd9d4a3c1"
+    },
+    {
+      "stage": "terravore-paid-destroyer-operating-22850201-boundary-observation-v4",
+      "returncode": 0,
+      "wrapper_returncode": 0,
+      "helper_sha256": "b2a7d6de08f1897cdd05654ea02e02abeb30889eab95e29f0e3976bd6820f98a"
+    },
+    {
+      "stage": "terravore-paid-destroyer-operating-22850201-operating-month-guard-v2",
+      "returncode": 1,
+      "wrapper_returncode": 1,
+      "helper_sha256": "a678ff892ee35e8290b740000e3416297f86cf460d57a0b903e624614aa19084"
+    }
+  ],
+  "scope": "At most8 native months, no operation after May1 or any child nonzero."
+}
