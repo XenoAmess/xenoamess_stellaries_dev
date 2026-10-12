@@ -1,0 +1,50 @@
+"""Same November native transit invariants; stop at any unreviewed upgrade boundary."""
+import json,logging,sys
+from decimal import Decimal as D
+from pathlib import Path
+before,after,prior_file,prior_execution,day_arg=sys.argv[1:];days=int(day_arg)
+sys.path.insert(0,'eat_everything_origin/tools');sys.argv=['runtime']
+import runtime as r,audit_save as q
+from priority_terravore_native_state import read_state,omit
+logging.disable(logging.INFO);h=r.harness;run,user,m=h.load_run();load=lambda n:json.loads((run/n).read_text('utf-8-sig'))
+b,a=[read_state(run,s) for s in [before,after]];ba,aa=b['audit'],a['audit'];bc,ac=ba['countries']['0'],aa['countries']['0'];br,ar=b['roots'],a['roots']
+pre=load(prior_file);px=load(prior_execution+'-execution.json');ob=load(after+'-construction-boundary-observation-v4.json');ox=load(after+'-boundary-observation-v4-execution.json');cx=load(after+'-calendar-execution.json')
+mineral_ids={16777746,50333149,50333147,33554923,1960,1961,1962};fid='50332250';paid_order='1627389955'
+order=lambda st:q.block(q.block(st['fleets'][fid],'current_order'),'upgrade_design_at_orbitable_fleet_order')
+upgrade_boundary=order(b)!=order(a) or b['queues']['3']!=a['queues']['3'] or a['messages']!=b['messages'] or any(q.scalars(q.block(a['ships'][str(i)],'ship_design_implementation')).get('design')==218105405 for i in mineral_ids)
+jobs=lambda au:{k:v for k,v in au['pop_jobs'].items() if v['planet']==0 and v['type'] in ['calculator_physicist','calculator_biologist','calculator_engineer']}
+ss=lambda raw:q.scalars(q.block(raw,'ship_design_implementation'))
+owned_zones={str(i) for c in bc['owned_colonies'] for d in ba['colonies'][str(c)]['districts'] for i in ba['districts'][str(d)].get('zones',[]) if i!=4294967295}
+owned_buildings={str(i) for c in bc['owned_colonies'] for i in ba['colonies'][str(c)]['buildings'] if i!=4294967295}
+zone_maps=[{k:v for k,v,x in q.fields(rr['zones']) if x} for rr in [br,ar]]
+building_maps=[{k:v for k,v,x in q.fields(rr['buildings']) if x} for rr in [br,ar]]
+owned_buildings|={str(i) for z in owned_zones for i in q.ids(q.block(zone_maps[0][z],'buildings')) if i!=4294967295}
+assets_held=all(k in zone_maps[0] and k in zone_maps[1] and zone_maps[0][k]==zone_maps[1][k] for k in owned_zones) and all(k in building_maps[0] and k in building_maps[1] and building_maps[0][k]==building_maps[1][k] for k in owned_buildings)
+def queue_held(k,v):
+ if v==a['queues'].get(k):return True
+ av=a['queues'].get(k,'')
+ return ba['date']=='2280.11.03' and aa['date']=='2280.11.04' and k in ['2108','2247'] and q.scalars(v).get('disabled')=='yes' and 'disabled' not in q.scalars(av) and omit(v,{'disabled'})==omit(av,{'disabled'}) and not q.ids(q.block(v,'items')) and not q.ids(q.block(av,'items'))
+
+checks={
+ 'prior_business_PASS_actual0_exact_SAV_and_source':pre['status'].startswith('PASS') and all(v is True for v in pre['checks'].values()) and pre['after_sha256']==ba['save_sha256'] and px['returncode']==0 and px['helper_sha256']==h.sha256(Path(px['command'][1])),
+ 'original_six_observer_actual0_calendar_actual0_exact_sources':len(ob['checks'])==6 and all(v is True for v in ob['checks'].values()) and ox['returncode']==cx['returncode']==0 and ox['helper_sha256']==h.sha256(run/'priority_terravore_construction_boundary_observation_v4.py')=='973488fd0aa6b21741c1a038e12f4c1e925501fe7db8d82817ada6ba601e3f05' and cx['helper_sha256']==h.sha256(run/'formal_production_native_calendar_checked_v4.py')=='af7c1d33bebcf2c7763647401c6ba76398bc4e434000374b23fefe1d9cb31f76',
+ 'native_same_November_1_to8_days_original_SAVs':1<=days<=8 and ba['date'][:8]==aa['date'][:8]=='2280.11.' and int(ba['date'][-2:])>=3 and int(aa['date'][-2:])-int(ba['date'][-2:])==days and ob['before_sha256']==ba['save_sha256']==h.sha256(run/(before+'.sav')) and ob['after_sha256']==aa['save_sha256']==h.sha256(run/(after+'.sav')),
+ 'EEP_government_crisis_AP_and_Menace_held_no_rewards':all(bc[k]==ac[k] for k in ['variables','flags','government','traditions','ascension_perks','crisis','owned_colonies']) and ac['variables']['eep_c']==62 and ac['variables']['eep_d']==17 and ac['variables']['eep_worlds']==4 and ac['effective_stockpile']['menace']==2135,
+ 'all_effective_resources_true_research_banks_full_queues_held':all(bc[k]==ac[k] for k in ['effective_stockpile','research_stockpile','tech_status']),
+ 'mother11975_source493_exact_species_no_foreign_mother':ob['before_state']['species_population_by_colony']==ob['after_state']['species_population_by_colony']=={'0:73':11975,'30:73':100,'30:61':27,'30:2':366},
+ 'mother35_capacity27_levels_and_science_jobs_held':aa['planets']['7']==ba['planets']['7'] and aa['colonies']['0']['districts']==ba['colonies']['0']['districts'] and all(aa['districts'][str(i)]==ba['districts'][str(i)] for i in aa['colonies']['0']['districts']) and sum(aa['districts'][str(i)]['level'] for i in aa['colonies']['0']['districts'])==27 and len(jobs(ba))==len(jobs(aa))==3 and jobs(ba)==jobs(aa) and aa['colonies']['0']['free_housing']>0 and aa['colonies']['0']['free_amenities']>0 and aa['colonies']['0']['crime']==0,
+ 'source14_34month_situation_zero_no_bite_or_reward':all(ba['planets']['1578'][k]==aa['planets']['1578'][k] for k in ['owner','controller','planet_size','variables','deposits']) and aa['planets']['1578']['variables']['eep_months']==34 and ba['situations']==aa['situations'],
+ 'original_paid_zone_progress_exact1p4_each_native_day':paid_order in b['items'] and paid_order in a['items'] and omit(b['items'][paid_order],{'progress'})==omit(a['items'][paid_order],{'progress'}) and D(str(q.scalars(a['items'][paid_order])['progress']))-D(str(q.scalars(b['items'][paid_order])['progress']))==D('1.4')*days and q.scalars(a['items'][paid_order])['progress']<360 and q.ids(q.block(a['queues']['0'],'items'))==[1627389955] and assets_held,
+ 'all_other_owned_construction_queues_held':all(queue_held(k,v) for k,v in b['queues'].items() if k not in ['0','3'] and q.scalars(v).get('owner')==0),
+ 'same_owned_ships_fleets_and_old_birth_identity_no_revival':set(b['ships'])==set(a['ships']) and set(b['fleets'])==set(a['fleets']) and set(q.ids(q.block(a['fleets'][fid],'ships')))==mineral_ids and all(q.scalars(v)['construction_date']==q.scalars(a['ships'][k])['construction_date'] and q.block(v,'name')==q.block(a['ships'][k],'name') for k,v in b['ships'].items()),
+ 'only_original_seven_authorized_design_states_all_others_held':all(ss(a['ships'][k]) in [{'design':184550902,'upgrade':218105405,'growth_stage':0},{'design':218105405,'upgrade':4294967295,'growth_stage':0}] if int(k) in mineral_ids else q.block(v,'ship_design_implementation')==q.block(a['ships'][k],'ship_design_implementation') for k,v in b['ships'].items()) and all(a['designs'].get(k)==v for k,v in b['designs'].items()),
+ 'all_original_owned_ship_life_not_lowered_armor_shield_caps_held':all(0<q.scalars(v).get('hitpoints',0)<=q.scalars(a['ships'][k]).get('hitpoints',0) and all(q.scalars(v).get(f)==q.scalars(a['ships'][k]).get(f) for f in ['max_hitpoints','max_armor_hitpoints','max_shield_hitpoints']) for k,v in b['ships'].items()),
+ 'owned_army_ID_species_health_held_no_new_armies':q.block(b['country'],'owned_armies')==q.block(a['country'],'owned_armies') and all(all(q.scalars(q.block(br['army'],str(i))).get(f)==q.scalars(q.block(ar['army'],str(i))).get(f) for f in ['owner','species','type','health','max_health','morale']) for i in q.ids(q.block(b['country'],'owned_armies'))),
+ 'no_owned_combat_or_new_pending':not a['pending'] and not any(q.ids(q.block(q.block(v,'combat'),'in_combat_with')) for v in a['fleets'].values()),
+ 'production41_CN_error_original_module_held':m['language']=='l_simp_chinese' and m['version']=='0.2.0' and len(h.tree_manifest(h.MOD_ROOT)[0])==41 and h.tree_manifest(h.MOD_ROOT)[1]=='ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7' and h.sha256(run/'priority_terravore_native_state.py')==h.sha256(Path(__file__).with_name('priority_terravore_native_state.py')) and h.sha256(user/'logs/error.log')==h.sha256(run/(before+'-error-after.log'))==h.sha256(run/(after+'-error-after.log'))=='4f3b0e6b9ac64daf9c3daf0346f8f61180f9e87486035a2f1a8298833becd850',
+}
+passed=all(v is True for v in checks.values());boundaries=['unreviewed_native_upgrade_boundary'] if upgrade_boundary else []
+maximum=min(8,30-int(aa['date'][-2:])) if passed and not boundaries else 0
+out=run/(after+'-refit-short-transit-v3-proof.json');assert not out.exists()
+h.write_json(out,{'status':'PASS_NATIVE_REFIT_COMMON_INVARIANTS_WITH_UPGRADE_BOUNDARY' if passed and boundaries else 'PASS_NATIVE_REFIT_SHORT_TRANSIT' if passed else 'FAIL','checks':checks,'before_sha256':ba['save_sha256'],'after_sha256':aa['save_sha256'],'date':aa['date'],'state_module_sha256':h.sha256(run/'priority_terravore_native_state.py'),'boundaries':boundaries,'native_devour_calendar_ready':passed and not boundaries,'maximum_days_to_native_bite_boundary':maximum,'refit_order_raw':order(a),'shipyard3_queue_raw':a['queues']['3'],'new_messages':[v for v in a['messages'] if v not in b['messages']],'scope':'Common November transit invariants only. Any changed upgrade order, shipyard queue, message or implemented new design stops for independent review. No upgrade completion, monthly maintenance, devour settlement, Queen or route acceptance claimed.'})
+print(json.dumps({'status':'PASS' if passed else 'FAIL','checks':len(checks),'failed':[k for k,v in checks.items() if v is not True],'boundaries':boundaries,'maximum_days':maximum}),flush=True);assert passed

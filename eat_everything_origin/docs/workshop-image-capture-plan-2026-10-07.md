@@ -106,3 +106,10 @@ rc.4报告入口改为母星按钮后，WS-04更新候选为同一2283.03.03原�
 
 
 2026-10-12续验候选证据：RUN20261009T044016Z，正式0.2.0原41文件/简中/Steam离线。terravore-seven-mineral-fleet-naval-capacity-native-ui.jpg SHA332f3711a361cf6a58da9ebcfcb04124f48c5eccdad86103bca357207f7086cc，原生1024×768，展示七矿物舰舰容133/131；此为有tooltip的证据图，尚不作为无UI遮挡正式图库图。terravore-camera-live-pulse-paused-date.jpg SHA180ab7f61bda1d9f77d86d3e38124365e61b47f50c493ed76773b7ab06081771，原生1024×768，绑定2280.05.02正常短暂运行后母星矿舰镜头及原SAV/七观察26项月合同，亦为候选。后续同七舰已真正通过停泊与离港完整维护月，不能将镜头刷新本身说成完成离港维护。2280.11.03已正常征服size14巴尔塔萨港，待正常吞噬启动后采集源星/母星35容量及七舰图；不得用尚未发生的吞噬、C200女王或高阶危机作图说。上述原件随CUT45归档；已发布0.2.0七图清单不变，未上传。
+
+
+2026-10-12新候选三图（RUN20261009T044016Z／2280.11.14／正式0.2.0原41文件／简中／Steam离线）：全部原生fresh Steam F12 GPU、1024×768，人工查看无控制台、菜单、tooltip或确认弹窗遮挡；有测试帝国EEP名称，非产品本地化key泄漏。完整绑定及限制见terravore-seven-refit-and-fifth-devour-workshop-candidates.json，随CUT46归档，未上传且不替换已发布0.2.0七图。
+WS-TERRAVORE-REFIT-07 terravore-upgraded-seven-minerals-mother-gallery-ui.jpg／209060B／SHAf9d12773a51ecfcb0d8e9593a681fc6f76458e5e6ca05b2fbff935a0d577c56e。图说：七艘正常矿物付费护卫舰，经原生零费用武器升级后保留原船。
+WS-TERRAVORE-CORE-35 terravore-current-mother35-gallery-ui.jpg／209327B／SHA1e3e25938a22be3b01362a3b6e250d5143767fd4ac38c5622a07df9d39be9c03。图说：吞星累计增加17共享容量；原尺寸18、当前共享35，27级区划正常付费建成，工程特化仍在建设。
+WS-TERRAVORE-QUEEN-DEVOUR terravore-balthasar-situation-uncovered-ui.jpg／192060B／SHAc36cecac34702a3a867899ea56649101efd2f446f52ab08f0f188097f8ab26e7。图说：女王·白绮与正常吞噬局势；14规模目标计时34个月，当前未结算。
+七舰绑定完工10PASS0与原SAVc69c105a…；母35/27正常付费等级，工程区15.4/360未完工；女王吞噬图仅进行中，不宣称C200/高危机或第五结算完成。原图不裁切不重绘不伪造UI。
