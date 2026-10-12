@@ -1,5 +1,10 @@
 ﻿# Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
 
+最新核验 2026-10-12 09:07：噬岩者实际2279.01.01暂停，首艘“威慑级护卫舰”完成正常225矿物/0合金购买（13PASS0）、原唯一订单150994986按1.33每日work建造（四段waitV2各21PASS0）、2278.11.24真实出生ship16777746/fleet50332250/design184550902（出生V2 24PASS0），舰容105→109。实际母星停泊维护UI .75能量+.75矿物/合金0已采图；首次月账23PASS0，随后完整30日维护V2/sourcead36490c…24PASS0，四现金E68.33/M38.4875/A30.194/U72.71875=实际net，ships及components合金费不增。母11938/容量35/27付费级、C62/D17/worlds4/PSI1/stage2/crisis2/fleet2/Menace1635/Gmade0、原21军舰加本新舰/三MIA保持，第四结算与C60双Queen已通过且不重复奖励。最新SAV6d87159e9418d7be3d0bbbffc89def5afa3502c6d55a8e8cd049722bd9416933。
+
+完整月原23一FAIL1正确捕获原生pirate.6/18日/country0未来事件，独立INV5d61cb…核on_monthly_pulse→pirate.4/5蜂巢分支（当前trade218.7068，事件本身需>300等条件，未来是否触发未定）；V2只改为已核known边界，仍readyfalse/max0，不删除事件或许可跳过。私有waitV1错误冻结其他国家13建造progress已独立修正/原一FAIL1保留，birthV1未用import lint1未正确阻断的编排问题也已如实记录并V2静态0重验；没有确认新的生产Mod/open_kaishek bug，生产41/0.2.0/tree未变，不保证未验部分无bug。原母report快照11920是按需报告缓存，不冒称每月刷新；真实人口与nativegrowth另核。三张实际矿舰UI与原出生/维护proof已纳Workshop候选，未上传。仍只有纵火本能整路线1/7=14.3%/当前推荐不变；噬岩者更高危机项目3/4、女王C200、矿舰升级及超舰容/离港维护、最终长跑重载仍待，下一铁心灭绝者。Steam离线、运行时仅简中；九非中文维持静态校验通过、运行时不在范围内。
+
+
 2026-10-11 战斗结束、撤退与报告分段：12.15敌825的fleet_stats.date从06.14重置0.01.01、combat.in_combat_with为空，mia_type=mia_emergency_ftl／return_date2270.07.07，真实12舰ID全保持，巡洋舰1495.28786仍存活。本国COMBAT_STATS211为reason=no_more_enemies／battle.date06.14／message.date12.14，最终敌损[0,3,0,0]与早先210的[0,1,0,0]共同对应结束前实时[0,4,0,0]；本日真实新对象消失0／威慑0。不能将统计重置当新增死亡、把结算分段3当本日击毁数，或将GUI“战斗胜利”当整场war1结束。原32项单FAIL保留，独立34／36项和同两SAV／原始报告互证PASS／实际0。[精确证据与战后边界](priority-terravore-native-battle-disengagement-2026-10-11.md)。此为Stellaris本局原生状态，不推广CK3。
 
 2026-10-11 原生防御平台订单实证：11.25正常两次543合金点击，queue2.location={type0,id0}对应基地0，buildable_defense_platform含starbase0与ship_design_implementation={design150995587,upgrade4294967295,growth_stage0}。实际两单needed60、串行；11.26首单1、次0，此后11.29首4，独立付款27项／首V13 33项／常规32项全PASS／实际0。现有护卫舰队列的1.58／日与starbase_defensive_war_ship_build_speed_mult=0.33不能套到平台；平台本局实际1／日。平台class为shipclass_military_station，区别于护卫舰shipclass_military；预览3000船体不等于已完成对象实际船体。付款仅资源alloys变化、两旧none句柄+16777216复用、唯一fleet807 dirty_cloaking_strength缓存增加，RNG及其它top保持。仅Stellaris本局实证，不推广CK3。[设计和原件](priority-terravore-native-defense-platforms-2026-10-11.md)。
@@ -672,3 +677,6 @@ crisis.4145正常option0的after=refresh_auto_generated_ship_designs会新增自
 
 
 补充科研实际时间证据（本次原audit两端，不证明所有版本固定日）：9.30与10.01 truephysics5694.92366/society9473.7804/Eng星堡progress1460.88185相等；10.02 truephysics5769.5985/society9500.36959/Eng1498.60854同日实际增长；10.05与11.01仍为后一组。因此11.01端点“进度未增长”不能证明科研卡死，下一正常实测应先观察11.02，而非给项目免费完成。CRISIS_SPECIAL_PROJECT_PSIONIC_2正式中文由游戏nemesis_content_l_simp_chinese.yml提取别名解析为“涌动暗潮”；crisis_corvette正式中文“威慑级护卫舰”，原生20_nemesis.txt定义基础cost300minerals/components_add_to_cost=no/base_buildtime30/upkeep1energy+1minerals，实际购买价格与维护仍需正常UI/存档实测修正后值，不只凭基础定义宣告通过。
+
+
+本机4.5.2新实证：crisis_corvette实际基础300M、噬杀蜂群-25%实付225M/0A，work30/当前进度1.33每日，第23日出厂。原order句柄消失不必留scalar none，新船ship16777746/舰50332250与design184550902/母base0直接互证；native船体+25%实际250，不能把buildtooltip基础200强当最终250不符。驻港crew_quarters-25%使native1E1M变.75E.75M，完整月费用ships精确+.75E.75M、alloy及ship_components费原样，全四现金实际net守恒。本存档每月02日true P/S bank与Eng队列更新，01日可尚无科研增量；economy.resources科研镜像可等操作时同步，必须以tech_status.stored_techpoints为真bank。eep_report只按调用刷新，未调用月份的快照无需等于新actualpop。原生monthlypirate.4/5明确可为非荒野蜂巢排队pirate.6，需在其自己>300trade等trigger真实检查后才能判断是否发生；脚本注释yearly不覆盖on_actions实际monthly绑定。这些为本机Stellaris/native和本Mod事实，不推广为CK3方言或通用P语法。

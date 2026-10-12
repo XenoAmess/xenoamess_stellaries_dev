@@ -1,0 +1,68 @@
+"""Bounded same-month progress of the original genuinely paid native mineral corvette."""
+import json,logging,re,sys,zipfile
+from pathlib import Path
+from decimal import Decimal as D,ROUND_CEILING
+before,after=sys.argv[1:]
+sys.path.insert(0,'eat_everything_origin/tools');sys.argv=['runtime']
+import runtime as r,audit_save as q
+logging.disable(logging.INFO);h=r.harness;run,user,meta=h.load_run();load=lambda n:json.loads((run/n).read_text('utf-8-sig'));sha=h.sha256
+obs=load(after+'-construction-boundary-observation-v2.json');oe=load(after+'-boundary-observation-v2-execution.json');b,a=obs['before_state'],obs['after_state'];ba,aa=b['audit'],a['audit'];bc,ac=ba['countries']['0'],aa['countries']['0'];cal=load(after+'-calendar-receipt.json');ce=load(after+'-calendar-execution.json');pre=load(cal['prior_proof_file']);pe=load(cal['prior_execution_stage']+'-execution.json')
+purchase_stage='terravore-mineral-corvette-first-paid';purchase=load(purchase_stage+'-first-mineral-corvette-purchase-proof.json');px=load(purchase_stage+'-first-mineral-corvette-purchase-guard-execution.json')
+omit=lambda raw,keys:[(k,v,o) for k,v,o in q.fields(raw) if k not in keys]
+def ordinal(date):
+ y,m,d=map(int,date.split('.'));return y*360+(m-1)*30+d-1
+days=ordinal(aa['date'])-ordinal(ba['date'])
+def order(st):return q.block(q.block(q.block(st['raw_roots']['construction'],'item_mgr'),'items'),'150994986')
+bo,ao=order(b),order(a);bps,aps=q.scalars(bo),q.scalars(ao);progress=D(str(aps.get('progress',-1)));rate=D('1.33')
+def queue(st):return q.block(q.block(q.block(st['raw_roots']['construction'],'queue_mgr'),'queues'),'3')
+def structure(st):
+ au=st['audit'];ds=au['colonies']['0']['districts'];zs={i for d in ds for i in au['districts'][str(d)]['zones'] if i!=4294967295};bs={i for z in zs for i in q.ids(q.block(q.block(st['raw_roots']['zones'],str(z)),'buildings'))};groups={'districts':ds,'zones':sorted(zs),'buildings':sorted(bs),'deposit':au['planets']['7']['deposits']}
+ return {root:{str(i):q.block(st['raw_roots'][root],str(i)) for i in ids} for root,ids in groups.items()}
+def jobs(st):return {i:j for i,j in st['audit']['pop_jobs'].items() if j['planet']==0}
+bj,aj=jobs(b),jobs(a)
+def living(st):return {sid for raw in st['owned_fleets_raw'].values() if q.scalars(raw).get('ship_class')=='shipclass_military' for sid in q.ids(q.block(raw,'ships')) if q.scalars(st['owned_ships_raw'][str(sid)]).get('hitpoints',0)>0 and q.scalars(st['owned_ships_raw'][str(sid)]).get('killed')!='yes'}
+def eng(tech):
+ raw=q.block(tech,'engineering_queue');ts=list(q.tokens(raw));return q.scalars(raw[ts[0][2]:ts[-1][1]])
+be,ae=eng(bc['tech_status']),eng(ac['tech_status'])
+known_mia={'2':('2280.03.16',2),'33555013':('2280.01.03',33555519),'33555278':('2281.06.27',50333369)}
+actual_mia={fid for fid,raw in a['owned_fleets_raw'].items() if q.scalars(q.block(raw,'properties')).get('mia')=='yes'}
+mia_ok=actual_mia==set(known_mia) and all(q.scalars(a['owned_fleets_raw'][fid]).get('return_date')==date and q.scalars(a['owned_fleets_raw'][fid]).get('mia_type')=='mia_emergency_ftl' and q.ids(q.block(a['owned_fleets_raw'][fid],'ships'))==[sid] for fid,(date,sid) in known_mia.items())
+wars={}
+for st in [before,after]:
+ with zipfile.ZipFile(run/(st+'.sav')) as z:raw=z.read('gamestate').decode('utf-8-sig')
+ wars[st]=q.block(raw,'war')
+bw,aw=[q.block(wars[st],'1') for st in [before,after]]
+boundaries=[]
+if a['pending_country0_raw']:boundaries.append('native_pending_event_requires_review')
+if any(k=='delayed_event' and o for k,v,o in q.fields(q.block(q.block(a['country0_raw'],'modules'),'standard_event_module'))):boundaries.append('unknown_country_delayed_event')
+if any(re.search(r'\bfleet\s*=',q.block(q.block(raw,'combat'),'in_combat_with')) for raw in a['owned_fleets_raw'].values()):boundaries.append('native_owned_active_combat')
+if not mia_ok:boundaries.append('native_owned_MIA_requires_review')
+if b['war1_battles_raw']!=a['war1_battles_raw']:boundaries.append('native_war_battle_history_changed')
+if obs['new_country0_messages_raw']:boundaries.append('new_country0_message_requires_review')
+maximum=min(7,max(0,int(((D(30)-progress)/rate).to_integral_value(rounding=ROUND_CEILING))-1),max(0,ordinal('2278.11.30')-ordinal(aa['date'])))
+if maximum==0:boundaries.append('first_paid_mineral_ship_birth_boundary' if progress+rate>=30 else 'next_month_boundary')
+checks={
+ 'purchase13_actual0_fixed_source_original_SAV_and_INV':len(purchase['checks'])==13 and all(v is True for v in purchase['checks'].values()) and px['returncode']==0 and px['helper_sha256']==sha(Path(px['command'][1]))=='1b2c377f348a0b504ded898aa633625b0b2db66357bc1e0a3be3daac19b04fd7' and purchase['after_sha256']==sha(run/(purchase_stage+'.sav'))=='63f76ef98f6bf2425bf9e63f6f2c137df040e0d2399c789ab95d5a6dd793ef90' and purchase['purchase_INV_sha256']==sha(run/(purchase_stage+'-purchase-investigation.json'))=='00e8c7f7fdd03f5fde736eb8d62cd73a1167b14a9c4b06dca74251eec380b30c',
+ 'prior_PASS_actual0_original_source_SAV_order_and_births':pre['status'].startswith('PASS_') and all(v is True for v in pre['checks'].values()) and pe['returncode']==0 and pe['helper_sha256']==sha(Path(pe['command'][1])) and pe['helper_sha256'] in {px['helper_sha256'],sha(Path(__file__))} and pre['after_sha256']==ba['save_sha256'] and pre['first_mineral_order']==purchase['first_mineral_order'] and pre['paid_births']==purchase['paid_births'],
+ 'six_observations_actual0_fixed_source_original_SAV_pair':len(obs['checks'])==6 and all(v is True for v in obs['checks'].values()) and oe['returncode']==0 and oe['helper_sha256']==sha(Path(oe['command'][1]))=='44c27824de3486709c69acfb8ccc2b8ecff9cf356374bfd5fdc584db6a198a9b' and all(au['save_sha256']==sha(run/(st+'.sav')) for st,au in [(before,ba),(after,aa)]),
+ 'calendarV3_actual0_exact_same_month_1_to_7days':ce['returncode']==0 and ce['helper_sha256']==sha(Path(ce['command'][1]))=='c0bd2c1b44adc36b746cc8e13d87754c7bad970cee870d4e87eb63ccbb176589' and cal['status']=='CALENDAR_CONFIRMED' and cal['business_preflight'] is True and cal['start_date']==ba['date'] and cal['date']==aa['date'] and cal['days']==days and 1<=days<=7 and ba['date'][:7]==aa['date'][:7]=='2278.11',
+ 'single_original225M_order_work30_base0_design_and_exact133daily_progress':bool(bo) and bool(ao) and omit(bo,{'progress'})==omit(ao,{'progress'}) and {k:v for k,v in aps.items() if k!='progress'}=={'queue':3,'paying_country':0,'progress_needed':30} and q.scalars(q.block(ao,'resources'))=={'minerals':225} and q.scalars(q.block(q.block(ao,'buildable_ship'),'ship_design_implementation'))=={'design':184550902,'upgrade':4294967295,'growth_stage':0} and q.scalars(q.block(q.block(ao,'buildable_ship'),'orbitable'))=={'starbase':0} and progress-D(str(bps['progress']))==rate*days and 0<progress<30 and queue(a)==queue(b) and q.ids(q.block(queue(a),'items'))==[150994986],
+ 'construction_queue3_only_order_progress_changed_no_unpaid_order':omit(q.block(q.block(b['raw_roots']['construction'],'item_mgr'),'items'),{'150994986'})==omit(q.block(q.block(a['raw_roots']['construction'],'item_mgr'),'items'),{'150994986'}) and omit(b['raw_roots']['construction'],{'item_mgr'})==omit(a['raw_roots']['construction'],{'item_mgr'}),
+ 'all_effective_cash_held_no_repeat225M_no_alloy_deduction':{k:v for k,v in bc['effective_stockpile'].items() if k not in q.RESEARCH_RESOURCES}=={k:v for k,v in ac['effective_stockpile'].items() if k not in q.RESEARCH_RESOURCES},
+ 'EEP_credit_C62_D17_worlds4_PSI1_stage2_no_grants_repeated':bc['variables']==ac['variables'] and all(ac['variables'].get(k)==v for k,v in {'eep_c':62,'eep_d':17,'eep_worlds':4,'eep_psi':1,'eep_g':0,'eep_made':0,'eep_last_manufactured':0,'eep_last_return':491,'eep_stage':2,'eep_crisis':2,'eep_fleet_stage':2}.items()) and ac['effective_stockpile']['menace']==1635,
+ 'government_AP_traditions_native_crisis2_EEP_flags_held':all(bc[k]==ac[k] for k in ['government','ascension_perks','traditions','crisis','flags']),
+ 'mother_population11926_only_colony0_no_new_species':bc['owned_colonies']==ac['owned_colonies']==[0] and ba['colonies']['0']['actual_pop_sum']==aa['colonies']['0']['actual_pop_sum']==11926 and b['species_population_by_colony']==a['species_population_by_colony']=={'0:73':11926},
+ 'mother35_capacity_27paid_levels_all_owned_structure_held':structure(b)==structure(a) and sum(aa['districts'][str(i)]['level'] for i in aa['colonies']['0']['districts'])==27 and aa['planets']['7']['variables']==ba['planets']['7']['variables'] and aa['planets']['7']['variables']['eep_capacity_value']==17,
+ 'all_job_shapes_and_original_full_science_workforce_held':bj.keys()==aj.keys() and all({k:v for k,v in j.items() if k not in {'workforce','bonus_workforce'}}=={k:v for k,v in aj[i].items() if k not in {'workforce','bonus_workforce'}} for i,j in bj.items()) and all(sum(j['workforce'] for j in aj.values() if j['type']==typ)==n for typ,n in [('calculator_physicist',780),('calculator_biologist',180),('calculator_engineer',180)]),
+ 'mother_owner0_positive_housing_amenities_crime0':aa['planets']['7']['owner']==aa['planets']['7']['controller']==0 and aa['colonies']['0']['free_housing']>0 and aa['colonies']['0']['free_amenities']>0 and aa['colonies']['0']['crime']==0,
+ 'source523_shattered_unowned_empty_no_active_situation':aa['planets']['523']['planet_class']=='pc_shattered' and aa['planets']['523'].get('owner',4294967295)==4294967295 and not any(g['planet']==38 for g in aa['pop_groups'].values()) and all(s.get('killed')=='yes' for s in aa['situations'].values()),
+ 'all_original_owned_IDS_designs_21military_three_MIA_and_no_revival':b['owned_ship_ids']==a['owned_ship_ids'] and b['owned_fleets']==a['owned_fleets'] and living(b)==living(a) and len(living(a))==21 and mia_ok and all(q.block(raw,'ship_design_implementation')==q.block(b['owned_ships_raw'][sid],'ship_design_implementation') and q.scalars(raw).get('hitpoints',0)>0 for sid,raw in a['owned_ships_raw'].items()) and not set([1807,1895,1896,67110639,16779140])&set(a['owned_ship_ids']),
+ 'true_PS_banks_monotone_Eng0_original_starbase4_queue_held':all(ac['research_stockpile'][k]>=bc['research_stockpile'][k] for k in ['physics_research','society_research']) and bc['research_stockpile']['engineering_research']==ac['research_stockpile']['engineering_research']==0 and omit(bc['tech_status'],{'stored_techpoints','engineering_queue'})==omit(ac['tech_status'],{'stored_techpoints','engineering_queue'}) and {k:v for k,v in be.items() if k!='progress'}=={k:v for k,v in ae.items() if k!='progress'} and ae['technology']=='tech_starbase_4' and ae['progress']>=be['progress'],
+ 'native_project8_PSIONIC2_still_unstarted_other_projects_countdowns_only':[(k,v,o) for k,v,o in q.fields(q.block(a['country0_raw'],'events')) if k!='special_project']==[(k,v,o) for k,v,o in q.fields(q.block(b['country0_raw'],'events')) if k!='special_project'] and any(q.scalars(v).get('id')==8 and q.scalars(v).get('special_project')=='CRISIS_SPECIAL_PROJECT_PSIONIC_2' and 'status' not in q.scalars(v) for k,v,o in q.fields(q.block(a['country0_raw'],'events')) if k=='special_project' and o),
+ 'native_war1_original_goals_forcedpeace_dates_no_new_battle':omit(bw,{'attacker_war_exhaustion','defender_war_exhaustion'})==omit(aw,{'attacker_war_exhaustion','defender_war_exhaustion'}) and q.scalars(aw).get('attacker_force_peace_date')=='2278.01.02' and q.scalars(aw).get('defender_force_peace_date')=='2280.04.15' and b['war1_battles_raw']==a['war1_battles_raw'],
+ 'no_pending_delayed_combat_unknown_messages_or_MIA':not any(x!='first_paid_mineral_ship_birth_boundary' and x!='next_month_boundary' for x in boundaries),
+ 'production41_020_CN_original_error_held':meta['version']=='0.2.0' and meta['language']=='l_simp_chinese' and len(h.tree_manifest(h.MOD_ROOT)[0])==41 and h.tree_manifest(h.MOD_ROOT)[1]=='ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7' and (run/(before+'-error-after.log')).read_bytes()==(run/(after+'-error-before.log')).read_bytes()==(run/(after+'-error-after.log')).read_bytes() and sha(run/(after+'-error-after.log'))=='df43a78778ff981c9add0382adb3fd127128adbc6006d6bfd7db6a194c6056eb',
+}
+passed=all(v is True for v in checks.values());ready=passed and not boundaries and maximum>0
+out=run/(after+'-first-mineral-corvette-wait-proof.json');assert not out.exists();h.write_json(out,{'status':'PASS_NATIVE_FIRST_MINERAL_CORVETTE_WAIT_COMPONENT' if passed else 'FAIL','checks':checks,'before_sha256':ba['save_sha256'],'after_sha256':aa['save_sha256'],'date':aa['date'],'days':days,'progress':str(progress),'rate_per_day':str(rate),'paid_births':purchase['paid_births'],'first_mineral_order':purchase['first_mineral_order'],'purchase_proof_sha256':sha(run/(purchase_stage+'-first-mineral-corvette-purchase-proof.json')),'boundaries':boundaries,'native_devour_calendar_ready':ready,'maximum_days_to_native_bite_boundary':maximum if ready else 0,'research_banks_before':bc['research_stockpile'],'research_banks_after':ac['research_stockpile'],'wars_raw':wars,'scope':'Paid mineral order bounded progress only. No ship birth, maintenance or full route claim.'})
+print(json.dumps({'status':'PASS' if passed else 'FAIL','checks':len(checks),'failed':[k for k,v in checks.items() if v is not True],'progress':str(progress),'next_max':maximum if ready else 0,'boundaries':boundaries}),flush=True);assert passed

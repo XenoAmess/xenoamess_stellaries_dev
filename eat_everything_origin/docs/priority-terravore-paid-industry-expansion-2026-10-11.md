@@ -1387,3 +1387,102 @@ C60月度V2/source33a77916ea6b1e071f7acc0211c9a7aa679dfdacf91c8d7bad74bbdbe8168f
 CUT41实际结果：freeze2026-10-12T00:19:19.302689Z，35814源/2971984513B，reused35003、新811/224372473B；独立Git暂存原字节核验PASS/actual0，35914唯一blob/3012930318B，根回执evidence/priority-native-fourth-settlement-C60-and-crisis2-notices-delta-staged-verification-2026-10-11.json（文件名后缀沿用既有helper，实际freeze为10-12）。第五源尚未开始、当前2278.11.01暂停/最新SAV2dfccc…/Queen两ACK9PASS0/pending空/当前生产0.2.0无改。全部原失败/原战损/实际返还与两QueenCG候选保留；原件验证通过不等于整路线或重载通过。
 
 编排经验：本次验证进程启动时stage会话尚未报告完成，随后已取得git add actual0；最终verify逐份新及复用原字节全部PASS0，最后stage scope818文件与cached diffcheck0。字节证明有效，但后续应先收齐stage实际退出再启动验证，避免对并发更新的index引入无谓不确定性。本次顺序原样保留，不伪写为全过程串行。加入根回执/五docs后只允许819本任务文件提交并推送main，独立核远端完整SHA后继续正常矿物舰生产与原生项目。
+
+
+CUT41已提交推送1e3f795cb291d7199a3663648ca86c1995541a7c，commit/push/独立ls-remote实际0且远端main同完整SHA；Git原始回执写RUN、纳入下一切点。当前2278.11.01暂停/pending空。开始已记录后续矿物舰正常UI调查与1艘付费建造方案，正式中文由游戏提取“威慑级护卫舰”。C60与本两通知分项通过，仍不扩大整路线推荐；没有新确认生产Mod/P工具bug，保持0.2.0未改、Steam离线。
+
+
+矿物舰当前只读UI实证：母星starbase0/shipyardqueue3/两shipyard+crew_quarters、queue3原items为空/simultaneous2。game.ship_sizes20_nemesis基础300M，正式中文“威慑级护卫舰”，当前自动眼镜王蛇级/design184550902（crisis_corvette）；真实buildlist e8b57392ce03090d525fd0e4fea8cca02ce995979cbbe375ce7067e465177fd2及hover f7e72b610774eb5c14d17c9cc7bd27c65a25bd001bcff943c2e6a1d4d5b4956e已目视核实际225M/base300/噬杀蜂群-25%、合金0、menu22日/tooltip基础30、naval size4、HP200/armor253/shield160，不把菜单工期当精确出生日期。拥有者不能读fleet.owner（此SAV未序列化该字段），必须依country0.fleets_manager.owned_fleets和原ship.fleet定位，不能把缺owner判无我方星港。
+
+首艘矿物舰购买方案先于实施：在当前11.01暂停/最新SAV2dfccc…/Queen最后9PASS0下，正常只点design眼镜王蛇级row569,401一次，保存唯一terravore-mineral-corvette-first-paid/SAV。独立核原生Nemesis2与本设计growth_stages、225M实际扣款/合金等其他现金全部原样、EEP/P/S bank/科研队列/母人口11926/容量17/付费27与全owned原21军舰/三MIA保持；queue3恰新增单订单/work30/design184550902/cost225M/实际owner与目标base0、无即时新舰/不额外扣款。完整原construction/country/starbase/owned实体变化保留，先读取真正订单字段再写严格guard，不泛放未知差异。购买guard静态0/独立全trueactual0后，另正常唯一1日11.01→11.02校准真实每日work/物理bank/原研究tick，再以已付队列精确界限逐日/短段观测首次出生；normal出生须same design/母0/unique ID/paidorder消费一次/naval105→109/不凭remaining22UI预测；随后完整月维护能量+矿物/合金0与资源账本核验和实际舰图候选。原生物理project8仍未开工，先一条经济变更核完再另正常开工，避免混杂扣款。
+
+
+首艘矿物舰已正常购买/唯一native_save实际0，11.01同日SAV63f76ef98f6bf2425bf9e63f6f2c137df040e0d2399c789ab95d5a6dd793ef90；purchase INV00e8c7f7fdd03f5fde736eb8d62cd73a1167b14a9c4b06dca74251eec380b30c。全worldtop仅country/construction变、所有top scalars原样；country0只modules.standard_economy_module变。矿13984.8569→13759.8569恰225，合金3272.39229和能/凝聚/威慑等不变，trueP5769.5985/S9500.36959/E0不变。原economy镜像P5750.23836/S9493.4761/E27.9457在购买同步为trueP/S并去E0字段，是镜像同步不是额外科研收益，不能拿economy镜像当真实bank。construction仅queue3新items=[150994986]、旧scalar none134217770退休/相同低24bit42；新item queue3/paying0/progress0/work30/resources={minerals225}/buildable_ship.design184550902/upgradeinvalid/growth0/orbitablebase0。没有即时新船。
+
+购买独立guard细节先于实现：固定本原INV/两SAV/原Queen最后9PASS0/source424a…/实际clicksave、41生产CN与原error；全部其他worldtop（含ships/fleet/军舰/母人口jobs/技术/war）原文必须完全不变、所有其他country与country0非modules原样。modules只standard_economy/resources允许上述225扣款与原镜像精确值→truebanks同步，不泛放cache/现金/实际bank；所有其他construction queue与item原文相同、原none→新高代同低位handle严格、单新order/work/设计/资源/母星base完全固定。静态0后同已发生两SAV全true/actual0才可输出ordinaryreadytrue/max1/无boundary，仅计划11.01→11.02一日校准，不能跳UI显示22日或直接跨出生。新订单独立first_mineral_order记录，不覆盖原paid_births与旧30/36普通舰战损账。
+
+
+first-mineral-corvette purchase/source1b2c377f348a0b504ded898aa633625b0b2db66357bc1e0a3be3daac19b04fd7静态0后13PASS/actual0；真实225M/0A/原none42→高代订单150994986/30work/同设计与全部其他世界原文保持均通过。按已记录ordinaryreadytrue/max1继续唯一11.01→11.02，新的六观察必须实际0；原生首日progress与真实科研bank增量以本单日实际SAV为准，不预写1.35/22日或工程完成。之后再记录队列短段与出生严格方案。
+
+
+首日校准实证：V3恰1日到2278.11.02/SAV906f0ad9871e7e4fceaacaf52389622f9539302fdf8e40212bca772f8c4a380d、六观察actual0。唯一已付订单progress0→1.33/work30，现金全部原样/未重复扣225M/无新消息或pending/母11926和全部EEP不变；trueP5769.5985→5844.27334/+74.67484，S9500.36959→9526.95878/+26.58919，Eng原星堡队列1498.60854→1536.33523/+37.72669，证实本存档月初第二天正常科研tick。受损旧站/舰原生恢复HP/armor，5实体增量原件保留，不要求每日HP原文完全一致；无新舰或阵亡。只读误写旧helper路径失败仍为文件定位错误，不计生产Mod缺陷。
+
+矿物舰等待guard方案先于实现：独立新私有只读组件，固定购买13PASS/actual0/source1b2c…/SAV63f…与原INV00e8…，每段绑定V3/六观察actual0/真实两SAV及前一PASS原source。仅允许同一个2278.11月份且不跨月、母星base0单订单150994986/design184550902/work30/225M原资源、progress精确增加1.33×日数且仍<30；单段最多7日、下一月前最后日或预计出生前一日，哪项先到即停。当前月初第二日科研tick单独核真bank与Eng原tech/date递增，后续不硬要求每日增长；不把镜像当bank。母11926、35容量/27付费结构、全部job shape/三个科研岗满额、EEP奖励/flags/C62D17/worlds4/Gmade0/Menace1635、原Nemesis2/未开工project8保持；现金全原样且无即时免费船、全部原owned IDs/设计/21军事/三MIA原日期保持，仅允许原生HP护甲恢复，不放行新损失/战斗或未知事件。source523已毁/无真实pop/无owner，4阵亡不复活；母正住房舒适/crime0、各war阵营/目标/forcepeace日期和battle history保持。新pending/country delayed/新相关Mod消费消息/新战斗/MIA变化/工程tech变化均停，不用guard证明整路线。静态0/全trueactual0才输出ordinaryready/max；到临界另独立review恰1日，核原guard与剩余work/预计唯一出生后才能跨出生，出生验证另写guard，不能把等待PASS当造舰完成。
+
+
+首日wait V1/source6052dd71c81aa11e316adba54e7a1f48e4cfe0455bf07fbe0e33bd069912e27b静态0后20项仅construction_queue3_only_order_progress_changed_no_unpaid_order失败/actual1，原proof/source/流保留且未推进。只读INV 1e19d0babbd3fab17e6a268d98d9959bda532ba748ff9df9f62dee8c705c0546固定同两SAV，14改变项恰我方150994986+其他帝国13项；13项paying_country均非0、仅progress自然上升/所有其他字段原文相同，所有queue原样。V1错误把其他帝国建造也冻结，属于私有验收guard缺陷，无新增生产Mod/open_kaishek缺陷。
+
+V2修正方案先于实现：只把construction全银河不变收敛为country0所有owner0队列及paying0订单，仍禁止新我方订单/扣款或出生，仅150994986允许progress严格1.33×日数；其他帝国原始construction照存、不声称它们冻结。保留其他19严格检查，加第21项固定原V1唯一FAIL/actual1/source6052…/两SAV及上述INV13only-progress，V2新文件不覆盖原V1。静态0/21全trueactual0后仅按已定<=7日短段继续，无其他放宽。
+
+
+矿舰wait V2/source39b6b67ea8ff5b335ede438fb10080950eb274a62c76935e8454b738d659920c静态0/21PASS/actual0，精确同月progress1.33/30、我方仅唯一已付订单、母/军舰/三MIA/全部EEP与原项目保持，边界空/max7；原V1一FAIL1与INV1e19d0…完整保留。按既定最多7日推进2278.11.02→11.09，唯一stagefirst-progress-step01；后续仍每段V3实际0→六观察实际0→同V2严格21PASS，只有前段通过才允许下一段，不提前跳到完成或跨月。
+
+
+11.09/step01/SAV8d29125c8798830470ab545454802d5bd30635bde051203ac9189007339d8422，唯一7日V3/六观察actual0/waitV2严格21PASS0；progress1.33→10.64，全部现金真实bank原样、无新消息pending/军舰战损，母11926/C62D17worlds4保持。继续依同21项与max7正常11.09→11.16，未提前许可出生。
+
+
+首艘付费矿物舰出生边界review方案先于实现：准备独立只读review，只有最新waitV2/source39b6…/21全true实际0、最新实际SAV/六观察actual0、boundaries恰first_paid_mineral_ship_birth_boundary/ordinaryreadyfalse/max0，且同2278.11、当前work<30/只余<=1.33、唯一订单150994986仍queue3/work30/resources225M/母base0/design184550902，才能授权下一日。review日期由实际stage当天+1计算，严格同月，不许可月初或额外日数；固定购买13/source1b2c…/SAV63f…/原INV00e8…、no pending/delayed/combat和三已知MIA仍同日期、EEP C62D17worlds4/Gmade0/原error41生产CN。全true/actual0才V3一次1日，之后独立出生核paidorder消费/unique actualship/fleet/同设计/出生母0/naval105→109/现金不再扣；观察新原生完成消息按真实SAV核，任何新其他事件先停。模板不等于出生，只有出生guard通过后才采实际舰UI作Workshop候选。
+
+
+后两7日段11.16/SAVd96f0f9c86d252b02773c72438a8a883191911681e0103cd8dc36c99600fe018、11.23/SAV8250bc049b619bded0e57c1c9f051c2e84dd6a2dacbd24a71c6317506241247b，V3/六观察均actual0/waitV2各21PASS0，progress19.95→29.26，现金/母11926/原owned与EEP均保持。最新guard正确停first_paid_mineral_ship_birth_boundary/readyfalse/max0。独立birth-review/source8c01030f21590a9e899cd5d4f8b062053ec3391970927610c29964667a04ba18静态0/8PASS/actual0，仅授权11.23→11.24恰1日、余work0.74；现在唯一V3跨该边界，不把review结果当已经出生。
+
+
+矿舰实际出生初查：11.24/SAV2998396a8c71853589f5465066de209d4252e7fa427cd1d5f6a2780599331eba，V3/六观察actual0。唯一新ship16777746/fleet50332250，construction_date2278.11.24、design184550902/growth0/母system0/orbit starbase0、nativeHP250/250、armor253/253、shield160/160；native实际HP250有国家修正，不把早先build tooltip基础200硬套成实际出生值。queue3 items字段删除/150994986项缺席（非scalar none），used_naval_capacity与fleet_size105→109，原21军事仍存/设计保持，所有真实现金与bank不变；无新消息pending、budget本段尚原样。built_artificial_ship63429600→63489672、三原生timedflags各-1、ship_names加Gurkha、新fleettemplate33554475、economy科研镜像同步至trueP5844.27334/S9526.95878均为原生建船/缓存效果，不能当重复科研所得；维护不能凭此日未刷新budget判通过。
+
+出生guard细节先于实现：复用waitV2既有严格母/结构/jobs/credit/truebank/war/三MIA/error生产检查，但出生分支单独新文件，固定前21PASS/source39b6…和8项review/source8c010…/原购买13/source1b2c…/真实SAV，exact1日11.23→11.24/原order29.26work30。country0 queues只queue3去items，其余raw保持；所有paying0订单原唯一项→空，无另新订单或扣款。owned只新增16777746/50332250、旧IDs集合无缺/原design和正HP保持、原21→22军事，新舰精确出生日期/HP250 armor253 shield160/同design/舰容+4/nativepower增104.48438（原浮点原件对账），不接受模板或转交船冒出生。真实stock、所有EEP/母11926与35/27完全保持，新舰原文和fleet原文保存在proof，与原SAV互证；输出停在maintenance_plan_required/max0，出生PASS不代替月度维护验收。静态0/独立全trueactual0后才正常UI查看实际新舰并采GPU/OCR候选；需要另写跨月方案。
+
+
+出生V1/source2dd314992afcb6f2ab822f746329dbd38a7caefacba673a4b7a6b7acceae65a1独立23项全PASS/actual0，但root编排未在静态pyflakes退出1后阻断下一exec（仅ROUND_CEILING未使用，compile0）；不写成静态0，原源/静态输出/实际23PASS全部保留。该错误为验收编排/私有辅助源码，不是生产Mod或P引擎缺陷。stdout progress=-1也只是已删除订单的哨兵展示，真实新ship原文已在proof正确保存，不应以-1表述进度。
+
+出生V2方案先于修正：新文件仅移除未用ROUND_CEILING、stdout改为真实birth ship与fleet，所有23验收判断保持，新增第24项固定原23PASS/actual0/source2dd…/同两SAV原件；新proof独立输出不覆盖V1。静态compile与pyflakes都actual0并显式检查退出后，才执行V2，新24PASS0才据此继续UI/维护。后续所有顺序exec显式检查每步exit_code，不能仅看到脚本创建成功便假设lint通过。
+
+
+出生V2/source42fe84bea2b2845010c93a644e8c62dfb8a2194e2b3c1788b01d2db0a05cd41d静态compile/pyflakes均0后24PASS/actual0，出生分项通过，原23PASS及lint编排缺陷保留。正常UI actual舰“EEP廓尔喀”/眼镜王蛇级威慑级护卫舰，详情c22930fb310015229073c3154195da9970321154e25891d6940bda43032d0eaf与舰队45437f734a2fb8e3a3f4049556cce0d519acf251293992b5d6abc73d948fe963已目视核；hover6ead6242c725b4ef4cee3e4b321a4668dc30f328a26c2c2a1724251b606e85a9显示HP250/253/160、维护0.75能量+0.75矿物/无合金、驻港维护-25%、船体+25%，不是build菜单或普通舰。三图已写terravore-first-paid-mineral-ship-workshop-gallery-candidate.json绑定11.24原SAV/24PASS实际0，明确仅出生与UI，月度维护未通过/未上传。
+
+首月矿物维护方案先于实现：当前11.24暂停/出生24PASS0/source42fe…/新船16777746/f50332250母0停泊、crew_quarters0。独立review只接受当前maintenance_plan_required/max0边界，绑定出生/购买/SAV/实际维护hover图源与0.75E+0.75M，mother/EEP/22军事/三MIA/无pending/delay/combat/error生产；仅授权11.24→12.01恰7日到第一个月账边界。V3/六观察实际0后另月度guard核所有EEP奖励无重发、母自然增长及报表时序、27付费结构/35容量/jobs与原有舰设计身份、唯一矿舰原身份/满HP/母停泊与crew_quarters保持。真实budget.current_month.expenses.ships相对11月前值应增加0.75E/0.75M且合金不增加，ship_components合金亦不得因该舰增加；整个E/M/A/U现金delta必须逐项等于真实本月net（资源cap另据实际核），不能仅看tooltip或现金总额正。其他岗位人口/原生费用改变单独列账，不把stock矿物净增误读为免费维护。再以12.01→下一月01.01整30日同船停泊持续核完整月维护，研究真bank/工程tick不保证每天发生，不能授予资源/科研。新消息或战斗/身份变化先停，结果是维护分项而非全路线；出生后这两段不允许另买船或启动项目8混杂费用。
+
+
+????review/source7339f71d3c7ec117fa0387037548e1d5c4dca9b2766e37b098d35bfc705b6e61??0/8PASS/actual0??11.24?12.01?7??V3?????????tooltip?review?????????
+
+
+首月维护实际观察：2278.12.01/SAV7fd51e010c854ebd2a0a76c0717c32963171d9d4bdc78e3279f28a6d4350b86b，唯一7日V3/六观察actual0/pending消息均空、EEP全不变。母11926→11932/native last_month_growth_data={month_start11926,growth6}。budget.current.ships费用原E22/M0/A10/trade10→E22.75/M0.75/A10/trade10；ship_components E18.4/A3.131完全不变，矿舰未增加合金维护。人口trait矿费107.28→107.334/+0.054，trade_policy税96.32552→104.25764（income同步），其他费用原样；E/M/A/U真实delta68.33/38.5415/30.194/72.71875，恰当前net，lastmonth恰旧current。
+
+母eep_actual_pop仍11920、free_districts6，不是每月必更新：只读eep_events.txt及eep_report源码证实报告在通知/主动报告等调用时刷新、当前无noticepending且无阶段新通知，故不能写成“12月报表刷新到11926”或误判核心产出失败。真实人口11932与native月growth才是本次自然增长证据；当前报告缓存原样作为可追溯快照，不用它替代真实人口账。源码为本机Stellaris/Mod规则，无新的共通P/CK3语法结论。
+
+维护guard详细方案先于实现：独立新私有组件，固定真实出生24/source42fe…/购买13/source1b2c…/原SAV与order账、每段前PASS/actual0/source与V3/六观察6/两SAV。仅first7日到12.01或随后恰30日到2279.01.01，真实每月onlyowned0/同species73，growth0..10且native growth_and_size.month_start=前actual/growth=后actual差、全部EEP变量/旗标/Nemesis/AP传统不动/母35容量27结构jobs保持。原ownedIDs/设计/22军事与三MIA身份日期无损、矿舰16777746/f50332250满250/253/160与母0停泊、无我方construction订单/无新舰；项目8仍未开工。首月ships费用精确+.75E+.75M/alloy0，次月精确维持；ship_components原文同、四现金delta严格等于全currentnet/lastmonth=前current，Menace1635/封顶trade50000及influence1000保持。科研真banks单调/Eng原星堡队列同tech/date，不硬要求月01科研变化；原error/41生产简中/war/无pending/delay/combat同。首12.01全trueactual0才ordinaryready/max30允许整月；1.01全true后停next_native_acceptance_plan_required/max0，再另正常项目开工方案。所有原失败保留，不宣告超舰容/升级或整路线通过。
+
+
+首月维护guard/sourcead3fda22edb69a841b33bc67d33e65b2171eb7d020a440a11cdf1c0adc557ae5静态0后23PASS/actual0：ships精确+.75E+.75M/合金0增、component费原样、四现金delta全等net/自然6/母军舰三MIA原项目EEP全部保持。只在边界空/readytrue/max30后继续唯一2278.12.01→2279.01.01整30日。首月PASS仅真实停泊维护分项，超舰容/升级/后续危机/全路线仍待，原生产0.2.0未改。
+
+
+整30日实际到2279.01.01/SAV6d87159e9418d7be3d0bbbffc89def5afa3502c6d55a8e8cd049722bd9416933、V3/六观察actual0；月度guard/sourcead3…原23项22true/唯一no_pending_delayed_combat_unknown_messages_or_MIA FAIL/actual1，原失败完整保留，不继续推进。全部矿舰/stockledger/母/EEP/原22军事与三MIA等22项均true；真实E/M/A/U净额68.33/38.4875/30.194/72.71875=stockdelta，ships保持E22.75/M.75/A10、components原费不增，母11932→11938/nativegrowth6、trueP5918.94818/S9553.54797。
+
+独立原生INV 5d61cb4be60837f1ad4f14b44b461da681eb04576f0503d99b9fc6a7f8eaf73b：唯一country delayed=pirate.6/days18/scopecountry0（未来未触发）。本机on_actions实际on_monthly_pulse→pirate.4，在trade月收入>100且尚无birth_of_piracy时转pirate.5；原生pirate.5明确存在蜂巢非荒野分支，安排pirate.6 days1 random30。当前trade收入218.7068，pirate.6自身trigger仍要求>300等条件，不能预言18日后一定出现或必然跳过，也不能把注释yearly当实际月pulse。已保存两完整native源码及SHA/原delay；本次FAIL是正确捕获需审阅的原生未来事件边界，不是已经发现Mod/工具bug，也不是四现金或维护失败。
+
+月度V2方案先于实现：新文件仅适用同1.01真实SAV，把已独立核明的单个pirate.6/18day/scope0从unknown边界改为known_native_pirate6_delayed_event；仍输出readyfalse/max0且nextplanrequired，不授权日历、不删除海盗或排队事件。原其他22检查完全不松，加第24项绑定原23一FAIL/actual1/sourcead3…/两SAV/上述INV全源码SHA和真实唯一delay/218.7068收入。静态0/24全trueactual0仅代表完整月停泊维护分项通过，后续项目UI/到期观察需另文档和独立review。
+
+
+最新核验 2026-10-12 09:07：噬岩者实际2279.01.01暂停，首艘“威慑级护卫舰”完成正常225矿物/0合金购买（13PASS0）、原唯一订单150994986按1.33每日work建造（四段waitV2各21PASS0）、2278.11.24真实出生ship16777746/fleet50332250/design184550902（出生V2 24PASS0），舰容105→109。实际母星停泊维护UI .75能量+.75矿物/合金0已采图；首次月账23PASS0，随后完整30日维护V2/sourcead36490c…24PASS0，四现金E68.33/M38.4875/A30.194/U72.71875=实际net，ships及components合金费不增。母11938/容量35/27付费级、C62/D17/worlds4/PSI1/stage2/crisis2/fleet2/Menace1635/Gmade0、原21军舰加本新舰/三MIA保持，第四结算与C60双Queen已通过且不重复奖励。最新SAV6d87159e9418d7be3d0bbbffc89def5afa3502c6d55a8e8cd049722bd9416933。
+
+完整月原23一FAIL1正确捕获原生pirate.6/18日/country0未来事件，独立INV5d61cb…核on_monthly_pulse→pirate.4/5蜂巢分支（当前trade218.7068，事件本身需>300等条件，未来是否触发未定）；V2只改为已核known边界，仍readyfalse/max0，不删除事件或许可跳过。私有waitV1错误冻结其他国家13建造progress已独立修正/原一FAIL1保留，birthV1未用import lint1未正确阻断的编排问题也已如实记录并V2静态0重验；没有确认新的生产Mod/open_kaishek bug，生产41/0.2.0/tree未变，不保证未验部分无bug。原母report快照11920是按需报告缓存，不冒称每月刷新；真实人口与nativegrowth另核。三张实际矿舰UI与原出生/维护proof已纳Workshop候选，未上传。仍只有纵火本能整路线1/7=14.3%/当前推荐不变；噬岩者更高危机项目3/4、女王C200、矿舰升级及超舰容/离港维护、最终长跑重载仍待，下一铁心灭绝者。Steam离线、运行时仅简中；九非中文维持静态校验通过、运行时不在范围内。
+
+
+## CUT42 方案：首艘矿物舰付费、实际出生与完整月停泊维护
+
+当前2279.01.01暂停/全部helper结束，独立维护V2/sourcead36490c…24PASS0，当前SAV6d87159e9418d7be3d0bbbffc89def5afa3502c6d55a8e8cd049722bd9416933。唯一label native-mineral-corvette-paid-birth-and-full-month-upkeep，固定基线CUT41 native-fourth-settlement-C60-and-crisis2-notices/已推送1e3f795cb291d7199a3663648ca86c1995541a7c。保存CUT41后Git原回执、正常矿舰UI成本225M/维护原图、购买13PASS0/原INV、1日校准与真科研tick、waitV1原20一FAIL1冻结其他帝国订单及INV13only-progress/V2 21PASS各短段、精确出生review8/唯一1日/原出生V1 23PASS与未用import lint1编排问题/独立birthV2静态0+24PASS、新ship16777746/f50332250所有原文、实际舰三图与候选绑定、首月review8/7日/23PASS、整月30日/六观察/原23唯一unknown delayed FAIL1/原pirate6原文及两完整native源码INV5d61…/独立月V2 24PASS0与known边界停/max0，全部原SAV/stdout/stderr/actualexit及源码保留。无生产Mod/open_kaishek改动/确认bug，只有分项通过，1/7整路线与推荐不变。
+
+元数据估算新增或变大小444项/103190937B（尚不含随后候选和最终冻结统计），实际D608243712B/C20563435520B。按既有archive actual0→force-stage唯一cut+五任务docs并等actual0→独立verify暂存Git新复用原字节PASS/actual0→填actual计数/rootreceipt/stage scope/diffcheck→本任务提交推送main/独立ls-remote全SHA。冻结期间不写RUN、不进行GUI/日历/新验收，不删除旧证据；Git原回执在freeze验证结束后写RUN供下一切点。不能再在stage实际结束前启动verify。
+
+归档后继续正常物理项目8“涌动暗潮”启动，当前trueP5918.94818尚不足6000但应正常按原研究规则推进，先唯一正常UI开工并同日保存/精确guard，不免费完成或授予科研；当前pirate.6仅18日未来排队，先独立边界review/短段到期核真实trigger结果，不预言必出现/必取消。再依法取得后续危机威慑/项目与女王C200，矿物舰离港/升级/超舰容、长跑重载仍待。Steam保持离线直到最后真实上传，生产0.2.0未变，不发本轮预发布版。
+
+
+CUT42实际结果：freeze2026-10-12T01:09:41.369171Z，36259源/3075176835B，reused35814、新445/103192322B；archive实际0→git add实际0结束后才启动独立verify，verify PASS/actual0，36360唯一blob/3116891829B。根回执evidence/priority-native-mineral-corvette-paid-birth-and-full-month-upkeep-delta-staged-verification-2026-10-11.json（suffix沿用helper，实际freeze10-12）。首矿舰购买13/等待各21/真实出生V2 24/首月23/完整月V2 24均actual0，全部原失败与已核pirate6未来18日边界、三张实际矿舰UI/维护候选原件保存；当前1.01暂停，生产41/0.2.0未改、无确认Mod/P引擎新bug，不代替超舰容/升级/后续危机/C200/长重载或全路线。先stage唯一任务五docs+新cut+根receipt/scope/diff再提交推送main/核独立远端完整SHA，之后按既定正常项目8与原生海盗边界继续。
+
+
+CUT42提交时Git自动maintenance/repack全历史，D余量由457555968B降至131457024B；已只读确认本任务commit13144→21280→maintenance14452→repack24596→pack-objects22292链，pack参数仅.git/objects/pack/.tmp-24596-pack。修复方案先于操作：仅停止本任务新派生的pack-objects22292（核完整命令与父链），等待原commit真实退出；不停止游戏/其他仓库或其他Python，不删证据或Git有效对象。随后核生成的本前缀临时文件，只将这些已确认未完成文件移到C盘任务专用git-maintenance诊断目录保留，确保原绝对路径限于当前仓库.git/objects/pack且目标在已命名本机artifact目录；后续本任务commit/amend/push只用命令级gc.auto=0/maintenance.auto=false，避免修改用户全局Git配置。原已生成commit/SHA/回执如实保留，必要时对尚未推送的本任务提交补文档amend，独立核远端最终SHA。该问题为本机Git磁盘/编排，不是Mod或open_kaishek缺陷。
+
+
+磁盘调查更正：pack进程核查时已自行Out of diskspace失败，未实际执行Stop-Process；commit本身actual0/HEAD6424c53a7021a16f24a2eba5ddc6be78f3646c71，原stderr163B已保存。遗留实际文件并非.tmp-24596-pack前缀，而是当前仓库.git/objects/pack/tmp_pack_IdUp3P，465305600B/本次新生成，所有Git子进程已退出/D仅12288B。方案修正先于移动：只Move-Item这个完整已核LiteralPath至C盘指定git-maintenance-cut42-20261012T0114Z，先核绝对源/目标边界和SHA，移动后核同SHA，不递归/不删除有效Git包或任何证据。后续以命令级关闭自动整理补本任务未推送提交的文档。
+
+
+Git磁盘处置实际结果：原commit6424c53a7021a16f24a2eba5ddc6be78f3646c71 actual0，自动maintenance已自行报Out of diskspace/actualstderr保留，未实际停止进程。确认仅遗留tmp_pack_IdUp3P465305600B，已按LiteralPath单文件移动至C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/git-maintenance-cut42-20261012T0114Z/tmp_pack_IdUp3P；前后SHA256 bffe4647b5307994e10a4607085b10d7eb8e8c3d2aae886a79f33fb264ad07c3一致，原不存在，D恢复465317888B。无删除有效pack或验收证据，运行时无操作。Git诊断新回执写RUN留下一切点。本任务未推送提交补本说明后用命令级gc.auto=0/maintenance.auto=false amend，不改全局配置；amend后额外git fsck --connectivity-only确认磁盘事故未损对象引用，实际0后推送并独立核远端完整SHA。

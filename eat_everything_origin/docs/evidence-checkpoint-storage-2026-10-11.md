@@ -354,3 +354,21 @@ CUT40实际结果：freeze2026-10-11T22:45:55.039869Z，35004源/2747623531B，r
 CUT41实际结果：freeze2026-10-12T00:19:19.302689Z，35814源/2971984513B，reused35003、新811/224372473B；独立Git暂存原字节核验PASS/actual0，35914唯一blob/3012930318B，根回执evidence/priority-native-fourth-settlement-C60-and-crisis2-notices-delta-staged-verification-2026-10-11.json（文件名后缀沿用既有helper，实际freeze为10-12）。第五源尚未开始、当前2278.11.01暂停/最新SAV2dfccc…/Queen两ACK9PASS0/pending空/当前生产0.2.0无改。全部原失败/原战损/实际返还与两QueenCG候选保留；原件验证通过不等于整路线或重载通过。
 
 编排经验：本次验证进程启动时stage会话尚未报告完成，随后已取得git add actual0；最终verify逐份新及复用原字节全部PASS0，最后stage scope818文件与cached diffcheck0。字节证明有效，但后续应先收齐stage实际退出再启动验证，避免对并发更新的index引入无谓不确定性。本次顺序原样保留，不伪写为全过程串行。加入根回执/五docs后只允许819本任务文件提交并推送main，独立核远端完整SHA后继续正常矿物舰生产与原生项目。
+
+
+## CUT42 方案：首艘矿物舰付费、实际出生与完整月停泊维护
+
+当前2279.01.01暂停/全部helper结束，独立维护V2/sourcead36490c…24PASS0，当前SAV6d87159e9418d7be3d0bbbffc89def5afa3502c6d55a8e8cd049722bd9416933。唯一label native-mineral-corvette-paid-birth-and-full-month-upkeep，固定基线CUT41 native-fourth-settlement-C60-and-crisis2-notices/已推送1e3f795cb291d7199a3663648ca86c1995541a7c。保存CUT41后Git原回执、正常矿舰UI成本225M/维护原图、购买13PASS0/原INV、1日校准与真科研tick、waitV1原20一FAIL1冻结其他帝国订单及INV13only-progress/V2 21PASS各短段、精确出生review8/唯一1日/原出生V1 23PASS与未用import lint1编排问题/独立birthV2静态0+24PASS、新ship16777746/f50332250所有原文、实际舰三图与候选绑定、首月review8/7日/23PASS、整月30日/六观察/原23唯一unknown delayed FAIL1/原pirate6原文及两完整native源码INV5d61…/独立月V2 24PASS0与known边界停/max0，全部原SAV/stdout/stderr/actualexit及源码保留。无生产Mod/open_kaishek改动/确认bug，只有分项通过，1/7整路线与推荐不变。
+
+元数据估算新增或变大小444项/103190937B（尚不含随后候选和最终冻结统计），实际D608243712B/C20563435520B。按既有archive actual0→force-stage唯一cut+五任务docs并等actual0→独立verify暂存Git新复用原字节PASS/actual0→填actual计数/rootreceipt/stage scope/diffcheck→本任务提交推送main/独立ls-remote全SHA。冻结期间不写RUN、不进行GUI/日历/新验收，不删除旧证据；Git原回执在freeze验证结束后写RUN供下一切点。不能再在stage实际结束前启动verify。
+
+归档后继续正常物理项目8“涌动暗潮”启动，当前trueP5918.94818尚不足6000但应正常按原研究规则推进，先唯一正常UI开工并同日保存/精确guard，不免费完成或授予科研；当前pirate.6仅18日未来排队，先独立边界review/短段到期核真实trigger结果，不预言必出现/必取消。再依法取得后续危机威慑/项目与女王C200，矿物舰离港/升级/超舰容、长跑重载仍待。Steam保持离线直到最后真实上传，生产0.2.0未变，不发本轮预发布版。
+
+
+CUT42实际结果：freeze2026-10-12T01:09:41.369171Z，36259源/3075176835B，reused35814、新445/103192322B；archive实际0→git add实际0结束后才启动独立verify，verify PASS/actual0，36360唯一blob/3116891829B。根回执evidence/priority-native-mineral-corvette-paid-birth-and-full-month-upkeep-delta-staged-verification-2026-10-11.json（suffix沿用helper，实际freeze10-12）。首矿舰购买13/等待各21/真实出生V2 24/首月23/完整月V2 24均actual0，全部原失败与已核pirate6未来18日边界、三张实际矿舰UI/维护候选原件保存；当前1.01暂停，生产41/0.2.0未改、无确认Mod/P引擎新bug，不代替超舰容/升级/后续危机/C200/长重载或全路线。先stage唯一任务五docs+新cut+根receipt/scope/diff再提交推送main/核独立远端完整SHA，之后按既定正常项目8与原生海盗边界继续。
+
+
+CUT42提交时Git自动maintenance/repack全历史，D余量由457555968B降至131457024B；已只读确认本任务commit13144→21280→maintenance14452→repack24596→pack-objects22292链，pack参数仅.git/objects/pack/.tmp-24596-pack。修复方案先于操作：仅停止本任务新派生的pack-objects22292（核完整命令与父链），等待原commit真实退出；不停止游戏/其他仓库或其他Python，不删证据或Git有效对象。随后核生成的本前缀临时文件，只将这些已确认未完成文件移到C盘任务专用git-maintenance诊断目录保留，确保原绝对路径限于当前仓库.git/objects/pack且目标在已命名本机artifact目录；后续本任务commit/amend/push只用命令级gc.auto=0/maintenance.auto=false，避免修改用户全局Git配置。原已生成commit/SHA/回执如实保留，必要时对尚未推送的本任务提交补文档amend，独立核远端最终SHA。该问题为本机Git磁盘/编排，不是Mod或open_kaishek缺陷。
+
+
+Git磁盘处置实际结果：原commit6424c53a7021a16f24a2eba5ddc6be78f3646c71 actual0，自动maintenance已自行报Out of diskspace/actualstderr保留，未实际停止进程。确认仅遗留tmp_pack_IdUp3P465305600B，已按LiteralPath单文件移动至C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/git-maintenance-cut42-20261012T0114Z/tmp_pack_IdUp3P；前后SHA256 bffe4647b5307994e10a4607085b10d7eb8e8c3d2aae886a79f33fb264ad07c3一致，原不存在，D恢复465317888B。无删除有效pack或验收证据，运行时无操作。Git诊断新回执写RUN留下一切点。本任务未推送提交补本说明后用命令级gc.auto=0/maintenance.auto=false amend，不改全局配置；amend后额外git fsck --connectivity-only确认磁盘事故未损对象引用，实际0后推送并独立核远端完整SHA。
