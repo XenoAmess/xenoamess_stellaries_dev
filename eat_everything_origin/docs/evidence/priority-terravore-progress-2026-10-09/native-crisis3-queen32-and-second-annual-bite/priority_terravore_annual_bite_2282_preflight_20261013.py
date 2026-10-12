@@ -1,0 +1,17 @@
+"""Preflight only: exact next annual native bite, random outcome must be reviewed."""
+import json,logging,sys
+from pathlib import Path
+sys.path[:0]=['eat_everything_origin/tools','_runtime/heart-of-devouring'];sys.argv=['runtime']
+import runtime as r,audit_save as q
+from priority_terravore_native_state import read_state
+logging.disable(logging.INFO);h=r.harness;run,user,m=h.load_run();load=lambda n:json.loads((run/n).read_text('utf-8-sig'))
+before='terravore-queen32-acknowledged';a=read_state(run,before);p=load(before+'-event-ack-proof.json');x=load(before+'-event-ack-guard-execution.json');old=load('terravore-three-labs-normal-month-22811201-annual-pop-bite-review-proof.json');ox=load('terravore-three-labs-normal-month-22811201-annual-pop-bite-review-execution.json')
+tokens=lambda raw:[t[0] for t in q.tokens(raw)];vanilla=(h.GAME_EXE.parent/'common/scripted_effects/00_scripted_effects.txt').read_text('utf-8-sig');mod=(h.MOD_ROOT/'common/scripted_effects/eep_native_consume.txt').read_text('utf-8-sig')
+checks={
+ 'prior8PASS0_source_and_original_SAV':len(p['checks'])==8 and all(v is True for v in p['checks'].values()) and x['returncode']==0 and x['helper_sha256']==h.sha256(Path(x['command'][1]))=='569751f44a8d00f52f7ec55819fbb5d1dc9ef710fe15d099bf74d9599b1f4ee3' and p['after_sha256']==a['audit']['save_sha256']==h.sha256(run/(before+'.sav')),
+ 'prior13PASS0_native_sources_and_exact458tokens':len(old['checks'])==13 and all(v is True for v in old['checks'].values()) and ox['returncode']==0 and ox['helper_sha256']==h.sha256(Path(ox['command'][1]))=='9be328b3a8425905e106099141dc09bda8d87992fd579c0398b089780604eeab' and all(h.sha256(Path(v['path']))==h.sha256(run/v['preserved'])==v['sha256'] for v in old['sources']) and len(tokens(q.block(mod,'eep_native_consume')))==458 and tokens(q.block(mod,'eep_native_consume').replace('event_target:eep_core@event_target:eep_actor','owner.capital_scope'))==tokens(q.block(vanilla,'consume_world')),
+ 'exact_annual30day_boundary_no_lab_or_settlement_completion':a['audit']['date']=='2282.11.01' and p['boundaries']==['annual_native_bite_expired_cooldown_review'] and not a['pending'] and a['audit']['planets']['1578']['flags']['recently_eaten_planet']['flag_days']==30 and q.scalars(a['items']['184549419'])['progress']==282.8 and 282.8+42<360 and a['audit']['situations']['167772163']['progress']==24,
+ 'CN_same_production_error627_and_Queen3_cached':m['language']=='l_simp_chinese' and h.tree_manifest(h.MOD_ROOT)[1]=='ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7' and h.sha256(user/'logs/error.log')=='627e51825f38d8ab28ff788c58d44b2e769c4dfcaa563be1b64feb1035508592' and a['audit']['countries']['0']['variables']['eep_fleet_stage']==3,
+}
+passed=all(v is True for v in checks.values());out=run/(before+'-annual-bite2282-preflight.json');assert not out.exists();h.write_json(out,{'status':'PASS_REVIEWED_NATIVE_BOUNDARY' if passed else 'FAIL','checks':checks,'before_sha256':p['after_sha256'],'after_sha256':p['after_sha256'],'start_date':'2282.11.01','end_date':'2282.12.01','days':30,'maximum_days':30,'allowed_boundaries':p['boundaries'],'execution_stage':before+'-annual-bite2282-preflight','sources':old['sources'],'scope':'30 native days to next annual bite; no random outcome, project completion or Queen repeat presumed.'})
+print(json.dumps({'status':'PASS' if passed else 'FAIL','checks':len(checks),'failed':[k for k,v in checks.items() if v is not True]}),flush=True);assert passed
