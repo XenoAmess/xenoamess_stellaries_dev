@@ -392,3 +392,6 @@ Git磁盘处置实际结果：原commit6424c53a7021a16f24a2eba5ddc6be78f3646c71 
 Git pack迁移本体已完成并原fsck0，但PowerShell最后生成receipt使用Measure-Object对hashtable读bytes失败，原脚本actual1，不能把整个脚本报0。停止后续driver。修复只补独立验真receipt，不重跑迁移：重新读取既有C清单，完整两份SHA/长度/目录目标/空D保留目录核验、再次原生Gitfsck0及HEAD不变，保存原失败说明与本次源码/流/actual，成功才恢复实机。
 
 独立保全复核完成：priority_verify_git_pack_preservation.py/sourcefcc9b00ccd941585b0af2952918386f4198ff897d772b21c9c567ae53e28ccca，6PASS/actual0。55文件/3507367443B，C端pack与original双副本逐文件SHA及长度均同原清单；D端pack junction正确，HEAD保持eb1af11aea50dfbaced171de3002e64c5509ef26，独立git fsck --connectivity-only实际0。原PowerShell迁移最后receipt计算错误actual1原样保留，不能记为原脚本0。复核后D约3.96GB/C约15.59GB可用，未删除任何历史对象。该恢复为同任务证据存储修复，生产Mod不变。
+
+
+2026-10-12续验更新：噬岩者当前2280.03.13暂停，三支原付费突击军和六艘225矿物/0合金的新矿物舰已正常建成，七矿物舰使实际舰容133/131；当前24项战役守卫PASS/actual0。项目2进度1949.8431/6000、C62/D17/母星12026，超容完整月维护、离港/改装、高阶危机/女王与C200、最终退出重载仍待验。CUT44 native-paid-mineral-fleet-six-births-and-overcapacity按原字节归档保全。全路线完成1/7；优先噬岩者，之后铁心灭绝者，其余顺延。无新增已确认Mod/P验收工具bug；九种非简中仅静态校验通过，运行时不在范围内。详见priority-terravore-final-acceptance-2026-10-12.md。

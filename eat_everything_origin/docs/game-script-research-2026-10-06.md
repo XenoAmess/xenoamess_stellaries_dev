@@ -683,3 +683,17 @@ crisis.4145正常option0的after=refresh_auto_generated_ship_designs会新增自
 
 2026-10-12本机Stellaris4.5.2简中新增实证：F1是情报日志，F2是政府；原生项目CRISIS_SPECIAL_PROJECT_PSIONIC_2花6000物理、physics_queue special_project8，true科研银行用tech_status.stored_techpoints。原生army通过colony字段关联地面殖民地，运输中用ship关联；购买buildable_army.planet是colony0，而建设queue.location type2/id7是物理planet7，不能混同。实际进攻部队三单100M/90work，军队队列simultaneous1、按1work/day实测，尚无出生。文件句柄替换用低24位slots核原none→新单，不要求旧空句柄继续保留。system.starbases复数列表→base.station→ship.fleet→country.fleets_manager.owned_fleets才是星系所有权证据；planet.owner独立，敌领可含前超光速。
 普通corvette原版resources.logistics.trade基础1、defines停港0/友境.5/中立1/敌境2；此局setting1，原18舰从停留出征后首月ships.trade10→37，实际单舰tooltip后勤2，不能把月内位置变化强当整月固定值。这里只核原生账和费用上限，不声称完整复原闭源引擎日内计费公式。其它船能量矿物合金与component维护保持，四现金delta严格等native当前月net，trade政策转化自动调整；原矿舰.75E+.75M驻港合同不变。详细源文件原件SHA及UI/原SAV在CUT43/收尾文档。这些是Stellaris本机存档与UI/游戏规则，不作为CK3方言或通用P语法推广。
+
+
+2026-10-12噬岩者原生实证补充：
+- 已付原版assault_army为100矿/90工作量/每原生日1工作，自动部署时army.ship→ship.army/ship.fleet形成双向关联，后续出生运输可自动合并现有同母星fleet。真实birth day健康200/200，次日受原生修正刷新为330/330；不能把UI已含修正的330当出生帧基础值。
+- 星系零损哨站战斗可以有COMBAT_STATS通知但war.battles匿名记录全部保持；归属转移还可带原空建设queue owner和已有中继器/矿站维护。不能要求每次战报都追加损失历史，也不能将取得既有站点误判为免费新造舰。
+- 本机4.5.2简中设置实际autosave=4对应每半年，正常UI左两次改为autosave=2每月。原生fast_forward30会写自动SAV；8.01自动SAV与同日正常手动保存除四文件元数据外整个audit一致，包含全部现金、研究、人口、国家、母星等当前采集字段。后续工具可直接保全原始自动SAV作为月度端点，但必须真实新写入mtime/完整ZIP/日期/SHA，不能伪造UI/OCR证据。
+- 打开原版设置页可能渲染信息设置条目并记game_text作用域错误。本轮16:14:51五条owner/fromfrom/solar_system/GetName错误对应原版nomads_1_l_simp_chinese.yml16行MESSAGE_ASTRAL_RIFT_STAGE_FINISHED_NOMAD_PERMISSION_TITLE。生产Mod没有覆盖此key，完整error2814→3723B固定增量及原版源已保全。此结论仅是本实例来源归因，不是对任意错误白名单。
+- 原生风暴数据根为storms.storms，消息cosmic_storm引用其中ID；首次风暴cstorms.1810按原源排cstorms.1815/1800日。当前实际1773剩余与原生scope关联已核，不能冻结只允许pirate6或删原版延迟。
+以上均Stellaris存档/UI/原生事件实例，不推广为CK3方言或P语言共通语法。
+
+2026-10-12噬岩者原生SAV实证：单哨站被原生we_disabled战报击败时ship_size_count_lost可为0，旧站及本系统3座采集站会保留ID/建造日期并转入敌方owned_fleets，不能以本国资产集合减少直接判断被删除/Mod错误。本次原失踪护卫舰return_date2280.01.03，在1.04端点已原ID返母星0，return_date移除/mia属性移除及自动回港令正常产生；只确认本次事实，不推断所有MIA统一翌日。原版paragon.998由on_decade_pulse_country调用，排999 days1 random1800；新存档paragon999延迟不是不明Mod事件。原版招募领袖池刷新defines1800日，刷新通知不代表已雇领袖变动。均为Stellaris源和SAV知识，不作为CK3共通语法。
+
+
+2026-10-12噬岩者原生实机补充：六艘正常225矿物付费矿物护卫舰施工完成后，2280.03.13与原舰共七艘，used_naval_capacity133/简中UI上限131。原舰原生tooltip显示0.76能量+0.76矿物，无合金；此为即时UI读数，不能据此声称已经通过超舰容完整月账。官方concepts_l_simp_chinese.yml401/510明确超过海军容量提升舰船维护，未公开具体闭源公式；需把实际月账与旧普通舰/组件费用分别核对，不能将全局惩罚增加的旧合金舰费用归因于矿物舰有合金维护。原主舰队在146于2280.03.06与已存在敌fleet825五舰开战，是正常航行触发，不是新增Mod战斗事件。

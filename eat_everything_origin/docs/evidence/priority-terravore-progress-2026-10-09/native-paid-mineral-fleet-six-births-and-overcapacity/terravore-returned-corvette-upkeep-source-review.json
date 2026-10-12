@@ -1,0 +1,203 @@
+{
+  "status": "PASS_NATIVE_RETURNED_ORDINARY_CORVETTE_FEES",
+  "checks": {
+    "all_original_design_component_templates_resolved": true,
+    "official_component_fees_exact074E0124A": true,
+    "official_ordinary_corvette_base1E05A": true,
+    "actual_first_post_return_month_fee_change_reconciled": true,
+    "known_fleet825_detection_only_original_country1_five": true,
+    "original_source_copies_and_ui_preserved": true
+  },
+  "before_sha256": "7679231618f5236e79b3e9bc234a5dd13ee8ebf4c911c0bccf84157af82aa0f9",
+  "after_sha256": "4f4e68fc51adab1551d789d280e7f47806e424bd9495405f8ad3d35355ed9069",
+  "components": [
+    {
+      "key": "FLAK_BATTERY_1",
+      "count": 1,
+      "template_original": "\n\ttype = point_defence\n\n\tkey = \"FLAK_BATTERY_1\"\n\tsize = point_defence\n\n\ticon = \"GFX_ship_part_flak_batteries_1\"\n\ticon_frame = 1\n\n\tprerequisites = { \"tech_flak_batteries_1\" }\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\tcomponent_set = \"FLAK_BATTERY_1\"\n\tprojectile_gfx = \"flak_pd_1\"\n\ttags = {\n\t\tweapon_type_point_defense\n\t\tweapon_type_kinetic\n\t}\n\tai_tags = {\n\t\tweapon_role_point_defense\n\t\tscreen\n\t\tscreen_stealth\n\t}\n\tupgrades_to = \"FLAK_BATTERY_2\"\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = 8\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = 0.08\n\t\t\talloys = 0.008\n\t\t}\n\t}\n\n\tpoint_defence_targets = { \"missile\" \"strike_craft\" }\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_pointdefence.txt",
+      "upkeep": {
+        "energy": "0.08",
+        "alloys": "0.008"
+      }
+    },
+    {
+      "key": "SMALL_MASS_DRIVER_2",
+      "count": 1,
+      "template_original": "\n\ttype = instant\n\n\tkey = \"SMALL_MASS_DRIVER_2\"\n\tsize = small\n\n\ticon = \"GFX_ship_part_mass_driver_2\"\n\ticon_frame = 1\n\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tprerequisites = { \"tech_mass_drivers_2\" }\n\tcomponent_set = \"MASS_DRIVER_2\"\n\tprojectile_gfx = \"coilgun_s\"\n\ttags = {\n\t\tweapon_type_kinetic\n\t\ts_slot\n\t}\n\tai_tags = {\n\t\tweapon_role_anti_shield\n\t\tgunship\n\t\tgunship_stealth\n\t}\n\tupgrades_to = \"SMALL_MASS_DRIVER_3\"\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @s_t2_cost\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @s_t2_upkeep_energy\n\t\t\talloys = @s_t2_upkeep_alloys\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = 1\n\t\tmodifier = {\n\t\t\tfactor = @cosmic_storm_shroud_ai_weight_factor\n\t\t\thas_country_flag = affected_by_shroud_storm\n\t\t}\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_projectile.txt",
+      "upkeep": {
+        "energy": "0.15",
+        "alloys": "0.03"
+      }
+    },
+    {
+      "key": "MISSILE_1",
+      "count": 1,
+      "template_original": "\n\tkey = \"MISSILE_1\"\n\tsize = small\n\n\ticon = \"GFX_ship_part_missile_1\"\n\ticon_frame = 1\n\ttype = missile\n\n\tprerequisites = { \"tech_missiles_1\" }\n\tcomponent_set = \"MISSILE_1\"\n\tprojectile_gfx = \"small_missile\"\n\ttags = {\n\t\tweapon_type_explosive\n\t\ts_slot\n\t}\n\tai_tags = {\n\t\tweapon_role_artillery\n\t\tartillery\n\t\tartillery_stealth\n\t\tenergy_torpedoes\n\t\tenergy_torpedoes_stealth\n\t}\n\tai_tag_weight = 0\n\tupgrades_to = \"MISSILE_2\"\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @s_t1_cost\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @s_t1_upkeep_energy\n\t\t\talloys = @s_t1_upkeep_alloys\n\t\t}\n\t}\n\tpotential = {\n\t\tship_uses_mauler_components = no\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_missiles.txt",
+      "upkeep": {
+        "energy": "0.1",
+        "alloys": "0.02"
+      }
+    },
+    {
+      "key": "SMALL_ARMOR_2",
+      "count": 2,
+      "template_original": "\n\tkey = \"SMALL_ARMOR_2\"\n\tsize = small\n\ticon = \"GFX_ship_part_armor_2\"\n\ticon_frame = 1\n\tpower = 0\n\tmodifier = {\n\t\tship_armor_add = @armor_S2\n\t}\n\tship_modifier = {\n\t\tship_armor_hardening_add = @hardening_T2\n\t}\n\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tprerequisites = { \"tech_ship_armor_2\" }\n\tcomponent_set = \"ARMOR_2\"\n\tupgrades_to = \"SMALL_ARMOR_3\"\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @armor_s_t2_cost\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @defense_s_t2_upkeep_energy\n\t\t\talloys = @defense_s_t2_upkeep_alloys\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = @T2_weight\n\t\tinline_script = {\n\t\t\tscript = ship_components/weights/roles_stealth\n\t\t\tMULT = 2\n\t\t}\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities.txt",
+      "upkeep": {
+        "energy": "0.08",
+        "alloys": "0.015"
+      }
+    },
+    {
+      "key": "SMALL_SHIELD_3",
+      "count": 1,
+      "template_original": "\n\tkey = \"SMALL_SHIELD_3\"\n\tsize = small\n\ticon = \"GFX_ship_part_shield_3\"\n\ticon_frame = 1\n\tpower = @power_S3\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @shield_s_t3_cost\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @defense_s_t3_upkeep_energy\n\t\t\talloys = @defense_s_t3_upkeep_alloys\n\t\t}\n\t}\n\tmodifier = {\n\t\tship_shield_add = @shield_S3\n\t\tship_shield_regen_add_static = @regen_S3 #Regeneration per day\n\t}\n\tship_modifier = {\n\t\tship_shield_hardening_add = @hardening_T3\n\t}\n\tprerequisites = { \"tech_shields_3\" }\n\tcomponent_set = \"SHIELD_3\"\n\tupgrades_to = \"SMALL_SHIELD_4\"\n\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tai_weight = {\n\t\tweight = @T3_weight\n\t\tinline_script = {\n\t\t\tscript = ship_components/weights/roles_stealth\n\t\t\tMULT = 0\n\t\t}\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_shields.txt",
+      "upkeep": {
+        "energy": "0.12",
+        "alloys": "0.023"
+      }
+    },
+    {
+      "key": "REACTOR_BOOSTER_1",
+      "count": 1,
+      "template_original": "\n\tkey = \"REACTOR_BOOSTER_1\"\n\tsize = aux\n\ticon = \"GFX_ship_part_reactor_booster_1\"\n\ticon_frame = 1\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = 5\n\t\t}\n\t}\n\n\tprerequisites = { \"tech_reactor_boosters_1\" }\n\tcomponent_set = \"REACTOR_BOOSTER_1\"\n\tupgrades_to = \"REACTOR_BOOSTER_2\"\n\n\tmodifier = {\n\t\tship_reactor_power_mult = 0.20\n\t}\n\n\tai_weight = {\n\t\tweight = 1\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+      "upkeep": {}
+    },
+    {
+      "key": "CORVETTE_FUSION_REACTOR",
+      "count": 1,
+      "template_original": "\n\tkey = \"CORVETTE_FUSION_REACTOR\"\n\tsize = small\n\ticon = \"GFX_ship_part_reactor_2\"\n\ticon_frame = 1\n\tpower = @corvette_reactor_power_2\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @corvette_reactor_cost_2\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = 0.13\n\t\t\talloys = 0.013\n\t\t}\n\t}\n\n\tprerequisites = { \"tech_fusion_power\" }\n\tcomponent_set = \"power_core\"\n\tpotential = {\n\t\tship_uses_corvette_reactors = yes\n\t\tfrom = {\n\t\t\tcountry_uses_bio_ships = no\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\tupgrades_to = \"CORVETTE_COLD_FUSION_REACTOR\"\n\n\tai_weight = {\n\t\tweight = 2\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_reactors.txt",
+      "upkeep": {
+        "energy": "0.13",
+        "alloys": "0.013"
+      }
+    },
+    {
+      "key": "HYPER_DRIVE_2",
+      "count": 1,
+      "template_original": "\n\tkey = \"HYPER_DRIVE_2\"\n\tsize = small\n\ticon = \"GFX_ship_part_hyper_drive_2\"\n\ticon_frame = 1\n\tpower = @power2\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @cost2\n\t\t}\n\t}\n\tftl = yes\n\tship_modifier = {\n\t\tship_disengage_opportunities_add = 1\n\t\tship_windup_mult = -0.25\n\t}\n\n\tai_weight = {\n\t\tweight = 2\n\t}\n\n\tpotential = {\n\t\tis_eager_explorer_ship = no\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\tprerequisites = { \"tech_hyper_drive_2\" }\n\tcomponent_set = \"ftl_components\"\n\tupgrades_to = \"HYPER_DRIVE_3\"\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_drives.txt",
+      "upkeep": {}
+    },
+    {
+      "key": "SHIP_THRUSTER_1",
+      "count": 1,
+      "template_original": "\n\tkey = \"SHIP_THRUSTER_1\"\n\tsize = small\n\ticon = \"GFX_ship_part_thruster_1\"\n\ticon_frame = 1\n\tpower = @power_1\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @cost1\n\t\t}\n\t}\n\n\tmodifier = {\n\t}\n\n\tprerequisites = { \"tech_thrusters_1\" }\n\tcomponent_set = \"thruster_components\"\n\tpotential = {\n\t\tfrom = {\n\t\t\tcountry_uses_bio_ships = no\n\t\t}\n\t\tship_uses_corvette_components = yes\n\t}\n\tupgrades_to = \"SHIP_THRUSTER_2\"\n\n\tai_weight = {\n\t\tweight = 1\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_thrusters.txt",
+      "upkeep": {}
+    },
+    {
+      "key": "SENSOR_2",
+      "count": 1,
+      "template_original": "\n\tkey = \"SENSOR_2\"\n\tsize = medium\n\ticon = \"GFX_ship_part_sensor_2\"\n\ticon_frame = 1\n\tpower = @power2\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @cost2\n\t\t}\n\t}\n\tsensor_range = @sensor2\n\thyperlane_range = @hyperlane2\n\n\tprerequisites = { \"tech_sensors_2\" }\n\tcomponent_set = \"sensor_components\"\n\tupgrades_to = \"SENSOR_3\"\n\n\tship_modifier = {\n\t\tship_tracking_add = @hit2\n\t}\n\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t\tis_ship_size = paladin_ship\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tai_weight = {\n\t\tweight = 10\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_sensors.txt",
+      "upkeep": {}
+    },
+    {
+      "key": "COMBAT_COMPUTER_DEFAULT",
+      "count": 1,
+      "template_original": "\n\tkey = \"COMBAT_COMPUTER_DEFAULT\"\n\tsize = small\n\ticon = \"GFX_ship_part_computer_default\"\n\ticon_frame = 1\n\tship_behavior = \"default\"\n\tupgrade_path = default\n\tpotential = {\n\t\tfrom = {\n\t\t\tcountry_uses_bio_ships = no\n\t\t}\n\t\tOR = {\n\t\t\tis_ship_class = shipclass_military\n\t\t\tis_ship_class = shipclass_entropy_conduit\n\t\t\tis_ship_size = juggernaut\n\t\t}\n\t\tNOT = { is_ship_size = paladin_ship }\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\tcomponent_set = \"combat_computers\"\n\n\tai_weight = {\n\t\tweight = 1\n\t}\n",
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_roles.txt",
+      "upkeep": {}
+    }
+  ],
+  "component_upkeep_total": {
+    "energy": "0.74",
+    "alloys": "0.124"
+  },
+  "sources": [
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities.txt",
+      "sha256": "cd8a9a20f856d6abb6fdb98636cfb5dcda471f25d4ed757d46a668f95d0fa254"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities_aux.txt",
+      "sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_drives.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities_drives.txt",
+      "sha256": "7db6b11cc78d37e6c16eab98b0c8960e336a1f860c8aca2b1c4033d3b5475889"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_reactors.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities_reactors.txt",
+      "sha256": "934821c1e8e05e71e1d2a142a9628e029a1b43636347f0bed34a74cd0cc2f333"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_roles.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities_roles.txt",
+      "sha256": "e3cf0c8f74da5b7d8e5a031f25fc37e43c3047c9e1b792b0383c36bfd36846fe"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_sensors.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities_sensors.txt",
+      "sha256": "fd08a1e7a5263691538cbdf6d4a63ee6a1e889a9cb23343c3ea5b0ff06972b99"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_shields.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities_shields.txt",
+      "sha256": "54ab3bdfa086ca2e50829641087eff44728c52d5295a44fe42fe9ec2f69e7293"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_thrusters.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_utilities_thrusters.txt",
+      "sha256": "c743cd84aab451b8d43259c46249c3a476f28819b417e9bf99aaadbc0721448c"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_missiles.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_weapons_missiles.txt",
+      "sha256": "8115d3ee865d63962166d300d23af918c21224a8b828351c09b63d9cd8c9315c"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_pointdefence.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_weapons_pointdefence.txt",
+      "sha256": "7464d8a915a6e25132bd653d37bd634336956cc94d77c28bf55bb79e542e6352"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_projectile.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_weapons_projectile.txt",
+      "sha256": "12f3db4e3567fa707ff0f52d1bdc5cb47716b32ed7244425f4a70265dc6f5666"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\02_scripted_variables_component_cost.txt",
+      "preserved": "terravore-ordinary-upkeep-native-02_scripted_variables_component_cost.txt",
+      "sha256": "d2b035df63e70f0ae970f03c06c70ee6b6f52ef372e049b6c69a50517d183d07"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\03_scripted_variables_ships.txt",
+      "preserved": "terravore-ordinary-upkeep-native-03_scripted_variables_ships.txt",
+      "sha256": "44ce49d52ad1d5d127149ed61b6c5ee497eca873f5836c7787946e75e11d97dc"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\00_ship_sizes.txt",
+      "preserved": "terravore-ordinary-upkeep-native-00_ship_sizes.txt",
+      "sha256": "5d8fb948b2197e8a39e021a8501574e043d3c1fd3db7e0c8b9b0b1142da65c2f"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\20_nemesis.txt",
+      "preserved": "terravore-ordinary-upkeep-native-20_nemesis.txt",
+      "sha256": "901c15ae7918089601f3f4f5cd1c2af3f05e800d367f6c73a3214e78bec4c666"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\localisation\\simp_chinese\\messages_l_simp_chinese.yml",
+      "preserved": "terravore-ordinary-upkeep-native-messages_l_simp_chinese.yml",
+      "sha256": "7b3d8417034fe50d626cb90cc5f02d9500407338558d5c9304c718924199f8b5"
+    }
+  ],
+  "detected_enemy_fleet_raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"AQUATIC4_FLEET_PurpleFleet\"\n\t\t}\n\t\tfleet_template=83886158\n\t\tships=\n\t\t{\n\t\t\t16779110 33556025 67109342 16779083 33556209 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tin_combat_with=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tfleet=67109697\n\t\t\t\t}\n \n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=18.96\n\t\t\t\ty=-18.96\n\t\t\t\torigin=146\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=23.67929\n\t\t\t\ty=-16.72438\n\t\t\t\tspeed=0\n\t\t\t\trotation=-0.00022\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=0\n\t\t\t\tships=\n\t\t\t\t{\n\t\t\t\t\t16779110 33556025 67109342 16779083 33556209 \n\t\t\t\t}\n\t\t\t\tparent=\n\t\t\t\t{\n\t\t\t\t\t-1 0 0 0 0 \n\t\t\t\t}\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=108.9814\n\t\t\t\ty=-19.03339\n\t\t\t\torigin=146\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"2280.01.15\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t\tfleet=825\n\t\t\t\t\tship_class=shipclass_military\n\t\t\t\t\tcountry=1\n\t\t\t\t\tempire_flag=\n\t\t\t\t\t{\n\t\t\t\t\t\ticon=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tcategory=\"domination\"\n\t\t\t\t\t\t\tfile=\"domination_23.dds\"\n\t\t\t\t\t\t}\n\t\t\t\t\t\tbackground=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tcategory=\"backgrounds\"\n\t\t\t\t\t\t\tfile=\"flag_BG_56.dds\"\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcolors=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"indigo\"\n\t\t\t\t\t\t\t\"blue\"\n\t\t\t\t\t\t\t\"black\"\n\t\t\t\t\t\t\t\"indigo\"\n\t\t\t\t\t\t\t\"indigo\"\n\t\t\t\t\t\t\t\"blue\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tcountry_name=\"泰梅西安联邦\"\n\t\t\t\t\tfleet_name=\"绛紫舰队\"\n\t\t\t\t\tship_size_key=\n\t\t\t\t\t{\n\t\t\t\t\t\t\"destroyer\"\n\t\t\t\t\t\t\"corvette\"\n\t\t\t\t\t\t\"frigate\"\n\t\t\t\t\t}\n\t\t\t\t\tship_size_name=\n\t\t\t\t\t{\n\t\t\t\t\t\t\"destroyer\"\n\t\t\t\t\t\t\"corvette\"\n\t\t\t\t\t\t\"frigate\"\n\t\t\t\t\t}\n\t\t\t\t\tship_size_count=\n\t\t\t\t\t{\n\t\t\t\t\t\t1 1 3 \n\t\t\t\t\t}\n\t\t\t\t\tship_size_count_lost=\n\t\t\t\t\t{\n\t\t\t\t\t\t0 0 0 \n\t\t\t\t\t}\n\t\t\t\t\tleader=\n\t\t\t\t\t{\n\t\t\t\t\t\tname=\"维克托·温伯恩\"\n\t\t\t\t\t\texperience=245.475\n\t\t\t\t\t\tskill=4\n\t\t\t\t\t\tskill_cap=10\n\t\t\t\t\t\tclass=\"commander\"\n\t\t\t\t\t\tdesign=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tgender=male\n\t\t\t\t\t\t\tname=\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tfull_names=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"%LEADER_2%\"\n\t\t\t\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\tkey=\"1\"\n\t\t\t\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\tkey=\"AQUATIC4_CHR_Victor\"\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\tkey=\"2\"\n\t\t\t\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\tkey=\"AQUATIC4_CHR_Wimbourne\"\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tuse_full_regnal_name=yes\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tportrait=\"aqu15_m\"\n\t\t\t\t\t\t\ttexture=2\n\t\t\t\t\t\t\tattachment=0\n\t\t\t\t\t\t\tclothes=0\n\t\t\t\t\t\t\tleader_class=\"commander\"\n\t\t\t\t\t\t}\n\t\t\t\t\t\ttrait=\"subclass_commander_admiral\"\n\t\t\t\t\t\ttrait=\"leader_trait_unyielding\"\n\t\t\t\t\t\ttrait=\"leader_trait_butcher\"\n\t\t\t\t\t\ttrait=\"leader_trait_resilient\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"2280.01.15\"\n\t\t\t\tenemy=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tfleet=67109697\n\t\t\t\t\t\tship_class=shipclass_starbase\n\t\t\t\t\t\tcountry=0\n\t\t\t\t\t\tempire_flag=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\ticon=\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tcategory=\"blocky\"\n\t\t\t\t\t\t\t\tfile=\"flag_blocky_7.dds\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbackground=\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tcategory=\"backgrounds\"\n\t\t\t\t\t\t\t\tfile=\"double_hemispheres.dds\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tcolors=\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"dark_grey\"\n\t\t\t\t\t\t\t\t\"purple\"\n\t\t\t\t\t\t\t\t\"null\"\n\t\t\t\t\t\t\t\t\"null\"\n\t\t\t\t\t\t\t\t\"null\"\n\t\t\t\t\t\t\t\t\"null\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcountry_name=\"吞噬之心·噬岩者\"\n\t\t\t\t\t\tfleet_name=\"伊达利马空间站\"\n\t\t\t\t\t\tship_size_key=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"starbase_outpost\"\n\t\t\t\t\t\t}\n\t\t\t\t\t\tship_size_name=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"starbase_outpost\"\n\t\t\t\t\t\t}\n\t\t\t\t\t\tship_size_count=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t1 \n\t\t\t\t\t\t}\n\t\t\t\t\t\tship_size_count_lost=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t0 \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t\tdamage_outgoing=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"LARGE_BLUE_LASER\"\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\tdamage_hitpoints=637.82521\n\t\t\t\t\t\tdamage_shields=171.50311\n\t\t\t\t\t\tbase_damage_hitpoints=510.26017\n\t\t\t\t\t\tbase_damage_shields=343.00624\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_3\"\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\tdamage_hitpoints=433.75158\n\t\t\t\t\t\tdamage_shields=484.78878\n\t\t\t\t\t\tdamage_armor=29.49175\n\t\t\t\t\t\tbase_damage_hitpoints=433.75158\n\t\t\t\t\t\tbase_damage_shields=323.19253\n\t\t\t\t\t\tbase_damage_armor=58.9835\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"SMALL_MASS_DRIVER_3\"\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\tdamage_hitpoints=468.64029\n\t\t\t\t\t\tdamage_shields=646.37922\n\t\t\t\t\t\tdamage_armor=39.07669\n\t\t\t\t\t\tbase_damage_hitpoints=468.64029\n\t\t\t\t\t\tbase_damage_shields=430.9195\n\t\t\t\t\t\tbase_damage_armor=78.15339\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"SMALL_MINING_LASER\"\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\tdamage_hitpoints=748.72347\n\t\t\t\t\t\tdamage_shields=144.98705\n\t\t\t\t\t\tdamage_armor=121.3348\n\t\t\t\t\t\tbase_damage_hitpoints=499.14902\n\t\t\t\t\t\tbase_damage_shields=289.9742\n\t\t\t\t\t\tbase_damage_armor=80.88987\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"TORPEDO_1\"\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\tdamage_hitpoints=4971.06315\n\t\t\t\t\t\tdamage_shields=53.46534\n\t\t\t\t\t\tdamage_armor=6140.85924\n\t\t\t\t\t\tbase_damage_hitpoints=4971.06315\n\t\t\t\t\t\tbase_damage_shields=53.46534\n\t\t\t\t\t\tbase_damage_armor=4093.90616\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t\tdamage_incoming=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_3\"\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\tdamage_armor=585.61822\n\t\t\t\t\t\tbase_damage_armor=1171.2365\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t\thit_ratio_outgoing=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"LARGE_BLUE_LASER\"\n\t\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdesign=335546116\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\thits=7\n\t\t\t\t\t\tmisses=1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_3\"\n\t\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdesign=335546116\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\thits=12\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"SMALL_MASS_DRIVER_3\"\n\t\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdesign=335546116\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\thits=29\n\t\t\t\t\t\tmisses=7\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"SMALL_MINING_LASER\"\n\t\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdesign=335546116\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\thits=41\n\t\t\t\t\t\tmisses=4\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"TORPEDO_1\"\n\t\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdesign=335546116\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\thits=6\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t\thit_ratio_incoming=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_3\"\n\t\t\t\t\t\tship_design_implementation=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tdesign=218105346\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfleet_index=0\n\t\t\t\t\t\thits=16\n\t\t\t\t\t\tmisses=3\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"indiscriminate\"\n\t\tship_class=shipclass_military\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=1.56929\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=18.96\n\t\t\t\ty=-18.96\n\t\t\t\torigin=146\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=134\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2280.01.30\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=156\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=-245.84115\n\t\t\t\t\ty=13.59215\n\t\t\t\t\torigin=188\n\t\t\t\t}\n\t\t\t\tto=146\n\t\t\t\tfleet=825\n\t\t\t\tjump_method=jump_hyperlane\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\torder_id=97\n\t\tproperties=\n\t\t{\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t}\n\t\tincoming_merges=\n\t\t{\n\t\t\t33554809 \n\t\t}\n\t\thit_points=4330.00000\n\t\tmilitary_power=971.29687\n\t\tdiplomacy_weight=971.29687\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t\tmia_type=mia_emergency_ftl\n\t",
+  "detection_message_original": [
+    "\n\ttype=\"FLEET_DETECTED_MESSAGE_TYPE\"\n\tlocalization=\"MESSAGE_FLEET_DETECTED_WE\"\n\tvariables=\n\t{\n\t\t\n\t\t{\n\t\t\tkey=\"FLEET\"\n\t\t\tvalue=\"绛紫舰队\"\n\t\t}\n \n\t\t{\n\t\t\tkey=\"WHO\"\n\t\t\tvalue=\"泰梅西安联邦\"\n\t\t}\n \n\t\t{\n\t\t\tkey=\"TARGET\"\n\t\t\tvalue=\"伊达利马\"\n\t\t}\n \n\t}\n\treceiver=0\n\ttarget_fleet=825\n\tcoordinate=\n\t{\n\t\tx=0\n\t\ty=0\n\t\torigin=4294967295\n\t}\n\tend=\t\"2280.04.07\"\n\tdate=\t\"2280.01.07\"\n\tnotification=288\n\tmessage_type=none\n"
+  ],
+  "native_ui_file": "terravore-returned-ordinary-corvette-actual-row-upkeep-ui.jpg",
+  "native_ui_sha256": "fc4be2acefbe35e19a052a63fbaa8f6df46d1dfc212bcc0c2ce1e2be4884b448",
+  "scope": "Exact ordinary returned ship fees source resolution and known fleet detection; added mineral ships have separate paid orders and native hull sources."
+}
