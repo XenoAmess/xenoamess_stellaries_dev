@@ -1,0 +1,29 @@
+"""Read-only actual native war-end and sole empty-effect event acknowledgment."""
+import json,logging,sys
+sys.path.insert(0,'eat_everything_origin/tools');sys.argv=['runtime']
+import runtime as r,audit_save as q
+from priority_terravore_native_state import read_state
+logging.disable(logging.INFO);h=r.harness;run,user,m=h.load_run();load=lambda n:json.loads((run/n).read_text('utf-8-sig'))
+before='terravore-post-refit-normal-month-22810401';after='terravore-native-white-peace-acknowledged';b,a=[read_state(run,s) for s in [before,after]]
+p=load(before+'-post-refit-stable-month-v2-proof.json');px=load(before+'-stable-month-guard-v2-execution.json');ob=load(before+'-construction-boundary-observation-v4.json');click=load('terravore-native-white-peace-acknowledge-execution.json');sx=load(after+'-save-execution.json')
+src=h.GAME_EXE.parent/'events/on_action_events_1.txt';preserved=run/('terravore-post-refit-native-source-'+src.name);text=src.read_text('utf-8-sig')
+event=next(v for k,v,obj in q.fields(text) if obj and q.scalars(v).get('id')=='action.39')
+source=h.GAME_EXE.parent/'common/defines/00_defines.txt';dest=run/'terravore-native-peace-original-defines.txt'
+if dest.exists():assert dest.read_bytes()==source.read_bytes()
+else:dest.write_bytes(source.read_bytes())
+bt=[v for v,x,y in q.tokens(b['roots']['open_player_event_selection_history'])];at=[v for v,x,y in q.tokens(a['roots']['open_player_event_selection_history'])];segment=['{','player_event','=','291','human','=','1','option','=','0','}']
+msgs=[q.scalars(v) for v in ob['new_country0_messages_raw']];truce=q.scalars(q.block(a['roots']['truce'],'1'))
+checks={
+ 'original17_month_checks_true_only_native_war_boundary_actual1_retained':len(p['checks'])==18 and [k for k,v in p['checks'].items() if v is not True]==['no_new_messages_pending_combat_or_war_changes'] and px['returncode']==1 and px['helper_sha256']==h.sha256(run/'priority_terravore_post_refit_stable_month_guard_v2.py')=='9933c862f0b14416bd64d0024c0568917b83e99e643bca035cbb8d9d949ae61c',
+ 'original_date_SHA_and_same_day_ack_save_actual0':p['after_sha256']==b['audit']['save_sha256']==h.sha256(run/(before+'.sav')) and a['audit']['save_sha256']==h.sha256(run/(after+'.sav'))=='85e8299e85c99efb77f73f98fbecc9b694817f9c1e5de09d49516dc591a103ba' and b['audit']['date']==a['audit']['date']=='2281.04.01' and sx['returncode']==click['returncode']==0,
+ 'unique_native_peace_offer295_and_action39_event291_originals':len(msgs)==2 and msgs[0]['type']=='DIPLO_ACTION_OFFER_PEACE' and msgs[0]['localization']=='WAR_END_STATUS_QUO' and msgs[0]['notification']==295 and msgs[0]['date']=='2281.03.30' and msgs[1]['type']=='EVENT_MESSAGE_TYPE' and msgs[1]['event']==291 and msgs[1]['date']=='2281.03.30',
+ 'original_war1_removed_real_truce1_same_after_ack':not q.block(b['roots']['war'],'1') and b['roots']['war']==a['roots']['war'] and b['roots']['truce']==a['roots']['truce'] and truce=={'start_date':'2281.03.30','truce_type':'war'},
+ 'official_empty_option_and_original_source_live_SHA':h.sha256(src)==h.sha256(preserved) and list(q.fields(q.block(event,'option')))==[('name','action.39.a',False)] and h.sha256(source)==h.sha256(dest) and 'TRUCE_YEARS' in source.read_text('utf-8-sig'),
+ 'only_pending291_consumed_and_exact_human_option0_history_append':len(b['pending'])==1 and q.scalars(b['pending'][0])['id']==291 and q.scalars(b['pending'][0])['event']=='action.39' and not a['pending'] and sum(at==bt[:i]+segment+bt[i:] for i in range(len(bt)+1))==1,
+ 'all_business_audit_country_cash_research_EEP_and_original_assets_exact':b['country']==a['country'] and all(b['audit'][k]==a['audit'][k] for k in ['countries','planets','colonies','pop_groups','pop_jobs','situations','districts','deposits']) and all(b[k]==a[k] for k in ['ships','fleets','queues','items']) and all(b['roots'][k]==a['roots'][k] for k in ['army','zones','buildings']) and a['messages']==[v for v in b['messages'] if v!=ob['new_country0_messages_raw'][1]],
+ 'core_and_source_still_owned0_situation5_and_paid_zone207p2':a['audit']['planets']['7']['owner']==a['audit']['planets']['1578']['owner']==0 and a['audit']['situations']['167772163']['progress']==5 and q.scalars(a['items']['1627389955'])['progress']==207.2,
+ 'production41_CN_error_exact_and_existing_component_source_bound':m['language']=='l_simp_chinese' and m['version']=='0.2.0' and len(h.tree_manifest(h.MOD_ROOT)[0])==41 and h.tree_manifest(h.MOD_ROOT)[1]=='ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7' and h.sha256(user/'logs/error.log')==h.sha256(run/(after+'-error-after.log'))=='4f3b0e6b9ac64daf9c3daf0346f8f61180f9e87486035a2f1a8298833becd850',
+}
+passed=all(v is True for v in checks.values());out=run/(after+'-native-peace-review-v2-proof.json');assert not out.exists()
+h.write_json(out,{'status':'PASS_ACTUAL_NATIVE_PEACE_AND_EMPTY_OPTION_ACKNOWLEDGED' if passed else 'FAIL','checks':checks,'before_sha256':b['audit']['save_sha256'],'after_sha256':a['audit']['save_sha256'],'date':a['audit']['date'],'native_offer_and_event_original':ob['new_country0_messages_raw'],'pending_event_original':b['pending'],'truce1_original':q.block(a['roots']['truce'],'1'),'sources':[{'path':str(src),'preserved':preserved.name,'sha256':h.sha256(src)},{'path':str(source),'preserved':dest.name,'sha256':h.sha256(source)}],'boundaries':[],'native_devour_calendar_ready':passed,'maximum_days_to_native_bite_boundary':30 if passed else 0,'scope':'Native peace with existing conquered source retained, sole empty option acknowledged. Allows next monthly construction/research observation. No new conquest, war victory, settlement or full route claim.'})
+print(json.dumps({'status':'PASS' if passed else 'FAIL','checks':len(checks),'failed':[k for k,v in checks.items() if v is not True]}),flush=True);assert passed

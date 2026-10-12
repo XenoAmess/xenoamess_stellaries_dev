@@ -1,0 +1,15 @@
+{
+  "status": "PASS_EXACT_ERROR_BASELINE_ALLOWED_AND_REJECTED_CASES",
+  "checks": {
+    "exact_reviewed_old_to_new_allowed": true,
+    "exact_new_unchanged_allowed": true,
+    "new_to_old_rejected": true,
+    "any_other_new_error_rejected": true,
+    "duplicate_native_error_rejected": true,
+    "truncated_log_rejected": true,
+    "changed_original_timestamp_rejected": true,
+    "baseline_source_preserved_current_log_unchanged": true
+  },
+  "module_sha256": "e1e9fe46a1a24a687a095e93e8ed5c5a870d1ed5f45caae01ed3c043cf75a817",
+  "scope": "Only original reviewed line allowed. Unknown additions, duplicate line and modified logs rejected; no log mutations."
+}
