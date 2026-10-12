@@ -1255,3 +1255,135 @@ source37 review04 10PASS0→唯一7日到2278.06.22/SAV17465338a61375122cb2cbf1e
 
 
 CUT40实际结果：freeze2026-10-11T22:45:55.039869Z，35004源/2747623531B，reused34695、新309/109492624B；独立Git暂存原字节核验PASS/actual0，35103唯一blob/2787895481B，根回执evidence/priority-native-source37-four-losses-and-short-battle-watch-delta-staged-verification-2026-10-11.json。原V8三FAIL1/21true、四真实阵亡/三MIA/原277/全局舰船与双方war/sourceguard V1原FAIL及V2 12PASS0、新独立review与五段V9 25PASS0原件完整保存。仅暂停证据，不代表整体路线或重载验收。按scope/diff提交推送/独立核main完整SHA后继续review06限定7日。
+
+
+CUT40已提交推送3afca45781b78bb43e653cde1780e309489ecbcf，commit/push/独立ls-remote实际0且远端main同完整SHA。游戏当前6.29暂停，继续已记录review06及7日到7.06。
+
+
+CUT40后review06 10PASS0→唯一7日到2278.07.06/SAVac25b5eac45a6a2d54022b54322c51ae06051b6e2871fa3af46fe1676dbbf7bf，V3/六观察/V9 25均全PASS/actual0，progress28→29/32，原EEP/21存活/三MIA与error保持，仅known active_combat boundary。下一review07后≤7日到7.13，仍不自动跨新实战结果/最终cap。
+
+
+source37 review07 10PASS0→唯一7日到2278.07.13/SAV2fff9a430d8eb7ace07c7766b1dd2e5cf2f5a99680ffaf6e15bb9b1eb615516e，V3/六观察/V9 25均全PASS/actual0，progress29/32及原核心/三MIA/error保持，仅known active_combat。下一review08后≤7日到7.20，原失败和当前原生交战原件保持。
+
+
+source37 review08 10PASS0→唯一7日到2278.07.20/SAV1e7080cb61af8a6318c66c23cc09dd730d87053d96c68b6f3e18a5132fcecfb3，V3/六观察/V9 25均全PASS/actual0，progress29/32及原core/三MIA/error保持，仅known active combat。下一review09后≤7日到7.27，同日界规则不变。
+
+
+source37 review09 10PASS0→唯一7日到2278.07.27/SAVab39c3250e7167a839c180f3b990737ef753f6772adda5fdee5bfbcee81e0213，V3/六观察/V9 25均全PASS/actual0，progress29/32及原core/三MIA/error保持，仅known active combat。下一review10后≤7日到8.04，跨8月首须按真实tick核进度30，不预写通过。
+
+
+source37 review10 10PASS0→唯一7日到2278.08.04/SAVfd8467788326d7a0a3d7e4f725fd1e0cf7b931cd8cebcbfe9ba7ae7498ecd781，V3/六观察/V9 25均全PASS/actual0，progress29→30/32，总人口11805，原EEP/21军舰/三MIA/error保持，仅known active_combat。下一review11后≤7日到8.11，不提前写最终结算或女王已通知。
+
+
+source37 review11 10PASS0→唯一7日到2278.08.11/SAV3b068598166f41e5a78fb9d389e9c096e22b56f8b598fa07e70bfa1cbb244751，V3/六观察/V9 25均全PASS/actual0，progress30/32及原core/三MIA/error保持，仅known active combat。下一review12后≤7日到8.18；任何新战报/损失或业务boundary依旧停。
+
+
+source37 review12 10PASS0→唯一7日到2278.08.18/SAVe77525cc744d43ad831235b940db716c63131e4bab8f2e44f55e6b4771f85b3f，V3/六观察/V9 25全部PASS/actual0，progress30/32、总11805/母11416源389/原EEP/21军舰/三MIA/error保持。boundaries仅native_war_battle_history_changed、已无active combat，因此停止且未调用会要求交战的review13。新原生278 COMBAT_STATS/receiver0/date2278.08.11/start2278.03.30/reasonno_more_enemies：我方fleet849原starport count1/lost0；敌825原count[1,9,4,1]/lost[0,8,1,1]。war1新增单个system37/date8.11/country1攻击country0/attacker_victoryno/attacker_losses11/defender_losses0的ships记录。原报告lost数组合计10与war原attacker_losses11分别原样记录，不将两字段擅自当同一度量或写成确认Mod bug。站1931现HP5515.30989，仍我方/未disabled；science1049/leader74/375存活。敌已撤离当前交战，但不假定完全歼灭。
+
+下一defense-end只读组件方案先于实现：固定本V9/sourcec590…25PASS/actual0/仅新warhistory边界、两真实SAV/六观察/source44c…及V3/sourcec0…actual0/review12/source57ac…10PASS0；永久原source37战损V2/sourcefa51…12PASS/actual0/INV c8f6…仍绑定。独立核全部owned IDs/实际设计/21军舰正HP/原三MIA日期保持，所有owned typed combat为空、无pending；新消息恰278、匿名own849 lost0/enemy825原两数组/日期reason精准，war1其他字段除battle/fatigue完全同前、新battle列表恰增一条上述原记录且其余历史原样。源523/母7 owner/controller0/Q13/月32/progress30/原EEP/error/41生产0.2.0简中保持。完整保存战前后war、原278/双方fleet825及原source/starport/science状态，输出独立PASS_DEFENSE_END、paid_births、readytrue/无boundary、最多30日到9.30。原V9 proof与其warhistory stop不改写。
+
+独立waitV10方案先于实现：复制V9保留25原核心/全部历史四死三MIA/消费/迁移/返回/capture/stop固定原件，只新增已核defense-end原证明source/SAV/actual0为第26检查、prior来源增加此独立组件固定SHA。普通范围8.18→9.30/每段≤30日，V3仍须readytrue/boundaries空/max足够；新实战/MIA/战争/consume/女王等事件及任何核心异常照旧停。当前剩余到9.30共42日，计划先30日到9.18、再12日到9.30，各端须新六观察/V10 26全true/actual0才继续；最终10.01/10.02另设计精确单日review及结算验收，不跨32月cap、不提前写C62/D17/女王通过。组件/V10先compile/pyflakes0再执行，所有旧源码/失败保持。没有生产Mod/P工具变化或新确认bug，Steam离线。
+
+
+defense-end/source520e1cd81dceff5ff453a7f00b8f4b67740a7285b8bdeebbfc0eb040afce30fe compile/pyflakes0后独立11PASS/actual0，proof SHA75f617c46016304166f82e912895bb97fef9388448fbdcd201f390c90d722768；当前真实Menace仍885、source30/32/母11416源389总11805。原V9 25PASS带warhistory boundary的证明原样保留，新独立组件精确解此唯一278历史边界。开始已记录V10方案实施，普通下一30日到9.18，只在新V3再核本11PASS0/readytrue/max30/无boundary后执行。
+
+
+战斗结束后唯一30日到2278.09.18/SAV3808d7cb100dfb668f4463111bcfdc3bc7209fdc6cae696fe9d1278d4883f1b3，V3/六观察实际0；V10/sourcefc5f352c71faa985e792ff296eca1e2c9528fd3f2ee0d2daad4707d911913f6d compile/pyflakes0后独立26项PASS/actual0，progress31/32，总11812/原EEP/21存活/三MIA/error保持，boundaries空/readytrue/max12。下一唯一12日到9.30，V3再核businessready/准确max12及原26PASS0后执行；到cap后必须停止并设计单日final review，不套普通30日跨界。
+
+
+战斗后第二唯一12日已到2278.09.30/SAVf47a4b8364163511683dce72a2728dc0eea2c09631cc6e07569e201431f6c55c，V3/六观察/V10 26均全PASS/actual0，progress31/32、母11423源389总11812、原EEP/Menace885/21军舰/三MIA/error保持；boundaries空但因最终cap readyfalse/max0，已停止普通等待。没有生产Mod/P工具修改或新确认bug。
+
+最终单日review方案先于实现：新增独立只读final_boundary_review，仅接受当前9.30原26PASS/actual0/V10 sourcefc5f352c71faa985e792ff296eca1e2c9528fd3f2ee0d2daad4707d911913f6d、真实SAV f47a4b…、原六观察/source44c…及V3/sourcec0…/actual0。核当前date9.30、situation50331660/target523/type/approach/progress31/Q13/月32、源owned完成colony38/全部species73/POP389/nativeactive flags且无pending、母owner/controller0/人口>=10K/住房舒适正/crime0、C49/D14/G0/made0/worlds3/PSI1/stage1/fleet0/Menace885，当前无typed combat/pending、仅原三MIA/精确日期、owned原21军事与已核defense-end所有设计身份保持/no新增error/正式41生产0.2.0简中。固定输出status PASS_REVIEWED_NATIVE_BOUNDARY/全部checks/同当前SAV/start9.30/end10.01/days=max1/allowed_boundaries=[]/execution_stage/sourceproofSHA。即使corePASS也不能忽略cap，须新review实际0/完整绑定后V3只推进1日。
+
+最终验收预期（先于结算操作）：第32月允许on_progress_complete当日结算，或eep.20安排eep.21/days1在10.02结算；不把10.01未结算直接判bug，需核真实delayed scope/progress32/pending情况后再设计单日延迟组件。真正结算必须源星球pc_shattered/colony38解除owned/活动局势删除、C恰49+13=62/D恰17/worlds恰4/母星容量18+17=35/27付费区划保持，G/made/last_manufactured仍0；源所有founder人口（含最终补足原生消费的随机POP）全回母星，eep_last_return与真实源人口及native消息互证，不能要求新pop_group ID或把月度全部库存delta当消费奖励。普通自然增长单独保留；本步native奖励随机分支不预写数量。crisis destroy_worlds一次结算预期Menace+750，以实际原目标/存档核验。若女王C60事件与结算同日出现，立即在任何ACK前采真实简中CG/UI/OCR；若仅eep_notice_pending则下一月脉冲另逐步验证，不能先写女王通过。
+
+图资产采集具体方案：当前9.30暂停先正常只读打开吞噬局势、用原r.gpu_capture采31/32/sourceQ13/月32及母星概览等实际画面，记录SAV/26PASS绑定/SHA/实际文本，不预写结算；作为Workshop候选而非已上传。之后恢复正常save/日历允许的UI状态，不点击取消吞噬或改变approach。最终C60/矿物舰素材等真实触发后另外采，普通星港防御胜利不冒称矿物舰战斗特色。Steam仍离线。
+
+
+9.30实际局势画面已采且目视核验：clean72d51196386493362e2514430e649d4e49bf3cbd67a0bdc300392cd8ed84f71b含女王CG/吞噬亚蒙-I/遵从女王/玩法文本；tooltip d55deef10eab21941ee6f52859a1515ccc9b79653d74aff85e5b0ac3c39071b7明确31.0/32.0、下月32.0(+1.0)、剥离世界及本阶段规则。新候选terravore-pre-final-situation-workshop-gallery-candidate.json绑定本原SAV f47a…/26PASS/sourcefc5…/两图SHA，未上传，不代表最终结算/C60通知已通过。正常只读关闭该局势面板后继续独立final review，无中止或approach变更。
+
+
+final review V1/sourcee0e23986de6f25f2f206c9a588b8902bef23ff4e00c8169cd41cbcb6c0787131 compile/pyflakes0后10项恰一FAIL/actual1（source_owned_completed_colony38_all_founder73_native_active_no_pending），其余9true；未调用日历/无任何推进。原失败proof SHAbc99d1ed9a34f94fd9149d8ee0b4f56d3c16b402766a06282d8d2661630fa996、源码/流/actual1保留。根因是root未读取当前逐殖民地实际人口，就把以前源389和总量增长全落母星的假定写死进预检。真实9.30原V10 proof与原SAV一致：母11422、源390、总11812；owned0/38/全部species73/完成日期/nativeflags/无pending均正确，原26核心也全通过。更正此前9.30“母11423源389”结论；该人口分配未经原件确认不得外推。只证明当前分配，不仅凭总增长推断是哪种自然增长/迁移原因。
+
+独立final review V2方案先于实现：复制V1，仅该人口条件改为本固定SAV实际390且与原26PASS proof.source_population逐一相等，仍要求原种族/owner/flag/native/task所有条件，其他9检查不松；新增原V1固定源码SHA/恰一FAIL/actual1/原proofSHA绑定。输出独立V2 execution stage/proof，旧V1不改/不重跑。先compile/pyflakes0再同当前原SAV复算11项，全部true/actual0后V3只允许原定9.30→10.01/1日。没有生产Mod/open_kaishek变动或新确认bug，真实UI候选仍绑定正确31/32/SAV，未上传。
+
+
+final review V2/sourcef7d905744f6c4c013809e3d1231646599db92eef4befa0eae61fd44f0b9a01b4静态0后11PASS/actual0；V3仅推进9.30→10.01一个原生日，SAV09a444d71a7a3d59e24cf1c90678647ad89bfc8071ba73a9364a1af8d7d6e673、六观察全部true/actual0、error原字节不增。真实progress32，唯一delayed_event={event=eep.21,days=1,scope={type=situation,id=50331660,opener_id=4294967295,random_allowed=yes}}；源尚无eep_pending，原native/active/being_devoured保持，recently_eaten_planet旗63482640剩120日。C49/D14/worlds3/PSI1/stage1/Menace885尚未奖励；母11422→11429、源390→391、总11812→11820，月初总增长8，不能仅由总量推断各自然增长/迁移分量。该状态符合已有次日事件设计，尚无确认新Mod bug。
+
+独立final_pending_guard方案先于实现：复制原V10保留26核心/全部历史INV及四死三MIA固定锚点，只接受本唯一9.30→10.01/1日固定两SAV f47a…→09a…、原31→32、原V10 fc5…26PASS0和最终reviewV2 f7d…11PASS0。把普通progress<32范围改为本精确progress32并唯一原eep.21/days1/scope50331660；绝不泛放后续月份。新增第27项绑定原预检和延迟事件，源/月32/Q13/native旗递减/所有生产经济母结构27级/任务人口真实月增长范围/船舰/技术/error其他检查不松。独立PASS组件必须readyfalse/max0、boundary=native_final_eep21_day1_ready_to_settle，不允许普通calendar续跑。先compile/pyflakes0、同SAV全27true/actual0才继续。
+
+独立final_delayed_boundary_review方案先于实现：只读固定新27PASS0/sourceSHA/本current SAV09a…/六观察0/原reviewV2及真实原delayed scope；核当前32与C49/D14/worlds3/G0/made0/PSI1/stage1/原21军舰与三MIA及无其他pending/combat/error，精确start10.01/end10.02/days=max1、allowed_boundaries仅本最终延迟边界、sourceproofSHA/actual execution0。静态0与独立全true/actual0后calendarV3唯一推进1日；其后立即六观察并在ACK前采真实UI，按此前最终结算标准核人口全返/母容量35与27付费区划保持/C62D17worlds4/奖励与女王真实pending，不预写成功。原final V1人口误判/actual1与源码完整保留。生产Mod/open_kaishek均无改动，Steam离线。
+
+
+final_pending/source87a7530927a93c52d5859aab5afe981d75706507b42161cf74b9e835d4425b95静态0后27PASS/actual0，仅精确final延迟boundary/readyfalse/max0。final_delayed_review/sourceb0e58048f8996a3b86efe4a80c72fb337d079456a7d3ff3d0eca0b77555c8b91静态0后11PASS/actual0，V3唯一10.01→10.02/1日actual0、SAV7e13a140ff372bb916ac3e06f97c6dfe2bdc32a7439fe76e669f2360a2c9f939，六观察全部true/actual0，原error不增。
+
+真实结算结果：C49→62、D14→17、worlds3→4、previous_capacity14/last_capacity3、last_return491、G/made/last_manufactured0、母11429→11920、源391→0、全帝国11820→11920；原生最终补足两次随机消费，实际消息279合金与280人口、合金库存恰+130、总人口恰+100，全部原源391及原生新增100迁回母星。Menace885→1635/恰+750，native crisis_progression新增crisis_level_2并安排crisis.4145/days3，Mod eep_crisis仍1待月度刷新，不将二者误当矛盾。源pc_shattered/owner与controller字段已去除/owned_colonies仅[0]/pop_group无38残留/所有deposits空/任务active/native/being_devoured移除；situation50331660仍保留killed=yes的原生墓碑条目，不能要求序列化ID立即不存在或误判继续运行。旧colony38和source.colony=38引用也暂存，但actual_pop_sum0/非owned，旧species_information缓存num_pops491不是实际残留人口。母eep_capacity乘数17，基础18故总35，付费27级和母jobs保持；当日部分housing_usage仍上期缓存，后续tick核缓存刷新。eep_notice_pending已置，尚无eep.13/player_event/stage2，女王待月初。
+
+结算独立组件方案先于实现：绑定原27PASS0/11review0/六观察0/V3固定source与本两SAV；全量保存country0、原native消息279/280、原crisis_progression与country delayed、source/colony38/局势killed墓碑。核C/D/worlds精确delta和其他变量仅已列结算键改变；491=原源391+实际原生POP100、母+491/帝国+100、owned只母且species73无残留、G/made0和一回奖励750/原destroyworldobjective+750及nativelevel1→2。核最终两consume消息/源bomb25.3→65.3/同一日期、合金+130且能矿unity不变（同月仅一日，无月账）；母结构27/原jobs/容量17/housing与amenities正/所有owned设计21军舰/三MIA/两war历史/原error/41生产不变。技术P/S真实bank自然日增/Eng同星堡队列不变。新country delayed仅精准crisis.4145/days3/scope country0，Queennotice仅pending无玩家事件，组件业务boundary明确native_crisis4145_day3和queen_monthly_notice，不普通ready；通过组件不等于完整路线/重载验收。静态0后独立所有checks true/actual0。之后另精确3日review到10.05，先采原生危机事件UI再正常唯一option/核项目，女王11.01另按实况处理。
+
+只读母星POP界面已采351f1bb23f0f6a85adfaa4dbf48944b0ac80394c846d3ff3fe5e75ae54207776，实际11.9K和每月自然+7/移民0/组装0；当前是人口页，不能据此宣称已看区划容量35。将正常切基础设施采容量tooltip和35/27展示，绑定同SAV/结算组件后写候选。所有图仍未上传。没有确认生产Mod/open_kaishek bug或代码修改。
+
+
+settlement V1/source0d547bb180f2dc2102134e76c48365dbdfc97098784384da1452343b21bf2873静态0后19项恰一FAIL/actual1：single_destroy_world_objective750_and_native_level2_threshold，其余18true。实际两crisis原文显示objective750→1500/stock885→1635/levels1→[1,2]完全符合；失败是root直接把q.fields返回的带双引号原始value与无引号字符串比较。q.fields保留原始token引号、q.scalars才解释scalar，此为私有脚本已有接口用错，非Mod/open_kaishek/原生bug，也不外推成新的跨游戏语法规则。原proof SHA0816dabfd890c0db59a9baf57fcde7010f7dcd7d729de9558b0e3ee3dff0ecd5/原源码/19一FAIL/actual1/streams保留，未推进日历。
+
+独立settlement V2方案先于实现：仅重复level字段各自用q.scalars('level='+v)['level']解码后逐一比较1→[1,2]，保留重复字段且不使用会丢失前项的整体q.scalars；原objective+750/Menace+750和其他18项不松。新增第20项绑定原V1固定SHA/原19一FAILactual1/同SAV/proofSHA，并补危机destroy_enemy_ships objective135原样保持。独立新source/proof/exec-v2，静态0后同两SAV复算，全部true/actual0再继续。没有新的生产代码bug；现场仍10.02暂停。
+
+
+settlement V2/source812c022c3ffcd851fb6705c9c1b6e03ee24966d32b19113207182aa872f9416d静态0后20PASS/actual0，proof SHA44a9d284581bb82cadf3ec459107d5fe4e6258a15a0e83b348d052e8efe9f4c1。全部人口/信用/容量/原生奖励/墓碑/经济/舰船/两war/error checks通过；原V1一FAIL1保留。真实基础设施图71f736f65676137b7a34c301e38b01f39baeffa2b4a3ac8db3bafef719b7a6db已目视核5/35蜂巢、7/35发电、15/35采矿、0/35农业/11.9K/觐见女王·白绮；新candidate terravore-final-native-settlement-core-workshop-gallery-candidate.json绑定本SAV/20PASS及POP图SHA，未上传。下一唯一3日到10.05，独立review只接受此20PASS/source812c…及精确原crisis.4145 country0 days3；Queen11.01尚未通过。
+
+
+crisis4145-review静态0后5PASS/actual0，唯一3日到2278.10.05/SAV073f662405184c78ce128a6f4d891859eaca16f2f059f1eaba417c118f94ba63，V3/六观察全部true/actual0。真实唯一player_event282/crisis.4145/country0到期2281.01.05（这是选项超时，不是事件触发日）；消息“吾乃军团”date10.05，全部POP11920/EEP/库存不变/no新增error。country延迟已消费，mother住房usage已刷新11920，无人口缺失。实际简中图652936ea5951eae43f90f31022081720c7108938c4f5e8a6c845ea4a828b9fdb已目视核“吾乃军团/事件链：化身天灾/这就是我们的道路。”，唯一option位于510,514，尚未ACK。
+
+crisis到达组件方案先于实现：原20结算PASS/source812c…/固定proof/SAV锚定，当前六观察/source44c…/V3/sourcec0…/5review actual0与准确3日；核source毁灭无活局势/母11920与容量17结构27/EEP与所有库存原样/舰船身份21设计与三MIA/两war无新battle/error41生产，唯一pending282/crisis.4145/同原country0 scope并country delayed为空，原Queennotice保持。独立alltrue/actual0后才点击上述唯一option。
+
+危机282 ACK设计先于实现：新可复用normal-event-ack guard支持此nativecrisis.4145及随后eep.13/eep.31的叙事无奖励option0。必须两实际SAV同日、前原组件alltrue/actual0/sourceSHA与SAV绑定、点击/正常save actual0；从原pending精确去掉目标ID/对应消息，selected_history恰新增human1/option0一次，其他pending（女王双事件时）原样。eep.13/eep.31所有其余top roots/country原文完全不变；crisis.4145只允许country0.events新增唯一未开工CRISIS_SPECIAL_PROJECT_PSIONIC_2（本is_psionic优先于hive分支）、scope同事件且母7 carrier、allocator+1、其他项目与chain原样；允许原生refresh_auto_generated_ship_designs改变模板design但所有owned实际设计必须不变、random_count因项目ai_date正常+1，除此所有top和country严核不变/无库存POP奖励。项目cost6000物理来自原生00_projects_nemesis.txt，不免费完成。ACK后单独设计26日10.05→11.01/月初QueenC60+矿物舰通知，不把已触nativelevel2当更高级验收。
+
+
+原生crisis282到达组件/source985bd358dcc95c9c691ff3629f8f838b2e204fba848b1dcd1c2affb79888c567静态0后9PASS/actual0，才正常唯一510,514点击与save实际0。ACK后同日SAV2e272b75fc4b9f688094ff01e124e2affe00416736639ebc6526492182c6a40f/no新增error；真实项目id8/CRISIS_SPECIAL_PROJECT_PSIONIC_2/未开工/ai_date2278.10.11/母7、allocator8→9。只读初次比较错误地在每个top key循环重新扫描整个gamestate导致长耗时，已核唯一helper PID15572后终止该只读进程（actual1/无游戏操作），改一次解析缓存；另初次entity调查对scalar none调用q.fields报ValueError，随后先检测opened再解析，原错误不改写成Mod问题。
+
+原生refresh INV7f901ef47c9edcc0edac107663ce6aa0fa15dce3a44e9728b7ec95502b2f6667保存完整changed ships/fleets/designs/countrycollection和top scalars。新事实修正前述“random仅+1/所有owned实际design不变”假设：真实random331528808→331529041（+233），last_created_design285214259→184550902；nativeafter refresh_auto_generated_ship_designs创建5自动模板：184550902 crisis_corvette、201328177 military_station_medium、218105357 military_station_large、251659768 starbase_starport、268436983 starbase_starhold，清理5旧scalar none代号167773686/184550961/201328141/234882552/251659767；country0 collection去4旧模板251660010/369100552/385877735/402654950并加这5。旧模板全局是否存留按实际原件保持，不能称destroy ship。
+
+三个2.29缴获的原资源站ship50332983/50333076设计58→8、50333335设计59→9，原设计growth_stages完全相同（mining/research默认section），只有名称/graphicalculture不同，ship原文除此implementation.design和is_original_design=no完全不变（HP/armor/shield/max/位置/出生日期等无改变）；对应fleet16778103/16778097/875只properties新增dirty_cloaking_strength=yes。全部21军舰和其他owned设计严格原样，不把这三被接收资源站映射误写矿物舰或免费升级。此行为可由原生事件after直接解释，未确认新Mod或P引擎bug。
+
+ACK组件实施范围修正先于实现：本crisis ACK单独guard，固定本INV/两SAV/原arrival9/source985…/actual0与真实点击save、原生event/option/PSIONIC_2源码；top只上述已核country/events+collection、ship_design exact5新模板/5旧none清理、fleet/ships exact3同组件站映射、random+233/lastdesign184550902、目标pending/消息/history可变。其余世界top/所有other country/母所有人口结构/EEP经济AP研究/两war全原文一致；每个新模板auto_gen/精确size和countrycollection、三站exactfields和同growth组件、所有其余actualowned原文必须核，不能泛放设计变化。原计划random+1不用于放行此原生刷新情形；后来Queen纯叙事ACK仍全top原样无此例外。
+
+
+crisis282 ACK/sourceccccc87cffa8a5e61ce0f583f6da85438ff9ce30b83fb30e2ed078fa411704bf静态0后15PASS/actual0。所有被缴获资源站实际raw仅已核同组件design映射/is_original_design与fleet dirty标记，21军事与其余实体/世界/所有EEP现金POP完全原样，唯一project8未开工，原生refresh INV7f901…绑定通过。没有生产Mod或P引擎变动/缺陷。
+
+女王月初方案先于实现：独立review固定本15PASS/actual0/sourceccccc…与当前SAV2e272…，核date10.05/source已毁/母11920/C62D17worlds4/last_return491/Gmade0/noticepending/原生Nemesis2/未开工项目8/无其他pending或country delayed/原error41生产CN；只允许10.05→11.01恰26日，boundaries仅queen_monthly_notice。静态0/独立全true0后V3唯一26日，六观察actual0即先采所有真实Queen UI/CG，任何ACK前绑定SAV/SHA/OCR。预期eep_stage1→2/eep_crisis1→2/eep_fleet_stage0→2/C_remainder1→2、noticepending移除/新增fleetnotice、实际eep.13成长与eep.31矿物舰两通知；其他EEP奖励与Menace/来源毁灭回执不能重发。实际order和全局事件ID以真实SAV为准；不可把排队但未见的第二张CG当已采或已验收。核心report快照与当月实际growth原件互证、正住房/舒适和核心结构27级保持，预算和自然增长独立核，工程星堡原队列/真实P/S bank、全部21军舰/三MIA/已知三站新design/两war/error保持。随后各原生单选叙事ACK严格零经济效果，再另开启真实矿物舰正常付费建造/维护与后续危机项目，当前只代表阶段通知而非矿舰实造验收。
+
+
+C60-month-review/source321aaf553d61561c6758d95eef47cd2114c86d38ffa7f88366a4b9c7c9a83ee0静态0后5PASS/actual0，唯一26日到2278.11.01/SAV75fdf019ba9fdb637f9f0a41e0375815c6fe830bf9d1093f9dc414604e8e6e73，V3/六观察actual0/error不增。真实两个player_event283=eep.13/284=eep.31（timeout2281.02.01），消息“群星归心”和“以群星铸成刀锋”；stage2/crisis2/fleet_stage2/C_remainder2，noticepending已去、fleet_notice63489120，C62/D17/worlds4/return491/Gmade0/Menace1635保持。界面先显示后发284矿舰事件，已采5d0310c7c8624b901111bbbe3d7afa832c4be5c162ab1e365f6e5fa512a16809并目视核女王/轨道舰队CG与上述真实中文，不把此图冒称283成长事件。真实option在510,537。
+
+月度人口11920→11926/+6，与last_month_growth_data.current_month_growth_details.GROWTH_CAT_GROWTH=6互证；growth_and_size={month_start_size11429,growth497}跨含10.02迁回491，所以497=491+6，不得把497全当本月自然增长或重复Mod造人。details中的GROWTH_CAT_OTHER=391原样保留，不单凭它推出完整分项相加（其余原生出生100已有前日实际SAV守恒证据）。eep_report当月先于增长，实际母snapshot11920、最终actual11926；只证明本次时序，不能硬要求snapshot等于随后增长后的总数。free_districts6/capacity17。维护岗3536→4033（+497）为原生返还后岗位重新分配，其他岗位shape/科研满岗仍需核；不要求所有workforce原样。
+
+唯一额外原生消息281为泰梅西安联邦(country1)对country0/war1/status_quo的旧offer193273528320超时10.30失败（ACTION_OFFER_PEACE_PROPOSAL_FAILED_RECIPIENT），并无手动外交/和平，war1双方目标和两forcepeace字段及日期仍原样。该原生超时不算Mod bug；月度守卫须核实际两war原文只允许疲劳自然变化、无新battle/终战。能矿合金凝聚月初delta分别69.08/39.3455/30.194/72.71875，与真实current月净额一致，lastmonth=前current。
+
+月度组件实施细节先于实现：固定ACK15/sourceccccc…/原review5/source321a…/V3/sourcec0…/六观察/source44c…/两实际SAV；精确上述两个Queenpending/两中文消息与唯一已核超时peace消息，EEP只改已列四变量、flags仅noticepending去/fleet_notice加；source无owner/empty/killed墓碑允许日常清理，母snapshot11920/free6/capacity17与actual11926和+6原growthdetails互证；四现金完整current净额对账/lastmonth/cap影响单列/真实P/S banks和Eng星堡队列保持/21原军舰三MIA和三资源站新actual设计保持，其他结构/jobs shape及满岗/住房舒适正。静态0后全true/actual0才正常ACK当前284一次；新same-day通用Queen ACK只接受eep.13/eep.31的option0无效果源码、原最新PASS/actual0/SAV/真实clicksave、目标pending和message恰删除/其余pending原样/historyhuman1option0一次、所有其余worldtop/country/经济POP完全原样。ACK284后先采实际283成长CG，再ACK283并各自存档守卫，不跳过第二张图或混用SAV绑定。
+
+
+C60月度V1/source45ea963ef4405032beeec0a09c742188719fb2b508a6005b78145aed8404c086静态0后16项恰一FAIL/actual1：goverment_AP_traditions_PS_banks_Eng_original_starbase4_queue_held，其余15true（含双通知、所有奖励不重发、自然6/完整四资源台账/军舰与war/原error）。分解原件：government/AP/traditions/真实banks全部相同、tech_status除engqueue亦相同，Eng tech_starbase_4/date2275.02.02/progress1498.60854两端完全相等。root新guard错误地把原既有“同队列进度不下降”>=收紧成必须严格>，未有设计要求/证据保证本段科研逐次增长；不能用此误判吞噬Mod缺陷，也不能宣称本段科研取得进展。原V1 proof SHA97e803682d1a68a321c69b3d29c0e7d4928f0d3216f61b65464ae08f993b15b8/actual1/源码/流保留，未ACK任何Queen事件。
+
+月度V2方案先于实现：只把Eng进度比较恢复既有>=（当前实值相等），仍原tech/date/其他字段/真实bank/AP全一致；新第17项绑定原V1/source45ea…/原16一FAILactual1/同两SAV/proofSHA，其他15严格检查完全不松。先静态0/独立17全trueactual0后才ACK284并采283。该组件不证明星堡科研完成或研究速度，后续项目研究须单独正常开工并核真实进度/资源消耗。
+
+
+C60月度V2/source33a77916ea6b1e071f7acc0211c9a7aa679dfdacf91c8d7bad74bbdbe8168f31静态0后17PASS/actual0，原16一FAIL1完整保留。Queen叙事ACK/source424a8e536dd8af4a2ce2c18867f3f5dad54462a457f66b8043346690fbe91d12静态0后首次eep.31/284独立9PASS/actual0，SAVf34dc6835d01ef7ccba97d5958cf43e0b0e4c6bdaf4d42c8c216fe6443ea88e1，世界其他top/country/经济POP全部原文相同，仅284pending/message去除/history一次，283仍pending。实际283成长图913fdee447461e0a3d9024945d630e86b0e115c93e42f8839a3a6e5961bfd34c已目视核群星归心/C62/D17/制造0/成长女王CG；正常点击283唯一option并保存中。两新candidate terravore-C60-fleet284-workshop-gallery-candidate.json、terravore-C60-growth283-workshop-gallery-candidate.json分别绑定原始月初SAV75fd…/17PASS和ACK后SAVf34d…/9PASS，图片在对应事件ACK前采集，未上传、不声称矿物舰实造通过。
+
+
+第二Queen283正常ACK后同日SAV2dfccc7ffebd8cc8e2b9c4869dd873f2eb395c739b74d492675b84d549fbb434，通用source424a…独立9PASS/actual0，pending为空/所有其他世界top与country/经济POP原文完全不变。两Queen成长/矿舰解锁通知及零收益ACK分项已通过；仍非矿物舰实际生产/全路线验收。
+
+最新核验 2026-10-12 08:11：噬岩者第四源亚蒙-I已于2278.10.02正常结算，原生补足合金130和人口100、源391+100共491全部返母，C49→62/D14→17/worlds3→4，母总容量35/原27级付费区划保持，G/made/last_manufactured0；独立结算V2 20PASS/actual0。Menace885→1635恰+750/nativeNemesis2，原生crisis.4145/282在10.05出现并正常ACK，新增id8未开工CRISIS_SPECIAL_PROJECT_PSIONIC_2；独立原生ACK15PASS0，三个缴获资源站只同组件design映射/21军舰严格保持。2278.11.01实际Queen283=eep.13“群星归心”/284=eep.31“以群星铸成刀锋”、stage2/crisis2/fleetstage2；月度V2 17PASS0/四资源净额完整对账/自然增长6至11926/奖励未重发；两叙事ACK各9PASS0，世界其他原文不变、pending现空，最新SAV2dfccc7ffebd8cc8e2b9c4869dd873f2eb395c739b74d492675b84d549fbb434。两张真实Queen CG/扩张母星35容量/局势31/32与原生POP消费图均已采并按对应SAV与独立证明写Workshop候选，尚未上传。源37原生防御已结束，四阵亡不复活、21存活/三MIA原日期保持。原V8三FAIL以及后续私有POP假定/quoted scalar/严格科研增长误判等全部原失败与独立修正保留，均非已确认生产Mod/open_kaishek缺陷；生产41/0.2.0/tree未改，原error2814B不增。没有新确认Mod代码bug，不保证未验部分无bug。整路线仍仅纵火本能1/7=14.3%，下一铁心灭绝者；真正矿物舰付费建造/维护、危机后续项目及3/4、更高女王C200/长跑重载仍待，不扩大推荐。Steam离线/实机仅简中，九非中文维持此前静态校验通过、运行时不在范围内。
+
+
+## CUT41 方案：第四源最终结算、C60女王双通知与原生危机二级
+
+当前2278.11.01暂停，所有helper已结束；唯一label native-fourth-settlement-C60-and-crisis2-notices，固定基线CUT40 native-source37-four-losses-and-short-battle-watch/已推送3afca45781b78bb43e653cde1780e309489ecbcf。保存CUT40后Git原回执、review06–12与各7日V3/六观察/V9 25PASS、原278/defense-end11PASS/原战报与war度量分别保留、V10两段26PASS/9.30实际人口更正、局势及母星真实图、final review V1原一FAIL1及V2 11PASS/最终10.01原延迟与27PASS/精准1日review11/10.02结算V1 quoted scalar原一FAIL1与独立V2 20PASS、原750奖励/491返还/两native消息、crisis4145 review5/arrival9/ACK15/全部设计刷新INV与私有只读调查错误、月初review5/六观察/C60月度V1原一FAIL1与V2 17PASS、两Queen原CG与候选SAV绑定、各零收益ACK9PASS0及最后pending空SAV2dfccc…。保存源码/原始stdout stderr/实际return/SAV全原件，不删除失败或原战损。
+
+元数据粗估新或大小变动810文件/224360459B，D空余892784640B/C约20.6GB，足本次增量及Git对象；精确新增/复用计数以archive实际输出为准，不把估算当验收。archive→force stage唯一newcut+五任务docs→独立verify实际Git原字节PASS0→回填计数/rootreceipt并严格scope/diff→commit/push main/独立ls-remote全SHA。冻结期间不写RUN/不操作GUI或日历，所有Git回执在冻结验证后写RUN、进入下一切点。正式生产树0.2.0/41/tree不变，open_kaishek沿用同payload既有通过证据；没有确认生产Mod/P工具缺陷，此切点不等于全路线/重载或公开发布。
+
+提交推送后继续真实矿物舰与正常项目：先只读正常UI确认本country自动crisis_corvette设计184550902、母星船坞可见成本/建造菜单与原生价格/合金消耗/维护，按实际选择1艘正常付费并逐一核stock扣款/唯一construction条目→进度→出生/实际设计/维护，不把普通舰或自动模板当矿舰出生。原生id8物理6000项目只有5769.5985真实物理bank，需正常开工与后续真实tick验证，不免费完成/补科研；如果原生research进度不能按既有fast_forward推进，先只读诊断并改用正常取消暂停等待实际日tick，禁止用授予完成替代。后续更高危机/C200/长跑重载和下一铁心灭绝者仍按清单。Steam只在最后实际上传时在线。
+
+
+CUT41实际结果：freeze2026-10-12T00:19:19.302689Z，35814源/2971984513B，reused35003、新811/224372473B；独立Git暂存原字节核验PASS/actual0，35914唯一blob/3012930318B，根回执evidence/priority-native-fourth-settlement-C60-and-crisis2-notices-delta-staged-verification-2026-10-11.json（文件名后缀沿用既有helper，实际freeze为10-12）。第五源尚未开始、当前2278.11.01暂停/最新SAV2dfccc…/Queen两ACK9PASS0/pending空/当前生产0.2.0无改。全部原失败/原战损/实际返还与两QueenCG候选保留；原件验证通过不等于整路线或重载通过。
+
+编排经验：本次验证进程启动时stage会话尚未报告完成，随后已取得git add actual0；最终verify逐份新及复用原字节全部PASS0，最后stage scope818文件与cached diffcheck0。字节证明有效，但后续应先收齐stage实际退出再启动验证，避免对并发更新的index引入无谓不确定性。本次顺序原样保留，不伪写为全过程串行。加入根回执/五docs后只允许819本任务文件提交并推送main，独立核远端完整SHA后继续正常矿物舰生产与原生项目。

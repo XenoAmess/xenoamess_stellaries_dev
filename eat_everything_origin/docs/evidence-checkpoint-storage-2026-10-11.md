@@ -340,3 +340,17 @@ CUT39实际结果：freeze2026-10-11T22:18:18.673838Z，34695源/2638130907B，r
 
 
 CUT40实际结果：freeze2026-10-11T22:45:55.039869Z，35004源/2747623531B，reused34695、新309/109492624B；独立Git暂存原字节核验PASS/actual0，35103唯一blob/2787895481B，根回执evidence/priority-native-source37-four-losses-and-short-battle-watch-delta-staged-verification-2026-10-11.json。原V8三FAIL1/21true、四真实阵亡/三MIA/原277/全局舰船与双方war/sourceguard V1原FAIL及V2 12PASS0、新独立review与五段V9 25PASS0原件完整保存。仅暂停证据，不代表整体路线或重载验收。按scope/diff提交推送/独立核main完整SHA后继续review06限定7日。
+
+
+## CUT41 方案：第四源最终结算、C60女王双通知与原生危机二级
+
+当前2278.11.01暂停，所有helper已结束；唯一label native-fourth-settlement-C60-and-crisis2-notices，固定基线CUT40 native-source37-four-losses-and-short-battle-watch/已推送3afca45781b78bb43e653cde1780e309489ecbcf。保存CUT40后Git原回执、review06–12与各7日V3/六观察/V9 25PASS、原278/defense-end11PASS/原战报与war度量分别保留、V10两段26PASS/9.30实际人口更正、局势及母星真实图、final review V1原一FAIL1及V2 11PASS/最终10.01原延迟与27PASS/精准1日review11/10.02结算V1 quoted scalar原一FAIL1与独立V2 20PASS、原750奖励/491返还/两native消息、crisis4145 review5/arrival9/ACK15/全部设计刷新INV与私有只读调查错误、月初review5/六观察/C60月度V1原一FAIL1与V2 17PASS、两Queen原CG与候选SAV绑定、各零收益ACK9PASS0及最后pending空SAV2dfccc…。保存源码/原始stdout stderr/实际return/SAV全原件，不删除失败或原战损。
+
+元数据粗估新或大小变动810文件/224360459B，D空余892784640B/C约20.6GB，足本次增量及Git对象；精确新增/复用计数以archive实际输出为准，不把估算当验收。archive→force stage唯一newcut+五任务docs→独立verify实际Git原字节PASS0→回填计数/rootreceipt并严格scope/diff→commit/push main/独立ls-remote全SHA。冻结期间不写RUN/不操作GUI或日历，所有Git回执在冻结验证后写RUN、进入下一切点。正式生产树0.2.0/41/tree不变，open_kaishek沿用同payload既有通过证据；没有确认生产Mod/P工具缺陷，此切点不等于全路线/重载或公开发布。
+
+提交推送后继续真实矿物舰与正常项目：先只读正常UI确认本country自动crisis_corvette设计184550902、母星船坞可见成本/建造菜单与原生价格/合金消耗/维护，按实际选择1艘正常付费并逐一核stock扣款/唯一construction条目→进度→出生/实际设计/维护，不把普通舰或自动模板当矿舰出生。原生id8物理6000项目只有5769.5985真实物理bank，需正常开工与后续真实tick验证，不免费完成/补科研；如果原生research进度不能按既有fast_forward推进，先只读诊断并改用正常取消暂停等待实际日tick，禁止用授予完成替代。后续更高危机/C200/长跑重载和下一铁心灭绝者仍按清单。Steam只在最后实际上传时在线。
+
+
+CUT41实际结果：freeze2026-10-12T00:19:19.302689Z，35814源/2971984513B，reused35003、新811/224372473B；独立Git暂存原字节核验PASS/actual0，35914唯一blob/3012930318B，根回执evidence/priority-native-fourth-settlement-C60-and-crisis2-notices-delta-staged-verification-2026-10-11.json（文件名后缀沿用既有helper，实际freeze为10-12）。第五源尚未开始、当前2278.11.01暂停/最新SAV2dfccc…/Queen两ACK9PASS0/pending空/当前生产0.2.0无改。全部原失败/原战损/实际返还与两QueenCG候选保留；原件验证通过不等于整路线或重载通过。
+
+编排经验：本次验证进程启动时stage会话尚未报告完成，随后已取得git add actual0；最终verify逐份新及复用原字节全部PASS0，最后stage scope818文件与cached diffcheck0。字节证明有效，但后续应先收齐stage实际退出再启动验证，避免对并发更新的index引入无谓不确定性。本次顺序原样保留，不伪写为全过程串行。加入根回执/五docs后只允许819本任务文件提交并推送main，独立核远端完整SHA后继续正常矿物舰生产与原生项目。
