@@ -1,0 +1,13 @@
+"""Verify completed Git pack preservation after receipt-only PowerShell failure."""
+import hashlib,json,subprocess
+from pathlib import Path
+run=Path('_runtime/heart-of-devouring/runs/20261009T044016Z');root=Path(r'C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/git-object-pack-storage-terravore-20261012');manifest=json.loads((root/'source-manifest.json').read_text('utf-8-sig'));live=Path('.git/objects/pack');backup=Path('.git/pack-source-preserved-terravore-20261012');sha=lambda p:hashlib.file_digest(p.open('rb'),'sha256').hexdigest()
+checks={'exact_junction_target':live.is_junction() and live.resolve()==(root/'pack').resolve(),'empty_original_D_backup':backup.is_dir() and not list(backup.iterdir()),'exact_live_and_original_inventory':{x.name for x in live.iterdir()}=={x.name for x in (root/'original').iterdir()}=={v['name'] for v in manifest}}
+for directory in [live,root/'original']:
+ for row in manifest:
+  p=directory/row['name'];assert p.resolve().is_relative_to(root.resolve());assert p.stat().st_size==row['bytes'] and sha(p)==row['sha256']
+checks['every_live_and_preserved_original_byte_matches_manifest']=True
+cmd=['git','-c','gc.auto=0','-c','maintenance.auto=false','fsck','--connectivity-only','--no-dangling'];ex=subprocess.run(cmd,capture_output=True);(run/'git-pack-storage-recheck-stdout.bin').write_bytes(ex.stdout);(run/'git-pack-storage-recheck-stderr.bin').write_bytes(ex.stderr);checks['git_connectivity_actual0']=ex.returncode==0
+head=subprocess.run(['git','-c','gc.auto=0','-c','maintenance.auto=false','rev-parse','HEAD'],capture_output=True);checks['HEAD_held_actual0']=head.returncode==0 and head.stdout.decode().strip()=='eb1af11aea50dfbaced171de3002e64c5509ef26'
+import shutil
+p={'status':'PASS_GIT_PACK_PRESERVED_AND_RECHECKED' if all(checks.values()) else 'FAIL','checks':checks,'files':len(manifest),'bytes':sum(v['bytes'] for v in manifest),'free_D':shutil.disk_usage('D:/').free,'free_C':shutil.disk_usage('C:/').free,'manifest':manifest,'original_script_sha256':sha(run/'terravore_preserve_git_pack_storage.ps1'),'original_script_actual_exit':1,'original_failure':'Final receipt only: Measure-Object property bytes cannot be found in hashtable inputs. Copy, junction, first fsck and preservation had completed; no source deleted.','git_recheck_command':cmd,'git_recheck_returncode':ex.returncode};out=run/'git-pack-storage-independent-preservation-proof.json';assert not out.exists();out.write_text(json.dumps(p,indent=2),encoding='utf-8');(run/'git-pack-storage-original-source-manifest.json').write_bytes((root/'source-manifest.json').read_bytes());print(json.dumps({k:v for k,v in p.items() if k!='manifest'}),flush=True);assert all(checks.values())

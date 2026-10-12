@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\runs\20261009T044016Z\priority_terravore_project2_wait_guard.py", line 36, in <module>
+    'all_owned_ships_positive_HP_no_damage_or_revival':all(q.scalars(v).get('hitpoints',0)>0 and q.scalars(v).get('hitpoints',0)>=q.scalars(b['owned_ships_raw'][i]).get('hitpoints',0) for i,v in a['owned_ships_raw'].items()) and all(q.scalars(a['raw_roots']['ships']).get(str(i),'none')=='none' for i in [1807,1895,1896,67110639]),
+                                                                                                                                                                                                                                     ^^^
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\runs\20261009T044016Z\priority_terravore_project2_wait_guard.py", line 36, in <genexpr>
+    'all_owned_ships_positive_HP_no_damage_or_revival':all(q.scalars(v).get('hitpoints',0)>0 and q.scalars(v).get('hitpoints',0)>=q.scalars(b['owned_ships_raw'][i]).get('hitpoints',0) for i,v in a['owned_ships_raw'].items()) and all(q.scalars(a['raw_roots']['ships']).get(str(i),'none')=='none' for i in [1807,1895,1896,67110639]),
+                                                                                                                                                                                                                                                   ~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'ships'

@@ -1486,3 +1486,5 @@ CUT42提交时Git自动maintenance/repack全历史，D余量由457555968B降至1
 
 
 Git磁盘处置实际结果：原commit6424c53a7021a16f24a2eba5ddc6be78f3646c71 actual0，自动maintenance已自行报Out of diskspace/actualstderr保留，未实际停止进程。确认仅遗留tmp_pack_IdUp3P465305600B，已按LiteralPath单文件移动至C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/git-maintenance-cut42-20261012T0114Z/tmp_pack_IdUp3P；前后SHA256 bffe4647b5307994e10a4607085b10d7eb8e8c3d2aae886a79f33fb264ad07c3一致，原不存在，D恢复465317888B。无删除有效pack或验收证据，运行时无操作。Git诊断新回执写RUN留下一切点。本任务未推送提交补本说明后用命令级gc.auto=0/maintenance.auto=false amend，不改全局配置；amend后额外git fsck --connectivity-only确认磁盘事故未损对象引用，实际0后推送并独立核远端完整SHA。
+
+2026-10-12当前2279.04.01正常扩张：实付300M征募3支进攻部队（100M/90工作量每单，首30/90，后两0），全现金/科研/EEP不赠送；18原舰正常移动188→146→96→53→147。来源归属必须区分system.starbases→station.fleet→country.owned_fleets与planet.owner，不能把foreign系统中前超光速世界误当对手殖民地。目标拉萨多尔system147/物理1578/colony30/owner1/470人口、无colony30守军，后续正常登陆。新矿舰16777746仍驻母base0，整月.75E+.75M与0新增合金通过；原18普通护卫舰出征原生贸易后勤另记（首月ships.trade10→37），不能冻住全部舰队贸易账来判断矿舰缺陷。31PASS/actual0，不提前宣告征服/军队出生或全部矿物舰项目完成。详收尾设计页。

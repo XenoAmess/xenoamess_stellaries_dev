@@ -1,0 +1,33 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "gc.auto=0",
+    "-c",
+    "maintenance.auto=false",
+    "-c",
+    "http.version=HTTP/1.1",
+    "ls-remote",
+    "--exit-code",
+    "origin",
+    "refs/heads/main"
+  ],
+  "started_at_utc": "2026-10-12T01:18:47.104447+00:00",
+  "finished_at_utc": "2026-10-12T01:18:48.440578+00:00",
+  "returncode": 0,
+  "outputs": [
+    {
+      "file": "git-remote-mineral-corvette-build-and-upkeep-stdout.bin",
+      "bytes": 57,
+      "sha256": "7c5a532cfd21db742db88becfa8da2c8cc231982f59dc93f3fd76651e04c0a27"
+    },
+    {
+      "file": "git-remote-mineral-corvette-build-and-upkeep-stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "local_head": "eb1af11aea50dfbaced171de3002e64c5509ef26",
+  "remote_head": "eb1af11aea50dfbaced171de3002e64c5509ef26",
+  "same_full_SHA": true
+}

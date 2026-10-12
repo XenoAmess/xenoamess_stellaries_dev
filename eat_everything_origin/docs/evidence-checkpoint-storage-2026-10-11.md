@@ -372,3 +372,23 @@ CUT42提交时Git自动maintenance/repack全历史，D余量由457555968B降至1
 
 
 Git磁盘处置实际结果：原commit6424c53a7021a16f24a2eba5ddc6be78f3646c71 actual0，自动maintenance已自行报Out of diskspace/actualstderr保留，未实际停止进程。确认仅遗留tmp_pack_IdUp3P465305600B，已按LiteralPath单文件移动至C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/git-maintenance-cut42-20261012T0114Z/tmp_pack_IdUp3P；前后SHA256 bffe4647b5307994e10a4607085b10d7eb8e8c3d2aae886a79f33fb264ad07c3一致，原不存在，D恢复465317888B。无删除有效pack或验收证据，运行时无操作。Git诊断新回执写RUN留下一切点。本任务未推送提交补本说明后用命令级gc.auto=0/maintenance.auto=false amend，不改全局配置；amend后额外git fsck --connectivity-only确认磁盘事故未损对象引用，实际0后推送并独立核远端完整SHA。
+
+
+2026-10-12 噬岩者续验前 D 再次满盘；新遗留 tmp_pack_KvTJWZ465043456B 已按既定方案转存 C 专用目录，前后 SHA2569f3e1878c3a46ab83d2091473c215d64d99479a8cdc4af8b6c9a3ac771731ac5 一致，恢复约464MB。首次进程计数门禁未通过未移动，后续查无 Git 活动才执行。Python 跨盘 move 因源只读属性在已复制后无法移除源，随后核对两端同 SHA，原生 Move-Item -LiteralPath -Force 实际0完成，未动有效 pack。原回执 RUN/git-maintenance-repeat-temp-preserved.json。后续归档控制增量与磁盘容量；所有 Git 命令使用命令级 gc.auto=0/maintenance.auto=false。
+
+
+续验环境修复方案：命令级关闭自动维护未能阻止后台客户端每约3分钟再次触发本仓库 repack，遗留大量0B临时文件；Steam 位于 D 的截图也已出现0B，首次只读 capture 失败，不能视作有效 UI。为保持证据采集，先仅在本仓库 local Git config 设置 gc.auto=0、maintenance.auto=false（不改全局、不停其他仓库进程），复核实际生效、磁盘空间及新截图。如果仍有正在进行的本仓库 repack，先只读识别进程和父链，再处置已确认的本仓库自动维护。验收标准：有效 pack 保留、Git connectivity通过、截图新文件可解码且非0、游戏日期保持2279.01.01，生产41文件不变。
+
+
+## 噬岩者收尾期间 Git pack 存储迁移方案（实施前）
+
+目标：D仅余约458MB不足持续保存下一批实机原件与Git对象，C约18GB。保持仓库工作树/refs/远端/历史对象和原始证据完整，将本仓库.git/objects/pack的有效文件和既有临时文件转存C专用artifact存储；不清理其它项目/用户数据、不删除有效pack或历史。生产Mod和游戏日期不变。
+
+设计：只在当前游戏暂停、无归档/日历/其它本任务Git命令时，枚举pack目录非递归全部文件，拒绝子目录，保存精确绝对路径/长度/SHA256清单；复制到C唯一git-object-pack-storage目录，逐文件SHA验证。确认无活动Git进程后，核源仍与清单一致，将原D pack目录同卷移动到本仓库.git下唯一保留目录，创建原D pack路径到C新目录的NTFS目录junction。命令级禁止自动维护，执行git fsck --connectivity-only实际0、确认HEAD仍eb1af11a…且所有新pack文件同SHA；若失败，不推进游戏并按原保留目录恢复指向。成功后仅把原保留目录的每个已核文件逐一使用原生Move-Item -LiteralPath -Force转存C另一个original保留目录（保留第二份，前后SHA一致），D留空目录、不做递归删除；所有计算的绝对源/目的均先验证位于本仓库.git或明确的C专用根。
+
+验收标准：两份C字节与原清单全一致，D pack junction目标准确、有效对象/refs不变、Git连接性实际0，D恢复足够空间；原stdout/stderr/操作清单/实际退出写RUN并进入下一证据切点。局部gc.auto0/maintenance.auto=false保持，不改全局；这属于任务环境修复，不是Mod/P引擎缺陷。
+
+
+Git pack迁移本体已完成并原fsck0，但PowerShell最后生成receipt使用Measure-Object对hashtable读bytes失败，原脚本actual1，不能把整个脚本报0。停止后续driver。修复只补独立验真receipt，不重跑迁移：重新读取既有C清单，完整两份SHA/长度/目录目标/空D保留目录核验、再次原生Gitfsck0及HEAD不变，保存原失败说明与本次源码/流/actual，成功才恢复实机。
+
+独立保全复核完成：priority_verify_git_pack_preservation.py/sourcefcc9b00ccd941585b0af2952918386f4198ff897d772b21c9c567ae53e28ccca，6PASS/actual0。55文件/3507367443B，C端pack与original双副本逐文件SHA及长度均同原清单；D端pack junction正确，HEAD保持eb1af11aea50dfbaced171de3002e64c5509ef26，独立git fsck --connectivity-only实际0。原PowerShell迁移最后receipt计算错误actual1原样保留，不能记为原脚本0。复核后D约3.96GB/C约15.59GB可用，未删除任何历史对象。该恢复为同任务证据存储修复，生产Mod不变。

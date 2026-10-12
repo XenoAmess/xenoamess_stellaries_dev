@@ -1,0 +1,64 @@
+"""Bounded same-month native psionic2 progress and exact true-bank ledger, no grants."""
+import json,logging,re,sys,zipfile
+from pathlib import Path
+from decimal import Decimal as D
+before,after=sys.argv[1:];sys.path[:0]=['eat_everything_origin/tools'];sys.argv=['runtime']
+import runtime as r,audit_save as q
+logging.disable(logging.INFO);h=r.harness;run,user,meta=h.load_run();load=lambda n:json.loads((run/n).read_text('utf-8-sig'));sha=h.sha256
+obs=load(after+'-construction-boundary-observation-v2.json');oe=load(after+'-boundary-observation-v2-execution.json');b,a=obs['before_state'],obs['after_state'];ba,aa=b['audit'],a['audit'];bc,ac=ba['countries']['0'],aa['countries']['0'];cal=load(after+'-calendar-receipt.json');ce=load(after+'-calendar-execution.json');pre,pe=load(cal['prior_proof_file']),load(cal['prior_execution_stage']+'-execution.json');days=cal['days'];ticks=int(int(ba['date'][-2:])<2<=int(aa['date'][-2:]));omit=lambda raw,ks:[(k,v,o) for k,v,o in q.fields(raw) if k not in ks]
+def queue(c,name):
+ raw=q.block(c['tech_status'],name);ts=list(q.tokens(raw));return q.scalars(raw[ts[0][2]:ts[-1][1]]) if ts else {}
+bp,ap=[queue(c,'physics_queue') for c in [bc,ac]];be,ae=[queue(c,'engineering_queue') for c in [bc,ac]]
+def delays(st):return [v for k,v,o in q.fields(q.block(q.block(st['country0_raw'],'modules'),'standard_event_module')) if k=='delayed_event' and o]
+bd,ad=delays(b),delays(a);assert len(bd)==1;bs=q.scalars(bd[0]);remain=bs['days']-days;trade=sum(D(str(v.get('trade',0))) for v in ac['budget_categories']['current_month']['income'].values());delayok=(len(ad)==1 and q.scalars(ad[0])=={'event':'pirate.6','days':remain} and omit(ad[0],{'days'})==omit(bd[0],{'days'})) if remain>0 else not ad and trade<D(300) and 'birth_of_piracy' not in q.scalars(q.block(a['country0_raw'],'flags'))
+def ownitems(st):return {k:v for k,v,o in q.fields(q.block(q.block(st['raw_roots']['construction'],'item_mgr'),'items')) if o and q.scalars(v).get('paying_country')==0}
+def ownqueues(st):return {k:v for k,v,o in q.fields(q.block(q.block(st['raw_roots']['construction'],'queue_mgr'),'queues')) if o and q.scalars(v).get('owner')==0}
+known={'2':('2280.03.16',2),'33555013':('2280.01.03',33555519),'33555278':('2281.06.27',50333369)};mia={i for i,v in a['owned_fleets_raw'].items() if q.scalars(q.block(v,'properties')).get('mia')=='yes'}
+ship_identity=lambda st:{i:(q.scalars(v).get('fleet'),q.block(v,'ship_design_implementation'),q.scalars(v).get('construction_date')) for i,v in st['owned_ships_raw'].items()}
+actual_military=lambda st:{sid for fid,v in st['owned_fleets_raw'].items() if q.scalars(v).get('ship_class')=='shipclass_military' for sid in q.ids(q.block(v,'ships')) if str(sid) in st['owned_ships_raw']}
+with zipfile.ZipFile(run/(after+'.sav')) as z:full=z.read('gamestate').decode('utf-8-sig')
+allships=q.scalars(q.block(full,'ships'))
+flags=q.scalars(q.block(a['country0_raw'],'flags'));variables={'eep_c':62,'eep_d':17,'eep_worlds':4,'eep_psi':1,'eep_stage':2,'eep_crisis':2,'eep_fleet_stage':2,'eep_g':0,'eep_made':0}
+def planets_same_with_native_timers():
+ if set(ba['planets'])!=set(aa['planets']):return False
+ for i,bp in ba['planets'].items():
+  ap=aa['planets'][i]
+  if {k:v for k,v in bp.items() if k!='flags'}!={k:v for k,v in ap.items() if k!='flags'}:return False
+  expected=json.loads(json.dumps(bp['flags']))
+  for v in expected.values():
+   if isinstance(v,dict) and v.get('flag_days',0)>0:v['flag_days']-=days
+  if expected!=ap['flags']:return False
+ return True
+def population_same_with_exact_group1_cache():
+ bs,ats=ba['pop_groups'],aa['pop_groups']
+ if {k:v for k,v in bs.items() if k!='1'}!={k:v for k,v in ats.items() if k!='1'}:return False
+ cache={'power','crime','housing_usage'};bg,ag=bs['1'],ats['1']
+ return {k:v for k,v in bg.items() if k not in cache}=={k:v for k,v in ag.items() if k not in cache} and all(ag[k]==bg[k] or D(str(ag[k]))==D(str(ag['size']))/(D(1) if k=='housing_usage' else D(100)) for k in cache)
+checks={
+ 'prior_allPASS_actual0_original_SAV_source':pre['status'].startswith('PASS') and all(v is True for v in pre['checks'].values()) and pe['returncode']==0 and pe['helper_sha256']==sha(Path(pe['command'][1])) and pre['after_sha256']==ba['save_sha256'],
+ 'six_observations_actual0_fixed_source_actual_SAV_pair':len(obs['checks'])==6 and all(v is True for v in obs['checks'].values()) and oe['returncode']==0 and oe['helper_sha256']=='44c27824de3486709c69acfb8ccc2b8ecff9cf356374bfd5fdc584db6a198a9b' and all(sha(run/(st+'.sav'))==au['save_sha256'] for st,au in [(before,ba),(after,aa)]),
+ 'native_calendarV3_actual0_exact_review_bounded_same_month':ce['returncode']==0 and ce['helper_sha256']=='c0bd2c1b44adc36b746cc8e13d87754c7bad970cee870d4e87eb63ccbb176589' and cal['business_preflight'] is True and 1<=days<=7 and ba['date'][:7]==aa['date'][:7] and cal['review_file'] and sha(run/cal['review_file'])==cal['review_sha256'],
+ 'actual_physics_project8_date_only_progress_calibrated':bp.get('special_project')==ap.get('special_project')==8 and bp.get('date')==ap.get('date')=='2279.01.01' and D(str(ap.get('progress',0)))-D(str(bp.get('progress',0)))==D('129.98954')*ticks and D(str(ap.get('progress',0)))<6000,
+ 'true_physics_bank_exact_minus55_31470_per_tick':D(str(ac['research_stockpile']['physics_research']))-D(str(bc['research_stockpile']['physics_research']))==-D('55.31470')*ticks,
+ 'true_society_bank_exact26_58919_no_queue':D(str(ac['research_stockpile']['society_research']))-D(str(bc['research_stockpile']['society_research']))==D('26.58919')*ticks and not queue(ac,'society_queue'),
+ 'original_starbase4_engineering_exact37_72669_no_newtech':be.get('technology')==ae.get('technology')=='tech_starbase_4' and be.get('date')==ae.get('date')=='2275.02.02' and D(str(ae.get('progress',0)))-D(str(be.get('progress',0)))==D('37.72669')*ticks and ac['research_stockpile']['engineering_research']==bc['research_stockpile']['engineering_research']==0 and bc['research_progress_by_tech']==ac['research_progress_by_tech'],
+ 'four_true_cash_and_current_budget_no_same_month_income':all(bc['effective_stockpile'][k]==ac['effective_stockpile'][k] for k in ['energy','minerals','alloys','unity']) and bc['budget_categories']==ac['budget_categories'],
+ 'EEP_all_credit_and_notifications_held_no_grants':bc['flags']==ac['flags'] and bc['variables']==ac['variables'] and all(ac['variables'].get(k)==v for k,v in variables.items()),
+ 'government_AP_traditions_native_crisis2_held':all(bc[k]==ac[k] for k in ['government','ascension_perks','traditions']) and q.block(b['country0_raw'],'crisis_progression')==q.block(a['country0_raw'],'crisis_progression'),
+ 'mother_actual11938_founder73_only_colony0_held':bc['owned_colonies']==ac['owned_colonies']==[0] and ba['colonies']['0']['actual_pop_sum']==aa['colonies']['0']['actual_pop_sum']==11938 and b['species_population_by_colony']==a['species_population_by_colony'] and aa['planets']['7']['variables']['eep_capacity_value']==17,
+ 'original27_paid_district_levels_and_planets_held':ba['districts']==aa['districts'] and sum(aa['districts'][str(i)]['level'] for i in aa['colonies']['0']['districts'])==27 and planets_same_with_native_timers(),
+ 'actual_pop_jobs_and_species_held':population_same_with_exact_group1_cache() and all(ba[k]==aa[k] for k in ['pop_jobs','species','deposits','event_targets']),
+ 'no_new_own_construction_or_order':ownitems(b)==ownitems(a) and ownqueues(b)==ownqueues(a),
+ 'all_original_owned_ship_identity_designs22military_held':b['owned_fleets']==a['owned_fleets'] and b['owned_ship_ids']==a['owned_ship_ids'] and ship_identity(b)==ship_identity(a) and actual_military(b)==actual_military(a) and len(actual_military(a))==22 and ac['native']['used_naval_capacity']==109,
+ 'all_owned_ships_positive_HP_no_damage_or_revival':all(q.scalars(v).get('hitpoints',0)>0 and q.scalars(v).get('hitpoints',0)>=q.scalars(b['owned_ships_raw'][i]).get('hitpoints',0) for i,v in a['owned_ships_raw'].items()) and all(allships.get(str(i),'none')=='none' for i in [1807,1895,1896,67110639]),
+ 'same_three_MIA_original_dates_ids':mia==set(known) and all(q.scalars(a['owned_fleets_raw'][i]).get('return_date')==date and q.ids(q.block(a['owned_fleets_raw'][i],'ships'))==[sid] for i,(date,sid) in known.items()),
+ 'known_pirate6_exact_countdown_or_native_no_trigger_expiry':bs['event']=='pirate.6' and delayok,
+ 'no_pending_new_message_owned_combat_or_battle':not a['pending_country0_raw'] and not obs['new_country0_messages_raw'] and not any(re.search(r'\bfleet\s*=',q.block(q.block(v,'combat'),'in_combat_with')) for v in a['owned_fleets_raw'].values()) and b['war1_battles_raw']==a['war1_battles_raw'],
+ 'production41_020_CN_original_error_held':meta['version']=='0.2.0' and meta['language']=='l_simp_chinese' and len(h.tree_manifest(h.MOD_ROOT)[0])==41 and h.tree_manifest(h.MOD_ROOT)[1]=='ac802ed0b6226731b039458a472f46ed5c6f7f7de3e629751509cbb322f9eae7' and sha(run/(after+'-error-after.log'))=='df43a78778ff981c9add0382adb3fd127128adbc6006d6bfd7db6a194c6056eb',
+ 'native_project8_still_inprogress_no_completion':len([v for k,v,o in q.fields(q.block(a['country0_raw'],'events')) if k=='special_project' and q.scalars(v).get('id')==8 and q.scalars(v).get('status')=='in_progress'])==1 and 'crisis_special_project_2_complete' not in flags,
+}
+original_ex=load('terravore-project2-first-tick-date-wait-guard-execution.json')
+checks['original_waitV1_KeyError_actual1_source_preserved']=original_ex['returncode']==1 and original_ex['helper_sha256']=='51c6974aaf67c99115721479e847630a67a6c0e83157b3600bb1c7b7abd57b5f' and b"KeyError: 'ships'" in (run/'terravore-project2-first-tick-date-wait-guard-stderr.txt').read_bytes()
+orig2=load('terravore-project2-first-tick-date-project2-wait-v2-proof.json');ox2=load('terravore-project2-first-tick-date-wait-guard-v2-execution.json')
+checks['original22_two_exact_native_timer_cache_FAIL1_INV_bound']=len(orig2['checks'])==22 and {k for k,v in orig2['checks'].items() if v is not True}=={'original27_paid_district_levels_and_planets_held','actual_pop_jobs_and_species_held'} and ox2['returncode']==1 and ox2['helper_sha256']=='36cca915475a7884b4d1be3709f41d5a2c5af4b24b64ca8ba3af32367cf2905f' and sha(run/'terravore-project2-first-tick-date-audit-cache-diff-investigation.json')=='734195c0ccd6a84ffc5af9874662529ed0420119ff2430baef4c0e5d94050afd'
+passed=all(v is True for v in checks.values());out=run/(after+'-project2-wait-v3-proof.json');assert not out.exists();boundaries=(['known_native_pirate6_delayed_event'] if remain>0 else ['native_pirate6_expiry_requires_review'])+['next_native_acceptance_plan_required'];h.write_json(out,{'status':'PASS_TERRAVORE_PROJECT2_NATIVE_WAIT_V3_COMPONENT' if passed else 'FAIL','checks':checks,'before_sha256':ba['save_sha256'],'after_sha256':aa['save_sha256'],'physics_progress':ap.get('progress',0),'true_bank':ac['research_stockpile'],'pirate_remaining':max(0,remain),'boundaries':boundaries,'native_devour_calendar_ready':False,'maximum_days_to_native_bite_boundary':0});print(json.dumps({'status':'PASS' if passed else 'FAIL','checks':len(checks),'failed':[k for k,v in checks.items() if v is not True],'date':aa['date'],'physics_progress':ap.get('progress',0),'pirate_remaining':remain}),flush=True);assert passed
