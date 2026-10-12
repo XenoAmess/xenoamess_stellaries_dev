@@ -1,4 +1,7 @@
-﻿# Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
+# Stellaris 4.5.2 吞星、区划、灵飞与武灾代码研究
+
+2026-10-13新增原生核验（精确本局，非通用引擎规则）：2283.1.1→2.1源星防御军50331803由475满生命变0，其余19军原文保持，根ground_combat为空，无新战斗/错误。原生蜂巢首都4军与巡逻岗位1军、workforce100/bonus_workforce=-2.5保持；符合有效工作量下降后延迟清退，但取整与延迟机制未证实，不能从一月仍有5军或二月清退推出通用时点。精确8项审阅通过，后续只允许原已死亡这一ID清理，不能允许其它死亡或复活。
+2283.6.2原生tech_thrusters_2完成，自动工程研究选tech_alloys_2。6.1→7.1原61船34舰队保持，8艘民用船实际设计仅required_component SHIP_THRUSTER_1→2，10艘军用船仅upgrade设计引用作同一单组件变化，军用实际design及原武器/生命/维护保持。新通知299为原生科技完成，无Queen重复或新error。原始15PASS/4FAIL、独立精确19PASS和V9复核19PASS均保留；不能把设计引用更新当新生舰、免费军舰改装或额外Mod奖励。E研究溢出未进入bank，未确认引擎内部溢出规则。私有月守卫漏掉工程完成提前边界已补保守检查点，检查点500不是原生科技成本。以上均为Stellaris本局实测，不推广CK3方言。
 
 最新核验 2026-10-12 09:07：噬岩者实际2279.01.01暂停，首艘“威慑级护卫舰”完成正常225矿物/0合金购买（13PASS0）、原唯一订单150994986按1.33每日work建造（四段waitV2各21PASS0）、2278.11.24真实出生ship16777746/fleet50332250/design184550902（出生V2 24PASS0），舰容105→109。实际母星停泊维护UI .75能量+.75矿物/合金0已采图；首次月账23PASS0，随后完整30日维护V2/sourcead36490c…24PASS0，四现金E68.33/M38.4875/A30.194/U72.71875=实际net，ships及components合金费不增。母11938/容量35/27付费级、C62/D17/worlds4/PSI1/stage2/crisis2/fleet2/Menace1635/Gmade0、原21军舰加本新舰/三MIA保持，第四结算与C60双Queen已通过且不重复奖励。最新SAV6d87159e9418d7be3d0bbbffc89def5afa3502c6d55a8e8cd049722bd9416933。
 
@@ -736,3 +739,5 @@ Stellaris4.5.2原生危机等级读取必须取country.crisis_progression，path
 私人脚本文本生成需显式设置PowerShell OutputEncoding UTF8，或使用ASCII Unicode escape：否则“能量之泉”被写成????导致失败。原native存档颜色码是真U+0011，不能从JSON显示的\x11误判为原文literal；必要时逐codepoint核对。此是本地编排/私人脚本经验，非P通用语法，也非open_kaishek工具缺陷。
 
 2026-10-13 Stellaris4.5.2实测：原生consume_world的remove_district在2282.12.1拆除源星1档发电区划时，colony.districts移除16777285，但gamestate districts对应旧ID保留type/level并killed=yes；其zone16777322亦保留type并killed=yes；原300最大/0实际工作量的technician_drone岗位消失，蜂巢原区划保持。分析原生拆区划须同时核active引用和raw killed标志，不能因旧ID仍在root就称区划未移除；此前另一年度未观测到拆除不表示未来均不拆除。此为Stellaris原生实现/存档字段事实，不推广CK3。eep_report月回调可在母星自然增长前取人口快照，11.1快照11933、月底实际11939；source situation已24时report snapshot24。当前free_districts快照0包含6已付排队区划预留，不等于实际总容量为0。
+
+2026-10-13第五结算与月度统计：原生最终三口POP/矿物/POP产生200人口+1000矿物；源504+200=704回母，真实11997→12701，C76/D21/39容量，单毁星目标+750、Menace2930。次月只自然+6到12707，但last_month_growth_data.current_month_growth_details仍列GROWTH_CAT_OTHER504，属于本月较早已回流的人口记录，不能加到中月已回流基准；按原存档区间对账并保存历史统计。报告快照在月初增长前记录12701/free4、任务归零，非每时实时总人口；无重复女王/奖励。源旧colony空数据与孤立建筑可残留，不等于仍拥有殖民地；owned_colonies仅0且源无owner/人口0/破碎相互核实。原21项一FAIL错误剩余军数与原18项一FAIL增长窗口误算均保留，纠正后结算22PASS/首月20PASS。此为Stellaris原生数据口径，不推广CK3。
