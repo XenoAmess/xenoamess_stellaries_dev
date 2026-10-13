@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\priority_terravore_labs_completion_calendar_v8_20261013.py", line 33, in <module>
+    b=json.loads((run/(start+'.audit.json')).read_text('utf-8'));validate_native_interval(b['date'],end,days)
+                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\xenoamess_stellaries_dev\_runtime\heart-of-devouring\priority_terravore_labs_completion_calendar_v8_20261013.py", line 9, in validate_native_interval
+    assert 1<=days<=360 and ordinal(end)-ordinal(start)==days,'Native30-day date mismatch; no GUI action allowed'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Native30-day date mismatch; no GUI action allowed
