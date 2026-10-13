@@ -774,3 +774,5 @@ Stellaris4.5.2原生特化兼容与实际替换：噬岩者2283.10.1普通800M�
 
 
 2026-10-13 Stellaris civilian auto-upgrade：原版common/ship_sizes/00_ship_sizes.txt:101定义auto_upgrade会保持该舰型自动设计为当前科技并自动更新已有移动船；constructor:677启用。当前实机2286.04.02原科技完成时，已有施工船2由四槽BULWARK_BATTLEWRIGHT_SECTION自动换三槽DEFAULT_CONSTRUCTION_SECTION，原两125装甲变一125，实际/最大装甲250→125而舰体375/护盾320/出生/坐标/舰队/订单不变，且无付费升级队列。不能冻结所有民用船设计后把此正常原生自动更新报成Modbug；也不能把原始特殊模板归因本次Mod。普通/特殊模板槽数分别由section_templates/constructor.txt:9和overlord.txt:1631核实。这是Stellaris原生舰型规则，不外推CK3。
+
+2026-10-13 Stellaris原生航行SAV观察：2286.09.01两支原矿舰在30的move_wind_up状态，current_order双can_reachyes且最终target164保持，但movement.path只序列化三个origin=[30,71,71]节点，后二节点同一到达坐标，预热总112/剩87或54。前月路径仍含完整70→30→71→164。不能无条件要求每个移动状态的path都包含最终目的星系；核验应结合原订单、目标、实际星系/临近离港节点、jump状态/计数及真实超空间相邻关系。本例仅记录原生实际投影，不声称所有预热态必采用相同裁剪机制，也不把未列出164当实际到站或取消目的。原26唯一路线FAIL、同对SAV和后续补证保留；仅Stellaris本版本观察。
