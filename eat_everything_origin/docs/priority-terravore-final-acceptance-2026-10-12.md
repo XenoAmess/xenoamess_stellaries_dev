@@ -669,3 +669,79 @@ hover V2实际actual1，在截图前停于精确光标位置断言；只读GetCu
 CUT52归档实施前：label native-rally-arrivals-and-alloys2，基线native-paid-destroyers-and-first-hive /f4099aa238e6fc39cb499323dc219c050106e64e。自本段起冻结RUN、GUI、日历主动写入直到完整原件增量归档及独立Git index逐blob核验完成；包含所有原始PASS/FAIL、四航行月/到站补证、原生风暴/科技源码、单日科技完成/自动选题、两笔市场交易、币种/镜像调查及被遮挡截图/悬停工具试验。git add -f仅精确新archive目录以保留manifest引用的__pycache__原件，不忽略或重写失败。只读/docs/git可继续；验核通过后仅提交五份任务docs/增量目录/receipt，推送并核远端，解除冻结继续主路线，不在归档节点结束任务。无新生产代码/版本/changelog/Steam上传。
 
 CUT52原件及独立暂存核验实际完成：archive actual0，43731源文件/4691207221B，新增624文件/78378827B、复用43107；source-snapshot捕获UTC2026-10-13T01:10:33.419917Z。仅新archive精确git add -f后，verify_priority_delta_checkpoint_git实际0，43842个Git index原始blob/4741704638B全部SHA及字节数一致，无缺失pycache。本次原始FAIL与补证全部保留。receipt文件固定命名priority-native-rally-arrivals-and-alloys2-delta-staged-verification-2026-10-11.json，文件名日期不是本次采集日期；实际为2026-10-13。五份任务docs/本增量/receipt将随本检查点提交推送，完成远端核对后解除冻结并继续，不宣告噬岩者整路线通过。
+
+矿物舰继续前进实施前（CUT52远端确认后执行）：以10.2第二笔市场16PASS/actual0/SAV32471371…为基准，日期仍暂停。先在未移动的宽星图用正常hover核635,394确为尼什潘30，选择outliner第3舰队917（9驱逐舰/72指挥）并仅一次正常右击目标。读真实ETA及can_reach；若ETA早于2286.3.30可保留合法命令，再对50332250做独立同样预览；若晚，立即同日正常H停止，旧50332250保持卡兹比斯，不假设未来能穿越关闭边境。每次实际UI操作和F12原图留存，禁止用命令创建路线/跳跃/改速。
+
+同日订单守卫目标：正常独立SAV绑定市场16PASS与actual0、原77舰完整原文/35舰队成员、全部country0现金/银行/EEP/科技/人口/施工保持，主力83886903已有70→30订单保持；仅实际选定矿舰的current_order/order_id/movement_manager及既有原生dirty缓存标记、基地160对应停泊引用可以按输入更新。保留命令须真实唯一orbit_planet_order/can_reach=yes/target30、原生路径后缀188→139→171→70→30全部相邻且拥有者仅0/临时开放1/未占，ETA严格早于期限。取消则核唯一正常H实际0、无current_order/仍188且无战斗或损失，不谎称已前进。未知差分立即停查。守卫通过再另审后续日历，不直接重复旧6.1→10.1窗口，也不允许跨过研究/到站/施工/边境/事件边界。
+
+CUT52提交399d2a705ef55c5cdd34527616d53f4ce663323c已正常推送origin/main，git ls-remote独立确认完全一致；632任务文件（五docs/增量626/receipt1），无生产Mod修改或Steam上传。冻结解除，继续上述同日矿舰前进预览与后续完整验收。
+
+917实际前进预览ETA2286.7.12，原图f4c5f13da6b2608203dfaaa5da89b412632dbff562bbd8b9f73786311b9d3a8b/actual0，晚于开放期限；已同日正常H取消，未向50332250下新令。新SAVcc34d2fa8bf4f6f1ce0bd0ba324b1305137af451b1acdae8ac3628690e3018e3、保存actual0/error无新增。只读root差分仅fleet/starbase_mgr：917 order_id2→3，properties只新增dirty_cloaking_strength=yes；movement仍原188精确坐标、target INVALID/state move_idle/无current_order/无path node，path.date保留已取消的2286.7.12估算；orbit变空、time_since_last_path_update省略。基地160 slot0由917清INVALID、slot1旧50332250保持。取消后917是留在基地旁，不能继续称已停泊；该path.date不是活动到达边界。新增独立取消守卫实施前：完整核上述精确差分、原market16PASS/source/SAV，country0全原文和audit业务/77舰全原文/其它34舰队、其它根/基地/队列/研究/EEP均保持，三次正常输入和原生F12实际0绑定；通过后另审当前状态日历，不重复下令或假装已向30前进。
+
+同日取消独立守卫15PASS/actual0/sourceb91b0c0eda53d205a4a81b39fac11f0fd25a8f84c7cced2bfdc281026c0de26f，SAVcc34d2fa…；国家全原文/原77舰/其它34舰队/两根以外原文均保持。两矿舰仍188，917无订单且未停泊，50332250停泊base160slot1；主力仍70→30/ETA12.6。
+
+下一运营窗口实施前：仅10.2→11.1/29原生日，复用partial calendar V8自动原生SAV/observer V8，独立review及业务guard实际0后才继续。此段没有day2 cached科研tick，真实三银行/tech_status和项目3 3678.92190、新工程0/550全保持，不重复10.2研究；只有月初一次八项现金结算，使用新真实budget.balance及influence1000/trade50000上限。母仅本族自然增长0..10/OTHER0；容量39/28paid/原zone/lab/研究岗位、C76/D21/worlds5/Menace2930/crisis3/PSI1/女王stage2保持。五付费蜂巢仅首190.4+29×1.4=231work，未完工，其余0，原77舰/35舰队成员/15军保持、ships矿维护77.70204正常离港率，无新船或费用。
+
+预审须核主唯一活动ETA12.6晚于11.1、工程/施工/项目均不完成、无pending/error；忽略已取消917的path.date7.12，它无活动订单。两矿舰仅保持188 idle/无订单/INVALID目标，旧50332250原停泊保持、新917空orbit保持；主可沿原合法后缀前进，若原生动态估算提前正常抵达30，仅允许无订单/无节点/idle、INVALID目标、环绕原订单同一orbitable及last_ftl_jump70→30且无损的严格终态，不能新下战斗命令。原所有EEP旗帜固定；普通定时flags按29日核，已记录的NAI gravity标记如变化需在proof单独列明，并核96/146仍实际在原风暴内和生产Mod无引用，不能解释成风暴结束。其它未知旗帜/消息/pending/战斗/损失/新error立即停查；只允许原SYSTEM_SURVEYED消息。到11.1后根据真实主力ETA再审下一窗口，不直接跳到12月或开放到期。
+
+11.1原生29日日历/七观察actual0，SAV6f9f1e9485c6ba4ef3f1258831b717fb156b6866bc657ee81bdda5bdf6036fa1。主83886903已正常抵达30，idle/无current_order/无路径节点/目标INVALID，环绕原目标orbitable，last jump70→30；path.date10.22只保留原生估计，不声称精确实际到站日。两矿舰仍188，原77舰/35舰队/15军及EEP保持。母自然+6至12862、首paid蜂巢231work，三真实银行/项目3保持；现金按真实新月balance精确核，E−56.46911/M−67.94954/A−10.84821/U+71.41875/trade+91.53146/crystals+1.75，其它上限/零项如原。无消息/pending/error新增。
+
+29日guard/source58fdaacd71d48bbf0263f174f3b252564bfcd582d38abd1e6b30ac859e9cd1d9实际21PASS/1FAIL/actual1，唯一native_flags29day_timers_only_known_NAI_gravity_observation。只读查明所有flags实际严格等于原旗帜按29日正常倒计时，gravity前后均缺失；失败来自同一个表达式错误要求146继续受风暴影响。真实风暴50331648对象[48,53,96,145,146]→[48,53,96,145]，146.storm变INVALID，96仍受影响；147原已退出保持。不能据旧地理快照冻结移动风暴。本次没有新的旗帜不一致，10.1清标记原因未明观察项仍保留。
+
+V2补证实施前：同对SAV保留原22项单FAIL/actual1/source；原21项完整保持，只把旗帜合同改为严格flags(a)==29日预期（无需gravity例外），独立核本对风暴恰移出146、96仍50331648/147仍INVALID、对象列表精确变化。新增原失败来源与SAV绑定，不重复日历、不移动舰队、不改Mod或P工具，不谎称风暴标记原因已解决。通过后进入主力30→71→164→39清理奇拉的正常路线/战斗准备及科学支援审查。
+
+2026-10-13续验：11.1同对SAV的postmarket-29day-v2-proof已实际24PASS/actual0，source27f11ace0fb74071dff23b3492f0f6bf21013f582d4d8d28b12a91350c8252d5；不是重新推进日历。只读复核当前主力83886903在30，原生存档military_power为1880.71875（当前星系实际快照，不能沿用离开该星系后的估算）；科学舰166在37，施工舰2在0，运输舰33555320在147，不能把旧坐标作为现状。
+
+路线调查纠正：以星系starbases数组→基地station→舰船fleet→国家owned_fleets映射拥有者，允许0/当前开放1/无主/指定敌国的所有中间星系，国家16777218的最近战时路线是30→71→164→39→68，其后可到2、90、118等。此前只允许目标终点而禁止敌方中间节点的BFS，不能证明该国在战争中不可达。国家16777219在这一允许集合内仍无路线；这是只读候选，不代表已宣战、实际can_reach或外交合法性已经验证。当前16777218对0关闭边境，无战争；需继续核停战、共同防御/附庸关系及原生宣战UI后才能开战。
+
+下一步实施前合同：暂停2285.11.1，用既有原生hover确认维亚尔164的屏幕坐标；选择主力83886903，正常右键下达30→71→164的中立航行订单，先不进入39的敌对舰队。独立保存同日SAV并核主力唯一订单can_reach、目标164、路径每段相邻且仅无主，日期/国家0资源、EEP、人口、科技、施工/原77舰和35舰队成员及其余订单不变，允许已记录的原生订单/泊位/dirty缓存变化。若目标或路径不符，停查并正常取消，不推进日历。经原生ETA和当前研究/施工/事件边界审查通过后再授权短日历。另只读核39守军现状及16777218外交关系，结果回写；禁止SAV编辑或资源/研究/事件/军事作弊。
+
+164订单实际同日SAV31fb0c27f9cff4552151719543807d9eb814a4f7ab4f5c4f80bd4a8e84453a3c：hover原图3584650d…正式文本“维亚尔/未调查的星系”；右键后的原图6e6278cf…预计2286.04.25。只读根差分仅planets/fleet：462.planet_orbitals原0=83886903变空；主力删除已到站auto_movement、增加唯一orbit_planet_order/planet1732/can_reach=yes、order_id4→5、movement新路径30→71→164/目标164/清空orbit/省略time_since_last_path_update；其它舰队、77舰、country0原文保持。独立订单守卫将精确核这两根其余原文及所有audit业务不变，不以屏幕ETA代替实际到站日。
+
+外交/守军只读事实：当前war中无活动战争，agreements为空、federation为空，16777218没有subject/overlord标量，其对0关系无truce；它与16777219有独立停战，不能误当本国停战。39有33554515、854两支各9舰/783.77343的原生敌对守军，合计1567.54686；68有敌方基地及舰队。宣战前仍须原生UI核战争参与方。本阶段先到164，再决定是否清理39。
+
+订单guard V1实际13PASS/3FAIL/actual1，source e48cd70c58bc3cc88cd73357f6cf194ef6e371014f8891f4aa90fae1cd104fcf，未推进日历。两项是把仅含空白的原生空orbit/orbitals块当成非空；只读核其它movement/planet字段完全保持。路线项揭示真实环境变化：30/164的starbases={INVALID}，71有base171→station33555437→fleet33555334→owner1，construction_date2285.10.06。故“沿途全无主”判断错误，71须按临时开放1处理；不能把缺少拥有者映射当成无主，也不能把INVALID引用当有效基地。先前文字描述按此纠正。当前原生can_reach=yes，但最终ETA4.25晚于3.30，不能据此承诺安全完成全程。
+
+V2补证实施前：保留原16项/3FAIL/actual1/source；仅将两空块判断改为fields为空，并精确核路径[30,71,164]、30/164仅INVALID、71的上述完整基地拥有者链及双方forced_open_borders=2286.03.30、无closed_borders。所有其它原检查保留，新增原FAIL绑定。通过只证明当前合法订单，仍readyfalse/max0；允许独立审查11.1→12.1这一短窗口，禁止直接推进到4.25或跨过3.30。3.30前必须根据实际位置/路径/边境状态独立停查，必要时用正常UI撤回或调整，不能宣称已抵达或保证边境永不关闭。该短段没有战斗/吞星/额外奖励。
+
+订单V2因派生脚本的输出文件替换未命中而actual1，在assert not out.exists处安全停止，无覆盖原proof/无GUI/无日历。只读执行其18项检查均为true后，V3只修正唯一输出路径为独立v3-proof并绑定V2原execution/source，保留全部18项，不重复订单。
+
+航行月度夹具实施前：从既有rally-month合同派生travel164-month，先许可11.1→12.1，后续每月逐段复核，最晚停2286.3.1。保留原现金八项实际月balance守恒、每月2日一次真实科研tick（P银行+44.13339、项目3加160.20937并扣S银行68.1742、工程行星风暴抵御加103.17267/成本550）、其它科技和项目原文、EEP/C76/D21/worlds5/stage2/crisis3/Menace2930、母39容量/28paid/3zone六labs、原77舰/35队/15军、施工首项每月+42且不完工、矿舰离港77.70204M维护、无事件/战争/损失/error和正常flags。工程队列progress缺省按0，不发明overflow银行。只调整主力合法路径为30→71→164及实际到站时的严格idle/无订单/无nodes/原目标planet1732/lastjump71→164；两矿舰仍188保持无订单/原泊位。月末若主力提前到164，同样停止由下一次review确认。每次复用原生calendar V7和observer V8，业务guard非0立即停查；不跨工程完工4.2、施工完工4.29、3.30开放边境或任何未知事件。此为平静运营窗口，战斗与宣战另立合同。
+
+订单V3实际19PASS/actual0/source90e855b48cacfcf67bb8ba5b3aab2006ba1be8c5b21569aff695e683edf0db06；11.1→12.1独立review4PASS、calendar/observer7PASS及月guard24PASS均actual0。SAV20d65aa638f04a3f45a2390a3b3e89b1ec62789a874f0f209cd38904ea2f4113。主力真实在71，剩余[71,164]，原生动态ETA2286.4.8；两矿舰仍188，无新增订单。项目3进度3839.13127、工程103.17267/550、母人口12868（自然+6/OTHER0）、首付费蜂巢273/480。全现金按真实月balance、EEP及原资产/维护/事件/error检查通过。月度工具source69fe57ce40e9a06dc9d60046b3f5f44c7131adeb81770918bf1ba4763fc87324。继续同合同逐段审查到1.1，未宣告噬岩者完整通过。
+
+12.1→2286.1.1月度24PASS/actual0，SAVde3761210ca01e2fedc5561f29031d97c3fca7f21549d8cb4f3ae6080a8f7b14，主力仍71、项目3999.34064、蜂巢315、母12874。1.1→2.1日历actual0/observer7PASS后，业务guard22PASS/2FAIL/actual1，保留原件；SAV1379f1f70c47467c8de7d7bba0d0167d00fbc5367499055039f82b42a7578a1e。未继续日历：主力已入164且于1.26遭遇原生country25/type crystal的fleet16777660，正式名称键NAME_Shardlings来自initializers_names_l_simp_chinese.yml:295“晶态碎片”，9舰/783.77343。主力18舰全在、无死亡；18舰护盾160→缺省0，唯16779033装甲250→151.865，其它生命/身份/设计保持，主力combat仅此敌舰队。无新message/pending/战争/停战变化，原22项运营/EEP/科研/现金/施工检查全通过；项目4159.55001、工程309.51801、蜂巢357、母12880。不能把此段称为平静航行通过。
+
+伤害来源已核：164带turbulent_nebula/nebula_cloaking，原版common/static_modifiers/02_static_modifiers.txt:1077规定ship_shield_reduction=1.0、ship_speed_reduction=0.5、ship_evasion_mult=0.3；正式简中main_3_l_simp_chinese.yml:3606为“湍流星云”。护盾缺省0与原版环境一致；装甲下降与正在进行的真实战斗一致，非已确认Mod缺陷。原始F12图6cb9c7ab…显示简中日期2.1/暂停、维亚尔主力约2.9K；不能把先前预计4.8或2.13称为实际入星系日/完成日。
+
+交战边界补证实施前：不重复1→2月日历、不改SAV，绑定原24项两FAIL/actual1/source/SAV，保留全部22项true；新增精确原18舰身份/设计/舰体保持、18护盾缺省0/仅16779033装甲151.865、全77舰仍在、唯主力与country25的9晶体舰交战、起始1.26/星系164/原版湍流源及正式中文来源、无消息/pending/战争和未追加奖励。状态只声明已观测合法原生晶体遭遇，readyfalse/max0。通过后独立审查2.1→2.8的7日交战窗口：继续真实战斗、不下新订单；跨一次已知day2科研tick但不跨月账/施工完工/项目完工/边境期限。允许战斗损伤/敌舰死亡/正常脱离及对应原生战报与奖励，但必须逐船核原身份、无免费新舰/资源/EEP结算；未知变化立即停查。后续战斗窗口按真实结果另审。
+
+晶体遭遇补证实际28PASS/actual0/sourcee65342e44bc6ca5926c1c663861178bfff865170ee294714d23c14d5f257b128；原24两FAIL完整保留。7日战斗夹具实施前细化：每段独立review→completion calendar V8→observer V8→业务guard；不跨2.30。保持原付费队列/母容量人口/岗位结构/15军/EEP/73种族/舰船出生设计，原77舰不得新增，主力18舰可受伤但不得无解释失踪；若出现本国损失，停止另核原生死亡/脱离证据。非主力舰原生命保持。敌16777660可从原9舰逐步减少，剩余不得新增；威慑必须与原生crisobj_destroy_enemy_ships目标增量、敌舰实际移除/死亡逐一对应，其余危机目标不动。原生events/nemesis_crisis_menace_objective_events.txt:37/66没有限制被毁舰所属国必须为default；common/crisis_objectives/00_crisis_objectives.txt:42按3000/星系数，本局200星系推导每舰15，仍须以存档实际目标/现金增量核实，不先宣称拿到奖励。主力不在战斗后才可声明战斗结束，未知消息/新pending/error/其它舰交战/损失立即停查。原生战报先保留为边界，验明后再继续。所有proof继续readyfalse，避免把交战组件当完整政体验收。
+
+7日工具V1 py_compile0、pyflakes1（re未使用）；只读review4PASS/actual0但未推进GUI/日历。V2先新增原country25拥有16777660的正则链检查，使既有re用于真实校验，保留所有18业务项；使用独立v2 review/proof输出及执行stage，静态两项实际0并重做readonly review后才能进行日历。原V1/sourcee65aec196c5baab33e27f28b960815f8f126bb3372f2f0b6d8f7ba25ee782d33及readonly输出保留，不覆盖。
+
+2.1→2.8原生7日calendar actual0/observer6PASS，SAV24074b5770247f97cbe95fa57b33302e0344133dc051754011525a417b10e393；V2 guard16PASS/3FAIL/actual1（sourcee492981ea8d9a80c6b7b505b01b76c9bcce83635c7b0b5acf7320bba549d26ae），已停查。实际77→75舰，主力18→16：16779033/16779128两舰在全局ships为字面none，主力fleet_stats.combat_stats.fleet保留原18艘/ship_size_count_lost={2}，日期1.26、country0，第7舰队；舰容261→251恰两艘各5，无其它本国舰队成员/订单变化。敌9→6，三个移除16777247/33554926/83887260，原生enemy统计原9/损失3，威慑目标135→180、总威慑2930→2975恰+45，其余目标不变。可归因于原生战斗的实际损失，不是免费创建/EEP回流或已确认Mod缺陷。
+
+重要解析纠正：combat.in_combat_with匿名条目同时含fleet=16777660和debris=184549380，q.ids会混取两者。184549380是残骸引用，全局fleet没有该对象，不能报告成第二舰队。Stellaris交战对手必须按具名fleet字段解析；不得把通用数字提取用于此块。V3实施前：保留原19项三FAIL原件和16项true；对存活原舰继续核身份/设计/出生/生命上限，新增本段失踪只能是原主力舰且全局none、原生损失统计累计=18−当前主力舰数、舰容每失一艘−5、其它34队原成员/全部order_id保持。敌移除数还须与原生enemy损失统计增量、每舰15威慑和目标增量一致；用fleet正则解析对手，仅16777660允许。首次V3绑定此原FAIL/SAV，并明确不是“无损”；后续短段仍按真实损失记录。主力不少于12且仍在同一对手战斗才可review续7日；所有未知战报/pending/额外对手/error仍停查。V3只修私有夹具，不改生产Mod或open_kaishek，不重复已有日历。
+
+V3静态两项0，运行actual1/source16888297139d116749d54d0729fa8e28f73e2449bbcc6072e235adb6484907a6，在对combat_stats.enemy匿名对象数组使用具名fields时ValueError，未写proof/未推进日历。V4实施前仅用tokens剥离当前唯一敌人数组的外层匿名括号，再读fleet及损失数组；严格只允许enemy16777660，不泛放多敌统计；保留所有原检查，绑定原V3错误与source，独立v4输出/后续review。已用正常选择舰队/E进入星系采集2.8原生战斗画面，日期未动。
+
+V4实际首段23PASS/actual0/source2d1106694b9dfd1a5d27776d8a47dd18e1239633e9f633ab7fe901534ef725b9；明确本国两舰损失，非无损通过。2.8→2.15独立review4PASS、calendar/observer6PASS、业务guard21PASS均actual0，SAV892a4b5556a701b307828dbc574a2dd976dfd803670f8307bc1478e71741eea5。此段我方新增损失0、主力16保持；敌新增损失4，累计7/9，只余50332761/67110053，威慑+60至3035，原生目标统计逐舰对应。项目3在2.2正常tick后4319.75938/12000、工程412.69068/550，现金八项同月保持，无事件/error/EEP副作用。继续同合同review2.15→2.22；如战斗结束伴随新战报，先停查再补证，不把预期胜利提前报告成事实。
+
+2.8截图31aec9f7…确实是原生舰队战斗面板（己方损失/伤害可见），但E进入的是当前选中母星系统EEP-Throne，镜头没有定位到164；不得标作维亚尔战场CG或工坊特色候选。原图留存作UI调查，后续需正常定位实际舰队再采集场景。
+
+2.15→2.22原生calendar/observer6项均actual0，SAV890571bc926e56064fe4521540ac8b218f727cd5a748a07171e3a7835b046e8f；V4 guard18PASS/3FAIL/actual1后已停查，原件保留。实际战斗于2.20结束，唯一新消息COMBAT_STATS/receiver0/notification312/date2286.2.20/坐标164，combat_stats.date1.26/reason=no_more_enemies，最终fleets匿名数组为己方83886903/country0/原18/损失2，enemy数组16777660/country25/原9/损失9。当前主力16舰保持、无新本国损失，敌最后两舰移除/威慑+30到3065；全场9舰×15=135与目标135→270/总2930→3065一致。当前无交战，原主力fleet_stats已清为fleet空/date0.01.01，这使按活动战斗统计推算损失的两项检查不再适用；新战报也触发预定消息边界，不是Modbug。
+
+胜利补证实施前：保留原21项三FAIL及18项true，绑定V4原实际1/source/原SAV；只对三项补充最终唯一原生消息及匿名fleets/enemy统计，核起止日期/星系/双方国别/原舰数/最终损失、reason=no_more_enemies、敌全局fleet及9舰none、主力16原舰/251舰容/两原死亡保持、无pending/战争变化及活动统计清空。最后一段敌损失2/奖励30与全场9/135双重守恒，EEP、真实研究/现金/施工/人口及无新增error维持原检查。只能声明本次原生晶体战斗组件通过；主力在164仍执行到中心的旧订单，不能把已入星系等同已完成环绕订单。通过后正常UI继续勘测/殖民支援及奇拉路线，不重放此战或给予补偿舰船/资源。
+
+胜利V1静态0，运行actual1/sourcef605bac30a950c3c1774555d72bf0850f7cfa8f08baddec9b202b306c5f28d91，在假设所有被毁舰原ID都继续保留none时KeyError，未写proof/无日历。只读完整ships确认7原敌舰none，83887250/67110053两个原ID条目已缺失；实际保留方式及原因不外推。原最终COMBAT_STATS明确9/9毁，fleet16777660为none。V2实施前仅把这一项改为精确“七指定ID为none、两指定ID不存在、敌fleet为none”，不接受任意活舰或泛化消失；其余检查全保持，新增绑定V1错误/source，独立v2输出。不得把不存在直接等同none或伪造新tombstone。
+
+胜利V2实际27PASS/actual0/source5b4f8b681a340b30f6341ef96a89b236e658a19eb21fe38d8e5359626cb9d7d0，原V1异常与V4边界FAIL完整保留。全场两普通舰真实损失/9晶体毁/135威慑守恒，未发补偿或改SAV。母12880/首蜂巢386.4/项目4319.75938/工程412.69068/75舰35队15军/EEP原值。native pc_volcanic明确colonizable=yes，NAME_Vermilion候选须正常勘测并处理原生异常/UI条件，不能只凭planet_size宣布可吞源。
+
+CUT53归档实施前：label native-neutral-route-and-crystal-victory，基线native-rally-arrivals-and-alloys2 /399d2a705ef55c5cdd34527616d53f4ce663323c；自此冻结RUN/GUI/日历主动写入直到完整原件增量归档、独立Git index原始blob核验、提交推送并核远端完成。只精确git add -f新archive目录以保全manifest引用pycache，五任务docs及receipt一起提交，不纳入其它改动。原始PASS/FAIL/例外/source/streams/SAV/F12全部保留，不修改生产Mod/版本/changelog/Steam。不在归档点结束任务，解除冻结后继续科学/殖民/军队支援及奇拉路线，边境到期前另审。
+
+CUT53原件归档actual0：44161源文件/4790033075B，新增430/98825854B、复用43731，source-snapshot.captured_at_utc=2026-10-13T02:44:43.964666Z；精确新增archive git add -f实际0。独立index验证进行中，冻结未解除，尚不能将归档成功表述为已提交推送。
+
+CUT53独立Git index原始blob核验actual0/PASS_STAGED_RAW_PRIORITY_DELTA_CHECKPOINT：44273 blobs/4841131172B，全部源引用/SHA/字节数与新增或冻结基线原件一致；44161来源/新增430/复用43731无缺失。receipt为priority-native-neutral-route-and-crystal-victory-delta-staged-verification-2026-10-11.json（固定旧命名日期，实际采集2026-10-13）。仅五任务docs、432新增archive文件和此receipt共438项提交；提交推送并独立核远端后才解除RUN冻结继续。
+
+冻结期间只读下一步调查：原生fleet_view.gui:517的focus_on按钮shortCut=q，正式简中FOCUS_ON_FLEET为“前往”，用于视角切到舰队位置；后续采图可正常选择主力后Q定位，不能沿用E进入当前选中母星造成的错镜头。原生cb_hunger是“猎食”，wg_absorption是“吸收”且total_war=yes（main_3_l_simp_chinese.yml:2933/3008、00_war_goals.txt:347），16777218当前外交候选无本国停战/附庸协议。可考虑清理39后正常宣战并夺取无殖民地的68前哨，升级建立前线船坞，再用真实资源当地建勘测/施工/殖民舰，解决后方支援必须穿越邻国临时边境的长航路问题。该方案尚未实施/未保证占领或战胜，宣战参与方、战争目标UI、基地升级造价工期及原生can_reach必须在实际操作前核验；不凭脚本定义宣称已获所有权或免费建舰。
