@@ -768,3 +768,9 @@ Stellaris4.5.2原生特化兼容与实际替换：噬岩者2283.10.1普通800M�
 2026-10-13 Stellaris4.5.2 native source：turbulent_nebula在common/static_modifiers/02_static_modifiers.txt:1077规定ship_shield_reduction=1.0、ship_speed_reduction=0.5、ship_evasion_mult=0.3，简中main_3_l_simp_chinese.yml:3606为“湍流星云”。维亚尔164原生modifier与18舰护盾160→0一致，装甲伤害另由实际晶体交战验证，不能冻结环境变化后的盾值。crisis.4025原生击毁舰事件未限制受害国必须default；本200星系局crisis_objectives奖励3000/200=15，每艘晶体死亡对应目标与menace+15，9舰累计+135实证。此为Stellaris内容规则，不外推CK3。
 
 2026-10-13 航路调查必须刷新：瓦霍尔71于2285.10.6新建base171→station33555437→fleet33555334→country1。starbases={INVALID}不是有效基地；缺少完整owner链时不得推断无主。战时BFS须允许目标敌国的中间星系，不能只允许敌方终点后断言不可达。候选国家16777218沿164→39→68可达，但实际can_reach/宣战参与方/边境仍须原生UI核验。pc_volcanic在00_planet_classes.txt:430以下明确colonizable=yes，不能把此类“火山星球”当不可殖民的pc_molten；奇拉的NAME_Vermilion是size20/pc_volcanic并预置infernal_oasis_category异常，后续需正常勘测与UI核殖民条件。上述仅本版本本局证据，不把候选当已建立殖民地。
+
+
+2026-10-13 Stellaris原版/实机核实：civic_hive_devouring_swarm（02_gestalt_civics.txt:227、263）原生自带舰体与装甲百分比恢复0.05，石质名称swap_type位于277，当前源未在swap中覆盖modifier；00_defines.txt:1779/1781脱战两恢复倍率均5。本例270/250上限对应每日0.675/0.625先作预测，再由2286.02.22→03.01九日、03.01→03.30二十九日及后续单日SAV逐舰精确校准，已通过postcombat V3/V4与storm550 V3独立守卫；不能把组件中无再生组织误判为不能自愈。简中outliner原提示支持右击前往，当前右击866,449确实把镜头定位主力164；fleet_view.gui的Q快捷键只证明定义存在，之前未正确选中舰队时Q仍留母星，不能用快捷键定义替代实际UI定位证据。这些为Stellaris专属运行/UI规则，不外推CK3。
+
+
+2026-10-13 Stellaris civilian auto-upgrade：原版common/ship_sizes/00_ship_sizes.txt:101定义auto_upgrade会保持该舰型自动设计为当前科技并自动更新已有移动船；constructor:677启用。当前实机2286.04.02原科技完成时，已有施工船2由四槽BULWARK_BATTLEWRIGHT_SECTION自动换三槽DEFAULT_CONSTRUCTION_SECTION，原两125装甲变一125，实际/最大装甲250→125而舰体375/护盾320/出生/坐标/舰队/订单不变，且无付费升级队列。不能冻结所有民用船设计后把此正常原生自动更新报成Modbug；也不能把原始特殊模板归因本次Mod。普通/特殊模板槽数分别由section_templates/constructor.txt:9和overlord.txt:1631核实。这是Stellaris原生舰型规则，不外推CK3。
