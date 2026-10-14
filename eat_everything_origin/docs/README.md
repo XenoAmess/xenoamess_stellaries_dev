@@ -1,5 +1,13 @@
 # 吞噬之心：设计与研究
 
+当前总清单：[2026-10-15本批全部任务、优先级与验收节点](current-batch-plan-2026-10-15.md)。并行建造需求已由用户确认是额外一条真实队列；开局母舰与三类世界需求同列入计划。
+
+- [新增UI组件清单与统一决议整改](ui-components-and-decision-migration-2026-10-15.md)
+
+本轮新增需求：[决议控制的自动吞噬设计](auto-devour-decisions-design-2026-10-15.md)，默认关闭。当前优先完成[障碍清除与UI专项](building-demolition-ui-investigation-2026-10-15.md)。
+
+2026-10-15当前任务：[建筑拆除UI偏移排查](building-demolition-ui-investigation-2026-10-15.md)。用户已停止噬岩者验收，真实完成范围与未通过项见[停止记录](terravore-acceptance-stopped-2026-10-15.md)；历史继续验收计划不再自动执行。
+
 更新：2026-10-08。正式 `0.2.0` 已发布至[创意工坊新物品3815707212](https://steamcommunity.com/sharedfiles/filedetails/?id=3815707212)，全41文件、公开文案、Change Note与七张图片远端核验通过，Git标签v0.2.0已推送。完整实机验收仅焦土蜂巢；首发推荐焦土蜂巢；其它路线开放但未完成完整实机验收。Steam已恢复离线，继续测试与修复。
 
 已确认方向：偏强爽玩、普通星球吞噬 3～5 年。设计默认 20 格星球 4 年；用户拥有 Nemesis 与「虚境之影」，两项启用作为主验收配置，实机前核验实际加载状态。
