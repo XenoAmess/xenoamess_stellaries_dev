@@ -1,28 +1,5 @@
 # Country scope. Preserve the four legacy effects/counters; only their repeats migrate.
-shishan_code_architecture_migrate_counter_effect = {
-	if = {
-		limit = { is_variable_set = $COUNTER$ }
-		set_variable = { which = shishan_code_architecture_legacy_integer value = this.$COUNTER$ }
-		floor_variable = shishan_code_architecture_legacy_integer
-		if = {
-			limit = {
-				OR = {
-					check_variable = { which = $COUNTER$ value < 0 }
-					NOT = { check_variable = { which = $COUNTER$ value = this.shishan_code_architecture_legacy_integer } }
-				}
-			}
-			set_country_flag = shishan_code_architecture_legacy_invalid
-		}
-		if = {
-			limit = { check_variable = { which = $COUNTER$ value > 1 } }
-			set_variable = { which = shishan_code_architecture_legacy_extra value = this.$COUNTER$ }
-			change_variable = { which = shishan_code_architecture_legacy_extra value = -1 }
-			change_variable = { which = shishan_code_architecture_repeat_count value = this.shishan_code_architecture_legacy_extra }
-		}
-		clear_variable = shishan_code_architecture_legacy_integer
-		clear_variable = shishan_code_architecture_legacy_extra
-	}
-}
+# Inline the four counters below: stay below the native five-pass effect init limit.
 
 shishan_code_architecture_migrate_effect = {
 	if = {
@@ -34,10 +11,94 @@ shishan_code_architecture_migrate_effect = {
 			limit = { NOT = { is_variable_set = shishan_code_architecture_repeat_count } }
 			set_variable = { which = shishan_code_architecture_repeat_count value = 0 }
 		}
-		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_output }
-		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_energy }
-		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_assembly }
-		shishan_code_architecture_migrate_counter_effect = { COUNTER = shishan_code_iteration_experience }
+		if = {
+			limit = { is_variable_set = shishan_code_iteration_output }
+			set_variable = { which = shishan_code_architecture_legacy_integer value = this.shishan_code_iteration_output }
+			floor_variable = shishan_code_architecture_legacy_integer
+			if = {
+				limit = {
+					OR = {
+						check_variable = { which = shishan_code_iteration_output value < 0 }
+						NOT = { check_variable = { which = shishan_code_iteration_output value = this.shishan_code_architecture_legacy_integer } }
+					}
+				}
+				set_country_flag = shishan_code_architecture_legacy_invalid
+			}
+			if = {
+				limit = { check_variable = { which = shishan_code_iteration_output value > 1 } }
+				set_variable = { which = shishan_code_architecture_legacy_extra value = this.shishan_code_iteration_output }
+				change_variable = { which = shishan_code_architecture_legacy_extra value = -1 }
+				change_variable = { which = shishan_code_architecture_repeat_count value = this.shishan_code_architecture_legacy_extra }
+			}
+			clear_variable = shishan_code_architecture_legacy_integer
+			clear_variable = shishan_code_architecture_legacy_extra
+		}
+		if = {
+			limit = { is_variable_set = shishan_code_iteration_energy }
+			set_variable = { which = shishan_code_architecture_legacy_integer value = this.shishan_code_iteration_energy }
+			floor_variable = shishan_code_architecture_legacy_integer
+			if = {
+				limit = {
+					OR = {
+						check_variable = { which = shishan_code_iteration_energy value < 0 }
+						NOT = { check_variable = { which = shishan_code_iteration_energy value = this.shishan_code_architecture_legacy_integer } }
+					}
+				}
+				set_country_flag = shishan_code_architecture_legacy_invalid
+			}
+			if = {
+				limit = { check_variable = { which = shishan_code_iteration_energy value > 1 } }
+				set_variable = { which = shishan_code_architecture_legacy_extra value = this.shishan_code_iteration_energy }
+				change_variable = { which = shishan_code_architecture_legacy_extra value = -1 }
+				change_variable = { which = shishan_code_architecture_repeat_count value = this.shishan_code_architecture_legacy_extra }
+			}
+			clear_variable = shishan_code_architecture_legacy_integer
+			clear_variable = shishan_code_architecture_legacy_extra
+		}
+		if = {
+			limit = { is_variable_set = shishan_code_iteration_assembly }
+			set_variable = { which = shishan_code_architecture_legacy_integer value = this.shishan_code_iteration_assembly }
+			floor_variable = shishan_code_architecture_legacy_integer
+			if = {
+				limit = {
+					OR = {
+						check_variable = { which = shishan_code_iteration_assembly value < 0 }
+						NOT = { check_variable = { which = shishan_code_iteration_assembly value = this.shishan_code_architecture_legacy_integer } }
+					}
+				}
+				set_country_flag = shishan_code_architecture_legacy_invalid
+			}
+			if = {
+				limit = { check_variable = { which = shishan_code_iteration_assembly value > 1 } }
+				set_variable = { which = shishan_code_architecture_legacy_extra value = this.shishan_code_iteration_assembly }
+				change_variable = { which = shishan_code_architecture_legacy_extra value = -1 }
+				change_variable = { which = shishan_code_architecture_repeat_count value = this.shishan_code_architecture_legacy_extra }
+			}
+			clear_variable = shishan_code_architecture_legacy_integer
+			clear_variable = shishan_code_architecture_legacy_extra
+		}
+		if = {
+			limit = { is_variable_set = shishan_code_iteration_experience }
+			set_variable = { which = shishan_code_architecture_legacy_integer value = this.shishan_code_iteration_experience }
+			floor_variable = shishan_code_architecture_legacy_integer
+			if = {
+				limit = {
+					OR = {
+						check_variable = { which = shishan_code_iteration_experience value < 0 }
+						NOT = { check_variable = { which = shishan_code_iteration_experience value = this.shishan_code_architecture_legacy_integer } }
+					}
+				}
+				set_country_flag = shishan_code_architecture_legacy_invalid
+			}
+			if = {
+				limit = { check_variable = { which = shishan_code_iteration_experience value > 1 } }
+				set_variable = { which = shishan_code_architecture_legacy_extra value = this.shishan_code_iteration_experience }
+				change_variable = { which = shishan_code_architecture_legacy_extra value = -1 }
+				change_variable = { which = shishan_code_architecture_repeat_count value = this.shishan_code_architecture_legacy_extra }
+			}
+			clear_variable = shishan_code_architecture_legacy_integer
+			clear_variable = shishan_code_architecture_legacy_extra
+		}
 		set_country_flag = shishan_code_architecture_migrated
 	}
 }
@@ -60,7 +121,7 @@ shishan_code_architecture_refresh_effect = {
 		every_owned_pop_group = {
 			limit = {
 				is_same_species = prev
-				pop_amount > 0
+				pop_group_size > 0
 			}
 			set_variable = { which = shishan_code_architecture_group_traits value = 0 }
 			every_trait_of_species = {
@@ -68,7 +129,7 @@ shishan_code_architecture_refresh_effect = {
 					change_variable = { which = shishan_code_architecture_group_traits value = 1 }
 				}
 			}
-			set_variable = { which = shishan_code_architecture_group_population value = trigger:pop_amount }
+			set_variable = { which = shishan_code_architecture_group_population value = trigger:pop_group_size }
 			set_variable = { which = shishan_code_architecture_group_weight value = this.shishan_code_architecture_group_traits }
 			multiply_variable = { which = shishan_code_architecture_group_weight value = this.shishan_code_architecture_group_population }
 			prev = {
@@ -115,11 +176,19 @@ shishan_code_apply_domestic_template_effect = {
 	every_owned_pop_group = {
 		limit = {
 			is_exact_same_species = event_target:shishan_code_reward_old_species
-			pop_amount > 0
+			pop_group_size > 0
 		}
 		change_species = event_target:shishan_code_reward_new_species
 	}
 	every_owned_leader = {
+		limit = { is_exact_same_species = event_target:shishan_code_reward_old_species }
+		change_species = event_target:shishan_code_reward_new_species
+		if = {
+			limit = { has_leader_flag = shishan_code_vivhite }
+			change_leader_portrait = shishan_code_vivhite
+		}
+	}
+	every_envoy = {
 		limit = { is_exact_same_species = event_target:shishan_code_reward_old_species }
 		change_species = event_target:shishan_code_reward_new_species
 	}
@@ -143,11 +212,18 @@ shishan_code_modify_domestic_template_effect = {
 	modify_species = {
 		species = this
 		change_scoped_species = no
+		inherit_parent_rights = yes
 		add_trait = $ADD_TRAIT$
 		effect = { save_event_target_as = shishan_code_reward_new_species }
 	}
-	event_target:shishan_code_reward_country = {
-		shishan_code_apply_domestic_template_effect = yes
+	if = {
+		limit = { exists = event_target:shishan_code_reward_country }
+		event_target:shishan_code_reward_country = {
+			shishan_code_apply_domestic_template_effect = yes
+		}
+	}
+	else = {
+		log = "SHISHAN_CODE_TEMPLATE_COUNTRY_TARGET_MISSING"
 	}
 }
 
@@ -157,12 +233,19 @@ shishan_code_architecture_refactor_template_effect = {
 	modify_species = {
 		species = this
 		change_scoped_species = no
+		inherit_parent_rights = yes
 		remove_trait = trait_shishan_code
 		add_trait = trait_shishan_refactored
 		effect = { save_event_target_as = shishan_code_reward_new_species }
 	}
-	event_target:shishan_code_reward_country = {
-		shishan_code_apply_domestic_template_effect = yes
+	if = {
+		limit = { exists = event_target:shishan_code_reward_country }
+		event_target:shishan_code_reward_country = {
+			shishan_code_apply_domestic_template_effect = yes
+		}
+	}
+	else = {
+		log = "SHISHAN_CODE_TEMPLATE_COUNTRY_TARGET_MISSING"
 	}
 }
 
@@ -171,12 +254,19 @@ shishan_code_architecture_relapse_template_effect = {
 	modify_species = {
 		species = this
 		change_scoped_species = no
+		inherit_parent_rights = yes
 		remove_trait = trait_shishan_refactored
 		add_trait = trait_shishan_code
 		effect = { save_event_target_as = shishan_code_reward_new_species }
 	}
-	event_target:shishan_code_reward_country = {
-		shishan_code_apply_domestic_template_effect = yes
+	if = {
+		limit = { exists = event_target:shishan_code_reward_country }
+		event_target:shishan_code_reward_country = {
+			shishan_code_apply_domestic_template_effect = yes
+		}
+	}
+	else = {
+		log = "SHISHAN_CODE_TEMPLATE_COUNTRY_TARGET_MISSING"
 	}
 }
 
@@ -185,24 +275,28 @@ shishan_code_architecture_refactor_species_effect = {
 	if = {
 		limit = { has_origin = origin_shishan_code }
 		save_event_target_as = shishan_code_reward_country
-		every_owned_species = {
+		every_owned_pop_group = {
 			limit = {
 				is_same_species = prev
-				has_trait = trait_shishan_code
-				prev = {
-					any_owned_pop_group = {
-						is_exact_same_species = prevprev
-						pop_amount > 0
-					}
-				}
+				pop_group_size > 0
+				species = { has_trait = trait_shishan_code }
 			}
 			if = {
-				limit = { has_trait = trait_shishan_refactored }
-				event_target:shishan_code_reward_country = {
-					set_country_flag = shishan_code_architecture_state_invalid
+				limit = {
+					is_same_species = prev
+					pop_group_size > 0
+					species = { has_trait = trait_shishan_code }
+				}
+				species = {
+					if = {
+						limit = { has_trait = trait_shishan_refactored }
+						event_target:shishan_code_reward_country = {
+							set_country_flag = shishan_code_architecture_state_invalid
+						}
+					}
+					shishan_code_architecture_refactor_template_effect = yes
 				}
 			}
-			shishan_code_architecture_refactor_template_effect = yes
 		}
 		shishan_code_architecture_refresh_effect = yes
 	}
@@ -212,24 +306,28 @@ shishan_code_architecture_relapse_species_effect = {
 	if = {
 		limit = { has_origin = origin_shishan_code }
 		save_event_target_as = shishan_code_reward_country
-		every_owned_species = {
+		every_owned_pop_group = {
 			limit = {
 				is_same_species = prev
-				has_trait = trait_shishan_refactored
-				prev = {
-					any_owned_pop_group = {
-						is_exact_same_species = prevprev
-						pop_amount > 0
-					}
-				}
+				pop_group_size > 0
+				species = { has_trait = trait_shishan_refactored }
 			}
 			if = {
-				limit = { has_trait = trait_shishan_code }
-				event_target:shishan_code_reward_country = {
-					set_country_flag = shishan_code_architecture_state_invalid
+				limit = {
+					is_same_species = prev
+					pop_group_size > 0
+					species = { has_trait = trait_shishan_refactored }
+				}
+				species = {
+					if = {
+						limit = { has_trait = trait_shishan_code }
+						event_target:shishan_code_reward_country = {
+							set_country_flag = shishan_code_architecture_state_invalid
+						}
+					}
+					shishan_code_architecture_relapse_template_effect = yes
 				}
 			}
-			shishan_code_architecture_relapse_template_effect = yes
 		}
 		shishan_code_architecture_refresh_effect = yes
 	}

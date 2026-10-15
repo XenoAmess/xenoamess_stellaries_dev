@@ -4,6 +4,11 @@ shishan_code_refresh_vivhite_effect = {
 	remove_modifier = shishan_code_vivhite_society_step
 	if = {
 		limit = { any_owned_leader = { has_leader_flag = shishan_code_vivhite } }
+		# Native payment exemption bypasses the economic upkeep multiplier floor.
+		every_owned_leader = {
+			limit = { has_leader_flag = shishan_code_vivhite }
+			set_leader_flag = should_not_have_upkeep
+		}
 		add_modifier = { modifier = shishan_code_vivhite_base days = -1 }
 		add_modifier = {
 			modifier = shishan_code_vivhite_engineering_step

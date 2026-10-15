@@ -1,0 +1,1056 @@
+{
+  "status": "PASS_CLEAN_PENDING_SURVIVAL_AND_CLAIM4_WITH_DISCLOSED_EMPTY_SERIALIZATION_NORMALIZATION",
+  "scope": "Independent read-only raw native before/clean/claim comparisons on paused-date R4 source replayed with rc6. No GUI/game input.",
+  "inputs": [
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\fb454_fourth_rerolled.sav",
+      "sha256": "3d55081cc9e2b7f70415b253f56cab013f27a92b1787b5730f26867a433c64c4",
+      "date": "2204.04.01"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_clean_pending.sav",
+      "sha256": "4daada20d345e31989f53cc8fa9eb2ec1ec31001eb00fffead1de7dd447980c1",
+      "date": "2204.04.01"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_claim4.sav",
+      "sha256": "13c8314f020292cafa7256d74ad41cc831d2d6ec8486375ac3d8090f1fe616b8",
+      "date": "2204.04.01"
+    }
+  ],
+  "checks": [
+    {
+      "name": "all_three_snapshots_same_date",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "clean_one_for_one_trait_swap_population_preserved",
+      "status": "PASS",
+      "observed": [
+        {
+          "group_id": 50331648,
+          "sizes": [
+            500,
+            500,
+            500
+          ],
+          "species_ids": [
+            53,
+            56,
+            58
+          ],
+          "population_preserved": true,
+          "clean_single_trait_swap": true,
+          "claim_single_emotion_trait_added": true
+        },
+        {
+          "group_id": 1,
+          "sizes": [
+            2160,
+            2160,
+            2160
+          ],
+          "species_ids": [
+            54,
+            55,
+            57
+          ],
+          "population_preserved": true,
+          "clean_single_trait_swap": true,
+          "claim_single_emotion_trait_added": true
+        },
+        {
+          "group_id": 12,
+          "sizes": [
+            200,
+            200,
+            200
+          ],
+          "species_ids": [
+            54,
+            55,
+            57
+          ],
+          "population_preserved": true,
+          "clean_single_trait_swap": true,
+          "claim_single_emotion_trait_added": true
+        },
+        {
+          "group_id": 13,
+          "sizes": [
+            1780,
+            1780,
+            1780
+          ],
+          "species_ids": [
+            54,
+            55,
+            57
+          ],
+          "population_preserved": true,
+          "clean_single_trait_swap": true,
+          "claim_single_emotion_trait_added": true
+        },
+        {
+          "group_id": 14,
+          "sizes": [
+            900,
+            900,
+            900
+          ],
+          "species_ids": [
+            54,
+            55,
+            57
+          ],
+          "population_preserved": true,
+          "clean_single_trait_swap": true,
+          "claim_single_emotion_trait_added": true
+        },
+        {
+          "group_id": 16777253,
+          "sizes": [
+            53,
+            53,
+            53
+          ],
+          "species_ids": [
+            53,
+            56,
+            58
+          ],
+          "population_preserved": true,
+          "clean_single_trait_swap": true,
+          "claim_single_emotion_trait_added": true
+        }
+      ]
+    },
+    {
+      "name": "claim4_both_templates_exactly_plus_one_emotion_trait",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "exactly_two_new_species_per_stage",
+      "status": "PASS",
+      "observed": {
+        "clean_mapping": {
+          "53": 56,
+          "54": 55
+        },
+        "claim_mapping": {
+          "56": 58,
+          "55": 57
+        }
+      }
+    },
+    {
+      "name": "main_pointer_follows_actual_clones_each_stage",
+      "status": "PASS",
+      "observed": {
+        "founder_species_ref": [
+          54,
+          55,
+          57
+        ]
+      }
+    },
+    {
+      "name": "clean_U_unchanged_claim_U_exactly_plus1",
+      "status": "PASS",
+      "observed": {
+        "exact_U": [
+          "7270/799",
+          "7270/799",
+          "8069/799"
+        ],
+        "native_P": [
+          5593,
+          5593,
+          5593
+        ],
+        "native_W": [
+          50890,
+          50890,
+          56483
+        ]
+      }
+    },
+    {
+      "name": "clean_n4_R0",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "claim_n4_R0",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "clean_saved_pending_candidates_and_CD3_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "claim_consumes_receipt_and_cools_to2",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "all_seven_leaders_including_envoys_migrated_and_growth_preserved",
+      "status": "PASS",
+      "observed": [
+        {
+          "id": 167772189,
+          "class": "official",
+          "species_before_clean_after_claim": [
+            "54",
+            "55",
+            "57"
+          ],
+          "species_follow_correct_clone": true,
+          "all_growth_portrait_and_name_fields_preserved": true
+        },
+        {
+          "id": 134217755,
+          "class": "envoy",
+          "species_before_clean_after_claim": [
+            "54",
+            "55",
+            "57"
+          ],
+          "species_follow_correct_clone": true,
+          "all_growth_portrait_and_name_fields_preserved": true
+        },
+        {
+          "id": 150994970,
+          "class": "envoy",
+          "species_before_clean_after_claim": [
+            "54",
+            "55",
+            "57"
+          ],
+          "species_follow_correct_clone": true,
+          "all_growth_portrait_and_name_fields_preserved": true
+        },
+        {
+          "id": 150994969,
+          "class": "scientist",
+          "species_before_clean_after_claim": [
+            "54",
+            "55",
+            "57"
+          ],
+          "species_follow_correct_clone": true,
+          "all_growth_portrait_and_name_fields_preserved": true
+        },
+        {
+          "id": 150994968,
+          "class": "commander",
+          "species_before_clean_after_claim": [
+            "54",
+            "55",
+            "57"
+          ],
+          "species_follow_correct_clone": true,
+          "all_growth_portrait_and_name_fields_preserved": true
+        },
+        {
+          "id": 90,
+          "class": "official",
+          "species_before_clean_after_claim": [
+            "54",
+            "55",
+            "57"
+          ],
+          "species_follow_correct_clone": true,
+          "all_growth_portrait_and_name_fields_preserved": true
+        },
+        {
+          "id": 167772174,
+          "class": "official",
+          "species_before_clean_after_claim": [
+            "54",
+            "55",
+            "57"
+          ],
+          "species_follow_correct_clone": true,
+          "all_growth_portrait_and_name_fields_preserved": true
+        }
+      ]
+    },
+    {
+      "name": "all_existing_species_definitions_raw_unchanged_per_stage",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "foreign_sentinel18_and_old_main3321888769_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "foreign_group18_native": [
+          {
+            "key": "can_vote",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_worker_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_specialist_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_ruler_job",
+            "value": "yes"
+          },
+          {
+            "key": "key",
+            "value": [
+              {
+                "key": "species",
+                "value": "3321888769"
+              },
+              {
+                "key": "category",
+                "value": "ruler"
+              }
+            ]
+          },
+          {
+            "key": "planet",
+            "value": "2"
+          },
+          {
+            "key": "ethos",
+            "value": [
+              {
+                "key": "ethics",
+                "value": [
+                  "ethic_authoritarian",
+                  "ethic_pacifist",
+                  "ethic_militarist",
+                  "ethic_xenophile",
+                  "ethic_materialist"
+                ]
+              },
+              {
+                "key": "pops",
+                "value": [
+                  "128",
+                  "51",
+                  "14",
+                  "6",
+                  "1"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "factions",
+            "value": []
+          },
+          {
+            "key": "wanted_factions",
+            "value": []
+          },
+          {
+            "key": "size",
+            "value": "200"
+          },
+          {
+            "key": "last_month_growth",
+            "value": "0"
+          },
+          {
+            "key": "month_start_size",
+            "value": "200"
+          },
+          {
+            "key": "fractions",
+            "value": [
+              {
+                "key": "-1",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "key": "total_attraction",
+            "value": "34.38437"
+          },
+          {
+            "key": "ethics_attraction",
+            "value": [
+              "0",
+              "18.98437",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "8",
+              "0",
+              "0",
+              "0",
+              "5.4",
+              "0",
+              "0",
+              "0",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "key": "habitability",
+            "value": "0.75"
+          },
+          {
+            "key": "variables",
+            "value": [
+              {
+                "key": "shishan_feedback_probe_sentinel",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "key": "happiness",
+            "value": "0.89604"
+          },
+          {
+            "key": "power",
+            "value": "18"
+          },
+          {
+            "key": "crime",
+            "value": "0.41584"
+          },
+          {
+            "key": "amenities_usage",
+            "value": "250"
+          },
+          {
+            "key": "housing_usage",
+            "value": "200"
+          }
+        ]
+      }
+    },
+    {
+      "name": "all_other_population_groups_raw_unchanged",
+      "status": "OBSERVATION",
+      "observed": {
+        "strict_raw_equality": false,
+        "changed_groups": [
+          {
+            "group_id": 8,
+            "raw_fields_changed": {
+              "wanted_factions": [
+                null,
+                [],
+                []
+              ],
+              "factions": [
+                null,
+                [],
+                []
+              ]
+            },
+            "equivalent_after_only_omitted_empty_faction_normalization": true
+          },
+          {
+            "group_id": 22,
+            "raw_fields_changed": {
+              "wanted_factions": [
+                null,
+                [],
+                []
+              ],
+              "factions": [
+                null,
+                [],
+                []
+              ]
+            },
+            "equivalent_after_only_omitted_empty_faction_normalization": true
+          },
+          {
+            "group_id": 23,
+            "raw_fields_changed": {
+              "wanted_factions": [
+                null,
+                [],
+                []
+              ],
+              "factions": [
+                null,
+                [],
+                []
+              ]
+            },
+            "equivalent_after_only_omitted_empty_faction_normalization": true
+          },
+          {
+            "group_id": 45,
+            "raw_fields_changed": {
+              "wanted_factions": [
+                null,
+                [],
+                []
+              ],
+              "factions": [
+                null,
+                [],
+                []
+              ]
+            },
+            "equivalent_after_only_omitted_empty_faction_normalization": true
+          },
+          {
+            "group_id": 46,
+            "raw_fields_changed": {
+              "wanted_factions": [
+                null,
+                [],
+                []
+              ],
+              "factions": [
+                null,
+                [],
+                []
+              ]
+            },
+            "equivalent_after_only_omitted_empty_faction_normalization": true
+          },
+          {
+            "group_id": 47,
+            "raw_fields_changed": {
+              "wanted_factions": [
+                null,
+                [],
+                []
+              ],
+              "factions": [
+                null,
+                [],
+                []
+              ]
+            },
+            "equivalent_after_only_omitted_empty_faction_normalization": true
+          },
+          {
+            "group_id": 48,
+            "raw_fields_changed": {
+              "wanted_factions": [
+                null,
+                [],
+                []
+              ],
+              "factions": [
+                null,
+                [],
+                []
+              ]
+            },
+            "equivalent_after_only_omitted_empty_faction_normalization": true
+          }
+        ],
+        "boundary": "Seven groups acquire explicit empty factions/wanted_factions fields. All other raw entries remain identical. Whole-block byte/native equality is not claimed."
+      }
+    },
+    {
+      "name": "all_other_leaders_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "count": 226
+      }
+    },
+    {
+      "name": "global_probe_and_backup_targets_raw_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "after_clean_and_claim_native_cache_matches_instantaneous_PW",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "all_other_population_groups_unchanged_except_explicit_empty_faction_fields",
+      "status": "PASS",
+      "observed": [
+        {
+          "group_id": 8,
+          "raw_fields_changed": {
+            "wanted_factions": [
+              null,
+              [],
+              []
+            ],
+            "factions": [
+              null,
+              [],
+              []
+            ]
+          },
+          "equivalent_after_only_omitted_empty_faction_normalization": true
+        },
+        {
+          "group_id": 22,
+          "raw_fields_changed": {
+            "wanted_factions": [
+              null,
+              [],
+              []
+            ],
+            "factions": [
+              null,
+              [],
+              []
+            ]
+          },
+          "equivalent_after_only_omitted_empty_faction_normalization": true
+        },
+        {
+          "group_id": 23,
+          "raw_fields_changed": {
+            "wanted_factions": [
+              null,
+              [],
+              []
+            ],
+            "factions": [
+              null,
+              [],
+              []
+            ]
+          },
+          "equivalent_after_only_omitted_empty_faction_normalization": true
+        },
+        {
+          "group_id": 45,
+          "raw_fields_changed": {
+            "wanted_factions": [
+              null,
+              [],
+              []
+            ],
+            "factions": [
+              null,
+              [],
+              []
+            ]
+          },
+          "equivalent_after_only_omitted_empty_faction_normalization": true
+        },
+        {
+          "group_id": 46,
+          "raw_fields_changed": {
+            "wanted_factions": [
+              null,
+              [],
+              []
+            ],
+            "factions": [
+              null,
+              [],
+              []
+            ]
+          },
+          "equivalent_after_only_omitted_empty_faction_normalization": true
+        },
+        {
+          "group_id": 47,
+          "raw_fields_changed": {
+            "wanted_factions": [
+              null,
+              [],
+              []
+            ],
+            "factions": [
+              null,
+              [],
+              []
+            ]
+          },
+          "equivalent_after_only_omitted_empty_faction_normalization": true
+        },
+        {
+          "group_id": 48,
+          "raw_fields_changed": {
+            "wanted_factions": [
+              null,
+              [],
+              []
+            ],
+            "factions": [
+              null,
+              [],
+              []
+            ]
+          },
+          "equivalent_after_only_omitted_empty_faction_normalization": true
+        }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\fb454_fourth_rerolled.sav",
+      "founder": 54,
+      "owned_species_refs_cache": [
+        "53",
+        "54"
+      ],
+      "actual_domestic_templates": [
+        {
+          "id": 53,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            53,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        },
+        {
+          "id": 54,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 9,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            54,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "variables": {
+        "shishan_code_architecture_bonus": "0.45494",
+        "shishan_code_architecture_multiplier": "1.45494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "9.09887",
+        "shishan_code_architecture_trait_average": "9.09887",
+        "shishan_code_architecture_trait_weight": "50890",
+        "shishan_code_maintenance_count": "4",
+        "shishan_code_reroll_cooldown": "3",
+        "shishan_code_reward_old_1": "1",
+        "shishan_code_reward_old_2": "7",
+        "shishan_code_reward_old_3": "5",
+        "shishan_code_reward_slot_1": "11",
+        "shishan_code_reward_slot_2": "9",
+        "shishan_code_reward_slot_3": "12",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_reward_pending": "62844720",
+        "shishan_code_reward_rerolled": "62844720"
+      }
+    },
+    {
+      "name": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_clean_pending.sav",
+      "founder": 55,
+      "owned_species_refs_cache": [
+        "53",
+        "54"
+      ],
+      "actual_domestic_templates": [
+        {
+          "id": 55,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 9,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            55,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 56,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            56,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "variables": {
+        "shishan_code_architecture_bonus": "0.45494",
+        "shishan_code_architecture_multiplier": "1.45494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "9.09887",
+        "shishan_code_architecture_trait_average": "9.09887",
+        "shishan_code_architecture_trait_weight": "50890",
+        "shishan_code_maintenance_count": "4",
+        "shishan_code_reroll_cooldown": "3",
+        "shishan_code_reward_old_1": "1",
+        "shishan_code_reward_old_2": "7",
+        "shishan_code_reward_old_3": "5",
+        "shishan_code_reward_slot_1": "11",
+        "shishan_code_reward_slot_2": "9",
+        "shishan_code_reward_slot_3": "12",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_reward_pending": "62844720",
+        "shishan_code_reward_rerolled": "62844720",
+        "shishan_code_refactored": "62844720"
+      }
+    },
+    {
+      "name": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_claim4.sav",
+      "founder": 57,
+      "owned_species_refs_cache": [
+        "53",
+        "54"
+      ],
+      "actual_domestic_templates": [
+        {
+          "id": 57,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            57,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 58,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 11,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            58,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "variables": {
+        "shishan_code_architecture_bonus": "0.50494",
+        "shishan_code_architecture_multiplier": "1.50494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "10.09887",
+        "shishan_code_architecture_trait_average": "10.09887",
+        "shishan_code_architecture_trait_weight": "56483",
+        "shishan_code_maintenance_count": "4",
+        "shishan_code_reroll_cooldown": "2",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "0",
+        "shishan_code_reward_slot_2": "0",
+        "shishan_code_reward_slot_3": "0",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_refactored": "62844720"
+      }
+    }
+  ],
+  "cache_boundary": "Serialized owned_species_refs may remain stale after clone migration. This report verifies actual population groups and founder_species_ref; successful real claim after clean demonstrates current path no longer turns this valid pending reward into a false repeat fallback.",
+  "limitations": [
+    "This controlled branch replays a real prior pending save; it is distinct from the natural seed/white branch.",
+    "Species rights resolution is not inferred solely from serialized explicit rows; earlier root native UI provides the current-sample rights check."
+  ]
+}

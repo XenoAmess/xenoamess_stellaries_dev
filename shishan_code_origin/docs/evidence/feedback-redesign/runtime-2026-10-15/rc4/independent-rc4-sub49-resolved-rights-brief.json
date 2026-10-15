@@ -1,0 +1,55 @@
+{
+  "status": "PASS_CURRENT_NATIVE_SAMPLE",
+  "date": "2204.02.13",
+  "species_id": 49,
+  "scope": "Resolved rights of the observed 541-population domestic subtemplate only, combining root-operated native UI screenshots with independent read-only saved population and employment audit.",
+  "ui_evidence": [
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-sub49-resolved-rights.jpg",
+      "sha256": "d8d420d2d6589a9d9f0e14ac41553a2bbc5f491588cb6a1a119c41ad7cdc7833",
+      "review": "Image inspected by this agent from existing local file; no GUI or game input performed."
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-sub49-rights-detail.jpg",
+      "sha256": "6a314eddcbbfcdf9246fb091391dbd547c2d3f542a8afe5fae10f80a07ede936",
+      "review": "Image inspected by this agent from existing local file; no GUI or game input performed."
+    }
+  ],
+  "resolved_ui_rights": {
+    "citizenship": "Full Citizenship",
+    "living_standard": "Decent Conditions",
+    "military_service": "Full Military Service",
+    "colonization": "Allowed",
+    "population_controls": "None",
+    "migration_controls": "None"
+  },
+  "positive_saved_behavior": {
+    "population_after_claim": 511,
+    "population_after_five_calendar_months": 541,
+    "worker_group_size": 500,
+    "actual_job_type": "miner",
+    "actual_job_id": 25,
+    "actual_assigned_workforce": 500,
+    "all_can_fill_worker_specialist_ruler_and_can_vote_flags": "yes",
+    "purge_or_citizenship_fields_present_in_subgroup_records": false
+  },
+  "serialized_records_preserved": {
+    "raw_only_audit": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\independent-rc4-claim-audit.json",
+    "sha256_before": "a2eeff0fb54893f9ae9ec21b71b1404a12e4ed3affd2ca20e33c2f3de29b1f18",
+    "raw_only_resolved_rights_status": "UNKNOWN (unchanged)",
+    "rights_primary_species_index": 3321888769,
+    "country_founder_species_ref_after_claim": 50,
+    "explicit_rights_species_rows_after_claim": [
+      48,
+      50,
+      50
+    ],
+    "explicit_row49_present": false,
+    "interpretation": "Serialized rights rows and the engine-resolved current UI are distinct evidence. Missing explicit row49 did not imply purge; duplicated row50 metadata is retained exactly. This sample UI resolves the previously unverified actual rights, without rewriting the original raw-only conclusion."
+  },
+  "limitations": [
+    "This confirms the current native sample, not a complete formal model of inherit_parent_rights serialization or every country/rights combination.",
+    "The grey purge-method setting in the rights menu is not evidence of active purging.",
+    "Root performed all UI operations and reports no rights changes; this agent only inspected existing images and saved records."
+  ]
+}

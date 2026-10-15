@@ -1,0 +1,59 @@
+{
+  "scope": "read-only saved evidence index; no game or input operations by this auditor",
+  "source_of_native_result": "root operator confirmation of the final visible result on each focused canonical probe; earlier malformed or unfocused probes excluded",
+  "saved_main_pointer": "country.founder_species_ref=50",
+  "saved_rights_primary": "3321888769 (independent rights row, not a main pointer)",
+  "saved_trait_truth": {
+    "50": {
+      "trait_robot_artificial_engineers": true,
+      "trait_robot_learning_algorithms": false
+    },
+    "49": {
+      "trait_robot_artificial_engineers": true,
+      "trait_robot_learning_algorithms": true
+    },
+    "3321888769": {
+      "trait_robot_artificial_engineers": false,
+      "trait_robot_learning_algorithms": false
+    }
+  },
+  "probes": [
+    {
+      "command": "trigger owner_main_species = { has_trait = trait_robot_artificial_engineers }",
+      "root_operator_verified_last_native_result": "TRUE",
+      "artifacts": [
+        {
+          "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-focused-getter-engineers.console.json",
+          "sha256": "844b4bbd6b38a5a25627ddccba75916702581c2bfebf40e808c7419264e357af"
+        },
+        {
+          "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-focused-getter-engineers-result.jpg",
+          "sha256": "bc20a1e69ff20b398acbb4f8d7021e9efe44780e5a85d101095c9ffb72baca7a"
+        },
+        {
+          "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-focused-getter-engineers-result.ocr.json",
+          "sha256": "2433ad039498e637943975357996bfb0ae9b4e22386462744214a43451018405"
+        }
+      ]
+    },
+    {
+      "command": "trigger owner_main_species = { has_trait = trait_robot_learning_algorithms }",
+      "root_operator_verified_last_native_result": "FALSE",
+      "artifacts": [
+        {
+          "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-focused-getter-learning.console.json",
+          "sha256": "c5d2ff9ce159ae6cded7fa6289d195488eaca888bc0bf5260b36476e52092a52"
+        },
+        {
+          "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-focused-getter-learning-result.jpg",
+          "sha256": "60ad4fdbec25c4a29d58372830a021264e466e3566217c85a150154dcdff923e"
+        },
+        {
+          "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\rc4-focused-getter-learning-result.ocr.json",
+          "sha256": "557017a36476a2bd50ee07f83a57a812aa50903c689544976869b3771734344e"
+        }
+      ]
+    }
+  ],
+  "conclusion": "The correctly keyed native owner_main_species results distinguish template 50 from 49 and the old main, corroborating country.founder_species_ref for this native transition. Rights getter resolution is a separate domain."
+}

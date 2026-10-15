@@ -1,4 +1,4 @@
-"""Generate the audited, ordered species-trait reward pools for Stellaris 4.5.1.
+"""Generate the audited, ordered species-trait reward pools for Stellaris 4.5.2.
 
 The lists contain ordinary vanilla positives with modifiers that function for a
 machine pop/leader. Story, ascension, DLC-special, habitability-at-100%, and
@@ -23,23 +23,30 @@ ROBOTIC = [
     ("trait_robot_harvesters", [], False, True),
     ("trait_robot_superconductive", [], False, False),
     ("trait_robot_efficient_processors", [], False, False),
-    ("trait_robot_logic_engines", [], False, False),
+    ("trait_robot_logic_engines", ["trait_robot_suppressed"], False, False),
     ("trait_robot_loyalty_circuits", [], True, False),
     ("trait_robot_double_jointed", ["trait_robot_bulky", "trait_interconnected"], False, False),
-    ("trait_robot_enhanced_memory", [], False, False),
-    ("trait_robot_emotion_emulators", ["trait_robot_uncanny"], False, False),
+    ("trait_robot_enhanced_memory", ["trait_robot_suppressed"], False, False),
+    ("trait_robot_emotion_emulators", ["trait_robot_uncanny", "trait_interconnected"], False, False),
     ("trait_robot_durable", ["trait_robot_high_maintenance"], False, False),
-    ("trait_robot_learning_algorithms", ["trait_robot_repurposed_hardware"], False, False),
+    ("trait_robot_learning_algorithms", ["trait_robot_repurposed_hardware", "trait_robot_suppressed"], False, False),
     ("trait_robot_mass_produced", ["trait_robot_custom_made"], False, False),
     ("trait_robot_recycled", ["trait_robot_luxurious"], False, False),
-    ("trait_robot_propaganda_machines", [], True, False),
+    ("trait_robot_propaganda_machines", ["trait_robot_quarrelsome"], True, False),
     ("trait_robot_streamlined_protocols", ["trait_robot_high_bandwidth"], False, False),
-    ("trait_robot_trading_algorithms", [], True, False),
-    ("trait_robot_artificial_engineers", [], False, False),
-    ("trait_robot_artificial_physicists", [], False, False),
-    ("trait_robot_artificial_sociologists", [], False, False),
-    ("trait_robot_integrated_weaponry", [], False, False),
+    ("trait_robot_trading_algorithms", ["trait_robot_scarcity_algorithms"], True, False),
+    ("trait_robot_artificial_engineers", ["trait_robot_artificial_physicists", "trait_robot_artificial_sociologists", "trait_structural_awareness"], False, False),
+    ("trait_robot_artificial_physicists", ["trait_robot_artificial_sociologists", "trait_robot_artificial_engineers", "trait_structural_awareness"], False, False),
+    ("trait_robot_artificial_sociologists", ["trait_robot_artificial_physicists", "trait_robot_artificial_engineers", "trait_structural_awareness"], False, False),
+    ("trait_robot_integrated_weaponry", ["trait_robot_delicate_frames"], False, False),
 ]
+
+ROBOTIC_REQUIRED_DLC = {
+    "trait_robot_artificial_engineers": "The Machine Age",
+    "trait_robot_artificial_physicists": "The Machine Age",
+    "trait_robot_artificial_sociologists": "The Machine Age",
+    "trait_robot_integrated_weaponry": "The Machine Age",
+}
 
 OTHER = [
     ("trait_agrarian", [], False, True),
@@ -75,19 +82,26 @@ def species_condition(item: tuple[str, list[str], bool, bool], compatible: bool 
         excluded.append(compatible_name(name))
         other_names = {entry[0] for entry in OTHER}
         excluded.extend(compatible_name(entry) for entry in opposite if entry in other_names)
-    return "NOR = { " + " ".join("has_trait = " + n for n in dict.fromkeys(excluded)) + " }"
+    archetype = "" if compatible else "OR = { is_archetype = ROBOT is_archetype = MACHINE } "
+    return archetype + "NOR = { " + " ".join("has_trait = " + n for n in dict.fromkeys(excluded)) + " }"
+
+
+def pop_condition(item: tuple[str, list[str], bool, bool], compatible: bool = False) -> str:
+    # Actual population stays authoritative while owned_species_refs catches up.
+    return "is_same_species = prev pop_group_size > 0 species = { " + species_condition(item, compatible) + " }"
 
 
 def condition(item: tuple[str, list[str], bool, bool], compatible: bool = False) -> str:
-    _, _, individual, food = item
+    name, _, individual, food = item
     checks = [
-        "any_owned_species = { is_same_species = prev " + species_condition(item, compatible)
-        + " prev = { any_owned_pop_group = { is_exact_same_species = prevprev pop_amount > 0 } } }"
+        "any_owned_pop_group = { " + pop_condition(item, compatible) + " }"
     ]
     if individual:
         checks.append("NOT = { has_ethic = ethic_gestalt_consciousness }")
     if food:
         checks.append("country_uses_food = yes")
+    if not compatible and name in ROBOTIC_REQUIRED_DLC:
+        checks.append(f'host_has_dlc = "{ROBOTIC_REQUIRED_DLC[name]}"')
     return " ".join(checks)
 
 
@@ -129,7 +143,7 @@ def random_draw(slot: int, fresh: bool = False) -> str:
     draws = ["random_list = {"]
     for index, _, _, tier in ENTRIES:
         draws.append(
-            f"1 = {{ modifier = {{ factor = 0 NOT = {{ {available(index, tier, fresh)} }} }} "
+            f"1 = {{ modifier = {{ factor = 0 NOT = {{ AND = {{ {available(index, tier, fresh)} }} }} }} "
             f"set_variable = {{ which = shishan_code_reward_slot_{slot} value = {index} }} }}"
         )
     draws.append("}")
@@ -158,7 +172,7 @@ def generate_scripts() -> tuple[str, str, str]:
                    "if = { limit = { has_origin = origin_shishan_code has_country_flag = shishan_code_reward_pending "
                    "NOT = { has_country_flag = shishan_code_reward_window_open } }\n"
                    "set_country_flag = shishan_code_reward_window_open\n"
-                   "country_event = { id = shishan_code.1000 } }\n}")
+                   "country_event = { id = shishan_code.1004 } }\n}")
     tier_one = "OR = { " + " ".join(eligible(i) for i, _, _, tier in ENTRIES if tier == 1) + " }"
     tier_two = "OR = { " + " ".join(eligible(i) for i, _, _, tier in ENTRIES if tier == 2) + " }"
     effects.append("shishan_code_reward_choose_tier_effect = {\n"
@@ -200,9 +214,9 @@ def generate_scripts() -> tuple[str, str, str]:
                        "remove_country_flag = shishan_code_reward_window_open\n"
                        f"if = {{ limit = {{ has_origin = origin_shishan_code has_country_flag = shishan_code_reward_pending {has_candidate(index)} {eligible(index)} }}\n"
                        "save_event_target_as = shishan_code_reward_country\n"
-                       "every_owned_species = { limit = { is_same_species = prev " + species_condition(item, compatible)
-                       + " prev = { any_owned_pop_group = { is_exact_same_species = prevprev pop_amount > 0 } } }\n"
-                       f"shishan_code_modify_domestic_template_effect = {{ ADD_TRAIT = {trait} }} }}\n"
+                       "every_owned_pop_group = { limit = { " + pop_condition(item, compatible) + " }\n"
+                       "if = { limit = { " + pop_condition(item, compatible) + " } species = {\n"
+                       f"shishan_code_modify_domestic_template_effect = {{ ADD_TRAIT = {trait} }} }} }} }}\n"
                        "if = { limit = { check_variable = { which = shishan_code_reroll_cooldown value > 0 } }\n"
                        "change_variable = { which = shishan_code_reroll_cooldown value = -1 } }\n"
                        "shishan_code_reward_finish_effect = yes\ncountry_event = { id = shishan_code.1003 }\n}\n}")
@@ -237,8 +251,8 @@ def generate_scripts() -> tuple[str, str, str]:
     for index, item, compatible, _ in ENTRIES:
         var = f"shishan_code_reward_coverage_{index:02d}"
         coverage.extend([f"set_variable = {{ which = {var} value = 0 }}", f"if = {{ limit = {{ {has_candidate(index)} }}",
-                         "every_owned_pop_group = { limit = { is_same_species = prev pop_amount > 0 species = { " + species_condition(item, compatible) + " } }",
-                         f"prev = {{ change_variable = {{ which = {var} value = prev.trigger:pop_amount }} }} }}",
+                         "every_owned_pop_group = { limit = { is_same_species = prev pop_group_size > 0 species = { " + species_condition(item, compatible) + " } }",
+                         f"prev = {{ change_variable = {{ which = {var} value = prev.trigger:pop_group_size }} }} }}",
                          "if = { limit = { check_variable = { which = shishan_code_architecture_population value > 0 } }",
                          f"divide_variable = {{ which = {var} value = this.shishan_code_architecture_population }}",
                          f"multiply_variable = {{ which = {var} value = 100 }}", "}", "}"])
@@ -249,16 +263,16 @@ def generate_scripts() -> tuple[str, str, str]:
               "country_event = {", "id = shishan_code.1000", "title = shishan_code_reward_title", "desc = shishan_code_reward_desc",
               "picture = GFX_shishan_event", "is_triggered_only = yes",
               "trigger = { has_origin = origin_shishan_code has_country_flag = shishan_code_reward_pending has_country_flag = shishan_code_reward_window_open }",
-              "immediate = { shishan_code_reward_refresh_effect = yes shishan_code_reward_coverage_effect = yes }"]
+              "immediate = { shishan_code_reward_coverage_effect = yes }"]
     for index, _, _, _ in ENTRIES:
         events.extend(["option = {", f"name = shishan_code_reward_option_{index:02d}",
                        f"trigger = {{ has_country_flag = shishan_code_reward_pending {has_candidate(index)} }}",
                        f"custom_tooltip = shishan_code_reward_option_{index:02d}_tooltip", "ai_chance = { factor = 1 }",
-                       f"shishan_code_reward_claim_{index:02d}_effect = yes", "}"])
+                       f"hidden_effect = {{ shishan_code_reward_claim_{index:02d}_effect = yes }}", "}"])
     events.extend(["option = { name = shishan_code_reward_reroll",
                    "allow = { custom_tooltip = { fail_text = shishan_code_reward_reroll_unavailable shishan_code_reward_can_reroll = yes } }",
-                   "ai_chance = { factor = 0 } shishan_code_reward_reroll_effect = yes }",
-                   "option = { name = shishan_code_reward_later ai_chance = { factor = 0 } remove_country_flag = shishan_code_reward_window_open }", "}",
+                   "ai_chance = { factor = 0 } hidden_effect = { shishan_code_reward_reroll_effect = yes } }",
+                   "option = { name = shishan_code_reward_later ai_chance = { factor = 0 } hidden_effect = { remove_country_flag = shishan_code_reward_window_open } }", "}",
                    "country_event = { id = shishan_code.1001 title = shishan_code_architecture_title desc = shishan_code_architecture_summary",
                    "picture = GFX_shishan_event is_triggered_only = yes trigger = { has_origin = origin_shishan_code }",
                    "immediate = { shishan_code_architecture_refresh_effect = yes }",
@@ -268,7 +282,12 @@ def generate_scripts() -> tuple[str, str, str]:
                    "option = { name = shishan_code_feedback_close } }",
                    "country_event = { id = shishan_code.1003 title = shishan_code_architecture_title desc = shishan_code_architecture_summary",
                    "picture = GFX_shishan_event is_triggered_only = yes trigger = { has_origin = origin_shishan_code }",
-                   "option = { name = shishan_code_feedback_close } }", ""])
+                   "option = { name = shishan_code_feedback_close } }",
+                   "country_event = { id = shishan_code.1004 hide_window = yes is_triggered_only = yes",
+                   "trigger = { has_origin = origin_shishan_code has_country_flag = shishan_code_reward_pending has_country_flag = shishan_code_reward_window_open }",
+                   "immediate = { shishan_code_reward_refresh_effect = yes",
+                   "if = { limit = { has_country_flag = shishan_code_reward_pending has_country_flag = shishan_code_reward_window_open }",
+                   "country_event = { id = shishan_code.1000 } } } }", ""])
     return "\n\n".join(effects) + "\n", "\n\n".join(triggers) + "\n", "\n".join(events)
 
 

@@ -1,0 +1,97 @@
+# Isolated test fixture only. Never include in the production Mod or Workshop package.
+namespace = shishan_feedback_probe
+
+# Establish a foreign population using the source country's unchanged old main template.
+# Country flags, a pop-group variable and global targets permit native-save auditing.
+country_event = {
+	id = shishan_feedback_probe.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_origin = origin_shishan_code }
+	immediate = {
+		if = {
+			limit = {
+				has_origin = origin_shishan_code
+				exists = owner_main_species
+				NOT = { has_country_flag = shishan_feedback_probe_sentinel_ready }
+			}
+			save_global_event_target_as = shishan_feedback_probe_source_country
+			owner_main_species = {
+				save_global_event_target_as = shishan_feedback_probe_source_species
+			}
+			if = {
+				limit = {
+					any_country = {
+						is_country_type = default
+						NOT = { is_same_value = root }
+						any_owned_pop_group = { pop_group_size > 0 }
+					}
+				}
+				random_country = {
+					limit = {
+						is_country_type = default
+						NOT = { is_same_value = root }
+						any_owned_pop_group = { pop_group_size > 0 }
+					}
+					save_global_event_target_as = shishan_feedback_probe_foreign_country
+					set_country_flag = shishan_feedback_probe_foreign_sentinel
+					random_owned_pop_group = {
+						limit = { pop_group_size > 0 }
+						species = {
+							save_global_event_target_as = shishan_feedback_probe_foreign_original_species
+						}
+						save_global_event_target_as = shishan_feedback_probe_foreign_group
+						set_variable = { which = shishan_feedback_probe_sentinel value = 1 }
+						change_species = event_target:shishan_feedback_probe_source_species
+					}
+				}
+				if = {
+					limit = {
+						exists = event_target:shishan_feedback_probe_foreign_group
+						event_target:shishan_feedback_probe_foreign_group = {
+							pop_group_size > 0
+							is_exact_same_species = event_target:shishan_feedback_probe_source_species
+							check_variable = { which = shishan_feedback_probe_sentinel value = 1 }
+						}
+					}
+					set_country_flag = shishan_feedback_probe_sentinel_ready
+					log = "SHISHAN_FEEDBACK_PROBE_1_READY_FOREIGN_SENTINEL"
+				}
+				else = {
+					log = "SHISHAN_FEEDBACK_PROBE_1_BLOCKED_POSTCONDITION"
+				}
+			}
+			else = {
+				log = "SHISHAN_FEEDBACK_PROBE_1_BLOCKED_NO_ELIGIBLE_FOREIGN_GROUP"
+			}
+		}
+		else = {
+			log = "SHISHAN_FEEDBACK_PROBE_1_BLOCKED_PREREQUISITE_OR_REPLAY"
+		}
+	}
+}
+
+# Controlled candidate interaction only; this does not complete research or increment n.
+country_event = {
+	id = shishan_feedback_probe.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_origin = origin_shishan_code
+		NOT = { has_country_flag = shishan_code_reward_pending }
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_origin = origin_shishan_code
+				NOT = { has_country_flag = shishan_code_reward_pending }
+			}
+			set_country_flag = shishan_code_reward_ticket_ready
+			shishan_code_award_reward = yes
+			log = "SHISHAN_FEEDBACK_PROBE_2_REQUESTED_CONTROLLED_REWARD"
+		}
+		else = {
+			log = "SHISHAN_FEEDBACK_PROBE_2_BLOCKED_ORIGIN_OR_PENDING"
+		}
+	}
+}

@@ -1,0 +1,1943 @@
+{
+  "status": "PASS",
+  "scope": "Independent read-only raw native stageIII/IV/V numerical audit after controlled progress500/750/950 and ordinary complete-month advancement. Existing OCR screenshots reviewed programmatically; no GUI/game input by this agent.",
+  "baseline": {
+    "input": {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\fb456_floor_j500.sav",
+      "sha256": "1f254e6090af681e3c5bf399f46456bfb38a2301843379b2f844ca3c07492cc5",
+      "date": "2210.02.22"
+    },
+    "stageI_current_last_budget": {
+      "current_month": {
+        "country_base_income": {
+          "energy": "25",
+          "minerals": "25",
+          "physics_research": "12.5",
+          "society_research": "12.5",
+          "engineering_research": "12.5",
+          "influence": "3.75",
+          "unity": "12.5",
+          "consumer_goods": "18.75",
+          "alloys": "6.25"
+        },
+        "planet_biologists_income": [
+          {
+            "key": "society_research",
+            "value": "31.80869"
+          },
+          {
+            "key": "unity",
+            "value": "9.46687"
+          }
+        ],
+        "planet_biologists_expenses": [
+          {
+            "key": "consumer_goods",
+            "value": "6.93"
+          }
+        ]
+      },
+      "last_month": {
+        "country_base_income": {
+          "energy": "25",
+          "minerals": "25",
+          "physics_research": "12.5",
+          "society_research": "12.5",
+          "engineering_research": "12.5",
+          "influence": "3.75",
+          "unity": "12.5",
+          "consumer_goods": "18.75",
+          "alloys": "6.25"
+        },
+        "planet_biologists_income": [
+          {
+            "key": "society_research",
+            "value": "31.80777"
+          },
+          {
+            "key": "unity",
+            "value": "9.4666"
+          }
+        ],
+        "planet_biologists_expenses": [
+          {
+            "key": "consumer_goods",
+            "value": "6.93"
+          }
+        ]
+      }
+    },
+    "existing_floor_audit": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\independent-rc6-floor-j500-audit.json"
+  },
+  "stages": [
+    {
+      "stage": 3,
+      "input": {
+        "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\fb456_stage3.sav",
+        "sha256": "9c422d99f6745d4de1516b81e4f76cee074f7f62334ac9374cf921b2ca412eae",
+        "date": "2210.05.02"
+      },
+      "checks": {
+        "expected_native_save_sha": true,
+        "one_active_situation_correct_stage": true,
+        "progress_in_expected_stage_interval": true,
+        "native_last_month_floor_point2": true,
+        "n1_unchanged": true,
+        "five_active_institutes": true,
+        "actual_assigned_J500_bonus_excluded": true,
+        "country_base_energy_current_last_expected": true,
+        "all_nine_country_base_resource_rows_scale_to_stage_exactly": true,
+        "OCR_image_hash_matches": true,
+        "native_tooltip_output_penalty": true,
+        "native_tooltip_upkeep_penalty": true,
+        "native_tooltip_ship_damage_rounded_display": true,
+        "native_tooltip_ship_speed_rounded_display": true,
+        "actor_scope_preserved": true,
+        "physical_template_definitions_preserved": true
+      },
+      "situations": [
+        {
+          "id": 4,
+          "stage": "2",
+          "progress": "500.6",
+          "last_month_progress": "0.2",
+          "native": [
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "target",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                }
+              ]
+            },
+            {
+              "key": "type",
+              "value": "situation_shishan_code"
+            },
+            {
+              "key": "progress",
+              "value": "500.6"
+            },
+            {
+              "key": "last_month_progress",
+              "value": "0.2"
+            },
+            {
+              "key": "approach",
+              "value": ""
+            },
+            {
+              "key": "stage_durations",
+              "value": [
+                [
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "end",
+                    "value": "250"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "250"
+                  },
+                  {
+                    "key": "end",
+                    "value": "500"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "500"
+                  },
+                  {
+                    "key": "end",
+                    "value": "750"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "750"
+                  },
+                  {
+                    "key": "end",
+                    "value": "950"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "950"
+                  },
+                  {
+                    "key": "end",
+                    "value": "1000"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "stage_flags",
+              "value": [
+                "yes",
+                "yes",
+                "yes",
+                "no",
+                "no"
+              ]
+            },
+            {
+              "key": "stage",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 33554621,
+          "type": "shishan_code_maintainer",
+          "workforce": "500",
+          "bonus_workforce": "50",
+          "assignments": [
+            {
+              "pop_group": "13",
+              "amount": "500"
+            }
+          ],
+          "native": [
+            {
+              "key": "type",
+              "value": "shishan_code_maintainer"
+            },
+            {
+              "key": "automated_workforce",
+              "value": "0"
+            },
+            {
+              "key": "workforce",
+              "value": "500"
+            },
+            {
+              "key": "max_workforce",
+              "value": "500"
+            },
+            {
+              "key": "bonus_workforce",
+              "value": "50"
+            },
+            {
+              "key": "workforce_limit",
+              "value": "500"
+            },
+            {
+              "key": "automated_workforce_limit",
+              "value": "499"
+            },
+            {
+              "key": "pop_groups",
+              "value": [
+                [
+                  {
+                    "key": "pop_group",
+                    "value": "13"
+                  },
+                  {
+                    "key": "amount",
+                    "value": "500"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "pop_group",
+              "value": "4294967295"
+            }
+          ]
+        }
+      ],
+      "institutes": [
+        {
+          "id": 16777252,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 33554478,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 54,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "actual_J": "500",
+      "bonus_excluded": "50",
+      "budget": {
+        "current_month": {
+          "country_base_income": {
+            "energy": "17.5",
+            "minerals": "17.5",
+            "physics_research": "8.75",
+            "society_research": "8.75",
+            "engineering_research": "8.75",
+            "influence": "2.625",
+            "unity": "8.75",
+            "consumer_goods": "13.125",
+            "alloys": "4.375"
+          },
+          "planet_biologists_income": [
+            {
+              "key": "society_research",
+              "value": "24.88202"
+            },
+            {
+              "key": "unity",
+              "value": "7.40536"
+            }
+          ],
+          "planet_biologists_expenses": [
+            {
+              "key": "consumer_goods",
+              "value": "10.395"
+            }
+          ]
+        },
+        "last_month": {
+          "country_base_income": {
+            "energy": "17.5",
+            "minerals": "17.5",
+            "physics_research": "8.75",
+            "society_research": "8.75",
+            "engineering_research": "8.75",
+            "influence": "2.625",
+            "unity": "8.75",
+            "consumer_goods": "13.125",
+            "alloys": "4.375"
+          },
+          "planet_biologists_income": [
+            {
+              "key": "society_research",
+              "value": "24.88091"
+            },
+            {
+              "key": "unity",
+              "value": "7.40503"
+            }
+          ],
+          "planet_biologists_expenses": [
+            {
+              "key": "consumer_goods",
+              "value": "10.395"
+            }
+          ]
+        }
+      },
+      "exact_production_scaling": {
+        "current_month": {
+          "energy": {
+            "stageI": "25",
+            "expected": "17.5",
+            "observed": "17.5",
+            "pass": true
+          },
+          "minerals": {
+            "stageI": "25",
+            "expected": "17.5",
+            "observed": "17.5",
+            "pass": true
+          },
+          "physics_research": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "society_research": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "engineering_research": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "influence": {
+            "stageI": "3.75",
+            "expected": "2.625",
+            "observed": "2.625",
+            "pass": true
+          },
+          "unity": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "consumer_goods": {
+            "stageI": "18.75",
+            "expected": "13.125",
+            "observed": "13.125",
+            "pass": true
+          },
+          "alloys": {
+            "stageI": "6.25",
+            "expected": "4.375",
+            "observed": "4.375",
+            "pass": true
+          }
+        },
+        "last_month": {
+          "energy": {
+            "stageI": "25",
+            "expected": "17.5",
+            "observed": "17.5",
+            "pass": true
+          },
+          "minerals": {
+            "stageI": "25",
+            "expected": "17.5",
+            "observed": "17.5",
+            "pass": true
+          },
+          "physics_research": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "society_research": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "engineering_research": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "influence": {
+            "stageI": "3.75",
+            "expected": "2.625",
+            "observed": "2.625",
+            "pass": true
+          },
+          "unity": {
+            "stageI": "12.5",
+            "expected": "8.75",
+            "observed": "8.75",
+            "pass": true
+          },
+          "consumer_goods": {
+            "stageI": "18.75",
+            "expected": "13.125",
+            "observed": "13.125",
+            "pass": true
+          },
+          "alloys": {
+            "stageI": "6.25",
+            "expected": "4.375",
+            "observed": "4.375",
+            "pass": true
+          }
+        }
+      },
+      "variables": {
+        "shishan_code_architecture_bonus": "0.35",
+        "shishan_code_architecture_multiplier": "1.35",
+        "shishan_code_architecture_population": "5504",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "7",
+        "shishan_code_architecture_trait_average": "7",
+        "shishan_code_architecture_trait_weight": "38528",
+        "shishan_code_maintenance_count": "1",
+        "shishan_code_reroll_cooldown": "0",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "0",
+        "shishan_code_reward_slot_2": "0",
+        "shishan_code_reward_slot_3": "0",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62837520"
+      },
+      "OCR_evidence": {
+        "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage3-tooltip.ocr.json",
+        "sha256": "0aafe7e8142f527f6f1fe303d5e490297669357a35445335e713a24d892312ff",
+        "image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage3-tooltip.jpg",
+        "image_sha256": "2cde67422c0566f63db5129de04ebb1e9ee4e7af6e869426f6a2e044e626fece",
+        "native_pid": 8976,
+        "percentage_rows": [
+          {
+            "row_index": 43,
+            "text": "每月能量币：-12.50%"
+          },
+          {
+            "row_index": 55,
+            "text": "每月贸易：-12.50%"
+          },
+          {
+            "row_index": 57,
+            "text": "每月矿物：-12.50%"
+          },
+          {
+            "row_index": 58,
+            "text": "每月食物：-12.50%"
+          },
+          {
+            "row_index": 65,
+            "text": "每月合金：-12.50%"
+          },
+          {
+            "row_index": 66,
+            "text": "每月能量币：-12.50%"
+          },
+          {
+            "row_index": 67,
+            "text": "每月贸易：-12.50%"
+          },
+          {
+            "row_index": 77,
+            "text": "每月矿物：-12.50%"
+          },
+          {
+            "row_index": 78,
+            "text": "每月食物：-12.50%"
+          },
+          {
+            "row_index": 79,
+            "text": "每月合金：-12.50%"
+          },
+          {
+            "row_index": 84,
+            "text": "每月消费品：-12.50%"
+          },
+          {
+            "row_index": 88,
+            "text": "每月物理学研究：-12.50%"
+          },
+          {
+            "row_index": 89,
+            "text": "每月社会学研究：-12.50%"
+          },
+          {
+            "row_index": 90,
+            "text": "每月工程学研究：-12.50%"
+          },
+          {
+            "row_index": 91,
+            "text": "每月凝聚力：-12.50%"
+          },
+          {
+            "row_index": 93,
+            "text": "每月影响力：-12.50%"
+          },
+          {
+            "row_index": 94,
+            "text": "每月易爆微粒：-12.50%"
+          },
+          {
+            "row_index": 95,
+            "text": "每月异星天然气：-12.50%"
+          },
+          {
+            "row_index": 97,
+            "text": "每月稀有水晶：-12.50%"
+          },
+          {
+            "row_index": 98,
+            "text": "月度活体金属产出：-12.50%"
+          },
+          {
+            "row_index": 99,
+            "text": "泽珞：-12.50%"
+          },
+          {
+            "row_index": 100,
+            "text": "月度暗物质产出：-12.50%"
+          },
+          {
+            "row_index": 101,
+            "text": "月度纳米机器人产出：-12.50%"
+          },
+          {
+            "row_index": 102,
+            "text": "月度稀有文物产出：-12.50%"
+          },
+          {
+            "row_index": 103,
+            "text": "每月星界丝缕：-12.50%"
+          },
+          {
+            "row_index": 104,
+            "text": "月度超然逻辑产出：-12.50%"
+          },
+          {
+            "row_index": 105,
+            "text": "月度结晶熵产出：-12.50%"
+          },
+          {
+            "row_index": 106,
+            "text": "岗位所需的维护费：+12.50%"
+          },
+          {
+            "row_index": 107,
+            "text": "舰船武器伤害：-12%"
+          },
+          {
+            "row_index": 108,
+            "text": "亚光速航速：-12%"
+          }
+        ],
+        "native_ship_rounding_boundary": "StageIII exact configured ship modifiers are-12.5%, displayed-12%; stageV exact-37.5%, displayed-37%. Native tooltip display is observed; no combat or movement benchmark is claimed."
+      }
+    },
+    {
+      "stage": 4,
+      "input": {
+        "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\fb456_stage4.sav",
+        "sha256": "e4100f8bf48bc0ff641422080a0e7703794e2065ac31330ea486026e0e7583fd",
+        "date": "2210.07.12"
+      },
+      "checks": {
+        "expected_native_save_sha": true,
+        "one_active_situation_correct_stage": true,
+        "progress_in_expected_stage_interval": true,
+        "native_last_month_floor_point2": true,
+        "n1_unchanged": true,
+        "five_active_institutes": true,
+        "actual_assigned_J500_bonus_excluded": true,
+        "country_base_energy_current_last_expected": true,
+        "all_nine_country_base_resource_rows_scale_to_stage_exactly": true,
+        "OCR_image_hash_matches": true,
+        "native_tooltip_output_penalty": true,
+        "native_tooltip_upkeep_penalty": true,
+        "native_tooltip_ship_damage_rounded_display": true,
+        "native_tooltip_ship_speed_rounded_display": true,
+        "actor_scope_preserved": true,
+        "physical_template_definitions_preserved": true
+      },
+      "situations": [
+        {
+          "id": 4,
+          "stage": "3",
+          "progress": "750.4",
+          "last_month_progress": "0.2",
+          "native": [
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "target",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                }
+              ]
+            },
+            {
+              "key": "type",
+              "value": "situation_shishan_code"
+            },
+            {
+              "key": "progress",
+              "value": "750.4"
+            },
+            {
+              "key": "last_month_progress",
+              "value": "0.2"
+            },
+            {
+              "key": "approach",
+              "value": ""
+            },
+            {
+              "key": "stage_durations",
+              "value": [
+                [
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "end",
+                    "value": "250"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "250"
+                  },
+                  {
+                    "key": "end",
+                    "value": "500"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "500"
+                  },
+                  {
+                    "key": "end",
+                    "value": "750"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "750"
+                  },
+                  {
+                    "key": "end",
+                    "value": "950"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "950"
+                  },
+                  {
+                    "key": "end",
+                    "value": "1000"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "stage_flags",
+              "value": [
+                "yes",
+                "yes",
+                "yes",
+                "yes",
+                "no"
+              ]
+            },
+            {
+              "key": "stage",
+              "value": "3"
+            }
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 33554621,
+          "type": "shishan_code_maintainer",
+          "workforce": "500",
+          "bonus_workforce": "50",
+          "assignments": [
+            {
+              "pop_group": "13",
+              "amount": "500"
+            }
+          ],
+          "native": [
+            {
+              "key": "type",
+              "value": "shishan_code_maintainer"
+            },
+            {
+              "key": "automated_workforce",
+              "value": "0"
+            },
+            {
+              "key": "workforce",
+              "value": "500"
+            },
+            {
+              "key": "max_workforce",
+              "value": "500"
+            },
+            {
+              "key": "bonus_workforce",
+              "value": "50"
+            },
+            {
+              "key": "workforce_limit",
+              "value": "500"
+            },
+            {
+              "key": "automated_workforce_limit",
+              "value": "499"
+            },
+            {
+              "key": "pop_groups",
+              "value": [
+                [
+                  {
+                    "key": "pop_group",
+                    "value": "13"
+                  },
+                  {
+                    "key": "amount",
+                    "value": "500"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "pop_group",
+              "value": "4294967295"
+            }
+          ]
+        }
+      ],
+      "institutes": [
+        {
+          "id": 16777252,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 33554478,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 54,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "actual_J": "500",
+      "bonus_excluded": "50",
+      "budget": {
+        "current_month": {
+          "country_base_income": {
+            "energy": "15",
+            "minerals": "15",
+            "physics_research": "7.5",
+            "society_research": "7.5",
+            "engineering_research": "7.5",
+            "influence": "2.25",
+            "unity": "7.5",
+            "consumer_goods": "11.25",
+            "alloys": "3.75"
+          },
+          "planet_biologists_income": [
+            {
+              "key": "society_research",
+              "value": "22.57405"
+            },
+            {
+              "key": "unity",
+              "value": "6.71847"
+            }
+          ],
+          "planet_biologists_expenses": [
+            {
+              "key": "consumer_goods",
+              "value": "11.55"
+            }
+          ]
+        },
+        "last_month": {
+          "country_base_income": {
+            "energy": "15",
+            "minerals": "15",
+            "physics_research": "7.5",
+            "society_research": "7.5",
+            "engineering_research": "7.5",
+            "influence": "2.25",
+            "unity": "7.5",
+            "consumer_goods": "11.25",
+            "alloys": "3.75"
+          },
+          "planet_biologists_income": [
+            {
+              "key": "society_research",
+              "value": "22.57295"
+            },
+            {
+              "key": "unity",
+              "value": "6.71814"
+            }
+          ],
+          "planet_biologists_expenses": [
+            {
+              "key": "consumer_goods",
+              "value": "11.55"
+            }
+          ]
+        }
+      },
+      "exact_production_scaling": {
+        "current_month": {
+          "energy": {
+            "stageI": "25",
+            "expected": "15.0",
+            "observed": "15",
+            "pass": true
+          },
+          "minerals": {
+            "stageI": "25",
+            "expected": "15.0",
+            "observed": "15",
+            "pass": true
+          },
+          "physics_research": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "society_research": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "engineering_research": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "influence": {
+            "stageI": "3.75",
+            "expected": "2.250",
+            "observed": "2.25",
+            "pass": true
+          },
+          "unity": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "consumer_goods": {
+            "stageI": "18.75",
+            "expected": "11.250",
+            "observed": "11.25",
+            "pass": true
+          },
+          "alloys": {
+            "stageI": "6.25",
+            "expected": "3.750",
+            "observed": "3.75",
+            "pass": true
+          }
+        },
+        "last_month": {
+          "energy": {
+            "stageI": "25",
+            "expected": "15.0",
+            "observed": "15",
+            "pass": true
+          },
+          "minerals": {
+            "stageI": "25",
+            "expected": "15.0",
+            "observed": "15",
+            "pass": true
+          },
+          "physics_research": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "society_research": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "engineering_research": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "influence": {
+            "stageI": "3.75",
+            "expected": "2.250",
+            "observed": "2.25",
+            "pass": true
+          },
+          "unity": {
+            "stageI": "12.5",
+            "expected": "7.50",
+            "observed": "7.5",
+            "pass": true
+          },
+          "consumer_goods": {
+            "stageI": "18.75",
+            "expected": "11.250",
+            "observed": "11.25",
+            "pass": true
+          },
+          "alloys": {
+            "stageI": "6.25",
+            "expected": "3.750",
+            "observed": "3.75",
+            "pass": true
+          }
+        }
+      },
+      "variables": {
+        "shishan_code_architecture_bonus": "0.35",
+        "shishan_code_architecture_multiplier": "1.35",
+        "shishan_code_architecture_population": "5515",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "7",
+        "shishan_code_architecture_trait_average": "7",
+        "shishan_code_architecture_trait_weight": "38605",
+        "shishan_code_maintenance_count": "1",
+        "shishan_code_reroll_cooldown": "0",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "0",
+        "shishan_code_reward_slot_2": "0",
+        "shishan_code_reward_slot_3": "0",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62837520"
+      },
+      "OCR_evidence": {
+        "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage4-tooltip.ocr.json",
+        "sha256": "eb495996e3bd0ffb88b392a072a4716fc368dfb2a8f81d767331d367cd37c5fa",
+        "image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage4-tooltip.jpg",
+        "image_sha256": "2c641f5895fc308be5ae83e157a8e4e7fae86336d18d56f1fef13323028252ec",
+        "native_pid": 8976,
+        "percentage_rows": [
+          {
+            "row_index": 44,
+            "text": "每月能量币：-25%"
+          },
+          {
+            "row_index": 54,
+            "text": "每月贸易：-25%"
+          },
+          {
+            "row_index": 56,
+            "text": "每月矿物：-25%"
+          },
+          {
+            "row_index": 57,
+            "text": "每月食物：-25%"
+          },
+          {
+            "row_index": 58,
+            "text": "每月合金：-25%"
+          },
+          {
+            "row_index": 59,
+            "text": "每月贸易：-25%"
+          },
+          {
+            "row_index": 60,
+            "text": "每月能量币：-25%"
+          },
+          {
+            "row_index": 72,
+            "text": "每月食物：-25%"
+          },
+          {
+            "row_index": 73,
+            "text": "每月矿物：-25%"
+          },
+          {
+            "row_index": 80,
+            "text": "每月合金：-25%"
+          },
+          {
+            "row_index": 82,
+            "text": "每月消费品：-25%"
+          },
+          {
+            "row_index": 86,
+            "text": "每月物理学研究：-25%"
+          },
+          {
+            "row_index": 87,
+            "text": "每月社会学研究：-25%"
+          },
+          {
+            "row_index": 88,
+            "text": "每月工程学研究：-25%"
+          },
+          {
+            "row_index": 89,
+            "text": "每月凝聚力：-25%"
+          },
+          {
+            "row_index": 90,
+            "text": "每月影响力：-25%"
+          },
+          {
+            "row_index": 91,
+            "text": "每月易爆微粒：-25%"
+          },
+          {
+            "row_index": 92,
+            "text": "每月异星天然气：-25%"
+          },
+          {
+            "row_index": 93,
+            "text": "每月稀有水晶：-25%"
+          },
+          {
+            "row_index": 94,
+            "text": "月度活体金属产出：-25%"
+          },
+          {
+            "row_index": 95,
+            "text": "泽珞：-25%"
+          },
+          {
+            "row_index": 96,
+            "text": "月度暗物质产出：-25%"
+          },
+          {
+            "row_index": 97,
+            "text": "月度纳米机器人产出：-25%"
+          },
+          {
+            "row_index": 98,
+            "text": "月度稀有文物产出：-25%"
+          },
+          {
+            "row_index": 99,
+            "text": "每月星界丝缕：-25%"
+          },
+          {
+            "row_index": 100,
+            "text": "月度超然逻辑产出：-25%"
+          },
+          {
+            "row_index": 101,
+            "text": "月度结晶熵产出：-25%"
+          },
+          {
+            "row_index": 102,
+            "text": "岗位所需的维护费：+25%"
+          },
+          {
+            "row_index": 103,
+            "text": "舰船武器伤害：-25%"
+          },
+          {
+            "row_index": 104,
+            "text": "亚光速航速：-25%"
+          }
+        ],
+        "native_ship_rounding_boundary": "StageIII exact configured ship modifiers are-12.5%, displayed-12%; stageV exact-37.5%, displayed-37%. Native tooltip display is observed; no combat or movement benchmark is claimed."
+      }
+    },
+    {
+      "stage": 5,
+      "input": {
+        "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\fb456_stage5.sav",
+        "sha256": "09da58cb063b4d739218bd45de308d1e6c923928ed265573e32347bac968f6e3",
+        "date": "2210.09.23"
+      },
+      "checks": {
+        "expected_native_save_sha": true,
+        "one_active_situation_correct_stage": true,
+        "progress_in_expected_stage_interval": true,
+        "native_last_month_floor_point2": true,
+        "n1_unchanged": true,
+        "five_active_institutes": true,
+        "actual_assigned_J500_bonus_excluded": true,
+        "country_base_energy_current_last_expected": true,
+        "all_nine_country_base_resource_rows_scale_to_stage_exactly": true,
+        "OCR_image_hash_matches": true,
+        "native_tooltip_output_penalty": true,
+        "native_tooltip_upkeep_penalty": true,
+        "native_tooltip_ship_damage_rounded_display": true,
+        "native_tooltip_ship_speed_rounded_display": true,
+        "actor_scope_preserved": true,
+        "physical_template_definitions_preserved": true
+      },
+      "situations": [
+        {
+          "id": 4,
+          "stage": "4",
+          "progress": "950.4",
+          "last_month_progress": "0.2",
+          "native": [
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "target",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                }
+              ]
+            },
+            {
+              "key": "type",
+              "value": "situation_shishan_code"
+            },
+            {
+              "key": "progress",
+              "value": "950.4"
+            },
+            {
+              "key": "last_month_progress",
+              "value": "0.2"
+            },
+            {
+              "key": "approach",
+              "value": ""
+            },
+            {
+              "key": "stage_durations",
+              "value": [
+                [
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "end",
+                    "value": "250"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "250"
+                  },
+                  {
+                    "key": "end",
+                    "value": "500"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "500"
+                  },
+                  {
+                    "key": "end",
+                    "value": "750"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "750"
+                  },
+                  {
+                    "key": "end",
+                    "value": "950"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "950"
+                  },
+                  {
+                    "key": "end",
+                    "value": "1000"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "stage_flags",
+              "value": [
+                "yes",
+                "yes",
+                "yes",
+                "yes",
+                "yes"
+              ]
+            },
+            {
+              "key": "stage",
+              "value": "4"
+            }
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 33554621,
+          "type": "shishan_code_maintainer",
+          "workforce": "500",
+          "bonus_workforce": "50",
+          "assignments": [
+            {
+              "pop_group": "13",
+              "amount": "500"
+            }
+          ],
+          "native": [
+            {
+              "key": "type",
+              "value": "shishan_code_maintainer"
+            },
+            {
+              "key": "automated_workforce",
+              "value": "0"
+            },
+            {
+              "key": "workforce",
+              "value": "500"
+            },
+            {
+              "key": "max_workforce",
+              "value": "500"
+            },
+            {
+              "key": "bonus_workforce",
+              "value": "50"
+            },
+            {
+              "key": "workforce_limit",
+              "value": "500"
+            },
+            {
+              "key": "automated_workforce_limit",
+              "value": "499"
+            },
+            {
+              "key": "pop_groups",
+              "value": [
+                [
+                  {
+                    "key": "pop_group",
+                    "value": "13"
+                  },
+                  {
+                    "key": "amount",
+                    "value": "500"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "pop_group",
+              "value": "4294967295"
+            }
+          ]
+        }
+      ],
+      "institutes": [
+        {
+          "id": 16777252,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 33554478,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 54,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 55,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "disabled": null,
+          "native": [
+            {
+              "key": "type",
+              "value": "building_shishan_code_institute"
+            },
+            {
+              "key": "position",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "actual_J": "500",
+      "bonus_excluded": "50",
+      "budget": {
+        "current_month": {
+          "country_base_income": {
+            "energy": "12.5",
+            "minerals": "12.5",
+            "physics_research": "6.25",
+            "society_research": "6.25",
+            "engineering_research": "6.25",
+            "influence": "1.875",
+            "unity": "6.25",
+            "consumer_goods": "9.375",
+            "alloys": "3.125"
+          },
+          "planet_biologists_income": [
+            {
+              "key": "society_research",
+              "value": "20.26627"
+            },
+            {
+              "key": "unity",
+              "value": "6.03163"
+            }
+          ],
+          "planet_biologists_expenses": [
+            {
+              "key": "consumer_goods",
+              "value": "12.705"
+            }
+          ]
+        },
+        "last_month": {
+          "country_base_income": {
+            "energy": "12.5",
+            "minerals": "12.5",
+            "physics_research": "6.25",
+            "society_research": "6.25",
+            "engineering_research": "6.25",
+            "influence": "1.875",
+            "unity": "6.25",
+            "consumer_goods": "9.375",
+            "alloys": "3.125"
+          },
+          "planet_biologists_income": [
+            {
+              "key": "society_research",
+              "value": "20.26516"
+            },
+            {
+              "key": "unity",
+              "value": "6.0313"
+            }
+          ],
+          "planet_biologists_expenses": [
+            {
+              "key": "consumer_goods",
+              "value": "12.705"
+            }
+          ]
+        }
+      },
+      "exact_production_scaling": {
+        "current_month": {
+          "energy": {
+            "stageI": "25",
+            "expected": "12.5",
+            "observed": "12.5",
+            "pass": true
+          },
+          "minerals": {
+            "stageI": "25",
+            "expected": "12.5",
+            "observed": "12.5",
+            "pass": true
+          },
+          "physics_research": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "society_research": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "engineering_research": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "influence": {
+            "stageI": "3.75",
+            "expected": "1.875",
+            "observed": "1.875",
+            "pass": true
+          },
+          "unity": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "consumer_goods": {
+            "stageI": "18.75",
+            "expected": "9.375",
+            "observed": "9.375",
+            "pass": true
+          },
+          "alloys": {
+            "stageI": "6.25",
+            "expected": "3.125",
+            "observed": "3.125",
+            "pass": true
+          }
+        },
+        "last_month": {
+          "energy": {
+            "stageI": "25",
+            "expected": "12.5",
+            "observed": "12.5",
+            "pass": true
+          },
+          "minerals": {
+            "stageI": "25",
+            "expected": "12.5",
+            "observed": "12.5",
+            "pass": true
+          },
+          "physics_research": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "society_research": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "engineering_research": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "influence": {
+            "stageI": "3.75",
+            "expected": "1.875",
+            "observed": "1.875",
+            "pass": true
+          },
+          "unity": {
+            "stageI": "12.5",
+            "expected": "6.25",
+            "observed": "6.25",
+            "pass": true
+          },
+          "consumer_goods": {
+            "stageI": "18.75",
+            "expected": "9.375",
+            "observed": "9.375",
+            "pass": true
+          },
+          "alloys": {
+            "stageI": "6.25",
+            "expected": "3.125",
+            "observed": "3.125",
+            "pass": true
+          }
+        }
+      },
+      "variables": {
+        "shishan_code_architecture_bonus": "0.35",
+        "shishan_code_architecture_multiplier": "1.35",
+        "shishan_code_architecture_population": "5527",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "7",
+        "shishan_code_architecture_trait_average": "7",
+        "shishan_code_architecture_trait_weight": "38689",
+        "shishan_code_maintenance_count": "1",
+        "shishan_code_reroll_cooldown": "0",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "0",
+        "shishan_code_reward_slot_2": "0",
+        "shishan_code_reward_slot_3": "0",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62837520"
+      },
+      "OCR_evidence": {
+        "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage5-tooltip.ocr.json",
+        "sha256": "b571014cc5c027696573452ea2263cf90b90a96e5b0d49e70dd0fe7a7fd07a01",
+        "image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage5-tooltip.jpg",
+        "image_sha256": "72d9f37af1844895ac494eba4f1197e34a5db02664efd140202d58318b0efbd0",
+        "native_pid": 8976,
+        "percentage_rows": [
+          {
+            "row_index": 49,
+            "text": "每月能量币：-37.50%"
+          },
+          {
+            "row_index": 51,
+            "text": "每月贸易：-37.50%"
+          },
+          {
+            "row_index": 53,
+            "text": "每月矿物：-37.50%"
+          },
+          {
+            "row_index": 54,
+            "text": "每月食物：-37.50%"
+          },
+          {
+            "row_index": 61,
+            "text": "每月合金：-37.50%"
+          },
+          {
+            "row_index": 62,
+            "text": "每月贸易：-37.50%"
+          },
+          {
+            "row_index": 63,
+            "text": "每月能量币：-37.50%"
+          },
+          {
+            "row_index": 69,
+            "text": "每月矿物：-37.50%"
+          },
+          {
+            "row_index": 70,
+            "text": "每月食物：-37.50%"
+          },
+          {
+            "row_index": 77,
+            "text": "每月合金：-37.50%"
+          },
+          {
+            "row_index": 79,
+            "text": "每月消费品：-37.50%"
+          },
+          {
+            "row_index": 83,
+            "text": "每月物理学研究：-37.50%"
+          },
+          {
+            "row_index": 84,
+            "text": "每月社会学研究：-37.50%"
+          },
+          {
+            "row_index": 87,
+            "text": "每月工程学研究：-37.50%"
+          },
+          {
+            "row_index": 88,
+            "text": "每月凝聚力：-37.50%"
+          },
+          {
+            "row_index": 89,
+            "text": "每月影响力：-37.50%"
+          },
+          {
+            "row_index": 90,
+            "text": "每月易爆微粒：-37.50%"
+          },
+          {
+            "row_index": 92,
+            "text": "每月异星天然气：-37.50%"
+          },
+          {
+            "row_index": 93,
+            "text": "每月稀有水晶：-37.50%"
+          },
+          {
+            "row_index": 94,
+            "text": "月度活体金属产出：-37.50%"
+          },
+          {
+            "row_index": 95,
+            "text": "泽珞：-37.50%"
+          },
+          {
+            "row_index": 96,
+            "text": "月度暗物质产出：-37.50%"
+          },
+          {
+            "row_index": 97,
+            "text": "月度纳米机器人产出：-37.50%"
+          },
+          {
+            "row_index": 98,
+            "text": "月度稀有文物产出：-37.50%"
+          },
+          {
+            "row_index": 99,
+            "text": "每月星界丝缕：-37.50%"
+          },
+          {
+            "row_index": 100,
+            "text": "月度超然逻辑产出：-37.50%"
+          },
+          {
+            "row_index": 101,
+            "text": "月度结晶熵产出：-37.50%"
+          },
+          {
+            "row_index": 102,
+            "text": "岗位所需的维护费：+37.50%"
+          },
+          {
+            "row_index": 103,
+            "text": "舰船武器伤害：-37%"
+          },
+          {
+            "row_index": 104,
+            "text": "亚光速航速：-37%"
+          }
+        ],
+        "native_ship_rounding_boundary": "StageIII exact configured ship modifiers are-12.5%, displayed-12%; stageV exact-37.5%, displayed-37%. Native tooltip display is observed; no combat or movement benchmark is claimed."
+      }
+    }
+  ],
+  "checks_count": 48,
+  "checks_passed": 48,
+  "failures": [],
+  "frozen_stage_source": {
+    "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\mod\\shishan-feedback-local\\common\\static_modifiers\\shishan_code_stages.txt",
+    "sha256": "d5a7d78cf1f334d56d297d5001e5b57bb6c5795222ea53bda57b66b27337b12c"
+  },
+  "root_progress_command_provenance": [
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage3-input.console.json",
+      "sha256": "4ae27a6490e454a3f23d27a7b4b0c51cf4f9cefbc1f8205ef685aed9f484bcda",
+      "record": {
+        "command": "effect event_target:shishan_numeric_country = { every_situation = { limit = { is_situation_type = situation_shishan_code } set_situation_progress = 500 } }",
+        "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage3-input-result.jpg"
+      }
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage4-input.console.json",
+      "sha256": "45a26c1919ea8ea28c6bebbe48a6b056a09692927af45371d006aa5d7fecfc73",
+      "record": {
+        "command": "effect event_target:shishan_numeric_country = { every_situation = { limit = { is_situation_type = situation_shishan_code } set_situation_progress = 750 } }",
+        "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage4-input-result.jpg"
+      }
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage5-input.console.json",
+      "sha256": "bd6d4394fb765b76728ceb5f1df874a9dc449fb59af6653894a2b5de1aef3289",
+      "record": {
+        "command": "effect event_target:shishan_numeric_country = { every_situation = { limit = { is_situation_type = situation_shishan_code } set_situation_progress = 950 } }",
+        "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T094102Z\\rc6-numeric-stage5-input-result.jpg"
+      }
+    }
+  ],
+  "limitations": [
+    "This is controlled stage-threshold input with real engine stage updates and budget computation, not natural progression to those dates.",
+    "Country-base resource budget and exact native resource/upkeep tooltip values substantiate the changed penalties. Ship evidence is modifier tooltip display with integer precision, not combat damage or travel-time benchmarking.",
+    "Resource-category planet_biologists includes normal biologists; its expense values are preserved without inventing a per-maintainer-only cost.",
+    "Population may naturally assemble during completed months; formal template traits, actual assignedJ500 and actor scope are independently preserved."
+  ]
+}

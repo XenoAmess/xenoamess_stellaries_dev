@@ -1,0 +1,1946 @@
+{
+  "scope": "independent native saved-data closure, composed prefix and final replay explicitly separated",
+  "status": "PASS",
+  "checks": {
+    "native_same_date_2204_04_01": true,
+    "source_hash_rechecked": true,
+    "clean_preserves_earned_ticket": true,
+    "clean_R0_n4_CD3": true,
+    "saved_ownedrefs_remain_stale_while_actual_population_55_56": true,
+    "three_selected_slots_have_positive_native_trait_coverage": true,
+    "claim_R0_n4_CD2": true,
+    "one_actual_trait_added_to_all_population": true,
+    "pending_rerolled_window_consumed": true,
+    "all_slots_cleared": true,
+    "single_modifier_each": true,
+    "both_native_architecture_audits_match": true,
+    "CD_assignment_decrement_and_comparison_AST_unchanged_rc4_to_rc6": true,
+    "exactly_two_new_species_and_no_old_shared_definition_mutation": true
+  },
+  "same_day_candidate_native_trait_coverage": {
+    "11": {
+      "trait": "trait_robot_learning_algorithms",
+      "canonical_opposites": [
+        "trait_robot_repurposed_hardware",
+        "trait_robot_suppressed"
+      ],
+      "eligible_template_ids": [
+        55
+      ],
+      "eligible_population": 5040,
+      "country_population": 5593,
+      "required_dlc": null,
+      "forbidden_ethics": []
+    },
+    "9": {
+      "trait": "trait_robot_emotion_emulators",
+      "canonical_opposites": [
+        "trait_interconnected",
+        "trait_robot_uncanny"
+      ],
+      "eligible_template_ids": [
+        55,
+        56
+      ],
+      "eligible_population": 5593,
+      "country_population": 5593,
+      "required_dlc": null,
+      "forbidden_ethics": []
+    },
+    "12": {
+      "trait": "trait_robot_mass_produced",
+      "canonical_opposites": [
+        "trait_robot_custom_made"
+      ],
+      "eligible_template_ids": [
+        55,
+        56
+      ],
+      "eligible_population": 5593,
+      "country_population": 5593,
+      "required_dlc": null,
+      "forbidden_ethics": []
+    }
+  },
+  "snapshots": [
+    {
+      "save": "fb456_clean_pending",
+      "sha256": "4daada20d345e31989f53cc8fa9eb2ec1ec31001eb00fffead1de7dd447980c1",
+      "date": "2204.04.01",
+      "audit_status": "PASS",
+      "actor": {
+        "source": "player[].country",
+        "country_id": 0,
+        "origin": "origin_shishan_code",
+        "main_species_source": "country.founder_species_ref",
+        "main_species_id": 55,
+        "main_species_evidence": {
+          "founder_species_ref": "55",
+          "rights_primary_species_index": "3321888769",
+          "rights_primary_raw": [
+            {
+              "key": "species_index",
+              "value": "3321888769"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ],
+          "default_species_raw": [
+            {
+              "key": "3321888769",
+              "value": "55"
+            }
+          ],
+          "owned_species_refs_raw": [
+            "53",
+            "54"
+          ],
+          "interpretation": "main template uses country.founder_species_ref; rights primary and cached species references are independent saved fields, not resolved rights or substitute main pointers"
+        }
+      },
+      "variables": {
+        "shishan_code_architecture_bonus": "0.45494",
+        "shishan_code_architecture_multiplier": "1.45494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "9.09887",
+        "shishan_code_architecture_trait_average": "9.09887",
+        "shishan_code_architecture_trait_weight": "50890",
+        "shishan_code_maintenance_count": "4",
+        "shishan_code_reroll_cooldown": "3",
+        "shishan_code_reward_old_1": "1",
+        "shishan_code_reward_old_2": "7",
+        "shishan_code_reward_old_3": "5",
+        "shishan_code_reward_slot_1": "11",
+        "shishan_code_reward_slot_2": "9",
+        "shishan_code_reward_slot_3": "12",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_reward_pending": "62844720",
+        "shishan_code_reward_rerolled": "62844720",
+        "shishan_code_refactored": "62844720"
+      },
+      "P": 5593,
+      "W": 50890,
+      "U": "50890/5593",
+      "templates": [
+        {
+          "id": 55,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 9,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            55,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 56,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            56,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "architecture_modifiers": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier_raw": "9.09887",
+          "effective_multiplier": "9.09887",
+          "days": "-1",
+          "native_fields": [
+            {
+              "key": "multiplier",
+              "value": "9.09887"
+            },
+            {
+              "key": "modifier",
+              "value": "shishan_code_architecture_jobs"
+            },
+            {
+              "key": "days",
+              "value": "-1"
+            }
+          ]
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "save": "fb456_claim4",
+      "sha256": "13c8314f020292cafa7256d74ad41cc831d2d6ec8486375ac3d8090f1fe616b8",
+      "date": "2204.04.01",
+      "audit_status": "PASS",
+      "actor": {
+        "source": "player[].country",
+        "country_id": 0,
+        "origin": "origin_shishan_code",
+        "main_species_source": "country.founder_species_ref",
+        "main_species_id": 57,
+        "main_species_evidence": {
+          "founder_species_ref": "57",
+          "rights_primary_species_index": "3321888769",
+          "rights_primary_raw": [
+            {
+              "key": "species_index",
+              "value": "3321888769"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ],
+          "default_species_raw": [
+            {
+              "key": "3321888769",
+              "value": "57"
+            }
+          ],
+          "owned_species_refs_raw": [
+            "53",
+            "54"
+          ],
+          "interpretation": "main template uses country.founder_species_ref; rights primary and cached species references are independent saved fields, not resolved rights or substitute main pointers"
+        }
+      },
+      "variables": {
+        "shishan_code_architecture_bonus": "0.50494",
+        "shishan_code_architecture_multiplier": "1.50494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "10.09887",
+        "shishan_code_architecture_trait_average": "10.09887",
+        "shishan_code_architecture_trait_weight": "56483",
+        "shishan_code_maintenance_count": "4",
+        "shishan_code_reroll_cooldown": "2",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "0",
+        "shishan_code_reward_slot_2": "0",
+        "shishan_code_reward_slot_3": "0",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_refactored": "62844720"
+      },
+      "P": 5593,
+      "W": 56483,
+      "U": "56483/5593",
+      "templates": [
+        {
+          "id": 57,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            57,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 58,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 11,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            58,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "architecture_modifiers": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier_raw": "10.09887",
+          "effective_multiplier": "10.09887",
+          "days": "-1",
+          "native_fields": [
+            {
+              "key": "multiplier",
+              "value": "10.09887"
+            },
+            {
+              "key": "modifier",
+              "value": "shishan_code_architecture_jobs"
+            },
+            {
+              "key": "days",
+              "value": "-1"
+            }
+          ]
+        }
+      ],
+      "diagnostics": []
+    }
+  ],
+  "CD_cross_run_sequence": [
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T074214Z\\fb453_reroll1.sav",
+      "run": "R3 seed",
+      "n": "1",
+      "CD": "3",
+      "R": "0"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\fb454_claim1.sav",
+      "run": "R4",
+      "n": "1",
+      "CD": "2",
+      "R": "0"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\fb454_claim2.sav",
+      "run": "R4",
+      "n": "2",
+      "CD": "1",
+      "R": "0"
+    },
+    {
+      "save": "fb454_claim3",
+      "run": "R4",
+      "n": "3",
+      "CD": "0",
+      "R": "0"
+    },
+    {
+      "save": "fb454_fourth_pending",
+      "run": "R4",
+      "n": "4",
+      "CD": "0",
+      "R": "0"
+    },
+    {
+      "save": "fb454_fourth_rerolled",
+      "run": "R4",
+      "n": "4",
+      "CD": "3",
+      "R": "0"
+    },
+    {
+      "save": "fb456_clean_pending",
+      "run": "R6 replay from R4 fourth_rerolled",
+      "n": "4",
+      "CD": "3",
+      "R": "0"
+    },
+    {
+      "save": "fb456_claim4",
+      "run": "R6 replay from R4 fourth_rerolled",
+      "n": "4",
+      "CD": "2",
+      "R": "0"
+    }
+  ],
+  "CD_projection_rc4_and_rc6": {
+    "shishan_code_reward_initialize_effect": [
+      [
+        "set_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "0"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_reroll_effect": [
+      [
+        "set_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "3"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_can_reroll": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "0"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_01_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_02_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_03_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_04_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_05_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_06_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_07_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_08_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_09_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_10_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_11_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_12_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_13_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_14_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_15_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_16_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_17_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_18_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_19_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_20_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_21_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_22_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_23_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_24_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_25_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_26_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_27_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_28_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_29_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_30_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_31_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_32_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_33_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_34_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_35_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_36_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_37_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_38_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ],
+    "shishan_code_reward_claim_39_effect": [
+      [
+        "check_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            ">",
+            "0"
+          ]
+        ]
+      ],
+      [
+        "change_variable",
+        [
+          [
+            "which",
+            "=",
+            "shishan_code_reroll_cooldown"
+          ],
+          [
+            "value",
+            "=",
+            "-1"
+          ]
+        ]
+      ]
+    ]
+  },
+  "source_r4_fourth_rerolled_sha256": "3d55081cc9e2b7f70415b253f56cab013f27a92b1787b5730f26867a433c64c4",
+  "limits": [
+    "The complete CD sequence spans an R3 seed, R4 prefix, and R6 replay; it is not a single uninterrupted run.",
+    "R4 original clean reopen failure is preserved, not overwritten.",
+    "CD arithmetic AST is unchanged; eligibility, population enumeration and preflight were intentionally fixed in rc5.",
+    "The saved raw native trait coverage corroborates legal entity choices; actual three-option UI is root evidence rc6-clean-earned-options."
+  ],
+  "species_database_delta": {
+    "added_ids": [
+      57,
+      58
+    ],
+    "preexisting_species_changed": []
+  }
+}

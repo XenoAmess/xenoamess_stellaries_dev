@@ -1,0 +1,396 @@
+{
+  "status": "SOURCE_AND_SEED_CAPACITY_INPUT_READY;FREE_SLOTS_NATIVE_PROBE_NEEDED",
+  "seed": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_natural_claim.sav",
+  "sha256": "9ddcb31ce9dab6843758ac2f71e786b43a8242d1cdda4da3cb89e4d5844bbc4d",
+  "date": "2209.11.28",
+  "maintenance_count": "1",
+  "owned_building_refs": [
+    0,
+    2,
+    3,
+    4,
+    16777252,
+    1
+  ],
+  "owned_buildings": [
+    {
+      "id": 0,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "building_capital"
+        },
+        {
+          "key": "position",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "building_machine_assembly_plant"
+        },
+        {
+          "key": "position",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "building_luxury_residence"
+        },
+        {
+          "key": "position",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "building_foundry_1"
+        },
+        {
+          "key": "position",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "id": 16777252,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "building_shishan_code_institute"
+        },
+        {
+          "key": "position",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "building_factory_1"
+        },
+        {
+          "key": "position",
+          "value": "0"
+        }
+      ]
+    }
+  ],
+  "source_building": {
+    "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T090720Z\\mod\\shishan-feedback-local\\common\\buildings\\shishan_code_buildings.txt",
+    "sha256": "ef8c1ad1c10bfcffbd62aab0098ed4d253c08e1ed18f5487fcefe1fa16c88b07",
+    "native_source": "building_shishan_code_institute = {\n\tcan_build = yes\n\tbase_buildtime = 360\n\tcategory = research\n\tbuilding_sets = { research society }\n\tpotential = {\n\t\texists = owner\n\t\towner = { has_origin = origin_shishan_code }\n\t\tis_special_colony_type = no\n\t}\n\tresources = {\n\t\tcategory = planet_buildings\n\t\tcost = { minerals = 400 }\n\t\tupkeep = { energy = 2 }\n\t}\n\ttriggered_planet_modifier = {\n\t\tpotential = { owner = { is_machine_empire = yes } }\n\t\tjob_shishan_code_maintainer_drone_add = 100\n\t}\n\ttriggered_planet_modifier = {\n\t\tpotential = { owner = { is_individual_machine = yes } }\n\t\tjob_shishan_code_maintainer_add = 100\n\t}\n\tai_weight = { weight = 1 }\n}\n",
+    "unique_or_max_limit_declared": false,
+    "job_capacity_added_per_building": 100
+  },
+  "actual_maintainer_and_civilian_job_rows": [
+    {
+      "id": 0,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "civilian"
+        },
+        {
+          "key": "automated_workforce",
+          "value": "-1"
+        },
+        {
+          "key": "workforce",
+          "value": "2373"
+        },
+        {
+          "key": "max_workforce",
+          "value": "-1"
+        },
+        {
+          "key": "bonus_workforce",
+          "value": "238.4"
+        },
+        {
+          "key": "workforce_limit",
+          "value": "-1"
+        },
+        {
+          "key": "automated_workforce_limit",
+          "value": "-1"
+        },
+        {
+          "key": "pop_groups",
+          "value": [
+            [
+              {
+                "key": "pop_group",
+                "value": "1"
+              },
+              {
+                "key": "amount",
+                "value": "2374"
+              }
+            ]
+          ]
+        },
+        {
+          "key": "planet",
+          "value": "0"
+        },
+        {
+          "key": "pop_group",
+          "value": "4294967295"
+        }
+      ]
+    },
+    {
+      "id": 33554621,
+      "native_fields": [
+        {
+          "key": "type",
+          "value": "shishan_code_maintainer"
+        },
+        {
+          "key": "automated_workforce",
+          "value": "0"
+        },
+        {
+          "key": "workforce",
+          "value": "100"
+        },
+        {
+          "key": "max_workforce",
+          "value": "100"
+        },
+        {
+          "key": "bonus_workforce",
+          "value": "10"
+        },
+        {
+          "key": "workforce_limit",
+          "value": "100"
+        },
+        {
+          "key": "automated_workforce_limit",
+          "value": "99"
+        },
+        {
+          "key": "pop_groups",
+          "value": [
+            [
+              {
+                "key": "pop_group",
+                "value": "13"
+              },
+              {
+                "key": "amount",
+                "value": "100"
+              }
+            ]
+          ]
+        },
+        {
+          "key": "planet",
+          "value": "0"
+        },
+        {
+          "key": "pop_group",
+          "value": "4294967295"
+        }
+      ]
+    }
+  ],
+  "available_civilian_groups": [
+    {
+      "id": 1,
+      "size": "2374",
+      "can_fill_specialist_job": "yes"
+    }
+  ],
+  "proposed_controlled_input": {
+    "extra_institutes": 4,
+    "total_institutes_if_all_added": 5,
+    "nominal_capacity": 500,
+    "required_actual_assigned_J": 500,
+    "expected_n": 1,
+    "unclamped_formula_result": 0,
+    "expected_final_floor": 0.2,
+    "boundary": "Building capacity is not assigned workforce. Check actual pop_jobs.workforce and per-group assignments after normal time advancement; exclude bonus_workforce."
+  },
+  "free_slots_boundary": {
+    "serialized_free_slot_count": "NOT_FOUND;owned refs6 are not a free-slot count",
+    "supported_native_read_only_probe": "trigger capital_scope = { free_building_slots >= 4 }",
+    "generated_trigger_lines_1489_1494": [
+      "free_building_slots - Checks the colony's number of slots available for new constructions",
+      "free_building_slots > 2",
+      "Supported Scopes: planet ship colony",
+      "",
+      "has_relation_flag - Checks if the country has a relation flag towards target country",
+      "has_relation_flag = {"
+    ],
+    "generated_add_building_lines97_103": [
+      "add_building - Adds a specific building on the scoped colony",
+      "\tadd_building = <key>",
+      "or",
+      "\tadd_building = {",
+      "\t\tdistrict = <district_type_key>",
+      "\t\tzone = <zone_type_key>",
+      "\t\tbuilding = <building_type_key>"
+    ]
+  },
+  "readable_budget_baselines": [
+    {
+      "source_path": "country.0.budget.current_month.income.country_base",
+      "native_fields": [
+        {
+          "key": "energy",
+          "value": "25"
+        },
+        {
+          "key": "minerals",
+          "value": "25"
+        },
+        {
+          "key": "physics_research",
+          "value": "12.5"
+        },
+        {
+          "key": "society_research",
+          "value": "12.5"
+        },
+        {
+          "key": "engineering_research",
+          "value": "12.5"
+        },
+        {
+          "key": "influence",
+          "value": "3.75"
+        },
+        {
+          "key": "unity",
+          "value": "12.5"
+        },
+        {
+          "key": "consumer_goods",
+          "value": "18.75"
+        },
+        {
+          "key": "alloys",
+          "value": "6.25"
+        }
+      ]
+    },
+    {
+      "source_path": "country.0.budget.current_month.income.planet_biologists",
+      "native_fields": [
+        {
+          "key": "society_research",
+          "value": "8.90192"
+        },
+        {
+          "key": "unity",
+          "value": "1.85456"
+        }
+      ]
+    },
+    {
+      "source_path": "country.0.budget.current_month.expenses.planet_biologists",
+      "native_fields": [
+        {
+          "key": "consumer_goods",
+          "value": "1.98"
+        }
+      ]
+    },
+    {
+      "source_path": "country.0.budget.last_month.income.country_base",
+      "native_fields": [
+        {
+          "key": "energy",
+          "value": "25"
+        },
+        {
+          "key": "minerals",
+          "value": "25"
+        },
+        {
+          "key": "physics_research",
+          "value": "12.5"
+        },
+        {
+          "key": "society_research",
+          "value": "12.5"
+        },
+        {
+          "key": "engineering_research",
+          "value": "12.5"
+        },
+        {
+          "key": "influence",
+          "value": "3.75"
+        },
+        {
+          "key": "unity",
+          "value": "12.5"
+        },
+        {
+          "key": "consumer_goods",
+          "value": "18.75"
+        },
+        {
+          "key": "alloys",
+          "value": "6.25"
+        }
+      ]
+    },
+    {
+      "source_path": "country.0.budget.last_month.income.planet_biologists",
+      "native_fields": [
+        {
+          "key": "society_research",
+          "value": "8.90155"
+        },
+        {
+          "key": "unity",
+          "value": "1.85449"
+        }
+      ]
+    },
+    {
+      "source_path": "country.0.budget.last_month.expenses.planet_biologists",
+      "native_fields": [
+        {
+          "key": "consumer_goods",
+          "value": "1.98"
+        }
+      ]
+    }
+  ],
+  "stage_output_expectation_if_other_modifiers_unchanged": {
+    "I_country_base_energy": 25,
+    "III": 17.5,
+    "IV": 15,
+    "V": 12.5,
+    "formula": "I country-base output25 represents1.25x; III/IV/V 0.875x/0.75x/0.625x yield ratios0.7/0.6/0.5 of same I base.",
+    "upkeep_budget": "current_month/last_month.expenses.planet_biologists.consumer_goods must be interpreted with actual jobs/workforce; category also includes ordinary biologists, so no unsupported per-maintainer extraction.",
+    "ship_stats": "Native UI modifier or supported engine getter required; generic resource budget does not serialize ship damage/speed bonus directly."
+  },
+  "limitations": [
+    "Controlled add_building is a capacity fixture, not a natural construction claim.",
+    "No production Mod edits or GUI/game inputs were performed by this agent.",
+    "Actual free slots and subsequent J500 remain to be confirmed natively."
+  ]
+}

@@ -1,0 +1,3069 @@
+{
+  "scope": "independent native saved-data comparison; no script emulation, GUI, or economic UI certification",
+  "status": "PASS",
+  "checks": {
+    "n1_R0_CD0_unchanged": true,
+    "U_exact_delta_one_no_population_change": true,
+    "power_drills_received_by_all_populated_templates": true,
+    "single_architecture_modifier": true,
+    "claim_slots_consumed": true,
+    "pending_consumed": true,
+    "same_seven_owned_leader_IDs": true,
+    "one_white_same_ID": true,
+    "white_nonzero_xp_level_portrait_traits_selections_unchanged": true,
+    "white_native_free_flag_present_before_after": true,
+    "white_now_on_actual_main_template": true
+  },
+  "snapshots": [
+    {
+      "save": "fb456_white_reboot_month",
+      "sha256": "2c2c131e6db5965800f042f3f521af41aad3eafdc6c625843d5f1feb19346c79",
+      "date": "2209.11.28",
+      "audit_status": "FAIL",
+      "actor": {
+        "source": "player[].country",
+        "country_id": 0,
+        "origin": "origin_shishan_code",
+        "main_species_source": "country.founder_species_ref",
+        "main_species_id": 3321888769,
+        "main_species_evidence": {
+          "founder_species_ref": "3321888769",
+          "rights_primary_species_index": "3321888769",
+          "rights_primary_raw": [
+            {
+              "key": "species_index",
+              "value": "3321888769"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ],
+          "default_species_raw": null,
+          "owned_species_refs_raw": [
+            "3321888769"
+          ],
+          "interpretation": "main template uses country.founder_species_ref; rights primary and cached species references are independent saved fields, not resolved rights or substitute main pointers"
+        }
+      },
+      "variables": {
+        "shishan_code_architecture_bonus": "0.3",
+        "shishan_code_architecture_multiplier": "1.3",
+        "shishan_code_architecture_population": "5469",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "6",
+        "shishan_code_architecture_trait_average": "6",
+        "shishan_code_architecture_trait_weight": "32814",
+        "shishan_code_maintenance_count": "1",
+        "shishan_code_reroll_cooldown": "0",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "7",
+        "shishan_code_reward_slot_2": "1",
+        "shishan_code_reward_slot_3": "11",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62837520",
+        "shishan_code_reward_pending": "62877864"
+      },
+      "P": 5474,
+      "W": 32844,
+      "U": "32844/5474",
+      "templates": [
+        {
+          "id": 3321888769,
+          "base_ref": null,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 6,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5474,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "architecture_modifiers": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier_raw": "6",
+          "effective_multiplier": "6",
+          "days": "-1",
+          "native_fields": [
+            {
+              "key": "multiplier",
+              "value": "6"
+            },
+            {
+              "key": "modifier",
+              "value": "shishan_code_architecture_jobs"
+            },
+            {
+              "key": "days",
+              "value": "-1"
+            }
+          ]
+        }
+      ],
+      "white": [
+        {
+          "id": 16777294,
+          "species": "3321888769",
+          "level": "5",
+          "experience": "25",
+          "portrait": "shishan_code_vivhite",
+          "flags": [
+            {
+              "key": "shishan_code_vivhite",
+              "value": "62892216"
+            },
+            {
+              "key": "should_not_have_upkeep",
+              "value": "62892960"
+            }
+          ],
+          "traits": [
+            "leader_trait_shishan_code_vivhite"
+          ],
+          "trait_selections": "4",
+          "available_trait": [
+            "leader_trait_architectural_interest",
+            "leader_trait_spycraft"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "负疚者·白绮"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "shishan_code_vivhite"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_legendary"
+            },
+            {
+              "key": "experience",
+              "value": "25"
+            },
+            {
+              "key": "leader_flags",
+              "value": "455"
+            },
+            {
+              "key": "date",
+              "value": "2194.09.30"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2209.09.30"
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "flags",
+              "value": [
+                {
+                  "key": "shishan_code_vivhite",
+                  "value": "62892216"
+                },
+                {
+                  "key": "should_not_have_upkeep",
+                  "value": "62892960"
+                }
+              ]
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "miner"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "custom_description",
+              "value": "shishan_code_vivhite_backstory"
+            },
+            {
+              "key": "custom_catch_phrase",
+              "value": "shishan_code_vivhite_catch_phrase"
+            },
+            {
+              "key": "design",
+              "value": [
+                {
+                  "key": "gender",
+                  "value": "female"
+                },
+                {
+                  "key": "name",
+                  "value": [
+                    {
+                      "key": "full_names",
+                      "value": [
+                        {
+                          "key": "key",
+                          "value": "NAME_shishan_code_vivhite"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "use_full_regnal_name",
+                      "value": "yes"
+                    }
+                  ]
+                },
+                {
+                  "key": "portrait",
+                  "value": "shishan_code_vivhite"
+                },
+                {
+                  "key": "texture",
+                  "value": "0"
+                },
+                {
+                  "key": "leader_class",
+                  "value": "official"
+                }
+              ]
+            },
+            {
+              "key": "available_trait_selections",
+              "value": "4"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_architectural_interest"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_spycraft"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_shishan_code_vivhite"
+            },
+            {
+              "key": "level",
+              "value": "5"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "owned_leaders": [
+        {
+          "id": 167772189,
+          "species": "3321888769",
+          "level": "2",
+          "experience": "1016",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_principled"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "leader_trait_principled_2",
+            "trait_ruler_eye_for_talent",
+            "trait_ruler_charismatic"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Jaffaba"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "1016"
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "politician"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "design",
+              "value": [
+                {
+                  "key": "gender",
+                  "value": "female"
+                },
+                {
+                  "key": "name",
+                  "value": [
+                    {
+                      "key": "full_names",
+                      "value": [
+                        {
+                          "key": "key",
+                          "value": "HUM1_CHR_Jaffaba"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "use_full_regnal_name",
+                      "value": "yes"
+                    }
+                  ]
+                },
+                {
+                  "key": "portrait",
+                  "value": "sd_hum_robot"
+                },
+                {
+                  "key": "texture",
+                  "value": "0"
+                },
+                {
+                  "key": "evolution_mask",
+                  "value": "0"
+                },
+                {
+                  "key": "attachment",
+                  "value": "0"
+                },
+                {
+                  "key": "clothes",
+                  "value": "0"
+                },
+                {
+                  "key": "trait",
+                  "value": "leader_trait_principled"
+                },
+                {
+                  "key": "leader_class",
+                  "value": "official"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_principled_2"
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_eye_for_talent"
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_charismatic"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_principled"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 134217755,
+          "species": "3321888769",
+          "level": "1",
+          "experience": null,
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [],
+          "trait_selections": null,
+          "available_trait": [],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Lathira"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "envoy"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "job",
+              "value": "artisan"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_pacifist"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "level",
+              "value": "1"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 150994970,
+          "species": "3321888769",
+          "level": "1",
+          "experience": null,
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [],
+          "trait_selections": null,
+          "available_trait": [],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Falatir"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "envoy"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "job",
+              "value": "engineer"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_egalitarian"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "level",
+              "value": "1"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 150994969,
+          "species": "3321888769",
+          "level": "2",
+          "experience": "780",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_spark_of_genius"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "leader_trait_spark_of_genius_2",
+            "leader_trait_meticulous",
+            "leader_trait_politician"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Limathar"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "scientist"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "780"
+            },
+            {
+              "key": "location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "ship"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "1"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "council_location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "council_position"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "11"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "technician"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_spark_of_genius_2"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_meticulous"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_politician"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_spark_of_genius"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 150994968,
+          "species": "3321888769",
+          "level": "2",
+          "experience": "780",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_politician"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "trait_ruler_logistic_understanding",
+            "leader_trait_unyielding"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Jonnar"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "commander"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "780"
+            },
+            {
+              "key": "location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "ship"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "3"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "council_location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "council_position"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "10"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "9"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "enforcer"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_egalitarian"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_logistic_understanding"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_unyielding"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_politician"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 90,
+          "species": "3321888769",
+          "level": "2",
+          "experience": "755",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_trade_focus"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "leader_trait_trade_focus_2",
+            "leader_trait_shipwright",
+            "trait_ruler_eye_for_talent"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Darmull"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "755"
+            },
+            {
+              "key": "council_location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "council_position"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "12"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "politician"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_trade_focus_2"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_shipwright"
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_eye_for_talent"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_trade_focus"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 16777294,
+          "species": "3321888769",
+          "level": "5",
+          "experience": "25",
+          "portrait": "shishan_code_vivhite",
+          "flags": [
+            {
+              "key": "shishan_code_vivhite",
+              "value": "62892216"
+            },
+            {
+              "key": "should_not_have_upkeep",
+              "value": "62892960"
+            }
+          ],
+          "traits": [
+            "leader_trait_shishan_code_vivhite"
+          ],
+          "trait_selections": "4",
+          "available_trait": [
+            "leader_trait_architectural_interest",
+            "leader_trait_spycraft"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "负疚者·白绮"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "shishan_code_vivhite"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_legendary"
+            },
+            {
+              "key": "experience",
+              "value": "25"
+            },
+            {
+              "key": "leader_flags",
+              "value": "455"
+            },
+            {
+              "key": "date",
+              "value": "2194.09.30"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2209.09.30"
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "flags",
+              "value": [
+                {
+                  "key": "shishan_code_vivhite",
+                  "value": "62892216"
+                },
+                {
+                  "key": "should_not_have_upkeep",
+                  "value": "62892960"
+                }
+              ]
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "miner"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "custom_description",
+              "value": "shishan_code_vivhite_backstory"
+            },
+            {
+              "key": "custom_catch_phrase",
+              "value": "shishan_code_vivhite_catch_phrase"
+            },
+            {
+              "key": "design",
+              "value": [
+                {
+                  "key": "gender",
+                  "value": "female"
+                },
+                {
+                  "key": "name",
+                  "value": [
+                    {
+                      "key": "full_names",
+                      "value": [
+                        {
+                          "key": "key",
+                          "value": "NAME_shishan_code_vivhite"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "use_full_regnal_name",
+                      "value": "yes"
+                    }
+                  ]
+                },
+                {
+                  "key": "portrait",
+                  "value": "shishan_code_vivhite"
+                },
+                {
+                  "key": "texture",
+                  "value": "0"
+                },
+                {
+                  "key": "leader_class",
+                  "value": "official"
+                }
+              ]
+            },
+            {
+              "key": "available_trait_selections",
+              "value": "4"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_architectural_interest"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_spycraft"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_shishan_code_vivhite"
+            },
+            {
+              "key": "level",
+              "value": "5"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "diagnostics": [
+        {
+          "severity": "error",
+          "code": "ARCHITECTURE_OBSERVATION_MISMATCH",
+          "key": "shishan_code_architecture_population",
+          "observed": "5469",
+          "expected": "5474",
+          "status": "MISMATCH"
+        },
+        {
+          "severity": "error",
+          "code": "ARCHITECTURE_OBSERVATION_MISMATCH",
+          "key": "shishan_code_architecture_trait_weight",
+          "observed": "32814",
+          "expected": "32844",
+          "status": "MISMATCH"
+        }
+      ]
+    },
+    {
+      "save": "fb456_natural_claim",
+      "sha256": "9ddcb31ce9dab6843758ac2f71e786b43a8242d1cdda4da3cb89e4d5844bbc4d",
+      "date": "2209.11.28",
+      "audit_status": "PASS",
+      "actor": {
+        "source": "player[].country",
+        "country_id": 0,
+        "origin": "origin_shishan_code",
+        "main_species_source": "country.founder_species_ref",
+        "main_species_id": 48,
+        "main_species_evidence": {
+          "founder_species_ref": "48",
+          "rights_primary_species_index": "3321888769",
+          "rights_primary_raw": [
+            {
+              "key": "species_index",
+              "value": "3321888769"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ],
+          "default_species_raw": [
+            {
+              "key": "3321888769",
+              "value": "48"
+            }
+          ],
+          "owned_species_refs_raw": [
+            "3321888769"
+          ],
+          "interpretation": "main template uses country.founder_species_ref; rights primary and cached species references are independent saved fields, not resolved rights or substitute main pointers"
+        }
+      },
+      "variables": {
+        "shishan_code_architecture_bonus": "0.35",
+        "shishan_code_architecture_multiplier": "1.35",
+        "shishan_code_architecture_population": "5474",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "7",
+        "shishan_code_architecture_trait_average": "7",
+        "shishan_code_architecture_trait_weight": "38318",
+        "shishan_code_maintenance_count": "1",
+        "shishan_code_reroll_cooldown": "0",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "0",
+        "shishan_code_reward_slot_2": "0",
+        "shishan_code_reward_slot_3": "0",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62837520"
+      },
+      "P": 5474,
+      "W": 38318,
+      "U": "38318/5474",
+      "templates": [
+        {
+          "id": 48,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_power_drills"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_robot_power_drills",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 7,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            48,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5474,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "architecture_modifiers": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier_raw": "7",
+          "effective_multiplier": "7",
+          "days": "-1",
+          "native_fields": [
+            {
+              "key": "multiplier",
+              "value": "7"
+            },
+            {
+              "key": "modifier",
+              "value": "shishan_code_architecture_jobs"
+            },
+            {
+              "key": "days",
+              "value": "-1"
+            }
+          ]
+        }
+      ],
+      "white": [
+        {
+          "id": 16777294,
+          "species": "48",
+          "level": "5",
+          "experience": "25",
+          "portrait": "shishan_code_vivhite",
+          "flags": [
+            {
+              "key": "shishan_code_vivhite",
+              "value": "62892216"
+            },
+            {
+              "key": "should_not_have_upkeep",
+              "value": "62892960"
+            }
+          ],
+          "traits": [
+            "leader_trait_shishan_code_vivhite"
+          ],
+          "trait_selections": "4",
+          "available_trait": [
+            "leader_trait_architectural_interest",
+            "leader_trait_spycraft"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "负疚者·白绮"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "shishan_code_vivhite"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_legendary"
+            },
+            {
+              "key": "experience",
+              "value": "25"
+            },
+            {
+              "key": "leader_flags",
+              "value": "455"
+            },
+            {
+              "key": "date",
+              "value": "2194.09.30"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2209.09.30"
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "flags",
+              "value": [
+                {
+                  "key": "shishan_code_vivhite",
+                  "value": "62892216"
+                },
+                {
+                  "key": "should_not_have_upkeep",
+                  "value": "62892960"
+                }
+              ]
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "miner"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "custom_description",
+              "value": "shishan_code_vivhite_backstory"
+            },
+            {
+              "key": "custom_catch_phrase",
+              "value": "shishan_code_vivhite_catch_phrase"
+            },
+            {
+              "key": "design",
+              "value": [
+                {
+                  "key": "gender",
+                  "value": "female"
+                },
+                {
+                  "key": "name",
+                  "value": [
+                    {
+                      "key": "full_names",
+                      "value": [
+                        {
+                          "key": "key",
+                          "value": "NAME_shishan_code_vivhite"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "use_full_regnal_name",
+                      "value": "yes"
+                    }
+                  ]
+                },
+                {
+                  "key": "portrait",
+                  "value": "shishan_code_vivhite"
+                },
+                {
+                  "key": "texture",
+                  "value": "0"
+                },
+                {
+                  "key": "leader_class",
+                  "value": "official"
+                }
+              ]
+            },
+            {
+              "key": "available_trait_selections",
+              "value": "4"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_architectural_interest"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_spycraft"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_shishan_code_vivhite"
+            },
+            {
+              "key": "level",
+              "value": "5"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "owned_leaders": [
+        {
+          "id": 167772189,
+          "species": "48",
+          "level": "2",
+          "experience": "1016",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_principled"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "leader_trait_principled_2",
+            "trait_ruler_eye_for_talent",
+            "trait_ruler_charismatic"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Jaffaba"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "1016"
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "politician"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "design",
+              "value": [
+                {
+                  "key": "gender",
+                  "value": "female"
+                },
+                {
+                  "key": "name",
+                  "value": [
+                    {
+                      "key": "full_names",
+                      "value": [
+                        {
+                          "key": "key",
+                          "value": "HUM1_CHR_Jaffaba"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "use_full_regnal_name",
+                      "value": "yes"
+                    }
+                  ]
+                },
+                {
+                  "key": "portrait",
+                  "value": "sd_hum_robot"
+                },
+                {
+                  "key": "texture",
+                  "value": "0"
+                },
+                {
+                  "key": "evolution_mask",
+                  "value": "0"
+                },
+                {
+                  "key": "attachment",
+                  "value": "0"
+                },
+                {
+                  "key": "clothes",
+                  "value": "0"
+                },
+                {
+                  "key": "trait",
+                  "value": "leader_trait_principled"
+                },
+                {
+                  "key": "leader_class",
+                  "value": "official"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_principled_2"
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_eye_for_talent"
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_charismatic"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_principled"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 134217755,
+          "species": "48",
+          "level": "1",
+          "experience": null,
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [],
+          "trait_selections": null,
+          "available_trait": [],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Lathira"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "envoy"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "job",
+              "value": "artisan"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_pacifist"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "level",
+              "value": "1"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 150994970,
+          "species": "48",
+          "level": "1",
+          "experience": null,
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [],
+          "trait_selections": null,
+          "available_trait": [],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Falatir"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "envoy"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "job",
+              "value": "engineer"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_egalitarian"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "level",
+              "value": "1"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 150994969,
+          "species": "48",
+          "level": "2",
+          "experience": "780",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_spark_of_genius"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "leader_trait_spark_of_genius_2",
+            "leader_trait_meticulous",
+            "leader_trait_politician"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Limathar"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "scientist"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "780"
+            },
+            {
+              "key": "location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "ship"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "1"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "council_location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "council_position"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "11"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "technician"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_spark_of_genius_2"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_meticulous"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_politician"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_spark_of_genius"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 150994968,
+          "species": "48",
+          "level": "2",
+          "experience": "780",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_politician"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "trait_ruler_logistic_understanding",
+            "leader_trait_unyielding"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Jonnar"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "commander"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "780"
+            },
+            {
+              "key": "location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "ship"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "3"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "council_location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "council_position"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "10"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "9"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "enforcer"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_egalitarian"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_logistic_understanding"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_unyielding"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_politician"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 90,
+          "species": "48",
+          "level": "2",
+          "experience": "755",
+          "portrait": "sd_hum_robot",
+          "flags": [],
+          "traits": [
+            "leader_trait_trade_focus"
+          ],
+          "trait_selections": null,
+          "available_trait": [
+            "leader_trait_trade_focus_2",
+            "leader_trait_shipwright",
+            "trait_ruler_eye_for_talent"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "HUM1_CHR_Darmull"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "male"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_default"
+            },
+            {
+              "key": "experience",
+              "value": "755"
+            },
+            {
+              "key": "council_location",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "council_position"
+                },
+                {
+                  "key": "assignment",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "12"
+                },
+                {
+                  "key": "position",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2200.01.01"
+            },
+            {
+              "key": "age",
+              "value": "7"
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "politician"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_trade_focus_2"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_shipwright"
+            },
+            {
+              "key": "available_trait",
+              "value": "trait_ruler_eye_for_talent"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_trade_focus"
+            },
+            {
+              "key": "level",
+              "value": "2"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": 16777294,
+          "species": "48",
+          "level": "5",
+          "experience": "25",
+          "portrait": "shishan_code_vivhite",
+          "flags": [
+            {
+              "key": "shishan_code_vivhite",
+              "value": "62892216"
+            },
+            {
+              "key": "should_not_have_upkeep",
+              "value": "62892960"
+            }
+          ],
+          "traits": [
+            "leader_trait_shishan_code_vivhite"
+          ],
+          "trait_selections": "4",
+          "available_trait": [
+            "leader_trait_architectural_interest",
+            "leader_trait_spycraft"
+          ],
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "负疚者·白绮"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "48"
+            },
+            {
+              "key": "portrait",
+              "value": "shishan_code_vivhite"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_legendary"
+            },
+            {
+              "key": "experience",
+              "value": "25"
+            },
+            {
+              "key": "leader_flags",
+              "value": "455"
+            },
+            {
+              "key": "date",
+              "value": "2194.09.30"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2209.09.30"
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "flags",
+              "value": [
+                {
+                  "key": "shishan_code_vivhite",
+                  "value": "62892216"
+                },
+                {
+                  "key": "should_not_have_upkeep",
+                  "value": "62892960"
+                }
+              ]
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "miner"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "custom_description",
+              "value": "shishan_code_vivhite_backstory"
+            },
+            {
+              "key": "custom_catch_phrase",
+              "value": "shishan_code_vivhite_catch_phrase"
+            },
+            {
+              "key": "design",
+              "value": [
+                {
+                  "key": "gender",
+                  "value": "female"
+                },
+                {
+                  "key": "name",
+                  "value": [
+                    {
+                      "key": "full_names",
+                      "value": [
+                        {
+                          "key": "key",
+                          "value": "NAME_shishan_code_vivhite"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "use_full_regnal_name",
+                      "value": "yes"
+                    }
+                  ]
+                },
+                {
+                  "key": "portrait",
+                  "value": "shishan_code_vivhite"
+                },
+                {
+                  "key": "texture",
+                  "value": "0"
+                },
+                {
+                  "key": "leader_class",
+                  "value": "official"
+                }
+              ]
+            },
+            {
+              "key": "available_trait_selections",
+              "value": "4"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_architectural_interest"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_spycraft"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_shishan_code_vivhite"
+            },
+            {
+              "key": "level",
+              "value": "5"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "diagnostics": []
+    }
+  ],
+  "limits": [
+    "Native freeflag is observed; actual fee0 remains the root UI evidence.",
+    "Saved snapshots show preserved XP/identity across this species clone, not the entire death/reboot timeline.",
+    "white_reboot_month strict instantaneous architecture audit is FAIL for saved monthly cache lag; natural_claim refresh is PASS. These are not erased by the successful delta comparison."
+  ],
+  "status_scope": "PASS applies to the requested claim delta/leader-preservation checks; baseline monthly architecture cache has separate FAIL diagnostics."
+}

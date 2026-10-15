@@ -1,0 +1,827 @@
+{
+  "status": "PASS_WHITE_ACTUAL_DEATH_REBOOT_AND_FREE_UPKEEP",
+  "scope": "Independent raw native four-save comparison plus direct review of root-produced screenshots; no GUI/game input by this agent.",
+  "inputs": [
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_before.sav",
+      "sha256": "55867e1bbd89153cbf3c4bf9dcfc62147c789e8e4d5b3749da65002b77ce67ec",
+      "date": "2209.09.30"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_dead.sav",
+      "sha256": "adca049ea9c588f92a78cce038a7ff6a38bff639ae1fbdb0fd3cea88704b2080",
+      "date": "2209.09.30"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_reboot.sav",
+      "sha256": "9d61e54d21495200d1728e895e4b85fce118a375f40a5cec1d6ad7b9569356f2",
+      "date": "2209.09.30"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_reboot_month.sav",
+      "sha256": "2c2c131e6db5965800f042f3f521af41aad3eafdc6c625843d5f1feb19346c79",
+      "date": "2209.11.28"
+    }
+  ],
+  "checks": [
+    {
+      "name": "same_date_actual_UI_payment",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "energy_exact_deduction",
+      "status": "PASS",
+      "observed": {
+        "before": "7216.54875",
+        "after": "6716.54875",
+        "delta": "-500.00000"
+      }
+    },
+    {
+      "name": "alloys_exact_deduction",
+      "status": "PASS",
+      "observed": {
+        "before": "3196.11119",
+        "after": "2996.11119",
+        "delta": "-200.00000"
+      }
+    },
+    {
+      "name": "other_nonresearch_resource_balances_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "exactly_one_new_active_white_after_zero_active_death",
+      "status": "PASS",
+      "observed": {
+        "before": [
+          16777287
+        ],
+        "dead": [],
+        "reboot": [
+          16777294
+        ],
+        "month": [
+          16777294
+        ]
+      }
+    },
+    {
+      "name": "other_six_owned_leader_ids_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "XP25_preserved_after_reboot_and_month",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "level5_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "formal_traits_preserved_no_transient_XP_boost",
+      "status": "PASS",
+      "observed": {
+        "traits": [
+          "leader_trait_shishan_code_vivhite"
+        ]
+      }
+    },
+    {
+      "name": "four_pending_skill_points_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "repeated_pending_trait_choices_preserved",
+      "status": "PASS",
+      "observed": {
+        "choices": [
+          "leader_trait_architectural_interest",
+          "leader_trait_spycraft"
+        ]
+      }
+    },
+    {
+      "name": "class_tier_bonus_skill_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "custom_portrait_and_native_free_flag",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "three_country_bonuses_unique_each_multiplier1",
+      "status": "PASS",
+      "observed": {
+        "reboot": [
+          {
+            "modifier": "shishan_code_architecture_jobs",
+            "multiplier_raw": "6",
+            "effective_multiplier": "6",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "multiplier",
+                "value": "6"
+              },
+              {
+                "key": "modifier",
+                "value": "shishan_code_architecture_jobs"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          },
+          {
+            "modifier": "shishan_code_vivhite_base",
+            "multiplier_raw": null,
+            "effective_multiplier": "1",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "modifier",
+                "value": "shishan_code_vivhite_base"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          },
+          {
+            "modifier": "shishan_code_vivhite_engineering_step",
+            "multiplier_raw": null,
+            "effective_multiplier": "1",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "modifier",
+                "value": "shishan_code_vivhite_engineering_step"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          },
+          {
+            "modifier": "shishan_code_vivhite_society_step",
+            "multiplier_raw": null,
+            "effective_multiplier": "1",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "modifier",
+                "value": "shishan_code_vivhite_society_step"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          }
+        ],
+        "month": [
+          {
+            "modifier": "shishan_code_architecture_jobs",
+            "multiplier_raw": "6",
+            "effective_multiplier": "6",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "multiplier",
+                "value": "6"
+              },
+              {
+                "key": "modifier",
+                "value": "shishan_code_architecture_jobs"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          },
+          {
+            "modifier": "shishan_code_vivhite_base",
+            "multiplier_raw": null,
+            "effective_multiplier": "1",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "modifier",
+                "value": "shishan_code_vivhite_base"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          },
+          {
+            "modifier": "shishan_code_vivhite_engineering_step",
+            "multiplier_raw": null,
+            "effective_multiplier": "1",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "modifier",
+                "value": "shishan_code_vivhite_engineering_step"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          },
+          {
+            "modifier": "shishan_code_vivhite_society_step",
+            "multiplier_raw": null,
+            "effective_multiplier": "1",
+            "days": "-1",
+            "native_fields": [
+              {
+                "key": "modifier",
+                "value": "shishan_code_vivhite_society_step"
+              },
+              {
+                "key": "days",
+                "value": "-1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "backup_target_country_flag_and_vars_cleared",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "old_backup_inactive_unflagged_then_collected",
+      "status": "PASS",
+      "observed": [
+        {
+          "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_reboot.sav",
+          "record_exists": true,
+          "owned": false,
+          "white_flag": false,
+          "native_fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "负疚者·白绮"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "species",
+              "value": "3321888769"
+            },
+            {
+              "key": "portrait",
+              "value": "sd_hum_robot"
+            },
+            {
+              "key": "gender",
+              "value": "female"
+            },
+            {
+              "key": "creator",
+              "value": "0"
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "tier",
+              "value": "leader_tier_legendary"
+            },
+            {
+              "key": "leader_flags",
+              "value": "487"
+            },
+            {
+              "key": "date",
+              "value": "2194.09.30"
+            },
+            {
+              "key": "recruitment_date",
+              "value": "2209.09.30"
+            },
+            {
+              "key": "age",
+              "value": "0"
+            },
+            {
+              "key": "flags",
+              "value": [
+                {
+                  "key": "should_not_have_upkeep",
+                  "value": "62891520"
+                }
+              ]
+            },
+            {
+              "key": "variables",
+              "value": [
+                {
+                  "key": "leader_pending_negative_traits_unmodified",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "key": "job",
+              "value": "miner"
+            },
+            {
+              "key": "ethic",
+              "value": "ethic_xenophobe"
+            },
+            {
+              "key": "background_planet",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "custom_description",
+              "value": "shishan_code_vivhite_backstory"
+            },
+            {
+              "key": "custom_catch_phrase",
+              "value": "shishan_code_vivhite_catch_phrase"
+            },
+            {
+              "key": "design",
+              "value": [
+                {
+                  "key": "gender",
+                  "value": "female"
+                },
+                {
+                  "key": "name",
+                  "value": [
+                    {
+                      "key": "full_names",
+                      "value": [
+                        {
+                          "key": "key",
+                          "value": "NAME_shishan_code_vivhite"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "use_full_regnal_name",
+                      "value": "yes"
+                    }
+                  ]
+                },
+                {
+                  "key": "portrait",
+                  "value": "shishan_code_vivhite"
+                },
+                {
+                  "key": "texture",
+                  "value": "0"
+                },
+                {
+                  "key": "leader_class",
+                  "value": "official"
+                }
+              ]
+            },
+            {
+              "key": "available_trait_selections",
+              "value": "4"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_architectural_interest"
+            },
+            {
+              "key": "available_trait",
+              "value": "leader_trait_spycraft"
+            },
+            {
+              "key": "traits",
+              "value": "leader_trait_shishan_code_vivhite"
+            },
+            {
+              "key": "level",
+              "value": "5"
+            },
+            {
+              "key": "bonus_skill_level",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_reboot_month.sav",
+          "record_exists": false,
+          "owned": false,
+          "white_flag": false,
+          "native_fields": null
+        }
+      ]
+    },
+    {
+      "name": "n1_R0_CD0_pending_reward_stable",
+      "status": "PASS",
+      "observed": {
+        "shishan_code_maintenance_count": "1",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_reroll_cooldown": "0",
+        "shishan_code_reward_slot_1": "7",
+        "shishan_code_reward_slot_2": "1",
+        "shishan_code_reward_slot_3": "11"
+      }
+    },
+    {
+      "name": "final_officials_budget_current_and_last8",
+      "status": "PASS",
+      "observed": {
+        "before": "9",
+        "immediate_reboot": "9",
+        "final_current": "8",
+        "final_last": "8"
+      }
+    },
+    {
+      "name": "UI_cost_name_portrait_and_free_upkeep_verified",
+      "status": "PASS",
+      "observed": {
+        "images": [
+          {
+            "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-reboot-choice.jpg",
+            "sha256": "fe04ffd0fac222f57590c1bbabd818a63706905bafdb5b10a13b6a089b678fcb"
+          },
+          {
+            "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-white-free-after-reboot.jpg",
+            "sha256": "c22cbc2e675ba7ec13b374a38d294788c12b103d90ca262a189fe21f1aa5d4af"
+          }
+        ],
+        "observed": "Direct review of existing root screenshots: popup500energy/200alloys; final correct Chinese white name and portrait; white no upkeep, other four visible leaders4.0 each. This agent performed no game/UI input."
+      }
+    }
+  ],
+  "new_active_leader_id": 16777294,
+  "final_leader_native_fields": [
+    {
+      "key": "name",
+      "value": [
+        {
+          "key": "full_names",
+          "value": [
+            {
+              "key": "key",
+              "value": "负疚者·白绮"
+            }
+          ]
+        },
+        {
+          "key": "use_full_regnal_name",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "key": "species",
+      "value": "3321888769"
+    },
+    {
+      "key": "portrait",
+      "value": "shishan_code_vivhite"
+    },
+    {
+      "key": "gender",
+      "value": "female"
+    },
+    {
+      "key": "country",
+      "value": "0"
+    },
+    {
+      "key": "creator",
+      "value": "0"
+    },
+    {
+      "key": "class",
+      "value": "official"
+    },
+    {
+      "key": "tier",
+      "value": "leader_tier_legendary"
+    },
+    {
+      "key": "experience",
+      "value": "25"
+    },
+    {
+      "key": "leader_flags",
+      "value": "455"
+    },
+    {
+      "key": "date",
+      "value": "2194.09.30"
+    },
+    {
+      "key": "recruitment_date",
+      "value": "2209.09.30"
+    },
+    {
+      "key": "age",
+      "value": "0"
+    },
+    {
+      "key": "flags",
+      "value": [
+        {
+          "key": "shishan_code_vivhite",
+          "value": "62892216"
+        },
+        {
+          "key": "should_not_have_upkeep",
+          "value": "62892960"
+        }
+      ]
+    },
+    {
+      "key": "variables",
+      "value": [
+        {
+          "key": "leader_pending_negative_traits_unmodified",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "key": "job",
+      "value": "miner"
+    },
+    {
+      "key": "ethic",
+      "value": "ethic_xenophobe"
+    },
+    {
+      "key": "background_planet",
+      "value": [
+        {
+          "key": "type",
+          "value": "planet"
+        },
+        {
+          "key": "reference",
+          "value": "8"
+        }
+      ]
+    },
+    {
+      "key": "custom_description",
+      "value": "shishan_code_vivhite_backstory"
+    },
+    {
+      "key": "custom_catch_phrase",
+      "value": "shishan_code_vivhite_catch_phrase"
+    },
+    {
+      "key": "design",
+      "value": [
+        {
+          "key": "gender",
+          "value": "female"
+        },
+        {
+          "key": "name",
+          "value": [
+            {
+              "key": "full_names",
+              "value": [
+                {
+                  "key": "key",
+                  "value": "NAME_shishan_code_vivhite"
+                }
+              ]
+            },
+            {
+              "key": "use_full_regnal_name",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "key": "portrait",
+          "value": "shishan_code_vivhite"
+        },
+        {
+          "key": "texture",
+          "value": "0"
+        },
+        {
+          "key": "leader_class",
+          "value": "official"
+        }
+      ]
+    },
+    {
+      "key": "available_trait_selections",
+      "value": "4"
+    },
+    {
+      "key": "available_trait",
+      "value": "leader_trait_architectural_interest"
+    },
+    {
+      "key": "available_trait",
+      "value": "leader_trait_spycraft"
+    },
+    {
+      "key": "traits",
+      "value": "leader_trait_shishan_code_vivhite"
+    },
+    {
+      "key": "level",
+      "value": "5"
+    },
+    {
+      "key": "bonus_skill_level",
+      "value": "0"
+    }
+  ],
+  "final_expenses_native": {
+    "current_month": {
+      "leader_commanders": [
+        {
+          "key": "unity",
+          "value": "4"
+        }
+      ],
+      "leader_scientists": [
+        {
+          "key": "unity",
+          "value": "4"
+        }
+      ],
+      "leader_officials": [
+        {
+          "key": "unity",
+          "value": "8"
+        }
+      ]
+    },
+    "last_month": {
+      "leader_commanders": [
+        {
+          "key": "unity",
+          "value": "4"
+        }
+      ],
+      "leader_scientists": [
+        {
+          "key": "unity",
+          "value": "4"
+        }
+      ],
+      "leader_officials": [
+        {
+          "key": "unity",
+          "value": "8"
+        }
+      ]
+    }
+  },
+  "resources_same_date_before_after": {
+    "before": {
+      "energy": "7216.54875",
+      "minerals": "6075.75024",
+      "physics_research": "1852.74373",
+      "society_research": "2263.6713",
+      "engineering_research": "2350.50001",
+      "influence": "729.33586",
+      "unity": "2376.24569",
+      "trade": "3405.2891",
+      "consumer_goods": "3153.69701",
+      "alloys": "3196.11119"
+    },
+    "after": {
+      "energy": "6716.54875",
+      "minerals": "6075.75024",
+      "physics_research": "1944.63696",
+      "engineering_research": "2650.71854",
+      "influence": "729.33586",
+      "unity": "2376.24569",
+      "trade": "3405.2891",
+      "consumer_goods": "3153.69701",
+      "alloys": "2996.11119"
+    },
+    "research_accounting_fields_changed": [
+      {
+        "resource": "physics_research",
+        "before": "1852.74373",
+        "after": "1944.63696"
+      },
+      {
+        "resource": "society_research",
+        "before": "2263.6713",
+        "after": null
+      },
+      {
+        "resource": "engineering_research",
+        "before": "2350.50001",
+        "after": "2650.71854"
+      }
+    ],
+    "boundary": "Payment exactness is established from energy and alloys; other nonresearch balances are unchanged. Research accounting fields changed/normalized and are preserved without a guessed mechanism. Entire resources block equality is not claimed."
+  },
+  "serialized_name_boundary": {
+    "name_native": [
+      {
+        "key": "full_names",
+        "value": [
+          {
+            "key": "key",
+            "value": "负疚者·白绮"
+          }
+        ]
+      },
+      {
+        "key": "use_full_regnal_name",
+        "value": "yes"
+      }
+    ],
+    "design_native": [
+      {
+        "key": "gender",
+        "value": "female"
+      },
+      {
+        "key": "name",
+        "value": [
+          {
+            "key": "full_names",
+            "value": [
+              {
+                "key": "key",
+                "value": "NAME_shishan_code_vivhite"
+              }
+            ]
+          },
+          {
+            "key": "use_full_regnal_name",
+            "value": "yes"
+          }
+        ]
+      },
+      {
+        "key": "portrait",
+        "value": "shishan_code_vivhite"
+      },
+      {
+        "key": "texture",
+        "value": "0"
+      },
+      {
+        "key": "leader_class",
+        "value": "official"
+      }
+    ],
+    "interpretation": "Name text retains replacement characters but design uses the correct localization key and real final Chinese UI renders correctly. Preserve serialization details; do not infer a final visible naming failure from this alone."
+  },
+  "backup_boundary": "Death-stage clone lacks rawXP and has generic portrait; countryXP25 backup restores activeXP25 and explicit portrait correctly. Immediate dead backup history remains unowned/unflagged, then is collected by the following saved month.",
+  "limitations": [
+    "New ID, age/recruitment date/assignment/background may change. This verifies growth XP/level/formal traits/selection state and class/tier, not byte identity of the whole leader record.",
+    "Immediate budget9 was retained; final full-month budget8 now agrees with zero individual UI upkeep."
+  ]
+}

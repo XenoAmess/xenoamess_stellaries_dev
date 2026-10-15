@@ -1,0 +1,27 @@
+{
+  "semantic_scope": "development negative regression; frozen faulty package must be rejected without RNG",
+  "frozen_package": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T071829Z\\mod\\shishan-feedback-local",
+  "frozen_rewards_sha256": "93589b9d972b937859a7296859587a15381b9a57514424c50db51194d5834607",
+  "frozen_fault_rejected": true,
+  "deterministic_rejection": "deterministic first-candidate weight: slot 1, else_if, wrong tier: expected 0, got 1",
+  "random_sampling_used": false,
+  "native_logic_tests": {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_shishan_feedback_redesign.py",
+      "-k",
+      "NativeLogicRegressionTests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_and_or_nor_and_default_keep_their_explicit_truth_tables (test_shishan_feedback_redesign.NativeLogicRegressionTests.test_and_or_nor_and_default_keep_their_explicit_truth_tables) ... ok\ntest_native_not_truth_table (test_shishan_feedback_redesign.NativeLogicRegressionTests.test_native_not_truth_table) ... ok\ntest_old_multichild_not_guard_fails_weight_deterministically (test_shishan_feedback_redesign.NativeLogicRegressionTests.test_old_multichild_not_guard_fails_weight_deterministically) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nOK\n"
+  }
+}

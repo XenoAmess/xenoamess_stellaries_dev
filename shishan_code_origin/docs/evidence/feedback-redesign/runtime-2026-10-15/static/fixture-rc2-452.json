@@ -1,0 +1,62 @@
+{
+  "status": "FAIL",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "p_scripts": 26,
+  "p_parsed": 26,
+  "dds": 13,
+  "languages": [
+    "braz_por",
+    "english",
+    "french",
+    "german",
+    "japanese",
+    "korean",
+    "polish",
+    "russian",
+    "simp_chinese",
+    "spanish"
+  ],
+  "localization_keys": 268,
+  "localization_applicability": "checked",
+  "finite_scope_preflight": {
+    "status": "UNKNOWN",
+    "profile": "stellaris-4.5.2-population-scopes-v1",
+    "checked": 165,
+    "relevant_files": 4,
+    "diagnostics": [
+      {
+        "code": "STELLARIS_SCOPE_UNKNOWN",
+        "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\fixture-rc2\\mod\\events\\shishan_feedback_probe_events.txt",
+        "line": 52,
+        "column": 8,
+        "opcode": "pop_group_size",
+        "scope": "UNKNOWN",
+        "allowed_scopes": [
+          "pop_group"
+        ],
+        "profile": "stellaris-4.5.2-population-scopes-v1"
+      }
+    ]
+  },
+  "finite_script_value_preflight": {
+    "status": "NOT_APPLICABLE",
+    "profile": "stellaris-4.5.2-referenced-script-value-shapes-v1",
+    "checked": 0,
+    "diagnostics": []
+  },
+  "semantic_scope": "syntax/package plus explicitly registered finite population scopes and referenced script-value shapes only; runtime, recursive expansion and other opcodes require Stellaris tests",
+  "errors": [
+    {
+      "code": "STELLARIS_SCOPE_UNKNOWN",
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\fixture-rc2\\mod\\events\\shishan_feedback_probe_events.txt",
+      "line": 52,
+      "column": 8,
+      "opcode": "pop_group_size",
+      "scope": "UNKNOWN",
+      "allowed_scopes": [
+        "pop_group"
+      ],
+      "profile": "stellaris-4.5.2-population-scopes-v1"
+    }
+  ]
+}

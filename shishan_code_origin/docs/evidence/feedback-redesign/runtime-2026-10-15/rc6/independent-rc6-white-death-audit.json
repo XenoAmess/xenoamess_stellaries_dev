@@ -1,0 +1,493 @@
+{
+  "status": "PASS_DEATH_BACKUP_AND_RECEIPT_TRANSITION",
+  "scope": "Read-only independent raw native before/dead comparison after root actual kill_leader command and normal on_action handling. Reboot has not yet been paid or audited.",
+  "inputs": [
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_before.sav",
+      "sha256": "55867e1bbd89153cbf3c4bf9dcfc62147c789e8e4d5b3749da65002b77ce67ec",
+      "date": "2209.09.30"
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_white_dead.sav",
+      "sha256": "adca049ea9c588f92a78cce038a7ff6a38bff639ae1fbdb0fd3cea88704b2080",
+      "date": "2209.09.30"
+    }
+  ],
+  "checks": {
+    "same_paused_date": true,
+    "active_white_count_zero": true,
+    "other_six_owned_leaders_preserved": true,
+    "country_white_modifiers_removed": true,
+    "reboot_pending_flag_set": true,
+    "country_backup_XP25_preserved": true,
+    "backup_level5_preserved": true,
+    "backup_formal_traits_preserved": true,
+    "backup_pending_skill_selections_and_choices_preserved": true,
+    "backup_excluded_from_active_owned_list": true,
+    "maintenance_reward_and_architecture_state_unchanged": true,
+    "resources_unchanged_before_reboot_payment": true
+  },
+  "native_kill_provenance": {
+    "command_record": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-white-native-kill.console.json",
+    "sha256": "5a123debff541f292bca15517d250b4718228a8b753b493a8f150e0926b9456a",
+    "record": {
+      "command": "effect random_owned_leader = { limit = { has_leader_flag = shishan_code_vivhite } kill_leader = { show_notification = yes } }",
+      "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-white-native-kill-result.jpg"
+    }
+  },
+  "country_backup_XP": "25",
+  "backup_target": {
+    "type": "leader",
+    "id": "16777271",
+    "opener_id": "4294967295",
+    "name": "shishan_code_vivhite_backup0"
+  },
+  "active_white_before": [
+    16777287
+  ],
+  "active_white_after": [],
+  "backup_leader_native_fields": [
+    {
+      "key": "name",
+      "value": [
+        {
+          "key": "full_names",
+          "value": [
+            {
+              "key": "key",
+              "value": "负疚者·白绮"
+            }
+          ]
+        },
+        {
+          "key": "use_full_regnal_name",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "key": "species",
+      "value": "3321888769"
+    },
+    {
+      "key": "portrait",
+      "value": "sd_hum_robot"
+    },
+    {
+      "key": "gender",
+      "value": "female"
+    },
+    {
+      "key": "creator",
+      "value": "0"
+    },
+    {
+      "key": "class",
+      "value": "official"
+    },
+    {
+      "key": "tier",
+      "value": "leader_tier_legendary"
+    },
+    {
+      "key": "leader_flags",
+      "value": "455"
+    },
+    {
+      "key": "date",
+      "value": "2194.09.30"
+    },
+    {
+      "key": "recruitment_date",
+      "value": "2209.09.30"
+    },
+    {
+      "key": "age",
+      "value": "0"
+    },
+    {
+      "key": "flags",
+      "value": [
+        {
+          "key": "shishan_code_vivhite",
+          "value": "62809488"
+        },
+        {
+          "key": "should_not_have_upkeep",
+          "value": "62891520"
+        }
+      ]
+    },
+    {
+      "key": "variables",
+      "value": [
+        {
+          "key": "leader_pending_negative_traits_unmodified",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "key": "job",
+      "value": "miner"
+    },
+    {
+      "key": "ethic",
+      "value": "ethic_xenophobe"
+    },
+    {
+      "key": "background_planet",
+      "value": [
+        {
+          "key": "type",
+          "value": "planet"
+        },
+        {
+          "key": "reference",
+          "value": "8"
+        }
+      ]
+    },
+    {
+      "key": "custom_description",
+      "value": "shishan_code_vivhite_backstory"
+    },
+    {
+      "key": "custom_catch_phrase",
+      "value": "shishan_code_vivhite_catch_phrase"
+    },
+    {
+      "key": "design",
+      "value": [
+        {
+          "key": "gender",
+          "value": "female"
+        },
+        {
+          "key": "name",
+          "value": [
+            {
+              "key": "full_names",
+              "value": [
+                {
+                  "key": "key",
+                  "value": "NAME_shishan_code_vivhite"
+                }
+              ]
+            },
+            {
+              "key": "use_full_regnal_name",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "key": "portrait",
+          "value": "shishan_code_vivhite"
+        },
+        {
+          "key": "texture",
+          "value": "0"
+        },
+        {
+          "key": "leader_class",
+          "value": "official"
+        }
+      ]
+    },
+    {
+      "key": "available_trait_selections",
+      "value": "4"
+    },
+    {
+      "key": "available_trait",
+      "value": "leader_trait_architectural_interest"
+    },
+    {
+      "key": "available_trait",
+      "value": "leader_trait_spycraft"
+    },
+    {
+      "key": "traits",
+      "value": "leader_trait_shishan_code_vivhite"
+    },
+    {
+      "key": "level",
+      "value": "5"
+    },
+    {
+      "key": "bonus_skill_level",
+      "value": "0"
+    }
+  ],
+  "dead_original_native_fields": [
+    {
+      "key": "name",
+      "value": [
+        {
+          "key": "full_names",
+          "value": [
+            {
+              "key": "key",
+              "value": "NAME_shishan_code_vivhite"
+            }
+          ]
+        },
+        {
+          "key": "use_full_regnal_name",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "key": "species",
+      "value": "3321888769"
+    },
+    {
+      "key": "portrait",
+      "value": "shishan_code_vivhite"
+    },
+    {
+      "key": "gender",
+      "value": "female"
+    },
+    {
+      "key": "country",
+      "value": "0"
+    },
+    {
+      "key": "creator",
+      "value": "0"
+    },
+    {
+      "key": "class",
+      "value": "official"
+    },
+    {
+      "key": "tier",
+      "value": "leader_tier_legendary"
+    },
+    {
+      "key": "experience",
+      "value": "25"
+    },
+    {
+      "key": "leader_flags",
+      "value": "487"
+    },
+    {
+      "key": "date",
+      "value": "2200.03.03"
+    },
+    {
+      "key": "recruitment_date",
+      "value": "2200.03.03"
+    },
+    {
+      "key": "age",
+      "value": "6"
+    },
+    {
+      "key": "flags",
+      "value": [
+        {
+          "key": "shishan_code_vivhite",
+          "value": "62809488"
+        },
+        {
+          "key": "should_not_have_upkeep",
+          "value": "62891520"
+        },
+        {
+          "key": "retirement_is_default",
+          "value": "62892216"
+        }
+      ]
+    },
+    {
+      "key": "variables",
+      "value": [
+        {
+          "key": "leader_pending_negative_traits_unmodified",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "key": "background_planet",
+      "value": [
+        {
+          "key": "type",
+          "value": "planet"
+        },
+        {
+          "key": "reference",
+          "value": "4294967295"
+        }
+      ]
+    },
+    {
+      "key": "custom_description",
+      "value": "shishan_code_vivhite_backstory"
+    },
+    {
+      "key": "custom_catch_phrase",
+      "value": "shishan_code_vivhite_catch_phrase"
+    },
+    {
+      "key": "available_trait_selections",
+      "value": "4"
+    },
+    {
+      "key": "available_trait",
+      "value": "leader_trait_architectural_interest"
+    },
+    {
+      "key": "available_trait",
+      "value": "leader_trait_spycraft"
+    },
+    {
+      "key": "traits",
+      "value": "leader_trait_shishan_code_vivhite"
+    },
+    {
+      "key": "level",
+      "value": "5"
+    },
+    {
+      "key": "bonus_skill_level",
+      "value": "0"
+    }
+  ],
+  "country_modifiers_after": [
+    {
+      "modifier": "shishan_code_architecture_jobs",
+      "multiplier_raw": "6",
+      "effective_multiplier": "6",
+      "days": "-1",
+      "native_fields": [
+        {
+          "key": "multiplier",
+          "value": "6"
+        },
+        {
+          "key": "modifier",
+          "value": "shishan_code_architecture_jobs"
+        },
+        {
+          "key": "days",
+          "value": "-1"
+        }
+      ]
+    }
+  ],
+  "country_mod_flags_after": {
+    "shishan_code_initialized": "62808000",
+    "shishan_code_vivhite_recruited": "62809488",
+    "shishan_code_architecture_migrated": "62837520",
+    "shishan_code_reward_pending": "62877864",
+    "shishan_code_vivhite_pending_reboot": "62892216"
+  },
+  "resources_after_death": [
+    {
+      "key": "energy",
+      "value": "7216.54875"
+    },
+    {
+      "key": "minerals",
+      "value": "6075.75024"
+    },
+    {
+      "key": "physics_research",
+      "value": "1852.74373"
+    },
+    {
+      "key": "society_research",
+      "value": "2263.6713"
+    },
+    {
+      "key": "engineering_research",
+      "value": "2350.50001"
+    },
+    {
+      "key": "influence",
+      "value": "729.33586"
+    },
+    {
+      "key": "unity",
+      "value": "2376.24569"
+    },
+    {
+      "key": "trade",
+      "value": "3405.2891"
+    },
+    {
+      "key": "consumer_goods",
+      "value": "3153.69701"
+    },
+    {
+      "key": "alloys",
+      "value": "3196.11119"
+    }
+  ],
+  "intermediate_backup_caveats": {
+    "backup_leader_experience_field": null,
+    "XP_restore_source": "Country shishan_code_vivhite_backup_xp=25, not a serialized experience field on the exile clone. Final reboot must restore it.",
+    "should_not_have_upkeep_on_backup": true,
+    "free_flag_interpretation": "Native free flag remains on inactive dead/exiled records. It was not removed; inactive membership and country bonus removal are independently verified.",
+    "backup_portrait": "sd_hum_robot",
+    "backup_design_native": [
+      {
+        "key": "gender",
+        "value": "female"
+      },
+      {
+        "key": "name",
+        "value": [
+          {
+            "key": "full_names",
+            "value": [
+              {
+                "key": "key",
+                "value": "NAME_shishan_code_vivhite"
+              }
+            ]
+          },
+          {
+            "key": "use_full_regnal_name",
+            "value": "yes"
+          }
+        ]
+      },
+      {
+        "key": "portrait",
+        "value": "shishan_code_vivhite"
+      },
+      {
+        "key": "texture",
+        "value": "0"
+      },
+      {
+        "key": "leader_class",
+        "value": "official"
+      }
+    ],
+    "backup_name_native": [
+      {
+        "key": "full_names",
+        "value": [
+          {
+            "key": "key",
+            "value": "负疚者·白绮"
+          }
+        ]
+      },
+      {
+        "key": "use_full_regnal_name",
+        "value": "yes"
+      }
+    ],
+    "backup_name_contains_replacement_character": false,
+    "boundary": "Intermediate clone portrait/name are raw observations; final active reboot portrait/name need native inspection before acceptance."
+  }
+}

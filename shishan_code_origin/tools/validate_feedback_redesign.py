@@ -154,7 +154,8 @@ class Values:
         self.depth += 1
         try:
             definition = one(self.definitions, name)
-            return self.evaluate(definition) if isinstance(definition, list) else self.scalar(definition)
+            require(isinstance(definition, list), f"ordinary named script value {name} must use a block definition; bare scalar values are not executable script values")
+            return self.evaluate(definition)
         finally:
             self.depth -= 1
 
@@ -213,6 +214,9 @@ class Scope:
     species: "Scope | None" = None
     projects: set | None = None
     leaders: list | None = None
+    envoys: list | None = None
+    species_rights: dict | None = None
+    default_rights: dict | None = None
     owner: "Scope | None" = None
     main_species: "Scope | None" = None
     lineage: str = "main"
@@ -220,6 +224,9 @@ class Scope:
     origin: str = "origin_shishan_code"
     food: bool = True
     gestalt: bool = False
+    archetype: str = "MACHINE"
+    portrait: str = "default"
+    councilor: bool = False
 
     def __post_init__(self):
         self.variables = {} if self.variables is None else self.variables
@@ -230,6 +237,9 @@ class Scope:
         self.species_templates = [] if self.species_templates is None else self.species_templates
         self.projects = set() if self.projects is None else self.projects
         self.leaders = [] if self.leaders is None else self.leaders
+        self.envoys = [] if self.envoys is None else self.envoys
+        self.species_rights = {} if self.species_rights is None else self.species_rights
+        self.default_rights = {} if self.default_rights is None else self.default_rights
 
 
 class Effects:
@@ -239,7 +249,7 @@ class Effects:
     In particular lineage labels are supplied independently by test fixtures.
     """
 
-    def __init__(self, definitions: list[Entry], values: list[Entry] | None = None, seed: int = 0, trigger_overrides: dict | None = None, effect_hooks: dict | None = None, opaque_effects: set | None = None):
+    def __init__(self, definitions: list[Entry], values: list[Entry] | None = None, seed: int = 0, trigger_overrides: dict | None = None, effect_hooks: dict | None = None, opaque_effects: set | None = None, host_dlcs: set | None = None, snapshot_pop_group_limits: bool = False):
         self.definitions = definitions
         self.values = values or []
         self.rng = random.Random(seed)
@@ -253,6 +263,12 @@ class Effects:
         self.event_targets = {}
         self.opaque_effects = opaque_effects or set()
         self.opaque_calls = []
+        self.host_dlcs = set(host_dlcs or ())
+        self.clone_models = []
+        self.logs = []
+        # Optional conservative fixture: preselect iterator targets, then
+        # resolve their current species at execution time. Not an engine claim.
+        self.snapshot_pop_group_limits = snapshot_pop_group_limits
 
     def resolve_scope(self, name: str, current: Scope, previous: Scope | None) -> Scope:
         target = {"this": current, "prev": previous, "root": self.root,
@@ -285,20 +301,26 @@ class Effects:
         if value.startswith("value:"):
             return Values(self.values, current.variables).named(value[6:])
         if value.startswith("trigger:"):
-            require(value == "trigger:pop_amount", f"unsupported trigger export {value}")
-            return Decimal(current.population)
+            return self.population_export(value[8:], current)
         if "." in value:
             scope, key = value.split(".", 1)
             if scope in ("this", "prev", "root", "owner"):
                 target = self.resolve_scope(scope, current, previous)
                 if key.startswith("value:"):
                     return Values(self.values, target.variables).named(key[6:])
-                if key == "trigger:pop_amount":
-                    return Decimal(target.population)
+                if key.startswith("trigger:"):
+                    return self.population_export(key[8:], target)
                 return Decimal(target.variables.get(key, 0))
         if value in current.variables:
             return Decimal(current.variables[value])
         return number(value)
+
+    def population_export(self, key: str, scope: Scope) -> Decimal:
+        if key == "pop_amount" and scope.kind == "pop_group":
+            raise ContractError("pop_amount is invalid in pop_group scope; use native pop_group_size")
+        require(key == "pop_group_size", f"unsupported trigger export trigger:{key}")
+        require(scope.kind == "pop_group", f"pop_group_size requires pop_group scope, got {scope.kind}")
+        return Decimal(scope.population)
 
     def compare(self, actual, op, expected) -> bool:
         if op == "=":
@@ -326,7 +348,9 @@ class Effects:
             elif key == "OR":
                 result = any(self.trigger([item], current, previous) for item in block(value))
             elif key in ("NOT", "NOR"):
-                result = not (self.trigger(block(value), current, previous) if key == "NOT" else any(self.trigger([item], current, previous) for item in block(value)))
+                # Native 4.5.2 NOT negates each direct child (NOR semantics).
+                # To negate a conjunction the script must wrap it in AND.
+                result = not any(self.trigger([item], current, previous) for item in block(value))
             elif key in ("this", "prev", "root", "owner", "owner_main_species", "species"):
                 result = self.scoped_trigger(block(value), self.resolve_scope(key, current, previous), current)
             elif key == "has_origin":
@@ -341,6 +365,23 @@ class Effects:
                 result = value in current.variables
             elif key == "has_trait":
                 result = value in current.traits
+            elif key == "is_archetype":
+                require(current.kind == "species", f"is_archetype requires species scope, got {current.kind}")
+                result = current.archetype == str(value).strip('"')
+            elif key == "host_has_dlc":
+                result = str(value).strip('"') in self.host_dlcs
+            elif key == "exists":
+                if value == "owner":
+                    result = current.owner is not None
+                else:
+                    require(isinstance(value, str) and value.startswith("event_target:"), f"unsupported exists target {value}")
+                    result = value[13:] in self.event_targets
+            elif key == "is_gestalt":
+                require(current.kind == "country", "is_gestalt requires country scope")
+                result = current.gestalt == (value == "yes")
+            elif key == "is_councilor":
+                require(current.kind == "leader", "is_councilor requires leader scope")
+                result = current.councilor == (value == "yes")
             elif key == "country_uses_food":
                 result = current.food == (value == "yes")
             elif key == "has_ethic":
@@ -357,8 +398,8 @@ class Effects:
                 result = any(self.scoped_trigger(block(value), group, current) for group in current.groups if group.owner is current)
             elif key == "any_owned_leader":
                 result = any(self.scoped_trigger(block(value), leader, current) for leader in current.leaders if leader.owner is current)
-            elif key == "pop_amount":
-                result = self.compare(Decimal(current.population), entry.op, self.scalar(value, current, previous))
+            elif key in ("pop_group_size", "pop_amount"):
+                result = self.compare(self.population_export(key, current), entry.op, self.scalar(value, current, previous))
             elif key == "check_variable":
                 body = block(value)
                 variable = one(body, "which")
@@ -402,6 +443,25 @@ class Effects:
             self.execute(body, current, previous)
         finally:
             self.depth -= 1
+
+    def random_weights(self, choices: list[Entry], current: Scope, previous: Scope | None = None) -> list[tuple[Decimal, list[Entry]]]:
+        """Compute every emitted weight, including zeroes, without sampling."""
+        result = []
+        for choice in choices:
+            weight = number(choice.key)
+            body = block(choice.value)
+            for modifier in (item for item in body if item.key == "modifier"):
+                modifier_body = block(modifier.value)
+                conditions = [item for item in modifier_body if item.key not in ("factor", "add")]
+                if self.trigger(conditions, current, previous):
+                    factors = [item.value for item in modifier_body if item.key == "factor"]
+                    additions = [item.value for item in modifier_body if item.key == "add"]
+                    for factor in factors:
+                        weight *= self.scalar(factor, current, previous)
+                    for addition in additions:
+                        weight += self.scalar(addition, current, previous)
+            result.append((weight, [item for item in body if item.key != "modifier"]))
+        return result
 
     def execute(self, entries: list[Entry], current: Scope, previous: Scope | None = None) -> None:
         branch_taken = False
@@ -454,6 +514,8 @@ class Effects:
                 current.flags.discard(value)
             elif key == "save_event_target_as":
                 self.event_targets[str(value)] = current
+            elif key == "log":
+                self.logs.append(str(value).strip('"'))
             elif key == "enable_special_project":
                 current.projects.add(str(one(block(value), "name")))
             elif key == "abort_special_project":
@@ -467,9 +529,62 @@ class Effects:
                         self.scoped_execute([item for item in body if item.key != "limit"], species, current)
             elif key == "every_owned_pop_group":
                 body = block(value)
-                for group in current.groups:
-                    if group.owner is current and all(self.scoped_trigger(block(item.value), group, current) for item in body if item.key == "limit"):
+                def qualifies(group):
+                    return group.owner is current and all(self.scoped_trigger(block(item.value), group, current) for item in body if item.key == "limit")
+                targets = [group for group in current.groups if qualifies(group)] if self.snapshot_pop_group_limits else list(current.groups)
+                for group in targets:
+                    if self.snapshot_pop_group_limits or qualifies(group):
                         self.scoped_execute([item for item in body if item.key != "limit"], group, current)
+            elif key in ("every_owned_leader", "every_envoy"):
+                require(current.kind == "country", f"{key} requires country scope")
+                body = block(value)
+                targets = current.leaders if key == "every_owned_leader" else current.envoys
+                for leader in targets:
+                    if leader.owner is current and all(self.scoped_trigger(block(item.value), leader, current) for item in body if item.key == "limit"):
+                        self.scoped_execute([item for item in body if item.key != "limit"], leader, current)
+            elif key == "modify_species":
+                # Explicit fixture model, never an emulation of native cloning.
+                require(current.kind == "species", "modify_species fixture requires species scope")
+                body = block(value)
+                allowed = {"species", "change_scoped_species", "inherit_parent_rights", "add_trait", "remove_trait", "effect"}
+                require(all(item.key in allowed for item in body), "unmodeled modify_species field")
+                source = self.resolve_scope(str(one(body, "species")), current, previous)
+                equal(one(body, "change_scoped_species"), "no", "fixture requires isolated clone")
+                inheritance = [item.value for item in body if item.key == "inherit_parent_rights"]
+                require(len(inheritance) <= 1 and all(item in ("yes", "no") for item in inheritance), "invalid rights inheritance field")
+                clone = Scope(kind="species", owner=source.owner, lineage=source.lineage,
+                              traits=set(source.traits), archetype=source.archetype,
+                              portrait=source.portrait)
+                for change in body:
+                    if change.key == "add_trait":
+                        clone.traits.add(str(change.value))
+                    elif change.key == "remove_trait":
+                        clone.traits.discard(str(change.value))
+                if source.owner is not None:
+                    country = source.owner
+                    parent_rights = country.species_rights.get(id(source), country.default_rights)
+                    country.species_rights[id(clone)] = dict(parent_rights if inheritance == ["yes"] else country.default_rights)
+                    # Keep the independently supplied owned-species cache.
+                    # Native rc4 showed it can remain stale after this clone.
+                self.clone_models.append(clone)
+                self.scoped_execute(block(one(body, "effect")), clone, current)
+            elif key == "change_species":
+                require(current.kind in ("pop_group", "leader", "envoy"), f"change_species unsupported fixture scope {current.kind}")
+                current.species = self.resolve_scope(str(value), current, previous)
+                if current.kind == "pop_group":
+                    current.traits = current.species.traits
+                elif current.kind == "leader":
+                    # A fixture default makes the explicit special-portrait
+                    # restoration observable; this is not an engine assertion.
+                    current.portrait = current.species.portrait
+            elif key == "change_dominant_species":
+                require(current.kind == "country", "change_dominant_species requires country scope")
+                body = block(value)
+                equal(one(body, "change_all"), "no", "fixture forbids global species changes")
+                current.main_species = self.resolve_scope(str(one(body, "species")), current, previous)
+            elif key == "change_leader_portrait":
+                require(current.kind == "leader", "portrait change requires regular leader fixture")
+                current.portrait = str(value)
             elif key == "every_trait_of_species":
                 for trait in sorted(current.traits):
                     target = Scope(kind="trait", traits={trait}, owner=current.owner)
@@ -483,21 +598,9 @@ class Effects:
                         current.traits.discard(change.value)
             elif key == "random_list":
                 choices, weights = [], []
-                for choice in block(value):
-                    weight = number(choice.key)
-                    body = block(choice.value)
-                    for modifier in (item for item in body if item.key == "modifier"):
-                        modifier_body = block(modifier.value)
-                        conditions = [item for item in modifier_body if item.key not in ("factor", "add")]
-                        if self.trigger(conditions, current, previous):
-                            factors = [item.value for item in modifier_body if item.key == "factor"]
-                            additions = [item.value for item in modifier_body if item.key == "add"]
-                            for factor in factors:
-                                weight *= self.scalar(factor, current, previous)
-                            for addition in additions:
-                                weight += self.scalar(addition, current, previous)
+                for weight, body in self.random_weights(block(value), current, previous):
                     if weight > 0:
-                        choices.append([item for item in body if item.key != "modifier"])
+                        choices.append(body)
                         weights.append(float(weight))
                 require(bool(choices), "random_list has no eligible choice")
                 self.execute(self.rng.choices(choices, weights=weights, k=1)[0], current, previous)
@@ -524,7 +627,12 @@ class Effects:
 def load_definitions(mod: Path, directory: str) -> list[Entry]:
     definitions = []
     for path in sorted((mod / "common" / directory).glob("*.txt")):
-        definitions.extend(read_script(path))
+        entries = read_script(path)
+        if directory == "script_values":
+            for entry in entries:
+                if not entry.key.startswith("@"):
+                    require(isinstance(entry.value, list), f"ordinary named script value {entry.key} must use a block definition: {path}")
+        definitions.extend(entries)
     return definitions
 
 
@@ -533,13 +641,17 @@ def check_domestic_templates(definitions: list[Entry]) -> dict:
     old = "event_target:shishan_code_reward_old_species"
     new = "event_target:shishan_code_reward_new_species"
     apply = block(one(definitions, "shishan_code_apply_domestic_template_effect"))
-    for iterator in ("every_owned_pop_group", "every_owned_leader"):
+    for iterator in ("every_owned_pop_group", "every_owned_leader", "every_envoy"):
         body = block(one(apply, iterator))
         limit = block(one(body, "limit"))
         equal(one(limit, "is_exact_same_species"), old, f"{iterator} exact template restriction")
         equal(one(body, "change_species"), new, f"{iterator} domestic new template")
         if iterator == "every_owned_pop_group":
-            require(Entry("pop_amount", ">", "0") in limit, "template applies to empty group")
+            require(Entry("pop_group_size", ">", "0") in limit, "template applies to empty group or uses unsupported population scope")
+        elif iterator == "every_owned_leader":
+            restore = block(one(body, "if"))
+            equal(one(block(one(restore, "limit")), "has_leader_flag"), "shishan_code_vivhite", "special leader portrait flag")
+            equal(one(restore, "change_leader_portrait"), "shishan_code_vivhite", "special leader portrait restoration")
     condition = block(one(apply, "if"))
     equal(one(block(one(block(one(condition, "limit")), "owner_main_species")), "is_exact_same_species"), old, "main species only changes when it is the modified exact template")
     dominant = block(one(condition, "change_dominant_species"))
@@ -551,26 +663,99 @@ def check_domestic_templates(definitions: list[Entry]) -> dict:
         clone = block(one(body, "modify_species"))
         equal(one(clone, "species"), "this", "clone source")
         equal(one(clone, "change_scoped_species"), "no", "shared source template must not be mutated")
+        equal(one(clone, "inherit_parent_rights"), "yes", "clone must inherit explicit parent rights")
         equal(one(block(one(clone, "effect")), "save_event_target_as"), "shishan_code_reward_new_species", "clone target")
-        equal(one(block(one(body, "event_target:shishan_code_reward_country")), "shishan_code_apply_domestic_template_effect"), "yes", "clone domestic application")
+        guarded = block(one(body, "if"))
+        equal(one(block(one(guarded, "limit")), "exists"), "event_target:shishan_code_reward_country", "domestic country target existence guard")
+        equal(one(block(one(guarded, "event_target:shishan_code_reward_country")), "shishan_code_apply_domestic_template_effect"), "yes", "clone domestic application")
+        equal(str(one(block(one(body, "else")), "log")).strip('"'), "SHISHAN_CODE_TEMPLATE_COUNTRY_TARGET_MISSING", "missing country target diagnosis")
         require(not any(item.key == "change_species_characteristics" for item in walk(body)), "shared species mutation in domestic helper")
     for action in ("refactor", "relapse"):
         entry = block(one(definitions, f"shishan_code_architecture_{action}_species_effect"))
         branch = block(one(entry, "if"))
         equal(one(block(one(branch, "limit")), "has_origin"), "origin_shishan_code", "state species origin gate")
-        population = block(one(branch, "every_owned_species"))
+        population = block(one(branch, "every_owned_pop_group"))
         limit = block(one(population, "limit"))
         equal(one(limit, "is_same_species"), "prev", "state only modifies main lineage")
-        actual = block(one(block(one(limit, "prev")), "any_owned_pop_group"))
-        equal(one(actual, "is_exact_same_species"), "prevprev", "owned template must be populated")
-        require(Entry("pop_amount", ">", "0") in actual, "state modifies empty/unapplied template")
-    return {"clone_helpers": 3, "country_state_entry_points": 2, "engine_clone_behavior": "NOT RUN"}
+        require(Entry("pop_group_size", ">", "0") in limit, "state modifies empty/unapplied template or uses unsupported population scope")
+        equal(one(block(one(limit, "species")), "has_trait"), "trait_shishan_code" if action == "refactor" else "trait_shishan_refactored", "state reads current actual population template")
+        recheck = block(one(population, "if"))
+        equal(block(one(recheck, "limit")), limit, "state rechecks current population species before cloning")
+        require(not any(item.key in ("every_owned_species", "any_owned_species") for item in walk(entry)), "state relies on stale owned species cache")
+    return {"clone_helpers": 3, "country_state_entry_points": 2, "clone_fixture": check_domestic_template_model(definitions), "engine_clone_behavior": "NOT RUN"}
+
+
+def domestic_template_fixture(definitions):
+    """Explicit rights/identity fixtures, never native save or engine results."""
+    actor = Scope(default_rights={"citizenship": "purge", "living_standard": "subsistence"})
+    foreign = Scope(origin="origin_default")
+    main = Scope(kind="species", owner=actor, traits={"trait_shishan_code", "trait_main_negative"}, portrait="machine_default")
+    sub = Scope(kind="species", owner=actor, traits={"trait_shishan_code", "trait_sub_negative"})
+    actor.main_species, actor.species_templates = main, [main, sub]
+    actor.species_rights[id(main)] = {"citizenship": "full", "living_standard": "normal"}
+    actor.species_rights[id(sub)] = {"citizenship": "full", "living_standard": "normal", "military_service": "full"}
+    foreign.species_rights[id(main)] = {"citizenship": "residence"}
+    actor.groups = [Scope(kind="pop_group", owner=actor, species=main, traits=main.traits, population=5040),
+                    Scope(kind="pop_group", owner=actor, species=sub, traits=sub.traits, population=511),
+                    Scope(kind="pop_group", owner=actor, species=main, traits=main.traits, population=0),
+                    Scope(kind="pop_group", owner=foreign, species=main, traits=main.traits, population=200)]
+    actor.leaders = [Scope(kind="leader", owner=actor, species=main, variables={"identity": 90 + i, "experience": 100 + i},
+                          flags={"shishan_code_vivhite"} if i == 0 else set(),
+                          portrait="shishan_code_vivhite" if i == 0 else "machine_default") for i in range(5)]
+    actor.leaders.extend([Scope(kind="leader", owner=actor, species=sub, variables={"identity": 100, "experience": 300}),
+                          Scope(kind="leader", owner=foreign, species=main, variables={"identity": 101, "experience": 400})])
+    actor.envoys = [Scope(kind="envoy", owner=actor, species=main, variables={"identity": 120 + i, "experience": 0}) for i in range(2)]
+    actor.envoys.append(Scope(kind="envoy", owner=foreign, species=main, variables={"identity": 130}))
+    return Effects(definitions), actor, foreign, main, sub
+
+
+def check_domestic_template_model(definitions: list[Entry]) -> dict:
+    """Execute actual clone helpers in a field-controlled narrow fixture model."""
+    helpers = (("shishan_code_modify_domestic_template_effect", {"ADD_TRAIT": "trait_new_reward"}, "trait_new_reward"),
+               ("shishan_code_architecture_refactor_template_effect", {}, "trait_shishan_refactored"),
+               ("shishan_code_architecture_relapse_template_effect", {}, "trait_shishan_code"))
+    cases = 0
+    for helper, parameters, added in helpers:
+        for source_kind in ("main", "sub", "missing_target"):
+            engine, actor, foreign, main, sub = domestic_template_fixture(definitions)
+            old = sub if source_kind == "sub" else main
+            if helper == "shishan_code_architecture_relapse_template_effect":
+                old.traits.discard("trait_shishan_code")
+                old.traits.add("trait_shishan_refactored")
+            old_traits = set(old.traits)
+            parent_rights, foreign_rights = dict(actor.species_rights[id(old)]), dict(foreign.species_rights[id(main)])
+            targets = actor.groups + actor.leaders + actor.envoys
+            before = [(target, target.species, dict(target.variables), set(target.flags)) for target in targets]
+            if source_kind != "missing_target":
+                engine.event_targets["shishan_code_reward_country"] = actor
+            engine.named(helper, old, parameters=parameters)
+            equal(len(engine.clone_models), 1, "one isolated fixture clone")
+            new = engine.clone_models[0]
+            require(new is not old and added in new.traits, "new clone must receive the actual helper trait")
+            if helper != "shishan_code_modify_domestic_template_effect":
+                require(("trait_shishan_code" if added == "trait_shishan_refactored" else "trait_shishan_refactored") not in new.traits, "state clone removes the opposite status trait")
+            equal(old.traits, old_traits, "foreign shared source template remains unmodified")
+            equal(actor.species_rights[id(new)], parent_rights, "clone preserves explicit parent rights over purge defaults")
+            equal(foreign.species_rights[id(main)], foreign_rights, "foreign rights remain unchanged")
+            for target, original, variables, flags in before:
+                migrate = source_kind != "missing_target" and target.owner is actor and original is old and (target.kind != "pop_group" or target.population > 0)
+                require(target.species is (new if migrate else original), f"{helper}: {source_kind}: {target.kind} domestic exact-template migration")
+                equal(target.variables, variables, "leader/envoy/group identity and experience preserved")
+                equal(target.flags, flags, "leader/envoy/group flags preserved")
+                if migrate and target.kind == "leader" and "shishan_code_vivhite" in flags:
+                    equal(target.portrait, "shishan_code_vivhite", "special leader portrait retained")
+            require(actor.main_species is (new if source_kind == "main" else main), "dominant species changes only for migrated main template")
+            equal(engine.logs, ["SHISHAN_CODE_TEMPLATE_COUNTRY_TARGET_MISSING"] if source_kind == "missing_target" else [], "missing target is guarded and diagnosed")
+            cases += 1
+    return {"field_controlled_scenarios": cases, "shared_foreign_template": True,
+            "rights_default_fixture": "purge/subsistence", "regular_leaders": 5, "envoys": 2,
+            "engine_rights_and_clone_behavior": "NOT RUN"}
 
 
 def check_architecture(mod: Path) -> dict:
     definitions = load_definitions(mod, "scripted_effects")
     values = load_definitions(mod, "script_values")
-    equal(number(one(values, "shishan_code_architecture_per_trait")), Decimal(".05"), "architecture per trait")
+    equal(Values(values).named("shishan_code_architecture_per_trait"), Decimal(".05"), "architecture per trait")
     refresh = block(one(definitions, "shishan_code_architecture_refresh_effect"))
     modifier_definitions = load_definitions(mod, "static_modifiers")
     native_bonus = block(one(modifier_definitions, "shishan_code_architecture_jobs"))
@@ -667,7 +852,7 @@ def reward_fixture(definitions, values, eligible_ids, seed=0):
     def abstract_clone(interpreter, old, parameters):
         trait = str(parameters["ADD_TRAIT"])
         grants.append(trait)
-        new = Scope(kind="species", owner=country, lineage=old.lineage, traits=old.traits | {trait})
+        new = Scope(kind="species", owner=country, lineage=old.lineage, traits=old.traits | {trait}, archetype=old.archetype)
         for group in country.groups:
             if group.owner is country and group.species is old and group.population > 0:
                 group.species = new
@@ -677,7 +862,7 @@ def reward_fixture(definitions, values, eligible_ids, seed=0):
             country.main_species = new
         interpreter.trigger_overrides[f"shishan_code_reward_eligible_{trait_ids[trait]:02d}"] = False
 
-    interpreter = Effects(definitions, values, seed, overrides, {"shishan_code_modify_domestic_template_effect": abstract_clone})
+    interpreter = Effects(definitions, values, seed, overrides, {"shishan_code_modify_domestic_template_effect": abstract_clone}, host_dlcs={"The Machine Age"})
     interpreter.grants = grants
     return interpreter, country
 
@@ -724,12 +909,12 @@ def run_country_event(interpreter: Effects, events: list[Entry], event_id: str, 
 def check_reward_windows(mod: Path, definitions: list[Entry], values: list[Entry]) -> dict:
     interpreter, country = reward_fixture(definitions, values, set(range(1, 7)), 3)
     interpreter.named("shishan_code_award_reward", country)
-    equal(interpreter.events.count("shishan_code.1000"), 1, "first reward schedules one window")
+    equal(interpreter.events.count("shishan_code.1004"), 1, "first reward schedules one window preflight")
     require("shishan_code_reward_window_open" in country.flags, "reward window lock not persisted")
     original = reward_snapshot(interpreter, country)
     for _ in range(3):
         interpreter.named("shishan_code_reward_open_window_effect", country)
-    equal(interpreter.events.count("shishan_code.1000"), 1, "pending reward cannot schedule duplicate windows")
+    equal(interpreter.events.count("shishan_code.1004"), 1, "pending reward cannot schedule duplicate windows")
     equal(reward_snapshot(interpreter, country), original, "opening repeated window leaves ticket intact")
     event = find_country_event(country_events(mod), "shishan_code.1000")
     later = [block(entry.value) for entry in event if entry.key == "option" and one(block(entry.value), "name") == "shishan_code_reward_later"]
@@ -740,18 +925,18 @@ def check_reward_windows(mod: Path, definitions: list[Entry], values: list[Entry
     equal(reward_slots(country), original[2], "later preserves candidates")
     interpreter.named("shishan_code_reward_open_window_effect", country)
     interpreter.named("shishan_code_reward_open_window_effect", country)
-    equal(interpreter.events.count("shishan_code.1000"), 2, "later allows one persisted-ticket reopen")
+    equal(interpreter.events.count("shishan_code.1004"), 2, "later allows one persisted-ticket reopen")
     interpreter.named("shishan_code_reward_reroll_effect", country)
-    equal(interpreter.events.count("shishan_code.1000"), 3, "reroll replaces the window exactly once")
+    equal(interpreter.events.count("shishan_code.1004"), 3, "reroll replaces the window exactly once")
     require("shishan_code_reward_window_open" in country.flags, "rerolled window remains locked")
     selected = next(index for index in reward_slots(country) if index)
     interpreter.named(f"shishan_code_reward_claim_{selected:02d}_effect", country)
     require("shishan_code_reward_window_open" not in country.flags, "confirmation releases window lock")
     interpreter.named("shishan_code_reward_open_window_effect", country)
-    equal(interpreter.events.count("shishan_code.1000"), 3, "consumed ticket cannot reopen")
+    equal(interpreter.events.count("shishan_code.1004"), 3, "consumed ticket cannot reopen")
     country.flags.add("shishan_code_reward_ticket_ready")
     interpreter.named("shishan_code_award_reward", country)
-    equal(interpreter.events.count("shishan_code.1000"), 4, "new successful ticket opens one window")
+    equal(interpreter.events.count("shishan_code.1004"), 4, "new successful ticket opens one window")
     # A visible option may become invalid before it is clicked. The engine
     # closes that window after the click even when its internal guard rejects.
     # Only the lock may change; a capital reopen must repair the pending UI.
@@ -771,10 +956,11 @@ def check_reward_windows(mod: Path, definitions: list[Entry], values: list[Entry
         interpreter.named(action, country)
         require("shishan_code_reward_window_open" not in country.flags, f"rejected {rejection} must release window lock")
         equal(reward_business_snapshot(interpreter, country), before, f"rejected {rejection} preserves ticket/candidates/n/R/cooldown/grants")
-        count_before = interpreter.events.count("shishan_code.1000")
+        count_before = interpreter.events.count("shishan_code.1004")
         planet = Scope(kind="planet", owner=country)
         interpreter.execute(block(one(decision, "effect")), planet)
-        equal(interpreter.events.count("shishan_code.1000"), count_before + 1, f"rejected {rejection} capital wrapper can reopen")
+        equal(interpreter.events.count("shishan_code.1004"), count_before + 1, f"rejected {rejection} capital wrapper can reopen")
+        require(run_country_event(interpreter, country_events(mod), "shishan_code.1004", country), "reopened reward preflight must run")
         require(run_country_event(interpreter, country_events(mod), "shishan_code.1000", country), "reopened reward UI event must run")
         if rejection == "claim":
             require(selected not in reward_slots(country), "reopened window must repair the invalid candidate")
@@ -784,32 +970,94 @@ def check_reward_windows(mod: Path, definitions: list[Entry], values: list[Entry
         equal(country.variables["shishan_code_reroll_cooldown"], before[0]["shishan_code_reroll_cooldown"], "reopen cannot reduce cooldown")
         equal(country.variables.get("shishan_code_architecture_repeat_count", Decimal(0)), before[0].get("shishan_code_architecture_repeat_count", Decimal(0)), "reopen cannot award repeats")
         equal(interpreter.grants, [], "rejected action cannot grant a trait")
-    return {"duplicate_open_requests": 3, "window_queue_counts": [1, 2, 3, 4], "rejected_option_unlock_and_reopen_cases": 2, "engine_window_lifecycle": "NOT RUN"}
+    return {"duplicate_open_requests": 3, "preflight_queue_counts": [1, 2, 3, 4], "rejected_option_unlock_and_reopen_cases": 2, "preflight": check_reward_preflight(mod, definitions, values), "engine_window_lifecycle": "NOT RUN"}
+
+
+def check_reward_preflight(mod: Path, definitions: list[Entry], values: list[Entry], events: list[Entry] | None = None) -> dict:
+    events = country_events(mod) if events is None else events
+    preflight = find_country_event(events, "shishan_code.1004")
+    equal(one(preflight, "hide_window"), "yes", "preflight event stays hidden")
+    visible = find_country_event(events, "shishan_code.1000")
+    require(not any(entry.key == "shishan_code_reward_refresh_effect" for entry in walk(block(one(visible, "immediate")))), "visible reward event cannot consume an exhausted ticket")
+    for exhausted in (False, True):
+        engine, actor = reward_fixture(definitions, values, set(range(1, 7)))
+        engine.named("shishan_code_award_reward", actor)
+        equal(engine.events.count("shishan_code.1004"), 1, "opening schedules one hidden preflight")
+        equal(engine.events.count("shishan_code.1000"), 0, "opening does not bypass preflight")
+        if exhausted:
+            engine.trigger_overrides = {key: False for key in engine.trigger_overrides}
+        require(run_country_event(engine, events, "shishan_code.1004", actor), "valid queued preflight runs")
+        equal(engine.events.count("shishan_code.1000"), 0 if exhausted else 1, "exhausted pending ticket cannot schedule empty visible reward")
+        equal(actor.variables.get("shishan_code_architecture_repeat_count", Decimal(0)), Decimal(1 if exhausted else 0), "preflight repetition follows actual exhaustion")
+        equal("shishan_code_reward_pending" in actor.flags, not exhausted, "preflight pending receipt")
+        equal("shishan_code_reward_window_open" in actor.flags, not exhausted, "preflight window lock")
+        if exhausted:
+            require(not run_country_event(engine, events, "shishan_code.1004", actor), "consumed preflight replay rejected")
+            equal(actor.variables["shishan_code_architecture_repeat_count"], Decimal(1), "preflight replay cannot award twice")
+    return {"legal_and_exhausted_cases": 2, "empty_visible_window_scheduled": False, "engine_queue_behavior": "NOT RUN"}
+
+
+def check_reward_draw_weights(definitions: list[Entry], values: list[Entry]) -> dict:
+    """Reject ineligible weights deterministically, before any RNG is used."""
+    cases = 0
+    for slot in (1, 2, 3):
+        pick = block(one(definitions, f"shishan_code_reward_pick_{slot}_effect"))
+        for branch, fresh in (("else_if", False), ("if", True)):
+            draws = block(one(block(one(pick, branch)), "random_list"))
+            equal(len(draws), 39, "fixed reward weight inventory")
+            scenarios = [
+                ("eligible", {1}, 1, 0, 0, Decimal(1)),
+                ("wrong tier", {1}, 2, 0, 0, Decimal(0)),
+                ("already selected", {1}, 1, 1, 0, Decimal(0)),
+                ("ineligible", set(), 1, 0, 0, Decimal(0)),
+            ]
+            if fresh:
+                scenarios.append(("old-group member", {1}, 1, 0, 1, Decimal(0)))
+            for label, eligible, tier, selected, old, expected in scenarios:
+                interpreter, country = reward_fixture(definitions, values, eligible)
+                country.variables["shishan_code_reward_tier"] = Decimal(tier)
+                for index in (1, 2, 3):
+                    country.variables[f"shishan_code_reward_slot_{index}"] = Decimal(selected if index == 1 else 0)
+                    country.variables[f"shishan_code_reward_old_{index}"] = Decimal(old if index == 1 else 0)
+                weights = interpreter.random_weights(draws, country)
+                equal(weights[0][0], expected, f"deterministic first-candidate weight: slot {slot}, {branch}, {label}")
+                cases += 1
+    return {"deterministic_weight_cases": cases, "random_sampling_used": False}
+
+
+def check_claim_population_recheck(definitions: list[Entry], index: int) -> None:
+    claim = block(one(definitions, f"shishan_code_reward_claim_{index:02d}_effect"))
+    population = block(one(block(one(claim, "if")), "every_owned_pop_group"))
+    inner = block(one(population, "if"))
+    equal(block(one(inner, "limit")), block(one(population, "limit")), "claim rechecks current population species before cloning")
 
 
 def check_rewards(mod: Path) -> dict:
     definitions = load_definitions(mod, "scripted_effects") + load_definitions(mod, "scripted_triggers")
     values = load_definitions(mod, "script_values")
+    deterministic_weights = check_reward_draw_weights(definitions, values)
     # Fixed counts/tiers are a design baseline, independent of generator lists.
     eligibility = [entry for entry in definitions if re.fullmatch(r"shishan_code_reward_eligible_\d+", entry.key)]
     equal({entry.key for entry in eligibility}, {f"shishan_code_reward_eligible_{index:02d}" for index in range(1, 40)}, "39 eligibility triggers")
     for index in range(1, 40):
         guard = block(one(definitions, f"shishan_code_reward_eligible_{index:02d}"))
-        domestic = block(one(guard, "any_owned_species"))
+        domestic = block(one(guard, "any_owned_pop_group"))
         equal(one(domestic, "is_same_species"), "prev", "reward eligibility main lineage")
-        actual = block(one(block(one(domestic, "prev")), "any_owned_pop_group"))
-        equal(one(actual, "is_exact_same_species"), "prevprev", "reward eligibility actual domestic template")
-        require(Entry("pop_amount", ">", "0") in actual, "empty template makes reward eligible")
+        require(Entry("pop_group_size", ">", "0") in domestic, "empty template makes reward eligible or uses unsupported population scope")
+        block(one(domestic, "species"))
         claim = block(one(definitions, f"shishan_code_reward_claim_{index:02d}_effect"))
         require(claim and claim[0] == Entry("remove_country_flag", "=", "shishan_code_reward_window_open"), "rejected claim must release window lock before its guard")
         require(not any(entry.key == "change_species_characteristics" for entry in walk(claim)), "reward mutates shared species")
         branch = block(one(claim, "if"))
-        grant_scope = block(one(branch, "every_owned_species"))
+        grant_scope = block(one(branch, "every_owned_pop_group"))
         grant_limit = block(one(grant_scope, "limit"))
         equal(one(grant_limit, "is_same_species"), "prev", "grant only modifies main lineage")
-        populated = block(one(block(one(grant_limit, "prev")), "any_owned_pop_group"))
-        equal(one(populated, "is_exact_same_species"), "prevprev", "grant requires actual domestic template")
-        require(Entry("pop_amount", ">", "0") in populated, "grant modifies an empty/unapplied template")
+        require(Entry("pop_group_size", ">", "0") in grant_limit, "grant modifies an empty/unapplied template or uses unsupported population scope")
+        inner = block(one(grant_scope, "if"))
+        check_claim_population_recheck(definitions, index)
+        equal(grant_limit, domestic, "eligibility and actual population grant conditions agree")
+        block(one(inner, "species"))
+        require(not any(item.key in ("every_owned_species", "any_owned_species") for item in walk(guard + claim)), "reward relies on stale owned species cache")
     # N=0..6 and mixed tiers exercise the actual random_list / slot guards.
     draws = 0
     for seed in range(8):
@@ -916,7 +1164,7 @@ def check_rewards(mod: Path) -> dict:
         interpreter.named("shishan_code_award_reward", country)
         equal(reward_snapshot(interpreter, country), before, "reward requires origin and successful receipt")
     windows = check_reward_windows(mod, definitions, values)
-    return {"seeded_candidate_cases": draws, "eligible_counts_checked": [0, 1, 2, 3, 4, 5, 6], "cooldown_sequence": [3, 2, 1, 0], "tier_priority": "robotic before compatible", "window_lock": windows, "eligibility_facts": "fixture overrides; actual guard scope checked structurally", "grant_clone_semantics": "abstract fixture hook, engine NOT RUN"}
+    return {"seeded_candidate_cases": draws, "deterministic_weights": deterministic_weights, "eligible_counts_checked": [0, 1, 2, 3, 4, 5, 6], "cooldown_sequence": [3, 2, 1, 0], "tier_priority": "robotic before compatible", "window_lock": windows, "eligibility_facts": "fixture overrides; actual guard scope checked structurally", "grant_clone_semantics": "abstract fixture hook, engine NOT RUN"}
 
 
 def check_receipt_recovery(mod: Path) -> dict:
@@ -1183,8 +1431,13 @@ def check_localisation(mod: Path, game: Path | None = None) -> dict:
         require("shishan_code_architecture_jobs" in chinese, "architecture modifier display name missing")
         equal(resolve_single_reference("shishan_code_architecture_jobs", chinese), FULL_NAME, "architecture modifier complete display name")
     used_local_keys = set()
+    engine_modifier_keys = set()
     for path in sorted((*((mod / "common").rglob("*.txt")), *((mod / "events").rglob("*.txt")))):
         for entry in walk(read_script(path)):
+            # This key is constructed by the native modifier UI, not present
+            # as an explicit localisation reference in script source.
+            if entry.key == "leaders_unity_upkeep_mult":
+                engine_modifier_keys.add("mod_leaders_unity_upkeep_mult")
             if entry.key in ("title", "desc", "name", "custom_tooltip", "custom_description", "custom_catch_phrase") and isinstance(entry.value, str):
                 name = entry.value.strip('"')
                 if name.startswith(("shishan_", "trait_shishan_", "leader_trait_shishan_", "origin_shishan_", "NAME_shishan_")):
@@ -1192,19 +1445,94 @@ def check_localisation(mod: Path, game: Path | None = None) -> dict:
     for language, entries in dictionaries.items():
         missing = used_local_keys - entries.keys()
         require(not missing, f"script localisation keys missing in {language}: {sorted(missing)}")
+        missing_engine = engine_modifier_keys - entries.keys()
+        require(not missing_engine, f"engine modifier localisation keys missing in {language}: {sorted(missing_engine)}")
     return {
         "languages": list(LANGUAGES), "files": files, "keys_per_language": len(chinese),
         "full_name_keys": sorted(full_name_keys), "full_name_characters": 18,
         "full_name_utf8_bytes": 54, "references": reference_count,
         "script_localisation_keys": len(used_local_keys),
+        "engine_modifier_localisation_keys": sorted(engine_modifier_keys),
         "vanilla_reference_scope": "checked" if game else "not checked without --game",
         "non_chinese_runtime": "out_of_scope",
     }
 
 
+def vivhite_upkeep_fixture(definitions: list[Entry], values: list[Entry]):
+    actor = Scope(variables={"shishan_code_maintenance_count": Decimal(4)})
+    foreign = Scope(origin="origin_default")
+    white = Scope(kind="leader", owner=actor, flags={"shishan_code_vivhite"},
+                  traits={"leader_trait_shishan_code_vivhite", "fixture_chosen_career_trait"},
+                  variables={"identity": 174, "level": 5, "current_xp": 748}, portrait="shishan_code_vivhite")
+    ordinary = Scope(kind="leader", owner=actor, variables={"identity": 175})
+    other_country_white = Scope(kind="leader", owner=foreign, flags={"shishan_code_vivhite"})
+    backup = Scope(kind="leader", owner=actor, flags={"shishan_code_vivhite"})
+    # Include a foreign fixture in the collection to independently check owner
+    # filtering. The unowned/exiled backup is deliberately not in this list.
+    actor.leaders = [white, ordinary, other_country_white]
+    engine = Effects(definitions, values)
+    engine.root = actor
+    return engine, actor, white, ordinary, other_country_white, backup
+
+
+def check_vivhite_upkeep_lifecycle(mod: Path, events: list[Entry] | None = None) -> dict:
+    events = country_events(mod) if events is None else events
+    birth = find_country_event(events, "shishan_code.4")
+    birth_option = block(one(birth, "option"))
+    birth_branch = block(one(birth_option, "if"))
+    created = block(one(birth_branch, "create_leader"))
+    require(Entry("set_leader_flag", "=", "shishan_code_vivhite") in block(one(created, "effect")), "initial leader must receive the Vivhite identity flag")
+    require(Entry("shishan_code_refresh_vivhite_effect", "=", "yes") in birth_branch, "initial creation must refresh native upkeep exemption")
+    require(next(i for i, e in enumerate(birth_branch) if e.key == "create_leader") < next(i for i, e in enumerate(birth_branch) if e.key == "shishan_code_refresh_vivhite_effect"), "initial upkeep refresh must run after creation")
+    reboot = find_country_event(events, "shishan_code.41")
+    reboot_option = next(block(e.value) for e in reboot if e.key == "option" and one(block(e.value), "name") == "shishan_code.41.a")
+    require(Entry("shishan_code_refresh_vivhite_effect", "=", "yes") in reboot_option, "reboot must refresh native upkeep exemption")
+    death = find_country_event(events, "shishan_code.40")
+    backup = block(one(block(one(block(one(death, "immediate")), "clone_leader")), "effect"))
+    require(backup and backup[0] == Entry("remove_leader_flag", "=", "should_not_have_upkeep"), "backup must remove inherited upkeep exemption before exile")
+    monthly = find_country_event(events, "shishan_code.60")
+    branch = block(one(block(one(monthly, "immediate")), "if"))
+    equal(one(block(one(branch, "limit")), "has_origin"), "origin_shishan_code", "legacy upkeep refresh origin gate")
+    require(Entry("shishan_code_refresh_vivhite_effect", "=", "yes") in branch, "legacy monthly refresh must repair native upkeep exemption")
+    actions = load_definitions(mod, "on_actions")
+    require(Entry("shishan_code.60", None, None) in block(one(block(one(actions, "on_monthly_pulse_country")), "events")), "legacy upkeep repair must have actual monthly dispatch")
+    return {"initial_creation": "refresh after create", "old_save_repair": "origin monthly event 60", "reboot": "refresh after clone", "backup_inherited_exemption": "removed before exile"}
+
+
+def check_vivhite_upkeep(mod: Path, game: Path | None = None, definitions: list[Entry] | None = None) -> dict:
+    definitions = load_definitions(mod, "scripted_effects") if definitions is None else definitions
+    values = load_definitions(mod, "script_values")
+    refresh = block(one(definitions, "shishan_code_refresh_vivhite_effect"))
+    branch = block(one(refresh, "if"))
+    targets = block(one(branch, "every_owned_leader"))
+    equal(block(one(targets, "limit")), [Entry("has_leader_flag", "=", "shishan_code_vivhite")], "native upkeep exemption must be limited to Vivhite")
+    equal(one(targets, "set_leader_flag"), "should_not_have_upkeep", "Vivhite must receive native upkeep exemption")
+    assignments = [e for e in walk(definitions) if e.key == "set_leader_flag" and e.value == "should_not_have_upkeep"]
+    equal(len(assignments), 1, "native exemption has one filtered grant site")
+    engine, actor, white, ordinary, foreign_white, backup = vivhite_upkeep_fixture(definitions, values)
+    before = (dict(white.variables), set(white.traits), white.portrait)
+    engine.named("shishan_code_refresh_vivhite_effect", actor)
+    require("should_not_have_upkeep" in white.flags, "refresh failed to grant native exemption")
+    require(all("should_not_have_upkeep" not in target.flags for target in (ordinary, foreign_white, backup)), "upkeep exemption leaked to unrelated, foreign, or backup leader")
+    equal((white.variables, white.traits, white.portrait), before, "upkeep repair preserves actual identity/growth/choices/portrait fixture")
+    lifecycle = check_vivhite_upkeep_lifecycle(mod)
+    native = {"status": "NOT CHECKED without --game"}
+    if game is not None:
+        path = game / "common/game_rules/00_rules.txt"
+        rule = block(one(parse(path.read_text(encoding="utf-8-sig")), "should_pay_for_leader_upkeep"))
+        require(any(e.key == "NOR" and Entry("has_leader_flag", "=", "should_not_have_upkeep") in block(e.value) for e in rule), "installed native upkeep rule no longer excludes the chosen flag")
+        require(not engine.trigger(rule, white), "installed native rule still charges exempt Vivhite")
+        require(engine.trigger(rule, ordinary), "ordinary leader unexpectedly exempt under installed rule")
+        white.flags.remove("should_not_have_upkeep")
+        require(engine.trigger(rule, white), "minus-one modifier alone must not be treated as native exemption")
+        native = {"status": "PASS", "source": str(path), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "rule": "should_pay_for_leader_upkeep", "exempt_flag": "should_not_have_upkeep", "ordinary_leader_pays": True, "Vivhite_without_native_flag_pays": True, "Vivhite_with_native_flag_pays": False}
+    return {"lifecycle": lifecycle, "installed_native_rule_model": native,
+            "preserved_nonzero_xp_fixture": 748, "engine_fee_ui_and_reboot": "NOT RUN", "economic_minus_one_is_not_free_proof": True}
+
+
 def validate_package(mod: Path, game: Path | None = None) -> dict:
     checks = []
-    for name, check in (("numeric_contract", lambda: check_numeric(mod)), ("architecture_data_contract", lambda: check_architecture(mod)), ("reward_state_contract", lambda: check_rewards(mod)), ("receipt_recovery_contract", lambda: check_receipt_recovery(mod)), ("localisation_contract", lambda: check_localisation(mod, game))):
+    for name, check in (("numeric_contract", lambda: check_numeric(mod)), ("architecture_data_contract", lambda: check_architecture(mod)), ("reward_state_contract", lambda: check_rewards(mod)), ("receipt_recovery_contract", lambda: check_receipt_recovery(mod)), ("vivhite_native_upkeep_contract", lambda: check_vivhite_upkeep(mod, game)), ("localisation_contract", lambda: check_localisation(mod, game))):
         try:
             details = check()
         except (ContractError, OSError, UnicodeError, ArithmeticError) as error:

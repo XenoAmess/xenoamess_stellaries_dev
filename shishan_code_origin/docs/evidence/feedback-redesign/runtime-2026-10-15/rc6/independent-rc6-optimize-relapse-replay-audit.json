@@ -1,0 +1,1616 @@
+{
+  "status": "PASS",
+  "scope": "Independent read-only native optimize/controlled-relapse/no-receipt-replay audit. No game/GUI input.",
+  "inputs": [
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_claim4.sav",
+      "sha256": "13c8314f020292cafa7256d74ad41cc831d2d6ec8486375ac3d8090f1fe616b8",
+      "date": "2204.04.01"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_optimize_pending.sav",
+      "sha256": "8036867fa559c4547f594681bcd1a764c47ff36b37632eb0654b150a6b994d5c",
+      "date": "2204.04.08"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_relapse_pending.sav",
+      "sha256": "db8231c7c88434a362fe1366666ccddf9c094833cc51c4771c71b3fc7ed8e5f2",
+      "date": "2204.04.08"
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_relapse_replay.sav",
+      "sha256": "e341391396693362ffe3dc8ebee346696827f3deeefa1890fa9fe2363d6eed3d",
+      "date": "2204.04.08"
+    }
+  ],
+  "checks": [
+    {
+      "name": "optimize_increments_n4_to5_once",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "R0_CD2_all_states",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "optimize_new_pending_distinct_slots",
+      "status": "PASS",
+      "observed": {
+        "slots": [
+          "20",
+          "11",
+          "5"
+        ]
+      }
+    },
+    {
+      "name": "pending_slots_survive_relapse_replay",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "optimize_actual_sample_no_relapse",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "relapse_only_refactored_to_code_no_population_loss",
+      "status": "PASS",
+      "observed": [
+        {
+          "group_id": 50331648,
+          "species_before": 58,
+          "species_after": 60,
+          "size_before": 500,
+          "size_after": 500,
+          "single_swap": true,
+          "population_preserved": true
+        },
+        {
+          "group_id": 1,
+          "species_before": 57,
+          "species_after": 59,
+          "size_before": 2160,
+          "size_after": 2160,
+          "single_swap": true,
+          "population_preserved": true
+        },
+        {
+          "group_id": 12,
+          "species_before": 57,
+          "species_after": 59,
+          "size_before": 200,
+          "size_after": 200,
+          "single_swap": true,
+          "population_preserved": true
+        },
+        {
+          "group_id": 13,
+          "species_before": 57,
+          "species_after": 59,
+          "size_before": 1780,
+          "size_after": 1780,
+          "single_swap": true,
+          "population_preserved": true
+        },
+        {
+          "group_id": 14,
+          "species_before": 57,
+          "species_after": 59,
+          "size_before": 900,
+          "size_after": 900,
+          "single_swap": true,
+          "population_preserved": true
+        },
+        {
+          "group_id": 16777253,
+          "species_before": 58,
+          "species_after": 60,
+          "size_before": 53,
+          "size_after": 53,
+          "single_swap": true,
+          "population_preserved": true
+        }
+      ]
+    },
+    {
+      "name": "two_new_clones_main_pointer_correct",
+      "status": "PASS",
+      "observed": {
+        "mapping": {
+          "58": 60,
+          "57": 59
+        },
+        "main_before": 57,
+        "main_after": 59
+      }
+    },
+    {
+      "name": "population_weight_and_U_constant",
+      "status": "PASS",
+      "observed": {
+        "exact_U": [
+          "8069/799",
+          "8069/799",
+          "8069/799",
+          "8069/799"
+        ]
+      }
+    },
+    {
+      "name": "relapse_authorizing_flags_consumed",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "one_active_situation_starts0",
+      "status": "PASS",
+      "observed": {
+        "claim4_historical_killed": [
+          {
+            "id": 4,
+            "killed": "yes",
+            "progress": "0",
+            "last_month_progress": "1.25",
+            "stage": "0",
+            "native": [
+              {
+                "key": "country",
+                "value": "0"
+              },
+              {
+                "key": "target",
+                "value": [
+                  {
+                    "key": "type",
+                    "value": "none"
+                  },
+                  {
+                    "key": "id",
+                    "value": "0"
+                  },
+                  {
+                    "key": "opener_id",
+                    "value": "4294967295"
+                  }
+                ]
+              },
+              {
+                "key": "type",
+                "value": "situation_shishan_code"
+              },
+              {
+                "key": "progress",
+                "value": "0"
+              },
+              {
+                "key": "last_month_progress",
+                "value": "1.25"
+              },
+              {
+                "key": "approach",
+                "value": ""
+              },
+              {
+                "key": "stage_durations",
+                "value": [
+                  [
+                    {
+                      "key": "start",
+                      "value": "0"
+                    },
+                    {
+                      "key": "end",
+                      "value": "250"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "250"
+                    },
+                    {
+                      "key": "end",
+                      "value": "500"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "500"
+                    },
+                    {
+                      "key": "end",
+                      "value": "750"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "750"
+                    },
+                    {
+                      "key": "end",
+                      "value": "950"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "950"
+                    },
+                    {
+                      "key": "end",
+                      "value": "1000"
+                    }
+                  ]
+                ]
+              },
+              {
+                "key": "stage_flags",
+                "value": [
+                  "yes",
+                  "yes",
+                  "yes",
+                  "yes",
+                  "yes"
+                ]
+              },
+              {
+                "key": "killed",
+                "value": "yes"
+              },
+              {
+                "key": "stage",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "optimize": [],
+        "relapse": [
+          {
+            "id": 16777220,
+            "killed": null,
+            "progress": "0",
+            "last_month_progress": "0",
+            "stage": "0",
+            "native": [
+              {
+                "key": "country",
+                "value": "0"
+              },
+              {
+                "key": "target",
+                "value": [
+                  {
+                    "key": "type",
+                    "value": "none"
+                  },
+                  {
+                    "key": "id",
+                    "value": "0"
+                  },
+                  {
+                    "key": "opener_id",
+                    "value": "4294967295"
+                  }
+                ]
+              },
+              {
+                "key": "type",
+                "value": "situation_shishan_code"
+              },
+              {
+                "key": "progress",
+                "value": "0"
+              },
+              {
+                "key": "last_month_progress",
+                "value": "0"
+              },
+              {
+                "key": "approach",
+                "value": ""
+              },
+              {
+                "key": "stage_durations",
+                "value": [
+                  [
+                    {
+                      "key": "start",
+                      "value": "0"
+                    },
+                    {
+                      "key": "end",
+                      "value": "250"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "250"
+                    },
+                    {
+                      "key": "end",
+                      "value": "500"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "500"
+                    },
+                    {
+                      "key": "end",
+                      "value": "750"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "750"
+                    },
+                    {
+                      "key": "end",
+                      "value": "950"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "950"
+                    },
+                    {
+                      "key": "end",
+                      "value": "1000"
+                    }
+                  ]
+                ]
+              },
+              {
+                "key": "stage_flags",
+                "value": [
+                  "yes",
+                  "no",
+                  "no",
+                  "no",
+                  "no"
+                ]
+              },
+              {
+                "key": "stage",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "replay": [
+          {
+            "id": 16777220,
+            "killed": null,
+            "progress": "0",
+            "last_month_progress": "0",
+            "stage": "0",
+            "native": [
+              {
+                "key": "country",
+                "value": "0"
+              },
+              {
+                "key": "target",
+                "value": [
+                  {
+                    "key": "type",
+                    "value": "none"
+                  },
+                  {
+                    "key": "id",
+                    "value": "0"
+                  },
+                  {
+                    "key": "opener_id",
+                    "value": "4294967295"
+                  }
+                ]
+              },
+              {
+                "key": "type",
+                "value": "situation_shishan_code"
+              },
+              {
+                "key": "progress",
+                "value": "0"
+              },
+              {
+                "key": "last_month_progress",
+                "value": "0"
+              },
+              {
+                "key": "approach",
+                "value": ""
+              },
+              {
+                "key": "stage_durations",
+                "value": [
+                  [
+                    {
+                      "key": "start",
+                      "value": "0"
+                    },
+                    {
+                      "key": "end",
+                      "value": "250"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "250"
+                    },
+                    {
+                      "key": "end",
+                      "value": "500"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "500"
+                    },
+                    {
+                      "key": "end",
+                      "value": "750"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "750"
+                    },
+                    {
+                      "key": "end",
+                      "value": "950"
+                    }
+                  ],
+                  [
+                    {
+                      "key": "start",
+                      "value": "950"
+                    },
+                    {
+                      "key": "end",
+                      "value": "1000"
+                    }
+                  ]
+                ]
+              },
+              {
+                "key": "stage_flags",
+                "value": [
+                  "yes",
+                  "no",
+                  "no",
+                  "no",
+                  "no"
+                ]
+              },
+              {
+                "key": "stage",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "all7_leaders_including_envoys_growth_portrait_preserved",
+      "status": "PASS",
+      "observed": [
+        {
+          "id": 167772189,
+          "class": "official",
+          "species_before": "57",
+          "species_after": "59",
+          "species_matches_clone": true,
+          "all_other_raw_fields_unchanged": true
+        },
+        {
+          "id": 134217755,
+          "class": "envoy",
+          "species_before": "57",
+          "species_after": "59",
+          "species_matches_clone": true,
+          "all_other_raw_fields_unchanged": true
+        },
+        {
+          "id": 150994970,
+          "class": "envoy",
+          "species_before": "57",
+          "species_after": "59",
+          "species_matches_clone": true,
+          "all_other_raw_fields_unchanged": true
+        },
+        {
+          "id": 150994969,
+          "class": "scientist",
+          "species_before": "57",
+          "species_after": "59",
+          "species_matches_clone": true,
+          "all_other_raw_fields_unchanged": true
+        },
+        {
+          "id": 150994968,
+          "class": "commander",
+          "species_before": "57",
+          "species_after": "59",
+          "species_matches_clone": true,
+          "all_other_raw_fields_unchanged": true
+        },
+        {
+          "id": 90,
+          "class": "official",
+          "species_before": "57",
+          "species_after": "59",
+          "species_matches_clone": true,
+          "all_other_raw_fields_unchanged": true
+        },
+        {
+          "id": 167772174,
+          "class": "official",
+          "species_before": "57",
+          "species_after": "59",
+          "species_matches_clone": true,
+          "all_other_raw_fields_unchanged": true
+        }
+      ]
+    },
+    {
+      "name": "all_old_species_definitions_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "foreign_marker18_species_size_category_probe_and_old_root_preserved",
+      "status": "PASS",
+      "observed": {
+        "marker18_native_final": [
+          {
+            "key": "can_vote",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_worker_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_specialist_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_ruler_job",
+            "value": "yes"
+          },
+          {
+            "key": "key",
+            "value": [
+              {
+                "key": "species",
+                "value": "3321888769"
+              },
+              {
+                "key": "category",
+                "value": "ruler"
+              }
+            ]
+          },
+          {
+            "key": "planet",
+            "value": "2"
+          },
+          {
+            "key": "ethos",
+            "value": [
+              {
+                "key": "ethics",
+                "value": [
+                  "ethic_authoritarian",
+                  "ethic_pacifist",
+                  "ethic_militarist",
+                  "ethic_xenophile",
+                  "ethic_materialist"
+                ]
+              },
+              {
+                "key": "pops",
+                "value": [
+                  "128",
+                  "51",
+                  "14",
+                  "6",
+                  "1"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "factions",
+            "value": []
+          },
+          {
+            "key": "wanted_factions",
+            "value": []
+          },
+          {
+            "key": "size",
+            "value": "200"
+          },
+          {
+            "key": "last_month_growth",
+            "value": "0"
+          },
+          {
+            "key": "month_start_size",
+            "value": "200"
+          },
+          {
+            "key": "fractions",
+            "value": [
+              {
+                "key": "-1",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "key": "total_attraction",
+            "value": "34.38437"
+          },
+          {
+            "key": "ethics_attraction",
+            "value": [
+              "0",
+              "18.98437",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "8",
+              "0",
+              "0",
+              "0",
+              "5.4",
+              "0",
+              "0",
+              "0",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "key": "habitability",
+            "value": "0.75"
+          },
+          {
+            "key": "variables",
+            "value": [
+              {
+                "key": "shishan_feedback_probe_sentinel",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "key": "happiness",
+            "value": "0.89618"
+          },
+          {
+            "key": "power",
+            "value": "18"
+          },
+          {
+            "key": "crime",
+            "value": "0.41528"
+          },
+          {
+            "key": "amenities_usage",
+            "value": "250"
+          },
+          {
+            "key": "housing_usage",
+            "value": "200"
+          }
+        ],
+        "boundary": "claim4 to optimize spans seven normal game days: happiness0.89604 to0.89618 and crime0.41584 to0.41528 change; species/population200/category/probe remain identical. Whole marker record equality is only required within the same paused-date controlled stages."
+      }
+    },
+    {
+      "name": "all_other_pop_groups_raw_unchanged_in_same_day_controlled_relapse_replay",
+      "status": "PASS",
+      "observed": {
+        "boundary": "The initial claim4 to optimize seven-day interval includes ordinary AI population group lifecycle changes; no whole-world population byte identity is claimed for that time interval."
+      }
+    },
+    {
+      "name": "replay_mod_variables_flags_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "replay_all_species_pop_groups_and_owned_leaders_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "replay_situations_and_projects_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "global_probe_targets_preserved",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "snapshots": [
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_claim4.sav",
+      "founder": 57,
+      "templates": [
+        {
+          "id": 57,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            57,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 58,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 11,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            58,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "variables": {
+        "shishan_code_architecture_bonus": "0.50494",
+        "shishan_code_architecture_multiplier": "1.50494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "10.09887",
+        "shishan_code_architecture_trait_average": "10.09887",
+        "shishan_code_architecture_trait_weight": "56483",
+        "shishan_code_maintenance_count": "4",
+        "shishan_code_reroll_cooldown": "2",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "0",
+        "shishan_code_reward_slot_2": "0",
+        "shishan_code_reward_slot_3": "0",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_refactored": "62844720"
+      },
+      "projects": [],
+      "situations": [
+        {
+          "id": 4,
+          "killed": "yes",
+          "progress": "0",
+          "last_month_progress": "1.25",
+          "stage": "0",
+          "native": [
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "target",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                }
+              ]
+            },
+            {
+              "key": "type",
+              "value": "situation_shishan_code"
+            },
+            {
+              "key": "progress",
+              "value": "0"
+            },
+            {
+              "key": "last_month_progress",
+              "value": "1.25"
+            },
+            {
+              "key": "approach",
+              "value": ""
+            },
+            {
+              "key": "stage_durations",
+              "value": [
+                [
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "end",
+                    "value": "250"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "250"
+                  },
+                  {
+                    "key": "end",
+                    "value": "500"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "500"
+                  },
+                  {
+                    "key": "end",
+                    "value": "750"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "750"
+                  },
+                  {
+                    "key": "end",
+                    "value": "950"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "950"
+                  },
+                  {
+                    "key": "end",
+                    "value": "1000"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "stage_flags",
+              "value": [
+                "yes",
+                "yes",
+                "yes",
+                "yes",
+                "yes"
+              ]
+            },
+            {
+              "key": "killed",
+              "value": "yes"
+            },
+            {
+              "key": "stage",
+              "value": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_optimize_pending.sav",
+      "founder": 57,
+      "templates": [
+        {
+          "id": 57,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            57,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 58,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_shishan_refactored",
+            "trait_robot_emotion_emulators"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_refactored",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 11,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            58,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "variables": {
+        "shishan_code_architecture_bonus": "0.50494",
+        "shishan_code_architecture_multiplier": "1.50494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "10.09887",
+        "shishan_code_architecture_trait_average": "10.09887",
+        "shishan_code_architecture_trait_weight": "56483",
+        "shishan_code_maintenance_count": "5",
+        "shishan_code_reroll_cooldown": "2",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "20",
+        "shishan_code_reward_slot_2": "11",
+        "shishan_code_reward_slot_3": "5",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_refactored": "62844720",
+        "shishan_code_reward_pending": "62844888"
+      },
+      "projects": [],
+      "situations": []
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_relapse_pending.sav",
+      "founder": 59,
+      "templates": [
+        {
+          "id": 59,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_emotion_emulators",
+            "trait_shishan_code"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            59,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 60,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_emotion_emulators",
+            "trait_shishan_code"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 11,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            60,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "variables": {
+        "shishan_code_architecture_bonus": "0.50494",
+        "shishan_code_architecture_multiplier": "1.50494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "10.09887",
+        "shishan_code_architecture_trait_average": "10.09887",
+        "shishan_code_architecture_trait_weight": "56483",
+        "shishan_code_maintenance_count": "5",
+        "shishan_code_reroll_cooldown": "2",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "20",
+        "shishan_code_reward_slot_2": "11",
+        "shishan_code_reward_slot_3": "5",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_reward_pending": "62844888"
+      },
+      "projects": [],
+      "situations": [
+        {
+          "id": 16777220,
+          "killed": null,
+          "progress": "0",
+          "last_month_progress": "0",
+          "stage": "0",
+          "native": [
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "target",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                }
+              ]
+            },
+            {
+              "key": "type",
+              "value": "situation_shishan_code"
+            },
+            {
+              "key": "progress",
+              "value": "0"
+            },
+            {
+              "key": "last_month_progress",
+              "value": "0"
+            },
+            {
+              "key": "approach",
+              "value": ""
+            },
+            {
+              "key": "stage_durations",
+              "value": [
+                [
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "end",
+                    "value": "250"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "250"
+                  },
+                  {
+                    "key": "end",
+                    "value": "500"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "500"
+                  },
+                  {
+                    "key": "end",
+                    "value": "750"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "750"
+                  },
+                  {
+                    "key": "end",
+                    "value": "950"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "950"
+                  },
+                  {
+                    "key": "end",
+                    "value": "1000"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "stage_flags",
+              "value": [
+                "yes",
+                "no",
+                "no",
+                "no",
+                "no"
+              ]
+            },
+            {
+              "key": "stage",
+              "value": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "save": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\fb456_relapse_replay.sav",
+      "founder": 59,
+      "templates": [
+        {
+          "id": 59,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_emotion_emulators",
+            "trait_shishan_code"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 10,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            59,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5040,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "id": 60,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_learning_algorithms",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_enhanced_memory",
+            "trait_robot_emotion_emulators",
+            "trait_shishan_code"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_artificial_engineers",
+            "trait_robot_efficient_processors",
+            "trait_robot_emotion_emulators",
+            "trait_robot_enhanced_memory",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_learning_algorithms",
+            "trait_robot_luxurious",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 11,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            60,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 553,
+          "group_ids": [
+            50331648,
+            16777253
+          ]
+        }
+      ],
+      "variables": {
+        "shishan_code_architecture_bonus": "0.50494",
+        "shishan_code_architecture_multiplier": "1.50494",
+        "shishan_code_architecture_population": "5593",
+        "shishan_code_architecture_repeat_count": "0",
+        "shishan_code_architecture_total": "10.09887",
+        "shishan_code_architecture_trait_average": "10.09887",
+        "shishan_code_architecture_trait_weight": "56483",
+        "shishan_code_maintenance_count": "5",
+        "shishan_code_reroll_cooldown": "2",
+        "shishan_code_reward_old_1": "0",
+        "shishan_code_reward_old_2": "0",
+        "shishan_code_reward_old_3": "0",
+        "shishan_code_reward_slot_1": "20",
+        "shishan_code_reward_slot_2": "11",
+        "shishan_code_reward_slot_3": "5",
+        "shishan_code_reward_tier": "1"
+      },
+      "flags": {
+        "shishan_code_initialized": "62808000",
+        "shishan_code_vivhite_recruited": "62809488",
+        "shishan_code_architecture_migrated": "62840232",
+        "shishan_code_reward_pending": "62844888"
+      },
+      "projects": [],
+      "situations": [
+        {
+          "id": 16777220,
+          "killed": null,
+          "progress": "0",
+          "last_month_progress": "0",
+          "stage": "0",
+          "native": [
+            {
+              "key": "country",
+              "value": "0"
+            },
+            {
+              "key": "target",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "none"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                }
+              ]
+            },
+            {
+              "key": "type",
+              "value": "situation_shishan_code"
+            },
+            {
+              "key": "progress",
+              "value": "0"
+            },
+            {
+              "key": "last_month_progress",
+              "value": "0"
+            },
+            {
+              "key": "approach",
+              "value": ""
+            },
+            {
+              "key": "stage_durations",
+              "value": [
+                [
+                  {
+                    "key": "start",
+                    "value": "0"
+                  },
+                  {
+                    "key": "end",
+                    "value": "250"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "250"
+                  },
+                  {
+                    "key": "end",
+                    "value": "500"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "500"
+                  },
+                  {
+                    "key": "end",
+                    "value": "750"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "750"
+                  },
+                  {
+                    "key": "end",
+                    "value": "950"
+                  }
+                ],
+                [
+                  {
+                    "key": "start",
+                    "value": "950"
+                  },
+                  {
+                    "key": "end",
+                    "value": "1000"
+                  }
+                ]
+              ]
+            },
+            {
+              "key": "stage_flags",
+              "value": [
+                "yes",
+                "no",
+                "no",
+                "no",
+                "no"
+              ]
+            },
+            {
+              "key": "stage",
+              "value": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "root_console_provenance": [
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-controlled-relapse-receipt.console.json",
+      "sha256": "602c609f5b322a18bef7b47065758b9cb1deddd61632728335ca7c2be7019419",
+      "record": {
+        "command": "effect event_target:shishan_feedback_probe_source_country = { set_country_flag = shishan_code_relapse_pending country_event = { id = shishan_code.31 } }",
+        "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-controlled-relapse-receipt-result.jpg"
+      }
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-optimize-native-complete.console.json",
+      "sha256": "1ea25d461f1a764ead05071d2bfbaf9b2071dad3b630fcd453f6af842a5389af",
+      "record": {
+        "command": "effect event_target:shishan_feedback_probe_source_country = { complete_special_project = { type = SHISHAN_CODE_OPTIMIZE } }",
+        "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-optimize-native-complete-result.jpg"
+      }
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-relapse-earned-reopen.console.json",
+      "sha256": "18e7711b7442c32773b3eb2df4b7e4ac5cd025af1e644c7ac5a22b97368d9dbe",
+      "record": {
+        "command": "effect event_target:shishan_feedback_probe_source_country = { shishan_code_reward_open_window_effect = yes }",
+        "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-relapse-earned-reopen-result.jpg"
+      }
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-replay-no-receipts.console.json",
+      "sha256": "a0ca2d7674e48b10f5f10a6dc082c71c6ecc1e29a430e4a9907b01f546ef7231",
+      "record": {
+        "command": "effect event_target:shishan_feedback_probe_source_country = { country_event = { id = shishan_code.10 } country_event = { id = shishan_code.20 } country_event = { id = shishan_code.30 } }",
+        "result_image": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T090720Z\\rc6-replay-no-receipts-result.jpg"
+      }
+    }
+  ],
+  "retired_historical_leader_records_collected_during_seven_day_interval": [],
+  "probability_boundary": "Native OPTIMIZE complete_special_project then actual outcome did not relapse. Later controlled set_country_flag + event31 deliberately authorizes relapse; this is not natural probability evidence. Events10/20/30 replay without receipts is a separate idempotency check.",
+  "situation_boundary": "Historical killed=yes records are retained and excluded from active count. Relapse has one active situation at0.",
+  "comparison_boundary": "claim4 date04.01 to optimize04.08 includes seven normal game days; whole global leader archive identity is not claimed. The raw retired records collected during this interval are disclosed separately."
+}

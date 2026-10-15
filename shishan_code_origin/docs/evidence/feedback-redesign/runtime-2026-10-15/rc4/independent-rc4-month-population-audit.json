@@ -1,0 +1,2977 @@
+{
+  "status": "PASS",
+  "scope": "Read-only raw native multi-save population/employment audit; actual groups and monthly cached variables explicitly separated. This is not a definitive resolved-citizenship certification.",
+  "checks": [
+    {
+      "name": "sub49_survives_and_grows_after_five_calendar_months",
+      "status": "PASS",
+      "observed": {
+        "before": 511,
+        "after": 541
+      }
+    },
+    {
+      "name": "sub49_all_can_fill_and_vote_flags_yes",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "sub49_no_explicit_purge_or_citizenship_fields",
+      "status": "PASS",
+      "observed": {
+        "limitation": "Absence of a serialized field is not proof of resolved citizenship; actual worker allocation and population retention are positive observed evidence."
+      }
+    },
+    {
+      "name": "sub49_worker500_keeps_actual_productive_job_allocation",
+      "status": "PASS",
+      "observed": [
+        {
+          "save": "fb454_claim1",
+          "allocations": [
+            {
+              "job_id": 0,
+              "job_type": "civilian",
+              "colony_id": 0,
+              "group_id": 16777253,
+              "amount": "11"
+            },
+            {
+              "job_id": 25,
+              "job_type": "miner",
+              "colony_id": 0,
+              "group_id": 50331648,
+              "amount": "500"
+            }
+          ]
+        },
+        {
+          "save": "fb454_claim1month",
+          "allocations": [
+            {
+              "job_id": 0,
+              "job_type": "civilian",
+              "colony_id": 0,
+              "group_id": 16777253,
+              "amount": "41"
+            },
+            {
+              "job_id": 25,
+              "job_type": "miner",
+              "colony_id": 0,
+              "group_id": 50331648,
+              "amount": "500"
+            }
+          ]
+        },
+        {
+          "save": "fb454_pending2",
+          "allocations": [
+            {
+              "job_id": 0,
+              "job_type": "civilian",
+              "colony_id": 0,
+              "group_id": 16777253,
+              "amount": "41"
+            },
+            {
+              "job_id": 25,
+              "job_type": "miner",
+              "colony_id": 0,
+              "group_id": 50331648,
+              "amount": "500"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "main50_population5040_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "founder_species_ref50_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "foreign_marker_species_population_category_and_probe_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "old_shared_species_definition_raw_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "same_day_pending_refresh_changes_cache_not_population",
+      "status": "PASS",
+      "observed": {
+        "month_cache_delta_P": -6,
+        "month_cache_delta_W": -48,
+        "pending_cache_delta_P": 0,
+        "pending_cache_delta_W": 0,
+        "interpretation": "Monthly cached snapshot precedes latest natural assembly of six sub49 units. Same-day pending reward refresh catches up to native 5581/39608 without changing any population."
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "fb454_claim1",
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\fb454_claim1.sav",
+      "sha256": "2fbe5a5527af56414f844ebba7475f9d4342ccf40145294fcd62022048c058c2",
+      "date": "2203.09.24",
+      "founder_species_ref": "50",
+      "population_by_domestic_template": {
+        "49": 511,
+        "50": 5040
+      },
+      "instantaneous_native_population": 5551,
+      "instantaneous_native_weight": 39368,
+      "instantaneous_U_exact": "5624/793",
+      "instantaneous_U_decimal": 7.092055485498109,
+      "country_monthly_cache": {
+        "architecture_population": "5551",
+        "architecture_trait_weight": "39368",
+        "architecture_trait_average": "7.09205",
+        "architecture_total": "7.09205",
+        "architecture_repeat_count": "0",
+        "architecture_bonus": "0.3546",
+        "maintenance_count": "1",
+        "reroll_cooldown": "2"
+      },
+      "cache_P_minus_instantaneous_P": 0,
+      "cache_W_minus_instantaneous_W": 0,
+      "domestic_groups": [
+        {
+          "group_id": 50331648,
+          "colony_id": 0,
+          "species_id": 49,
+          "category": "worker",
+          "size": 500,
+          "formal_trait_count": 8
+        },
+        {
+          "group_id": 1,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "civilian",
+          "size": 2160,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 12,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "ruler",
+          "size": 200,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 13,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "specialist",
+          "size": 1780,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 14,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "worker",
+          "size": 900,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 16777253,
+          "colony_id": 0,
+          "species_id": 49,
+          "category": "civilian",
+          "size": 11,
+          "formal_trait_count": 8
+        }
+      ],
+      "sub49_groups": [
+        {
+          "group_id": 50331648,
+          "category": "worker",
+          "size": 500,
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "purge_or_citizenship_fields": {},
+          "native_fields": [
+            {
+              "key": "can_vote",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_worker_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_specialist_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_ruler_job",
+              "value": "yes"
+            },
+            {
+              "key": "key",
+              "value": [
+                {
+                  "key": "species",
+                  "value": "49"
+                },
+                {
+                  "key": "category",
+                  "value": "worker"
+                }
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "ethos",
+              "value": [
+                {
+                  "key": "ethics",
+                  "value": [
+                    "ethic_xenophobe",
+                    "ethic_pacifist",
+                    "ethic_egalitarian"
+                  ]
+                },
+                {
+                  "key": "pops",
+                  "value": [
+                    "343",
+                    "117",
+                    "40"
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "factions",
+              "value": []
+            },
+            {
+              "key": "wanted_factions",
+              "value": []
+            },
+            {
+              "key": "size",
+              "value": "500"
+            },
+            {
+              "key": "last_month_growth",
+              "value": "0"
+            },
+            {
+              "key": "month_start_size",
+              "value": "500"
+            },
+            {
+              "key": "fractions",
+              "value": [
+                {
+                  "key": "-1",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "total_attraction",
+              "value": "17.075"
+            },
+            {
+              "key": "ethics_attraction",
+              "value": [
+                "0",
+                "0",
+                "0",
+                "1.375",
+                "0",
+                "11.7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "4",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "key": "habitability",
+              "value": "1"
+            },
+            {
+              "key": "happiness",
+              "value": "0.401"
+            },
+            {
+              "key": "power",
+              "value": "12.5"
+            },
+            {
+              "key": "crime",
+              "value": "5.99"
+            },
+            {
+              "key": "amenities_usage",
+              "value": "500"
+            },
+            {
+              "key": "housing_usage",
+              "value": "500"
+            }
+          ]
+        },
+        {
+          "group_id": 16777253,
+          "category": "civilian",
+          "size": 11,
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "purge_or_citizenship_fields": {},
+          "native_fields": [
+            {
+              "key": "can_vote",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_worker_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_specialist_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_ruler_job",
+              "value": "yes"
+            },
+            {
+              "key": "key",
+              "value": [
+                {
+                  "key": "species",
+                  "value": "49"
+                },
+                {
+                  "key": "category",
+                  "value": "civilian"
+                }
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "ethos",
+              "value": [
+                {
+                  "key": "ethics",
+                  "value": [
+                    "ethic_xenophobe",
+                    "ethic_pacifist"
+                  ]
+                },
+                {
+                  "key": "pops",
+                  "value": [
+                    "9",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "factions",
+              "value": []
+            },
+            {
+              "key": "wanted_factions",
+              "value": []
+            },
+            {
+              "key": "size",
+              "value": "11"
+            },
+            {
+              "key": "last_month_growth",
+              "value": "5"
+            },
+            {
+              "key": "month_start_size",
+              "value": "11"
+            },
+            {
+              "key": "last_month_growth_details",
+              "value": [
+                {
+                  "key": "key",
+                  "value": "GROWTH_CAT_ASSEMBLY"
+                },
+                {
+                  "key": "value",
+                  "value": "5"
+                }
+              ]
+            },
+            {
+              "key": "fractions",
+              "value": [
+                {
+                  "key": "-1",
+                  "value": "-0.072"
+                }
+              ]
+            },
+            {
+              "key": "total_attraction",
+              "value": "17.075"
+            },
+            {
+              "key": "ethics_attraction",
+              "value": [
+                "0",
+                "0",
+                "0",
+                "1.375",
+                "0",
+                "11.7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "4",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "key": "habitability",
+              "value": "1"
+            },
+            {
+              "key": "happiness",
+              "value": "0.401"
+            },
+            {
+              "key": "power",
+              "value": "0.275"
+            },
+            {
+              "key": "crime",
+              "value": "0.13178"
+            },
+            {
+              "key": "housing_usage",
+              "value": "11"
+            }
+          ]
+        }
+      ],
+      "sub49_job_assignments": [
+        {
+          "job_id": 0,
+          "job_type": "civilian",
+          "colony_id": 0,
+          "group_id": 16777253,
+          "amount": "11"
+        },
+        {
+          "job_id": 25,
+          "job_type": "miner",
+          "colony_id": 0,
+          "group_id": 50331648,
+          "amount": "500"
+        }
+      ],
+      "domestic_rights_rows": [
+        {
+          "species_id": 48,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "48"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        },
+        {
+          "species_id": 50,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "50"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        },
+        {
+          "species_id": 50,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "50"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        }
+      ],
+      "foreign_marker18": {
+        "species_id": 3321888769,
+        "size": "200",
+        "colony_id": "2",
+        "category": "ruler",
+        "traits": [
+          "trait_machine_unit",
+          "trait_shishan_code",
+          "trait_robot_luxurious",
+          "trait_robot_high_bandwidth",
+          "trait_robot_high_maintenance",
+          "trait_wet_planet_preference"
+        ],
+        "probe_variables": [
+          {
+            "key": "shishan_feedback_probe_sentinel",
+            "value": "1"
+          }
+        ],
+        "native_fields": [
+          {
+            "key": "can_procreate",
+            "value": "yes"
+          },
+          {
+            "key": "can_crossbreed",
+            "value": "yes"
+          },
+          {
+            "key": "can_vote",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_worker_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_specialist_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_ruler_job",
+            "value": "yes"
+          },
+          {
+            "key": "key",
+            "value": [
+              {
+                "key": "species",
+                "value": "3321888769"
+              },
+              {
+                "key": "category",
+                "value": "ruler"
+              }
+            ]
+          },
+          {
+            "key": "planet",
+            "value": "2"
+          },
+          {
+            "key": "ethos",
+            "value": [
+              {
+                "key": "ethics",
+                "value": [
+                  "ethic_authoritarian",
+                  "ethic_pacifist",
+                  "ethic_militarist",
+                  "ethic_xenophile"
+                ]
+              },
+              {
+                "key": "pops",
+                "value": [
+                  "129",
+                  "53",
+                  "15",
+                  "3"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "factions",
+            "value": []
+          },
+          {
+            "key": "wanted_factions",
+            "value": []
+          },
+          {
+            "key": "size",
+            "value": "200"
+          },
+          {
+            "key": "last_month_growth",
+            "value": "0"
+          },
+          {
+            "key": "month_start_size",
+            "value": "200"
+          },
+          {
+            "key": "fractions",
+            "value": [
+              {
+                "key": "-1",
+                "value": "-0.6"
+              }
+            ]
+          },
+          {
+            "key": "total_attraction",
+            "value": "25.85875"
+          },
+          {
+            "key": "ethics_attraction",
+            "value": [
+              "0",
+              "17.71875",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "2",
+              "0",
+              "1.1",
+              "0",
+              "5.04",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "key": "habitability",
+            "value": "1"
+          },
+          {
+            "key": "variables",
+            "value": [
+              {
+                "key": "shishan_feedback_probe_sentinel",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "key": "happiness",
+            "value": "0.90322"
+          },
+          {
+            "key": "power",
+            "value": "18"
+          },
+          {
+            "key": "crime",
+            "value": "0.38712"
+          },
+          {
+            "key": "amenities_usage",
+            "value": "200"
+          },
+          {
+            "key": "housing_usage",
+            "value": "180"
+          }
+        ]
+      },
+      "old_main3321888769_native": [
+        {
+          "key": "name_list",
+          "value": "HUM1"
+        },
+        {
+          "key": "name",
+          "value": [
+            {
+              "key": "key",
+              "value": "SPEC_Alari"
+            }
+          ]
+        },
+        {
+          "key": "plural",
+          "value": [
+            {
+              "key": "key",
+              "value": "SPEC_Alari_pl"
+            }
+          ]
+        },
+        {
+          "key": "adjective",
+          "value": [
+            {
+              "key": "key",
+              "value": "%ADJECTIVE%"
+            },
+            {
+              "key": "variables",
+              "value": [
+                [
+                  {
+                    "key": "key",
+                    "value": "adjective"
+                  },
+                  {
+                    "key": "value",
+                    "value": [
+                      {
+                        "key": "key",
+                        "value": "SPEC_Alari"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "key": "class",
+          "value": "MACHINE"
+        },
+        {
+          "key": "portrait",
+          "value": "sd_hum_robot"
+        },
+        {
+          "key": "traits",
+          "value": [
+            {
+              "key": "trait",
+              "value": "trait_machine_unit"
+            },
+            {
+              "key": "trait",
+              "value": "trait_shishan_code"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_luxurious"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_high_bandwidth"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_high_maintenance"
+            },
+            {
+              "key": "trait",
+              "value": "trait_wet_planet_preference"
+            }
+          ]
+        },
+        {
+          "key": "home_planet",
+          "value": [
+            {
+              "key": "type",
+              "value": "planet"
+            },
+            {
+              "key": "reference",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "key": "gender",
+          "value": "not_set"
+        }
+      ]
+    },
+    {
+      "name": "fb454_claim1month",
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\fb454_claim1month.sav",
+      "sha256": "ac2fab291e9a52aad4237b489d49bc01853b443ff94010f9d56c3e441dc14584",
+      "date": "2204.02.13",
+      "founder_species_ref": "50",
+      "population_by_domestic_template": {
+        "49": 541,
+        "50": 5040
+      },
+      "instantaneous_native_population": 5581,
+      "instantaneous_native_weight": 39608,
+      "instantaneous_U_exact": "39608/5581",
+      "instantaneous_U_decimal": 7.096936032969002,
+      "country_monthly_cache": {
+        "architecture_population": "5575",
+        "architecture_trait_weight": "39560",
+        "architecture_trait_average": "7.09596",
+        "architecture_total": "7.09596",
+        "architecture_repeat_count": "0",
+        "architecture_bonus": "0.35479",
+        "maintenance_count": "1",
+        "reroll_cooldown": "2"
+      },
+      "cache_P_minus_instantaneous_P": -6,
+      "cache_W_minus_instantaneous_W": -48,
+      "domestic_groups": [
+        {
+          "group_id": 50331648,
+          "colony_id": 0,
+          "species_id": 49,
+          "category": "worker",
+          "size": 500,
+          "formal_trait_count": 8
+        },
+        {
+          "group_id": 1,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "civilian",
+          "size": 2160,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 12,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "ruler",
+          "size": 200,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 13,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "specialist",
+          "size": 1780,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 14,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "worker",
+          "size": 900,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 16777253,
+          "colony_id": 0,
+          "species_id": 49,
+          "category": "civilian",
+          "size": 41,
+          "formal_trait_count": 8
+        }
+      ],
+      "sub49_groups": [
+        {
+          "group_id": 50331648,
+          "category": "worker",
+          "size": 500,
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "purge_or_citizenship_fields": {},
+          "native_fields": [
+            {
+              "key": "can_vote",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_worker_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_specialist_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_ruler_job",
+              "value": "yes"
+            },
+            {
+              "key": "key",
+              "value": [
+                {
+                  "key": "species",
+                  "value": "49"
+                },
+                {
+                  "key": "category",
+                  "value": "worker"
+                }
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "ethos",
+              "value": [
+                {
+                  "key": "ethics",
+                  "value": [
+                    "ethic_xenophobe",
+                    "ethic_pacifist",
+                    "ethic_egalitarian"
+                  ]
+                },
+                {
+                  "key": "pops",
+                  "value": [
+                    "343",
+                    "117",
+                    "40"
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "factions",
+              "value": []
+            },
+            {
+              "key": "wanted_factions",
+              "value": []
+            },
+            {
+              "key": "size",
+              "value": "500"
+            },
+            {
+              "key": "last_month_growth",
+              "value": "0"
+            },
+            {
+              "key": "month_start_size",
+              "value": "500"
+            },
+            {
+              "key": "fractions",
+              "value": [
+                {
+                  "key": "-1",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "total_attraction",
+              "value": "17.075"
+            },
+            {
+              "key": "ethics_attraction",
+              "value": [
+                "0",
+                "0",
+                "0",
+                "1.375",
+                "0",
+                "11.7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "4",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "key": "habitability",
+              "value": "1"
+            },
+            {
+              "key": "happiness",
+              "value": "0.63745"
+            },
+            {
+              "key": "power",
+              "value": "12.5"
+            },
+            {
+              "key": "crime",
+              "value": "3.6255"
+            },
+            {
+              "key": "amenities_usage",
+              "value": "500"
+            },
+            {
+              "key": "housing_usage",
+              "value": "500"
+            }
+          ]
+        },
+        {
+          "group_id": 16777253,
+          "category": "civilian",
+          "size": 41,
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "purge_or_citizenship_fields": {},
+          "native_fields": [
+            {
+              "key": "can_vote",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_worker_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_specialist_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_ruler_job",
+              "value": "yes"
+            },
+            {
+              "key": "key",
+              "value": [
+                {
+                  "key": "species",
+                  "value": "49"
+                },
+                {
+                  "key": "category",
+                  "value": "civilian"
+                }
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "ethos",
+              "value": [
+                {
+                  "key": "ethics",
+                  "value": [
+                    "ethic_xenophobe",
+                    "ethic_pacifist"
+                  ]
+                },
+                {
+                  "key": "pops",
+                  "value": [
+                    "33",
+                    "8"
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "factions",
+              "value": []
+            },
+            {
+              "key": "wanted_factions",
+              "value": []
+            },
+            {
+              "key": "size",
+              "value": "41"
+            },
+            {
+              "key": "last_month_growth",
+              "value": "6"
+            },
+            {
+              "key": "month_start_size",
+              "value": "41"
+            },
+            {
+              "key": "last_month_growth_details",
+              "value": [
+                {
+                  "key": "key",
+                  "value": "GROWTH_CAT_ASSEMBLY"
+                },
+                {
+                  "key": "value",
+                  "value": "6"
+                }
+              ]
+            },
+            {
+              "key": "fractions",
+              "value": [
+                {
+                  "key": "-1",
+                  "value": "-0.6"
+                }
+              ]
+            },
+            {
+              "key": "total_attraction",
+              "value": "17.075"
+            },
+            {
+              "key": "ethics_attraction",
+              "value": [
+                "0",
+                "0",
+                "0",
+                "1.375",
+                "0",
+                "11.7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "4",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "key": "habitability",
+              "value": "1"
+            },
+            {
+              "key": "happiness",
+              "value": "0.63745"
+            },
+            {
+              "key": "power",
+              "value": "1.025"
+            },
+            {
+              "key": "crime",
+              "value": "0.29729"
+            },
+            {
+              "key": "housing_usage",
+              "value": "41"
+            }
+          ]
+        }
+      ],
+      "sub49_job_assignments": [
+        {
+          "job_id": 0,
+          "job_type": "civilian",
+          "colony_id": 0,
+          "group_id": 16777253,
+          "amount": "41"
+        },
+        {
+          "job_id": 25,
+          "job_type": "miner",
+          "colony_id": 0,
+          "group_id": 50331648,
+          "amount": "500"
+        }
+      ],
+      "domestic_rights_rows": [
+        {
+          "species_id": 48,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "48"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        },
+        {
+          "species_id": 50,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "50"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        },
+        {
+          "species_id": 50,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "50"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        }
+      ],
+      "foreign_marker18": {
+        "species_id": 3321888769,
+        "size": "200",
+        "colony_id": "2",
+        "category": "ruler",
+        "traits": [
+          "trait_machine_unit",
+          "trait_shishan_code",
+          "trait_robot_luxurious",
+          "trait_robot_high_bandwidth",
+          "trait_robot_high_maintenance",
+          "trait_wet_planet_preference"
+        ],
+        "probe_variables": [
+          {
+            "key": "shishan_feedback_probe_sentinel",
+            "value": "1"
+          }
+        ],
+        "native_fields": [
+          {
+            "key": "can_vote",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_worker_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_specialist_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_ruler_job",
+            "value": "yes"
+          },
+          {
+            "key": "key",
+            "value": [
+              {
+                "key": "species",
+                "value": "3321888769"
+              },
+              {
+                "key": "category",
+                "value": "ruler"
+              }
+            ]
+          },
+          {
+            "key": "planet",
+            "value": "2"
+          },
+          {
+            "key": "ethos",
+            "value": [
+              {
+                "key": "ethics",
+                "value": [
+                  "ethic_authoritarian",
+                  "ethic_pacifist",
+                  "ethic_militarist",
+                  "ethic_xenophile",
+                  "ethic_materialist"
+                ]
+              },
+              {
+                "key": "pops",
+                "value": [
+                  "128",
+                  "51",
+                  "14",
+                  "6",
+                  "1"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "factions",
+            "value": []
+          },
+          {
+            "key": "wanted_factions",
+            "value": []
+          },
+          {
+            "key": "size",
+            "value": "200"
+          },
+          {
+            "key": "last_month_growth",
+            "value": "0"
+          },
+          {
+            "key": "month_start_size",
+            "value": "200"
+          },
+          {
+            "key": "fractions",
+            "value": [
+              {
+                "key": "-1",
+                "value": "-0.4"
+              }
+            ]
+          },
+          {
+            "key": "total_attraction",
+            "value": "34.38437"
+          },
+          {
+            "key": "ethics_attraction",
+            "value": [
+              "0",
+              "18.98437",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "8",
+              "0",
+              "0",
+              "0",
+              "5.4",
+              "0",
+              "0",
+              "0",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "key": "habitability",
+            "value": "0.75"
+          },
+          {
+            "key": "variables",
+            "value": [
+              {
+                "key": "shishan_feedback_probe_sentinel",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "key": "happiness",
+            "value": "0.89567"
+          },
+          {
+            "key": "power",
+            "value": "18"
+          },
+          {
+            "key": "crime",
+            "value": "0.41744"
+          },
+          {
+            "key": "amenities_usage",
+            "value": "250"
+          },
+          {
+            "key": "housing_usage",
+            "value": "200"
+          }
+        ]
+      },
+      "old_main3321888769_native": [
+        {
+          "key": "name_list",
+          "value": "HUM1"
+        },
+        {
+          "key": "name",
+          "value": [
+            {
+              "key": "key",
+              "value": "SPEC_Alari"
+            }
+          ]
+        },
+        {
+          "key": "plural",
+          "value": [
+            {
+              "key": "key",
+              "value": "SPEC_Alari_pl"
+            }
+          ]
+        },
+        {
+          "key": "adjective",
+          "value": [
+            {
+              "key": "key",
+              "value": "%ADJECTIVE%"
+            },
+            {
+              "key": "variables",
+              "value": [
+                [
+                  {
+                    "key": "key",
+                    "value": "adjective"
+                  },
+                  {
+                    "key": "value",
+                    "value": [
+                      {
+                        "key": "key",
+                        "value": "SPEC_Alari"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "key": "class",
+          "value": "MACHINE"
+        },
+        {
+          "key": "portrait",
+          "value": "sd_hum_robot"
+        },
+        {
+          "key": "traits",
+          "value": [
+            {
+              "key": "trait",
+              "value": "trait_machine_unit"
+            },
+            {
+              "key": "trait",
+              "value": "trait_shishan_code"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_luxurious"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_high_bandwidth"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_high_maintenance"
+            },
+            {
+              "key": "trait",
+              "value": "trait_wet_planet_preference"
+            }
+          ]
+        },
+        {
+          "key": "home_planet",
+          "value": [
+            {
+              "key": "type",
+              "value": "planet"
+            },
+            {
+              "key": "reference",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "key": "gender",
+          "value": "not_set"
+        }
+      ]
+    },
+    {
+      "name": "fb454_pending2",
+      "path": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T080652Z\\fb454_pending2.sav",
+      "sha256": "8f850157778b51714f0dcd8e0f247b69b83996a3c991c3699c3233a8ac3258b6",
+      "date": "2204.02.13",
+      "founder_species_ref": "50",
+      "population_by_domestic_template": {
+        "49": 541,
+        "50": 5040
+      },
+      "instantaneous_native_population": 5581,
+      "instantaneous_native_weight": 39608,
+      "instantaneous_U_exact": "39608/5581",
+      "instantaneous_U_decimal": 7.096936032969002,
+      "country_monthly_cache": {
+        "architecture_population": "5581",
+        "architecture_trait_weight": "39608",
+        "architecture_trait_average": "7.09693",
+        "architecture_total": "7.09693",
+        "architecture_repeat_count": "0",
+        "architecture_bonus": "0.35484",
+        "maintenance_count": "2",
+        "reroll_cooldown": "2"
+      },
+      "cache_P_minus_instantaneous_P": 0,
+      "cache_W_minus_instantaneous_W": 0,
+      "domestic_groups": [
+        {
+          "group_id": 50331648,
+          "colony_id": 0,
+          "species_id": 49,
+          "category": "worker",
+          "size": 500,
+          "formal_trait_count": 8
+        },
+        {
+          "group_id": 1,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "civilian",
+          "size": 2160,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 12,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "ruler",
+          "size": 200,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 13,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "specialist",
+          "size": 1780,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 14,
+          "colony_id": 0,
+          "species_id": 50,
+          "category": "worker",
+          "size": 900,
+          "formal_trait_count": 7
+        },
+        {
+          "group_id": 16777253,
+          "colony_id": 0,
+          "species_id": 49,
+          "category": "civilian",
+          "size": 41,
+          "formal_trait_count": 8
+        }
+      ],
+      "sub49_groups": [
+        {
+          "group_id": 50331648,
+          "category": "worker",
+          "size": 500,
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "purge_or_citizenship_fields": {},
+          "native_fields": [
+            {
+              "key": "can_vote",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_worker_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_specialist_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_ruler_job",
+              "value": "yes"
+            },
+            {
+              "key": "key",
+              "value": [
+                {
+                  "key": "species",
+                  "value": "49"
+                },
+                {
+                  "key": "category",
+                  "value": "worker"
+                }
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "ethos",
+              "value": [
+                {
+                  "key": "ethics",
+                  "value": [
+                    "ethic_xenophobe",
+                    "ethic_pacifist",
+                    "ethic_egalitarian"
+                  ]
+                },
+                {
+                  "key": "pops",
+                  "value": [
+                    "343",
+                    "117",
+                    "40"
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "factions",
+              "value": []
+            },
+            {
+              "key": "wanted_factions",
+              "value": []
+            },
+            {
+              "key": "size",
+              "value": "500"
+            },
+            {
+              "key": "last_month_growth",
+              "value": "0"
+            },
+            {
+              "key": "month_start_size",
+              "value": "500"
+            },
+            {
+              "key": "fractions",
+              "value": [
+                {
+                  "key": "-1",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "key": "total_attraction",
+              "value": "17.075"
+            },
+            {
+              "key": "ethics_attraction",
+              "value": [
+                "0",
+                "0",
+                "0",
+                "1.375",
+                "0",
+                "11.7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "4",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "key": "habitability",
+              "value": "1"
+            },
+            {
+              "key": "happiness",
+              "value": "0.63745"
+            },
+            {
+              "key": "power",
+              "value": "12.5"
+            },
+            {
+              "key": "crime",
+              "value": "3.6255"
+            },
+            {
+              "key": "amenities_usage",
+              "value": "500"
+            },
+            {
+              "key": "housing_usage",
+              "value": "500"
+            }
+          ]
+        },
+        {
+          "group_id": 16777253,
+          "category": "civilian",
+          "size": 41,
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "purge_or_citizenship_fields": {},
+          "native_fields": [
+            {
+              "key": "can_vote",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_worker_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_specialist_job",
+              "value": "yes"
+            },
+            {
+              "key": "can_fill_ruler_job",
+              "value": "yes"
+            },
+            {
+              "key": "key",
+              "value": [
+                {
+                  "key": "species",
+                  "value": "49"
+                },
+                {
+                  "key": "category",
+                  "value": "civilian"
+                }
+              ]
+            },
+            {
+              "key": "planet",
+              "value": "0"
+            },
+            {
+              "key": "ethos",
+              "value": [
+                {
+                  "key": "ethics",
+                  "value": [
+                    "ethic_xenophobe",
+                    "ethic_pacifist"
+                  ]
+                },
+                {
+                  "key": "pops",
+                  "value": [
+                    "33",
+                    "8"
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "factions",
+              "value": []
+            },
+            {
+              "key": "wanted_factions",
+              "value": []
+            },
+            {
+              "key": "size",
+              "value": "41"
+            },
+            {
+              "key": "last_month_growth",
+              "value": "6"
+            },
+            {
+              "key": "month_start_size",
+              "value": "41"
+            },
+            {
+              "key": "last_month_growth_details",
+              "value": [
+                {
+                  "key": "key",
+                  "value": "GROWTH_CAT_ASSEMBLY"
+                },
+                {
+                  "key": "value",
+                  "value": "6"
+                }
+              ]
+            },
+            {
+              "key": "fractions",
+              "value": [
+                {
+                  "key": "-1",
+                  "value": "-0.6"
+                }
+              ]
+            },
+            {
+              "key": "total_attraction",
+              "value": "17.075"
+            },
+            {
+              "key": "ethics_attraction",
+              "value": [
+                "0",
+                "0",
+                "0",
+                "1.375",
+                "0",
+                "11.7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "4",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "key": "habitability",
+              "value": "1"
+            },
+            {
+              "key": "happiness",
+              "value": "0.63745"
+            },
+            {
+              "key": "power",
+              "value": "1.025"
+            },
+            {
+              "key": "crime",
+              "value": "0.29729"
+            },
+            {
+              "key": "housing_usage",
+              "value": "41"
+            }
+          ]
+        }
+      ],
+      "sub49_job_assignments": [
+        {
+          "job_id": 0,
+          "job_type": "civilian",
+          "colony_id": 0,
+          "group_id": 16777253,
+          "amount": "41"
+        },
+        {
+          "job_id": 25,
+          "job_type": "miner",
+          "colony_id": 0,
+          "group_id": 50331648,
+          "amount": "500"
+        }
+      ],
+      "domestic_rights_rows": [
+        {
+          "species_id": 48,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "48"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        },
+        {
+          "species_id": 50,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "50"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        },
+        {
+          "species_id": 50,
+          "native_fields": [
+            {
+              "key": "species_index",
+              "value": "50"
+            },
+            {
+              "key": "living_standard",
+              "value": "living_standard_normal"
+            },
+            {
+              "key": "citizenship",
+              "value": "citizenship_full"
+            },
+            {
+              "key": "military_service",
+              "value": "military_service_full"
+            },
+            {
+              "key": "slavery",
+              "value": "slavery_indentured"
+            },
+            {
+              "key": "purge",
+              "value": "purge_displacement"
+            },
+            {
+              "key": "population_control",
+              "value": "population_control_no"
+            },
+            {
+              "key": "colonization_control",
+              "value": "colonization_control_no"
+            },
+            {
+              "key": "migration_control",
+              "value": "migration_control_no"
+            },
+            {
+              "key": "subspecies_integration",
+              "value": "no_integration"
+            },
+            {
+              "key": "former_living_standard",
+              "value": "living_standard_good"
+            },
+            {
+              "key": "former_citizenship",
+              "value": "citizenship_robot_servitude"
+            },
+            {
+              "key": "former_slavery",
+              "value": "slavery_normal"
+            },
+            {
+              "key": "former_purge",
+              "value": "purge_normal"
+            },
+            {
+              "key": "last_changed_citizenship_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_military_service_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_slavery_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_purge_type",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_living_standard",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_colonization_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_population_control",
+              "value": "0.01.01"
+            },
+            {
+              "key": "last_changed_migration_control",
+              "value": "0.01.01"
+            }
+          ]
+        }
+      ],
+      "foreign_marker18": {
+        "species_id": 3321888769,
+        "size": "200",
+        "colony_id": "2",
+        "category": "ruler",
+        "traits": [
+          "trait_machine_unit",
+          "trait_shishan_code",
+          "trait_robot_luxurious",
+          "trait_robot_high_bandwidth",
+          "trait_robot_high_maintenance",
+          "trait_wet_planet_preference"
+        ],
+        "probe_variables": [
+          {
+            "key": "shishan_feedback_probe_sentinel",
+            "value": "1"
+          }
+        ],
+        "native_fields": [
+          {
+            "key": "can_vote",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_worker_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_specialist_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_ruler_job",
+            "value": "yes"
+          },
+          {
+            "key": "key",
+            "value": [
+              {
+                "key": "species",
+                "value": "3321888769"
+              },
+              {
+                "key": "category",
+                "value": "ruler"
+              }
+            ]
+          },
+          {
+            "key": "planet",
+            "value": "2"
+          },
+          {
+            "key": "ethos",
+            "value": [
+              {
+                "key": "ethics",
+                "value": [
+                  "ethic_authoritarian",
+                  "ethic_pacifist",
+                  "ethic_militarist",
+                  "ethic_xenophile",
+                  "ethic_materialist"
+                ]
+              },
+              {
+                "key": "pops",
+                "value": [
+                  "128",
+                  "51",
+                  "14",
+                  "6",
+                  "1"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "factions",
+            "value": []
+          },
+          {
+            "key": "wanted_factions",
+            "value": []
+          },
+          {
+            "key": "size",
+            "value": "200"
+          },
+          {
+            "key": "last_month_growth",
+            "value": "0"
+          },
+          {
+            "key": "month_start_size",
+            "value": "200"
+          },
+          {
+            "key": "fractions",
+            "value": [
+              {
+                "key": "-1",
+                "value": "-0.4"
+              }
+            ]
+          },
+          {
+            "key": "total_attraction",
+            "value": "34.38437"
+          },
+          {
+            "key": "ethics_attraction",
+            "value": [
+              "0",
+              "18.98437",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "8",
+              "0",
+              "0",
+              "0",
+              "5.4",
+              "0",
+              "0",
+              "0",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "key": "habitability",
+            "value": "0.75"
+          },
+          {
+            "key": "variables",
+            "value": [
+              {
+                "key": "shishan_feedback_probe_sentinel",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "key": "happiness",
+            "value": "0.89567"
+          },
+          {
+            "key": "power",
+            "value": "18"
+          },
+          {
+            "key": "crime",
+            "value": "0.41744"
+          },
+          {
+            "key": "amenities_usage",
+            "value": "250"
+          },
+          {
+            "key": "housing_usage",
+            "value": "200"
+          }
+        ]
+      },
+      "old_main3321888769_native": [
+        {
+          "key": "name_list",
+          "value": "HUM1"
+        },
+        {
+          "key": "name",
+          "value": [
+            {
+              "key": "key",
+              "value": "SPEC_Alari"
+            }
+          ]
+        },
+        {
+          "key": "plural",
+          "value": [
+            {
+              "key": "key",
+              "value": "SPEC_Alari_pl"
+            }
+          ]
+        },
+        {
+          "key": "adjective",
+          "value": [
+            {
+              "key": "key",
+              "value": "%ADJECTIVE%"
+            },
+            {
+              "key": "variables",
+              "value": [
+                [
+                  {
+                    "key": "key",
+                    "value": "adjective"
+                  },
+                  {
+                    "key": "value",
+                    "value": [
+                      {
+                        "key": "key",
+                        "value": "SPEC_Alari"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "key": "class",
+          "value": "MACHINE"
+        },
+        {
+          "key": "portrait",
+          "value": "sd_hum_robot"
+        },
+        {
+          "key": "traits",
+          "value": [
+            {
+              "key": "trait",
+              "value": "trait_machine_unit"
+            },
+            {
+              "key": "trait",
+              "value": "trait_shishan_code"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_luxurious"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_high_bandwidth"
+            },
+            {
+              "key": "trait",
+              "value": "trait_robot_high_maintenance"
+            },
+            {
+              "key": "trait",
+              "value": "trait_wet_planet_preference"
+            }
+          ]
+        },
+        {
+          "key": "home_planet",
+          "value": [
+            {
+              "key": "type",
+              "value": "planet"
+            },
+            {
+              "key": "reference",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "key": "gender",
+          "value": "not_set"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Five calendar months contain natural growth and budget/happiness changes. Full foreign-group byte equality is not claimed across natural running; species/population/category/probe marker and old shared species definition are compared explicitly.",
+    "Missing explicit rights row49 remains a native rights resolution question for the root live getter/UI check.",
+    "Second pending creation provenance is not inferred from serialized n2 alone."
+  ]
+}

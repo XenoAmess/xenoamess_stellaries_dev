@@ -1,0 +1,1252 @@
+{
+  "status": "FAIL",
+  "scope": "Independent read-only native raw Document comparisons; no desktop/game interaction, no script interpreter simulation; native rights resolution of missing entry is not inferred.",
+  "inputs": [
+    {
+      "name": "fb453_pending1",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T074214Z\\save games\\acceptance-fixtures\\fb453_pending1.sav",
+      "sha256": "c1950f0ac7ff8d0520f357792de0931ede7923dd99b99f51d98f78bcef77e068",
+      "bytes": 596977,
+      "date": "2203.09.24",
+      "country_id": 0,
+      "main_species_id": 3321888769
+    },
+    {
+      "name": "fb453_reroll1",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T074214Z\\save games\\acceptance-fixtures\\fb453_reroll1.sav",
+      "sha256": "dfbd57b69483888404d0dff327eae1379e088bb48dcfc5dff5320aba6caf2c83",
+      "bytes": 598950,
+      "date": "2203.09.24",
+      "country_id": 0,
+      "main_species_id": 3321888769
+    },
+    {
+      "name": "fb453_claim1",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T074214Z\\save games\\acceptance-fixtures\\fb453_claim1.sav",
+      "sha256": "ecd44f924b8dbe3dbb3a66ec881c330268f87304f3e02740749ca37e79d97718",
+      "bytes": 599142,
+      "date": "2203.09.24",
+      "country_id": 0,
+      "main_species_id": 50
+    }
+  ],
+  "raw_source_paths": {
+    "groups": "pop_groups.<id>",
+    "species": "species_db.<id>.traits; base_ref",
+    "primary": "country.0.modules.standard_species_rights_module.primary.species_index",
+    "rights": "country.0.modules.standard_species_rights_module",
+    "leaders": "country.0.owned_leaders; leaders.<id>.species"
+  },
+  "reroll_candidates": {
+    "pending": [
+      19,
+      6,
+      18
+    ],
+    "rerolled": [
+      17,
+      12,
+      1
+    ],
+    "oldslots_saved": [
+      19,
+      6,
+      18
+    ]
+  },
+  "clone_mapping": {
+    "48": 49,
+    "3321888769": 50
+  },
+  "checks": [
+    {
+      "name": "reroll_three_distinct_fresh_candidates",
+      "status": "PASS",
+      "observed": {
+        "before": [
+          19,
+          6,
+          18
+        ],
+        "after": [
+          17,
+          12,
+          1
+        ],
+        "saved_old": [
+          19,
+          6,
+          18
+        ]
+      }
+    },
+    {
+      "name": "reroll_saves_exact_previous_candidates",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reroll_cd3_once_flag_pending_n1_R0",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reroll_all_existing_species_definitions_raw_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reroll_all_population_groups_raw_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reroll_owned_seven_leaders_raw_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reroll_rights_and_main_pointer_raw_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "claim_selected17_engineering_core_present_in_both_domestic_templates",
+      "status": "PASS",
+      "observed": {
+        "trait_key": "trait_robot_artificial_engineers"
+      }
+    },
+    {
+      "name": "claim_n1_R0_cd2_pending_and_once_flags_consumed",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "claim_slots_and_old_slots_cleared",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "claim_all_domestic_population_groups_exactly_plus_one_trait_population_unchanged",
+      "status": "PASS",
+      "observed": [
+        {
+          "group_id": 50331648,
+          "before": {
+            "group_id": 50331648,
+            "colony_id": 0,
+            "species_id": 48,
+            "size": 500,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_learning_algorithms"
+            ]
+          },
+          "after": {
+            "group_id": 50331648,
+            "colony_id": 0,
+            "species_id": 49,
+            "size": 500,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_learning_algorithms",
+              "trait_robot_artificial_engineers"
+            ]
+          },
+          "unchanged_population": true,
+          "traits_exactly_plus_engineering": true
+        },
+        {
+          "group_id": 1,
+          "before": {
+            "group_id": 1,
+            "colony_id": 0,
+            "species_id": 3321888769,
+            "size": 2160,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference"
+            ]
+          },
+          "after": {
+            "group_id": 1,
+            "colony_id": 0,
+            "species_id": 50,
+            "size": 2160,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_artificial_engineers"
+            ]
+          },
+          "unchanged_population": true,
+          "traits_exactly_plus_engineering": true
+        },
+        {
+          "group_id": 12,
+          "before": {
+            "group_id": 12,
+            "colony_id": 0,
+            "species_id": 3321888769,
+            "size": 200,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference"
+            ]
+          },
+          "after": {
+            "group_id": 12,
+            "colony_id": 0,
+            "species_id": 50,
+            "size": 200,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_artificial_engineers"
+            ]
+          },
+          "unchanged_population": true,
+          "traits_exactly_plus_engineering": true
+        },
+        {
+          "group_id": 13,
+          "before": {
+            "group_id": 13,
+            "colony_id": 0,
+            "species_id": 3321888769,
+            "size": 1780,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference"
+            ]
+          },
+          "after": {
+            "group_id": 13,
+            "colony_id": 0,
+            "species_id": 50,
+            "size": 1780,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_artificial_engineers"
+            ]
+          },
+          "unchanged_population": true,
+          "traits_exactly_plus_engineering": true
+        },
+        {
+          "group_id": 14,
+          "before": {
+            "group_id": 14,
+            "colony_id": 0,
+            "species_id": 3321888769,
+            "size": 900,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference"
+            ]
+          },
+          "after": {
+            "group_id": 14,
+            "colony_id": 0,
+            "species_id": 50,
+            "size": 900,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_artificial_engineers"
+            ]
+          },
+          "unchanged_population": true,
+          "traits_exactly_plus_engineering": true
+        },
+        {
+          "group_id": 16777253,
+          "before": {
+            "group_id": 16777253,
+            "colony_id": 0,
+            "species_id": 48,
+            "size": 11,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_learning_algorithms"
+            ]
+          },
+          "after": {
+            "group_id": 16777253,
+            "colony_id": 0,
+            "species_id": 49,
+            "size": 11,
+            "traits": [
+              "trait_machine_unit",
+              "trait_shishan_code",
+              "trait_robot_luxurious",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_wet_planet_preference",
+              "trait_robot_learning_algorithms",
+              "trait_robot_artificial_engineers"
+            ]
+          },
+          "unchanged_population": true,
+          "traits_exactly_plus_engineering": true
+        }
+      ]
+    },
+    {
+      "name": "claim_two_distinct_new_domestic_clones",
+      "status": "PASS",
+      "observed": {
+        "48": 49,
+        "3321888769": 50
+      }
+    },
+    {
+      "name": "claim_main_pointer_changed_to_main_clone",
+      "status": "PASS",
+      "observed": {
+        "source": "country.modules.standard_species_rights_module.primary.species_index",
+        "before": 3321888769,
+        "after": 50
+      }
+    },
+    {
+      "name": "claim_U_exactly_plus_one_and_save_cache_matches",
+      "status": "PASS",
+      "observed": {
+        "before_exact": "4831/793",
+        "after_exact": "5624/793",
+        "difference_exact": "1",
+        "before_weight": 33817,
+        "after_weight": 39368,
+        "population": 5551,
+        "cached_before": "6.09205",
+        "cached_after": "7.09205"
+      }
+    },
+    {
+      "name": "claim_all_seven_owned_leaders_migrated",
+      "status": "FAIL",
+      "observed": [
+        {
+          "leader_id": 167772189,
+          "class": "official",
+          "species_before": "3321888769",
+          "species_after": "50",
+          "expected_species": "50",
+          "migrated": true,
+          "all_other_raw_fields_unchanged": true,
+          "raw_diff": [
+            {
+              "path": "/1/value",
+              "before": "3321888769",
+              "after": "50"
+            }
+          ],
+          "changed_native_fields": {
+            "species": {
+              "before": "3321888769",
+              "after": "50"
+            }
+          }
+        },
+        {
+          "leader_id": 134217755,
+          "class": "envoy",
+          "species_before": "3321888769",
+          "species_after": "3321888769",
+          "expected_species": "50",
+          "migrated": false,
+          "all_other_raw_fields_unchanged": true,
+          "raw_diff": [],
+          "changed_native_fields": {}
+        },
+        {
+          "leader_id": 150994970,
+          "class": "envoy",
+          "species_before": "3321888769",
+          "species_after": "3321888769",
+          "expected_species": "50",
+          "migrated": false,
+          "all_other_raw_fields_unchanged": true,
+          "raw_diff": [],
+          "changed_native_fields": {}
+        },
+        {
+          "leader_id": 150994969,
+          "class": "scientist",
+          "species_before": "3321888769",
+          "species_after": "50",
+          "expected_species": "50",
+          "migrated": true,
+          "all_other_raw_fields_unchanged": true,
+          "raw_diff": [
+            {
+              "path": "/1/value",
+              "before": "3321888769",
+              "after": "50"
+            }
+          ],
+          "changed_native_fields": {
+            "species": {
+              "before": "3321888769",
+              "after": "50"
+            }
+          }
+        },
+        {
+          "leader_id": 150994968,
+          "class": "commander",
+          "species_before": "3321888769",
+          "species_after": "50",
+          "expected_species": "50",
+          "migrated": true,
+          "all_other_raw_fields_unchanged": true,
+          "raw_diff": [
+            {
+              "path": "/1/value",
+              "before": "3321888769",
+              "after": "50"
+            }
+          ],
+          "changed_native_fields": {
+            "species": {
+              "before": "3321888769",
+              "after": "50"
+            }
+          }
+        },
+        {
+          "leader_id": 90,
+          "class": "official",
+          "species_before": "3321888769",
+          "species_after": "50",
+          "expected_species": "50",
+          "migrated": true,
+          "all_other_raw_fields_unchanged": true,
+          "raw_diff": [
+            {
+              "path": "/1/value",
+              "before": "3321888769",
+              "after": "50"
+            }
+          ],
+          "changed_native_fields": {
+            "species": {
+              "before": "3321888769",
+              "after": "50"
+            }
+          }
+        },
+        {
+          "leader_id": 167772174,
+          "class": "official",
+          "species_before": "3321888769",
+          "species_after": "50",
+          "expected_species": "50",
+          "migrated": true,
+          "all_other_raw_fields_unchanged": false,
+          "raw_diff": [
+            {
+              "path": "/1/value",
+              "before": "3321888769",
+              "after": "50"
+            },
+            {
+              "path": "/2/value",
+              "before": "shishan_code_vivhite",
+              "after": "sd_hum_robot"
+            }
+          ],
+          "changed_native_fields": {
+            "species": {
+              "before": "3321888769",
+              "after": "50"
+            },
+            "portrait": {
+              "before": "shishan_code_vivhite",
+              "after": "sd_hum_robot"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "claim_owned_leaders_all_other_raw_fields_unchanged",
+      "status": "FAIL",
+      "observed": null
+    },
+    {
+      "name": "claim_all_preexisting_species_definitions_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "new_species_ids": [
+          49,
+          50
+        ]
+      }
+    },
+    {
+      "name": "claim_foreign_marker_group18_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "native_fields": [
+          {
+            "key": "can_procreate",
+            "value": "yes"
+          },
+          {
+            "key": "can_crossbreed",
+            "value": "yes"
+          },
+          {
+            "key": "can_vote",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_worker_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_specialist_job",
+            "value": "yes"
+          },
+          {
+            "key": "can_fill_ruler_job",
+            "value": "yes"
+          },
+          {
+            "key": "key",
+            "value": [
+              {
+                "key": "species",
+                "value": "3321888769"
+              },
+              {
+                "key": "category",
+                "value": "ruler"
+              }
+            ]
+          },
+          {
+            "key": "planet",
+            "value": "2"
+          },
+          {
+            "key": "ethos",
+            "value": [
+              {
+                "key": "ethics",
+                "value": [
+                  "ethic_authoritarian",
+                  "ethic_pacifist",
+                  "ethic_militarist",
+                  "ethic_xenophile"
+                ]
+              },
+              {
+                "key": "pops",
+                "value": [
+                  "129",
+                  "53",
+                  "15",
+                  "3"
+                ]
+              }
+            ]
+          },
+          {
+            "key": "factions",
+            "value": []
+          },
+          {
+            "key": "wanted_factions",
+            "value": []
+          },
+          {
+            "key": "size",
+            "value": "200"
+          },
+          {
+            "key": "last_month_growth",
+            "value": "0"
+          },
+          {
+            "key": "month_start_size",
+            "value": "200"
+          },
+          {
+            "key": "fractions",
+            "value": [
+              {
+                "key": "-1",
+                "value": "-0.6"
+              }
+            ]
+          },
+          {
+            "key": "total_attraction",
+            "value": "25.85875"
+          },
+          {
+            "key": "ethics_attraction",
+            "value": [
+              "0",
+              "17.71875",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "2",
+              "0",
+              "1.1",
+              "0",
+              "5.04",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "key": "habitability",
+            "value": "1"
+          },
+          {
+            "key": "variables",
+            "value": [
+              {
+                "key": "shishan_feedback_probe_sentinel",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "key": "happiness",
+            "value": "0.90322"
+          },
+          {
+            "key": "power",
+            "value": "18"
+          },
+          {
+            "key": "crime",
+            "value": "0.38712"
+          },
+          {
+            "key": "amenities_usage",
+            "value": "200"
+          },
+          {
+            "key": "housing_usage",
+            "value": "180"
+          }
+        ]
+      }
+    },
+    {
+      "name": "claim_old_main3321888769_definition_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "traits": [
+          "trait_machine_unit",
+          "trait_shishan_code",
+          "trait_robot_luxurious",
+          "trait_robot_high_bandwidth",
+          "trait_robot_high_maintenance",
+          "trait_wet_planet_preference"
+        ],
+        "definition_sha256": "835fb24800a08ea2072b67b7c8226a65e09a621b7bf565111dfc869601f04200"
+      }
+    },
+    {
+      "name": "claim_all_foreign_population_groups_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "count": 42,
+        "changed_group_ids": []
+      }
+    },
+    {
+      "name": "claim_all_foreign_leaders_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "count": 226,
+        "changed_leader_ids": []
+      }
+    },
+    {
+      "name": "claim_primary_rights_preserved_except_species_index",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "claim_both_domestic_templates_have_explicit_preserved_rights",
+      "status": "UNKNOWN",
+      "observed": {
+        "mapping": [
+          {
+            "old_species": 48,
+            "new_species": 49,
+            "old_rights": [
+              {
+                "key": "species_index",
+                "value": "48"
+              },
+              {
+                "key": "living_standard",
+                "value": "living_standard_normal"
+              },
+              {
+                "key": "citizenship",
+                "value": "citizenship_full"
+              },
+              {
+                "key": "military_service",
+                "value": "military_service_full"
+              },
+              {
+                "key": "slavery",
+                "value": "slavery_indentured"
+              },
+              {
+                "key": "purge",
+                "value": "purge_displacement"
+              },
+              {
+                "key": "population_control",
+                "value": "population_control_no"
+              },
+              {
+                "key": "colonization_control",
+                "value": "colonization_control_no"
+              },
+              {
+                "key": "migration_control",
+                "value": "migration_control_no"
+              },
+              {
+                "key": "subspecies_integration",
+                "value": "no_integration"
+              },
+              {
+                "key": "former_living_standard",
+                "value": "living_standard_good"
+              },
+              {
+                "key": "former_citizenship",
+                "value": "citizenship_robot_servitude"
+              },
+              {
+                "key": "former_slavery",
+                "value": "slavery_normal"
+              },
+              {
+                "key": "former_purge",
+                "value": "purge_normal"
+              },
+              {
+                "key": "last_changed_citizenship_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_military_service_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_slavery_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_purge_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_living_standard",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_colonization_control",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_population_control",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_migration_control",
+                "value": "0.01.01"
+              }
+            ],
+            "new_rights_explicit_or_primary": null,
+            "explicit_rights_preserved": false,
+            "fallback_note": "Missing new subspecies entry cannot prove resolved runtime rights or infer engine inheritance solely from this save."
+          },
+          {
+            "old_species": 3321888769,
+            "new_species": 50,
+            "old_rights": [
+              {
+                "key": "species_index",
+                "value": "3321888769"
+              },
+              {
+                "key": "living_standard",
+                "value": "living_standard_normal"
+              },
+              {
+                "key": "citizenship",
+                "value": "citizenship_full"
+              },
+              {
+                "key": "military_service",
+                "value": "military_service_full"
+              },
+              {
+                "key": "slavery",
+                "value": "slavery_indentured"
+              },
+              {
+                "key": "purge",
+                "value": "purge_displacement"
+              },
+              {
+                "key": "population_control",
+                "value": "population_control_no"
+              },
+              {
+                "key": "colonization_control",
+                "value": "colonization_control_no"
+              },
+              {
+                "key": "migration_control",
+                "value": "migration_control_no"
+              },
+              {
+                "key": "subspecies_integration",
+                "value": "no_integration"
+              },
+              {
+                "key": "former_living_standard",
+                "value": "living_standard_good"
+              },
+              {
+                "key": "former_citizenship",
+                "value": "citizenship_robot_servitude"
+              },
+              {
+                "key": "former_slavery",
+                "value": "slavery_normal"
+              },
+              {
+                "key": "former_purge",
+                "value": "purge_normal"
+              },
+              {
+                "key": "last_changed_citizenship_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_military_service_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_slavery_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_purge_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_living_standard",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_colonization_control",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_population_control",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_migration_control",
+                "value": "0.01.01"
+              }
+            ],
+            "new_rights_explicit_or_primary": [
+              {
+                "key": "species_index",
+                "value": "50"
+              },
+              {
+                "key": "living_standard",
+                "value": "living_standard_normal"
+              },
+              {
+                "key": "citizenship",
+                "value": "citizenship_full"
+              },
+              {
+                "key": "military_service",
+                "value": "military_service_full"
+              },
+              {
+                "key": "slavery",
+                "value": "slavery_indentured"
+              },
+              {
+                "key": "purge",
+                "value": "purge_displacement"
+              },
+              {
+                "key": "population_control",
+                "value": "population_control_no"
+              },
+              {
+                "key": "colonization_control",
+                "value": "colonization_control_no"
+              },
+              {
+                "key": "migration_control",
+                "value": "migration_control_no"
+              },
+              {
+                "key": "subspecies_integration",
+                "value": "no_integration"
+              },
+              {
+                "key": "former_living_standard",
+                "value": "living_standard_good"
+              },
+              {
+                "key": "former_citizenship",
+                "value": "citizenship_robot_servitude"
+              },
+              {
+                "key": "former_slavery",
+                "value": "slavery_normal"
+              },
+              {
+                "key": "former_purge",
+                "value": "purge_normal"
+              },
+              {
+                "key": "last_changed_citizenship_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_military_service_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_slavery_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_purge_type",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_living_standard",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_colonization_control",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_population_control",
+                "value": "0.01.01"
+              },
+              {
+                "key": "last_changed_migration_control",
+                "value": "0.01.01"
+              }
+            ],
+            "explicit_rights_preserved": true,
+            "fallback_note": null
+          }
+        ],
+        "all_rights_species_ids_after": [
+          48,
+          50,
+          3321888769
+        ],
+        "default_native_fields": [
+          {
+            "key": "species_index",
+            "value": "0"
+          },
+          {
+            "key": "living_standard",
+            "value": "living_standard_subsistence"
+          },
+          {
+            "key": "citizenship",
+            "value": "citizenship_purge"
+          },
+          {
+            "key": "military_service",
+            "value": "military_service_none"
+          },
+          {
+            "key": "slavery",
+            "value": "slavery_indentured"
+          },
+          {
+            "key": "purge",
+            "value": "purge_displacement"
+          },
+          {
+            "key": "population_control",
+            "value": "population_control_yes"
+          },
+          {
+            "key": "colonization_control",
+            "value": "colonization_control_yes"
+          },
+          {
+            "key": "migration_control",
+            "value": "migration_control_yes"
+          },
+          {
+            "key": "subspecies_integration",
+            "value": "no_integration"
+          },
+          {
+            "key": "former_living_standard",
+            "value": "living_standard_stratified"
+          },
+          {
+            "key": "former_citizenship",
+            "value": "citizenship_slavery"
+          },
+          {
+            "key": "former_military_service",
+            "value": "military_service_limited"
+          },
+          {
+            "key": "former_slavery",
+            "value": "slavery_normal"
+          },
+          {
+            "key": "former_purge",
+            "value": "purge_normal"
+          },
+          {
+            "key": "former_population_control",
+            "value": "population_control_no"
+          },
+          {
+            "key": "former_colonization_control",
+            "value": "colonization_control_no"
+          },
+          {
+            "key": "former_migration_control",
+            "value": "migration_control_no"
+          },
+          {
+            "key": "last_changed_citizenship_type",
+            "value": "0.01.01"
+          },
+          {
+            "key": "last_changed_military_service_type",
+            "value": "0.01.01"
+          },
+          {
+            "key": "last_changed_slavery_type",
+            "value": "0.01.01"
+          },
+          {
+            "key": "last_changed_purge_type",
+            "value": "0.01.01"
+          },
+          {
+            "key": "last_changed_living_standard",
+            "value": "0.01.01"
+          },
+          {
+            "key": "last_changed_colonization_control",
+            "value": "0.01.01"
+          },
+          {
+            "key": "last_changed_population_control",
+            "value": "0.01.01"
+          },
+          {
+            "key": "last_changed_migration_control",
+            "value": "0.01.01"
+          }
+        ]
+      }
+    },
+    {
+      "name": "claim_all_foreign_countries_species_rights_raw_unchanged",
+      "status": "PASS",
+      "observed": {
+        "changed_country_ids": []
+      }
+    },
+    {
+      "name": "owner_main_species_native_errors_absent",
+      "status": "FAIL",
+      "observed": {
+        "count": 6,
+        "errors": [
+          {
+            "line": 22,
+            "text": "[15:46:49][trigger_impl.cpp:1218]: Script Error: Invalid context switch [owner_main_species] from  [(invalid scope / scope not set)], common/scripted_effects/shishan_code_architecture_effects.txt:189 @ scripted effect shishan_code_apply_domestic_template_effect at common/scripted_effects/shishan_code_architecture_effects.txt:211 @ scripted effect shishan_code_modify_domestic_template_effect at common/scripted_effects/shishan_code_rewards.txt:402 @ scripted effect shishan_code_reward_claim_06_effect at file: events/shishan_code_rewards_events.txt line: 51, Scope: ",
+            "following_scope": [
+              "type=none",
+              "id=0",
+              "opener_id=4294967295",
+              "random={ 0 928955276 }",
+              "random_allowed=yes",
+              "root=",
+              "{",
+              "\ttype=country",
+              "\tid=0"
+            ]
+          },
+          {
+            "line": 256,
+            "text": "[15:46:49][trigger_impl.cpp:1218]: Script Error: Invalid context switch [owner_main_species] from  [(invalid scope / scope not set)], common/scripted_effects/shishan_code_architecture_effects.txt:189 @ scripted effect shishan_code_apply_domestic_template_effect at common/scripted_effects/shishan_code_architecture_effects.txt:211 @ scripted effect shishan_code_modify_domestic_template_effect at common/scripted_effects/shishan_code_rewards.txt:402 @ scripted effect shishan_code_reward_claim_06_effect at file: events/shishan_code_rewards_events.txt line: 51, Scope: ",
+            "following_scope": [
+              "type=none",
+              "id=0",
+              "opener_id=4294967295",
+              "random={ 0 1759038186 }",
+              "random_allowed=yes",
+              "root=",
+              "{",
+              "\ttype=country",
+              "\tid=0"
+            ]
+          },
+          {
+            "line": 490,
+            "text": "[15:52:09][trigger_impl.cpp:1218]: Script Error: Invalid context switch [owner_main_species] from  [(invalid scope / scope not set)], common/scripted_effects/shishan_code_architecture_effects.txt:189 @ scripted effect shishan_code_apply_domestic_template_effect at common/scripted_effects/shishan_code_architecture_effects.txt:211 @ scripted effect shishan_code_modify_domestic_template_effect at common/scripted_effects/shishan_code_rewards.txt:402 @ scripted effect shishan_code_reward_claim_06_effect at file: events/shishan_code_rewards_events.txt line: 51, Scope: ",
+            "following_scope": [
+              "type=none",
+              "id=0",
+              "opener_id=4294967295",
+              "random={ 0 128738102 }",
+              "random_allowed=yes",
+              "root=",
+              "{",
+              "\ttype=country",
+              "\tid=0"
+            ]
+          },
+          {
+            "line": 609,
+            "text": "[15:52:09][trigger_impl.cpp:1218]: Script Error: Invalid context switch [owner_main_species] from  [(invalid scope / scope not set)], common/scripted_effects/shishan_code_architecture_effects.txt:189 @ scripted effect shishan_code_apply_domestic_template_effect at common/scripted_effects/shishan_code_architecture_effects.txt:211 @ scripted effect shishan_code_modify_domestic_template_effect at common/scripted_effects/shishan_code_rewards.txt:402 @ scripted effect shishan_code_reward_claim_06_effect at file: events/shishan_code_rewards_events.txt line: 51, Scope: ",
+            "following_scope": [
+              "type=none",
+              "id=0",
+              "opener_id=4294967295",
+              "random={ 0 4131207638 }",
+              "random_allowed=yes",
+              "root=",
+              "{",
+              "\ttype=country",
+              "\tid=0"
+            ]
+          },
+          {
+            "line": 728,
+            "text": "[15:54:40][trigger_impl.cpp:1218]: Script Error: Invalid context switch [owner_main_species] from  [(invalid scope / scope not set)], common/scripted_effects/shishan_code_architecture_effects.txt:189 @ scripted effect shishan_code_apply_domestic_template_effect at common/scripted_effects/shishan_code_architecture_effects.txt:211 @ scripted effect shishan_code_modify_domestic_template_effect at common/scripted_effects/shishan_code_rewards.txt:545 @ scripted effect shishan_code_reward_claim_17_effect at file: events/shishan_code_rewards_events.txt line: 128, Scope: ",
+            "following_scope": [
+              "type=none",
+              "id=0",
+              "opener_id=4294967295",
+              "random={ 0 1312796315 }",
+              "random_allowed=yes",
+              "root=",
+              "{",
+              "\ttype=country",
+              "\tid=0"
+            ]
+          },
+          {
+            "line": 807,
+            "text": "[15:54:40][trigger_impl.cpp:1218]: Script Error: Invalid context switch [owner_main_species] from  [(invalid scope / scope not set)], common/scripted_effects/shishan_code_architecture_effects.txt:189 @ scripted effect shishan_code_apply_domestic_template_effect at common/scripted_effects/shishan_code_architecture_effects.txt:211 @ scripted effect shishan_code_modify_domestic_template_effect at common/scripted_effects/shishan_code_rewards.txt:545 @ scripted effect shishan_code_reward_claim_17_effect at file: events/shishan_code_rewards_events.txt line: 128, Scope: ",
+            "following_scope": [
+              "type=none",
+              "id=0",
+              "opener_id=4294967295",
+              "random={ 0 3626182042 }",
+              "random_allowed=yes",
+              "root=",
+              "{",
+              "\ttype=country",
+              "\tid=0"
+            ]
+          }
+        ],
+        "interpretation": "Observed native Script Error from type=none during option06 and option17 evaluation. Save proves actual clones/main pointer mutation did complete. Saved state alone cannot attribute each error to tooltip pre-evaluation versus actual effect evaluation; preserve error as unresolved until source/runtime recheck."
+      }
+    }
+  ],
+  "native_log": {
+    "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T074214Z\\logs\\error.log",
+    "sha256": "d9c93d3a151158bfd3529271f774b1e5b729afa410939d4ead1ec383446eaefc"
+  },
+  "limitations": [
+    "This report does not independently recompute candidate legal-opposite rules; another canonical eligibility audit handles them.",
+    "Absence of explicit subspecies rights is UNKNOWN resolved rights, not proof of purge or proof of correct inheritance.",
+    "Native error origin cannot be conclusively separated between tooltip and execution using serialized data alone."
+  ]
+}

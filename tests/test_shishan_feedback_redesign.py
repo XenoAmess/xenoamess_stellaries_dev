@@ -43,6 +43,130 @@ class ParserTests(unittest.TestCase):
             checks.Effects([]).execute(checks.parse("mystery=yes"), checks.Scope())
 
 
+class NativeScopeRegressionTests(unittest.TestCase):
+    """Bugs observed by the 4.5.2 engine, independent of current Mod files."""
+
+    def test_native_pop_group_size_comparison_and_exports(self):
+        country = checks.Scope(kind="country", population=9999)
+        group = checks.Scope(kind="pop_group", owner=country, population=511)
+        interpreter = checks.Effects([])
+        self.assertTrue(interpreter.trigger(checks.parse("pop_group_size > 0"), group))
+        self.assertFalse(interpreter.trigger(checks.parse("pop_group_size > 511"), group))
+        self.assertEqual(checks.Decimal(511), interpreter.scalar("trigger:pop_group_size", group))
+        self.assertEqual(checks.Decimal(511), interpreter.scalar("prev.trigger:pop_group_size", country, group))
+
+    def test_pop_amount_at_pop_group_scope_is_rejected(self):
+        country = checks.Scope(kind="country")
+        group = checks.Scope(kind="pop_group", owner=country, population=511)
+        interpreter = checks.Effects([])
+        with self.assertRaisesRegex(checks.ContractError, "pop_amount is invalid in pop_group scope"):
+            interpreter.trigger(checks.parse("pop_amount > 0"), group)
+        for expression, current, previous in (("trigger:pop_amount", group, None), ("prev.trigger:pop_amount", country, group)):
+            with self.subTest(expression=expression), self.assertRaisesRegex(checks.ContractError, "pop_amount is invalid in pop_group scope"):
+                interpreter.scalar(expression, current, previous)
+
+    def test_native_pop_group_size_rejects_other_target_scopes(self):
+        group = checks.Scope(kind="pop_group", population=511)
+        interpreter = checks.Effects([])
+        for kind in ("country", "species", "trait", "planet"):
+            scope = checks.Scope(kind=kind, population=511)
+            with self.subTest(kind=kind):
+                with self.assertRaisesRegex(checks.ContractError, "requires pop_group scope"):
+                    interpreter.trigger(checks.parse("pop_group_size > 0"), scope)
+                with self.assertRaisesRegex(checks.ContractError, "requires pop_group scope"):
+                    interpreter.scalar("trigger:pop_group_size", scope)
+                with self.assertRaisesRegex(checks.ContractError, "requires pop_group scope"):
+                    interpreter.scalar("prev.trigger:pop_group_size", group, scope)
+
+    def test_bare_named_script_value_rejected_but_base_block_executes(self):
+        faulty = checks.parse("per_trait=0.05 result={base=0 add=value:per_trait}")
+        with self.assertRaisesRegex(checks.ContractError, "ordinary named script value per_trait must use a block"):
+            checks.Values(faulty).named("per_trait")
+        with self.assertRaisesRegex(checks.ContractError, "ordinary named script value per_trait must use a block"):
+            checks.Values(faulty).named("result")
+        fixed = checks.parse("per_trait={base=0.05} result={base=0 add=value:per_trait}")
+        self.assertEqual(checks.Decimal("0.05"), checks.Values(fixed).named("per_trait"))
+        self.assertEqual(checks.Decimal("0.05"), checks.Values(fixed).named("result"))
+        interpreter = checks.Effects([], faulty)
+        with self.assertRaisesRegex(checks.ContractError, "ordinary named script value per_trait must use a block"):
+            interpreter.scalar("value:per_trait", checks.Scope())
+        self.assertEqual(checks.Decimal("0.05"), checks.Effects([], fixed).scalar("value:per_trait", checks.Scope()))
+
+    def test_unused_bare_named_script_value_definition_is_also_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            candidate = Path(directory)
+            values = candidate / "common/script_values/fixture.txt"
+            values.parent.mkdir(parents=True)
+            values.write_text("unused_plain=0.05\nvalid={base=1}\n", encoding="utf-8")
+            with self.assertRaisesRegex(checks.ContractError, "ordinary named script value unused_plain must use a block"):
+                checks.load_definitions(candidate, "script_values")
+            values.write_text("@compile_constant=0.05\nvalid={base=1}\n", encoding="utf-8")
+            definitions = checks.load_definitions(candidate, "script_values")
+            self.assertEqual(checks.Decimal(1), checks.Values(definitions).named("valid"))
+            with self.assertRaisesRegex(checks.ContractError, "ordinary named script value"):
+                checks.Values(definitions).named("@compile_constant")
+
+    def test_repaired_iteration_uses_group_size_and_cleans_temporary_scope(self):
+        source = checks.parse('''refresh={
+          set_variable={which=population value=0}
+          every_owned_pop_group={
+            limit={pop_group_size>0}
+            set_variable={which=amount value=trigger:pop_group_size}
+            prev={change_variable={which=population value=prev.trigger:pop_group_size}}
+            clear_variable=amount
+          }
+        }''')
+        country = checks.Scope(kind="country")
+        country.groups = [checks.Scope(kind="pop_group", owner=country, population=5040), checks.Scope(kind="pop_group", owner=country, population=511), checks.Scope(kind="pop_group", owner=country, population=0)]
+        checks.Effects(source).named("refresh", country)
+        self.assertEqual(checks.Decimal(5551), country.variables["population"])
+        self.assertTrue(all(not group.variables for group in country.groups))
+
+
+class NativeLogicRegressionTests(unittest.TestCase):
+    """Truth table anchored by the two observed 4.5.2 console evaluations."""
+
+    def test_native_not_truth_table(self):
+        interpreter = checks.Effects([])
+        scope = checks.Scope()
+        for source, expected in (
+            ("NOT={}", True), ("NOT={always=yes}", False), ("NOT={always=no}", True),
+            ("NOT={always=yes always=yes}", False), ("NOT={always=yes always=no}", False),
+            ("NOT={always=no always=yes}", False), ("NOT={always=no always=no}", True),
+            ("NOT={AND={always=yes always=no}}", True),
+        ):
+            with self.subTest(source=source):
+                self.assertEqual(expected, interpreter.trigger(checks.parse(source), scope))
+
+    def test_and_or_nor_and_default_keep_their_explicit_truth_tables(self):
+        interpreter = checks.Effects([])
+        scope = checks.Scope()
+        for left, right in ((False, False), (False, True), (True, False), (True, True)):
+            children = f"always={'yes' if left else 'no'} always={'yes' if right else 'no'}"
+            for name, expected in (("AND", left and right), ("OR", left or right), ("NOR", not (left or right))):
+                with self.subTest(name=name, left=left, right=right):
+                    self.assertEqual(expected, interpreter.trigger(checks.parse(name + "={" + children + "}"), scope))
+            self.assertEqual(left and right, interpreter.trigger(checks.parse(children), scope))
+
+    def test_old_multichild_not_guard_fails_weight_deterministically(self):
+        old = checks.parse('''
+          1={modifier={factor=0 NOT={always=yes check_variable={which=tier value=1}
+             NOT={check_variable={which=slot1 value=1}}}} set_variable={which=slot1 value=1}}
+        ''')
+        fixed = checks.parse('''
+          1={modifier={factor=0 NOT={AND={always=yes check_variable={which=tier value=1}
+             NOT={check_variable={which=slot1 value=1}}}}} set_variable={which=slot1 value=1}}
+        ''')
+        for label, tier, slot in (("wrong tier", 2, 0), ("already selected", 1, 1)):
+            country = checks.Scope(variables={"tier": checks.Decimal(tier), "slot1": checks.Decimal(slot)})
+            interpreter = checks.Effects([])
+            with self.subTest(label=label):
+                self.assertEqual(checks.Decimal(1), interpreter.random_weights(old, country)[0][0])
+                self.assertEqual(checks.Decimal(0), interpreter.random_weights(fixed, country)[0][0])
+        legal = checks.Scope(variables={"tier": checks.Decimal(1), "slot1": checks.Decimal(0)})
+        self.assertEqual(checks.Decimal(1), checks.Effects([]).random_weights(fixed, legal)[0][0])
+
+
 class ArithmeticTests(unittest.TestCase):
     # Constructed from prose contract, independent of production generators.
     SOURCE = """
@@ -129,6 +253,17 @@ class LocalisationNegativeTests(unittest.TestCase):
         self.change("english", lambda text: text.replace('"Integrated legacy architecture"', '"$shishan_code_fixture_desc$"'))
         with self.assertRaisesRegex(checks.ContractError, "cycle"):
             checks.check_localisation(self.mod)
+
+    def test_engine_leader_modifier_key_missing_from_all_languages_fails(self):
+        traits = self.mod / "common/traits/fixture.txt"
+        traits.parent.mkdir(parents=True)
+        traits.write_text("leader_fixture={self_modifier={leaders_unity_upkeep_mult=-1}}", encoding="utf-8")
+        with self.assertRaisesRegex(checks.ContractError, "engine modifier localisation keys missing"):
+            checks.check_localisation(self.mod)
+        for language in checks.LANGUAGES:
+            self.change(language, lambda text: text + ' mod_leaders_unity_upkeep_mult:0 "Leader Unity Upkeep"\n')
+        result = checks.check_localisation(self.mod)
+        self.assertEqual(["mod_leaders_unity_upkeep_mult"], result["engine_modifier_localisation_keys"])
 
 
 class EmittedArtifactTests(unittest.TestCase):
