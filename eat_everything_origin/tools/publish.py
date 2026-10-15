@@ -221,7 +221,7 @@ def publish(inputs):
         steam.close()
 
 
-def verify(download):
+def verify(download, report_path=None):
     state = json.loads(STATE.read_text(encoding="utf-8"))
     item_id = int(state["item_id"])
     if item_id == FORBIDDEN_ID or state.get("submit_result") != 1:
@@ -259,7 +259,7 @@ def verify(download):
         steam.close()
     gallery = workshop_images.verify_previews(previews, expected["gallery"])
     report = {"status": "PASS", "version": expected["version"], "item_id": item_id, "url": f"https://steamcommunity.com/sharedfiles/filedetails/?id={item_id}", "public_metadata_exact": True, "change_note_exact": True, "download_files": len(expected["content"]), "production_files": expected["content"], "gallery_exact": True, "gallery": gallery, "verified_at_utc": datetime.now(timezone.utc).isoformat()}
-    write_json(ROOT / "docs/evidence/workshop-verification.json", report)
+    write_json(report_path or ROOT / "docs/evidence/workshop-verification.json", report)
     print(json.dumps({k: report[k] for k in ["status", "version", "item_id", "url", "download_files"]}))
 
 
