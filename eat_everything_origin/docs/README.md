@@ -2,11 +2,15 @@
 
 最新需求：[1015完整需求清单](requirements-2026-10-15.md)。用户已调整优先级：统一决议体系最高，障碍清除及UI回归后置。
 
+本批已实现并完成约定专项：[0.3.0-rc.1功能、静态前置与隔离测试记录](implementation-1015-2026-10-15.md)。实机只启用生产吞噬之心，Steam保持离线；预发布版本未上传创意工坊。
+
+本批交付结果：[1015实施与专项验收结果](acceptance-1015-result-2026-10-15.md)，逐项链接原始证据、原严格FAIL及有界例外；不恢复已停止的噬岩者自然战役。
+
 当前总清单：[2026-10-15本批全部任务、优先级与验收节点](current-batch-plan-2026-10-15.md)。并行建造需求已由用户确认是额外一条真实队列；开局母舰与三类世界需求同列入计划。
 
 - [新增UI组件清单与统一决议整改](ui-components-and-decision-migration-2026-10-15.md)
 
-本轮新增需求：[决议控制的自动吞噬设计](auto-devour-decisions-design-2026-10-15.md)，默认关闭。当前优先完成[障碍清除与UI专项](building-demolition-ui-investigation-2026-10-15.md)。
+本轮新增需求：[决议控制的自动吞噬设计](auto-devour-decisions-design-2026-10-15.md)，默认关闭。[障碍清除与UI专项](building-demolition-ui-investigation-2026-10-15.md)按最新要求后置。
 
 2026-10-15当前任务：[建筑拆除UI偏移排查](building-demolition-ui-investigation-2026-10-15.md)。用户已停止噬岩者验收，真实完成范围与未通过项见[停止记录](terravore-acceptance-stopped-2026-10-15.md)；历史继续验收计划不再自动执行。
 

@@ -1,0 +1,22 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "date": true,
+    "flags": true,
+    "stocks": true,
+    "population_actual_fields": true,
+    "employment_cache_allowed_values": true,
+    "task_actual_fields": true,
+    "world_count": true
+  },
+  "before_sha256": "95764b97735922f4acd119fc8f3c51e97aa2b70b53cb68d80fd20281055ab56c",
+  "after_sha256": "08dfec0c6680492b84b2012d55174e5c944a873dbc8f30e20e7dbf5fd10f98e2",
+  "allowed_fields": [
+    "can_fill_drone_job",
+    "can_fill_ruler_job",
+    "can_fill_specialist_job",
+    "can_fill_worker_job",
+    "situation.variables.eep_snapshot_progress (must equal actual progress)"
+  ],
+  "original_failure": "v6-load-strict-failure.json"
+}

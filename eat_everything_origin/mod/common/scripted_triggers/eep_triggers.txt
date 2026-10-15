@@ -38,6 +38,14 @@ eep_founder_pop = {
 }
 
 # Carrier scope. No resources or population are changed by these predicates.
+eep_digestible_world = {
+    OR = {
+        can_have_habitable_deposits = yes
+        is_planet_class = pc_hive
+        is_planet_class = pc_machine
+    }
+}
+
 eep_source_valid = {
     exists = owner
     owner = { eep_qualified = yes eep_core_available = yes }
@@ -51,7 +59,13 @@ eep_source_valid = {
     NOT = { has_planet_flag = being_devoured }
     NOT = { has_designation = col_nanotech_world }
     NOT = { is_planet_class = pc_cosmogenesis_world }
-    can_have_habitable_deposits = yes
+    eep_digestible_world = yes
+}
+
+# Carrier scope. Never appropriate another empire's persistent physical core.
+eep_migration_target_valid = {
+    eep_source_valid = yes
+    NOT = { has_carrier_flag = eep_core }
 }
 
 eep_seed_available = {

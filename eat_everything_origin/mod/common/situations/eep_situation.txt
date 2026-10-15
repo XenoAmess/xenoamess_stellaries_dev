@@ -27,7 +27,7 @@ situation_eep_devouring = {
         name = eep_cancel_approach
         icon = GFX_situation_approach_influence
         icon_background = GFX_situation_approach_bg_yellow
-        on_select = { abort_situation = this }
+        on_select = { target = { eep_cancel_task = yes } }
         ai_weight = { base = 0 }
     }
     monthly_progress = {

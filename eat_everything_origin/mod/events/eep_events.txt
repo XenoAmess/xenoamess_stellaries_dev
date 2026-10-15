@@ -22,7 +22,7 @@ country_event = {
     id = eep.1
     hide_window = yes
     is_triggered_only = yes
-    immediate = { eep_initialize = yes }
+    immediate = { eep_initialize = yes eep_startup = yes }
 }
 
 country_event = {
@@ -34,6 +34,7 @@ country_event = {
         if = {
             limit = { has_origin = origin_heart_of_devouring }
             eep_initialize = yes
+            eep_auto_devour_scan = yes
             if = {
                 limit = {
                     has_country_flag = eep_initialized
@@ -235,17 +236,6 @@ country_event = {
     is_triggered_only = yes
     immediate = { eep_report = yes }
     option = { name = eep.100.a }
-    option = {
-        name = eep.100.tasks
-        trigger = { any_situation = { is_situation_type = situation_eep_devouring target = { has_planet_flag = eep_active } } }
-        hidden_effect = {
-            every_situation = {
-                limit = { is_situation_type = situation_eep_devouring target = { has_planet_flag = eep_active } }
-                target = { planet = { save_event_target_as = eep_report_source } }
-                owner = { country_event = { id = eep.101 } }
-            }
-        }
-    }
 }
 country_event = {
     id = eep.101
@@ -253,5 +243,6 @@ country_event = {
     desc = eep.101.desc
     picture = GFX_eep_devouring
     is_triggered_only = yes
+    immediate = { eep_report = yes }
     option = { name = eep.100.a }
 }

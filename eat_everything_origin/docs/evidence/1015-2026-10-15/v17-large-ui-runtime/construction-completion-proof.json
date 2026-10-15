@@ -1,0 +1,99 @@
+{
+  "status": "PASS_SCOPED",
+  "scope": "Final candidate real civilian order payment/cancel/refund, 120-day blocker clearance, two actual parallel district completions in 480 days, native reload. Fresh game only; not stopped Terravore campaign.",
+  "checks": {
+    "one_order_500_minerals": true,
+    "cancel_restores_all_stock": true,
+    "cancel_keeps_full_pop_groups": true,
+    "cancel_queue_empty": true,
+    "clear_300_energy": true,
+    "clear_native_120_day_order": true,
+    "clear_real_120_days": true,
+    "clear_correct_native_swap": true,
+    "other_deposits_kept": true,
+    "clear_queue_empty": true,
+    "two_orders_cost_exact_1000_minerals": true,
+    "two_distinct_district_orders": true,
+    "two_real_slots": true,
+    "other_world_one_slot": true,
+    "ten_actual_days": true,
+    "both_progress_ten": true,
+    "both_need_480": true,
+    "actual_480_days": true,
+    "both_districts_completed": true,
+    "other_districts_kept": true,
+    "finished_queue_empty": true,
+    "ledger_no_devouring_rewards": true,
+    "auto_still_off": true,
+    "native_reload_date_same": true,
+    "reload_pop_groups_strict": true,
+    "reload_districts_strict": true,
+    "reload_event_targets_strict": true,
+    "reload_queues_strict": true,
+    "reload_country_effective_stockpile_strict": true,
+    "reload_country_variables_strict": true,
+    "reload_country_flags_strict": true,
+    "reload_deposits_strict": true,
+    "single_mother_kept": true,
+    "reload_worlds_only_explicit_binary_field_difference": true,
+    "native_graceful_exit": true
+  },
+  "source_tree": "83e85b96dc407396a58eceb192b5a28493053df129c272dcb28da6ee286a6fa2",
+  "saves": {
+    "cp17base": "cda8b4857f483417e71de025543970f260aefe64a111d6e18b4a6f1a337433a9",
+    "cp17one": "7fbfd98a8af3a794e254ca7729e8ec960f98bf58baa9fd6defdb5e24deaf99fb",
+    "cp17back": "3ba3514353c11a35697bcc5fdfb9aaf7bb7cdd28670af0541bd99b4838b28926",
+    "cp17clr": "15cf173a77db94329cdbf34fd45609bc1e3346f4169e9ca29385b028d968db6c",
+    "cp17clear": "c017d81546fd2dc2ef5cdfc337f4ea9d17197b486ced4c30cb24cca48a52c4ad",
+    "cp17paid": "c4d7c2055c12513569560facde61b014ae800358855aff903b8e78a83873d601",
+    "cp17prog": "c70e90043df7cbf70e9ee060cdefc9affa2f153f4a01149f442eddde0fc85d1f",
+    "cp17done": "a75a7d00497861b9ed89a05eb0f6b6b28d0f2a36a848a058fce579aa64f2a7eb",
+    "cp17load": "3603f761b5560111aab044216944b7d03c96382c48e67a9e0688a99960638fad"
+  },
+  "fixture": "Native energy 5000 and minerals 5000 once before baseline. No instant_build, no direct completion, no SAV edits.",
+  "order_ids": [
+    33554432,
+    16777225
+  ],
+  "real_progress": {
+    "33554432": {
+      "queue": 0,
+      "paying_country": 0,
+      "progress": 10,
+      "progress_needed": 480
+    },
+    "16777225": {
+      "queue": 0,
+      "paying_country": 0,
+      "progress": 10,
+      "progress_needed": 480
+    }
+  },
+  "raw_observations": [
+    "cp17base.observation.json",
+    "cp17one.observation.json",
+    "cp17back.observation.json",
+    "cp17clr.observation.json",
+    "cp17clear.observation.json",
+    "cp17paid.observation.json",
+    "cp17prog.observation.json",
+    "cp17done.observation.json",
+    "cp17load.observation.json"
+  ],
+  "strict_world_failure_retained": "construction-completion-strict-worlds-failure.json",
+  "raw_world_differences": {
+    "2071": {
+      "carrier_binary_flags": [
+        1,
+        3
+      ]
+    },
+    "1": {
+      "carrier_binary_flags": [
+        1,
+        3
+      ]
+    }
+  },
+  "private_bit_note": "Only the explicit 1-to-3 carrier_binary_flags differences on worlds 1 and 2071 are allowed. Private engine bit semantics are not established. All other world fields and critical runtime contracts remain strict."
+}
