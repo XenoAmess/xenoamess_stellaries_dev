@@ -27,7 +27,7 @@ class PublicationGuards(unittest.TestCase):
         release.validate_target(release.ITEM, release.VERSION, self.prior, dict(identity, submit_started=True, submit_result=2))
 
     def test_prerelease_and_already_published_versions_rejected(self):
-        for version in ("0.3.0-rc.1", "0.2.0", "0.3.1"):
+        for version in ("0.3.0-rc.1", "0.2.0", "0.3.0"):
             with self.subTest(version=version), self.assertRaises(RuntimeError):
                 release.validate_target(release.ITEM, version, self.prior, {})
         with self.assertRaises(RuntimeError):
@@ -58,7 +58,7 @@ class PublicationGuards(unittest.TestCase):
 
     def test_canonical_changelog_and_note(self):
         note = release.change_note()
-        self.assertTrue(note.startswith("[v0.3.0]\n"))
+        self.assertTrue(note.startswith(f"[v{release.VERSION}]\n"))
         self.assertNotIn("## 0.3.0-rc.1", note)
         for label in ("新增", "变更", "修复", "兼容", "验收", "已知限制"):
             self.assertIn(f"- {label}：", note)
@@ -69,7 +69,7 @@ class PublicationGuards(unittest.TestCase):
         original = Path.read_text
         def altered(path, *args, **kwargs):
             text = original(path, *args, **kwargs)
-            return text + "different release content" if path.name == "change-note-v0.3.0.txt" else text
+            return text + "different release content" if path.name == f"change-note-v{release.VERSION}.txt" else text
         with patch.object(Path, "read_text", altered), self.assertRaisesRegex(RuntimeError, "canonical formal changelog"):
             release.preflight(require_clean=False)
 

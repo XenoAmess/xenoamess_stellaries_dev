@@ -135,6 +135,53 @@ class GalleryProtocolTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "frozen"):
                 gallery.local_images(folder, version)
 
+    def test_in_place_preserves_correct_slot_and_replaces_only_changed(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            images = []
+            for name in ("01.jpg", "new02.jpg"):
+                (root / name).write_bytes(name.encode())
+                images.append({"file": name, "sha256": hashlib.sha256(name.encode()).hexdigest()})
+            existing = [self.preview, {**self.preview, "index": 1, "filename": "old02.jpg"}]
+            steam = SimulatedSteam()
+            actions = gallery.update_previews_in_place(steam, 99, existing, images, root, lambda _: b"01.jpg")
+            self.assertEqual([a["action"] for a in actions], ["KEEP", "REPLACE"])
+            self.assertEqual(steam.calls, [("UpdateItemPreviewFile", (99, 1, str(root / "new02.jpg").encode()))])
+
+    def test_in_place_missing_or_drifted_retained_image_prevents_all_mutation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "01.jpg").write_bytes(b"original")
+            images = [{"file": "01.jpg", "sha256": hashlib.sha256(b"original").hexdigest()}]
+            def missing(_):
+                raise OSError("HTTP404")
+            for fetch in (missing, lambda _: b"drift"):
+                steam = SimulatedSteam()
+                with self.assertRaises((OSError, RuntimeError)):
+                    gallery.update_previews_in_place(steam, 99, [self.preview], images, root, fetch)
+                self.assertFalse(steam.calls)
+
+    def test_in_place_wrong_count_or_position_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "01.jpg").write_bytes(b"original")
+            images = [{"file": "01.jpg", "sha256": hashlib.sha256(b"original").hexdigest()}]
+            for existing in ([], [{**self.preview, "index": 2}], [{**self.preview, "type": 1}]):
+                steam = SimulatedSteam()
+                with self.assertRaises(RuntimeError):
+                    gallery.update_previews_in_place(steam, 99, existing, images, root, lambda _: b"original")
+                self.assertFalse(steam.calls)
+
+    def test_in_place_update_failure_does_not_delete_or_append(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "new.jpg").write_bytes(b"original")
+            images = [{"file": "new.jpg", "sha256": hashlib.sha256(b"original").hexdigest()}]
+            steam = SimulatedSteam(fail="UpdateItemPreviewFile")
+            with self.assertRaisesRegex(RuntimeError, "in-place gallery update failed"):
+                gallery.update_previews_in_place(steam, 99, [self.preview], images, root)
+            self.assertEqual([name for name, _ in steam.calls], ["UpdateItemPreviewFile"])
+
 
 if __name__ == "__main__":
     unittest.main()

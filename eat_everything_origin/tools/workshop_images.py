@@ -31,6 +31,7 @@ API = {
     "ReleaseQueryUGCRequest": ([C.c_void_p, C.c_uint64], C.c_bool),
     "RemoveItemPreview": ([C.c_void_p, C.c_uint64, C.c_uint32], C.c_bool),
     "AddItemPreviewFile": ([C.c_void_p, C.c_uint64, C.c_char_p, C.c_int32], C.c_bool),
+    "UpdateItemPreviewFile": ([C.c_void_p, C.c_uint64, C.c_uint32, C.c_char_p], C.c_bool),
 }
 
 
@@ -150,6 +151,36 @@ def replace_previews(steam, update, existing, gallery, root):
             raise RuntimeError("Workshop gallery changed after preflight")
         if not steam.call("AddItemPreviewFile", update, str(path).encode("utf-8"), 0):
             raise RuntimeError("Workshop gallery upload configuration failed")
+
+
+def update_previews_in_place(steam, update, existing, gallery, root, fetch=None):
+    """Keep verified images and replace changed slots without deleting UGC files."""
+    if len(existing) != len(gallery):
+        raise RuntimeError("in-place update requires the same gallery size")
+    root = Path(root).resolve()
+    if fetch is None:
+        def fetch(url):
+            with urllib.request.urlopen(url, timeout=30) as response:
+                return response.read()
+    actions = []
+    # Complete every local and retained-remote check before configuring mutations.
+    for index, (actual, expected) in enumerate(zip(existing, gallery)):
+        path = (root / expected["file"]).resolve()
+        path.relative_to(root)
+        raw = path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != expected["sha256"]:
+            raise RuntimeError("in-place gallery source changed")
+        if actual.get("index") != index or actual.get("type") != 0:
+            raise RuntimeError("in-place gallery position/type differs")
+        keep = actual.get("filename") == path.name
+        if keep and fetch(actual["url"]) != raw:
+            raise RuntimeError("retained public gallery bytes differ")
+        actions.append({"index": index, "action": "KEEP" if keep else "REPLACE", "file": str(path), "sha256": expected["sha256"]})
+    bind_api(steam)
+    for action in actions:
+        if action["action"] == "REPLACE" and not steam.call("UpdateItemPreviewFile", update, action["index"], action["file"].encode("utf-8")):
+            raise RuntimeError("in-place gallery update failed")
+    return actions
 
 
 def verify_previews(actual, expected, fetch=None):

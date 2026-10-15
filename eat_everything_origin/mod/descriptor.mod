@@ -1,4 +1,4 @@
-version="0.3.0"
+version="0.3.1"
 tags={ "Origins" "Events" "Gameplay" }
 name="吞噬之心"
 supported_version="4.5.2"

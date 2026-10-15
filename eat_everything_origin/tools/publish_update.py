@@ -1,4 +1,4 @@
-"""Frozen 0.3.0 update of this project's own item; never CreateItem."""
+"""Frozen formal update of this project's own item; never CreateItem."""
 import argparse
 import ctypes as C
 from datetime import datetime, timezone
@@ -18,12 +18,12 @@ import publish as base
 import workshop_images
 
 ROOT, REPO, MOD = base.ROOT, base.REPO, base.MOD
-VERSION = "0.3.0"
+VERSION = "0.3.1"
 ITEM = 3815707212
 CANDIDATE = "62e273a504a817be3c4037340557c4f1e3e2e522"
 EXE_SHA = "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83"
 PROOFS = ROOT / "docs/evidence/1015-2026-10-15"
-EVIDENCE = ROOT / "docs/evidence/publication-0.3.0"
+EVIDENCE = ROOT / f"docs/evidence/publication-{VERSION}"
 STATE = EVIDENCE / "publish-state.json"
 ACCEPTANCE = EVIDENCE / "acceptance.json"
 STATIC = EVIDENCE / "open-kaishek.json"
@@ -83,7 +83,7 @@ def accepted_files():
         raise RuntimeError("formal package file set differs from accepted candidate")
     for name, raw in original.items():
         if name == "descriptor.mod":
-            raw = raw.replace(b'version="0.3.0-rc.1"', b'version="0.3.0"')
+            raw = raw.replace(b'version="0.3.0-rc.1"', f'version="{VERSION}"'.encode())
         if files[name] != digest(raw):
             raise RuntimeError("formal content drift from accepted candidate: " + name)
     index_path = PROOFS / "final-evidence-index.json"
@@ -232,9 +232,9 @@ def publish(inputs):
         strings = (C.c_char_p * 3)(b"Origins", b"Events", b"Gameplay")
         if not steam.call("SetItemTags", update, C.byref(base.native.StringArray(strings, 3))):
             raise RuntimeError("SetItemTags failed")
-        workshop_images.replace_previews(steam, update, existing, inputs["gallery"], ROOT)
+        gallery_actions = workshop_images.update_previews_in_place(steam, update, existing, inputs["gallery"], ROOT)
         state = {"schema": "heart-of-devouring-workshop-update-v1", "version": VERSION, "item_id": ITEM,
-                 "inputs": inputs, "previous_public_version": "0.2.0", "submit_started": True,
+                 "inputs": inputs, "previous_public_version": "0.3.0", "gallery_actions": gallery_actions, "submit_started": True,
                  "started_at_utc": datetime.now(timezone.utc).isoformat()}
         base.write_json(STATE, state)
         result = steam.wait(steam.call("SubmitItemUpdate", update, inputs["note"].encode("utf-8")), base.native.SubmitItemUpdateResult, 3404)
