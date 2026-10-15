@@ -1,6 +1,6 @@
-# 0.3.0 正式发布与创意工坊图文说明
+# 0.3 系列正式发布与创意工坊图文说明
 
-日期：2026-10-15。状态：0.3.0已上传，独立文件核对通过；图库远端核验失败，未宣告发布收尾完成。
+日期：2026-10-15。状态：最终0.3.1发布并远端核验通过；0.3.0图库失败及修复记录保留。Steam已恢复离线。
 
 ## 目标与范围
 
@@ -46,3 +46,14 @@
 验收标准不降低：最终六张图库和四张正文图均公开可读、字节相符，正文包含0.3.1修复记录与0.3.0功能记录，Change Note从0.3.1正式changelog生成；重新使用open_kaishek核正式版本及候选等价并完成工具回归。Steam只在再次最后上传与核验阶段恢复在线。
 
 0.3.1修复实施：已恢复Steam离线，原生BLoggedOn拒绝在线会话；正式包重新通过24脚本／12DDS／十语言101键检查，47文件仅描述符版本不同。20项离线工具测试通过，原生DLL确实导出UpdateItemPreviewFile。保留前四槽并核公开原字节，只原位替换第五／六槽；新图分别绑定n17l5与n17p0原生存档，武灾5图明确为隔离夹具。该API签名与更新前配置要求来自[Steam官方文档](https://partner.steamgames.com/doc/api/ISteamUGC#UpdateItemPreviewFile)。新预检通过，拟冻结新输入并再次最后上线。
+
+## 最终结果
+
+- 正式物品：[吞噬之心](https://steamcommunity.com/sharedfiles/filedetails/?id=3815707212)，公开版本0.3.1。13:26:42原生提交返回EResult1、正确物品ID且无需协议；未修改只读上游。
+- [最终远端核验](evidence/publication-0.3.1/workshop-verification.json)为PASS，UTC 2026-10-15T05:27:11.673849+00:00。公开标题、应用、可见性、正文、封面、Change Note一致；六张图库的顺序、文件名、类型和原始字节全部一致。四张正文图片已实际生成HTML img，公开图片字节全部一致。
+- Steam原生独立下载到`C:/SteamLibrary/steamapps/workshop/content/281990/3815707212`，全部47个文件逐项SHA与上传冻结清单及当前正式包一致，见[下载凭证](evidence/publication-0.3.1/workshop-download.json)。不使用源目录复制品冒充下载。
+- [实际上传BBCode](../workshop/description.bbcode)、[正式changelog](../CHANGELOG.md)及[对应Change Note](../workshop/change-note-v0.3.1.txt)入库。正文保留0.3.0主要新增功能及0.3.1图库修复，列出设计、循环、开局、决议、女王成长、DLC、推荐路线及验收限制。
+- Steam客户端实际正文截图[图片正常显示](evidence/publication-0.3.1/pub031-body-images-visible.png)；[离线恢复凭证](evidence/publication-0.3.1/offline-restored.json)与[菜单显示“上线”](evidence/publication-0.3.1/pub031-offline-proof.png)共同核实恢复离线，没有启动游戏或恢复噬岩者战役。
+- 原0.3.0成功上传、独立下载、两张图库404及额外历史页面请求429的情况保留在[未通过图库的原记录](evidence/publication-0.3.0/partial-verification.json)。0.3.0没有因失败而被重复上传；0.3.1全量核验通过后才进入标签步骤。
+
+发布输入冻结提交为`926a0891a1f8ea1a8378cd23b47173958103323a`；最终标签`v0.3.1`指向包含核验凭证与本报告的收尾提交。成功版本不得再次运行publish；当前工具会主动拒绝重传。后续发布需先按仓库规则建立新的未发布版本与changelog，重新冻结输入。
