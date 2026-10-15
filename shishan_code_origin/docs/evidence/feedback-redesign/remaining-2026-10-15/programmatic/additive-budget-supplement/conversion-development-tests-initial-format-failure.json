@@ -1,0 +1,22 @@
+{
+  "status": "FAIL",
+  "scope": "seven new development conversion tests; no native saves or primary tests run",
+  "created_at_utc": "2026-10-15T12:55:25.709707+00:00",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_additive_budget_conversion.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "test_missing_or_extra_conversion_output_is_not_zero (test_additive_budget_conversion.ConversionDevelopmentTests.test_missing_or_extra_conversion_output_is_not_zero) ... ok\ntest_ordinary_fee_drift_is_never_exempt (test_additive_budget_conversion.ConversionDevelopmentTests.test_ordinary_fee_drift_is_never_exempt) ... ok\ntest_other_nonjob_income_drift_is_never_exempt (test_additive_budget_conversion.ConversionDevelopmentTests.test_other_nonjob_income_drift_is_never_exempt) ... ok\ntest_unknown_policy_is_not_covered (test_additive_budget_conversion.ConversionDevelopmentTests.test_unknown_policy_is_not_covered) ... ok\ntest_verified_conversion_is_separate_and_v1_fail_is_preserved (test_additive_budget_conversion.ConversionDevelopmentTests.test_verified_conversion_is_separate_and_v1_fail_is_preserved) ... FAIL\ntest_wrong_input_throughput_fails (test_additive_budget_conversion.ConversionDevelopmentTests.test_wrong_input_throughput_fails) ... ok\ntest_wrong_output_share_fails (test_additive_budget_conversion.ConversionDevelopmentTests.test_wrong_output_share_fails) ... ok\n\n======================================================================\nFAIL: test_verified_conversion_is_separate_and_v1_fail_is_preserved (test_additive_budget_conversion.ConversionDevelopmentTests.test_verified_conversion_is_separate_and_v1_fail_is_preserved)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\workspace\\xenoamess_stellaries_dev\\tests\\test_additive_budget_conversion.py\", line 48, in test_verified_conversion_is_separate_and_v1_fail_is_preserved\n    self.assertEqual(\"80\", result[\"derived_conversion\"][\"job_trade_response\"][\"Q0\"])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '80' != '8E+1'\n- 80\n+ 8E+1\n\n\n----------------------------------------------------------------------\nRan 7 tests in 0.060s\n\nFAILED (failures=1)\n",
+  "source_sha256": "df1daec1e45ac9e40a0ac132ddb4f80dc0bfd5afa6ff906fe01e99e6c7ba92ef",
+  "tests_sha256": "7ad6f686f1337f14402f4a007cd027c6e8a01d928aa01117fe1caf29e3a38675"
+}

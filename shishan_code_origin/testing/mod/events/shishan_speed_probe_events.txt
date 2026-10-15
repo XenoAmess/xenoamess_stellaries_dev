@@ -1,0 +1,978 @@
+# ISOLATED FIXTURE ONLY. Never upload with the formal Mod.
+namespace = shishan_speed_probe
+
+country_event = {
+ id = shishan_speed_probe.1
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+   }
+remove_country_flag = shishan_speed_probe_n_ready
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 0 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+shishan_speed_probe_verify_effect = yes
+if = {
+ limit = { has_country_flag = shishan_speed_probe_j_ready }
+ set_variable = { which = shishan_code_maintenance_count value = 0 }
+ set_variable = { which = shishan_speed_probe_input_n value = 0 }
+ set_country_flag = shishan_speed_probe_n_ready
+ log = "SHISHAN_SPEED_PROBE_1_READY_N0_J0_INPUT_ONLY"
+}
+else = { log = "SHISHAN_SPEED_PROBE_1_N_UNCHANGED_J0_NOT_CONFIRMED" }
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_1_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.2
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+   }
+remove_country_flag = shishan_speed_probe_n_ready
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 0 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+shishan_speed_probe_verify_effect = yes
+if = {
+ limit = { has_country_flag = shishan_speed_probe_j_ready }
+ set_variable = { which = shishan_code_maintenance_count value = 1 }
+ set_variable = { which = shishan_speed_probe_input_n value = 1 }
+ set_country_flag = shishan_speed_probe_n_ready
+ log = "SHISHAN_SPEED_PROBE_2_READY_N1_J0_INPUT_ONLY"
+}
+else = { log = "SHISHAN_SPEED_PROBE_2_N_UNCHANGED_J0_NOT_CONFIRMED" }
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_2_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.3
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+   }
+remove_country_flag = shishan_speed_probe_n_ready
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 0 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+shishan_speed_probe_verify_effect = yes
+if = {
+ limit = { has_country_flag = shishan_speed_probe_j_ready }
+ set_variable = { which = shishan_code_maintenance_count value = 10 }
+ set_variable = { which = shishan_speed_probe_input_n value = 10 }
+ set_country_flag = shishan_speed_probe_n_ready
+ log = "SHISHAN_SPEED_PROBE_3_READY_N10_J0_INPUT_ONLY"
+}
+else = { log = "SHISHAN_SPEED_PROBE_3_N_UNCHANGED_J0_NOT_CONFIRMED" }
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_3_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.4
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+   }
+remove_country_flag = shishan_speed_probe_n_ready
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 0 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+shishan_speed_probe_verify_effect = yes
+if = {
+ limit = { has_country_flag = shishan_speed_probe_j_ready }
+ set_variable = { which = shishan_code_maintenance_count value = 5 }
+ set_variable = { which = shishan_speed_probe_input_n value = 5 }
+ set_country_flag = shishan_speed_probe_n_ready
+ log = "SHISHAN_SPEED_PROBE_4_READY_N5_J0_INPUT_ONLY"
+}
+else = { log = "SHISHAN_SPEED_PROBE_4_N_UNCHANGED_J0_NOT_CONFIRMED" }
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_4_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.99
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 99 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 99 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_99_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.100
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 100 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 100 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_100_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.199
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 199 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 199 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_199_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.200
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 200 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 200 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_200_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.299
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 299 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 299 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_299_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.300
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 300 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 300 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_300_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.399
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 399 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 399 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_399_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.400
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 400 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 400 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_400_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.499
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 499 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 499 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_499_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.500
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 500 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 500 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_500_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.700
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 700 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 700 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_700_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.800
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 800 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 800 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_800_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.899
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 899 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 899 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_899_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.900
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 900 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 900 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_900_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.1200
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 1200 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 1200 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_1200_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.50
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+num_owned_colonies >= 2
+any_owned_colony = { is_capital = no }
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 100 }
+set_variable = { which = shishan_speed_probe_requested_a value = 50 }
+set_variable = { which = shishan_speed_probe_requested_b value = 50 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 1 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 50 }
+}
+random_owned_colony = {
+ limit = { is_capital = no }
+ set_planet_flag = shishan_speed_probe_colony_b
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 50 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_50_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.51
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+num_owned_colonies >= 2
+any_owned_colony = { is_capital = no }
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 100 }
+set_variable = { which = shishan_speed_probe_requested_a value = 99 }
+set_variable = { which = shishan_speed_probe_requested_b value = 1 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 1 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 99 }
+}
+random_owned_colony = {
+ limit = { is_capital = no }
+ set_planet_flag = shishan_speed_probe_colony_b
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 1 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_51_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.52
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_code_maintenance_count
+num_owned_colonies >= 2
+any_owned_colony = { is_capital = no }
+   }
+shishan_speed_probe_reset_capacity_effect = yes
+set_variable = { which = shishan_speed_probe_requested_j value = 50 }
+set_variable = { which = shishan_speed_probe_requested_a value = 50 }
+set_variable = { which = shishan_speed_probe_requested_b value = 0 }
+set_variable = { which = shishan_speed_probe_cross_colony value = 1 }
+capital_scope = {
+ set_planet_flag = shishan_speed_probe_colony_a
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 50 }
+}
+random_owned_colony = {
+ limit = { is_capital = no }
+ set_planet_flag = shishan_speed_probe_colony_b
+ shishan_speed_probe_prepare_colony_effect = { CAPACITY = 0 }
+}
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_52_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+country_event = {
+ id = shishan_speed_probe.9000
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = capital_scope
+exists = owner_main_species
+any_situation = { is_situation_type = situation_shishan_code }
+OR = { is_machine_empire = yes is_individual_machine = yes }
+NOR = {
+ has_country_flag = shishan_code_refactored
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_country_flag = shishan_speed_probe_n_ready
+is_variable_set = shishan_speed_probe_requested_j
+is_variable_set = shishan_speed_probe_cross_colony
+   }
+shishan_speed_probe_verify_effect = yes
+  }
+  else = { log = "SHISHAN_SPEED_PROBE_9000_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}

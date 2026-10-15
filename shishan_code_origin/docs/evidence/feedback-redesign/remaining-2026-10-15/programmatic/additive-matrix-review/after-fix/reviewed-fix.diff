@@ -1,0 +1,58 @@
+--- reviewed_d6948a5
++++ fixed_2bee9c8
+@@ -292,6 +292,7 @@
+         inline = [e["value"] for e in biologist[0]["raw"] if e["key"] == "inline_script"]
+         unity_safe = unity_safe and inline == ["output/researcher_output"]
+     return {"status": "PASS" if unity_safe else "NOT COVERED", "unity_source_isolated": unity_safe,
++            "society_source_isolated": unity_safe,
+             "planet_biologists_job_types": categories, "files": files,
+             "permitted_base_trait_keys": FINITE_BASE_TRAITS,
+             "scope": "declared isolated game+pack job resource tables; unknown additional loaded Mods or dynamic resource-add channels require independent source review",
+@@ -522,7 +523,22 @@
+                 if days is not None and number(days) >= 0 and number(days) <= 30:
+                     guards.append(issue("INVALID", "EXPIRING_COUNTRY_MODIFIER", branch=branch, phase=phase, modifier=modifier))
+     guards += timing
+-    active = {j["type"] for j in ref_measured["jobs"] if j["workforce"] is not None and number(j["workforce"]) > 0}
++    active = set()
++    for branch in BRANCHES:
++        for phase in PHASES:
++            for job in snapshots[branch][phase]["jobs"]:
++                if job["type"] not in category_types:
++                    continue
++                channels = ("workforce", "bonus_workforce", "automated_workforce")
++                try:
++                    amounts = [number(job.get(key), key) for key in channels]
++                except native.AuditError:
++                    guards.append(issue("NOT COVERED", "CATEGORY_WORKFORCE_CHANNEL_UNKNOWN", branch=branch,
++                                        phase=phase, job=job["id"], job_type=job["type"],
++                                        observed={key: job.get(key) for key in channels}))
++                    continue
++                if any(value != 0 for value in amounts):
++                    active.add(job["type"])
+     unisolated = sorted((known & active) - set(JOBS))
+     if profile.get("status") != "PASS" or unisolated:
+         guards.append(issue("NOT COVERED", "UNITY_SOURCE_NOT_ISOLATED", source_profile_status=profile.get("status"), other_category_jobs=unisolated))
+@@ -546,11 +562,22 @@
+     unity = attempt(lambda: resource_matrix(snapshots, "unity", ("shishan_code_maintainer",)))
+     society = attempt(lambda: resource_matrix(snapshots, "society_research", JOBS))
+     controls = attempt(lambda: negative_controls(snapshots))
++    society_isolated = (profile.get("status") == "PASS" and
++                        profile.get("society_source_isolated", profile.get("unity_source_isolated", False)))
++    society["source_isolated"] = bool(society_isolated)
+     guarded_status = status_of(guards)
+-    limited_checks = guards + unity["checks"] + controls["checks"]
++    # A covered secondary resource's arithmetic failure is a gate, too. Missing
++    # or unresolved secondary data stays explicitly NOT COVERED rather than
++    # impersonating either a reliable numerical oracle or a passed resource.
++    secondary_failures = [row for row in society["checks"] if row["status"] in ("FAIL", "INVALID")] if society_isolated else []
++    limited_checks = guards + unity["checks"] + controls["checks"] + secondary_failures
+     limited_status = status_of(limited_checks)
+     for result in (unity, society, controls):
+         result["arithmetic_status"] = result["status"]
++        if result is society and not society_isolated:
++            result["status"] = "NOT COVERED"
++            result["interpretation"] = "secondary arithmetic retained, but source isolation is not certified in this profile"
++            continue
+         if guarded_status != "PASS":
+             result["status"] = guarded_status
+             result["interpretation"] = "arithmetic retained; sample guards do not permit acceptance"

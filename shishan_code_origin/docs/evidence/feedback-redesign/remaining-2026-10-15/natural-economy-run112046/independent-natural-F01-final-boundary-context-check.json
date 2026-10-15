@@ -1,0 +1,242 @@
+{
+  "status": "INVALID",
+  "scope": "Necessary within-F01 checks after prospective employment-boundary correction; not a fabricated seven-branch audit. Original report and old source preserved.",
+  "matrix_status": "NOT RUN",
+  "source_files": [
+    {
+      "source": {
+        "path": "C:\\workspace\\xenoamess_stellaries_dev\\tools\\audit_additive_runtime_matrix.py",
+        "bytes": 39398,
+        "sha256": "d6948a5d874b6684912df3e53f69bb3db5e65b925956b5a9068733d0da152787"
+      },
+      "archive": {
+        "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\additive-runtime-matrix-employment-carrier-revision.py",
+        "bytes": 39398,
+        "sha256": "d6948a5d874b6684912df3e53f69bb3db5e65b925956b5a9068733d0da152787"
+      }
+    },
+    {
+      "source": {
+        "path": "C:\\workspace\\xenoamess_stellaries_dev\\tests\\test_additive_runtime_matrix.py",
+        "bytes": 24459,
+        "sha256": "bd5beb7b10315e62b7ee762eb68ef84ed248a3f9d9d94e8bda2afdf2da7896e2"
+      },
+      "archive": {
+        "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\additive-runtime-matrix-tests-employment-carrier-revision.py",
+        "bytes": 24459,
+        "sha256": "bd5beb7b10315e62b7ee762eb68ef84ed248a3f9d9d94e8bda2afdf2da7896e2"
+      }
+    }
+  ],
+  "original_report": {
+    "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\independent-natural-F01-window-audit.json",
+    "bytes": 183569,
+    "sha256": "80dd96ca6d7efbff442e2f50c65e72157b2e6a94d4b4a2e5f96efa705198af2e"
+  },
+  "saves": {
+    "input": {
+      "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\econ104_common_0202.sav",
+      "sha256": "b0dce89057b0082b588e5030bc8c6b8c8283c7017dc65fa08716e00de173def2",
+      "date": "2210.02.02"
+    },
+    "warm": {
+      "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\econ104_F01_warm.sav",
+      "sha256": "5602fd4c1f3ceba20439d72d26eb43a5c451fb46f8ebdb5cec7ed1f904c34095",
+      "date": "2210.03.02"
+    },
+    "measured": {
+      "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\econ104_F01_measured.sav",
+      "sha256": "0eed7c29c739d5b9cf762677700561da72fb05e2ec9c15ddf64f09d12aab6dd2",
+      "date": "2210.04.02"
+    }
+  },
+  "sequential_parser_release": [
+    {
+      "phase": "input",
+      "live_complete_native_documents": 0
+    },
+    {
+      "phase": "warm",
+      "live_complete_native_documents": 0
+    },
+    {
+      "phase": "measured",
+      "live_complete_native_documents": 0
+    }
+  ],
+  "measured_category_job_types": [
+    "biologist",
+    "calculator_biologist",
+    "shishan_code_maintainer",
+    "shishan_code_maintainer_drone"
+  ],
+  "measured_category_employment": {
+    "status": "PASS"
+  },
+  "other_domestic_same_phase_cross_branch": {
+    "status": "NOT RUN",
+    "reason": "Only F01 exists; growth in civilian alone does not violate revised within-branch measured-category boundary. Six other native branches remain absent."
+  },
+  "setup_relative_to_common_S": {
+    "status": "NOT RUN",
+    "reason": "Full seven-branch setup audit is absent. F01 input is the original common source itself; no invented inputs for missing branches."
+  },
+  "economic_context_window": {
+    "status": "INVALID",
+    "checks": [
+      {
+        "phase": "warm",
+        "status": "INVALID"
+      },
+      {
+        "phase": "measured",
+        "status": "PASS"
+      }
+    ],
+    "unchanged_original_diff": {
+      "government": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "completed_technologies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "policies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "ethos": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "colonies": {
+        "equivalent_under_sealed_rule": false,
+        "changes_beyond_epsilon": [
+          {
+            "path": "/colonies/0/stability",
+            "before": "72.7026",
+            "after": "72.714",
+            "delta": "0.0114",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "situations": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "other_country_modifiers": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "owned_leader_economic_state": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "depleted_resource_keys": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      }
+    }
+  },
+  "strict_cache_audit": {
+    "status": "FAIL",
+    "checks": [
+      {
+        "phase": "input",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_population",
+        "observation": {
+          "observed": "5485",
+          "expected": "5491",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "input",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_trait_weight",
+        "observation": {
+          "observed": "38395",
+          "expected": "38437",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "warm",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_population",
+        "observation": {
+          "observed": "5491",
+          "expected": "5497",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "warm",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_trait_weight",
+        "observation": {
+          "observed": "38437",
+          "expected": "38479",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "measured",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_population",
+        "observation": {
+          "observed": "5497",
+          "expected": "5503",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "measured",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_trait_weight",
+        "observation": {
+          "observed": "38479",
+          "expected": "38521",
+          "status": "MISMATCH"
+        }
+      }
+    ],
+    "interpretation": "P/W failures remain FAIL separately. Stable actual/cache U/T/B/R would allow fixed-U economy differences, but do not waive employment/context guards."
+  },
+  "interpretation": "Measured-category job fields and semantic allocations remain fixed; civilian-only natural growth is no longer misclassified as measured employment drift. Stability still changes 72.7026 to 72.714, exceeding unchanged epsilon 0.0001, so this original natural window remains INVALID. No architecture-causation inference from civilian growth.",
+  "epsilon_rule": "unchanged max(0.0001,0.000001*max(abs(compared values)))",
+  "carrier_modifiers_by_phase": {
+    "input": [
+      {
+        "colony_id": 0,
+        "carrier_modifiers": []
+      }
+    ],
+    "warm": [
+      {
+        "colony_id": 0,
+        "carrier_modifiers": []
+      }
+    ],
+    "measured": [
+      {
+        "colony_id": 0,
+        "carrier_modifiers": []
+      }
+    ]
+  },
+  "prior_revised_boundary_report": {
+    "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\independent-natural-F01-revised-boundary-check.json",
+    "bytes": 7930,
+    "sha256": "c5231f56f0b618da49132b3870222fc0df7b5f6c9cdbd2a202090856458dba50"
+  }
+}

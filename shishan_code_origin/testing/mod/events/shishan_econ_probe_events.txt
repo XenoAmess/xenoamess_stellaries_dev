@@ -1,0 +1,319 @@
+# Isolated economy lab. Never include in a production or Workshop package.
+
+namespace = shishan_econ_probe
+
+country_event = {
+ id = shishan_econ_probe.10
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = owner_main_species
+any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+NOR = {
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+NOT = { has_modifier = shishan_econ_probe_counter }
+   }
+shishan_code_architecture_refresh_effect = yes
+if = {
+ limit = { check_variable = { which = shishan_code_architecture_population value > 0 } }
+ add_modifier = { modifier = shishan_econ_probe_counter days = -1 multiplier = this.shishan_code_architecture_total }
+ set_variable = { which = shishan_econ_probe_counter_t value = this.shishan_code_architecture_total }
+ set_country_flag = shishan_econ_probe_counter_active
+ log = "SHISHAN_ECON_PROBE_10_READY_COUNTER"
+}
+else = { log = "SHISHAN_ECON_PROBE_10_BLOCKED_REFRESH_POPULATION" }
+  }
+  else = { log = "SHISHAN_ECON_PROBE_10_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_econ_probe.11
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = owner_main_species
+any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+NOR = {
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_modifier = shishan_econ_probe_counter
+   }
+remove_modifier = shishan_econ_probe_counter
+clear_variable = shishan_econ_probe_counter_t
+remove_country_flag = shishan_econ_probe_counter_active
+shishan_code_architecture_refresh_effect = yes
+log = "SHISHAN_ECON_PROBE_11_READY_ARCHITECTURE_ON"
+  }
+  else = { log = "SHISHAN_ECON_PROBE_11_BLOCKED_PREREQUISITE_OR_NO_COUNTER" }
+ }
+}
+
+country_event = {
+ id = shishan_econ_probe.20
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = owner_main_species
+any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+NOR = {
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+NOT = { has_modifier = shishan_econ_probe_other_output }
+   }
+add_modifier = { modifier = shishan_econ_probe_other_output days = -1 }
+set_country_flag = shishan_econ_probe_other_output_active
+log = "SHISHAN_ECON_PROBE_20_READY_OTHER_OUTPUT"
+  }
+  else = { log = "SHISHAN_ECON_PROBE_20_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_econ_probe.21
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = owner_main_species
+any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+NOR = {
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+has_modifier = shishan_econ_probe_other_output
+   }
+remove_modifier = shishan_econ_probe_other_output
+remove_country_flag = shishan_econ_probe_other_output_active
+log = "SHISHAN_ECON_PROBE_21_READY_OTHER_OUTPUT_REMOVED"
+  }
+  else = { log = "SHISHAN_ECON_PROBE_21_BLOCKED_PREREQUISITE_OR_NO_INPUT" }
+ }
+}
+
+country_event = {
+ id = shishan_econ_probe.30
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = owner_main_species
+any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+NOR = {
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+NOT = { has_modifier = shishan_econ_probe_counter }
+NOT = { any_owned_pop_group = {
+ is_same_species = prev
+ pop_group_size > 0
+ species = { OR = { has_trait = trait_external_econ_probe_positive has_trait = trait_external_econ_probe_negative has_trait = trait_external_econ_probe_hidden } }
+} }
+NOT = { any_owned_pop_group = {
+ is_same_species = prev
+ pop_group_size > 0
+ species = { NOR = { is_archetype = ROBOT is_archetype = MACHINE } }
+} }
+   }
+save_event_target_as = shishan_code_reward_country
+every_owned_pop_group = {
+ limit = { is_same_species = prev
+pop_group_size > 0
+species = { OR = { is_archetype = ROBOT is_archetype = MACHINE } NOT = { has_trait = trait_external_econ_probe_positive } } }
+ if = {
+  limit = { is_same_species = prev
+pop_group_size > 0
+species = { OR = { is_archetype = ROBOT is_archetype = MACHINE } NOT = { has_trait = trait_external_econ_probe_positive } } }
+  species = { shishan_code_modify_domestic_template_effect = { ADD_TRAIT = trait_external_econ_probe_positive } }
+ }
+}
+shishan_code_architecture_refresh_effect = yes
+if = {
+ limit = {
+  NOT = { any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { NOT = { has_trait = trait_external_econ_probe_positive } } } }
+ }
+ set_country_flag = shishan_econ_probe_trait_positive
+ log = "SHISHAN_ECON_PROBE_30_READY_EXTERNAL_TRAIT"
+}
+else = { log = "SHISHAN_ECON_PROBE_30_BLOCKED_POSTCONDITION" }
+  }
+  else = { log = "SHISHAN_ECON_PROBE_30_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_econ_probe.31
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = owner_main_species
+any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+NOR = {
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+NOT = { has_modifier = shishan_econ_probe_counter }
+NOT = { any_owned_pop_group = {
+ is_same_species = prev
+ pop_group_size > 0
+ species = { OR = { has_trait = trait_external_econ_probe_positive has_trait = trait_external_econ_probe_negative has_trait = trait_external_econ_probe_hidden } }
+} }
+NOT = { any_owned_pop_group = {
+ is_same_species = prev
+ pop_group_size > 0
+ species = { NOR = { is_archetype = ROBOT is_archetype = MACHINE } }
+} }
+   }
+save_event_target_as = shishan_code_reward_country
+every_owned_pop_group = {
+ limit = { is_same_species = prev
+pop_group_size > 0
+species = { OR = { is_archetype = ROBOT is_archetype = MACHINE } NOT = { has_trait = trait_external_econ_probe_negative } } }
+ if = {
+  limit = { is_same_species = prev
+pop_group_size > 0
+species = { OR = { is_archetype = ROBOT is_archetype = MACHINE } NOT = { has_trait = trait_external_econ_probe_negative } } }
+  species = { shishan_code_modify_domestic_template_effect = { ADD_TRAIT = trait_external_econ_probe_negative } }
+ }
+}
+shishan_code_architecture_refresh_effect = yes
+if = {
+ limit = {
+  NOT = { any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { NOT = { has_trait = trait_external_econ_probe_negative } } } }
+ }
+ set_country_flag = shishan_econ_probe_trait_negative
+ log = "SHISHAN_ECON_PROBE_31_READY_EXTERNAL_TRAIT"
+}
+else = { log = "SHISHAN_ECON_PROBE_31_BLOCKED_POSTCONDITION" }
+  }
+  else = { log = "SHISHAN_ECON_PROBE_31_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_econ_probe.32
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+has_origin = origin_shishan_code
+exists = owner_main_species
+any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+NOR = {
+ has_country_flag = shishan_code_reward_pending
+ has_country_flag = shishan_code_reward_ticket_ready
+ has_country_flag = shishan_code_maintain_success_pending
+ has_country_flag = shishan_code_optimize_success_pending
+ has_country_flag = shishan_code_clean_success_pending
+ has_country_flag = shishan_code_relapse_pending
+}
+NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+NOT = { has_modifier = shishan_econ_probe_counter }
+NOT = { any_owned_pop_group = {
+ is_same_species = prev
+ pop_group_size > 0
+ species = { OR = { has_trait = trait_external_econ_probe_positive has_trait = trait_external_econ_probe_negative has_trait = trait_external_econ_probe_hidden } }
+} }
+NOT = { any_owned_pop_group = {
+ is_same_species = prev
+ pop_group_size > 0
+ species = { NOR = { is_archetype = ROBOT is_archetype = MACHINE } }
+} }
+   }
+save_event_target_as = shishan_code_reward_country
+every_owned_pop_group = {
+ limit = { is_same_species = prev
+pop_group_size > 0
+species = { OR = { is_archetype = ROBOT is_archetype = MACHINE } NOT = { has_trait = trait_external_econ_probe_hidden } } }
+ if = {
+  limit = { is_same_species = prev
+pop_group_size > 0
+species = { OR = { is_archetype = ROBOT is_archetype = MACHINE } NOT = { has_trait = trait_external_econ_probe_hidden } } }
+  species = { shishan_code_modify_domestic_template_effect = { ADD_TRAIT = trait_external_econ_probe_hidden } }
+ }
+}
+shishan_code_architecture_refresh_effect = yes
+if = {
+ limit = {
+  NOT = { any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { NOT = { has_trait = trait_external_econ_probe_hidden } } } }
+ }
+ set_country_flag = shishan_econ_probe_trait_hidden
+ log = "SHISHAN_ECON_PROBE_32_READY_EXTERNAL_TRAIT"
+}
+else = { log = "SHISHAN_ECON_PROBE_32_BLOCKED_POSTCONDITION" }
+  }
+  else = { log = "SHISHAN_ECON_PROBE_32_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}

@@ -1,0 +1,1772 @@
+{
+  "status": "INVALID",
+  "purpose": "Read-only numeric digest of the first seven native branches; preserves INVALID and independent strict-cache FAIL. No oracle, fixture, save or audit-source changes.",
+  "full_report": "_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\additive-stable-growth-native-audit.json",
+  "full_report_sha256": "19d63e304dd186abb1d76d782faf0b1aeb8c3b14dea81882207615e6a105e33d",
+  "audit_source_sha256": "2bee9c8460e07a228d8d0f577aa8245792e2ecc936497c975e6bd422be0173a1",
+  "manifest_sha256": "3ae6fabb8ed1e44496170cffb1079e0393f7e7c32911360431bb66873118d9fb",
+  "limited_economy_status": "INVALID",
+  "setup_status": "PASS",
+  "strict_cache_status": "FAIL",
+  "strict_cache_fail_count": 32,
+  "limited_guards": [
+    {
+      "status": "INVALID",
+      "code": "OTHER_DOMESTIC_EMPLOYMENT_CHANGED",
+      "branch": "F01",
+      "phase": "warm",
+      "boundary": "other domestic jobs at the same phase/date across branches"
+    },
+    {
+      "status": "INVALID",
+      "code": "OTHER_DOMESTIC_EMPLOYMENT_CHANGED",
+      "branch": "F01",
+      "phase": "measured",
+      "boundary": "other domestic jobs at the same phase/date across branches"
+    },
+    {
+      "status": "INVALID",
+      "code": "OTHER_DOMESTIC_EMPLOYMENT_CHANGED",
+      "branch": "F11",
+      "phase": "warm",
+      "boundary": "other domestic jobs at the same phase/date across branches"
+    },
+    {
+      "status": "INVALID",
+      "code": "OTHER_DOMESTIC_EMPLOYMENT_CHANGED",
+      "branch": "F11",
+      "phase": "measured",
+      "boundary": "other domestic jobs at the same phase/date across branches"
+    },
+    {
+      "status": "INVALID",
+      "code": "OTHER_DOMESTIC_EMPLOYMENT_CHANGED",
+      "branch": "FN",
+      "phase": "warm",
+      "boundary": "other domestic jobs at the same phase/date across branches"
+    },
+    {
+      "status": "INVALID",
+      "code": "OTHER_DOMESTIC_EMPLOYMENT_CHANGED",
+      "branch": "FN",
+      "phase": "measured",
+      "boundary": "other domestic jobs at the same phase/date across branches"
+    }
+  ],
+  "unity": {
+    "status": "INVALID",
+    "arithmetic_status": "PASS",
+    "Q0": "1.0",
+    "Q1": "1",
+    "checks": [
+      {
+        "status": "PASS",
+        "code": "A40_RESPONSE_EQUAL",
+        "observed": "1",
+        "expected": "1.0",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "ARCHITECTURE_AT_A0",
+        "observed": "0.35",
+        "expected": "0.350",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "ARCHITECTURE_AT_A40",
+        "observed": "0.35",
+        "expected": "0.350",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "INTERACTION",
+        "observed": "0.00",
+        "expected": "0",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "DUMMY_INCREMENT_FP",
+        "observed": "0.05",
+        "expected": "0.050",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "DUMMY_INCREMENT_FN",
+        "observed": "0.05",
+        "expected": "0.050",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "DUMMY_INCREMENT_FH",
+        "observed": "0.05",
+        "expected": "0.050",
+        "epsilon": "0.0001"
+      }
+    ]
+  },
+  "society_secondary": {
+    "status": "INVALID",
+    "arithmetic_status": "PASS",
+    "Q0": "3.0",
+    "Q1": "3",
+    "checks": [
+      {
+        "status": "PASS",
+        "code": "A40_RESPONSE_EQUAL",
+        "observed": "3",
+        "expected": "3.0",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "ARCHITECTURE_AT_A0",
+        "observed": "1.05",
+        "expected": "1.050",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "ARCHITECTURE_AT_A40",
+        "observed": "1.05",
+        "expected": "1.050",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "INTERACTION",
+        "observed": "0.00",
+        "expected": "0",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "DUMMY_INCREMENT_FP",
+        "observed": "0.15",
+        "expected": "0.150",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "DUMMY_INCREMENT_FN",
+        "observed": "0.15",
+        "expected": "0.150",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "DUMMY_INCREMENT_FH",
+        "observed": "0.15",
+        "expected": "0.150",
+        "epsilon": "0.0001"
+      }
+    ],
+    "source_isolated": true
+  },
+  "negative_controls": {
+    "status": "INVALID",
+    "checks": [
+      {
+        "status": "PASS",
+        "code": "MAINTENANCE_F00_consumer_goods",
+        "observed": "1.125",
+        "expected": "1.125",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "MAINTENANCE_F10_consumer_goods",
+        "observed": "1.125",
+        "expected": "1.125",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "MAINTENANCE_F01_consumer_goods",
+        "observed": "1.125",
+        "expected": "1.125",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "MAINTENANCE_F11_consumer_goods",
+        "observed": "1.125",
+        "expected": "1.125",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "MAINTENANCE_FP_consumer_goods",
+        "observed": "1.125",
+        "expected": "1.125",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "MAINTENANCE_FN_consumer_goods",
+        "observed": "1.125",
+        "expected": "1.125",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "MAINTENANCE_FH_consumer_goods",
+        "observed": "1.125",
+        "expected": "1.125",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_energy",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_minerals",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_physics_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_society_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_engineering_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_influence",
+        "observed": "3.75",
+        "expected": "3.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_unity",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_consumer_goods",
+        "observed": "18.75",
+        "expected": "18.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F00_alloys",
+        "observed": "6.25",
+        "expected": "6.25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_energy",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_minerals",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_physics_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_society_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_engineering_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_influence",
+        "observed": "3.75",
+        "expected": "3.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_unity",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_consumer_goods",
+        "observed": "18.75",
+        "expected": "18.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F10_alloys",
+        "observed": "6.25",
+        "expected": "6.25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_energy",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_minerals",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_physics_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_society_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_engineering_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_influence",
+        "observed": "3.75",
+        "expected": "3.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_unity",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_consumer_goods",
+        "observed": "18.75",
+        "expected": "18.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F01_alloys",
+        "observed": "6.25",
+        "expected": "6.25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_energy",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_minerals",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_physics_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_society_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_engineering_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_influence",
+        "observed": "3.75",
+        "expected": "3.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_unity",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_consumer_goods",
+        "observed": "18.75",
+        "expected": "18.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_F11_alloys",
+        "observed": "6.25",
+        "expected": "6.25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_energy",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_minerals",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_physics_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_society_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_engineering_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_influence",
+        "observed": "3.75",
+        "expected": "3.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_unity",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_consumer_goods",
+        "observed": "18.75",
+        "expected": "18.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FP_alloys",
+        "observed": "6.25",
+        "expected": "6.25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_energy",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_minerals",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_physics_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_society_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_engineering_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_influence",
+        "observed": "3.75",
+        "expected": "3.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_unity",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_consumer_goods",
+        "observed": "18.75",
+        "expected": "18.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FN_alloys",
+        "observed": "6.25",
+        "expected": "6.25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_energy",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_minerals",
+        "observed": "25",
+        "expected": "25",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_physics_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_society_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_engineering_research",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_influence",
+        "observed": "3.75",
+        "expected": "3.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_unity",
+        "observed": "12.5",
+        "expected": "12.5",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_consumer_goods",
+        "observed": "18.75",
+        "expected": "18.75",
+        "epsilon": "0.0001"
+      },
+      {
+        "status": "PASS",
+        "code": "COUNTRY_BASE_FH_alloys",
+        "observed": "6.25",
+        "expected": "6.25",
+        "epsilon": "0.0001"
+      }
+    ],
+    "foreign_economy": {
+      "status": "NOT COVERED",
+      "reason": "no independently fixed foreign job/budget window in this finite domestic matrix"
+    },
+    "station_deposit_building_income": {
+      "status": "NOT COVERED",
+      "reason": "country_base only; these sources need their own stable source/workforce audit"
+    },
+    "arithmetic_status": "PASS",
+    "interpretation": "arithmetic retained; sample guards do not permit acceptance"
+  },
+  "source_profile_status": "PASS",
+  "rows": [
+    {
+      "branch": "F00",
+      "actual_U": "7",
+      "R": "0",
+      "T": "7",
+      "B": "0.35",
+      "n": "1",
+      "architecture_instances": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "7",
+          "days": "-1"
+        }
+      ],
+      "counter_instances": [
+        {
+          "modifier": "shishan_econ_probe_counter",
+          "multiplier": "7",
+          "days": "-1"
+        }
+      ],
+      "A40_instances": [],
+      "measured_maintainer": {
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100"
+      },
+      "measured_biologist": {
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60"
+      },
+      "measured_last_month_category_income": {
+        "society_research": "8.184",
+        "unity": "1.705"
+      },
+      "measured_last_month_category_expenses": {
+        "consumer_goods": "1.98"
+      },
+      "normalized_unity": "1.55",
+      "normalized_society": "4.65",
+      "phases": {
+        "input": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F00_input.sav",
+          "sha256": "a0961b09e72d2347b8d7b7db2a53abe01e12e6dbba3e025657f64a053f8ca3b8",
+          "date": "2210.03.02",
+          "actual_population": 5497,
+          "actual_trait_weight": 38479,
+          "civilian_workforce": "2396",
+          "civilian_bonus_workforce": "240.7",
+          "civilian_allocated": "2397",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2397
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "warm": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F00_warm.sav",
+          "sha256": "292e6ea82054b1d62c15485b845e614efa678c4112950102fe6c04679d9d419a",
+          "date": "2210.04.02",
+          "actual_population": 5503,
+          "actual_trait_weight": 38521,
+          "civilian_workforce": "2402",
+          "civilian_bonus_workforce": "241.3",
+          "civilian_allocated": "2403",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2403
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "measured": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F00_measured.sav",
+          "sha256": "19b6253460722e88bb28618ce40a3b8d006c210954322cc7d44c6d38eecd8f09",
+          "date": "2210.05.02",
+          "actual_population": 5509,
+          "actual_trait_weight": 38563,
+          "civilian_workforce": "2408",
+          "civilian_bonus_workforce": "241.9",
+          "civilian_allocated": "2409",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2409
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch": "F10",
+      "actual_U": "7",
+      "R": "0",
+      "T": "7",
+      "B": "0.35",
+      "n": "1",
+      "architecture_instances": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "7",
+          "days": "-1"
+        }
+      ],
+      "counter_instances": [
+        {
+          "modifier": "shishan_econ_probe_counter",
+          "multiplier": "7",
+          "days": "-1"
+        }
+      ],
+      "A40_instances": [
+        {
+          "modifier": "shishan_econ_probe_other_output",
+          "multiplier": "1",
+          "days": "-1"
+        }
+      ],
+      "measured_maintainer": {
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100"
+      },
+      "measured_biologist": {
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60"
+      },
+      "measured_last_month_category_income": {
+        "society_research": "10.296",
+        "unity": "2.145"
+      },
+      "measured_last_month_category_expenses": {
+        "consumer_goods": "1.98"
+      },
+      "normalized_unity": "1.95",
+      "normalized_society": "5.85",
+      "phases": {
+        "input": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F10_input.sav",
+          "sha256": "79c3fdf0c4ff8b3b06d68396c49d3f09011495115468a66172c371db4b25c361",
+          "date": "2210.03.02",
+          "actual_population": 5497,
+          "actual_trait_weight": 38479,
+          "civilian_workforce": "2396",
+          "civilian_bonus_workforce": "240.7",
+          "civilian_allocated": "2397",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2397
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "warm": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F10_warm.sav",
+          "sha256": "4982b5199c1418329cbb7378bc2380d7ccab3ccbfe05e21e95d095c7d168e57c",
+          "date": "2210.04.02",
+          "actual_population": 5503,
+          "actual_trait_weight": 38521,
+          "civilian_workforce": "2402",
+          "civilian_bonus_workforce": "241.3",
+          "civilian_allocated": "2403",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2403
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "measured": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F10_measured.sav",
+          "sha256": "ab860f45f108efbf477235fd304e361b27a9386652e69800bfc8a530cdf664df",
+          "date": "2210.05.02",
+          "actual_population": 5509,
+          "actual_trait_weight": 38563,
+          "civilian_workforce": "2408",
+          "civilian_bonus_workforce": "241.9",
+          "civilian_allocated": "2409",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2409
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch": "F01",
+      "actual_U": "7",
+      "R": "0",
+      "T": "7",
+      "B": "0.35",
+      "n": "1",
+      "architecture_instances": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "7",
+          "days": "-1"
+        }
+      ],
+      "counter_instances": [],
+      "A40_instances": [],
+      "measured_maintainer": {
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100"
+      },
+      "measured_biologist": {
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60"
+      },
+      "measured_last_month_category_income": {
+        "society_research": "10.032",
+        "unity": "2.09"
+      },
+      "measured_last_month_category_expenses": {
+        "consumer_goods": "1.98"
+      },
+      "normalized_unity": "1.9",
+      "normalized_society": "5.7",
+      "phases": {
+        "input": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F01_input.sav",
+          "sha256": "b1407e68cb8f4228d7827bb0f4d2c59223a0b8cbf604a33edfcde98913a96cae",
+          "date": "2210.03.02",
+          "actual_population": 5497,
+          "actual_trait_weight": 38479,
+          "civilian_workforce": "2396",
+          "civilian_bonus_workforce": "240.7",
+          "civilian_allocated": "2397",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2397
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "warm": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F01_warm.sav",
+          "sha256": "3db87cb2d961bbc5b7f490718f49042c28fc3e3b8b416725d7966c0a417eca04",
+          "date": "2210.04.02",
+          "actual_population": 5502,
+          "actual_trait_weight": 38514,
+          "civilian_workforce": "2401",
+          "civilian_bonus_workforce": "241.2",
+          "civilian_allocated": "2402",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2402
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "measured": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F01_measured.sav",
+          "sha256": "3f5e92f10ebb2642b9f6647c4b739378d6d0d0af7a360584f2b3f79488f2cc88",
+          "date": "2210.05.02",
+          "actual_population": 5508,
+          "actual_trait_weight": 38556,
+          "civilian_workforce": "2407",
+          "civilian_bonus_workforce": "241.8",
+          "civilian_allocated": "2408",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2408
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch": "F11",
+      "actual_U": "7",
+      "R": "0",
+      "T": "7",
+      "B": "0.35",
+      "n": "1",
+      "architecture_instances": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "7",
+          "days": "-1"
+        }
+      ],
+      "counter_instances": [],
+      "A40_instances": [
+        {
+          "modifier": "shishan_econ_probe_other_output",
+          "multiplier": "1",
+          "days": "-1"
+        }
+      ],
+      "measured_maintainer": {
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100"
+      },
+      "measured_biologist": {
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60"
+      },
+      "measured_last_month_category_income": {
+        "society_research": "12.144",
+        "unity": "2.53"
+      },
+      "measured_last_month_category_expenses": {
+        "consumer_goods": "1.98"
+      },
+      "normalized_unity": "2.3",
+      "normalized_society": "6.9",
+      "phases": {
+        "input": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F11_input.sav",
+          "sha256": "9f79f10bcc07c3bd9f1cbb36933343ef75f28b02f398cb07b9746aeab5b76c30",
+          "date": "2210.03.02",
+          "actual_population": 5497,
+          "actual_trait_weight": 38479,
+          "civilian_workforce": "2396",
+          "civilian_bonus_workforce": "240.7",
+          "civilian_allocated": "2397",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2397
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "warm": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F11_warm.sav",
+          "sha256": "95e45dd540fc9ae4296904dfd6b5661a9c2148be1e154f484e14bf05c3e7e0a1",
+          "date": "2210.04.02",
+          "actual_population": 5502,
+          "actual_trait_weight": 38514,
+          "civilian_workforce": "2401",
+          "civilian_bonus_workforce": "241.2",
+          "civilian_allocated": "2402",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2402
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        },
+        "measured": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_F11_measured.sav",
+          "sha256": "0c54a7b3aa538df3344465f6d23129d9c7d746869882dca4379bec889e6614e7",
+          "date": "2210.05.02",
+          "actual_population": 5508,
+          "actual_trait_weight": 38556,
+          "civilian_workforce": "2407",
+          "civilian_bonus_workforce": "241.8",
+          "civilian_allocated": "2408",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 48,
+              "size": 2408
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 48,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 48,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 48,
+              "size": 1400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch": "FP",
+      "actual_U": "8",
+      "R": "0",
+      "T": "8",
+      "B": "0.4",
+      "n": "1",
+      "architecture_instances": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "8",
+          "days": "-1"
+        }
+      ],
+      "counter_instances": [],
+      "A40_instances": [
+        {
+          "modifier": "shishan_econ_probe_other_output",
+          "multiplier": "1",
+          "days": "-1"
+        }
+      ],
+      "measured_maintainer": {
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100"
+      },
+      "measured_biologist": {
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60"
+      },
+      "measured_last_month_category_income": {
+        "society_research": "12.408",
+        "unity": "2.585"
+      },
+      "measured_last_month_category_expenses": {
+        "consumer_goods": "1.98"
+      },
+      "normalized_unity": "2.35",
+      "normalized_society": "7.05",
+      "phases": {
+        "input": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FP_attempt2_input.sav",
+          "sha256": "03b45b0dc07bc5214cb5ebbebaf4458bff59c3d2ae63618db9f2851ab4377eb7",
+          "date": "2210.03.02",
+          "actual_population": 5497,
+          "actual_trait_weight": 43976,
+          "civilian_workforce": "2396",
+          "civilian_bonus_workforce": "240.7",
+          "civilian_allocated": "2397",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2397
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        },
+        "warm": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FP_attempt2_warm.sav",
+          "sha256": "ea2aa2ed7e08f3bd5786746591783ba22b77875e9635227b66c82a07d777b959",
+          "date": "2210.04.02",
+          "actual_population": 5503,
+          "actual_trait_weight": 44024,
+          "civilian_workforce": "2402",
+          "civilian_bonus_workforce": "241.3",
+          "civilian_allocated": "2403",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2403
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        },
+        "measured": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FP_attempt2_measured.sav",
+          "sha256": "6c8124efc5c728a779bb0b3ffb9643718d29884d14f12e39ab31d376c525ad56",
+          "date": "2210.05.02",
+          "actual_population": 5509,
+          "actual_trait_weight": 44072,
+          "civilian_workforce": "2408",
+          "civilian_bonus_workforce": "241.9",
+          "civilian_allocated": "2409",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2409
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch": "FN",
+      "actual_U": "8",
+      "R": "0",
+      "T": "8",
+      "B": "0.4",
+      "n": "1",
+      "architecture_instances": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "8",
+          "days": "-1"
+        }
+      ],
+      "counter_instances": [],
+      "A40_instances": [
+        {
+          "modifier": "shishan_econ_probe_other_output",
+          "multiplier": "1",
+          "days": "-1"
+        }
+      ],
+      "measured_maintainer": {
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100"
+      },
+      "measured_biologist": {
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60"
+      },
+      "measured_last_month_category_income": {
+        "society_research": "12.408",
+        "unity": "2.585"
+      },
+      "measured_last_month_category_expenses": {
+        "consumer_goods": "1.98"
+      },
+      "normalized_unity": "2.35",
+      "normalized_society": "7.05",
+      "phases": {
+        "input": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FN_input.sav",
+          "sha256": "629278695ed8b7541c85a009c0a4abe952ef36ea3f5de74c1706ca2a7948306d",
+          "date": "2210.03.02",
+          "actual_population": 5497,
+          "actual_trait_weight": 43976,
+          "civilian_workforce": "2396",
+          "civilian_bonus_workforce": "240.7",
+          "civilian_allocated": "2397",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2397
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        },
+        "warm": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FN_warm.sav",
+          "sha256": "ce3b62421d768453f48f439de1e396c3755aab07a3857db46bad3e2c6d028af6",
+          "date": "2210.04.02",
+          "actual_population": 5502,
+          "actual_trait_weight": 44016,
+          "civilian_workforce": "2401",
+          "civilian_bonus_workforce": "241.2",
+          "civilian_allocated": "2402",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2402
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        },
+        "measured": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FN_measured.sav",
+          "sha256": "42229db2437bf267ea825b3429e8651e27b503ec630f61097efb97a91e9851e1",
+          "date": "2210.05.02",
+          "actual_population": 5508,
+          "actual_trait_weight": 44064,
+          "civilian_workforce": "2407",
+          "civilian_bonus_workforce": "241.8",
+          "civilian_allocated": "2408",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2408
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch": "FH",
+      "actual_U": "8",
+      "R": "0",
+      "T": "8",
+      "B": "0.4",
+      "n": "1",
+      "architecture_instances": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "8",
+          "days": "-1"
+        }
+      ],
+      "counter_instances": [],
+      "A40_instances": [
+        {
+          "modifier": "shishan_econ_probe_other_output",
+          "multiplier": "1",
+          "days": "-1"
+        }
+      ],
+      "measured_maintainer": {
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100"
+      },
+      "measured_biologist": {
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60"
+      },
+      "measured_last_month_category_income": {
+        "society_research": "12.408",
+        "unity": "2.585"
+      },
+      "measured_last_month_category_expenses": {
+        "consumer_goods": "1.98"
+      },
+      "normalized_unity": "2.35",
+      "normalized_society": "7.05",
+      "phases": {
+        "input": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FH_input.sav",
+          "sha256": "aa35fb61896b753364ba0372f09a2da27761eb87da66b786816a7e1d1196caf6",
+          "date": "2210.03.02",
+          "actual_population": 5497,
+          "actual_trait_weight": 43976,
+          "civilian_workforce": "2396",
+          "civilian_bonus_workforce": "240.7",
+          "civilian_allocated": "2397",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2397
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        },
+        "warm": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FH_warm.sav",
+          "sha256": "ef2aa920d0e95161d06db47b0dd9295d97d14522195d4b850ca8034a71bcf444",
+          "date": "2210.04.02",
+          "actual_population": 5503,
+          "actual_trait_weight": 44024,
+          "civilian_workforce": "2402",
+          "civilian_bonus_workforce": "241.3",
+          "civilian_allocated": "2403",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2403
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        },
+        "measured": {
+          "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T113522Z\\econstable_FH_measured.sav",
+          "sha256": "c39981eb6b7609c4fce3f9593cd0fcf963b359305f93deb87893b0e91c468386",
+          "date": "2210.05.02",
+          "actual_population": 5509,
+          "actual_trait_weight": 44072,
+          "civilian_workforce": "2408",
+          "civilian_bonus_workforce": "241.9",
+          "civilian_allocated": "2409",
+          "actual_groups": [
+            {
+              "id": 1,
+              "category": "civilian",
+              "species_id": 51,
+              "size": 2409
+            },
+            {
+              "id": 12,
+              "category": "ruler",
+              "species_id": 51,
+              "size": 200
+            },
+            {
+              "id": 13,
+              "category": "specialist",
+              "species_id": 51,
+              "size": 1500
+            },
+            {
+              "id": 14,
+              "category": "worker",
+              "species_id": 51,
+              "size": 1400
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "interpretation": "Observed unity and society arithmetic matches the finite additive response, including positive/negative/hidden dummy increments; same-phase civilian population/employment differs in F01/F11/FN, so this sample does not qualify for acceptance. Foreign economy and station/deposit/building income remain NOT COVERED."
+}

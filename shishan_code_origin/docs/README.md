@@ -5,6 +5,15 @@
 ## 当前改版
 
 - [0.2.1发布与修订范围的继续验收](release-0.2.1-and-remaining-acceptance-2026-10-15.md)
+- [剩余74用例台账及排除范围](remaining-acceptance-case-ledger-2026-10-15.md)
+- [独立乘算调查与用户授权的加算合同](trait-multiplication-investigation-2026-10-15.md)
+- [加算经济对照设计与审计边界](remaining-additive-economy-probe-design-2026-10-15.md)
+- [经济矩阵审计器独立复核与门禁修复](remaining-additive-matrix-independent-review-2026-10-15.md)
+- [七分支原生预算、维护费与来源补充审计](remaining-additive-budget-supplement-2026-10-15.md)
+- [月速边界夹具](remaining-speed-boundary-probes-2026-10-15.md)
+- [旧存档异常夹具](remaining-legacy-anomaly-probes-2026-10-15.md)
+- [显示矩阵调查](remaining-display-matrix-investigation-2026-10-15.md)
+- [性能采集与计算开关方案](remaining-performance-measurement-design-2026-10-15.md)
 - [用户反馈与改版设计稿（2026-10-04）](../../docs/shishan-code-origin-feedback-redesign-2026-10-04.md)
 - [基于低内聚高耦合的旧时代集成服务架构：全特质 5% 与独立乘算设计](../../docs/shishan-code-origin-trait-synergy-design-2026-10-04.md)
 - [改版测试方案：环境、闸门、方法与通过条件](feedback-redesign-test-plan-2026-10-04.md)
@@ -30,7 +39,9 @@
 
 2026-10-04的rc.1仅做程序验证，作为历史保留。当前局势初始月速为1；每特质5%采用原生岗位产出加算，独立乘算调查未找到当前约束下合适的可靠实现，按用户授权采用加算回退，见[调查与合同](trait-multiplication-investigation-2026-10-15.md)。白绮本人免费改用原生维护豁免，避开经济倍率下限；其它领袖正常付费。九种非中文翻译仅静态校验，运行时不在范围内。22自然新局和长期路线不纳入继续验收，其他功能/显示/性能用例仍逐项取证。
 
-机制全名为「基于低内聚高耦合的旧时代集成服务架构」。1600×900、请求缩放0.75的简中实机确认正文可读全文，原生标题栏仍省略；其它显示矩阵未执行。
+发布后固定真实人口的七分支、21份原生档通过凝聚力/社会学的加算对照，新增正面、负面、隐藏零费特质均按每个+5%生效，被测岗位维护不变；完整资源和政体矩阵尚未完成。旧自然增长窗口的INVALID保留，详见经济探针记录和剩余台账。
+
+机制全名为「基于低内聚高耦合的旧时代集成服务架构」。1600×900、请求缩放0.75，以及最低1280×720、默认兼最大1.0的简中实机均确认正文可读全文；后者覆盖个体机械和高重复层机器智能，原生标题栏仍省略。其它显示组合和完整状态矩阵仍待执行，见剩余台账。
 
 ## 历史合同与证据
 

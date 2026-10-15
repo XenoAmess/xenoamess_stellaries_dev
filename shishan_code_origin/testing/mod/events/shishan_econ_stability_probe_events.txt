@@ -1,0 +1,58 @@
+# Isolated v2 economy control. Never ship in the production/Workshop package.
+namespace = shishan_econ_probe
+
+country_event = {
+ id = shishan_econ_probe.40
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = {
+  has_origin = origin_shishan_code
+  is_country_type = default
+  exists = owner_main_species
+  exists = capital_scope
+  any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+  capital_scope = { is_owned_by = prev }
+  NOR = {
+   has_country_flag = shishan_code_reward_pending
+   has_country_flag = shishan_code_reward_ticket_ready
+   has_country_flag = shishan_code_reward_window_open
+   has_country_flag = shishan_code_maintain_success_pending
+   has_country_flag = shishan_code_optimize_success_pending
+   has_country_flag = shishan_code_clean_success_pending
+   has_country_flag = shishan_code_relapse_pending
+  }
+  NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+  NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+  NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+ }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    is_country_type = default
+    exists = owner_main_species
+    exists = capital_scope
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    capital_scope = { is_owned_by = prev }
+    NOR = {
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_reward_window_open
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    NOT = { capital_scope = { has_modifier = shishan_econ_probe_stability_control } }
+   }
+   capital_scope = {
+    add_modifier = { modifier = shishan_econ_probe_stability_control days = -1 }
+   }
+   log = "SHISHAN_ECON_PROBE_40_READY_STABILITY_CONTROL"
+  }
+  else = { log = "SHISHAN_ECON_PROBE_40_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}

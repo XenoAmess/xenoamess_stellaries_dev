@@ -1,0 +1,111 @@
+{
+  "status": "INVESTIGATION_COMPLETE_RUNTIME_NOT_RUN",
+  "created_at_utc": "2026-10-15T11:09:07.237419+00:00",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "mod_version": "0.2.1",
+  "daily_tick_measurement": {
+    "candidate": "-gamestatetimer",
+    "evidence": "Official DD410 2026-02-05 plus matching current EXE identifier/path/columns",
+    "output_pattern": "logs/gametimer_*.tsv",
+    "required_columns": [
+      "Game Date",
+      "Time Unit",
+      "Seconds"
+    ],
+    "sample_filter": "Time Unit == Day",
+    "current_452_native_export_verified": false,
+    "gaps_and_units_verified": false
+  },
+  "refresh_measurement": {
+    "candidate": "script_profiler toggle twice",
+    "candidate_files": [
+      "script_profiling.log",
+      "script_profiling_summary.log"
+    ],
+    "aggregate_columns_evidence": [
+      "Total Time",
+      "Average Time",
+      "Hits"
+    ],
+    "per_call_samples_verified": false,
+    "quantile_from_total_hits_average": "NOT POSSIBLE WITHOUT INDIVIDUAL SAMPLES"
+  },
+  "readonly_console_queries": [
+    "help script_profiler",
+    "help debug_stats",
+    "help ticks_per_turn",
+    "ticks_per_turn"
+  ],
+  "console_queries_executed_by_agent": false,
+  "sparse_ocr_or_total_time_accepted_as_daily_distribution": false,
+  "fixture_plan": {
+    "implemented_this_turn": false,
+    "template_counts": [
+      1,
+      10,
+      50
+    ],
+    "colonies_by_empire_scale": [
+      1,
+      10,
+      50
+    ],
+    "population_per_colony": 10000,
+    "counts_are": "Proposed controlled G0 inputs, not native achieved states",
+    "real_nonempty_domestic_main_lineage_required": true,
+    "same_u_compatible_variants_require_native_confirmation": true,
+    "performance_off": "Missing current production computation switch; economic counter does not disable refresh work"
+  },
+  "remaining": [
+    "Short native -gamestatetimer run and verify continuous Day records",
+    "Verify native script profiler export granularity",
+    "If aggregate-only, obtain single-refresh timing samples with proven one-hit window",
+    "Implement/freeze 9 scale/template seeds and 2 polities",
+    "Define computation OFF without confusing economic cancellation",
+    "G1 each future fixture/copy",
+    "Warmup and paired 100-month actual measurements"
+  ],
+  "pf01_status": "NOT RUN",
+  "nat_exclusion_removes_pf01": false,
+  "sources": [
+    {
+      "path": "_runtime\\shishan_code\\20261015-remaining\\performance-investigation\\exe-dump-candidate-strings.json",
+      "bytes": 4223,
+      "sha256": "927286cb8f09429ba11d79b8987573ba13456300102a2e281d2a5bfc9c4f595f"
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-remaining\\performance-investigation\\exe-profiler-string-context.json",
+      "bytes": 26164,
+      "sha256": "823179e650e6aea31233fa487b60795046631028e66cd010794378338a9faf6d"
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-remaining\\performance-investigation\\exe-profiler-strings.json",
+      "bytes": 4462,
+      "sha256": "1ed370e88b9db6a5683b92040739ef011f5cd42ebcbc141ec5e3591b735fd7d0"
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-remaining\\performance-investigation\\exe-timer-command-strings.json",
+      "bytes": 6624,
+      "sha256": "865f655fe713d2aefb0eb0b4c87cf5f986f3be880d4b6e67e9c18bc785663be2"
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-remaining\\performance-investigation\\exe-timer-context-secondary.json",
+      "bytes": 18100,
+      "sha256": "3e03134e2735681344725db48ea0d73657fd57a0f9f80f615fc1702cd9783bec"
+    },
+    {
+      "path": "_runtime\\shishan_code\\20261015-remaining\\performance-investigation\\official-source-index.json",
+      "bytes": 1453,
+      "sha256": "f5233134f2e8fc48c353ea2b0e7d20b5f6ed23e7087bf7cea41d75c68cac6548"
+    }
+  ],
+  "source_json_lf": true,
+  "actions": {
+    "gui": false,
+    "game_launch": false,
+    "process_attach_or_injection": false,
+    "binary_modification": false,
+    "new_p_fixture": false,
+    "production_change": false
+  }
+}

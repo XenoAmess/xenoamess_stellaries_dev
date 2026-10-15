@@ -1,0 +1,184 @@
+{
+  "status": "STATIC_SOURCE_CONFIRMED",
+  "native_stability100": "NOT RUN",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "tool_head": "2b559966c72f4e845111e3e15652ae2354aaed57",
+  "tool_cli_sha256": "6ac143ebf03f3e1a041dff01b2d808e60de8e289d18cebf9855682f0a80b6d82",
+  "sources": [
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\defines\\00_defines.txt",
+      "sha256": "82eebd807eb54af347025b061af2991fc40a1b1059e39c2cb8ee135dca02b7cc",
+      "lines": [
+        {
+          "line": 653,
+          "text": "\t\tBASE_PLANET_STABILITY\t\t\t\t= 50"
+        },
+        {
+          "line": 654,
+          "text": "\t\tMAX_PLANET_STABILITY\t\t\t\t= 100"
+        },
+        {
+          "line": 655,
+          "text": "\t\tADDITIONAL_PLANET_STABILITY_LIMIT\t= 15    # Used for unbreakable resolve"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\modifiers.log",
+      "sha256": "dbe73b32e39316ad1f811c03be01852441360e9b0daecbb6e9051d36a6d4987f",
+      "lines": [
+        {
+          "line": 150,
+          "text": "- planet_amenities_no_happiness_add, Category: Colony"
+        },
+        {
+          "line": 151,
+          "text": "- planet_amenities_no_happiness_mult, Category: Colony"
+        },
+        {
+          "line": 152,
+          "text": "- planet_stability_add, Category: Colony"
+        },
+        {
+          "line": 153,
+          "text": "- planet_stability_mult, Category: Colony"
+        },
+        {
+          "line": 154,
+          "text": "- planet_stability_add_with_limit, Category: Colony"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\scopes.log",
+      "sha256": "b75c7789699a72fac0b73d1858a5d1a26d0f97a087e0cdcc932039a0068a4188",
+      "lines": [
+        {
+          "line": 82,
+          "text": "capital_scope - Scopes from an empire to its capital colony."
+        },
+        {
+          "line": 83,
+          "text": "Supported Scopes: country"
+        },
+        {
+          "line": 84,
+          "text": "Output Scope: colony"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\effects.log",
+      "sha256": "6d209da812f2d3f776a95a1ff7a598c127ece4661d90dea16ef1f5a5684fb12d",
+      "lines": [
+        {
+          "line": 480,
+          "text": "add_modifier - Adds a specific modifier to the scoped object for a set duration"
+        },
+        {
+          "line": 481,
+          "text": "add_modifier = {"
+        },
+        {
+          "line": 482,
+          "text": "\tmodifier = <key>"
+        },
+        {
+          "line": 483,
+          "text": "\tdays/months/years = <int, -1 (default) means it never expires>"
+        },
+        {
+          "line": 484,
+          "text": "\tmultiplier = <float>/<variable> (optional)"
+        },
+        {
+          "line": 485,
+          "text": "\ttime_multiplier = <variable> (optional: days/months/years value is multiplied by the value of this variable)"
+        },
+        {
+          "line": 486,
+          "text": "\tclear_on_owner_change = yes (optional: default no; clears modifier if planet/system/megastructure's owner changes)"
+        },
+        {
+          "line": 487,
+          "text": "}"
+        },
+        {
+          "line": 488,
+          "text": "Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift cosmic_storm_influence_field colony"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\triggers.log",
+      "sha256": "f25ad15a4f573e3c603e0315a4c8dbeedd4ecc85e8cae49f34ca2bbb5ff38679",
+      "lines": [
+        {
+          "line": 1551,
+          "text": "has_modifier - Checks if the scoped object has a certain modifier"
+        },
+        {
+          "line": 1552,
+          "text": "has_modifier = <modifier>"
+        },
+        {
+          "line": 1553,
+          "text": "For colony scope, it will check the carrier modifiers."
+        },
+        {
+          "line": 1554,
+          "text": "Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift colony"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\static_modifiers\\00_static_modifiers.txt",
+      "sha256": "97555ecc32a3ac071c53c7a817ae8d3bc54907470471c2695265378e67e3ec8a",
+      "lines": [
+        {
+          "line": 1147,
+          "text": "# Amenities ( 25% - 200% of required)"
+        },
+        {
+          "line": 1148,
+          "text": "planet_amenities_no_happiness_low = {"
+        },
+        {
+          "line": 1149,
+          "text": "\tplanet_stability_add = -50"
+        },
+        {
+          "line": 1150,
+          "text": "}"
+        },
+        {
+          "line": 1151,
+          "text": ""
+        },
+        {
+          "line": 1152,
+          "text": "planet_amenities_no_happiness_high = {"
+        },
+        {
+          "line": 1153,
+          "text": "\tplanet_stability_add = 20"
+        },
+        {
+          "line": 1154,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "path": "C:\\workspace\\open_kaishek\\tools\\stellaris_scope_guard.py",
+      "sha256": "bcded70a654dd6b34bb6c0f6d0f8262017e2cb20f3eb51cd4107a8c7ce436467",
+      "lines": [
+        {
+          "line": 23,
+          "text": "SCOPES = {\"owner\": \"country\", \"controller\": \"country\", \"species\": \"species\", \"owner_main_species\": \"species\", \"planet\": \"planet\", \"capital_scope\": \"colony\"}"
+        }
+      ]
+    }
+  ],
+  "boundary": "Native scope/type and maximum constant are confirmed; neither the constant nor G1 proves the future saved capital stability or all tick behavior."
+}

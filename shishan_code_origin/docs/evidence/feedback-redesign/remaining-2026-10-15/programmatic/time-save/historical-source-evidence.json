@@ -1,0 +1,100 @@
+{
+  "status": "HISTORICAL_AND_SOURCE_EVIDENCE_ONLY",
+  "sources": [
+    {
+      "path": "docs/shishan-code-origin-rs04-mixed-species-2026-09-29.md",
+      "bytes": 11234,
+      "sha256": "bb10ae35ac9ec1f998fa48775846627c30c355c67961b4577143d383d0103b61",
+      "relevant_lines": [
+        {
+          "line": 27,
+          "text": "后续由此存档分别按第一、三、五阶段推进至同一个月结算日，核对两组岗位分配及矿物来源。初始 `fast_forward 5` 在游戏暂停时未推动日期，恢复游戏后持续运行到 `2203.09.26`；分支比较以存档实际日期为准，不以控制台命令字面天数为准。"
+        }
+      ]
+    },
+    {
+      "path": "docs/shishan-code-origin-runtime-findings-2026-09-27.md",
+      "bytes": 70361,
+      "sha256": "1e6c7f3ca388b478c232737abbc3f9aa319a494fdbaa640ceb2093f741f5f29f",
+      "relevant_lines": [
+        {
+          "line": 160,
+          "text": "4.5.1 控制台 `save <name>` 在本次会话中返回 `Unknown command`，即使 F12 证明输入完整；正式分支存档改用游戏暂停菜单的“保存游戏”，不要把控制台 `save` 视为可用夹具。`_runtime/shishan_code/console_f12.py` 的一次执行仍成功测试 `effect every_situation={set_situation_progress=1000}`；回显 `1000.00`，第五阶段立刻恢复，截图 `20260927214512_1.jpg`。同一隔离会话的 `shishan_rs_2226_08_23.sav` 是第二阶段 `n=0` 的 GUI 保存基线，SHA-256 为 `3be43bd222375ee7a8f00862200410ce6093e6295ee6a3b05436f2b1ab7e2af6`。"
+        },
+        {
+          "line": 182,
+          "text": "为覆盖“真实研究完成而非控制台完成”终点，拟在**隔离用户目录的 Mod 副本**中增设一次性验收修正 `shishan_test_society_boost`：仅把本国社会学月产出大幅提高，不更改项目成本、`on_success` 或正式仓库 Mod 文件。先从当前 `shishan_maintain_monthlyprogress_n1.sav` 保存研究中基线并退出游戏，给隔离副本添加静态修正，重启同一隔离目录载入基线；国家控制台只施加这一临时修正，再按正常月结算使项目自然达到 `3000`。验收标准是进度确实通过 `society_queue` 累积至成本附近、项目自然完成后只使 `n:1→2` 一次、局势归零、维护/清理下一轮费用正确；取消或失败不算。结束后移除临时文件并重启原始 Mod 副本，避免把夹具带入后续正常实机或正式提交。控制台 `fast_forward 30` 在 4.5.1 实际推进 30 天，回显可核查；`research_speed 100` 返回 `Unknown command`，不再使用。"
+        }
+      ]
+    },
+    {
+      "path": "shishan_code_origin/tools/runtime_feedback.py",
+      "bytes": 10870,
+      "sha256": "e5344c176c844fe5fa039ef9c4878fa8e314f644da164f591ad1aa5c6e3aba56",
+      "relevant_lines": [
+        {
+          "line": 166,
+          "text": "def native_save(name):"
+        },
+        {
+          "line": 182,
+          "text": "            raise RuntimeError(f\"native save UI label missing/ambiguous: {text}\")"
+        }
+      ]
+    },
+    {
+      "path": "eat_everything_origin/tools/runtime_1015.py",
+      "bytes": 5702,
+      "sha256": "1651490dfda337294cf3acf7aea8e4aecaca638bd928c2a2b6f16f3bf0e3813f",
+      "relevant_lines": [
+        {
+          "line": 77,
+          "text": "def wait_for_native_date(expected, stage, timeout_seconds=600):"
+        },
+        {
+          "line": 78,
+          "text": "    \"\"\"Observe the real HUD date after fast_forward; never infer completion.\"\"\""
+        },
+        {
+          "line": 80,
+          "text": "    deadline = time.monotonic() + timeout_seconds"
+        },
+        {
+          "line": 84,
+          "text": "        if any(row[\"text\"] == expected and row[\"score\"] >= .8"
+        },
+        {
+          "line": 96,
+          "text": "    raise RuntimeError(\"Native date was not observed before timeout: \" + expected)"
+        }
+      ]
+    },
+    {
+      "path": "eat_everything_origin/docs/evidence/priority-terravore-progress-2026-10-09/third-tradition-outposts/formal_production_native_calendar.py",
+      "bytes": 2182,
+      "sha256": "bf467a417bab8894e894b5cb28401045542fa2c3333317dc26b340a258f41327",
+      "relevant_lines": [
+        {
+          "line": 8,
+          "text": "h.press_scan_code(0x29,stage+'-console-open',1);h.type_text('fast_forward '+str(days),True,stage+'-native-days')"
+        },
+        {
+          "line": 11,
+          "text": " f=r.gpu_capture(stage+'-calendar-poll-'+str(n));labels=[x['text'] for x in f['rows']];complete=end in labels and '\\u6682\\u505c' in labels and any(h.normalized(t).startswith('fastforwarded'+str(days)+'day') or h.normalized(t)=='fastforwarded'+str(days)+'d' for t in labels)"
+        },
+        {
+          "line": 14,
+          "text": "  h.write_json(run/(stage+'-calendar-receipt.json'),{'status':'CALENDAR_CONFIRMED','date':end,'start_date':b['date'],'days':days,'image_sha256':f['image_sha256'],'actual_receipt_labels':[t for t in labels if 'fastforward' in h.normalized(t)]});break"
+        },
+        {
+          "line": 16,
+          "text": "h.press_scan_code(0x29,stage+'-console-close',1);a=r.native_save(stage,end,(0,));ea=(user/'logs/error.log').read_bytes();(run/(stage+'-error-after.log')).write_bytes(ea)"
+        }
+      ]
+    }
+  ],
+  "current_game_452_native_fast_forward_receipt": "NOT LOCATED_IN_INDEXED_SHISHAN_CONSOLE_JSON",
+  "current_save_command": "NOT VERIFIED",
+  "current_ticks_per_turn_and_pause_behavior": "NOT EXECUTED",
+  "important": "Source helper polls do not prove current native semantics; 4.5.1 evidence remains version-bounded."
+}

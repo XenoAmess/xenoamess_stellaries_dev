@@ -1,0 +1,69 @@
+# Country scope: remove only maintenance capacity globally. Never writes speed/progress.
+shishan_speed_probe_reset_capacity_effect = {
+ remove_country_flag = shishan_speed_probe_j_ready
+ every_owned_colony = {
+  remove_modifier = shishan_speed_probe_individual_capacity
+  remove_modifier = shishan_speed_probe_drone_capacity
+  remove_planet_flag = shishan_speed_probe_colony_a
+  remove_planet_flag = shishan_speed_probe_colony_b
+  while = {
+   limit = { has_building = building_shishan_code_institute }
+   remove_building = building_shishan_code_institute
+  }
+  check_planet_employment = yes
+ }
+}
+
+# Colony scope. CAPACITY is a controlled input; real employment is checked separately.
+shishan_speed_probe_prepare_colony_effect = {
+ remove_all_buildings = yes
+ remove_all_districts = yes
+ if = {
+  limit = { owner = { is_machine_empire = yes } }
+  add_modifier = { modifier = shishan_speed_probe_drone_capacity multiplier = $CAPACITY$ days = -1 }
+  create_pop_group = { species = owner category = complex_drone size = 2000 effect = { set_pop_group_flag = shishan_speed_probe_created_input } }
+ }
+ else_if = {
+  limit = { owner = { is_individual_machine = yes } }
+  add_modifier = { modifier = shishan_speed_probe_individual_capacity multiplier = $CAPACITY$ days = -1 }
+  create_pop_group = { species = owner category = specialist size = 2000 effect = { set_pop_group_flag = shishan_speed_probe_created_input } }
+ }
+ check_planet_employment = yes
+}
+
+# Works in country or colony scope. All observed counts originate in native exports.
+shishan_speed_probe_snapshot_effect = {
+ export_trigger_value_to_variable = { trigger = num_assigned_jobs parameters = { job = shishan_code_maintainer } variable = shishan_speed_probe_observed_individual }
+ export_trigger_value_to_variable = { trigger = num_assigned_jobs parameters = { job = shishan_code_maintainer_drone } variable = shishan_speed_probe_observed_drone }
+ set_variable = { which = shishan_speed_probe_observed_total value = this.shishan_speed_probe_observed_individual }
+ change_variable = { which = shishan_speed_probe_observed_total value = this.shishan_speed_probe_observed_drone }
+}
+
+# Country scope; READY means only that controlled inputs currently have native employment.
+shishan_speed_probe_verify_effect = {
+ remove_country_flag = shishan_speed_probe_j_ready
+ shishan_speed_probe_snapshot_effect = yes
+ every_owned_colony = {
+  limit = { OR = { has_planet_flag = shishan_speed_probe_colony_a has_planet_flag = shishan_speed_probe_colony_b } }
+  shishan_speed_probe_snapshot_effect = yes
+ }
+ if = {
+  limit = {
+   OR = {
+    AND = { is_individual_machine = yes check_variable = { which = shishan_speed_probe_observed_individual value = this.shishan_speed_probe_requested_j } check_variable = { which = shishan_speed_probe_observed_drone value = 0 } }
+    AND = { is_machine_empire = yes check_variable = { which = shishan_speed_probe_observed_drone value = this.shishan_speed_probe_requested_j } check_variable = { which = shishan_speed_probe_observed_individual value = 0 } }
+   }
+   OR = {
+    check_variable = { which = shishan_speed_probe_cross_colony value = 0 }
+    AND = {
+     check_variable = { which = shishan_speed_probe_cross_colony value = 1 }
+     any_owned_colony = { has_planet_flag = shishan_speed_probe_colony_a check_variable = { which = shishan_speed_probe_observed_total value = owner.shishan_speed_probe_requested_a } }
+     any_owned_colony = { has_planet_flag = shishan_speed_probe_colony_b check_variable = { which = shishan_speed_probe_observed_total value = owner.shishan_speed_probe_requested_b } }
+    }
+   }
+  }
+  set_country_flag = shishan_speed_probe_j_ready
+  log = "SHISHAN_SPEED_PROBE_READY_NATIVE_EMPLOYMENT_ONLY"
+ }
+ else = { log = "SHISHAN_SPEED_PROBE_NOT_READY_NATIVE_EMPLOYMENT_MISMATCH" }
+}

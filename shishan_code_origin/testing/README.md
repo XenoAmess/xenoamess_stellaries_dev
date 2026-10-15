@@ -65,3 +65,40 @@ event shishan_feedback_probe.2
 2026-10-15主任务补记：open_kaishek修复已提交推送至`2b55996`，53项相关测试通过。主任务重跑实际fixture-rc2包为PASS（26/26脚本、13DDS、268键），已启动隔离4.5.2。上文NOT RUN是开发阶段历史状态；行为结果见本轮实机验证记录，不能从门禁PASS推导实机PASS。
 
 当前执行状态：工具修复已完成并推送，rc.6正式与实际隔离包重新通过G1（25/25及26/26脚本、13DDS、269键），简中实机本轮已执行并正常退出。生产90文件原样复制，夹具只额外加入本目录一个P文件；具体行为、存档及失败证据见[实机记录](../docs/runtime-feedback-validation-2026-10-15.md)。原开发阶段NOT RUN不表示当前整体状态，也不替代各行为结论。
+
+## 加算经济 lab（0.2.1 正式包的独立测试叠加）
+
+先行设计及完整取证规则见[最小受控加算经济探针](../docs/remaining-additive-economy-probe-design-2026-10-15.md)。本节为后续已授权实施；前面的两个 foreign/reward 事件保持原样。lab 仅新增 3 个 P 文件与 10 个测试本地化文件，不改 90 个正式生产文件或生产 on_action。
+
+| 国家控制台入口 | 输入与 READY 后观察 |
+| --- | --- |
+| `event shishan_econ_probe.10` | 架构等效 OFF：按生产刚刷新得到的实际 T，永久添加每层 -5% 的同键 counter。记录实际输入 `shishan_econ_probe_counter_t`，不会月度追调。 |
+| `event shishan_econ_probe.11` | 仅在已有 counter 时移除，使架构 ON；清理 counter 标记和记录，调用生产 refresh。 |
+| `event shishan_econ_probe.20` | 添加唯一的 +40% 岗位产出加算输入；不重复叠加。 |
+| `event shishan_econ_probe.21` | 仅在已有 +40% 输入时移除。 |
+| `event shishan_econ_probe.30` | 添加 `trait_external_econ_probe_positive`，cost=1/positive，无自带经济效果。 |
+| `event shishan_econ_probe.31` | 添加 `trait_external_econ_probe_negative`，cost=-1/negative，无自带经济效果。 |
+| `event shishan_econ_probe.32` | 添加 `trait_external_econ_probe_hidden`，cost=0/hidden=yes，无自带经济效果。 |
+
+以上都是隐藏、仅触发事件，没有 on_action；国家应为当前玩家，关闭选中的星球/领袖后调用。事件 trigger 限本起源，immediate 再查起源、主模板、正人口主谱系、无 pending/成功票据及没有在研维护/清理/优化。每个入口输出 `SHISHAN_ECON_PROBE_<ID>_READY_...` 或 `..._BLOCKED_...`；READY 仅表示受控输入成功，不是经济验收通过。
+
+`.10` 在 counter 已存在时 BLOCKED，不能用重放静默重新校准；`.11/.21` 缺少待移除对象时 BLOCKED。三个 trait 入口要求没有 counter、没有任一 lab trait，且实际主谱系皆为 ROBOT/MACHINE；只调用既有国内 clone helper，执行前重检并在后置条件核对全部实际主谱系人口已有该键。单个分支只允许一种 lab trait；从同一 S 重载准备下一分支。它们不修改共享物种定义、不直接写 U/R/T/B/n/CD、不发成功凭证、不补资源，也不能代替自然项目或真实第三方整包兼容验收。
+
+最小操作：从 `fb456_natural_claim` 准备并保存共同 S，先用原有 `.1` 建立外国哨兵（若需）。依次重载 S：F00 调 `.10`；F10 调 `.10`、`.20`；F01 不加输入；F11 调 `.20`；FP/FN/FH 调 `.20` 后分别 `.30/.31/.32`。各自先暖完整一月，再测完整一月并原生另存。具体正常岗位与 bonus_workforce 分母、分类 budget、误差、T 固定和样本无效判定按设计执行。
+
+拟定组合包目录为 `_runtime/shishan_code/20261015-remaining/additive-fixture/mod`：正式 90 文件逐字节复制，再叠当前 `testing/mod`，含原 foreign_probe；生产 descriptor/version 仍为 0.2.1。测试专用额外文件、哈希、G1 报告另存运行目录；没有 G1 PASS 不进入此夹具实机。十语言测试标签提供完整键集，九种外语仅静态校验，运行时不在范围内。不得把此包上传 Workshop。
+
+开发静态与 G1 结果实施后回填；目前本节不宣称原生 lab 已执行。
+
+2026-10-15 开发收口：lab 新增 13 文件，连原 foreign_probe 共 14 个额外文件；实际组合包 104 文件，正式 90 文件逐一 SHA-256 与源相同并在 G1 后重查。G1 **PASS：29/29 P 脚本、13 DDS、279 键/语**；全部事件 ID 无重复；十语静态检查为 60 文件/每语 279 键，通过。三个静态负例拒绝缺失 clone 内层 guard、hidden 字段、pending/凭证 guard。详情及完整报告链接见上述设计文档；实际 lab 事件与经济原生回归仍为 NOT RUN，待主任务执行。未改生产、工具或启动游戏。
+# v2：独立稳定度控制（经济实验专用）
+
+来源与验收边界见[经济探针设计](../docs/remaining-additive-economy-probe-design-2026-10-15.md)的 v2 章节。`shishan_econ_stability_probe_events.txt`、对应 static modifier 与十语独立 yml 仅供新 `additive-stable-fixture`；原运行中的104文件包保持原样。新包从冻结104逐字节复制后叠12文件，共116，仍是测试环境，禁止用于正式Workshop上传。
+
+原生控制台 `event shishan_econ_probe.40` 只给本国真实首都添加永久 `shishan_econ_probe_stability_control`，其唯一数学输入为 `planet_stability_add=100`。事件要求本起源/default country、主谱系实际人口、首都归本国、无在研三项目/待领/成功/复发凭证。首次 READY，已有控制时 BLOCKED；没有修改预算、U/R/T/B/J、资源或预期输出。前提不满足可能被原生 event trigger 拒发；只有进入 immediate 才保证其对应日志分支，不能伪造未执行事件的 marker。
+
+主任务须从原生存档确认真实 capital 的 stability=100、唯一正确永久 modifier、其它条件不变后，保存七分支共用 S。静态依据 MAX_PLANET_STABILITY=100、capital_scope输出colony及修正Category Colony，不代替实际达到100；G1 与7项结构/负例测试通过时，实际clamp尚 NOT RUN。随后run113522Z的共同源`econstable_common_0302`已独立确认实际100/唯一永久正确modifier及U7/R0/J100，七支窗口仍待证。若缓存需要真实tick刷新，由主任务自然推进并另存共同源，不能直接写 stability 字段。所有分支共用同一受控环境，之后沿原10/20/30/31/32输入矩阵；原自然F01 INVALID数据保留。
+
+2026-10-15 原生收口：首次稳定度100但自然组装仍开启的七支21档因部分civilian人数差1保持INVALID；随后使用原版正常「停止组装机器人」决议并成熟两个月，不改116文件包。新共同源`ecng_common_0502`和七支21档的实际人口P5497及全部国内就业固定，测量期已观察经济context固定，setup及同相位跨支守卫通过；共同源→input→warm的carrier_flags共同暖机变化另列原报告。冻结审计器对有限经济、setup、严格P/W均判PASS。凝聚力/社会学的同区额外40%对照及正/负/隐藏零费特质各+5%通过，被测消费品维护及country_base不变。完整原始档、早期失败、驱动源码与日志见[归档](../docs/evidence/feedback-redesign/remaining-2026-10-15/controlled-economy-run113522/README.md)；范围仍限已测岗位/资源，不把新结果覆盖旧INVALID或推广至全部政体、经济与性能。
+
+其它独立夹具的前提、G1和未执行原生边界分别见[月速](../docs/remaining-speed-boundary-probes-2026-10-15.md)、[旧档异常](../docs/remaining-legacy-anomaly-probes-2026-10-15.md)、[性能计算开关](../docs/remaining-performance-measurement-design-2026-10-15.md)。这些测试资产均未混入正式90文件或上传Steam。

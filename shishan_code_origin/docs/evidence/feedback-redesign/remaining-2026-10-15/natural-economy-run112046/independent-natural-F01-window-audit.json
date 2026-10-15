@@ -1,0 +1,5779 @@
+{
+  "report_version": 1,
+  "generated_at_utc": "2026-10-15T11:32:34.982677+00:00",
+  "scope": "Independent read-only necessary window checks for the three original natural F01 native saves; no GUI, no game launch, no source/save mutation. No fabricated F00 or other branches.",
+  "status": "INVALID",
+  "native_seven_branch_matrix": {
+    "status": "NOT RUN",
+    "available_branch": "F01",
+    "missing_branches": [
+      "F00",
+      "F10",
+      "F11",
+      "FP",
+      "FN",
+      "FH"
+    ],
+    "reason": "Six branches absent; no complete audit_matrix call and no arithmetic acceptance."
+  },
+  "source_files": [
+    {
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\tools\\audit_additive_runtime_matrix.py",
+      "bytes": 36066,
+      "sha256": "28f87780dc79e8d685e187fe74bf68ff01f6867533bad82e983365cb40774430"
+    },
+    {
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\tools\\audit_feedback_runtime_save.py",
+      "bytes": 27521,
+      "sha256": "e3308841093cccb0ae7e463067acc5127c6acc69844e632e3b7a5241ac37d984"
+    },
+    {
+      "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\manifest.json",
+      "bytes": 22029,
+      "sha256": "e3360fe907e533506cd7392e8cd83f3cd36897f0bdbfb4a726346a0262616c44"
+    }
+  ],
+  "save_source_sha_checks": [
+    {
+      "status": "PASS",
+      "phase": "input",
+      "expected_sha256": "b0dce89057b0082b588e5030bc8c6b8c8283c7017dc65fa08716e00de173def2",
+      "observed_sha256": "b0dce89057b0082b588e5030bc8c6b8c8283c7017dc65fa08716e00de173def2"
+    },
+    {
+      "status": "PASS",
+      "phase": "warm",
+      "expected_sha256": "5602fd4c1f3ceba20439d72d26eb43a5c451fb46f8ebdb5cec7ed1f904c34095",
+      "observed_sha256": "5602fd4c1f3ceba20439d72d26eb43a5c451fb46f8ebdb5cec7ed1f904c34095"
+    },
+    {
+      "status": "PASS",
+      "phase": "measured",
+      "expected_sha256": "0eed7c29c739d5b9cf762677700561da72fb05e2ec9c15ddf64f09d12aab6dd2",
+      "observed_sha256": "0eed7c29c739d5b9cf762677700561da72fb05e2ec9c15ddf64f09d12aab6dd2"
+    }
+  ],
+  "sequential_parser_release": [
+    {
+      "after_phase": "input",
+      "live_complete_native_documents": 0
+    },
+    {
+      "after_phase": "warm",
+      "live_complete_native_documents": 0
+    },
+    {
+      "after_phase": "measured",
+      "live_complete_native_documents": 0
+    }
+  ],
+  "epsilon_rule": "Unchanged original auditor: max(0.0001,0.000001*max(abs(compared values))).",
+  "strict_cache_audit": {
+    "status": "FAIL",
+    "checks": [
+      {
+        "phase": "input",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_population",
+        "observation": {
+          "observed": "5485",
+          "expected": "5491",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "input",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_trait_weight",
+        "observation": {
+          "observed": "38395",
+          "expected": "38437",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "warm",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_population",
+        "observation": {
+          "observed": "5491",
+          "expected": "5497",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "warm",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_trait_weight",
+        "observation": {
+          "observed": "38437",
+          "expected": "38479",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "measured",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_population",
+        "observation": {
+          "observed": "5497",
+          "expected": "5503",
+          "status": "MISMATCH"
+        }
+      },
+      {
+        "phase": "measured",
+        "status": "FAIL",
+        "code": "STRICT_CACHE_MISMATCH",
+        "key": "shishan_code_architecture_trait_weight",
+        "observation": {
+          "observed": "38479",
+          "expected": "38521",
+          "status": "MISMATCH"
+        }
+      }
+    ],
+    "interpretation": "P/W failures remain FAIL separately. Stable actual/cache U/T/B/R would allow fixed-U economy differences, but do not waive employment/context guards."
+  },
+  "finite_core_guards": {
+    "status": "PASS",
+    "checks": []
+  },
+  "original_window_necessary_guards": {
+    "status": "INVALID",
+    "checks": [
+      {
+        "status": "INVALID",
+        "code": "EMPLOYMENT_OR_CAPACITY_CHANGED",
+        "branch": "F01",
+        "phase": "input",
+        "reference": "F01 measured (necessary within-branch guard only; missing F00 prevents complete matrix audit)",
+        "differences": [
+          {
+            "path": "/4/allocations/0/amount",
+            "before": "2391",
+            "after": "2403",
+            "delta": "12",
+            "epsilon": "0.002403"
+          },
+          {
+            "path": "/4/bonus_workforce",
+            "before": "240.1",
+            "after": "241.3",
+            "delta": "1.2",
+            "epsilon": "0.0002413"
+          },
+          {
+            "path": "/4/workforce",
+            "before": "2390",
+            "after": "2402",
+            "delta": "12",
+            "epsilon": "0.002402"
+          }
+        ]
+      },
+      {
+        "status": "INVALID",
+        "code": "EMPLOYMENT_OR_CAPACITY_CHANGED",
+        "branch": "F01",
+        "phase": "warm",
+        "reference": "F01 measured (necessary within-branch guard only; missing F00 prevents complete matrix audit)",
+        "differences": [
+          {
+            "path": "/4/allocations/0/amount",
+            "before": "2397",
+            "after": "2403",
+            "delta": "6",
+            "epsilon": "0.002403"
+          },
+          {
+            "path": "/4/bonus_workforce",
+            "before": "240.7",
+            "after": "241.3",
+            "delta": "0.6",
+            "epsilon": "0.0002413"
+          },
+          {
+            "path": "/4/workforce",
+            "before": "2396",
+            "after": "2402",
+            "delta": "6",
+            "epsilon": "0.002402"
+          }
+        ]
+      },
+      {
+        "status": "INVALID",
+        "code": "ECONOMIC_CONTEXT_CHANGED",
+        "branch": "F01",
+        "phase": "warm",
+        "reference": "F01 measured",
+        "differences": [
+          {
+            "path": "/colonies/0/stability",
+            "before": "72.7026",
+            "after": "72.714",
+            "delta": "0.0114",
+            "epsilon": "0.0001"
+          }
+        ]
+      }
+    ],
+    "period_checks": [
+      {
+        "status": "PASS",
+        "code": "INSUFFICIENT_OR_AMBIGUOUS_FULL_MONTH",
+        "start": 795631,
+        "warm": 795661,
+        "end": 795691
+      },
+      {
+        "status": "PASS",
+        "code": "WARM_NOT_AT_MEASUREMENT_MONTH_START",
+        "warm_day": 2
+      },
+      {
+        "status": "PASS",
+        "code": "NO_PRECEDING_WARMUP_MONTH"
+      }
+    ],
+    "reference_caveat": "Original complete matrix compares all jobs to F00 measured. F00 is absent. Internal differences among F01 endpoints are sufficient to fail that common-reference condition, without inventing a replacement F00."
+  },
+  "observed_by_phase": {
+    "input": {
+      "date": "2210.02.02",
+      "actual_population": 5491,
+      "actual_weighted_trait_numerator": 38437,
+      "actual_U": "7",
+      "actual_templates": [
+        {
+          "id": 48,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_power_drills"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_robot_power_drills",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 7,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            48,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5491,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "maintainer_J": "100",
+      "maintainer_effective_workforce": "1.1",
+      "society_combined_effective_workforce": "1.76",
+      "measured_jobs": [
+        {
+          "id": 16,
+          "colony_id": 0,
+          "type": "biologist",
+          "workforce": "60",
+          "bonus_workforce": "6",
+          "automated_workforce": "0",
+          "max_workforce": "60",
+          "workforce_limit": "60",
+          "automated_workforce_limit": "59",
+          "allocations": [
+            {
+              "group_id": 13,
+              "species_id": 48,
+              "category": "specialist",
+              "amount": "60",
+              "base_traits": [
+                "trait_machine_unit",
+                "trait_robot_high_bandwidth",
+                "trait_robot_high_maintenance",
+                "trait_robot_luxurious",
+                "trait_robot_power_drills",
+                "trait_shishan_code",
+                "trait_wet_planet_preference"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 33554621,
+          "colony_id": 0,
+          "type": "shishan_code_maintainer",
+          "workforce": "100",
+          "bonus_workforce": "10",
+          "automated_workforce": "0",
+          "max_workforce": "100",
+          "workforce_limit": "100",
+          "automated_workforce_limit": "99",
+          "allocations": [
+            {
+              "group_id": 13,
+              "species_id": 48,
+              "category": "specialist",
+              "amount": "100",
+              "base_traits": [
+                "trait_machine_unit",
+                "trait_robot_high_bandwidth",
+                "trait_robot_high_maintenance",
+                "trait_robot_luxurious",
+                "trait_robot_power_drills",
+                "trait_shishan_code",
+                "trait_wet_planet_preference"
+              ]
+            }
+          ]
+        }
+      ],
+      "context_stability": [
+        {
+          "colony_id": 0,
+          "stability": "72.6918",
+          "final_designation": "col_capital",
+          "ascension_tier": "0",
+          "buildings_cache": [
+            "0",
+            "2",
+            "3",
+            "4",
+            "16777252",
+            "1"
+          ],
+          "districts": [
+            "0",
+            "1",
+            "2"
+          ],
+          "binary_flags": "72",
+          "deposits": [
+            "255",
+            "256",
+            "257",
+            "258",
+            "259",
+            "260",
+            "261",
+            "262",
+            "263",
+            "264",
+            "265",
+            "266",
+            "267"
+          ],
+          "carrier_flags": "1"
+        }
+      ],
+      "core_guard_status": "PASS",
+      "core_guard_checks": [],
+      "strict_cache": {
+        "status": "FAIL",
+        "checks": [
+          {
+            "status": "FAIL",
+            "code": "STRICT_CACHE_MISMATCH",
+            "key": "shishan_code_architecture_population",
+            "observation": {
+              "observed": "5485",
+              "expected": "5491",
+              "status": "MISMATCH"
+            }
+          },
+          {
+            "status": "FAIL",
+            "code": "STRICT_CACHE_MISMATCH",
+            "key": "shishan_code_architecture_trait_weight",
+            "observation": {
+              "observed": "38395",
+              "expected": "38437",
+              "status": "MISMATCH"
+            }
+          }
+        ],
+        "comparisons": {
+          "shishan_code_architecture_population": {
+            "observed": "5485",
+            "expected": "5491",
+            "status": "MISMATCH"
+          },
+          "shishan_code_architecture_trait_weight": {
+            "observed": "38395",
+            "expected": "38437",
+            "status": "MISMATCH"
+          },
+          "shishan_code_architecture_trait_average": {
+            "observed": "7",
+            "expected": "7",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_total": {
+            "observed": "7",
+            "expected": "7",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_bonus": {
+            "observed": "0.35",
+            "expected": "0.35",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_multiplier": {
+            "observed": "1.35",
+            "expected": "1.35",
+            "status": "MATCH"
+          }
+        }
+      },
+      "actual_budget": {
+        "current_month": {
+          "income": {
+            "country_base": {
+              "energy": "25",
+              "minerals": "25",
+              "physics_research": "12.5",
+              "society_research": "12.5",
+              "engineering_research": "12.5",
+              "influence": "3.75",
+              "unity": "12.5",
+              "consumer_goods": "18.75",
+              "alloys": "6.25"
+            },
+            "starbase_modules": {
+              "energy": "7.5"
+            },
+            "orbital_mining_deposits": {
+              "energy": "12.5",
+              "minerals": "12.5"
+            },
+            "orbital_research_deposits": {
+              "engineering_research": "3.75"
+            },
+            "country_power_projection": {
+              "influence": "1.6111"
+            },
+            "trade_policy": {
+              "energy": "31.22381",
+              "trade": "31.22381"
+            },
+            "planet_miners": {
+              "minerals": "69.4456"
+            },
+            "planet_technician": {
+              "energy": "91.66819"
+            },
+            "planet_politicians": {
+              "unity": "19.09754"
+            },
+            "planet_bureaucrats": {
+              "unity": "6.87511"
+            },
+            "planet_metallurgists": {
+              "alloys": "26.73655"
+            },
+            "planet_artisans": {
+              "consumer_goods": "40.10483"
+            },
+            "planet_civilians": {
+              "trade": "45.54763"
+            },
+            "planet_physicists": {
+              "physics_research": "3.43755"
+            },
+            "planet_biologists": {
+              "society_research": "9.16681",
+              "unity": "1.90975"
+            },
+            "planet_engineers": {
+              "engineering_research": "3.43755"
+            },
+            "pop_category_workers": {
+              "trade": "3.5"
+            },
+            "pop_category_specialists": {
+              "trade": "6.1875"
+            },
+            "pop_category_rulers": {
+              "trade": "1.25"
+            },
+            "pop_category_civilians": {
+              "trade": "5.9625"
+            }
+          },
+          "expenses": {
+            "ships": {
+              "energy": "3.6",
+              "alloys": "1.08"
+            },
+            "ship_components": {
+              "energy": "1.188",
+              "alloys": "0.216"
+            },
+            "station_gatherers": {
+              "energy": "4"
+            },
+            "station_researchers": {
+              "energy": "1"
+            },
+            "starbases": {
+              "energy": "2"
+            },
+            "starbase_buildings": {
+              "energy": "0.96"
+            },
+            "starbase_modules": {
+              "energy": "0.96"
+            },
+            "planet_buildings": {
+              "energy": "15"
+            },
+            "planet_districts_mining": {
+              "energy": "4"
+            },
+            "planet_districts_generator": {
+              "energy": "3"
+            },
+            "planet_districts_cities": {
+              "energy": "6"
+            },
+            "leader_commanders": {
+              "unity": "4"
+            },
+            "leader_scientists": {
+              "unity": "4"
+            },
+            "leader_officials": {
+              "unity": "8"
+            },
+            "trade_policy": {
+              "trade": "62.44763"
+            },
+            "planet_pop_assemblers": {
+              "alloys": "4.05"
+            },
+            "planet_politicians": {
+              "consumer_goods": "4.95"
+            },
+            "planet_bureaucrats": {
+              "consumer_goods": "1.98"
+            },
+            "planet_metallurgists": {
+              "minerals": "23.1"
+            },
+            "planet_artisans": {
+              "minerals": "17.325"
+            },
+            "planet_physicists": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_biologists": {
+              "consumer_goods": "1.98"
+            },
+            "planet_engineers": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_pops_traits": {
+              "energy": "60.335"
+            },
+            "pop_category_workers": {
+              "consumer_goods": "3.85"
+            },
+            "pop_category_specialists": {
+              "consumer_goods": "8.25"
+            },
+            "pop_category_rulers": {
+              "consumer_goods": "2.2"
+            },
+            "pop_category_civilians": {
+              "consumer_goods": "6.55875"
+            }
+          }
+        },
+        "last_month": {
+          "income": {
+            "country_base": {
+              "energy": "25",
+              "minerals": "25",
+              "physics_research": "12.5",
+              "society_research": "12.5",
+              "engineering_research": "12.5",
+              "influence": "3.75",
+              "unity": "12.5",
+              "consumer_goods": "18.75",
+              "alloys": "6.25"
+            },
+            "starbase_modules": {
+              "energy": "7.5"
+            },
+            "orbital_mining_deposits": {
+              "energy": "12.5",
+              "minerals": "12.5"
+            },
+            "orbital_research_deposits": {
+              "engineering_research": "3.75"
+            },
+            "country_power_projection": {
+              "influence": "1.6111"
+            },
+            "trade_policy": {
+              "energy": "31.15823",
+              "trade": "31.15823"
+            },
+            "planet_miners": {
+              "minerals": "69.4432"
+            },
+            "planet_technician": {
+              "energy": "91.66502"
+            },
+            "planet_politicians": {
+              "unity": "19.09688"
+            },
+            "planet_bureaucrats": {
+              "unity": "6.87487"
+            },
+            "planet_metallurgists": {
+              "alloys": "26.73563"
+            },
+            "planet_artisans": {
+              "consumer_goods": "40.10344"
+            },
+            "planet_civilians": {
+              "trade": "45.43147"
+            },
+            "planet_physicists": {
+              "physics_research": "3.43743"
+            },
+            "planet_biologists": {
+              "society_research": "9.16649",
+              "unity": "1.90968"
+            },
+            "planet_engineers": {
+              "engineering_research": "3.43743"
+            },
+            "pop_category_workers": {
+              "trade": "3.5"
+            },
+            "pop_category_specialists": {
+              "trade": "6.1875"
+            },
+            "pop_category_rulers": {
+              "trade": "1.25"
+            },
+            "pop_category_civilians": {
+              "trade": "5.9475"
+            }
+          },
+          "expenses": {
+            "ships": {
+              "energy": "3.6",
+              "alloys": "1.08"
+            },
+            "ship_components": {
+              "energy": "1.188",
+              "alloys": "0.216"
+            },
+            "station_gatherers": {
+              "energy": "4"
+            },
+            "station_researchers": {
+              "energy": "1"
+            },
+            "starbases": {
+              "energy": "2"
+            },
+            "starbase_buildings": {
+              "energy": "0.96"
+            },
+            "starbase_modules": {
+              "energy": "0.96"
+            },
+            "planet_buildings": {
+              "energy": "15"
+            },
+            "planet_districts_mining": {
+              "energy": "4"
+            },
+            "planet_districts_generator": {
+              "energy": "3"
+            },
+            "planet_districts_cities": {
+              "energy": "6"
+            },
+            "leader_commanders": {
+              "unity": "4"
+            },
+            "leader_scientists": {
+              "unity": "4"
+            },
+            "leader_officials": {
+              "unity": "8"
+            },
+            "trade_policy": {
+              "trade": "62.31647"
+            },
+            "planet_pop_assemblers": {
+              "alloys": "4.05"
+            },
+            "planet_politicians": {
+              "consumer_goods": "4.95"
+            },
+            "planet_bureaucrats": {
+              "consumer_goods": "1.98"
+            },
+            "planet_metallurgists": {
+              "minerals": "23.1"
+            },
+            "planet_artisans": {
+              "minerals": "17.325"
+            },
+            "planet_physicists": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_biologists": {
+              "consumer_goods": "1.98"
+            },
+            "planet_engineers": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_pops_traits": {
+              "energy": "60.269"
+            },
+            "pop_category_workers": {
+              "consumer_goods": "3.85"
+            },
+            "pop_category_specialists": {
+              "consumer_goods": "8.25"
+            },
+            "pop_category_rulers": {
+              "consumer_goods": "2.2"
+            },
+            "pop_category_civilians": {
+              "consumer_goods": "6.54225"
+            }
+          }
+        }
+      }
+    },
+    "warm": {
+      "date": "2210.03.02",
+      "actual_population": 5497,
+      "actual_weighted_trait_numerator": 38479,
+      "actual_U": "7",
+      "actual_templates": [
+        {
+          "id": 48,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_power_drills"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_robot_power_drills",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 7,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            48,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5497,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "maintainer_J": "100",
+      "maintainer_effective_workforce": "1.1",
+      "society_combined_effective_workforce": "1.76",
+      "measured_jobs": [
+        {
+          "id": 16,
+          "colony_id": 0,
+          "type": "biologist",
+          "workforce": "60",
+          "bonus_workforce": "6",
+          "automated_workforce": "0",
+          "max_workforce": "60",
+          "workforce_limit": "60",
+          "automated_workforce_limit": "59",
+          "allocations": [
+            {
+              "group_id": 13,
+              "species_id": 48,
+              "category": "specialist",
+              "amount": "60",
+              "base_traits": [
+                "trait_machine_unit",
+                "trait_robot_high_bandwidth",
+                "trait_robot_high_maintenance",
+                "trait_robot_luxurious",
+                "trait_robot_power_drills",
+                "trait_shishan_code",
+                "trait_wet_planet_preference"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 33554621,
+          "colony_id": 0,
+          "type": "shishan_code_maintainer",
+          "workforce": "100",
+          "bonus_workforce": "10",
+          "automated_workforce": "0",
+          "max_workforce": "100",
+          "workforce_limit": "100",
+          "automated_workforce_limit": "99",
+          "allocations": [
+            {
+              "group_id": 13,
+              "species_id": 48,
+              "category": "specialist",
+              "amount": "100",
+              "base_traits": [
+                "trait_machine_unit",
+                "trait_robot_high_bandwidth",
+                "trait_robot_high_maintenance",
+                "trait_robot_luxurious",
+                "trait_robot_power_drills",
+                "trait_shishan_code",
+                "trait_wet_planet_preference"
+              ]
+            }
+          ]
+        }
+      ],
+      "context_stability": [
+        {
+          "colony_id": 0,
+          "stability": "72.7026",
+          "final_designation": "col_capital",
+          "ascension_tier": "0",
+          "buildings_cache": [
+            "0",
+            "2",
+            "3",
+            "4",
+            "16777252",
+            "1"
+          ],
+          "districts": [
+            "0",
+            "1",
+            "2"
+          ],
+          "binary_flags": "72",
+          "deposits": [
+            "255",
+            "256",
+            "257",
+            "258",
+            "259",
+            "260",
+            "261",
+            "262",
+            "263",
+            "264",
+            "265",
+            "266",
+            "267"
+          ],
+          "carrier_flags": "1"
+        }
+      ],
+      "core_guard_status": "PASS",
+      "core_guard_checks": [],
+      "strict_cache": {
+        "status": "FAIL",
+        "checks": [
+          {
+            "status": "FAIL",
+            "code": "STRICT_CACHE_MISMATCH",
+            "key": "shishan_code_architecture_population",
+            "observation": {
+              "observed": "5491",
+              "expected": "5497",
+              "status": "MISMATCH"
+            }
+          },
+          {
+            "status": "FAIL",
+            "code": "STRICT_CACHE_MISMATCH",
+            "key": "shishan_code_architecture_trait_weight",
+            "observation": {
+              "observed": "38437",
+              "expected": "38479",
+              "status": "MISMATCH"
+            }
+          }
+        ],
+        "comparisons": {
+          "shishan_code_architecture_population": {
+            "observed": "5491",
+            "expected": "5497",
+            "status": "MISMATCH"
+          },
+          "shishan_code_architecture_trait_weight": {
+            "observed": "38437",
+            "expected": "38479",
+            "status": "MISMATCH"
+          },
+          "shishan_code_architecture_trait_average": {
+            "observed": "7",
+            "expected": "7",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_total": {
+            "observed": "7",
+            "expected": "7",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_bonus": {
+            "observed": "0.35",
+            "expected": "0.35",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_multiplier": {
+            "observed": "1.35",
+            "expected": "1.35",
+            "status": "MATCH"
+          }
+        }
+      },
+      "actual_budget": {
+        "current_month": {
+          "income": {
+            "country_base": {
+              "energy": "25",
+              "minerals": "25",
+              "physics_research": "12.5",
+              "society_research": "12.5",
+              "engineering_research": "12.5",
+              "influence": "3.75",
+              "unity": "12.5",
+              "consumer_goods": "18.75",
+              "alloys": "6.25"
+            },
+            "starbase_modules": {
+              "energy": "7.5"
+            },
+            "orbital_mining_deposits": {
+              "energy": "12.5",
+              "minerals": "12.5"
+            },
+            "orbital_research_deposits": {
+              "engineering_research": "3.75"
+            },
+            "country_power_projection": {
+              "influence": "1.6111"
+            },
+            "trade_policy": {
+              "energy": "31.28952",
+              "trade": "31.28952"
+            },
+            "planet_miners": {
+              "minerals": "69.4484"
+            },
+            "planet_technician": {
+              "energy": "91.67188"
+            },
+            "planet_politicians": {
+              "unity": "19.09831"
+            },
+            "planet_bureaucrats": {
+              "unity": "6.87539"
+            },
+            "planet_metallurgists": {
+              "alloys": "26.73763"
+            },
+            "planet_artisans": {
+              "consumer_goods": "40.10645"
+            },
+            "planet_civilians": {
+              "trade": "45.66405"
+            },
+            "planet_physicists": {
+              "physics_research": "3.43769"
+            },
+            "planet_biologists": {
+              "society_research": "9.16718",
+              "unity": "1.90983"
+            },
+            "planet_engineers": {
+              "engineering_research": "3.43769"
+            },
+            "pop_category_workers": {
+              "trade": "3.5"
+            },
+            "pop_category_specialists": {
+              "trade": "6.1875"
+            },
+            "pop_category_rulers": {
+              "trade": "1.25"
+            },
+            "pop_category_civilians": {
+              "trade": "5.9775"
+            }
+          },
+          "expenses": {
+            "ships": {
+              "energy": "3.6",
+              "alloys": "1.08"
+            },
+            "ship_components": {
+              "energy": "1.188",
+              "alloys": "0.216"
+            },
+            "station_gatherers": {
+              "energy": "4"
+            },
+            "station_researchers": {
+              "energy": "1"
+            },
+            "starbases": {
+              "energy": "2"
+            },
+            "starbase_buildings": {
+              "energy": "0.96"
+            },
+            "starbase_modules": {
+              "energy": "0.96"
+            },
+            "planet_buildings": {
+              "energy": "15"
+            },
+            "planet_districts_mining": {
+              "energy": "4"
+            },
+            "planet_districts_generator": {
+              "energy": "3"
+            },
+            "planet_districts_cities": {
+              "energy": "6"
+            },
+            "leader_commanders": {
+              "unity": "4"
+            },
+            "leader_scientists": {
+              "unity": "4"
+            },
+            "leader_officials": {
+              "unity": "8"
+            },
+            "trade_policy": {
+              "trade": "62.57905"
+            },
+            "planet_pop_assemblers": {
+              "alloys": "4.05"
+            },
+            "planet_politicians": {
+              "consumer_goods": "4.95"
+            },
+            "planet_bureaucrats": {
+              "consumer_goods": "1.98"
+            },
+            "planet_metallurgists": {
+              "minerals": "23.1"
+            },
+            "planet_artisans": {
+              "minerals": "17.325"
+            },
+            "planet_physicists": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_biologists": {
+              "consumer_goods": "1.98"
+            },
+            "planet_engineers": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_pops_traits": {
+              "energy": "60.401"
+            },
+            "pop_category_workers": {
+              "consumer_goods": "3.85"
+            },
+            "pop_category_specialists": {
+              "consumer_goods": "8.25"
+            },
+            "pop_category_rulers": {
+              "consumer_goods": "2.2"
+            },
+            "pop_category_civilians": {
+              "consumer_goods": "6.57525"
+            }
+          }
+        },
+        "last_month": {
+          "income": {
+            "country_base": {
+              "energy": "25",
+              "minerals": "25",
+              "physics_research": "12.5",
+              "society_research": "12.5",
+              "engineering_research": "12.5",
+              "influence": "3.75",
+              "unity": "12.5",
+              "consumer_goods": "18.75",
+              "alloys": "6.25"
+            },
+            "starbase_modules": {
+              "energy": "7.5"
+            },
+            "orbital_mining_deposits": {
+              "energy": "12.5",
+              "minerals": "12.5"
+            },
+            "orbital_research_deposits": {
+              "engineering_research": "3.75"
+            },
+            "country_power_projection": {
+              "influence": "1.6111"
+            },
+            "trade_policy": {
+              "energy": "31.22381",
+              "trade": "31.22381"
+            },
+            "planet_miners": {
+              "minerals": "69.4456"
+            },
+            "planet_technician": {
+              "energy": "91.66819"
+            },
+            "planet_politicians": {
+              "unity": "19.09754"
+            },
+            "planet_bureaucrats": {
+              "unity": "6.87511"
+            },
+            "planet_metallurgists": {
+              "alloys": "26.73655"
+            },
+            "planet_artisans": {
+              "consumer_goods": "40.10483"
+            },
+            "planet_civilians": {
+              "trade": "45.54763"
+            },
+            "planet_physicists": {
+              "physics_research": "3.43755"
+            },
+            "planet_biologists": {
+              "society_research": "9.16681",
+              "unity": "1.90975"
+            },
+            "planet_engineers": {
+              "engineering_research": "3.43755"
+            },
+            "pop_category_workers": {
+              "trade": "3.5"
+            },
+            "pop_category_specialists": {
+              "trade": "6.1875"
+            },
+            "pop_category_rulers": {
+              "trade": "1.25"
+            },
+            "pop_category_civilians": {
+              "trade": "5.9625"
+            }
+          },
+          "expenses": {
+            "ships": {
+              "energy": "3.6",
+              "alloys": "1.08"
+            },
+            "ship_components": {
+              "energy": "1.188",
+              "alloys": "0.216"
+            },
+            "station_gatherers": {
+              "energy": "4"
+            },
+            "station_researchers": {
+              "energy": "1"
+            },
+            "starbases": {
+              "energy": "2"
+            },
+            "starbase_buildings": {
+              "energy": "0.96"
+            },
+            "starbase_modules": {
+              "energy": "0.96"
+            },
+            "planet_buildings": {
+              "energy": "15"
+            },
+            "planet_districts_mining": {
+              "energy": "4"
+            },
+            "planet_districts_generator": {
+              "energy": "3"
+            },
+            "planet_districts_cities": {
+              "energy": "6"
+            },
+            "leader_commanders": {
+              "unity": "4"
+            },
+            "leader_scientists": {
+              "unity": "4"
+            },
+            "leader_officials": {
+              "unity": "8"
+            },
+            "trade_policy": {
+              "trade": "62.44763"
+            },
+            "planet_pop_assemblers": {
+              "alloys": "4.05"
+            },
+            "planet_politicians": {
+              "consumer_goods": "4.95"
+            },
+            "planet_bureaucrats": {
+              "consumer_goods": "1.98"
+            },
+            "planet_metallurgists": {
+              "minerals": "23.1"
+            },
+            "planet_artisans": {
+              "minerals": "17.325"
+            },
+            "planet_physicists": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_biologists": {
+              "consumer_goods": "1.98"
+            },
+            "planet_engineers": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_pops_traits": {
+              "energy": "60.335"
+            },
+            "pop_category_workers": {
+              "consumer_goods": "3.85"
+            },
+            "pop_category_specialists": {
+              "consumer_goods": "8.25"
+            },
+            "pop_category_rulers": {
+              "consumer_goods": "2.2"
+            },
+            "pop_category_civilians": {
+              "consumer_goods": "6.55875"
+            }
+          }
+        }
+      }
+    },
+    "measured": {
+      "date": "2210.04.02",
+      "actual_population": 5503,
+      "actual_weighted_trait_numerator": 38521,
+      "actual_U": "7",
+      "actual_templates": [
+        {
+          "id": 48,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_power_drills"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_robot_power_drills",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 7,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            48,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5503,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "maintainer_J": "100",
+      "maintainer_effective_workforce": "1.1",
+      "society_combined_effective_workforce": "1.76",
+      "measured_jobs": [
+        {
+          "id": 16,
+          "colony_id": 0,
+          "type": "biologist",
+          "workforce": "60",
+          "bonus_workforce": "6",
+          "automated_workforce": "0",
+          "max_workforce": "60",
+          "workforce_limit": "60",
+          "automated_workforce_limit": "59",
+          "allocations": [
+            {
+              "group_id": 13,
+              "species_id": 48,
+              "category": "specialist",
+              "amount": "60",
+              "base_traits": [
+                "trait_machine_unit",
+                "trait_robot_high_bandwidth",
+                "trait_robot_high_maintenance",
+                "trait_robot_luxurious",
+                "trait_robot_power_drills",
+                "trait_shishan_code",
+                "trait_wet_planet_preference"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 33554621,
+          "colony_id": 0,
+          "type": "shishan_code_maintainer",
+          "workforce": "100",
+          "bonus_workforce": "10",
+          "automated_workforce": "0",
+          "max_workforce": "100",
+          "workforce_limit": "100",
+          "automated_workforce_limit": "99",
+          "allocations": [
+            {
+              "group_id": 13,
+              "species_id": 48,
+              "category": "specialist",
+              "amount": "100",
+              "base_traits": [
+                "trait_machine_unit",
+                "trait_robot_high_bandwidth",
+                "trait_robot_high_maintenance",
+                "trait_robot_luxurious",
+                "trait_robot_power_drills",
+                "trait_shishan_code",
+                "trait_wet_planet_preference"
+              ]
+            }
+          ]
+        }
+      ],
+      "context_stability": [
+        {
+          "colony_id": 0,
+          "stability": "72.714",
+          "final_designation": "col_capital",
+          "ascension_tier": "0",
+          "buildings_cache": [
+            "0",
+            "2",
+            "3",
+            "4",
+            "16777252",
+            "1"
+          ],
+          "districts": [
+            "0",
+            "1",
+            "2"
+          ],
+          "binary_flags": "72",
+          "deposits": [
+            "255",
+            "256",
+            "257",
+            "258",
+            "259",
+            "260",
+            "261",
+            "262",
+            "263",
+            "264",
+            "265",
+            "266",
+            "267"
+          ],
+          "carrier_flags": "1"
+        }
+      ],
+      "core_guard_status": "PASS",
+      "core_guard_checks": [],
+      "strict_cache": {
+        "status": "FAIL",
+        "checks": [
+          {
+            "status": "FAIL",
+            "code": "STRICT_CACHE_MISMATCH",
+            "key": "shishan_code_architecture_population",
+            "observation": {
+              "observed": "5497",
+              "expected": "5503",
+              "status": "MISMATCH"
+            }
+          },
+          {
+            "status": "FAIL",
+            "code": "STRICT_CACHE_MISMATCH",
+            "key": "shishan_code_architecture_trait_weight",
+            "observation": {
+              "observed": "38479",
+              "expected": "38521",
+              "status": "MISMATCH"
+            }
+          }
+        ],
+        "comparisons": {
+          "shishan_code_architecture_population": {
+            "observed": "5497",
+            "expected": "5503",
+            "status": "MISMATCH"
+          },
+          "shishan_code_architecture_trait_weight": {
+            "observed": "38479",
+            "expected": "38521",
+            "status": "MISMATCH"
+          },
+          "shishan_code_architecture_trait_average": {
+            "observed": "7",
+            "expected": "7",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_total": {
+            "observed": "7",
+            "expected": "7",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_bonus": {
+            "observed": "0.35",
+            "expected": "0.35",
+            "status": "MATCH"
+          },
+          "shishan_code_architecture_multiplier": {
+            "observed": "1.35",
+            "expected": "1.35",
+            "status": "MATCH"
+          }
+        }
+      },
+      "actual_budget": {
+        "current_month": {
+          "income": {
+            "country_base": {
+              "energy": "25",
+              "minerals": "25",
+              "physics_research": "12.5",
+              "society_research": "12.5",
+              "engineering_research": "12.5",
+              "influence": "3.75",
+              "unity": "12.5",
+              "consumer_goods": "18.75",
+              "alloys": "6.25"
+            },
+            "starbase_modules": {
+              "energy": "7.5"
+            },
+            "orbital_mining_deposits": {
+              "energy": "12.5",
+              "minerals": "12.5"
+            },
+            "orbital_research_deposits": {
+              "engineering_research": "3.75"
+            },
+            "country_power_projection": {
+              "influence": "1.6111"
+            },
+            "trade_policy": {
+              "energy": "31.35524",
+              "trade": "31.35524"
+            },
+            "planet_miners": {
+              "minerals": "69.4512"
+            },
+            "planet_technician": {
+              "energy": "91.67558"
+            },
+            "planet_politicians": {
+              "unity": "19.09908"
+            },
+            "planet_bureaucrats": {
+              "unity": "6.87566"
+            },
+            "planet_metallurgists": {
+              "alloys": "26.73871"
+            },
+            "planet_artisans": {
+              "consumer_goods": "40.10806"
+            },
+            "planet_civilians": {
+              "trade": "45.78049"
+            },
+            "planet_physicists": {
+              "physics_research": "3.43783"
+            },
+            "planet_biologists": {
+              "society_research": "9.16755",
+              "unity": "1.9099"
+            },
+            "planet_engineers": {
+              "engineering_research": "3.43783"
+            },
+            "pop_category_workers": {
+              "trade": "3.5"
+            },
+            "pop_category_specialists": {
+              "trade": "6.1875"
+            },
+            "pop_category_rulers": {
+              "trade": "1.25"
+            },
+            "pop_category_civilians": {
+              "trade": "5.9925"
+            }
+          },
+          "expenses": {
+            "ships": {
+              "energy": "3.6",
+              "alloys": "1.08"
+            },
+            "ship_components": {
+              "energy": "1.188",
+              "alloys": "0.216"
+            },
+            "station_gatherers": {
+              "energy": "4"
+            },
+            "station_researchers": {
+              "energy": "1"
+            },
+            "starbases": {
+              "energy": "2"
+            },
+            "starbase_buildings": {
+              "energy": "0.96"
+            },
+            "starbase_modules": {
+              "energy": "0.96"
+            },
+            "planet_buildings": {
+              "energy": "15"
+            },
+            "planet_districts_mining": {
+              "energy": "4"
+            },
+            "planet_districts_generator": {
+              "energy": "3"
+            },
+            "planet_districts_cities": {
+              "energy": "6"
+            },
+            "leader_commanders": {
+              "unity": "4"
+            },
+            "leader_scientists": {
+              "unity": "4"
+            },
+            "leader_officials": {
+              "unity": "8"
+            },
+            "trade_policy": {
+              "trade": "62.71049"
+            },
+            "planet_pop_assemblers": {
+              "alloys": "4.05"
+            },
+            "planet_politicians": {
+              "consumer_goods": "4.95"
+            },
+            "planet_bureaucrats": {
+              "consumer_goods": "1.98"
+            },
+            "planet_metallurgists": {
+              "minerals": "23.1"
+            },
+            "planet_artisans": {
+              "minerals": "17.325"
+            },
+            "planet_physicists": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_biologists": {
+              "consumer_goods": "1.98"
+            },
+            "planet_engineers": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_pops_traits": {
+              "energy": "60.467"
+            },
+            "pop_category_workers": {
+              "consumer_goods": "3.85"
+            },
+            "pop_category_specialists": {
+              "consumer_goods": "8.25"
+            },
+            "pop_category_rulers": {
+              "consumer_goods": "2.2"
+            },
+            "pop_category_civilians": {
+              "consumer_goods": "6.59175"
+            }
+          }
+        },
+        "last_month": {
+          "income": {
+            "country_base": {
+              "energy": "25",
+              "minerals": "25",
+              "physics_research": "12.5",
+              "society_research": "12.5",
+              "engineering_research": "12.5",
+              "influence": "3.75",
+              "unity": "12.5",
+              "consumer_goods": "18.75",
+              "alloys": "6.25"
+            },
+            "starbase_modules": {
+              "energy": "7.5"
+            },
+            "orbital_mining_deposits": {
+              "energy": "12.5",
+              "minerals": "12.5"
+            },
+            "orbital_research_deposits": {
+              "engineering_research": "3.75"
+            },
+            "country_power_projection": {
+              "influence": "1.6111"
+            },
+            "trade_policy": {
+              "energy": "31.28952",
+              "trade": "31.28952"
+            },
+            "planet_miners": {
+              "minerals": "69.4484"
+            },
+            "planet_technician": {
+              "energy": "91.67188"
+            },
+            "planet_politicians": {
+              "unity": "19.09831"
+            },
+            "planet_bureaucrats": {
+              "unity": "6.87539"
+            },
+            "planet_metallurgists": {
+              "alloys": "26.73763"
+            },
+            "planet_artisans": {
+              "consumer_goods": "40.10645"
+            },
+            "planet_civilians": {
+              "trade": "45.66405"
+            },
+            "planet_physicists": {
+              "physics_research": "3.43769"
+            },
+            "planet_biologists": {
+              "society_research": "9.16718",
+              "unity": "1.90983"
+            },
+            "planet_engineers": {
+              "engineering_research": "3.43769"
+            },
+            "pop_category_workers": {
+              "trade": "3.5"
+            },
+            "pop_category_specialists": {
+              "trade": "6.1875"
+            },
+            "pop_category_rulers": {
+              "trade": "1.25"
+            },
+            "pop_category_civilians": {
+              "trade": "5.9775"
+            }
+          },
+          "expenses": {
+            "ships": {
+              "energy": "3.6",
+              "alloys": "1.08"
+            },
+            "ship_components": {
+              "energy": "1.188",
+              "alloys": "0.216"
+            },
+            "station_gatherers": {
+              "energy": "4"
+            },
+            "station_researchers": {
+              "energy": "1"
+            },
+            "starbases": {
+              "energy": "2"
+            },
+            "starbase_buildings": {
+              "energy": "0.96"
+            },
+            "starbase_modules": {
+              "energy": "0.96"
+            },
+            "planet_buildings": {
+              "energy": "15"
+            },
+            "planet_districts_mining": {
+              "energy": "4"
+            },
+            "planet_districts_generator": {
+              "energy": "3"
+            },
+            "planet_districts_cities": {
+              "energy": "6"
+            },
+            "leader_commanders": {
+              "unity": "4"
+            },
+            "leader_scientists": {
+              "unity": "4"
+            },
+            "leader_officials": {
+              "unity": "8"
+            },
+            "trade_policy": {
+              "trade": "62.57905"
+            },
+            "planet_pop_assemblers": {
+              "alloys": "4.05"
+            },
+            "planet_politicians": {
+              "consumer_goods": "4.95"
+            },
+            "planet_bureaucrats": {
+              "consumer_goods": "1.98"
+            },
+            "planet_metallurgists": {
+              "minerals": "23.1"
+            },
+            "planet_artisans": {
+              "minerals": "17.325"
+            },
+            "planet_physicists": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_biologists": {
+              "consumer_goods": "1.98"
+            },
+            "planet_engineers": {
+              "consumer_goods": "0.7425"
+            },
+            "planet_pops_traits": {
+              "energy": "60.401"
+            },
+            "pop_category_workers": {
+              "consumer_goods": "3.85"
+            },
+            "pop_category_specialists": {
+              "consumer_goods": "8.25"
+            },
+            "pop_category_rulers": {
+              "consumer_goods": "2.2"
+            },
+            "pop_category_civilians": {
+              "consumer_goods": "6.57525"
+            }
+          }
+        }
+      }
+    }
+  },
+  "job_resource_classification": {
+    "artisan": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_artisans"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": false
+    },
+    "bio_trophy_unemployment": {
+      "stratum_category": "bio_trophy_unemployment",
+      "resource_categories": [
+        "unemployment_resources"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+        "bytes": 35045,
+        "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+      },
+      "measured_category_member": false
+    },
+    "biologist": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_biologists"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": true
+    },
+    "bureaucrat": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_bureaucrats"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": false
+    },
+    "civilian": {
+      "stratum_category": "civilian",
+      "resource_categories": [
+        "planet_civilians"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+        "bytes": 35045,
+        "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+      },
+      "measured_category_member": false
+    },
+    "crisis_purge": {
+      "stratum_category": "purge",
+      "resource_categories": [],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+        "bytes": 35045,
+        "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+      },
+      "measured_category_member": false
+    },
+    "cruise_passenger_unemployment": {
+      "stratum_category": "cruise_passenger_unemployment",
+      "resource_categories": [
+        "planet_cruise_passengers"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\17_nomads_jobs.txt",
+        "bytes": 13051,
+        "sha256": "74f27999909748943c88e1bd40edc9e6f1185568a4ea5ad5626d5df63de3d0c8"
+      },
+      "measured_category_member": false
+    },
+    "disconnected_drone": {
+      "stratum_category": "simple_drone",
+      "resource_categories": [
+        "planet_disconnected_drones"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\15_biogenesis_jobs.txt",
+        "bytes": 7254,
+        "sha256": "183ab971408870ae21624f9efe485a63831e861c32b72caab64b01fb02c98d31"
+      },
+      "measured_category_member": false
+    },
+    "enforcer": {
+      "stratum_category": "specialist",
+      "resource_categories": [],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": false
+    },
+    "engineer": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_engineers"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": false
+    },
+    "event_purge": {
+      "stratum_category": "purge",
+      "resource_categories": [
+        "planet_jobs"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\06_event_jobs.txt",
+        "bytes": 43034,
+        "sha256": "818f6c57f8ee39ff7a4892b41939b7dcef1b132681571c57ecc1336ba3d2cfc3"
+      },
+      "measured_category_member": false
+    },
+    "fotd_protectors": {
+      "stratum_category": "worker",
+      "resource_categories": [],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+        "bytes": 35045,
+        "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+      },
+      "measured_category_member": false
+    },
+    "foundry": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_metallurgists"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": false
+    },
+    "hunter_gatherer": {
+      "stratum_category": "worker",
+      "resource_categories": [
+        "planet_farmers"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+        "bytes": 38144,
+        "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+      },
+      "measured_category_member": false
+    },
+    "hunter_gatherer_lithoid": {
+      "stratum_category": "worker",
+      "resource_categories": [
+        "planet_farmers"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+        "bytes": 38144,
+        "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+      },
+      "measured_category_member": false
+    },
+    "miner": {
+      "stratum_category": "worker",
+      "resource_categories": [
+        "planet_miners"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+        "bytes": 21119,
+        "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df"
+      },
+      "measured_category_member": false
+    },
+    "neural_chip": {
+      "stratum_category": "chip_slave",
+      "resource_categories": [
+        "planet_neural_chips"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\13_machine_age_jobs.txt",
+        "bytes": 16997,
+        "sha256": "5b4963303f53e7fe5d654c565e4aadd9aec3311787e0a3ff468afc8b6b01c1ea"
+      },
+      "measured_category_member": false
+    },
+    "peasant": {
+      "stratum_category": "worker",
+      "resource_categories": [
+        "planet_farmers"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+        "bytes": 38144,
+        "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+      },
+      "measured_category_member": false
+    },
+    "peasant_lithoid": {
+      "stratum_category": "worker",
+      "resource_categories": [
+        "planet_farmers"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+        "bytes": 38144,
+        "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+      },
+      "measured_category_member": false
+    },
+    "physicist": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_physicists"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": false
+    },
+    "politician": {
+      "stratum_category": "ruler",
+      "resource_categories": [
+        "planet_politicians"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\01_ruler_jobs.txt",
+        "bytes": 13716,
+        "sha256": "58a4b8595e692216e2c4faba8fbf29975880fe0bfb18cb4bd5e257d35877331f"
+      },
+      "measured_category_member": false
+    },
+    "roboticist": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_pop_assemblers"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "bytes": 70358,
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      "measured_category_member": false
+    },
+    "servant": {
+      "stratum_category": "worker",
+      "resource_categories": [],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+        "bytes": 35045,
+        "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+      },
+      "measured_category_member": false
+    },
+    "shishan_code_maintainer": {
+      "stratum_category": "specialist",
+      "resource_categories": [
+        "planet_biologists"
+      ],
+      "source": {
+        "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-remaining\\additive-fixture\\mod\\common\\pop_jobs\\shishan_code_jobs.txt",
+        "bytes": 1273,
+        "sha256": "84be93698be2c0855adc14d4bb87fdb87e77e68154b40bde98acca3f5bf137d6"
+      },
+      "measured_category_member": true
+    },
+    "squire": {
+      "stratum_category": "worker",
+      "resource_categories": [
+        "planet_squires"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+        "bytes": 21119,
+        "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df"
+      },
+      "measured_category_member": false
+    },
+    "technician": {
+      "stratum_category": "worker",
+      "resource_categories": [
+        "planet_technician"
+      ],
+      "source": {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+        "bytes": 21119,
+        "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df"
+      },
+      "measured_category_member": false
+    }
+  },
+  "per_job_native_field_and_allocation_audit": [
+    {
+      "type": "artisan",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_artisans"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 22,
+            "colony_id": 0,
+            "type": "artisan",
+            "workforce": "350",
+            "bonus_workforce": "35",
+            "automated_workforce": "0",
+            "max_workforce": "350",
+            "workforce_limit": "350",
+            "automated_workforce_limit": "349",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "350",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 22,
+            "colony_id": 0,
+            "type": "artisan",
+            "workforce": "350",
+            "bonus_workforce": "35",
+            "automated_workforce": "0",
+            "max_workforce": "350",
+            "workforce_limit": "350",
+            "automated_workforce_limit": "349",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "350",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 22,
+            "colony_id": 0,
+            "type": "artisan",
+            "workforce": "350",
+            "bonus_workforce": "35",
+            "automated_workforce": "0",
+            "max_workforce": "350",
+            "workforce_limit": "350",
+            "automated_workforce_limit": "349",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "350",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "bio_trophy_unemployment",
+      "category": {
+        "stratum_category": "bio_trophy_unemployment",
+        "resource_categories": [
+          "unemployment_resources"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+          "bytes": 35045,
+          "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 4,
+            "colony_id": 0,
+            "type": "bio_trophy_unemployment",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 4,
+            "colony_id": 0,
+            "type": "bio_trophy_unemployment",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 4,
+            "colony_id": 0,
+            "type": "bio_trophy_unemployment",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "biologist",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_biologists"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": true
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 16,
+            "colony_id": 0,
+            "type": "biologist",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 16,
+            "colony_id": 0,
+            "type": "biologist",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 16,
+            "colony_id": 0,
+            "type": "biologist",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "bureaucrat",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_bureaucrats"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 18,
+            "colony_id": 0,
+            "type": "bureaucrat",
+            "workforce": "120",
+            "bonus_workforce": "12",
+            "automated_workforce": "0",
+            "max_workforce": "120",
+            "workforce_limit": "120",
+            "automated_workforce_limit": "119",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "120",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 18,
+            "colony_id": 0,
+            "type": "bureaucrat",
+            "workforce": "120",
+            "bonus_workforce": "12",
+            "automated_workforce": "0",
+            "max_workforce": "120",
+            "workforce_limit": "120",
+            "automated_workforce_limit": "119",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "120",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 18,
+            "colony_id": 0,
+            "type": "bureaucrat",
+            "workforce": "120",
+            "bonus_workforce": "12",
+            "automated_workforce": "0",
+            "max_workforce": "120",
+            "workforce_limit": "120",
+            "automated_workforce_limit": "119",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "120",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "civilian",
+      "category": {
+        "stratum_category": "civilian",
+        "resource_categories": [
+          "planet_civilians"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+          "bytes": 35045,
+          "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 0,
+            "colony_id": 0,
+            "type": "civilian",
+            "workforce": "2390",
+            "bonus_workforce": "240.1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": [
+              {
+                "group_id": 1,
+                "species_id": 48,
+                "category": "civilian",
+                "amount": "2391",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 0,
+            "colony_id": 0,
+            "type": "civilian",
+            "workforce": "2396",
+            "bonus_workforce": "240.7",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": [
+              {
+                "group_id": 1,
+                "species_id": 48,
+                "category": "civilian",
+                "amount": "2397",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 0,
+            "colony_id": 0,
+            "type": "civilian",
+            "workforce": "2402",
+            "bonus_workforce": "241.3",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": [
+              {
+                "group_id": 1,
+                "species_id": 48,
+                "category": "civilian",
+                "amount": "2403",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": false,
+          "changes_beyond_epsilon": [
+            {
+              "path": "/0/allocations/0/amount",
+              "before": "2391",
+              "after": "2397",
+              "delta": "6",
+              "epsilon": "0.002397"
+            },
+            {
+              "path": "/0/bonus_workforce",
+              "before": "240.1",
+              "after": "240.7",
+              "delta": "0.6",
+              "epsilon": "0.0002407"
+            },
+            {
+              "path": "/0/workforce",
+              "before": "2390",
+              "after": "2396",
+              "delta": "6",
+              "epsilon": "0.002396"
+            }
+          ],
+          "raw_saved_rows_equal": false
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": false,
+          "changes_beyond_epsilon": [
+            {
+              "path": "/0/allocations/0/amount",
+              "before": "2397",
+              "after": "2403",
+              "delta": "6",
+              "epsilon": "0.002403"
+            },
+            {
+              "path": "/0/bonus_workforce",
+              "before": "240.7",
+              "after": "241.3",
+              "delta": "0.6",
+              "epsilon": "0.0002413"
+            },
+            {
+              "path": "/0/workforce",
+              "before": "2396",
+              "after": "2402",
+              "delta": "6",
+              "epsilon": "0.002402"
+            }
+          ],
+          "raw_saved_rows_equal": false
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": false,
+          "changes_beyond_epsilon": [
+            {
+              "path": "/0/allocations/0/amount",
+              "before": "2391",
+              "after": "2403",
+              "delta": "12",
+              "epsilon": "0.002403"
+            },
+            {
+              "path": "/0/bonus_workforce",
+              "before": "240.1",
+              "after": "241.3",
+              "delta": "1.2",
+              "epsilon": "0.0002413"
+            },
+            {
+              "path": "/0/workforce",
+              "before": "2390",
+              "after": "2402",
+              "delta": "12",
+              "epsilon": "0.002402"
+            }
+          ],
+          "raw_saved_rows_equal": false
+        }
+      }
+    },
+    {
+      "type": "crisis_purge",
+      "category": {
+        "stratum_category": "purge",
+        "resource_categories": [],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+          "bytes": 35045,
+          "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 2,
+            "colony_id": 0,
+            "type": "crisis_purge",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 2,
+            "colony_id": 0,
+            "type": "crisis_purge",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 2,
+            "colony_id": 0,
+            "type": "crisis_purge",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "cruise_passenger_unemployment",
+      "category": {
+        "stratum_category": "cruise_passenger_unemployment",
+        "resource_categories": [
+          "planet_cruise_passengers"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\17_nomads_jobs.txt",
+          "bytes": 13051,
+          "sha256": "74f27999909748943c88e1bd40edc9e6f1185568a4ea5ad5626d5df63de3d0c8"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 13,
+            "colony_id": 0,
+            "type": "cruise_passenger_unemployment",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 13,
+            "colony_id": 0,
+            "type": "cruise_passenger_unemployment",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 13,
+            "colony_id": 0,
+            "type": "cruise_passenger_unemployment",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "disconnected_drone",
+      "category": {
+        "stratum_category": "simple_drone",
+        "resource_categories": [
+          "planet_disconnected_drones"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\15_biogenesis_jobs.txt",
+          "bytes": 7254,
+          "sha256": "183ab971408870ae21624f9efe485a63831e861c32b72caab64b01fb02c98d31"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 12,
+            "colony_id": 0,
+            "type": "disconnected_drone",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 12,
+            "colony_id": 0,
+            "type": "disconnected_drone",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 12,
+            "colony_id": 0,
+            "type": "disconnected_drone",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "enforcer",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 19,
+            "colony_id": 0,
+            "type": "enforcer",
+            "workforce": "100",
+            "bonus_workforce": "10",
+            "automated_workforce": "0",
+            "max_workforce": "100",
+            "workforce_limit": "100",
+            "automated_workforce_limit": "99",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "100",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 19,
+            "colony_id": 0,
+            "type": "enforcer",
+            "workforce": "100",
+            "bonus_workforce": "10",
+            "automated_workforce": "0",
+            "max_workforce": "100",
+            "workforce_limit": "100",
+            "automated_workforce_limit": "99",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "100",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 19,
+            "colony_id": 0,
+            "type": "enforcer",
+            "workforce": "100",
+            "bonus_workforce": "10",
+            "automated_workforce": "0",
+            "max_workforce": "100",
+            "workforce_limit": "100",
+            "automated_workforce_limit": "99",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "100",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "engineer",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_engineers"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 17,
+            "colony_id": 0,
+            "type": "engineer",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 17,
+            "colony_id": 0,
+            "type": "engineer",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 17,
+            "colony_id": 0,
+            "type": "engineer",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "event_purge",
+      "category": {
+        "stratum_category": "purge",
+        "resource_categories": [
+          "planet_jobs"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\06_event_jobs.txt",
+          "bytes": 43034,
+          "sha256": "818f6c57f8ee39ff7a4892b41939b7dcef1b132681571c57ecc1336ba3d2cfc3"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 10,
+            "colony_id": 0,
+            "type": "event_purge",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 10,
+            "colony_id": 0,
+            "type": "event_purge",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 10,
+            "colony_id": 0,
+            "type": "event_purge",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "fotd_protectors",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+          "bytes": 35045,
+          "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 3,
+            "colony_id": 0,
+            "type": "fotd_protectors",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 3,
+            "colony_id": 0,
+            "type": "fotd_protectors",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 3,
+            "colony_id": 0,
+            "type": "fotd_protectors",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "foundry",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_metallurgists"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 21,
+            "colony_id": 0,
+            "type": "foundry",
+            "workforce": "350",
+            "bonus_workforce": "35",
+            "automated_workforce": "0",
+            "max_workforce": "350",
+            "workforce_limit": "350",
+            "automated_workforce_limit": "349",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "350",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 21,
+            "colony_id": 0,
+            "type": "foundry",
+            "workforce": "350",
+            "bonus_workforce": "35",
+            "automated_workforce": "0",
+            "max_workforce": "350",
+            "workforce_limit": "350",
+            "automated_workforce_limit": "349",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "350",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 21,
+            "colony_id": 0,
+            "type": "foundry",
+            "workforce": "350",
+            "bonus_workforce": "35",
+            "automated_workforce": "0",
+            "max_workforce": "350",
+            "workforce_limit": "350",
+            "automated_workforce_limit": "349",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "350",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "hunter_gatherer",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [
+          "planet_farmers"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+          "bytes": 38144,
+          "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 6,
+            "colony_id": 0,
+            "type": "hunter_gatherer",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 6,
+            "colony_id": 0,
+            "type": "hunter_gatherer",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 6,
+            "colony_id": 0,
+            "type": "hunter_gatherer",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "hunter_gatherer_lithoid",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [
+          "planet_farmers"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+          "bytes": 38144,
+          "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 7,
+            "colony_id": 0,
+            "type": "hunter_gatherer_lithoid",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 7,
+            "colony_id": 0,
+            "type": "hunter_gatherer_lithoid",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 7,
+            "colony_id": 0,
+            "type": "hunter_gatherer_lithoid",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "miner",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [
+          "planet_miners"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+          "bytes": 21119,
+          "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 25,
+            "colony_id": 0,
+            "type": "miner",
+            "workforce": "800",
+            "bonus_workforce": "200",
+            "automated_workforce": "0",
+            "max_workforce": "800",
+            "workforce_limit": "800",
+            "automated_workforce_limit": "799",
+            "allocations": [
+              {
+                "group_id": 14,
+                "species_id": 48,
+                "category": "worker",
+                "amount": "800",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 25,
+            "colony_id": 0,
+            "type": "miner",
+            "workforce": "800",
+            "bonus_workforce": "200",
+            "automated_workforce": "0",
+            "max_workforce": "800",
+            "workforce_limit": "800",
+            "automated_workforce_limit": "799",
+            "allocations": [
+              {
+                "group_id": 14,
+                "species_id": 48,
+                "category": "worker",
+                "amount": "800",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 25,
+            "colony_id": 0,
+            "type": "miner",
+            "workforce": "800",
+            "bonus_workforce": "200",
+            "automated_workforce": "0",
+            "max_workforce": "800",
+            "workforce_limit": "800",
+            "automated_workforce_limit": "799",
+            "allocations": [
+              {
+                "group_id": 14,
+                "species_id": 48,
+                "category": "worker",
+                "amount": "800",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "neural_chip",
+      "category": {
+        "stratum_category": "chip_slave",
+        "resource_categories": [
+          "planet_neural_chips"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\13_machine_age_jobs.txt",
+          "bytes": 16997,
+          "sha256": "5b4963303f53e7fe5d654c565e4aadd9aec3311787e0a3ff468afc8b6b01c1ea"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 11,
+            "colony_id": 0,
+            "type": "neural_chip",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 11,
+            "colony_id": 0,
+            "type": "neural_chip",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 11,
+            "colony_id": 0,
+            "type": "neural_chip",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "peasant",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [
+          "planet_farmers"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+          "bytes": 38144,
+          "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 8,
+            "colony_id": 0,
+            "type": "peasant",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 8,
+            "colony_id": 0,
+            "type": "peasant",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 8,
+            "colony_id": 0,
+            "type": "peasant",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "peasant_lithoid",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [
+          "planet_farmers"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+          "bytes": 38144,
+          "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 9,
+            "colony_id": 0,
+            "type": "peasant_lithoid",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 9,
+            "colony_id": 0,
+            "type": "peasant_lithoid",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 9,
+            "colony_id": 0,
+            "type": "peasant_lithoid",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "physicist",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_physicists"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 15,
+            "colony_id": 0,
+            "type": "physicist",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 15,
+            "colony_id": 0,
+            "type": "physicist",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 15,
+            "colony_id": 0,
+            "type": "physicist",
+            "workforce": "60",
+            "bonus_workforce": "6",
+            "automated_workforce": "0",
+            "max_workforce": "60",
+            "workforce_limit": "60",
+            "automated_workforce_limit": "59",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "60",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "politician",
+      "category": {
+        "stratum_category": "ruler",
+        "resource_categories": [
+          "planet_politicians"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\01_ruler_jobs.txt",
+          "bytes": 13716,
+          "sha256": "58a4b8595e692216e2c4faba8fbf29975880fe0bfb18cb4bd5e257d35877331f"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 14,
+            "colony_id": 0,
+            "type": "politician",
+            "workforce": "200",
+            "bonus_workforce": "20",
+            "automated_workforce": "0",
+            "max_workforce": "200",
+            "workforce_limit": "200",
+            "automated_workforce_limit": "199",
+            "allocations": [
+              {
+                "group_id": 12,
+                "species_id": 48,
+                "category": "ruler",
+                "amount": "200",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 14,
+            "colony_id": 0,
+            "type": "politician",
+            "workforce": "200",
+            "bonus_workforce": "20",
+            "automated_workforce": "0",
+            "max_workforce": "200",
+            "workforce_limit": "200",
+            "automated_workforce_limit": "199",
+            "allocations": [
+              {
+                "group_id": 12,
+                "species_id": 48,
+                "category": "ruler",
+                "amount": "200",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 14,
+            "colony_id": 0,
+            "type": "politician",
+            "workforce": "200",
+            "bonus_workforce": "20",
+            "automated_workforce": "0",
+            "max_workforce": "200",
+            "workforce_limit": "200",
+            "automated_workforce_limit": "199",
+            "allocations": [
+              {
+                "group_id": 12,
+                "species_id": 48,
+                "category": "ruler",
+                "amount": "200",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "roboticist",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_pop_assemblers"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+          "bytes": 70358,
+          "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 20,
+            "colony_id": 0,
+            "type": "roboticist",
+            "workforce": "300",
+            "bonus_workforce": "-30",
+            "automated_workforce": "0",
+            "max_workforce": "300",
+            "workforce_limit": "300",
+            "automated_workforce_limit": "299",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "300",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 20,
+            "colony_id": 0,
+            "type": "roboticist",
+            "workforce": "300",
+            "bonus_workforce": "-30",
+            "automated_workforce": "0",
+            "max_workforce": "300",
+            "workforce_limit": "300",
+            "automated_workforce_limit": "299",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "300",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 20,
+            "colony_id": 0,
+            "type": "roboticist",
+            "workforce": "300",
+            "bonus_workforce": "-30",
+            "automated_workforce": "0",
+            "max_workforce": "300",
+            "workforce_limit": "300",
+            "automated_workforce_limit": "299",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "300",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "servant",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+          "bytes": 35045,
+          "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 1,
+            "colony_id": 0,
+            "type": "servant",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 1,
+            "colony_id": 0,
+            "type": "servant",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 1,
+            "colony_id": 0,
+            "type": "servant",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "shishan_code_maintainer",
+      "category": {
+        "stratum_category": "specialist",
+        "resource_categories": [
+          "planet_biologists"
+        ],
+        "source": {
+          "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-remaining\\additive-fixture\\mod\\common\\pop_jobs\\shishan_code_jobs.txt",
+          "bytes": 1273,
+          "sha256": "84be93698be2c0855adc14d4bb87fdb87e77e68154b40bde98acca3f5bf137d6"
+        },
+        "measured_category_member": true
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 33554621,
+            "colony_id": 0,
+            "type": "shishan_code_maintainer",
+            "workforce": "100",
+            "bonus_workforce": "10",
+            "automated_workforce": "0",
+            "max_workforce": "100",
+            "workforce_limit": "100",
+            "automated_workforce_limit": "99",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "100",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 33554621,
+            "colony_id": 0,
+            "type": "shishan_code_maintainer",
+            "workforce": "100",
+            "bonus_workforce": "10",
+            "automated_workforce": "0",
+            "max_workforce": "100",
+            "workforce_limit": "100",
+            "automated_workforce_limit": "99",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "100",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 33554621,
+            "colony_id": 0,
+            "type": "shishan_code_maintainer",
+            "workforce": "100",
+            "bonus_workforce": "10",
+            "automated_workforce": "0",
+            "max_workforce": "100",
+            "workforce_limit": "100",
+            "automated_workforce_limit": "99",
+            "allocations": [
+              {
+                "group_id": 13,
+                "species_id": 48,
+                "category": "specialist",
+                "amount": "100",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "squire",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [
+          "planet_squires"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+          "bytes": 21119,
+          "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 5,
+            "colony_id": 0,
+            "type": "squire",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "warm": [
+          {
+            "id": 5,
+            "colony_id": 0,
+            "type": "squire",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ],
+        "measured": [
+          {
+            "id": 5,
+            "colony_id": 0,
+            "type": "squire",
+            "workforce": "-1",
+            "bonus_workforce": "1",
+            "automated_workforce": "-1",
+            "max_workforce": "-1",
+            "workforce_limit": "-1",
+            "automated_workforce_limit": "-1",
+            "allocations": []
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    },
+    {
+      "type": "technician",
+      "category": {
+        "stratum_category": "worker",
+        "resource_categories": [
+          "planet_technician"
+        ],
+        "source": {
+          "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+          "bytes": 21119,
+          "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df"
+        },
+        "measured_category_member": false
+      },
+      "phases": {
+        "input": [
+          {
+            "id": 24,
+            "colony_id": 0,
+            "type": "technician",
+            "workforce": "600",
+            "bonus_workforce": "60",
+            "automated_workforce": "0",
+            "max_workforce": "600",
+            "workforce_limit": "600",
+            "automated_workforce_limit": "599",
+            "allocations": [
+              {
+                "group_id": 14,
+                "species_id": 48,
+                "category": "worker",
+                "amount": "600",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "warm": [
+          {
+            "id": 24,
+            "colony_id": 0,
+            "type": "technician",
+            "workforce": "600",
+            "bonus_workforce": "60",
+            "automated_workforce": "0",
+            "max_workforce": "600",
+            "workforce_limit": "600",
+            "automated_workforce_limit": "599",
+            "allocations": [
+              {
+                "group_id": 14,
+                "species_id": 48,
+                "category": "worker",
+                "amount": "600",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ],
+        "measured": [
+          {
+            "id": 24,
+            "colony_id": 0,
+            "type": "technician",
+            "workforce": "600",
+            "bonus_workforce": "60",
+            "automated_workforce": "0",
+            "max_workforce": "600",
+            "workforce_limit": "600",
+            "automated_workforce_limit": "599",
+            "allocations": [
+              {
+                "group_id": 14,
+                "species_id": 48,
+                "category": "worker",
+                "amount": "600",
+                "base_traits": [
+                  "trait_machine_unit",
+                  "trait_robot_high_bandwidth",
+                  "trait_robot_high_maintenance",
+                  "trait_robot_luxurious",
+                  "trait_robot_power_drills",
+                  "trait_shishan_code",
+                  "trait_wet_planet_preference"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair_differences": {
+        "input_to_warm": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "warm_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        },
+        "input_to_measured": {
+          "equivalent_under_sealed_rule": true,
+          "changes_beyond_epsilon": [],
+          "raw_saved_rows_equal": true
+        }
+      }
+    }
+  ],
+  "context_pair_differences": {
+    "input_to_warm": {
+      "government": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "completed_technologies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "policies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "ethos": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "colonies": {
+        "equivalent_under_sealed_rule": false,
+        "changes_beyond_epsilon": [
+          {
+            "path": "/colonies/0/stability",
+            "before": "72.6918",
+            "after": "72.7026",
+            "delta": "0.0108",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "situations": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "other_country_modifiers": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "owned_leader_economic_state": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "depleted_resource_keys": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      }
+    },
+    "warm_to_measured": {
+      "government": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "completed_technologies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "policies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "ethos": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "colonies": {
+        "equivalent_under_sealed_rule": false,
+        "changes_beyond_epsilon": [
+          {
+            "path": "/colonies/0/stability",
+            "before": "72.7026",
+            "after": "72.714",
+            "delta": "0.0114",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "situations": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "other_country_modifiers": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "owned_leader_economic_state": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "depleted_resource_keys": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      }
+    },
+    "input_to_measured": {
+      "government": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "completed_technologies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "policies": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "ethos": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "colonies": {
+        "equivalent_under_sealed_rule": false,
+        "changes_beyond_epsilon": [
+          {
+            "path": "/colonies/0/stability",
+            "before": "72.6918",
+            "after": "72.714",
+            "delta": "0.0222",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "situations": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "other_country_modifiers": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "owned_leader_economic_state": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      },
+      "depleted_resource_keys": {
+        "equivalent_under_sealed_rule": true,
+        "changes_beyond_epsilon": []
+      }
+    }
+  },
+  "actual_budget_pair_differences": {
+    "input_to_warm": [
+      {
+        "path": "/budget/current_month/expenses/planet_pops_traits/energy",
+        "before": "60.335",
+        "after": "60.401",
+        "delta": "0.066",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/expenses/pop_category_civilians/consumer_goods",
+        "before": "6.55875",
+        "after": "6.57525",
+        "delta": "0.01650",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/expenses/trade_policy/trade",
+        "before": "62.44763",
+        "after": "62.57905",
+        "delta": "0.13142",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_artisans/consumer_goods",
+        "before": "40.10483",
+        "after": "40.10645",
+        "delta": "0.00162",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_biologists/society_research",
+        "before": "9.16681",
+        "after": "9.16718",
+        "delta": "0.00037",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_bureaucrats/unity",
+        "before": "6.87511",
+        "after": "6.87539",
+        "delta": "0.00028",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_civilians/trade",
+        "before": "45.54763",
+        "after": "45.66405",
+        "delta": "0.11642",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_engineers/engineering_research",
+        "before": "3.43755",
+        "after": "3.43769",
+        "delta": "0.00014",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_metallurgists/alloys",
+        "before": "26.73655",
+        "after": "26.73763",
+        "delta": "0.00108",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_miners/minerals",
+        "before": "69.4456",
+        "after": "69.4484",
+        "delta": "0.0028",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_physicists/physics_research",
+        "before": "3.43755",
+        "after": "3.43769",
+        "delta": "0.00014",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_politicians/unity",
+        "before": "19.09754",
+        "after": "19.09831",
+        "delta": "0.00077",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_technician/energy",
+        "before": "91.66819",
+        "after": "91.67188",
+        "delta": "0.00369",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/pop_category_civilians/trade",
+        "before": "5.9625",
+        "after": "5.9775",
+        "delta": "0.0150",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/trade_policy/energy",
+        "before": "31.22381",
+        "after": "31.28952",
+        "delta": "0.06571",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/trade_policy/trade",
+        "before": "31.22381",
+        "after": "31.28952",
+        "delta": "0.06571",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/planet_pops_traits/energy",
+        "before": "60.269",
+        "after": "60.335",
+        "delta": "0.066",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/pop_category_civilians/consumer_goods",
+        "before": "6.54225",
+        "after": "6.55875",
+        "delta": "0.01650",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/trade_policy/trade",
+        "before": "62.31647",
+        "after": "62.44763",
+        "delta": "0.13116",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_artisans/consumer_goods",
+        "before": "40.10344",
+        "after": "40.10483",
+        "delta": "0.00139",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_biologists/society_research",
+        "before": "9.16649",
+        "after": "9.16681",
+        "delta": "0.00032",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_bureaucrats/unity",
+        "before": "6.87487",
+        "after": "6.87511",
+        "delta": "0.00024",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_civilians/trade",
+        "before": "45.43147",
+        "after": "45.54763",
+        "delta": "0.11616",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_engineers/engineering_research",
+        "before": "3.43743",
+        "after": "3.43755",
+        "delta": "0.00012",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_metallurgists/alloys",
+        "before": "26.73563",
+        "after": "26.73655",
+        "delta": "0.00092",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_miners/minerals",
+        "before": "69.4432",
+        "after": "69.4456",
+        "delta": "0.0024",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_physicists/physics_research",
+        "before": "3.43743",
+        "after": "3.43755",
+        "delta": "0.00012",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_politicians/unity",
+        "before": "19.09688",
+        "after": "19.09754",
+        "delta": "0.00066",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_technician/energy",
+        "before": "91.66502",
+        "after": "91.66819",
+        "delta": "0.00317",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/pop_category_civilians/trade",
+        "before": "5.9475",
+        "after": "5.9625",
+        "delta": "0.0150",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/trade_policy/energy",
+        "before": "31.15823",
+        "after": "31.22381",
+        "delta": "0.06558",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/trade_policy/trade",
+        "before": "31.15823",
+        "after": "31.22381",
+        "delta": "0.06558",
+        "epsilon": "0.0001"
+      }
+    ],
+    "warm_to_measured": [
+      {
+        "path": "/budget/current_month/expenses/planet_pops_traits/energy",
+        "before": "60.401",
+        "after": "60.467",
+        "delta": "0.066",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/expenses/pop_category_civilians/consumer_goods",
+        "before": "6.57525",
+        "after": "6.59175",
+        "delta": "0.01650",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/expenses/trade_policy/trade",
+        "before": "62.57905",
+        "after": "62.71049",
+        "delta": "0.13144",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_artisans/consumer_goods",
+        "before": "40.10645",
+        "after": "40.10806",
+        "delta": "0.00161",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_biologists/society_research",
+        "before": "9.16718",
+        "after": "9.16755",
+        "delta": "0.00037",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_bureaucrats/unity",
+        "before": "6.87539",
+        "after": "6.87566",
+        "delta": "0.00027",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_civilians/trade",
+        "before": "45.66405",
+        "after": "45.78049",
+        "delta": "0.11644",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_engineers/engineering_research",
+        "before": "3.43769",
+        "after": "3.43783",
+        "delta": "0.00014",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_metallurgists/alloys",
+        "before": "26.73763",
+        "after": "26.73871",
+        "delta": "0.00108",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_miners/minerals",
+        "before": "69.4484",
+        "after": "69.4512",
+        "delta": "0.0028",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_physicists/physics_research",
+        "before": "3.43769",
+        "after": "3.43783",
+        "delta": "0.00014",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_politicians/unity",
+        "before": "19.09831",
+        "after": "19.09908",
+        "delta": "0.00077",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_technician/energy",
+        "before": "91.67188",
+        "after": "91.67558",
+        "delta": "0.00370",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/pop_category_civilians/trade",
+        "before": "5.9775",
+        "after": "5.9925",
+        "delta": "0.0150",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/trade_policy/energy",
+        "before": "31.28952",
+        "after": "31.35524",
+        "delta": "0.06572",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/trade_policy/trade",
+        "before": "31.28952",
+        "after": "31.35524",
+        "delta": "0.06572",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/planet_pops_traits/energy",
+        "before": "60.335",
+        "after": "60.401",
+        "delta": "0.066",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/pop_category_civilians/consumer_goods",
+        "before": "6.55875",
+        "after": "6.57525",
+        "delta": "0.01650",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/trade_policy/trade",
+        "before": "62.44763",
+        "after": "62.57905",
+        "delta": "0.13142",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_artisans/consumer_goods",
+        "before": "40.10483",
+        "after": "40.10645",
+        "delta": "0.00162",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_biologists/society_research",
+        "before": "9.16681",
+        "after": "9.16718",
+        "delta": "0.00037",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_bureaucrats/unity",
+        "before": "6.87511",
+        "after": "6.87539",
+        "delta": "0.00028",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_civilians/trade",
+        "before": "45.54763",
+        "after": "45.66405",
+        "delta": "0.11642",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_engineers/engineering_research",
+        "before": "3.43755",
+        "after": "3.43769",
+        "delta": "0.00014",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_metallurgists/alloys",
+        "before": "26.73655",
+        "after": "26.73763",
+        "delta": "0.00108",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_miners/minerals",
+        "before": "69.4456",
+        "after": "69.4484",
+        "delta": "0.0028",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_physicists/physics_research",
+        "before": "3.43755",
+        "after": "3.43769",
+        "delta": "0.00014",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_politicians/unity",
+        "before": "19.09754",
+        "after": "19.09831",
+        "delta": "0.00077",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_technician/energy",
+        "before": "91.66819",
+        "after": "91.67188",
+        "delta": "0.00369",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/pop_category_civilians/trade",
+        "before": "5.9625",
+        "after": "5.9775",
+        "delta": "0.0150",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/trade_policy/energy",
+        "before": "31.22381",
+        "after": "31.28952",
+        "delta": "0.06571",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/trade_policy/trade",
+        "before": "31.22381",
+        "after": "31.28952",
+        "delta": "0.06571",
+        "epsilon": "0.0001"
+      }
+    ],
+    "input_to_measured": [
+      {
+        "path": "/budget/current_month/expenses/planet_pops_traits/energy",
+        "before": "60.335",
+        "after": "60.467",
+        "delta": "0.132",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/expenses/pop_category_civilians/consumer_goods",
+        "before": "6.55875",
+        "after": "6.59175",
+        "delta": "0.03300",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/expenses/trade_policy/trade",
+        "before": "62.44763",
+        "after": "62.71049",
+        "delta": "0.26286",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_artisans/consumer_goods",
+        "before": "40.10483",
+        "after": "40.10806",
+        "delta": "0.00323",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_biologists/society_research",
+        "before": "9.16681",
+        "after": "9.16755",
+        "delta": "0.00074",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_biologists/unity",
+        "before": "1.90975",
+        "after": "1.9099",
+        "delta": "0.00015",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_bureaucrats/unity",
+        "before": "6.87511",
+        "after": "6.87566",
+        "delta": "0.00055",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_civilians/trade",
+        "before": "45.54763",
+        "after": "45.78049",
+        "delta": "0.23286",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_engineers/engineering_research",
+        "before": "3.43755",
+        "after": "3.43783",
+        "delta": "0.00028",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_metallurgists/alloys",
+        "before": "26.73655",
+        "after": "26.73871",
+        "delta": "0.00216",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_miners/minerals",
+        "before": "69.4456",
+        "after": "69.4512",
+        "delta": "0.0056",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_physicists/physics_research",
+        "before": "3.43755",
+        "after": "3.43783",
+        "delta": "0.00028",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_politicians/unity",
+        "before": "19.09754",
+        "after": "19.09908",
+        "delta": "0.00154",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/planet_technician/energy",
+        "before": "91.66819",
+        "after": "91.67558",
+        "delta": "0.00739",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/pop_category_civilians/trade",
+        "before": "5.9625",
+        "after": "5.9925",
+        "delta": "0.0300",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/trade_policy/energy",
+        "before": "31.22381",
+        "after": "31.35524",
+        "delta": "0.13143",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/current_month/income/trade_policy/trade",
+        "before": "31.22381",
+        "after": "31.35524",
+        "delta": "0.13143",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/planet_pops_traits/energy",
+        "before": "60.269",
+        "after": "60.401",
+        "delta": "0.132",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/pop_category_civilians/consumer_goods",
+        "before": "6.54225",
+        "after": "6.57525",
+        "delta": "0.03300",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/expenses/trade_policy/trade",
+        "before": "62.31647",
+        "after": "62.57905",
+        "delta": "0.26258",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_artisans/consumer_goods",
+        "before": "40.10344",
+        "after": "40.10645",
+        "delta": "0.00301",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_biologists/society_research",
+        "before": "9.16649",
+        "after": "9.16718",
+        "delta": "0.00069",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_biologists/unity",
+        "before": "1.90968",
+        "after": "1.90983",
+        "delta": "0.00015",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_bureaucrats/unity",
+        "before": "6.87487",
+        "after": "6.87539",
+        "delta": "0.00052",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_civilians/trade",
+        "before": "45.43147",
+        "after": "45.66405",
+        "delta": "0.23258",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_engineers/engineering_research",
+        "before": "3.43743",
+        "after": "3.43769",
+        "delta": "0.00026",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_metallurgists/alloys",
+        "before": "26.73563",
+        "after": "26.73763",
+        "delta": "0.00200",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_miners/minerals",
+        "before": "69.4432",
+        "after": "69.4484",
+        "delta": "0.0052",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_physicists/physics_research",
+        "before": "3.43743",
+        "after": "3.43769",
+        "delta": "0.00026",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_politicians/unity",
+        "before": "19.09688",
+        "after": "19.09831",
+        "delta": "0.00143",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/planet_technician/energy",
+        "before": "91.66502",
+        "after": "91.67188",
+        "delta": "0.00686",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/pop_category_civilians/trade",
+        "before": "5.9475",
+        "after": "5.9775",
+        "delta": "0.0300",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/trade_policy/energy",
+        "before": "31.15823",
+        "after": "31.28952",
+        "delta": "0.13129",
+        "epsilon": "0.0001"
+      },
+      {
+        "path": "/budget/last_month/income/trade_policy/trade",
+        "before": "31.15823",
+        "after": "31.28952",
+        "delta": "0.13129",
+        "epsilon": "0.0001"
+      }
+    ]
+  },
+  "source_profile": {
+    "status": "PASS",
+    "unity_source_isolated": true,
+    "planet_biologists_job_types": [
+      "biologist",
+      "calculator_biologist",
+      "shishan_code_maintainer",
+      "shishan_code_maintainer_drone"
+    ],
+    "files": [
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\000_pretriggers.txt",
+        "sha256": "5cc9b13bd8b8a81468e5de18fb01095d946a6bb3cd8336a728f877d0d5875f80"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+        "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\01_ruler_jobs.txt",
+        "sha256": "58a4b8595e692216e2c4faba8fbf29975880fe0bfb18cb4bd5e257d35877331f"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+        "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\04_gestalt_jobs.txt",
+        "sha256": "9469c178efbaa2d8e5bce43545ee6d5a184ee0e764336e85170795d0cc6820ad"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+        "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\06_event_jobs.txt",
+        "sha256": "818f6c57f8ee39ff7a4892b41939b7dcef1b132681571c57ecc1336ba3d2cfc3"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\07_fallen_empire_jobs.txt",
+        "sha256": "6c86bcdcc5f25b87027d72a561f9623ecd4ca1d4ba02b391c6004756322a5064"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\08_overlord_jobs.txt",
+        "sha256": "fecfd6c415afa11fec353863f3b96079d91c6c7a32130991911d7837253c231a"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\09_first_contact_jobs.txt",
+        "sha256": "ba2747e8ddbac4b08984355877ed0de31d0bdf184bd73a9f1dab1e2c63590236"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\10_paragon_fake_jobs.txt",
+        "sha256": "99ef34b0fa0d8d7690ae5b90159fa4259679375f2550eb0647e4d8d7e20ba142"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\11_astral_planes_jobs.txt",
+        "sha256": "537982c6ce9647618b9ec22f91d1ea2f43f63b1619c0bc1bdaa7c3ad94ac21a3"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\12_cosmic_storm_jobs.txt",
+        "sha256": "abfbfb76c00c849a5e1001348c4ac5f82f7d84bbba9a94227d1e2016f2776131"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\13_machine_age_jobs.txt",
+        "sha256": "5b4963303f53e7fe5d654c565e4aadd9aec3311787e0a3ff468afc8b6b01c1ea"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\14_grand_archive_jobs.txt",
+        "sha256": "8b5bcf1f6c470b765e178fcdad131c28cb7c6dd504609802761357159092a859"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\14_wilderness_jobs.txt",
+        "sha256": "ca2fa3cda3bce6e3caa052b56ab51454a7f0a06fbd09b1a58fa90244c3ff17c3"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\15_biogenesis_jobs.txt",
+        "sha256": "183ab971408870ae21624f9efe485a63831e861c32b72caab64b01fb02c98d31"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\15_strange_worlds_jobs.txt",
+        "sha256": "3e8b251cd104815329f942cc649bb8a07ff24a7a88ce882f6d729c5ca70f39ee"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\16_shroud_jobs.txt",
+        "sha256": "868480705cb8800c79ebce4f976fe186bb68d89783a4a5b455581478cd5928ef"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\17_nomads_jobs.txt",
+        "sha256": "74f27999909748943c88e1bd40edc9e6f1185568a4ea5ad5626d5df63de3d0c8"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\99_swap_jobs.txt",
+        "sha256": "547eee0d83d9cce19dc0986a1c9fdbd86fb1facd79bbb50f7bc53e9db39c8e4d"
+      },
+      {
+        "path": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-remaining\\additive-fixture\\mod\\common\\pop_jobs\\shishan_code_jobs.txt",
+        "sha256": "84be93698be2c0855adc14d4bb87fdb87e77e68154b40bde98acca3f5bf137d6"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\researcher_output.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "permitted_base_trait_keys": [
+      "trait_machine_unit",
+      "trait_robot_high_bandwidth",
+      "trait_robot_high_maintenance",
+      "trait_robot_luxurious",
+      "trait_robot_power_drills",
+      "trait_shishan_code",
+      "trait_wet_planet_preference"
+    ],
+    "scope": "declared isolated game+pack job resource tables; unknown additional loaded Mods or dynamic resource-add channels require independent source review",
+    "society_source_status": "CONDITIONAL: Q derived from same four-grid; combined workforce; zookeeper/other source drift invalidates interpretation"
+  },
+  "recommendations_for_future_design_only": [
+    {
+      "suggestion": "Consider a prospective measured-source employment guard: maintenance-only workforce for unity; maintenance+biologist workforce for society and category upkeep; track other domestic jobs separately.",
+      "finding": "Only civilian workforce/bonus/allocation drift is observed in this branch. Civilian uses planet_civilians, while biologist and maintainer use planet_biologists. This does not establish architecture-caused measured job changes.",
+      "constraint": "Do not change existing rules retroactively. Original all-job employment guard remains INVALID."
+    },
+    {
+      "suggestion": "Stabilize or independently control colony stability before the next complete seven-branch window.",
+      "constraint": "Even a future narrower employment boundary cannot remove the present beyond-epsilon stability drift. Do not relax epsilon or declare this original window valid."
+    },
+    {
+      "suggestion": "Record native cache refresh phase precisely while preserving strict P/W failure evidence.",
+      "constraint": "No evidence here attributes the P/W lag or civilian growth causally to architecture. Three snapshots do not prove intervening tick stability."
+    }
+  ],
+  "limitations": [
+    "No other six branches; Q, four-grid interaction, FP/FN/FH increments cannot be calculated or accepted.",
+    "Source inspection classifies declared isolated job resource tables only; dynamic unknown resource additions are outside finite profile.",
+    "Saved sentinel unemployment records (-1 workforce/automation/capacity) are preserved literally, not treated as real automated employment.",
+    "Endpoint-only context and job observations do not prove intervening native ticks."
+  ]
+}

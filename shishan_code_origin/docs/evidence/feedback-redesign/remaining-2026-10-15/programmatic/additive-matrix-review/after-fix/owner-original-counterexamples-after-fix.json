@@ -1,0 +1,396 @@
+{
+  "status": "PASS",
+  "scope": "exact independent synthetic inputs replayed; no native save or production mutation",
+  "original_evidence": "shishan_code_origin\\docs\\evidence\\feedback-redesign\\remaining-2026-10-15\\programmatic\\additive-matrix-review\\development-counterexamples.json",
+  "original_evidence_sha256": "47d9525866823e5473dd400cb5115db09b5d810ae7ec60e76950a03f4b81fe6d",
+  "tool_sha256": "2bee9c8460e07a228d8d0f577aa8245792e2ecc936497c975e6bd422be0173a1",
+  "cases": [
+    {
+      "name": "society_failure_does_not_gate_top",
+      "original_observed": {
+        "top": "PASS",
+        "limited": "PASS",
+        "strict": "PASS",
+        "setup": "PASS",
+        "unity": "PASS",
+        "society_secondary": "FAIL",
+        "guards": [],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "FAIL",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "558.9421363636363636363636364",
+            "expected": "0.1845",
+            "epsilon": "0.0005589421363636363636363636364"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "repaired_observed": {
+        "top": "FAIL",
+        "limited": "FAIL",
+        "society_secondary": "FAIL",
+        "unity": "PASS",
+        "guards": [],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "FAIL",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "558.9421363636363636363636364",
+            "expected": "0.1845",
+            "epsilon": "0.0005589421363636363636363636364"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "expected_status": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "name": "extra_category_job_automated_workforce_only",
+      "original_observed": {
+        "top": "PASS",
+        "limited": "PASS",
+        "strict": "PASS",
+        "setup": "PASS",
+        "unity": "PASS",
+        "society_secondary": "PASS",
+        "guards": [],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "repaired_observed": {
+        "top": "NOT COVERED",
+        "limited": "NOT COVERED",
+        "society_secondary": "NOT COVERED",
+        "unity": "NOT COVERED",
+        "guards": [
+          {
+            "status": "NOT COVERED",
+            "code": "UNITY_SOURCE_NOT_ISOLATED",
+            "source_profile_status": "PASS",
+            "other_category_jobs": [
+              "extra_native_same_category_source"
+            ]
+          }
+        ],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "expected_status": "NOT COVERED",
+      "status": "PASS"
+    },
+    {
+      "name": "extra_category_job_bonus_workforce_only",
+      "original_observed": {
+        "top": "PASS",
+        "limited": "PASS",
+        "strict": "PASS",
+        "setup": "PASS",
+        "unity": "PASS",
+        "society_secondary": "PASS",
+        "guards": [],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "repaired_observed": {
+        "top": "NOT COVERED",
+        "limited": "NOT COVERED",
+        "society_secondary": "NOT COVERED",
+        "unity": "NOT COVERED",
+        "guards": [
+          {
+            "status": "NOT COVERED",
+            "code": "UNITY_SOURCE_NOT_ISOLATED",
+            "source_profile_status": "PASS",
+            "other_category_jobs": [
+              "extra_native_same_category_source"
+            ]
+          }
+        ],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "expected_status": "NOT COVERED",
+      "status": "PASS"
+    }
+  ]
+}

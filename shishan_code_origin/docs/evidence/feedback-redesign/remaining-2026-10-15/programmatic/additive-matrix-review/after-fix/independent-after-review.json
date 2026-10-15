@@ -1,0 +1,240 @@
+{
+  "status": "PASS",
+  "scope": "only the two reported gate defects are independently confirmed closed; not native matrix certification",
+  "created_at_utc": "2026-10-15T11:51:12.296019+00:00",
+  "tool_sha256": "2bee9c8460e07a228d8d0f577aa8245792e2ecc936497c975e6bd422be0173a1",
+  "old_counterexamples_sha256_before": "47d9525866823e5473dd400cb5115db09b5d810ae7ec60e76950a03f4b81fe6d",
+  "old_counterexamples_sha256_after": "47d9525866823e5473dd400cb5115db09b5d810ae7ec60e76950a03f4b81fe6d",
+  "original_counterexamples_preserved": true,
+  "independent_counterexample_replays": 3,
+  "existing_43_tests_rerun": false,
+  "owner_43_test_report_sha256": "0df7be9f4976205efd05cbd71d58584e5a3b9029811d2a73de9e081de6c1201f",
+  "owner_43_test_report_identity_checked": true,
+  "source_diff_review": "only source-isolation disclosure, all-phase/category active channel guard, and isolated secondary failure aggregation; no native budget/input mutation",
+  "cases": [
+    {
+      "name": "society_failure_does_not_gate_top",
+      "status": "PASS",
+      "expectation": "FAIL",
+      "canonical_input_sha256": "3f505a7c8bdca95f8fad08a87076bdbe84154c5064cb9c67c18a614bd5fd7d9a",
+      "canonical_profile_sha256": "3a8eae73dd300d207c6ad62042c88aacc33c857c131becf461d3f77311124d40",
+      "old_top": "PASS",
+      "observed": {
+        "top": "FAIL",
+        "limited": "FAIL",
+        "society_secondary": "FAIL",
+        "unity": "PASS",
+        "guards": [],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "FAIL",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "558.9421363636363636363636364",
+            "expected": "0.1845",
+            "epsilon": "0.0005589421363636363636363636364"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "owner_replay_equal": true,
+      "input_profile_unchanged": true
+    },
+    {
+      "name": "extra_category_job_automated_workforce_only",
+      "status": "PASS",
+      "expectation": "NOT COVERED",
+      "canonical_input_sha256": "6d7e6461c437c666e20d352a47e04a5fb53ad5e325a47c3ba0e332aca38b8704",
+      "canonical_profile_sha256": "f616473e881b73d1c531fda262c454556e40cb29da7d579d6f916d245c083c7b",
+      "old_top": "PASS",
+      "observed": {
+        "top": "NOT COVERED",
+        "limited": "NOT COVERED",
+        "society_secondary": "NOT COVERED",
+        "unity": "NOT COVERED",
+        "guards": [
+          {
+            "status": "NOT COVERED",
+            "code": "UNITY_SOURCE_NOT_ISOLATED",
+            "source_profile_status": "PASS",
+            "other_category_jobs": [
+              "extra_native_same_category_source"
+            ]
+          }
+        ],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "owner_replay_equal": true,
+      "input_profile_unchanged": true
+    },
+    {
+      "name": "extra_category_job_bonus_workforce_only",
+      "status": "PASS",
+      "expectation": "NOT COVERED",
+      "canonical_input_sha256": "f2baa166d86e04772e3e52a5a64127b5acaadd5e0af9c0db410cd271611f1fdc",
+      "canonical_profile_sha256": "f616473e881b73d1c531fda262c454556e40cb29da7d579d6f916d245c083c7b",
+      "old_top": "PASS",
+      "observed": {
+        "top": "NOT COVERED",
+        "limited": "NOT COVERED",
+        "society_secondary": "NOT COVERED",
+        "unity": "NOT COVERED",
+        "guards": [
+          {
+            "status": "NOT COVERED",
+            "code": "UNITY_SOURCE_NOT_ISOLATED",
+            "source_profile_status": "PASS",
+            "other_category_jobs": [
+              "extra_native_same_category_source"
+            ]
+          }
+        ],
+        "society_checks": [
+          {
+            "status": "PASS",
+            "code": "A40_RESPONSE_EQUAL",
+            "observed": "3.690",
+            "expected": "3.69",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A0",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "ARCHITECTURE_AT_A40",
+            "observed": "1.2915",
+            "expected": "1.2915",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "INTERACTION",
+            "observed": "0.0000",
+            "expected": "0",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FP",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FN",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          },
+          {
+            "status": "PASS",
+            "code": "DUMMY_INCREMENT_FH",
+            "observed": "0.1845",
+            "expected": "0.1845",
+            "epsilon": "0.0001"
+          }
+        ]
+      },
+      "owner_replay_equal": true,
+      "input_profile_unchanged": true
+    }
+  ],
+  "native_matrix": "NOT CERTIFIED BY THIS REVIEW",
+  "production_fixture_or_tool_modified_by_reviewer": false
+}

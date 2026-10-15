@@ -76,3 +76,9 @@
 ## 完成与边界
 
 本调查只新增本文与只读 JSON，没有启动游戏、GUI、Steam 或修改生产/验收工具。源码/文档行号与哈希已落证据；只读扫描 22 个岗位文件全部解析，无解析失败。正式 0.2.1 发布及后续实际验收仍由主任务执行，本调查不宣称发布完成或经济实测完成。
+
+## 调查完成后的原生验证
+
+以上调查本身仍为静态研究，其结论是本约束下采用用户允许的岗位加算回退。后续主任务在冻结116文件隔离测试包中完成正常停组装控制后的七组真实原生存档；[新七组完整审计](evidence/feedback-redesign/remaining-2026-10-15/controlled-economy-run113522/additive-no-growth-native-audit.json)（SHA=`c55fa0ff97453227153a2fb7bd9cba1ed572b8778769b16d16cebba47c926e42`）与[精确数值摘要](evidence/feedback-redesign/remaining-2026-10-15/controlled-economy-run113522/additive-no-growth-native-numeric-summary.json)记录TS05/06在登记有限样本内PASS：A40四格交互为0，原生正面/负面/隐藏特质各使U7→8并增加`.05Q`，实际岗位/维护和country_base对照满足本样本门禁，严格P/W也通过。归档路径由balance统一按原字节封口，完整过程和边界见[经济探针设计及实际结果](remaining-additive-economy-probe-design-2026-10-15.md)。
+
+该后续结果验证的是加算回退，不是独立乘算；没有改写上文调查时「新合同待实测」的历史状态，也没有消除首次自然增长版的INVALID/FAIL。外国经济、任意资源/模板、所有非岗位成本、长期和性能等未覆盖项仍须按各自用例记录，不能由TS05/06有限样本PASS替代。

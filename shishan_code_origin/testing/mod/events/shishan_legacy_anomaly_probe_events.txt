@@ -1,0 +1,460 @@
+# Isolated legacy anomaly lab. Never ship or upload this file.
+# Preparation clears R only to model a missing legacy input; it never writes expected outputs.
+
+namespace = shishan_legacy_anomaly_probe
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.10
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_output } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_energy } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_assembly } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_experience } }
+   }
+   # Test input: missing R and migration markers, not an expected result.
+   clear_variable = shishan_code_architecture_repeat_count
+   remove_country_flag = shishan_code_architecture_migrated
+   remove_country_flag = shishan_code_architecture_legacy_invalid
+   clear_variable = shishan_code_iteration_output
+   clear_variable = shishan_code_iteration_energy
+   clear_variable = shishan_code_iteration_assembly
+   clear_variable = shishan_code_iteration_experience
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 10 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_10_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_10_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.11
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_output } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_energy } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_assembly } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_experience } }
+   }
+   # Test input: missing R and migration markers, not an expected result.
+   clear_variable = shishan_code_architecture_repeat_count
+   remove_country_flag = shishan_code_architecture_migrated
+   remove_country_flag = shishan_code_architecture_legacy_invalid
+   clear_variable = shishan_code_iteration_output
+   clear_variable = shishan_code_iteration_energy
+   clear_variable = shishan_code_iteration_assembly
+   clear_variable = shishan_code_iteration_experience
+   set_variable = { which = shishan_code_iteration_output value = 0 }
+   set_variable = { which = shishan_code_iteration_energy value = 0 }
+   set_variable = { which = shishan_code_iteration_assembly value = 0 }
+   set_variable = { which = shishan_code_iteration_experience value = 0 }
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 11 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_11_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_11_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.12
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_output } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_energy } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_assembly } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_experience } }
+   }
+   # Test input: missing R and migration markers, not an expected result.
+   clear_variable = shishan_code_architecture_repeat_count
+   remove_country_flag = shishan_code_architecture_migrated
+   remove_country_flag = shishan_code_architecture_legacy_invalid
+   clear_variable = shishan_code_iteration_output
+   clear_variable = shishan_code_iteration_energy
+   clear_variable = shishan_code_iteration_assembly
+   clear_variable = shishan_code_iteration_experience
+   set_variable = { which = shishan_code_iteration_output value = -3 }
+   set_variable = { which = shishan_code_iteration_energy value = -3 }
+   set_variable = { which = shishan_code_iteration_assembly value = -3 }
+   set_variable = { which = shishan_code_iteration_experience value = -3 }
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 12 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_12_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_12_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.13
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_output } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_energy } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_assembly } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_experience } }
+   }
+   # Test input: missing R and migration markers, not an expected result.
+   clear_variable = shishan_code_architecture_repeat_count
+   remove_country_flag = shishan_code_architecture_migrated
+   remove_country_flag = shishan_code_architecture_legacy_invalid
+   clear_variable = shishan_code_iteration_output
+   clear_variable = shishan_code_iteration_energy
+   clear_variable = shishan_code_iteration_assembly
+   clear_variable = shishan_code_iteration_experience
+   set_variable = { which = shishan_code_iteration_output value = 1.5 }
+   set_variable = { which = shishan_code_iteration_energy value = 1.5 }
+   set_variable = { which = shishan_code_iteration_assembly value = 1.5 }
+   set_variable = { which = shishan_code_iteration_experience value = 1.5 }
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 13 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_13_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_13_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.14
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    NOT = {
+     any_owned_pop_group = {
+      is_same_species = prev
+      pop_group_size > 0
+      species = { OR = {
+       has_trait = trait_shishan_iteration_output
+       has_trait = trait_shishan_iteration_energy
+       has_trait = trait_shishan_iteration_assembly
+       has_trait = trait_shishan_iteration_experience
+      } }
+     }
+    }
+   }
+   # Test input: missing R and migration markers, not an expected result.
+   clear_variable = shishan_code_architecture_repeat_count
+   remove_country_flag = shishan_code_architecture_migrated
+   remove_country_flag = shishan_code_architecture_legacy_invalid
+   clear_variable = shishan_code_iteration_output
+   clear_variable = shishan_code_iteration_energy
+   clear_variable = shishan_code_iteration_assembly
+   clear_variable = shishan_code_iteration_experience
+   set_variable = { which = shishan_code_iteration_output value = 3 }
+   set_variable = { which = shishan_code_iteration_energy value = 3 }
+   set_variable = { which = shishan_code_iteration_assembly value = 3 }
+   set_variable = { which = shishan_code_iteration_experience value = 3 }
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 14 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_14_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_14_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.15
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_output } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_energy } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_assembly } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_experience } }
+   }
+   # Test input: missing R and migration markers, not an expected result.
+   clear_variable = shishan_code_architecture_repeat_count
+   remove_country_flag = shishan_code_architecture_migrated
+   remove_country_flag = shishan_code_architecture_legacy_invalid
+   clear_variable = shishan_code_iteration_output
+   clear_variable = shishan_code_iteration_energy
+   clear_variable = shishan_code_iteration_assembly
+   clear_variable = shishan_code_iteration_experience
+   set_variable = { which = shishan_code_iteration_output value = 0.5 }
+   set_variable = { which = shishan_code_iteration_energy value = 0.5 }
+   set_variable = { which = shishan_code_iteration_assembly value = 0.5 }
+   set_variable = { which = shishan_code_iteration_experience value = 0.5 }
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 15 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_15_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_15_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.16
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_output } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_energy } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_assembly } }
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 species = { has_trait = trait_shishan_iteration_experience } }
+   }
+   # Test input: missing R and migration markers, not an expected result.
+   clear_variable = shishan_code_architecture_repeat_count
+   remove_country_flag = shishan_code_architecture_migrated
+   remove_country_flag = shishan_code_architecture_legacy_invalid
+   clear_variable = shishan_code_iteration_output
+   clear_variable = shishan_code_iteration_energy
+   clear_variable = shishan_code_iteration_assembly
+   clear_variable = shishan_code_iteration_experience
+   set_variable = { which = shishan_code_iteration_output value = 3 }
+   set_variable = { which = shishan_code_iteration_energy value = 3 }
+   set_variable = { which = shishan_code_iteration_assembly value = 3 }
+   set_variable = { which = shishan_code_iteration_experience value = 3 }
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 16 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_16_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_16_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.20
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    has_country_flag = shishan_code_refactored
+   }
+   # Test input: a stale receipt contradictory to the existing country state.
+   remove_country_flag = shishan_code_callback_state_invalid
+   set_country_flag = shishan_code_clean_success_pending
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 20 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_20_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_20_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.21
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    exists = owner_main_species
+    any_owned_pop_group = { is_same_species = prev pop_group_size > 0 }
+    NOR = {
+     has_country_flag = shishan_legacy_anomaly_probe_prepared
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+    NOT = { has_country_flag = shishan_code_refactored }
+   }
+   # Test input: a stale receipt contradictory to the existing country state.
+   remove_country_flag = shishan_code_callback_state_invalid
+   set_country_flag = shishan_code_relapse_pending
+   set_country_flag = shishan_legacy_anomaly_probe_prepared
+   set_variable = { which = shishan_legacy_anomaly_probe_case value = 21 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_21_INPUT_READY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_21_BLOCKED_PREREQUISITE_OR_REPLAY" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.90
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    has_country_flag = shishan_legacy_anomaly_probe_prepared
+    check_variable = { which = shishan_legacy_anomaly_probe_case value >= 10 }
+    check_variable = { which = shishan_legacy_anomaly_probe_case value <= 16 }
+    NOT = { has_country_flag = shishan_code_reward_pending }
+   }
+   shishan_code_architecture_refresh_effect = yes
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_90_REQUESTED_REFRESH"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_90_BLOCKED_NO_LEGACY_INPUT" }
+ }
+}
+
+country_event = {
+ id = shishan_legacy_anomaly_probe.91
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    has_country_flag = shishan_legacy_anomaly_probe_prepared
+    OR = {
+     check_variable = { which = shishan_legacy_anomaly_probe_case value = 20 }
+     check_variable = { which = shishan_legacy_anomaly_probe_case value = 21 }
+    }
+    NOT = { has_country_flag = shishan_code_reward_pending }
+   }
+   country_event = { id = shishan_code.60 }
+   log = "SHISHAN_LEGACY_ANOMALY_PROBE_91_REQUESTED_RECEIPT_RECOVERY"
+  }
+  else = { log = "SHISHAN_LEGACY_ANOMALY_PROBE_91_BLOCKED_NO_RECEIPT_INPUT" }
+ }
+}

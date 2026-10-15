@@ -1,0 +1,88 @@
+# ISOLATED COMPUTATION PROFILING FIXTURE. Never publish with the production Mod.
+namespace = shishan_perf_probe
+
+# OFF: retain the existing native B and skip future architecture refresh work.
+country_event = {
+ id = shishan_perf_probe.1
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    has_modifier = shishan_code_architecture_jobs
+    has_country_flag = shishan_code_architecture_migrated
+    is_variable_set = shishan_code_architecture_population
+    is_variable_set = shishan_code_architecture_trait_weight
+    is_variable_set = shishan_code_architecture_trait_average
+    is_variable_set = shishan_code_architecture_repeat_count
+    is_variable_set = shishan_code_architecture_total
+    is_variable_set = shishan_code_architecture_bonus
+    is_variable_set = shishan_code_architecture_multiplier
+    check_variable = { which = shishan_code_architecture_population value > 0 }
+    NOR = {
+     has_country_flag = shishan_perf_probe_compute_off
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+   }
+   set_country_flag = shishan_perf_probe_compute_off
+   log = "SHISHAN_PERF_PROBE_OFF_RETAIN_EXISTING_B"
+  }
+  else = { log = "SHISHAN_PERF_PROBE_OFF_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+# ON: restore original calculation at its next normal call, without writing B.
+country_event = {
+ id = shishan_perf_probe.2
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = { has_origin = origin_shishan_code has_country_flag = shishan_perf_probe_compute_off }
+   remove_country_flag = shishan_perf_probe_compute_off
+   log = "SHISHAN_PERF_PROBE_ON_NEXT_NATIVE_REFRESH"
+  }
+  else = { log = "SHISHAN_PERF_PROBE_ON_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}
+
+# Optional single wrapper invocation. This writes no timing or expected output.
+country_event = {
+ id = shishan_perf_probe.3
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = { has_origin = origin_shishan_code }
+ immediate = {
+  if = {
+   limit = {
+    has_origin = origin_shishan_code
+    has_modifier = shishan_code_architecture_jobs
+    has_country_flag = shishan_code_architecture_migrated
+    NOR = {
+     has_country_flag = shishan_code_reward_pending
+     has_country_flag = shishan_code_reward_ticket_ready
+     has_country_flag = shishan_code_maintain_success_pending
+     has_country_flag = shishan_code_optimize_success_pending
+     has_country_flag = shishan_code_clean_success_pending
+     has_country_flag = shishan_code_relapse_pending
+    }
+    NOT = { is_researching_special_project = SHISHAN_CODE_MAINTAIN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_CLEAN }
+    NOT = { is_researching_special_project = SHISHAN_CODE_OPTIMIZE }
+   }
+   shishan_code_architecture_refresh_effect = yes
+  }
+  else = { log = "SHISHAN_PERF_PROBE_CALL_PREREQUISITE_NOT_MET_NO_CHANGE" }
+ }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "FAIL",
+  "scope": "nine new development tests only; no native saves or primary 36/43 tests run",
+  "created_at_utc": "2026-10-15T12:47:37.030951+00:00",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_additive_budget_supplement.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "test_missing_leader_fee_never_becomes_zero (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_missing_leader_fee_never_becomes_zero) ... ok\ntest_no_growth_additional_guard_checks_all_domestic_jobs (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_no_growth_additional_guard_checks_all_domestic_jobs) ... ok\ntest_parent_duplicates_cycles_and_unknown_parent_fail_closed (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_parent_duplicates_cycles_and_unknown_parent_fail_closed) ... ok\ntest_population_fee_difference_fails_without_normalization (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_population_fee_difference_fails_without_normalization) ... ok\ntest_primary_invalid_and_zero_only_fees_cannot_turn_into_pass (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_primary_invalid_and_zero_only_fees_cannot_turn_into_pass) ... ok\ntest_raw_q_and_nonzero_fee_sources_are_observed (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_raw_q_and_nonzero_fee_sources_are_observed) ... FAIL\ntest_secondary_or_independent_raw_difference_is_not_swallowed (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_secondary_or_independent_raw_difference_is_not_swallowed) ... ok\ntest_unknown_and_mixed_income_sources_are_not_inferred (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_unknown_and_mixed_income_sources_are_not_inferred) ... ok\ntest_zero_job_response_is_not_positive_bonus_evidence (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_zero_job_response_is_not_positive_bonus_evidence) ... ok\n\n======================================================================\nFAIL: test_raw_q_and_nonzero_fee_sources_are_observed (test_additive_budget_supplement.BudgetSupplementDevelopmentTests.test_raw_q_and_nonzero_fee_sources_are_observed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\workspace\\xenoamess_stellaries_dev\\tests\\test_additive_budget_supplement.py\", line 53, in test_raw_q_and_nonzero_fee_sources_are_observed\n    self.assertEqual(\"PASS\", result[\"focused_expense_coverage\"][\"population_upkeep\"][\"status\"])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'PASS' != 'NOT COVERED'\n- PASS\n+ NOT COVERED\n\n\n----------------------------------------------------------------------\nRan 9 tests in 0.091s\n\nFAILED (failures=1)\n",
+  "source_sha256": "2d9002b86b5fce9b6f723f8cf13740fe717f2a3901498ae19dfbc3e20da57c23",
+  "tests_sha256": "d25a3ae7d283c5b0392fcd24c76d33c9bc3fd025ac295162146c899ad429dca3"
+}

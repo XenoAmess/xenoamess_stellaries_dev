@@ -1,0 +1,222 @@
+{
+  "status": "STATIC_PREPARATION_PASS_RUNTIME_NOT_RUN",
+  "created_at_utc": "2026-10-15T10:58:16.317285+00:00",
+  "native_sources": [
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T090720Z\\logs\\script_documentation\\effects.log",
+      "bytes": 309661,
+      "sha256": "0fa6b27ba6498dd4dd8b0b0336d5b1cee37b75f7d2f3f8a02d3be5e6f0297892",
+      "sections": [
+        {
+          "key": "check_planet_employment",
+          "line": 49,
+          "text": "check_planet_employment - Immediately runs a job evaluation on the colony, firing and employing pops as needed\ncheck_planet_employment = yes\nSupported Scopes: planet ship colony"
+        },
+        {
+          "key": "create_pop_group",
+          "line": 384,
+          "text": "create_pop_group - Creates a new pop group based on an existing one with overrides. If no existing pop group is passed, species is mandatory.\ncreate_pop_group = {\n\tpop_group = <base pop group> (optional; if omitted, species is required)\n\tspecies = last_created / <target> / random (optional; if omitted, base pop group is required)\n\tethos = { ethic = <key> } / random (optional; if no base group and no ethic is provided, ethos will be randomized)\n\tcategory = <pop category> (optional; if omitted and no base group is defined, use category from first assigned job)\n\tsize = <number> (optional, default: POP_BULK_UNIT_SIZE)\n\trandom = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].\n\tgrowth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')\n\teffect = <init effect> (optional)\n}\nSupported Scopes: planet ship colony"
+        },
+        {
+          "key": "add_modifier",
+          "line": 480,
+          "text": "add_modifier - Adds a specific modifier to the scoped object for a set duration\nadd_modifier = {\n\tmodifier = <key>\n\tdays/months/years = <int, -1 (default) means it never expires>\n\tmultiplier = <float>/<variable> (optional)\n\ttime_multiplier = <variable> (optional: days/months/years value is multiplied by the value of this variable)\n\tclear_on_owner_change = yes (optional: default no; clears modifier if planet/system/megastructure's owner changes)\n}\nSupported Scopes: megastructure planet country ship pop pop_group fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift cosmic_storm_influence_field colony"
+        },
+        {
+          "key": "export_trigger_value_to_variable",
+          "line": 557,
+          "text": "export_trigger_value_to_variable - Exports the value of a trigger to a specified variable (so for num_pops, it'll export the number of pops).\nexport_trigger_value_to_variable = {\n\ttrigger = has_resource\n\tparameters = { resource = energy } (optional: specify extra parameters for triggers with { }\n\tvariable = <string> (this example will print the amount of energy the scoped object has to a variable)\n\trounded = yes (default: no)\n}\nSupported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage colony"
+        },
+        {
+          "key": "remove_all_buildings",
+          "line": 65,
+          "text": "remove_all_buildings - Removes all buildings from the scoped colony\nremove_all_buildings = yes\nSupported Scopes: planet ship colony"
+        },
+        {
+          "key": "remove_all_districts",
+          "line": 2016,
+          "text": "remove_all_districts - Removes all districts from the scoped colony\nremove_all_districts = yes\nSupported Scopes: planet ship colony"
+        },
+        {
+          "key": "remove_building",
+          "line": 906,
+          "text": "remove_building - Removes a single instance of a specific building from the scoped colony\n\tremove_building = <building_type_key>\nSupported Scopes: planet ship colony"
+        },
+        {
+          "key": "while",
+          "line": 3343,
+          "text": "while - Repeats enclosed effects while limit criteria are met or until set iteration count is reached\nwhile = { limit = { <triggers> } <effects> }\n while = { count = [3|Variable] <effects> }\nSupported Scopes: all"
+        },
+        {
+          "key": "every_owned_colony",
+          "line": 5489,
+          "text": "every_owned_colony - Iterate through each colony owned by the current empire - executes the enclosed effects on all of them for which the limit triggers return true\nevery_owned_colony = { limit = { <triggers> } <effects> }\nSupported Scopes: country sector"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T090720Z\\logs\\script_documentation\\triggers.log",
+      "bytes": 203232,
+      "sha256": "f804a784471d0a4ba9f785d12b27435604b19f2e949285656339510c038fd300",
+      "sections": [
+        {
+          "key": "num_assigned_jobs",
+          "line": 3059,
+          "text": "num_assigned_jobs - Checks the number of pops the colony or country has that work a specific job.\nnum_assigned_jobs = { job = <key> value > 201 }\nSupported Scopes: planet country ship galactic_object colony"
+        },
+        {
+          "key": "num_owned_colonies",
+          "line": 3705,
+          "text": "num_owned_colonies - Checks the country's or sector's number of owned colonies (includes both planet and ship colonies)\nnum_owned_colonies < 8\nSupported Scopes: country sector"
+        },
+        {
+          "key": "is_capital",
+          "line": 1087,
+          "text": "is_capital - Checks if the colony is its owner's capital\nis_capital = yes\nSupported Scopes: planet ship colony"
+        },
+        {
+          "key": "any_situation",
+          "line": 4628,
+          "text": "any_situation - Iterate through each situation a country is experiencing - checks whether the enclosed triggers return true for any of them\nany_situation = { <triggers> }\nSupported Scopes: country"
+        },
+        {
+          "key": "is_situation_type",
+          "line": 1613,
+          "text": "is_situation_type - Checks if the scoped situation is a certain type.\nis_situation_type = my_situation_type\nSupported Scopes: situation"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T090720Z\\logs\\script_documentation\\modifiers.log",
+      "bytes": 4212029,
+      "sha256": "c907b4c54152632959e35c7ee29d3d0aaa85d82305a695711f18d575057e1b5b",
+      "relevant_lines": [
+        {
+          "line": 44392,
+          "text": "- job_shishan_code_maintainer_add, Category: Colony"
+        },
+        {
+          "line": 44400,
+          "text": "- job_shishan_code_maintainer_drone_add, Category: Colony"
+        }
+      ]
+    }
+  ],
+  "fixture_version": "formal 0.2.1 production bytes plus isolated speed input fixtures",
+  "controlled_inputs": {
+    "n_entries": {
+      "1": 0,
+      "2": 1,
+      "3": 10,
+      "4": 5
+    },
+    "single_colony_capacity_entries": [
+      99,
+      100,
+      199,
+      200,
+      299,
+      300,
+      399,
+      400,
+      499,
+      500,
+      700,
+      800,
+      899,
+      900,
+      1200
+    ],
+    "cross_colony_entries": {
+      "50": [
+        50,
+        50
+      ],
+      "51": [
+        99,
+        1
+      ],
+      "52": [
+        50,
+        0
+      ]
+    },
+    "read_only_observation_entry": 9000,
+    "created_population_per_prepared_colony": 2000
+  },
+  "independent_expected_examples": [
+    {
+      "n": 0,
+      "J": 0,
+      "monthly_speed": "1"
+    },
+    {
+      "n": 0,
+      "J": 99,
+      "monthly_speed": "1"
+    },
+    {
+      "n": 0,
+      "J": 100,
+      "monthly_speed": "0.75"
+    },
+    {
+      "n": 0,
+      "J": 199,
+      "monthly_speed": "0.75"
+    },
+    {
+      "n": 0,
+      "J": 200,
+      "monthly_speed": "0.5"
+    },
+    {
+      "n": 1,
+      "J": 0,
+      "monthly_speed": "1.25"
+    },
+    {
+      "n": 10,
+      "J": 0,
+      "monthly_speed": "3.5"
+    },
+    {
+      "n": 5,
+      "J": 0,
+      "monthly_speed": "2.25"
+    },
+    {
+      "n": 0,
+      "J_by_colony": [
+        50,
+        50
+      ],
+      "monthly_speed": "0.75"
+    }
+  ],
+  "expected_examples_boundary": "Paper expected values only; never written into the game by the fixture. Need observed J and three native monthly deltas.",
+  "commands": [
+    {
+      "command": "python -B C:/workspace/open_kaishek/tools/accept_stellaris_mod.py --mod _runtime/shishan_code/20261015-remaining/speed-fixture/mod --version-file shishan_code_origin/VERSION --game 'C:/Program Files (x86)/Steam/steamapps/common/Stellaris' --expected-exe-sha256 400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83 --report _runtime/shishan_code/20261015-remaining/speed-fixture/package-open-kaishek.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s tests -p test_shishan_speed_probe_fixture.py -v",
+      "exit_code": 0,
+      "tests": 9
+    }
+  ],
+  "runtime_required": [
+    "Native assignment equals requested J",
+    "Native per-colony 50+50 and 99+1",
+    "Three monthly progress deltas at constant n and J",
+    "Two government job classes",
+    "Empty capacity with J0",
+    "Stage boundaries and normal building costs separately"
+  ],
+  "runtime_status": "NOT RUN",
+  "gui_actions": false,
+  "game_launched": false,
+  "production_modified": false,
+  "native_save_generated_by_agent": false
+}

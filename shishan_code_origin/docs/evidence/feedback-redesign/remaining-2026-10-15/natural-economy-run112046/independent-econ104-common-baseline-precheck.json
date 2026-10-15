@@ -1,0 +1,2957 @@
+{
+  "status": "PASS_CURRENT_BASELINE",
+  "native_economy_matrix": "NOT RUN",
+  "scope": "independent read-only snapshot precheck, not a promise of future period stability",
+  "checks": [
+    {
+      "name": "source_sha256",
+      "status": "PASS",
+      "observed": "b0dce89057b0082b588e5030bc8c6b8c8283c7017dc65fa08716e00de173def2"
+    },
+    {
+      "name": "common_date",
+      "status": "PASS",
+      "observed": "2210.02.02"
+    },
+    {
+      "name": "game_start_expired",
+      "status": "PASS",
+      "modifiers": [
+        {
+          "modifier": "shishan_code_architecture_jobs",
+          "multiplier": "7",
+          "days": "-1"
+        },
+        {
+          "modifier": "shishan_code_vivhite_base",
+          "multiplier": "1",
+          "days": "-1"
+        },
+        {
+          "modifier": "shishan_code_vivhite_engineering_step",
+          "multiplier": "1",
+          "days": "-1"
+        },
+        {
+          "modifier": "shishan_code_vivhite_society_step",
+          "multiplier": "1",
+          "days": "-1"
+        }
+      ]
+    },
+    {
+      "name": "shishan_code_architecture_trait_average",
+      "status": "PASS",
+      "observed": "7",
+      "expected": "7"
+    },
+    {
+      "name": "shishan_code_architecture_repeat_count",
+      "status": "PASS",
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "shishan_code_architecture_total",
+      "status": "PASS",
+      "observed": "7",
+      "expected": "7"
+    },
+    {
+      "name": "shishan_code_architecture_bonus",
+      "status": "PASS",
+      "observed": "0.35",
+      "expected": ".35"
+    },
+    {
+      "name": "shishan_code_maintenance_count",
+      "status": "PASS",
+      "observed": "1",
+      "expected": "1"
+    },
+    {
+      "name": "independent_actual_U7",
+      "status": "PASS",
+      "population": 5491,
+      "trait_weight": 38437,
+      "U": "7"
+    },
+    {
+      "name": "actual_J100",
+      "status": "PASS",
+      "jobs": [
+        {
+          "id": 33554621,
+          "colony_id": 0,
+          "type": "shishan_code_maintainer",
+          "workforce": "100",
+          "bonus_workforce": "10",
+          "automated_workforce": "0",
+          "max_workforce": "100",
+          "workforce_limit": "100",
+          "automated_workforce_limit": "99",
+          "allocations": [
+            {
+              "group_id": 13,
+              "species_id": 48,
+              "category": "specialist",
+              "amount": "100",
+              "base_traits": [
+                "trait_machine_unit",
+                "trait_robot_high_bandwidth",
+                "trait_robot_high_maintenance",
+                "trait_robot_luxurious",
+                "trait_robot_power_drills",
+                "trait_shishan_code",
+                "trait_wet_planet_preference"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "no_automated_measured_jobs",
+      "status": "PASS"
+    },
+    {
+      "name": "no_test_inputs_before_branching",
+      "status": "PASS"
+    },
+    {
+      "name": "no_active_special_project",
+      "status": "PASS",
+      "projects": [
+        {
+          "key": "SHISHAN_CODE_CLEAN",
+          "id": 2,
+          "status": null,
+          "native_fields": [
+            {
+              "key": "id",
+              "value": "2"
+            },
+            {
+              "key": "special_project",
+              "value": "SHISHAN_CODE_CLEAN"
+            },
+            {
+              "key": "scope",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "country"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                },
+                {
+                  "key": "random",
+                  "value": [
+                    "0",
+                    "115486075"
+                  ]
+                },
+                {
+                  "key": "random_allowed",
+                  "value": "yes"
+                },
+                {
+                  "key": "saved_event_target",
+                  "value": [
+                    {
+                      "key": "type",
+                      "value": "leader"
+                    },
+                    {
+                      "key": "id",
+                      "value": "90"
+                    },
+                    {
+                      "key": "opener_id",
+                      "value": "4294967295"
+                    },
+                    {
+                      "key": "name",
+                      "value": "governor_leader"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "coordinate",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "2"
+                },
+                {
+                  "key": "id",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "carrier",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "ai_research_date",
+              "value": "2200.01.10"
+            }
+          ]
+        },
+        {
+          "key": "SHISHAN_CODE_MAINTAIN",
+          "id": 3,
+          "status": null,
+          "native_fields": [
+            {
+              "key": "id",
+              "value": "3"
+            },
+            {
+              "key": "special_project",
+              "value": "SHISHAN_CODE_MAINTAIN"
+            },
+            {
+              "key": "scope",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "country"
+                },
+                {
+                  "key": "id",
+                  "value": "0"
+                },
+                {
+                  "key": "opener_id",
+                  "value": "4294967295"
+                },
+                {
+                  "key": "random",
+                  "value": [
+                    "0",
+                    "473270815"
+                  ]
+                },
+                {
+                  "key": "random_allowed",
+                  "value": "yes"
+                },
+                {
+                  "key": "from",
+                  "value": [
+                    {
+                      "key": "type",
+                      "value": "country"
+                    },
+                    {
+                      "key": "id",
+                      "value": "0"
+                    },
+                    {
+                      "key": "opener_id",
+                      "value": "4294967295"
+                    },
+                    {
+                      "key": "random",
+                      "value": [
+                        "0",
+                        "3168103142"
+                      ]
+                    },
+                    {
+                      "key": "random_allowed",
+                      "value": "yes"
+                    },
+                    {
+                      "key": "from",
+                      "value": [
+                        {
+                          "key": "type",
+                          "value": "country"
+                        },
+                        {
+                          "key": "id",
+                          "value": "0"
+                        },
+                        {
+                          "key": "opener_id",
+                          "value": "4294967295"
+                        },
+                        {
+                          "key": "random",
+                          "value": [
+                            "0",
+                            "2517353070"
+                          ]
+                        },
+                        {
+                          "key": "random_allowed",
+                          "value": "yes"
+                        },
+                        {
+                          "key": "from",
+                          "value": [
+                            {
+                              "key": "type",
+                              "value": "country"
+                            },
+                            {
+                              "key": "id",
+                              "value": "0"
+                            },
+                            {
+                              "key": "opener_id",
+                              "value": "4294967295"
+                            },
+                            {
+                              "key": "random",
+                              "value": [
+                                "0",
+                                "1428347025"
+                              ]
+                            },
+                            {
+                              "key": "random_allowed",
+                              "value": "yes"
+                            },
+                            {
+                              "key": "saved_event_target",
+                              "value": [
+                                {
+                                  "key": "type",
+                                  "value": "country"
+                                },
+                                {
+                                  "key": "id",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "opener_id",
+                                  "value": "4294967295"
+                                },
+                                {
+                                  "key": "name",
+                                  "value": "shishan_code_reward_country"
+                                }
+                              ]
+                            },
+                            {
+                              "key": "saved_event_target",
+                              "value": [
+                                {
+                                  "key": "type",
+                                  "value": "species"
+                                },
+                                {
+                                  "key": "id",
+                                  "value": "3321888769"
+                                },
+                                {
+                                  "key": "opener_id",
+                                  "value": "4294967295"
+                                },
+                                {
+                                  "key": "name",
+                                  "value": "shishan_code_reward_old_species"
+                                }
+                              ]
+                            },
+                            {
+                              "key": "saved_event_target",
+                              "value": [
+                                {
+                                  "key": "type",
+                                  "value": "species"
+                                },
+                                {
+                                  "key": "id",
+                                  "value": "48"
+                                },
+                                {
+                                  "key": "opener_id",
+                                  "value": "4294967295"
+                                },
+                                {
+                                  "key": "name",
+                                  "value": "shishan_code_reward_new_species"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "coordinate",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "2"
+                },
+                {
+                  "key": "id",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "carrier",
+              "value": [
+                {
+                  "key": "type",
+                  "value": "planet"
+                },
+                {
+                  "key": "reference",
+                  "value": "8"
+                }
+              ]
+            },
+            {
+              "key": "ai_research_date",
+              "value": "2210.01.03"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "window_observations": [
+    {
+      "status": "CLEAR_CURRENTLY",
+      "kind": "other_timed_country_modifiers_within60days",
+      "records": []
+    },
+    {
+      "status": "FOLLOW_UP_REQUIRED",
+      "kind": "future_stability_and_employment",
+      "note": "One snapshot cannot prove two future months. Existing matrix guards remain unchanged."
+    },
+    {
+      "status": "FOLLOW_UP_REQUIRED",
+      "kind": "native_research_queues",
+      "records": {
+        "society_queue": [
+          [
+            {
+              "key": "progress",
+              "value": "589.63109"
+            },
+            {
+              "key": "technology",
+              "value": "tech_ground_defense_planning"
+            },
+            {
+              "key": "date",
+              "value": "2203.11.03"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "status": "FOLLOW_UP_REQUIRED",
+      "kind": "native_owned_leader_progression",
+      "records": [
+        {
+          "id": 167772189,
+          "class": "official",
+          "level": "2",
+          "experience": "1052",
+          "bonus_skill_level": "0",
+          "available_trait_selections": null,
+          "job": "politician",
+          "location": null,
+          "council_location": null,
+          "traits": [
+            "leader_trait_principled"
+          ]
+        },
+        {
+          "id": 134217755,
+          "class": "envoy",
+          "level": "1",
+          "experience": null,
+          "bonus_skill_level": "0",
+          "available_trait_selections": null,
+          "job": "artisan",
+          "location": null,
+          "council_location": null,
+          "traits": []
+        },
+        {
+          "id": 150994970,
+          "class": "envoy",
+          "level": "1",
+          "experience": null,
+          "bonus_skill_level": "0",
+          "available_trait_selections": null,
+          "job": "engineer",
+          "location": null,
+          "council_location": null,
+          "traits": []
+        },
+        {
+          "id": 150994969,
+          "class": "scientist",
+          "level": "2",
+          "experience": "810",
+          "bonus_skill_level": "0",
+          "available_trait_selections": null,
+          "job": "technician",
+          "location": [
+            {
+              "key": "type",
+              "value": "ship"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "council_location": [
+            {
+              "key": "type",
+              "value": "council_position"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "11"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "traits": [
+            "leader_trait_spark_of_genius"
+          ]
+        },
+        {
+          "id": 150994968,
+          "class": "commander",
+          "level": "2",
+          "experience": "810",
+          "bonus_skill_level": "0",
+          "available_trait_selections": null,
+          "job": "enforcer",
+          "location": [
+            {
+              "key": "type",
+              "value": "ship"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "3"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "council_location": [
+            {
+              "key": "type",
+              "value": "council_position"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "10"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "traits": [
+            "leader_trait_politician"
+          ]
+        },
+        {
+          "id": 90,
+          "class": "official",
+          "level": "2",
+          "experience": "770",
+          "bonus_skill_level": "0",
+          "available_trait_selections": null,
+          "job": "politician",
+          "location": null,
+          "council_location": [
+            {
+              "key": "type",
+              "value": "council_position"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "12"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "traits": [
+            "leader_trait_trade_focus"
+          ]
+        },
+        {
+          "id": 16777294,
+          "class": "official",
+          "level": "5",
+          "experience": "25",
+          "bonus_skill_level": "0",
+          "available_trait_selections": "4",
+          "job": "miner",
+          "location": null,
+          "council_location": null,
+          "traits": [
+            "leader_trait_shishan_code_vivhite"
+          ]
+        }
+      ]
+    },
+    {
+      "status": "OBSERVED_RISK",
+      "kind": "stability_drift_since_original_source",
+      "previous": "72.672",
+      "current": "72.6918",
+      "delta": "0.0198",
+      "interpretation": "Future same-kind warm/measured drift beyond existing epsilon would invalidate the matrix; no audit-rule relaxation."
+    }
+  ],
+  "snapshot": {
+    "save": "C:\\workspace\\xenoamess_stellaries_dev\\_runtime\\shishan_code\\20261015-runtime\\runs\\20261015T112046Z\\econ104_common_0202.sav",
+    "sha256": "b0dce89057b0082b588e5030bc8c6b8c8283c7017dc65fa08716e00de173def2",
+    "bytes": 631618,
+    "version": "Cygnus v4.5.2",
+    "date": "2210.02.02",
+    "actor_id": 0,
+    "origin": "origin_shishan_code",
+    "mods": [
+      "屎山代码"
+    ],
+    "population": {
+      "owned_colony_ids": [
+        0
+      ],
+      "ownership_links": [
+        {
+          "colony_id": 0,
+          "carrier_type": "planet",
+          "carrier_reference": 8,
+          "carrier_owner": 0,
+          "listed_pop_groups": [
+            14,
+            1,
+            12,
+            13
+          ]
+        }
+      ],
+      "main_species_id": 48,
+      "main_lineage_root": 3321888769,
+      "included_groups": [
+        {
+          "id": 1,
+          "colony_id": 0,
+          "species_id": 48,
+          "category": "civilian",
+          "size": 2391,
+          "lineage_root": 3321888769,
+          "same_main_lineage": true,
+          "formal_trait_count": 7
+        },
+        {
+          "id": 12,
+          "colony_id": 0,
+          "species_id": 48,
+          "category": "ruler",
+          "size": 200,
+          "lineage_root": 3321888769,
+          "same_main_lineage": true,
+          "formal_trait_count": 7
+        },
+        {
+          "id": 13,
+          "colony_id": 0,
+          "species_id": 48,
+          "category": "specialist",
+          "size": 1500,
+          "lineage_root": 3321888769,
+          "same_main_lineage": true,
+          "formal_trait_count": 7
+        },
+        {
+          "id": 14,
+          "colony_id": 0,
+          "species_id": 48,
+          "category": "worker",
+          "size": 1400,
+          "lineage_root": 3321888769,
+          "same_main_lineage": true,
+          "formal_trait_count": 7
+        }
+      ],
+      "excluded_domestic_groups": [],
+      "foreign_colony_groups_excluded": 46,
+      "populated_templates": [
+        {
+          "id": 48,
+          "base_ref": 3321888769,
+          "raw_trait_keys": [
+            "trait_machine_unit",
+            "trait_shishan_code",
+            "trait_robot_luxurious",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_wet_planet_preference",
+            "trait_robot_power_drills"
+          ],
+          "distinct_trait_keys": [
+            "trait_machine_unit",
+            "trait_robot_high_bandwidth",
+            "trait_robot_high_maintenance",
+            "trait_robot_luxurious",
+            "trait_robot_power_drills",
+            "trait_shishan_code",
+            "trait_wet_planet_preference"
+          ],
+          "distinct_trait_count": 7,
+          "duplicate_trait_keys": [],
+          "base_ref_chain": [
+            48,
+            3321888769
+          ],
+          "lineage_root": 3321888769,
+          "population": 5491,
+          "group_ids": [
+            1,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "population": 5491,
+      "trait_weight": 38437,
+      "trait_average_exact": "7/1",
+      "trait_average_expression": "38437/5491",
+      "trait_average_decimal": "7",
+      "trait_exclusion_keys": [],
+      "lineage_method": "species_db base_ref chains; unsupported explicit identity fields fail closed"
+    },
+    "variables": {
+      "shishan_code_architecture_bonus": "0.35",
+      "shishan_code_architecture_multiplier": "1.35",
+      "shishan_code_architecture_population": "5485",
+      "shishan_code_architecture_repeat_count": "0",
+      "shishan_code_architecture_total": "7",
+      "shishan_code_architecture_trait_average": "7",
+      "shishan_code_architecture_trait_weight": "38395",
+      "shishan_code_maintenance_count": "1",
+      "shishan_code_reroll_cooldown": "0",
+      "shishan_code_reward_coverage_01": "100",
+      "shishan_code_reward_coverage_02": "0",
+      "shishan_code_reward_coverage_03": "0",
+      "shishan_code_reward_coverage_04": "0",
+      "shishan_code_reward_coverage_05": "0",
+      "shishan_code_reward_coverage_06": "0",
+      "shishan_code_reward_coverage_07": "100",
+      "shishan_code_reward_coverage_08": "0",
+      "shishan_code_reward_coverage_09": "0",
+      "shishan_code_reward_coverage_10": "0",
+      "shishan_code_reward_coverage_11": "100",
+      "shishan_code_reward_coverage_12": "0",
+      "shishan_code_reward_coverage_13": "0",
+      "shishan_code_reward_coverage_14": "0",
+      "shishan_code_reward_coverage_15": "0",
+      "shishan_code_reward_coverage_16": "0",
+      "shishan_code_reward_coverage_17": "0",
+      "shishan_code_reward_coverage_18": "0",
+      "shishan_code_reward_coverage_19": "0",
+      "shishan_code_reward_coverage_20": "0",
+      "shishan_code_reward_coverage_21": "0",
+      "shishan_code_reward_coverage_22": "0",
+      "shishan_code_reward_coverage_23": "0",
+      "shishan_code_reward_coverage_24": "0",
+      "shishan_code_reward_coverage_25": "0",
+      "shishan_code_reward_coverage_26": "0",
+      "shishan_code_reward_coverage_27": "0",
+      "shishan_code_reward_coverage_28": "0",
+      "shishan_code_reward_coverage_29": "0",
+      "shishan_code_reward_coverage_30": "0",
+      "shishan_code_reward_coverage_31": "0",
+      "shishan_code_reward_coverage_32": "0",
+      "shishan_code_reward_coverage_33": "0",
+      "shishan_code_reward_coverage_34": "0",
+      "shishan_code_reward_coverage_35": "0",
+      "shishan_code_reward_coverage_36": "0",
+      "shishan_code_reward_coverage_37": "0",
+      "shishan_code_reward_coverage_38": "0",
+      "shishan_code_reward_coverage_39": "0",
+      "shishan_code_reward_old_1": "0",
+      "shishan_code_reward_old_2": "0",
+      "shishan_code_reward_old_3": "0",
+      "shishan_code_reward_slot_1": "0",
+      "shishan_code_reward_slot_2": "0",
+      "shishan_code_reward_slot_3": "0",
+      "shishan_code_reward_tier": "1"
+    },
+    "modifiers": [
+      {
+        "modifier": "shishan_code_architecture_jobs",
+        "multiplier": "7",
+        "days": "-1"
+      },
+      {
+        "modifier": "shishan_code_vivhite_base",
+        "multiplier": "1",
+        "days": "-1"
+      },
+      {
+        "modifier": "shishan_code_vivhite_engineering_step",
+        "multiplier": "1",
+        "days": "-1"
+      },
+      {
+        "modifier": "shishan_code_vivhite_society_step",
+        "multiplier": "1",
+        "days": "-1"
+      }
+    ],
+    "projects": [
+      {
+        "key": "SHISHAN_CODE_CLEAN",
+        "id": 2,
+        "status": null,
+        "native_fields": [
+          {
+            "key": "id",
+            "value": "2"
+          },
+          {
+            "key": "special_project",
+            "value": "SHISHAN_CODE_CLEAN"
+          },
+          {
+            "key": "scope",
+            "value": [
+              {
+                "key": "type",
+                "value": "country"
+              },
+              {
+                "key": "id",
+                "value": "0"
+              },
+              {
+                "key": "opener_id",
+                "value": "4294967295"
+              },
+              {
+                "key": "random",
+                "value": [
+                  "0",
+                  "115486075"
+                ]
+              },
+              {
+                "key": "random_allowed",
+                "value": "yes"
+              },
+              {
+                "key": "saved_event_target",
+                "value": [
+                  {
+                    "key": "type",
+                    "value": "leader"
+                  },
+                  {
+                    "key": "id",
+                    "value": "90"
+                  },
+                  {
+                    "key": "opener_id",
+                    "value": "4294967295"
+                  },
+                  {
+                    "key": "name",
+                    "value": "governor_leader"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "coordinate",
+            "value": [
+              {
+                "key": "type",
+                "value": "2"
+              },
+              {
+                "key": "id",
+                "value": "8"
+              }
+            ]
+          },
+          {
+            "key": "carrier",
+            "value": [
+              {
+                "key": "type",
+                "value": "planet"
+              },
+              {
+                "key": "reference",
+                "value": "8"
+              }
+            ]
+          },
+          {
+            "key": "ai_research_date",
+            "value": "2200.01.10"
+          }
+        ]
+      },
+      {
+        "key": "SHISHAN_CODE_MAINTAIN",
+        "id": 3,
+        "status": null,
+        "native_fields": [
+          {
+            "key": "id",
+            "value": "3"
+          },
+          {
+            "key": "special_project",
+            "value": "SHISHAN_CODE_MAINTAIN"
+          },
+          {
+            "key": "scope",
+            "value": [
+              {
+                "key": "type",
+                "value": "country"
+              },
+              {
+                "key": "id",
+                "value": "0"
+              },
+              {
+                "key": "opener_id",
+                "value": "4294967295"
+              },
+              {
+                "key": "random",
+                "value": [
+                  "0",
+                  "473270815"
+                ]
+              },
+              {
+                "key": "random_allowed",
+                "value": "yes"
+              },
+              {
+                "key": "from",
+                "value": [
+                  {
+                    "key": "type",
+                    "value": "country"
+                  },
+                  {
+                    "key": "id",
+                    "value": "0"
+                  },
+                  {
+                    "key": "opener_id",
+                    "value": "4294967295"
+                  },
+                  {
+                    "key": "random",
+                    "value": [
+                      "0",
+                      "3168103142"
+                    ]
+                  },
+                  {
+                    "key": "random_allowed",
+                    "value": "yes"
+                  },
+                  {
+                    "key": "from",
+                    "value": [
+                      {
+                        "key": "type",
+                        "value": "country"
+                      },
+                      {
+                        "key": "id",
+                        "value": "0"
+                      },
+                      {
+                        "key": "opener_id",
+                        "value": "4294967295"
+                      },
+                      {
+                        "key": "random",
+                        "value": [
+                          "0",
+                          "2517353070"
+                        ]
+                      },
+                      {
+                        "key": "random_allowed",
+                        "value": "yes"
+                      },
+                      {
+                        "key": "from",
+                        "value": [
+                          {
+                            "key": "type",
+                            "value": "country"
+                          },
+                          {
+                            "key": "id",
+                            "value": "0"
+                          },
+                          {
+                            "key": "opener_id",
+                            "value": "4294967295"
+                          },
+                          {
+                            "key": "random",
+                            "value": [
+                              "0",
+                              "1428347025"
+                            ]
+                          },
+                          {
+                            "key": "random_allowed",
+                            "value": "yes"
+                          },
+                          {
+                            "key": "saved_event_target",
+                            "value": [
+                              {
+                                "key": "type",
+                                "value": "country"
+                              },
+                              {
+                                "key": "id",
+                                "value": "0"
+                              },
+                              {
+                                "key": "opener_id",
+                                "value": "4294967295"
+                              },
+                              {
+                                "key": "name",
+                                "value": "shishan_code_reward_country"
+                              }
+                            ]
+                          },
+                          {
+                            "key": "saved_event_target",
+                            "value": [
+                              {
+                                "key": "type",
+                                "value": "species"
+                              },
+                              {
+                                "key": "id",
+                                "value": "3321888769"
+                              },
+                              {
+                                "key": "opener_id",
+                                "value": "4294967295"
+                              },
+                              {
+                                "key": "name",
+                                "value": "shishan_code_reward_old_species"
+                              }
+                            ]
+                          },
+                          {
+                            "key": "saved_event_target",
+                            "value": [
+                              {
+                                "key": "type",
+                                "value": "species"
+                              },
+                              {
+                                "key": "id",
+                                "value": "48"
+                              },
+                              {
+                                "key": "opener_id",
+                                "value": "4294967295"
+                              },
+                              {
+                                "key": "name",
+                                "value": "shishan_code_reward_new_species"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "coordinate",
+            "value": [
+              {
+                "key": "type",
+                "value": "2"
+              },
+              {
+                "key": "id",
+                "value": "8"
+              }
+            ]
+          },
+          {
+            "key": "carrier",
+            "value": [
+              {
+                "key": "type",
+                "value": "planet"
+              },
+              {
+                "key": "reference",
+                "value": "8"
+              }
+            ]
+          },
+          {
+            "key": "ai_research_date",
+            "value": "2210.01.03"
+          }
+        ]
+      }
+    ],
+    "strict_cache": {
+      "status": "FAIL",
+      "checks": [
+        {
+          "status": "FAIL",
+          "code": "STRICT_CACHE_MISMATCH",
+          "key": "shishan_code_architecture_population",
+          "observation": {
+            "observed": "5485",
+            "expected": "5491",
+            "status": "MISMATCH"
+          }
+        },
+        {
+          "status": "FAIL",
+          "code": "STRICT_CACHE_MISMATCH",
+          "key": "shishan_code_architecture_trait_weight",
+          "observation": {
+            "observed": "38395",
+            "expected": "38437",
+            "status": "MISMATCH"
+          }
+        }
+      ],
+      "comparisons": {
+        "shishan_code_architecture_population": {
+          "observed": "5485",
+          "expected": "5491",
+          "status": "MISMATCH"
+        },
+        "shishan_code_architecture_trait_weight": {
+          "observed": "38395",
+          "expected": "38437",
+          "status": "MISMATCH"
+        },
+        "shishan_code_architecture_trait_average": {
+          "observed": "7",
+          "expected": "7",
+          "status": "MATCH"
+        },
+        "shishan_code_architecture_total": {
+          "observed": "7",
+          "expected": "7",
+          "status": "MATCH"
+        },
+        "shishan_code_architecture_bonus": {
+          "observed": "0.35",
+          "expected": "0.35",
+          "status": "MATCH"
+        },
+        "shishan_code_architecture_multiplier": {
+          "observed": "1.35",
+          "expected": "1.35",
+          "status": "MATCH"
+        }
+      }
+    },
+    "jobs": [
+      {
+        "id": 22,
+        "colony_id": 0,
+        "type": "artisan",
+        "workforce": "350",
+        "bonus_workforce": "35",
+        "automated_workforce": "0",
+        "max_workforce": "350",
+        "workforce_limit": "350",
+        "automated_workforce_limit": "349",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "350",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "colony_id": 0,
+        "type": "bio_trophy_unemployment",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 16,
+        "colony_id": 0,
+        "type": "biologist",
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60",
+        "automated_workforce_limit": "59",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "60",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "colony_id": 0,
+        "type": "bureaucrat",
+        "workforce": "120",
+        "bonus_workforce": "12",
+        "automated_workforce": "0",
+        "max_workforce": "120",
+        "workforce_limit": "120",
+        "automated_workforce_limit": "119",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "120",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 0,
+        "colony_id": 0,
+        "type": "civilian",
+        "workforce": "2390",
+        "bonus_workforce": "240.1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": [
+          {
+            "group_id": 1,
+            "species_id": 48,
+            "category": "civilian",
+            "amount": "2391",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "colony_id": 0,
+        "type": "crisis_purge",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 13,
+        "colony_id": 0,
+        "type": "cruise_passenger_unemployment",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 12,
+        "colony_id": 0,
+        "type": "disconnected_drone",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 19,
+        "colony_id": 0,
+        "type": "enforcer",
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100",
+        "automated_workforce_limit": "99",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "100",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "colony_id": 0,
+        "type": "engineer",
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60",
+        "automated_workforce_limit": "59",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "60",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "colony_id": 0,
+        "type": "event_purge",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 3,
+        "colony_id": 0,
+        "type": "fotd_protectors",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 21,
+        "colony_id": 0,
+        "type": "foundry",
+        "workforce": "350",
+        "bonus_workforce": "35",
+        "automated_workforce": "0",
+        "max_workforce": "350",
+        "workforce_limit": "350",
+        "automated_workforce_limit": "349",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "350",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "colony_id": 0,
+        "type": "hunter_gatherer",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 7,
+        "colony_id": 0,
+        "type": "hunter_gatherer_lithoid",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 25,
+        "colony_id": 0,
+        "type": "miner",
+        "workforce": "800",
+        "bonus_workforce": "200",
+        "automated_workforce": "0",
+        "max_workforce": "800",
+        "workforce_limit": "800",
+        "automated_workforce_limit": "799",
+        "allocations": [
+          {
+            "group_id": 14,
+            "species_id": 48,
+            "category": "worker",
+            "amount": "800",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "colony_id": 0,
+        "type": "neural_chip",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 8,
+        "colony_id": 0,
+        "type": "peasant",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 9,
+        "colony_id": 0,
+        "type": "peasant_lithoid",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 15,
+        "colony_id": 0,
+        "type": "physicist",
+        "workforce": "60",
+        "bonus_workforce": "6",
+        "automated_workforce": "0",
+        "max_workforce": "60",
+        "workforce_limit": "60",
+        "automated_workforce_limit": "59",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "60",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "colony_id": 0,
+        "type": "politician",
+        "workforce": "200",
+        "bonus_workforce": "20",
+        "automated_workforce": "0",
+        "max_workforce": "200",
+        "workforce_limit": "200",
+        "automated_workforce_limit": "199",
+        "allocations": [
+          {
+            "group_id": 12,
+            "species_id": 48,
+            "category": "ruler",
+            "amount": "200",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "colony_id": 0,
+        "type": "roboticist",
+        "workforce": "300",
+        "bonus_workforce": "-30",
+        "automated_workforce": "0",
+        "max_workforce": "300",
+        "workforce_limit": "300",
+        "automated_workforce_limit": "299",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "300",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "colony_id": 0,
+        "type": "servant",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 33554621,
+        "colony_id": 0,
+        "type": "shishan_code_maintainer",
+        "workforce": "100",
+        "bonus_workforce": "10",
+        "automated_workforce": "0",
+        "max_workforce": "100",
+        "workforce_limit": "100",
+        "automated_workforce_limit": "99",
+        "allocations": [
+          {
+            "group_id": 13,
+            "species_id": 48,
+            "category": "specialist",
+            "amount": "100",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "colony_id": 0,
+        "type": "squire",
+        "workforce": "-1",
+        "bonus_workforce": "1",
+        "automated_workforce": "-1",
+        "max_workforce": "-1",
+        "workforce_limit": "-1",
+        "automated_workforce_limit": "-1",
+        "allocations": []
+      },
+      {
+        "id": 24,
+        "colony_id": 0,
+        "type": "technician",
+        "workforce": "600",
+        "bonus_workforce": "60",
+        "automated_workforce": "0",
+        "max_workforce": "600",
+        "workforce_limit": "600",
+        "automated_workforce_limit": "599",
+        "allocations": [
+          {
+            "group_id": 14,
+            "species_id": 48,
+            "category": "worker",
+            "amount": "600",
+            "base_traits": [
+              "trait_machine_unit",
+              "trait_robot_high_bandwidth",
+              "trait_robot_high_maintenance",
+              "trait_robot_luxurious",
+              "trait_robot_power_drills",
+              "trait_shishan_code",
+              "trait_wet_planet_preference"
+            ]
+          }
+        ]
+      }
+    ],
+    "budget": {
+      "current_month": {
+        "income": {
+          "country_base": {
+            "energy": "25",
+            "minerals": "25",
+            "physics_research": "12.5",
+            "society_research": "12.5",
+            "engineering_research": "12.5",
+            "influence": "3.75",
+            "unity": "12.5",
+            "consumer_goods": "18.75",
+            "alloys": "6.25"
+          },
+          "starbase_modules": {
+            "energy": "7.5"
+          },
+          "orbital_mining_deposits": {
+            "energy": "12.5",
+            "minerals": "12.5"
+          },
+          "orbital_research_deposits": {
+            "engineering_research": "3.75"
+          },
+          "country_power_projection": {
+            "influence": "1.6111"
+          },
+          "trade_policy": {
+            "energy": "31.22381",
+            "trade": "31.22381"
+          },
+          "planet_miners": {
+            "minerals": "69.4456"
+          },
+          "planet_technician": {
+            "energy": "91.66819"
+          },
+          "planet_politicians": {
+            "unity": "19.09754"
+          },
+          "planet_bureaucrats": {
+            "unity": "6.87511"
+          },
+          "planet_metallurgists": {
+            "alloys": "26.73655"
+          },
+          "planet_artisans": {
+            "consumer_goods": "40.10483"
+          },
+          "planet_civilians": {
+            "trade": "45.54763"
+          },
+          "planet_physicists": {
+            "physics_research": "3.43755"
+          },
+          "planet_biologists": {
+            "society_research": "9.16681",
+            "unity": "1.90975"
+          },
+          "planet_engineers": {
+            "engineering_research": "3.43755"
+          },
+          "pop_category_workers": {
+            "trade": "3.5"
+          },
+          "pop_category_specialists": {
+            "trade": "6.1875"
+          },
+          "pop_category_rulers": {
+            "trade": "1.25"
+          },
+          "pop_category_civilians": {
+            "trade": "5.9625"
+          }
+        },
+        "expenses": {
+          "ships": {
+            "energy": "3.6",
+            "alloys": "1.08"
+          },
+          "ship_components": {
+            "energy": "1.188",
+            "alloys": "0.216"
+          },
+          "station_gatherers": {
+            "energy": "4"
+          },
+          "station_researchers": {
+            "energy": "1"
+          },
+          "starbases": {
+            "energy": "2"
+          },
+          "starbase_buildings": {
+            "energy": "0.96"
+          },
+          "starbase_modules": {
+            "energy": "0.96"
+          },
+          "planet_buildings": {
+            "energy": "15"
+          },
+          "planet_districts_mining": {
+            "energy": "4"
+          },
+          "planet_districts_generator": {
+            "energy": "3"
+          },
+          "planet_districts_cities": {
+            "energy": "6"
+          },
+          "leader_commanders": {
+            "unity": "4"
+          },
+          "leader_scientists": {
+            "unity": "4"
+          },
+          "leader_officials": {
+            "unity": "8"
+          },
+          "trade_policy": {
+            "trade": "62.44763"
+          },
+          "planet_pop_assemblers": {
+            "alloys": "4.05"
+          },
+          "planet_politicians": {
+            "consumer_goods": "4.95"
+          },
+          "planet_bureaucrats": {
+            "consumer_goods": "1.98"
+          },
+          "planet_metallurgists": {
+            "minerals": "23.1"
+          },
+          "planet_artisans": {
+            "minerals": "17.325"
+          },
+          "planet_physicists": {
+            "consumer_goods": "0.7425"
+          },
+          "planet_biologists": {
+            "consumer_goods": "1.98"
+          },
+          "planet_engineers": {
+            "consumer_goods": "0.7425"
+          },
+          "planet_pops_traits": {
+            "energy": "60.335"
+          },
+          "pop_category_workers": {
+            "consumer_goods": "3.85"
+          },
+          "pop_category_specialists": {
+            "consumer_goods": "8.25"
+          },
+          "pop_category_rulers": {
+            "consumer_goods": "2.2"
+          },
+          "pop_category_civilians": {
+            "consumer_goods": "6.55875"
+          }
+        }
+      },
+      "last_month": {
+        "income": {
+          "country_base": {
+            "energy": "25",
+            "minerals": "25",
+            "physics_research": "12.5",
+            "society_research": "12.5",
+            "engineering_research": "12.5",
+            "influence": "3.75",
+            "unity": "12.5",
+            "consumer_goods": "18.75",
+            "alloys": "6.25"
+          },
+          "starbase_modules": {
+            "energy": "7.5"
+          },
+          "orbital_mining_deposits": {
+            "energy": "12.5",
+            "minerals": "12.5"
+          },
+          "orbital_research_deposits": {
+            "engineering_research": "3.75"
+          },
+          "country_power_projection": {
+            "influence": "1.6111"
+          },
+          "trade_policy": {
+            "energy": "31.15823",
+            "trade": "31.15823"
+          },
+          "planet_miners": {
+            "minerals": "69.4432"
+          },
+          "planet_technician": {
+            "energy": "91.66502"
+          },
+          "planet_politicians": {
+            "unity": "19.09688"
+          },
+          "planet_bureaucrats": {
+            "unity": "6.87487"
+          },
+          "planet_metallurgists": {
+            "alloys": "26.73563"
+          },
+          "planet_artisans": {
+            "consumer_goods": "40.10344"
+          },
+          "planet_civilians": {
+            "trade": "45.43147"
+          },
+          "planet_physicists": {
+            "physics_research": "3.43743"
+          },
+          "planet_biologists": {
+            "society_research": "9.16649",
+            "unity": "1.90968"
+          },
+          "planet_engineers": {
+            "engineering_research": "3.43743"
+          },
+          "pop_category_workers": {
+            "trade": "3.5"
+          },
+          "pop_category_specialists": {
+            "trade": "6.1875"
+          },
+          "pop_category_rulers": {
+            "trade": "1.25"
+          },
+          "pop_category_civilians": {
+            "trade": "5.9475"
+          }
+        },
+        "expenses": {
+          "ships": {
+            "energy": "3.6",
+            "alloys": "1.08"
+          },
+          "ship_components": {
+            "energy": "1.188",
+            "alloys": "0.216"
+          },
+          "station_gatherers": {
+            "energy": "4"
+          },
+          "station_researchers": {
+            "energy": "1"
+          },
+          "starbases": {
+            "energy": "2"
+          },
+          "starbase_buildings": {
+            "energy": "0.96"
+          },
+          "starbase_modules": {
+            "energy": "0.96"
+          },
+          "planet_buildings": {
+            "energy": "15"
+          },
+          "planet_districts_mining": {
+            "energy": "4"
+          },
+          "planet_districts_generator": {
+            "energy": "3"
+          },
+          "planet_districts_cities": {
+            "energy": "6"
+          },
+          "leader_commanders": {
+            "unity": "4"
+          },
+          "leader_scientists": {
+            "unity": "4"
+          },
+          "leader_officials": {
+            "unity": "8"
+          },
+          "trade_policy": {
+            "trade": "62.31647"
+          },
+          "planet_pop_assemblers": {
+            "alloys": "4.05"
+          },
+          "planet_politicians": {
+            "consumer_goods": "4.95"
+          },
+          "planet_bureaucrats": {
+            "consumer_goods": "1.98"
+          },
+          "planet_metallurgists": {
+            "minerals": "23.1"
+          },
+          "planet_artisans": {
+            "minerals": "17.325"
+          },
+          "planet_physicists": {
+            "consumer_goods": "0.7425"
+          },
+          "planet_biologists": {
+            "consumer_goods": "1.98"
+          },
+          "planet_engineers": {
+            "consumer_goods": "0.7425"
+          },
+          "planet_pops_traits": {
+            "energy": "60.269"
+          },
+          "pop_category_workers": {
+            "consumer_goods": "3.85"
+          },
+          "pop_category_specialists": {
+            "consumer_goods": "8.25"
+          },
+          "pop_category_rulers": {
+            "consumer_goods": "2.2"
+          },
+          "pop_category_civilians": {
+            "consumer_goods": "6.54225"
+          }
+        }
+      }
+    },
+    "context": {
+      "government": [
+        {
+          "key": "type",
+          "value": "gov_moral_democracy"
+        },
+        {
+          "key": "authority",
+          "value": "auth_democratic"
+        },
+        {
+          "key": "origin",
+          "value": "origin_shishan_code"
+        },
+        {
+          "key": "council_positions",
+          "value": [
+            "10",
+            "11",
+            "12"
+          ]
+        },
+        {
+          "key": "council_agenda",
+          "value": "agenda_infinite_opportunities"
+        },
+        {
+          "key": "unlocked_civic_council_slots",
+          "value": "3"
+        },
+        {
+          "key": "picked_council_types",
+          "value": [
+            "councilor_defense",
+            "councilor_research",
+            "councilor_state"
+          ]
+        }
+      ],
+      "completed_technologies": [
+        {
+          "key": "technology",
+          "value": "tech_solar_panel_network"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_corvettes"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_starbase_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_starbase_2"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_assault_armies"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_ship_armor_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_thrusters_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_space_defense_station_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_basic_industry"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_mechanized_mining"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_space_construction"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_mass_drivers_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_flak_batteries_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_missiles_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_space_exploration"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_basic_science_lab_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_fission_power"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_reactor_boosters_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_shields_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_power_plant_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_hyper_drive_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_lasers_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_pd_tracking_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_planetary_defenses"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_interplanetary_commerce"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_industrial_farming"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_hydroponics"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_colonization_1"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_planetary_government"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "technology",
+          "value": "tech_holo_entertainment"
+        },
+        {
+          "key": "level",
+          "value": "1"
+        }
+      ],
+      "policies": [
+        [
+          {
+            "key": "policy",
+            "value": "diplomatic_stance"
+          },
+          {
+            "key": "selected",
+            "value": "diplo_stance_expansionist"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "war_philosophy"
+          },
+          {
+            "key": "selected",
+            "value": "liberation_wars"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "fleet_doctrine"
+          },
+          {
+            "key": "selected",
+            "value": "battleline_fleet_doctrine"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "subjugation_war_terms"
+          },
+          {
+            "key": "selected",
+            "value": "balanced_terms"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "orbital_bombardment"
+          },
+          {
+            "key": "selected",
+            "value": "orbital_bombardment_selective"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "orbital_bombardment_accept_surrender"
+          },
+          {
+            "key": "selected",
+            "value": "orbital_bombardment_surrender_allowed"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "resettlement"
+          },
+          {
+            "key": "selected",
+            "value": "resettlement_allowed"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "first_contact_protocol"
+          },
+          {
+            "key": "selected",
+            "value": "first_contact_cautious"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "border_policy"
+          },
+          {
+            "key": "selected",
+            "value": "border_policy_closed"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "research_restriction_policy"
+          },
+          {
+            "key": "selected",
+            "value": "research_restriction_no_restriction"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "economic_policy"
+          },
+          {
+            "key": "selected",
+            "value": "economic_policy_balanced"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "trade_policy"
+          },
+          {
+            "key": "selected",
+            "value": "trade_policy_default"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "artificial_intelligence_policy"
+          },
+          {
+            "key": "selected",
+            "value": "ai_full_rights"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "population_controls"
+          },
+          {
+            "key": "selected",
+            "value": "population_controls_allowed"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "slavery"
+          },
+          {
+            "key": "selected",
+            "value": "slavery_allowed"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "purge"
+          },
+          {
+            "key": "selected",
+            "value": "purge_displacement_only"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "nomad_border_policy"
+          },
+          {
+            "key": "selected",
+            "value": "nomad_border_policy_open"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "nomad_deterrence"
+          },
+          {
+            "key": "selected",
+            "value": "nomad_deterrence_purge_pops"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "defense_platform_protocols"
+          },
+          {
+            "key": "selected",
+            "value": "defense_platform_standard"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "weapon_preference"
+          },
+          {
+            "key": "selected",
+            "value": "weapon_preference_explosive"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "defense_preference"
+          },
+          {
+            "key": "selected",
+            "value": "shields_preference"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "starbase_weapon_preference"
+          },
+          {
+            "key": "selected",
+            "value": "starbase_weapon_preference_energy"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "starbase_defense_preference"
+          },
+          {
+            "key": "selected",
+            "value": "starbase_shields_preference"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "platform_weapon_preference"
+          },
+          {
+            "key": "selected",
+            "value": "platform_weapon_preference_energy"
+          }
+        ],
+        [
+          {
+            "key": "policy",
+            "value": "platform_defense_preference"
+          },
+          {
+            "key": "selected",
+            "value": "platform_balanced_defenses"
+          }
+        ]
+      ],
+      "ethos": [
+        {
+          "key": "ethics",
+          "value": [
+            "ethic_fanatic_xenophobe",
+            "ethic_pacifist"
+          ]
+        }
+      ],
+      "colonies": [
+        {
+          "colony_id": 0,
+          "stability": "72.6918",
+          "final_designation": "col_capital",
+          "ascension_tier": "0",
+          "buildings_cache": [
+            "0",
+            "2",
+            "3",
+            "4",
+            "16777252",
+            "1"
+          ],
+          "districts": [
+            "0",
+            "1",
+            "2"
+          ],
+          "binary_flags": "72",
+          "deposits": [
+            "255",
+            "256",
+            "257",
+            "258",
+            "259",
+            "260",
+            "261",
+            "262",
+            "263",
+            "264",
+            "265",
+            "266",
+            "267"
+          ],
+          "carrier_flags": "1"
+        }
+      ],
+      "situations": [
+        {
+          "id": 4,
+          "type": "situation_shishan_code",
+          "stage": "0",
+          "approach": ""
+        }
+      ],
+      "other_country_modifiers": [
+        {
+          "modifier": "shishan_code_vivhite_base",
+          "multiplier": "1"
+        },
+        {
+          "modifier": "shishan_code_vivhite_engineering_step",
+          "multiplier": "1"
+        },
+        {
+          "modifier": "shishan_code_vivhite_society_step",
+          "multiplier": "1"
+        }
+      ],
+      "owned_leader_economic_state": [
+        {
+          "id": 167772189,
+          "class": "official",
+          "tier": "leader_tier_default",
+          "level": "2",
+          "bonus_skill_level": "0",
+          "job": "politician",
+          "location": null,
+          "council_location": null,
+          "traits": [
+            "leader_trait_principled"
+          ]
+        },
+        {
+          "id": 134217755,
+          "class": "envoy",
+          "tier": "leader_tier_default",
+          "level": "1",
+          "bonus_skill_level": "0",
+          "job": "artisan",
+          "location": null,
+          "council_location": null,
+          "traits": []
+        },
+        {
+          "id": 150994970,
+          "class": "envoy",
+          "tier": "leader_tier_default",
+          "level": "1",
+          "bonus_skill_level": "0",
+          "job": "engineer",
+          "location": null,
+          "council_location": null,
+          "traits": []
+        },
+        {
+          "id": 150994969,
+          "class": "scientist",
+          "tier": "leader_tier_default",
+          "level": "2",
+          "bonus_skill_level": "0",
+          "job": "technician",
+          "location": [
+            {
+              "key": "type",
+              "value": "ship"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "council_location": [
+            {
+              "key": "type",
+              "value": "council_position"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "11"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "traits": [
+            "leader_trait_spark_of_genius"
+          ]
+        },
+        {
+          "id": 150994968,
+          "class": "commander",
+          "tier": "leader_tier_default",
+          "level": "2",
+          "bonus_skill_level": "0",
+          "job": "enforcer",
+          "location": [
+            {
+              "key": "type",
+              "value": "ship"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "3"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "council_location": [
+            {
+              "key": "type",
+              "value": "council_position"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "10"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "traits": [
+            "leader_trait_politician"
+          ]
+        },
+        {
+          "id": 90,
+          "class": "official",
+          "tier": "leader_tier_default",
+          "level": "2",
+          "bonus_skill_level": "0",
+          "job": "politician",
+          "location": null,
+          "council_location": [
+            {
+              "key": "type",
+              "value": "council_position"
+            },
+            {
+              "key": "assignment",
+              "value": "none"
+            },
+            {
+              "key": "id",
+              "value": "12"
+            },
+            {
+              "key": "position",
+              "value": "0"
+            }
+          ],
+          "traits": [
+            "leader_trait_trade_focus"
+          ]
+        },
+        {
+          "id": 16777294,
+          "class": "official",
+          "tier": "leader_tier_legendary",
+          "level": "5",
+          "bonus_skill_level": "0",
+          "job": "miner",
+          "location": null,
+          "council_location": null,
+          "traits": [
+            "leader_trait_shishan_code_vivhite"
+          ]
+        }
+      ],
+      "depleted_resource_keys": []
+    }
+  },
+  "strict_cache_status": "FAIL",
+  "future_window_status": "UNPROVEN_WITH_OBSERVED_STABILITY_DRIFT_RISK",
+  "reference_source_observation": {
+    "save": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\save games\\acceptance-fixtures\\fb456_natural_claim.sav",
+    "sha256": "9ddcb31ce9dab6843758ac2f71e786b43a8242d1cdda4da3cb89e4d5844bbc4d",
+    "date": "2209.11.28",
+    "previous_colony_context": [
+      {
+        "colony_id": 0,
+        "stability": "72.672",
+        "final_designation": "col_capital",
+        "ascension_tier": "0",
+        "buildings_cache": [
+          "0",
+          "2",
+          "3",
+          "4",
+          "16777252",
+          "1"
+        ],
+        "districts": [
+          "0",
+          "1",
+          "2"
+        ],
+        "binary_flags": "72",
+        "deposits": [
+          "255",
+          "256",
+          "257",
+          "258",
+          "259",
+          "260",
+          "261",
+          "262",
+          "263",
+          "264",
+          "265",
+          "266",
+          "267"
+        ],
+        "carrier_flags": "1"
+      }
+    ],
+    "current_colony_context": [
+      {
+        "colony_id": 0,
+        "stability": "72.6918",
+        "final_designation": "col_capital",
+        "ascension_tier": "0",
+        "buildings_cache": [
+          "0",
+          "2",
+          "3",
+          "4",
+          "16777252",
+          "1"
+        ],
+        "districts": [
+          "0",
+          "1",
+          "2"
+        ],
+        "binary_flags": "72",
+        "deposits": [
+          "255",
+          "256",
+          "257",
+          "258",
+          "259",
+          "260",
+          "261",
+          "262",
+          "263",
+          "264",
+          "265",
+          "266",
+          "267"
+        ],
+        "carrier_flags": "1"
+      }
+    ],
+    "completed_technology_list_equal": true,
+    "employment_and_capacity_signature_equal": false,
+    "stability_delta": "0.0198"
+  }
+}
