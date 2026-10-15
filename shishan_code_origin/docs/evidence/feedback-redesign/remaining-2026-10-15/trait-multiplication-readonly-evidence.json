@@ -1,0 +1,3395 @@
+{
+  "schema": "trait-multiplication-readonly-investigation-v1",
+  "recorded_utc": "2026-10-15T10:23:03.314169+00:00",
+  "scope": "Read-only native scripts and existing generated engine documentation; no game launch, GUI, production changes, tool changes, or acceptance run.",
+  "native_identity": {
+    "root": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris",
+    "launcher_version": "Cygnus v4.5.2 (9776)",
+    "launcher_settings_sha256": "cb6ccdee57361b207e99dc5a2ee1d843a75c0aaf6ee8e88899d02d50710ab3d2",
+    "generated_documentation_run": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z",
+    "generated_documentation_files": [
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\effects.log",
+        "sha256": "6d209da812f2d3f776a95a1ff7a598c127ece4661d90dea16ef1f5a5684fb12d",
+        "bytes": 309661,
+        "mtime_utc": "2026-10-15T09:42:37.991791+00:00"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\triggers.log",
+        "sha256": "f25ad15a4f573e3c603e0315a4c8dbeedd4ecc85e8cae49f34ca2bbb5ff38679",
+        "bytes": 203232,
+        "mtime_utc": "2026-10-15T09:42:37.715830+00:00"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\scopes.log",
+        "sha256": "b75c7789699a72fac0b73d1858a5d1a26d0f97a087e0cdcc932039a0068a4188",
+        "bytes": 17656,
+        "mtime_utc": "2026-10-15T09:42:37.992791+00:00"
+      },
+      {
+        "path": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\modifiers.log",
+        "sha256": "dbe73b32e39316ad1f811c03be01852441360e9b0daecbb6e9051d36a6d4987f",
+        "bytes": 4212029,
+        "mtime_utc": "2026-10-15T09:42:37.693838+00:00"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "id": "category_inheritance_and_add_per_table",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\economic_categories\\99_README_ECONOMIC_CATEGORIES.txt",
+      "sha256": "c66ceb1f9ce278941255fb9c410e5127cb8c5915f81935f31a6c6efb7db8192b",
+      "start_line": 25,
+      "end_line": 47,
+      "lines": [
+        {
+          "line": 25,
+          "text": "#\t \t\tproduces"
+        },
+        {
+          "line": 26,
+          "text": "#\t \t}"
+        },
+        {
+          "line": 27,
+          "text": "#\t }"
+        },
+        {
+          "line": 28,
+          "text": "#"
+        },
+        {
+          "line": 29,
+          "text": "# I then find the scrap_miner job (in pop_jobs) and change its category from planet_miners to planet_scrap_miners."
+        },
+        {
+          "line": 30,
+          "text": "# Since planet_scrap_miners is a child of planet_miners, Scrap Miners will now receive the effects of both"
+        },
+        {
+          "line": 31,
+          "text": "# planet_miners and planet_scrap_miners modifiers."
+        },
+        {
+          "line": 32,
+          "text": "# IMPORTANT!  _add modifiers don't apply to children categories, only _mult ones do. This is working as intended."
+        },
+        {
+          "line": 33,
+          "text": "# Limiting _add inheritance is necessary to avoid unintentional cascade effects."
+        },
+        {
+          "line": 34,
+          "text": "#"
+        },
+        {
+          "line": 35,
+          "text": "# IMPORTANT!  An _add modifier is applied once per resource table filed under its category on the same object."
+        },
+        {
+          "line": 36,
+          "text": "# Most objects declare their category once, so this makes no difference. A pop group is the exception. It holds one"
+        },
+        {
+          "line": 37,
+          "text": "# resource table from its species archetype, and one more from each trait, and once all of them used planet_pops. An _add"
+        },
+        {
+          "line": 38,
+          "text": "# modifier on planet_pops was applied once for each of those tables, and the total changes with the trait list of the"
+        },
+        {
+          "line": 39,
+          "text": "# species. Put such a modifier on a category that only one resource table uses. The archetype tables stay on planet_pops"
+        },
+        {
+          "line": 40,
+          "text": "# for this reason, and the trait tables use the hidden child category planet_pops_traits."
+        },
+        {
+          "line": 41,
+          "text": "#"
+        },
+        {
+          "line": 42,
+          "text": "# You can also define triggered modifiers, which will apply in the same way as mult and add modifiers normally do, but with the extra condition that a trigger must return true."
+        },
+        {
+          "line": 43,
+          "text": "# The format for these is triggered_produces_modifier, etc (see below)"
+        },
+        {
+          "line": 44,
+          "text": "# These are useful if e.g. you want to apply an effect only to biological pops. Note however that if you do something too complicated in these, and then use the modifiers in a lot"
+        },
+        {
+          "line": 45,
+          "text": "# of places, then it can have a bit of a performance impact (it will check these triggers whenever it is working out what resources a resource table contains, and there is a non-zero"
+        },
+        {
+          "line": 46,
+          "text": "# value for this triggered modifier. So not the worst, but don't go crazy!)."
+        },
+        {
+          "line": 47,
+          "text": "#"
+        }
+      ]
+    },
+    {
+      "id": "planet_jobs_root",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\economic_categories\\01_job_categories.txt",
+      "sha256": "ed538c98f6af75039ceff16dc532f55ca265d180504f7f709fce372127760468",
+      "start_line": 1,
+      "end_line": 23,
+      "lines": [
+        {
+          "line": 1,
+          "text": "planet_jobs = {"
+        },
+        {
+          "line": 2,
+          "text": "\tparent = planets"
+        },
+        {
+          "line": 3,
+          "text": ""
+        },
+        {
+          "line": 4,
+          "text": "\tgenerate_mult_modifiers = {"
+        },
+        {
+          "line": 5,
+          "text": "\t\tproduces"
+        },
+        {
+          "line": 6,
+          "text": "\t\tupkeep"
+        },
+        {
+          "line": 7,
+          "text": "\t}"
+        },
+        {
+          "line": 8,
+          "text": ""
+        },
+        {
+          "line": 9,
+          "text": "\tgenerate_add_modifiers = {"
+        },
+        {
+          "line": 10,
+          "text": "\t\tproduces"
+        },
+        {
+          "line": 11,
+          "text": "\t}"
+        },
+        {
+          "line": 12,
+          "text": "\tmodifier_category = colony"
+        },
+        {
+          "line": 13,
+          "text": "}"
+        },
+        {
+          "line": 14,
+          "text": ""
+        },
+        {
+          "line": 15,
+          "text": "planet_jobs_productive = { #this should contain all categories that primarily produce resources (rather than e.g. amenities, trade, stability)"
+        },
+        {
+          "line": 16,
+          "text": "\tparent = planet_jobs"
+        },
+        {
+          "line": 17,
+          "text": "\tgenerate_mult_modifiers = {"
+        },
+        {
+          "line": 18,
+          "text": "\t\tproduces"
+        },
+        {
+          "line": 19,
+          "text": "\t\tupkeep"
+        },
+        {
+          "line": 20,
+          "text": "\t}"
+        },
+        {
+          "line": 21,
+          "text": "\tmodifier_category = colony"
+        },
+        {
+          "line": 22,
+          "text": "}"
+        },
+        {
+          "line": 23,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "id": "leaf_category_additive_baseline",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\economic_categories\\01_job_categories.txt",
+      "sha256": "ed538c98f6af75039ceff16dc532f55ca265d180504f7f709fce372127760468",
+      "start_line": 102,
+      "end_line": 116,
+      "lines": [
+        {
+          "line": 102,
+          "text": "planet_miners = {"
+        },
+        {
+          "line": 103,
+          "text": "\ticon = \"job_miner\""
+        },
+        {
+          "line": 104,
+          "text": "\tparent = planet_jobs_worker"
+        },
+        {
+          "line": 105,
+          "text": "\tgenerate_mult_modifiers = {"
+        },
+        {
+          "line": 106,
+          "text": "\t\tproduces"
+        },
+        {
+          "line": 107,
+          "text": "\t}"
+        },
+        {
+          "line": 108,
+          "text": ""
+        },
+        {
+          "line": 109,
+          "text": "\tgenerate_add_modifiers = {"
+        },
+        {
+          "line": 110,
+          "text": "\t\tproduces"
+        },
+        {
+          "line": 111,
+          "text": "\t\tupkeep"
+        },
+        {
+          "line": 112,
+          "text": "\t}"
+        },
+        {
+          "line": 113,
+          "text": "\tmodifier_category = colony"
+        },
+        {
+          "line": 114,
+          "text": "}"
+        },
+        {
+          "line": 115,
+          "text": ""
+        },
+        {
+          "line": 116,
+          "text": "planet_livestock_farmers = {"
+        }
+      ]
+    },
+    {
+      "id": "native_produces_mult_example",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\01_ruler_jobs.txt",
+      "sha256": "58a4b8595e692216e2c4faba8fbf29975880fe0bfb18cb4bd5e257d35877331f",
+      "start_line": 474,
+      "end_line": 494,
+      "lines": [
+        {
+          "line": 474,
+          "text": "\t\tcategory = planet_knights"
+        },
+        {
+          "line": 475,
+          "text": "\t\tproduces = {"
+        },
+        {
+          "line": 476,
+          "text": "\t\t\ttrigger = { exists = owner }"
+        },
+        {
+          "line": 477,
+          "text": "\t\t\tunity = 2"
+        },
+        {
+          "line": 478,
+          "text": "\t\t\tmult = value:knight_commander_unity_output_modifier"
+        },
+        {
+          "line": 479,
+          "text": "\t\t}"
+        },
+        {
+          "line": 480,
+          "text": "\t\tproduces = {"
+        },
+        {
+          "line": 481,
+          "text": "\t\t\ttrigger = { exists = owner }"
+        },
+        {
+          "line": 482,
+          "text": "\t\t\tphysics_research = 1"
+        },
+        {
+          "line": 483,
+          "text": "\t\t\tengineering_research = 1"
+        },
+        {
+          "line": 484,
+          "text": "\t\t\tsociety_research = 1"
+        },
+        {
+          "line": 485,
+          "text": "\t\t\tmult = value:knight_commander_research_output_modifier"
+        },
+        {
+          "line": 486,
+          "text": "\t\t}"
+        },
+        {
+          "line": 487,
+          "text": "\t\tproduces = {"
+        },
+        {
+          "line": 488,
+          "text": "\t\t\ttrigger = {"
+        },
+        {
+          "line": 489,
+          "text": "\t\t\t\towner? = { has_country_flag = cosmogenesis_knights }"
+        },
+        {
+          "line": 490,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 491,
+          "text": "\t\t\tadvanced_logic = 1"
+        },
+        {
+          "line": 492,
+          "text": "\t\t\tmult = value:knight_commander_research_output_modifier"
+        },
+        {
+          "line": 493,
+          "text": "\t\t}"
+        },
+        {
+          "line": 494,
+          "text": "\t\tupkeep = {"
+        }
+      ]
+    },
+    {
+      "id": "native_resource_add_example",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\buildings\\03_resource_buildings.txt",
+      "sha256": "1d0ab107cedb5be2c0de9bfadd9a2b44490bcdee7dc2af184df1580dc02592dc",
+      "start_line": 764,
+      "end_line": 771,
+      "lines": [
+        {
+          "line": 764,
+          "text": "\t}"
+        },
+        {
+          "line": 765,
+          "text": ""
+        },
+        {
+          "line": 766,
+          "text": "\ttriggered_planet_modifier = {"
+        },
+        {
+          "line": 767,
+          "text": "\t\tpotential = {"
+        },
+        {
+          "line": 768,
+          "text": "\t\t\towner? = { is_nomadic = no }"
+        },
+        {
+          "line": 769,
+          "text": "\t\t}"
+        },
+        {
+          "line": 770,
+          "text": "\t\tplanet_miners_minerals_produces_add = 0.5"
+        },
+        {
+          "line": 771,
+          "text": "\t}"
+        }
+      ]
+    },
+    {
+      "id": "native_output_modifier_reader_rounding_warning",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\script_values\\00_script_values.txt",
+      "sha256": "7a0930d60b82e33be38ce6617b79db8f9f8fc2407472b777b1273f62d81ea76e",
+      "start_line": 384,
+      "end_line": 397,
+      "lines": [
+        {
+          "line": 384,
+          "text": "job_total_output_modifier = {"
+        },
+        {
+          "line": 385,
+          "text": "\tbase = 1"
+        },
+        {
+          "line": 386,
+          "text": "\tcomplex_trigger_modifier = {"
+        },
+        {
+          "line": 387,
+          "text": "\t\ttrigger = check_economic_production_modifier_for_job"
+        },
+        {
+          "line": 388,
+          "text": "\t\tparameters = {"
+        },
+        {
+          "line": 389,
+          "text": "\t\t\tjob = $JOB$"
+        },
+        {
+          "line": 390,
+          "text": "\t\t\tresource = $RESOURCE$"
+        },
+        {
+          "line": 391,
+          "text": "\t\t\tspecies_modifiers_only = no #Note this"
+        },
+        {
+          "line": 392,
+          "text": "\t\t}"
+        },
+        {
+          "line": 393,
+          "text": "\t\tmode = add"
+        },
+        {
+          "line": 394,
+          "text": "\t}"
+        },
+        {
+          "line": 395,
+          "text": "\tround_to = 0.01 #DO NOT REMOVE. It is here to stop modifiers perpetually being recalculated because complex dependency"
+        },
+        {
+          "line": 396,
+          "text": "\t\t\t\t\t#orders can ensure there is always a 0.00001 difference"
+        },
+        {
+          "line": 397,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "id": "generated_expensive_output_modifier_reader",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\triggers.log",
+      "sha256": "f25ad15a4f573e3c603e0315a4c8dbeedd4ecc85e8cae49f34ca2bbb5ff38679",
+      "start_line": 1261,
+      "end_line": 1270,
+      "lines": [
+        {
+          "line": 1261,
+          "text": "check_economic_production_modifier_for_job - Checks the value of economic production modifiers a pop has for producing a certain resource via a certain job. Can specify checking all modifiers or just those from traits. WARNING: expensive trigger"
+        },
+        {
+          "line": 1262,
+          "text": "check_economic_production_modifier_for_job = {"
+        },
+        {
+          "line": 1263,
+          "text": "\tjob = miner"
+        },
+        {
+          "line": 1264,
+          "text": "\tresource = minerals"
+        },
+        {
+          "line": 1265,
+          "text": "\tresource = { minerals = 0.5 energy = 0.5 } (for evaluating the bonuses to multiple resources, with weights)"
+        },
+        {
+          "line": 1266,
+          "text": "\tspecies_modifiers_only = no (default: yes - only checks trait modifiers, trait triggered pop modifiers, and species habitability)"
+        },
+        {
+          "line": 1267,
+          "text": "\tvalue > 1.25"
+        },
+        {
+          "line": 1268,
+          "text": "}"
+        },
+        {
+          "line": 1269,
+          "text": "Supported Scopes: planet ship pop_group colony"
+        },
+        {
+          "line": 1270,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "id": "generated_job_output_and_upkeep_keys",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\modifiers.log",
+      "sha256": "dbe73b32e39316ad1f811c03be01852441360e9b0daecbb6e9051d36a6d4987f",
+      "start_line": 4974,
+      "end_line": 4975,
+      "lines": [
+        {
+          "line": 4974,
+          "text": "- planet_jobs_produces_mult, Category: AI Economy, Colony"
+        },
+        {
+          "line": 4975,
+          "text": "- planet_jobs_upkeep_mult, Category: AI Economy, Colony"
+        }
+      ]
+    },
+    {
+      "id": "generated_workforce_keys",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\modifiers.log",
+      "sha256": "dbe73b32e39316ad1f811c03be01852441360e9b0daecbb6e9051d36a6d4987f",
+      "start_line": 32,
+      "end_line": 35,
+      "lines": [
+        {
+          "line": 32,
+          "text": "- pop_workforce_mult, Category: Pops"
+        },
+        {
+          "line": 33,
+          "text": "- pop_bonus_workforce_mult, Category: Pops"
+        },
+        {
+          "line": 34,
+          "text": "- job_max_workforce_add, Category: Colony"
+        },
+        {
+          "line": 35,
+          "text": "- job_max_workforce_mult, Category: Colony"
+        }
+      ]
+    },
+    {
+      "id": "generated_dynamic_modifier_multiplier",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\effects.log",
+      "sha256": "6d209da812f2d3f776a95a1ff7a598c127ece4661d90dea16ef1f5a5684fb12d",
+      "start_line": 480,
+      "end_line": 488,
+      "lines": [
+        {
+          "line": 480,
+          "text": "add_modifier - Adds a specific modifier to the scoped object for a set duration"
+        },
+        {
+          "line": 481,
+          "text": "add_modifier = {"
+        },
+        {
+          "line": 482,
+          "text": "\tmodifier = <key>"
+        },
+        {
+          "line": 483,
+          "text": "\tdays/months/years = <int, -1 (default) means it never expires>"
+        },
+        {
+          "line": 484,
+          "text": "\tmultiplier = <float>/<variable> (optional)"
+        },
+        {
+          "line": 485,
+          "text": "\ttime_multiplier = <variable> (optional: days/months/years value is multiplied by the value of this variable)"
+        },
+        {
+          "line": 486,
+          "text": "\tclear_on_owner_change = yes (optional: default no; clears modifier if planet/system/megastructure's owner changes)"
+        },
+        {
+          "line": 487,
+          "text": "}"
+        },
+        {
+          "line": 488,
+          "text": "Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object pop_faction federation starbase spy_network espionage_operation astral_rift cosmic_storm_influence_field colony"
+        }
+      ]
+    },
+    {
+      "id": "generated_revenue_reader",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\triggers.log",
+      "sha256": "f25ad15a4f573e3c603e0315a4c8dbeedd4ecc85e8cae49f34ca2bbb5ff38679",
+      "start_line": 2292,
+      "end_line": 2313,
+      "lines": [
+        {
+          "line": 2292,
+          "text": "resource_income_compare - Checks specific resource income value for the country scope (note: checks profit minus loss, not revenue):"
+        },
+        {
+          "line": 2293,
+          "text": "resource_income_compare = {"
+        },
+        {
+          "line": 2294,
+          "text": "\tresource = <resource_name>"
+        },
+        {
+          "line": 2295,
+          "text": "\tvalue ><= <value>"
+        },
+        {
+          "line": 2296,
+          "text": "}"
+        },
+        {
+          "line": 2297,
+          "text": "Supported Scopes: country"
+        },
+        {
+          "line": 2298,
+          "text": ""
+        },
+        {
+          "line": 2299,
+          "text": "resource_expenses_compare - Checks specific resource expenses value for the country scope:"
+        },
+        {
+          "line": 2300,
+          "text": "resource_expenses_compare = {"
+        },
+        {
+          "line": 2301,
+          "text": "\tresource = <resource_name>"
+        },
+        {
+          "line": 2302,
+          "text": "\tcategory = <category_name> # Optional; if not provided, will use sum for all Categories"
+        },
+        {
+          "line": 2303,
+          "text": "\tvalue ><= <value>"
+        },
+        {
+          "line": 2304,
+          "text": "}"
+        },
+        {
+          "line": 2305,
+          "text": "Supported Scopes: country"
+        },
+        {
+          "line": 2306,
+          "text": ""
+        },
+        {
+          "line": 2307,
+          "text": "resource_revenue_compare - Checks specific resource revenue value for the country scope:"
+        },
+        {
+          "line": 2308,
+          "text": "resource_revenue_compare = {"
+        },
+        {
+          "line": 2309,
+          "text": "\tresource = <resource_name>"
+        },
+        {
+          "line": 2310,
+          "text": "\tcategory = <category_name> # Optional; if not provided, will use sum for all Categories"
+        },
+        {
+          "line": 2311,
+          "text": "\tvalue ><= <value>"
+        },
+        {
+          "line": 2312,
+          "text": "}"
+        },
+        {
+          "line": 2313,
+          "text": "Supported Scopes: country"
+        }
+      ]
+    },
+    {
+      "id": "generated_export_income",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\effects.log",
+      "sha256": "6d209da812f2d3f776a95a1ff7a598c127ece4661d90dea16ef1f5a5684fb12d",
+      "start_line": 570,
+      "end_line": 572,
+      "lines": [
+        {
+          "line": 570,
+          "text": "export_resource_income_to_variable - Exports the value of the current country's monthly income of the specified resource to a variable."
+        },
+        {
+          "line": 571,
+          "text": "export_resource_income_to_variable = { resource = energy variable = <string> }"
+        },
+        {
+          "line": 572,
+          "text": "Supported Scopes: country"
+        }
+      ]
+    },
+    {
+      "id": "generated_resource_lump_sum",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\effects.log",
+      "sha256": "6d209da812f2d3f776a95a1ff7a598c127ece4661d90dea16ef1f5a5684fb12d",
+      "start_line": 1208,
+      "end_line": 1210,
+      "lines": [
+        {
+          "line": 1208,
+          "text": "add_monthly_resource_mult - Adds a lump sum of a resource to the scoped country, defined as a multiple of the country's monthly income of that resource (clamped to max and min allowed values)"
+        },
+        {
+          "line": 1209,
+          "text": "add_monthly_resource_mult = { resource = <key> value = <float> max = <max cap, int> min = <min cap, int> mult = <variable> }"
+        },
+        {
+          "line": 1210,
+          "text": "Supported Scopes: country"
+        }
+      ]
+    },
+    {
+      "id": "generated_duplicate_output",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\effects.log",
+      "sha256": "6d209da812f2d3f776a95a1ff7a598c127ece4661d90dea16ef1f5a5684fb12d",
+      "start_line": 3114,
+      "end_line": 3117,
+      "lines": [
+        {
+          "line": 3114,
+          "text": "steal_planet_output - Steals resource output from a planet and gives it to a target empire or stockpile."
+        },
+        {
+          "line": 3115,
+          "text": "steal_planet_output = { planet = <target> who = <country or ship scope> resource = <key|group|all> max_amount = <value> percentage = <value|scripted_value> mode = <duplicate|steal> (default: steal) notification_mode = <none|thief_only|both> (default: thief_only) show_in_monthly_resources_mode = <none|thief_only|both> (default: thief_only) }"
+        },
+        {
+          "line": 3116,
+          "text": "resource groups: basic, advanced, strategic, rare, other, research, material (material = basic + advanced + strategic + rare)"
+        },
+        {
+          "line": 3117,
+          "text": "Supported Scopes: planet"
+        }
+      ]
+    },
+    {
+      "id": "native_workforce_assignment_weight",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\defines\\00_defines.txt",
+      "sha256": "82eebd807eb54af347025b061af2991fc40a1b1059e39c2cb8ee135dca02b7cc",
+      "start_line": 1967,
+      "end_line": 1972,
+      "lines": [
+        {
+          "line": 1967,
+          "text": ""
+        },
+        {
+          "line": 1968,
+          "text": "\t\tDEFAULT_CHANGE_JOB_THRESHOLD\t\t= 1.05\t\t# A job must have this much higher weight in order for a pop to switch to it from their current job"
+        },
+        {
+          "line": 1969,
+          "text": ""
+        },
+        {
+          "line": 1970,
+          "text": "\t\tPOP_JOB_WORKFORCE_WEIGHT_POWER\t\t= 3\t\t\t# Workforce factor is raised to this power when calculating job weights, amplifying differences between pops. 1 = linear, 3 = industrious (+0.15) miner gets 1.15^3 = 1.52x weight."
+        },
+        {
+          "line": 1971,
+          "text": ""
+        },
+        {
+          "line": 1972,
+          "text": "\t\tFAVORITE_JOB_WEIGHT_MULT\t\t\t= 10.0\t\t# Weight multiplier applied to a job marked as the planet favorite, ensuring it fills before other jobs of the same stratum rank."
+        }
+      ]
+    },
+    {
+      "id": "native_economic_multiplier_floor",
+      "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\defines\\00_defines.txt",
+      "sha256": "82eebd807eb54af347025b061af2991fc40a1b1059e39c2cb8ee135dca02b7cc",
+      "start_line": 2030,
+      "end_line": 2033,
+      "lines": [
+        {
+          "line": 2030,
+          "text": "\tNEconomy = {"
+        },
+        {
+          "line": 2031,
+          "text": "\t\tMIN_MODIFIER_MULT \t\t\t\t\t= -0.9\t\t# Used for various modifer multipliers to cap the multiplication from reaching 0 or negative values."
+        },
+        {
+          "line": 2032,
+          "text": "\t\tMIN_ECONOMIC_MODIFIER_MULT \t\t\t= -0.9\t\t# Cost, upkeep and production modifiers generated through the economic system (common/economic_categories) cannot go beyond this point"
+        },
+        {
+          "line": 2033,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "id": "current_additive_modifier",
+      "source": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod\\common\\static_modifiers\\shishan_code_architecture_modifiers.txt",
+      "sha256": "448e092b13584bae3f05c73f0ab4c5cfb15bf8553cc77375903446eab2d14def",
+      "start_line": 1,
+      "end_line": 5,
+      "lines": [
+        {
+          "line": 1,
+          "text": "# Explicit rc fallback: additive native job-output modifier, not a final-output multiplier."
+        },
+        {
+          "line": 2,
+          "text": "# The single country instance is scaled by the uncapped weighted trait + repeat count."
+        },
+        {
+          "line": 3,
+          "text": "shishan_code_architecture_jobs = {"
+        },
+        {
+          "line": 4,
+          "text": "\tplanet_jobs_produces_mult = 0.05"
+        },
+        {
+          "line": 5,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "id": "current_per_trait_value",
+      "source": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod\\common\\script_values\\shishan_code_architecture_values.txt",
+      "sha256": "9a9770294a0864aae83099d57a236647562946797731ec8433b55ac1cd5cfda3",
+      "start_line": 1,
+      "end_line": 8,
+      "lines": [
+        {
+          "line": 1,
+          "text": "# Every actual species trait is one layer; the growth bucket is linear and uncapped."
+        },
+        {
+          "line": 2,
+          "text": "shishan_code_architecture_per_trait = { base = 0.05 }"
+        },
+        {
+          "line": 3,
+          "text": ""
+        },
+        {
+          "line": 4,
+          "text": "# Country-scoped UI/math value. Zero-population refresh leaves this at 1."
+        },
+        {
+          "line": 5,
+          "text": "shishan_code_architecture_country_multiplier = {"
+        },
+        {
+          "line": 6,
+          "text": "\tbase = 1"
+        },
+        {
+          "line": 7,
+          "text": "\tadd = this.shishan_code_architecture_bonus"
+        },
+        {
+          "line": 8,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "id": "current_refresh_remove_add_country_scope",
+      "pattern": "remove_modifier = shishan_code_architecture_jobs|Native additive output only|modifier = shishan_code_architecture_jobs|multiplier = this.shishan_code_architecture_total",
+      "total_matches": 4,
+      "excerpts": [
+        {
+          "id": "current_refresh_remove_add_country_scope:111",
+          "source": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod\\common\\scripted_effects\\shishan_code_architecture_effects.txt",
+          "sha256": "d9714f74ccea754553d815d5a8d88d3260acd212efecd02e1de5a3f6fd4e0663",
+          "start_line": 111,
+          "end_line": 113,
+          "lines": [
+            {
+              "line": 111,
+              "text": "\tremove_modifier = shishan_code_architecture_jobs"
+            },
+            {
+              "line": 112,
+              "text": "\tif = {"
+            },
+            {
+              "line": 113,
+              "text": "\t\tlimit = { has_origin = origin_shishan_code }"
+            }
+          ]
+        },
+        {
+          "id": "current_refresh_remove_add_country_scope:152",
+          "source": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod\\common\\scripted_effects\\shishan_code_architecture_effects.txt",
+          "sha256": "d9714f74ccea754553d815d5a8d88d3260acd212efecd02e1de5a3f6fd4e0663",
+          "start_line": 152,
+          "end_line": 154,
+          "lines": [
+            {
+              "line": 152,
+              "text": "\t\t\t# Native additive output only; never modifies workforce or any upkeep category."
+            },
+            {
+              "line": 153,
+              "text": "\t\t\tadd_modifier = {"
+            },
+            {
+              "line": 154,
+              "text": "\t\t\t\tmodifier = shishan_code_architecture_jobs"
+            }
+          ]
+        },
+        {
+          "id": "current_refresh_remove_add_country_scope:154",
+          "source": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod\\common\\scripted_effects\\shishan_code_architecture_effects.txt",
+          "sha256": "d9714f74ccea754553d815d5a8d88d3260acd212efecd02e1de5a3f6fd4e0663",
+          "start_line": 154,
+          "end_line": 156,
+          "lines": [
+            {
+              "line": 154,
+              "text": "\t\t\t\tmodifier = shishan_code_architecture_jobs"
+            },
+            {
+              "line": 155,
+              "text": "\t\t\t\tdays = -1"
+            },
+            {
+              "line": 156,
+              "text": "\t\t\t\tmultiplier = this.shishan_code_architecture_total"
+            }
+          ]
+        },
+        {
+          "id": "current_refresh_remove_add_country_scope:156",
+          "source": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod\\common\\scripted_effects\\shishan_code_architecture_effects.txt",
+          "sha256": "d9714f74ccea754553d815d5a8d88d3260acd212efecd02e1de5a3f6fd4e0663",
+          "start_line": 156,
+          "end_line": 158,
+          "lines": [
+            {
+              "line": 156,
+              "text": "\t\t\t\tmultiplier = this.shishan_code_architecture_total"
+            },
+            {
+              "line": 157,
+              "text": "\t\t\t}"
+            },
+            {
+              "line": 158,
+              "text": "\t\t}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "current_player_facing_additive_description",
+      "pattern": "^ shishan_code_architecture_jobs_desc:",
+      "total_matches": 1,
+      "excerpts": [
+        {
+          "id": "current_player_facing_additive_description:3",
+          "source": "C:\\workspace\\xenoamess_stellaries_dev\\shishan_code_origin\\mod\\localisation\\simp_chinese\\shishan_code_feedback_l_simp_chinese.yml",
+          "sha256": "40e32e87307d4cd41a8be4422bffce7e47716d52df00a6adb954c1c607476ec5",
+          "start_line": 3,
+          "end_line": 3,
+          "lines": [
+            {
+              "line": 3,
+              "text": " shishan_code_architecture_jobs_desc:0 \"所有正式物种特质（正负均计）按本国主体谱系实际人口加权，每个有效特质提供岗位产出加算+5%，不增加维护费。有限奖励池耗尽后，每个补丁层等效一个特质，无上限。本预发布采用加算，尚未实现独立乘算。\""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "native_jobs_inventory": {
+    "method": "Top-level block definitions in common/pop_jobs/*.txt with category, resources or is_capped_by_modifier; includes swapped and fake definitions; does not assert all are enabled resource jobs. output/ references counted syntactically, not recursively expanded.",
+    "files": [
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\000_pretriggers.txt",
+        "sha256": "5cc9b13bd8b8a81468e5de18fb01095d946a6bb3cd8336a728f877d0d5875f80",
+        "bytes": 1603
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\00_other_jobs.txt",
+        "sha256": "62a63b3e17c111ad475b92193eaa80ec727375e95ba3b04b30883d08215e0a3f",
+        "bytes": 35045
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\01_ruler_jobs.txt",
+        "sha256": "58a4b8595e692216e2c4faba8fbf29975880fe0bfb18cb4bd5e257d35877331f",
+        "bytes": 13716
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\02_specialist_jobs.txt",
+        "sha256": "3e35067fd9b2524a101c2cc35dbbc3c67b383a46c8bf3bbfe475da77edbf6fbc",
+        "bytes": 70358
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\03_worker_jobs.txt",
+        "sha256": "a86f096d6ac18dd5ee3a6267d31551c933816300e5ccd279f5e7b6afb5fe18df",
+        "bytes": 21119
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\04_gestalt_jobs.txt",
+        "sha256": "9469c178efbaa2d8e5bce43545ee6d5a184ee0e764336e85170795d0cc6820ad",
+        "bytes": 55976
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\05_primitive_jobs.txt",
+        "sha256": "1ac9b220281ad62ee88988bc25e77947d9f58802c668b3930cfcb93d7150fc2e",
+        "bytes": 38144
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\06_event_jobs.txt",
+        "sha256": "818f6c57f8ee39ff7a4892b41939b7dcef1b132681571c57ecc1336ba3d2cfc3",
+        "bytes": 43034
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\07_fallen_empire_jobs.txt",
+        "sha256": "6c86bcdcc5f25b87027d72a561f9623ecd4ca1d4ba02b391c6004756322a5064",
+        "bytes": 11626
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\08_overlord_jobs.txt",
+        "sha256": "fecfd6c415afa11fec353863f3b96079d91c6c7a32130991911d7837253c231a",
+        "bytes": 43292
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\09_first_contact_jobs.txt",
+        "sha256": "ba2747e8ddbac4b08984355877ed0de31d0bdf184bd73a9f1dab1e2c63590236",
+        "bytes": 6643
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\10_paragon_fake_jobs.txt",
+        "sha256": "99ef34b0fa0d8d7690ae5b90159fa4259679375f2550eb0647e4d8d7e20ba142",
+        "bytes": 1837
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\11_astral_planes_jobs.txt",
+        "sha256": "537982c6ce9647618b9ec22f91d1ea2f43f63b1619c0bc1bdaa7c3ad94ac21a3",
+        "bytes": 8133
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\12_cosmic_storm_jobs.txt",
+        "sha256": "abfbfb76c00c849a5e1001348c4ac5f82f7d84bbba9a94227d1e2016f2776131",
+        "bytes": 774
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\13_machine_age_jobs.txt",
+        "sha256": "5b4963303f53e7fe5d654c565e4aadd9aec3311787e0a3ff468afc8b6b01c1ea",
+        "bytes": 16997
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\14_grand_archive_jobs.txt",
+        "sha256": "8b5bcf1f6c470b765e178fcdad131c28cb7c6dd504609802761357159092a859",
+        "bytes": 7349
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\14_wilderness_jobs.txt",
+        "sha256": "ca2fa3cda3bce6e3caa052b56ab51454a7f0a06fbd09b1a58fa90244c3ff17c3",
+        "bytes": 67
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\15_biogenesis_jobs.txt",
+        "sha256": "183ab971408870ae21624f9efe485a63831e861c32b72caab64b01fb02c98d31",
+        "bytes": 7254
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\15_strange_worlds_jobs.txt",
+        "sha256": "3e8b251cd104815329f942cc649bb8a07ff24a7a88ce882f6d729c5ca70f39ee",
+        "bytes": 3072
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\16_shroud_jobs.txt",
+        "sha256": "868480705cb8800c79ebce4f976fe186bb68d89783a4a5b455581478cd5928ef",
+        "bytes": 14923
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\17_nomads_jobs.txt",
+        "sha256": "74f27999909748943c88e1bd40edc9e6f1185568a4ea5ad5626d5df63de3d0c8",
+        "bytes": 13051
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\pop_jobs\\99_swap_jobs.txt",
+        "sha256": "547eee0d83d9cce19dc0986a1c9fdbd86fb1facd79bbb50f7bc53e9db39c8e4d",
+        "bytes": 749
+      }
+    ],
+    "parse_errors": [],
+    "definitions": 345,
+    "with_output_hooks": 16,
+    "without_output_hooks": 329,
+    "with_direct_resource_block": 264,
+    "jobs": [
+      {
+        "job": "civilian",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "servant",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "slave_overseer",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "slave_toiler",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "organic_battery",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "livestock",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "livestock_infernal",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "livestock_zoo_animal",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "livestock_zoo_beast",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "bio_trophy",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "crisis_purge",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "assimilation",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "criminal",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "deviant_drone",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "corrupt_drone",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fotd_protectors",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "organic_exhibit",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "livestock_lithoid",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "livestock_zoo_animal_lithoid",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "livestock_zoo_beast_lithoid",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_lithoid",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_robot",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_processing",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_processing_lithoid",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_processing_infernal",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_processing_robot",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_labor_camps",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_matrix",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "purge_sacrifice",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "bio_trophy_unemployment",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "slave_unemployment",
+        "file": "00_other_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "politician",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "knight_commander",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "dystopian_enforcer",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "dystopian_telepath",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "head_researcher",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "high_priest",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "noble",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "merchant",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "executive",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "warden",
+        "file": "01_ruler_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "physicist",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/researcher_output"
+        ]
+      },
+      {
+        "job": "biologist",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/researcher_output"
+        ]
+      },
+      {
+        "job": "engineer",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/researcher_output"
+        ]
+      },
+      {
+        "job": "xeno_zoo_keeper",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "bureaucrat",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "enforcer",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "educator",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "telepath",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "entertainer",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "culture_worker",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "unifier",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "chemist",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "translucer",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "gas_refiner",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "roboticist",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/bonus_pop_growth"
+        ]
+      },
+      {
+        "job": "healthcare",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/healthcare_triggered_modifiers",
+          "output/genomic_triggered_modifiers"
+        ]
+      },
+      {
+        "job": "trader",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "numistic_priest",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "preacher",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "manager",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "steward",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "necromancer",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "death_chronicler",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "necro_apprentice",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "foundry",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/foundry_nomad_triggered_modifiers",
+          "output/foundry_output"
+        ]
+      },
+      {
+        "job": "catalytic_technician",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "artisan",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/factory_output"
+        ]
+      },
+      {
+        "job": "artificer",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "reassigner",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "bath_attendant",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "bath_attendant_individual_machine",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "knight",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "archaeoengineers",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "resort_worker",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "polytechnic_mentor",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "offworld_prospector",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "soldier",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/soldier_triggered_modifiers"
+        ]
+      },
+      {
+        "job": "battle_thrall",
+        "file": "02_specialist_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/soldier_triggered_modifiers"
+        ]
+      },
+      {
+        "job": "clerk",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "technician",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "miner",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "crystal_miner",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "gas_extractor",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "mote_harvester",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "farmer",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "mortal_initiate",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "angler",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "ranger",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "squire",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/bonus_pop_growth"
+        ]
+      },
+      {
+        "job": "foundry_prison_worker",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "catalytic_technician_prison_worker",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "artisan_prison_worker",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "artificer_prison_worker",
+        "file": "03_worker_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "spawning_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/genomic_triggered_modifiers"
+        ]
+      },
+      {
+        "job": "offspring_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "replicator",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "gestation_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "evaluator",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "coordinator",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/colony_support_contract_production",
+          "output/colony_support_contract_modifiers"
+        ]
+      },
+      {
+        "job": "synapse_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "chronicle_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "calculator_physicist",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "brain_drone_physicist",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "calculator_biologist",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "brain_drone_biologist",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "archaeo_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "archaeo_unit",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "calculator_engineer",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "brain_drone_engineer",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "artisan_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fabricator",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/foundry_nomad_triggered_modifiers",
+          "output/foundry_output"
+        ]
+      },
+      {
+        "job": "alloy_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "catalytic_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "chemist_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "translucer_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "gas_refiner_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "patrol_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "mote_harvesting_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "crystal_mining_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "gas_extraction_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "logistics_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "mining_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "scrap_miner_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "agri_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "technician_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "maintenance_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "wilderness_maintenance_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "warrior_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/soldier_triggered_modifiers"
+        ]
+      },
+      {
+        "job": "bath_attendant_machine",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "bath_attendant_hive",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "polytechnic_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "offworld_prospector_drone",
+        "file": "04_gestalt_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "pre_sapient",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "pre_sapient_nascent",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hunted_pre_sapient",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hunted_pre_sapient_lithoid",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_animal",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_animal_nascent",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_animal_lithoid",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_animal_lithoid_nascent",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_beast",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_beast_nascent",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_beast_lithoid",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "xeno_zoo_beast_lithoid_nascent",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hunter_gatherer",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hunter_gatherer_lithoid",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "peasant",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "peasant_lithoid",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_warrior",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_noble",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_researcher",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_priest",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_laborer",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_miner",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_technician",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_farmer",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_researcher_2",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_priest_2",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_entertainer",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_warrior_2",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_bureaucrat",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "solarpunk_anarchist",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_administrator",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hive_sustenance_drone",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hive_sustenance_drone_lithoid",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hive_basic_agri_drone",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "hive_basic_agri_drone_lithoid",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_warrior",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_synapse_drone",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_cerebellum_drone",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_factory_drone",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_miner",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_technician",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_farmer",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_brain_drone",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_spawning_drone",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_warrior_2",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "primitive_hive_synapse_drone_2",
+        "file": "05_primitive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "event_purge",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "ratling_scavenger",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "odd_factory_worker",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "odd_factory_drone",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "underground_trade_worker",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "underground_contact_drone",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "dimensional_portal_researcher",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "dimensional_portal_researcher_gestalt",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "space_time_anomaly_researcher",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "space_time_anomaly_researcher_gestalt",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "gas_plant_engineer",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "gas_plant_engineer_gestalt",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "cave_cleaner_gestalt",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "titan_hunter",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "robot_caretaker",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "turtle_miner",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "turtle_miner_gestalt",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "machine_nurse",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "manufactorium_specialist",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "manufactorium_complex_drone",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "manufactorium_scraper_drone",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "archivist",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "puddle_technician",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "puddle_technician_drone",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "stasis_warden",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "stasis_warden_drone",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astrogarbage_collector",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astrogarbage_collector_gestalt",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "myrmeku_power_farmer",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "myrmeku_power_farmer_gestalt",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "stratovent_researcher",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "stratovent_refiner",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "stratovent_refiner_upg",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "stratovent_refiner_minerals",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "mineral_diver_drone",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "alien_hunter",
+        "file": "06_event_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_overseer",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_sky_cardinal",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_guardian_bot",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_protector",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_archivist",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_acolyte_farm",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_acolyte_mine",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_acolyte_generator",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_augur",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_xeno_keeper",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_xeno_ward",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_hedonist",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_acolyte_artisan",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "fe_maintenance_bot",
+        "file": "07_fallen_empire_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_propagandist",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_propagandist_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_academic",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_academic_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_trader",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_trader_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "aid_worker",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "aid_worker_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_breeder",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_breeder_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "mind_thrall",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "mind_thrall_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_offspring_drone_feeder",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_offspring_drone_feeder_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_metallurgist",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_foundry_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_fabricator",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_catalytic_technician",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_catalytic_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_beholder",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_beholder_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_necromancer",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_necromancer_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_reassigner",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_reassigner_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_recruiter",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_recruiter_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_ranger",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_ranger_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_arborist",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_arborist_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_bio_trophy",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_bio_trophy_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_manager",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_mortal_initiate",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_mortal_initiate_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_knight",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_knight_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_healthcare",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_replicator",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_spawning_drone",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "overlord_spawning_drone_lithoid",
+        "file": "08_overlord_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_laborer",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_miner",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_technician",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_farmer",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_researcher",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_priest",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_bureaucrat",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_manager",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "low_tech_warrior",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "broken_shackles_scavenger",
+        "file": "09_first_contact_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "munitions_decommissioner",
+        "file": "11_astral_planes_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "munitions_decommissioning_unit",
+        "file": "11_astral_planes_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "munitions_decommissioning_unit_lithoid",
+        "file": "11_astral_planes_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "munitions_decommissioning_drone",
+        "file": "11_astral_planes_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astral_researcher",
+        "file": "11_astral_planes_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astral_drone",
+        "file": "11_astral_planes_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astral_unit",
+        "file": "11_astral_planes_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astrometeorologist",
+        "file": "12_cosmic_storm_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astrometeorologist_hive",
+        "file": "12_cosmic_storm_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "astrometeorologist_machine",
+        "file": "12_cosmic_storm_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "haruspex",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "technophant",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "neural_chip",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "augmentor",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "augmentor_drone",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "identity_designer",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "cyberdome_duelist",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "cyberdome_spectator",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "clip_maximizer",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "nanotech_research_unit",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "nanotech_researcher",
+        "file": "13_machine_age_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "treasure_gatherer",
+        "file": "14_grand_archive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "wrangler",
+        "file": "14_grand_archive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "drone_wrangler",
+        "file": "14_grand_archive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "treasure_gatherer_gestalt",
+        "file": "14_grand_archive_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "disconnected_drone",
+        "file": "15_biogenesis_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "skywatcher",
+        "file": "15_biogenesis_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/soldier_triggered_modifiers"
+        ]
+      },
+      {
+        "job": "skywatcher_drone",
+        "file": "15_biogenesis_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": [
+          "output/soldier_triggered_modifiers"
+        ]
+      },
+      {
+        "job": "genomic_researcher",
+        "file": "15_biogenesis_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "genomic_drone",
+        "file": "15_biogenesis_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "transference_volunteer",
+        "file": "15_biogenesis_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "transference_drone",
+        "file": "15_biogenesis_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "sand_whisperer",
+        "file": "15_strange_worlds_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "sand_caretaker",
+        "file": "15_strange_worlds_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "drone_sand_whisperer",
+        "file": "15_strange_worlds_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "drone_sand_caretaker",
+        "file": "15_strange_worlds_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "space_junk_collector",
+        "file": "15_strange_worlds_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "drone_space_junk_collector",
+        "file": "15_strange_worlds_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "telepath_drone",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "physician_drone",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "observator_drone",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "energy_thrall",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "drone_energy_thrall",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "test_subject",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "test_subject_drone",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "experiment_engineer",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "experiment_engineer_drone",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "slave_orderly",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "production_overseer",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "extradimensional_research_unit",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "shroud_trader",
+        "file": "16_shroud_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "cruise_passenger",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "cruise_passenger_unemployment",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "cruise_crew_overseer",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "cruise_crew_overseer_drone",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "ark_waystation_trader",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "ark_harvester",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "ark_waystation_trader_gestalt",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "ark_harvester_gestalt",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "ark_deep_sleep",
+        "file": "17_nomads_jobs.txt",
+        "root_resources_blocks": 1,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "duelist",
+        "file": "99_swap_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "historical_curator",
+        "file": "99_swap_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      },
+      {
+        "job": "storm_dancer",
+        "file": "99_swap_jobs.txt",
+        "root_resources_blocks": 0,
+        "output_inline_hooks": []
+      }
+    ],
+    "output_inline_files": [
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\bonus_pop_growth.txt",
+        "sha256": "f104817e5d734b28007061a8f3adc33243f687218484df5f33f21c12692b5a93",
+        "bytes": 403
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\bureaucrat_output.txt",
+        "sha256": "94419c3731f06c38d27d7177afd89f6b1dd40d25b558b85d578eb326fb177fbb",
+        "bytes": 1368
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\colony_support_contract_modifiers.txt",
+        "sha256": "0ca4f4a4934177fe6a513795ba999808aa09ae94dad551e91042d8349b484d1a",
+        "bytes": 533
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\colony_support_contract_production.txt",
+        "sha256": "cf408f91bf2154a6ba48f555cdce931bf2e3b1215500bd12d2d7c44828966016",
+        "bytes": 458
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\entertainer_output.txt",
+        "sha256": "e1d444f5bb1a6815a47f38d8ec9c7b99d0a76d74e4754995d36c386e7560da1b",
+        "bytes": 250
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\entertainer_output_modifier.txt",
+        "sha256": "551ea5fc0f4eaafe8a98b564292d9ae618475905b834769b8a6f16f927c4e332",
+        "bytes": 1373
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\factory_output.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\foundry_nomad_triggered_modifiers.txt",
+        "sha256": "fb8176135083d301a2ebffe1ce5e41e235633ff9b0cf2ebd5271217eeafac9c8",
+        "bytes": 220
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\foundry_output.txt",
+        "sha256": "872d1c29a4242c4847d455e00638fa2131582ba2e7808848d312072def677796",
+        "bytes": 1222
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\genomic_triggered_modifiers.txt",
+        "sha256": "51a3e05716c3fd5a611b64ee0c96b94ecd2f094c8731f707e3098c38d419653b",
+        "bytes": 720
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\healthcare_triggered_modifiers.txt",
+        "sha256": "f4926b0d4773bcbcb0fe2118e73fdd73dcbf0da547b06289b11da73164c5b8d8",
+        "bytes": 908
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\politician_output.txt",
+        "sha256": "857dbc39e0e8cac5298339dffd6849ec174b9a35d5bb5dee501e83e766e68cbe",
+        "bytes": 745
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\researcher_output.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\soldier_triggered_modifiers.txt",
+        "sha256": "e84be3182cd3bdc5a196147e12ffdd71a9ea466219d2815abdf6601f7e242703",
+        "bytes": 2668
+      },
+      {
+        "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stellaris\\common\\inline_scripts\\output\\trader_output.txt",
+        "sha256": "3a801fd1d220427cd220d7f28618627734b1ec5f616d1beb278d3f8d782d064c",
+        "bytes": 220
+      }
+    ]
+  },
+  "limited_modifier_interface_search": {
+    "source": "C:\\Users\\Administrator\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261015T094102Z\\logs\\script_documentation\\modifiers.log",
+    "registered_modifiers_total": 45600,
+    "queries": [
+      {
+        "pattern": "^- .*job.*final",
+        "matches": []
+      },
+      {
+        "pattern": "^- .*final.*job",
+        "matches": []
+      },
+      {
+        "pattern": "^- .*jobs.*produces.*(?:factor|multiplier)",
+        "matches": []
+      },
+      {
+        "pattern": "^- .*resource_table.*mult",
+        "matches": []
+      }
+    ],
+    "interpretation": "Zero matches under these explicit name patterns is not a proof that the engine has no multiplicative arithmetic or future extension. Existing native produces.mult and output reader are positive capabilities."
+  },
+  "official_primary_context": [
+    {
+      "title": "Stellaris Dev Diary #372 - Modding: Pop Groups and Jobs",
+      "author": "Eladrin / Gruntsatwork, Stellaris development team",
+      "published": "2025-02-27",
+      "url": "https://steamcommunity.com/games/281990/announcements/detail/502818210084553499",
+      "readable_official_mirror": "https://store.steampowered.com/news/posts/?appids=281990&enddate=1742288410&feed=steam_community_announcements",
+      "short_quote": "job upkeep and output of 110 Physicist jobs",
+      "points": [
+        "A pop group can supply multiple jobs.",
+        "Bonus workforce is separate from production bonuses and scales job upkeep as well as output.",
+        "Pop upkeep and job upkeep are distinct."
+      ],
+      "version_limit": "Historical 4.0 design diary, corroborates architecture and a material maintenance risk; not a new 4.5.2 runtime probe."
+    }
+  ],
+  "native_probes_not_run": true,
+  "conclusion": "Under current nationwide-job, maintenance-unchanged, no blanket vanilla/third-party job overrides and no monthly subsidy constraints, no sufficiently established suitable final independent channel was found. Preserve user-authorized additive fallback; do not claim a universal mathematical impossibility.",
+  "publication_mod_version": "0.2.1 (version maintenance owned by parent)"
+}

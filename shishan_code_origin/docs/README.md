@@ -4,6 +4,7 @@
 
 ## 当前改版
 
+- [0.2.1发布与修订范围的继续验收](release-0.2.1-and-remaining-acceptance-2026-10-15.md)
 - [用户反馈与改版设计稿（2026-10-04）](../../docs/shishan-code-origin-feedback-redesign-2026-10-04.md)
 - [基于低内聚高耦合的旧时代集成服务架构：全特质 5% 与独立乘算设计](../../docs/shishan-code-origin-trait-synergy-design-2026-10-04.md)
 - [改版测试方案：环境、闸门、方法与通过条件](feedback-redesign-test-plan-2026-10-04.md)
