@@ -68,3 +68,58 @@
 设人口预期。另从R到I/F核C/G/D/made/worlds、返还/制造收据、成长/六核心等级
 保持，以及源无人且没有新的活Situation。完整strict仍保留，若自然状态或日期
 不符则保留失败，不自动填PASS。
+
+### 月度对照的加载日期栏故障
+
+第一支I已实际到2201.11.02，core5267，预声明的经济／成长账本全部不变。
+重新载入R时，原native_load已完成真实选择与Load点击，但GPU完整顶部资源／
+日期栏缺失，故其45秒UI日期检查超时；没有生成成功load回执，不把超时改写成功。
+新截图确认其余系统／舰队／暂停UI仍在。此现象在旧
+`native-relic-health-calibration-1019.md` 已有相同故障记录，原因仍UNKNOWN。
+
+恢复先以新的原生保存核实真实日期和状态，再按旧记录的独立原生`play 0`
+重申本国控制，要求新的实际日期帧和状态证据。保留首次失败、额外诊断SAV和
+全部动作；恢复记录采用独立schema，不能伪造原native_load成功回执。只有
+R日期／身份／账本核对成功后才继续F；若实际日期不同则停止并重载明确原输入。
+
+额外native-save尝试未能打开原生Esc菜单，没有生成诊断SAV；随后play0尝试也因
+console不可见而在输入前正确停止，未发送play命令。已核前台窗口和PID均为
+32348，Shift/Ctrl/Alt/Win均未按住，游戏Responding=true。下一步先按既有
+标题栏几何／HTCAPTION验证做一次物理聚焦，再重试已知play0恢复；不向不可见
+console盲打命令。所有失败动作／GPU／OCR保持原件。
+
+标题栏物理聚焦后console仍不可见，第二次play0同样在输入前被拒绝；实际没有
+执行任何play0。GPU已目视主菜单按钮，物理点击仅显示tooltip而未打开菜单。
+停止继续输入，改用正常退出请求和新的隔离进程恢复已保存的`r8normalreload`
+（2201.10.03）进行F支；I支已保存并通过其事前账本不变量。新进程F仍从确切
+同一个R的SHA载入、推进相同29日、核同日I/F原no-settlement。另显式记录进程
+边界，可同时作为非零成功结算账本的跨进程幂等证据。不能将首个失败load声明
+成功，也不把UI故障归因为已证的Mod脚本缺陷。旧run先实际停机／冻结完整日志。
+
+## 最终限定补证与索引合并设计
+
+第三进程从主菜单真实载入完成档，另存后的原no-settlement9/9；本进程实际
+dispatch日志标记已出现，随后自然FF29到2201.11.02，F与旧run的I均core5267，
+原同日no-settlement9/9，奖励／成长／六核心层数命中事前不变量，无活吞噬任务。
+以此新的实际执行链替代此前未获日志支持的warm-reload回调，不篡改旧失败。
+
+完整结算加真实跨进程加载使用独立全局存活性补强PASS；原27项诊断仍26真／
+1假（历史岗位列表），完整嵌入。新包三批共464份源拷贝、32,441,459字节，
+8份原生SAV及93对GPU/OCR，全部原字节／ZIP CRC／SAV与audit/receipt/history
+闭合。原T5进度0→1→4→5→10月2日killed，10月3日Situation已清理；最初辅助
+读取误假定stable仍有Situation而KeyError，发生在写报告前，随后按真实缺失记录。
+
+下一步仅通过旧index helper合并normal三个余项与common的本国主体返还单项，
+保留旧seed true、所有其它检查及18组PENDING。预期97true／41null；完整日志只
+归档和诊断，不提前填入最终log证据。此设计先于索引修改。
+
+### 合并结果
+
+已通过旧helper合并4个原名单项，当前97true／41null，18组及组件仍PENDING；
+normal四个原check均有依据，仅缺最终log门槛。其它case、经济、成长typed及旧
+seed证据不改。新注册两个真实run，包含原run后共三个。
+
+新包472份payload（含索引／作者报告／提案）、32,858,016字节，938条提案引用
+全部SHA闭合。更新可变reference-plan后同步当前`_scaffold.reference_plan`的SHA；
+旧`_progress.history`中的历史操作hash保留原义，不冒称当前文件hash。首次完整
+引用校验发现该当前指纹待更新，已在提交前纠正；不改历史操作或原始证据。

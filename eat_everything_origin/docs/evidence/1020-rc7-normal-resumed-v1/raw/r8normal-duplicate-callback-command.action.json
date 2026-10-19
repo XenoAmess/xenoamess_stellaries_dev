@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r8normal-duplicate-callback-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_reg_owned_source } event_target:eep_reg_owned_source = { if = { limit = { is_planet_class = pc_shattered has_planet_flag = eep_destroy_done has_planet_flag = eep_credit_done has_planet_flag = eep_population_done has_planet_flag = eep_crisis_done } log = \"NORMAL_DESTROYED_SOURCE_REPEAT_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"NORMAL_DESTROYED_SOURCE_REPEAT_NOT_READY_NOT_DISPATCHED\" } } } else = { log = \"NORMAL_DESTROYED_SOURCE_REPEAT_BASE_OR_TARGET_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T20:27:59.871247+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
