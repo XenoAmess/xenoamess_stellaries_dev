@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r7normal-inspect-native-fixture-readiness-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_reg_owned_source } event_target:eep_reg_owned_source = { if = { limit = { is_colony = yes is_owned_by = event_target:eep_mothership0.owner is_planet_class = pc_machine planet_size = 2 pop_amount = 50 eep_source_valid = yes NOT = { has_carrier_flag = eep_core } NOT = { has_planet_flag = eep_credit_done } NOT = { has_planet_flag = eep_destroy_done } } log = \"EEP_REG_Q2_READY_50\" } else = { log = \"EEP_REG_Q2_NOT_READY_50\" } } } else = { log = \"EEP_REG_Q2_TARGET_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T19:29:36.171441+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

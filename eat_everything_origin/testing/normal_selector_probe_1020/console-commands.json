@@ -1,0 +1,31 @@
+{
+  "schema": "eep.rc7.normal-selector-pure-log-probe.v1",
+  "status": "STATIC_SYNTAX_PACKAGE_PASS_RUNTIME_PENDING",
+  "scope": "Offline parse package only, not installed; no game object writes. Parent executes only after actual Kaishek static acceptance.",
+  "commands": [
+    {
+      "id": "A",
+      "command": "effect log = \"R7NP_A_ROOT\" if = { limit = { exists = event_target:eep_core0 } log = \"R7NP_A_CORE_EXISTS\" } event_target:eep_core0 = { log = \"R7NP_A_CORE [This.GetName]\" solar_system = { log = \"R7NP_A_SYSTEM [This.GetName]\" every_system_planet = { log = \"R7NP_A_EACH [This.GetName]\" } random_system_planet = { log = \"R7NP_A_RANDOM [This.GetName]\" } } } log = \"R7NP_A_END\"",
+      "characters": 370,
+      "body_sha256": "8a1cf225ff043c33c1dc30ee05ca9a6cd2447a90a6c1524758b5e6feeea65922"
+    },
+    {
+      "id": "B",
+      "command": "effect event_target:eep_core0 = { solar_system = { every_system_planet = { if = { limit = { is_colony = no } log = \"R7NP_B_C0 [This.GetName]\" } if = { limit = { NOT = { is_colony = yes } } log = \"R7NP_B_CN [This.GetName]\" } if = { limit = { is_under_colonization = no } log = \"R7NP_B_U0 [This.GetName]\" } if = { limit = { NOT = { is_under_colonization = yes } } log = \"R7NP_B_UN [This.GetName]\" } if = { limit = { is_star = no } log = \"R7NP_B_S0 [This.GetName]\" } if = { limit = { is_artificial = no } log = \"R7NP_B_A0 [This.GetName]\" } } } }",
+      "characters": 542,
+      "body_sha256": "0ece90186881e1e2512bf7fee6754afe260b81916acbbf700869817a985894af"
+    },
+    {
+      "id": "C",
+      "command": "effect event_target:eep_core0 = { solar_system = { every_system_planet = { if = { limit = { NOT = { has_carrier_flag = eep_core } } log = \"R7NP_C_K0 [This.GetName]\" } if = { limit = { NOT = { has_carrier_flag = eep_guard_reserved } } log = \"R7NP_C_R0 [This.GetName]\" } if = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } log = \"R7NP_C_PASS [This.GetName]\" } } random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } log = \"R7NP_C_RANDOM_PASS [This.GetName]\" } } }",
+      "characters": 731,
+      "body_sha256": "cf3d030039a6742ada2e9c35617140b8f33d8e8d6d68bc0c4f19d0ac9e1bd0bf"
+    }
+  ],
+  "static_acceptance": {
+    "path": "docs/evidence/1019-analysis/rc7-normal-selector-probe-open-kaishek-1020-v1.json",
+    "sha256": "912613768f10d5fcacddc36c79620ff83b9e10923305fafeee10d8d8fe7b4b7c",
+    "status": "PASS",
+    "scope": "syntax/package including supported fixed weapon CSV paths, literal planet-killer numeric sources and callback existence plus explicitly registered finite population scopes and referenced script-value shapes only; native loading, phase timing, runtime, recursive expansion and other opcodes require Stellaris tests"
+  }
+}
