@@ -162,3 +162,40 @@ Pu startup 当前 98 个证据引用、Pu economy 58 个，成长两组分别 54
 typed 组件归因验证器及 UTF-8／LF，全部通过。`git diff --check` 通过。
 两份可变 JSON 原来已有的 CRLF 也一并规范为 LF，因此普通 diff 行数较大；
 使用 `git diff --ignore-space-at-eol` 可以查看本轮内容变化，未改动任何 raw 字节。
+
+## 第三轮 Hive 已封口提案的合并设计
+
+主线程确认 Hive 原生包与 UI／操作归档已经独立封口，授权仅合并
+`docs/evidence/1019-analysis/rc7-r7hvc-startup-economy-partial-proposal-v1.json`
+及其真实归档引用。此节先于本轮 JSON 改动。不读取活动 Machine、UI 或日志，
+不改已有报告、工具、Mod，不执行 Git。
+
+既有 helper 将登记 Hive startup 七项与 economy 七项原名单项 true、历史
+0.3.1 baseline 12 月及本轮 RC7 candidate 12 月。四个操作约束只依据受控工作流
+独立审查，其原始 native report 四个 null 保持不变。m00 的缓存净电
+`65.48168` 不作首月；候选月份从 m01 的 `23.14466` 开始。
+本局原生初始人口 5300、core 11／pc_hive／Mother 152／971 与该 preset 自身
+baseline 对照，不借用 Pu 人口或其它来源。
+
+仍复用已有唯一 canonical run manifest，保留整组、组件与全局 PENDING。
+参考计划只扩充证据库存并更新 pending 内的引用 SHA；Pu 月份、成长 typed
+数据、已有 32 项 true 和各原始失败结果保持原义。验收本次合并应增加 14 项
+明确 true，两个 Hive 组四类归档证据齐备但最终停机日志仍列缺。
+
+### 第三轮合并结果
+
+Hive startup 与 economy 已各记录 7 项原名单项 true，分别附加 36／58 个真实
+归档引用；两组均仍 PENDING，仅缺最终停止日志。Hive baseline 12 月与 candidate
+12 月通过原 `add_budget` 导入，保存原 OBSERVATION_ONLY JSON 数字不变；例如
+首月 balance 实际 JSON 为 `23.144660000000002`，没有据显示短小数重写数据。
+最初只读复核将该浮点值与短小数 `23.14466` 精确比较而失败，已改为直接与原
+观察 JSON 逐值精确比较，全部月份一致；未修改报告、观察或任何验收数值政策。
+
+索引现为 46 项 true／92 项 null。18 组、组件及全局状态均 PENDING；唯一
+canonical run 不变，Pu、画廊、typed 成长与其他组数据保持原样。Machine 月份
+仍为零，没有读取其活动材料或运行日志。最终 reference-plan SHA：
+`b63f3c80045659561e977f2d1cfd535135fb886b995bb91ca1951ef68e3c5239`；
+pending SHA：
+`e300c2709fff4d0040fe4887e8b6c9d9fb1aa0cc00eb3285a5fe0ef78fe6674a`。
+1,449 处引用／755 个唯一文件逐字节 SHA、原 pending loader、既有完整组件归因
+验证器、连续月份和原观察值一致性均通过；`git diff --check` 通过。未建立最终结果。
