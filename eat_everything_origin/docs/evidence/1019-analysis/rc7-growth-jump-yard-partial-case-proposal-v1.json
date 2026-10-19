@@ -1,0 +1,303 @@
+{
+  "schema": "eep.1020.rc7-growth-jump-yard-partial-case-proposal.v1",
+  "status": "PARTIAL_EVIDENCE_ONLY",
+  "case_id": "unlimited_growth",
+  "case_status": "PENDING",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "run_ids": [
+    "20261019T164112Z"
+  ],
+  "supported_checks": {
+    "jump_and_shipyards_preserved": true
+  },
+  "check_basis": {
+    "jump_and_shipyards_preserved": {
+      "evidence_mode": "COMBINED_NATIVE_OPERATION_AND_GROWTH_RETENTION",
+      "report": {
+        "path": "docs/evidence/1019-analysis/rc7-growth-jump-yard-contract-review-v1.json",
+        "sha256": "1d5c2a875934d89ecb25744ef8dd6a97d2e345b0c7728fcbd2cfa69152fc517e",
+        "kind": "analysis"
+      },
+      "actual_C0_jump": {
+        "fleet": 151,
+        "ship": 1044,
+        "origin": 5,
+        "destination": 7,
+        "native_windup_days": 14,
+        "native_arrived_date": "2201.01.21",
+        "native_cooldown_and_200day_UI": true
+      },
+      "actual_growth_retention": {
+        "fleet": 125,
+        "ship": 809,
+        "nine_C_nodes": [
+          0,
+          9,
+          10,
+          19,
+          20,
+          49,
+          50,
+          200,
+          10000
+        ],
+        "refresh_final_native_SAV_count": 18,
+        "native_field_checks_passed": 180,
+        "JUMP_DRIVE_1_equipped_all18": true,
+        "mobile_starbase_id": "15",
+        "shipyard_build_queue_id": "48",
+        "shipyard_queue_owner": 0,
+        "shipyard_queue_type": "ships",
+        "shipyard_queue_simultaneous": 10,
+        "all18_queue_metadata_and_item_lists_equal": true
+      },
+      "interpretation": "Existing contract requires retention of opening jump and ten-yard capability under evolution. Actual C0 candidate jump and unchanged candidate hardware/native ten-yard binding at all growth nodes jointly support this named retention check. It is not a high-L jump observation.",
+      "high_level_jump_executed": false,
+      "new_paid_ship_construction_executed": false
+    }
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/1019-analysis/rc7-growth-jump-yard-contract-review-v1.json",
+      "sha256": "1d5c2a875934d89ecb25744ef8dd6a97d2e345b0c7728fcbd2cfa69152fc517e",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n00-c0-refresh.sav",
+      "sha256": "cfe3e7043b4dbee17f61408c7421fba40e2dd325fef349f8a0f53501149d0c10",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n00-c0-final.sav",
+      "sha256": "481724067359f10ecb899a56434dd829565c59bad061a6c618976de391abd10c",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n01-c9-refresh.sav",
+      "sha256": "29d55cb8f0ba2630129258bd14bd479d3137bc94078482b6aa657df123f07c62",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n01-c9-final.sav",
+      "sha256": "7fb82da54acde33edc5a18a7a625a51371576cd9075af59cbf5f911d749d1c1b",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n02-c10-refresh.sav",
+      "sha256": "51fa1c86689feb122f037ea58a14f9c3cfe1c0a6ee704ba8e9a3db4875af89d4",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n02-c10-final.sav",
+      "sha256": "866222e3e1d07149396d9ab5d12e20613af15d5c4e929d7b2571401459aef5ca",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n03-c19-refresh.sav",
+      "sha256": "bda19e9550af1a1d614d9273f241d28c4886c7a6b1ee1461ee66c2067dd2be88",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n03-c19-final.sav",
+      "sha256": "2857e4ada9b9c303d3db950b87d5f1d155b59b5e0e3bfbb3acdb28bd1227f6f2",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n04-c20-refresh.sav",
+      "sha256": "a3e8a61da0d44da028eaf5e2164f530844a688cf940f4d10a871427f4c589edd",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n04-c20-final.sav",
+      "sha256": "7cf2dd8f026696e8cb00c2d224943461a88096f20d605a015d10fa0fdde933fc",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n05-c49-refresh.sav",
+      "sha256": "f889d67b3a6c3323589322b611daf2af56f3abe352b41f827de0a463d0723b47",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n05-c49-final.sav",
+      "sha256": "a84cff8857b244fcd2e4a6836fd83f15658743bc0212b643269e8e3f11011929",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n06-c50-refresh.sav",
+      "sha256": "63d9673ce48ca4461c21f523e5660c78eaf081352af4c36fc60dd2e13d61238f",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n06-c50-final.sav",
+      "sha256": "1da5fed4cf1ad2ccae46950a05b3f88a8b581890dd8cbf06e44f7b97a7c290a4",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n07-c200-refresh.sav",
+      "sha256": "7be53a5ff078ce3996e28da26a35fafc7cb7bc28106ef8eba028ce7f7975235f",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n07-c200-final.sav",
+      "sha256": "43eda8cbaa4236ff0ab11af97e1c385ef5cbe4673fdd360c0664ea11977ee361",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n08-c10000-refresh.sav",
+      "sha256": "5861ad0d282b314b5910b07027e56cd917bbc5c5fb428d27ae962e204c0803d3",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n08-c10000-final.sav",
+      "sha256": "f733e79be5cb9cac7ad9101fc171d5bf4ddfe5fdc7adce479c3b8dae6bd2eb52",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/requirements-2026-10-19.md",
+      "sha256": "90800448d69eca73d8d6c4360222fcb02e4bf4669390928a63cab2d156e384d6",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/acceptance-rc4-efficient-matrix-v1.md",
+      "sha256": "94fd4a611fa4a114c9efae2f6bff23f2231b6b90383f7030b6db7410d9e904cd",
+      "kind": "analysis"
+    },
+    {
+      "path": "tools/check_1019.py",
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc",
+      "kind": "analysis"
+    },
+    {
+      "path": "tools/publish_1019.py",
+      "sha256": "06c60c0a9bd406580314999ae6649365bb5c1fa6c7152c0b0a7fb5a420e06918",
+      "kind": "analysis"
+    },
+    {
+      "path": "testing/inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92",
+      "kind": "analysis"
+    },
+    {
+      "path": "tools/audit_save.py",
+      "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc7-growth-native-report-v1.json",
+      "sha256": "4677e82c62ce30851f247691dad38703f52d6187ce26f2e63ea9fe0d7df9d1a3",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/index.json",
+      "sha256": "fccfee53675528f2da413a70d3ba971e79d3cd5c8ccc169c0c9f63f616bc95c3",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/manifest.json",
+      "sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/archive-index.json",
+      "sha256": "2b0a727f7e8f4fd0868ecb7bc36449315e37d16db8bc0b66486523562a523c61",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/verification-v1.json",
+      "sha256": "232269e2060883cb3a7d0f89d634ed165def986dd930663f6184dfb79b7b89d3",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/actual-jump-report-v1.json",
+      "sha256": "76500a18a3bbca7bf3a44680cb005aff01836652ebe265a0c535aff265fdc046",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/original-arrived-mother-check-v1.json",
+      "sha256": "c0720b3b215f71072d947d22352a52f1211b6cacd0859959c8c71fe87ff281b2",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/native-jump-observation-v1.json",
+      "sha256": "0699bcdd0d8dd318b9f470b452fcfb57ff3ea0a7d8e3afb19b331693d2d36a10",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/partial-case-proposal-v1.json",
+      "sha256": "8ce2de79a060220775393a957220fbdb34a0ec0e7aa8777589fe137851903dac",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready.sav",
+      "sha256": "87b40d759d0da5340b117f1a917f34cf1f85834260b1b8e5f2d8767496f99c4c",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready.native-save.json",
+      "sha256": "0a742d55bb1ea1d48a4101956372f24af01492a1b40f79e4058360de3b49cf40",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1.sav",
+      "sha256": "5d26ee990b421c9eb4744040122b55bc345fcc4eca071f3837fd4ca00739f727",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1.native-save.json",
+      "sha256": "e67076f1202ebdbff5dc730000a1963132a700fbded8860212e5a99eaab40d66",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2.sav",
+      "sha256": "325808af0d1efb9ae1f6c529dadcefb674aea5c818609efce2e5fc9e0ff8f25c",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2.native-save.json",
+      "sha256": "dc871ff30228f14d8c1af6b641fb74136a172173a7b3f0cc138f52fb8ea3870b",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-native-target-mode.jpg",
+      "sha256": "409763216afd37f5ba8e2d5cceffe8517fc5fb1712428f0b76c8d8a190706eaf",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-cooldown-hover.jpg",
+      "sha256": "d621f05f6a0bdbcbd29be703556185575e3afb7913b3f9a0c714c0cad7b21cf1",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-activate-native.action.json",
+      "sha256": "728bb668f62fbc5f0b05f2028a965475919da2efe380ff0f034f5cce14128bbd",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-command.action.json",
+      "sha256": "2f917a2d4d724613ad199250f297d65142434623836ca13ae994a4803342e976",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-command.action.json",
+      "sha256": "849a6c5ed2b69535e51f65bd33c0a6acbb90c4f4ccb97486bac9cdaed8ae09ed",
+      "kind": "actions"
+    }
+  ],
+  "source_boundary": "All native sources are already sealed RC7 packages. No live r7pk or active logs read. Separate actual Mother instances explicitly identified.",
+  "prior_partial_preserved": {
+    "path": "docs/evidence/1019-analysis/rc7-unlimited-growth-partial-case-proposal-v1.json",
+    "sha256": "1080572cc9162f00020c7aee6a008091f8a913fca53dfb52f22b686ea6181afd",
+    "kind": "analysis"
+  },
+  "other_case_checks_not_inferred": [
+    "daily_regeneration",
+    "destroyed_mother_not_respawned",
+    "invalid_or_cancelled_no_growth"
+  ],
+  "missing_for_whole_case": [
+    "Other original named checks not covered by this single-check proposal.",
+    "Final stopped-run logs and common whole-case review."
+  ],
+  "final_result_written": false,
+  "created_at_utc": "2026-10-19T18:55:18.411534+00:00"
+}

@@ -1,0 +1,1288 @@
+{
+  "schema": "eep.1020.rc7-growth-jump-yard-contract-review.v1",
+  "status": "PASS_SCOPED_COMBINED_EVIDENCE",
+  "case_id": "unlimited_growth",
+  "case_status": "PENDING",
+  "proposed_check": {
+    "jump_and_shipyards_preserved": true
+  },
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "run_id": "20261019T164112Z",
+  "scope": "Existing contract capability retention: actual C0 native jump by the same RC7 fixed design in one Mother instance plus unchanged jump hardware and actual ten-yard bindings across eighteen native growth states in a separate controlled Mother instance. No high-level actual jump or newly paid ship construction is claimed.",
+  "original_contract": {
+    "requirements": "Evolution must not lock opening propulsion or shipyards; active jump and ten shipyards, no specified L1000 jump or new paid construction sample.",
+    "existing_mother_checker": "One bound mobile starbase and its existing shipyard queue simultaneous=10. Actual native active-jump evidence is independent.",
+    "efficient_matrix": "Existing SAV offline mother check suffices for ten-yards/loadout fields; no extra UI or native save for these fields.",
+    "interpretation": "Combining actual positive operation of unchanged candidate hardware and native growth retention satisfies this named retention check without asserting high-L execution. It does not prove movement-while-building, new paid construction, maximum jump range or cooldown termination."
+  },
+  "growth_snapshots": [
+    {
+      "phase": {
+        "node": 0,
+        "C": 0,
+        "phase": "refresh",
+        "stage": "r7mx-n00-c0-refresh",
+        "date": "2201.02.01",
+        "input_date": "2201.01.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=0} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n00-c0-refresh.sav",
+        "sha256": "cfe3e7043b4dbee17f61408c7421fba40e2dd325fef349f8a0f53501149d0c10",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "490411f383a846dcd93014b75b611459a28564f806c6d512fb4fba2906963344",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 0,
+        "C": 0,
+        "phase": "final",
+        "stage": "r7mx-n00-c0-final",
+        "date": "2201.03.01",
+        "input_date": "2201.02.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n00-c0-final.sav",
+        "sha256": "481724067359f10ecb899a56434dd829565c59bad061a6c618976de391abd10c",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "40f4a435a3b29de0578faa9a2c622c1c032dc7f026eec69aab789940b89d1eae",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 1,
+        "C": 9,
+        "phase": "refresh",
+        "stage": "r7mx-n01-c9-refresh",
+        "date": "2201.04.01",
+        "input_date": "2201.03.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=9} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n01-c9-refresh.sav",
+        "sha256": "29d55cb8f0ba2630129258bd14bd479d3137bc94078482b6aa657df123f07c62",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "44a04cecd36e6f31504394df587f35daaf16b5ad76cdee5db97901cb3683a33e",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 1,
+        "C": 9,
+        "phase": "final",
+        "stage": "r7mx-n01-c9-final",
+        "date": "2201.05.01",
+        "input_date": "2201.04.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n01-c9-final.sav",
+        "sha256": "7fb82da54acde33edc5a18a7a625a51371576cd9075af59cbf5f911d749d1c1b",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "2d38abae5af383e1fba00ab5775367722103bec99cab06ee2688f56f1c8df2bf",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 2,
+        "C": 10,
+        "phase": "refresh",
+        "stage": "r7mx-n02-c10-refresh",
+        "date": "2201.06.01",
+        "input_date": "2201.05.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=10} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n02-c10-refresh.sav",
+        "sha256": "51fa1c86689feb122f037ea58a14f9c3cfe1c0a6ee704ba8e9a3db4875af89d4",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "6f5de7eb556dbc4ed8320cc19a29fa455829548edcad9bba72f6d2849997ab5e",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 2,
+        "C": 10,
+        "phase": "final",
+        "stage": "r7mx-n02-c10-final",
+        "date": "2201.07.01",
+        "input_date": "2201.06.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n02-c10-final.sav",
+        "sha256": "866222e3e1d07149396d9ab5d12e20613af15d5c4e929d7b2571401459aef5ca",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "470a174786eb3777c1e97e6bfe3a0fe793c6cea9dffde967a0122048bd15a838",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 3,
+        "C": 19,
+        "phase": "refresh",
+        "stage": "r7mx-n03-c19-refresh",
+        "date": "2201.08.01",
+        "input_date": "2201.07.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=19} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n03-c19-refresh.sav",
+        "sha256": "bda19e9550af1a1d614d9273f241d28c4886c7a6b1ee1461ee66c2067dd2be88",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "a35ded3ac219237adcd5f9c9890c11c49aa2add000ae4e7dfa05243175839b5b",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 3,
+        "C": 19,
+        "phase": "final",
+        "stage": "r7mx-n03-c19-final",
+        "date": "2201.09.01",
+        "input_date": "2201.08.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n03-c19-final.sav",
+        "sha256": "2857e4ada9b9c303d3db950b87d5f1d155b59b5e0e3bfbb3acdb28bd1227f6f2",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "60b761197bf0336e846377cd4cfa672980e88e6a0d5d5b126e142665f558e9b6",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 4,
+        "C": 20,
+        "phase": "refresh",
+        "stage": "r7mx-n04-c20-refresh",
+        "date": "2201.10.01",
+        "input_date": "2201.09.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=20} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n04-c20-refresh.sav",
+        "sha256": "a3e8a61da0d44da028eaf5e2164f530844a688cf940f4d10a871427f4c589edd",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "81b5102cf1a46a7054c453a44ba0f5fe58dff50c72b5419157d3c964c515ca86",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 4,
+        "C": 20,
+        "phase": "final",
+        "stage": "r7mx-n04-c20-final",
+        "date": "2201.11.01",
+        "input_date": "2201.10.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n04-c20-final.sav",
+        "sha256": "7cf2dd8f026696e8cb00c2d224943461a88096f20d605a015d10fa0fdde933fc",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "3869fffb5816f5089bd0f12c49758e9e1e0349485c7ee707a2dff04ab1c68e0f",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 5,
+        "C": 49,
+        "phase": "refresh",
+        "stage": "r7mx-n05-c49-refresh",
+        "date": "2201.12.01",
+        "input_date": "2201.11.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=49} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n05-c49-refresh.sav",
+        "sha256": "f889d67b3a6c3323589322b611daf2af56f3abe352b41f827de0a463d0723b47",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "2c80498d46c7039aa15b07ebe978582789c3cd0888a0e11dddeb5c7fb423246e",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 5,
+        "C": 49,
+        "phase": "final",
+        "stage": "r7mx-n05-c49-final",
+        "date": "2202.01.01",
+        "input_date": "2201.12.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n05-c49-final.sav",
+        "sha256": "a84cff8857b244fcd2e4a6836fd83f15658743bc0212b643269e8e3f11011929",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "79457906a95c1f9c92cb99c38f36d3992badc4be13cc0068d844dcc0535b5c43",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 6,
+        "C": 50,
+        "phase": "refresh",
+        "stage": "r7mx-n06-c50-refresh",
+        "date": "2202.02.01",
+        "input_date": "2202.01.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=50} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n06-c50-refresh.sav",
+        "sha256": "63d9673ce48ca4461c21f523e5660c78eaf081352af4c36fc60dd2e13d61238f",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "120390a46d14c0cf532706ca7b6f5d7bf8c09a0762fd4d1e15981040322ff78a",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 6,
+        "C": 50,
+        "phase": "final",
+        "stage": "r7mx-n06-c50-final",
+        "date": "2202.03.01",
+        "input_date": "2202.02.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n06-c50-final.sav",
+        "sha256": "1da5fed4cf1ad2ccae46950a05b3f88a8b581890dd8cbf06e44f7b97a7c290a4",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "994e9d673396a9d837d5ab8b1771bfc8c784aaa1df52f3eb1edff913c366a8da",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 7,
+        "C": 200,
+        "phase": "refresh",
+        "stage": "r7mx-n07-c200-refresh",
+        "date": "2202.04.01",
+        "input_date": "2202.03.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=200} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n07-c200-refresh.sav",
+        "sha256": "7be53a5ff078ce3996e28da26a35fafc7cb7bc28106ef8eba028ce7f7975235f",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "12b470d41fc67b493b7c1b3077895ae162e7785047e21e8155e1eb61ef4f2b4e",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 7,
+        "C": 200,
+        "phase": "final",
+        "stage": "r7mx-n07-c200-final",
+        "date": "2202.05.01",
+        "input_date": "2202.04.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n07-c200-final.sav",
+        "sha256": "43eda8cbaa4236ff0ab11af97e1c385ef5cbe4673fdd360c0664ea11977ee361",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "da1b7d7b9edc61a657867df8a226a7f7b87e63d6d3ab0c87ce7b0ace8b46743b",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 8,
+        "C": 10000,
+        "phase": "refresh",
+        "stage": "r7mx-n08-c10000-refresh",
+        "date": "2202.06.01",
+        "input_date": "2202.05.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=10000} eep_sync_mothership=yes}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n08-c10000-refresh.sav",
+        "sha256": "5861ad0d282b314b5910b07027e56cd917bbc5c5fb428d27ae962e204c0803d3",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "2beb8b98bad4d3ab84ad220d7b7b97b79f0a8aafd8b9b525119fca9305a22cfd",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    },
+    {
+      "phase": {
+        "node": 8,
+        "C": 10000,
+        "phase": "final",
+        "stage": "r7mx-n08-c10000-final",
+        "date": "2202.07.01",
+        "input_date": "2202.06.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      "save": {
+        "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n08-c10000-final.sav",
+        "sha256": "f733e79be5cb9cac7ad9101fc171d5bf4ddfe5fdc7adce479c3b8dae6bd2eb52",
+        "kind": "native_save"
+      },
+      "gamestate_sha256": "df603efb738c57d05d5966bf19f90c131b32611aa29b16d893dea0f010f2652c",
+      "mother": {
+        "fleet": 125,
+        "ship": 809,
+        "ship_size": "juggernaut",
+        "design_id": 16777235,
+        "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+        "required_components": [
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "SENSOR_4",
+          "JUMP_DRIVE_1",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      },
+      "mobile_starbase": {
+        "id": "15",
+        "native": {
+          "level": "starbase_level_juggernaut",
+          "build_queue": 47,
+          "shipyard_build_queue": 48,
+          "station": 809,
+          "construction_type": "starbase_shipyard"
+        }
+      },
+      "shipyard_queue": {
+        "id": "48",
+        "native": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships"
+        },
+        "items": [],
+        "body_sha256": "a9ded56a405c189153f12d77ad8e1c742fc0df1114bc8b659fe250505549dbf7"
+      },
+      "checks": {
+        "bound_Mother_ship_in_fleet125": true,
+        "native_juggernaut": true,
+        "jump_drive_equipped": true,
+        "one_mobile_starbase_bound_to_ship809": true,
+        "native_juggernaut_starbase_level": true,
+        "native_shipyard_construction_type": true,
+        "queue_exists": true,
+        "queue_owner0": true,
+        "queue_type_ships": true,
+        "ten_simultaneous": true
+      }
+    }
+  ],
+  "growth_snapshot_count": 18,
+  "growth_native_field_checks": 180,
+  "stable_mobile_starbase_queue_identity_and_metadata_all18": true,
+  "C0_actual_jump": {
+    "report": {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/actual-jump-report-v1.json",
+      "sha256": "76500a18a3bbca7bf3a44680cb005aff01836652ebe265a0c535aff265fdc046",
+      "kind": "analysis"
+    },
+    "original_mother_check": {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/original-arrived-mother-check-v1.json",
+      "sha256": "c0720b3b215f71072d947d22352a52f1211b6cacd0859959c8c71fe87ff281b2",
+      "kind": "analysis"
+    },
+    "actual_fleet": 151,
+    "actual_ship": 1044,
+    "actual_C": 0,
+    "actual_L": 0,
+    "origin": 5,
+    "destination": 7,
+    "windup_days": 14,
+    "arrived_date": "2201.01.21",
+    "native_cooldown_and_200day_UI": true,
+    "different_from_growth_Mother125_ship809": true,
+    "checks": 25,
+    "mother_checks": 14
+  },
+  "source_refs": [
+    {
+      "path": "docs/requirements-2026-10-19.md",
+      "sha256": "90800448d69eca73d8d6c4360222fcb02e4bf4669390928a63cab2d156e384d6",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/acceptance-rc4-efficient-matrix-v1.md",
+      "sha256": "94fd4a611fa4a114c9efae2f6bff23f2231b6b90383f7030b6db7410d9e904cd",
+      "kind": "analysis"
+    },
+    {
+      "path": "tools/check_1019.py",
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc",
+      "kind": "analysis"
+    },
+    {
+      "path": "tools/publish_1019.py",
+      "sha256": "06c60c0a9bd406580314999ae6649365bb5c1fa6c7152c0b0a7fb5a420e06918",
+      "kind": "analysis"
+    },
+    {
+      "path": "testing/inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92",
+      "kind": "analysis"
+    },
+    {
+      "path": "tools/audit_save.py",
+      "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc7-growth-native-report-v1.json",
+      "sha256": "4677e82c62ce30851f247691dad38703f52d6187ce26f2e63ea9fe0d7df9d1a3",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/index.json",
+      "sha256": "fccfee53675528f2da413a70d3ba971e79d3cd5c8ccc169c0c9f63f616bc95c3",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/manifest.json",
+      "sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/archive-index.json",
+      "sha256": "2b0a727f7e8f4fd0868ecb7bc36449315e37d16db8bc0b66486523562a523c61",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/verification-v1.json",
+      "sha256": "232269e2060883cb3a7d0f89d634ed165def986dd930663f6184dfb79b7b89d3",
+      "kind": "analysis"
+    }
+  ],
+  "original_partial_unchanged": {
+    "path": "docs/evidence/1019-analysis/rc7-unlimited-growth-partial-case-proposal-v1.json",
+    "sha256": "1080572cc9162f00020c7aee6a008091f8a913fca53dfb52f22b686ea6181afd",
+    "kind": "analysis"
+  },
+  "limitations": [
+    "C0 jump Mother151/1044 and growth Mother125/809 are distinct actual instances; no same-ship high-L jump is inferred.",
+    "No live r7pk data, active logs, UI, Steam, Git mutation or production changes.",
+    "Original1850 growth report and old proposal remain unchanged; this is new supplemental evidence and an explicit review conclusion.",
+    "Full case remains PENDING for the other existing checks, final stopped logs and common review."
+  ],
+  "native_operations_added": 0,
+  "new_test_requirements_added": 0,
+  "created_at_utc": "2026-10-19T18:54:53.338503+00:00"
+}

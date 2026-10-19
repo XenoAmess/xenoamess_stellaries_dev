@@ -111,3 +111,23 @@ effect event_target:eep_mothership0={every_owned_ship={reduce_shield=10000000 da
 4. 仅`fast_forward 1`，核对真实下一日，另存day1并比较恢复。只改health及观察vars，无手动治疗。若首日没有恢复，保留诊断并由主线程按实际状态决定有限追加少天；不自动循环、不无限加新测试、不要求重跑已通过矩阵。
 
 合计最低2次load、4条effect、4次原生save与1条FF1。加载与原生保存所需的实际菜单关闭/确认/frame仍不可省略。所有结果目前 `PENDING_NATIVE_EXECUTION`；三个parse输出不改变上述两partial提案任何null或整组状态。最终复核三个命令文本无多行、UTF-8无BOM、包装等于原命令体、全部plan引用SHA一致；新包只包含文档证据及静态语法结果，不进入生产Mod。
+
+## 跃迁与十船坞保留合同的补充只读调查
+
+本轮受主线程明确授权，只读原有1019验收合同、现有check实现、已sealed `1020-rc7-native-jump-v1` 和原十八成长快照，判定 `jump_and_shipyards_preserved` 是否已可由同RC7真实跃迁与成长稳定性证据组合覆盖。优先沿既定合同收口，不自动新增高L跃迁、船坞建造或其它矩阵。原partial提案保持原字节，必要时另交新的事实性结论；不读活动r7pk或活动日志，不操作UI/Git，不修改工具或Mod。只有原合同确实要求而现有证据未覆盖时，才列出现有最短补充动作；不编新验收要求。
+
+原1850报告显式证明各level装备/身份稳定，但没有命名的yard检查。为避免把摘要外推，本只读调查将直接从已sealed十八SAV提取Mother实际ship_size/required jump、mobile starbase绑定、shipyard_build_queue/owner/type/simultaneous和订单列表；先逐个核原ZIP SHA/CRC，再与原mother check的既有判据一致核查。新增独立 `evidence/1019-analysis/rc7-growth-jump-yard-contract-review-v1.json`，不改1850原报告或原partial；已有C0跃迁包只作同候选另一实例的实际能力正对照，不冒称成长实例曾在高L实跳。
+
+主线程已明确按原合同采用上述组合覆盖，不追加高L重复实跳或造舰。审查后另建 `evidence/1019-analysis/rc7-growth-jump-yard-partial-case-proposal-v1.json`，只提案 `unlimited_growth.jump_and_shipyards_preserved=true`，整组PENDING/finalfalse/缺最终logs保持。原 `rc7-unlimited-growth-partial-case-proposal-v1.json` 中历史null及原字节SHA保持；本补充仅补现有单项，不推升daily_regeneration、destroyed_mother或invalid/cancel等其它项。
+
+### 原合同解释与实际只读结果
+
+原 [1019需求](requirements-2026-10-19.md) 的措辞是“进化不锁开局动力与船坞”，验收列“主动跃迁、十船坞”，没有要求L1000重新实际跳跃或重新付费建舰。原 [最少矩阵](acceptance-rc4-efficient-matrix-v1.md) 明确同SAV离线mother检查可核十并发移动船坞，“无需专为这些字段再操作配置页或保存新档”；主动跃迁另需实际运行证据。当前原checker `mother()` 的十船坞判据保持为：唯一mobile starbase的station绑定该Mother ship，其真实shipyard_build_queue存在且simultaneous=10，不要求新下造舰单或等待完工。本轮没有更改这些合同或判据。
+
+新增 [只读组合报告](evidence/1019-analysis/rc7-growth-jump-yard-contract-review-v1.json) SHA `1d5c2a875934d89ecb25744ef8dd6a97d2e345b0c7728fcbd2cfa69152fc517e`，`PASS_SCOPED_COMBINED_EVIDENCE`。十八原ZIP的SHA及CRC先复核；每档十项原生字段核对共180项全部成立：Mother fleet125/ship809、juggernaut、唯一JUMP_DRIVE_1、唯一绑定mobile starbase15、原生juggernaut等级和starbase_shipyard类型、真实queue48/owner0/type ships/simultaneous10。十八档queue身份/元数据/空订单列表完全相同，C0至C10000及每个refresh/final都保留十并行能力；不称本轮有付费订单完成。
+
+C0实际跃迁来自另一真实实例Mother151/ship1044，同一RC7树、相同固定生产设计；原25项jump观察与到达mother14项报告均通过。它实际从5→7，14日蓄能，Jan21到达并有原生cooldown与UI200日提示，移动后仍有十船坞。成长实例125/809在九节点十八档保留同一固定设计的JUMP_DRIVE_1及原生yard绑定。二者组合支持“能力未被进化锁住”这一原检查；**没有把151/1044写成125/809，也没有写成高L已经实跳**。保留两个实例、不同日期和不同分支的事实，不能推导高L实跳、边移动边造舰、最大跃迁距离或200日冷却结束。
+
+因此无需新增高L跃迁或native造舰。此前本文表格/原partial中该项null是当时证据阶段快照，原件保持；现单独 [新增partial提案](evidence/1019-analysis/rc7-growth-jump-yard-partial-case-proposal-v1.json) SHA `eebdc0eae3f328934561eca949e3b8c5aec0b4267b170dafeff258f69c7ea9d4`，只支持 `jump_and_shipyards_preserved=true`，45个实际引用。该结论按原合同组合覆盖，交index_prepare显式合并，final_result_written=false、case_status=PENDING、最终logs缺口与其它未测check均保持，不改原1850/native/UI报告或旧partial字节。
+
+只读采样的首次临时Python把growth_stages匿名对象列表交给具名fields解析而拒绝，未产生报告或改任何源；随即复用现有 `inspect_1019.design()` 的匿名列表解析，不改工具。最终十八档报告完整覆盖原全部phase，没有删失败原生样本、扩大HP政策或新增实机步骤。
