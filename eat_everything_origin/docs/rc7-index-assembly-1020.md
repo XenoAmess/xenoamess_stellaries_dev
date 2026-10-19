@@ -375,3 +375,42 @@ pending SHA：
 canonical 引用、原 pending loader／完整组件归因、72 个月份原观察和只读
 `git diff --check` 均通过。原 strict FAIL1／FAIL25、边界诊断和 receiver 自身
 138 null 的历史记录没有被改写；未创建最终结果，未读活动 fire／日志。
+
+## 第八轮敌星真实完成与去重证据合并设计
+
+主线程授权合并已独立封口的 `1020-rc7-pk-enemy-completion-v1`，提案总索引
+`partial-case-proposals-v1.json` SHA
+`76f747bad5064a913cea62fcba9b331ad423df19c2c35de26df8c65067c05d65`。
+三份原名部分提案共支持 13 项 true：enemy_fire 五项、common_settlement 敌方
+适用五项、cancel_idempotence 重复／重载／危机一次三项。本节先于 JSON 修改。
+
+沿用原 helper，仅登记这些明确单项及已封包真实引用。reload_no_reward 先前已
+由取消分支为 true，此次增加独立完成分支依据，不重复计作新检查；预期全索引
+增加 12 个 true。提案中 checks_not_inferred_here 的 null 不覆盖先前独立证据：
+尤其已有 queue／cancel 两个 true 保留。自有非核心星发射、原生 devour 扣减、
+自有主种族返还、Lithoid 分支仍按各自未完范围保留 null，normal／重启等不推断。
+
+原 immediate 23／25 两项 FAIL、stable1 缺 audit 的诊断、重复严格零差异与
+reload 严格 47 差异一并保留。最终停止日志和 A／B／AFTER_RELOAD dispatch 标记
+确认仍待主线程收取；整组、组件、全局继续 PENDING，不创建最终结果。
+只改原三文件，不读取活动 normal／Li／fire／日志，不操作 UI 或任何 Git。
+
+### 第八轮封口结果
+
+三份提案的 13 个明确单项依据已通过原 helper 合并，其中完成后的 reload 是
+已有 true 的新增独立来源，所以全局新增 12 个 true：现为 92 项 true／46 项 null，
+93 条带明确分析来源的单项观测。取消组五项原 check 现全 true，仍 PENDING；
+敌星发射仅缺自有星分支，公共结算仍缺原生扣减／自有返还／Lithoid 三项。
+三个组分别有 281／281／460 个真实引用，最终日志和 dispatch 标记确认仍待收。
+
+reference-plan SHA：
+`5a23f2e2095c23e5df727715e22cb7e26aa9e57e1c2f9f1f03c8fde37e21491a`；
+pending SHA：
+`38044f38ac7af4a182b010b02d3c6cfda86c6167b3892ebf2621c2a03be1a1fd`。
+重新读取全部 3,094 处索引引用／1,718 个唯一文件 SHA、各 case 原 typed 引用、
+新包 58 个 canonical 引用均通过；保持原独立 verify 的 24／24 与 1,166 个 typed
+引用报告不变。原 loader／完整组件归因及三分支 72 个月份原观察一致性通过。
+本任务三文件的 UTF-8／LF／行尾空白校验通过，全程没有 Git 操作。
+
+18 组、组件及全局仍 PENDING，原失败与边界诊断不变；成长 invalid／cancel、
+normal／Lithoid／候选重启等没有根据本敌方分支推断，也未建立最终结果。
