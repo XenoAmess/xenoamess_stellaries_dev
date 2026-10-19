@@ -1,0 +1,35 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "source_colony_reference_absent_or_original": true,
+    "source_physically_shattered": true,
+    "source_without_owner_or_controller": true,
+    "colony_population_list_empty": true,
+    "live_population_counters_zero_or_absent": true,
+    "no_global_population_at_source_colony": true,
+    "no_country_ownership_or_control": true,
+    "listed_job_ids_not_new": true,
+    "all_global_and_listed_jobs_historical_only": true
+  },
+  "source_world": 17,
+  "colony_id": 1,
+  "retained_job_ids": [],
+  "jobs": {},
+  "live_global_groups": {},
+  "country_references": {},
+  "limitation": "Proves absence of live colony/population/job allocations; historical storage may remain.",
+  "sources": {
+    "before": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireprefire.sav",
+      "sha256": "7ebbaff3d0af80b4e1adfffbdedc4a7c2065507bceb9d953292a66c570a52887"
+    },
+    "after": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirestable2.sav",
+      "sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126"
+    },
+    "checker": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_settlement_liveness_1020.py",
+      "sha256": "9388976cfebd68a64c41282d6a0e379d6393dbafcaf258c591079087ab8fd8bd"
+    }
+  }
+}
