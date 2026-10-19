@@ -106,3 +106,40 @@ Windows SetCursorPos 将鼠标从屏幕角落移到物理屏幕中央，记录�
 授权来源，不点击、不关闭 FAILSAFE；随后重新执行 failSafeCheck，通过后才调用
 既有焦点恢复、关闭遗留控制台／debug，再以新 r7puc 采集全年。此动作不会改写
 原 r7pu 失败或构成任何 Mod 测试通过。
+
+## 真实恢复证据封存范围（复制前）
+
+root已报告实际恢复由原正常焦点路径完成。本次只读封存当前run
+`20261019T164112Z`中`r7puc-user-authorized-cursor-reset.action.json`、
+`r7puc-recover-console*`、`r7puc-recover-debug*`的原字节到独立子包；建立
+逐文件SHA／大小清单与复制后验证。不得复制或改写r7puc经济记录、活动日志、
+Mod、工具或原47项mock证据；不执行UI或Git。真实标题栏fallback未触发，不能
+据正常路径恢复报告其已通过实机验证。此前r7pu失败保持原状。
+
+## 真实恢复与原字节封存结果
+
+2026-10-20 01:40（上海时间）root执行用户授权的鼠标操作。独立action实际记录
+操作前坐标为`[567,569]`，此时已不在角落；屏幕`[2560,1440]`，目标和操作后
+均为`[1280,720]`。`FAILSAFE`保持true，随后`failSafeCheck`通过。前文描述的是
+操作计划，不能据此把实际操作前坐标改写成角落坐标，也不能称本次移鼠标绕过了
+仍在触发的角落急停。
+
+root报告`focus_current_window`返回HWND `98176084`，本次原正常路径成功。
+源目录在封存时没有`focus-titlebar-recovery-*.action.json`，所以新增标题栏
+fallback在此实际场景中**未执行**；原47项mock覆盖结果不变，其实机结果仍为
+未覆盖。root随后关闭遗留console／debug，三张新鲜GPU画面及OCR均绑定PID
+`37300`、标题Stellaris、client `1024x768`，采集时间为01:40:10至01:40:26。
+最后画面仍为旧场景的2200.05.01暂停状态，普通通知弹窗可见；画面只证明恢复后
+可继续按新方案操作，不能视作新r7puc年度经济或任何Mod功能通过。
+
+[独立封存索引](evidence/1020-titlebar-focus-recovery/native-normal-path-v1/archive-index-v1.json)
+含11份原字节payload，共644429字节，其中3张GPU图与3份OCR的图片SHA全部
+闭合。每份复制前后源SHA稳定、目标与源逐字节相同；
+[完整性核验](evidence/1020-titlebar-focus-recovery/native-normal-path-v1/archive-verification-v1.json)
+的PASS仅指封存完整性。索引SHA为
+`202c3243ff1a588bd2a4273a7dea4a6bbeb7bd15cf4d8619c9f2b411cacb3a15`，
+核验SHA为`e01b39db433a4c66f4c19c4b3aa4db5230893d69bfb356422d7b4e9f1a4898fa`。
+
+封存时再次核对原mock记录绑定的工具、测试及旧工具源码，其字节均未改变；未
+重跑或改写原47项结果。本次没有触碰r7puc经济文件、活动日志、UI、Git或原r7pu
+失败记录；新r7puc全年由root独立执行，结果须另行验收。
