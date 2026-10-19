@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gd-setup-core_owner_loss_inspect-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_reg_old_core exists = event_target:eep_reg_new_core exists = event_target:eep_reg_receiver event_target:eep_core0 = { is_same_value = event_target:eep_reg_new_core is_owned_by = event_target:eep_reg_receiver has_carrier_flag = eep_core } event_target:eep_reg_old_core = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner NOT = { has_carrier_flag = eep_core } } event_target:eep_mothership0.owner = { has_country_flag = eep_initialized eep_core_available = no } } log = \"EEP_REG_MIGRATED_CORE_FOREIGN_BOUND_BACKUP_ALIVE\" } else = { log = \"EEP_REG_CORE_OWNER_LOSS_STATE_NOT_ESTABLISHED\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:56:38.463275+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

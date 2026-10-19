@@ -57,6 +57,19 @@ death branch保持C20500/L2050/R410/P0和六历史层63/74/76/63/56/78的真实�
 
 ## 既有SAV读取接口及字段
 
+### 1020恢复执行补充
+
+实际继续使用新run20261019T204055Z／PID24520。等C/D原生载入链结束后才导入
+成长输入，避免活动载入列表因新文件重排。低／高输入仍用本页两个原SHA；
+输出采用r9growthlow/high/hurt/day/deadmonth/deadload独占名，不改原计划和命令。
+当前只读原高档已核ship809属fleet125，H3396960、A2873613.6、S4718142且三项
+满额，满足原伤害探针安全上界；实际加载导出后仍须在新SAV重新核H/A>200000、
+S<10000000、核心可用、无战斗与维修订单，事前记录后才输入正伤害命令。
+普通舰11身份及十getter必须完整实测，缺项不得当0；若长输入解析失败，保留
+原始失败，按同一冻结getter原文分段重发缺项后另存新版本，不删检查或改阈值。
+新伤档先核真实H/A下降且max和账本不变，再仅FF1检验自然恢复；不能从满血、
+命令输入或静态恢复系数推断已恢复。后续死亡严格沿本页月脉冲及已毁档重载。
+
 已存在Mother时，可用 `check_growth_1019.read_save(save_path, expected_sha)` 读取CRC/实际date、owner、fleet/ship、country_variables、fleet_variables、ship_variables、health、layout和三防控制舰max；`receipt_save(receipt_path)`另核receipt SHA/date。但**该函数要求唯一真实活Mother，死亡after不可用它**；其ordinary_ships也只投影三防max，不能拿它证明普通舰十个getter。
 
 普通舰十getter和死亡after沿现有 `testing/inspect_1019.py:288` 的 `observe(save_path)`：必须对真正已保存、receipt/audit/manifest齐备且属于当前RC7运行的源artifact路径调用，再按既有归档规则冻结输出；不要直接把canonical只读包目录当原active-run新输出，也不要用其可能扫描的receipt metadata推断未来SAV。本页不调用observe或读取活动metadata。

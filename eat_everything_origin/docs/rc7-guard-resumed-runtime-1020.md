@@ -169,3 +169,30 @@ C包286份原件、64对GPU/OCR、三档ZIP/audit/receipt校验及原receiver均
 all_core单项已合入，索引106 true／32 null。D-R实际receiver16777218、core
 人口50、old core5177；原生capital已自动为colony0，但EEP绑定仍物理1，未重绑。
 全部D原生前提已建立，后续wait/fire均预计May30，仍待实际原checker。
+
+补充只读核对：C-R原生war0仍有attacker country0、war goal target1，但没有
+defenders，country1对象已不存在；C-wait/fire中war0均已移除，与05:53:07原生
+nomads.94无效FROM同日。新诊断r9log-nomads-native-war-cleanup-v2.json保留
+三档SHA、完整war0原块及原版事件源码片段/hash，将并入最终停机日志审计包。
+这支持旧战争清理触发链的推断，不等于可见完整引擎栈。C封包原件不追加改写。
+
+D wait原生前提通过且ready已真实重载。06:03:11原长dispatch编译失败，实际
+控制台报缺少log/fire_on_action等参数及`vent_target:eep_reg_old_core`无效；未
+出现原marker。按事前短段方案同暂停日执行，06:03:35出现
+R9GD_CORE_OWNER_LOSS_SHORT_DISPATCH。THIS仍是已核old物理2，FROM仍Mother151；
+后续F原生和原no-settlement尚在执行。不得把长段失败改写为成功，也不只凭短
+marker就给owner复验通过。
+
+D-F实际完成，R May29、wait/fire同为May30；原no-settlement及两支growth均
+PASS_SCOPED，全部EEP变量和Mother层数相同，三档foreign绑定与old core活人口
+前提持续。实际使用短dispatch，原长段失败与完整strict保留。现按原receiver
+三档复算后建立1020-rc7-guard-d-v1，白名单为已完成r9gd前缀、该receiver缓存；
+不吸入正在进行r9growth或完整活动日志。原件SHA、ZIP、audit/receipt与图OCR
+核完后仅合入core-owner复验，并以A/B/C/D全无成长加既有取消原件合入
+unlimited.invalid_or_cancelled_no_growth；18整组与组件仍PENDING，最终日志未验。
+
+D包198原件／11,418,131字节、40对GPU/OCR及三档ZIP/audit/receipt均通过。
+核心owner复验与全invalid/cancelled无成长已按限定报告合入，索引108 true／
+30 null；guard原十项均true，所有18整组与组件仍PENDING。取消部分另独立
+验证五个原cache的SHA及内容指纹，再调用冻结原growth并比较全部EEP与Mother
+变量及修正，不只复述旧报告标题。原失败和预算政策均未改。

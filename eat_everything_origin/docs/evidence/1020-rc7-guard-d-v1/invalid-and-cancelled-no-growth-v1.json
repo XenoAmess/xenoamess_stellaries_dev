@@ -1,0 +1,824 @@
+{
+  "schema": "eep.1020.invalid-and-cancelled-no-growth.v1",
+  "status": "PASS_SCOPED_INVALID_AND_CANCELLED_NO_GROWTH",
+  "checks": {
+    "all_cancel_native_growth_signatures_identical": true,
+    "all_four_guard_branches_pass": true,
+    "original_cancel_chain_proof": true
+  },
+  "guard_branches": {
+    "A": {
+      "checks": {
+        "same_native_date": true,
+        "all_eep_variables_equal": true,
+        "mother_all_variables_and_modifier_items_equal": true,
+        "idle_original_growth_pass": true,
+        "fired_original_growth_pass": true
+      },
+      "sources": [
+        {
+          "path": "docs/evidence/1020-rc7-guard-a-v1/raw/r9gaI.observation.json",
+          "sha256": "ce90b9da40578523efc29fde26c7151b5754b15fc9199612a9299c6839327dd4"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-guard-a-v1/raw/r9gaF.observation.json",
+          "sha256": "97e184e0686e6bf57a34f586da5d45a8ced8c61deb5eb237d5d7a60d3fd915d6"
+        }
+      ],
+      "date": "2201.01.22",
+      "actual_c": 0,
+      "country_eep_fields": {
+        "eep_c": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_mothership_level": 0,
+        "eep_mothership_next": 10,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "mother": {
+        "151": {
+          "variables": {
+            "eep_applied_level": 0,
+            "eep_component_armor_level": 0,
+            "eep_component_damage_level": 0,
+            "eep_component_hull_level": 0,
+            "eep_component_regen_level": 0,
+            "eep_component_rewards": 0,
+            "eep_component_shield_level": 0,
+            "eep_component_tracking_level": 0
+          },
+          "modifier_items": [
+            {
+              "modifier": "eep_mothership",
+              "days": -1
+            }
+          ]
+        }
+      }
+    },
+    "B": {
+      "checks": {
+        "same_native_date": true,
+        "all_eep_variables_equal": true,
+        "mother_all_variables_and_modifier_items_equal": true,
+        "idle_original_growth_pass": true,
+        "fired_original_growth_pass": true
+      },
+      "sources": [
+        {
+          "path": "docs/evidence/1020-rc7-guard-b-v1/raw/r9gbI.observation.json",
+          "sha256": "40ca2460c982ff9d8cc3f5af4902ffb87d0d3ee5769a318780f7d8051e8cd14b"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-guard-b-v1/raw/r9gbF.observation.json",
+          "sha256": "7ea7fb717fc606d755266d213a9570a285512cb810b1239ddf56020798df175c"
+        }
+      ],
+      "date": "2201.01.23",
+      "actual_c": 0,
+      "country_eep_fields": {
+        "eep_c": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_mothership_level": 0,
+        "eep_mothership_next": 10,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "mother": {
+        "151": {
+          "variables": {
+            "eep_applied_level": 0,
+            "eep_component_armor_level": 0,
+            "eep_component_damage_level": 0,
+            "eep_component_hull_level": 0,
+            "eep_component_regen_level": 0,
+            "eep_component_rewards": 0,
+            "eep_component_shield_level": 0,
+            "eep_component_tracking_level": 0
+          },
+          "modifier_items": [
+            {
+              "modifier": "eep_mothership",
+              "days": -1
+            }
+          ]
+        }
+      }
+    },
+    "C": {
+      "checks": {
+        "same_native_date": true,
+        "all_eep_variables_equal": true,
+        "mother_all_variables_and_modifier_items_equal": true,
+        "idle_original_growth_pass": true,
+        "fired_original_growth_pass": true
+      },
+      "sources": [
+        {
+          "path": "docs/evidence/1020-rc7-guard-c-v1/raw/r9gcwait.observation.json",
+          "sha256": "31890e49bcd0aedb98573f6b611b766ad047b7c1d01d7b45b25f87011f77d673"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-guard-c-v1/raw/r9gcfire.observation.json",
+          "sha256": "bc9789b761bf5d89eed89387144db0ca1eead84586cd46aa906f24a13f96b83b"
+        }
+      ],
+      "date": "2201.05.29",
+      "actual_c": 21,
+      "country_eep_fields": {
+        "eep_c": 21,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 7,
+        "eep_delta": 300,
+        "eep_entitled": 300,
+        "eep_fleet_stage": 0,
+        "eep_g": 21,
+        "eep_last_capacity": 5,
+        "eep_last_manufactured": 300,
+        "eep_last_return": 0,
+        "eep_made": 300,
+        "eep_mothership_level": 2,
+        "eep_mothership_next": 9,
+        "eep_previous_capacity": 2,
+        "eep_stage": 0,
+        "eep_worlds": 1
+      },
+      "mother": {
+        "151": {
+          "variables": {
+            "eep_applied_level": 2,
+            "eep_component_armor_level": 0,
+            "eep_component_damage_level": 0,
+            "eep_component_hull_level": 0,
+            "eep_component_regen_level": 0,
+            "eep_component_rewards": 0,
+            "eep_component_shield_level": 0,
+            "eep_component_tracking_level": 0
+          },
+          "modifier_items": [
+            {
+              "modifier": "eep_mothership",
+              "days": -1
+            },
+            {
+              "multiplier": 2,
+              "modifier": "eep_mothership_evolution",
+              "days": -1
+            }
+          ]
+        }
+      }
+    },
+    "D": {
+      "checks": {
+        "same_native_date": true,
+        "all_eep_variables_equal": true,
+        "mother_all_variables_and_modifier_items_equal": true,
+        "idle_original_growth_pass": true,
+        "fired_original_growth_pass": true
+      },
+      "sources": [
+        {
+          "path": "docs/evidence/1020-rc7-guard-d-v1/raw/r9gdwait.observation.json",
+          "sha256": "d8e6b3e4b34ff00af22b89a136ff7d41d649c0155a1ebc6af1b84b7b210456f8"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-guard-d-v1/raw/r9gdfire.observation.json",
+          "sha256": "4f61d1a5a27100d11f85deba5f6d7d9f9ee0d4bc48217fd2a5e1e5004784cfed"
+        }
+      ],
+      "date": "2201.05.30",
+      "actual_c": 21,
+      "country_eep_fields": {
+        "eep_c": 21,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 7,
+        "eep_delta": 300,
+        "eep_entitled": 300,
+        "eep_fleet_stage": 0,
+        "eep_g": 21,
+        "eep_last_capacity": 5,
+        "eep_last_manufactured": 300,
+        "eep_last_return": 0,
+        "eep_made": 300,
+        "eep_mothership_level": 2,
+        "eep_mothership_next": 9,
+        "eep_previous_capacity": 2,
+        "eep_stage": 0,
+        "eep_worlds": 1
+      },
+      "mother": {
+        "151": {
+          "variables": {
+            "eep_applied_level": 2,
+            "eep_component_armor_level": 0,
+            "eep_component_damage_level": 0,
+            "eep_component_hull_level": 0,
+            "eep_component_regen_level": 0,
+            "eep_component_rewards": 0,
+            "eep_component_shield_level": 0,
+            "eep_component_tracking_level": 0
+          },
+          "modifier_items": [
+            {
+              "modifier": "eep_mothership",
+              "days": -1
+            },
+            {
+              "multiplier": 2,
+              "modifier": "eep_mothership_evolution",
+              "days": -1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "original_cancel_roles": {
+    "enemy_queued": {
+      "source": {
+        "path": "docs/evidence/1019-rc7-pk-native-cancel-v1/cache/c1ebb2806d57719e0570327f0dd9c663e714897424b6ca862659a383940b95ee.json",
+        "sha256": "fdef1187fdeb9d24b55d3e5756792517eaf4b15cb27265a468ee554c16df5b5a"
+      },
+      "growth": {
+        "status": "PASS_SCOPED",
+        "scope": "native country level, one fleet modifier and frozen per-level definition only",
+        "checks": {
+          "candidate_0_4": true,
+          "native_country_level": true,
+          "native_next_level_remainder": true,
+          "expected_c": true,
+          "unique_mothership": true,
+          "fleet_applied_level": true,
+          "single_scaled_evolution_modifier": true,
+          "permanent_evolution_modifier": true,
+          "no_ship_evolution_stacking": true,
+          "frozen_per_level_definition": true
+        },
+        "c": 0,
+        "level": 0,
+        "next_level_remainder": 10,
+        "multiplier_records": [],
+        "frozen_definition": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+          "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+          "body": "\n    ship_weapon_damage = 0.05\n    ship_hull_mult = 0.05\n    ship_armor_mult = 0.05\n    ship_shield_mult = 0.05\n    ship_hull_regen_add_static = 0.1\n    ship_armor_regen_add_static = 0.1\n"
+        },
+        "provenance": {
+          "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotqueued.sav",
+          "save_sha256": "8cffba65db094d10b4f652224515e7a1434036e3a352dc525d4312035ea9809e",
+          "run_id": "20261019T164112Z",
+          "version": "0.4.0-rc.7",
+          "version_source": "static_gate_and_copied_descriptor",
+          "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+          "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+          "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotqueued.audit.json",
+          "audit_sha256": "6fb355b4d387a293652313ebf6dff1cf4cd0d9fb3599795a9f5a5e98d2a45431",
+          "receipts": [
+            {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotqueued.native-save.json",
+              "sha256": "3ce112fd4f43020ff2c316d45d39052986147919e772b0becda14ae31b3e0596",
+              "entry": {
+                "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotqueued.sav",
+                "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotqueued.sav",
+                "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotqueued.sav",
+                "sha256": "8cffba65db094d10b4f652224515e7a1434036e3a352dc525d4312035ea9809e",
+                "date": "2201.01.21"
+              }
+            }
+          ],
+          "unsupported_receipt_shapes": []
+        },
+        "limitations": [
+          "Panel growth also depends on country modifiers.",
+          "Five-level real-component rewards are not certified by this check."
+        ]
+      },
+      "signature": {
+        "country_eep": {
+          "eep_c": 0,
+          "eep_component_armor_level": 0,
+          "eep_component_damage_level": 0,
+          "eep_component_entitled": 0,
+          "eep_component_hull_level": 0,
+          "eep_component_pending": 0,
+          "eep_component_regen_level": 0,
+          "eep_component_rewards": 0,
+          "eep_component_shield_level": 0,
+          "eep_component_snapshot_state": 0,
+          "eep_component_tracking_level": 0,
+          "eep_d": 2,
+          "eep_fleet_stage": 0,
+          "eep_g": 0,
+          "eep_last_capacity": 0,
+          "eep_last_manufactured": 0,
+          "eep_last_return": 0,
+          "eep_made": 0,
+          "eep_mothership_level": 0,
+          "eep_mothership_next": 10,
+          "eep_stage": 0,
+          "eep_worlds": 0
+        },
+        "mother": {
+          "151": {
+            "variables": {
+              "eep_applied_level": 0,
+              "eep_component_armor_level": 0,
+              "eep_component_damage_level": 0,
+              "eep_component_hull_level": 0,
+              "eep_component_regen_level": 0,
+              "eep_component_rewards": 0,
+              "eep_component_shield_level": 0,
+              "eep_component_tracking_level": 0
+            },
+            "modifier_items": [
+              {
+                "modifier": "eep_mothership",
+                "days": -1
+              }
+            ]
+          }
+        }
+      }
+    },
+    "enemy_day1": {
+      "source": {
+        "path": "docs/evidence/1019-rc7-pk-native-cancel-v1/cache/2953d5c2fb8846e61584f71cd8996753a93cd9cdbe69905feef1ae4fbe622880.json",
+        "sha256": "a33ca7b96c15bb79028f6cc03fc5b6d6829fcf358d866fa009c6cc887e231d6f"
+      },
+      "growth": {
+        "status": "PASS_SCOPED",
+        "scope": "native country level, one fleet modifier and frozen per-level definition only",
+        "checks": {
+          "candidate_0_4": true,
+          "native_country_level": true,
+          "native_next_level_remainder": true,
+          "expected_c": true,
+          "unique_mothership": true,
+          "fleet_applied_level": true,
+          "single_scaled_evolution_modifier": true,
+          "permanent_evolution_modifier": true,
+          "no_ship_evolution_stacking": true,
+          "frozen_per_level_definition": true
+        },
+        "c": 0,
+        "level": 0,
+        "next_level_remainder": 10,
+        "multiplier_records": [],
+        "frozen_definition": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+          "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+          "body": "\n    ship_weapon_damage = 0.05\n    ship_hull_mult = 0.05\n    ship_armor_mult = 0.05\n    ship_shield_mult = 0.05\n    ship_hull_regen_add_static = 0.1\n    ship_armor_regen_add_static = 0.1\n"
+        },
+        "provenance": {
+          "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday1.sav",
+          "save_sha256": "ec88ba87f6d849d608a39b9c127005c691ce6bd6cf33540f106101dd21b485a4",
+          "run_id": "20261019T164112Z",
+          "version": "0.4.0-rc.7",
+          "version_source": "static_gate_and_copied_descriptor",
+          "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+          "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+          "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday1.audit.json",
+          "audit_sha256": "8fabcb132ff9cdb407ce231103e14eaa423d5d852133a401753d6174725aeee9",
+          "receipts": [
+            {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday1.native-save.json",
+              "sha256": "903fcb9c20818bec429958253698add4284723d7e882c11eb57ca456066c7030",
+              "entry": {
+                "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotday1.sav",
+                "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotday1.sav",
+                "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday1.sav",
+                "sha256": "ec88ba87f6d849d608a39b9c127005c691ce6bd6cf33540f106101dd21b485a4",
+                "date": "2201.01.22"
+              }
+            }
+          ],
+          "unsupported_receipt_shapes": []
+        },
+        "limitations": [
+          "Panel growth also depends on country modifiers.",
+          "Five-level real-component rewards are not certified by this check."
+        ]
+      },
+      "signature": {
+        "country_eep": {
+          "eep_c": 0,
+          "eep_component_armor_level": 0,
+          "eep_component_damage_level": 0,
+          "eep_component_entitled": 0,
+          "eep_component_hull_level": 0,
+          "eep_component_pending": 0,
+          "eep_component_regen_level": 0,
+          "eep_component_rewards": 0,
+          "eep_component_shield_level": 0,
+          "eep_component_snapshot_state": 0,
+          "eep_component_tracking_level": 0,
+          "eep_d": 2,
+          "eep_fleet_stage": 0,
+          "eep_g": 0,
+          "eep_last_capacity": 0,
+          "eep_last_manufactured": 0,
+          "eep_last_return": 0,
+          "eep_made": 0,
+          "eep_mothership_level": 0,
+          "eep_mothership_next": 10,
+          "eep_stage": 0,
+          "eep_worlds": 0
+        },
+        "mother": {
+          "151": {
+            "variables": {
+              "eep_applied_level": 0,
+              "eep_component_armor_level": 0,
+              "eep_component_damage_level": 0,
+              "eep_component_hull_level": 0,
+              "eep_component_regen_level": 0,
+              "eep_component_rewards": 0,
+              "eep_component_shield_level": 0,
+              "eep_component_tracking_level": 0
+            },
+            "modifier_items": [
+              {
+                "modifier": "eep_mothership",
+                "days": -1
+              }
+            ]
+          }
+        }
+      }
+    },
+    "enemy_charge": {
+      "source": {
+        "path": "docs/evidence/1019-rc7-pk-native-cancel-v1/cache/1819e0719882401baca2846e04142c3ae36e6f417c2c5ede96613c0f611bab7f.json",
+        "sha256": "569d70f97295ee8c9f7d93077117591fdf9f6060cc616a859c9a27fcea7a9ba1"
+      },
+      "growth": {
+        "status": "PASS_SCOPED",
+        "scope": "native country level, one fleet modifier and frozen per-level definition only",
+        "checks": {
+          "candidate_0_4": true,
+          "native_country_level": true,
+          "native_next_level_remainder": true,
+          "expected_c": true,
+          "unique_mothership": true,
+          "fleet_applied_level": true,
+          "single_scaled_evolution_modifier": true,
+          "permanent_evolution_modifier": true,
+          "no_ship_evolution_stacking": true,
+          "frozen_per_level_definition": true
+        },
+        "c": 0,
+        "level": 0,
+        "next_level_remainder": 10,
+        "multiplier_records": [],
+        "frozen_definition": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+          "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+          "body": "\n    ship_weapon_damage = 0.05\n    ship_hull_mult = 0.05\n    ship_armor_mult = 0.05\n    ship_shield_mult = 0.05\n    ship_hull_regen_add_static = 0.1\n    ship_armor_regen_add_static = 0.1\n"
+        },
+        "provenance": {
+          "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday6.sav",
+          "save_sha256": "88cfe048183aefbfda9fcfc58947bd11e0528a7e8d202fce73b03a87436cdb36",
+          "run_id": "20261019T164112Z",
+          "version": "0.4.0-rc.7",
+          "version_source": "static_gate_and_copied_descriptor",
+          "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+          "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+          "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday6.audit.json",
+          "audit_sha256": "e5b6b35ac294ae4902bb4fc90046d9a633a2881646969b5af4d63e7053f46806",
+          "receipts": [
+            {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday6.native-save.json",
+              "sha256": "c50ff6cdbc3daf6036564e244e9423d8268398357c02dfe74db8a39e2b5a5350",
+              "entry": {
+                "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotday6.sav",
+                "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotday6.sav",
+                "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotday6.sav",
+                "sha256": "88cfe048183aefbfda9fcfc58947bd11e0528a7e8d202fce73b03a87436cdb36",
+                "date": "2201.01.27"
+              }
+            }
+          ],
+          "unsupported_receipt_shapes": []
+        },
+        "limitations": [
+          "Panel growth also depends on country modifiers.",
+          "Five-level real-component rewards are not certified by this check."
+        ]
+      },
+      "signature": {
+        "country_eep": {
+          "eep_c": 0,
+          "eep_component_armor_level": 0,
+          "eep_component_damage_level": 0,
+          "eep_component_entitled": 0,
+          "eep_component_hull_level": 0,
+          "eep_component_pending": 0,
+          "eep_component_regen_level": 0,
+          "eep_component_rewards": 0,
+          "eep_component_shield_level": 0,
+          "eep_component_snapshot_state": 0,
+          "eep_component_tracking_level": 0,
+          "eep_d": 2,
+          "eep_fleet_stage": 0,
+          "eep_g": 0,
+          "eep_last_capacity": 0,
+          "eep_last_manufactured": 0,
+          "eep_last_return": 0,
+          "eep_made": 0,
+          "eep_mothership_level": 0,
+          "eep_mothership_next": 10,
+          "eep_stage": 0,
+          "eep_worlds": 0
+        },
+        "mother": {
+          "151": {
+            "variables": {
+              "eep_applied_level": 0,
+              "eep_component_armor_level": 0,
+              "eep_component_damage_level": 0,
+              "eep_component_hull_level": 0,
+              "eep_component_regen_level": 0,
+              "eep_component_rewards": 0,
+              "eep_component_shield_level": 0,
+              "eep_component_tracking_level": 0
+            },
+            "modifier_items": [
+              {
+                "modifier": "eep_mothership",
+                "days": -1
+              }
+            ]
+          }
+        }
+      }
+    },
+    "enemy_cancel": {
+      "source": {
+        "path": "docs/evidence/1019-rc7-pk-native-cancel-v1/cache/0ec6100bfe7dfb8aca0681c24fa6d93bb8565f04a581dba159c44ec122410b0b.json",
+        "sha256": "d9f37418f4fe521c21c3bfa14129c11bbda42aeda1ee3ca45f9db2e33e0b232e"
+      },
+      "growth": {
+        "status": "PASS_SCOPED",
+        "scope": "native country level, one fleet modifier and frozen per-level definition only",
+        "checks": {
+          "candidate_0_4": true,
+          "native_country_level": true,
+          "native_next_level_remainder": true,
+          "expected_c": true,
+          "unique_mothership": true,
+          "fleet_applied_level": true,
+          "single_scaled_evolution_modifier": true,
+          "permanent_evolution_modifier": true,
+          "no_ship_evolution_stacking": true,
+          "frozen_per_level_definition": true
+        },
+        "c": 0,
+        "level": 0,
+        "next_level_remainder": 10,
+        "multiplier_records": [],
+        "frozen_definition": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+          "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+          "body": "\n    ship_weapon_damage = 0.05\n    ship_hull_mult = 0.05\n    ship_armor_mult = 0.05\n    ship_shield_mult = 0.05\n    ship_hull_regen_add_static = 0.1\n    ship_armor_regen_add_static = 0.1\n"
+        },
+        "provenance": {
+          "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancel.sav",
+          "save_sha256": "d54cb834d25f54a4513c5a9ab3ecb84adc00baf0b481f878b58081847fd3873a",
+          "run_id": "20261019T164112Z",
+          "version": "0.4.0-rc.7",
+          "version_source": "static_gate_and_copied_descriptor",
+          "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+          "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+          "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancel.audit.json",
+          "audit_sha256": "4a2ba3e0af44c4b6008539c6837f2fa14dd6d77c461193a935a29f7740cb9f6a",
+          "receipts": [
+            {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancel.native-save.json",
+              "sha256": "66127dc4541c52932ae0c09177ccc360e3d494c27d1797a450ad3e4787beb2f7",
+              "entry": {
+                "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotcancel.sav",
+                "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotcancel.sav",
+                "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancel.sav",
+                "sha256": "d54cb834d25f54a4513c5a9ab3ecb84adc00baf0b481f878b58081847fd3873a",
+                "date": "2201.01.27"
+              }
+            }
+          ],
+          "unsupported_receipt_shapes": []
+        },
+        "limitations": [
+          "Panel growth also depends on country modifiers.",
+          "Five-level real-component rewards are not certified by this check."
+        ]
+      },
+      "signature": {
+        "country_eep": {
+          "eep_c": 0,
+          "eep_component_armor_level": 0,
+          "eep_component_damage_level": 0,
+          "eep_component_entitled": 0,
+          "eep_component_hull_level": 0,
+          "eep_component_pending": 0,
+          "eep_component_regen_level": 0,
+          "eep_component_rewards": 0,
+          "eep_component_shield_level": 0,
+          "eep_component_snapshot_state": 0,
+          "eep_component_tracking_level": 0,
+          "eep_d": 2,
+          "eep_fleet_stage": 0,
+          "eep_g": 0,
+          "eep_last_capacity": 0,
+          "eep_last_manufactured": 0,
+          "eep_last_return": 0,
+          "eep_made": 0,
+          "eep_mothership_level": 0,
+          "eep_mothership_next": 10,
+          "eep_stage": 0,
+          "eep_worlds": 0
+        },
+        "mother": {
+          "151": {
+            "variables": {
+              "eep_applied_level": 0,
+              "eep_component_armor_level": 0,
+              "eep_component_damage_level": 0,
+              "eep_component_hull_level": 0,
+              "eep_component_regen_level": 0,
+              "eep_component_rewards": 0,
+              "eep_component_shield_level": 0,
+              "eep_component_tracking_level": 0
+            },
+            "modifier_items": [
+              {
+                "modifier": "eep_mothership",
+                "days": -1
+              }
+            ]
+          }
+        }
+      }
+    },
+    "enemy_cancel_reload": {
+      "source": {
+        "path": "docs/evidence/1019-rc7-pk-native-cancel-v1/cache/2e889be8ad7e5c13c4d1b39380c7255b44c76737073d8dc96c848bca0f7f256b.json",
+        "sha256": "88033b73508edfa9ce731586381e0a13623cc95d10b2984809a170a7c4c2314c"
+      },
+      "growth": {
+        "status": "PASS_SCOPED",
+        "scope": "native country level, one fleet modifier and frozen per-level definition only",
+        "checks": {
+          "candidate_0_4": true,
+          "native_country_level": true,
+          "native_next_level_remainder": true,
+          "expected_c": true,
+          "unique_mothership": true,
+          "fleet_applied_level": true,
+          "single_scaled_evolution_modifier": true,
+          "permanent_evolution_modifier": true,
+          "no_ship_evolution_stacking": true,
+          "frozen_per_level_definition": true
+        },
+        "c": 0,
+        "level": 0,
+        "next_level_remainder": 10,
+        "multiplier_records": [],
+        "frozen_definition": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+          "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+          "body": "\n    ship_weapon_damage = 0.05\n    ship_hull_mult = 0.05\n    ship_armor_mult = 0.05\n    ship_shield_mult = 0.05\n    ship_hull_regen_add_static = 0.1\n    ship_armor_regen_add_static = 0.1\n"
+        },
+        "provenance": {
+          "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancelreload.sav",
+          "save_sha256": "895c2b1beb85b2ac688cf0c2271f28aaedeacdbf667ef35db4969147d91c9053",
+          "run_id": "20261019T164112Z",
+          "version": "0.4.0-rc.7",
+          "version_source": "static_gate_and_copied_descriptor",
+          "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+          "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+          "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancelreload.audit.json",
+          "audit_sha256": "7ce330ef16435aca71d47237f4ade8ba072e6dbe3375b49936c5f583d6a1701f",
+          "receipts": [
+            {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancelreload.native-save.json",
+              "sha256": "8778fb0772699879a02e27f6fd253ccfff732aa449df648b19bd033a5822c0e7",
+              "entry": {
+                "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotcancelreload.sav",
+                "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkshotcancelreload.sav",
+                "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancelreload.sav",
+                "sha256": "895c2b1beb85b2ac688cf0c2271f28aaedeacdbf667ef35db4969147d91c9053",
+                "date": "2201.01.27"
+              }
+            }
+          ],
+          "unsupported_receipt_shapes": []
+        },
+        "limitations": [
+          "Panel growth also depends on country modifiers.",
+          "Five-level real-component rewards are not certified by this check."
+        ]
+      },
+      "signature": {
+        "country_eep": {
+          "eep_c": 0,
+          "eep_component_armor_level": 0,
+          "eep_component_damage_level": 0,
+          "eep_component_entitled": 0,
+          "eep_component_hull_level": 0,
+          "eep_component_pending": 0,
+          "eep_component_regen_level": 0,
+          "eep_component_rewards": 0,
+          "eep_component_shield_level": 0,
+          "eep_component_snapshot_state": 0,
+          "eep_component_tracking_level": 0,
+          "eep_d": 2,
+          "eep_fleet_stage": 0,
+          "eep_g": 0,
+          "eep_last_capacity": 0,
+          "eep_last_manufactured": 0,
+          "eep_last_return": 0,
+          "eep_made": 0,
+          "eep_mothership_level": 0,
+          "eep_mothership_next": 10,
+          "eep_stage": 0,
+          "eep_worlds": 0
+        },
+        "mother": {
+          "151": {
+            "variables": {
+              "eep_applied_level": 0,
+              "eep_component_armor_level": 0,
+              "eep_component_damage_level": 0,
+              "eep_component_hull_level": 0,
+              "eep_component_regen_level": 0,
+              "eep_component_rewards": 0,
+              "eep_component_shield_level": 0,
+              "eep_component_tracking_level": 0
+            },
+            "modifier_items": [
+              {
+                "modifier": "eep_mothership",
+                "days": -1
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "original_cancel_proof": {
+    "path": "docs/evidence/1019-rc7-pk-native-cancel-v1/authored/independent-native-cancel-chain-v1.json",
+    "sha256": "0f4d362f67e6d41074bc72a3f25a7314149f0a3473cdec018bff065ff3cbd610"
+  },
+  "scope": "All four actually dispatched invalid guard branches plus existing real queue/charge/cancel/reload; complete native country growth, Mother tiers and unique modifiers; original failures retained."
+}

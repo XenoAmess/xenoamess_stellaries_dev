@@ -167,3 +167,13 @@ all_core单项与A/B合并后，当前106 true／32 null；整组仍PENDING。
 D转交后原生ready已确认receiver16777218活国、新core仍foreign绑定，旧core
 仍本国5177人口，原生capital自动选回colony0，EEP绑定仍为物理1。长状态探针
 解析失败原件保留，继续以真实R/I/F验证，而非把该输入失败当生产guard失败。
+
+D及四组guard现已完成：原receiver一任务通过，198原件／11,418,131字节、
+40对GPU/OCR原字节校验通过。长dispatch解析失败后，事前定义的短段实际执行，
+THIS旧core2／FROM Mother151，marker与同日F闭合；没有收益或成长。另独立
+重核A/B/C/D全部EEP及Mother变量／修正，旧queued/day1/charge/cancel/reload
+五角色的原growth均通过。当前108 true／30 null，十项guard单项齐备，全部
+整组与组件仍PENDING、最终日志未验。
+
+现执行同银河低／高两锚点普通舰十getter负对照，之后实际正伤害自然恢复与
+死亡／月脉冲／已毁档重载。没有重跑三类全年、敌星射击或真实跃迁。
