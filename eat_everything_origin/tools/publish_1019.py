@@ -56,9 +56,20 @@ COMPONENT_CHECKS = {"real_component", "positive_effect_observed", "random_pool",
                     "every_five_levels", "threshold_idempotent", "reload_persistent",
                     "other_fleets_unchanged", "equipped_component_present_in_native_design",
                     "component_owns_dynamic_bonus", "no_external_reward_modifier",
-                    "native_tier_zero_one_two_effect", "growth_modifier_held_constant_during_component_probe",
+                    "native_component_effects_source_attributed", "growth_component_contributions_separated",
                     "cross_threshold_catchup"}
+COMPONENT_KINDS = ("shield", "armor", "hull", "damage", "tracking", "regen")
+COMPONENT_MODIFIERS = {"ship_hull_add", "ship_hull_mult", "ship_armor_add", "ship_armor_mult",
+                       "ship_shield_add", "ship_shield_mult", "ship_weapon_damage", "ship_tracking_add",
+                       "ship_hull_regen_add_static", "ship_armor_regen_add_static"}
+# Expectations were fixed before the RC4 RNG observations; they are source
+# models, not inherited RC3 runtime acceptance or fitted future coefficients.
+COMPONENT_SOURCE_MODELS = (
+    "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
+    "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8")
+COMPONENT_ATTRIBUTION_CONTRACT = "source_separated_native_rng_v1"
 GROWTH_SAMPLES = [(0, 0), (9, 0), (10, 1), (19, 1), (20, 2), (200, 20), (10000, 1000)]
+COMPONENT_NODES = (0, 9, 10, 19, 20, 49, 50, 200, 10000)
 PLANET_KILLER_CALLBACK_CONTRACT = "native_completed_queued_unqueued_v1"
 PLANET_KILLER_NUMERIC_CONTRACT = "native_csv_or_literal_txt_v1"
 WEAPON_CSV_LOADER_CONTRACT = "native_fixed_paths_v1"
@@ -357,6 +368,88 @@ def validate_static_report(report, root):
         raise RuntimeError("matching whole-package open_kaishek gate incomplete")
 
 
+def validate_component_attribution(case, tree, root):
+    """Require this candidate's six native RNG channels and fixed-source model.
+
+    The independent report checks actual SAVs and source coefficients. This
+    gate binds its bytes and required observations, without claiming that a
+    changing-L observation was a fixed-L 0/1/2 hardware probe.
+    """
+    def require(condition, detail):
+        if not condition:
+            raise RuntimeError("random_components source attribution incomplete: " + detail)
+
+    def scoped(value):
+        return (isinstance(value, dict) and value.get("status") == "PASS_SCOPED"
+                and isinstance(value.get("checks"), list) and bool(value["checks"])
+                and all(isinstance(row, dict) and row.get("passed") is True for row in value["checks"]))
+
+    def finite(value):
+        return type(value) in (int, float) and math.isfinite(value)
+
+    reference = case.get("component_attribution_report")
+    require(isinstance(reference, dict), "native growth report reference")
+    path = reference_path(reference, root)
+    require(any(entry.get("kind") == "analysis" and entry.get("path") == reference["path"]
+                and entry.get("sha256") == reference["sha256"] for entry in case["evidence"]),
+            "growth report must be this case's analysis evidence")
+    try:
+        report = read_json(path)
+    except (ValueError, OSError) as error:
+        raise RuntimeError("random_components source attribution report unreadable") from error
+    require(isinstance(report, dict), "native report object")
+    require(report.get("schema") == "eep.six-core-growth-report.v1"
+            and report.get("status") == "PASS_SCOPED"
+            and report.get("component_attribution_contract") == COMPONENT_ATTRIBUTION_CONTRACT,
+            "native source-separated RNG contract")
+    require(report.get("run_id") in case["run_ids"] and report.get("production_tree_sha256") == tree,
+            "current candidate run and source")
+    require(type(report.get("absolute_tolerance")) in (int, float)
+            and report["absolute_tolerance"] == .01
+            and report.get("source_models_sha256") == list(COMPONENT_SOURCE_MODELS),
+            "predetermined source models and tolerance")
+    for name in ("matrix", "repeat", "reload", "budget", "ordinary_controls"):
+        require(scoped(report.get(name)), name + " scoped native checks")
+    controls = report["ordinary_controls"].get("ship_ids")
+    require(isinstance(controls, list) and bool(controls)
+            and all(isinstance(identity, str) and identity for identity in controls)
+            and len(set(controls)) == len(controls), "nonempty ordinary native controls")
+    coverage, tiers = report.get("nonzero_tier_coverage"), report.get("final_native_tiers")
+    require(isinstance(coverage, dict) and set(coverage) == set(COMPONENT_KINDS)
+            and all(value is True for value in coverage.values()), "six actual nonzero RNG channels")
+    require(isinstance(tiers, dict) and set(tiers) == set(COMPONENT_KINDS)
+            and all(type(value) is int and value > 0 for value in tiers.values())
+            and sum(tiers.values()) == COMPONENT_NODES[-1] // 50, "six positive actual native tiers")
+    baseline = report.get("C0_baseline")
+    require(isinstance(baseline, dict) and type(baseline.get("C")) is int and baseline["C"] == 0
+            and type(baseline.get("L")) is int and baseline["L"] == 0
+            and baseline.get("actual_native_intercept") is True, "actual C0 intercept")
+    initial_tiers = baseline.get("tiers")
+    require(isinstance(initial_tiers, dict) and set(initial_tiers) == set(COMPONENT_KINDS)
+            and all(type(value) is int and value == 0 for value in initial_tiers.values()), "zero C0 native tiers")
+    exports, maximums = baseline.get("modifier_exports"), baseline.get("native_maximums")
+    require(isinstance(exports, dict) and set(exports) == COMPONENT_MODIFIERS
+            and all(finite(value) for value in exports.values()), "ten independent C0 native exports")
+    require(isinstance(maximums, dict)
+            and set(maximums) == {"max_hitpoints", "max_armor_hitpoints", "max_shield_hitpoints"}
+            and all(finite(value) and value > 0 for value in maximums.values()), "three actual C0 native maximums")
+    native = {entry["sha256"] for entry in case["evidence"] if entry.get("kind") == "native_save"}
+    observations = report.get("native_evidence")
+    require(isinstance(observations, list) and len(observations) == 2 * len(COMPONENT_NODES),
+            "eighteen raw native observations")
+    observed_shas = []
+    for index, observation in enumerate(observations):
+        require(isinstance(observation, dict), "native phase object")
+        phase = observation.get("phase")
+        require(isinstance(phase, dict) and type(phase.get("C")) is int
+                and phase["C"] == COMPONENT_NODES[index // 2]
+                and phase.get("phase") == ("refresh" if index % 2 == 0 else "final")
+                and observation.get("sha256") in native, "native phase and case SAV binding")
+        observed_shas.append(observation["sha256"])
+    require(len(set(observed_shas)) == len(observed_shas)
+            and baseline.get("save_sha256") == observed_shas[1], "distinct raw SAVs and actual C0 binding")
+
+
 def validate_runtime_index(runtime, root):
     candidate_version(runtime)
     if (runtime.get("schema") != "eep-1019-acceptance-v1" or runtime.get("status") != "PASS_SCOPED"
@@ -416,6 +509,8 @@ def validate_runtime_index(runtime, root):
                 or not case.get("run_ids") or not set(case["run_ids"]).issubset(run_ids)):
             raise RuntimeError("required runtime case incomplete: " + name)
         verify_references(case.get("evidence"), root, EVIDENCE_KINDS)
+    if components["status"] == "IMPLEMENTED":
+        validate_component_attribution(cases["random_components"], tree, root)
     for branch in ("hive", "machine", "purifier"):
         budget = runtime.get("economy", {}).get(branch, {})
         months = budget.get("candidate_months", [])

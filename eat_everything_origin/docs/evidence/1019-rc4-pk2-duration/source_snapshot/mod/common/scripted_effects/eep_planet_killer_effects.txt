@@ -1,0 +1,35 @@
+# Source Carrier scope. Called only after native weapon completion and revalidation.
+eep_colossus_settle = {
+    if = {
+        limit = { eep_colossus_target_valid = yes }
+        planet = { save_event_target_as = eep_source }
+        from.owner = {
+            save_event_target_as = eep_actor
+            event_target:eep_core@this = { save_event_target_as = eep_bound_core }
+        }
+        export_trigger_value_to_variable = { trigger = planet_size variable = eep_q }
+        set_variable = { which = eep_old_damage value = 0 }
+        export_trigger_value_to_variable = {
+            trigger = count_deposits
+            parameters = { type = d_lithoid_devastation }
+            variable = eep_old_damage
+        }
+        if = {
+            limit = { is_variable_set = eep_old_damage }
+            subtract_variable = { which = eep_q value = eep_old_damage }
+        }
+        if = {
+            limit = { check_variable = { which = eep_q value > 0 } }
+            set_planet_flag = eep_colossus_active
+            if = {
+                limit = { event_target:eep_actor = { is_lithoid_devouring_swarm = yes } }
+                set_planet_flag = eep_native
+            }
+            eep_settle_source = yes
+            event_target:eep_actor = {
+                set_country_flag = eep_notice_pending
+                eep_sync_mothership = yes
+            }
+        }
+    }
+}

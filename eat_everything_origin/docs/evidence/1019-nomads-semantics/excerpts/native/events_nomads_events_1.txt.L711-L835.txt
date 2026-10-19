@@ -1,0 +1,125 @@
+# Hands a purge-vassal colony's stockpile and the NOMADIC_PURGE_COMPLETE toast up to the overlord. Fired from on_colony_destroyed (owner still valid) so it works however the colony is removed. Scope = the destroyed colony.
+carrier_event = {
+	id = nomads.13
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin = origin_nomadic_purger
+			exists = overlord
+		}
+	}
+
+	immediate = {
+		# Colony message targets are not implemented (AUG-55014) and everything here is destroyed soon after, so
+		# all values are frozen into the message at creation and the target is the purged planet, which persists.
+		owner = {
+			save_event_target_as = purge_vassal_country
+			set_variable = { which = purge_xfer_pops  value = 0 }
+			if = {
+				limit = { is_variable_set = purge_resettled_pops }
+				set_variable = { which = purge_xfer_pops  value = purge_resettled_pops }
+			}
+			set_variable = { which = purge_xfer_total  value = purge_xfer_pops }
+			set_purge_xfer_resource_effect = { RESOURCE = minerals }
+			set_purge_xfer_resource_effect = { RESOURCE = food }
+			set_purge_xfer_resource_effect = { RESOURCE = energy }
+			set_purge_xfer_resource_effect = { RESOURCE = alloys }
+			set_purge_xfer_resource_effect = { RESOURCE = consumer_goods }
+			set_purge_xfer_resource_effect = { RESOURCE = trade }
+			set_purge_xfer_resource_effect = { RESOURCE = volatile_motes }
+			set_purge_xfer_resource_effect = { RESOURCE = exotic_gases }
+			set_purge_xfer_resource_effect = { RESOURCE = rare_crystals }
+			set_purge_xfer_resource_effect = { RESOURCE = sr_living_metal }
+			set_purge_xfer_resource_effect = { RESOURCE = sr_zro }
+			set_purge_xfer_resource_effect = { RESOURCE = sr_dark_matter }
+			set_purge_xfer_resource_effect = { RESOURCE = nanites }
+			set_purge_xfer_resource_effect = { RESOURCE = minor_artifacts }
+			set_purge_xfer_resource_effect = { RESOURCE = astral_threads }
+			# Resources-only total, so the toast can line-break its resources and pops sections independently.
+			set_variable = { which = purge_xfer_res_total  value = purge_xfer_total }
+			subtract_variable = { which = purge_xfer_res_total  value = purge_xfer_pops }
+		}
+		# Created before the transfer below empties the vassal's stockpile
+		owner.overlord = {
+			create_message = {
+				type = NOMADIC_PURGE_COMPLETE
+				localization = NOMADIC_PURGE_COMPLETE_DESC
+				days = 30
+				target = root
+				variable = {
+					type = name
+					localization = PLANET
+					scope = root
+				}
+				variable = {
+					type = resources
+					localization = RESOURCES
+					scope = event_target:purge_vassal_country
+					resources = { minerals food energy alloys consumer_goods trade volatile_motes exotic_gases rare_crystals sr_living_metal sr_zro sr_dark_matter nanites minor_artifacts astral_threads }
+					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_res_total  value > 0 } } }
+				}
+				variable = {
+					type = variable
+					varname = purge_xfer_pops
+					localization = POPS
+					scope = event_target:purge_vassal_country
+					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_pops  value > 0 } } }
+				}
+				variable = {
+					type = key
+					localization = POPS_UNIT
+					value = purge_xfer_unit_pops
+					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_pops  value > 0 } } }
+				}
+				variable = {
+					# " and " joins the resources and pops, but only shows when both sections are present
+					type = key
+					localization = AND
+					value = purge_xfer_and
+					trigger = {
+						event_target:purge_vassal_country = {
+							check_variable = { which = purge_xfer_res_total  value > 0 }
+							check_variable = { which = purge_xfer_pops  value > 0 }
+						}
+					}
+				}
+				variable = {
+					# Single line-break putting the gained resources/pops on their own line below the headline
+					type = key
+					localization = LINEBREAK
+					value = purge_xfer_linestart
+					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_total  value > 0 } } }
+				}
+				variable = {
+					type = key
+					localization = GAINED
+					value = purge_xfer_lineend
+					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_total  value > 0 } } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { num_owned_planets <= 1 }
+			}
+			owner = {
+				set_timed_country_flag = {
+					flag = supress_country_destroyed_message
+					days = 2
+				}
+				transfer_resources_to_empire = {
+					target = overlord
+					resources = { minerals food energy alloys consumer_goods trade volatile_motes exotic_gases rare_crystals sr_living_metal sr_zro sr_dark_matter nanites minor_artifacts astral_threads }
+					percentage = 1.0
+				}
+			}
+		}
+		# Clear the snapshot so a later engine-removed colony cannot show this colony's pops
+		owner = {
+			set_variable = { which = purge_resettled_pops  value = 0 }
+		}
+	}
+}

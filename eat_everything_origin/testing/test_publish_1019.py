@@ -117,6 +117,45 @@ class Release1019Guards(unittest.TestCase):
                 "checks": {check: True for check in checks}, "run_ids": ["synthetic-run"],
                 "evidence": copy.deepcopy(self.evidence)}
 
+    def implemented_components(self, runtime=None):
+        runtime = copy.deepcopy(self.runtime) if runtime is None else runtime
+        runtime["component_rewards"].update(status="IMPLEMENTED", reason="Synthetic six-core guard input only")
+        case = self.case(release.COMPONENT_CHECKS)
+        runtime["cases"]["random_components"] = case
+        native = []
+        for index in range(2 * len(release.COMPONENT_NODES)):
+            name = f"proofs/synthetic-growth-{index:02}.sav"
+            self.write(name, f"synthetic guard bytes, never native SAV: {index}".encode())
+            entry = self.reference(name, "native_save")
+            case["evidence"].append(entry)
+            native.append({"sha256": entry["sha256"], "phase": {
+                "C": release.COMPONENT_NODES[index // 2], "phase": "refresh" if index % 2 == 0 else "final"}})
+        passed = {"status": "PASS_SCOPED", "checks": [{"check": "synthetic guard input only", "passed": True}]}
+        tiers = dict.fromkeys(release.COMPONENT_KINDS, 33)
+        tiers["shield"] = 35
+        report = {"schema": "eep.six-core-growth-report.v1", "status": "PASS_SCOPED",
+            "component_attribution_contract": release.COMPONENT_ATTRIBUTION_CONTRACT,
+            "run_id": "synthetic-run", "production_tree_sha256": runtime["production_tree_sha256"],
+            "absolute_tolerance": .01, "source_models_sha256": list(release.COMPONENT_SOURCE_MODELS),
+            **{name: copy.deepcopy(passed) for name in ("matrix", "repeat", "reload", "budget", "ordinary_controls")},
+            "nonzero_tier_coverage": dict.fromkeys(release.COMPONENT_KINDS, True),
+            "final_native_tiers": tiers, "native_evidence": native,
+            "C0_baseline": {"C": 0, "L": 0, "tiers": dict.fromkeys(release.COMPONENT_KINDS, 0),
+                "actual_native_intercept": True, "save_sha256": native[1]["sha256"],
+                "modifier_exports": dict.fromkeys(release.COMPONENT_MODIFIERS, 0.0),
+                "native_maximums": dict.fromkeys(("max_hitpoints", "max_armor_hitpoints", "max_shield_hitpoints"), 1000)}}
+        report["ordinary_controls"]["ship_ids"] = ["synthetic-ordinary-control"]
+        self.attribution_report(runtime, report)
+        return runtime, report
+
+    def attribution_report(self, runtime, report):
+        name = "proofs/synthetic-component-attribution.json"
+        self.json(name, report)
+        case = runtime["cases"]["random_components"]
+        case["evidence"] = [entry for entry in case["evidence"] if entry["path"] != name]
+        case["evidence"].append(self.reference(name, "analysis"))
+        case["component_attribution_report"] = self.reference(name)
+
     def callbacks(self, key):
         return "\n".join(f"on_destroy_planet_with_{key}{suffix} = {{}}" for suffix in ("", "_queued", "_unqueued")) + "\n"
 
@@ -244,7 +283,7 @@ class Release1019Guards(unittest.TestCase):
         bad["component_rewards"]["status"] = "IMPLEMENTED"
         with self.assertRaises(RuntimeError):
             self.validate(bad)
-        bad["cases"]["random_components"] = self.case(release.COMPONENT_CHECKS)
+        self.implemented_components(bad)
         self.validate(bad)
         bad["cases"]["random_components"]["checks"]["positive_effect_observed"] = False
         with self.assertRaises(RuntimeError):
@@ -263,16 +302,12 @@ class Release1019Guards(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "mothership_configuration"):
             self.validate()
 
-    def test_real_component_tier_upgrade_requires_native_ownership_and_probe_evidence(self):
-        runtime = copy.deepcopy(self.runtime)
-        runtime["component_rewards"]["status"] = "IMPLEMENTED"
-        runtime["cases"]["random_components"] = self.case(release.COMPONENT_CHECKS)
-        runtime["cases"]["random_components"]["observations"] = {
-            "delivery": "PREINSTALLED_COMPONENT_TIER_UPGRADE", "tiers_observed": [0, 1, 2]}
+    def test_real_component_tier_upgrade_requires_native_ownership_and_source_attribution(self):
+        runtime, _ = self.implemented_components()
         self.validate(runtime)
         required = ("equipped_component_present_in_native_design", "component_owns_dynamic_bonus",
-                    "no_external_reward_modifier", "native_tier_zero_one_two_effect",
-                    "growth_modifier_held_constant_during_component_probe", "cross_threshold_catchup")
+                    "no_external_reward_modifier", "native_component_effects_source_attributed",
+                    "growth_component_contributions_separated", "cross_threshold_catchup")
         for check in required:
             for value in (None, False):
                 bad = copy.deepcopy(runtime)
@@ -282,6 +317,78 @@ class Release1019Guards(unittest.TestCase):
                     bad["cases"]["random_components"]["checks"][check] = value
                 with self.subTest(check=check, value=value), self.assertRaisesRegex(RuntimeError, "random_components"):
                     self.validate(bad)
+
+    def test_old_fixed_level_check_names_cannot_substitute_for_rng_attribution(self):
+        runtime, _ = self.implemented_components()
+        for new, old in (("native_component_effects_source_attributed", "native_tier_zero_one_two_effect"),
+                         ("growth_component_contributions_separated", "growth_modifier_held_constant_during_component_probe")):
+            bad = copy.deepcopy(runtime)
+            bad["cases"]["random_components"]["checks"][old] = bad["cases"]["random_components"]["checks"].pop(new)
+            with self.subTest(new=new), self.assertRaisesRegex(RuntimeError, "random_components"):
+                self.validate(bad)
+
+    def test_each_of_six_channels_needs_actual_nonzero_rng_tier_and_coverage(self):
+        runtime, report = self.implemented_components()
+        self.validate(runtime)
+        for kind in release.COMPONENT_KINDS:
+            for field, value in (("nonzero_tier_coverage", False), ("nonzero_tier_coverage", 1),
+                                 ("final_native_tiers", 0), ("final_native_tiers", True),
+                                 ("final_native_tiers", 1.0), ("final_native_tiers", None)):
+                bad, claim = copy.deepcopy(runtime), copy.deepcopy(report)
+                if value is None:
+                    del claim[field][kind]
+                else:
+                    claim[field][kind] = value
+                self.attribution_report(bad, claim)
+                with self.subTest(kind=kind, field=field, value=value), self.assertRaisesRegex(RuntimeError, "random_components"):
+                    self.validate(bad)
+
+    def test_attribution_rejects_missing_intercept_exports_models_controls_and_raw_samples(self):
+        runtime, report = self.implemented_components()
+        changes = {
+            "old run": lambda r: r.update(run_id="old-rc3"),
+            "old source": lambda r: r.update(production_tree_sha256="0" * 64),
+            "incomplete": lambda r: r.update(status="INCOMPLETE"),
+            "old contract": lambda r: r.update(component_attribution_contract="fixed_level_probe"),
+            "fitted models": lambda r: r.update(source_models_sha256=["0" * 64, "1" * 64]),
+            "relaxed tolerance": lambda r: r.update(absolute_tolerance=.1),
+            "not actual baseline": lambda r: r["C0_baseline"].update(actual_native_intercept=False),
+            "nonzero baseline": lambda r: r["C0_baseline"].update(C=50),
+            "boolean baseline": lambda r: r["C0_baseline"].update(L=False),
+            "baseline reward": lambda r: r["C0_baseline"]["tiers"].update(shield=1),
+            "missing export": lambda r: r["C0_baseline"]["modifier_exports"].pop("ship_tracking_add"),
+            "invalid export": lambda r: r["C0_baseline"]["modifier_exports"].update(ship_weapon_damage=float("nan")),
+            "boolean export": lambda r: r["C0_baseline"]["modifier_exports"].update(ship_weapon_damage=True),
+            "missing maximum": lambda r: r["C0_baseline"]["native_maximums"].pop("max_armor_hitpoints"),
+            "no controls": lambda r: r["ordinary_controls"].update(ship_ids=[]),
+            "control failure": lambda r: r["ordinary_controls"]["checks"][0].update(passed=False),
+            "no matrix": lambda r: r["matrix"].update(checks=[]),
+            "integer pass": lambda r: r["matrix"]["checks"][0].update(passed=1),
+            "missing reload": lambda r: r["reload"].update(status="NOT_PROVIDED"),
+            "missing raw": lambda r: r["native_evidence"].pop(),
+            "unbound raw": lambda r: r["native_evidence"][0].update(sha256="0" * 64),
+            "duplicate raw": lambda r: r["native_evidence"][0].update(sha256=r["native_evidence"][1]["sha256"]),
+            "wrong phase": lambda r: r["native_evidence"][0]["phase"].update(C=10),
+            "wrong C0 raw": lambda r: r["C0_baseline"].update(save_sha256=r["native_evidence"][-1]["sha256"]),
+        }
+        for label, mutate in changes.items():
+            bad, claim = copy.deepcopy(runtime), copy.deepcopy(report)
+            mutate(claim)
+            self.attribution_report(bad, claim)
+            with self.subTest(label=label), self.assertRaisesRegex(RuntimeError, "random_components"):
+                self.validate(bad)
+
+    def test_attribution_report_must_be_hash_bound_case_analysis(self):
+        runtime, report = self.implemented_components()
+        bad = copy.deepcopy(runtime)
+        del bad["cases"]["random_components"]["component_attribution_report"]
+        with self.assertRaisesRegex(RuntimeError, "random_components"):
+            self.validate(bad)
+        bad = copy.deepcopy(runtime)
+        bad["cases"]["random_components"]["evidence"] = [entry for entry in bad["cases"]["random_components"]["evidence"]
+            if entry["path"] != "proofs/synthetic-component-attribution.json"]
+        with self.assertRaisesRegex(RuntimeError, "random_components"):
+            self.validate(bad)
 
     def test_conditional_alternative_authorization_does_not_select_fallback(self):
         runtime = copy.deepcopy(self.runtime)

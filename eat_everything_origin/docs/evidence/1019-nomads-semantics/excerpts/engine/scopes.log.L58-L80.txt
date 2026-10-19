@@ -1,0 +1,23 @@
+fleet - Scopes from an object to its fleet.
+Supported Scopes: ship fleet leader army starbase astral_rift colony
+Output Scope: fleet
+
+design - Scopes to the ship's design
+Supported Scopes: ship
+Output Scope: design
+
+from - Scopes to the ROOT of the previous event, or the preset hardcoded FROM scope.
+Supported Scopes: all
+Output Scope: various
+
+this - Scopes to the current scope.
+Supported Scopes: all
+Output Scope: various
+
+root - Scopes to the original scope of this context, e.g. the country of a country_event.
+Supported Scopes: all
+Output Scope: various
+
+prev - Scopes to the previous scope, e.g. owner = { capital_scope = { is_owned_by = prev } } would refer to the owner of the capital here (and always be true).
+Supported Scopes: all
+Output Scope: various

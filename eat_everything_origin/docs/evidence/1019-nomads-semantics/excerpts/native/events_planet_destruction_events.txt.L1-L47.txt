@@ -1,0 +1,47 @@
+namespace = planet_destruction
+
+#carrier_event = {
+#	id = planet_destruction.1
+#	is_triggered_only = yes
+#	hide_window = yes
+#
+#	immediate = {
+#		remove_planet = yes
+#	}
+#}
+
+# Add static war exhaustion for these planet destruction events with:
+# add_static_war_exhaustion = {
+#				attacker = <country>						# attacker in this battle
+#				location = <planet>							# location for battle
+#				value_for_planet_destruction = <0.0-1.0>	# scale amount of WE added to this battle
+#			}
+
+# Cracked
+carrier_event = {
+	id = planet_destruction.100
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Don't fire the colossus narrative events if the planet is destroyed by an arkship.
+		# However we still use this event as it handles all of the relations and flags we need.
+		if = {
+			limit = {
+				from = {
+					is_arkship_ship = no
+				}
+			}
+			if = {
+				limit = {
+					is_planet_class = pc_frozen
+				}
+				from.owner = { country_event = { id = planet_destruction.102 } }
+			}
+			else_if = {
+				limit = {
+					NOT = { is_planet_class = pc_ai }
+				}
+				from.owner = { country_event = { id = planet_destruction.101 } }
+			}
+		}

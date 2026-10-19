@@ -181,6 +181,8 @@ CSV中的键关联继续由open_kaishek的native＋Mod定义解析负责，根�
 
 [独立报告关联](evidence/1019-requirements/rc4-open-kaishek-report-link-v1.json) 已生成，SHA `381cfe922135d8c5858a7bd2e5a9d211e811895c21d120e925ebf7ed60a25d14`，9项核对成立。root项目／artifact两份2e报告字节完全相同；2e共2386字节、含64处CRLF，转LF后恰等于external7c的2322字节，JSON语义完全相同，无其他差异。运行 `20261019T112808Z` 的manifest及gate仍绑定2e、rc4树06485dc…；未改gate／报告／manifest，未重启或重复实机。Git text属性为unset（-text），实际filtered／raw hash-object相同，根副本会按原字节入Git。外部格式规范化不改变既有run的静态证据身份；此关联本身仅为 `PASS_REPORT_LINK_ONLY`，运行时验收继续PENDING。
 
+已为RC4另建全新 [PENDING progress-v1](evidence/1019-requirements/rc4-runtime-progress-v1.json)，没有从RC3进度复制case／预算／成长／组件结果。绑定59文件树06485dc…、run112808唯一canonical manifest及原2e静态报告，仅本轮阶段包265份／15,174,376字节和三SAV／输入／分析留痕；0个case单项true、18组／组件／顶层全部PENDING、全部预算及growth为空。20／18／9项报告只作为基线／排队／首次windup0/90受限观察，native fire_time30和完整90／30仍未验；RC3仅explicit historical archives。新index SHA `2cf16f8eebd1c4f09ee9d21c25c5b7f146e0a15ee36b88fd1aed23b224d6d36a`，69次引用／38唯一文件全匹配，最终门禁按预期拒绝PENDING。[范围和最少更新命令](evidence/1019-requirements/rc4-runtime-progress-plan-v1.md)明确同run不重复add-run、后续phase2另版追加；原报告／gate／manifest未改。
+
 ## 验收标准
 
 - 离线单元测试覆盖完整合成输入以及缺组、失败状态、错误语言／EXE／生产树、证据篡改／路径逃逸、预算不足／负值、组件范围含糊、候选内容漂移、动态脚本与本地化数量、正式报告绑定及 WS-06 旧图拒绝。合成输入不得写入生产证据目录。

@@ -1,0 +1,25 @@
+{
+  "schema": "eep.1019.native-owned-colony-scope-source.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Native generated documentation only; no live iterator execution",
+  "run_id": "20261019T112808Z",
+  "sources": {
+    "triggers.log": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\logs\\script_documentation\\triggers.log",
+      "sha256": "b546d9997f734a00be687f1398fb85c16b3fc6fb843e01578d93d5cb76c95f9c",
+      "lines": {
+        "1107": "num_owned_planets - Checks the country's or sector's number of owned colonies (includes both planet and ship colonies)",
+        "4427": "any_owned_planet - Iterate through each colony owned by the current empire (Deprecated; use owned_colony instead) - checks whether the enclosed triggers return true for any of them"
+      }
+    },
+    "scopes.log": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\logs\\script_documentation\\scopes.log",
+      "sha256": "fbe03ce58a231b6438500d0eada40387f82cbcc7bc020674336cfb8cda7bcd1b",
+      "lines": {
+        "102": "prevprev - Scopes back to two scope changes ago, e.g. planet = { owner = { any_owned_planet = { is_same_value = prevprev } } } would be checking if the owner of the planet owns any planet that is the same as the planet you are starting in (which would always be true)."
+      }
+    }
+  },
+  "conclusion": "any_owned_planet documents owned colonies, and documented planet-to-owner-to-any_owned_planet comparison with prevprev is valid. Controlled noncolony resource worlds alone do not establish a last-colony script defect.",
+  "runtime_behavior": "Jul9 raw world destroyed; Jul10 native country death, empire600 and direct colony employable cache cleanup observed separately."
+}

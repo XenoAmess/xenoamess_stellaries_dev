@@ -1,0 +1,1405 @@
+{
+  "schema": "eep.1019.rc4-mother-relic-source-comparison.v1",
+  "status": "PASS_SCOPED",
+  "scope": "RC4 pk2base native installed loadout and hidden-tech availability, compared against original NAME_Relic source; static isolation only for other juggernauts when no native control exists",
+  "mothership_configuration_case_status": "PENDING",
+  "generated_at_utc": "2026-10-19T12:10:26.438973+00:00",
+  "run_id": "20261019T112808Z",
+  "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+  "date": "2200.03.07",
+  "native_save": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\pk2base.sav",
+    "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2"
+  },
+  "gamestate_sha256": "bdd93739f77a45e70958ac75867d6dcfc60d03460b8a3511f7e3e049adaa16ba",
+  "manifest": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\manifest.json",
+    "sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1"
+  },
+  "mother_report": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-pk2base-mother-report-v1.json",
+    "sha256": "305ee00fc8567eae218a48bb4b16990f93e59fb769aa1a74159416e40cb750f6"
+  },
+  "checks": {
+    "native_save_sha_bound_to_mother_report": true,
+    "native_zip_crc_valid": true,
+    "native_raw_design_matches_mother_report": true,
+    "exact_50_unique_slot_components": true,
+    "exact_six_required_components": true,
+    "exact_11_auxiliary_components": true,
+    "all_43_relic_slot_components_preserved": true,
+    "exact_six_real_cores_in_aux6_to_aux11": true,
+    "exactly_one_additional_pk_slot": true,
+    "eleven_large_armor_and_eleven_large_shield": true,
+    "ten_native_mobile_shipyard_queue": true,
+    "all_relevant_frozen_sources_match_manifest": true,
+    "hidden_technology_unresearched_in_all_native_countries": true,
+    "hidden_technology_not_researchable_by_definition": true,
+    "both_custom_sections_require_hidden_technology": true,
+    "no_native_section_key_collision": true,
+    "no_native_ship_definition_path_overrides": true
+  },
+  "actual_mother": {
+    "fleet_id": "159",
+    "ship_id": "997",
+    "design_id": "1495",
+    "ship_size": "juggernaut",
+    "slot_components": [
+      {
+        "slot": "EXTRA_LARGE_01",
+        "template": "TITAN_LASER"
+      },
+      {
+        "slot": "LARGE_GUN_01",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_02",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_03",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_04",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_05",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_06",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_07",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_01",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_02",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_03",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_04",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_05",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "PD_08",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_09",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_10",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "LARGE_UTILITY_1",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_2",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_3",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_4",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_5",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_6",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_7",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_8",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_9",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_10",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_11",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_12",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_13",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_14",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_15",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_16",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_17",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_18",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_19",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_20",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_21",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_22",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "AUX_UTILITY_1",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_2",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_3",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_4",
+        "template": "AUTO_REPAIR"
+      },
+      {
+        "slot": "AUX_UTILITY_5",
+        "template": "AUTO_REPAIR"
+      },
+      {
+        "slot": "AUX_UTILITY_6",
+        "template": "EEP_ADAPTIVE_SHIELD_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_7",
+        "template": "EEP_ADAPTIVE_ARMOR_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_8",
+        "template": "EEP_ADAPTIVE_HULL_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_9",
+        "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_10",
+        "template": "EEP_ADAPTIVE_TRACKING_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_11",
+        "template": "EEP_ADAPTIVE_REGEN_CORE"
+      },
+      {
+        "slot": "PLANET_KILLER_GUN_01",
+        "template": "EEP_PLANET_KILLER_DEVOURER"
+      }
+    ],
+    "component_counts": {
+      "TITAN_LASER": 1,
+      "LARGE_PLASMA_3": 7,
+      "SMALL_DISRUPTOR_3": 2,
+      "SMALL_PLASMA_3": 3,
+      "POINT_DEFENCE_3": 3,
+      "LARGE_ARMOR_5": 11,
+      "LARGE_DARK_MATTER_DEFLECTOR": 11,
+      "SHIELD_BOOSTER": 3,
+      "AUTO_REPAIR": 2,
+      "EEP_ADAPTIVE_SHIELD_CORE": 1,
+      "EEP_ADAPTIVE_ARMOR_CORE": 1,
+      "EEP_ADAPTIVE_HULL_CORE": 1,
+      "EEP_ADAPTIVE_DAMAGE_CORE": 1,
+      "EEP_ADAPTIVE_TRACKING_CORE": 1,
+      "EEP_ADAPTIVE_REGEN_CORE": 1,
+      "EEP_PLANET_KILLER_DEVOURER": 1
+    },
+    "required_components": [
+      "JUGGERNAUT_DARK_MATTER_REACTOR",
+      "SENSOR_4",
+      "JUMP_DRIVE_1",
+      "COMBAT_COMPUTER_LINE_SAPIENT",
+      "COLOSSUS_SHIP_THRUSTER_5",
+      "SHIP_AURA_INSPIRING_PRESENCE"
+    ],
+    "aux_components": {
+      "AUX_UTILITY_1": "SHIELD_BOOSTER",
+      "AUX_UTILITY_2": "SHIELD_BOOSTER",
+      "AUX_UTILITY_3": "SHIELD_BOOSTER",
+      "AUX_UTILITY_4": "AUTO_REPAIR",
+      "AUX_UTILITY_5": "AUTO_REPAIR",
+      "AUX_UTILITY_6": "EEP_ADAPTIVE_SHIELD_CORE",
+      "AUX_UTILITY_7": "EEP_ADAPTIVE_ARMOR_CORE",
+      "AUX_UTILITY_8": "EEP_ADAPTIVE_HULL_CORE",
+      "AUX_UTILITY_9": "EEP_ADAPTIVE_DAMAGE_CORE",
+      "AUX_UTILITY_10": "EEP_ADAPTIVE_TRACKING_CORE",
+      "AUX_UTILITY_11": "EEP_ADAPTIVE_REGEN_CORE"
+    },
+    "shipyard_queue": {
+      "owner": 0,
+      "simultaneous": 10,
+      "type": "ships",
+      "location": {
+        "type": 0,
+        "id": 997
+      },
+      "items": []
+    }
+  },
+  "native_relic_source": {
+    "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\global_ship_designs\\leviathans_designs.txt",
+    "sha256": "b34a781443d03abbc9a5842ea9b6ec556b04e2cd380faa84c560a67bc8e5640e",
+    "definition_line": 1664,
+    "definition_body_sha256": "eb5be98803d0f5751677056b23552bd4e979b554fd8bb4cd931b6c85650b7621",
+    "ship_size": "npc_warship_01",
+    "slot_components": [
+      {
+        "slot": "EXTRA_LARGE_01",
+        "template": "TITAN_LASER"
+      },
+      {
+        "slot": "LARGE_GUN_01",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_02",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_03",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_04",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_05",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_06",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_07",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_01",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_02",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_03",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_04",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_05",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "PD_08",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_09",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_10",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "LARGE_UTILITY_1",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_2",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_3",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_4",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_5",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_6",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_7",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_8",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_9",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_10",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_11",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_12",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_13",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_14",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_15",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_16",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_17",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_18",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_19",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_20",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_21",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_22",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "AUX_UTILITY_1",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_2",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_3",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_4",
+        "template": "AUTO_REPAIR"
+      },
+      {
+        "slot": "AUX_UTILITY_5",
+        "template": "AUTO_REPAIR"
+      }
+    ],
+    "component_counts": {
+      "TITAN_LASER": 1,
+      "LARGE_PLASMA_3": 7,
+      "SMALL_DISRUPTOR_3": 2,
+      "SMALL_PLASMA_3": 3,
+      "POINT_DEFENCE_3": 3,
+      "LARGE_ARMOR_5": 11,
+      "LARGE_DARK_MATTER_DEFLECTOR": 11,
+      "SHIELD_BOOSTER": 3,
+      "AUTO_REPAIR": 2
+    },
+    "required_components": [
+      "BATTLESHIP_DARK_MATTER_REACTOR",
+      "SENSOR_4",
+      "JUMP_DRIVE_1",
+      "COMBAT_COMPUTER_LINE_SAPIENT",
+      "SHIP_THRUSTER_5",
+      "SHIP_AURA_INSPIRING_PRESENCE"
+    ]
+  },
+  "comparison": {
+    "matched_reference_slots": [
+      {
+        "slot": "EXTRA_LARGE_01",
+        "relic": "TITAN_LASER",
+        "mother": "TITAN_LASER",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_GUN_01",
+        "relic": "LARGE_PLASMA_3",
+        "mother": "LARGE_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_GUN_02",
+        "relic": "LARGE_PLASMA_3",
+        "mother": "LARGE_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_GUN_03",
+        "relic": "LARGE_PLASMA_3",
+        "mother": "LARGE_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_GUN_04",
+        "relic": "LARGE_PLASMA_3",
+        "mother": "LARGE_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_GUN_05",
+        "relic": "LARGE_PLASMA_3",
+        "mother": "LARGE_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_GUN_06",
+        "relic": "LARGE_PLASMA_3",
+        "mother": "LARGE_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_GUN_07",
+        "relic": "LARGE_PLASMA_3",
+        "mother": "LARGE_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "SMALL_GUN_01",
+        "relic": "SMALL_DISRUPTOR_3",
+        "mother": "SMALL_DISRUPTOR_3",
+        "equal": true
+      },
+      {
+        "slot": "SMALL_GUN_02",
+        "relic": "SMALL_DISRUPTOR_3",
+        "mother": "SMALL_DISRUPTOR_3",
+        "equal": true
+      },
+      {
+        "slot": "SMALL_GUN_03",
+        "relic": "SMALL_PLASMA_3",
+        "mother": "SMALL_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "SMALL_GUN_04",
+        "relic": "SMALL_PLASMA_3",
+        "mother": "SMALL_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "SMALL_GUN_05",
+        "relic": "SMALL_PLASMA_3",
+        "mother": "SMALL_PLASMA_3",
+        "equal": true
+      },
+      {
+        "slot": "PD_08",
+        "relic": "POINT_DEFENCE_3",
+        "mother": "POINT_DEFENCE_3",
+        "equal": true
+      },
+      {
+        "slot": "PD_09",
+        "relic": "POINT_DEFENCE_3",
+        "mother": "POINT_DEFENCE_3",
+        "equal": true
+      },
+      {
+        "slot": "PD_10",
+        "relic": "POINT_DEFENCE_3",
+        "mother": "POINT_DEFENCE_3",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_1",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_2",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_3",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_4",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_5",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_6",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_7",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_8",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_9",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_10",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_11",
+        "relic": "LARGE_ARMOR_5",
+        "mother": "LARGE_ARMOR_5",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_12",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_13",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_14",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_15",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_16",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_17",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_18",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_19",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_20",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_21",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "LARGE_UTILITY_22",
+        "relic": "LARGE_DARK_MATTER_DEFLECTOR",
+        "mother": "LARGE_DARK_MATTER_DEFLECTOR",
+        "equal": true
+      },
+      {
+        "slot": "AUX_UTILITY_1",
+        "relic": "SHIELD_BOOSTER",
+        "mother": "SHIELD_BOOSTER",
+        "equal": true
+      },
+      {
+        "slot": "AUX_UTILITY_2",
+        "relic": "SHIELD_BOOSTER",
+        "mother": "SHIELD_BOOSTER",
+        "equal": true
+      },
+      {
+        "slot": "AUX_UTILITY_3",
+        "relic": "SHIELD_BOOSTER",
+        "mother": "SHIELD_BOOSTER",
+        "equal": true
+      },
+      {
+        "slot": "AUX_UTILITY_4",
+        "relic": "AUTO_REPAIR",
+        "mother": "AUTO_REPAIR",
+        "equal": true
+      },
+      {
+        "slot": "AUX_UTILITY_5",
+        "relic": "AUTO_REPAIR",
+        "mother": "AUTO_REPAIR",
+        "equal": true
+      }
+    ],
+    "additional_mother_slots": {
+      "AUX_UTILITY_6": "EEP_ADAPTIVE_SHIELD_CORE",
+      "AUX_UTILITY_7": "EEP_ADAPTIVE_ARMOR_CORE",
+      "AUX_UTILITY_8": "EEP_ADAPTIVE_HULL_CORE",
+      "AUX_UTILITY_9": "EEP_ADAPTIVE_DAMAGE_CORE",
+      "AUX_UTILITY_10": "EEP_ADAPTIVE_TRACKING_CORE",
+      "AUX_UTILITY_11": "EEP_ADAPTIVE_REGEN_CORE",
+      "PLANET_KILLER_GUN_01": "EEP_PLANET_KILLER_DEVOURER"
+    },
+    "shared_required_components": [
+      "SENSOR_4",
+      "JUMP_DRIVE_1",
+      "COMBAT_COMPUTER_LINE_SAPIENT",
+      "SHIP_AURA_INSPIRING_PRESENCE"
+    ],
+    "relic_only_required_components": [
+      "BATTLESHIP_DARK_MATTER_REACTOR",
+      "SHIP_THRUSTER_5"
+    ],
+    "mother_only_required_components": [
+      "JUGGERNAUT_DARK_MATTER_REACTOR",
+      "COLOSSUS_SHIP_THRUSTER_5"
+    ],
+    "required_adaptation_reason": "Relic NPC battleship reactor/thruster are replaced by chassis-appropriate juggernaut reactor and colossus thruster; sensor/jump/computer/aura retained."
+  },
+  "hidden_technology": {
+    "key": "eep_mothership",
+    "definition": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\copied_mod\\common\\technology\\eep_mothership.txt",
+      "sha256": "c3d62e08c47b7634634ddcca8a018e2dfda3961c89c18d7f4e80f29990c585b9"
+    },
+    "definition_body": "\n    icon = \"tech_juggernaut\"\n    area = engineering\n    tier = 5\n    category = { voidcraft }\n    cost = 1\n    weight = 0\n    potential = { always = no }\n    ai_weight = { factor = 0 }\n",
+    "native_country_scan": [
+      {
+        "country_id": "0",
+        "type": "default",
+        "completed_technology_count": 28,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "a6841694ef325b0651c63835110d9d2e7c18d009da94e867606e3c5280439048"
+      },
+      {
+        "country_id": "1",
+        "type": "default",
+        "completed_technology_count": 31,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "667a2bdda8564d038824b13a64d0e3f602dd54a37275ef9e6ee3cfdca094c619"
+      },
+      {
+        "country_id": "16777218",
+        "type": "default",
+        "completed_technology_count": 29,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "0aa25cc1f5c4f256eea5e89e23ed24bd3d3b8a4bdaef8065e18efcb2713b113b"
+      },
+      {
+        "country_id": "16777219",
+        "type": "default",
+        "completed_technology_count": 31,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "d1ce936a89c3b21e808a271f6fb8d27a16edaa1d5ecccacf79751d42841d7f35"
+      },
+      {
+        "country_id": "16777220",
+        "type": "caravaneer_home",
+        "completed_technology_count": 241,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "96933e205c5e3c107bfb25e3eeaa212852f30b39b7d2f6d3bbe84c905275be0a"
+      },
+      {
+        "country_id": "5",
+        "type": "caravaneer_fleet",
+        "completed_technology_count": 34,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "9e1b10f641b329bf12a2f86b4145029334295373a13131e464067f326f6e32b6"
+      },
+      {
+        "country_id": "6",
+        "type": "caravaneer_fleet",
+        "completed_technology_count": 34,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "320fd8de26076b49e585b455c97dc6a2de74053beeb08cb5e46e7b541886bd56"
+      },
+      {
+        "country_id": "7",
+        "type": "enclave",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "ab2740de4929859eb33306eb4312866c29d11349487749aa741287a0f15687a9"
+      },
+      {
+        "country_id": "8",
+        "type": "tiyanki_garrison",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "8c82dac8e59ceef26f37622dc6bf68acb1b73d5cb5d8a8dd297ff4fd16d26e91"
+      },
+      {
+        "country_id": "9",
+        "type": "enclave",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "dce6c6b5653b6a15026c46d8d1026cebde5f80402f2d631e62796b37dd481f34"
+      },
+      {
+        "country_id": "10",
+        "type": "guardian_dragon",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "c02bc8a85c84e7c6ebbeab0b9f24f0e27b63c2af572c2f7b408bb2f175e33e39"
+      },
+      {
+        "country_id": "11",
+        "type": "enclave",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "9a7796f244bc2ba8904521c42ee4fb819b884124bd6ec0a1a98c33563e6c337e"
+      },
+      {
+        "country_id": "12",
+        "type": "voidworms",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "d655a3c951becbf88444d2f45a3f57003951a429540e5284352cabdd02fcb919"
+      },
+      {
+        "country_id": "13",
+        "type": "dormant_marauders",
+        "completed_technology_count": 239,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "90819bb245d878cc5a88ea30f9bda5ecd239680c85d3c7df02a77a979ee9accb"
+      },
+      {
+        "country_id": "14",
+        "type": "enclave",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "4d103c5808771d2d606f3971724b46f127a9068c54702276f09a1cf3ee571d31"
+      },
+      {
+        "country_id": "15",
+        "type": "mindwarden_enclave",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "691bc987643b8095402e3846b0042cbb2317d0890ea57dd71b220355823939bb"
+      },
+      {
+        "country_id": "16",
+        "type": "enclave",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "e148d4d94cd4388d9c51e618e5b17a1d3dc2b175c0b63a50d28f8b17ef63ebe2"
+      },
+      {
+        "country_id": "17",
+        "type": "drone",
+        "completed_technology_count": 34,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "583a09da33e339959d75445b7154c781be37a0e38a7f46db40f736bb19941a4b"
+      },
+      {
+        "country_id": "18",
+        "type": "primitive",
+        "completed_technology_count": 27,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "32fb00c0ca80857821ab54c2eb3878660f9401461410233aeeb19b304804c88f"
+      },
+      {
+        "country_id": "19",
+        "type": "primitive",
+        "completed_technology_count": 27,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "d540830f8add08438053dc249589bf56cae97463e5ed8d714c41830e3612e4ef"
+      },
+      {
+        "country_id": "20",
+        "type": "amoeba_garrison",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "c60328e2fa27c181d952f4481a1cde1374dfe2e09877cce03ed0760b53e1063c"
+      },
+      {
+        "country_id": "21",
+        "type": "neutral_faction",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "d7d1d0020232d13a06d6503a48b85cc1f4bfcaedbf431a376a832b155619ff10"
+      },
+      {
+        "country_id": "22",
+        "type": "primitive",
+        "completed_technology_count": 27,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "0b581ec04e4735eabf44091527f7f75f3f9e230708da0ba458b0cbc81a0d0110"
+      },
+      {
+        "country_id": "23",
+        "type": "amoeba",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "4e61c92ccffa22163ee6813a345ab01f5bd013332495e44d8bfb97e397f50ece"
+      },
+      {
+        "country_id": "24",
+        "type": "primitive",
+        "completed_technology_count": 27,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "e0c79a698dcc25d484c2b0db2c35f2501d028e674d08139dd799aee5b917fe0e"
+      },
+      {
+        "country_id": "25",
+        "type": "faction",
+        "completed_technology_count": 34,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "045d3b43a077065a29f92ae6d892ebdcf271feab3f2151ab906ceaa131e11c1c"
+      },
+      {
+        "country_id": "26",
+        "type": "crystal",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "fab633fd2f5a58e3c993fcfcc0efe14eb8239051b3465aa400f654deea6f6fb2"
+      },
+      {
+        "country_id": "27",
+        "type": "primitive",
+        "completed_technology_count": 27,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "1f0dc50fa2c298d981a64e23841818ee619f2416d2d96239365155bc6221891d"
+      },
+      {
+        "country_id": "28",
+        "type": "tiyanki",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "0d8150bcd6d4bba4c27326130783160265ae9b596b12f34e015daa5a997be2ea"
+      },
+      {
+        "country_id": "29",
+        "type": "global_event",
+        "completed_technology_count": 0,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "c3096ed717053b71277f8272a76389a64f97a422e57c962d1ee272df2dbc9dfc"
+      },
+      {
+        "country_id": "30",
+        "type": "shroud",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "ae88724fafd10a036c527abdff3ae83df769dc4681c277faf1e2a8d224d8600f"
+      },
+      {
+        "country_id": "31",
+        "type": "shroud",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "c9f3a8911ffb4d7cad3419486b7a3cab552f23a0abcdd253d54b628620d3f292"
+      },
+      {
+        "country_id": "32",
+        "type": "shroud_spirits",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "4075ecc658c1a664bec28e4c3f7d8cd437881ecc99c7615c5f660b83fde42922"
+      },
+      {
+        "country_id": "33",
+        "type": "cutholoids",
+        "completed_technology_count": 30,
+        "hidden_technology_completed": false,
+        "hidden_technology_token_anywhere_in_tech_status": false,
+        "tech_status_sha256": "4fda70a2108e98e9b70bf2b23194c736265ecd6c832b966285e950d3cadaff35"
+      }
+    ],
+    "section_prerequisites": {
+      "common/section_templates/eep_mothership.txt": [
+        "eep_mothership"
+      ],
+      "common/section_templates/eep_mothership_legacy.txt": [
+        "eep_mothership"
+      ]
+    },
+    "scope": "Absence from current native completed technologies and tech_status only; does not certify absence of all possible empire technology grants in unexecuted scenarios."
+  },
+  "other_juggernaut_isolation": {
+    "status": "NOT_OBSERVED_NO_OTHER_NATIVE_JUGGERNAUT",
+    "actual_native_juggernauts": [
+      {
+        "ship_id": "997",
+        "fleet_id": "159",
+        "fleet_owners": [
+          "0"
+        ],
+        "design_id": "1495",
+        "design_name": "NAME_EEP_Baiqi_Mothership_1019",
+        "sections": [
+          "eep_mothership_section_1019"
+        ],
+        "ship_flags": {
+          "eep_mothership_design_1019": 62808000
+        },
+        "original_owner": 0
+      }
+    ],
+    "other_native_juggernauts": [],
+    "all_native_ship_objects_scanned": 1008,
+    "unique_used_native_designs_parsed": 76,
+    "native_section_key_collisions": [],
+    "native_ship_definition_path_overrides": [],
+    "native_section_source_inventory": [
+      {
+        "path": "common/section_templates/ai.txt",
+        "sha256": "80d5da2391e15a6303a90be5905855a32ebcb642f738b6598d8aa717f448a91d"
+      },
+      {
+        "path": "common/section_templates/an4.txt",
+        "sha256": "a08490bf894a03c443ab9eff639cbd8460cdd9ba548e93558a58fb05f7d2de90"
+      },
+      {
+        "path": "common/section_templates/ancient_drones.txt",
+        "sha256": "a8bd12426335c6f25192e8c4a75421329e6fb44058731d0a2b8f89591146eaa7"
+      },
+      {
+        "path": "common/section_templates/ancient_stations.txt",
+        "sha256": "562c010388a80d0361ba2b14e8aeef9d32154c1097ee9ac5912a4f13ad1b8079"
+      },
+      {
+        "path": "common/section_templates/battleship.txt",
+        "sha256": "c2661235363b087c34258ef0ff21284c9d9fe65ef8681619329f4fd57a678de5"
+      },
+      {
+        "path": "common/section_templates/bio_titan.txt",
+        "sha256": "b1bc149b67c0124842bd3f0993797115df498ddd07911f88bbd6f7767499ef86"
+      },
+      {
+        "path": "common/section_templates/biogenesis_crisis.txt",
+        "sha256": "56c81c83cd875cc75c473b48481c090a5b0034024f0b45a13a8e60938914d9d0"
+      },
+      {
+        "path": "common/section_templates/biogenesis_harbinger.txt",
+        "sha256": "642f63990ec85f62cd3ab1eb9c6eba7c933253d405021fa0f3cc6113ffdf9913"
+      },
+      {
+        "path": "common/section_templates/biogenesis_mauler.txt",
+        "sha256": "3d4803f00078afa56d227ee89d2144d917a3c376ea677b26983ae4dc5028d199"
+      },
+      {
+        "path": "common/section_templates/biogenesis_offspring_harbinger.txt",
+        "sha256": "71e9e3166e2c7e04052680181a4aba000e9220c576c4aaa39870c2397f36f47f"
+      },
+      {
+        "path": "common/section_templates/biogenesis_offspring_mauler.txt",
+        "sha256": "d815aa89c199b9512f51bd4b5468f48d6c9b53d77745fa1064a46183c1adc1a5"
+      },
+      {
+        "path": "common/section_templates/biogenesis_offspring_stinger.txt",
+        "sha256": "5d1c84dd952cee5d6b4f9def8b9f61b58e6b569069be95e32aeaf8c0ada75e79"
+      },
+      {
+        "path": "common/section_templates/biogenesis_offspring_weaver.txt",
+        "sha256": "2d8a0341fd01a51c75ad6f9fbabd1d89bbc1f9b1bf5be5aaaab1259eefdaadc5"
+      },
+      {
+        "path": "common/section_templates/biogenesis_stinger.txt",
+        "sha256": "0587c35616470de915a0c433b039a03b9f5a223ae3d75ec2b8bb4983262c7ffc"
+      },
+      {
+        "path": "common/section_templates/biogenesis_weaver.txt",
+        "sha256": "3fc6c07d943d6dcbd775eb18b3f18f115ea0d919e98cacbdff8c515daaae485b"
+      },
+      {
+        "path": "common/section_templates/colonizer.txt",
+        "sha256": "2e7782592a83a0e7fb7c143698de5096e61144d1128820b1ecc8af74bbd6485a"
+      },
+      {
+        "path": "common/section_templates/colossus.txt",
+        "sha256": "0100e9686b9e6cd3d6882f6d2d8a8800d8f80d2f3a2bede68eac626d72518788"
+      },
+      {
+        "path": "common/section_templates/constructor.txt",
+        "sha256": "8a293057848cf080a1522513f8f9416926933347150dcbb466b101b1c0497fbb"
+      },
+      {
+        "path": "common/section_templates/corvette.txt",
+        "sha256": "76048744b57fb74d6bc3b7e0d558c40c2837a2c9fc8ae988749ac77705fffa5c"
+      },
+      {
+        "path": "common/section_templates/cosmo_crisis.txt",
+        "sha256": "a98598841f4ea4c1c667efcd65814e37b3c190d221f9b0a1d74a5463df58363b"
+      },
+      {
+        "path": "common/section_templates/crisis.txt",
+        "sha256": "59da205fb7b87aaaa31d8f7e2cd8a9fe31658c3d9002ce65fca124b063adb465"
+      },
+      {
+        "path": "common/section_templates/cruiser.txt",
+        "sha256": "6bf4fff6f203e1ce33a871519b5b446980f6842514e343781cf983e971c6ad9b"
+      },
+      {
+        "path": "common/section_templates/crystal_monster.txt",
+        "sha256": "d84b9caa47a1315f9e068eb28f5ea4d411117ad2f22233c2a8e4410fae1b7b7f"
+      },
+      {
+        "path": "common/section_templates/destroyer.txt",
+        "sha256": "c2cb6c9dd97b05fb0ceb15da9bcbfd8686b4b595c693b945ed22b6898f78c98d"
+      },
+      {
+        "path": "common/section_templates/distant_stars.txt",
+        "sha256": "de2ae6be9534ed9329d99af871429ac938b87e6d67b7f5ce255e0d03bedde3b1"
+      },
+      {
+        "path": "common/section_templates/extra_dimensional.txt",
+        "sha256": "067e395858b0ca9668120a40c59e2323887ff65584dc707245ce64e39a0d3fbc"
+      },
+      {
+        "path": "common/section_templates/fallen_empire.txt",
+        "sha256": "dd2bc1db6618fc51eac74ec2f2cd774b316e86c6deee087ddeff5a9a4a2f5747"
+      },
+      {
+        "path": "common/section_templates/federations.txt",
+        "sha256": "ea8ca9b6d015f2e50cc259e4aec5ca53bd7147e0b9ccb14ac8b640d3888f762b"
+      },
+      {
+        "path": "common/section_templates/first_contact_dlc.txt",
+        "sha256": "2d922587ed3fe3eeb692fb3b8496dcf1b1636054ca793f5adc7a0858e0d32d96"
+      },
+      {
+        "path": "common/section_templates/generic_ships.txt",
+        "sha256": "1624d160a8d3e600e4f8b625cf0d764e039eb7c2d1f6b846bb04188530ea1796"
+      },
+      {
+        "path": "common/section_templates/grand_archive.txt",
+        "sha256": "c68a47c0f132d72abf5cb99c7027fbb81ea6e1ba0ab1bf74e100d15544738b6c"
+      },
+      {
+        "path": "common/section_templates/grave_guardians.txt",
+        "sha256": "a3ca45a20a131626543f753372883f381cd75936fd5dbd0f0bf848440cde121b"
+      },
+      {
+        "path": "common/section_templates/gray_goo.txt",
+        "sha256": "a8de2433d259c2447064ff930b2b184a9ef6eac7a58e77b55a3e02badabbb9ba"
+      },
+      {
+        "path": "common/section_templates/habitats.txt",
+        "sha256": "ed828c00674d219ce60baadb304772d52793149237124009c3c8c42ff76c93a7"
+      },
+      {
+        "path": "common/section_templates/infernal_sections.txt",
+        "sha256": "5143b1919a6cca692b0432468a3ae2d2cac1010b043e8f122396aff8418f3614"
+      },
+      {
+        "path": "common/section_templates/juggernaut.txt",
+        "sha256": "dd8201941644c604e351ecdb6d60cda6cff6320317ad19060e266ad383827c10"
+      },
+      {
+        "path": "common/section_templates/leviathans.txt",
+        "sha256": "6d29993c51d5c6e86e40dca938eab9fa3d1f13521fe415e0093ce813488e65cd"
+      },
+      {
+        "path": "common/section_templates/megacorp.txt",
+        "sha256": "abf8b8749e0ecab33c3eb924fdfc139ac90cc0c2cd1415c1a652a6c290f91be0"
+      },
+      {
+        "path": "common/section_templates/nomad.txt",
+        "sha256": "8ece0aba21671bb56484b899ab4ea55240438ec981899fdf1df14b44590421e2"
+      },
+      {
+        "path": "common/section_templates/nomads_dlc.txt",
+        "sha256": "701fd3cf28e8b328c338fb02ef0235114661f69f2ed2c8401987e3ea30fc6106"
+      },
+      {
+        "path": "common/section_templates/orbital_ring.txt",
+        "sha256": "e5c19807d79c7f953027fd2fefc09c6fe4dbcc28968c51a53eaf155b85b615a6"
+      },
+      {
+        "path": "common/section_templates/other.txt",
+        "sha256": "fc807ee54fc4b73d2cf95c7ef8fa76cc2fdeab0c6eef5063caf9c96362845cae"
+      },
+      {
+        "path": "common/section_templates/overlord.txt",
+        "sha256": "693cfe3cd117d717623a061741cb7a60fb7e6b7ff496cae6393fec6969c38f94"
+      },
+      {
+        "path": "common/section_templates/paragon.txt",
+        "sha256": "e1b113f8bcec5b19efb32a165e161bab2a60fd4d5ed885444c169e3c7db892d5"
+      },
+      {
+        "path": "common/section_templates/pirate.txt",
+        "sha256": "3dac571866df46e1ef0d626f70e8e5aeb3687e39f142080a3f67d71550d7f1b8"
+      },
+      {
+        "path": "common/section_templates/psionic.txt",
+        "sha256": "06195d547915578fdb103b1a8e437252fab557f075c837e11977a76bb74ac0bd"
+      },
+      {
+        "path": "common/section_templates/reanimated.txt",
+        "sha256": "e130b3572b868b202368a6a4cbfa514a686316724910eefed83fdc9878d9edea"
+      },
+      {
+        "path": "common/section_templates/science.txt",
+        "sha256": "3eb906b87c7817be4c607d18b470cc8195415e419a05f9248bad30f214571600"
+      },
+      {
+        "path": "common/section_templates/shroud.txt",
+        "sha256": "2fa2e3e24bdf76feca3e49bfe81a74160cd54fa50afcf68f06708d60e4045018"
+      },
+      {
+        "path": "common/section_templates/space_citadel.txt",
+        "sha256": "c5600c1e4b68664a6b68093451fe1dc6e4edde3052a074204b1a4e59a422d95b"
+      },
+      {
+        "path": "common/section_templates/space_monster.txt",
+        "sha256": "096b0e64633b94aa47e3b9ee81278c7824e19ccc66fcf63e7c90d624d538d71d"
+      },
+      {
+        "path": "common/section_templates/space_whale.txt",
+        "sha256": "f10ab1d9360badb0f9e95b6a66dc0a26e9fb76a8a0d02a1a1269b0f512b3df1e"
+      },
+      {
+        "path": "common/section_templates/starbase.txt",
+        "sha256": "5df4fc6da74711d9a06a96ae7e966b09f1f9be508bafb76752f2abb1e53c8206"
+      },
+      {
+        "path": "common/section_templates/swarm.txt",
+        "sha256": "3a760ef4376e4e150bf1dcc8212a3b57eea587c3b0afb0423367c5c663d8bb87"
+      },
+      {
+        "path": "common/section_templates/synth_queen.txt",
+        "sha256": "f1015876230a098af3082a07ee96a7f45cf6181e58db80483675bd7167796470"
+      },
+      {
+        "path": "common/section_templates/titan.txt",
+        "sha256": "f674f16aa44e2cfb8541c807476c805a84809633547133032f1ce3ccb2c5e425"
+      },
+      {
+        "path": "common/section_templates/transport.txt",
+        "sha256": "ec56775577f5f512b2190d998dd5955d3957b53b897c3a013277ec7d9c7e9575"
+      },
+      {
+        "path": "common/section_templates/unplugged.txt",
+        "sha256": "8ee38f7799cbb95e672e59dd19c3fcbee63fefa56155b5bc72969092531ae9b4"
+      },
+      {
+        "path": "common/section_templates/waystation.txt",
+        "sha256": "a8b734834be67ab92617d9cccc640158a822c652598e71e92b1449fa9e852413"
+      }
+    ],
+    "source_prerequisite_scope": "Custom section keys plus non-researchable, ungranted prerequisite prevent normal selection by other designs; no other juggernaut behavior is claimed tested."
+  },
+  "same_country_same_date_native_relic": {
+    "status": "NOT_OBSERVED",
+    "native_name_relic_ships": []
+  },
+  "still_pending": {
+    "actual_jump": null,
+    "power_nonnegative": null,
+    "reference_stats_observed": null,
+    "same_country_same_date_relic_reference": null,
+    "other_juggernauts_unchanged_runtime": null,
+    "existing_advantages_damage_speed_runtime": null
+  },
+  "source_files": [
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\copied_mod\\common\\global_ship_designs\\eep_mothership.txt",
+      "sha256": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\copied_mod\\common\\section_templates\\eep_mothership.txt",
+      "sha256": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\copied_mod\\common\\section_templates\\eep_mothership_legacy.txt",
+      "sha256": "967e22c4b80091dab66d5d38878c97398cd347b560dc7d5f17903aea7fcdf9b3"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\copied_mod\\common\\technology\\eep_mothership.txt",
+      "sha256": "c3d62e08c47b7634634ddcca8a018e2dfda3961c89c18d7f4e80f29990c585b9"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\copied_mod\\common\\component_templates\\eep_evolution_components.txt",
+      "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\copied_mod\\common\\scripted_effects\\eep_mothership_effects.txt",
+      "sha256": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5"
+    }
+  ],
+  "analysis_tools": [
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py",
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1015.py",
+      "sha256": "24c66754024a7f35bcd314d378fc7129a76eebb67460a7f9211355d8d1e4e1d8"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\audit_save.py",
+      "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+    }
+  ],
+  "limitations": [
+    "The original NAME_Relic source is not a spawned same-country same-date runtime reference.",
+    "Native installed Jump Drive does not demonstrate active jump. No actual power surplus, damage or speed is inferred from equipment names.",
+    "The hidden technology absence is a present-save fact, not a blanket proof of every technology grant path.",
+    "No other actual juggernaut control exists when the explicit other_juggernauts status says not observed.",
+    "This loaded unpublished RC3 fixture is not RC4 new-game startup or released0.3.1 migration acceptance.",
+    "No existing evidence, run/gate/report/manifest, SAV or pending index was modified."
+  ]
+}

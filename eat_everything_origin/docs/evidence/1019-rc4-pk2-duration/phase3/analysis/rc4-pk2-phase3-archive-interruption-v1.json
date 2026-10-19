@@ -1,0 +1,20 @@
+{
+  "schema": "eep.1019.archive-index-interruption.v1",
+  "status": "INDEX_NOT_CREATED_PAYLOAD_BYTES_PRESERVED",
+  "recorded_at_utc": "2026-10-19T12:21:54.980042+00:00",
+  "phase": "All new payloads copied exclusively; source-path-uniqueness assertion before index creation",
+  "actual_exception": "AssertionError: all_archive_source_paths_unique=False; other15 checks true",
+  "existing_parent_alias": {
+    "source": "candidate-rc4/open-kaishek.json",
+    "destinations": [
+      "source_snapshot/open-kaishek.json",
+      "static-acceptance/open-kaishek.json"
+    ],
+    "sha256": "2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d"
+  },
+  "parent_payloads": 348,
+  "parent_unique_sources": 347,
+  "phase3_files_including_preexisting_README": 450,
+  "archive_index_v3_created": false,
+  "resolution": "Revalidate existing exclusively copied payload bytes without overwrite; preserve duplicate semantic destinations, explicitly record alias and require equal SHA."
+}

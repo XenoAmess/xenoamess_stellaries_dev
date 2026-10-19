@@ -14,7 +14,7 @@
 
 输入为干净C0的原生 `.native-save.json` receipt（不是编辑的SAV）、唯一ASCII prefix、期望country／Mother fleet／ship、候选树SHA。anchor必须月初且与receipt的SHA／根日期一致，C0、L0、R0、六tier0，实际gov为机器灭绝政体，绑定target、owner和六个真实core各一份均匹配。未设的零tier允许初始化，但任何已有非零tier都拒绝，防止把此前C0人工shield1／2硬件档混入自然成长。执行首个30日原生autosave再次核对clean C0，以捕获同日却错误载入了另一脏分支的情形。
 
-默认autosave目录由receipt实际 `history` 文件所在目录导出，避免原 `written_at` 文件被原生UI保存流程移走后继续错误绑定旧目录；可显式指定当前原生加载目录，但必须位于当前隔离userdir的save games内。默认dry-run只读anchor／manifest，不导入Win32／桌面模块，不修改当前运行指针、桌面、目录或SAV。
+默认autosave目录由receipt的 `written_at.parent` 导出：这是原生UI实际写入的campaign目录。`native_save`随后把这份文件移到 `history` 只是工具归档，不会通知引擎切换campaign目录；原生anchor字节仍从history核SHA。若之后执行 `native_load`，引擎可能改为加载文件所在目录，应明确传 `--autosave-dir` 指向经实际加载／新鲜自动存档确认的目录，不能仅凭history存在推断。目录必须位于当前隔离userdir的save games内。默认dry-run只读anchor／manifest，不导入Win32／桌面模块，不修改当前运行指针、桌面、目录或SAV。
 
 执行时核验当前run_id、简中、EXE／候选树、已通过的open_kaishek报告及其SHA和回调／CSV门禁，保存目录和活跃run匹配。相同prefix的任何旧输出都使新运行拒绝，归档SAV／audit／状态JSON均独占新建；只更新本次新建的progress receipt并保留已完成snapshots，不覆盖历史证据。运行不支持隐式续跑，失败后保留全部结果，新试验使用新prefix并由主线程重新载入正确anchor。
 
@@ -63,3 +63,11 @@ py eat_everything_origin/tools/runtime_growth_1019.py --anchor-receipt "C:\Users
 RC3任意命名CSV未证明被引擎读取，因此不能再要求“CSV文件数至少1”作为执行前置。RC4改用专属TXT数值后，0CSV是合法候选形态。LiveBackend保留报告状态／SHA、source tree与实际copied tree、EXE一致性核验，随后复用 `publish_1019.validate_weapon_csv_contract(report, copied_mod)` 与 `validate_planet_killer_contract(report, copied_mod)` 两个共享纯校验函数；不另造放宽规则。后者同时核numeric合同 `native_csv_or_literal_txt_v1` 的实际PK键与来源字节；前者核 `native_fixed_paths_v1`、未支持文件数0、0CSV的明确not_applicable。旧RC3报告不能因旧status=PASS而继续采集，新RC4必须重新open_kaishek并指定新tree。此适配仍仅开发和只读校验，不连接桌面。
 
 共享合同适配已实施，10项collector测试再次通过。只读调用两个共享validator校验原RC3冻结包／原报告，分别因缺少受支持的CSV loader合同与numeric载入合同而明确拒绝。随后同进程对真实fmm00生成18阶段PLAN_ONLY计划，实际六health值为93960／93960、44787.6／44787.6、167310／167310，归属country IDs为 `[0]`；`runtime_1019`未导入，`gcauto1*`输出文件数量0。新RC4正向载入门禁及真实UI执行由主线程另验，此处没有宣称通过。
+
+## RC4实操前提纠正
+
+主线程在RC4 PK自动档尝试中观察到：未reload时，自动档继续写原生UI保存的 `written_at.parent`；选择工具自建history目录会等待失败。旧失败证据保留。只读源码也支持此区分：`tools/runtime.py:183-194` 使用 `source.replace(history)` 归档，既有 `runtime_single_homeworld.monthly_autosaves` 则使用written_at.parent。初版collector错误地把“归档文件当前所在目录”当成“引擎当前campaign目录”，此前dry-run成功只证明解析与计划生成，不能证明该目录实际产生新自动档。
+
+本次修正默认值为written_at.parent，保留history原始SHA验证和显式override。测试让written_at与history处在不同目录、原written_at文件已被工具移走，验证无需reload即可选原campaign目录；显式传history时仍能覆写到已实际加载的目录。首个原生fresh ZIP的mtime／CRC／根日期门槛保持，错误目录不会回退搜索旧档。
+
+修正后collector12项离线测试通过，真实fmm00 dry-run也明确输出原UI目录 `eep03_-1033273808`。新入口与独立reporter（另9项测试）详见 [RC4成长报告方案](growth-report-1019.md)：优先复用同一Machine完成12个月经济后的year1干净C0月初UI anchor，自动读取真实Mother IDs，不额外newgame／load；20500第二段默认使用下一月原生自动补差。未执行live。

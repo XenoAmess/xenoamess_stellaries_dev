@@ -1,0 +1,150 @@
+# Native decisions only; do not override the planet GUI.
+decision_eep_cancel_devour = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    potential = {
+        owner = { has_origin = origin_heart_of_devouring is_ai = no }
+        has_planet_flag = eep_active
+    }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = eep_cancel_devour_effect
+        hidden_effect = { eep_cancel_task = yes }
+    }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_resume_auto_devour = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    potential = {
+        owner = { eep_qualified = yes is_ai = no }
+        has_planet_flag = eep_auto_devour_excluded
+        NOT = { has_planet_flag = eep_active }
+    }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = eep_resume_auto_devour_effect
+        hidden_effect = { remove_planet_flag = eep_auto_devour_excluded }
+    }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_migrate_core = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    potential = {
+        owner = { eep_qualified = yes is_ai = no }
+        is_artificial = no
+        eep_digestible_world = yes
+        NOT = { planet = { is_same_value = event_target:eep_core@owner } }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = eep_migration_required
+            eep_migration_target_valid = yes
+        }
+    }
+    effect = {
+        custom_tooltip = eep_migration_effect
+        hidden_effect = { eep_migrate_core = yes }
+    }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_audience = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    potential = {
+        owner = { eep_qualified = yes is_ai = no }
+        planet = { is_same_value = event_target:eep_core@owner }
+    }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = eep_audience_effect
+        hidden_effect = { owner = { country_event = { id = eep.100 } } }
+    }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_digest_report = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    potential = {
+        owner = { eep_qualified = yes is_ai = no }
+        has_planet_flag = eep_active
+    }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = eep_digest_report_effect
+        hidden_effect = {
+            planet = { save_event_target_as = eep_report_source }
+            owner = { country_event = { id = eep.101 } }
+        }
+    }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_auto_devour_enable = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    potential = {
+        owner = {
+            eep_qualified = yes
+            is_ai = no
+            NOT = { has_country_flag = eep_auto_devour_enabled }
+        }
+    }
+    allow = { owner = { eep_core_available = yes } }
+    effect = {
+        custom_tooltip = eep_auto_devour_enable_effect
+        hidden_effect = { owner = { set_country_flag = eep_auto_devour_enabled } }
+    }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_auto_devour_disable = {
+    icon = decision_burning_settlement
+    owned_planets_only = yes
+    potential = {
+        owner = {
+            has_origin = origin_heart_of_devouring
+            is_ai = no
+            has_country_flag = eep_auto_devour_enabled
+        }
+    }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = eep_auto_devour_disable_effect
+        hidden_effect = { owner = { remove_country_flag = eep_auto_devour_enabled } }
+    }
+    ai_weight = { weight = 0 }
+}
+
+decision_eep_devour = {
+    icon = decision_burning_settlement
+    sound = event_structural_collapse
+    important = yes
+    owned_planets_only = yes
+    resources = { category = decisions }
+    potential = {
+        is_artificial = no
+        eep_digestible_world = yes
+        owner = {
+            eep_qualified = yes
+            is_lithoid_devouring_swarm = no
+        }
+        NOT = { planet = { is_same_value = event_target:eep_core@owner } }
+        NOT = { has_planet_flag = eep_active }
+    }
+    allow = {
+        custom_tooltip = { fail_text = eep_source_required eep_source_valid = yes }
+        custom_tooltip = { fail_text = eep_seed_required eep_seed_available = yes }
+        custom_tooltip = {
+            fail_text = eep_material_required
+            planet_size > value:eep_damage_count
+        }
+    }
+    effect = { custom_tooltip = eep_devour_effect hidden_effect = { eep_begin = yes } }
+    ai_weight = { weight = 0 }
+}

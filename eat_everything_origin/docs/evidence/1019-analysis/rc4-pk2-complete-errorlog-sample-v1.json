@@ -1,0 +1,30 @@
+{
+  "schema": "eep.1019.live-log-byte-sample.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Single error.log sample after PK2 complete frame; not terminal/full-run logs freeze",
+  "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\logs\\error.log",
+  "source_size": 3200,
+  "source_mtime_ns": 1792411771211290700,
+  "sample": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-pk2-complete-errorlog-sample-v1.log",
+  "sha256": "c92f44f4b866edab8f69a8b2e1ce7a860e5487c407541f5b9a5f9298841deb98",
+  "sampled_at_utc": "2026-10-19T12:18:10.337736+00:00",
+  "byte_range": [
+    0,
+    3200
+  ],
+  "error_text_filtered": false,
+  "complete_run_freeze": false,
+  "observed_operator_invalid_key": {
+    "key": "on_destroy_planet_with_EEP_PLANET_KILLER_DISMANTLE",
+    "time": "20:05:42"
+  },
+  "observed_native_event_error": {
+    "file": "events/nomads_events_1.txt",
+    "line": 2268,
+    "time": "20:09:31",
+    "context": "Invalid context switch [from] from country0",
+    "event_id_not_present_in_log_text": true,
+    "reported_source_event_id": "nomads.94"
+  },
+  "first_copy_attempt": "Assertion requiring literal nomads.94 rejected before writing because native log only writes file/line, not event ID. Second read verifies actual file/line and preserves complete bytes."
+}

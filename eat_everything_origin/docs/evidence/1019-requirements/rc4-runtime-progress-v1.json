@@ -1,0 +1,992 @@
+{
+  "schema": "eep-1019-acceptance-v1",
+  "status": "PENDING",
+  "version": "0.4.0-rc.4",
+  "formal_version": "0.4.0",
+  "language": "l_simp_chinese",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "profile_id": "eep-0.4.0-single-production-mod",
+  "enabled_mods": [
+    "mod/ugc_eep-1019.mod"
+  ],
+  "fully_accepted_civics": [],
+  "production_files": {
+    "common/component_sets/eep_planet_killer.txt": "1ca4ac77f4aaac3fe8235139ce58e980995b28d00790955fd84952b8821300a5",
+    "common/component_templates/eep_evolution_components.txt": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+    "common/component_templates/eep_planet_killer.txt": "0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92",
+    "common/decisions/eep_decisions.txt": "ce9e68d9b0d425704d6b278ac5c1c6a010955600d30269dc5656c2eb70eca2e3",
+    "common/decisions/zz_eep_native_decision.txt": "afb47a2cf28b88cfc80e8b46fc81860178aaf544b6f7bffba785cd8ab37fad9c",
+    "common/deposits/eep_deposits.txt": "85131e640143201ac5a20fc29419b8b95e0d2840d042de060602db33fa370965",
+    "common/global_ship_designs/eep_mothership.txt": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123",
+    "common/governments/civics/eep_origin.txt": "6230a99d5338eaaf4c8b05b4e947e52a6e8bd2b987c88fe995f72a3beb77e5de",
+    "common/graphical_culture/eep_mothership.txt": "46e0498a85b09cf9d842f0eccda5b06666508107c0a846be2291ed5167c0970d",
+    "common/on_actions/eep_on_actions.txt": "f37870ca1050ca976cbee80312a8862a698ca4596bae55a7b9e9fdfec897db8e",
+    "common/script_values/eep_evolution_values.txt": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09",
+    "common/script_values/eep_values.txt": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba",
+    "common/scripted_effects/eep_auto_effects.txt": "4cd1229cff5c07e7b0272cb8721e00e6f7d6d2b8e90bbffc9a912c11f60cfb10",
+    "common/scripted_effects/eep_cancel_effects.txt": "2739e609afb90d28fcd56c5db6c48668de655ac1315afb86907764098b77b36d",
+    "common/scripted_effects/eep_colossus_native.txt": "148e0ff5b70113893d0ea75b4e3070448990b36d087a5eff0e636a24ed4b888f",
+    "common/scripted_effects/eep_effects.txt": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6",
+    "common/scripted_effects/eep_migration_effects.txt": "7519ed6f2f3502da5c1a1c84261353d5be851e0345ac6d50761c19cab5219cfe",
+    "common/scripted_effects/eep_mothership_effects.txt": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5",
+    "common/scripted_effects/eep_native_consume.txt": "47ee1a78bd40c14f6893fd47177e1138f9f2003ad3ca5d550b0b0c20ca4bb12e",
+    "common/scripted_effects/eep_planet_killer_effects.txt": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9",
+    "common/scripted_effects/eep_settlement_effects.txt": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+    "common/scripted_effects/eep_startup_effects.txt": "e1ec38f25535507d284a620ac864a6cbf1340712087ad430596f2b907dfde0f3",
+    "common/scripted_loc/eep_loc.txt": "aece3efd0fa978438467ce16e4950fe9b8f7afc289be30af71d0e798408484af",
+    "common/scripted_triggers/eep_planet_killer.txt": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+    "common/scripted_triggers/eep_triggers.txt": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+    "common/section_templates/eep_mothership.txt": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493",
+    "common/section_templates/eep_mothership_legacy.txt": "967e22c4b80091dab66d5d38878c97398cd347b560dc7d5f17903aea7fcdf9b3",
+    "common/situations/eep_situation.txt": "f6f9b034949e1d24da7d598a4de9ca0a483fe99526b1ff7489eb3db1a6cbd29d",
+    "common/static_modifiers/eep_modifiers.txt": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+    "common/technology/eep_mothership.txt": "c3d62e08c47b7634634ddcca8a018e2dfda3961c89c18d7f4e80f29990c585b9",
+    "descriptor.mod": "bb62aca8b0a8db1d57b6832e499a1c7d6036b66e08dc1d2bedef9595d2f9cc42",
+    "events/eep_events.txt": "e4be49df425db8dd4c4919a788c38ef2d4075466a9da946e6dc35a6c47cf55a1",
+    "events/eep_planet_killer_events.txt": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e",
+    "gfx/event_pictures/eep_core.dds": "ccbf95e4f2058f563bbb20039b3c5bfbdafe56c3d3df5cbd7a7af73d53ed42a3",
+    "gfx/event_pictures/eep_devouring.dds": "1dfaa5fbd583075b7955aaacf23320b298553a0345d6e7e4028221bc01ee0c21",
+    "gfx/event_pictures/eep_fleet.dds": "89a59a46f265c29c039bbcb42946dc3d7e3db3d2885692e0f9cd9a84d96aca2b",
+    "gfx/event_pictures/eep_growth.dds": "2c7068ff0ef7f3250ddb789ef1f30104896706a6c4f7ef6f6cc00cdc5c065940",
+    "gfx/event_pictures/eep_psionic.dds": "068940d6e209d4e038c6aad6a4373fce8045d87ba43a30824267313e60344a50",
+    "gfx/interface/icons/modifiers/eep_capacity.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_add.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_mult.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/origins/eep_heart.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/origins/eep_origin.dds": "0b0efde9b1db8b9e528dd5f13095cd4d6ab40d6067775301ae8c1d7434a2d604",
+    "gfx/models/portraits/eep/eep_baiqi.dds": "fee48048257e630fe432f2e1cd9a8ea04c95a3213d9e5bb7bb5e6a0ac934d918",
+    "gfx/models/portraits/eep/eep_baiqi_full.dds": "31f854d06b16f1209f3d8257de89fb387f715a05ecbd12db21c099ce94db5235",
+    "gfx/models/ships/zz_eep/eep_mothership.asset": "f299b6fb43effd03597af2d5a4c96577ce2323c9964916a09c68b71958fb2e91",
+    "gfx/portraits/portraits/eep_portraits.txt": "15e64490ae386c85806630aa0aed35a45374af64944795aecb7480137e0d1d09",
+    "interface/eep.gfx": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92",
+    "localisation/braz_por/eep_l_braz_por.yml": "66711ed16c59303ca1ce7a9f8363a2db0f1ca2e055cffb16bbad4d4c38875a5b",
+    "localisation/english/eep_l_english.yml": "76c2cd008c818c67009167d97311dc3bb87372619117f5e01ae93cc1704e094e",
+    "localisation/french/eep_l_french.yml": "60ed9b2edc0763edaedefed9b605ff41bcf5208466c2c8011f6adeb5f1d88c64",
+    "localisation/german/eep_l_german.yml": "921885d3b241905111aa992889e54fd6edff4c9a3e68c7f64a29c554898c7020",
+    "localisation/japanese/eep_l_japanese.yml": "77ca1127f88bd27a54d9340bb8d373c7cdce7c6f533bd40c5e89858a1c46c515",
+    "localisation/korean/eep_l_korean.yml": "886f9e01e9f335cb4c7ee3ee57727032a31831ddfd015474d3e0031ecc7a7ae6",
+    "localisation/polish/eep_l_polish.yml": "6d6b18e7d44f13bc966297a579683d300e069ea44e2b5b80546bf74f7d19a787",
+    "localisation/russian/eep_l_russian.yml": "7fd679ee7d3123f6e30c62e5cc0a88528d8e64ee2ed041eeca80edd7d6c21db6",
+    "localisation/simp_chinese/eep_l_simp_chinese.yml": "b1add578c1f81db6e558485c1f8d96a7e780d1c4c932f2016a34f2a0e2c9fe66",
+    "localisation/spanish/eep_l_spanish.yml": "5a31c680e65f45e8fffb0b34b032c4a120c684017c882a0728339d4aceeb6450",
+    "thumbnail.png": "25c23dbb7aa5c6de0d5fb3051b52778aafbefe6ff9ba94b653b84bfcf1f7961c"
+  },
+  "candidate_descriptor": "version=\"0.4.0-rc.4\"\ntags={ \"Origins\" \"Events\" \"Gameplay\" }\nname=\"吞噬之心\"\nsupported_version=\"4.5.2\"\npicture=\"thumbnail.png\"\n",
+  "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+  "static_gate": {
+    "report": {
+      "path": "docs/evidence/1019-rc4-pk2-duration/static-acceptance/open-kaishek.json",
+      "sha256": "2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d"
+    },
+    "production_files": {
+      "common/component_sets/eep_planet_killer.txt": "1ca4ac77f4aaac3fe8235139ce58e980995b28d00790955fd84952b8821300a5",
+      "common/component_templates/eep_evolution_components.txt": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+      "common/component_templates/eep_planet_killer.txt": "0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92",
+      "common/decisions/eep_decisions.txt": "ce9e68d9b0d425704d6b278ac5c1c6a010955600d30269dc5656c2eb70eca2e3",
+      "common/decisions/zz_eep_native_decision.txt": "afb47a2cf28b88cfc80e8b46fc81860178aaf544b6f7bffba785cd8ab37fad9c",
+      "common/deposits/eep_deposits.txt": "85131e640143201ac5a20fc29419b8b95e0d2840d042de060602db33fa370965",
+      "common/global_ship_designs/eep_mothership.txt": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123",
+      "common/governments/civics/eep_origin.txt": "6230a99d5338eaaf4c8b05b4e947e52a6e8bd2b987c88fe995f72a3beb77e5de",
+      "common/graphical_culture/eep_mothership.txt": "46e0498a85b09cf9d842f0eccda5b06666508107c0a846be2291ed5167c0970d",
+      "common/on_actions/eep_on_actions.txt": "f37870ca1050ca976cbee80312a8862a698ca4596bae55a7b9e9fdfec897db8e",
+      "common/script_values/eep_evolution_values.txt": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09",
+      "common/script_values/eep_values.txt": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba",
+      "common/scripted_effects/eep_auto_effects.txt": "4cd1229cff5c07e7b0272cb8721e00e6f7d6d2b8e90bbffc9a912c11f60cfb10",
+      "common/scripted_effects/eep_cancel_effects.txt": "2739e609afb90d28fcd56c5db6c48668de655ac1315afb86907764098b77b36d",
+      "common/scripted_effects/eep_colossus_native.txt": "148e0ff5b70113893d0ea75b4e3070448990b36d087a5eff0e636a24ed4b888f",
+      "common/scripted_effects/eep_effects.txt": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6",
+      "common/scripted_effects/eep_migration_effects.txt": "7519ed6f2f3502da5c1a1c84261353d5be851e0345ac6d50761c19cab5219cfe",
+      "common/scripted_effects/eep_mothership_effects.txt": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5",
+      "common/scripted_effects/eep_native_consume.txt": "47ee1a78bd40c14f6893fd47177e1138f9f2003ad3ca5d550b0b0c20ca4bb12e",
+      "common/scripted_effects/eep_planet_killer_effects.txt": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9",
+      "common/scripted_effects/eep_settlement_effects.txt": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+      "common/scripted_effects/eep_startup_effects.txt": "e1ec38f25535507d284a620ac864a6cbf1340712087ad430596f2b907dfde0f3",
+      "common/scripted_loc/eep_loc.txt": "aece3efd0fa978438467ce16e4950fe9b8f7afc289be30af71d0e798408484af",
+      "common/scripted_triggers/eep_planet_killer.txt": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "common/scripted_triggers/eep_triggers.txt": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "common/section_templates/eep_mothership.txt": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493",
+      "common/section_templates/eep_mothership_legacy.txt": "967e22c4b80091dab66d5d38878c97398cd347b560dc7d5f17903aea7fcdf9b3",
+      "common/situations/eep_situation.txt": "f6f9b034949e1d24da7d598a4de9ca0a483fe99526b1ff7489eb3db1a6cbd29d",
+      "common/static_modifiers/eep_modifiers.txt": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+      "common/technology/eep_mothership.txt": "c3d62e08c47b7634634ddcca8a018e2dfda3961c89c18d7f4e80f29990c585b9",
+      "descriptor.mod": "bb62aca8b0a8db1d57b6832e499a1c7d6036b66e08dc1d2bedef9595d2f9cc42",
+      "events/eep_events.txt": "e4be49df425db8dd4c4919a788c38ef2d4075466a9da946e6dc35a6c47cf55a1",
+      "events/eep_planet_killer_events.txt": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e",
+      "gfx/event_pictures/eep_core.dds": "ccbf95e4f2058f563bbb20039b3c5bfbdafe56c3d3df5cbd7a7af73d53ed42a3",
+      "gfx/event_pictures/eep_devouring.dds": "1dfaa5fbd583075b7955aaacf23320b298553a0345d6e7e4028221bc01ee0c21",
+      "gfx/event_pictures/eep_fleet.dds": "89a59a46f265c29c039bbcb42946dc3d7e3db3d2885692e0f9cd9a84d96aca2b",
+      "gfx/event_pictures/eep_growth.dds": "2c7068ff0ef7f3250ddb789ef1f30104896706a6c4f7ef6f6cc00cdc5c065940",
+      "gfx/event_pictures/eep_psionic.dds": "068940d6e209d4e038c6aad6a4373fce8045d87ba43a30824267313e60344a50",
+      "gfx/interface/icons/modifiers/eep_capacity.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_add.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_mult.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/origins/eep_heart.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/origins/eep_origin.dds": "0b0efde9b1db8b9e528dd5f13095cd4d6ab40d6067775301ae8c1d7434a2d604",
+      "gfx/models/portraits/eep/eep_baiqi.dds": "fee48048257e630fe432f2e1cd9a8ea04c95a3213d9e5bb7bb5e6a0ac934d918",
+      "gfx/models/portraits/eep/eep_baiqi_full.dds": "31f854d06b16f1209f3d8257de89fb387f715a05ecbd12db21c099ce94db5235",
+      "gfx/models/ships/zz_eep/eep_mothership.asset": "f299b6fb43effd03597af2d5a4c96577ce2323c9964916a09c68b71958fb2e91",
+      "gfx/portraits/portraits/eep_portraits.txt": "15e64490ae386c85806630aa0aed35a45374af64944795aecb7480137e0d1d09",
+      "interface/eep.gfx": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92",
+      "localisation/braz_por/eep_l_braz_por.yml": "66711ed16c59303ca1ce7a9f8363a2db0f1ca2e055cffb16bbad4d4c38875a5b",
+      "localisation/english/eep_l_english.yml": "76c2cd008c818c67009167d97311dc3bb87372619117f5e01ae93cc1704e094e",
+      "localisation/french/eep_l_french.yml": "60ed9b2edc0763edaedefed9b605ff41bcf5208466c2c8011f6adeb5f1d88c64",
+      "localisation/german/eep_l_german.yml": "921885d3b241905111aa992889e54fd6edff4c9a3e68c7f64a29c554898c7020",
+      "localisation/japanese/eep_l_japanese.yml": "77ca1127f88bd27a54d9340bb8d373c7cdce7c6f533bd40c5e89858a1c46c515",
+      "localisation/korean/eep_l_korean.yml": "886f9e01e9f335cb4c7ee3ee57727032a31831ddfd015474d3e0031ecc7a7ae6",
+      "localisation/polish/eep_l_polish.yml": "6d6b18e7d44f13bc966297a579683d300e069ea44e2b5b80546bf74f7d19a787",
+      "localisation/russian/eep_l_russian.yml": "7fd679ee7d3123f6e30c62e5cc0a88528d8e64ee2ed041eeca80edd7d6c21db6",
+      "localisation/simp_chinese/eep_l_simp_chinese.yml": "b1add578c1f81db6e558485c1f8d96a7e780d1c4c932f2016a34f2a0e2c9fe66",
+      "localisation/spanish/eep_l_spanish.yml": "5a31c680e65f45e8fffb0b34b032c4a120c684017c882a0728339d4aceeb6450",
+      "thumbnail.png": "25c23dbb7aa5c6de0d5fb3051b52778aafbefe6ff9ba94b653b84bfcf1f7961c"
+    },
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468"
+  },
+  "runs": [
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/manifest.json",
+      "sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1"
+    }
+  ],
+  "cases": {
+    "hive_startup": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      },
+      "evidence": []
+    },
+    "machine_startup": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      },
+      "evidence": []
+    },
+    "purifier_startup": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      },
+      "evidence": []
+    },
+    "hive_economy": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      },
+      "evidence": []
+    },
+    "machine_economy": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      },
+      "evidence": []
+    },
+    "purifier_economy": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      },
+      "evidence": []
+    },
+    "lithoid_hive_first_month": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_energy_nonnegative": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      },
+      "evidence": []
+    },
+    "mothership_configuration": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "actual_jump": null,
+        "existing_advantages_preserved": null,
+        "five_relic_auxiliary_components_preserved": null,
+        "native_design_matches": null,
+        "no_empire_technology_grant": null,
+        "other_juggernauts_unchanged": null,
+        "power_nonnegative": null,
+        "reference_stats_observed": null,
+        "same_country_same_date_relic_reference": null,
+        "ten_mobile_shipyards": null,
+        "twenty_two_large_defense_slots": null,
+        "upkeep_observed": null
+      },
+      "evidence": []
+    },
+    "unlimited_growth": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "count_level_samples": null,
+        "daily_regeneration": null,
+        "destroyed_mother_not_respawned": null,
+        "four_stats_five_percent_per_level": null,
+        "invalid_or_cancelled_no_growth": null,
+        "jump_and_shipyards_preserved": null,
+        "repeated_sync_idempotent": null,
+        "report_level_count_remainder": null,
+        "same_day_reload_idempotent": null,
+        "single_scaled_modifier": null
+      },
+      "evidence": []
+    },
+    "colossus_enemy_fire": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [
+        "20261019T112808Z"
+      ],
+      "checks": {
+        "beneficiary_is_core_owner": null,
+        "enemy_colony_destroyed": null,
+        "native_charge_and_fire": null,
+        "no_army": null,
+        "owned_noncore_colony_fire": null,
+        "war_target": null
+      },
+      "evidence": [
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2base.sav",
+          "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2queued.sav",
+          "sha256": "700f19e7ee6e786c3a5e4ea28ac67c5d12f829b0a39707aa58f66bd6a32a1ab5",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2day1.sav",
+          "sha256": "03511b65668f07133ec48b6da1a415f27cf5e47c1f89a292ef85ec302aa5abc3",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2base-screen.jpg",
+          "sha256": "5ce4ee8117af3d6d813a6d117459c15829309266e1114db16103eadc05dbeb46",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-choose-dismantle.jpg",
+          "sha256": "efce2d29ca02d5b4adf531d6e2b2f1b0c7b40f4e99e7af8104392356e013b35e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-day1-state.jpg",
+          "sha256": "83995023fe195233ddec8ab37b2e79f386ee3a7b19334a03a78416b41751111c",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-source-context.action.json",
+          "sha256": "281d2ace0130586f17650128325cdf45b7debae4d85879b19d29743b79e44573",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-choose-dismantle-click.action.json",
+          "sha256": "25465c7e5ff98ec111a86314626a9dd72686146c3b56aa72a59b86eb16bb6f49",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-one-day-command.action.json",
+          "sha256": "7994c32613e35b83934e98dfbaee71e855806019ecf8a236050b8e304263cb04",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-one-day-command-enter.action.json",
+          "sha256": "45262f0e3d1811a19344d1a17f1c70cf6eae100b7df879b3e65a459dc9ed688d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2base-configuration-report-v1.json",
+          "sha256": "b626422942b18cee6883d586fcf002e6f455a3c78547c991fa18ea916419effe",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-queued-day1-report-v1.json",
+          "sha256": "8efe970dee9bbe59d259b3500c2f46ef67b96ff174dfbf5765144b54a0558be5",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-base-queued-no-settlement-report-v1.json",
+          "sha256": "1eb7e5232d1348fce36907eb5dba5677cdaf5e8315a26850ec0c4a180a8aba82",
+          "kind": "analysis"
+        }
+      ]
+    },
+    "colossus_guards": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "all_core_worlds_rejected": null,
+        "artificial_rejected": null,
+        "colonizing_rejected": null,
+        "completion_revalidates_core_owner": null,
+        "completion_revalidates_target": null,
+        "devouring_rejected": null,
+        "ground_combat_rejected": null,
+        "neutral_friendly_rejected": null,
+        "settled_rejected": null,
+        "uncolonized_rejected": null
+      },
+      "evidence": []
+    },
+    "colossus_cancel_idempotence": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [
+        "20261019T112808Z"
+      ],
+      "checks": {
+        "cancel_no_reward": null,
+        "crisis_objective_once": null,
+        "queue_no_reward": null,
+        "reload_no_reward": null,
+        "repeat_event_no_reward": null
+      },
+      "evidence": [
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2base.sav",
+          "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2queued.sav",
+          "sha256": "700f19e7ee6e786c3a5e4ea28ac67c5d12f829b0a39707aa58f66bd6a32a1ab5",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-choose-dismantle.jpg",
+          "sha256": "efce2d29ca02d5b4adf531d6e2b2f1b0c7b40f4e99e7af8104392356e013b35e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2-choose-dismantle-click.action.json",
+          "sha256": "25465c7e5ff98ec111a86314626a9dd72686146c3b56aa72a59b86eb16bb6f49",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-base-queued-no-settlement-report-v1.json",
+          "sha256": "1eb7e5232d1348fce36907eb5dba5677cdaf5e8315a26850ec0c4a180a8aba82",
+          "kind": "analysis"
+        }
+      ]
+    },
+    "common_settlement": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "core_capacity_matches": null,
+        "enemy_population_not_returned": null,
+        "lithoid_native_branch": null,
+        "native_devour_loss_deducted": null,
+        "owned_main_species_return": null,
+        "population_matches": null,
+        "q_c_g_d_match": null,
+        "settlement_and_destruction_once": null
+      },
+      "evidence": []
+    },
+    "normal_dismantle_regression": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "normal_completion": null,
+        "normal_duration_preserved": null,
+        "normal_reload_idempotent": null,
+        "normal_seed_preserved": null
+      },
+      "evidence": []
+    },
+    "old_save_migration": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "civilian_queue_preserved": null,
+        "damage_preserved": null,
+        "extra_world_preserved": null,
+        "identity_preserved": null,
+        "layout_preserved": null,
+        "migration_once": null,
+        "name_preserved": null,
+        "native_design_migration": null,
+        "no_startup_reward": null,
+        "original_031_save": null,
+        "position_preserved": null,
+        "queue_preserved": null
+      },
+      "evidence": []
+    },
+    "candidate_reload": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "ledger_preserved": null,
+        "native_reload": null,
+        "native_restart": null,
+        "no_duplicate_reward": null
+      },
+      "evidence": []
+    },
+    "repeat_initialization": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "no_extra_civilian_queue": null,
+        "no_extra_reward": null,
+        "no_extra_ship": null,
+        "no_extra_world": null
+      },
+      "evidence": []
+    },
+    "random_components": {
+      "status": "PENDING",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "run_ids": [],
+      "checks": {
+        "component_owns_dynamic_bonus": null,
+        "cross_threshold_catchup": null,
+        "equipped_component_present_in_native_design": null,
+        "every_five_levels": null,
+        "growth_modifier_held_constant_during_component_probe": null,
+        "native_tier_zero_one_two_effect": null,
+        "no_external_reward_modifier": null,
+        "other_fleets_unchanged": null,
+        "positive_effect_observed": null,
+        "random_pool": null,
+        "real_component": null,
+        "reload_persistent": null,
+        "threshold_idempotent": null
+      },
+      "evidence": []
+    }
+  },
+  "economy": {
+    "hive": {
+      "baseline_months": [],
+      "candidate_months": []
+    },
+    "machine": {
+      "baseline_months": [],
+      "candidate_months": []
+    },
+    "purifier": {
+      "baseline_months": [],
+      "candidate_months": []
+    }
+  },
+  "growth_samples": [],
+  "component_rewards": {
+    "status": "PENDING",
+    "interval_levels": 5,
+    "reason": "Await actual native component tests and implementation decision.",
+    "evidence": []
+  },
+  "archives": [
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/archive-index-v1.json",
+      "sha256": "b82cc8fb9ad0ab8fd67c4b9df2454837fb9f91ecdc452930e57d0286329d2712"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/archive-verification-v1.json",
+      "sha256": "57d7ef97acfcff9382de1db6345f5e56f02d96fed90bbba3fc9aa53f1de95949"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/copy-index-interruption-v1.json",
+      "sha256": "19172a0260e7560062bad5ff57f4c8525b03d4a961b099beb8b1f71e0c950f0f"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/source_snapshot/gate.json",
+      "sha256": "731928624a2a9761f8e0754967db3b5e06c28bb7570f40921e966adb1a99fe0d"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/source_snapshot/source-copy.json",
+      "sha256": "4d948c9782197108c2703b89a4e65d3fc1e4636a322a9497a5ba88ca408b6a2d"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-queued-day1-strict-comparison-v1.json",
+      "sha256": "0248ca6762aecb89b7eb142575262681152d88c78de9e7cfe175310beed49662"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-boot-capture-retry-review-v1.json",
+      "sha256": "4f3dd62e9026836402b51772d6768430ac84d650e9d218e21123563772e526b9"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/pk2base.audit.json",
+      "sha256": "98ddca3821f0a1d606d473edf46fe95e7e77c9cea2d576154427a42990a82834"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/pk2base.native-save.json",
+      "sha256": "1c971f0fb1d0dc41dded7c119223bce37c1c20fa134b4f3ce21489089fddf2fd"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/pk2queued.audit.json",
+      "sha256": "3377224323539e30b09b7f8dd915b2c29769ee135ebe67c8cb55052e653b808a"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/pk2queued.native-save.json",
+      "sha256": "a8571aea7226eb20e353bc7e6274cedcb64763cd03fc79fb697a03dc6ad7b15a"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/pk2day1.audit.json",
+      "sha256": "59e6390e3767e7dfe9fda9974a04bce914eece45a791d76852ffe577a03a3959"
+    },
+    {
+      "path": "docs/evidence/1019-rc4-pk2-duration/pk2day1.native-save.json",
+      "sha256": "fb58e53931c25977901f1edb5d027b32d7536defa39fa8677c68faa34c06bc91"
+    },
+    {
+      "path": "docs/evidence/1019-requirements/rc4-gate.json",
+      "sha256": "731928624a2a9761f8e0754967db3b5e06c28bb7570f40921e966adb1a99fe0d"
+    },
+    {
+      "path": "docs/evidence/1019-requirements/rc4-source-copy.json",
+      "sha256": "4d948c9782197108c2703b89a4e65d3fc1e4636a322a9497a5ba88ca408b6a2d"
+    },
+    {
+      "path": "docs/evidence/1019-requirements/rc4-open-kaishek-report-link-v1.json",
+      "sha256": "381cfe922135d8c5858a7bd2e5a9d211e811895c21d120e925ebf7ed60a25d14"
+    },
+    {
+      "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v5.json",
+      "sha256": "6d648d959be464743ba981f1a7e59886952ef6069e27669927efd8e98294b21b"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-hardware/archive-index-v1.json",
+      "sha256": "eded63efe29b20e1f99223fa1bf9bef9787ad94e7b09a2a33a7e761498d70722"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v2.json",
+      "sha256": "350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-hive-startup/archive-index-v1.json",
+      "sha256": "f87ba1d0e428f603135d6b6d925e2c14680b3c5901da6d80572330cfcecbacde"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc3-pk1-native-fire-duration-fail-v1.json",
+      "sha256": "dcf8d56e47d718d20fe6e780d366ef592bc0a2d46adbceb52d8579b50b6b0342"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-final-logs/index.json",
+      "sha256": "8312c071af1918715a390af3702d800d51574181c1c5cace868b7b2436c0c95e"
+    }
+  ],
+  "_scaffold": {
+    "schema": "eep-1019-index-scaffold-v1",
+    "acceptance_claims": false,
+    "warning": "PENDING inventory and planned evidence only; no native action or acceptance is inferred.",
+    "required_growth_samples": [
+      {
+        "C": 0,
+        "L": 0
+      },
+      {
+        "C": 9,
+        "L": 0
+      },
+      {
+        "C": 10,
+        "L": 1
+      },
+      {
+        "C": 19,
+        "L": 1
+      },
+      {
+        "C": 20,
+        "L": 2
+      },
+      {
+        "C": 200,
+        "L": 20
+      },
+      {
+        "C": 10000,
+        "L": 1000
+      }
+    ],
+    "required_evidence_kinds": [
+      "actions",
+      "analysis",
+      "log",
+      "native_save",
+      "screenshot"
+    ],
+    "required_months_per_budget": 12,
+    "reference_plan": {
+      "path": "docs/evidence/1019-requirements/rc4-runtime-reference-plan-v1.json",
+      "sha256": "a78fd497035022e47511a2a5f5936dc551638e4b8f97286d1223cbb854a86038"
+    }
+  },
+  "_progress": {
+    "schema": "eep-1019-rc4-runtime-progress-v1",
+    "source_is_fresh_rc4_scaffold": true,
+    "native_case_acceptance": "PENDING",
+    "archive_index": {
+      "path": "docs/evidence/1019-rc4-pk2-duration/archive-index-v1.json",
+      "sha256": "b82cc8fb9ad0ab8fd67c4b9df2454837fb9f91ecdc452930e57d0286329d2712"
+    },
+    "archive_verification": {
+      "path": "docs/evidence/1019-rc4-pk2-duration/archive-verification-v1.json",
+      "sha256": "57d7ef97acfcff9382de1db6345f5e56f02d96fed90bbba3fc9aa53f1de95949"
+    },
+    "canonical_manifest": {
+      "path": "docs/evidence/1019-rc4-pk2-duration/manifest.json",
+      "sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1"
+    },
+    "verified_payload_files": 265,
+    "verified_payload_bytes": 15174376,
+    "verified_current_sources_matching": 265,
+    "source_changes_at_review": [],
+    "all_case_checks_left_unreviewed": true,
+    "scoped_observations": [
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2base-configuration-report-v1.json",
+          "sha256": "b626422942b18cee6883d586fcf002e6f455a3c78547c991fa18ea916419effe",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "RC4 loaded RC3 unfired save as duration fixture; binding/configuration/baseline only, not new-game startup or observed duration",
+        "checks": {
+          "native_base_provenance_valid": true,
+          "same_expected_rc4_tree": true,
+          "all_59_loaded_mod_files_match": true,
+          "raw_gate_report_sha_unchanged": true,
+          "native_exe_sha_matches": true,
+          "target17_still_enemy_owned": true,
+          "fresh_q19_without_prior_native_damage": true,
+          "all_reward_ledger_zero_and_d2": true,
+          "six_country_tiers_zero": true,
+          "six_mother_tiers_zero": true,
+          "unique_mother159_ship997": true,
+          "native_design_has_one_correct_pk_component": true,
+          "actual_copied_component_literal_duration90_30": true,
+          "actual_copied_component_no_custom_csv": true,
+          "static_literal_numeric_contract_passed": true,
+          "core2_owned_by_actor_with_population4809": true,
+          "all_actor_armies_home": true,
+          "no_actor_transport_fleet": true,
+          "no_pk_order_yet": true,
+          "worlds_empires_calibration_not_carried": true
+        },
+        "limitations": [
+          "Frozen configuration and native installed component key do not prove the engine timer; actual windup/fire fields and day progression must be sampled next.",
+          "This is loading an unpublished RC3 duration fixture into RC4, not RC4 new-game or released0.3.1 compatibility certification.",
+          "The original load receipt retains state_verified=false; this independent report verifies only the named post-save baseline facts.",
+          "Raw pre-canonical static report and manifest are unchanged; any LF-canonical tool linkage is separate publication evidence.",
+          "RC3 original duration FAIL and original files remain preserved."
+        ],
+        "case_checks_added": [],
+        "case_acceptance": "PENDING"
+      },
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-queued-day1-report-v1.json",
+          "sha256": "8efe970dee9bbe59d259b3500c2f46ef67b96ff174dfbf5765144b54a0558be5",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "Native order acceptance and first observed windup_time90/progress0, no early payout; full90-day/30-day duration not yet observed",
+        "checks": {
+          "same_day_base_queue_nine_checks_pass": true,
+          "queued_actual_destroy_planet17": true,
+          "day1_actual_destroy_planet17": true,
+          "queued_move_suborder_present": true,
+          "day1_native_windup_order_present": true,
+          "day1_windup_progress_zero": true,
+          "day1_native_windup_time90": true,
+          "all_eep_country_variables_unchanged": true,
+          "all_mother_variables_unchanged": true,
+          "all_mother_modifiers_unchanged": true,
+          "all_target17_alive_enemy_owned": true,
+          "all_live_source_size19_no_damage": true,
+          "all_source_pop5206": true,
+          "all_core_pop4809": true,
+          "all_core_capacity2": true,
+          "all_crisis_objectives_unchanged": true,
+          "all_actor_armies_home": true,
+          "no_actor_transport_fleet": true
+        },
+        "limitations": [
+          "Native fire_time30 is not present in the current windup order; TXT configuration is distinct from actual fire-phase evidence.",
+          "March8 is the first sampled zero counter, not a continuous observation of the exact engine transition instant.",
+          "Persisted q and colossus active snapshot remain absent; only live effective q19 is confirmed.",
+          "All original strict differences are retained; no cross-date no-settlement PASS is assigned to the day1 pair.",
+          "RC4 source/load fixture only; no RC4 startup/full release/old0.3.1 compatibility certification."
+        ],
+        "case_checks_added": [],
+        "case_acceptance": "PENDING"
+      },
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-base-queued-no-settlement-report-v1.json",
+          "sha256": "1eb7e5232d1348fce36907eb5dba5677cdaf5e8315a26850ec0c4a180a8aba82",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "same-day no second settlement only; strict differences separately retained",
+        "checks": {
+          "same_native_date": true,
+          "same_candidate_tree": true,
+          "reward_variables_unchanged": true,
+          "core_population_unchanged": true,
+          "core_capacity_unchanged": true,
+          "source_class_unchanged": true,
+          "source_colony_unchanged": true,
+          "settlement_receipts_unchanged": true,
+          "crisis_progression_unchanged": true
+        },
+        "limitations": [],
+        "case_checks_added": [],
+        "case_acceptance": "PENDING"
+      }
+    ],
+    "historical_archives": [
+      {
+        "reference": {
+          "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v5.json",
+          "sha256": "6d648d959be464743ba981f1a7e59886952ef6069e27669927efd8e98294b21b"
+        },
+        "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+        "scope": "Historical RC3 PENDING index; no numbers or checks inherited.",
+        "eligible_for_current_case_acceptance": false
+      },
+      {
+        "reference": {
+          "path": "docs/evidence/1019-rc3-hardware/archive-index-v1.json",
+          "sha256": "eded63efe29b20e1f99223fa1bf9bef9787ad94e7b09a2a33a7e761498d70722"
+        },
+        "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+        "scope": "Historical controlled hardware only.",
+        "eligible_for_current_case_acceptance": false
+      },
+      {
+        "reference": {
+          "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v2.json",
+          "sha256": "350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f"
+        },
+        "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+        "scope": "Historical RC3 Machine only; not current candidate economy.",
+        "eligible_for_current_case_acceptance": false
+      },
+      {
+        "reference": {
+          "path": "docs/evidence/1019-rc3-hive-startup/archive-index-v1.json",
+          "sha256": "f87ba1d0e428f603135d6b6d925e2c14680b3c5901da6d80572330cfcecbacde"
+        },
+        "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+        "scope": "Historical RC3 Hive first month only.",
+        "eligible_for_current_case_acceptance": false
+      },
+      {
+        "reference": {
+          "path": "docs/evidence/1019-analysis/rc3-pk1-native-fire-duration-fail-v1.json",
+          "sha256": "dcf8d56e47d718d20fe6e780d366ef592bc0a2d46adbceb52d8579b50b6b0342"
+        },
+        "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+        "scope": "Historical RC3 timing FAIL retained.",
+        "eligible_for_current_case_acceptance": false
+      },
+      {
+        "reference": {
+          "path": "docs/evidence/1019-rc3-final-logs/index.json",
+          "sha256": "8312c071af1918715a390af3702d800d51574181c1c5cace868b7b2436c0c95e"
+        },
+        "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+        "scope": "Historical stopped RC3 logs; not RC4 logs.",
+        "eligible_for_current_case_acceptance": false
+      }
+    ],
+    "stage_native_proofs": {
+      "pk2base": {
+        "date": "2200.03.07",
+        "save": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2base.sav",
+          "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+          "kind": "native_save"
+        },
+        "audit": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2base.audit.json",
+          "sha256": "98ddca3821f0a1d606d473edf46fe95e7e77c9cea2d576154427a42990a82834"
+        },
+        "receipt": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2base.native-save.json",
+          "sha256": "1c971f0fb1d0dc41dded7c119223bce37c1c20fa134b4f3ce21489089fddf2fd"
+        },
+        "gamestate_sha256": "bdd93739f77a45e70958ac75867d6dcfc60d03460b8a3511f7e3e049adaa16ba"
+      },
+      "pk2queued": {
+        "date": "2200.03.07",
+        "save": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2queued.sav",
+          "sha256": "700f19e7ee6e786c3a5e4ea28ac67c5d12f829b0a39707aa58f66bd6a32a1ab5",
+          "kind": "native_save"
+        },
+        "audit": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2queued.audit.json",
+          "sha256": "3377224323539e30b09b7f8dd915b2c29769ee135ebe67c8cb55052e653b808a"
+        },
+        "receipt": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2queued.native-save.json",
+          "sha256": "a8571aea7226eb20e353bc7e6274cedcb64763cd03fc79fb697a03dc6ad7b15a"
+        },
+        "gamestate_sha256": "5b172958632e6a8a0e5cedd82e7294e87b4fd07b15fe8a85d09a465228aec392"
+      },
+      "pk2day1": {
+        "date": "2200.03.08",
+        "save": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2day1.sav",
+          "sha256": "03511b65668f07133ec48b6da1a415f27cf5e47c1f89a292ef85ec302aa5abc3",
+          "kind": "native_save"
+        },
+        "audit": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2day1.audit.json",
+          "sha256": "59e6390e3767e7dfe9fda9974a04bce914eece45a791d76852ffe577a03a3959"
+        },
+        "receipt": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/pk2day1.native-save.json",
+          "sha256": "fb58e53931c25977901f1edb5d027b32d7536defa39fa8677c68faa34c06bc91"
+        },
+        "gamestate_sha256": "dfa203d6a33297e5bcfca7c5c251661cef5691986c85a80431b83928f2b42ac5"
+      }
+    },
+    "failures_retained": [
+      {
+        "reference": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-queued-day1-strict-comparison-v1.json",
+          "sha256": "0248ca6762aecb89b7eb142575262681152d88c78de9e7cfe175310beed49662"
+        },
+        "status": "FAIL",
+        "scope": "strict comparison of all old gameplay fields plus all 1019 observations; no ignored paths",
+        "not_promoted_to_case_pass": true
+      },
+      {
+        "reference": {
+          "path": "docs/evidence/1019-rc4-pk2-duration/analysis/rc4-pk2-boot-capture-retry-review-v1.json",
+          "sha256": "4f3dd62e9026836402b51772d6768430ac84d650e9d218e21123563772e526b9"
+        },
+        "status": "OBSERVATION_ONLY",
+        "scope": "Preserve initial early F12 capture failure and actual later welcome retry; no fabricated missing frame/error log",
+        "not_promoted_to_case_pass": true
+      }
+    ],
+    "history": [
+      {
+        "previous_index_sha256": "d959363ae872c1afa6e05dc11c228445f614b5cbf013db376d4cd0efe7c2ee62",
+        "operation": {
+          "command": "record-independent-rc4-first-phase-observations",
+          "reference_plan": {
+            "path": "docs/evidence/1019-requirements/rc4-runtime-reference-plan-v1.json",
+            "sha256": "a78fd497035022e47511a2a5f5936dc551638e4b8f97286d1223cbb854a86038"
+          },
+          "archive_index": {
+            "path": "docs/evidence/1019-rc4-pk2-duration/archive-index-v1.json",
+            "sha256": "b82cc8fb9ad0ab8fd67c4b9df2454837fb9f91ecdc452930e57d0286329d2712"
+          },
+          "source_is_fresh_scaffold": true,
+          "case_checks_modified": false,
+          "rc3_case_data_inherited": false
+        }
+      }
+    ],
+    "native_timing_observation": {
+      "first_observed_zero_windup_date": "2200.03.08",
+      "first_observed_windup": 0,
+      "actual_native_windup_time": 90,
+      "actual_native_fire_time": null,
+      "actual_native_fire_time_field_present": false,
+      "observed_progress_fraction": 0.0,
+      "configured_txt_total_fire_time": 30,
+      "configured_fire_time_source_only": true
+    },
+    "source_q_observation": {
+      "fresh_q_from_live_size_less_damage": 19,
+      "persisted_eep_q_present": false,
+      "eep_colossus_active_present": false,
+      "queued_callback_execution_claimed": false
+    },
+    "archive_interruption_preserved": {
+      "path": "docs/evidence/1019-rc4-pk2-duration/copy-index-interruption-v1.json",
+      "sha256": "19172a0260e7560062bad5ff57f4c8525b03d4a961b099beb8b1f71e0c950f0f"
+    },
+    "remaining": {
+      "complete_90day_windup_and_30day_fire": "PENDING",
+      "native_fire_time_field": "NOT_YET_OBSERVED",
+      "first_phase_only": true,
+      "rc4_new_game_startup": "PENDING",
+      "all_three_12month_economies": "PENDING",
+      "growth_and_real_random_components": "PENDING",
+      "guards_cancel_settlement_migration_reload": "PENDING",
+      "final_activity_logs": "NOT_ARCHIVED_FOR_RC4",
+      "no_rc3_pass_or_budgets_inherited": true
+    }
+  }
+}

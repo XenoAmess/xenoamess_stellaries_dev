@@ -1,0 +1,12 @@
+# Neutron Beam
+carrier_event = {
+	id = planet_destruction.300
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { NOT = { is_same_value = from.owner } }

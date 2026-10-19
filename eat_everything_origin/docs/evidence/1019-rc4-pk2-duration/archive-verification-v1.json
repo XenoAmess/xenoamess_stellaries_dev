@@ -1,0 +1,38 @@
+{
+  "schema": "eep.1019.rc4-pk2-phase-byte-verification.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Byte identity and complete first-phase whitelist only; not whole duration/release acceptance",
+  "checks": {
+    "all_source_double_read_and_copy_sha_match": true,
+    "complete_archive_payload_set": true,
+    "complete_boot_base_queue_day1_whitelist": true,
+    "exactly_three_phase_sav_files": true,
+    "all_three_native_sav_audit_receipts_gamestate_valid": true,
+    "loaded_mod_exact_59_manifest_files": true,
+    "source_mod_exact_59_manifest_files": true,
+    "source_copy_file_table_matches": true,
+    "static_gate_file_table_matches": true,
+    "all_source_tree_bindings_match": true,
+    "raw_precanonical_report_sha_unchanged": true,
+    "all_ocr_original_gpu_images_sha_match": true,
+    "early_failed_f12_action_preserved": true,
+    "missing_first_frame_not_fabricated": true,
+    "welcome_retry_actual_image_preserved": true,
+    "all_three_name_edit_ctrl_a_preserved": true,
+    "no_active_phase_charge_or_stop_files": true,
+    "no_active_logs": true,
+    "no_rc3_reports_copied": true,
+    "all_stage_files_before_completed_cutoff": true
+  },
+  "sav_checks": {
+    "pk2base": true,
+    "pk2queued": true,
+    "pk2day1": true
+  },
+  "file_count": 265,
+  "total_bytes": 15174376,
+  "archive_index": {
+    "path": "archive-index-v1.json",
+    "sha256": "b82cc8fb9ad0ab8fd67c4b9df2454837fb9f91ecdc452930e57d0286329d2712"
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "status": "PASS_SCOPED",
+  "scope": "One cancelled/requeued enemy planet17 native order, observed 90-day windup and fire0/time30 parameters, no advance EEP payout only",
+  "checks": {
+    "same_day_requeue_existing_no_settlement_9": true,
+    "cancel_order_empty": true,
+    "requeue_new_planet17_destroy_order": true,
+    "requeue_new_order_id2": true,
+    "requeue_windup_reset_to0": true,
+    "requeue_full_source_snapshot_unchanged": true,
+    "requeue_full_core_snapshot_unchanged": true,
+    "requeue_all_population_groups_unchanged": true,
+    "requeue_all_population_jobs_unchanged": true,
+    "requeue_all_stockpile_unchanged": true,
+    "2200_03_09_windup_matches_elapsed_days": true,
+    "2200_03_09_native_windup_time90": true,
+    "2200_04_01_windup_matches_elapsed_days": true,
+    "2200_04_01_native_windup_time90": true,
+    "2200_05_01_windup_matches_elapsed_days": true,
+    "2200_05_01_native_windup_time90": true,
+    "2200_06_01_windup_matches_elapsed_days": true,
+    "2200_06_01_native_windup_time90": true,
+    "all_active_eep_country_variables_unchanged": true,
+    "all_active_source_alive_owner_controller1_size19": true,
+    "all_active_live_q19_and_native_loss0": true,
+    "all_active_core_capacity2": true,
+    "all_active_no_eep_source_active_or_receipt_flags": true,
+    "all_active_worlds_and_empires_objectives_unpaid": true,
+    "all_active_no_actor_army_on_target": true,
+    "all_active_no_actor_transport_ship": true,
+    "windup90_elapsed_game_days_to_native_fire_stage": true,
+    "fire_stage_has_native_fire0_and_time30": true
+  },
+  "schema": "eep.1019.rc4-native-requeue-windup.v2",
+  "run_id": "20261019T112808Z",
+  "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+  "case_evidence": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\pk2-cancel-requeued-no-settlement-case-v1.json",
+    "sha256": "5d06dd198d1425835430119fd3f6730f182170f544c7c464222d5bbd55754daa"
+  },
+  "no_settlement_evidence": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-pk2-cancel-requeued-no-settlement-report-v1.json",
+    "sha256": "da40d51bdd5b5fc83c1a41cb7d59ce46a0a74d101d227e11be681ac3959eeceb"
+  },
+  "evidence": [
+    {
+      "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-pk2-requeue-monthly-native-collector-v1.json",
+      "sha256": "329b3a0d0bd0fc94205ebd53e12932a1172e274858fce07243a2115079c739ff"
+    },
+    {
+      "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-pk2-windup-fire0-native-collector-v1.json",
+      "sha256": "115ef9d0e8e6626f410a703287c87b458b5cdd2b07038cc7bbb1db4a55084fd1"
+    }
+  ],
+  "same_day_strict_differences": {
+    "status": "FAIL",
+    "scope": "strict comparison of all old gameplay fields plus all 1019 observations; no ignored paths",
+    "checks": {
+      "no_gameplay_differences": false,
+      "same_native_date": true
+    },
+    "before": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2cancel.sav",
+      "save_sha256": "add4d9de449008c49a8885ddd6fb08d828544f7a22441eda05f45da086b2cd07",
+      "run_id": "20261019T112808Z",
+      "version": "0.4.0-rc.4",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2cancel.audit.json",
+      "audit_sha256": "ccf3fb93e827361e54266b50144d8a3197de50216403c034966a76d35b403162",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2cancel.native-save.json",
+          "sha256": "7656e5c607039cacc24f3d12f7f50cb23ae2a1d7b1164443919acce886c2eb95",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\acceptance-fixtures\\pk2cancel.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2cancel.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2cancel.sav",
+            "sha256": "add4d9de449008c49a8885ddd6fb08d828544f7a22441eda05f45da086b2cd07",
+            "date": "2200.03.09"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    },
+    "after": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2requeued.sav",
+      "save_sha256": "64e34870d6f4a59e1c6b32ce140ece4b48dddab8752de0c59017f0ff88022708",
+      "run_id": "20261019T112808Z",
+      "version": "0.4.0-rc.4",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2requeued.audit.json",
+      "audit_sha256": "027a1a0d5ccf82623e110624929da1838552138550686a4bf538cb7ad64ff5bb",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2requeued.native-save.json",
+          "sha256": "5852c43808a6b2b1fa623b371c89ab4247c20957837eac90e63bf84afa09f3d9",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\acceptance-fixtures\\pk2requeued.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2requeued.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2requeued.sav",
+            "sha256": "64e34870d6f4a59e1c6b32ce140ece4b48dddab8752de0c59017f0ff88022708",
+            "date": "2200.03.09"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    },
+    "before_date": "2200.03.09",
+    "after_date": "2200.03.09",
+    "differences": [
+      {
+        "path": "$.fleets.159.native.order_id",
+        "before": 2,
+        "after": 3
+      },
+      {
+        "path": "$.fleets_1019.159.native.order_id",
+        "before": 2,
+        "after": 3
+      },
+      {
+        "path": "$.fleets_1019.159.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.27332\n\t\t\t\ty=-20.93996\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=21.41182\n\t\t\t\ty=1.60072\n\t\t\t\tspeed=0.00141\n\t\t\t\trotation=-1.61935\n\t\t\t\tforward_x=0.01417\n\t\t\t\tforward_y=-0.00045\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=0\n\t\t\t\tships=\n\t\t\t\t{\n\t\t\t\t\t997 \n\t\t\t\t}\n\t\t\t\tparent=\n\t\t\t\t{\n\t\t\t\t\t-1 \n\t\t\t\t}\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=-7.55023\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.87091\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=32.63097\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t\tvisual_height=10\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=1\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.03.07\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\torder_id=2\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=93960.00000\n\t\tmilitary_power=163886.56250\n\t\tdiplomacy_weight=163886.56250\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.27332\n\t\t\t\ty=-20.93996\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=21.41182\n\t\t\t\ty=1.60072\n\t\t\t\tspeed=0.00141\n\t\t\t\trotation=-1.61935\n\t\t\t\tforward_x=0.01417\n\t\t\t\tforward_y=-0.00045\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=0\n\t\t\t\tships=\n\t\t\t\t{\n\t\t\t\t\t997 \n\t\t\t\t}\n\t\t\t\tparent=\n\t\t\t\t{\n\t\t\t\t\t-1 \n\t\t\t\t}\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=-7.55023\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.87091\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=32.63097\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t\tvisual_height=10\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=1\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.03.07\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\torder_id=3\n\t\tcurrent_order=\n\t\t{\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=17\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_windup_order=\n\t\t\t\t\t{\n\t\t\t\t\t\twindup=0\n\t\t\t\t\t\twindup_time=90\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=2\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=93960.00000\n\t\tmilitary_power=163886.56250\n\t\tdiplomacy_weight=163886.56250\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      }
+    ]
+  },
+  "cross_date_strict_comparisons_preserved": true,
+  "natural_population": [
+    {
+      "date": "2200.03.09",
+      "core": 4809,
+      "source": 5206
+    },
+    {
+      "date": "2200.04.01",
+      "core": 4814,
+      "source": 5209
+    },
+    {
+      "date": "2200.05.01",
+      "core": 4819,
+      "source": 5211
+    },
+    {
+      "date": "2200.06.01",
+      "core": 4824,
+      "source": 5214
+    },
+    {
+      "date": "2200.06.09",
+      "core": 4824,
+      "source": 5214
+    }
+  ],
+  "independent_crisis_objectives": [
+    {
+      "date": "2200.03.09",
+      "native": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 75
+        }
+      ]
+    },
+    {
+      "date": "2200.04.01",
+      "native": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 75
+        }
+      ]
+    },
+    {
+      "date": "2200.05.01",
+      "native": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 90
+        }
+      ]
+    },
+    {
+      "date": "2200.06.01",
+      "native": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 90
+        }
+      ]
+    },
+    {
+      "date": "2200.06.09",
+      "native": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 90
+        }
+      ]
+    }
+  ],
+  "full_duration_case_status": "PENDING",
+  "limitations": [
+    "No fire30 completion observation yet.",
+    "Source persisted eep_q/colossus_active absent throughout; no populated-snapshot cancellation callback assertion.",
+    "Enemy-ship crisis progress changes 75 to90 independently during May and is not treated as world/empires payout.",
+    "Cross-month native population and stock changes are retained; same-day no_settlement applies only to cancel/requeue.",
+    "Recorded native guard fields are not a full trigger interpreter or exhaustive invalid-target matrix."
+  ],
+  "native_q_basis": {
+    "frozen_definition": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\mod\\eep-1019\\common\\script_values\\eep_values.txt",
+      "sha256": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba",
+      "body": "\n    base = 0\n    complex_trigger_modifier = {\n        trigger = count_deposits\n        parameters = { type = d_lithoid_devastation }\n        mode = add\n    }\n"
+    },
+    "stages": [
+      {
+        "stage": "requeued",
+        "date": "2200.03.09",
+        "source_save_sha256": "64e34870d6f4a59e1c6b32ce140ece4b48dddab8752de0c59017f0ff88022708",
+        "planet_size": 19,
+        "native_damage_deposit_count": 0,
+        "q": 19,
+        "all_native_deposits": {
+          "323": {
+            "type": "d_decrepit_dwellings"
+          },
+          "324": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "325": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "326": {
+            "type": "d_hot_springs"
+          },
+          "327": {
+            "type": "d_frozen_gas_lake"
+          },
+          "328": {
+            "type": "d_tempestous_mountain"
+          },
+          "329": {
+            "type": "d_veiny_cliffs"
+          },
+          "330": {
+            "type": "d_ore_rich_caverns"
+          },
+          "331": {
+            "type": "d_rich_mountain"
+          },
+          "332": {
+            "type": "d_forgiving_tundra"
+          },
+          "333": {
+            "type": "d_fungal_caves"
+          },
+          "334": {
+            "type": "d_forgiving_tundra"
+          },
+          "335": {
+            "type": "d_fungal_forest"
+          }
+        }
+      },
+      {
+        "stage": "windapr",
+        "date": "2200.04.01",
+        "source_save_sha256": "bf35e779561e5174b8f6f676df3ed43136e73f8a4af2968ef55df668869652d4",
+        "planet_size": 19,
+        "native_damage_deposit_count": 0,
+        "q": 19,
+        "all_native_deposits": {
+          "323": {
+            "type": "d_decrepit_dwellings"
+          },
+          "324": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "325": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "326": {
+            "type": "d_hot_springs"
+          },
+          "327": {
+            "type": "d_frozen_gas_lake"
+          },
+          "328": {
+            "type": "d_tempestous_mountain"
+          },
+          "329": {
+            "type": "d_veiny_cliffs"
+          },
+          "330": {
+            "type": "d_ore_rich_caverns"
+          },
+          "331": {
+            "type": "d_rich_mountain"
+          },
+          "332": {
+            "type": "d_forgiving_tundra"
+          },
+          "333": {
+            "type": "d_fungal_caves"
+          },
+          "334": {
+            "type": "d_forgiving_tundra"
+          },
+          "335": {
+            "type": "d_fungal_forest"
+          }
+        }
+      },
+      {
+        "stage": "windmay",
+        "date": "2200.05.01",
+        "source_save_sha256": "3bd0563aba42370042546bc26718b230baa24458f98a56d275b7fc39aba970ba",
+        "planet_size": 19,
+        "native_damage_deposit_count": 0,
+        "q": 19,
+        "all_native_deposits": {
+          "323": {
+            "type": "d_decrepit_dwellings"
+          },
+          "324": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "325": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "326": {
+            "type": "d_hot_springs"
+          },
+          "327": {
+            "type": "d_frozen_gas_lake"
+          },
+          "328": {
+            "type": "d_tempestous_mountain"
+          },
+          "329": {
+            "type": "d_veiny_cliffs"
+          },
+          "330": {
+            "type": "d_ore_rich_caverns"
+          },
+          "331": {
+            "type": "d_rich_mountain"
+          },
+          "332": {
+            "type": "d_forgiving_tundra"
+          },
+          "333": {
+            "type": "d_fungal_caves"
+          },
+          "334": {
+            "type": "d_forgiving_tundra"
+          },
+          "335": {
+            "type": "d_fungal_forest"
+          }
+        }
+      },
+      {
+        "stage": "windjun",
+        "date": "2200.06.01",
+        "source_save_sha256": "88f03fbc727f3d374e8210e41e51cb010c329ce3bc570ed205022a9d3290dd2b",
+        "planet_size": 19,
+        "native_damage_deposit_count": 0,
+        "q": 19,
+        "all_native_deposits": {
+          "323": {
+            "type": "d_decrepit_dwellings"
+          },
+          "324": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "325": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "326": {
+            "type": "d_hot_springs"
+          },
+          "327": {
+            "type": "d_frozen_gas_lake"
+          },
+          "328": {
+            "type": "d_tempestous_mountain"
+          },
+          "329": {
+            "type": "d_veiny_cliffs"
+          },
+          "330": {
+            "type": "d_ore_rich_caverns"
+          },
+          "331": {
+            "type": "d_rich_mountain"
+          },
+          "332": {
+            "type": "d_forgiving_tundra"
+          },
+          "333": {
+            "type": "d_fungal_caves"
+          },
+          "334": {
+            "type": "d_forgiving_tundra"
+          },
+          "335": {
+            "type": "d_fungal_forest"
+          }
+        }
+      },
+      {
+        "stage": "fire0",
+        "date": "2200.06.09",
+        "source_save_sha256": "6ad0ef297b802a87d4b366d66539d0672cc6259480d2e0d600a3b677e0ab3ce6",
+        "planet_size": 19,
+        "native_damage_deposit_count": 0,
+        "q": 19,
+        "all_native_deposits": {
+          "323": {
+            "type": "d_decrepit_dwellings"
+          },
+          "324": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "325": {
+            "type": "d_failing_infrastructure",
+            "swap_type": "d_ore_rich_caverns"
+          },
+          "326": {
+            "type": "d_hot_springs"
+          },
+          "327": {
+            "type": "d_frozen_gas_lake"
+          },
+          "328": {
+            "type": "d_tempestous_mountain"
+          },
+          "329": {
+            "type": "d_veiny_cliffs"
+          },
+          "330": {
+            "type": "d_ore_rich_caverns"
+          },
+          "331": {
+            "type": "d_rich_mountain"
+          },
+          "332": {
+            "type": "d_forgiving_tundra"
+          },
+          "333": {
+            "type": "d_fungal_caves"
+          },
+          "334": {
+            "type": "d_forgiving_tundra"
+          },
+          "335": {
+            "type": "d_fungal_forest"
+          }
+        }
+      }
+    ]
+  },
+  "supersedes": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-pk2-requeue-windup-fire0-report-v1.json",
+    "sha256": "fda31b172b32bd9b2162839b53fcedc6f1b8c958164f50bff447c127e629f709",
+    "reason": "v1 incorrectly attempted nonexistent eep_damage variable; v2 directly counts actual d_lithoid_devastation deposits per frozen source. Original v1 remains byte unchanged."
+  }
+}

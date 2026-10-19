@@ -519,7 +519,11 @@
     "ship_size_trigger_catalog": "triggers.log:1083-1085 supports fleet as well as ship; a ship-related trigger name does not imply ship-only input.",
     "runtime_alignment": "Root reports the actual EEP FROM comparison against event_target:eep_mothership@owner passed. The planned control keeps the same Mother fleet scope.",
     "withdrawn_inference": "The prior proposal to replace Mother fleet with Mother ship based on from.fleet.owner and is_arkship_ship is withdrawn; the full supported-scope catalogs were not considered.",
-    "precondition": "Verify event_target:eep_mothership0 resolves to the current Mother fleet after native pk1ready load.",
+    "precondition": "Verify event_target:eep_mothership0 resolves to the current Mother fleet after native pk2base load; original saved binding is fleet159 and target planet17.",
     "execution_status": "RC4 native control not yet executed; original source excerpts and frozen payload remain unchanged."
-  }
+  },
+  "current_base_plan": "rc4-native-callback-plan.json (pk2base replaces the earlier unexecuted pk1ready plan)",
+  "document_role": "Historical pre-execution plan/source record; current observed execution is reported separately.",
+  "subsequent_execution_analysis": "../1019-native-cracker-control/analysis.json",
+  "subsequent_execution_doc": "../../rc4-native-cracker-control-analysis-2026-10-19.md"
 }

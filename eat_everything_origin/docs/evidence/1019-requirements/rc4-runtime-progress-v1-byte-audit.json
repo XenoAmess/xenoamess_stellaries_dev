@@ -1,0 +1,90 @@
+{
+  "schema": "eep.1019.rc4-progress-v1-byte-audit.v1",
+  "status": "PASS_BYTE_AUDIT_SCOPED",
+  "runtime_acceptance": "PENDING",
+  "scope": "Fresh RC4 identity and archived base/queued/day1 observations only",
+  "progress_index": {
+    "path": "docs/evidence/1019-requirements/rc4-runtime-progress-v1.json",
+    "sha256": "2cf16f8eebd1c4f09ee9d21c25c5b7f146e0a15ee36b88fd1aed23b224d6d36a"
+  },
+  "reference_plan": {
+    "path": "docs/evidence/1019-requirements/rc4-runtime-reference-plan-v1.json",
+    "sha256": "a78fd497035022e47511a2a5f5936dc551638e4b8f97286d1223cbb854a86038"
+  },
+  "stage_archive": {
+    "path": "docs/evidence/1019-rc4-pk2-duration/archive-index-v1.json",
+    "sha256": "b82cc8fb9ad0ab8fd67c4b9df2454837fb9f91ecdc452930e57d0286329d2712"
+  },
+  "archive_verification": {
+    "path": "docs/evidence/1019-rc4-pk2-duration/archive-verification-v1.json",
+    "sha256": "57d7ef97acfcff9382de1db6345f5e56f02d96fed90bbba3fc9aa53f1de95949"
+  },
+  "verified_payload_files": 265,
+  "verified_payload_bytes": 15174376,
+  "source_and_copied_files": 59,
+  "three_native_sav_audit_receipts_crc_gamestate_verified": true,
+  "archive_checks_true": 20,
+  "index_reference_occurrences_verified": 69,
+  "index_unique_files_verified": 38,
+  "unique_manifest_run_id": "20261019T112808Z",
+  "canonical_manifest": {
+    "path": "docs/evidence/1019-rc4-pk2-duration/manifest.json",
+    "sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1"
+  },
+  "root_raw_static_report_sha256": "2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d",
+  "all_18_cases_pending": true,
+  "all_case_checks_null": true,
+  "true_case_checks": 0,
+  "all_baseline_and_candidate_month_arrays_empty": true,
+  "growth_samples_empty": true,
+  "component_rewards_pending_without_claims": true,
+  "rc3_case_results_inherited": false,
+  "historical_archive_reference_count": 6,
+  "only_current_stage_evidence_in_cases": true,
+  "active_logs_or_future_phase_imported": false,
+  "native_timing_observation": {
+    "first_observed_zero_windup_date": "2200.03.08",
+    "first_observed_windup": 0,
+    "actual_native_windup_time": 90,
+    "actual_native_fire_time": null,
+    "actual_native_fire_time_field_present": false,
+    "observed_progress_fraction": 0.0,
+    "configured_txt_total_fire_time": 30,
+    "configured_fire_time_source_only": true
+  },
+  "missing_current_colossus_groups": {
+    "colossus_enemy_fire": {
+      "missing_or_failed_checks": [
+        "beneficiary_is_core_owner",
+        "enemy_colony_destroyed",
+        "native_charge_and_fire",
+        "no_army",
+        "owned_noncore_colony_fire",
+        "war_target"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T112808Z"
+      ]
+    },
+    "colossus_cancel_idempotence": {
+      "missing_or_failed_checks": [
+        "cancel_no_reward",
+        "crisis_objective_once",
+        "queue_no_reward",
+        "reload_no_reward",
+        "repeat_event_no_reward"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T112808Z"
+      ]
+    }
+  },
+  "expected_final_gate_rejection": "matching scoped Chinese single-production-mod acceptance required",
+  "existing_root_gate_report_manifest_modified": false
+}

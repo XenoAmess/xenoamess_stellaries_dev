@@ -1,0 +1,28 @@
+# Native weapon targeting: THIS planet/Carrier, FROM firing fleet.
+can_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER = {
+    custom_tooltip = { fail_text = eep_colossus_target_required eep_colossus_target_valid = yes }
+}
+
+eep_colossus_target_valid = {
+    exists = from.owner
+    from.owner = { eep_qualified = yes eep_core_available = yes }
+    from = { is_same_value = event_target:eep_mothership@owner }
+    is_colony = yes
+    exists = owner
+    is_artificial = no
+    is_under_colonization = no
+    has_ground_combat = no
+    NOT = { has_carrier_flag = eep_core }
+    NOT = { has_planet_flag = eep_active }
+    NOT = { has_planet_flag = being_devoured }
+    NOT = { has_planet_flag = eep_credit_done }
+    NOT = { has_planet_flag = eep_destroy_done }
+    planet_size > value:eep_damage_count
+    NOT = { has_designation = col_nanotech_world }
+    NOT = { is_planet_class = pc_cosmogenesis_world }
+    eep_digestible_world = yes
+    OR = {
+        is_owned_by = from.owner
+        owner = { is_at_war_with = from.owner }
+    }
+}

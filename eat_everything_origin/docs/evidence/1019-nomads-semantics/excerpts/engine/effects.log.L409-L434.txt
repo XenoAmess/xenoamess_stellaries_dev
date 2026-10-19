@@ -1,0 +1,26 @@
+change_pc - Changes the class of the scoped planet
+change_pc = <class/random list>
+change_pc = { class = <class/random list> inherit_entity = yes }
+Supported Scopes: planet ship colony
+
+start_terraform_process - Starts terraforming process of scoped planet
+start_terraform_process = <class/random list>
+start_terraform_process = { class = <class/random list> inherit_entity = yes }
+Supported Scopes: planet ship colony
+
+set_star_class - Sets the star's star class, affecting system and galactic map graphics and potentially modifiers. Also changes the planet class of the system's primary star.
+set_star_class = <star class>
+Supported Scopes: galactic_object
+
+kill_pop_group - Instantly destroys part of a pop group
+kill_pop_group = {
+	pop_group = <target pop group>
+	amount = <amount killed> OR percentage = <percentage killed>
+	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
+	growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
+}
+Supported Scopes: all
+
+destroy_colony - Destroys the colony on the scoped carrier
+destroy_colony = yes
+Supported Scopes: planet ship colony

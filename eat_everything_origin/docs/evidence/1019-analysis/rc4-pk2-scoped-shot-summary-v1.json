@@ -1,0 +1,221 @@
+{
+  "schema": "eep.1019.rc4-pk2-scoped-shot-summary.v1",
+  "status": "PASS_SCOPED",
+  "scope": "One real native enemy-colony17 shot,90-day charge plus30-day fire, stable q19 settlement and correct completion-callback/reload dedup only",
+  "run_id": "20261019T112808Z",
+  "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+  "release_status": "PENDING",
+  "full_case_matrix_status": "PENDING",
+  "layers": [
+    {
+      "layer": "duration",
+      "status": "PASS_SCOPED",
+      "checks_passed": 24,
+      "checks_total": 24,
+      "failed_checks": [],
+      "evidence": {
+        "path": "docs/evidence/1019-analysis/rc4-pk2-native-duration-report-v2.json",
+        "sha256": "eb710c8fbfe827e44c8540bfeab45ac33f5992113e35ded7b2dd1ca67e1722c5"
+      }
+    },
+    {
+      "layer": "immediate_settlement",
+      "status": "FAIL",
+      "checks_passed": 23,
+      "checks_total": 25,
+      "failed_checks": [
+        "source_colony_destroyed",
+        "separate_empire_crisis_reward_matches_explicit_expectation"
+      ],
+      "evidence": {
+        "path": "docs/evidence/1019-analysis/rc4-pk2-prefire-fired-settlement-report-v1.json",
+        "sha256": "0a53c3514a0369d6bb334b149659c051edeca127364320a83124f3ca4878fe71"
+      }
+    },
+    {
+      "layer": "stable_settlement",
+      "status": "PASS_SCOPED",
+      "checks_passed": 25,
+      "checks_total": 25,
+      "failed_checks": [],
+      "evidence": {
+        "path": "docs/evidence/1019-analysis/rc4-pk2-prefire-stable-settlement-report-v2.json",
+        "sha256": "c4faf33a86831e7fd67ca0c645758a4cd57045a995832e697d3987050f6f2059"
+      }
+    },
+    {
+      "layer": "callback_reload",
+      "status": "PASS_SCOPED",
+      "checks_passed": 28,
+      "checks_total": 28,
+      "failed_checks": [],
+      "evidence": {
+        "path": "docs/evidence/1019-analysis/rc4-pk2-valid-callback-reload-dedup-report-v1.json",
+        "sha256": "d8d093ba60dc2f10feb8e658ca414baec9069a7ef914919f8830b79ca7593736"
+      }
+    }
+  ],
+  "runtime_dates": {
+    "new_requeue_windup0": "2200.03.09",
+    "native_fire0_time30": "2200.06.09",
+    "native_fire29_time30": "2200.07.08",
+    "actual_weapon_completion": "2200.07.09",
+    "native_country_death_empire_reward_cache_cleanup": "2200.07.10",
+    "correct_double_callback_after_cleanup": "2200.07.11",
+    "native_reload_then_correct_single_callback": "2200.07.12"
+  },
+  "actual_settlement": {
+    "q": 19,
+    "native_devour_damage_deposit_count_before": 0,
+    "C_delta": 19,
+    "G_delta": 19,
+    "D_before_after": [
+      2,
+      6
+    ],
+    "manufactured_population": 300,
+    "enemy_population_return": 0,
+    "core_population_before_after": [
+      4828,
+      5128
+    ],
+    "capacity_delta": 4,
+    "settled_world_count_delta": 1,
+    "level_before_after": [
+      0,
+      1
+    ],
+    "next_level_remainder": 1,
+    "component_rewards": 0,
+    "six_core_tiers": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "worlds_objective_points": 750,
+    "empires_objective_points_after_native_cleanup": 600,
+    "unit_reward_calibration": {
+      "path": "docs/evidence/1019-analysis/rc3-pk1-objective-calibration-v1.json",
+      "sha256": "58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a"
+    }
+  },
+  "population_species_evidence": [
+    {
+      "stage": "pk2prefire",
+      "date": "2200.07.08",
+      "save_sha256": "4a29d5ca6bd4383bda3d75067727b09bd8e0c920a99f05b2d30864bf8d71a7c7",
+      "founder_species_ref": 3321888769,
+      "actual_core_population_by_species": {
+        "3321888769": 4828
+      }
+    },
+    {
+      "stage": "pk2fired",
+      "date": "2200.07.09",
+      "save_sha256": "69a36461a8ee6617b3bd7ce6d1ff183716a0a34cad1c843c12ee018092bb53eb",
+      "founder_species_ref": 3321888769,
+      "actual_core_population_by_species": {
+        "3321888769": 5128
+      }
+    },
+    {
+      "stage": "pk2dupe",
+      "date": "2200.07.10",
+      "save_sha256": "b2b65422bd5acd4b08ec493710a3ed5f612ca710517e148522cddade9d4f714b",
+      "founder_species_ref": 3321888769,
+      "actual_core_population_by_species": {
+        "3321888769": 5128
+      }
+    },
+    {
+      "stage": "pk2dupevalid",
+      "date": "2200.07.11",
+      "save_sha256": "8e48334f2bea86c10149167749ff855a02fc57fe6a02ae8dd871a9bdd0c4ba0f",
+      "founder_species_ref": 3321888769,
+      "actual_core_population_by_species": {
+        "3321888769": 5128
+      }
+    },
+    {
+      "stage": "pk2dupereload",
+      "date": "2200.07.12",
+      "save_sha256": "86c1f000b1adcf260f27d0cd2ae23fb13e8b2e98045425197c92d0962d152408",
+      "founder_species_ref": 3321888769,
+      "actual_core_population_by_species": {
+        "3321888769": 5128
+      }
+    }
+  ],
+  "checks": {
+    "duration_layer_pass": true,
+    "stable_settlement_unchanged_checker25_pass": true,
+    "correct_callback_reload28_pass": true,
+    "immediate_settlement_FAIL_preserved": true,
+    "manufactured300_all_native_main_species": true,
+    "archive_v3_byte_verification_pass": true,
+    "independent_archive_verification_pass": true
+  },
+  "error_observations": {
+    "operator_invalid_callback_key": "DISMANTLE",
+    "correct_production_key": "DEVOURER",
+    "native_event_error": {
+      "file": "events/nomads_events_1.txt",
+      "line": 2268,
+      "time": "20:09:31",
+      "source_identified_event": "nomads.94",
+      "cause": "NOT_CONCLUDED_HERE"
+    },
+    "raw_error_bytes": {
+      "path": "docs/evidence/1019-analysis/rc4-pk2-complete-errorlog-sample-v1.log",
+      "sha256": "c92f44f4b866edab8f69a8b2e1ce7a860e5487c407541f5b9a5f9298841deb98"
+    },
+    "sample_metadata": {
+      "path": "docs/evidence/1019-analysis/rc4-pk2-complete-errorlog-sample-v1.json",
+      "sha256": "148317216b05a243a4a06e067a23613029fa0d13337dc4749b5b48171bd70fc9"
+    },
+    "no_runtime_error_claim": false
+  },
+  "archive": {
+    "index": {
+      "path": "docs/evidence/1019-rc4-pk2-duration/archive-index-v3.json",
+      "sha256": "1b371ae6e6c33bc1841af895bb94bb7e037d0a7b7da20bd689045d70e7afaf64"
+    },
+    "verification": {
+      "path": "docs/evidence/1019-rc4-pk2-duration/archive-verification-v3.json",
+      "sha256": "730ccb110ac9ff111a916965628cb9c7c6f71fbc8c83d7f8b8a37ab922e27262"
+    },
+    "independent_verification": {
+      "path": "docs/evidence/1019-analysis/rc4-pk2-archive-independent-byte-verification-v3.json",
+      "sha256": "7c4ef92c4d5a1c441f4ca677ea568f14422f04d1b721582811bc000528f80272"
+    },
+    "payload_files": 798,
+    "bytes": 47542644,
+    "native_saves": 15,
+    "ocr_gpu_bindings": 127,
+    "v1_v2_preserved": true,
+    "cutoff_prefix": "pk2-complete-final-state",
+    "later_nativecontrol_excluded": true,
+    "complete_activity_logs_freeze": false
+  },
+  "unverified_requirements": [
+    "Owned noncore colony actual weapon fire",
+    "Normal owned settlement real task regression",
+    "Lithoid and native-devour branch differences",
+    "All invalid-target and invalid-or-cancelled growth boundaries",
+    "Native jump action and same-country Relic panel/DPS/power comparison",
+    "Full final-candidate startup/economy/migration/growth release matrix",
+    "Root cause and acceptance disposition of native nomads event error"
+  ],
+  "limitations": [
+    "Fixture loaded an unfired RC3 native save into frozen RC4; it is not RC4 new-game startup or public0.3.1 migration.",
+    "Jul9 immediate FAIL remains distinct from Jul10 stable result; weapon still completed after30 fire days, not31.",
+    "Jul10 invalid DISMANTLE dispatch is not counted as successful callback dedup.",
+    "Jul1 independent autosave is missing, and no Jul1 screenshot/receipt/save was fabricated.",
+    "Full strict state differences remain visible; no strict full-reload PASS is claimed.",
+    "Mother setup teleport was not a native jump test.",
+    "Historical unit reward calibration is reused only for native reward units in the same universe, not inherited RC3 case acceptance."
+  ]
+}

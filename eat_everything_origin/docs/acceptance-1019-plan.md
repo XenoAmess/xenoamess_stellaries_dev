@@ -303,3 +303,131 @@ no_army的准确范围为目标没有actor入侵军队，而非整个帝国不�
 校准已完成：`pk1calafter`同日Jan2，SAV SHA256 `6d736fd34099cadc449121180fb372029d65dc3a344a1465c16b0c86ab70037f`。实际命令在global Mother的owner块内对两目标各complete一次；worlds的progress由无记录0变为750，empires由无记录0变为600。EEP全部country变量／flags、core2与source17完整原生快照、所有pop_groups／pop_jobs均相等；core人口4800／capacity2，source人口5200／size19保持。stock唯一差异为原先缺失的menace写入1350，报告没有用该总量校准任意objective。
 
 独立`rc3-pk1-objective-calibration-v1.json`为17项PASS_SCOPED，SHA256 `58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a`；两种case校准evidence字段可按SHA分别引用同一报告，对应奖励750／600。非灭国结算的expected_crisis_empires_progress_delta仍需显式为0，不能把600无条件写入所有case。严格比较保持FAIL及三项真实差异，原报告未覆盖。最小包53个源文件／3,206,832字节，八项字节／来源检查全true；其`archive-index-v1.json` SHA256 `f96198b616a731f37e563a9d29513f12c7f13e95dd750c4f9e9e02a25de3b891`。没有活动日志，整体运行仍非freeze。主线程恢复pk1base后才下实际巨像命令，校准不作为发射通过或自然收益证据。
+
+### PK物理星系定位只读更正
+
+原生galactic_object8以重复直接`planet`键列出physical9～22，含17，不是一个`planets`包装列表。其name key `SPEC_Dabbax_system`在原版简中译为普尔克兰；physical17 key `SPEC_Dabbax_planet`译为戴巴纳仙，moon_of=15。其他ART2_PLANET_Vurl-*原版译名本来就是沃尔*；这组UI文字与目标系统一致，不能据未见卫星名称断定Mother处在错误系统。
+
+Mar7实际`pk1prequeue` SHA256 `67dad27edbefbe00565488c1058b8161fcad4903f19ea23bfd6e2b8dc009ffa2`，Mother159 movement(40.65677,161.7926,origin8)，target17(32.63097,152.52768,origin8)，parent15(39.05145,129.3732,origin8)。它没有destroy_planet_order，故仅是下令前探查基线；不得因文件名含prequeue而声称排队成功。唯一target/core/Mother绑定及war保持，EEP C/G/made/worlds/L/R／六tier0、D2，core人口4809、source人口5206。原生destroy_enemy_ships进度75及menace75是清场收益，worlds／empires仍无记录，证明手工1350校准已恢复。完整成员坐标、原始字段、战争／军队、库存／预算另存`rc3-pk1prequeue-location-and-ledger-v1.json`，SHA256 `615db78fe49eafc9d6e07f94c0e968579d1c45b7b589cd0762b5bd634bbb2dc7`，仅OBSERVATION_ONLY；不假定未证实planet-select API。
+
+### Hive首月独立子集归档设计（先于实施）
+
+将已完成Hive首月阶段独立保存于`evidence/1019-rc3-hive-startup/`。原字节复制不可变manifest／copied_mod／源快照绑定／静态gate，fhcm00、fhcm01、fhcm01ui及各自audit／receipt／economy summary、实际动作／GPU截图／OCR、既有23项startup与十类auto/UI核对报告。首次fh选择失败的实际记录完整保留，标明操作选择失败及其边界，不能改写为Mod失败或成功。
+
+只复制已完成fh／fhc前缀白名单，以首月auto/UI comparison完成为截止，不复制Machine、硬件、PK分支或任何活动日志，不称完整run freeze。每个源文件读前／后stat及双读SHA一致、复制SHA一致，归档`* -text`保护。manifest文件表逐项匹配copied_mod／source snapshot，三SAV／audit／receipt及实际图像OCR哈希均须一致。归档索引和独立字节验证明确Hive仅开局／首月通过、全年经济及发布仍PENDING；完成后给发布agent引用路径，不操作UI／Steam／Mod／Git提交。
+
+Hive独立归档已完成：289源文件／16,250,350字节，25项字节／来源检查全true。`1019-rc3-hive-startup/archive-index-v1.json` SHA256 `f87ba1d0e428f603135d6b6d925e2c14680b3c5901da6d80572330cfcecbacde`，`archive-verification-v1.json` SHA256 `83de22b0618f4f1e4002094ad42019ee96c27881ac59b4d71d65c954339b3d49`。148份原始fh／fhc阶段文件加两份保存名称Ctrl+A、原字节manifest、完整copied_mod／source_snapshot、原始静态报告、十份执行器／只读工具源及三份专项报告均有逐源SHA。
+
+startup报告仍为23项限定PASS_SCOPED，SHA256 `1a525a12422911513abea8f024afaaf28d801149a8ec9ba0a17a50bd78fb142f`；另出`rc3-hive-auto-ui-comparison-report-v1.json`十项限定PASS_SCOPED，SHA256 `c14bd2961780d606918bf1b09d36bc32a754df55f70824734a48b2dff7da0438`。首次匹配停止的左栏截断行、随后实际点击与右栏完整“EEP 02 有机吞噬蜂群”标题保持；`rc3-hive-selection-attempt-review-v1.json`明确源异常字面量不等于不存在的独立终端原始错误文件，不重建stdout。没有活动日志、Machine／PK阶段或全年Hive结论，发布索引仍按PENDING引用。
+
+### PK实际排队与充能只读方案
+
+主线程已通过实际原生菜单“拆解星球 戴巴纳仙”下令，先保存已survey但未下令的`pk1ready`（Mar7，SHA256 `11149f60e725625393adececf6481f1dffc9b9364cc1c6fb46e3f76f328eb0ba`），随后依次取得同日queued及推进6日的charge。仅当原生SAV／audit／receipt齐备且SHA一致才读，旧模板与历史证据不改。ready→queued运行同日no-settlement并保留完整strict差异；独立抽取所有EEP country／Mother变量、源星q／flags、physical17的真实destroy_planet_order及移动子订单、真实战争与我方军队位置。charge读取原生progress字段和日期，按实际原版订单字段校准剩余天数，不凭UI字幕臆造发射状态。
+
+另一agent正在原checker仅修migration公共空队列适用性；本轮先将当前独立只读工具链原字节保存到`evidence/1019-analysis/pk1-readonly-toolchain-v1/`，使用其tools／testing完整相对布局运行PK检查，防止执行时源码与报告SHA错配。冻结范围仅现有audit_save、check_single_homeworld、check_1019、inspect_1015、inspect_1019；逐源SHA索引和`* -text`保护。不改业务Mod、UI、SAV及任何旧报告。实际charge／fire仍分开取证，queued／charge不会自动通过完整巨像case。
+
+已完成真实ready→queued：同日Mar7无收益九项通过；独立19项订单／完整EEP变量／原生菜单点击／无目标我方军队检查通过，报告`rc3-pk1-ready-queued-case-report-v1.json` SHA256 `f4835d18e16d163c7296750a8f664cbfe4ffd9a81f27427caf8a6f0c9625050a`。Mother.current_order.destroy_planet_order.planet=17，移动子订单坐标精确匹配源星且can_reach=yes；此时source q／colossus_active尚未出现，不将订单接受外推为callback已经执行。strict保持FAIL三差异：两处order_id1→2及完整Mother原始体新增真实订单，未忽略任何路径。
+
+### pk1charge原生保存中途失败的紧急只读调查
+
+真实FF6至Mar13后，helper在audit要求country1必须存在时停止；原始`pk1charge.sav`已由原生UI写入并复制，但没有原始audit／receipt，也未完成closemenu。该原件及失败状态不可覆盖。允许在独立analysis目录生成明确标为派生、无原始receipt的只读audit／观察，并将原ZIP、实际history同字节副本和已完成保存动作／GPU／OCR做最小字节留证；不能伪造标准receipt或冒充完整来源门禁PASS。
+
+实际raw SHA256 `156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77`，ZIP CRC完整，与游戏history内原生文件同字节。Mar13实际状态已经完成结算：目标17 pc_shattered／eep_q19／old_damage0／五完成flag，country1已不存在，Mother current_order为空；C19/G19/D6/made300/worlds1，三last为4／300／0，core人口5109＝Mar7的4809＋300，worlds750／empires600、enemyships75。故名为charge的文件不证明取得充能中间态；CSV的90／30不能未经原生单位验证解释为90／30个游戏日。五完成flag时间62809656相对Jan1为69日、即Mar10，可作为完成发生在六日窗口内的时间旁证。
+
+原生布局新事实：planet17仍保存colony=1整数链接，colony1也保留历史species／经济／增长cache；但planet已无owner／controller、源pop_groups及pop_jobs实际列表为空、实际人口0。旧settlement用`colony`字段消失判定毁殖民地是错误的布局假设，后续必须先保留旧工具诊断FAIL，再以真实失去所有权、无实际人口／岗位与pc_shattered等正面证据替代该假设；严格全差异门禁保持不变。当前raw缺原始receipt，仍只作OBSERVATION_ONLY，等待主线程另存完整fired证据后正式判断。
+
+主线程随后授权独立部分保存恢复，设计先记于`pk1-partial-save-recovery-1019.md`。原run无audit／receipt状态不动，`pk1-interrupted-save-v1/recovered/`新建原字节SAV／manifest副本、派生country0 audit和`pk1charge-recovery-receipt.json`，明确original_helper_completed=false，保留原生history与artifact同SHA／mtime、实际保存名称／Ctrl+A／点击／GPU图、重现`requested native country does not exist: 1`异常及UTC。旧inspector本就支持`*-receipt.json`，没有修改来源门禁或伪造原helper成功receipt；恢复receipt SHA256 `057a94b2108e35fb9788c878da2966b13b4cc46024df25e5c029dd158ca134fa`。
+
+冻结ba178旧checker实际运行完整case后，25项仅source_colony_destroyed失败，旧报告SHA256 `ee7a40f4d50851588eeccf29a3107e7a2d708c37e59c7a4951f36660b49e79de`。仅settlement函数加入真实活性模型：pc_shattered、无owner／controller、实际人口／group／job列表空、直接活人口计数为0或缺失，保留colony整数及历史cache。新checker SHA256 `681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc`，原inspector未改。13项真实正例／数据层负例／仅函数变化证明全部通过，另17项migration回归通过，未改另一agent的migration区域；原df147完整字节亦保留。
+
+新结算报告`rc3-pk1-recovered-settlement-report-v2.json`的25项数学／持久结果检查为PASS_SCOPED，SHA256 `a7462e3360ab52d2c4ecb711b5a727507d5eabdc63373880ba1d7c402fd994c5`；strict仍完整保留179项真实差异。总报告`rc3-pk1-native-fire-duration-fail-v1.json`明确为FAIL，SHA256 `dcf8d56e47d718d20fe6e780d366ef592bc0a2d46adbceb52d8579b50b6b0342`：真实菜单／physical17订单到pc_shattered及q19恰一次、750／600奖励与无目标我方陆军可分别肯定，但六日内已完成、没有充能中间档，90／30游戏日要求未通过，不能用结算局部PASS覆盖完整case失败。自然人口预期0依据同月窗口和独立六日硬件人口基线，未按after人口差额逆推。
+
+本轮独立恢复／动作／原生输入与原始ZIP／新旧工具及报告字节包共114源文件／7,863,767字节，16项验证全true。`pk1-interrupted-save-v1/archive-index-v1.json` SHA256 `2d233ed0c2397ba7ea30897f4d485d6e398008a8ffe192b5f8cb9a23cf6408a7`，`archive-verification-v1.json` SHA256 `d1ed2a06ddc03a0cf07a0ffad6e509385bb00db1b440e85c0818372faeb54f68`。原始helper缺audit／receipt、旧FAIL与来源字节保留；没有活动日志或后续证据，生产Mod未改，完整发布仍阻于时长合同与其他实机门禁。
+
+### RC4独立原生时长夹具只读方案
+
+新run `20261019T112808Z`／PID36644，冻结copied树`06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468`，59生产文件。主线程加载RC3未毁`pk1ready`建立独立时长夹具，不是RC4新游戏开局；首开F12过早的失败及重试保留，不推断错误点击或SAV覆盖。旧RC3六日完成、duration FAIL及全部历史文件均不改。
+
+等`pk2base`原生SAV／audit／receipt齐备且SHA一致才读取，核physical17仍owner1／q19、C0/G0/D2／六tier0、唯一Mother159／997、global core2／target17与军队仍在home；核原始manifest、59文件表、实际copied_mod及RC4组件TXT的`windup={min=90 max=90}`／`total_fire_time=30`，并确认SAV设计实际装载对应组件key。原生订单如出现windup_time／fire_time应按真实SAV字段读取，不能将这两个词误写为TXT键。源码与manifest完整绑定只能证明实际候选配置，不替代后续原生逐日行为。
+
+之后分别等待真实queued／day1等新SAV，按实际订单／原生计时字段与游戏日历判定充能90日、发射30日；未取得这些证据前均PENDING。run静态gate与report冻结的是pre-canonical工具副本，后续LF canonical仅EOL关联由发布agent独立记录；不改raw gate／manifest、不重写来源SHA。此阶段只读，不操作UI／Mod／Steam／Git。
+
+`pk2base`已原生保存Mar7，SHA256 `be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2`。独立`rc4-pk2base-configuration-report-v1.json`为20项基线／来源／配置PASS_SCOPED，SHA256 `b626422942b18cee6883d586fcf002e6f455a3c78547c991fa18ea916419effe`；完整观察另存。source17仍pc_alpine、owner/controller1、size19、损耗0、population5206；C/G/made/worlds/L/R／六tier0、D2，core2人口4809，五home守军保持，无目标我方运输／入侵军队，worlds／empires校准没有带入。Mother唯一159／997，design1495，实际PLANET_KILLER_GUN_01装配正确key且六core在AUX6～11。
+
+59份实际copied_mod与manifest逐SHA相符，组件TXT SHA256 `0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92`，实际为`windup={min=90 max=90}`、`total_fire_time=30`；旧自定义CSV不存在。原始静态报告SHA256 `2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d`保持，numeric_contract为native_csv_or_literal_txt_v1且literal值90／90／30／0已解析。实际EXE SHA亦匹配。以上只证明RC4组件配置和真实SAV装配绑定，原生时长行为仍待queued／day1及后续取样。
+
+RC4真实queued Mar7 SHA256 `700f19e7ee6e786c3a5e4ea28ac67c5d12f829b0a39707aa58f66bd6a32a1ab5`，day1 Mar8 SHA256 `03511b65668f07133ec48b6da1a415f27cf5e47c1f89a292ef85ec302aa5abc3`，各原生audit／receipt／gamestate SHA均通过。queued的physical17 destroy_planet_order仍含移动子订单；day1实际转入`planet_killer_weapon_windup_order={windup=0 windup_time=90 ...}`，因此90参数已由真实订单确证。当前没有fire_time字段，30仅为TXT配置，不能写成原生发射阶段已验证。
+
+`rc4-pk2-queued-day1-report-v1.json`18项限定PASS_SCOPED，SHA256 `8efe970dee9bbe59d259b3500c2f46ef67b96ff174dfbf5765144b54a0558be5`；base→queued原no-settlement九项通过，报告SHA256 `1eb7e5232d1348fce36907eb5dba5677cdaf5e8315a26850ec0c4a180a8aba82`。完整EEP country／Mother变量与modifier不变、core4809／capacity2、source5206／size19／owner1存活、两危机目标无新收益、五home守军和无自有transport均保持。source persisted q／colossus_active仍缺失，只确认live有效q19，不声称queued callback已经执行。
+
+Mar8是首个采样到windup0的日期，精确起算tick尚未连续观察。建议独立下一日Mar9确认是否0→1；若实际按游戏日+1，90日边界暂估Jun8、30日发射边界暂估Jul8，阶段转换tick必须由后续原生SAV确定。base→queued strict FAIL三差异、queued→day1 strict FAIL64差异全保留；没有拿跨日数据伪装同日无收益PASS。整个90／30时长case仍PENDING，旧RC3 FAIL不变。
+
+### RC4 PK2第一阶段增量归档设计（先于实施）
+
+建立独立`evidence/1019-rc4-pk2-duration/` v1，仅白名单run112808已完成的boot／welcome重试、RC3未毁档原生载入、pk2base／queued／day1三阶段及相应真实菜单输入／GPU／OCR、SAV／audit／receipt、原字节manifest／全部59copied_mod／冻结source_snapshot／raw static gate、现有RC4分析报告与只读工具源码。首次开机过早F12动作完整保留，明确没有对应图像或SAV覆盖；随后实际欢迎页及正确载入材料独立列出。原始不存在的失败截图／日志不补造。
+
+逐文件排他创建、读前后stat与双读SHA一致，复制后逐SHA相同；检查完整文件集合不含任何当前`pk2-charge-tick`／`pk2charge1`／stop-hover阶段或活动日志。这些后续仅在稳定后追加v2，不覆盖v1。新归档使用`* -text`，独立索引与verify核对三原生SAV／receipt／audit／gamestate、所有OCR对应原GPU图、59文件表与source snapshot／gate／manifest绑定、raw gate pre-canonical指纹不变。归档结果只供全新RC4 PENDING索引引用，不导入RC3任何预算或PASS、不开完整时长／发布通过，不操作UI／Mod／Steam／Git。
+
+归档索引构建发现RC4冻结源实际使用`gate.json`，不是RC3的`candidate-gate.json`；首次复制所有payload已排他完成，索引在读取旧命名时中止。保留全部副本原字节，按实际`gate.json`重新双读验证并生成首次索引，不覆盖任何已复制文件；该错误属于归档索引路径约定，不是Mod或原生运行失败。
+
+RC4 v1归档已完成265源文件／15,174,376字节，20项集合／字节／原生来源检查全true。`1019-rc4-pk2-duration/archive-index-v1.json` SHA256 `b82cc8fb9ad0ab8fd67c4b9df2454837fb9f91ecdc452930e57d0286329d2712`，verification SHA256 `57d7ef97acfcff9382de1db6345f5e56f02d96fed90bbba3fc9aa53f1de95949`。独立manifest SHA256 `a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1`；三SAV／59文件源与copied／raw gate／实际输入GPU／分析均归档，charge1／Stop／cancel／活动logs没有混入。已提供发布agent建立全新RC4 PENDING索引。
+
+v2增量设计：待charge1与cancel各原生receipt齐备后，追加Mar9 charge1计数、原生Stop按钮tooltip／hover／实际鼠标点击、同日cancel及其独立no-settlement／订单清空／全账本报告；两份实际名称编辑Ctrl+A也须归档。原v1所有payload与索引均不改。白名单仅charge-tick／charge1／select-charging／stop-hover／stop-tooltip／stop-charging-native／cancel／cancelled-state，截止取消后稳定frame；不收录后续requeued／月度autosave／活动日志。shortcut H只作为真实tooltip观察，本轮实际为鼠标点击，不冒充已按H实测。
+
+charge1 Mar9原生SHA256 `c6d861d7ec8751586f8516efbf6fbd2b6e60c5d4bc6fdd2bfdc42613feebfba3`，实际windup1／windup_time90，较Mar8的0确实推进一游戏日＋1。cancel同日Mar9原生SHA256 `add4d9de449008c49a8885ddd6fb08d828544f7a22441eda05f45da086b2cd07`，原生订单清空。Stop真实hover／mouse click均client69,339（desktop837,675），GPU显示停止全部命令tooltip及充能1%，取消后“无指令”；H仅肉眼可见的快捷键提示，本轮没有按H。
+
+`rc4-pk2-charge1-cancel-report-v1.json`19项限定PASS_SCOPED，SHA256 `56b26b89a75b8516f99fedadb52a0f921a79a7bf53ed0881b4798a74bec16669`；既有同日no-settlement九项全true，报告SHA256 `638c5952271b942b15bacacc29aad74c3372cf0258bfbf0f1d8bb67ce121a066`。全部EEP country／Mother变量与modifier、core/source完整原生快照、人口组／岗位／库存／危机均相等；source17 owner1仍活，core4809／capacity2，source5206，无目标我方入侵军队。strict保持FAIL一差异（Mother raw订单移除）。source q／active原本就未写入，本次不能认证带有效snapshot时的清理hook；重排必须新起算，不能累加取消前一日，完整90／30时长仍PENDING。
+
+RC4阶段归档v2完成348源文件＝原265＋83新文件，20,061,431字节，13项追加／保留验证全true。索引SHA256 `3c60b1cc7f85131071a110a87dcfb2f96dbe3f6dfca89f15c234b26621104d13`，verification SHA256 `508b40302a4ada44ec66e9889f00e1062741e2cad76f72ebf50870c18f60f3c2`。v1索引与全部payload原字节不变；phase2严格截止取消后frame，含charge1／cancel两原生SAV／audit／receipt、Stop实际输入／GPU／OCR、两Ctrl+A及新分析，没有后续requeue／月度推进／活动日志。发布agent按新索引版本引用，全部case和完整duration仍PENDING。
+
+### RC4重排队与月度计时只读分析设计
+
+独立读取cancel→requeued同日原生SAV，保留完整strict差异；检查订单重新出现且windup归零，全部EEP账本／危机／源星与core完整状态不变。后续仅在每份真实autosave／audit／receipt齐备并SHA核验后读取Apr1／May1／Jun1，比较原始订单计数和360日原生日历差，不用文件名称或UI百分比替代实际字段。跨月人口、库存等自然变化单独记录，不能以跨月严格差异不等冒充收益，也不将跨月数据放入要求同日的no-settlement检查。
+
+新增独立analysis脚本只读取这些已完成证据，提取原始destroy／windup／fire子订单、目标与core账本、所有EEP变量及危机目标；报告明确原始字段与未知字段，不尝试实现完整引擎trigger解释器。guard证据仅原生字段对应的限定事实，资格／digestible等脚本条件必须引用本run冻结源码，缺完整原生字段则保留UNKNOWN。不得操作UI、生成未来存档、修改业务Mod／原SAV或扩大已有PASS范围。采集路径失败、恢复原字节和没有重复推进须保留；完整shot后再一次性追加归档，不复制活动logs。
+
+重排队Mar9原始SAV SHA256 `64e34870d6f4a59e1c6b32ce140ece4b48dddab8752de0c59017f0ff88022708`：新destroy order_id=2／fleet order_id=3，physical17子订单已是windup=0／windup_time=90。它同日在射程内直接开始新充能，不能沿用首轮Mar8起算或额外移动一日的暂估；取消前1／90不累计。按后续每日＋1条件推算Jun9为90边界、Jul9为30日发射边界，仍需真实阶段转换tick确证，不提前宣告fire_time字段或完成日期已验证。
+
+主线程授权补充Jul1自然人口基线：等`pk2prefire`的immutable原生receipt稳定后，只读获取加载目录`acceptance-fixtures/autosave_2200.07.01.sav`，以真实`pk2-fire-to-lastday-command`开始UTC／mtime、ZIP CRC、meta日期及实际Mother归属验证新鲜性，排他原字节复制为artifact `pk2firejul.sav`，派生原生country0／1 audit并生成明确`native_ui_save=false`的自动存档receipt。该日没有独立HUD截图，不伪造有；Jul8真实prefire档与Jul1自动档分别保留各自来源。事前预期Jul8→Jul9非月初自然人口delta为0，不能按最终人口结果倒推自然项。
+
+重排／月度／fire0首版28项报告已生成，但复查发现其中live q19的表达式错误地尝试读取不存在的`eep_damage`变量。冻结真实`eep_damage_count`是count_deposits(type=d_lithoid_devastation)，不是变量。该fixture实际这类deposit数为0，结论未变；仍保留v1原字节，不将错误依据视为认证，v2必须直接逐份读取实际deposit表并引用冻结script value来计算原生损耗和q。其余原生计数、来源与strict差异不改。
+
+Jul1补证实际失败：在Jul8 `pk2prefire.native-save.json`稳定后按授权检查，`acceptance-fixtures/autosave_2200.07.01.sav`不存在，完整save-games文件名只列出新`autosave_2200.07.08.sav`及Apr1／May1／Jun1。读取在stat处抛FileNotFoundError，未创建任何Jul1 SAV／audit／receipt；不把Jul8自动档冒充月初、不伪造Jul1 HUD。该项作为明确缺失保留，事前Jul8→Jul9自然人口0预期仍依据同月日历和既有原生日步长范围，不声称独立Jul1基线已取得。
+
+重排／计时修正报告v2为28项限定PASS_SCOPED，SHA256 `30ce2a2f010a2bf9bdcd260f7fd69c21567fedc0ab676d755f47bc5d006a00df`；cancel→requeue同日no-settlement九项全true，strict三差异保留。Mar9 windup0→Apr1 22→May1 52→Jun1 82→Jun9原生fire0／fire_time30，与实际22／30／30／8日一致，90日充能行为已由真实阶段转换确证。所有EEP账本仍初值、source live q19／owner1、两毁灭目标无提前收益；敌舰目标75→90与跨月人口变化单列，完整发射30日与结算仍PENDING。
+
+Jul8 prefire实际fire29／fire_time30、source owner/controller1仍活，core4828／source5317；Jul9 fired真实receipt SHA256 `69a36461a8ee6617b3bd7ce6d1ff183716a0a34cad1c843c12ee018092bb53eb`后，目标已pc_shattered／无owner、订单清空、C19/G19/D6/made300/worlds1/L1、last4／300／0，原生worlds目标750。但是原始empires目标无记录、按既定规则为0，不能声称600已到账。country1仍在原始country表且带destroyer_country=0；它在Jul8仅physical17拥有owner1，Jul9实际world owner1列表为空，资本／人口cache尚留。尚不确定是延后销毁还是last-colony脚本条件未命中。
+
+结算case先保持独立原生校准750／600、自然人口0及所有严格检查，真实运行保留缺600的FAIL，不能将expected_empires改0来迎合。将单独追踪Jul10／Jul11的原生目标与country状态，再区分原生延后奖励、显式重复callback和真正漏奖；未有证据前完整巨像case不通过。校准同一原生宇宙的Jan2与Jul8国家ID／type集合相等、仍四个default，galaxy设置保持，但这不冒充重新完成过一次RC4校准。
+
+实际原checker Jul8→Jul9为23／25，除empires0而非600外，`source_colony_destroyed`仅直接`employable_pops=5317`缓存一项失败；其它七项pc_shattered／失去所有权／实际人口与group／job列表空均真。保持旧报告及checker不变。
+
+Jul10 `pk2dupe`真实SHA256 `b2b65422bd5acd4b08ec493710a3ed5f612ca710517e148522cddade9d4f714b`，country1已消失、empires目标600、worlds750不变，colony1的employable_pops已缺失，EEP账本全部不变。这提供原生下一日销毁／目标奖励／缓存清理的真实补证，不能把Jul9的即时FAIL重写为PASS。主线程该日命令误用了不存在的DISMANTLE回调key，原始actions／error保留，因此此档只能作自然＋1日对照，不认证重复回调。后续正确DEVOURER双回调和重载分别独立保存验证。
+
+稳定结算v2方案改用Jul8真实prefire→Jul10实际稳定档，保留完全相同q19／自然人口0／worlds750／empires600期望及全部25项严格条件；它是等待原生销毁tick后的结算结果，不是调整奖励预期，也不放宽缓存活性模型。90＋30日期行为仍独立用Jul9真实完成档证明，稳定结果报告不能把实际武器完成日期推迟到Jul10。
+
+稳定v2实际原checker已25／25 PASS_SCOPED；core人口Jul8 4828→Jul9 5128→Jul10 5128，只有恰300制造人口，无敌人口返还、无额外自然人口，原check源码SHA保持681836d2。Jul9即时报告原FAIL和完整strict差异均保留，后续仍需正确callback／重载去重证据。
+
+colossus只读线由原生generated文档核实：`any_owned_planet`迭代当前帝国拥有的colony，`num_owned_planets`统计planet／ship colonies；scopes文档直接给出planet→owner→any_owned_planet对prevprev比较的例子。因此controlled非殖民矿星导致last-colony条件失败的先前假说被排除，不能据此改生产判断。Jul10真实原生灭国补奖600与cache清理是本夹具实际观察；即时与稳定结果仍分别报告。
+
+新duration首版23／24的唯一FAIL是分析脚本错误假设fleet原生体有owner字段；实际fleet159无owner标量，归属存于country.fleets_manager.owned_fleets。该首版与错误假设保留，v2只以各真实SAV的全country拥有舰队表反查fleet159当前唯一归属0，并结合core物理owner0认证受益者，不用ship.original_owner冒充当前拥有者。其它90／30及结算日期检查原样保留；不改任何Mod或公共checker。
+
+`rc4-pk2-native-duration-report-v2.json`实际24／24限定PASS_SCOPED，SHA256 `eb710c8fbfe827e44c8540bfeab45ac33f5992113e35ded7b2dd1ca67e1722c5`。即时25项报告23真、SHA256 `0a53c3514a0369d6bb334b149659c051edeca127364320a83124f3ca4878fe71`，strict105；稳定25项全真、SHA256 `c4faf33a86831e7fd67ca0c645758a4cd57045a995832e697d3987050f6f2059`，strict148，全部真实差异不忽略。
+
+Jul11正确DEVOURER双回调后原生`pk2dupevalid` SHA256 `8e48334f2bea86c10149167749ff855a02fc57fe6a02ae8dd871a9bdd0c4ba0f`，人口5128、所有EEP变量与危机worlds750／empires600均保持。回调真实输入用显式FROM=event_target:eep_mothership0，区别于前一日错误DISMANTLE键；最后原生重载与一次正确回调仍待独立保存证据，不先通过reload检查。
+
+### RC4完整shot阶段增量归档v3设计
+
+等正确DEVOURER重复callback与原生重载后的`pk2dupereload`原生SAV／audit／immutable receipt及最后稳定frame齐备，再一次性追加完整shot包。v1／v2索引与348源文件全部保留原字节，仅在phase3新排他目录追加重排队、三真实月度autosave、Apr路径失败／恢复、fire0／prefire／fired、错误DISMANTLE派发自然对照、正确双DEVOURER派发、原生load及重载后重放的SAV／audit／receipt／实际输入／GPU／OCR、全部新分析及明确单时点error.log样本。7次新增原生菜单保存名的Ctrl+A按name-field实际mtime与name typed UTC之间匹配原始press记录，不能仅凭数量猜配。
+
+白名单严格为该已完成PK2阶段，截止最终稳定frame；不复制任何活动logs目录、不混入后续成长或新开局。Jul1缺失和首次路径失败均保留，不补不存在证据；原RC3 duration FAIL、RC4即时结算FAIL与分析假设FAIL全部作为历史诊断留证。新索引逐文件source／dest／SHA、读前后stat和双读原字节，独立集合verify、15份本run PK2原生SAV各audit／receipt／gamestate核验、59文件冻结source绑定和v1/v2不可变核验。这里只认证该enemy shot受限范围，owned／normal／Lithoid／完整guard矩阵及正式发布仍未完成。
+
+正确callback与重载报告`rc4-pk2-valid-callback-reload-dedup-report-v1.json`实际28／28限定PASS_SCOPED，SHA256 `d8d093ba60dc2f10feb8e658ca414baec9069a7ef914919f8830b79ca7593736`。Jul11→原生load→一次正确callback→Jul12 SHA256 `86c1f000b1adcf260f27d0cd2ae23fb13e8b2e98045425197c92d0962d152408`，EEP账本／六tier／单成长modifier／五once时间戳／人口5128／危机750600保持；完整strict33与20差异原样保留，不宣称full-state reload完全等价。错误DISMANTLE输入另留，未计为正确重复测试。
+
+主线程完成worker正常退出后指定fresh `pk2-complete-final-state`为本包截止；后续原版CRACKER或guard校准使用其它prefix，不扩入PK2 v3。最终error单次字节样本必须包含20:05:42无效DISMANTLE以及20:09:31原生nomads.94错误，不能过滤或声称运行无错误；原版对照调查属于下一独立阶段，本包仅记录已知错误与精确采样时间／字节区间，不做完整run日志冻结。
+
+v3首次复制已排他完成所有payload，索引前最后16项验证中15真，唯一“source path必须全唯一”断言失败：既有v1/v2刻意把同一冻结`candidate-rc4/open-kaishek.json`保存在`source_snapshot/`与`static-acceptance/`两语义位置，原348份payload实际347个source。这不是字节差异或原生失败；不能删改旧表来迎合新增断言。保留首次复制全部字节与失败的builder原源码，在独立恢复脚本按确定性source→dest重建表并再次核所有字节；改为校验重复source所有目标必须同SHA、来源别名明确列出、新增source仍唯一。任何payload不覆盖，首次索引只在恢复验证全部通过后新建。
+
+PK2完整v3已稳定：798份payload＝原348＋新450，47,542,644字节，22项验证全真，15份本run真实SAV／audit／receipt／CRC／gamestate与127对OCR／GPU哈希核验通过。索引SHA256 `1b371ae6e6c33bc1841af895bb94bb7e037d0a7b7da20bd689045d70e7afaf64`，verification SHA256 `730ccb110ac9ff111a916965628cb9c7c6f71fbc8c83d7f8b8a37ab922e27262`。另以独立第二进程重新打开最终索引／809个实际归档文件的完整集合／全部798份source与dest／15个ZIP，8项全真，报告SHA256 `7c4ef92c4d5a1c441f4ca677ea568f14422f04d1b721582811bc000528f80272`。v1/v2及所有既有payload不变，source别名明确同SHA，不收后续pk2nativecontrol。
+
+原生主种族人口也独立核对：core实际pop_groups仅species3321888769，Jul8 4828、Jul9／10／11／12均5128，制造300全为实际country0 founder_species_ref，没有把敌方species2返还。最终分层summary仅合并本次enemy shot的90／30时长、25项稳定结算及28项正确callback／原生重载去重范围；即时FAIL、全部strict差异、缺失Jul1及日志原生nomads错误仍保留，完整Mod发布与18组矩阵继续PENDING。生产Mod、公共checker与inspector未改，未操作UI／Steam或提交Git。

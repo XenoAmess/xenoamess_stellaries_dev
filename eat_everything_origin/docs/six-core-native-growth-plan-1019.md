@@ -10,7 +10,7 @@
 
 - `export_modifier_to_variable` 在本机effects.log:549-551支持ship scope；本轮shield硬件已实际导出成功。十个字段均为本机modifiers.log中的准确键。
 - `export_trigger_value_to_variable` 在effects.log:557-564支持ship；原版 `events/grand_archive_events.txt:7940-7946` 实际用 `has_max_hp` 与 `has_max_armor_hp` 导出最大舰体／装甲，triggers.log:1220-1226也列为ship trigger。
-- 当前catalog没有 `has_max_shield_hp`，不能照命名规律臆造。最大护盾直接读本次保存的原生ship `max_shield`，它也是硬件0／1／2已用的实际来源。`has_shield_hp`只表示当前盾，不能冒充最大盾；不额外加入当前盾除百分比的未实测组合。
+- 当前catalog没有 `has_max_shield_hp`，不能照命名规律臆造。最大护盾直接读本次保存的原生ship `max_shield_hitpoints`，它也是硬件0／1／2已用的实际来源。`has_shield_hp`只表示当前盾，不能冒充最大盾；不额外加入当前盾除百分比的未实测组合。
 - `every_owned_ship`在本机支持fleet，`every_ship`不是本轮可用迭代接口。tier本身已是原生fleet持久变量；需要在同一个ship诊断快照中复制时，使用原生 `set_variable` 的 `fleet.variable` 右值，不发任何奖励或modifier。
 - tracking／damage／固定regen导出的是实际ship modifier总量，不是每门武器最终tracking、面板DPS或本日实际治疗HP；这些不同语义没有一个已证单数API可以互换。
 
@@ -89,3 +89,5 @@ AUTO_REPAIR的百分比regen不能填进两个固定regen字段；满血导致�
 4. 待P0后重复sync／重载都不得新增tier。观察实际设计仍各装一个六核心，无六类普通奖励modifier；基础成长只保留唯一 `eep_mothership_evolution`（L0不挂，L>0倍率L）。Mother身份／归属、普通控制舰三防和有关修正同样检查。
 
 所有节点保存原生SAV、原始输入动作、日期与SHA；异常或无导出原样保留。该计划尚未执行，不是运行时通过声明，也不复用此前C0人工shield1／2、R0的不自然硬件档作为此自然抽取基线。
+
+RC4后续实操采用 [成长采集入口与独立报告](growth-report-1019.md)：沿用同一Machine12个月经济后的year1干净C0月初，不额外newgame或load；Mother IDs从该原生anchor发现，实际C0三防／十modifier为截距。原生自动存档目录优先实际UI写入的written_at.parent，history只是工具归档；20500第二段优先下一月原生自动补差。本文早期RC3固定ID和同日手动第二次sync方案保留历史，不作为RC4默认入口。

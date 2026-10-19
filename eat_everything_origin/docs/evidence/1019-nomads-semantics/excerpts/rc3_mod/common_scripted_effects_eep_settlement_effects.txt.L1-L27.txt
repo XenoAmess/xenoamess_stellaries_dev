@@ -1,0 +1,27 @@
+# Source Carrier/planet scope; caller binds eep_actor and eep_bound_core.
+# Both entry points share persistent once-only receipts and the same C/G/D math.
+eep_settle_source = {
+    save_event_target_as = eep_source
+    if = {
+        limit = {
+            exists = event_target:eep_actor
+            exists = event_target:eep_bound_core
+            event_target:eep_actor = { eep_qualified = yes eep_core_available = yes }
+            event_target:eep_bound_core = { is_same_value = event_target:eep_core@event_target:eep_actor }
+            NOT = { has_planet_flag = eep_destroy_done }
+            check_variable = { which = eep_q value > 0 }
+            OR = {
+                AND = {
+                    has_planet_flag = eep_colossus_active
+                    eep_colossus_target_valid = yes
+                }
+                AND = {
+                    has_planet_flag = eep_active
+                    is_owned_by = event_target:eep_actor
+                    event_target:eep_actor = {
+                        any_situation = {
+                            eep_task_ready = yes
+                            target = { is_same_value = event_target:eep_source }
+                        }
+                    }
+                }

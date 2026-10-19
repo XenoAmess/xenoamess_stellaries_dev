@@ -1,0 +1,35 @@
+        if = {
+            limit = { NOT = { has_planet_flag = eep_crisis_done } }
+            # Match crisis.5015's last-colony objective, with an explicit enemy guard.
+            # Evaluate before destroy_colony removes the source owner.
+            if = {
+                limit = {
+                    event_target:eep_actor = { has_ascension_perk = ap_become_the_crisis }
+                    exists = owner
+                    NOT = { is_owned_by = event_target:eep_actor }
+                    owner = {
+                        is_at_war_with = event_target:eep_actor
+                        NOT = { any_owned_planet = { NOT = { is_same_value = event_target:eep_source } } }
+                    }
+                }
+                event_target:eep_actor = { complete_crisis_objective = crisobj_destroy_empires }
+            }
+            event_target:eep_actor = {
+                if = {
+                    limit = { has_ascension_perk = ap_become_the_crisis }
+                    complete_crisis_objective = crisobj_destroy_worlds
+                }
+            }
+            set_planet_flag = eep_crisis_done
+        }
+        if = {
+            limit = { NOT = { has_planet_flag = eep_destroy_done } }
+            set_planet_flag = eep_destroy_done
+            destroy_colony = yes
+            change_pc = pc_shattered
+            clear_deposits = yes
+            eep_clear_task = yes
+            remove_planet_flag = eep_colossus_active
+        }
+    }
+}

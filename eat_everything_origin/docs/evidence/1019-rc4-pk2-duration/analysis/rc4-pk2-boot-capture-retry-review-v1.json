@@ -1,0 +1,198 @@
+{
+  "schema": "eep.1019.rc4-boot-capture-retry.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Preserve initial early F12 capture failure and actual later welcome retry; no fabricated missing frame/error log",
+  "first_f12_action": {
+    "file": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2-load-unfired-menu-0-f12.action.json",
+      "sha256": "6ceafc5da7374acee88da6a66e348edeb932fd3d497f8851eba5d6a4fae6425a"
+    },
+    "record": {
+      "action": "press_scan_code",
+      "stage": "pk2-load-unfired-menu-0-f12",
+      "scan_code": 88,
+      "repeat": 1,
+      "at_utc": "2026-10-19T11:28:39.337562+00:00"
+    }
+  },
+  "first_image_exists": false,
+  "first_ocr_exists": false,
+  "retry_ocr": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2-startup-retry.ocr.json",
+    "sha256": "145cd920187788fb716195c1be27fd2ac3fabe982edfa761db58d50c3a2fca20"
+  },
+  "retry_image": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2-startup-retry.jpg",
+    "sha256": "254c23e8c6f1f0d8eb9956790828f5957fde7fcf3b65b387277e4e00eed2e96e"
+  },
+  "retry_version_welcome_rows": [
+    {
+      "text": "Stellaris 4.5 'Cygnus'",
+      "score": 0.99918,
+      "box": [
+        [
+          178.0,
+          166.0
+        ],
+        [
+          388.0,
+          168.0
+        ],
+        [
+          388.0,
+          195.0
+        ],
+        [
+          178.0,
+          193.0
+        ]
+      ]
+    },
+    {
+      "text": "欢迎来到Stellaris 4.5“天鹅座”守护者更新!",
+      "score": 0.97392,
+      "box": [
+        [
+          192.0,
+          224.0
+        ],
+        [
+          406.0,
+          224.0
+        ],
+        [
+          406.0,
+          240.0
+        ],
+        [
+          192.0,
+          240.0
+        ]
+      ]
+    },
+    {
+      "text": "4.5中包含一项重要的机制改动，它为我们今年晚些时候在“意志力”扩展包中计划的内容做好了铺垫。",
+      "score": 0.99885,
+      "box": [
+        [
+          192.0,
+          298.0
+        ],
+        [
+          665.0,
+          298.0
+        ],
+        [
+          665.0,
+          314.0
+        ],
+        [
+          192.0,
+          314.0
+        ]
+      ]
+    },
+    {
+      "text": "请注意，由于人口组和派系改动的规模，4.5会重置存档和模组兼容性。完整更新日志可通过下方链接查看。",
+      "score": 0.99977,
+      "box": [
+        [
+          193.0,
+          419.0
+        ],
+        [
+          687.0,
+          419.0
+        ],
+        [
+          687.0,
+          435.0
+        ],
+        [
+          193.0,
+          435.0
+        ]
+      ]
+    },
+    {
+      "text": "点击前往Stellaris 论坛阅读Stellaris 4.5'Cygnus'的完整更新内容",
+      "score": 0.99229,
+      "box": [
+        [
+          193.0,
+          545.0
+        ],
+        [
+          499.0,
+          545.0
+        ],
+        [
+          499.0,
+          562.0
+        ],
+        [
+          193.0,
+          562.0
+        ]
+      ]
+    },
+    {
+      "text": "版本: Cygnus v4.5.2 (b77e)",
+      "score": 0.99887,
+      "box": [
+        [
+          265.0,
+          727.0
+        ],
+        [
+          399.0,
+          727.0
+        ],
+        [
+          399.0,
+          744.0
+        ],
+        [
+          265.0,
+          744.0
+        ]
+      ]
+    }
+  ],
+  "new_sav_files_created_after_failed_f12": [
+    {
+      "file": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+        "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2"
+      },
+      "mtime_ns": 1792409585207712700
+    },
+    {
+      "file": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2queued.sav",
+        "sha256": "700f19e7ee6e786c3a5e4ea28ac67c5d12f829b0a39707aa58f66bd6a32a1ab5"
+      },
+      "mtime_ns": 1792409758105701200
+    },
+    {
+      "file": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2day1.sav",
+        "sha256": "03511b65668f07133ec48b6da1a415f27cf5e47c1f89a292ef85ec302aa5abc3"
+      },
+      "mtime_ns": 1792409888259363800
+    }
+  ],
+  "loaded_input": {
+    "native_load_record": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2-load-unfired2.load.json",
+      "sha256": "09d805ec9be1e777a576166a323578b0387e36c6a1bb6ad3fddda2b437597e0f"
+    },
+    "source_sha256": "11149f60e725625393adececf6481f1dffc9b9364cc1c6fb46e3f76f328eb0ba",
+    "source_file_still_same_sha": true
+  },
+  "failure_scope": "The failed stage contains F12 input only; its expected image/OCR are absent. Later successful capture is separate, and no new SAV existed at the failure timestamp.",
+  "limitations": [
+    "No independent original exception stdout file exists in this phase; do not invent it.",
+    "This verifies recorded F12/input/timestamp/source-file scope, not continuous observation of arbitrary unrecorded operating-system input."
+  ]
+}

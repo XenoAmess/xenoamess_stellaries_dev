@@ -1,0 +1,68 @@
+# 1019 RC4 完整发射后的最小回归计划
+
+## 范围与状态
+
+主线程要求只读安排后续巨像护栏、本国非核心、普通拆解与核心迁移/转手回归。本轮只新增本页和 `testing/colossus_1019_postfire_plan.json` 命名计划，不改Mod、不执行UI或任何原生命令、不编辑SAV。所有待执行步骤标为PENDING。计划引用现有原生命令资产的具体命令，不把其中RC3的旧上下文或静态PARSED当作RC4已执行。
+
+主线程最新精简：Machine功能分支只做q2真实普通拆解及种子迁移，不重复打一炮。其源星在预baseline明确create_pop_group50，真实decision开始时应从核心迁50凑100。自有非核心PK交给Lithoid蜂群首月后的独立功能分支，pc_hive、300主体人口，同时覆盖原生bites与本国人口返回。这些50/300都是公开夹具人口，不能混入经济或开局验收。有效目标必须走真实原生PK命令或原有拆解决议；显式完成回调只派发给实际已毁星或已确认持续无效的目标，不在有效q2星上直接调用完成事件。
+
+RC4运行 `20261019T112808Z`；`pk2windapr.sav` SHA256 `bf35e779561e5174b8f6f676df3ed43136e73f8a4af2968ef55df668869652d4` 已只读复核2200.04.01，Mother159/ship997对物理planet17的destroy_planet_order包含windup22/windup_time90，C/G/made/worlds0、D2。后续完成状态的新事实见末节；本页新增夹具仍未由本线程执行。
+
+## 推荐次序与独立分支
+
+1. **主线真实敌星完成后立即防重**：原生完成档作为before。对仍指向物理planet17的eep_colossus_probe_target连续派发两次专属完成回调，FROM严格Mother0；同日保存，实际重载后再派发一次。原星球必须已shattered且destroy/credit/population/crisis receipts存在，预检不满足就不派发。比较C/G/D/made/worlds、容量、返还/制造人口、六核奖励和原生worlds/empires；原生事件尚待tick时补一天并使用同日idle对照，不假定跨日人口增长为0。
+2. **七目标/真实状态负例**：独立重载RC4发射前pk2base（敌国仍在、战争仍在），优先复用22命令资产中的split binding和7条<1000字符setup。一次批量派发并保留所有状态至下一日保存。殖民中、地面战各自另从base重载，先证明真实布尔及双方/进度，再派发；不因缺目标或构造失败无收益而判通过。
+3. **Machine q2普通before**：实际重载已验证敌星完成后的档，创建一颗本国自然类型、非核心、size2、无损耗的50主体人口机器殖民星，保存owned-ready。点击decision前必须实际确认源50、核心有足够合格主体人口、无生产账本变化。普通Situation与核心迁移另行重载该before，不在此Machine分支再走PK。
+4. **Lithoid本国PK正例**：独立Lithoid蜂群首月完成后，从干净功能锚点建size2、无损耗、300主体人口pc_hive殖民星，保存lith-owned-ready。不得使用pc_machine。选Mother真实右键该q2星，完整90/30发射并核回迁和native随机收益。若引擎拒绝自有殖民星，保留实际UI/tooltip，不用console完成替代；该项保持未通过并交主线程处理。
+5. **原决议回归**：从owned-ready重新加载，通过UI选择decision_eep_devour，确认真实Situation和源变量；按实际进度逐月FF30，门槛附近留次日完成。禁止写situation_progress、eep_months、eep_pending或调用eep.20/.21/.50/eep_settle作为正例捷径。完成后跨下一月脉冲并重载，账本不再增长；对已毁普通源可另派发专属PK完成负例，检查两入口不能再次结算。
+6. **当前核心/任意核心/迁移核心owner**：先验证当前实际core0的拒绝；七目标secondary_core在战争base转手敌国，保持actor核心可用，验证非绑定且外国所有的真实eep_core标记仍排除。另从owned-ready通过真实迁移决议把q2星设为新核心，保存旧物理核心引用并验证新绑定，再对新核心做完成负例。最后把新核心转手给仍存活的非actor国家，旧核心仍是有人的本国殖民地，保证玩家不灭国；source使用旧物理核心作为此时因核心不可用而无效的普通目标。native自动改首都与EEP绑定分别检查。
+
+现有敌星基础包已包含真实取消证据，不为本次计划重复整段充能取消；其原始same-date零收益结果仍需主线程/只读checker完成归档。
+
+## q2本国功能夹具与第一结算预期
+
+命令从全局Mother/Core显式取owner与主种，不依赖控制台当前选中ROOT。选择本系统未殖民、非恒星、非人工、非核心、未reserved空对象，立即reserve并保存eep_reg_owned_source；Machine命令change_pc=pc_machine、size2、清deposits、create_colony及create_pop_group50，可见名EEP_REG_Q2_50。set_name放在创建之后。Lithoid另有独立pc_hive/300命令和可见名，不共享Machine的正例账本或run。
+
+Machine创建before：源owner=Mother.owner、物理类型pc_machine、size2、d_lithoid_devastation实体0、实际50主体人口；is_colony=yes，EEP core标记与所有结算/吞噬状态均不存在。生产eep_core0仍指物理planet2，C/G/D/made/worlds和两项危机目标不因创建改变。仅在这些事实成立后保存owned-ready并点击真实普通decision。相同暂停日期分别记录core/source主种group总量，真实begin以后应core减50/source加50，总量守恒，未create_pop且made仍300。
+
+如果完成前基线确为C19/G19/D6/made300/worlds1，则q2第一结算应C21/G21/D7/made300/worlds2，last_capacity1、last_manufactured0、L2；未达到50累计量，不产生每5级核心随机奖励。两项危机应worlds增加一份当时原生奖励、empires增加0。其它基线必须代入实际公式，不能无条件套这些绝对数。
+
+Machine回迁R按结算前真实 `eep_founder_pop` 人口计算；种子迁入后100且没有正常增长/组装时R100，last_return100。核心在begin减50、完成加R，所以相对owned-ready的核心净增加R-50，另列正常增长；制造人口0、made保持300。若正常模拟改变源人口，保存真实R，不硬填100。after源毁、return_done及population_done各一次，人口量用完成前一日与同日/idle对照区分增长。
+
+Lithoid独立before必须实际C0/G0/D2/made0、q2、源300主种、pc_hive且is_lithoid_devouring_swarm=yes，核心与Mother绑定以该run真实SAV为准。完成应C2/G0/D2、made0、L0、last_capacity0、last_manufactured0、worlds加1；没有G造人或五级组件奖励。本国返回R取实际完成前合格主体人口，不硬填300。native随机收益与返回分列：bites可能给矿物、合金或直接核心人口，随机pop不能记作G制造人口，也不能用随机人口数补齐R。分别记录原生message/资源和核心真实pop_group变化，不预设随机类别；两项危机仅在该国真实具备危机飞升时按独立校准观察，不为凑字段加perk。
+
+## 普通Situation实际时长来源
+
+当前 `eep_effects.txt:202` 在原生决议启动时令eep_months=ceil(eep_q*2.4)。因此q2的脚本预期变量T=5，但必须从实际启动SAV读取eep_q/eep_months/seed_existing和真实Situation。`eep_situation.txt`的monthly_progress只在eep_task_operational=yes且未pending时每脉冲+1；并非每天自动折算为固定150天。`eep_events.txt:125`的eep.20安排次日eep.21，后者仅在实际progress达到target.eep_months时置pending并结算。
+
+启动SAV至少要求源eep_q2、eep_months5、eep_active，Situation type=situation_eep_devouring/country0/target解析至该物理源、progress0。输入before源50；begin真实从核心迁50以后，生产代码会重新计数，因此启动SAV预期eep_seed_existing100、eep_seed_need0，源100。必须从同日核心减50与源加50证明种子迁移，不能只看最终变量；核心应有足够合格主体人口且仍存活。随后每月读取真实progress和operational；受占领、地战、核心不可用等条件影响可暂停，不能因日历过了150天就手工推进。门槛达到后保留次日事件窗口，实际源毁灭且Situation移除才算结算完成。
+
+## 核心绑定的精确判据
+
+迁移前先保存eep_reg_old_core=当时eep_core0的物理planet，eep_reg_new_core=q2源。UI执行decision_eep_migrate_core，生产eep_migrate_core会移除旧core的EEP核心标记/deposit/容量宫廷并绑定新core；旧物理星此后是普通本国殖民地，不能继续把它当“仍受核心排除”而误报bug。
+
+新核心必须有eep_core、d_eep_core、实际owner0、core_actor绑定0、eep_core0指向新物理星；旧星不再带eep_core，新核心的完成负例零结算。转手后新核心保持物理标记且eep_core0仍指向它，owner变为接收国，actor eep_core_available=no；旧星仍owner0且有人口作为保命备份。原生可能把旧星重新设为首都，这不会自动令其变为EEP核心。eep_initialized不得清除，不调用二次迁移或手动重写core绑定。
+
+接收国从真实仍存活的default非actor国家选择并保存；主线已灭country1时不能继续引用旧victim。转手负例条件始终保持至回调、次日保存，之后靠原生重载清理。若实际发生core重绑，先核查初始化标记/迁移动作，绝不只凭capital数值下结论。
+
+## 执行计划资产与静态验收
+
+`testing/colossus_1019_postfire_plan.json`将明确每阶段reload锚点、存档名、全量ASCII命令、UI决议key、SAV字段与预期。复用命令按原JSON SHA和id绑定，新增命令仅建夹具、保存helper目标、query或对已确认无效状态派发。每项status=PENDING/runtime_result=null，不自动执行、不给运行PASS。
+
+新增effect片段先用既有open_kaishek lossless parser检查语法；JSON、ASCII单行、显式FROM、无正例完成捷径和无手工progress/core绑定检查属于静态范围。所有真实运行均由主线程在当前RC4冻结包完成前置gate后执行。Lithoid的native bites现在纳入上述独立自有PK功能分支；该夹具不认证经济或其它语言实机。
+
+## 完成后的新事实与最短执行口径
+
+只读复核原生`pk2prefire.sav`（2200.07.08，SHA256 `4a29d5ca6bd4383bda3d75067727b09bd8e0c920a99f05b2d30864bf8d71a7c7`）、`pk2fired.sav`（07.09，`69a36461a8ee6617b3bd7ce6d1ff183716a0a34cad1c843c12ee018092bb53eb`）和`pk2dupe.sav`（07.10，`b2b65422bd5acd4b08ec493710a3ed5f612ca710517e148522cddade9d4f714b`）。07.09已C/G19、D6、made300、worlds1、last_capacity4、last_return0、last_manufactured300、L1、六核tier/rewards全0；原生毁星progress750，灭国objective尚缺，country1尚有原始记录。07.10这些EEP字段全部保持，country1已不存在，原生灭国progress600。即时缺奖励和缓存人口的FAIL原件保留；稳定状态不能用07.09的暂态缺项代替，亦不据此修改生产逻辑。
+
+两项候选作用域假说没有得到bug证据。该run生成的`logs/script_documentation/triggers.log` SHA256 `b546d9997f734a00be687f1398fb85c16b3fc6fb843e01578d93d5cb76c95f9c`：4427明确any_owned_planet遍历owned colonies；1107明确num_owned_planets计入planet/ship colonies。`scopes.log` SHA256 `fbe03ce58a231b6438500d0eada40387f82cbcc7bc020674336cfb8cda7bcd1b`：102直接举planet→owner→any_owned_planet内is_same_value=prevprev恒真示例。因此不能把country1控制的未殖民矿星计入该owned循环，也不能仅凭Carrier/physical命名断言is_same_value必不匹配。静态文本不能单独区分本次600由手动块还是on_country_destroyed/crisis.4020发放；实际完成与下一tick的总差值600及后续防重才是当前行为证据。
+
+最短后续（按最新精简覆盖早先300人口Machine方案）：主线程已有07.10/重载防重证据时直接复用。Machine以稳定完成档创建q2/50并保存owned-ready，真实普通decision覆盖种子50迁移和结算，不再打PK；Lithoid首月后的独立pc_hive/300分支打真实自有PK。七目标负例另加载pk2base，按batch_split_bind及七条setup分次物理输入并原生保存，再执行batch_dispatch、推进一日并保存。batch_inspect较长且不是必须输入：优先由SAV读取七个物理对象的状态，不能把console可能截断的长查询当构造完成证明。colonizing_setup/ground_setup保留为来源，执行推荐下述已拆分短片段。
+
+本轮32条命令经open_kaishek lossless batch parser解析退出0、无诊断、roundTrip=true；这仅证明P文本结构。新增16条全部单行ASCII且小于1000字符；复用16条保留原资产SHA和来源。计划来源表将补齐RC4冻结Mod文件与原生API位置；所有新夹具和UI执行阶段仍PENDING，不宣称运行时通过。
+
+后续实施补充：为让殖民中/地战两支也可直接分条输入，计划保留原长setup作来源，同时新增一个通用actor/species绑定、殖民对象reserve/原生start两步、地战对象绑定/实际建军两步，共五个小片段。每步小于1000字符、前置条件显式，reserve立即持久化防重选；第二步引用第一步的具名物理目标，不重随机；建军前仍检查原生无地战且正确战争/owner/科技。构造失败要保留日志并停止，不派发完成。静态重跑只校验新增夹具结构，不把已有未执行项目转PASS。
+
+上述五段已实现为state_guard_bind455、colonizing_reserve_split474、colonizing_start_split618、ground_bind_split848、ground_armies_split879字符，阶段推荐步骤改用这些片段，保留原长setup供追溯。全部37条重新经既有parser批量解析退出0、无诊断且roundTrip=true；JSON所有source引用、阶段command_id、ASCII单行和命令长度/SHA均校验。最终本轮计划SHA256 `9271dce26cf1560d7f046d6a27dace032d9d95d612d83e88ef4c9834ab0e5b0a`。本线程没有执行这些原生命令，全部新阶段仍PENDING。
+
+最新精简实施已覆盖上面的旧37命令版：owned_q2_setup改为size50人口和EEP_REG_Q2_50（672字符），owned_q2_inspect精确pop_amount50及READY_50（637字符）；新增Lithoid pc_hive/300 setup673、inspect726字符。39条命令全部重新lossless解析退出0、无诊断、roundTrip=true，来源引用/阶段命令及ASCII单行/SHA再核。Machine正例阶段只包含普通decision及其seed50守恒，LithoidPK另列独立待绑定run。当前JSON SHA256 `76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8`。仍未执行UI或生产变更。

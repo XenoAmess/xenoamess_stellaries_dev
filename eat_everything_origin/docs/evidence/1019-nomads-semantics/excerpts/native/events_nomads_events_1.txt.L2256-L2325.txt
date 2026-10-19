@@ -1,0 +1,70 @@
+# on_war_ended: ROOT = Loser, FROM = Main Winner
+# on_becoming_subject: ROOT = Subject, FROM = Overlord
+country_event = {
+	id = nomads.94
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# A Champions Forge team country is a temporary subject, not a subjugation
+		NOT = { is_country_type = champions_forge_contestant }
+		OR = {
+			is_nomadic = yes
+			from = { is_nomadic = yes }
+		}
+	}
+
+	immediate = {
+		country_event = { id = nomads.96 }
+		from = { country_event = { id = nomads.96 } }
+	}
+}
+
+# Re-enable one empire's disabled arkships and waystations
+# ROOT = the empire whose vessels are recovered
+country_event = {
+	id = nomads.96
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# An arkship still held by an occupier stays disabled until the occupation ends
+		every_owned_fleet = {
+			limit = {
+				is_arkship_fleet = yes
+				is_controlled_by = owner
+			}
+			every_owned_ship = {
+				limit = {
+					is_arkship_ship = yes
+					NOT = { has_ship_flag = disabled_by_gatekeeper_event }
+					is_disabled = yes
+				}
+				repair_amount = 1000
+				set_disabled = no
+				remove_ship_flag = disabled_by_default_empire_event
+			}
+		}
+		every_owned_fleet = {
+			limit = {
+				any_owned_ship = { is_waystation_ship = yes  is_disabled = yes }
+			}
+			every_owned_ship = {
+				limit = { is_waystation_ship = yes  is_disabled = yes }
+				repair_amount = 1000
+				set_disabled = no
+			}
+		}
+	}
+}
+
+## Place pops on newly built Arkships
+carrier_event = {
+	id = nomads.95
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		carrier_is_type = ship
+		is_capital = no
+	}

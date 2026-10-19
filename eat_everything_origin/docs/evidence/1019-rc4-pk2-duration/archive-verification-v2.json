@@ -1,0 +1,30 @@
+{
+  "schema": "eep.1019.rc4-pk2-phase-byte-verification.v2",
+  "status": "PASS_SCOPED",
+  "scope": "Prior v1 preservation plus new completed charge1/cancel native evidence byte bindings only",
+  "checks": {
+    "v1_index_unchanged": true,
+    "all_v1_payload_sha_unchanged": true,
+    "all_new_payload_sha_match": true,
+    "all_new_sources_still_match": true,
+    "complete_new_stage_whitelist": true,
+    "two_native_sav_audit_receipt_gamestate_valid": true,
+    "new_ocr_gpu_images_sha_match": true,
+    "two_name_edit_ctrl_a_preserved": true,
+    "same_day_cancel_nineteen_checks_true": true,
+    "native_mouse_stop_not_keyboard_h": true,
+    "no_requeue_or_monthly_phase": true,
+    "no_dynamic_log_files": true,
+    "all_new_stage_files_within_completed_cutoff": true
+  },
+  "sav_checks": {
+    "pk2charge1": true,
+    "pk2cancel": true
+  },
+  "archive_index": {
+    "path": "archive-index-v2.json",
+    "sha256": "3c60b1cc7f85131071a110a87dcfb2f96dbe3f6dfca89f15c234b26621104d13"
+  },
+  "file_count": 348,
+  "new_file_count": 83
+}

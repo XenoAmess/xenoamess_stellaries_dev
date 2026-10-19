@@ -148,7 +148,7 @@ def make_plan(anchor_receipt, prefix, country=0, fleet=159, ship=997, expected_t
     actual_anchor = Path(receipt.get("history", receipt["written_at"])).resolve(strict=True)
     if digest(actual_anchor.read_bytes()) != receipt["sha256"]:
         raise ValueError("actual native load anchor differs from archived bytes")
-    folder = Path(autosave_dir).resolve(strict=True) if autosave_dir else actual_anchor.parent
+    folder = (Path(autosave_dir) if autosave_dir else Path(receipt["written_at"]).parent).resolve(strict=True)
     folder.relative_to((user / "save games").resolve(strict=True))
     phases, date = [], state["date"]
     for index, matter in enumerate(NODES):

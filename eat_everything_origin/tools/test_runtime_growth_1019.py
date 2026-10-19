@@ -82,6 +82,8 @@ class GrowthCollectorTests(unittest.TestCase):
         self.user = self.root / "user"
         self.folder = self.user / "save games/history"
         self.folder.mkdir(parents=True)
+        self.campaign = self.user / "save games/native-campaign"
+        self.campaign.mkdir()
         self.anchor = self.artifacts / "clean.sav"
         self.receipt = self.artifacts / "clean.native-save.json"
         self.set_anchor()
@@ -100,7 +102,7 @@ class GrowthCollectorTests(unittest.TestCase):
         history = self.folder / "clean.sav"
         history.write_bytes(raw)
         self.receipt.write_text(json.dumps({"archived": str(self.anchor), "history": str(history),
-            "written_at": str(self.user / "save games/old-folder/clean.sav"),
+            "written_at": str(self.campaign / "clean.sav"),
             "sha256": g.digest(raw), "date": date}), encoding="utf-8")
 
     def plan(self, **kwargs):
@@ -152,7 +154,7 @@ class GrowthCollectorTests(unittest.TestCase):
         self.assertEqual(len(plan["phases"]), 18)
         self.assertEqual(plan["phases"][0]["date"], "2200.02.01")
         self.assertEqual(plan["phases"][-1]["date"], "2201.07.01")
-        self.assertEqual(plan["autosave_dir"], str(self.folder))
+        self.assertEqual(plan["autosave_dir"], str(self.campaign))
         self.assertEqual(g.next_month("2200.12.01"), "2201.01.01")
         for i, matter in enumerate(g.NODES):
             refresh, final = plan["phases"][i*2:i*2+2]
@@ -167,6 +169,21 @@ class GrowthCollectorTests(unittest.TestCase):
             self.assertEqual(final["fast_forward"], "fast_forward 30")
         self.assertNotIn("runtime_1019", sys.modules)
         self.assertEqual(len(list(self.artifacts.glob("growth*"))), 0)
+
+    def test_default_uses_ui_campaign_after_history_move_and_override_supports_reload(self):
+        receipt = g.read_json(self.receipt)
+        self.assertFalse(Path(receipt["written_at"]).exists())
+        self.assertTrue(Path(receipt["history"]).is_file())
+        self.assertNotEqual(self.campaign, self.folder)
+        self.assertEqual(self.plan()["autosave_dir"], str(self.campaign))
+        self.assertEqual(self.plan(autosave_dir=self.folder)["autosave_dir"], str(self.folder))
+
+    def test_clean_year1_economy_anchor_keeps_its_actual_calendar(self):
+        self.set_anchor(date="2201.01.01")
+        plan = self.plan()
+        self.assertEqual(plan["anchor_date"], "2201.01.01")
+        self.assertEqual(plan["phases"][0]["date"], "2201.02.01")
+        self.assertEqual(plan["phases"][-1]["date"], "2202.07.01")
 
     def test_plan_rejects_dirty_tier_matter_and_non_month_first(self):
         for args in ({"tier": 1}, {"matter": 50}, {"rewards": 1}, {"level": 1},

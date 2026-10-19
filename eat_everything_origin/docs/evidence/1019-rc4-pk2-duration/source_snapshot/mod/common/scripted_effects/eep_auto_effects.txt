@@ -1,0 +1,21 @@
+# Country scope. An absent flag preserves the manual-only behavior of old saves.
+eep_auto_devour_scan = {
+    if = {
+        limit = {
+            has_country_flag = eep_auto_devour_enabled
+            eep_qualified = yes
+            eep_core_available = yes
+            is_ai = no
+        }
+        every_owned_planet = {
+            limit = {
+                NOT = { has_planet_flag = eep_auto_devour_excluded }
+                eep_source_valid = yes
+                eep_seed_available = yes
+                planet_size > value:eep_damage_count
+            }
+            # eep_begin rechecks live ownership and founder seed for every world.
+            eep_begin = yes
+        }
+    }
+}

@@ -1,0 +1,843 @@
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\nomads_events_1.txt
+SHA256 9706995838e51276c1348f5d0bb31e2a97b36e0a2c92a79de25b6065e091fb0a
+LINES 711-835
+711: # Hands a purge-vassal colony's stockpile and the NOMADIC_PURGE_COMPLETE toast up to the overlord. Fired from on_colony_destroyed (owner still valid) so it works however the colony is removed. Scope = the destroyed colony.
+712: carrier_event = {
+713: 	id = nomads.13
+714: 	hide_window = yes
+715: 	is_triggered_only = yes
+716: 
+717: 	trigger = {
+718: 		exists = owner
+719: 		owner = {
+720: 			has_origin = origin_nomadic_purger
+721: 			exists = overlord
+722: 		}
+723: 	}
+724: 
+725: 	immediate = {
+726: 		# Colony message targets are not implemented (AUG-55014) and everything here is destroyed soon after, so
+727: 		# all values are frozen into the message at creation and the target is the purged planet, which persists.
+728: 		owner = {
+729: 			save_event_target_as = purge_vassal_country
+730: 			set_variable = { which = purge_xfer_pops  value = 0 }
+731: 			if = {
+732: 				limit = { is_variable_set = purge_resettled_pops }
+733: 				set_variable = { which = purge_xfer_pops  value = purge_resettled_pops }
+734: 			}
+735: 			set_variable = { which = purge_xfer_total  value = purge_xfer_pops }
+736: 			set_purge_xfer_resource_effect = { RESOURCE = minerals }
+737: 			set_purge_xfer_resource_effect = { RESOURCE = food }
+738: 			set_purge_xfer_resource_effect = { RESOURCE = energy }
+739: 			set_purge_xfer_resource_effect = { RESOURCE = alloys }
+740: 			set_purge_xfer_resource_effect = { RESOURCE = consumer_goods }
+741: 			set_purge_xfer_resource_effect = { RESOURCE = trade }
+742: 			set_purge_xfer_resource_effect = { RESOURCE = volatile_motes }
+743: 			set_purge_xfer_resource_effect = { RESOURCE = exotic_gases }
+744: 			set_purge_xfer_resource_effect = { RESOURCE = rare_crystals }
+745: 			set_purge_xfer_resource_effect = { RESOURCE = sr_living_metal }
+746: 			set_purge_xfer_resource_effect = { RESOURCE = sr_zro }
+747: 			set_purge_xfer_resource_effect = { RESOURCE = sr_dark_matter }
+748: 			set_purge_xfer_resource_effect = { RESOURCE = nanites }
+749: 			set_purge_xfer_resource_effect = { RESOURCE = minor_artifacts }
+750: 			set_purge_xfer_resource_effect = { RESOURCE = astral_threads }
+751: 			# Resources-only total, so the toast can line-break its resources and pops sections independently.
+752: 			set_variable = { which = purge_xfer_res_total  value = purge_xfer_total }
+753: 			subtract_variable = { which = purge_xfer_res_total  value = purge_xfer_pops }
+754: 		}
+755: 		# Created before the transfer below empties the vassal's stockpile
+756: 		owner.overlord = {
+757: 			create_message = {
+758: 				type = NOMADIC_PURGE_COMPLETE
+759: 				localization = NOMADIC_PURGE_COMPLETE_DESC
+760: 				days = 30
+761: 				target = root
+762: 				variable = {
+763: 					type = name
+764: 					localization = PLANET
+765: 					scope = root
+766: 				}
+767: 				variable = {
+768: 					type = resources
+769: 					localization = RESOURCES
+770: 					scope = event_target:purge_vassal_country
+771: 					resources = { minerals food energy alloys consumer_goods trade volatile_motes exotic_gases rare_crystals sr_living_metal sr_zro sr_dark_matter nanites minor_artifacts astral_threads }
+772: 					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_res_total  value > 0 } } }
+773: 				}
+774: 				variable = {
+775: 					type = variable
+776: 					varname = purge_xfer_pops
+777: 					localization = POPS
+778: 					scope = event_target:purge_vassal_country
+779: 					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_pops  value > 0 } } }
+780: 				}
+781: 				variable = {
+782: 					type = key
+783: 					localization = POPS_UNIT
+784: 					value = purge_xfer_unit_pops
+785: 					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_pops  value > 0 } } }
+786: 				}
+787: 				variable = {
+788: 					# " and " joins the resources and pops, but only shows when both sections are present
+789: 					type = key
+790: 					localization = AND
+791: 					value = purge_xfer_and
+792: 					trigger = {
+793: 						event_target:purge_vassal_country = {
+794: 							check_variable = { which = purge_xfer_res_total  value > 0 }
+795: 							check_variable = { which = purge_xfer_pops  value > 0 }
+796: 						}
+797: 					}
+798: 				}
+799: 				variable = {
+800: 					# Single line-break putting the gained resources/pops on their own line below the headline
+801: 					type = key
+802: 					localization = LINEBREAK
+803: 					value = purge_xfer_linestart
+804: 					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_total  value > 0 } } }
+805: 				}
+806: 				variable = {
+807: 					type = key
+808: 					localization = GAINED
+809: 					value = purge_xfer_lineend
+810: 					trigger = { event_target:purge_vassal_country = { check_variable = { which = purge_xfer_total  value > 0 } } }
+811: 				}
+812: 			}
+813: 		}
+814: 		if = {
+815: 			limit = {
+816: 				owner = { num_owned_planets <= 1 }
+817: 			}
+818: 			owner = {
+819: 				set_timed_country_flag = {
+820: 					flag = supress_country_destroyed_message
+821: 					days = 2
+822: 				}
+823: 				transfer_resources_to_empire = {
+824: 					target = overlord
+825: 					resources = { minerals food energy alloys consumer_goods trade volatile_motes exotic_gases rare_crystals sr_living_metal sr_zro sr_dark_matter nanites minor_artifacts astral_threads }
+826: 					percentage = 1.0
+827: 				}
+828: 			}
+829: 		}
+830: 		# Clear the snapshot so a later engine-removed colony cannot show this colony's pops
+831: 		owner = {
+832: 			set_variable = { which = purge_resettled_pops  value = 0 }
+833: 		}
+834: 	}
+835: }
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\nomads_events_1.txt
+SHA256 9706995838e51276c1348f5d0bb31e2a97b36e0a2c92a79de25b6065e091fb0a
+LINES 2256-2325
+2256: # on_war_ended: ROOT = Loser, FROM = Main Winner
+2257: # on_becoming_subject: ROOT = Subject, FROM = Overlord
+2258: country_event = {
+2259: 	id = nomads.94
+2260: 	hide_window = yes
+2261: 	is_triggered_only = yes
+2262: 
+2263: 	trigger = {
+2264: 		# A Champions Forge team country is a temporary subject, not a subjugation
+2265: 		NOT = { is_country_type = champions_forge_contestant }
+2266: 		OR = {
+2267: 			is_nomadic = yes
+2268: 			from = { is_nomadic = yes }
+2269: 		}
+2270: 	}
+2271: 
+2272: 	immediate = {
+2273: 		country_event = { id = nomads.96 }
+2274: 		from = { country_event = { id = nomads.96 } }
+2275: 	}
+2276: }
+2277: 
+2278: # Re-enable one empire's disabled arkships and waystations
+2279: # ROOT = the empire whose vessels are recovered
+2280: country_event = {
+2281: 	id = nomads.96
+2282: 	hide_window = yes
+2283: 	is_triggered_only = yes
+2284: 
+2285: 	immediate = {
+2286: 		# An arkship still held by an occupier stays disabled until the occupation ends
+2287: 		every_owned_fleet = {
+2288: 			limit = {
+2289: 				is_arkship_fleet = yes
+2290: 				is_controlled_by = owner
+2291: 			}
+2292: 			every_owned_ship = {
+2293: 				limit = {
+2294: 					is_arkship_ship = yes
+2295: 					NOT = { has_ship_flag = disabled_by_gatekeeper_event }
+2296: 					is_disabled = yes
+2297: 				}
+2298: 				repair_amount = 1000
+2299: 				set_disabled = no
+2300: 				remove_ship_flag = disabled_by_default_empire_event
+2301: 			}
+2302: 		}
+2303: 		every_owned_fleet = {
+2304: 			limit = {
+2305: 				any_owned_ship = { is_waystation_ship = yes  is_disabled = yes }
+2306: 			}
+2307: 			every_owned_ship = {
+2308: 				limit = { is_waystation_ship = yes  is_disabled = yes }
+2309: 				repair_amount = 1000
+2310: 				set_disabled = no
+2311: 			}
+2312: 		}
+2313: 	}
+2314: }
+2315: 
+2316: ## Place pops on newly built Arkships
+2317: carrier_event = {
+2318: 	id = nomads.95
+2319: 	hide_window = yes
+2320: 	is_triggered_only = yes
+2321: 
+2322: 	trigger = {
+2323: 		carrier_is_type = ship
+2324: 		is_capital = no
+2325: 	}
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\on_actions\00_on_actions.txt
+SHA256 7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306
+LINES 1337-1358
+1337: # A colony has been destroyed. Called just before owner and controller is cleared
+1338: # Scope = Carrier
+1339: on_colony_destroyed = {
+1340: 	events = {
+1341: 		nomads.13 # Hand a purge-vassal's resources + the NOMADIC_PURGE_COMPLETE toast up to the overlord
+1342: 		colony.2002
+1343: 		origin.3002 #ToL Tree death
+1344: 		colony.9895 #Remove 'Sprawling Slums' blockers
+1345: 		astral_planes.2155	# Riftworld Rift Affinity modifier Cleanup
+1346: 		cyber.7015	#Genesis Guide remove deposit on colony destroyed
+1347: 		shroud.6704
+1348: 		shroud.6707 # (Hidden) Mindwarden Origin : abort Sanctum of the Lost situation
+1349: 		infernals.32 # Stops Volcanic terraforming (scripted)
+1350: 	}
+1351: }
+1352: 
+1353: # A colony has been destroyed by bombardment. Called after the planet's colony status has been cleared
+1354: # This = Colony
+1355: # From = Bombarder
+1356: on_colony_destroyed_by_bombardment = {
+1357: 	events = {
+1358: 	}
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\on_actions\00_on_actions.txt
+SHA256 7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306
+LINES 2627-2647
+2627: # A war has ended
+2628: # Root = Loser
+2629: # From = Main Winner
+2630: on_war_ended = {
+2631: 	events = {
+2632: 		fallen_empires.14
+2633: 		utopia.2660
+2634: 		origin.6256			# Fear of the Dark Separatists made neutral
+2635: 		paragon.5213
+2636: 		paragon.5223
+2637: 		focus.140			# Empire Focus
+2638: 		focus.660			# Set Flags for Defeat Fallen Empire Task
+2639: 		infernals.1051		# Galactic Crucible captured by non-crisis
+2640: 		nomads.94			# Re-enable Arkships
+2641: 		nomads.5020			# Deep Sleep Setup
+2642: 		nomads.5025			# Deep Sleep Removal
+2643: 		nomads.5030			# Deep Sleep Setup
+2644: 		nomads.5035			# Deep Sleep Removal
+2645: 		nomads.760			# Khan: reset Host hostility for enemies the Khan is no longer fighting
+2646: 	}
+2647: }
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\on_actions\00_on_actions.txt
+SHA256 7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306
+LINES 4496-4515
+4496: # This = subject
+4497: # From = subject's overlord
+4498: on_becoming_subject = {
+4499: 	events = {
+4500: 		nomads.94			# Re-enable Arkships disabled during the subjugation war
+4501: 		action.214		# Join Overlord's Federation if laws permit
+4502: 		crisis.5020		# Menace Objective - Vassalise Empires
+4503: 		emperor.80		# New vassal joins Imperium
+4504: 		action.441		# Force Subjects to join GalCom
+4505: 		origin.6064		# Fear of the Dark became a subject
+4506: 		origin.6070		# Fear of the Dark got a subject
+4507: 		paragon.5024		# Leader speech about getting subject
+4508: 		paragon.5032		# Leader speech on becoming a vassal
+4509: 		focus.700		# Empire focus
+4510: 		timeline.5		# Milestone First Vassal
+4511: 		bio.1090		# EvoPred Apex Predator Tracker
+4512: 		shroud.10385	# Patron Objective Counter: po_establish_diplomatic_pact
+4513: 		shroud.70		# Psionic Aura suppression dismantled from subjugation (Endbringers only)
+4514: 	}
+4515: }
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\on_actions\01_planet_destruction.txt
+SHA256 6ba54afe8c56225641311aa64f3daa358097a0adbbdaad0328eb5d260822325c
+LINES 1-34
+1: # Scope:
+2: # this/root = planet that have been fired upon
+3: # from = fleet that fired
+4: #on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT = {
+5: #	events = {
+6: #		planet_destruction.1
+7: #	}
+8: #}
+9: 
+10: # Note: The _queued on_actions also fire when the command is made even if there is nothing else in the queue
+11: # Similarly, the _unqueued on_actions fire even if you cancel the order while the weapon is on the wind-up to fire
+12: # They use the same scopes as the standard events
+13: 
+14: on_destroy_planet_with_PLANET_KILLER_CRACKER = {
+15: 	events = {
+16: 		toxoids.8016 #Destroyed knight Keep
+17: 		crisis.5015 # Menace Objective - Destroy World/Empire
+18: 		planet_destruction.110
+19: 		origin.3245 # Glassing a Progenitors Nest
+20: 		planet_destruction.600 # frag holy world
+21: 		planet_destruction.100 # goes last because it can kill a country, making some trigger checks impossible
+22: 		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+23: 		timeline.27         # Milestone First Destroyed Planet
+24: 	}
+25: }
+26: 
+27: on_destroy_planet_with_PLANET_KILLER_CRACKER_queued = {
+28: 	events = {
+29: 		fircon.5035 #Solarpunk Planet queued
+30: 	}
+31: }
+32: 
+33: on_destroy_planet_with_PLANET_KILLER_CRACKER_unqueued = {
+34: }
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\on_actions\01_planet_destruction.txt
+SHA256 6ba54afe8c56225641311aa64f3daa358097a0adbbdaad0328eb5d260822325c
+LINES 56-61
+56: on_destroy_planet_with_PLANET_KILLER_NEUTRON = {
+57: 	events = {
+58: 		planet_destruction.300
+59: 		origin.3245
+60: 		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+61: 	}
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\planet_destruction_events.txt
+SHA256 b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87
+LINES 1-47
+1: namespace = planet_destruction
+2: 
+3: #carrier_event = {
+4: #	id = planet_destruction.1
+5: #	is_triggered_only = yes
+6: #	hide_window = yes
+7: #
+8: #	immediate = {
+9: #		remove_planet = yes
+10: #	}
+11: #}
+12: 
+13: # Add static war exhaustion for these planet destruction events with:
+14: # add_static_war_exhaustion = {
+15: #				attacker = <country>						# attacker in this battle
+16: #				location = <planet>							# location for battle
+17: #				value_for_planet_destruction = <0.0-1.0>	# scale amount of WE added to this battle
+18: #			}
+19: 
+20: # Cracked
+21: carrier_event = {
+22: 	id = planet_destruction.100
+23: 	is_triggered_only = yes
+24: 	hide_window = yes
+25: 
+26: 	immediate = {
+27: 		# Don't fire the colossus narrative events if the planet is destroyed by an arkship.
+28: 		# However we still use this event as it handles all of the relations and flags we need.
+29: 		if = {
+30: 			limit = {
+31: 				from = {
+32: 					is_arkship_ship = no
+33: 				}
+34: 			}
+35: 			if = {
+36: 				limit = {
+37: 					is_planet_class = pc_frozen
+38: 				}
+39: 				from.owner = { country_event = { id = planet_destruction.102 } }
+40: 			}
+41: 			else_if = {
+42: 				limit = {
+43: 					NOT = { is_planet_class = pc_ai }
+44: 				}
+45: 				from.owner = { country_event = { id = planet_destruction.101 } }
+46: 			}
+47: 		}
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\planet_destruction_events.txt
+SHA256 b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87
+LINES 264-339
+264: 		# Add war exhaustion to planet owner
+265: 		if = {
+266: 			limit = {
+267: 				exists = owner
+268: 			}
+269: 			owner = {
+270: 				if = {
+271: 					limit = { #isn't the case when the crisis bombards planets, for instance
+272: 						is_at_war_with = from.fleet.owner
+273: 					}
+274: 					add_static_war_exhaustion = {
+275: 						attacker = from.fleet.owner
+276: 						location = root
+277: 						value_for_planet_destruction = 1.0
+278: 					}
+279: 				}
+280: 			}
+281: 		}
+282: 		every_owned_pop_group = {
+283: 			kill_all_pop = yes
+284: 		}
+285: 		if = {
+286: 			limit = {
+287: 				exists = orbital_defence
+288: 			}
+289: 			destroy_fleet = orbital_defence
+290: 		}
+291: 		remove_all_buildings = yes
+292: 		# destroy habitats and ringworlds
+293: 		if = {
+294: 			limit = {
+295: 				is_planet_class = pc_habitat
+296: 			}
+297: 			clear_consecration_effect = yes
+298: 			spawn_habitat_cracker_effect = yes
+299: 		}
+300: 		else_if = {
+301: 			limit = {
+302: 				is_planet_class = pc_cosmogenesis_world
+303: 			}
+304: 			spawn_lathe_cracker_effect = yes
+305: 		}
+306: 		else_if = {
+307: 			limit = {
+308: 				is_ringworld = yes
+309: 			}
+310: 			spawn_ringworld_cracker_effect = yes
+311: 			change_pc = pc_ringworld_habitable_damaged
+312: 		}
+313: 		else_if = {
+314: 			limit = { habitable_planet = yes }
+315: 			change_pc = pc_shattered
+316: 			clear_deposits = yes
+317: 			random_list = {
+318: 				1 = {
+319: 					add_deposit = d_minerals_10
+320: 					add_deposit = d_minerals_6
+321: 				}
+322: 				1 = {
+323: 					add_deposit = d_minerals_10
+324: 					add_deposit = d_minerals_2
+325: 				}
+326: 				1 = {
+327: 					add_deposit = d_minerals_8
+328: 				}
+329: 				1 = {
+330: 					add_deposit = d_minerals_4
+331: 				}
+332: 			}
+333: 		}
+334: 		else = {
+335: 			change_pc = pc_shattered
+336: 			clear_deposits = yes
+337: 		}
+338: 	}
+339: }
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\planet_destruction_events.txt
+SHA256 b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87
+LINES 784-795
+784: # Neutron Beam
+785: carrier_event = {
+786: 	id = planet_destruction.300
+787: 	hide_window = yes
+788: 
+789: 	is_triggered_only = yes
+790: 
+791: 	immediate = {
+792: 		if = {
+793: 			limit = {
+794: 				exists = owner
+795: 				owner = { NOT = { is_same_value = from.owner } }
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\planet_destruction_events.txt
+SHA256 b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87
+LINES 957-983
+957: 		# Add war exhaustion to planet owner
+958: 		owner = {
+959: 			if = {
+960: 				limit = { #isn't the case when the crisis bombards planets, for instance
+961: 					is_at_war_with = from.fleet.owner
+962: 				}
+963: 				add_static_war_exhaustion = {
+964: 					attacker = from.fleet.owner
+965: 					location = root
+966: 					value_for_planet_destruction = 1.0
+967: 				}
+968: 			}
+969: 		}
+970: 		while = {
+971: 			count = value:per_100_pop_amount #For every 100 pops iterate through this loop once
+972: 			from.owner = {
+973: 				if = {
+974: 					limit = { has_ascension_perk = ap_become_the_crisis }
+975: 					complete_crisis_objective = crisobj_purge_pops
+976: 				}
+977: 			}
+978: 		}
+979: 		destroy_colony = yes
+980: 		add_modifier = {
+981: 			modifier = neutron_bombarded
+982: 			days = 3600
+983: 		}
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\planet_destruction_events.txt
+SHA256 b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87
+LINES 2267-2273
+2267: # Toxified
+2268: carrier_event = {
+2269: 	id = planet_destruction.800
+2270: 	is_triggered_only = yes
+2271: 	hide_window = yes
+2272: 
+2273: 	immediate = {
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\events\planet_destruction_events.txt
+SHA256 b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87
+LINES 2484-2512
+2484: 		# Add war exhaustion to planet owner
+2485: 		if = {
+2486: 			limit = {
+2487: 				exists = owner
+2488: 			}
+2489: 			owner = {
+2490: 				if = {
+2491: 					limit = { #isn't the case when the crisis bombards planets, for instance
+2492: 						is_at_war_with = from.fleet.owner
+2493: 					}
+2494: 					add_static_war_exhaustion = {
+2495: 						attacker = from.fleet.owner
+2496: 						location = root
+2497: 						value_for_planet_destruction = 1.0
+2498: 					}
+2499: 				}
+2500: 			}
+2501: 		}
+2502: 		destroy_colony = yes
+2503: 		if = {
+2504: 			limit = {
+2505: 				exists = orbital_defence
+2506: 			}
+2507: 			destroy_fleet = orbital_defence
+2508: 		}
+2509: 		remove_all_buildings = yes
+2510: 
+2511: 		change_pc = pc_toxic
+2512: 		clear_deposits = yes
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\special_projects\06_projects_nomads.txt
+SHA256 b98063f46df5986ebfc5d2b37c460fbd7c3d989205e5f6d9c9b37273d34b229f
+LINES 81-90
+81: 			}
+82: 		}
+83: 	}
+84: 
+85: 	# Auto-cancel when the target fleet is gone or no longer holds a disabled nomad ship
+86: 	# (covers destroyed, war-end re-enable via nomads.94, or re-enabled by other means).
+87: 	# Scopes here follow on_fail: FROMFROM = location (the disabled fleet).
+88: 	abort_trigger = {
+89: 		OR = {
+90: 			NOT = { exists = fromfrom }
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\ship_sizes\00_waystations.txt
+SHA256 4443864cf86ce66a26768035fcb42cc5c3aa6f159fa9d1d4d25407f243547f8e
+LINES 64-70
+64: 	components_add_to_cost = no
+65: 	is_listed = no
+66: 	can_disable = yes
+67: 	stay_disabled = yes			# Disabled waystations stay disabled until re-enabled from script (nomads.94 on war end).
+68: 	available_to_everyone = yes
+69: 
+70: 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\ship_sizes\00_waystations.txt
+SHA256 4443864cf86ce66a26768035fcb42cc5c3aa6f159fa9d1d4d25407f243547f8e
+LINES 175-181
+175: 	components_add_to_cost = no
+176: 	is_listed = no
+177: 	can_disable = yes
+178: 	stay_disabled = yes			# Disabled waystations stay disabled until re-enabled from script (nomads.94 on war end).
+179: 	available_to_everyone = yes
+180: 
+181: 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+
+FILE C:\SteamLibrary\steamapps\common\Stellaris\common\ship_sizes\00_waystations.txt
+SHA256 4443864cf86ce66a26768035fcb42cc5c3aa6f159fa9d1d4d25407f243547f8e
+LINES 289-295
+289: 	components_add_to_cost = no
+290: 	is_listed = no
+291: 	can_disable = yes
+292: 	stay_disabled = yes			# Disabled waystations stay disabled until re-enabled from script (nomads.94 on war end).
+293: 	available_to_everyone = yes
+294: 
+295: 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\script_documentation\effects.log
+SHA256 206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb
+LINES 409-434
+409: change_pc - Changes the class of the scoped planet
+410: change_pc = <class/random list>
+411: change_pc = { class = <class/random list> inherit_entity = yes }
+412: Supported Scopes: planet ship colony
+413: 
+414: start_terraform_process - Starts terraforming process of scoped planet
+415: start_terraform_process = <class/random list>
+416: start_terraform_process = { class = <class/random list> inherit_entity = yes }
+417: Supported Scopes: planet ship colony
+418: 
+419: set_star_class - Sets the star's star class, affecting system and galactic map graphics and potentially modifiers. Also changes the planet class of the system's primary star.
+420: set_star_class = <star class>
+421: Supported Scopes: galactic_object
+422: 
+423: kill_pop_group - Instantly destroys part of a pop group
+424: kill_pop_group = {
+425: 	pop_group = <target pop group>
+426: 	amount = <amount killed> OR percentage = <percentage killed>
+427: 	random = <number> (optional) If set, the amount will be randomized in [max(0, size - random), size + random].
+428: 	growth_category = <key> (optional, default: 'GROWTH_CAT_OTHER')
+429: }
+430: Supported Scopes: all
+431: 
+432: destroy_colony - Destroys the colony on the scoped carrier
+433: destroy_colony = yes
+434: Supported Scopes: planet ship colony
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\script_documentation\effects.log
+SHA256 206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb
+LINES 1638-1640
+1638: remove_planet - Removes the planet from the scope 
+1639: remove_planet = yes
+1640: Supported Scopes: planet ship colony
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\script_documentation\effects.log
+SHA256 206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb
+LINES 2317-2319
+2317: fire_on_action - Fires a made-up on_action.
+2318: fire_on_action = { on_action = <string> scopes = { from = X fromfrom = Y } }
+2319: Supported Scopes: all
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\script_documentation\scopes.log
+SHA256 0ca542261993867fbb5860b806e85f0a445c2e934301cdbaf394f7b9998c3970
+LINES 58-80
+58: fleet - Scopes from an object to its fleet.
+59: Supported Scopes: ship fleet leader army starbase astral_rift colony
+60: Output Scope: fleet
+61: 
+62: design - Scopes to the ship's design
+63: Supported Scopes: ship
+64: Output Scope: design
+65: 
+66: from - Scopes to the ROOT of the previous event, or the preset hardcoded FROM scope.
+67: Supported Scopes: all
+68: Output Scope: various
+69: 
+70: this - Scopes to the current scope.
+71: Supported Scopes: all
+72: Output Scope: various
+73: 
+74: root - Scopes to the original scope of this context, e.g. the country of a country_event.
+75: Supported Scopes: all
+76: Output Scope: various
+77: 
+78: prev - Scopes to the previous scope, e.g. owner = { capital_scope = { is_owned_by = prev } } would refer to the owner of the capital here (and always be true).
+79: Supported Scopes: all
+80: Output Scope: various
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\script_documentation\scopes.log
+SHA256 0ca542261993867fbb5860b806e85f0a445c2e934301cdbaf394f7b9998c3970
+LINES 98-104
+98: fromfrom - Scopes to the FROM of the FROM scope (ROOT of two events ago, or the preset hardcoded FROMFROM scope).
+99: Supported Scopes: all
+100: Output Scope: various
+101: 
+102: prevprev - Scopes back to two scope changes ago, e.g. planet = { owner = { any_owned_planet = { is_same_value = prevprev } } } would be checking if the owner of the planet owns any planet that is the same as the planet you are starting in (which would always be true).
+103: Supported Scopes: all
+104: Output Scope: various
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\script_documentation\triggers.log
+SHA256 a4a439ff44a3d0de7145b0db88ce18b1eec0c056a3454ea9d22d43f0afac2615
+LINES 703-705
+703: is_nomadic - Checks if the country is nomadic
+704: is_nomadic = yes/no
+705: Supported Scopes: country
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\error.log
+SHA256 c2ef26be87bd2497c381c417935a7a3534518dcb6810795ff63a9a5687324215
+LINES 28-42
+28: [19:07:59][trigger_impl.cpp:1218]: Script Error: Invalid context switch [from] from EEP 03 铁心灭绝者 [country], file: events/nomads_events_1.txt line: 2268, Scope: 
+29: type=country
+30: id=0
+31: opener_id=4294967295
+32: random={ 0 346014873 }
+33: random_allowed=yes
+34: from=
+35: {
+36: 	type=country
+37: 	id=4294967295
+38: 	opener_id=4294967295
+39: 	random={ 0 381824503 }
+40: 	random_allowed=yes
+41: }
+42: 
+
+FILE D:\workspace\xenoamess_stellaries_dev\eat_everything_origin\docs\evidence\1019-rc3-final-logs\logs\game.log
+SHA256 f6e0044623da3168e5b31a7ced9944ecedba561a62e600541f7ecbdeee4dec32
+LINES 1-1
+1: [17:29:44][game_application.cpp:250]: Game Version: Cygnus v4.5.2
+
+FILE C:\Users\1\AppData\Local\xenoamess_stellaries_dev\artifacts\1019-implementation\candidate-rc3\mod\common\on_actions\eep_on_actions.txt
+SHA256 f37870ca1050ca976cbee80312a8862a698ca4596bae55a7b9e9fdfec897db8e
+LINES 1-8
+1: on_game_start_country = { events = { eep.1 } }
+2: on_monthly_pulse_country = { events = { eep.2 } }
+3: on_colony_transfer = { events = { eep.3 } }
+4: on_terraforming_complete = { events = { eep.4 } }
+5: on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER = { events = { eep.50 } }
+6: # Native implicit callbacks. Queueing and cancelling never grant settlement.
+7: on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER_queued = {}
+8: on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER_unqueued = {}
+
+FILE C:\Users\1\AppData\Local\xenoamess_stellaries_dev\artifacts\1019-implementation\candidate-rc3\mod\events\eep_planet_killer_events.txt
+SHA256 40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e
+LINES 1-10
+1: namespace = eep
+2: 
+3: # Completion only: cancelling a queued or charging order pays nothing.
+4: carrier_event = {
+5:     id = eep.50
+6:     hide_window = yes
+7:     is_triggered_only = yes
+8:     trigger = { eep_colossus_target_valid = yes }
+9:     immediate = { eep_colossus_settle = yes }
+10: }
+
+FILE C:\Users\1\AppData\Local\xenoamess_stellaries_dev\artifacts\1019-implementation\candidate-rc3\mod\common\scripted_effects\eep_planet_killer_effects.txt
+SHA256 4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9
+LINES 1-35
+1: # Source Carrier scope. Called only after native weapon completion and revalidation.
+2: eep_colossus_settle = {
+3:     if = {
+4:         limit = { eep_colossus_target_valid = yes }
+5:         planet = { save_event_target_as = eep_source }
+6:         from.owner = {
+7:             save_event_target_as = eep_actor
+8:             event_target:eep_core@this = { save_event_target_as = eep_bound_core }
+9:         }
+10:         export_trigger_value_to_variable = { trigger = planet_size variable = eep_q }
+11:         set_variable = { which = eep_old_damage value = 0 }
+12:         export_trigger_value_to_variable = {
+13:             trigger = count_deposits
+14:             parameters = { type = d_lithoid_devastation }
+15:             variable = eep_old_damage
+16:         }
+17:         if = {
+18:             limit = { is_variable_set = eep_old_damage }
+19:             subtract_variable = { which = eep_q value = eep_old_damage }
+20:         }
+21:         if = {
+22:             limit = { check_variable = { which = eep_q value > 0 } }
+23:             set_planet_flag = eep_colossus_active
+24:             if = {
+25:                 limit = { event_target:eep_actor = { is_lithoid_devouring_swarm = yes } }
+26:                 set_planet_flag = eep_native
+27:             }
+28:             eep_settle_source = yes
+29:             event_target:eep_actor = {
+30:                 set_country_flag = eep_notice_pending
+31:                 eep_sync_mothership = yes
+32:             }
+33:         }
+34:     }
+35: }
+
+FILE C:\Users\1\AppData\Local\xenoamess_stellaries_dev\artifacts\1019-implementation\candidate-rc3\mod\common\scripted_effects\eep_settlement_effects.txt
+SHA256 1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba
+LINES 1-27
+1: # Source Carrier/planet scope; caller binds eep_actor and eep_bound_core.
+2: # Both entry points share persistent once-only receipts and the same C/G/D math.
+3: eep_settle_source = {
+4:     save_event_target_as = eep_source
+5:     if = {
+6:         limit = {
+7:             exists = event_target:eep_actor
+8:             exists = event_target:eep_bound_core
+9:             event_target:eep_actor = { eep_qualified = yes eep_core_available = yes }
+10:             event_target:eep_bound_core = { is_same_value = event_target:eep_core@event_target:eep_actor }
+11:             NOT = { has_planet_flag = eep_destroy_done }
+12:             check_variable = { which = eep_q value > 0 }
+13:             OR = {
+14:                 AND = {
+15:                     has_planet_flag = eep_colossus_active
+16:                     eep_colossus_target_valid = yes
+17:                 }
+18:                 AND = {
+19:                     has_planet_flag = eep_active
+20:                     is_owned_by = event_target:eep_actor
+21:                     event_target:eep_actor = {
+22:                         any_situation = {
+23:                             eep_task_ready = yes
+24:                             target = { is_same_value = event_target:eep_source }
+25:                         }
+26:                     }
+27:                 }
+
+FILE C:\Users\1\AppData\Local\xenoamess_stellaries_dev\artifacts\1019-implementation\candidate-rc3\mod\common\scripted_effects\eep_settlement_effects.txt
+SHA256 1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba
+LINES 102-136
+102:         if = {
+103:             limit = { NOT = { has_planet_flag = eep_crisis_done } }
+104:             # Match crisis.5015's last-colony objective, with an explicit enemy guard.
+105:             # Evaluate before destroy_colony removes the source owner.
+106:             if = {
+107:                 limit = {
+108:                     event_target:eep_actor = { has_ascension_perk = ap_become_the_crisis }
+109:                     exists = owner
+110:                     NOT = { is_owned_by = event_target:eep_actor }
+111:                     owner = {
+112:                         is_at_war_with = event_target:eep_actor
+113:                         NOT = { any_owned_planet = { NOT = { is_same_value = event_target:eep_source } } }
+114:                     }
+115:                 }
+116:                 event_target:eep_actor = { complete_crisis_objective = crisobj_destroy_empires }
+117:             }
+118:             event_target:eep_actor = {
+119:                 if = {
+120:                     limit = { has_ascension_perk = ap_become_the_crisis }
+121:                     complete_crisis_objective = crisobj_destroy_worlds
+122:                 }
+123:             }
+124:             set_planet_flag = eep_crisis_done
+125:         }
+126:         if = {
+127:             limit = { NOT = { has_planet_flag = eep_destroy_done } }
+128:             set_planet_flag = eep_destroy_done
+129:             destroy_colony = yes
+130:             change_pc = pc_shattered
+131:             clear_deposits = yes
+132:             eep_clear_task = yes
+133:             remove_planet_flag = eep_colossus_active
+134:         }
+135:     }
+136: }
+

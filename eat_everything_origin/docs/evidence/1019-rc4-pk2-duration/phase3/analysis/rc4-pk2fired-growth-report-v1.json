@@ -1,0 +1,60 @@
+{
+  "status": "PASS_SCOPED",
+  "scope": "native country level, one fleet modifier and frozen per-level definition only",
+  "checks": {
+    "candidate_0_4": true,
+    "native_country_level": true,
+    "native_next_level_remainder": true,
+    "unique_mothership": true,
+    "fleet_applied_level": true,
+    "single_scaled_evolution_modifier": true,
+    "permanent_evolution_modifier": true,
+    "no_ship_evolution_stacking": true,
+    "frozen_per_level_definition": true
+  },
+  "c": 19,
+  "level": 1,
+  "next_level_remainder": 1,
+  "multiplier_records": [
+    {
+      "modifier": "eep_mothership_evolution",
+      "days": -1
+    }
+  ],
+  "frozen_definition": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+    "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+    "body": "\n    ship_weapon_damage = 0.05\n    ship_hull_mult = 0.05\n    ship_armor_mult = 0.05\n    ship_shield_mult = 0.05\n    ship_hull_regen_add_static = 0.1\n    ship_armor_regen_add_static = 0.1\n"
+  },
+  "provenance": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2fired.sav",
+    "save_sha256": "69a36461a8ee6617b3bd7ce6d1ff183716a0a34cad1c843c12ee018092bb53eb",
+    "run_id": "20261019T112808Z",
+    "version": "0.4.0-rc.4",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2fired.audit.json",
+    "audit_sha256": "0a7c52456dc5f7b521e7c21367ab333c80addcfefee4544aedbd345bc607be8b",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2fired.native-save.json",
+        "sha256": "449f38ce39298215ef4309498a14e2dce29a897c9e3760fd0c6411300f8b132d",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\acceptance-fixtures\\pk2fired.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2fired.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2fired.sav",
+          "sha256": "69a36461a8ee6617b3bd7ce6d1ff183716a0a34cad1c843c12ee018092bb53eb",
+          "date": "2200.07.09"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "limitations": [
+    "Panel growth also depends on country modifiers.",
+    "Five-level real-component rewards are not certified by this check."
+  ],
+  "checker_sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc",
+  "execution": "Existing pure growth function on independently provenance-verified native observation; no game actions"
+}

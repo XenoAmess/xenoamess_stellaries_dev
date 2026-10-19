@@ -1,0 +1,10 @@
+			}
+		}
+	}
+
+	# Auto-cancel when the target fleet is gone or no longer holds a disabled nomad ship
+	# (covers destroyed, war-end re-enable via nomads.94, or re-enabled by other means).
+	# Scopes here follow on_fail: FROMFROM = location (the disabled fleet).
+	abort_trigger = {
+		OR = {
+			NOT = { exists = fromfrom }

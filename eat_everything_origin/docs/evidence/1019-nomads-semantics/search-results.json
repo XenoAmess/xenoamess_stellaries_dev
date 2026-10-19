@@ -1,0 +1,140 @@
+{
+  "search_scope": "Loose files only; binary/internal engine dispatch not searched.",
+  "inventory_argv": [
+    "rg",
+    "--files",
+    "--hidden",
+    "--no-ignore",
+    "-g",
+    "*.txt",
+    "-g",
+    "*.log",
+    "-g",
+    "*.gui",
+    "-g",
+    "*.gfx",
+    "C:\\SteamLibrary\\steamapps\\common\\Stellaris"
+  ],
+  "inventory_file_count": 3262,
+  "inventory_sha256": "2459cbf22c6bfc476f9bd8cc1c2224e8d5c14249eeef8647272a0ced915b01a1",
+  "searches": [
+    {
+      "label": "all_literal_native_nomads94",
+      "argv": [
+        "rg",
+        "--json",
+        "--hidden",
+        "--no-ignore",
+        "-e",
+        "\\bnomads\\.94\\b",
+        "-g",
+        "*.txt",
+        "-g",
+        "*.log",
+        "-g",
+        "*.gui",
+        "-g",
+        "*.gfx",
+        "C:\\SteamLibrary\\steamapps\\common\\Stellaris"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "match_count": 7,
+      "matches": [
+        {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\nomads_events_1.txt",
+          "line": 2259,
+          "text": "\tid = nomads.94"
+        },
+        {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\00_on_actions.txt",
+          "line": 2640,
+          "text": "\t\tnomads.94\t\t\t# Re-enable Arkships"
+        },
+        {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\00_on_actions.txt",
+          "line": 4500,
+          "text": "\t\tnomads.94\t\t\t# Re-enable Arkships disabled during the subjugation war"
+        },
+        {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\special_projects\\06_projects_nomads.txt",
+          "line": 86,
+          "text": "\t# (covers destroyed, war-end re-enable via nomads.94, or re-enabled by other means)."
+        },
+        {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\00_waystations.txt",
+          "line": 67,
+          "text": "\tstay_disabled = yes\t\t\t# Disabled waystations stay disabled until re-enabled from script (nomads.94 on war end)."
+        },
+        {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\00_waystations.txt",
+          "line": 178,
+          "text": "\tstay_disabled = yes\t\t\t# Disabled waystations stay disabled until re-enabled from script (nomads.94 on war end)."
+        },
+        {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\00_waystations.txt",
+          "line": 292,
+          "text": "\tstay_disabled = yes\t\t\t# Disabled waystations stay disabled until re-enabled from script (nomads.94 on war end)."
+        }
+      ]
+    },
+    {
+      "label": "native_destroy_planet_assignment",
+      "argv": [
+        "rg",
+        "--json",
+        "--hidden",
+        "--no-ignore",
+        "-e",
+        "\\bdestroy_planet\\s*=",
+        "-g",
+        "*.txt",
+        "-g",
+        "*.log",
+        "-g",
+        "*.gui",
+        "-g",
+        "*.gfx",
+        "C:\\SteamLibrary\\steamapps\\common\\Stellaris"
+      ],
+      "exit_code": 1,
+      "stderr": "",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "label": "engine_destroy_planet_effect_entry",
+      "argv": [
+        "rg",
+        "--json",
+        "--hidden",
+        "--no-ignore",
+        "-e",
+        "^destroy_planet\\s*[-=]",
+        "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc3-final-logs\\logs\\script_documentation"
+      ],
+      "exit_code": 1,
+      "stderr": "",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "label": "rc3_mod_nomads94_or_global_hooks",
+      "argv": [
+        "rg",
+        "--json",
+        "--hidden",
+        "--no-ignore",
+        "-e",
+        "\\bnomads\\.94\\b|\\bon_war_ended\\b|\\bon_colony_destroyed\\b|\\bon_becoming_subject\\b",
+        "-g",
+        "*.txt",
+        "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod"
+      ],
+      "exit_code": 1,
+      "stderr": "",
+      "match_count": 0,
+      "matches": []
+    }
+  ]
+}
