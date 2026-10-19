@@ -1,0 +1,191 @@
+{
+  "schema": "eep.rc7.enemy-stable.fixed-expectations-result.v1",
+  "status": "PASS_SCOPED_SETTLEMENT_ONLY",
+  "scope": "Original25 fixed expectation checks on legitimate stable2 native role; immediate failures remain separately preserved.",
+  "original_receiver": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/receiver-report-v3.json",
+    "sha256": "62fdf96862261cb42e757c48e5a0ada0cc0b402fa40bb4c9e704ec7ecbd5977f",
+    "kind": "analysis"
+  },
+  "fixed_expectations": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/fixed-expectations-v1.json",
+    "sha256": "862c963b037ef8c65192b7b91d6d531178449fdbd3213ab0415862a335b8a1de",
+    "kind": "analysis"
+  },
+  "original_settlement_case": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/original-settlement-fixed-case-v1.json",
+    "sha256": "cc6cb31971f185d99757bbe62340c48d60a89989651ecb5f23111c777dfdce69",
+    "kind": "analysis"
+  },
+  "immediate_failure": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/immediate-fixed-expectations-result-v1.json",
+    "sha256": "abd6c903a6f1faf5cee36b582e5dec7cb98f2a84d84172c7c64df3de51c6bedc",
+    "kind": "analysis"
+  },
+  "original_checks": {
+    "same_candidate_tree": true,
+    "candidate_0_4": true,
+    "c_effective_matter_delta": true,
+    "g_ordinary_material_delta": true,
+    "d_formula": true,
+    "one_world_credit": true,
+    "manufactured_population_formula": true,
+    "manufactured_population_receipt": true,
+    "return_population_receipt": true,
+    "core_population_delta": true,
+    "core_capacity_matches_d": true,
+    "capacity_delta_matches_d_delta": true,
+    "capacity_receipt": true,
+    "source_was_colonized": true,
+    "source_colony_destroyed": true,
+    "real_shattered_planet_class": true,
+    "no_previous_destroy_receipt": true,
+    "all_once_only_receipts": true,
+    "bound_core_keeps_owner": true,
+    "source_is_not_core": true,
+    "source_q_receipt": true,
+    "fresh_colossus_q_matches_live_size_less_damage": true,
+    "no_enemy_population_return": true,
+    "one_calibrated_crisis_objective_reward": true,
+    "separate_empire_crisis_reward_matches_explicit_expectation": true
+  },
+  "actual": {
+    "q": 21,
+    "g_delta": 21,
+    "made_delta": 300,
+    "core_pop_delta": 300,
+    "capacity_delta": 5,
+    "source_colony_liveness": {
+      "shattered_planet": true,
+      "owner_absent": true,
+      "controller_absent": true,
+      "actual_population_empty": true,
+      "actual_pop_groups_empty": true,
+      "colony_pop_group_list_empty": true,
+      "colony_pop_job_list_empty": true,
+      "live_population_counters_zero_or_absent": true
+    },
+    "retained_source_colony_reference": 1,
+    "crisis_progress_before_after": [
+      0,
+      750
+    ],
+    "crisis_progress_delta": 750,
+    "crisis_objectives_independent": {
+      "crisobj_destroy_worlds": {
+        "before": {
+          "present": false,
+          "progress": 0
+        },
+        "after": {
+          "present": true,
+          "progress": 750
+        },
+        "delta": 750,
+        "expected_delta": 750
+      },
+      "crisobj_destroy_empires": {
+        "before": {
+          "present": false,
+          "progress": 0
+        },
+        "after": {
+          "present": true,
+          "progress": 600
+        },
+        "delta": 600,
+        "expected_delta": 600
+      }
+    },
+    "galaxy_system_count": 199,
+    "native_habitability_setting": 1
+  },
+  "actual_core_population": 5177,
+  "all_EEP_country_variables": {
+    "eep_c": 21,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_entitled": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_pending": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_snapshot_state": 0,
+    "eep_component_tracking_level": 0,
+    "eep_d": 7,
+    "eep_delta": 300,
+    "eep_entitled": 300,
+    "eep_fleet_stage": 0,
+    "eep_g": 21,
+    "eep_last_capacity": 5,
+    "eep_last_manufactured": 300,
+    "eep_last_return": 0,
+    "eep_made": 300,
+    "eep_mothership_level": 2,
+    "eep_mothership_next": 9,
+    "eep_previous_capacity": 2,
+    "eep_stage": 0,
+    "eep_worlds": 1
+  },
+  "mother_level_applied": 2,
+  "mother_timed_modifier": {
+    "raw": "\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tmultiplier=2\n\t\t\t\t\tmodifier=\"eep_mothership_evolution\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t",
+    "items": [
+      {
+        "modifier": "eep_mothership",
+        "days": -1
+      },
+      {
+        "multiplier": 2,
+        "modifier": "eep_mothership_evolution",
+        "days": -1
+      }
+    ]
+  },
+  "stable2_exact_native_role_binding": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirestable2.sav",
+    "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirestable2.native-save.json",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirestable2.audit.json",
+    "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+    "run_id": "20261019T164112Z",
+    "date": "2201.05.28",
+    "save_sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126",
+    "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+  },
+  "same_zip_failed_stable1_is_diagnostic": {
+    "save_sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126",
+    "accepted_native_role": false,
+    "audit_present": false,
+    "receipt_present": false
+  },
+  "crisis_ship_progress_separate": {
+    "before": [
+      {
+        "objective": "crisobj_destroy_enemy_ships",
+        "progress": 60
+      }
+    ],
+    "after": [
+      {
+        "objective": "crisobj_destroy_enemy_ships",
+        "progress": 60
+      },
+      {
+        "objective": "crisobj_destroy_worlds",
+        "progress": 750
+      },
+      {
+        "objective": "crisobj_destroy_empires",
+        "progress": 600
+      }
+    ]
+  },
+  "final_checks_supported": {},
+  "case_status": "PENDING",
+  "limitations": [
+    "Natural full90/30 input proof and war/no-army are separate evidence, not certified by this original settlement task.",
+    "Duplicate/reload callbacks not yet received; once-only claims remain pending.",
+    "Stopped complete logs and final common review still missing."
+  ]
+}

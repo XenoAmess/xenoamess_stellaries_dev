@@ -1,0 +1,58 @@
+{
+  "schema": "eep.rc7.enemy-prefire.scoped-summary.v1",
+  "status": "PASS_SCOPED_PREFIRE_ONLY",
+  "scope": "Live source/beneficiary/order before the last natural firing day; no after-result or settlement certification.",
+  "checks": {
+    "exact_prefire_SHA_native_May26": true,
+    "actual_order2_target17_reachable": true,
+    "actual_fire29_of30_reachable": true,
+    "actual_source21_minus_zero_damage_q21": true,
+    "actual_source_live_owner1_population4966": true,
+    "enemy_founder_return0_independently_summed": true,
+    "actual_core2_owner0_population4877_capacity2": true,
+    "actual_core_group_month_start_matches2700_2177": true,
+    "actual_current_month_growth_data_present_growth0": true,
+    "ground_combat_empty_and_actor_only_home_defense": true,
+    "war_actual0_attacks1_cleansing_retained": true,
+    "all_EEP_before_completion_C0_G0_D2": true,
+    "no_worlds_empires_reward_prefire": true,
+    "fixed_expectations_snapshot_and_population5177": true,
+    "original_receiver_prefire_only_no_settlement_yet": true
+  },
+  "native_prefire": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/native-prefire-readings-v1.json",
+    "sha256": "7ca61caec12fe93218f91f30097c7fc56f1f56ba73ebc746e972e4a90e423747",
+    "kind": "analysis"
+  },
+  "original_receiver": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/receiver-report-v1.json",
+    "sha256": "43f456726563c7906036b77974af865d3b8b75e5766c8e346867051c97f20e6c",
+    "kind": "analysis"
+  },
+  "fixed_expectations": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/fixed-expectations-v1.json",
+    "sha256": "862c963b037ef8c65192b7b91d6d531178449fdbd3213ab0415862a335b8a1de",
+    "kind": "analysis"
+  },
+  "crisis_objectives": [
+    {
+      "objective": "crisobj_destroy_enemy_ships",
+      "progress": 60
+    }
+  ],
+  "actual_core_capacity": 2,
+  "actual_current_month_growth_data_raw": "\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=4877\n\t\t\t\tgrowth=0\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=3305111553\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=4877\n\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"complex_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2700\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"simple_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2177\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t",
+  "current_month_growth_and_size": {
+    "month_start_size": 4877,
+    "growth": 0
+  },
+  "fixed_expected_other_pop_delta": 0,
+  "fixed_expected_core_population": 5177,
+  "final_checks_supported": {},
+  "case_status": "PENDING",
+  "limitations": [
+    "Current-month growth data exists with growth0; this is not an absent/empty entire data block or general engine timing proof.",
+    "Other population delta0 remains the pre-fixed expectation, not a post-result residual.",
+    "No active immediate or final-day raw/logs read."
+  ]
+}

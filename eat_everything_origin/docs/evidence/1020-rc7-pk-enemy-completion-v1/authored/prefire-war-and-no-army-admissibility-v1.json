@@ -1,0 +1,68 @@
+{
+  "schema": "eep.rc7.enemy-native-shot.prefire-admissibility.v1",
+  "status": "PASS_SCOPED_PREFIRE_WAR_AND_NO_ARMY",
+  "scope": "Actual final prefire role typed target binding, war and army facts; no continuous hidden-day trace claim.",
+  "checks": {
+    "four_unique_actual_typed_target_bindings": true,
+    "war0_actor0_attacks_source_owner1": true,
+    "war_goal_actual_cleansing": true,
+    "source17_owned1_beneficiary_core2_owned0": true,
+    "no_actor_landing_army_at_source1": true,
+    "no_global_ground_combat_before_final_day": true
+  },
+  "actual_typed_bindings": [
+    {
+      "type": "fleet",
+      "id": 151,
+      "opener_id": 4294967295,
+      "name": "eep_mothership0"
+    },
+    {
+      "type": "planet",
+      "id": 2,
+      "opener_id": 4294967295,
+      "name": "eep_core0"
+    },
+    {
+      "type": "planet",
+      "id": 17,
+      "opener_id": 4294967295,
+      "name": "eep_colossus_probe_target"
+    },
+    {
+      "type": "country",
+      "id": 1,
+      "opener_id": 4294967295,
+      "name": "eep_colossus_probe_victim"
+    }
+  ],
+  "war0_attackers": [
+    0
+  ],
+  "war0_defenders": [
+    1
+  ],
+  "war0_attacker_goal": {
+    "type": "wg_cleansing",
+    "war": 0,
+    "actor": 0,
+    "target": 1,
+    "win": "yes"
+  },
+  "original_attacker_list_raw": "\n\t\t\t\n\t\t\t{\n\t\t\t\tcall_type=primary\n\t\t\t\tcountry=0\n\t\t\t\tcaller=4294967295\n\t\t\t\tfleets_gone_mia=0\n\t\t\t}\n \n\t\t",
+  "original_defender_list_raw": "\n\t\t\t\n\t\t\t{\n\t\t\t\tcall_type=primary\n\t\t\t\tcountry=1\n\t\t\t\tcaller=4294967295\n\t\t\t\tfleets_gone_mia=0\n\t\t\t}\n \n\t\t",
+  "native_prefire": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/native-prefire-readings-v1.json",
+    "sha256": "7ca61caec12fe93218f91f30097c7fc56f1f56ba73ebc746e972e4a90e423747",
+    "kind": "analysis"
+  },
+  "original_receiver": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/receiver-report-v3.json",
+    "sha256": "62fdf96862261cb42e757c48e5a0ada0cc0b402fa40bb4c9e704ec7ecbd5977f",
+    "kind": "analysis"
+  },
+  "limitations": [
+    "Only actual sampled roles and original input chain are certified; final stopped logs remain pending.",
+    "Enemy defensive armies are not actor invasion armies."
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "eep.rc7.enemy-immediate.fixed-expectations-result.v1",
+  "status": "FAIL_PENDING_NATIVE_CLEANUP",
+  "scope": "Original immediate settlement failures retained without changing pre-fixed expectations or fitting population residuals.",
+  "original_receiver": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/receiver-report-v2.json",
+    "sha256": "0afddd48af7bb07a1797ee629bcf8e8b3ab223d059c3410c58b897a52b342ccf",
+    "kind": "analysis"
+  },
+  "native_readings": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/native-immediate-readings-v1.json",
+    "sha256": "8ec5651e0a19afdb1d7d9c605ae221edf714bc2fd5cc2f56115e7c33c09cfa44",
+    "kind": "analysis"
+  },
+  "fixed_expectations": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/fixed-expectations-v1.json",
+    "sha256": "862c963b037ef8c65192b7b91d6d531178449fdbd3213ab0415862a335b8a1de",
+    "kind": "analysis"
+  },
+  "original_settlement_case": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/original-settlement-fixed-case-v1.json",
+    "sha256": "cc6cb31971f185d99757bbe62340c48d60a89989651ecb5f23111c777dfdce69",
+    "kind": "analysis"
+  },
+  "original_checks_count": 25,
+  "passed_checks_count": 23,
+  "failed_checks": {
+    "source_colony_destroyed": false,
+    "separate_empire_crisis_reward_matches_explicit_expectation": false
+  },
+  "source_colony_liveness": {
+    "shattered_planet": true,
+    "owner_absent": true,
+    "controller_absent": true,
+    "actual_population_empty": true,
+    "actual_pop_groups_empty": true,
+    "colony_pop_group_list_empty": true,
+    "colony_pop_job_list_empty": true,
+    "live_population_counters_zero_or_absent": false
+  },
+  "source_colony_cached_population_counters": {
+    "num_sapient_pops": null,
+    "employable_pops": 4966
+  },
+  "actual_independent_settlement_fields": {
+    "q": 21,
+    "g_delta": 21,
+    "made_delta": 300,
+    "core_pop_delta": 300,
+    "capacity_delta": 5,
+    "source_colony_liveness": {
+      "shattered_planet": true,
+      "owner_absent": true,
+      "controller_absent": true,
+      "actual_population_empty": true,
+      "actual_pop_groups_empty": true,
+      "colony_pop_group_list_empty": true,
+      "colony_pop_job_list_empty": true,
+      "live_population_counters_zero_or_absent": false
+    },
+    "retained_source_colony_reference": 1,
+    "crisis_progress_before_after": [
+      0,
+      750
+    ],
+    "crisis_progress_delta": 750,
+    "crisis_objectives_independent": {
+      "crisobj_destroy_worlds": {
+        "before": {
+          "present": false,
+          "progress": 0
+        },
+        "after": {
+          "present": true,
+          "progress": 750
+        },
+        "delta": 750,
+        "expected_delta": 750
+      },
+      "crisobj_destroy_empires": {
+        "before": {
+          "present": false,
+          "progress": 0
+        },
+        "after": {
+          "present": false,
+          "progress": 0
+        },
+        "delta": 0,
+        "expected_delta": 600
+      }
+    },
+    "galaxy_system_count": 199,
+    "native_habitability_setting": 1
+  },
+  "population_expectation_and_observation": {
+    "prefire_core": 4877,
+    "expected_return": 0,
+    "expected_manufactured": 300,
+    "expected_other": 0,
+    "expected_post_core": 5177,
+    "actual_post_core": 5177
+  },
+  "source_done_receipts_present": [
+    "eep_destroy_done",
+    "eep_credit_done",
+    "eep_return_done",
+    "eep_population_done",
+    "eep_crisis_done"
+  ],
+  "full_source_flags_preserved": [
+    "3_year_owner_change_flag",
+    "nomad_recent_combat",
+    "eep_destroy_done",
+    "eep_credit_done",
+    "eep_return_done",
+    "eep_population_done",
+    "eep_crisis_done"
+  ],
+  "final_checks_supported": {},
+  "case_status": "PENDING",
+  "execution_observation": {
+    "original_receiver_report_status": "INCOMPLETE",
+    "outer_PowerShell_exit_code_reported_by_exec": 1,
+    "expected_original_python_nonzero_exit_declared_in_source": 2,
+    "note": "Outer shell normalizes native nonzero exit; no success exit is claimed."
+  },
+  "limitations": [
+    "Actual population/group/job lists are empty but original live cached colony counters still fail liveness criterion.",
+    "Empire objective is still0 instead of fixed600; no once-only reward claim.",
+    "Stable cleanup and duplicate/reload not yet received.",
+    "No active stable raw or logs read."
+  ]
+}

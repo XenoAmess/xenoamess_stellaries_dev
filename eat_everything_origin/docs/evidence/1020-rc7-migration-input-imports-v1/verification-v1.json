@@ -1,0 +1,148 @@
+{
+  "schema": "eep.rc7.migration_import_review.v1",
+  "status": "IMPORT_BYTES_VERIFIED_ONLY",
+  "observed_at_utc": "2026-10-19T19:35:49.550916+00:00",
+  "run_id": "20261019T164112Z",
+  "scope": "Copy receipt and two explicitly named source/copied save files only. No native load or migration acceptance conclusion.",
+  "original_receipt": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7migration-imports.json",
+    "bytes": 1393,
+    "sha256": "f968da8b4e14f7a725b1db7a7c9f385304978bd732b6023a17f21e673da8d0f9",
+    "mtime_ns": 1792438493750975100,
+    "stable_during_review": true
+  },
+  "archived_receipt": {
+    "path": "docs\\evidence\\1020-rc7-migration-input-imports-v1\\r7migration-imports.json",
+    "bytes": 1393,
+    "sha256": "f968da8b4e14f7a725b1db7a7c9f385304978bd732b6023a17f21e673da8d0f9"
+  },
+  "save_root": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games",
+  "imports": [
+    {
+      "filename": "p031before.sav",
+      "expected_from_previously_sealed_inventory": {
+        "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+        "bytes": 492290
+      },
+      "observations": {
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\p031before.sav",
+          "bytes": 492290,
+          "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+          "mtime_ns": 1792416301408846400,
+          "zip_members": [
+            "gamestate",
+            "meta"
+          ],
+          "gamestate_bytes": 8346659,
+          "gamestate_sha256": "6341d38d13f31546253a73891405d40810e11ec699d76e1a72e42e077a06ef8f",
+          "stable_during_read": true
+        },
+        "copied": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\p031before.sav",
+          "bytes": 492290,
+          "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+          "mtime_ns": 1792416301408846400,
+          "zip_members": [
+            "gamestate",
+            "meta"
+          ],
+          "gamestate_bytes": 8346659,
+          "gamestate_sha256": "6341d38d13f31546253a73891405d40810e11ec699d76e1a72e42e077a06ef8f",
+          "stable_during_read": true
+        }
+      },
+      "same_name_recursive_matches": [
+        "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\p031before.sav"
+      ],
+      "same_name_count": 1,
+      "canonical_save_reference": {
+        "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.sav",
+        "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+        "kind": "native_save",
+        "basis": "previously sealed source inventory; not re-copied or re-read in this review"
+      }
+    },
+    {
+      "filename": "ppaidbefore.sav",
+      "expected_from_previously_sealed_inventory": {
+        "sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+        "bytes": 561795
+      },
+      "observations": {
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\ppaidbefore.sav",
+          "bytes": 561795,
+          "sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+          "mtime_ns": 1792416496551475000,
+          "zip_members": [
+            "gamestate",
+            "meta"
+          ],
+          "gamestate_bytes": 9013573,
+          "gamestate_sha256": "098f343a73c5ac775acd955e0108ea9e7276afb8abbd9dc78d7b1385da396525",
+          "stable_during_read": true
+        },
+        "copied": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\ppaidbefore.sav",
+          "bytes": 561795,
+          "sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+          "mtime_ns": 1792416496551475000,
+          "zip_members": [
+            "gamestate",
+            "meta"
+          ],
+          "gamestate_bytes": 9013573,
+          "gamestate_sha256": "098f343a73c5ac775acd955e0108ea9e7276afb8abbd9dc78d7b1385da396525",
+          "stable_during_read": true
+        }
+      },
+      "same_name_recursive_matches": [
+        "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\ppaidbefore.sav"
+      ],
+      "same_name_count": 1,
+      "canonical_save_reference": {
+        "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.sav",
+        "sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+        "kind": "native_save",
+        "basis": "previously sealed source inventory; not re-copied or re-read in this review"
+      }
+    }
+  ],
+  "checks": {
+    "receipt_matches_root_given_sha": true,
+    "exactly_two_expected_original_damaged_inputs": true,
+    "both_source_and_copy_match_sealed_inventory": true,
+    "both_copies_inside_exact_isolated_acceptance_fixtures": true,
+    "both_same_name_recursive_counts_equal_one": true,
+    "zip_and_gamestate_bindings_match_receipt": true,
+    "source_and_receipt_stable_during_read": true,
+    "archived_receipt_original_bytes_preserved": true
+  },
+  "root_reported_procedure": {
+    "statement": "Root reports source SHA and destination-nonexistence guards before copy_seed_save, without overwrite.",
+    "independently_proven_by_this_review": false,
+    "reason": "The import receipt does not contain a pre-copy directory snapshot or chronological API audit."
+  },
+  "unchanged_materials": [
+    "sealed preparation cases and future SHA placeholders",
+    "earlier execution plan and preparation packages",
+    "original SAV and original import receipt",
+    "Mod and engine tools"
+  ],
+  "not_executed": [
+    "native_load",
+    "native_save",
+    "migration_check",
+    "game_state_inspection",
+    "UI",
+    "Steam",
+    "Git"
+  ],
+  "not_read": [
+    "active logs",
+    "active r7normal/fire",
+    "future migration native outputs"
+  ],
+  "native_acceptance_result": null
+}

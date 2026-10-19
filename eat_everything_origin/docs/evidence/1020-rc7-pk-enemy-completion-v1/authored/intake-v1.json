@@ -1,0 +1,381 @@
+{
+  "schema": "eep.1019.functional-intake.v1",
+  "status": "PENDING",
+  "expected_run_id": "20261019T164112Z",
+  "additional_run_ids": [],
+  "expected_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "expected_version": "0.4.0-rc.7",
+  "manifest": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+    "sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+  },
+  "interface_sources": {
+    "checker": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py",
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+    },
+    "inspector": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92"
+    },
+    "publisher_interface": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_1019.py",
+      "sha256": "06c60c0a9bd406580314999ae6649365bb5c1fa6c7152c0b0a7fb5a420e06918"
+    }
+  },
+  "world_ids": [
+    2,
+    17
+  ],
+  "roles": {
+    "enemy_prefire": {
+      "kind": "native_ui_save",
+      "save": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireprefire.sav",
+        "sha256": "7ebbaff3d0af80b4e1adfffbdedc4a7c2065507bceb9d953292a66c570a52887"
+      },
+      "receipt": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireprefire.native-save.json",
+        "sha256": "8e7d084448418342f956d8c72a7e1306aad47dc315921bd85635721517eebdf8"
+      },
+      "audit": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireprefire.audit.json",
+        "sha256": "b2b904c6a6535ef59c6ad4df0ac903ad9902a82b43971b97736587c971efd421"
+      }
+    }
+  },
+  "tasks": [],
+  "suggested_semantic_roles": {
+    "enemy_pk": [
+      "clean",
+      "base",
+      "calafter",
+      "queued",
+      "charge",
+      "cancel",
+      "cancel_reload",
+      "requeued",
+      "windup_last",
+      "fire_start",
+      "prefire",
+      "immediate",
+      "stable",
+      "duplicate",
+      "duplicate_reload",
+      "restart"
+    ],
+    "normal": [
+      "ready50",
+      "decision_start",
+      "precomplete",
+      "immediate",
+      "stable",
+      "duplicate",
+      "reload"
+    ],
+    "guard": [
+      "ready",
+      "idle",
+      "fired"
+    ],
+    "native_state_guard": [
+      "ready",
+      "idle",
+      "fired"
+    ],
+    "core": [
+      "before",
+      "after",
+      "newcore_idle",
+      "newcore_fired",
+      "ownerloss_idle",
+      "ownerloss_fired"
+    ],
+    "death": [
+      "before",
+      "cleanup",
+      "full_init",
+      "monthly",
+      "reload"
+    ],
+    "restore": [
+      "injured",
+      "natural_after"
+    ],
+    "lithoid_pk": [
+      "ready",
+      "calafter",
+      "restored",
+      "queued",
+      "windup_last",
+      "fire_start",
+      "prefire",
+      "immediate",
+      "stable",
+      "duplicate",
+      "reload"
+    ]
+  },
+  "role_format": {
+    "kind": "native_ui_save|native_autosave",
+    "save": {
+      "path": null,
+      "sha256": null
+    },
+    "receipt": {
+      "path": null,
+      "sha256": null
+    },
+    "audit": {
+      "path": null,
+      "sha256": null
+    },
+    "manifest": "optional exact reference for another declared run"
+  },
+  "task_formats": [
+    {
+      "id": "unique",
+      "kind": "compare|no-settlement|settlement",
+      "before": "actual role",
+      "after": "actual role",
+      "reload": "optional actual role",
+      "case": "original checker case object"
+    },
+    {
+      "id": "unique",
+      "kind": "mother|growth",
+      "role": "actual role",
+      "expected_c": "optional explicit finite number for growth"
+    }
+  ],
+  "final_case_matrix": {
+    "hive_startup": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "machine_startup": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "purifier_startup": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "hive_economy": {
+      "status": "PENDING",
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      }
+    },
+    "machine_economy": {
+      "status": "PENDING",
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      }
+    },
+    "purifier_economy": {
+      "status": "PENDING",
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      }
+    },
+    "lithoid_hive_first_month": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_energy_nonnegative": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "mothership_configuration": {
+      "status": "PENDING",
+      "checks": {
+        "actual_jump": null,
+        "existing_advantages_preserved": null,
+        "five_relic_auxiliary_components_preserved": null,
+        "native_design_matches": null,
+        "no_empire_technology_grant": null,
+        "other_juggernauts_unchanged": null,
+        "power_nonnegative": null,
+        "reference_stats_observed": null,
+        "same_country_same_date_relic_reference": null,
+        "ten_mobile_shipyards": null,
+        "twenty_two_large_defense_slots": null,
+        "upkeep_observed": null
+      }
+    },
+    "unlimited_growth": {
+      "status": "PENDING",
+      "checks": {
+        "count_level_samples": null,
+        "daily_regeneration": null,
+        "destroyed_mother_not_respawned": null,
+        "four_stats_five_percent_per_level": null,
+        "invalid_or_cancelled_no_growth": null,
+        "jump_and_shipyards_preserved": null,
+        "repeated_sync_idempotent": null,
+        "report_level_count_remainder": null,
+        "same_day_reload_idempotent": null,
+        "single_scaled_modifier": null
+      }
+    },
+    "colossus_enemy_fire": {
+      "status": "PENDING",
+      "checks": {
+        "beneficiary_is_core_owner": null,
+        "enemy_colony_destroyed": null,
+        "native_charge_and_fire": null,
+        "no_army": null,
+        "owned_noncore_colony_fire": null,
+        "war_target": null
+      }
+    },
+    "colossus_guards": {
+      "status": "PENDING",
+      "checks": {
+        "all_core_worlds_rejected": null,
+        "artificial_rejected": null,
+        "colonizing_rejected": null,
+        "completion_revalidates_core_owner": null,
+        "completion_revalidates_target": null,
+        "devouring_rejected": null,
+        "ground_combat_rejected": null,
+        "neutral_friendly_rejected": null,
+        "settled_rejected": null,
+        "uncolonized_rejected": null
+      }
+    },
+    "colossus_cancel_idempotence": {
+      "status": "PENDING",
+      "checks": {
+        "cancel_no_reward": null,
+        "crisis_objective_once": null,
+        "queue_no_reward": null,
+        "reload_no_reward": null,
+        "repeat_event_no_reward": null
+      }
+    },
+    "common_settlement": {
+      "status": "PENDING",
+      "checks": {
+        "core_capacity_matches": null,
+        "enemy_population_not_returned": null,
+        "lithoid_native_branch": null,
+        "native_devour_loss_deducted": null,
+        "owned_main_species_return": null,
+        "population_matches": null,
+        "q_c_g_d_match": null,
+        "settlement_and_destruction_once": null
+      }
+    },
+    "normal_dismantle_regression": {
+      "status": "PENDING",
+      "checks": {
+        "normal_completion": null,
+        "normal_duration_preserved": null,
+        "normal_reload_idempotent": null,
+        "normal_seed_preserved": null
+      }
+    },
+    "old_save_migration": {
+      "status": "PENDING",
+      "checks": {
+        "civilian_queue_preserved": null,
+        "damage_preserved": null,
+        "extra_world_preserved": null,
+        "identity_preserved": null,
+        "layout_preserved": null,
+        "migration_once": null,
+        "name_preserved": null,
+        "native_design_migration": null,
+        "no_startup_reward": null,
+        "original_031_save": null,
+        "position_preserved": null,
+        "queue_preserved": null
+      }
+    },
+    "candidate_reload": {
+      "status": "PENDING",
+      "checks": {
+        "ledger_preserved": null,
+        "native_reload": null,
+        "native_restart": null,
+        "no_duplicate_reward": null
+      }
+    },
+    "repeat_initialization": {
+      "status": "PENDING",
+      "checks": {
+        "no_extra_civilian_queue": null,
+        "no_extra_reward": null,
+        "no_extra_ship": null,
+        "no_extra_world": null
+      }
+    },
+    "random_components": {
+      "status": "PENDING",
+      "checks": {
+        "component_owns_dynamic_bonus": null,
+        "cross_threshold_catchup": null,
+        "equipped_component_present_in_native_design": null,
+        "every_five_levels": null,
+        "growth_component_contributions_separated": null,
+        "native_component_effects_source_attributed": null,
+        "no_external_reward_modifier": null,
+        "other_fleets_unchanged": null,
+        "positive_effect_observed": null,
+        "random_pool": null,
+        "real_component": null,
+        "reload_persistent": null,
+        "threshold_idempotent": null
+      }
+    }
+  }
+}

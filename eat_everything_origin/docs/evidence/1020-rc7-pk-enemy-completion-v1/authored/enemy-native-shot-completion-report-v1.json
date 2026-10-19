@@ -1,0 +1,367 @@
+{
+  "schema": "eep.rc7.native-enemy-shot.completion-scoped-report.v1",
+  "status": "PASS_SCOPED_ENEMY_SHOT_AND_IDEMPOTENCE",
+  "scope": "This actual enemy90/30 native shot, fixed settlement and same-day repeated callback/reload no-extra-reward; no final log certification or owned/normal/Lithoid coverage.",
+  "version": "0.4.0-rc.7",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "run_id": "20261019T164112Z",
+  "checks": {
+    "full_native_same_order2_target17_from_requeue_to_prefire": true,
+    "actual_windup0_1_89_of90_then_fire0_29_of30": true,
+    "immediate_order_finished_source_shattered_actual_pop0": true,
+    "actual_prefire_war_and_no_army_source_founder_return0": true,
+    "immediate_original23of25_twoFAIL_preserved": true,
+    "stable1_diagnostic_no_role_no_audit_receipt": true,
+    "formal_stable25_plus_reload26_original_checks_pass": true,
+    "separate_world750_empire600_exact": true,
+    "old_ships60_preserved_separate": true,
+    "post_settlement_C21_G21_D7_made300_world1_L2_next9": true,
+    "fixed_population4877_to5177_other0_not_fitted": true,
+    "core_capacity2_to7": true,
+    "true_native_load_duplicate_input_bound": true,
+    "actual_native_reload_source_then779char_commandEnter": true,
+    "two_original_same_day_no_second_settlement9_each": true,
+    "duplicate_full_strict_zero_diffs_preserved": true,
+    "actual_reload_full_strict47FAIL_preserved": true,
+    "complete_EEP_ledger_no_second_reward_after_callbacks_reload": true,
+    "source_receipts_and_globaltargets_make_dispatch_limits_true": true,
+    "same_native_country0_beneficiary_bound_core2": true,
+    "all_original_receiver_final_matrix_still138null": true
+  },
+  "actual_chain": [
+    {
+      "role": "enemy_requeued",
+      "date": "2201.01.27",
+      "save_sha256": "73421574dd6f6f2fc08b95dc25aaa88da5d152cd0b5824dfddb119d8ad946714",
+      "actual_order": {
+        "planet": 17,
+        "can_reach": "yes",
+        "order_id": 2,
+        "commissioner": 4294967295
+      },
+      "windup": {
+        "windup": 0,
+        "windup_time": 90,
+        "can_reach": "yes",
+        "commissioner": 4294967295
+      },
+      "fire": {},
+      "original_receiver": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/authored/receiver-report-v1.json",
+        "sha256": "8543df16c001a72f97a2cc759dea54a6a902462cbb7ea19073f86ee196ba986b",
+        "kind": "analysis"
+      },
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/cache/7692855dba54d2badf04d21c7e55ee09ce31bd38814a716302411ebe6487320e.json",
+        "sha256": "fc5f6aaa52e3a1bb6b3a5445d065bfa71c762fff22cfeacd771f464b5fbb8d8f",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_charge_start",
+      "date": "2201.01.28",
+      "save_sha256": "bdcc0b6649fd6e4ebfd1e8a674ae412a7f1eddc4814380d0f95e662a656f2bd1",
+      "actual_order": {
+        "planet": 17,
+        "can_reach": "yes",
+        "order_id": 2,
+        "commissioner": 4294967295
+      },
+      "windup": {
+        "windup": 1,
+        "windup_time": 90,
+        "can_reach": "yes",
+        "commissioner": 4294967295
+      },
+      "fire": {},
+      "original_receiver": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-charge-start-v1/authored/receiver-report-v1.json",
+        "sha256": "f1e0dba46920eb8c600b8fe9f9d938e246b3e6ca9944bd1c2155ec19da60fa1d",
+        "kind": "analysis"
+      },
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-charge-start-v1/cache/4bd08b09a90cfbb3c5b642e7d2cddc5b3b85171e6ef223ea2508ae616a3bc6d3.json",
+        "sha256": "92b4f1b49da020a2380740d466d603656d9682f196eaf086bfdd7bf40c6903fb",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_windup_last",
+      "date": "2201.04.26",
+      "save_sha256": "34fa1d3f632d60e80fb9ce960bbe49b395b9efe2498a69fc5f7da016213d5f6a",
+      "actual_order": {
+        "planet": 17,
+        "can_reach": "yes",
+        "order_id": 2,
+        "commissioner": 4294967295
+      },
+      "windup": {
+        "windup": 89,
+        "windup_time": 90,
+        "can_reach": "yes",
+        "commissioner": 4294967295
+      },
+      "fire": {},
+      "original_receiver": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-windup-last-v1/authored/receiver-report-v2.json",
+        "sha256": "90a55d9e81c9b424e1b1d689b54ccc70ebf476d6db6eeebbd509a4ddc37f5d0b",
+        "kind": "analysis"
+      },
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-windup-last-v1/cache/440765e17c11a81f94afc2f8a56725893a596dd8b364c4f42788a436f199ac89.json",
+        "sha256": "78386d61c1fafc5c55aebfccda51b0d1ed838bf9bc3816701f8fdc2e686d8296",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_fire_start",
+      "date": "2201.04.27",
+      "save_sha256": "7223d09908f73aeec1463497dbee4f4be0f72f40b2b465ac2831071087b38dc4",
+      "actual_order": {
+        "planet": 17,
+        "can_reach": "yes",
+        "order_id": 2,
+        "commissioner": 4294967295
+      },
+      "windup": {},
+      "fire": {
+        "fire": 0,
+        "fire_time": 30,
+        "can_reach": "yes",
+        "commissioner": 4294967295
+      },
+      "original_receiver": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-windup-last-v1/authored/receiver-report-v2.json",
+        "sha256": "90a55d9e81c9b424e1b1d689b54ccc70ebf476d6db6eeebbd509a4ddc37f5d0b",
+        "kind": "analysis"
+      },
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-windup-last-v1/cache/bc5c4fbcb9b942b5c5dbeeaad4dbc1aa7aab7bdfb62a98925046099d2593e2ab.json",
+        "sha256": "7201e242e21dc83b0dc3ded1086bbab305368c9977867a51a36b8c5e83121351",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_prefire",
+      "date": "2201.05.26",
+      "save_sha256": "7ebbaff3d0af80b4e1adfffbdedc4a7c2065507bceb9d953292a66c570a52887",
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireprefire.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireprefire.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireprefire.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+        "run_id": "20261019T164112Z",
+        "date": "2201.05.26",
+        "save_sha256": "7ebbaff3d0af80b4e1adfffbdedc4a7c2065507bceb9d953292a66c570a52887",
+        "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+      },
+      "actual_order": {
+        "planet": 17,
+        "can_reach": "yes",
+        "order_id": 2,
+        "commissioner": 4294967295
+      },
+      "windup": {},
+      "fire": {
+        "fire": 29,
+        "fire_time": 30,
+        "can_reach": "yes",
+        "commissioner": 4294967295
+      },
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/cache/d237bca47c58726e66cbfe2ab31d3e7b9e5cac5ff1c29e4590529a02f8949fde.json",
+        "sha256": "3af3c87864e2046672e9ed379088367e2b5c3dd529eecd254c32fdfbce3a16e2",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_immediate",
+      "date": "2201.05.27",
+      "save_sha256": "e0a604f835f86fe2e5bf1396b99a54c835cb3d406ac3bd5422c7fd0a6db10dc7",
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireimmediate.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireimmediate.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireimmediate.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+        "run_id": "20261019T164112Z",
+        "date": "2201.05.27",
+        "save_sha256": "e0a604f835f86fe2e5bf1396b99a54c835cb3d406ac3bd5422c7fd0a6db10dc7",
+        "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+      },
+      "actual_order": {},
+      "windup": {},
+      "fire": {},
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/cache/ef7a30f5847afeec03db077ab86a0e0c6cb9a3b0ecacfb277dc8c267a9dffcc0.json",
+        "sha256": "6a0e8e356b3a6c380547bf0c6ab03caddcaca6f4e9fba4e506f61164763c0866",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_stable",
+      "date": "2201.05.28",
+      "save_sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126",
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirestable2.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirestable2.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirestable2.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+        "run_id": "20261019T164112Z",
+        "date": "2201.05.28",
+        "save_sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126",
+        "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+      },
+      "actual_order": {},
+      "windup": {},
+      "fire": {},
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/cache/0a4f92e55f250258efec225ba430612acc3e923e3612fd595b8a23e34333be7c.json",
+        "sha256": "a3b25d1e2fe4d2b4bc0d14ec08bbd1d98946ff2dfcafdaff3925fd81c6c16e5c",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_duplicate",
+      "date": "2201.05.28",
+      "save_sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126",
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireduplicate.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireduplicate.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfireduplicate.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+        "run_id": "20261019T164112Z",
+        "date": "2201.05.28",
+        "save_sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126",
+        "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+      },
+      "actual_order": {},
+      "windup": {},
+      "fire": {},
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/cache/0a4f92e55f250258efec225ba430612acc3e923e3612fd595b8a23e34333be7c.json",
+        "sha256": "a3b25d1e2fe4d2b4bc0d14ec08bbd1d98946ff2dfcafdaff3925fd81c6c16e5c",
+        "kind": "analysis"
+      }
+    },
+    {
+      "role": "enemy_duplicate_reload",
+      "date": "2201.05.28",
+      "save_sha256": "c11216d66545c69aacf5686e80a0ad68fa049a8640ef3fbd25663f70e86d0cc6",
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfiredupereload.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfiredupereload.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfiredupereload.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+        "run_id": "20261019T164112Z",
+        "date": "2201.05.28",
+        "save_sha256": "c11216d66545c69aacf5686e80a0ad68fa049a8640ef3fbd25663f70e86d0cc6",
+        "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+      },
+      "actual_order": {},
+      "windup": {},
+      "fire": {},
+      "observation": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/cache/bc76f94649742d4e01647622261a354831f8fb5d3eb70fb0e1dec7830bd6de41.json",
+        "sha256": "9c2acb17771eff8d9ca25f711ea731a27c153c11828cbe91f7e2f62deaa38f7b",
+        "kind": "analysis"
+      }
+    }
+  ],
+  "prefire_admissibility": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/prefire-war-and-no-army-admissibility-v1.json",
+    "sha256": "d2e39f003aa0d5b9d2fa43f6ce1df4ee72f5cdf8d788e9fdf78f79899198e2d7",
+    "kind": "analysis"
+  },
+  "fixed_expectations": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/fixed-expectations-v1.json",
+    "sha256": "862c963b037ef8c65192b7b91d6d531178449fdbd3213ab0415862a335b8a1de",
+    "kind": "analysis"
+  },
+  "immediate_original_failure": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/immediate-fixed-expectations-result-v1.json",
+    "sha256": "abd6c903a6f1faf5cee36b582e5dec7cb98f2a84d84172c7c64df3de51c6bedc",
+    "kind": "analysis"
+  },
+  "stable_original_pass": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/stable-fixed-expectations-result-v1.json",
+    "sha256": "77e4e10ffd1b2ef69ac506026f68b1c963dd0f90f034f457efe57b855703ff39",
+    "kind": "analysis"
+  },
+  "original_receiver_final": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/receiver-report-v5.json",
+    "sha256": "03b3fe4d2ba7431f6cd789e75f509ea6f54f65142ffe8d174927acf2f6185b84",
+    "kind": "analysis"
+  },
+  "actual_callback_commands": [
+    {
+      "action": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-dispatch-two-completed-source-callbacks-command.action.json",
+        "sha256": "ec196e40ff00c9b076cfbe9db5e1a62e8546dc08810c7923730261f4b145fb0e",
+        "kind": "actions"
+      },
+      "enter": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-dispatch-two-completed-source-callbacks-command-enter.action.json",
+        "sha256": "d47bd546b712bd2bc04d3c6cc9151f6948983ecbb3c401a729b613e57a10e69e",
+        "kind": "actions"
+      },
+      "actual_command_characters": 877,
+      "submitted": true
+    },
+    {
+      "action": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-dispatch-callback-after-real-reload-command.action.json",
+        "sha256": "91539b2c621c9f2799f783b48315fe08747e71ca0a5f866d32744914c50458a9",
+        "kind": "actions"
+      },
+      "enter": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-dispatch-callback-after-real-reload-command-enter.action.json",
+        "sha256": "68587347a4c68620411bf0443f0a3ee3fb087172d7bf5e836116b069b43f7fc9",
+        "kind": "actions"
+      },
+      "actual_command_characters": 779,
+      "submitted": true
+    }
+  ],
+  "actual_native_load": {
+    "reference": {
+      "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-actual-reload-duplicate.load.json",
+      "sha256": "cca0c5bda3fb7b98019368584368598399eed37f0313110bcd4bedadedc3744c",
+      "kind": "actions"
+    },
+    "content": {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\eep-test-history\\r7pkfireduplicate.sav",
+      "source_sha256": "8a1ac05027925032bfcf1915ddc933aeb24af4cbae6e3f0f45992e0e190f9126",
+      "date": "2201.05.28",
+      "ui_date_verified": true,
+      "state_verified": false,
+      "followup": "audit a newly saved native file",
+      "loaded_at_utc": "2026-10-19T19:26:10.653663+00:00"
+    }
+  },
+  "strict_reload47": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/actual-reload-full-strict-differences-v1.json",
+    "sha256": "d82e7d662d7e3a92d928a874860dda6640b3552b35cdcb90a2039567a5651ef6",
+    "kind": "analysis"
+  },
+  "actual_core_population_by_role": {
+    "enemy_prefire": 4877,
+    "enemy_immediate": 5177,
+    "enemy_stable": 5177,
+    "enemy_duplicate": 5177,
+    "enemy_duplicate_reload": 5177
+  },
+  "raw_count": 236,
+  "raw_bytes": 13979676,
+  "final_case_status": "PENDING",
+  "missing": [
+    "Complete stopped-run logs and dispatch A/B/AFTER_RELOAD marker confirmation.",
+    "Owned noncore, native/Lithoid and normal-path coverage remain independent.",
+    "Common final review."
+  ],
+  "limitations": [
+    "No r7normal raw/screens or active logs read; original inspector may read authorized completed receipt metadata only.",
+    "Immediate23/25 FAIL, failed stable1 missing-audit diagnostic and full actual-reload47 strict FAIL are all retained.",
+    "Actual load state_verified=false receipt alone is insufficient; newly saved audited role and original checks supply its state evidence.",
+    "No source/tool/UI/Steam/Git mutations in this intake."
+  ]
+}

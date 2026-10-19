@@ -1,0 +1,79 @@
+{
+  "schema": "eep.rc7.enemy-native-shot.UI-observation.v1",
+  "status": "OBSERVATION_ONLY",
+  "frames": [
+    {
+      "image": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/run/r7pkfire-target-context-menu.jpg",
+        "sha256": "9dcbb072d049eea2cba472dbdfe1d35174facf57cf2d8951b9b0f157d4c435ee",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/run/r7pkfire-target-context-menu.ocr.json",
+        "sha256": "5d4a27bef4ff9728b81643faf47aa67fe486bcd8f14e1e6fff5375cd103dd03f",
+        "kind": "analysis"
+      },
+      "captured_at_utc": "2026-10-19T19:03:16.705371+00:00",
+      "pid": 37300,
+      "actual_HUD_date": "2201.01.27",
+      "visually_inspected": true,
+      "scope": "Actual rightclick dismantle menu for EEP_R6_ENEMY; click620,497 and new native order2 target17."
+    },
+    {
+      "image": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-windup-last-v1/run/r7pkfire-phase90-visible.jpg",
+        "sha256": "5198f0b287cc457c0b405de373248ac5bdb497c080eba6fd93b7a6956f8ce490",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-windup-last-v1/run/r7pkfire-phase90-visible.ocr.json",
+        "sha256": "70d347888d4980cf534ebc6ce712ae40b20aa243a837343579cdbefd6154e8fb",
+        "kind": "analysis"
+      },
+      "captured_at_utc": "2026-10-19T19:14:15.785336+00:00",
+      "pid": 37300,
+      "actual_HUD_date": "2201.04.27",
+      "visually_inspected": true,
+      "scope": "Actual native fire-start UI0percent, independently matched fire0/30."
+    },
+    {
+      "image": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-prefire-visible.jpg",
+        "sha256": "bb7701a80ec085554d02683f41f2e4060e691bd34eb477abd8deb6d8cc293cc0",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-prefire-visible.ocr.json",
+        "sha256": "7159d524c7a8a3f5a568b8570f7eeda9e26d197731009d2ee65e3ea3820bc7a5",
+        "kind": "analysis"
+      },
+      "captured_at_utc": "2026-10-19T19:16:30.560969+00:00",
+      "pid": 37300,
+      "actual_HUD_date": "2201.05.26",
+      "visually_inspected": true,
+      "scope": "Actual UI96percent, independently matched native fire29/30."
+    },
+    {
+      "image": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-natural-completion-visible.jpg",
+        "sha256": "9194bb14a000091fece4dc95125a6e6096a0e9b9b1d8cd64486f75ee471f24ad",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/run/r7pkfire-natural-completion-visible.ocr.json",
+        "sha256": "b554cb887e883a67569316f883402be22553b0db3ae0ea515e8d8db7f00a0a2a",
+        "kind": "analysis"
+      },
+      "captured_at_utc": "2026-10-19T19:20:15.293475+00:00",
+      "pid": 37300,
+      "actual_HUD_date": "2201.05.27",
+      "visually_inspected": true,
+      "scope": "Actual post-final-day HUD and cleared fleet selection; destroyed planet class is proved by native SAV, not inferred from this distant map frame."
+    }
+  ],
+  "scope": "Only original native GPU frames actually viewed; counters/class/war/population separately proved by native SAV.",
+  "limitations": [
+    "No actual gameplay input performed by the intake worker.",
+    "No active normal raw or logs read."
+  ]
+}
