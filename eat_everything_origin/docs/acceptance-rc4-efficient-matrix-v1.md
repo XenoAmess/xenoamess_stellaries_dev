@@ -110,3 +110,13 @@ Machine只开一次：保存干净Jan1 anchor，经济与功能选择任一顺�
 已仅在`publish_1019.py`替换两个内部check名，并新增对独立growth报告的字节／scope／六类覆盖／C0截距／原生文件绑定核对；其它case及其字段未放松。`test_publish_1019.py`中的新输入全部为临时目录里的合成guard数据，非原生SAV或实机证据；正例不要求额外固定L UI，负例逐六类拒绝零tier／假coverage、bool／float计数，另拒缺导出／最大值、后改模型／容差、无对照、缺补样、旧run/tree、未挂原生文件或重复／错序phase，以及旧固定L名称顶替新字段。
 
 实际验证：发布1019套件45项（57.985秒）、pending helper8项、历史single-homeworld5项、历史publication8项，共66项通过；定向diff空白检查通过。未生成新的真实RNG或经济PASS报告，18组封版progress仍PENDING且0个true check，SHA仍为`2cf16f8eebd1c4f09ee9d21c25c5b7f146e0a15ee36b88fd1aed23b224d6d36a`。主线程后续收齐完整功能批次时，仅需把实际growth报告经既有helper挂为random_components的analysis，并用同文件的collect_reference结果设置`component_attribution_report`；不手填SHA，不为每采样增加run或进度版本。
+
+## HP工程容差合同追加（未来RNG样本前）
+
+主线程已在真实成长样本生成前批准：仅HP量使用绝对`max(0.01,8*ULP32(expected))`、相对0；它是事先声明的工程允许量，不证明引擎内部存储位宽。源预测公式和系数不改。十项modifier导出（包括ship_hull_add）仍固定绝对0.01；账本／身份／槽位等仍精确比较。
+
+growth工具已稳定新增`hp_tolerance_contract=max_0p01_or_8_binary32_ulp_expected_v1`及`hp_tolerance={absolute_floor:0.01,binary32_ulps:8,relative_tolerance:0,classification:predeclared_engineering_allowance_not_engine_storage_proof}`；顶层absolute_tolerance仍0.01。数值row完整保留observed／actual、expected、raw_delta、applied_tolerance、ulp32_expected／ulp_error、relative_tolerance。tolerance_kind仅`hp_binary32_ulp_engineering`或`fixed_absolute`。
+
+发布门禁须绑定精确合同／8ULP／floor／rel0／声明范围，并独立核数值row使用的允许量；HP类型只适用于原生当前／最大H/A/S和max hull／armor trigger。把modifier套入HP允许量、增加ULP／相对误差、非有限值或旧报告缺合同均拒绝。新定向正反测试使用合成guard输入；不改任何历史实机报告或PENDING索引，不把工程允许量写成已经读到引擎位宽。
+
+实施与验收：已绑定合同并独立重算ULP／允许量／原始差值，兼容工具实际使用的空格和ordinary三防斜杠字段名；两种标签都拒绝把modifier认作HP。发布1019套件46项（60.984秒）、pending helper8项、历史single-homeworld5项、历史publication8项，共67项通过；定向diff空白检查通过。与growth工具的稳定合同字面相同；未改其工具或读取未来RNG样本。封版progress原SHA `2cf16f8eebd1c4f09ee9d21c25c5b7f146e0a15ee36b88fd1aed23b224d6d36a`再次核对不变，所有18组仍PENDING，未生成真实成长PASS。

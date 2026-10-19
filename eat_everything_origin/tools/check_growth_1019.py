@@ -5,6 +5,7 @@ import json
 import math
 from pathlib import Path
 import re
+import struct
 import subprocess
 import sys
 import zipfile
@@ -23,6 +24,8 @@ HEALTH = ("hitpoints", "max_hitpoints", "armor_hitpoints", "max_armor_hitpoints"
 CORE_SLOTS = {"AUX_UTILITY_" + str(i): "EEP_ADAPTIVE_" + kind.upper() + "_CORE"
               for i, kind in enumerate(KINDS, 6)}
 TOLERANCE = .01
+HP_ULPS = 8
+HP_TOLERANCE_CONTRACT = "max_0p01_or_8_binary32_ulp_expected_v1"
 MODEL_HASHES = (
     "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
     "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8")
@@ -40,11 +43,49 @@ def check(rows, name, actual, expected):
     rows.append({"check": name, "passed": actual == expected, "actual": actual, "expected": expected})
 
 
+def binary32_ulp(expected):
+    """Engineering reference spacing, not a claim about the engine's storage type."""
+    if type(expected) not in (int, float) or not math.isfinite(expected):
+        return None
+    try:
+        bits = struct.unpack(">I", struct.pack(">f", abs(expected)))[0]
+    except (OverflowError, struct.error):
+        return None
+    exponent = (bits >> 23) & 255
+    if exponent == 255:
+        return None
+    return math.ldexp(1.0, exponent - 127 - 23) if exponent else math.ldexp(1.0, -149)
+
+
+def numeric_comparison(rows, name, actual, expected, hp=False):
+    finite = (type(actual) in (int, float) and type(expected) in (int, float)
+              and math.isfinite(actual) and math.isfinite(expected))
+    ulp = binary32_ulp(expected)
+    tolerance = max(TOLERANCE, HP_ULPS * ulp) if hp and ulp is not None else TOLERANCE if not hp else None
+    delta = actual - expected if finite else None
+    if delta is not None and not math.isfinite(delta):
+        delta = None
+    ulp_error = abs(delta) / ulp if delta is not None and ulp else None
+    if ulp_error is not None and not math.isfinite(ulp_error):
+        ulp_error = None
+
+    def recorded(value):
+        return repr(value) if isinstance(value, float) and not math.isfinite(value) else value
+
+    rows.append({"check": name, "passed": delta is not None and tolerance is not None and abs(delta) <= tolerance,
+                 "actual": recorded(actual), "observed": recorded(actual), "expected": recorded(expected),
+                 "raw_delta": delta, "applied_tolerance": tolerance,
+                 "ulp32_expected": ulp, "ulp_error": ulp_error,
+                 "tolerance_kind": "hp_binary32_ulp_engineering" if hp else "fixed_absolute",
+                 "absolute_tolerance": tolerance, "relative_tolerance": 0})
+
+
 def close(rows, name, actual, expected):
-    valid = (type(actual) in (int, float) and math.isfinite(actual)
-             and math.isclose(actual, expected, rel_tol=0, abs_tol=TOLERANCE))
-    rows.append({"check": name, "passed": valid, "actual": actual, "expected": expected,
-                 "absolute_tolerance": TOLERANCE, "relative_tolerance": 0})
+    numeric_comparison(rows, name, actual, expected)
+
+
+def close_hp(rows, name, actual, expected):
+    numeric_comparison(rows, name, actual, expected, hp=True)
 
 
 def scope(rows):
@@ -229,7 +270,8 @@ def comparison(before, after, name):
     for key in ("health", "diagnostics"):
         old_values, new_values = previous.pop(key), current.pop(key)
         for field, value in old_values.items():
-            close(rows, name + " " + field, new_values.get(field), value)
+            compare = close_hp if key == "health" or field in ("eep_probe_max_hull", "eep_probe_max_armor") else close
+            compare(rows, name + " " + field, new_values.get(field), value)
     check(rows, name + " discrete business signature", current, previous)
     result = scope(rows)
     result.update(strict_gamestate_equal=after["gamestate_sha256"] == before["gamestate_sha256"],
@@ -345,13 +387,13 @@ def report(args):
             expected = prediction(baseline, final)
             for key, value in expected.items():
                 if key.startswith("max_"):
-                    close(rows, "refresh " + str(index) + " " + key, refresh["health"].get(key), value)
-                    close(rows, "final " + str(index) + " " + key, final["health"].get(key), value)
+                    close_hp(rows, "refresh " + str(index) + " " + key, refresh["health"].get(key), value)
+                    close_hp(rows, "final " + str(index) + " " + key, final["health"].get(key), value)
                 else:
                     close(rows, "export " + str(index) + " " + key, final["ship_variables"].get(key), value)
             for probe, health in (("eep_probe_max_hull", "max_hitpoints"), ("eep_probe_max_armor", "max_armor_hitpoints")):
-                close(rows, "refresh-day trigger " + str(index) + " " + probe,
-                      final["ship_variables"].get(probe), refresh["health"][health])
+                close_hp(rows, "refresh-day trigger " + str(index) + " " + probe,
+                         final["ship_variables"].get(probe), refresh["health"][health])
             check(rows, "diagnostic input date " + str(index), original["snapshots"][index*2+1]["diagnostics_from_date"], refresh["date"])
     matrix = scope(rows)
     if len(states) != 18:
@@ -371,7 +413,7 @@ def report(args):
                 if value is None:
                     check(controls, "ordinary absent native field " + str(index) + "/" + identity + "/" + key, actual, None)
                 else:
-                    close(controls, "ordinary native max " + str(index) + "/" + identity + "/" + key, actual, value)
+                    close_hp(controls, "ordinary native max " + str(index) + "/" + identity + "/" + key, actual, value)
     ordinary_controls = scope(controls)
     ordinary_controls.update(ship_ids=sorted(ordinary_base), native_maximum_channel_coverage=ordinary_channels,
                              scope="Same-owned ordinary ships native maximum hull/armor/shield throughout all eighteen snapshots; no ordinary damage/tracking/regen export claim.")
@@ -408,7 +450,7 @@ def report(args):
               [anchor["fleet"], anchor["ship"]])
         for key in HEALTH:
             if key.startswith("max_"):
-                close(stability, "startup-year1 Mother " + key, anchor["health"][key], initial["health"][key])
+                close_hp(stability, "startup-year1 Mother " + key, anchor["health"][key], initial["health"][key])
         check(stability, "ordinary ship identities", sorted(anchor["ordinary_ships"]), sorted(initial["ordinary_ships"]))
         for identity in sorted(set(initial["ordinary_ships"]) & set(anchor["ordinary_ships"])):
             for key, value in initial["ordinary_ships"][identity].items():
@@ -416,7 +458,7 @@ def report(args):
                 if value is None:
                     check(stability, label + " absent native field", anchor["ordinary_ships"][identity][key], None)
                 else:
-                    close(stability, label, anchor["ordinary_ships"][identity][key], value)
+                    close_hp(stability, label, anchor["ordinary_ships"][identity][key], value)
         startup = scope(stability)
         startup.update(initial={key: initial[key] for key in ("path", "sha256", "date")},
                        year1_anchor={key: anchor[key] for key in ("path", "sha256", "date")})
@@ -433,6 +475,9 @@ def report(args):
                             "path": states[1]["path"], "save_sha256": states[1]["sha256"], "date": states[1]["date"],
                             "diagnostics_from_date": states[0]["date"]}
     return {"status": status, "schema": "eep.six-core-growth-report.v1", "absolute_tolerance": TOLERANCE,
+            "hp_tolerance_contract": HP_TOLERANCE_CONTRACT,
+            "hp_tolerance": {"absolute_floor": TOLERANCE, "binary32_ulps": HP_ULPS, "relative_tolerance": 0,
+                             "classification": "predeclared_engineering_allowance_not_engine_storage_proof"},
             "component_attribution_contract": "source_separated_native_rng_v1",
             "run_id": manifest["run_id"], "production_tree_sha256": manifest["copied_mod_tree_sha256"],
             "C0_baseline": baseline_summary,

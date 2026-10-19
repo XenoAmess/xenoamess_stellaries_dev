@@ -42,3 +42,9 @@ RC3的真实已装组件自身动态倍率路线现已完成一级受控增益�
 分层参数有独立原版来源：组件文档 `000_documentation.txt:12-24` 明确设计修正与实际舰船修正是不同scope；`00_utilities_shields.txt:906-907` 的大暗物质盾用设计层 `modifier.ship_shield_add=@shield_L6`，原版 `scripted_variables/02_scripted_variables_component_cost.txt:389` 定义2925；`00_utilities_aux.txt:99-100` 的SHIELD_BOOSTER在设计层 `modifier` 给+0.1，原设计三件；同文件:439-441的CRADLE_MARK则在 `ship_modifier` 给同一字段+0.10。这是原版自身的分层用例，不依赖事后拟合或社区推测。
 
 基于真实11件盾及三件增幅器，源分层模型为 `11×2925×(1+3×0.1)×(1+ship层ship_shield_mult)`；ship层3.0／3.1分别预测167310／171492.75，与两档观察一致。查看hw2前预测tier2、ship层3.2时最大盾175675.5，仍须独立SAV核验。原始脚本没有公开闭源的完整计算函数，故这属于原始参数／scope加原生实测共同支持的模型；不把数字一致冒充读到引擎源码。更多机制与范围见 [成长组件记录](evolution-components-1019.md)。
+
+## 后续限定结果与最终说明
+
+上述hw1／hw2待验叙述保留调查历史。后续既有RC3硬件v2报告已完成56项限定检查：真实盾167310→171492.75→175675.5，01.19同日重载仍175675.5，六真实AUX核心保存、普通舰三防恒定、没有独立奖励timed_modifier。严格整档重载仍FAIL且57项差异保留；自然RNG与另五类核心不由该报告代替。本次仅只读复核现有报告，没有重跑测试。
+
+可向用户简述的当前结论与已核primary URL／原版行号集中在 [动态组件结论](dynamic-components-conclusions-1019.md)：已找到真实预装组件动态效能路径，尚不承诺任意运行时拼装或无限可见槽位；未来RC4六类自然升级必须按提前声明的矩阵验收。

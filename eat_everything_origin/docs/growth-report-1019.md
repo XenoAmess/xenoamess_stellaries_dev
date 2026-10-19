@@ -30,11 +30,11 @@
 
 L0不应有成长timed_modifier；L>0 fleet恰一条永久 `eep_mothership_evolution`，multiplier=L，不能堆叠或额外挂六类奖励modifier。六类非零tier覆盖逐项报告，未覆盖不声称已验证该类硬件增益。
 
-数值容差在读未来九节点前固定为绝对0.01、相对0，沿用既有硬件报告的存档小数处理；C／L／B／R／P／tier、身份与槽位等离散字段精确比较。不得根据后续结果增加容差。
+原设计数值容差为绝对0.01、相对0；在任何未来RC4九节点数据出现前，主线程通过 [大等级精度研究](growth-numerical-precision-1019.md) 确认仅三防HP量改用预先固定 `max(0.01,8*ULP32(expected))`、相对0，属于工程舍入预算，不声称已证明引擎位宽。十modifier导出仍固定0.01；C／L／B／R／P／tier、身份与槽位等离散字段精确。不得看后续误差再调ULP倍数或源公式；每项保留raw_delta／applied_tolerance／ULP诊断。
 
 ## 报告与验证设计
 
-`entry`只输出PLAN_ONLY；`report`生成矩阵、repeat、reload、20500 budget四个独立范围的检查，缺补充样本明确NOT_PROVIDED。矩阵通过只能写PASS_SCOPED；整套所需样本不齐时总状态INCOMPLETE，有明确不匹配时FAIL。重载业务签名可通过，但strict_gamestate_equal单列实际布尔值，不因设计ID等已知变化把全档写成PASS。未把破舰不复活、普通舰负对照或报告UI覆盖纳入本工具的自动通过范围。
+`entry`只输出PLAN_ONLY；`report`生成矩阵、repeat、reload、20500 budget及ordinary_controls独立范围的检查，缺补充样本明确NOT_PROVIDED。矩阵通过只能写PASS_SCOPED；整套所需样本不齐时总状态INCOMPLETE，有明确不匹配时FAIL。重载业务签名可通过，但strict_gamestate_equal单列实际布尔值，不因设计ID等已知变化把全档写成PASS。普通舰负对照仅覆盖原生最大三防；破舰不复活、普通舰伤害／tracking／regen导出与报告UI仍未纳入本工具的自动通过范围。
 
 必要离线测试覆盖：原生摘录解析、预先构造的边界计数与固定预测计算、误差／缺导出拒绝、预算400／10和410／0、重复抽取失败、业务重载与严格全档差异分离、报告独占写入。这些测试不模拟Stellaris RNG、计时或实际组件；真实九节点SAV尚未产生时不能生成一份假通过报告。
 
@@ -64,7 +64,7 @@ reporter的 `--budget-second-receipt` 接受这种单条auto receipt，不要求
 
 只读重新运行真实RC3 fmm00 collector dry-run成功，默认目录现为其真实UI写入目录 `eep03_-1033273808`，而非history；该检查未创建采集输出。对现有RC4 run112808的实际copied包完整59文件与原manifest比较、新静态报告／两共享载入来源门禁、原生来源与六个成长源文件SHA均检查成功，`runtime_1019`未导入。entry尚未对未来year1 anchor执行；九节点原生矩阵与补充SAV尚未产生，本次未生成任何成长运行时PASS报告，也未操作UI或直接提交。
 
-报告还将原始计划独立核到anchor日历和九个固定C序列，逐条核实际命令／console frame SHA、HUD GPU SHA与OCR真实日期，再以原ZIP CRC／SHA／根日期计算检查，避免仅信任采集器自报状态。三防与导出数值（含repeat／reload）使用预先固定绝对0.01、相对0；所有账本和槽位离散字段仍精确比较。若六类中有一类仍未抽到非零层，整套状态保持INCOMPLETE并列出覆盖缺口。
+报告还将原始计划独立核到anchor日历和九个固定C序列，逐条核实际命令／console frame SHA、HUD GPU SHA与OCR真实日期，再以原ZIP CRC／SHA／根日期计算检查，避免仅信任采集器自报状态。上述早期21项阶段数值原用0.01；当前仅三防HP（含repeat／reload与HP trigger导出）按后续、且早于未来数据的 [精度合同](growth-numerical-precision-1019.md) 使用 `max(0.01,8*ULP32(expected))`，十modifier仍固定0.01、相对0；所有账本和槽位离散字段仍精确。若六类中有一类仍未抽到非零层，整套状态保持INCOMPLETE并列出覆盖缺口。
 
 ## 发布门禁固定摘要合同
 

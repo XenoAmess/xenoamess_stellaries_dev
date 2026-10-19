@@ -137,6 +137,8 @@ class Release1019Guards(unittest.TestCase):
             "component_attribution_contract": release.COMPONENT_ATTRIBUTION_CONTRACT,
             "run_id": "synthetic-run", "production_tree_sha256": runtime["production_tree_sha256"],
             "absolute_tolerance": .01, "source_models_sha256": list(release.COMPONENT_SOURCE_MODELS),
+            "hp_tolerance_contract": release.COMPONENT_HP_TOLERANCE_CONTRACT,
+            "hp_tolerance": copy.deepcopy(release.COMPONENT_HP_TOLERANCE),
             **{name: copy.deepcopy(passed) for name in ("matrix", "repeat", "reload", "budget", "ordinary_controls")},
             "nonzero_tier_coverage": dict.fromkeys(release.COMPONENT_KINDS, True),
             "final_native_tiers": tiers, "native_evidence": native,
@@ -389,6 +391,57 @@ class Release1019Guards(unittest.TestCase):
             if entry["path"] != "proofs/synthetic-component-attribution.json"]
         with self.assertRaisesRegex(RuntimeError, "random_components"):
             self.validate(bad)
+
+    def test_hp_engineering_policy_accepts_hp_spacing_without_relaxing_modifier_exports(self):
+        runtime, report = self.implemented_components()
+        # At 2**20 the binary32 spacing is .125. A .5 HP difference is within
+        # the predeclared 8-ULP allowance; a flat modifier remains at .01.
+        hp = {"check": "refresh 8 max_hitpoints", "passed": True, "expected": 1048576.,
+            "actual": 1048576.5, "observed": 1048576.5, "raw_delta": .5,
+            "ulp32_expected": .125, "ulp_error": 4., "tolerance_kind": "hp_binary32_ulp_engineering",
+            "absolute_tolerance": 1., "applied_tolerance": 1., "relative_tolerance": 0}
+        actual, expected = -70000.005, -70000.
+        modifier = {"check": "export 8 eep_probe_ship_hull_add", "passed": True, "expected": expected,
+            "actual": actual, "observed": actual, "raw_delta": actual - expected,
+            "ulp32_expected": .0078125, "ulp_error": abs(actual - expected) / .0078125,
+            "tolerance_kind": "fixed_absolute", "absolute_tolerance": .01, "applied_tolerance": .01,
+            "relative_tolerance": 0}
+        report["matrix"]["checks"].extend([hp, modifier])
+        ordinary_hp = copy.deepcopy(hp)
+        ordinary_hp["check"] = "ordinary native max 17/5/max_hitpoints"
+        report["ordinary_controls"]["checks"].append(ordinary_hp)
+        self.attribution_report(runtime, report)
+        self.validate(runtime)
+        changes = {
+            "old report": lambda r: r.pop("hp_tolerance_contract"),
+            "old contract": lambda r: r.update(hp_tolerance_contract="unknown"),
+            "larger floor": lambda r: r["hp_tolerance"].update(absolute_floor=.1),
+            "more ULPs": lambda r: r["hp_tolerance"].update(binary32_ulps=16),
+            "float ULP count": lambda r: r["hp_tolerance"].update(binary32_ulps=8.),
+            "relative allowance": lambda r: r["hp_tolerance"].update(relative_tolerance=.001),
+            "false storage claim": lambda r: r["hp_tolerance"].update(classification="proven_engine_float32"),
+            "HP on modifier": lambda r: r["matrix"]["checks"][-2].update(check="export 8 eep_probe_ship_hull_add"),
+            "HP ordinary modifier": lambda r: r["ordinary_controls"]["checks"][-1].update(
+                check="ordinary native max 17/5/eep_probe_ship_hull_add"),
+            "HP policy under fixed label": lambda r: r["matrix"]["checks"][-2].update(tolerance_kind="fixed_absolute"),
+            "larger row allowance": lambda r: r["matrix"]["checks"][-2].update(absolute_tolerance=2., applied_tolerance=2.),
+            "wrong row spacing": lambda r: r["matrix"]["checks"][-2].update(ulp32_expected=.25),
+            "hidden relative row": lambda r: r["matrix"]["checks"][-2].update(relative_tolerance=False),
+            "boolean allowance": lambda r: r["matrix"]["checks"][-2].update(absolute_tolerance=True),
+            "nonfinite expected": lambda r: r["matrix"]["checks"][-2].update(expected=float("inf")),
+            "missing row policy": lambda r: r["matrix"]["checks"][-2].pop("tolerance_kind"),
+            "non HP modifier delta": lambda r: r["matrix"]["checks"][-1].update(
+                actual=-69999.98, observed=-69999.98, raw_delta=-69999.98 + 70000,
+                ulp_error=abs(-69999.98 + 70000) / .0078125),
+            "outside HP allowance": lambda r: r["matrix"]["checks"][-2].update(
+                actual=1048578., observed=1048578., raw_delta=2., ulp_error=16.),
+        }
+        for label, mutate in changes.items():
+            bad, claim = copy.deepcopy(runtime), copy.deepcopy(report)
+            mutate(claim)
+            self.attribution_report(bad, claim)
+            with self.subTest(label=label), self.assertRaisesRegex(RuntimeError, "random_components"):
+                self.validate(bad)
 
     def test_conditional_alternative_authorization_does_not_select_fallback(self):
         runtime = copy.deepcopy(self.runtime)

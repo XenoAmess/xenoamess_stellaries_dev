@@ -62,7 +62,7 @@ scopes.log:378的ship_growth_stage从ship进入当前设计阶段；triggers.log
 
 目前没有找到本机component的triggered_ship_modifier块内直接mult的实例。`00_utilities_aux_grand_archive.txt:21`虽然有mult=value:num_gravity_snare_upgrade_unlocked，但它在cost块，不能作为船体属性倍率证据。也不能把通用mult支持直接当作移动星堡类母舰已经通过。
 
-成长负责人随后找到并已独立核对的[巨构作者原始源码](https://github.com/Pouchkinn-s-Gigastructures/Gigastructures/blob/436812fb3acd9dc7d6cb5e666268a3a1d8135aa7/common/component_templates/giga_eawaf_components.txt#L28)提供更直接的外部实物例：固定commit `436812fb3acd9dc7d6cb5e666268a3a1d8135aa7` 的GIGA_EAWAF_DISENCHANTER_1组件，在triggered_ship_modifier中直接用mult读取event_target国家变量，2/3/4级同样使用。它弥补“组件块内部mult”实例缺口，但属于作者Mod源码，不能冒充本机原版或本次主宰实测，也不需要复制其组件/修正内容。
+成长负责人随后找到并已独立核对的[巨构作者原始源码](https://github.com/Pouchkinn-s-Gigastructures/Gigastructures/blob/436812fb3acd9dc7d6cb5e666268a3a1d8135aa7/common/component_templates/giga_eawaf_components.txt#L30)提供更直接的外部实物例：固定commit `436812fb3acd9dc7d6cb5e666268a3a1d8135aa7` 的GIGA_EAWAF_DISENCHANTER_1组件，在triggered_ship_modifier中直接用mult读取event_target国家变量，2/3/4级同样使用。它弥补“组件块内部mult”实例缺口，但属于作者Mod源码，不能冒充本机原版或本次主宰实测，也不需要复制其组件/修正内容。2026-10-19最终只读复核原始字节SHA为 `09fa80d0b3399d4fc90bcebac06a6d29046687b5e5cf38c7192ca05537116133`；按673行原始文件计，该块起于30行，mult在36行，浏览器转换后的行号不作为原文件行号。
 
 本机 `script_values/00_script_values.txt:1-61`明确以value:名称调用、base默认0、运算右值支持作用域变量，并示范先用is_variable_set护栏才读取owner变量；`06_script_values_biogenesis.txt:558`实际add=owner.growth_factor_variable，:593实际mult=owner.growth_factor_ship_size_variable。ship→fleet作用域在本次scopes.log:58有记录。因此读取母舰fleet等级可以采用以下待验形式：
 

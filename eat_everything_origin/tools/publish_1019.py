@@ -6,6 +6,7 @@ import json
 import math
 from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
+import struct
 
 import publish_update as update
 
@@ -68,6 +69,9 @@ COMPONENT_SOURCE_MODELS = (
     "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
     "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8")
 COMPONENT_ATTRIBUTION_CONTRACT = "source_separated_native_rng_v1"
+COMPONENT_HP_TOLERANCE_CONTRACT = "max_0p01_or_8_binary32_ulp_expected_v1"
+COMPONENT_HP_TOLERANCE = {"absolute_floor": .01, "binary32_ulps": 8, "relative_tolerance": 0,
+    "classification": "predeclared_engineering_allowance_not_engine_storage_proof"}
 GROWTH_SAMPLES = [(0, 0), (9, 0), (10, 1), (19, 1), (20, 2), (200, 20), (10000, 1000)]
 COMPONENT_NODES = (0, 9, 10, 19, 20, 49, 50, 200, 10000)
 PLANET_KILLER_CALLBACK_CONTRACT = "native_completed_queued_unqueued_v1"
@@ -385,7 +389,42 @@ def validate_component_attribution(case, tree, root):
                 and all(isinstance(row, dict) and row.get("passed") is True for row in value["checks"]))
 
     def finite(value):
-        return type(value) in (int, float) and math.isfinite(value)
+        try:
+            return type(value) in (int, float) and math.isfinite(value)
+        except OverflowError:
+            return False
+
+    def numeric_policy(row):
+        if "tolerance_kind" not in row and "absolute_tolerance" not in row:
+            return
+        kind, expected, actual = row.get("tolerance_kind"), row.get("expected"), row.get("observed")
+        require(kind in {"hp_binary32_ulp_engineering", "fixed_absolute"}
+                and finite(expected) and finite(actual) and finite(row.get("actual")) and row["actual"] == actual,
+                "finite native numeric observations")
+        try:
+            bits = struct.unpack(">I", struct.pack(">f", abs(expected)))[0]
+            exponent = (bits >> 23) & 255
+            ulp = (math.ldexp(1., exponent - 150) if exponent else math.ldexp(1., -149)) if exponent != 255 else None
+        except (OverflowError, struct.error):
+            ulp = None
+        hp_fields = {"hitpoints", "max_hitpoints", "armor_hitpoints", "max_armor_hitpoints",
+                     "shield_hitpoints", "max_shield_hitpoints", "eep_probe_max_hull", "eep_probe_max_armor"}
+        if kind == "hp_binary32_ulp_engineering":
+            require(re.split(r"[ /]", str(row.get("check", "")))[-1] in hp_fields and ulp is not None,
+                    "HP-only engineering allowance")
+            allowed = max(.01, 8 * ulp)
+        else:
+            allowed = .01
+        delta = actual - expected
+        require(finite(delta) and finite(row.get("raw_delta")) and row["raw_delta"] == delta
+                and finite(row.get("absolute_tolerance")) and row["absolute_tolerance"] == allowed
+                and finite(row.get("applied_tolerance")) and row["applied_tolerance"] == allowed
+                and type(row.get("relative_tolerance")) in (int, float) and row["relative_tolerance"] == 0
+                and row.get("ulp32_expected") == ulp
+                and (finite(row.get("ulp32_expected")) if ulp is not None else row.get("ulp32_expected") is None)
+                and row.get("ulp_error") == (abs(delta) / ulp if ulp else None)
+                and (finite(row.get("ulp_error")) if ulp else row.get("ulp_error") is None)
+                and abs(delta) <= allowed, "predeclared numeric allowance and raw delta")
 
     reference = case.get("component_attribution_report")
     require(isinstance(reference, dict), "native growth report reference")
@@ -408,8 +447,16 @@ def validate_component_attribution(case, tree, root):
             and report["absolute_tolerance"] == .01
             and report.get("source_models_sha256") == list(COMPONENT_SOURCE_MODELS),
             "predetermined source models and tolerance")
+    hp_policy = report.get("hp_tolerance")
+    require(report.get("hp_tolerance_contract") == COMPONENT_HP_TOLERANCE_CONTRACT
+            and hp_policy == COMPONENT_HP_TOLERANCE
+            and type(hp_policy.get("binary32_ulps")) is int
+            and type(hp_policy.get("relative_tolerance")) in (int, float),
+            "predeclared HP engineering policy")
     for name in ("matrix", "repeat", "reload", "budget", "ordinary_controls"):
         require(scoped(report.get(name)), name + " scoped native checks")
+        for row in report[name]["checks"]:
+            numeric_policy(row)
     controls = report["ordinary_controls"].get("ship_ids")
     require(isinstance(controls, list) and bool(controls)
             and all(isinstance(identity, str) and identity for identity in controls)

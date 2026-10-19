@@ -3,7 +3,9 @@ import contextlib
 import copy
 import io
 import json
+import math
 from pathlib import Path
+import struct
 import sys
 import tempfile
 import unittest
@@ -118,6 +120,59 @@ class GrowthReportTests(unittest.TestCase):
         c.close(rows, "missing", None, 0)
         self.assertEqual([row["passed"] for row in rows], [True, False, False])
         self.assertEqual(c.scope(rows)["status"], "FAIL")
+
+    def test_hp_engineering_budget_accepts_predeclared_level1000_and2050_quantization(self):
+        rows = []
+        for expected in (1331787.6, 2683137.6, 4454628.75):
+            observed = struct.unpack(">f", struct.pack(">f", expected))[0]
+            c.close_hp(rows, "source-only large HP", observed, expected)
+        self.assertTrue(all(row["passed"] for row in rows))
+        self.assertEqual([row["ulp32_expected"] for row in rows], [.125, .25, .5])
+        self.assertEqual([row["applied_tolerance"] for row in rows], [1, 2, 4])
+        self.assertGreater(abs(rows[0]["raw_delta"]), .01)
+        self.assertEqual(rows[0]["observed"], 1331787.625)
+        self.assertEqual(rows[0]["tolerance_kind"], "hp_binary32_ulp_engineering")
+
+    def test_large_hp_missing_whole_level_or_core_is_rejected(self):
+        rows = []
+        for expected, one_level, one_core in ((1653960, 1500, 3000),
+                                               (2683137.6, 1287, 2574),
+                                               (4454628.75, 2091.375, 4182.75)):
+            for missing in (one_level, one_core):
+                observed = struct.unpack(">f", struct.pack(">f", expected - missing))[0]
+                c.close_hp(rows, "missing full source contribution", observed, expected)
+        self.assertFalse(any(row["passed"] for row in rows))
+
+    def test_modifier_exports_keep_point_zero_one_and_small_hp_keeps_old_floor(self):
+        rows = []
+        c.close(rows, "wrong damage component", 56.5, 56.55)
+        c.close(rows, "wrong tracking component", 87, 90)
+        c.close(rows, "flat hull remains a modifier", -69999.98, -70000)
+        c.close_hp(rows, "small old baseline accepted", 100.009, 100)
+        c.close_hp(rows, "small old baseline rejected", 100.011, 100)
+        self.assertEqual([row["passed"] for row in rows], [False, False, False, True, False])
+        self.assertTrue(all(row["applied_tolerance"] == .01 for row in rows))
+        self.assertTrue(all(row["tolerance_kind"] == "fixed_absolute" for row in rows[:3]))
+
+    def test_hp_missing_nonfinite_and_out_of_binary32_range_never_get_infinite_tolerance(self):
+        rows = []
+        for observed, expected in ((None, 100), (math.nan, 100), (math.inf, 100),
+                                   (100, math.inf), (1e40, 1e40)):
+            c.close_hp(rows, "invalid HP", observed, expected)
+        self.assertFalse(any(row["passed"] for row in rows))
+        self.assertIsNone(rows[-1]["applied_tolerance"])
+        json.dumps(rows, allow_nan=False)
+
+    def test_reload_hp_budget_does_not_relax_modifier_diagnostics(self):
+        before = copy.deepcopy(self.base)
+        before["health"]["max_armor_hitpoints"] = 1331787.6
+        before["ship_variables"]["eep_probe_max_armor"] = 1331787.6
+        after = copy.deepcopy(before)
+        after["health"]["max_armor_hitpoints"] = 1331787.625
+        after["ship_variables"]["eep_probe_max_armor"] = 1331787.625
+        self.assertEqual(c.comparison(before, after, "large reload")["status"], "PASS_SCOPED")
+        after["ship_variables"]["eep_probe_ship_weapon_damage"] -= .05
+        self.assertEqual(c.comparison(before, after, "large reload")["status"], "FAIL")
 
     def test_reload_business_and_strict_gamestate_are_separate(self):
         after = copy.deepcopy(self.base)
