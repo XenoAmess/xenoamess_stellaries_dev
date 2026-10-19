@@ -1,0 +1,7 @@
+{
+  "status": "EXPECTED_REJECTION",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_single_homeworld.py\", line 121, in <module>\n    update.main()\n    ~~~~~~~~~~~^^\n  File \"D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_update.py\", line 304, in main\n    inputs = preflight()\n  File \"D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_update.py\", line 180, in preflight\n    validate_target(int((ROOT / \"workshop/item-id.txt\").read_text().strip()), version, prior, state)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_update.py\", line 67, in validate_target\n    raise RuntimeError(\"only the frozen unused formal version may be published\")\nRuntimeError: only the frozen unused formal version may be published\n",
+  "native_upload_attempted": false
+}

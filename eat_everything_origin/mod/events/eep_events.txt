@@ -22,7 +22,7 @@ country_event = {
     id = eep.1
     hide_window = yes
     is_triggered_only = yes
-    immediate = { eep_initialize = yes eep_startup = yes }
+    immediate = { eep_initialize = yes eep_startup = yes eep_sync_mothership = yes }
 }
 
 country_event = {
@@ -34,6 +34,7 @@ country_event = {
         if = {
             limit = { has_origin = origin_heart_of_devouring }
             eep_initialize = yes
+            eep_sync_mothership = yes
             eep_auto_devour_scan = yes
             if = {
                 limit = {

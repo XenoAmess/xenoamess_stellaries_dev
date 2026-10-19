@@ -1,0 +1,54 @@
+{
+  "status": "PASS_SCOPED",
+  "scope": "native country level, one fleet modifier and frozen per-level definition only",
+  "checks": {
+    "candidate_0_4": true,
+    "native_country_level": true,
+    "native_next_level_remainder": true,
+    "expected_c": true,
+    "unique_mothership": true,
+    "fleet_applied_level": true,
+    "single_scaled_evolution_modifier": true,
+    "permanent_evolution_modifier": true,
+    "no_ship_evolution_stacking": true,
+    "frozen_per_level_definition": true
+  },
+  "c": 0,
+  "level": 0,
+  "next_level_remainder": 10,
+  "multiplier_records": [],
+  "frozen_definition": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+    "sha256": "8015cfbcd9c7b90047f845e85a2a379fd53246d4a9819f4452fd77836f39a00c",
+    "body": "\n    ship_weapon_damage = 0.05\n    ship_hull_mult = 0.05\n    ship_armor_mult = 0.05\n    ship_shield_mult = 0.05\n    ship_hull_regen_add_static = 0.1\n    ship_armor_regen_add_static = 0.1\n"
+  },
+  "provenance": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+    "save_sha256": "2fddab313229b4bddf493cb53fd484aa3897a4c7f163838188dead442ea6e6be",
+    "run_id": "20261019T081638Z",
+    "version": "0.4.0-rc.1",
+    "production_tree_sha256": "e3c4c176c9b6d0fa6d43cab461d6f7dd9161cc4828ff800d78bdfc33ee7df526",
+    "manifest_sha256": "115aa0e49ce87ee7a86eab13fb17b16e6f861d2c5e8fe169ee7d9a42fc88bef2",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.audit.json",
+    "audit_sha256": "9f20103d9452161e620563b6722ac1951db3965855e36e1fe51df4096e485aa8",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.native-save.json",
+        "sha256": "4a9805eae0c34518a3fcbdd9f12f81f2e8223a627b87ea4b8a13a098a6975087",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\save games\\eep03_-1033273808\\pmm00.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\save games\\eep-test-history\\pmm00.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+          "sha256": "2fddab313229b4bddf493cb53fd484aa3897a4c7f163838188dead442ea6e6be",
+          "date": "2200.01.01"
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Panel growth also depends on country modifiers.",
+    "Five-level real-component rewards are not certified by this check."
+  ],
+  "interface_investigation_only": true,
+  "checker_sha256": "15246cb596f64d060209d93d9a3b746b64bf8199d6e6774d1ebd4c126bf3eb15"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS_SCOPED",
+  "scope": "Existing failure report overwrite refusal only",
+  "returncode": 1,
+  "existing_report": "eat_everything_origin\\docs\\evidence\\1019-analysis\\missing-manifest-negative-v3.json",
+  "before_sha256": "54e3119cab9f957f8926ea55b7e2dcc6b886e2e3a45e6b2cc3d4675d01634a1a",
+  "after_sha256": "54e3119cab9f957f8926ea55b7e2dcc6b886e2e3a45e6b2cc3d4675d01634a1a",
+  "stderr": "Traceback (most recent call last):\n  File \"D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py\", line 332, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py\", line 295, in main\n    raise FileExistsError(\"refusing to overwrite existing evidence: \" + str(args.output))\nFileExistsError: refusing to overwrite existing evidence: eat_everything_origin\\docs\\evidence\\1019-analysis\\missing-manifest-negative-v3.json\n",
+  "checker_sha256": "15246cb596f64d060209d93d9a3b746b64bf8199d6e6774d1ebd4c126bf3eb15"
+}

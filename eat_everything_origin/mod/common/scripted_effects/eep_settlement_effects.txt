@@ -1,0 +1,136 @@
+# Source Carrier/planet scope; caller binds eep_actor and eep_bound_core.
+# Both entry points share persistent once-only receipts and the same C/G/D math.
+eep_settle_source = {
+    save_event_target_as = eep_source
+    if = {
+        limit = {
+            exists = event_target:eep_actor
+            exists = event_target:eep_bound_core
+            event_target:eep_actor = { eep_qualified = yes eep_core_available = yes }
+            event_target:eep_bound_core = { is_same_value = event_target:eep_core@event_target:eep_actor }
+            NOT = { has_planet_flag = eep_destroy_done }
+            check_variable = { which = eep_q value > 0 }
+            OR = {
+                AND = {
+                    has_planet_flag = eep_colossus_active
+                    eep_colossus_target_valid = yes
+                }
+                AND = {
+                    has_planet_flag = eep_active
+                    is_owned_by = event_target:eep_actor
+                    event_target:eep_actor = {
+                        any_situation = {
+                            eep_task_ready = yes
+                            target = { is_same_value = event_target:eep_source }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = { has_planet_flag = eep_native NOT = { has_planet_flag = eep_bites_done } }
+            if = {
+                limit = { has_planet_flag = eep_colossus_active }
+                while = { count = value:eep_remaining_bites eep_native_consume_colossus = yes }
+            }
+            else = { while = { count = value:eep_remaining_bites eep_native_consume = yes } }
+            set_planet_flag = eep_bites_done
+        }
+        if = {
+            limit = { NOT = { has_planet_flag = eep_credit_done } }
+            event_target:eep_actor = {
+                set_variable = { which = eep_previous_capacity value = eep_d }
+                change_variable = { which = eep_c value = prev.eep_q }
+                if = {
+                    limit = { prev = { NOT = { has_planet_flag = eep_native } } }
+                    change_variable = { which = eep_g value = prev.eep_q }
+                }
+                set_variable = { which = eep_d value = eep_c }
+                divide_variable = { which = eep_d value = 4 }
+                floor_variable = eep_d
+                change_variable = { which = eep_d value = 2 }
+                set_variable = { which = eep_last_capacity value = eep_d }
+                subtract_variable = { which = eep_last_capacity value = eep_previous_capacity }
+                change_variable = { which = eep_worlds value = 1 }
+            }
+            set_planet_flag = eep_credit_done
+        }
+        event_target:eep_actor = { event_target:eep_core@this = { eep_update_capacity = yes } }
+        if = {
+            limit = { NOT = { has_planet_flag = eep_return_done } }
+            event_target:eep_actor = { set_variable = { which = eep_last_return value = 0 } }
+            if = {
+                limit = { is_owned_by = event_target:eep_actor }
+                set_variable = { which = eep_return_amount value = 0 }
+                export_trigger_value_to_variable = {
+                    trigger = count_owned_pop_amount
+                    parameters = { limit = { eep_founder_pop = yes } }
+                    variable = eep_return_amount
+                }
+                event_target:eep_actor = { set_variable = { which = eep_last_return value = prev.eep_return_amount } }
+                every_owned_pop_group = {
+                    limit = { eep_founder_pop = yes pop_group_size > 0 }
+                    resettle_pop_group = {
+                        POP_GROUP = this
+                        PLANET = event_target:eep_bound_core
+                        PERCENTAGE = 1
+                    }
+                }
+            }
+            set_planet_flag = eep_return_done
+        }
+        if = {
+            limit = { NOT = { has_planet_flag = eep_population_done } }
+            event_target:eep_actor = {
+                set_variable = { which = eep_entitled value = eep_g }
+                divide_variable = { which = eep_entitled value = 6 }
+                floor_variable = eep_entitled
+                multiply_variable = { which = eep_entitled value = 100 }
+                set_variable = { which = eep_delta value = eep_entitled }
+                subtract_variable = { which = eep_delta value = eep_made }
+                set_variable = { which = eep_last_manufactured value = eep_delta }
+                if = {
+                    limit = { check_variable = { which = eep_delta value > 0 } }
+                    event_target:eep_bound_core = {
+                        create_pop_group = { species = owner.owner_main_species size = owner.eep_delta }
+                    }
+                }
+                set_variable = { which = eep_made value = eep_entitled }
+            }
+            set_planet_flag = eep_population_done
+        }
+        if = {
+            limit = { NOT = { has_planet_flag = eep_crisis_done } }
+            # Match crisis.5015's last-colony objective, with an explicit enemy guard.
+            # Evaluate before destroy_colony removes the source owner.
+            if = {
+                limit = {
+                    event_target:eep_actor = { has_ascension_perk = ap_become_the_crisis }
+                    exists = owner
+                    NOT = { is_owned_by = event_target:eep_actor }
+                    owner = {
+                        is_at_war_with = event_target:eep_actor
+                        NOT = { any_owned_planet = { NOT = { is_same_value = event_target:eep_source } } }
+                    }
+                }
+                event_target:eep_actor = { complete_crisis_objective = crisobj_destroy_empires }
+            }
+            event_target:eep_actor = {
+                if = {
+                    limit = { has_ascension_perk = ap_become_the_crisis }
+                    complete_crisis_objective = crisobj_destroy_worlds
+                }
+            }
+            set_planet_flag = eep_crisis_done
+        }
+        if = {
+            limit = { NOT = { has_planet_flag = eep_destroy_done } }
+            set_planet_flag = eep_destroy_done
+            destroy_colony = yes
+            change_pc = pc_shattered
+            clear_deposits = yes
+            eep_clear_task = yes
+            remove_planet_flag = eep_colossus_active
+        }
+    }
+}

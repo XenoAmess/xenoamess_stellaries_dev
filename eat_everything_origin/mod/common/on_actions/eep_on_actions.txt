@@ -2,3 +2,7 @@ on_game_start_country = { events = { eep.1 } }
 on_monthly_pulse_country = { events = { eep.2 } }
 on_colony_transfer = { events = { eep.3 } }
 on_terraforming_complete = { events = { eep.4 } }
+on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER = { events = { eep.50 } }
+# Native implicit callbacks. Queueing and cancelling never grant settlement.
+on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER_queued = {}
+on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER_unqueued = {}

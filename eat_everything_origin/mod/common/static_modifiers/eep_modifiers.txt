@@ -4,20 +4,31 @@ eep_capacity = { planet_max_districts_add = 1 }
 eep_court = { planet_jobs_produces_mult = 0.10 }
 eep_parallel_construction = { planet_building_capacity_add = 1 }
 
-# About twice Gray's military power: native power uses exponent 0.65.
-# Roughly 1.74x offense and defenses yields 1.74^1.3 = 2.05x baseline power.
+# Exclusive flagship baseline; Relic equipment plus retained flagship advantages.
 eep_mothership = {
     # Native juggernaut chassis, Gray's 30000 base hull and 10 evasion.
     ship_hull_add = -70000
-    ship_evasion_add = 8
+    # Colossus thrusters carry no corvette evasion; match Relic's total 22.
+    ship_evasion_add = 20
     ships_upkeep_mult = -1
     starbases_upkeep_mult = -1
-    ship_shield_mult = 2.132
-    ship_weapon_damage = 2.132
+    ship_shield_mult = 3
+    # Relic weapons have lower raw DPS than Gray's beam and four missiles.
+    ship_weapon_damage = 3.8
     ship_fire_rate_mult = 0.8
     ship_hull_mult = 2.132
     ship_armor_mult = 0.74
     ship_speed_mult = 0.8
     ship_hull_regen_add_static = 1.392
     ship_armor_regen_add_static = 2.088
+}
+
+# One modifier scaled by floor(C/10), replaced rather than stacked.
+eep_mothership_evolution = {
+    ship_weapon_damage = 0.05
+    ship_hull_mult = 0.05
+    ship_armor_mult = 0.05
+    ship_shield_mult = 0.05
+    ship_hull_regen_add_static = 0.1
+    ship_armor_regen_add_static = 0.1
 }

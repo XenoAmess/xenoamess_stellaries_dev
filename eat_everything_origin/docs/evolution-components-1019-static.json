@@ -1,0 +1,259 @@
+{
+  "status": "STATIC_REVIEW_ONLY",
+  "runtime_status": "NOT_TESTED_BY_THIS_AGENT",
+  "game_version": "Stellaris 4.5.2",
+  "parser": [
+    {
+      "path": "mod/common/scripted_effects/eep_mothership_effects.txt",
+      "sha256": "c29dae46e118b3394c9956fc3b08833f375e32a89fb8863f5a20514593306eeb",
+      "result": {
+        "status": "PARSED",
+        "bytes": 2582,
+        "tokens": 680,
+        "blocks": 37,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    },
+    {
+      "path": "mod/common/component_templates/eep_evolution_components.txt",
+      "sha256": "3ec052a5c6412314715ca9fa73b9c14189b4d2569065bbe696d8122ad6b085eb",
+      "result": {
+        "status": "PARSED",
+        "bytes": 1361,
+        "tokens": 393,
+        "blocks": 15,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    }
+  ],
+  "authored_localization_keys": {
+    "simp_chinese": [
+      "EEP_SYMBIOTIC_SHIELD_CORE_SHIP",
+      "EEP_SYMBIOTIC_SHIELD_CORE_SHIP_DESC",
+      "eep_symbiotic_shield_core_ship"
+    ],
+    "english": [
+      "EEP_SYMBIOTIC_SHIELD_CORE_SHIP",
+      "EEP_SYMBIOTIC_SHIELD_CORE_SHIP_DESC",
+      "eep_symbiotic_shield_core_ship"
+    ],
+    "german": [
+      "EEP_SYMBIOTIC_SHIELD_CORE_SHIP",
+      "EEP_SYMBIOTIC_SHIELD_CORE_SHIP_DESC",
+      "eep_symbiotic_shield_core_ship"
+    ]
+  },
+  "authored_localization_key_sets_equal": true,
+  "non_chinese_han_placeholder_found": false,
+  "native_sprite": "GFX_ship_part_shield_recharger",
+  "component_set_omitted_like_native_starbase_auras": true,
+  "automatic_component_awards_connected": false,
+  "growth_level_cap_present": false,
+  "notes": [
+    "Kaishek grammar parsing is not package or runtime acceptance.",
+    "Full package gate and simplified-Chinese native probes are owned by the main task.",
+    "No desktop, game launch, game termination or runtime UI operations were performed by this agent."
+  ],
+  "historical_record_note": "Existing parser/localization records above describe the retired standalone prototypes. The active hardware candidate is recorded below.",
+  "active_dynamic_core_probe": {
+    "component": "EEP_ADAPTIVE_SHIELD_CORE",
+    "rank_variable": "fleet.eep_component_shield_level",
+    "script_value": "eep_component_shield_level_value",
+    "parser": [
+      {
+        "path": "mod/common/component_templates/eep_evolution_components.txt",
+        "sha256": "8cef964db273d4d72d9fbdc7006b1417532555faae68d28736879ee63bfeeae5",
+        "result": {
+          "status": "PARSED",
+          "bytes": 747,
+          "tokens": 175,
+          "blocks": 6,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "path": "mod/common/script_values/eep_evolution_values.txt",
+        "sha256": "c0765b2c49ffb18a959366806f90630d03c19592ff7c2c66745ead1ddccce731",
+        "result": {
+          "status": "PARSED",
+          "bytes": 359,
+          "tokens": 69,
+          "blocks": 3,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      }
+    ],
+    "ordinary_add_modifier_calls": 0,
+    "runtime_status": "PENDING_NATIVE_0_1_2_RELOAD_AND_NEGATIVE_CONTROL",
+    "whole_package_status": "MAIN_TASK_GATE_REQUIRED",
+    "historical_record_note": "Single-core prototype superseded by six-core candidate; no native proof is implied."
+  },
+  "six_dynamic_core_candidate": {
+    "status": "STATIC_SOURCE_CONTRACT_PASS",
+    "parser": [
+      {
+        "path": "mod/common/scripted_effects/eep_mothership_effects.txt",
+        "sha256": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5",
+        "result": {
+          "status": "PARSED",
+          "bytes": 8271,
+          "tokens": 2498,
+          "blocks": 135,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "path": "mod/common/component_templates/eep_evolution_components.txt",
+        "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+        "result": {
+          "status": "PARSED",
+          "bytes": 3426,
+          "tokens": 1028,
+          "blocks": 36,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "path": "mod/common/script_values/eep_evolution_values.txt",
+        "sha256": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09",
+        "result": {
+          "status": "PARSED",
+          "bytes": 1409,
+          "tokens": 394,
+          "blocks": 18,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      }
+    ],
+    "components": [
+      {
+        "component": "EEP_ADAPTIVE_SHIELD_CORE",
+        "fleet_rank": "eep_component_shield_level",
+        "script_value": "eep_component_shield_level_value",
+        "per_rank": {
+          "ship_shield_mult": 0.1
+        }
+      },
+      {
+        "component": "EEP_ADAPTIVE_ARMOR_CORE",
+        "fleet_rank": "eep_component_armor_level",
+        "script_value": "eep_component_armor_level_value",
+        "per_rank": {
+          "ship_armor_mult": 0.1
+        }
+      },
+      {
+        "component": "EEP_ADAPTIVE_HULL_CORE",
+        "fleet_rank": "eep_component_hull_level",
+        "script_value": "eep_component_hull_level_value",
+        "per_rank": {
+          "ship_hull_mult": 0.1
+        }
+      },
+      {
+        "component": "EEP_ADAPTIVE_DAMAGE_CORE",
+        "fleet_rank": "eep_component_damage_level",
+        "script_value": "eep_component_damage_level_value",
+        "per_rank": {
+          "ship_weapon_damage": 0.05
+        }
+      },
+      {
+        "component": "EEP_ADAPTIVE_TRACKING_CORE",
+        "fleet_rank": "eep_component_tracking_level",
+        "script_value": "eep_component_tracking_level_value",
+        "per_rank": {
+          "ship_tracking_add": 3
+        }
+      },
+      {
+        "component": "EEP_ADAPTIVE_REGEN_CORE",
+        "fleet_rank": "eep_component_regen_level",
+        "script_value": "eep_component_regen_level_value",
+        "per_rank": {
+          "ship_hull_regen_add_static": 0.2,
+          "ship_armor_regen_add_static": 0.2
+        }
+      }
+    ],
+    "rng": {
+      "relative_weights": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "persistent_total": "fleet.eep_component_rewards",
+      "entitlement": "floor(country.eep_c/50)",
+      "work_budget_per_sync": 200,
+      "total_cap": null,
+      "rank_initialization": "only_if_unset",
+      "reconstruct_total_from_tiers": false,
+      "pending": "max(country.eep_component_entitled-country.eep_component_rewards,0)",
+      "controlled_C0_shield_probe_exempts_sum_invariant": true
+    },
+    "source_contract_checks": [
+      "six utility definitions and six matching guarded script values",
+      "zero power and absent resource costs",
+      "bound Mother fleet identity filter on every core",
+      "exact seven native payload modifier fields",
+      "six weight-1 random branches, one selected tier per branch",
+      "per-iteration total +1 and budget -1",
+      "only missing ranks initialized; existing ranks preserved",
+      "temporary budget cleared after loop",
+      "one existing base-growth add_modifier; zero reward add_modifier",
+      "one-ship juggernaut owned bound target guard",
+      "C-derived entitlement and pending clamp",
+      "country tier and reward mirrors use actual fleet values"
+    ],
+    "country_snapshot": {
+      "same_named_tiers_and_rewards": true,
+      "state_variable": "eep_component_snapshot_state",
+      "states": {
+        "0": "current valid Mother",
+        "1": "historical record; Mother unavailable",
+        "2": "no verified snapshot"
+      },
+      "flag": "eep_component_snapshot_available",
+      "destruction_behavior": "preserve last-confirmed records; stop awards; no respawn"
+    },
+    "authored_localization": {
+      "path": "localization/evolution-1019-authored.json",
+      "sha256": "97a990b7540f896a1b5c3abb9c1b3178411679ad8ec4f6fd9802ce01f2ef0370",
+      "languages": [
+        "simp_chinese",
+        "english",
+        "german"
+      ],
+      "keys_per_language": 19,
+      "protected_tokens_equal": true,
+      "non_chinese_han_placeholder_found": false,
+      "runtime_other_languages": "OUT_OF_SCOPE",
+      "product_wording_only": true,
+      "development_pending_state_in_docs_not_game_ui": true,
+      "report_root_variables": 9,
+      "report_newlines": "actual newline characters in parsed author JSON; emitted as Stellaris escape sequences by locale integration"
+    },
+    "ordinary_reward_add_modifier_calls": 0,
+    "existing_base_growth_add_modifier_calls": 1,
+    "native_update_delay": {
+      "path": "C:/SteamLibrary/steamapps/common/Stellaris/common/defines/00_defines.txt",
+      "line": 574,
+      "setting": "TRIGGERED_MODIFIER_UPDATE_DELAY",
+      "value": 5,
+      "minimum_observation_days": 5
+    },
+    "runtime_status": "PENDING_NATIVE_INSTALLED_HARDWARE_0_1_2_RELOAD_AND_RNG_PROOF",
+    "whole_package_status": "MAIN_TASK_GATE_REQUIRED",
+    "scope_of_validation": "Actual source shape and Kaishek lossless syntax only; no emulated Stellaris execution or assertion of engine semantics."
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "status": "OBSERVATION_ONLY",
+  "scope": "Read-only native base shield source calculation on real rc1b SAV; not a six-core hardware result",
+  "provenance": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+    "save_sha256": "2fddab313229b4bddf493cb53fd484aa3897a4c7f163838188dead442ea6e6be",
+    "run_id": "20261019T081638Z",
+    "version": "0.4.0-rc.1",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "e3c4c176c9b6d0fa6d43cab461d6f7dd9161cc4828ff800d78bdfc33ee7df526",
+    "manifest_sha256": "115aa0e49ce87ee7a86eab13fb17b16e6f861d2c5e8fe169ee7d9a42fc88bef2",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.audit.json",
+    "audit_sha256": "9f20103d9452161e620563b6722ac1951db3965855e36e1fe51df4096e485aa8",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.native-save.json",
+        "sha256": "4a9805eae0c34518a3fcbdd9f12f81f2e8223a627b87ea4b8a13a098a6975087",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\save games\\eep03_-1033273808\\pmm00.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\save games\\eep-test-history\\pmm00.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+          "sha256": "2fddab313229b4bddf493cb53fd484aa3897a4c7f163838188dead442ea6e6be",
+          "date": "2200.01.01"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "basis": {
+    "base_shield": 32175,
+    "installed_components_including_required": [
+      {
+        "key": "AUTO_REPAIR",
+        "count": 2,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+        "source_sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"AUTO_REPAIR\"\n\tsize = aux\n\ticon = \"GFX_ship_part_auto_repair\"\n\ticon_frame = 1\n\tpower = -10\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = 20\n\t\t}\n\t}\n\n\tmodifier = {\n\t\tship_hull_regen_add_perc = 0.05\n\t\tship_armor_regen_add_perc = 0.1\n\t}\n\n\tprerequisites = { tech_regenerative_hull_tissue }\n\tcomponent_set = \"AUTO_REPAIR\"\n\n\tai_weight = {\n\t\tweight = 10\n\n\t\tinline_script = \"ai/armor_preference_weight\"\n\t}\n"
+      },
+      {
+        "key": "COLOSSUS_SHIP_THRUSTER_5",
+        "count": 1,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_thrusters.txt",
+        "source_sha256": "c743cd84aab451b8d43259c46249c3a476f28819b417e9bf99aaadbc0721448c",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"COLOSSUS_SHIP_THRUSTER_5\"\n\tsize = small\n\ticon = \"GFX_ship_part_thruster_5\"\n\ticon_frame = 1\n\tpower = @colossus_power_5\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @colossus_cost5\n\t\t\tsr_dark_matter = 32\n\t\t}\n\t}\n\tmodifier = {\n\t\tship_base_speed_mult = 1.25\n\t}\n\n\tprerequisites = { \"tech_dark_matter_propulsion\" }\n\tcomponent_set = \"thruster_components\"\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t\tship_uses_colossus_thrusters = yes\n\t}\n\n\tai_weight = {\n\t\tweight = 5\n\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tno_resource_for_component = { RESOURCE = sr_dark_matter }\n\t\t}\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tis_ai = yes\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "COMBAT_COMPUTER_LINE_SAPIENT",
+        "count": 1,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_roles.txt",
+        "source_sha256": "e3cf0c8f74da5b7d8e5a031f25fc37e43c3047c9e1b792b0383c36bfd36846fe",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"COMBAT_COMPUTER_LINE_SAPIENT\"\n\tsize = small\n\ticon = \"GFX_ship_part_computer_line_sapient\"\n\ticon_frame = 1\n\tpower = @power3\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @cost3\n\t\t}\n\t}\n\tpotential = {\n\t\tfrom = {\n\t\t\tcountry_uses_bio_ships = no\n\t\t}\n\t\tship_uses_line_role = yes\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\tcomponent_set = \"combat_computers\"\n\tship_behavior = \"line\"\n\tupgrade_path = line\n\tprerequisites = { \"tech_combat_computers_3\" }\n\tai_tags = { gunship gunship_stealth }\n\tai_tag_weight = 0\n\n\tship_modifier = {\n\t\tship_fire_rate_mult = 0.20\n\t\tship_accuracy_add = 20\n\t}\n\n\tai_weight = {\n\t\tweight = 5\n\t\tmodifier = {\n\t\t\tfactor = 0\n\t\t\tOR = {\n\t\t\t\thas_global_flag = ghost_signal_5_flag\n\t\t\t\thas_global_flag = ghost_signal_4_flag\n\t\t\t\thas_global_flag = ghost_signal_3_flag\n\t\t\t\thas_global_flag = ghost_signal_2_flag\n\t\t\t\thas_global_flag = ghost_signal_1_flag\n\t\t\t\thas_policy_flag = ai_outlawed\n\t\t\t}\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "EEP_PLANET_KILLER_DEVOURER",
+        "count": 1,
+        "kind": "weapon_component_template",
+        "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\mod\\eep-1019\\common\\component_templates\\eep_planet_killer.txt",
+        "source_sha256": "1e7d1f65e38c7bcfe370315b301ffbe680dad7571646c1a1e54f35cb96200cd0",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n    key = \"EEP_PLANET_KILLER_DEVOURER\"\n    size = planet_killer\n    type = planet_killer\n    use_ship_main_target = no\n    icon = GFX_ship_part_world_cracker\n    icon_frame = 1\n    component_set = \"EEP_PLANET_KILLER_DEVOURER\"\n    potential = { is_ship_size = juggernaut from = { has_origin = origin_heart_of_devouring } }\n    planet_destruction_gfx = \"shatter_planet_gfx\"\n    ai_weight = { factor = 0 }\n"
+      },
+      {
+        "key": "JUGGERNAUT_DARK_MATTER_REACTOR",
+        "count": 1,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_reactors.txt",
+        "source_sha256": "934821c1e8e05e71e1d2a142a9628e029a1b43636347f0bed34a74cd0cc2f333",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"JUGGERNAUT_DARK_MATTER_REACTOR\"\n\tsize = small\n\ticon = \"GFX_ship_part_dark_matter_power_core\"\n\ticon_frame = 1\n\tpower = @juggernaut_reactor_power_6\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @juggernaut_reactor_cost_6\n\t\t\tsr_dark_matter = 32\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = 20.79\n\t\t\talloys = 2.079\n\t\t}\n\t}\n\n\tprerequisites = { \"tech_dark_matter_power_core\" }\n\tcomponent_set = \"power_core\"\n\tpotential = {\n\t\tship_uses_juggernaut_reactors = yes\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tfriendly_aura = {\n\t\tname = \"juggernaut_logistics\"\n\t\tsystem_wide = yes\n\n\t\tstack_info = {\t\t\t#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.\n\t\t\tid = juggernaut_logistics\n\t\t\tpriority = 1\n\t\t}\n\n\t\tmodifier = {\n\t\t\tships_logistics_mult = -0.75\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = 6\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tno_resource_for_component = { RESOURCE = sr_dark_matter }\n\t\t}\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tis_ai = yes\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "JUMP_DRIVE_1",
+        "count": 1,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_drives.txt",
+        "source_sha256": "7db6b11cc78d37e6c16eab98b0c8960e336a1f860c8aca2b1c4033d3b5475889",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"JUMP_DRIVE_1\"\n\tsize = small\n\ticon = \"GFX_ship_part_jump_drive_1\"\n\ticon_frame = 1\n\tpower = @power4\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @cost4\n\t\t}\n\t}\n\n\tpotential = {\n\t\tship_uses_jump_drives = yes\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tftl = yes\n\tjumpdrive = yes\n\tship_modifier = {\n\t\tship_disengage_opportunities_add = 1\n\t\tship_windup_mult = -0.7\n\t}\n\n\tai_weight = {\n\t\tweight = 4\n\t}\n\n\tprerequisites = { \"tech_jump_drive_1\" }\n\tcomponent_set = \"ftl_components\"\n\tupgrades_to = \"PSI_JUMP_DRIVE_1\"\n"
+      },
+      {
+        "key": "LARGE_ARMOR_5",
+        "count": 11,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities.txt",
+        "source_sha256": "cd8a9a20f856d6abb6fdb98636cfb5dcda471f25d4ed757d46a668f95d0fa254",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"LARGE_ARMOR_5\"\n\tsize = large\n\ticon = \"GFX_ship_part_armor_5\"\n\ticon_frame = 1\n\tpower = 0\n\tmodifier = {\n\t\tship_armor_add = @armor_L5\n\t}\n\tship_modifier = {\n\t\tship_armor_hardening_add = @hardening_T5\n\t}\n\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tprerequisites = { \"tech_ship_armor_5\" }\n\tcomponent_set = \"ARMOR_5\"\n\tupgrades_to = \"LARGE_DRAGON_ARMOR\"\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @armor_l_t5_cost\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @defense_l_t5_upkeep_energy\n\t\t\talloys = @defense_l_t5_upkeep_alloys\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = @T5_weight\n\t\tinline_script = {\n\t\t\tscript = ship_components/weights/roles_stealth\n\t\t\tMULT = 2\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "LARGE_DARK_MATTER_DEFLECTOR",
+        "count": 11,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_shields.txt",
+        "source_sha256": "54ab3bdfa086ca2e50829641087eff44728c52d5295a44fe42fe9ec2f69e7293",
+        "base_shield_each": 2925,
+        "shield_context": [
+          {
+            "scope": "modifier",
+            "fields": {
+              "ship_shield_add": {
+                "raw": "@shield_L6",
+                "resolved": 2925
+              },
+              "ship_shield_regen_add_static": {
+                "raw": "@regen_L6",
+                "resolved": 8.125
+              }
+            },
+            "raw": "\n\t\tship_shield_add = @shield_L6\n\t\tship_shield_regen_add_static = @regen_L6 #Regeneration per day\n\t"
+          },
+          {
+            "scope": "ship_modifier",
+            "fields": {
+              "ship_shield_hardening_add": {
+                "raw": "@hardening_T6",
+                "resolved": 0.05
+              }
+            },
+            "raw": "\n\t\tship_shield_hardening_add = @hardening_T6\n\t"
+          }
+        ],
+        "definition_raw": "\n\tkey = \"LARGE_DARK_MATTER_DEFLECTOR\"\n\tsize = large\n\ticon = \"GFX_ship_part_dark_matter_shield\"\n\ticon_frame = 1\n\tpower = @power_L6\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @shield_l_t6_cost\n\t\t\tsr_dark_matter = 1\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @defense_l_t6_upkeep_energy\n\t\t\talloys = @defense_l_t6_upkeep_alloys\n\t\t}\n\t}\n\tmodifier = {\n\t\tship_shield_add = @shield_L6\n\t\tship_shield_regen_add_static = @regen_L6 #Regeneration per day\n\t}\n\tship_modifier = {\n\t\tship_shield_hardening_add = @hardening_T6\n\t}\n\tprerequisites = { \"tech_dark_matter_deflector\" }\n\tupgrades_to = \"LARGE_PSI_SHIELD\"\n\tcomponent_set = \"DARK_MATTER_DEFLECTOR\"\n\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tai_weight = {\n\t\tweight = @T5_weight\n\t\tmodifier = {\n\t\t\tfactor = 0\n\t\t\tno_resource_for_component = { RESOURCE = sr_dark_matter }\n\t\t}\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tis_ai = yes\n\t\t}\n\t\tinline_script = {\n\t\t\tscript = ship_components/weights/roles_stealth\n\t\t\tMULT = 0\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "LARGE_PLASMA_3",
+        "count": 7,
+        "kind": "weapon_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_energy.txt",
+        "source_sha256": "01ff71cab87c210eb06a739d3177d7b158fb2478fecd29f3b787d44e3c3201a7",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"LARGE_PLASMA_3\"\n\tsize = large\n\ttype = instant\n\n\ticon = \"GFX_ship_part_plasma_3\"\n\ticon_frame = 1\n\t#color = { 0.1 1.0 0.1 1 }\n\n\tpotential = {\n\t\tfrom = {\n\t\t\tcountry_uses_bio_ships = no\n\t\t}\n\t\tis_arkship_ship = no\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tmin_range = 45.0\n\n\tprerequisites = { \"tech_plasma_3\" }\n\tcomponent_set = \"PLASMA_3\"\n\tprojectile_gfx = \"plasma_cannon_l\"\n\ttags = {\n\t\tweapon_type_energy\n\t\tl_slot\n\t}\n\tai_tags = {\n\t\tweapon_role_anti_armor\n\t\tgunship\n\t\tgunship_stealth\n\t}\n\tai_tag_weight = 3\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @l_t5_cost\n\t\t\texotic_gases = @l_t5_rare\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @l_t5_upkeep_energy\n\t\t\talloys = @l_t5_upkeep_alloys\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = 1\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tno_resource_for_component = { RESOURCE = exotic_gases }\n\t\t}\n\t\tmodifier = {\n\t\t\tfactor = @cosmic_storm_gravity_ai_weight_factor\n\t\t\thas_country_flag = affected_by_gravity_storm\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "POINT_DEFENCE_3",
+        "count": 3,
+        "kind": "weapon_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_pointdefence.txt",
+        "source_sha256": "7464d8a915a6e25132bd653d37bd634336956cc94d77c28bf55bb79e542e6352",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"POINT_DEFENCE_3\"\n\tsize = point_defence\n\n\ticon = \"GFX_ship_part_point_defense_3\"\n\ticon_frame = 1\n\n\tprerequisites = { \"tech_pd_tracking_3\" }\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\tcomponent_set = \"POINT_DEFENCE_3\"\n\ttype = point_defence\n\n\tprojectile_gfx = \"white_laser_pd\"\n\ttags = {\n\t\tweapon_type_point_defense\n\t\tweapon_type_energy\n\t}\n\tai_tags = {\n\t\tweapon_role_point_defense\n\t\tscreen\n\t\tscreen_stealth\n\t}\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = 13\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = 0.13\n\t\t\talloys = 0.013\n\t\t}\n\t}\n\n\tpoint_defence_targets = { \"missile\" \"strike_craft\" }\n"
+      },
+      {
+        "key": "SENSOR_4",
+        "count": 1,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_sensors.txt",
+        "source_sha256": "fd08a1e7a5263691538cbdf6d4a63ee6a1e889a9cb23343c3ea5b0ff06972b99",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"SENSOR_4\"\n\tsize = medium\n\ticon = \"GFX_ship_part_sensor_4\"\n\ticon_frame = 1\n\tpower = @power4\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @cost4\n\t\t}\n\t}\n\tsensor_range = @sensor4\n\thyperlane_range = @hyperlane4\n\n\tship_modifier = {\n\t\tship_tracking_add = @hit4\n\t}\n\n\tpotential = {\n\t\tOR = {\n\t\t\tfrom = {\n\t\t\t\tcountry_uses_bio_ships = no\n\t\t\t}\n\t\t\tis_arkship_ship = yes\n\t\t\tis_ship_size = paladin_ship\n\t\t}\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tprerequisites = { \"tech_sensors_4\" }\n\tcomponent_set = \"sensor_components\"\n\n\tai_weight = {\n\t\tweight = 1000\n\t}\n"
+      },
+      {
+        "key": "SHIELD_BOOSTER",
+        "count": 3,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+        "source_sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699",
+        "base_shield_each": 0,
+        "shield_context": [
+          {
+            "scope": "modifier",
+            "fields": {
+              "ship_shield_mult": {
+                "raw": "0.1",
+                "resolved": 0.1
+              }
+            },
+            "raw": "\n\t\tship_shield_mult = 0.1\n\t"
+          }
+        ],
+        "definition_raw": "\n\tkey = \"SHIELD_BOOSTER\"\n\tsize = aux\n\ticon = \"GFX_ship_part_shield_recharger\"\n\ticon_frame = 1\n\tpower = -20\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = 10\n\t\t\texotic_gases = 1\n\t\t}\n\t}\n\n\tprerequisites = { \"tech_shield_rechargers_1\" }\n\tcomponent_set = \"SHIELD_BOOSTER\"\n\n\tmodifier = {\n\t\tship_shield_mult = 0.1\n\t}\n\n\tai_weight = {\n\t\tweight = 10\n\t\tinline_script = \"ai/shield_preference_weight\"\n\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tno_resource_for_component = { RESOURCE = exotic_gases }\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "SHIP_AURA_INSPIRING_PRESENCE",
+        "count": 1,
+        "kind": "utility_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_auras.txt",
+        "source_sha256": "a24cf59265ece6167e89e3c57176df4d1d7eb50833bb749590c5450d808f1995",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"SHIP_AURA_INSPIRING_PRESENCE\"\n\tsize = medium\n\ticon = \"GFX_ship_part_aura_inspiring_presence\"\n\ticon_frame = 1\n\tpower = 0\n\n\tpotential = {\n\t\tOR = {\n\t\t\tship_uses_titan_components = yes\n\t\t\tship_uses_dsc_components = yes\n\t\t}\n\t}\n\tcomponent_set = \"ship_aura_components\"\n\n\tfriendly_aura = {\n\t\tname = \"aura_inspiring_presence\"\n\t\tradius = @shipAuraRange\n\t\tapply_on = ships\n\n\t\tstack_info = {\t\t\t#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.\n\t\t\tid = friendly_inspiring_presence\n\t\t\tpriority = 20\n\t\t}\n\n\t\tmodifier = {\n\t\t\tship_fire_rate_mult = 0.05\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = 10\n\t}\n"
+      },
+      {
+        "key": "SMALL_DISRUPTOR_3",
+        "count": 2,
+        "kind": "weapon_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_energy.txt",
+        "source_sha256": "01ff71cab87c210eb06a739d3177d7b158fb2478fecd29f3b787d44e3c3201a7",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"SMALL_DISRUPTOR_3\"\n\tsize = small\n\ttype = instant\n\n\ticon = \"GFX_ship_part_disruptor_3\"\n\ticon_frame = 1\n\t#color = { 0.1 1.0 0.1 1 }\n\tpotential = {\n\t\tship_uses_starbase_components = no\n\t\tfrom = {\n\t\t\tcountry_uses_bio_ships = no\n\t\t}\n\t\tis_arkship_ship = no\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\tprerequisites = { \"tech_disruptors_3\" }\n\tcomponent_set = \"DISRUPTOR_3\"\n\tprojectile_gfx = \"disruptor_3_small\"\n\ttags = {\n\t\tweapon_type_energy\n\t\ts_slot\n\t}\n\tai_tags = {\n\t\tweapon_role_anti_hull\n\t\tbrawler\n\t\tbrawler_stealth\n\t}\n\tai_tag_weight = 5\n\ttarget_type = target_enemies\n\tinjected_modifier = {\n\t\tmodifier = {\n\t\t\tmodifier = disruptor_regen_debuff_3\n\t\t\tdays = 10\n\t\t}\n\t\tstack_info = {\n\t\t\tid = disruptor_regen\n\t\t\tpriority = 3\n\t\t}\n\t}\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @s_t5_cost\n\t\t\trare_crystals = @s_t5_rare\n\t\t}\n\t\tupkeep = {\n\t\t\talloys = @s_t5_upkeep_alloys\n\t\t\tenergy = @s_t5_upkeep_energy\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = 1\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tno_resource_for_component = { RESOURCE = rare_crystals }\n\t\t}\n\t\tmodifier = {\n\t\t\tfactor = 0\n\t\t\tfrom = {\n\t\t\t\tis_defense_platform_ship = yes\n\t\t\t}\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "SMALL_PLASMA_3",
+        "count": 3,
+        "kind": "weapon_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_energy.txt",
+        "source_sha256": "01ff71cab87c210eb06a739d3177d7b158fb2478fecd29f3b787d44e3c3201a7",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"SMALL_PLASMA_3\"\n\tsize = small\n\ttype = instant\n\n\ticon = \"GFX_ship_part_plasma_3\"\n\ticon_frame = 1\n\t#color = { 0.1 1.0 0.1 1 }\n\n\tpotential = {\n\t\tfrom = {\n\t\t\tcountry_uses_bio_ships = no\n\t\t}\n\t\tis_arkship_ship = no\n\t}\n\n\tshow_tech_unlock_if = {\n\t\tcountry_uses_bio_ships = no\n\t}\n\n\tprerequisites = { \"tech_plasma_3\" }\n\tcomponent_set = \"PLASMA_3\"\n\tprojectile_gfx = \"plasma_cannon_s\"\n\ttags = {\n\t\tweapon_type_energy\n\t\ts_slot\n\t}\n\tai_tags = {\n\t\tweapon_role_anti_armor\n\t\tgunship\n\t\tgunship_stealth\n\t}\n\tai_tag_weight = 3\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @s_t5_cost\n\t\t\texotic_gases = @s_t5_rare\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @s_t5_upkeep_energy\n\t\t\talloys = @s_t5_upkeep_alloys\n\t\t}\n\t}\n\n\tai_weight = {\n\t\tweight = 1\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tno_resource_for_component = { RESOURCE = exotic_gases }\n\t\t}\n\t}\n"
+      },
+      {
+        "key": "TITAN_LASER",
+        "count": 1,
+        "kind": "weapon_component_template",
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_extra_large.txt",
+        "source_sha256": "55852d2fa0c12f8101b90b562678108a58078a4f31e29b7629c3f047509b3b61",
+        "base_shield_each": 0,
+        "shield_context": [],
+        "definition_raw": "\n\tkey = \"TITAN_LASER\"\n\tsize = titanic\n\ttype = instant\n\tprio_projectile = yes\n\n\thidden = yes\n\n\ticon = \"GFX_ship_part_energy_lance_2\"\n\ticon_frame = 1\n\n#\tfiring_arc = 25.0\n\tuse_ship_main_target = no\n\n\ttags = {\n\t\tweapon_type_energy\n\t\tweapon_role_artillery\n\t\tt_slot\n\t}\n\tai_tags = {\n\t\tweapon_role_artillery\n\t\tartillery\n\t\tartillery_stealth\n\t}\n\n\tcomponent_set = \"TITAN_LASER\"\n\tprojectile_gfx = \"titan_laser\"\n\tresources = {\n\t\tcategory = ship_components\n\t\tcost = {\n\t\t\talloys = @titanic_t6_cost\n\t\t\trare_crystals = @titanic_t6_rare\n\t\t}\n\t\tupkeep = {\n\t\t\tenergy = @titanic_t6_upkeep_energy\n\t\t\talloys = @titanic_t6_upkeep_alloys\n\t\t}\n\t}\n\n\tcollateral_damage = @perdition_beam_fleet_damage\n\tcollateral_range = @perdition_beam_collateral_range\n\n\ttarget_weights = {\n\t\ttitan = 3\n\t\tbattleship = 2\n\t\tstinger_stage_1 = 1.5\n\t\tstinger_stage_2 = 2\n\t\tstinger_stage_3 = 2\n\t}\n\n\tai_weight = {\n\t\tweight = 1\n\t\tmodifier = {\n\t\t\tfactor = 0.0\n\t\t\tno_resource_for_component = { RESOURCE = rare_crystals }\n\t\t}\n\t}\n"
+      }
+    ],
+    "ship_size": {
+      "key": "juggernaut",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\18_juggernauts.txt",
+      "sha256": "3402b13978de2bbcc36c6d4eedab9e4a9ac7f5160183fa2b908029f10842f11f",
+      "native_shield_fields": {},
+      "shield_context": [],
+      "definition_raw": "\n\tformation_priority = @juggernaut_formation_priority\n\tmax_speed = @speed_slow\n\tacceleration = 0.2\n\trotation_speed = 0.15\n\tcollision_radius = @juggernaut_collision_radius\n\tmax_hitpoints = @juggernaut_hp\n\tmodifier = {\n\t\tship_evasion_add = @juggernaut_evasion\n\t\tstarbase_shipyard_capacity_add = 10\n\t}\n\n\tbase_buildtime = @juggernaut_build_time\n\tresources = {\n\t\tcategory = ships\n\t\tupkeep = {\n\t\t\tenergy = @juggernaut_upkeep_energy\n\t\t\talloys = @juggernaut_upkeep_alloys\n\t\t}\n\t}\n\n\tcombat_size_multiplier = 100\n\tsize_multiplier = 100\n\tmap_counter_icon = ship_counter_128\n\ticon = ship_size_military_64\n\tfleet_slot_size = 32\n\tsection_slots = {\n\t\t\"core\" = { locator = \"part1\" }\n\t}\n\n\tpotential_construction = {\n\t\tjuggernaut_potential_construction = yes\n\t}\n\n\tpossible_construction = {\n\t\tjuggernaut_possible_construction = yes\n\t}\n\n\tnum_target_locators = 0\n\tcan_have_federation_design = no\n\tenable_default_design = yes\t#if yes, countries will have an auto-generated design at start\n\tenable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser\n\tcan_disable = no\n\ticon_frame = 7 #probably unused, but mobile starbases are special\n\tship_class_icon_frame = 35\n\tselectable = { host_has_dlc = \"Federations\" }\n\n\tdefault_behavior = carrier\n\tship_roles = { carrier artillery }\n\n\tprerequisites = { \"tech_juggernaut\" }\n\tclass = shipclass_starbase\n\tconstruction_type = starbase_shipyard\n\n\trequired_component_set = \"power_core\"\n\trequired_component_set = \"sensor_components\"\n\trequired_component_set = \"combat_computers\"\n\trequired_component_set = \"ftl_components\"\n\trequired_component_set = \"thruster_components\"\n\trequired_component_set = \"ship_aura_components\"\n\n\tmin_upgrade_cost = {\n\t\talloys = 50\n\t}\n\n\tai_ship_data = {\n\t\tmin = 1\n\t\tmax = 1\n\t}\n\n\tavailable_to_everyone = yes\n"
+    },
+    "sections": [
+      {
+        "key": "eep_mothership_section",
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\mod\\eep-1019\\common\\section_templates\\eep_mothership.txt",
+        "sha256": "88fd4e3c751e5cd559fd48023985680f8667533345d3a120f81a833651c2bf4e",
+        "shield_context": []
+      }
+    ],
+    "variable_resolutions": [
+      {
+        "variable": "@shield_L6",
+        "resolved": 2925,
+        "definitions": [
+          {
+            "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\02_scripted_variables_component_cost.txt",
+            "sha256": "d2b035df63e70f0ae970f03c06c70ee6b6f52ef372e049b6c69a50517d183d07",
+            "line": 389,
+            "token": "2925"
+          }
+        ]
+      },
+      {
+        "variable": "@regen_L6",
+        "resolved": 8.125,
+        "definitions": [
+          {
+            "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\02_scripted_variables_component_cost.txt",
+            "sha256": "d2b035df63e70f0ae970f03c06c70ee6b6f52ef372e049b6c69a50517d183d07",
+            "line": 393,
+            "token": "8.125"
+          }
+        ]
+      },
+      {
+        "variable": "@hardening_T6",
+        "resolved": 0.05,
+        "definitions": [
+          {
+            "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\02_scripted_variables_component_cost.txt",
+            "sha256": "d2b035df63e70f0ae970f03c06c70ee6b6f52ef372e049b6c69a50517d183d07",
+            "line": 412,
+            "token": "0.05"
+          }
+        ]
+      }
+    ],
+    "native_exe": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\stellaris.exe",
+      "sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83"
+    },
+    "source_read_scope": "current native files plus verified frozen copied_mod; source-derived expectation only"
+  },
+  "actual_max_shield": 167310,
+  "inspector_sha256": "6a82a5bea48396a142043be4cbf881311d5cd1666519e6f9cfb0a7561a36866a"
+}

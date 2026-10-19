@@ -1,0 +1,59 @@
+{
+  "status": "FAIL",
+  "scope": "Expected rejection of actual old rc1b no-six-core native SAV repeated as all hardware stages",
+  "error_type": "ValueError",
+  "error": "frozen shield core must have one definition",
+  "case": {
+    "schema": "eep.1019.hardware-case.v1",
+    "status": "NEGATIVE_REAL_RC1B_LACKS_SIX_CORES",
+    "case_kind": "controlled_hardware_probe",
+    "tier0": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+    "tier1": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+    "tier2": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+    "reload": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+    "control_ship_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "minimum_refresh_days": 5,
+    "absolute_tolerance": 0.001,
+    "require_reload": true,
+    "notes": [
+      "Only original native SAV paths with matching manifests, receipts and audits are valid inputs.",
+      "C0/R0 with manually controlled shield tiers is intentionally separate from natural RNG reward invariants.",
+      "Native base shield and expected increments are resolved from component definitions, never from hard-coded panel results.",
+      "This pending template contains no runtime result and must not be published as PASS."
+    ]
+  },
+  "expected_status": "FAIL",
+  "provenance": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+    "save_sha256": "2fddab313229b4bddf493cb53fd484aa3897a4c7f163838188dead442ea6e6be",
+    "run_id": "20261019T081638Z",
+    "version": "0.4.0-rc.1",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "e3c4c176c9b6d0fa6d43cab461d6f7dd9161cc4828ff800d78bdfc33ee7df526",
+    "manifest_sha256": "115aa0e49ce87ee7a86eab13fb17b16e6f861d2c5e8fe169ee7d9a42fc88bef2",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.audit.json",
+    "audit_sha256": "9f20103d9452161e620563b6722ac1951db3965855e36e1fe51df4096e485aa8",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.native-save.json",
+        "sha256": "4a9805eae0c34518a3fcbdd9f12f81f2e8223a627b87ea4b8a13a098a6975087",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\save games\\eep03_-1033273808\\pmm00.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T081638Z\\save games\\eep-test-history\\pmm00.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T081638Z\\pmm00.sav",
+          "sha256": "2fddab313229b4bddf493cb53fd484aa3897a4c7f163838188dead442ea6e6be",
+          "date": "2200.01.01"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "checker_sha256": "acb9d63138bd96b2e289f66198440a424d0e6827dead2cd4827b577533e8c440",
+  "inspector_sha256": "6a82a5bea48396a142043be4cbf881311d5cd1666519e6f9cfb0a7561a36866a"
+}

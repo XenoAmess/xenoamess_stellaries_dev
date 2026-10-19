@@ -234,7 +234,7 @@ def publish(inputs):
             raise RuntimeError("SetItemTags failed")
         gallery_actions = workshop_images.update_previews_in_place(steam, update, existing, inputs["gallery"], ROOT)
         state = {"schema": "heart-of-devouring-workshop-update-v1", "version": VERSION, "item_id": ITEM,
-                 "inputs": inputs, "previous_public_version": "0.3.0", "gallery_actions": gallery_actions, "submit_started": True,
+                 "inputs": inputs, "previous_public_version": inputs["acceptance"].get("previous_public_version", "0.3.0"), "gallery_actions": gallery_actions, "submit_started": True,
                  "started_at_utc": datetime.now(timezone.utc).isoformat()}
         base.write_json(STATE, state)
         result = steam.wait(steam.call("SubmitItemUpdate", update, inputs["note"].encode("utf-8")), base.native.SubmitItemUpdateResult, 3404)

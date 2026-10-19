@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "at_utc": "2026-10-19T05:57:03.894415+00:00",
+  "scope": "25 offline publication guard and image-protocol tests; synthetic evidence inputs are not game acceptance",
+  "results": [
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "eat_everything_origin/testing",
+        "-p",
+        "test_publish_single_homeworld.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_complete_synthetic_guard_input (test_publish_single_homeworld.SingleHomeworldReleaseGuards.test_complete_synthetic_guard_input) ... ok\ntest_only_version_metadata_may_differ (test_publish_single_homeworld.SingleHomeworldReleaseGuards.test_only_version_metadata_may_differ) ... ok\ntest_reject_changed_or_external_proof (test_publish_single_homeworld.SingleHomeworldReleaseGuards.test_reject_changed_or_external_proof) ... ok\ntest_reject_incomplete_or_negative_economy (test_publish_single_homeworld.SingleHomeworldReleaseGuards.test_reject_incomplete_or_negative_economy) ... ok\ntest_reject_missing_failed_or_wrong_scope (test_publish_single_homeworld.SingleHomeworldReleaseGuards.test_reject_missing_failed_or_wrong_scope) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.048s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "eat_everything_origin/testing",
+        "-p",
+        "test_publish_update.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_altered_note_cannot_reach_native_upload (test_publish_update.PublicationGuards.test_altered_note_cannot_reach_native_upload) ... ok\ntest_canonical_changelog_and_note (test_publish_update.PublicationGuards.test_canonical_changelog_and_note) ... ok\ntest_changed_evidence_rejected (test_publish_update.PublicationGuards.test_changed_evidence_rejected) ... ok\ntest_inline_images_must_be_immutable_and_four_distinct (test_publish_update.PublicationGuards.test_inline_images_must_be_immutable_and_four_distinct) ... ok\ntest_prerelease_and_already_published_versions_rejected (test_publish_update.PublicationGuards.test_prerelease_and_already_published_versions_rejected) ... ok\ntest_production_drift_rejected (test_publish_update.PublicationGuards.test_production_drift_rejected) ... ok\ntest_successful_or_unknown_upload_cannot_be_retried (test_publish_update.PublicationGuards.test_successful_or_unknown_upload_cannot_be_retried) ... ok\ntest_upstream_and_other_items_are_rejected (test_publish_update.PublicationGuards.test_upstream_and_other_items_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 7.720s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "eat_everything_origin/testing",
+        "-p",
+        "test_workshop_images.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_failed_configuration_read_and_timeout_release_handle (test_workshop_images.GalleryProtocolTests.test_failed_configuration_read_and_timeout_release_handle) ... ok\ntest_failed_removal_or_changed_image_does_not_add_new_previews (test_workshop_images.GalleryProtocolTests.test_failed_removal_or_changed_image_does_not_add_new_previews) ... ok\ntest_in_place_missing_or_drifted_retained_image_prevents_all_mutation (test_workshop_images.GalleryProtocolTests.test_in_place_missing_or_drifted_retained_image_prevents_all_mutation) ... ok\ntest_in_place_preserves_correct_slot_and_replaces_only_changed (test_workshop_images.GalleryProtocolTests.test_in_place_preserves_correct_slot_and_replaces_only_changed) ... ok\ntest_in_place_update_failure_does_not_delete_or_append (test_workshop_images.GalleryProtocolTests.test_in_place_update_failure_does_not_delete_or_append) ... ok\ntest_in_place_wrong_count_or_position_rejected (test_workshop_images.GalleryProtocolTests.test_in_place_wrong_count_or_position_rejected) ... ok\ntest_remote_count_order_type_filename_and_bytes_mismatches_fail (test_workshop_images.GalleryProtocolTests.test_remote_count_order_type_filename_and_bytes_mismatches_fail) ... ok\ntest_retry_replaces_old_gallery_instead_of_adding_duplicates (test_workshop_images.GalleryProtocolTests.test_retry_replaces_old_gallery_instead_of_adding_duplicates) ... ok\ntest_selected_gallery_is_valid_and_draft_cannot_publish (test_workshop_images.GalleryProtocolTests.test_selected_gallery_is_valid_and_draft_cannot_publish) ... ok\ntest_uncached_query_reads_previews_and_releases_handle (test_workshop_images.GalleryProtocolTests.test_uncached_query_reads_previews_and_releases_handle) ... ok\ntest_upstream_and_invalid_item_rejected_before_any_call (test_workshop_images.GalleryProtocolTests.test_upstream_and_invalid_item_rejected_before_any_call) ... ok\ntest_wrong_callback_cached_and_failed_results_reject_and_release (test_workshop_images.GalleryProtocolTests.test_wrong_callback_cached_and_failed_results_reject_and_release) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.157s\n\nOK\n"
+    }
+  ]
+}

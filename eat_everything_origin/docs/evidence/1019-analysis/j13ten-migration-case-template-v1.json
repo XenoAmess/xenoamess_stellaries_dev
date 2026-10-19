@@ -1,0 +1,32 @@
+{
+  "schema": "eep.1019.migration-case.v1",
+  "status": "PENDING_NATIVE_MIGRATION_INPUTS",
+  "scope": "j13ten 0.3.0-rc.1 native queue/identity/damage interface fixture; not released 0.3.1 compatibility",
+  "fixture_source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1015-implementation\\runs\\20261014T223819Z\\j13ten.sav",
+  "fixture_sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e",
+  "before": null,
+  "after": null,
+  "reload": null,
+  "expected_fleet_id": 146,
+  "expected_ship_id": 822,
+  "expected_starbase_id": 13,
+  "expected_shipyard_queue_id": 54,
+  "expected_queued_items": 11,
+  "require_damaged_before": true,
+  "damage_mode": "lost_absolute",
+  "damage_metrics": [
+    "hull",
+    "armor",
+    "shield"
+  ],
+  "damage_tolerance": 0.001,
+  "notes": [
+    "Fill before/after/reload with genuine same-day native SAVs that have matching receipt/audit/manifest; do not edit SAVs.",
+    "Original j13ten is fully healthy. A genuinely damaged Mother before-save is required, using native engine operations.",
+    "Declare damage policy before evaluating results: lost_absolute, fraction, or current_absolute; all three are reported.",
+    "Queue54 has items0..9 at10/60 and item10 at0/60; each stores81 alloys, paying_country0, design1702, orbitable starbase13.",
+    "The checker retains every strict difference; scoped migration evidence never overwrites prior strict FAIL.",
+    "Original enqueue payment needs original actions/audits; preserved queue costs plus stockpile show migration did not recharge/refund.",
+    "Complete separate migration against a real released0.3.1 save for final release acceptance."
+  ]
+}

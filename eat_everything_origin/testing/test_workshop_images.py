@@ -121,9 +121,11 @@ class GalleryProtocolTests(unittest.TestCase):
                 with self.assertRaises(RuntimeError):
                     gallery.verify_previews(actual, expected, lambda _: data)
 
-    def test_current_candidate_is_locally_valid_but_cannot_publish(self):
+    def test_selected_gallery_is_valid_and_draft_cannot_publish(self):
         root = Path(__file__).resolve().parents[1]
-        version = (root / "VERSION").read_text(encoding="utf-8").strip()
+        # Validate the selected historical gallery independently of a newer
+        # gameplay candidate whose screenshots have not been selected yet.
+        version = json.loads((root / "workshop/images-manifest.json").read_text(encoding="utf-8"))["version"]
         self.assertGreaterEqual(len(gallery.local_images(root, version, require_frozen=False)), 3)
         # Exercise a draft independently of the final release's real status.
         with tempfile.TemporaryDirectory() as folder:

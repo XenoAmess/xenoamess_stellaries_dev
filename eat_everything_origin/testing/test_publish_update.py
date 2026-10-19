@@ -1,5 +1,6 @@
 """Negative publication guards: no native Steam or external mutations."""
 import importlib
+import json
 from pathlib import Path
 import sys
 import unittest
@@ -66,11 +67,23 @@ class PublicationGuards(unittest.TestCase):
         self.assertLess(len(description.encode("utf-8")), 8000)
 
     def test_altered_note_cannot_reach_native_upload(self):
+        # Isolate the note guard from whichever candidate is currently being
+        # developed; an unrelated VERSION/package rejection masks this guard.
+        acceptance = json.loads(release.ACCEPTANCE.read_text(encoding="utf-8"))
+        images = json.loads(release.INLINE.read_text(encoding="utf-8"))["images"]
+        pictures = [{key: value for key, value in image.items() if key != "public_bytes_exact"}
+                    for image in images]
         original = Path.read_text
         def altered(path, *args, **kwargs):
+            if path == release.ROOT / "VERSION":
+                return release.VERSION
             text = original(path, *args, **kwargs)
             return text + "different release content" if path.name == f"change-note-v{release.VERSION}.txt" else text
-        with patch.object(Path, "read_text", altered), self.assertRaisesRegex(RuntimeError, "canonical formal changelog"):
+        with (patch.object(Path, "read_text", altered),
+              patch.object(release, "validate_target"),
+              patch.object(release, "accepted_files", return_value=acceptance),
+              patch.object(release, "description_inputs", return_value=("synthetic note guard input", pictures)),
+              self.assertRaisesRegex(RuntimeError, "canonical formal changelog")):
             release.preflight(require_clean=False)
 
 

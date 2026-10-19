@@ -1,0 +1,26 @@
+{
+  "status": "OBSERVATION_ONLY",
+  "scope": "Original console probe failures versus native callback warning; no gameplay pass/fail substitution",
+  "original_error_log": "logs-frozen/stop-final/error.log",
+  "original_error_log_sha256": "1673e693de7b058ff9476e6dee39f332ab9dac8a9b3d97452ff8affef41fb147",
+  "wrong_scope_classification": "Initial console effect probe used Current=fleet; original scope context has ROOT country1. These failed probe inputs are not classified as Mod business errors.",
+  "wrong_scope_lines": [
+    "[16:48:56][effect.cpp:529]: Wrong scope for effect 'capital_scope' at  file:  line: 1",
+    "Current Scope: fleet",
+    "Supported Scopes: country",
+    "id=138",
+    "root=",
+    "\ttype=country",
+    "\tid=1",
+    "[16:49:40][effect.cpp:529]: Wrong scope for effect 'declare_war' at  file:  line: 1",
+    "Current Scope: fleet",
+    "Supported Scopes: country",
+    "[16:49:40][effect.cpp:723]: Wrong scope for effect 'declare_war' at  file:  line: 1",
+    "Current Scope: fleet",
+    "Supported Scopes: country"
+  ],
+  "queued_callback_warning_lines": [
+    "[17:05:52][onaction.cpp:180]: Could not find on action 'on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER_queued'"
+  ],
+  "complete_original_log_preserved": true
+}

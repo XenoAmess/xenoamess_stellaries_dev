@@ -1,0 +1,26 @@
+{
+  "status": "OBSERVATION_ONLY",
+  "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1015-implementation\\runs\\20261015T015525Z\\n17l2.sav",
+  "save_sha256": "6906414c25b908ca0a6327928bed7b1c8b128885bda880a6231a4d4a1015ba48",
+  "gamestate_sha256": "d82a44d41869cf5607fea54ca45ace153c5cf6849559debf2a9c18484f632054",
+  "meta_native": {
+    "version": "Cygnus v4.5.2",
+    "version_control_revision": 101,
+    "name": "EEP 02 有机吞噬蜂群",
+    "date": "2200.02.02",
+    "player_portrait": "human",
+    "meta_fleets": 15,
+    "meta_planets": 2
+  },
+  "crisis_progression_raw": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tlevel=\"crisis_level_2\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_worlds\"\n\t\t\t\tprogress=14000\n\t\t\t}\n\t\t",
+  "objective_rows": [
+    {
+      "objective": "crisobj_destroy_worlds",
+      "progress": 14000
+    }
+  ],
+  "native_objective_source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\crisis_objectives\\00_crisis_objectives.txt",
+  "native_objective_source_sha256": "e5caaa3be22664c20ea341c2dac33d2d93b099abb4a2b4b361feb2e54915851b",
+  "native_destroy_worlds_definition": "\n\treward = {\n\t\tbase = 150000\n\t\tdivide = trigger:num_galaxy_systems \t#on huge, this is 100. On smallest, it is 500\n\t\tcomplex_trigger_modifier = { \t\t\t#fewer worlds => more menace from destroying one\n\t\t\ttrigger = check_galaxy_setup_value\n\t\t\tparameters = { setting = habitable_worlds_scale }\n\t\t\tmode = divide\n\t\t}\n\t\tround_to = 50 \t\t\t\t\t\t\t\t#we don't want 127.5 menace\n\t\tmin = 150\t\t\t\t\t\t\t\t\t#just in case\n\t}\n",
+  "interpretation": "Native progress records reward points, not event counts. This old save is layout evidence only and not a calibration for a new galaxy."
+}

@@ -1,0 +1,151 @@
+{
+  "status": "PRIMARY_SOURCE_RESEARCH_NOT_RUNTIME_ACCEPTANCE",
+  "date": "2026-10-19",
+  "local_game_version": "Stellaris 4.5.2",
+  "representative_queries_executed": [
+    "Stellaris modding add_starbase_component set_ship_design dynamic components",
+    "site:forum.paradoxplaza.com Stellaris modding change ship components event script design",
+    "site:github.com Stellaris add_starbase_component",
+    "site:github.com Stellaris set_ship_design component",
+    "Stellaris Designable Starbases github Xaneas",
+    "Stellaris Dev Diary 253 Cepheus patch notes modding",
+    "Stellaris set_ship_design 3.9",
+    "Stellaris Dev Diary 380 Defenders Stars designable deep space citadels",
+    "triggered_ship_modifier mult stellaris",
+    "triggered_ship_design_modifier mult Stellaris",
+    "triggered_ship_modifier value: component",
+    "github cwtools stellaris config component_templates triggered_ship_modifier",
+    "Stellaris ACOT github source ship designs",
+    "Stellaris Gigastructural Engineering github source",
+    "Stellaris component hot reload modding",
+    "Stellaris create_ship_design components"
+  ],
+  "sources": [
+    {
+      "id": "official_253",
+      "type": "official_developer_diary",
+      "url": "https://store.steampowered.com/news/posts/?appids=281990&enddate=1652371652&feed=steam_community_announcements",
+      "title": "Dev Diary 253 - Three in One",
+      "published": "2022-05-05",
+      "version": "3.4 Cepheus",
+      "short_quote": "apply a modifier or script value",
+      "supports": "Generic triggered modifiers can have a dynamic mult input.",
+      "limitation": "The diary example is a pop modifier, not a native mothership component test."
+    },
+    {
+      "id": "giga_component",
+      "type": "mod_author_actual_source",
+      "url": "https://github.com/Pouchkinn-s-Gigastructures/Gigastructures/blob/436812fb3acd9dc7d6cb5e666268a3a1d8135aa7/common/component_templates/giga_eawaf_components.txt#L28",
+      "commit": "436812fb3acd9dc7d6cb5e666268a3a1d8135aa7",
+      "version": "Mod 3.40.4 DEV source, supported Stellaris v4.5.*",
+      "short_quote": "mult = event_target:giga_eawaf_country.giga_eawaf_field_potency_multiplier",
+      "supports": "Four actual utility component definitions use triggered_ship_modifier with a persistent scoped variable multiplier.",
+      "limitation": "Source establishes an implementation pattern. Local Mother shields, refresh and save behavior still need native tests."
+    },
+    {
+      "id": "giga_descriptor",
+      "type": "mod_author_actual_metadata",
+      "url": "https://github.com/Pouchkinn-s-Gigastructures/Gigastructures/blob/436812fb3acd9dc7d6cb5e666268a3a1d8135aa7/descriptor.mod",
+      "short_quote": "supported_version=\"v4.5.*\"",
+      "supports": "The inspected DEV source is authored for the same Stellaris major compatibility family as the local test; this does not certify a released build."
+    },
+    {
+      "id": "giga_static_payload",
+      "type": "mod_author_actual_source",
+      "url": "https://github.com/Pouchkinn-s-Gigastructures/Gigastructures/blob/436812fb3acd9dc7d6cb5e666268a3a1d8135aa7/common/static_modifiers/giga_eawaf_static_modifiers.txt#L78",
+      "short_quote": "giga_eawaf_disenchanter_1_upkeep_modifier = { ships_upkeep_mult = 0.10 }",
+      "supports": "The named payload used by the component has a concrete native upkeep effect. The component multiplier is not merely an unused invented identifier.",
+      "limitation": "The local prototype uses the vanilla direct-field form ship_shield_mult, supported by local native component examples."
+    },
+    {
+      "id": "cwtools_component_rules",
+      "type": "validator_author_actual_source",
+      "url": "https://github.com/cwtools/cwtools-stellaris-config/blob/99147efe8072b331005b50536762dcc0b8573224/config/common/components_consolidated.cwt#L206",
+      "commit": "99147efe8072b331005b50536762dcc0b8573224",
+      "short_quote": "replace_scope = { root = ship this = ship }",
+      "supports": "The maintained component schema treats triggered_ship_modifier as ship scope and recognizes component triggered modifiers.",
+      "limitation": "Community validator rules are not the engine implementation or an execution test."
+    },
+    {
+      "id": "official_380",
+      "type": "official_developer_diary",
+      "url": "https://store.steampowered.com/news/posts/?appids=281990&enddate=1745492418&feed=steam_community_announcements",
+      "title": "Dev Diary 380 - Defenders in the Stars",
+      "published": "2025-04-17",
+      "version": "BioGenesis / 4.0 development",
+      "short_quote": "individually designable and saved as its own ship design",
+      "supports": "Deep Space Citadel stages use real individual designs selected at construction, upgrade or downgrade.",
+      "limitation": "This is a distinct native design-selection route, not documentation of arbitrary P-script component array mutation on existing juggernauts."
+    },
+    {
+      "id": "designable_starbases_author",
+      "type": "mod_author_first_party_description",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3125931110",
+      "published": "2023-12-29",
+      "version": "Historical mod; no 4.5 compatibility certification inferred",
+      "short_quote": "Starbase Aura Components still need the Buildings and also be equipped in the Designer.",
+      "supports": "The author describes a dummy-design workaround and explicitly requires actual aura equipment in a design.",
+      "limitation": "Author description is firsthand evidence of that mod's design and limitations; no current source or local runtime result was available from this page."
+    },
+    {
+      "id": "official_179_forum",
+      "type": "official_forum_developer_thread",
+      "url": "https://admin-forum.paradoxplaza.com/forum/developer-diary/stellaris-dev-diary-179-4th-anniversary-2-7-wells-update.1388636/page-11",
+      "version": "2.7 Wells",
+      "short_quote": "create_ship_design = { design = <key>",
+      "supports": "Historical design creation takes an existing design key, consistent with the local 4.5.2 engine documentation.",
+      "limitation": "Old source; the local generated 4.5.2 effects.log is authoritative for current supported arguments."
+    },
+    {
+      "id": "official_wiki_access",
+      "type": "requested_reference_access_failure",
+      "urls": [
+        "https://stellaris.paradoxwikis.com/Effects",
+        "https://stellaris.paradoxwikis.com/Ship_modding"
+      ],
+      "status": "Browser returned Internal Error",
+      "limitation": "Fandom and GitHub wiki mirrors appeared in search results. They were treated as leads and not used as primary support for engine conclusions."
+    },
+    {
+      "id": "code_index_access",
+      "type": "discovery_service_access_failure",
+      "url": "https://grep.app/api/search?q=triggered_ship_modifier",
+      "status": "HTTP 429",
+      "fallback": "Fetched and scanned 158 actual files from the mod author's pinned GitHub commit, with zero retrieval errors."
+    }
+  ],
+  "paths_and_minimal_probes": [
+    {
+      "path": "Installed component owns dynamic triggered modifier",
+      "priority": 1,
+      "probe": "Actual AUX6 installation; no add_modifier; fleet rank unset/0, 1, 2, repeated same rank, native reload, and a rank rollback or component-removal negative control.",
+      "status": "Minimal prototype delivered, native behavior pending"
+    },
+    {
+      "path": "Starbase building equipped_component or module section/component_set",
+      "priority": 2,
+      "probe": "Install one isolated native building/module on the bound Mother, then verify actual design equipment, ship section and source effects; also verify existing shipyard queues and base gear remain.",
+      "status": "Owned by the main task and acceptance-analysis agent; distinct from failed standalone path"
+    },
+    {
+      "path": "Predefined design transitions and native DSC design selection",
+      "priority": 3,
+      "probe": "Two known predefined Mother designs differing in exactly one real component; set_ship_design on the same ship and compare identity, position, damage and paid queues.",
+      "limitation": "Finite preset combinations or stages do not alone provide unlimited arbitrary component composition."
+    },
+    {
+      "path": "Tiered upgrades_to plus auto-upgraded design",
+      "priority": 4,
+      "probe": "A private two-tier component family on an isolated private chassis/design; unlock only that private tier and inspect actual automatic or explicit upgrade.",
+      "limitation": "Static tiers are finite. Global technology grants or overriding all native juggernauts would violate this task's isolation."
+    },
+    {
+      "path": "Generate definitions during gameplay or hot reload",
+      "priority": 5,
+      "status": "No primary source for a portable P-script runtime definition-creation API was found",
+      "limitation": "No save editing, executable injection or runtime file rewriting is proposed as a legitimate Mod implementation. Absence from these searches is not proof of global impossibility."
+    }
+  ],
+  "source_scan_report": "evolution-components-1019-giga-web-source-scan.json",
+  "fallback": "Only if real hardware paths remain unavailable after scoped native tests; the user has conditionally accepted explicitly named persistent random symbiotic enhancements."
+}

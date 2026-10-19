@@ -1,0 +1,19 @@
+{
+  "schema": "eep.1019.hardware-case.v1",
+  "status": "PENDING_NATIVE_HARDWARE_INPUTS",
+  "case_kind": "controlled_hardware_probe",
+  "tier0": null,
+  "tier1": null,
+  "tier2": null,
+  "reload": null,
+  "control_ship_ids": [1, 2, 3, 4, 5],
+  "minimum_refresh_days": 5,
+  "absolute_tolerance": 0.001,
+  "require_reload": true,
+  "notes": [
+    "Only original native SAV paths with matching manifests, receipts and audits are valid inputs.",
+    "C0/R0 with manually controlled shield tiers is intentionally separate from natural RNG reward invariants.",
+    "Native base shield and expected increments are resolved from component definitions, never from hard-coded panel results.",
+    "This pending template contains no runtime result and must not be published as PASS."
+  ]
+}

@@ -1,0 +1,51 @@
+# Country scope: derive progression from settled matter, never from an event count.
+eep_sync_mothership = {
+    if = {
+        limit = { has_country_flag = eep_initialized }
+        set_variable = { which = eep_mothership_level value = eep_c }
+        divide_variable = { which = eep_mothership_level value = 10 }
+        floor_variable = eep_mothership_level
+        set_variable = { which = eep_mothership_next value = eep_mothership_level }
+        change_variable = { which = eep_mothership_next value = 1 }
+        multiply_variable = { which = eep_mothership_next value = 10 }
+        subtract_variable = { which = eep_mothership_next value = eep_c }
+        if = {
+            limit = {
+                exists = event_target:eep_mothership@this
+                event_target:eep_mothership@this = { owner = { is_same_value = prevprev } }
+            }
+            every_owned_ship = {
+                limit = {
+                    fleet = { is_same_value = event_target:eep_mothership@owner }
+                    NOT = { has_ship_flag = eep_mothership_design_1019 }
+                }
+                set_ship_design = { design = NAME_EEP_Baiqi_Mothership_1019 }
+                set_ship_flag = eep_mothership_design_1019
+            }
+            event_target:eep_mothership@this = {
+                if = {
+                    limit = {
+                        OR = {
+                            NOT = { is_variable_set = eep_applied_level }
+                            NOT = { check_variable = { which = eep_applied_level value = prev.eep_mothership_level } }
+                            AND = {
+                                prev = { check_variable = { which = eep_mothership_level value > 0 } }
+                                NOT = { has_modifier = eep_mothership_evolution }
+                            }
+                            AND = {
+                                prev = { check_variable = { which = eep_mothership_level value <= 0 } }
+                                has_modifier = eep_mothership_evolution
+                            }
+                        }
+                    }
+                    set_variable = { which = eep_applied_level value = prev.eep_mothership_level }
+                    remove_modifier = eep_mothership_evolution
+                    if = {
+                        limit = { check_variable = { which = eep_applied_level value > 0 } }
+                        add_modifier = { modifier = eep_mothership_evolution days = -1 multiplier = eep_applied_level }
+                    }
+                }
+            }
+        }
+    }
+}

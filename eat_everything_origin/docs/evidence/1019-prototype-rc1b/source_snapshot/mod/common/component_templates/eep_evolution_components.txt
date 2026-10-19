@@ -1,0 +1,40 @@
+# Prototype: only accepted after native attachment and stacking verification.
+utility_component_template = {
+    key = "EEP_SYMBIOTIC_SHIELD_CORE"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    potential = { is_ship_size = juggernaut from = { has_origin = origin_heart_of_devouring } }
+    friendly_aura = {
+        name = "eep_symbiotic_shield_core"
+        system_wide = yes
+        apply_on = fleets
+        limit = { exists = owner is_same_value = event_target:eep_mothership@owner }
+        modifier = { ship_shield_mult = 0.10 }
+    }
+    ai_weight = { weight = 0 }
+}
+
+# Independent ship-target probe.
+# Receiver filtering, self application and repeated stacking require native tests.
+utility_component_template = {
+    key = "EEP_SYMBIOTIC_SHIELD_CORE_SHIP"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    potential = { is_ship_size = juggernaut from = { has_origin = origin_heart_of_devouring } }
+    friendly_aura = {
+        name = "eep_symbiotic_shield_core_ship"
+        system_wide = yes
+        apply_on = ships
+        limit = {
+            exists = owner
+            exists = fleet
+            fleet = { is_same_value = event_target:eep_mothership@owner }
+        }
+        modifier = { ship_shield_mult = 0.10 }
+    }
+    ai_weight = { weight = 0 }
+}

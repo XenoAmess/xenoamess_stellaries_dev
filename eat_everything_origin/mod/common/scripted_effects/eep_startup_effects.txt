@@ -13,12 +13,36 @@ eep_startup = {
             if = { limit = { owner = { is_hive_empire = yes } } change_pc = pc_hive }
             else_if = { limit = { owner = { has_authority = auth_machine_intelligence } } change_pc = pc_machine }
             else = { change_pc = pc_relic }
+            eep_startup_homeworld_layout = yes
             eep_startup_resource_zones = yes
             eep_repair_core_deposit = yes
             eep_sync_court = yes
         }
         eep_startup_mothership = yes
-        eep_startup_world = yes
+    }
+}
+
+# Planet scope; only called by the once-per-new-game startup grant.
+# Converted gestalt resource districts provide triple rural workforce.
+# Preserve enough minerals/food while leaving workers for energy jobs.
+eep_startup_homeworld_layout = {
+    if = {
+        limit = { is_planet_class = pc_hive }
+        while = {
+            limit = { num_districts = { type = district_hive_3 value > 2 } }
+            remove_district = district_hive_3
+        }
+        while = {
+            limit = { num_districts = { type = district_hive_2 value > 4 } }
+            remove_district = district_hive_2
+        }
+    }
+    else_if = {
+        limit = { is_planet_class = pc_machine }
+        while = {
+            limit = { num_districts = { type = district_nexus_2 value > 2 } }
+            remove_district = district_nexus_2
+        }
     }
 }
 
@@ -87,11 +111,12 @@ eep_startup_mothership = {
                 set_owner = root
                 create_ship = {
                     name = NAME_EEP_Baiqi_Mothership
-                    design = NAME_EEP_Baiqi_Mothership
+                    design = NAME_EEP_Baiqi_Mothership_1019
                     graphical_culture = eep_dreadnought_01
                     graphical_culture_fallback = npf_01
                     prefix = no
                     upgradable = no
+                    effect = { set_ship_flag = eep_mothership_design_1019 }
                 }
                 set_location = event_target:eep_core@root
                 add_modifier = { modifier = eep_mothership days = -1 }
@@ -99,66 +124,4 @@ eep_startup_mothership = {
             }
         }
     }
-}
-
-eep_startup_world = {
-    if = {
-        limit = { NOT = { has_country_flag = eep_extra_world_granted } }
-        set_country_flag = eep_extra_world_granted
-        event_target:eep_core@this = { save_event_target_as = eep_startup_core }
-        event_target:eep_startup_core = {
-            solar_system = {
-                if = {
-                    limit = { root = { is_hive_empire = yes } }
-                    spawn_planet = {
-                        class = pc_hive
-                        location = event_target:eep_startup_core
-                        orbit_location = no
-                        orbit_distance_offset = 30
-                        orbit_angle_offset = 180
-                        size = 20
-                        init_effect = { eep_initialize_extra_world = yes }
-                    }
-                }
-                else_if = {
-                    limit = { root = { has_authority = auth_machine_intelligence } }
-                    spawn_planet = {
-                        class = pc_machine
-                        location = event_target:eep_startup_core
-                        orbit_location = no
-                        orbit_distance_offset = 30
-                        orbit_angle_offset = 180
-                        size = 20
-                        init_effect = { eep_initialize_extra_world = yes }
-                    }
-                }
-                else = {
-                    spawn_planet = {
-                        class = pc_relic
-                        location = event_target:eep_startup_core
-                        orbit_location = no
-                        orbit_distance_offset = 30
-                        orbit_angle_offset = 180
-                        size = 20
-                        init_effect = { eep_initialize_extra_world = yes }
-                    }
-                }
-            }
-        }
-    }
-}
-
-# Newly spawned physical planet scope. The starting colony is a normal source.
-eep_initialize_extra_world = {
-    set_planet_flag = eep_startup_world
-    set_surveyed = { surveyed = yes surveyor = root }
-    save_global_event_target_as = eep_extra_world@root
-    create_colony = { owner = root species = root.species }
-    generate_start_deposits_and_blockers = yes
-    colony = {
-        generate_start_buildings_and_districts = yes
-        create_pop_group = { size = 100 species = owner_main_species }
-    }
-    # create_colony selects a name from the founder's list; apply flavor last.
-    set_name = NAME_EEP_Throne_World
 }

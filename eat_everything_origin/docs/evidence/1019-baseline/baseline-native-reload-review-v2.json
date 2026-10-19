@@ -1,0 +1,42 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "all_owned_fleets_and_members_preserved": true,
+    "every_strict_difference_independently_explained": true
+  },
+  "strict_report": "eat_everything_origin\\docs\\evidence\\single-homeworld-20261019\\baseline-native-reload-check.json",
+  "strict_report_sha256": "940d0e0fbea6e60f506773fdf8a6db3694d2458818ebef68c5b68c245c5000d1",
+  "before_sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+  "after_sha256": "700be57897986c13d9636ec684e0e090062ceaeef266fb37a6b7b2b72664da96",
+  "approved_metadata_differences": [
+    {
+      "path": "$.fleets.128.ships.1008.design_id",
+      "before": 1493,
+      "after": 1559,
+      "reason": "native design index changed; complete design body identical",
+      "design_body_sha256": "2e2b4a1f0e9d1d990334152808d280abad6175b9ab7ed1997549773ccfffabb0",
+      "design_body_bytes": 3083
+    },
+    {
+      "path": "$.fleets.128.ships.1008.native.original_owner",
+      "before": null,
+      "after": 0,
+      "reason": "previously owned ship records its original country0 owner on load"
+    },
+    {
+      "path": "$.starbases.0.station_native.original_owner",
+      "before": null,
+      "after": 0,
+      "reason": "previously owned station records its original country0 owner on load"
+    },
+    {
+      "path": "$.starbases.15.station_native.original_owner",
+      "before": null,
+      "after": 0,
+      "reason": "previously owned station records its original country0 owner on load"
+    }
+  ],
+  "unexplained_differences": [],
+  "scope": "this exact same-day pair only; original strict FAIL remains unchanged",
+  "checker_sha256": "cbbff12ee7fb5477d57f4dbb38d586ca4a2d663a424b788ab0ccb76b75a6a474"
+}

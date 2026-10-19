@@ -1,87 +1,47 @@
-# EEP-exclusive Gray combat baseline; native mobile shipyard and dreadnought model.
+# Relic weapon and defense slots on the exclusive mobile shipyard hull.
 ship_section_template = {
-	key = "eep_mothership_section"
+	key = "eep_mothership_section_1019"
 	ship_size = juggernaut
 	fits_on_slot = core
 	entity = "eep_mothership_hull_entity"
 	icon = "GFX_ship_part_core_mid"
+	prerequisites = { "eep_mothership" }
 
-	component_slot = {
-		name = "TITAN_01"
-		template = "invisible_titanic_fixed"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_01"
-		template = "invisible_missile_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_02"
-		template = "invisible_missile_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_03"
-		template = "invisible_missile_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "TORPEDO_04"
-		template = "invisible_missile_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "MEDIUM_GUN_01"
-		template = "medium_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "MEDIUM_GUN_02"
-		template = "medium_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "MEDIUM_GUN_03"
-		template = "medium_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "MEDIUM_GUN_04"
-		template = "medium_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "MEDIUM_GUN_05"
-		template = "medium_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "MEDIUM_GUN_06"
-		template = "medium_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_01"
-		template = "large_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_02"
-		template = "large_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_03"
-		template = "large_turret"
-		locatorname = "large_gun_01"
-	}
-	component_slot = {
-		name = "LARGE_GUN_04"
-		template = "large_turret"
-		locatorname = "large_gun_01"
-	}
+	component_slot = { name = "EXTRA_LARGE_01" template = "extra_large_turret" locatorname = "large_gun_01" }
 
-	large_utility_slots = 12
-	aux_utility_slots = 2
+	component_slot = { name = "LARGE_GUN_01" template = "large_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "LARGE_GUN_02" template = "large_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "LARGE_GUN_03" template = "large_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "LARGE_GUN_04" template = "large_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "LARGE_GUN_05" template = "large_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "LARGE_GUN_06" template = "large_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "LARGE_GUN_07" template = "large_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "SMALL_GUN_01" template = "small_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "SMALL_GUN_02" template = "small_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "SMALL_GUN_03" template = "small_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "SMALL_GUN_04" template = "small_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "SMALL_GUN_05" template = "small_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "PD_08" template = "point_defence_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "PD_09" template = "point_defence_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "PD_10" template = "point_defence_turret" locatorname = "large_gun_01" }
+
+	component_slot = { name = "PLANET_KILLER_GUN_01" template = "invisible_planet_killer_fixed" locatorname = "large_gun_01" }
+
+	large_utility_slots = 22
+	# Keep the five Relic utilities and six independently upgradable symbiotic cores.
+	aux_utility_slots = 11
 }
