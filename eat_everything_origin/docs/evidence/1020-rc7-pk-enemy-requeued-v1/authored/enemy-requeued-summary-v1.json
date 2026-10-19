@@ -1,0 +1,514 @@
+{
+  "schema": "eep.rc7.enemy-requeued.scoped-summary.v1",
+  "status": "PASS_SCOPED_REQUEUE_ONLY",
+  "scope": "Actual native requeue from cancelled/reloaded empty order and same-day no reward; no complete charge/fire/settlement certification.",
+  "checks": {
+    "two_original_native_roles_exact_SHA_date_bound": true,
+    "original_no_settlement9_pass": true,
+    "before_cancel_reload_order_empty": true,
+    "requeued_actual_destroy_order_target17": true,
+    "requeued_actual_suborder_windup0_of90": true,
+    "requeued_order_id2_reachable": true,
+    "same_Mother151_ship1044_current_design16777250": true,
+    "all_EEP_country_variables_unchanged": true,
+    "source17_alive_owner1_q21": true,
+    "core2_still_owner0": true,
+    "true_native_context_menu_visually_inspected": true,
+    "physical_dismantle_click620_497_retained": true,
+    "strict_order_differences_FAIL_retained": true,
+    "old_ship_crisis45_unchanged_no_worlds_empires_reward": true
+  },
+  "roles": {
+    "enemy_cancel_reload": {
+      "date": "2201.01.27",
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancelreload.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancelreload.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkshotcancelreload.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+        "run_id": "20261019T164112Z",
+        "date": "2201.01.27",
+        "save_sha256": "895c2b1beb85b2ac688cf0c2271f28aaedeacdbf667ef35db4969147d91c9053",
+        "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+      },
+      "source": {
+        "physical_planet": 17,
+        "native": {
+          "colony": 1,
+          "planet_class": "pc_tundra",
+          "planet_size": 21,
+          "colonize_date": "2016.05.09",
+          "original_owner": 1,
+          "carrier_binary_flags": 3,
+          "build_queue": 4,
+          "binary_flags": 589,
+          "orbit": 24,
+          "last_bombardment": "0.01.01",
+          "owner": 1,
+          "controller": 1,
+          "moon_of": 15,
+          "bombardment_damage": 0,
+          "entity": 2
+        },
+        "population": 4954,
+        "groups": {
+          "34": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_fill_worker_job": "yes",
+              "planet": 1,
+              "size": 1400,
+              "last_month_growth": 0,
+              "month_start_size": 1400,
+              "total_attraction": 17.975,
+              "habitability": 1,
+              "happiness": 0,
+              "power": 8.75,
+              "crime": 28,
+              "amenities_usage": 1750,
+              "housing_usage": 1050
+            },
+            "key": {
+              "species": 16777219,
+              "category": "worker"
+            }
+          },
+          "33": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_vote": "yes",
+              "can_fill_worker_job": "yes",
+              "can_fill_specialist_job": "yes",
+              "can_fill_ruler_job": "yes",
+              "planet": 1,
+              "size": 1286,
+              "last_month_growth": -1,
+              "month_start_size": 1288,
+              "total_attraction": 17.48,
+              "habitability": 1,
+              "happiness": 0.10697,
+              "power": 38.58,
+              "crime": 22.96873,
+              "amenities_usage": 1929,
+              "housing_usage": 1286
+            },
+            "key": {
+              "species": 2,
+              "category": "specialist"
+            }
+          },
+          "4": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_vote": "yes",
+              "can_fill_worker_job": "yes",
+              "can_fill_specialist_job": "yes",
+              "can_fill_ruler_job": "yes",
+              "planet": 1,
+              "size": 1046,
+              "last_month_growth": 4,
+              "month_start_size": 1044,
+              "total_attraction": 21.78,
+              "habitability": 1,
+              "happiness": 0.10697,
+              "power": 10.46,
+              "crime": 18.68218,
+              "amenities_usage": 523,
+              "housing_usage": 1046
+            },
+            "key": {
+              "species": 2,
+              "category": "civilian"
+            }
+          },
+          "31": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_fill_worker_job": "yes",
+              "planet": 1,
+              "size": 1022,
+              "last_month_growth": 1,
+              "month_start_size": 1022,
+              "total_attraction": 17.975,
+              "habitability": 1,
+              "happiness": 0,
+              "power": 2.555,
+              "crime": 20.44,
+              "amenities_usage": 1277.5,
+              "housing_usage": 766.5
+            },
+            "key": {
+              "species": 16777219,
+              "category": "slave_unemployment"
+            }
+          },
+          "32": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_vote": "yes",
+              "can_fill_worker_job": "yes",
+              "can_fill_specialist_job": "yes",
+              "can_fill_ruler_job": "yes",
+              "planet": 1,
+              "size": 200,
+              "last_month_growth": 0,
+              "month_start_size": 200,
+              "total_attraction": 19.63,
+              "habitability": 1,
+              "happiness": 0.10697,
+              "power": 16,
+              "crime": 3.57212,
+              "amenities_usage": 300,
+              "housing_usage": 200
+            },
+            "key": {
+              "species": 2,
+              "category": "ruler"
+            }
+          }
+        },
+        "damage_deposit_count": 0,
+        "q_from_live_size_less_damage": 21,
+        "flags": [
+          "3_year_owner_change_flag",
+          "nomad_recent_combat"
+        ],
+        "variables": {}
+      },
+      "core": {
+        "physical_planet": 2,
+        "owner": 0,
+        "population": 4859
+      },
+      "mother": {
+        "fleet": 151,
+        "ship": 1044,
+        "design_id": "16777250",
+        "order_raw": "",
+        "fleet_variables": {
+          "eep_applied_level": 0,
+          "eep_component_armor_level": 0,
+          "eep_component_damage_level": 0,
+          "eep_component_hull_level": 0,
+          "eep_component_regen_level": 0,
+          "eep_component_rewards": 0,
+          "eep_component_shield_level": 0,
+          "eep_component_tracking_level": 0
+        }
+      },
+      "all_EEP_country_variables": {
+        "eep_c": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_mothership_level": 0,
+        "eep_mothership_next": 10,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "crisis_objectives": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 45
+        }
+      ]
+    },
+    "enemy_requeued": {
+      "date": "2201.01.27",
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirerequeued.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirerequeued.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7pkfirerequeued.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+        "run_id": "20261019T164112Z",
+        "date": "2201.01.27",
+        "save_sha256": "73421574dd6f6f2fc08b95dc25aaa88da5d152cd0b5824dfddb119d8ad946714",
+        "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+      },
+      "source": {
+        "physical_planet": 17,
+        "native": {
+          "colony": 1,
+          "planet_class": "pc_tundra",
+          "planet_size": 21,
+          "colonize_date": "2016.05.09",
+          "original_owner": 1,
+          "carrier_binary_flags": 3,
+          "build_queue": 4,
+          "binary_flags": 589,
+          "orbit": 24,
+          "last_bombardment": "0.01.01",
+          "owner": 1,
+          "controller": 1,
+          "moon_of": 15,
+          "bombardment_damage": 0,
+          "entity": 2
+        },
+        "population": 4954,
+        "groups": {
+          "34": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_fill_worker_job": "yes",
+              "planet": 1,
+              "size": 1400,
+              "last_month_growth": 0,
+              "month_start_size": 1400,
+              "total_attraction": 17.975,
+              "habitability": 1,
+              "happiness": 0,
+              "power": 8.75,
+              "crime": 28,
+              "amenities_usage": 1750,
+              "housing_usage": 1050
+            },
+            "key": {
+              "species": 16777219,
+              "category": "worker"
+            }
+          },
+          "33": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_vote": "yes",
+              "can_fill_worker_job": "yes",
+              "can_fill_specialist_job": "yes",
+              "can_fill_ruler_job": "yes",
+              "planet": 1,
+              "size": 1286,
+              "last_month_growth": -1,
+              "month_start_size": 1288,
+              "total_attraction": 17.48,
+              "habitability": 1,
+              "happiness": 0.10697,
+              "power": 38.58,
+              "crime": 22.96873,
+              "amenities_usage": 1929,
+              "housing_usage": 1286
+            },
+            "key": {
+              "species": 2,
+              "category": "specialist"
+            }
+          },
+          "4": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_vote": "yes",
+              "can_fill_worker_job": "yes",
+              "can_fill_specialist_job": "yes",
+              "can_fill_ruler_job": "yes",
+              "planet": 1,
+              "size": 1046,
+              "last_month_growth": 4,
+              "month_start_size": 1044,
+              "total_attraction": 21.78,
+              "habitability": 1,
+              "happiness": 0.10697,
+              "power": 10.46,
+              "crime": 18.68218,
+              "amenities_usage": 523,
+              "housing_usage": 1046
+            },
+            "key": {
+              "species": 2,
+              "category": "civilian"
+            }
+          },
+          "31": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_fill_worker_job": "yes",
+              "planet": 1,
+              "size": 1022,
+              "last_month_growth": 1,
+              "month_start_size": 1022,
+              "total_attraction": 17.975,
+              "habitability": 1,
+              "happiness": 0,
+              "power": 2.555,
+              "crime": 20.44,
+              "amenities_usage": 1277.5,
+              "housing_usage": 766.5
+            },
+            "key": {
+              "species": 16777219,
+              "category": "slave_unemployment"
+            }
+          },
+          "32": {
+            "native": {
+              "can_procreate": "yes",
+              "can_crossbreed": "yes",
+              "can_vote": "yes",
+              "can_fill_worker_job": "yes",
+              "can_fill_specialist_job": "yes",
+              "can_fill_ruler_job": "yes",
+              "planet": 1,
+              "size": 200,
+              "last_month_growth": 0,
+              "month_start_size": 200,
+              "total_attraction": 19.63,
+              "habitability": 1,
+              "happiness": 0.10697,
+              "power": 16,
+              "crime": 3.57212,
+              "amenities_usage": 300,
+              "housing_usage": 200
+            },
+            "key": {
+              "species": 2,
+              "category": "ruler"
+            }
+          }
+        },
+        "damage_deposit_count": 0,
+        "q_from_live_size_less_damage": 21,
+        "flags": [
+          "3_year_owner_change_flag",
+          "nomad_recent_combat"
+        ],
+        "variables": {}
+      },
+      "core": {
+        "physical_planet": 2,
+        "owner": 0,
+        "population": 4859
+      },
+      "mother": {
+        "fleet": 151,
+        "ship": 1044,
+        "design_id": "16777250",
+        "order_raw": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=17\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_windup_order=\n\t\t\t\t\t{\n\t\t\t\t\t\twindup=0\n\t\t\t\t\t\twindup_time=90\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=2\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t",
+        "fleet_variables": {
+          "eep_applied_level": 0,
+          "eep_component_armor_level": 0,
+          "eep_component_damage_level": 0,
+          "eep_component_hull_level": 0,
+          "eep_component_regen_level": 0,
+          "eep_component_rewards": 0,
+          "eep_component_shield_level": 0,
+          "eep_component_tracking_level": 0
+        }
+      },
+      "all_EEP_country_variables": {
+        "eep_c": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_mothership_level": 0,
+        "eep_mothership_next": 10,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "crisis_objectives": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 45
+        }
+      ]
+    }
+  },
+  "order_scalars": {
+    "planet": 17,
+    "can_reach": "yes",
+    "order_id": 2,
+    "commissioner": 4294967295
+  },
+  "windup_scalars": {
+    "windup": 0,
+    "windup_time": 90,
+    "can_reach": "yes",
+    "commissioner": 4294967295
+  },
+  "actual_native_click": {
+    "stage": "r7pkfire-click-native-dismantle",
+    "client_point": [
+      620,
+      497
+    ],
+    "desktop_point": [
+      1388,
+      833
+    ],
+    "hold_seconds": 0.15
+  },
+  "ocr_matching_row": {
+    "text": "拆解星球EEP_R6_ENEMY",
+    "score": 0.99802,
+    "box": [
+      [
+        493.0,
+        489.0
+      ],
+      [
+        620.0,
+        489.0
+      ],
+      [
+        620.0,
+        506.0
+      ],
+      [
+        493.0,
+        506.0
+      ]
+    ],
+    "visually_inspected": true
+  },
+  "receiver_report": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/authored/receiver-report-v1.json",
+    "sha256": "8543df16c001a72f97a2cc759dea54a6a902462cbb7ea19073f86ee196ba986b",
+    "kind": "analysis"
+  },
+  "native_context": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/authored/native-war-army-readings-v1.json",
+    "sha256": "cc647bd5deec3136e01edc40726322825251b79abd5743caa7593a15e018bcdb",
+    "kind": "analysis"
+  },
+  "final_checks_supported": {},
+  "case_status": "PENDING",
+  "limitations": [
+    "No r7pkfirewind89 or other active raw/logs read.",
+    "Only same-day original9 no-settlement checks pass; strict3 order differences remain FAIL.",
+    "Existing crisobj_destroy_enemy_ships45 is not planet-killer reward.",
+    "Full90/30 shot and all final cases remain PENDING."
+  ]
+}

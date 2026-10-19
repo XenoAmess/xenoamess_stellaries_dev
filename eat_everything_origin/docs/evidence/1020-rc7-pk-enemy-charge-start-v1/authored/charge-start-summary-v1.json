@@ -1,0 +1,206 @@
+{
+  "schema": "eep.rc7.enemy-charge-start.scoped-summary.v1",
+  "status": "PASS_SCOPED_CHARGE_START_ONLY",
+  "scope": "Actual requeued0/90 to1/90 on next native day; no full90/30 firing or settlement certification.",
+  "checks": {
+    "prior_requeued_observation_canonically_reused": true,
+    "charge_start_exact_native_receipt_SHA_bound": true,
+    "Jan27_to_Jan28_actual_native_dates": true,
+    "actual_same_order2_target17": true,
+    "actual_windup_zero_to_one_of90": true,
+    "actual_order_and_windup_reachable": true,
+    "same_Mother151_ship1044_design16777250": true,
+    "all_EEP_ledger_unchanged_across_first_day": true,
+    "live_source17_owner1_q21": true,
+    "core2_owner0_preserved": true,
+    "no_worlds_or_empires_crisis_payment": true,
+    "existing_ship_crisis45_retained_not_planet_reward": true,
+    "actual_single_day_command_and_physical_Enter": true,
+    "no_same_day_no_settlement_misused_cross_date": true,
+    "all_final_cases_PENDING": true
+  },
+  "roles": {
+    "requeued": {
+      "date": "2201.01.27",
+      "destroy_order_scalars": {
+        "planet": 17,
+        "can_reach": "yes",
+        "order_id": 2,
+        "commissioner": 4294967295
+      },
+      "windup_scalars": {
+        "windup": 0,
+        "windup_time": 90,
+        "can_reach": "yes",
+        "commissioner": 4294967295
+      },
+      "current_order_raw": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=17\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_windup_order=\n\t\t\t\t\t{\n\t\t\t\t\t\twindup=0\n\t\t\t\t\t\twindup_time=90\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=2\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t",
+      "mother": {
+        "fleet": 151,
+        "ship": 1044,
+        "design_id": "16777250"
+      },
+      "source_native": {
+        "colony": 1,
+        "planet_class": "pc_tundra",
+        "planet_size": 21,
+        "colonize_date": "2016.05.09",
+        "original_owner": 1,
+        "carrier_binary_flags": 3,
+        "build_queue": 4,
+        "binary_flags": 589,
+        "orbit": 24,
+        "last_bombardment": "0.01.01",
+        "owner": 1,
+        "controller": 1,
+        "moon_of": 15,
+        "bombardment_damage": 0,
+        "entity": 2
+      },
+      "source_population": 4954,
+      "source_q": 21,
+      "core_owner": 0,
+      "core_population": 4859,
+      "all_EEP_ledger": {
+        "eep_c": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_mothership_level": 0,
+        "eep_mothership_next": 10,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "crisis_objectives": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 45
+        }
+      ]
+    },
+    "charge_start": {
+      "date": "2201.01.28",
+      "destroy_order_scalars": {
+        "planet": 17,
+        "can_reach": "yes",
+        "order_id": 2,
+        "commissioner": 4294967295
+      },
+      "windup_scalars": {
+        "windup": 1,
+        "windup_time": 90,
+        "can_reach": "yes",
+        "commissioner": 4294967295
+      },
+      "current_order_raw": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=17\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_windup_order=\n\t\t\t\t\t{\n\t\t\t\t\t\twindup=1\n\t\t\t\t\t\twindup_time=90\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=2\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t",
+      "mother": {
+        "fleet": 151,
+        "ship": 1044,
+        "design_id": "16777250"
+      },
+      "source_native": {
+        "colony": 1,
+        "planet_class": "pc_tundra",
+        "planet_size": 21,
+        "colonize_date": "2016.05.09",
+        "original_owner": 1,
+        "carrier_binary_flags": 1,
+        "build_queue": 4,
+        "binary_flags": 589,
+        "orbit": 24,
+        "last_bombardment": "0.01.01",
+        "owner": 1,
+        "controller": 1,
+        "moon_of": 15,
+        "bombardment_damage": 0,
+        "entity": 2
+      },
+      "source_population": 4954,
+      "source_q": 21,
+      "core_owner": 0,
+      "core_population": 4859,
+      "all_EEP_ledger": {
+        "eep_c": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_entitled": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_pending": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_snapshot_state": 0,
+        "eep_component_tracking_level": 0,
+        "eep_d": 2,
+        "eep_fleet_stage": 0,
+        "eep_g": 0,
+        "eep_last_capacity": 0,
+        "eep_last_manufactured": 0,
+        "eep_last_return": 0,
+        "eep_made": 0,
+        "eep_mothership_level": 0,
+        "eep_mothership_next": 10,
+        "eep_stage": 0,
+        "eep_worlds": 0
+      },
+      "crisis_objectives": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 45
+        }
+      ]
+    }
+  },
+  "original_receiver": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-charge-start-v1/authored/receiver-report-v1.json",
+    "sha256": "f1e0dba46920eb8c600b8fe9f9d938e246b3e6ca9944bd1c2155ec19da60fa1d",
+    "kind": "analysis"
+  },
+  "native_context": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-charge-start-v1/authored/native-charge-order-and-context-v1.json",
+    "sha256": "8dd86d8d54a5802a4403c12ba3bc0fd65879e7832461f216d34de17b66165fb4",
+    "kind": "analysis"
+  },
+  "prior_receiver": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/authored/receiver-report-v1.json",
+    "sha256": "8543df16c001a72f97a2cc759dea54a6a902462cbb7ea19073f86ee196ba986b",
+    "kind": "analysis"
+  },
+  "prior_observation": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/cache/7692855dba54d2badf04d21c7e55ee09ce31bd38814a716302411ebe6487320e.json",
+    "sha256": "fc5f6aaa52e3a1bb6b3a5445d065bfa71c762fff22cfeacd771f464b5fbb8d8f",
+    "kind": "analysis"
+  },
+  "prior_stage_index": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/archive-index.json",
+    "sha256": "ecca5735c419a0b85fd34b48d603856f5609eab290bb96b5c851890a9a698770",
+    "kind": "analysis"
+  },
+  "prior_stage_verify": {
+    "path": "docs/evidence/1020-rc7-pk-enemy-requeued-v1/verification-v1.json",
+    "sha256": "26104bc804b3c7aae0e3bd55038cfdf3e7f194adb35673b8d47faea15cc4ac86",
+    "kind": "analysis"
+  },
+  "final_checks_supported": {},
+  "case_status": "PENDING",
+  "limitations": [
+    "Only the two explicitly sealed early-shot dates are compared.",
+    "No cross-date same-day no-settlement check is claimed.",
+    "No active wind89/restoration raw or logs are read.",
+    "Complete90/30 and all final cases remain PENDING."
+  ]
+}
