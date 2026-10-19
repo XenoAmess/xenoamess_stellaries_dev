@@ -1,0 +1,2345 @@
+{
+  "schema": "eep-1019-acceptance-v1",
+  "status": "PENDING",
+  "version": "0.4.0-rc.3",
+  "formal_version": "0.4.0",
+  "language": "l_simp_chinese",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "profile_id": "eep-0.4.0-single-production-mod",
+  "enabled_mods": [
+    "mod/ugc_eep-1019.mod"
+  ],
+  "fully_accepted_civics": [],
+  "production_files": {
+    "common/component_sets/eep_planet_killer.txt": "1ca4ac77f4aaac3fe8235139ce58e980995b28d00790955fd84952b8821300a5",
+    "common/component_templates/eep_evolution_components.txt": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+    "common/component_templates/eep_planet_killer.txt": "1e7d1f65e38c7bcfe370315b301ffbe680dad7571646c1a1e54f35cb96200cd0",
+    "common/component_templates/eep_weapon_components.csv": "f00d024a4714fd283629a94a401a3956e5317aa7e0693f03aacd7ed902140428",
+    "common/decisions/eep_decisions.txt": "ce9e68d9b0d425704d6b278ac5c1c6a010955600d30269dc5656c2eb70eca2e3",
+    "common/decisions/zz_eep_native_decision.txt": "afb47a2cf28b88cfc80e8b46fc81860178aaf544b6f7bffba785cd8ab37fad9c",
+    "common/deposits/eep_deposits.txt": "85131e640143201ac5a20fc29419b8b95e0d2840d042de060602db33fa370965",
+    "common/global_ship_designs/eep_mothership.txt": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123",
+    "common/governments/civics/eep_origin.txt": "6230a99d5338eaaf4c8b05b4e947e52a6e8bd2b987c88fe995f72a3beb77e5de",
+    "common/graphical_culture/eep_mothership.txt": "46e0498a85b09cf9d842f0eccda5b06666508107c0a846be2291ed5167c0970d",
+    "common/on_actions/eep_on_actions.txt": "f37870ca1050ca976cbee80312a8862a698ca4596bae55a7b9e9fdfec897db8e",
+    "common/script_values/eep_evolution_values.txt": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09",
+    "common/script_values/eep_values.txt": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba",
+    "common/scripted_effects/eep_auto_effects.txt": "4cd1229cff5c07e7b0272cb8721e00e6f7d6d2b8e90bbffc9a912c11f60cfb10",
+    "common/scripted_effects/eep_cancel_effects.txt": "2739e609afb90d28fcd56c5db6c48668de655ac1315afb86907764098b77b36d",
+    "common/scripted_effects/eep_colossus_native.txt": "148e0ff5b70113893d0ea75b4e3070448990b36d087a5eff0e636a24ed4b888f",
+    "common/scripted_effects/eep_effects.txt": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6",
+    "common/scripted_effects/eep_migration_effects.txt": "7519ed6f2f3502da5c1a1c84261353d5be851e0345ac6d50761c19cab5219cfe",
+    "common/scripted_effects/eep_mothership_effects.txt": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5",
+    "common/scripted_effects/eep_native_consume.txt": "47ee1a78bd40c14f6893fd47177e1138f9f2003ad3ca5d550b0b0c20ca4bb12e",
+    "common/scripted_effects/eep_planet_killer_effects.txt": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9",
+    "common/scripted_effects/eep_settlement_effects.txt": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+    "common/scripted_effects/eep_startup_effects.txt": "e1ec38f25535507d284a620ac864a6cbf1340712087ad430596f2b907dfde0f3",
+    "common/scripted_loc/eep_loc.txt": "aece3efd0fa978438467ce16e4950fe9b8f7afc289be30af71d0e798408484af",
+    "common/scripted_triggers/eep_planet_killer.txt": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+    "common/scripted_triggers/eep_triggers.txt": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+    "common/section_templates/eep_mothership.txt": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493",
+    "common/section_templates/eep_mothership_legacy.txt": "967e22c4b80091dab66d5d38878c97398cd347b560dc7d5f17903aea7fcdf9b3",
+    "common/situations/eep_situation.txt": "f6f9b034949e1d24da7d598a4de9ca0a483fe99526b1ff7489eb3db1a6cbd29d",
+    "common/static_modifiers/eep_modifiers.txt": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+    "common/technology/eep_mothership.txt": "c3d62e08c47b7634634ddcca8a018e2dfda3961c89c18d7f4e80f29990c585b9",
+    "descriptor.mod": "fabeb38eee4db3afca179d2177614dc773a214a5b54baba86fbfaec0ca2442dc",
+    "events/eep_events.txt": "e4be49df425db8dd4c4919a788c38ef2d4075466a9da946e6dc35a6c47cf55a1",
+    "events/eep_planet_killer_events.txt": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e",
+    "gfx/event_pictures/eep_core.dds": "ccbf95e4f2058f563bbb20039b3c5bfbdafe56c3d3df5cbd7a7af73d53ed42a3",
+    "gfx/event_pictures/eep_devouring.dds": "1dfaa5fbd583075b7955aaacf23320b298553a0345d6e7e4028221bc01ee0c21",
+    "gfx/event_pictures/eep_fleet.dds": "89a59a46f265c29c039bbcb42946dc3d7e3db3d2885692e0f9cd9a84d96aca2b",
+    "gfx/event_pictures/eep_growth.dds": "2c7068ff0ef7f3250ddb789ef1f30104896706a6c4f7ef6f6cc00cdc5c065940",
+    "gfx/event_pictures/eep_psionic.dds": "068940d6e209d4e038c6aad6a4373fce8045d87ba43a30824267313e60344a50",
+    "gfx/interface/icons/modifiers/eep_capacity.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_add.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_mult.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/origins/eep_heart.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+    "gfx/interface/icons/origins/eep_origin.dds": "0b0efde9b1db8b9e528dd5f13095cd4d6ab40d6067775301ae8c1d7434a2d604",
+    "gfx/models/portraits/eep/eep_baiqi.dds": "fee48048257e630fe432f2e1cd9a8ea04c95a3213d9e5bb7bb5e6a0ac934d918",
+    "gfx/models/portraits/eep/eep_baiqi_full.dds": "31f854d06b16f1209f3d8257de89fb387f715a05ecbd12db21c099ce94db5235",
+    "gfx/models/ships/zz_eep/eep_mothership.asset": "f299b6fb43effd03597af2d5a4c96577ce2323c9964916a09c68b71958fb2e91",
+    "gfx/portraits/portraits/eep_portraits.txt": "15e64490ae386c85806630aa0aed35a45374af64944795aecb7480137e0d1d09",
+    "interface/eep.gfx": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92",
+    "localisation/braz_por/eep_l_braz_por.yml": "66711ed16c59303ca1ce7a9f8363a2db0f1ca2e055cffb16bbad4d4c38875a5b",
+    "localisation/english/eep_l_english.yml": "76c2cd008c818c67009167d97311dc3bb87372619117f5e01ae93cc1704e094e",
+    "localisation/french/eep_l_french.yml": "60ed9b2edc0763edaedefed9b605ff41bcf5208466c2c8011f6adeb5f1d88c64",
+    "localisation/german/eep_l_german.yml": "921885d3b241905111aa992889e54fd6edff4c9a3e68c7f64a29c554898c7020",
+    "localisation/japanese/eep_l_japanese.yml": "77ca1127f88bd27a54d9340bb8d373c7cdce7c6f533bd40c5e89858a1c46c515",
+    "localisation/korean/eep_l_korean.yml": "886f9e01e9f335cb4c7ee3ee57727032a31831ddfd015474d3e0031ecc7a7ae6",
+    "localisation/polish/eep_l_polish.yml": "6d6b18e7d44f13bc966297a579683d300e069ea44e2b5b80546bf74f7d19a787",
+    "localisation/russian/eep_l_russian.yml": "7fd679ee7d3123f6e30c62e5cc0a88528d8e64ee2ed041eeca80edd7d6c21db6",
+    "localisation/simp_chinese/eep_l_simp_chinese.yml": "b1add578c1f81db6e558485c1f8d96a7e780d1c4c932f2016a34f2a0e2c9fe66",
+    "localisation/spanish/eep_l_spanish.yml": "5a31c680e65f45e8fffb0b34b032c4a120c684017c882a0728339d4aceeb6450",
+    "thumbnail.png": "25c23dbb7aa5c6de0d5fb3051b52778aafbefe6ff9ba94b653b84bfcf1f7961c"
+  },
+  "candidate_descriptor": "version=\"0.4.0-rc.3\"\ntags={ \"Origins\" \"Events\" \"Gameplay\" }\nname=\"吞噬之心\"\nsupported_version=\"4.5.2\"\npicture=\"thumbnail.png\"\n",
+  "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+  "static_gate": {
+    "report": {
+      "path": "docs/evidence/1019-requirements/rc3-open-kaishek.json",
+      "sha256": "a5054bd863896d2cf842402c544ebde7f5a823d01f6a1589c5b0c0d5b709d96f"
+    },
+    "production_files": {
+      "common/component_sets/eep_planet_killer.txt": "1ca4ac77f4aaac3fe8235139ce58e980995b28d00790955fd84952b8821300a5",
+      "common/component_templates/eep_evolution_components.txt": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+      "common/component_templates/eep_planet_killer.txt": "1e7d1f65e38c7bcfe370315b301ffbe680dad7571646c1a1e54f35cb96200cd0",
+      "common/component_templates/eep_weapon_components.csv": "f00d024a4714fd283629a94a401a3956e5317aa7e0693f03aacd7ed902140428",
+      "common/decisions/eep_decisions.txt": "ce9e68d9b0d425704d6b278ac5c1c6a010955600d30269dc5656c2eb70eca2e3",
+      "common/decisions/zz_eep_native_decision.txt": "afb47a2cf28b88cfc80e8b46fc81860178aaf544b6f7bffba785cd8ab37fad9c",
+      "common/deposits/eep_deposits.txt": "85131e640143201ac5a20fc29419b8b95e0d2840d042de060602db33fa370965",
+      "common/global_ship_designs/eep_mothership.txt": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123",
+      "common/governments/civics/eep_origin.txt": "6230a99d5338eaaf4c8b05b4e947e52a6e8bd2b987c88fe995f72a3beb77e5de",
+      "common/graphical_culture/eep_mothership.txt": "46e0498a85b09cf9d842f0eccda5b06666508107c0a846be2291ed5167c0970d",
+      "common/on_actions/eep_on_actions.txt": "f37870ca1050ca976cbee80312a8862a698ca4596bae55a7b9e9fdfec897db8e",
+      "common/script_values/eep_evolution_values.txt": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09",
+      "common/script_values/eep_values.txt": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba",
+      "common/scripted_effects/eep_auto_effects.txt": "4cd1229cff5c07e7b0272cb8721e00e6f7d6d2b8e90bbffc9a912c11f60cfb10",
+      "common/scripted_effects/eep_cancel_effects.txt": "2739e609afb90d28fcd56c5db6c48668de655ac1315afb86907764098b77b36d",
+      "common/scripted_effects/eep_colossus_native.txt": "148e0ff5b70113893d0ea75b4e3070448990b36d087a5eff0e636a24ed4b888f",
+      "common/scripted_effects/eep_effects.txt": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6",
+      "common/scripted_effects/eep_migration_effects.txt": "7519ed6f2f3502da5c1a1c84261353d5be851e0345ac6d50761c19cab5219cfe",
+      "common/scripted_effects/eep_mothership_effects.txt": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5",
+      "common/scripted_effects/eep_native_consume.txt": "47ee1a78bd40c14f6893fd47177e1138f9f2003ad3ca5d550b0b0c20ca4bb12e",
+      "common/scripted_effects/eep_planet_killer_effects.txt": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9",
+      "common/scripted_effects/eep_settlement_effects.txt": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+      "common/scripted_effects/eep_startup_effects.txt": "e1ec38f25535507d284a620ac864a6cbf1340712087ad430596f2b907dfde0f3",
+      "common/scripted_loc/eep_loc.txt": "aece3efd0fa978438467ce16e4950fe9b8f7afc289be30af71d0e798408484af",
+      "common/scripted_triggers/eep_planet_killer.txt": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "common/scripted_triggers/eep_triggers.txt": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "common/section_templates/eep_mothership.txt": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493",
+      "common/section_templates/eep_mothership_legacy.txt": "967e22c4b80091dab66d5d38878c97398cd347b560dc7d5f17903aea7fcdf9b3",
+      "common/situations/eep_situation.txt": "f6f9b034949e1d24da7d598a4de9ca0a483fe99526b1ff7489eb3db1a6cbd29d",
+      "common/static_modifiers/eep_modifiers.txt": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+      "common/technology/eep_mothership.txt": "c3d62e08c47b7634634ddcca8a018e2dfda3961c89c18d7f4e80f29990c585b9",
+      "descriptor.mod": "fabeb38eee4db3afca179d2177614dc773a214a5b54baba86fbfaec0ca2442dc",
+      "events/eep_events.txt": "e4be49df425db8dd4c4919a788c38ef2d4075466a9da946e6dc35a6c47cf55a1",
+      "events/eep_planet_killer_events.txt": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e",
+      "gfx/event_pictures/eep_core.dds": "ccbf95e4f2058f563bbb20039b3c5bfbdafe56c3d3df5cbd7a7af73d53ed42a3",
+      "gfx/event_pictures/eep_devouring.dds": "1dfaa5fbd583075b7955aaacf23320b298553a0345d6e7e4028221bc01ee0c21",
+      "gfx/event_pictures/eep_fleet.dds": "89a59a46f265c29c039bbcb42946dc3d7e3db3d2885692e0f9cd9a84d96aca2b",
+      "gfx/event_pictures/eep_growth.dds": "2c7068ff0ef7f3250ddb789ef1f30104896706a6c4f7ef6f6cc00cdc5c065940",
+      "gfx/event_pictures/eep_psionic.dds": "068940d6e209d4e038c6aad6a4373fce8045d87ba43a30824267313e60344a50",
+      "gfx/interface/icons/modifiers/eep_capacity.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_add.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_mult.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/origins/eep_heart.dds": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88",
+      "gfx/interface/icons/origins/eep_origin.dds": "0b0efde9b1db8b9e528dd5f13095cd4d6ab40d6067775301ae8c1d7434a2d604",
+      "gfx/models/portraits/eep/eep_baiqi.dds": "fee48048257e630fe432f2e1cd9a8ea04c95a3213d9e5bb7bb5e6a0ac934d918",
+      "gfx/models/portraits/eep/eep_baiqi_full.dds": "31f854d06b16f1209f3d8257de89fb387f715a05ecbd12db21c099ce94db5235",
+      "gfx/models/ships/zz_eep/eep_mothership.asset": "f299b6fb43effd03597af2d5a4c96577ce2323c9964916a09c68b71958fb2e91",
+      "gfx/portraits/portraits/eep_portraits.txt": "15e64490ae386c85806630aa0aed35a45374af64944795aecb7480137e0d1d09",
+      "interface/eep.gfx": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92",
+      "localisation/braz_por/eep_l_braz_por.yml": "66711ed16c59303ca1ce7a9f8363a2db0f1ca2e055cffb16bbad4d4c38875a5b",
+      "localisation/english/eep_l_english.yml": "76c2cd008c818c67009167d97311dc3bb87372619117f5e01ae93cc1704e094e",
+      "localisation/french/eep_l_french.yml": "60ed9b2edc0763edaedefed9b605ff41bcf5208466c2c8011f6adeb5f1d88c64",
+      "localisation/german/eep_l_german.yml": "921885d3b241905111aa992889e54fd6edff4c9a3e68c7f64a29c554898c7020",
+      "localisation/japanese/eep_l_japanese.yml": "77ca1127f88bd27a54d9340bb8d373c7cdce7c6f533bd40c5e89858a1c46c515",
+      "localisation/korean/eep_l_korean.yml": "886f9e01e9f335cb4c7ee3ee57727032a31831ddfd015474d3e0031ecc7a7ae6",
+      "localisation/polish/eep_l_polish.yml": "6d6b18e7d44f13bc966297a579683d300e069ea44e2b5b80546bf74f7d19a787",
+      "localisation/russian/eep_l_russian.yml": "7fd679ee7d3123f6e30c62e5cc0a88528d8e64ee2ed041eeca80edd7d6c21db6",
+      "localisation/simp_chinese/eep_l_simp_chinese.yml": "b1add578c1f81db6e558485c1f8d96a7e780d1c4c932f2016a34f2a0e2c9fe66",
+      "localisation/spanish/eep_l_spanish.yml": "5a31c680e65f45e8fffb0b34b032c4a120c684017c882a0728339d4aceeb6450",
+      "thumbnail.png": "25c23dbb7aa5c6de0d5fb3051b52778aafbefe6ff9ba94b653b84bfcf1f7961c"
+    },
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116"
+  },
+  "runs": [
+    {
+      "path": "docs/evidence/1019-rc3-hardware/manifest.json",
+      "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+    }
+  ],
+  "cases": {
+    "hive_startup": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      },
+      "evidence": []
+    },
+    "machine_startup": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [
+        "20261019T092935Z"
+      ],
+      "checks": {
+        "auto_devour_off": true,
+        "correct_homeworld_type": true,
+        "first_month_generator_jobs": true,
+        "initial_energy_200": true,
+        "normal_upkeep": true,
+        "population_preserved": true,
+        "single_homeworld": true
+      },
+      "evidence": [
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-startup-report-v1.json",
+          "sha256": "b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm00.sav",
+          "sha256": "18cae5e75b189ee8739cdadd3fc63d5c2929fad7a1d892e5382d0750d36c33d9",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm00reload.sav",
+          "sha256": "5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm01.sav",
+          "sha256": "c2d8c0b912b3cead2cb57b442152c1fc588c7f8d9eff4b99e8b2c7c4f141de9b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fm-initial-debug.jpg",
+          "sha256": "0ea0fef54f5858bcdbabb30959c1bc9ebaff84aca40e97ec9b83f82516f18452",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm01-auto-date-1.jpg",
+          "sha256": "777aefb8e4f5d470fe34cbe1572e2330ac50153907fca436585dfe584ced50e5",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm00-save-click.action.json",
+          "sha256": "ba10f42c6cd02a7e7d98a61402b273095572ff08d9f10ac66ffd8fcc424d7335",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm01-auto-command.action.json",
+          "sha256": "10d98ee8e7b3a343fb7f2e632268bfe6a7ae5dd6935d4201f39c4315004cb937",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-economy-12months-report-v1.json",
+          "sha256": "7e6722da9e9f0b2d0ea0dd3e21ad1f7d98c2e998a3b2b027dada542a89008ed5",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        }
+      ],
+      "check_scopes": {
+        "population_preserved": {
+          "claim": {
+            "value": true,
+            "scope": "Same-preset old native core 4800=RC3 core 4800; excludes removed gift colony100. Not a separate pure-vanilla fixture or constant population through year."
+          },
+          "analysis": {
+            "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+            "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+            "kind": "analysis"
+          },
+          "source_claim_path": "claims.population_preserved"
+        },
+        "normal_upkeep": {
+          "claim": {
+            "value": true,
+            "scope": "Nonzero native normal costs each month; only existing Mother-fleet discounts retained at equal values; no newly global free upkeep."
+          },
+          "analysis": {
+            "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+            "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+            "kind": "analysis"
+          },
+          "source_claim_path": "claims.normal_upkeep"
+        }
+      }
+    },
+    "purifier_startup": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      },
+      "evidence": []
+    },
+    "hive_economy": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      },
+      "evidence": []
+    },
+    "machine_economy": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [
+        "20261019T092935Z"
+      ],
+      "checks": {
+        "all_net_energy_nonnegative": true,
+        "baseline_12_months": true,
+        "candidate_12_months": true,
+        "no_job_closure": true,
+        "no_resource_injection": true,
+        "no_ship_disband": true,
+        "no_trade_subsidy": true
+      },
+      "evidence": [
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm01.sav",
+          "sha256": "c2d8c0b912b3cead2cb57b442152c1fc588c7f8d9eff4b99e8b2c7c4f141de9b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm01.economy.json",
+          "sha256": "4d6ebafa171783f68e167ac584f01b37ce52427963af0df3834e5f4bc1cebab6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm02.sav",
+          "sha256": "03ed2bfd87fd9c65f7f06676df1601c96ce0c78f728096712b23ce2402ab1018",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm02.economy.json",
+          "sha256": "9a8ae466adbb95bab9f5af34f1550fd0e2ecc67631f65b6525926292c23c52f5",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm03.sav",
+          "sha256": "9c37a2800249c8f7b70513e5f5755253394c34d2261f5122ba3c3edaa0ecbaed",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm03.economy.json",
+          "sha256": "c224f1a1decd8154f03a62a40f1948a5fd7e08375fef49b1a0ab7715c55519d8",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm04.sav",
+          "sha256": "0895ac73c292635b8059d49ee8ecba52e5177bc77d5ce5bfe8e009bcda7b687a",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm04.economy.json",
+          "sha256": "cb69dead8bbfe48cfa8d64b6696a98d17113ffe819a736421ff1379cac8cf392",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm05.sav",
+          "sha256": "a10936d1fda54c113b9b90fdb1720d2d3207d442c9e8a54111bb5ee7db871932",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm05.economy.json",
+          "sha256": "7bfae352e0141760320225892f93cb06416d9ddf203336559b688a0249baaf14",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm06.sav",
+          "sha256": "7aef2399e9a5f30947c75a881516774f5e3af851644a4479a9105523b19dd699",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm06.economy.json",
+          "sha256": "08114ec8e8ac980d10eed4575d1ccfaeb0f4255084fdb4aa8b249635234beddc",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm07.sav",
+          "sha256": "8ab8204a230a8ef4a4394fdb9a64c8d64906281b88b25e37f0f0ccb24330de66",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm07.economy.json",
+          "sha256": "cf39bad7448c3d1dd8ad23cfd3b52e6df391120f4ab0bd025b0b0d552072c679",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm08.sav",
+          "sha256": "797d19cc84e8e1268015d259556f890c332d1fa85381e2cb58305c01d4f4935b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm08.economy.json",
+          "sha256": "7cb1f4663c3fb9114c0bf174a9f26fac02d484c52f881263676f12096a03b1a6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm09.sav",
+          "sha256": "7961e866718e9e0856b14830092902c7053f52bcb7f603f95d7b602f9fd98b9c",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm09.economy.json",
+          "sha256": "9c4a7591995f3ad77321446889b57816dc11060a7e681a29d3861c229dabb6b7",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm10.sav",
+          "sha256": "8f0fa2e080dc41b672aea602d98e38b00e807e8097547aa19ba492ffc3e88d17",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm10.economy.json",
+          "sha256": "814daf39360f1da240764c8814cc2855b2d2c69c9b8f9850efe126cc65f41729",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm11.sav",
+          "sha256": "0f4d450466d22e2b23490ab641ae2c9e49d0cd381aaa725fbf65a3e22813bf3d",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm11.economy.json",
+          "sha256": "5a3abcc3d0289a749d9f47fc941a7b9b748cb03c6cafd7f90044e654dfb66543",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm12.sav",
+          "sha256": "676d996da685c01a2cd8e006b8567ba48f33774bf46de0dda2a30477f35fdcc6",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm12.economy.json",
+          "sha256": "4336104c16288ae33e3ed7fdff0b3727f0046c631937765cee794120c270ed33",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-economy-12months-report-v1.json",
+          "sha256": "7e6722da9e9f0b2d0ea0dd3e21ad1f7d98c2e998a3b2b027dada542a89008ed5",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm00reload.sav",
+          "sha256": "5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmyearui.sav",
+          "sha256": "f9633c53cb2be74841f9ac3e6ecb426d2bce357b86ab1031d770bbd1717b19d7",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm01-auto-date-1.jpg",
+          "sha256": "777aefb8e4f5d470fe34cbe1572e2330ac50153907fca436585dfe584ced50e5",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm12-auto-date-1.jpg",
+          "sha256": "7f600d7625a5d47b43856de148545d2b62d5f8d68ecac94e56f2833ebacf4b9b",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmyearui-save-dialog.jpg",
+          "sha256": "4d7f5c3622ac0358a35d74c8a6a0ac538f73d6c476ed097c5b6864a4bbb03af1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm01-auto-command.action.json",
+          "sha256": "10d98ee8e7b3a343fb7f2e632268bfe6a7ae5dd6935d4201f39c4315004cb937",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm02-auto-command.action.json",
+          "sha256": "6cbab3d027a36737ecfd29ee3dc401413974b5853c1323d557625db0cd26eda0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm03-auto-command.action.json",
+          "sha256": "c632fae0c4f796cce7428a0679eb4d632041b35148a099bb89caecac8f1427aa",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm04-auto-command.action.json",
+          "sha256": "1a013a3b3552a0b07ebaf407d47001b145f436f483ef3dfe21c031a3108b57af",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm05-auto-command.action.json",
+          "sha256": "893846a115a49fb18d88d4af18682aa947ab84c35a74447829ccaf8433ec3763",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm06-auto-command.action.json",
+          "sha256": "68b3d14e5e8c939d5ba745478188d42bc453580a59d963a73b27e5aeff19ee25",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm07-auto-command.action.json",
+          "sha256": "35375040c15ddf60fd83e927c49731b7b8a52888244f2f10d2127ce484866f0d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm08-auto-command.action.json",
+          "sha256": "87110b564a9d442794219252fa52ddd9507ff0419123d5e110908c04a9146911",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm09-auto-command.action.json",
+          "sha256": "e9dc6540b8be6ad1a4751d806ddb1a2a1e9e4407395a2bb3666303c37f4fe7c1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm10-auto-command.action.json",
+          "sha256": "b15ade2cc7e6f8a7214b8e621fddd6b903aa2a316b3f8b0b8142b50c7b50e5a8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm11-auto-command.action.json",
+          "sha256": "bfe599c28afb6944a8f4f55a49981173479789fdd5a1100de42df15b647efeb4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmm12-auto-command.action.json",
+          "sha256": "22cb26f2d2868b8f557f625d68c81f232bfa77fbfe15474230bec4ddbc580345",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/fmyearui-save-click.action.json",
+          "sha256": "da2ea90243351328d53053d93355f9c9eca1a6bb7d8fec7f948d7803490b8f38",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-year-ui-comparison-report-v1.json",
+          "sha256": "395d308ef3584c6bea60f9cb4d6d3924d1188f02c217874a35c71b3dc8846b4c",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        }
+      ],
+      "check_scopes": {
+        "no_resource_injection": {
+          "claim": {
+            "value": true,
+            "scope": "Recorded clean-load/year-UI actions plus all-resource monthly native ledger closure; no unrecorded-input guarantee."
+          },
+          "analysis": {
+            "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+            "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+            "kind": "analysis"
+          },
+          "source_claim_path": "claims.no_resource_injection"
+        },
+        "no_trade_subsidy": {
+          "claim": {
+            "value": true,
+            "scope": "No recorded market/trade/gift/resource-subsidy operation; normal native logistics trade production remains included."
+          },
+          "analysis": {
+            "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+            "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+            "kind": "analysis"
+          },
+          "source_claim_path": "claims.no_trade_subsidy"
+        },
+        "no_job_closure": {
+          "claim": {
+            "value": true,
+            "scope": "No job-management action; all finite native jobs retain max limits and positive workforce at all 14 checkpoints."
+          },
+          "analysis": {
+            "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+            "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+            "kind": "analysis"
+          },
+          "source_claim_path": "claims.no_job_closure"
+        },
+        "no_ship_disband": {
+          "claim": {
+            "value": true,
+            "scope": "No recorded disband action; all initially owned ship IDs, fleet IDs and names retained at all 14 checkpoints."
+          },
+          "analysis": {
+            "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+            "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+            "kind": "analysis"
+          },
+          "source_claim_path": "claims.no_ship_disband"
+        }
+      }
+    },
+    "purifier_economy": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      },
+      "evidence": []
+    },
+    "lithoid_hive_first_month": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_energy_nonnegative": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      },
+      "evidence": []
+    },
+    "mothership_configuration": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [
+        "20261019T092935Z"
+      ],
+      "checks": {
+        "actual_jump": null,
+        "existing_advantages_preserved": null,
+        "five_relic_auxiliary_components_preserved": null,
+        "native_design_matches": null,
+        "no_empire_technology_grant": null,
+        "other_juggernauts_unchanged": null,
+        "power_nonnegative": null,
+        "reference_stats_observed": null,
+        "same_country_same_date_relic_reference": null,
+        "ten_mobile_shipyards": null,
+        "twenty_two_large_defense_slots": null,
+        "upkeep_observed": null
+      },
+      "evidence": []
+    },
+    "unlimited_growth": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "count_level_samples": null,
+        "daily_regeneration": null,
+        "destroyed_mother_not_respawned": null,
+        "four_stats_five_percent_per_level": null,
+        "invalid_or_cancelled_no_growth": null,
+        "jump_and_shipyards_preserved": null,
+        "repeated_sync_idempotent": null,
+        "report_level_count_remainder": null,
+        "same_day_reload_idempotent": null,
+        "single_scaled_modifier": null
+      },
+      "evidence": []
+    },
+    "colossus_enemy_fire": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "beneficiary_is_core_owner": null,
+        "enemy_colony_destroyed": null,
+        "native_charge_and_fire": null,
+        "no_army": null,
+        "owned_noncore_colony_fire": null,
+        "war_target": null
+      },
+      "evidence": []
+    },
+    "colossus_guards": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "all_core_worlds_rejected": null,
+        "artificial_rejected": null,
+        "colonizing_rejected": null,
+        "completion_revalidates_core_owner": null,
+        "completion_revalidates_target": null,
+        "devouring_rejected": null,
+        "ground_combat_rejected": null,
+        "neutral_friendly_rejected": null,
+        "settled_rejected": null,
+        "uncolonized_rejected": null
+      },
+      "evidence": []
+    },
+    "colossus_cancel_idempotence": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "cancel_no_reward": null,
+        "crisis_objective_once": null,
+        "queue_no_reward": null,
+        "reload_no_reward": null,
+        "repeat_event_no_reward": null
+      },
+      "evidence": []
+    },
+    "common_settlement": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "core_capacity_matches": null,
+        "enemy_population_not_returned": null,
+        "lithoid_native_branch": null,
+        "native_devour_loss_deducted": null,
+        "owned_main_species_return": null,
+        "population_matches": null,
+        "q_c_g_d_match": null,
+        "settlement_and_destruction_once": null
+      },
+      "evidence": []
+    },
+    "normal_dismantle_regression": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "normal_completion": null,
+        "normal_duration_preserved": null,
+        "normal_reload_idempotent": null,
+        "normal_seed_preserved": null
+      },
+      "evidence": []
+    },
+    "old_save_migration": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "civilian_queue_preserved": null,
+        "damage_preserved": null,
+        "extra_world_preserved": null,
+        "identity_preserved": null,
+        "layout_preserved": null,
+        "migration_once": null,
+        "name_preserved": null,
+        "native_design_migration": null,
+        "no_startup_reward": null,
+        "original_031_save": null,
+        "position_preserved": null,
+        "queue_preserved": null
+      },
+      "evidence": []
+    },
+    "candidate_reload": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "ledger_preserved": null,
+        "native_reload": null,
+        "native_restart": null,
+        "no_duplicate_reward": null
+      },
+      "evidence": []
+    },
+    "repeat_initialization": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [],
+      "checks": {
+        "no_extra_civilian_queue": null,
+        "no_extra_reward": null,
+        "no_extra_ship": null,
+        "no_extra_world": null
+      },
+      "evidence": []
+    },
+    "random_components": {
+      "status": "PENDING",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "run_ids": [
+        "20261019T092935Z"
+      ],
+      "checks": {
+        "component_owns_dynamic_bonus": null,
+        "cross_threshold_catchup": null,
+        "equipped_component_present_in_native_design": null,
+        "every_five_levels": null,
+        "growth_modifier_held_constant_during_component_probe": null,
+        "native_tier_zero_one_two_effect": null,
+        "no_external_reward_modifier": null,
+        "other_fleets_unchanged": null,
+        "positive_effect_observed": null,
+        "random_pool": null,
+        "real_component": null,
+        "reload_persistent": null,
+        "threshold_idempotent": null
+      },
+      "evidence": [
+        {
+          "path": "docs/evidence/1019-rc3-hardware/hw0.sav",
+          "sha256": "815aa75e10b3629b42750347f5f30c765e339d01d67637ccfe21cd5e1691a655",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-hardware/hw1.sav",
+          "sha256": "b342199c7212594db5eb63746835e9670cc41c737eb694e8e6e8773585c76983",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-hardware/hw2.sav",
+          "sha256": "50d4c00dc4dbbe9422401d138b750295f9dbc633b9c2b1a342cc75a23e3ea3ad",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-hardware/hw2reload.sav",
+          "sha256": "aef3706cd833d7799f67c654cc3ca3abc630d319086b9ea23fffbb00cb20d186",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-hardware/analysis/rc3-hardware-case-report-v2.json",
+          "sha256": "318604b2a58f6181a030a2c7daf2d563edb92b9e7f27d2ae051e786a17a7134a",
+          "kind": "analysis"
+        }
+      ]
+    }
+  },
+  "economy": {
+    "hive": {
+      "baseline_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": -38.90665,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm01.sav",
+            "sha256": "d4e1e42fe38f1090ec41753e5be2bce10ddad952712b6ee7157e1692b6fbcaf2",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": -38.90665,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm02.sav",
+            "sha256": "941d289dc9a3458edcba70d729137c1e4e56afdcc024aea45aad2d1d32e7be6f",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": -38.18715,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm03.sav",
+            "sha256": "fd152e3d7726aaaca59d8dfb6eb6f0fe662dc43b60626b70711e08a5cc5255de",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": -38.187239999999996,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm04.sav",
+            "sha256": "3b53fb5278d2cb64a9b84fd4e4e90ed9df667bd6dc9a0460f9110cd00de7bb1e",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": -38.187329999999996,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm05.sav",
+            "sha256": "d3bbec66c1005ded46107abf46b7ee9f721da2a19908ed31600b0230c133b319",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": -37.46819,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm06.sav",
+            "sha256": "2ff9d95260d8000d615fdd01eacfc32f910cd495f39a97d064c9ab7b7983969a",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": -37.46835,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm07.sav",
+            "sha256": "1f2a7841e039dcd0d38c50bf16d9c048b105738c936537d2d1f72245154a1ab9",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": -37.46852,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm08.sav",
+            "sha256": "07b3c93a37b4389b70959665dc08e542adf5ede4306e61bd8a2bc6c8bc70b491",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": -36.749719999999996,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm09.sav",
+            "sha256": "991392c30ffd128dd0b285bccdce1423a39eecfaf9451f32eb85f9354e2c7b1d",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": -36.750009999999996,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm10.sav",
+            "sha256": "f9bb47ebe8f3b685ac140a8188d426292371da39bb8951edd2b63020a8d41126",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": -36.773289999999996,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm11.sav",
+            "sha256": "adb7e684683c15a92d2bc353a61712da85c66678950ae20ffdf54a426672ed8b",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": -36.05486,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm12.sav",
+            "sha256": "4a4c8f50e8f078a1024bed442396fdf305221d086238597af02b7ea19b2bc046",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        }
+      ],
+      "candidate_months": []
+    },
+    "machine": {
+      "baseline_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": -161.26091,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm01.sav",
+            "sha256": "0b64c808029f87aaef87355efb85e84287cf04a1374844f377056240672b0626",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": -164.70218,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm02.sav",
+            "sha256": "c46df8e9a26f55994fed564169097e8604867b34222daf50acdcf2ceb1b9ea83",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": -159.50822999999997,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm03.sav",
+            "sha256": "b19676e7dfd4506f564e6cbb60c1d71fa3ffcabf32b0253f6f21c0f9a0424326",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": -159.60426999999999,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm04.sav",
+            "sha256": "0567222c9a2c7349b5cb5ea057fa5b7169c922de4e1b69a28f338edb4d44c533",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": -156.5097,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm05.sav",
+            "sha256": "2ff7d83356edba6cf09a28d706c17b8b73fbb9f9e5cbf8aa487b67e644b2434b",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": -156.54975,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm06.sav",
+            "sha256": "c7d0e0176836dad9cd3ad1aeaca9b78df98450b5dc213b1584481b205744035d",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": -156.64583,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm07.sav",
+            "sha256": "814865697c274d97a81beca87f79feeabe0bee1fcdd84b136c00d027b589282a",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": -156.25939,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm08.sav",
+            "sha256": "89f4c1b0eb1f7dd56e3e45951c04c00eb751ad434a854dacbe7e078b9ae91eca",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": -156.35550999999998,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm09.sav",
+            "sha256": "21a870d84edaf348bd2315c8fa67eb7a100b8aa61030f9dc8803494a21e638b8",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": -153.85960999999998,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm10.sav",
+            "sha256": "99b025007d125e09688422e455cd1e017aa2b057c97f8be3be50b334efca7239",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": -153.47334,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm11.sav",
+            "sha256": "b5a98361dc6bac30b06665468b52a252ed62a356174439d719e4632b93f491e2",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": -153.60543,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm12.sav",
+            "sha256": "d994618c3743a5e431f0d05b0ca41cfd8a8e8144f7f210e5d941d90b42d1a492",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        }
+      ],
+      "candidate_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": 2.6588999999999947,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm01.sav",
+            "sha256": "c2d8c0b912b3cead2cb57b442152c1fc588c7f8d9eff4b99e8b2c7c4f141de9b",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm01.economy.json",
+            "sha256": "4d6ebafa171783f68e167ac584f01b37ce52427963af0df3834e5f4bc1cebab6",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": 3.2020000000000044,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm02.sav",
+            "sha256": "03ed2bfd87fd9c65f7f06676df1601c96ce0c78f728096712b23ce2402ab1018",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm02.economy.json",
+            "sha256": "9a8ae466adbb95bab9f5af34f1550fd0e2ecc67631f65b6525926292c23c52f5",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": 3.7449900000000005,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm03.sav",
+            "sha256": "9c37a2800249c8f7b70513e5f5755253394c34d2261f5122ba3c3edaa0ecbaed",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm03.economy.json",
+            "sha256": "c224f1a1decd8154f03a62a40f1948a5fd7e08375fef49b1a0ab7715c55519d8",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": 4.287069999999999,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm04.sav",
+            "sha256": "0895ac73c292635b8059d49ee8ecba52e5177bc77d5ce5bfe8e009bcda7b687a",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm04.economy.json",
+            "sha256": "cb69dead8bbfe48cfa8d64b6696a98d17113ffe819a736421ff1379cac8cf392",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": 4.829829999999993,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm05.sav",
+            "sha256": "a10936d1fda54c113b9b90fdb1720d2d3207d442c9e8a54111bb5ee7db871932",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm05.economy.json",
+            "sha256": "7bfae352e0141760320225892f93cb06416d9ddf203336559b688a0249baaf14",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": 5.372469999999999,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm06.sav",
+            "sha256": "7aef2399e9a5f30947c75a881516774f5e3af851644a4479a9105523b19dd699",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm06.economy.json",
+            "sha256": "08114ec8e8ac980d10eed4575d1ccfaeb0f4255084fdb4aa8b249635234beddc",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": 5.914999999999998,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm07.sav",
+            "sha256": "8ab8204a230a8ef4a4394fdb9a64c8d64906281b88b25e37f0f0ccb24330de66",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm07.economy.json",
+            "sha256": "cf39bad7448c3d1dd8ad23cfd3b52e6df391120f4ab0bd025b0b0d552072c679",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": 6.457419999999998,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm08.sav",
+            "sha256": "797d19cc84e8e1268015d259556f890c332d1fa85381e2cb58305c01d4f4935b",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm08.economy.json",
+            "sha256": "7cb1f4663c3fb9114c0bf174a9f26fac02d484c52f881263676f12096a03b1a6",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": 6.998890000000002,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm09.sav",
+            "sha256": "7961e866718e9e0856b14830092902c7053f52bcb7f603f95d7b602f9fd98b9c",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm09.economy.json",
+            "sha256": "9c4a7591995f3ad77321446889b57816dc11060a7e681a29d3861c229dabb6b7",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": 7.541069999999997,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm10.sav",
+            "sha256": "8f0fa2e080dc41b672aea602d98e38b00e807e8097547aa19ba492ffc3e88d17",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm10.economy.json",
+            "sha256": "814daf39360f1da240764c8814cc2855b2d2c69c9b8f9850efe126cc65f41729",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": 8.083139999999993,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm11.sav",
+            "sha256": "0f4d450466d22e2b23490ab641ae2c9e49d0cd381aaa725fbf65a3e22813bf3d",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm11.economy.json",
+            "sha256": "5a3abcc3d0289a749d9f47fc941a7b9b748cb03c6cafd7f90044e654dfb66543",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": 8.517049999999998,
+          "evidence": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm12.sav",
+            "sha256": "676d996da685c01a2cd8e006b8567ba48f33774bf46de0dda2a30477f35fdcc6",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-rc3-machine-economy/fmm12.economy.json",
+            "sha256": "4336104c16288ae33e3ed7fdff0b3727f0046c631937765cee794120c270ed33",
+            "kind": "analysis"
+          }
+        }
+      ]
+    },
+    "purifier": {
+      "baseline_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": 32.64322,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm01.sav",
+            "sha256": "d59f6cba24fe4b392edf71fa98a73dc6674cf9214f69c98fa92113c2a99b8964",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": 31.483040000000017,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm02.sav",
+            "sha256": "20eb7b59edca1b9e4dbd20c09f18c668015c1dc04e26e0aeebcff2bd30cd84fc",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": 31.49537000000001,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm03.sav",
+            "sha256": "622e0cfce9183840d129570316aa4942faaf49b68e57654baf3aff034ff904d2",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": 31.44077,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm04.sav",
+            "sha256": "65e15c5242f2060013698fbe1ca6a33d2f81b639ca881f5dc92bdc60e6feb26f",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": 31.38781,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm05.sav",
+            "sha256": "5e1ebd1c9a1fef3b3421c1504bb0cfef318332ef48837a9e208a5424a3444900",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": 31.31747,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm06.sav",
+            "sha256": "97a0276c04202791a73c22d2c3662588f2259241a3c0340116592cd5f992edcc",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": 31.17895,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm07.sav",
+            "sha256": "ffc68212ae44e001a8ecc6bf0b38488817968c9ca2fc5ceaa5a8339e3af9baac",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": 31.261830000000003,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm08.sav",
+            "sha256": "dd931fc0942ca4b4e59b0c54d774da5b74cfc4f23efa1273402c8f0e4401153f",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": 31.20021,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm09.sav",
+            "sha256": "e349fb52f0c6503c6e2a0885931ddd3d5cf7fd756a41b745213cebe68c21edc8",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": 31.142020000000002,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm10.sav",
+            "sha256": "536ed6b40a4ad29233caf2731a9e49e4f9419ac9460016897382e3c4d8d9dbea",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": 31.089439999999996,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm11.sav",
+            "sha256": "8c58956e52761d2d3ec221aa73956cf4c7b4ef0d9083229df194a2b9bb118deb",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": 31.03125,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm12.sav",
+            "sha256": "09e76c524ea329c0ae6715ba3a5a976d7574b3837018477e1a5a1011df8383c3",
+            "kind": "native_save"
+          },
+          "observation": {
+            "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+            "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+            "kind": "analysis"
+          }
+        }
+      ],
+      "candidate_months": []
+    }
+  },
+  "growth_samples": [],
+  "component_rewards": {
+    "status": "PENDING",
+    "interval_levels": 5,
+    "reason": "Await actual native component tests and implementation decision.",
+    "evidence": []
+  },
+  "archives": [
+    {
+      "path": "docs/evidence/1019-requirements/rc3-gate.json",
+      "sha256": "1b4543555346a87a79b615023a4c5e9cfe3f942e397542c2a3094779d72ae402"
+    },
+    {
+      "path": "docs/evidence/1019-requirements/rc3-source-copy.json",
+      "sha256": "d1a2b49e2f31c7ebaf54e2a99a89ab594f570ec1c675e4d2af2db30247ba6fd4"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-hardware/archive-index-v1.json",
+      "sha256": "eded63efe29b20e1f99223fa1bf9bef9787ad94e7b09a2a33a7e761498d70722"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+      "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/manifest.json",
+      "sha256": "bf540076292d39f95a711aed0aeb2e145356d667241da80f9de2e811c8a19095"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-hardware/analysis/hardware-hw0-hw1-raw-basis-prediction-fail-v1.json",
+      "sha256": "e5b32f8cd125314e71135fc6c9c4c02fc891145e0ad826c265fe19829537d947",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/manifest.json",
+      "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v1.json",
+      "sha256": "9fdd9cf4893eb70ab138964c7d047fcf07c554c683223e556825100999a51104"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/archive-verification-v1.json",
+      "sha256": "65012eaa9eea67e91f5730f1457cb276822bfe07afba22c98863aa0869e3bfbc"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/source-copy-receipt-v1.json",
+      "sha256": "d6e693dc0e895c6af44123847a36c193ff50f0dd3edd00c1eb0b94fc3cd7bb10"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fm-monthly-autosave-receipt.json",
+      "sha256": "92219c470d8d289ab793a2f356744e2f989926bdba26f5c718a86c67b3d09521"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fm-first-autosave-recovery.json",
+      "sha256": "60cce72305a1e7d7d88120e058472ebeba0e5017efc433dc5ad975e1431f3461"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm00.audit.json",
+      "sha256": "87b722348e8dcfe07745584129d54689cd7487568a6ccc9250f0e16ed2de543d"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm00.native-save.json",
+      "sha256": "f454a1b968121aa5cc142b0f796a1124b7de42f276921ec0859cd7d8940afa2a"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm00reload.audit.json",
+      "sha256": "48575f88d4fc0ee79ad4e39f437b905822c8c79b00cdcf9ba70fabc1bfbe8752"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm00reload.native-save.json",
+      "sha256": "a76689c8205d205e12b2b81e4ca047436994466914409f37072d0f1db3f9e86c"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmyearui.audit.json",
+      "sha256": "06aebeadb8fb795b50b7a5c56367c37c2dba05b2ca24b3956f2cfbe80b7bdbcf"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmyearui.native-save.json",
+      "sha256": "e7939f830cfebdac766f66ea47701f63a714e17299fd9f0c4ed3ca3f5ac0bd64"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm01.audit.json",
+      "sha256": "19f2d58262f1af89206a6aaf0466cde036ee3a76b28cad98fe5267540cfed80c"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm02.audit.json",
+      "sha256": "ee4c10db10bd187e5ebc5894f5b892adc23e42dabde80e5d39a4c3ee014ffb96"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm03.audit.json",
+      "sha256": "7e646d53bf787b87b950ce19b1ef28d620f22cc8c7a7087902f11b5fb8ec2309"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm04.audit.json",
+      "sha256": "c2331fd4d9d61dec94dbce393c9eee76b9e0ab579f4eee992ca190a66a15325b"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm05.audit.json",
+      "sha256": "dc39a6db84e92a542415e4355c397b970295ae9329a4db59d3efe8af3e67b16b"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm06.audit.json",
+      "sha256": "90213a869ec6e3aca2de2d2ff360f1d70c6aead39858c24b6812cc21df448061"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm07.audit.json",
+      "sha256": "87ebb4f330fa00f90ed55c7e84e588e694386cae9cae89a3d228126bb6d6ff3c"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm08.audit.json",
+      "sha256": "a0af221e5f4e8c4c6514544a2d780aebf53c167c7997f9722a128e2bc9a93d3a"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm09.audit.json",
+      "sha256": "b5f070bc391822745cbcb87602eb12d766a733d81530ba05cff40967d391b172"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm10.audit.json",
+      "sha256": "53d7d32fd209e6a2af1330946f1a351e793a54c5ef2cc01e889c5e5dfbc615eb"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm11.audit.json",
+      "sha256": "55b9678c22d58bc2ebcf32afb9f4f5a7798524fc7885b2b1a2a754adbe13bc73"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/fmm12.audit.json",
+      "sha256": "5237ed14a2a38bb57530517bf197ac2c8087eb787fdedaf06bc8db3c55c81725"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v2.json",
+      "sha256": "350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f"
+    },
+    {
+      "path": "docs/evidence/1019-rc3-machine-economy/archive-verification-v2.json",
+      "sha256": "3ad46788ffce352ae4d2b8c41f29f728c073b00f731b587656707ac8d2647a5b"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/archive-index-v1.json",
+      "sha256": "f96198b616a731f37e563a9d29513f12c7f13e95dd750c4f9e9e02a25de3b891"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/analysis/rc3-pk1-objective-calibration-v1.json",
+      "sha256": "58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/analysis/rc3-pk1-objective-calibration-strict-comparison-v1.json",
+      "sha256": "4bfb0658b70d0431256bb4300921d9dd5e20fd4f722789098e5b23f9b67ba05c"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/manifest.json",
+      "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/pk1base.sav",
+      "sha256": "dccb1e17d6f76c915e3f0a916e627f068c559d381e7a6962becc21c77093b38a"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/pk1calafter.sav",
+      "sha256": "6d736fd34099cadc449121180fb372029d65dc3a344a1465c16b0c86ab70037f"
+    }
+  ],
+  "_scaffold": {
+    "schema": "eep-1019-index-scaffold-v1",
+    "acceptance_claims": false,
+    "warning": "PENDING inventory and planned evidence only; no native action or acceptance is inferred.",
+    "required_growth_samples": [
+      {
+        "C": 0,
+        "L": 0
+      },
+      {
+        "C": 9,
+        "L": 0
+      },
+      {
+        "C": 10,
+        "L": 1
+      },
+      {
+        "C": 19,
+        "L": 1
+      },
+      {
+        "C": 20,
+        "L": 2
+      },
+      {
+        "C": 200,
+        "L": 20
+      },
+      {
+        "C": 10000,
+        "L": 1000
+      }
+    ],
+    "required_evidence_kinds": [
+      "actions",
+      "analysis",
+      "log",
+      "native_save",
+      "screenshot"
+    ],
+    "required_months_per_budget": 12
+  },
+  "_progress": {
+    "schema": "eep-1019-runtime-progress-v1",
+    "checkpoint_commit": "2e020d13778dbb8b6d36a294f2753839cef3bfe4",
+    "source_gate": {
+      "path": "docs/evidence/1019-requirements/rc3-gate.json",
+      "sha256": "1b4543555346a87a79b615023a4c5e9cfe3f942e397542c2a3094779d72ae402"
+    },
+    "source_copy": {
+      "path": "docs/evidence/1019-requirements/rc3-source-copy.json",
+      "sha256": "d1a2b49e2f31c7ebaf54e2a99a89ab594f570ec1c675e4d2af2db30247ba6fd4"
+    },
+    "verified_prerequisites": {
+      "source_files_match_rc3_gate": true,
+      "registered_run_manifest_matches_candidate": true,
+      "whole_package_static_gate": "PASS_STATIC_PACKAGE_ONLY",
+      "baseline_months_per_branch": 12
+    },
+    "scoped_observations": [
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-hardware/analysis/rc3-hardware-case-report-v2.json",
+          "sha256": "318604b2a58f6181a030a2c7daf2d563edb92b9e7f27d2ae051e786a17a7134a",
+          "kind": "analysis"
+        },
+        "reported_status": "PASS_SCOPED",
+        "reported_scope": "controlled six-core shield hardware 0/1/2 refresh, ordinary controls and same-day reload only",
+        "reported_checks": 56,
+        "index_case_acceptance": "PENDING",
+        "boundary": "Controlled shield hardware only; no natural RNG, twelve-month economy or complete random-components case acceptance inferred."
+      },
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-startup-report-v1.json",
+          "sha256": "b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "new-game startup and first month only",
+        "true_checks": 23,
+        "native_case_acceptance": "PENDING"
+      },
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-economy-12months-report-v1.json",
+          "sha256": "7e6722da9e9f0b2d0ea0dd3e21ad1f7d98c2e998a3b2b027dada542a89008ed5",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "Machine 12 native monthly economic checkpoints and first-month recovery only; other civics/natural RNG/full reload excluded",
+        "true_checks": 14,
+        "native_case_acceptance": "PENDING"
+      },
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-year-ui-comparison-report-v1.json",
+          "sha256": "395d308ef3584c6bea60f9cb4d6d3924d1188f02c217874a35c71b3dc8846b4c",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "exact ten native economic fields only; not full gamestate equality",
+        "true_checks": 10,
+        "native_case_acceptance": "PENDING"
+      },
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "six explicit scoped claims only; case remains PENDING",
+        "true_claims": 6,
+        "claims": {
+          "no_resource_injection": {
+            "value": true,
+            "scope": "Recorded clean-load/year-UI actions plus all-resource monthly native ledger closure; no unrecorded-input guarantee."
+          },
+          "no_trade_subsidy": {
+            "value": true,
+            "scope": "No recorded market/trade/gift/resource-subsidy operation; normal native logistics trade production remains included."
+          },
+          "no_job_closure": {
+            "value": true,
+            "scope": "No job-management action; all finite native jobs retain max limits and positive workforce at all 14 checkpoints."
+          },
+          "no_ship_disband": {
+            "value": true,
+            "scope": "No recorded disband action; all initially owned ship IDs, fleet IDs and names retained at all 14 checkpoints."
+          },
+          "population_preserved": {
+            "value": true,
+            "scope": "Same-preset old native core 4800=RC3 core 4800; excludes removed gift colony100. Not a separate pure-vanilla fixture or constant population through year."
+          },
+          "normal_upkeep": {
+            "value": true,
+            "scope": "Nonzero native normal costs each month; only existing Mother-fleet discounts retained at equal values; no newly global free upkeep."
+          }
+        },
+        "native_case_acceptance": "PENDING"
+      },
+      {
+        "analysis": {
+          "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/analysis/rc3-pk1-objective-calibration-v1.json",
+          "sha256": "58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "Same-date native unit reward calibration for two individually completed objectives; EEP settlement state unchanged; no weapon firing certification",
+        "true_checks": 17,
+        "native_case_acceptance": "PENDING",
+        "native_firing_certified": false
+      }
+    ],
+    "failures_retained": [
+      {
+        "path": "docs/evidence/1019-rc3-hardware/analysis/hardware-hw0-hw1-raw-basis-prediction-fail-v1.json",
+        "sha256": "e5b32f8cd125314e71135fc6c9c4c02fc891145e0ad826c265fe19829537d947",
+        "kind": "analysis"
+      }
+    ],
+    "native_case_acceptance": "PENDING",
+    "history": [
+      {
+        "previous_index_sha256": "bdb014317a1c7d606e2b984b448e22a4cec7291c232f8c009ebfd095d89e93e4",
+        "operation": {
+          "command": "import-reviewed-machine-economy-v2",
+          "parent_index": {
+            "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v1.json",
+            "sha256": "bdb014317a1c7d606e2b984b448e22a4cec7291c232f8c009ebfd095d89e93e4"
+          },
+          "source_archive": {
+            "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v1.json",
+            "sha256": "9fdd9cf4893eb70ab138964c7d047fcf07c554c683223e556825100999a51104"
+          },
+          "run_id": "20261019T092935Z",
+          "candidate_months": [
+            "fmm01",
+            "fmm02",
+            "fmm03",
+            "fmm04",
+            "fmm05",
+            "fmm06",
+            "fmm07",
+            "fmm08",
+            "fmm09",
+            "fmm10",
+            "fmm11",
+            "fmm12"
+          ],
+          "explicit_check_mapping": {
+            "machine_startup": {
+              "single_homeworld": [
+                "one_initial_colony",
+                "one_colony",
+                "one_bound_core",
+                "no_extra_target",
+                "no_extra_world_flag"
+              ],
+              "correct_homeworld_type": [
+                "correct_homeworld"
+              ],
+              "first_month_generator_jobs": [
+                "power_jobs_staffed"
+              ],
+              "auto_devour_off": [
+                "automatic_devouring_off"
+              ],
+              "initial_energy_200": [
+                "no_startup_subsidy"
+              ]
+            },
+            "machine_economy": {
+              "baseline_12_months": [
+                "twelve_baseline_months"
+              ],
+              "candidate_12_months": [
+                "twelve_candidate_months",
+                "twelve_native_receipt_snapshots"
+              ],
+              "all_net_energy_nonnegative": [
+                "candidate_energy_nonnegative_all_months"
+              ]
+            }
+          },
+          "complete_run_freeze": false
+        }
+      },
+      {
+        "previous_index_sha256": "bd79e70d3ca2ad1f4149d1ae1d0fab1d273a6076ab86994726d4d29dad9d18c9",
+        "operation": {
+          "command": "import-reviewed-machine-operational-constraints-v3",
+          "parent_index": {
+            "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v2.json",
+            "sha256": "bd79e70d3ca2ad1f4149d1ae1d0fab1d273a6076ab86994726d4d29dad9d18c9"
+          },
+          "archive_index": {
+            "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v2.json",
+            "sha256": "350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f"
+          },
+          "analysis": {
+            "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+            "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+            "kind": "analysis"
+          },
+          "explicit_scoped_claims": {
+            "no_resource_injection": {
+              "value": true,
+              "scope": "Recorded clean-load/year-UI actions plus all-resource monthly native ledger closure; no unrecorded-input guarantee."
+            },
+            "no_trade_subsidy": {
+              "value": true,
+              "scope": "No recorded market/trade/gift/resource-subsidy operation; normal native logistics trade production remains included."
+            },
+            "no_job_closure": {
+              "value": true,
+              "scope": "No job-management action; all finite native jobs retain max limits and positive workforce at all 14 checkpoints."
+            },
+            "no_ship_disband": {
+              "value": true,
+              "scope": "No recorded disband action; all initially owned ship IDs, fleet IDs and names retained at all 14 checkpoints."
+            },
+            "population_preserved": {
+              "value": true,
+              "scope": "Same-preset old native core 4800=RC3 core 4800; excludes removed gift colony100. Not a separate pure-vanilla fixture or constant population through year."
+            },
+            "normal_upkeep": {
+              "value": true,
+              "scope": "Nonzero native normal costs each month; only existing Mother-fleet discounts retained at equal values; no newly global free upkeep."
+            }
+          },
+          "case_checks": {
+            "machine_startup": [
+              "population_preserved",
+              "normal_upkeep"
+            ],
+            "machine_economy": [
+              "no_resource_injection",
+              "no_trade_subsidy",
+              "no_job_closure",
+              "no_ship_disband"
+            ]
+          },
+          "complete_run_freeze": false
+        }
+      },
+      {
+        "previous_index_sha256": "c6dd8394f34d530934894c00630040705552d64d7dc2aac5aeb6efe3b679b365",
+        "operation": {
+          "command": "canonicalize-runs-and-archive-scoped-objective-calibration-v4",
+          "parent_index": {
+            "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v3.json",
+            "sha256": "c6dd8394f34d530934894c00630040705552d64d7dc2aac5aeb6efe3b679b365"
+          },
+          "canonical_manifest": {
+            "path": "docs/evidence/1019-rc3-hardware/manifest.json",
+            "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+          },
+          "calibration_archive_index": {
+            "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/archive-index-v1.json",
+            "sha256": "f96198b616a731f37e563a9d29513f12c7f13e95dd750c4f9e9e02a25de3b891"
+          },
+          "case_checks_modified": false,
+          "full_run_logs_frozen": false
+        }
+      }
+    ],
+    "check_observations": [
+      {
+        "case": "machine_startup",
+        "check": "single_homeworld",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-startup-report-v1.json",
+          "sha256": "b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_startup",
+        "check": "correct_homeworld_type",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-startup-report-v1.json",
+          "sha256": "b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_startup",
+        "check": "first_month_generator_jobs",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-startup-report-v1.json",
+          "sha256": "b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_startup",
+        "check": "auto_devour_off",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-startup-report-v1.json",
+          "sha256": "b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_startup",
+        "check": "initial_energy_200",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-startup-report-v1.json",
+          "sha256": "b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_economy",
+        "check": "baseline_12_months",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-economy-12months-report-v1.json",
+          "sha256": "7e6722da9e9f0b2d0ea0dd3e21ad1f7d98c2e998a3b2b027dada542a89008ed5",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_economy",
+        "check": "candidate_12_months",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-economy-12months-report-v1.json",
+          "sha256": "7e6722da9e9f0b2d0ea0dd3e21ad1f7d98c2e998a3b2b027dada542a89008ed5",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_economy",
+        "check": "all_net_energy_nonnegative",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/analysis/rc3-machine-economy-12months-report-v1.json",
+          "sha256": "7e6722da9e9f0b2d0ea0dd3e21ad1f7d98c2e998a3b2b027dada542a89008ed5",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "machine_startup",
+        "check": "population_preserved",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        },
+        "scope": "Same-preset old native core 4800=RC3 core 4800; excludes removed gift colony100. Not a separate pure-vanilla fixture or constant population through year.",
+        "source_claim_path": "claims.population_preserved",
+        "case_acceptance": "PENDING"
+      },
+      {
+        "case": "machine_startup",
+        "check": "normal_upkeep",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        },
+        "scope": "Nonzero native normal costs each month; only existing Mother-fleet discounts retained at equal values; no newly global free upkeep.",
+        "source_claim_path": "claims.normal_upkeep",
+        "case_acceptance": "PENDING"
+      },
+      {
+        "case": "machine_economy",
+        "check": "no_resource_injection",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        },
+        "scope": "Recorded clean-load/year-UI actions plus all-resource monthly native ledger closure; no unrecorded-input guarantee.",
+        "source_claim_path": "claims.no_resource_injection",
+        "case_acceptance": "PENDING"
+      },
+      {
+        "case": "machine_economy",
+        "check": "no_trade_subsidy",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        },
+        "scope": "No recorded market/trade/gift/resource-subsidy operation; normal native logistics trade production remains included.",
+        "source_claim_path": "claims.no_trade_subsidy",
+        "case_acceptance": "PENDING"
+      },
+      {
+        "case": "machine_economy",
+        "check": "no_job_closure",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        },
+        "scope": "No job-management action; all finite native jobs retain max limits and positive workforce at all 14 checkpoints.",
+        "source_claim_path": "claims.no_job_closure",
+        "case_acceptance": "PENDING"
+      },
+      {
+        "case": "machine_economy",
+        "check": "no_ship_disband",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+          "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+          "kind": "analysis"
+        },
+        "scope": "No recorded disband action; all initially owned ship IDs, fleet IDs and names retained at all 14 checkpoints.",
+        "source_claim_path": "claims.no_ship_disband",
+        "case_acceptance": "PENDING"
+      }
+    ],
+    "parent_index": {
+      "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v3.json",
+      "sha256": "c6dd8394f34d530934894c00630040705552d64d7dc2aac5aeb6efe3b679b365"
+    },
+    "progress_checkpoint_commit": "f6efa25c166358353707c0bed5d022887f960e98",
+    "machine_economy_v2": {
+      "archive_index": {
+        "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v1.json",
+        "sha256": "9fdd9cf4893eb70ab138964c7d047fcf07c554c683223e556825100999a51104"
+      },
+      "archive_verification": {
+        "path": "docs/evidence/1019-rc3-machine-economy/archive-verification-v1.json",
+        "sha256": "65012eaa9eea67e91f5730f1457cb276822bfe07afba22c98863aa0869e3bfbc"
+      },
+      "verified_payload_files": 344,
+      "verified_payload_bytes": 21084334,
+      "clean_native_anchor": {
+        "path": "docs/evidence/1019-rc3-machine-economy/fmm00reload.sav",
+        "sha256": "5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc",
+        "kind": "native_save"
+      },
+      "candidate_months": 12,
+      "baseline_months": 12,
+      "check_mapping": {
+        "machine_startup": {
+          "single_homeworld": [
+            "one_initial_colony",
+            "one_colony",
+            "one_bound_core",
+            "no_extra_target",
+            "no_extra_world_flag"
+          ],
+          "correct_homeworld_type": [
+            "correct_homeworld"
+          ],
+          "first_month_generator_jobs": [
+            "power_jobs_staffed"
+          ],
+          "auto_devour_off": [
+            "automatic_devouring_off"
+          ],
+          "initial_energy_200": [
+            "no_startup_subsidy"
+          ]
+        },
+        "machine_economy": {
+          "baseline_12_months": [
+            "twelve_baseline_months"
+          ],
+          "candidate_12_months": [
+            "twelve_candidate_months",
+            "twelve_native_receipt_snapshots"
+          ],
+          "all_net_energy_nonnegative": [
+            "candidate_energy_nonnegative_all_months"
+          ]
+        }
+      },
+      "full_run_logs_frozen": false,
+      "case_acceptance": "PENDING",
+      "unproven_checks": {
+        "machine_startup": [
+          "population_preserved",
+          "normal_upkeep"
+        ],
+        "machine_economy": [
+          "no_resource_injection",
+          "no_trade_subsidy",
+          "no_job_closure",
+          "no_ship_disband"
+        ]
+      },
+      "ui_comparison_scope": "exact ten native economic fields only; not full gamestate equality",
+      "no_contamination_scope": "eep_probe variables and C/L/R/six component tiers only; not all actions"
+    },
+    "machine_operational_constraints_v3": {
+      "analysis": {
+        "path": "docs/evidence/1019-rc3-machine-economy/supplement-v2/analysis/rc3-machine-operational-constraints-report-v1.json",
+        "sha256": "6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62",
+        "kind": "analysis"
+      },
+      "archive_index": {
+        "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v2.json",
+        "sha256": "350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f"
+      },
+      "archive_verification": {
+        "path": "docs/evidence/1019-rc3-machine-economy/archive-verification-v2.json",
+        "sha256": "3ad46788ffce352ae4d2b8c41f29f728c073b00f731b587656707ac8d2647a5b"
+      },
+      "claims": {
+        "no_resource_injection": {
+          "value": true,
+          "scope": "Recorded clean-load/year-UI actions plus all-resource monthly native ledger closure; no unrecorded-input guarantee."
+        },
+        "no_trade_subsidy": {
+          "value": true,
+          "scope": "No recorded market/trade/gift/resource-subsidy operation; normal native logistics trade production remains included."
+        },
+        "no_job_closure": {
+          "value": true,
+          "scope": "No job-management action; all finite native jobs retain max limits and positive workforce at all 14 checkpoints."
+        },
+        "no_ship_disband": {
+          "value": true,
+          "scope": "No recorded disband action; all initially owned ship IDs, fleet IDs and names retained at all 14 checkpoints."
+        },
+        "population_preserved": {
+          "value": true,
+          "scope": "Same-preset old native core 4800=RC3 core 4800; excludes removed gift colony100. Not a separate pure-vanilla fixture or constant population through year."
+        },
+        "normal_upkeep": {
+          "value": true,
+          "scope": "Nonzero native normal costs each month; only existing Mother-fleet discounts retained at equal values; no newly global free upkeep."
+        }
+      },
+      "limitations": [
+        "Input records and screenshots cover the executed harness path, not a continuous operating-system input monitor.",
+        "Monthly stock closure rules out unexplained net credit at sampled boundaries, not hypothetical equal offsetting unrecorded credit/debit.",
+        "No trade subsidy does not mean no native trade income; logistics_drone has native planet_traders trade production and upkeep.",
+        "Job fields prove no saved finite limit reduction; raw jobs retained without inventing an undocumented manual-suppression flag.",
+        "Stable monthly ship identities and recorded actions do not claim observation of every intervening simulation tick.",
+        "Same-preset old core is a provenance-verified Mod baseline, not a newly executed pure-vanilla control.",
+        "Hive and later PK branch excluded; whole release and unrelated strict comparisons remain pending/FAIL as previously recorded."
+      ],
+      "verified_payload_files": 358,
+      "verified_payload_bytes": 22662741,
+      "verified_prior_payloads_unchanged": 344,
+      "supersedes_unproven_check_list": "_progress.machine_economy_v2.unproven_checks",
+      "remaining_machine_checks": [],
+      "full_run_logs_frozen": false,
+      "case_acceptance": "PENDING"
+    },
+    "runs_canonicalization_v4": {
+      "previous_manifests": [
+        {
+          "path": "docs/evidence/1019-rc3-hardware/manifest.json",
+          "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+        },
+        {
+          "path": "docs/evidence/1019-rc3-machine-economy/manifest.json",
+          "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+        }
+      ],
+      "canonical_manifest": {
+        "path": "docs/evidence/1019-rc3-hardware/manifest.json",
+        "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+      },
+      "removed_manifest_disposition": "preserved in archives; same bytes and same native run ID",
+      "previous_entry_count": 2,
+      "unique_run_id_count": 1,
+      "new_entry_count": 1,
+      "final_validator_duplicate_run_id_predicate_satisfied": true
+    },
+    "calibrations": {
+      "pk1_objective_v1": {
+        "archive_index": {
+          "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/archive-index-v1.json",
+          "sha256": "f96198b616a731f37e563a9d29513f12c7f13e95dd750c4f9e9e02a25de3b891"
+        },
+        "analysis": {
+          "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/analysis/rc3-pk1-objective-calibration-v1.json",
+          "sha256": "58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a",
+          "kind": "analysis"
+        },
+        "strict_comparison": {
+          "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/analysis/rc3-pk1-objective-calibration-strict-comparison-v1.json",
+          "sha256": "4bfb0658b70d0431256bb4300921d9dd5e20fd4f722789098e5b23f9b67ba05c",
+          "kind": "analysis"
+        },
+        "status": "PASS_SCOPED",
+        "scope": "Same-date native unit reward calibration for two individually completed objectives; EEP settlement state unchanged; no weapon firing certification",
+        "date": "2200.01.02",
+        "checks_true": 17,
+        "worlds_unit_reward_points": 750,
+        "empires_unit_reward_points": 600,
+        "limitations": [
+          "This is a deliberately injected native calibration effect, not a planet kill or natural objective completion.",
+          "Objective progress is reward points, not a count; worlds and empires remain separate.",
+          "Calibration belongs to this galaxy/state. Destroying a country can change the empire-unit reward context; do not assume a duplicate reward equals exactly twice600.",
+          "Main branch must restore pk1base before actual firing so manual calibration does not contaminate settlement observations."
+        ],
+        "strict_comparison_status": "FAIL",
+        "native_firing_certified": false,
+        "case_checks_added": [],
+        "case_acceptance": "PENDING"
+      }
+    },
+    "v4_exclusions": [
+      "Hive first-month activity-run proofs await a stable project-local stage archive.",
+      "Active PK firing and complete activity logs are excluded until finished and frozen."
+    ]
+  }
+}

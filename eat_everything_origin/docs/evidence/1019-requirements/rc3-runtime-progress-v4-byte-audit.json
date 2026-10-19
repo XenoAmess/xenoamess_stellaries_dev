@@ -1,0 +1,153 @@
+{
+  "schema": "eep.1019.progress-v4-byte-audit.v1",
+  "status": "PASS_BYTE_AUDIT_SCOPED",
+  "runtime_acceptance": "PENDING",
+  "scope": "Byte identity, archived scope and actual manifest rejection predicate only; no new case acceptance",
+  "created_at_utc": "2026-10-19T10:58:10.187534+00:00",
+  "historical_indexes_unchanged": {
+    "v1": {
+      "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v1.json",
+      "sha256": "bdb014317a1c7d606e2b984b448e22a4cec7291c232f8c009ebfd095d89e93e4"
+    },
+    "v2": {
+      "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v2.json",
+      "sha256": "bd79e70d3ca2ad1f4149d1ae1d0fab1d273a6076ab86994726d4d29dad9d18c9"
+    },
+    "v3": {
+      "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v3.json",
+      "sha256": "c6dd8394f34d530934894c00630040705552d64d7dc2aac5aeb6efe3b679b365"
+    }
+  },
+  "progress_v4": {
+    "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v4.json",
+    "sha256": "6f62ec128741ae936387d980d801ea22e91ff125be90c6dd80f5b4c4855b1116"
+  },
+  "archive_checks": {
+    "machine": {
+      "index": {
+        "path": "docs/evidence/1019-rc3-machine-economy/archive-index-v2.json",
+        "sha256": "350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f"
+      },
+      "payloads_verified": 358,
+      "payload_bytes": 22662741,
+      "current_original_sources_matching": 358,
+      "complete_run_freeze": false,
+      "active_logs_copied": false
+    },
+    "pk_calibration": {
+      "index": {
+        "path": "docs/evidence/1019-analysis/pk1-objective-calibration-v1/archive-index-v1.json",
+        "sha256": "f96198b616a731f37e563a9d29513f12c7f13e95dd750c4f9e9e02a25de3b891"
+      },
+      "payloads_verified": 53,
+      "payload_bytes": 3206832,
+      "current_original_sources_matching": 53,
+      "complete_run_freeze": false,
+      "active_logs_copied": false
+    }
+  },
+  "hive_first_month": {
+    "report": {
+      "path": "docs/evidence/1019-analysis/rc3-hive-startup-report-v1.json",
+      "sha256": "1a525a12422911513abea8f024afaaf28d801149a8ec9ba0a17a50bd78fb142f"
+    },
+    "source_proofs": [
+      {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fhcm00.sav",
+        "save_sha256": "0297ff12409b944373caa07996eb8a5d34ff16ba6ffcc723c40a361276aefa7f",
+        "audit_sha256": "0f66a606954c9628d0a634592c3bca6eea9c803db779ee5501f59329537a39d1",
+        "gamestate_sha256": "ff8141caac1af0f46cf0fdaa3e87f74557aedc3e154ba5bfc0a13c621afd8950",
+        "receipt_sha256": [
+          "788246eeba807564253f634a113591e1203a14f34c06db11bf2e0463829df96d"
+        ],
+        "all_current_bytes_match": true
+      },
+      {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fhcm01.sav",
+        "save_sha256": "32225a7809d6c9c07252216429aa795da5a77977f1f498e3daa8c987f77edf9d",
+        "audit_sha256": "01c92b4196690af907efab0c8752bae89b6768de96a02b718af04ed2294022ef",
+        "gamestate_sha256": "9db32986c0f46219347935e03f1dfbeba053a3f6552491299435d7ed41598f0f",
+        "receipt_sha256": [
+          "b9533d85bc45267828b5d25385771d5934aba8422a80c7d51dfb172ff1eb6021"
+        ],
+        "all_current_bytes_match": true
+      },
+      {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fhcm01ui.sav",
+        "save_sha256": "e4ef976d8ac33626281f65b9c2f6a126f96957c069205ca17bd34e8fd7234b51",
+        "audit_sha256": "864ec1e7a2a790fc50cc5fd356120877840e12339ce209e8b236160f2dace360",
+        "gamestate_sha256": "e3157e3791ac80d322b44f89431c39f1c739bf14a1a6473745a861dae6a9c3d4",
+        "receipt_sha256": [
+          "65877e46198cacf7130437f3d1f8b631d668f610c1b4c56a677ff433bdba154f"
+        ],
+        "all_current_bytes_match": true
+      }
+    ],
+    "startup_checks_true": 23,
+    "same_date_ui_fields_equal": 10,
+    "stage_archive_available": false,
+    "imported_into_v4": false,
+    "scope": "Hive native startup and first month only; no full-year economy or other civic coverage"
+  },
+  "pk_calibration": {
+    "scope": "Same-date native unit reward calibration for two individually completed objectives; EEP settlement state unchanged; no weapon firing certification",
+    "checks_true": 17,
+    "worlds_unit_reward_points": 750,
+    "empires_unit_reward_points": 600,
+    "native_firing_certified": false,
+    "strict_comparison_status_preserved": "FAIL",
+    "strict_failed_checks": [
+      "no_gameplay_differences"
+    ],
+    "case_checks_added": []
+  },
+  "manifest_duplicate_guard": {
+    "implementation": {
+      "project_path": "tools/publish_1019.py",
+      "predicate_ast_sha256": "ef31d592e2fddef489e03eafb59ce9c6e81ef64128999eb36bf1de673dc80795",
+      "predicate_source": "run.get('schema') != 'xenoamess.stellaris.acceptance-run.v1' or run.get('profile_id') != PROFILE or run.get('enabled_mods') != ENABLED_MODS or (run.get('language') != 'l_simp_chinese') or (run.get('game_exe_sha256') != update.EXE_SHA) or (run.get('repository_mod_tree_sha256') != tree) or (run.get('copied_mod_tree_sha256') != tree) or (len(hashes) != len(source)) or (hashes != files) or (gate.get('status') != 'PASS') or (gate.get('version') != runtime['version']) or (gate.get('source_tree_sha256') != tree) or (gate.get('report_sha256') != static['report']['sha256']) or (not run.get('run_id')) or (run['run_id'] in run_ids)",
+      "fingerprint_scope": "Python AST for this exact guard; independent of Git CRLF normalization"
+    },
+    "evaluation": "Exact AST predicate evaluated against real metadata; no statuses changed or diagnostic acceptance objects written",
+    "v3_entries": [
+      {
+        "manifest": {
+          "path": "docs/evidence/1019-rc3-hardware/manifest.json",
+          "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+        },
+        "run_id": "20261019T092935Z",
+        "duplicate_run_id": false,
+        "actual_final_manifest_predicate_rejects": false
+      },
+      {
+        "manifest": {
+          "path": "docs/evidence/1019-rc3-machine-economy/manifest.json",
+          "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+        },
+        "run_id": "20261019T092935Z",
+        "duplicate_run_id": true,
+        "actual_final_manifest_predicate_rejects": true
+      }
+    ],
+    "v4_entries": [
+      {
+        "manifest": {
+          "path": "docs/evidence/1019-rc3-hardware/manifest.json",
+          "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+        },
+        "run_id": "20261019T092935Z",
+        "duplicate_run_id": false,
+        "actual_final_manifest_predicate_rejects": false
+      }
+    ]
+  },
+  "v4_reference_occurrences_verified": 246,
+  "v4_unique_files_verified": 133,
+  "cases_unchanged_from_v3": true,
+  "budgets_unchanged_from_v3": true,
+  "all_18_cases_pending": true,
+  "true_machine_checks": 14,
+  "expected_final_gate_rejection": "matching scoped Chinese single-production-mod acceptance required",
+  "final_result_exists": false,
+  "formal_publication_evidence_directory_exists": false
+}

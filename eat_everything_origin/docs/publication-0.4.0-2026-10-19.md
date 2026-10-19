@@ -129,6 +129,26 @@ python eat_everything_origin/tools/publish_1019.py scaffold-index --reference-pl
 
 更新器不能写 `final-result.json`，不能把顶层、case或组件状态改成PASS，不能写入生产目录，也不能改非PENDING索引。报告齐备后仍需人工审查真实适用范围，再另建正式索引并通过严格发布门禁。补充测试覆盖状态不晋升、无证据／未知key／旧run拒绝、预算来源哈希与负值保留、重复添加幂等、证据字节篡改拒绝和最终路径保护。
 
+### rc3 机器经济 PENDING v2 导入计划（实施前）
+
+保留已提交 `f6efa25c1` 的 `rc3-runtime-progress-v1.json` 原字节及 SHA `bdb014317a1c7d606e2b984b448e22a4cec7291c232f8c009ebfd095d89e93e4`，另建 `rc3-runtime-progress-v2.json`。待验收线程完成独立机器经济归档、给出稳定索引后，先核验索引列出的全部原字节与冻结 rc3 manifest／静态报告，再使用既有 `runtime_index_1019.py` 导入机器分支十二份月度原生 SAV 及其原始 `OBSERVATION_ONLY` 预算报告。原始开局、实际干净重载起点与年末 UI 存档分别留痕，不把硬件探针状态作为经济起点。
+
+单项 check 只映射归档报告明确证明的同义事实；报告仅有“非负”不能据此填写“恰为200”，单一人口读数也不能证明人口没有损失。未能证明的开局检查及禁止补贴／关岗位／解散舰船等操作约束保持 null，待补齐对应分析。年末十项原生经济字段一致只作为限定观察，不扩大为完整 gamestate 一致或完整重载通过。所有 case、组件交付与顶层继续 PENDING，成长样本保持原状。
+
+独立归档中的动作、截图、原生存档、audit、receipt 和分析可按实际类型引用；不把硬件早期日志挂为经济全程日志。活动 run 的完整日志仅在最终冻结后补入，当前明确保留缺项。输出记录 v1 父副本 SHA、稳定归档引用、逐项映射依据、预算日期／净值与完成／未完清单；递归核对所有新增引用并执行 helper 的只读 `missing`。本次只整理证据，不修改 Mod、版本、正式 changelog，不进行 UI、Steam、tag、提交或推送。
+
+机器独立归档稳定后已完成上述 v2：344份归档与原来源／21,084,334字节全部一致，归档28项范围与字节检查成立。实际导入12个连续月预算，记录开局5项及经济3项明确观察；`initial_energy_200` 使用精确200的原始开局及干净anchor双重检查，未由“非负”推断。其余6个机器单项仍为null，两组缺完整冻结log，18组和组件／顶层仍全PENDING。v1 SHA及已提交blob未变；v2 SHA `bd79e70d3ca2ad1f4149d1ae1d0fab1d273a6076ab86994726d4d29dad9d18c9`，208次引用／122唯一文件逐字节核验。既有最终运行时门禁按预期拒绝PENDING副本；详细映射、可重复命令及未完项见[机器经济v2填写记录](evidence/1019-requirements/rc3-runtime-progress-machine-v2.md)。没有改工具代码或生产Mod，没有补造日志或最终结论。
+
+### rc3 机器六项限定补证 PENDING v3 计划（实施前）
+
+保留 v1／v2 原字节，从 SHA `bd79e70d3ca2ad1f4149d1ae1d0fab1d273a6076ab86994726d4d29dad9d18c9` 的 v2 另建 `rc3-runtime-progress-v3.json`。稳定扩展归档 `1019-rc3-machine-economy/archive-index-v2.json` SHA `350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f` 包含原344份未变文件和14份补证；先核验358份原字节、父索引与9项归档检查，再由既有 helper 导入操作约束报告的六个明确 claims。逐项保留报告原始 scope 和全部 limitations，不能只保存一个 true。
+
+人口比较明确为同preset历史原生母星4800与rc3母星4800，旧赠品星100另列，不称纯原版对照或全年人口恒定。正常维护保留非零原生成本及原有Mother舰队优惠，不称完全无优惠。无交易补贴允许正常native logistics trade收入；操作约束只涵盖记录的执行路径和采样边界，不称连续系统输入监控。机器开局／经济单项虽可补全，两个case及其余case、组件、顶层仍PENDING，等待最终活动日志与共同审查。Hive尚无阶段归档，本轮不挂；危机奖励校准也不列为原生巨像发射证据。本轮不改生产／工具／版本或历史进度副本，不操作UI／Steam／Git提交。
+
+v3补证已完成，SHA `c6dd8394f34d530934894c00630040705552d64d7dc2aac5aeb6efe3b679b365`。358份payload／22,662,741字节与来源一致，旧344份未改；新索引231次引用／126唯一文件全部核对，六项scope及limitations原样携带。机器两组全部14项单项已记录true，仍缺最终冻结log与共同审查；18组、组件和顶层仍PENDING。其余16组、预算及候选源未改，v1／v2保持原SHA，最终门禁仍拒绝该PENDING副本。详细范围和复填步骤见[机器六项v3记录](evidence/1019-requirements/rc3-runtime-progress-machine-v3.md)。
+
+v4归档审查已完成：[设计及剩余硬门槛](evidence/1019-requirements/rc3-runtime-progress-v4-review.md)／[字节审核](evidence/1019-requirements/rc3-runtime-progress-v4-byte-audit.json)。发现v2／v3重复登记同一run_id的两份等字节manifest；仅在新v4保留canonical硬件manifest为唯一runs项，Machine副本留archives，历史副本不改。实际最终验收器的manifest AST条件已分别对v3／v4真实元数据求值，重复拒绝条件得到修正；最终PENDING门禁仍拒绝。v4 SHA `6f62ec128741ae936387d980d801ea22e91ff125be90c6dd80f5b4c4855b1116`，246次引用／133唯一文件均匹配。pk1的53份独立手工奖励校准仅入archives和限定观察，保留strict FAIL，不填巨像case。Hive首月23＋10及三份原生来源当前字节一致，但缺阶段归档，未挂v4。Machine358份及全部预算／检查／scope、18组PENDING不变；当前无正式final-result，也未进行发布操作。
+
 ## 验收标准
 
 - 离线单元测试覆盖完整合成输入以及缺组、失败状态、错误语言／EXE／生产树、证据篡改／路径逃逸、预算不足／负值、组件范围含糊、候选内容漂移、动态脚本与本地化数量、正式报告绑定及 WS-06 旧图拒绝。合成输入不得写入生产证据目录。
