@@ -1,0 +1,4414 @@
+{
+  "schema": "eep.1019.repeat-initialization-case-proposal.v1",
+  "status": "PASS_SCOPED",
+  "case_id": "repeat_initialization",
+  "scope": "Actual initialized Machine C0 same-day two full initialize/startup/mothership-sync rounds; complete country/resources/pop/jobs/layout/all ships/queues/flags/tiers and strict native comparison.",
+  "run_ids": [
+    "20261019T150008Z"
+  ],
+  "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "checks": {
+    "no_extra_world": true,
+    "no_extra_ship": true,
+    "no_extra_reward": true,
+    "no_extra_civilian_queue": true
+  },
+  "check_basis": {
+    "no_extra_world": {
+      "report_checks": [
+        "single_colony_before_after",
+        "same_owned_colony_ids",
+        "all_population_groups_jobs_layout_colonies_zones_unchanged",
+        "actual_bound_core_available_owned_and_marked"
+      ],
+      "all_report_checks_true": true,
+      "strict_difference_count": 0,
+      "whole_native_zip_byte_identical": true
+    },
+    "no_extra_ship": {
+      "report_checks": [
+        "one_actual_mother_before_after",
+        "same_mother_identity_name_position_design_damage",
+        "all_owned_ship_inventory_unchanged",
+        "all_fleet_ship_states_unchanged",
+        "all_starbase_states_unchanged"
+      ],
+      "all_report_checks_true": true,
+      "strict_difference_count": 0,
+      "whole_native_zip_byte_identical": true
+    },
+    "no_extra_reward": {
+      "report_checks": [
+        "entire_parsed_country_unchanged",
+        "entire_raw_country0_unchanged",
+        "all_stockpile_and_native_research_sources_unchanged",
+        "five_economic_ledgers_unchanged",
+        "all_country_variables_unchanged",
+        "all_country_flags_unchanged",
+        "all_ship_and_fleet_variables_tiers_unchanged",
+        "all_population_groups_jobs_layout_colonies_zones_unchanged",
+        "all_crisis_objectives_unchanged"
+      ],
+      "all_report_checks_true": true,
+      "strict_difference_count": 0,
+      "whole_native_zip_byte_identical": true
+    },
+    "no_extra_civilian_queue": {
+      "report_checks": [
+        "all_civilian_military_queues_unchanged",
+        "all_cost_payer_progress_design_orbitable_items_unchanged",
+        "complete_raw_construction_and_armies_unchanged"
+      ],
+      "all_report_checks_true": true,
+      "strict_difference_count": 0,
+      "whole_native_zip_byte_identical": true
+    }
+  },
+  "shared_execution_prerequisites": {
+    "actual_full_two_round_command": true,
+    "physical_enter_recorded": true,
+    "submitted_then_native_execution_response": true,
+    "fresh_gpu_ocr_image_bindings": true,
+    "same_response_pid": true,
+    "same_native_date": true,
+    "same_frozen_rc6_tree": true,
+    "actual_exe_sha256": true
+  },
+  "report": {
+    "path": "eat_everything_origin/docs/evidence/1019-analysis/rc6-r6mc-repeat-initialization-report-v1.json",
+    "sha256": "d2ad24b26236b28b2d4f472da0047a3455cc3ef0c7730a759628878f9fd2cc66",
+    "kind": "analysis"
+  },
+  "observations": {
+    "before": {
+      "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc6-r6mcyearui-repeat-initialization-observation-v1.json",
+      "sha256": "0a64ca00b760cb03780201902cce6941a8eced80c19529501ec109ef689aca52"
+    },
+    "after": {
+      "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc6-r6mcinit2-repeat-initialization-observation-v1.json",
+      "sha256": "36cf2219df4499f9e02395cb1f43312587aeb85a43bb350ae2bc81da8d76a4b7"
+    }
+  },
+  "native_roles": {
+    "before": {
+      "save": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.sav",
+        "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "kind": "native_save"
+      },
+      "native_ui_save_receipt": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.native-save.json",
+        "sha256": "9a6f69149f8020c4504ded84b50eae78e8d76777969773e321cc6133c5f49b88",
+        "kind": "actions"
+      },
+      "audit": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.audit.json",
+        "sha256": "a0481afb322feb88b9b096bdf382e6f1752105fe88016f17a9d2b5fee3c96527",
+        "kind": "analysis"
+      },
+      "date": "2201.01.01",
+      "native_receipt": {
+        "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\r6mcyearui.sav",
+        "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6mcyearui.sav",
+        "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.sav",
+        "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "date": "2201.01.01"
+      }
+    },
+    "after": {
+      "save": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.sav",
+        "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "kind": "native_save"
+      },
+      "native_ui_save_receipt": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.native-save.json",
+        "sha256": "bd0aeb8756280f291e75a736bf8aa656f0f192dd3221584f1fb6292352b52815",
+        "kind": "actions"
+      },
+      "audit": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.audit.json",
+        "sha256": "254ec91078f07205888cae9e3efa5e5c0d4071cd635565041bcd0719531bee49",
+        "kind": "analysis"
+      },
+      "date": "2201.01.01",
+      "native_receipt": {
+        "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\r6mcinit2.sav",
+        "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6mcinit2.sav",
+        "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.sav",
+        "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "date": "2201.01.01"
+      }
+    }
+  },
+  "actual_command_evidence": {
+    "command": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2-effect-command.action.json",
+      "sha256": "8890a54a9336e340744d86e0de78e573ca96603eac56ecced08f53990c9e8afd",
+      "raw": {
+        "action": "type_text",
+        "stage": "r6mcinit2-effect-command",
+        "text": "effect root={eep_initialize=yes eep_startup=yes eep_sync_mothership=yes eep_initialize=yes eep_startup=yes eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:07:31.707793+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      }
+    },
+    "physical_enter": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2-effect-command-enter.action.json",
+      "sha256": "e6fedb0ffcb65502921cceec420d164305f2d1c6eabe3ad9cd5508cc5dd33d42",
+      "raw": {
+        "action": "press_scan_code",
+        "stage": "r6mcinit2-effect-command-enter",
+        "scan_code": 28,
+        "repeat": 1,
+        "at_utc": "2026-10-19T16:07:31.791219+00:00"
+      }
+    },
+    "response_capture": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2-effect-before.ocr.json",
+        "sha256": "4af7e5ea6c9641fa738639b42fbdc13dcc402bcd98870d8281c0223c977ba7d4",
+        "metadata": {
+          "stage": "r6mcinit2-effect-before",
+          "captured_at_utc": "2026-10-19T16:07:41.580989+00:00",
+          "pid": 30812,
+          "window_title": "Stellaris",
+          "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2-effect-before.jpg",
+          "image_sha256": "e42c2d774f7ebd4ca3dbbb952c1ec9195475dcbe87c64b594c4aad1262a08e6e",
+          "capture": "fresh Steam F12 GPU backbuffer",
+          "resolution": [
+            1024,
+            768
+          ],
+          "client_origin": [
+            768,
+            336
+          ],
+          "client_rect": [
+            0,
+            0,
+            1024,
+            768
+          ]
+        },
+        "image_byte_sha256": "e42c2d774f7ebd4ca3dbbb952c1ec9195475dcbe87c64b594c4aad1262a08e6e",
+        "rows": [
+          {
+            "text": "267+8",
+            "score": 0.99989,
+            "box": [
+              [
+                49.0,
+                9.0
+              ],
+              [
+                88.0,
+                9.0
+              ],
+              [
+                88.0,
+                27.0
+              ],
+              [
+                49.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "737+44",
+            "score": 0.99968,
+            "box": [
+              [
+                98.0,
+                10.0
+              ],
+              [
+                142.0,
+                8.0
+              ],
+              [
+                143.0,
+                26.0
+              ],
+              [
+                99.0,
+                28.0
+              ]
+            ]
+          },
+          {
+            "text": "0+0",
+            "score": 0.99964,
+            "box": [
+              [
+                161.0,
+                11.0
+              ],
+              [
+                186.0,
+                11.0
+              ],
+              [
+                186.0,
+                26.0
+              ],
+              [
+                161.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "0+0",
+            "score": 0.99846,
+            "box": [
+              [
+                217.0,
+                11.0
+              ],
+              [
+                241.0,
+                11.0
+              ],
+              [
+                241.0,
+                26.0
+              ],
+              [
+                217.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "814+51",
+            "score": 0.99991,
+            "box": [
+              [
+                259.0,
+                10.0
+              ],
+              [
+                303.0,
+                10.0
+              ],
+              [
+                303.0,
+                27.0
+              ],
+              [
+                259.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "523+26",
+            "score": 0.99992,
+            "box": [
+              [
+                312.0,
+                9.0
+              ],
+              [
+                357.0,
+                9.0
+              ],
+              [
+                357.0,
+                27.0
+              ],
+              [
+                312.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "0+0",
+            "score": 0.99912,
+            "box": [
+              [
+                374.0,
+                10.0
+              ],
+              [
+                399.0,
+                10.0
+              ],
+              [
+                399.0,
+                26.0
+              ],
+              [
+                374.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "163+5",
+            "score": 0.99976,
+            "box": [
+              [
+                424.0,
+                9.0
+              ],
+              [
+                461.0,
+                9.0
+              ],
+              [
+                461.0,
+                27.0
+              ],
+              [
+                424.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "409+29",
+            "score": 0.99988,
+            "box": [
+              [
+                473.0,
+                9.0
+              ],
+              [
+                517.0,
+                9.0
+              ],
+              [
+                517.0,
+                27.0
+              ],
+              [
+                473.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "e",
+            "score": 0.80215,
+            "box": [
+              [
+                486.0,
+                1.0
+              ],
+              [
+                501.0,
+                1.0
+              ],
+              [
+                501.0,
+                14.0
+              ],
+              [
+                486.0,
+                14.0
+              ]
+            ]
+          },
+          {
+            "text": "+57",
+            "score": 0.99982,
+            "box": [
+              [
+                536.0,
+                10.0
+              ],
+              [
+                558.0,
+                10.0
+              ],
+              [
+                558.0,
+                26.0
+              ],
+              [
+                536.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "5",
+            "score": 0.77806,
+            "box": [
+              [
+                541.0,
+                2.0
+              ],
+              [
+                553.0,
+                2.0
+              ],
+              [
+                553.0,
+                15.0
+              ],
+              [
+                541.0,
+                15.0
+              ]
+            ]
+          },
+          {
+            "text": "5",
+            "score": 0.54905,
+            "box": [
+              [
+                591.0,
+                0.0
+              ],
+              [
+                615.0,
+                0.0
+              ],
+              [
+                615.0,
+                28.0
+              ],
+              [
+                591.0,
+                28.0
+              ]
+            ]
+          },
+          {
+            "text": "1/3",
+            "score": 0.99961,
+            "box": [
+              [
+                693.0,
+                9.0
+              ],
+              [
+                723.0,
+                9.0
+              ],
+              [
+                723.0,
+                28.0
+              ],
+              [
+                693.0,
+                28.0
+              ]
+            ]
+          },
+          {
+            "text": "115/66",
+            "score": 0.99968,
+            "box": [
+              [
+                745.0,
+                9.0
+              ],
+              [
+                791.0,
+                9.0
+              ],
+              [
+                791.0,
+                27.0
+              ],
+              [
+                745.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "2201.01.01",
+            "score": 0.99761,
+            "box": [
+              [
+                915.0,
+                0.0
+              ],
+              [
+                976.0,
+                0.0
+              ],
+              [
+                976.0,
+                17.0
+              ],
+              [
+                915.0,
+                17.0
+              ]
+            ]
+          },
+          {
+            "text": "暂停",
+            "score": 0.99846,
+            "box": [
+              [
+                932.0,
+                12.0
+              ],
+              [
+                957.0,
+                12.0
+              ],
+              [
+                957.0,
+                27.0
+              ],
+              [
+                932.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_entitled变量设置为0.00。",
+            "score": 0.97945,
+            "box": [
+              [
+                25.0,
+                73.0
+              ],
+              [
+                242.0,
+                73.0
+              ],
+              [
+                242.0,
+                90.0
+              ],
+              [
+                25.0,
+                90.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_snapshot_state变量设置为2.00。",
+            "score": 0.99714,
+            "box": [
+              [
+                25.0,
+                85.0
+              ],
+              [
+                281.0,
+                84.0
+              ],
+              [
+                281.0,
+                101.0
+              ],
+              [
+                25.0,
+                102.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_snapshot_state变量设置为1.00。",
+            "score": 0.9907,
+            "box": [
+              [
+                23.0,
+                97.0
+              ],
+              [
+                281.0,
+                96.0
+              ],
+              [
+                281.0,
+                113.0
+              ],
+              [
+                23.0,
+                114.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_work_budget变量设置为200.00。",
+            "score": 0.99537,
+            "box": [
+              [
+                37.0,
+                110.0
+              ],
+              [
+                296.0,
+                108.0
+              ],
+              [
+                296.0,
+                125.0
+              ],
+              [
+                37.0,
+                127.0
+              ]
+            ]
+          },
+          {
+            "text": "清除eep_component_work_budget变量。",
+            "score": 0.99743,
+            "box": [
+              [
+                36.0,
+                121.0
+              ],
+              [
+                243.0,
+                120.0
+              ],
+              [
+                243.0,
+                138.0
+              ],
+              [
+                36.0,
+                139.0
+              ]
+            ]
+          },
+          {
+            "text": "(EEP 03 铁心灭绝者):",
+            "score": 0.94983,
+            "box": [
+              [
+                39.0,
+                133.0
+              ],
+              [
+                143.0,
+                133.0
+              ],
+              [
+                143.0,
+                150.0
+              ],
+              [
+                39.0,
+                150.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_shield_level变量设置为0.00。",
+            "score": 0.99832,
+            "box": [
+              [
+                44.0,
+                145.0
+              ],
+              [
+                285.0,
+                144.0
+              ],
+              [
+                285.0,
+                161.0
+              ],
+              [
+                44.0,
+                162.0
+              ]
+            ]
+          },
+          {
+            "text": "血",
+            "score": 0.60506,
+            "box": [
+              [
+                835.0,
+                121.0
+              ],
+              [
+                854.0,
+                121.0
+              ],
+              [
+                854.0,
+                138.0
+              ],
+              [
+                835.0,
+                138.0
+              ]
+            ]
+          },
+          {
+            "text": "概览",
+            "score": 1.0,
+            "box": [
+              [
+                835.0,
+                141.0
+              ],
+              [
+                872.0,
+                141.0
+              ],
+              [
+                872.0,
+                165.0
+              ],
+              [
+                835.0,
+                165.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_armor_level变量设置为0.00。",
+            "score": 0.99667,
+            "box": [
+              [
+                44.0,
+                157.0
+              ],
+              [
+                284.0,
+                156.0
+              ],
+              [
+                284.0,
+                173.0
+              ],
+              [
+                44.0,
+                174.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_hull_level变量设置为0.00。",
+            "score": 0.99682,
+            "box": [
+              [
+                44.0,
+                169.0
+              ],
+              [
+                274.0,
+                168.0
+              ],
+              [
+                274.0,
+                185.0
+              ],
+              [
+                44.0,
+                186.0
+              ]
+            ]
+          },
+          {
+            "text": "星域",
+            "score": 0.99976,
+            "box": [
+              [
+                836.0,
+                168.0
+              ],
+              [
+                876.0,
+                168.0
+              ],
+              [
+                876.0,
+                194.0
+              ],
+              [
+                836.0,
+                194.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_damage_level变量设置为0.00。",
+            "score": 0.97258,
+            "box": [
+              [
+                44.0,
+                181.0
+              ],
+              [
+                294.0,
+                180.0
+              ],
+              [
+                294.0,
+                197.0
+              ],
+              [
+                44.0,
+                198.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_tracking_level变量设置为0.00。",
+            "score": 0.9855,
+            "box": [
+              [
+                44.0,
+                194.0
+              ],
+              [
+                294.0,
+                192.0
+              ],
+              [
+                294.0,
+                209.0
+              ],
+              [
+                44.0,
+                211.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_regen_level变量设置为0.00。",
+            "score": 0.98445,
+            "box": [
+              [
+                45.0,
+                205.0
+              ],
+              [
+                283.0,
+                205.0
+              ],
+              [
+                283.0,
+                222.0
+              ],
+              [
+                45.0,
+                222.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Core",
+            "score": 0.99994,
+            "box": [
+              [
+                852.0,
+                199.0
+              ],
+              [
+                927.0,
+                199.0
+              ],
+              [
+                927.0,
+                219.0
+              ],
+              [
+                852.0,
+                219.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_snapshot_state变量设置为0.00",
+            "score": 0.99162,
+            "box": [
+              [
+                42.0,
+                228.0
+              ],
+              [
+                303.0,
+                227.0
+              ],
+              [
+                303.0,
+                247.0
+              ],
+              [
+                42.0,
+                248.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_rewards变量设置为0.00。",
+            "score": 0.99041,
+            "box": [
+              [
+                43.0,
+                216.0
+              ],
+              [
+                266.0,
+                215.0
+              ],
+              [
+                266.0,
+                235.0
+              ],
+              [
+                43.0,
+                236.0
+              ]
+            ]
+          },
+          {
+            "text": "唯一的王座",
+            "score": 0.99991,
+            "box": [
+              [
+                336.0,
+                215.0
+              ],
+              [
+                417.0,
+                215.0
+              ],
+              [
+                417.0,
+                236.0
+              ],
+              [
+                336.0,
+                236.0
+              ]
+            ]
+          },
+          {
+            "text": "机械首都",
+            "score": 0.99994,
+            "box": [
+              [
+                860.0,
+                235.0
+              ],
+              [
+                908.0,
+                235.0
+              ],
+              [
+                908.0,
+                253.0
+              ],
+              [
+                860.0,
+                253.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Core",
+            "score": 0.9988,
+            "box": [
+              [
+                861.0,
+                221.0
+              ],
+              [
+                923.0,
+                223.0
+              ],
+              [
+                923.0,
+                241.0
+              ],
+              [
+                861.0,
+                239.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Th",
+            "score": 0.99945,
+            "box": [
+              [
+                959.0,
+                222.0
+              ],
+              [
+                1001.0,
+                222.0
+              ],
+              [
+                1001.0,
+                239.0
+              ],
+              [
+                959.0,
+                239.0
+              ]
+            ]
+          },
+          {
+            "text": "将eep_component_pending变量设置为0.00。",
+            "score": 0.99898,
+            "box": [
+              [
+                24.0,
+                253.0
+              ],
+              [
+                246.0,
+                253.0
+              ],
+              [
+                246.0,
+                270.0
+              ],
+              [
+                24.0,
+                270.0
+              ]
+            ]
+          },
+          {
+            "text": "从eep_component_pending变量中减去0.00。",
+            "score": 0.98358,
+            "box": [
+              [
+                25.0,
+                266.0
+              ],
+              [
+                247.0,
+                266.0
+              ],
+              [
+                247.0,
+                283.0
+              ],
+              [
+                25.0,
+                283.0
+              ]
+            ]
+          },
+          {
+            "text": "军用舰队",
+            "score": 0.99991,
+            "box": [
+              [
+                838.0,
+                258.0
+              ],
+              [
+                903.0,
+                258.0
+              ],
+              [
+                903.0,
+                279.0
+              ],
+              [
+                838.0,
+                279.0
+              ]
+            ]
+          },
+          {
+            "text": "a",
+            "score": 0.56354,
+            "box": [
+              [
+                1.0,
+                279.0
+              ],
+              [
+                15.0,
+                279.0
+              ],
+              [
+                15.0,
+                291.0
+              ],
+              [
+                1.0,
+                291.0
+              ]
+            ]
+          },
+          {
+            "text": "Executing effect script.",
+            "score": 0.97965,
+            "box": [
+              [
+                24.0,
+                289.0
+              ],
+              [
+                141.0,
+                289.0
+              ],
+              [
+                141.0,
+                306.0
+              ],
+              [
+                24.0,
+                306.0
+              ]
+            ]
+          },
+          {
+            "text": "15/50 (15)",
+            "score": 0.96915,
+            "box": [
+              [
+                855.0,
+                294.0
+              ],
+              [
+                917.0,
+                294.0
+              ],
+              [
+                917.0,
+                314.0
+              ],
+              [
+                855.0,
+                314.0
+              ]
+            ]
+          },
+          {
+            "text": "第1舰队",
+            "score": 0.99993,
+            "box": [
+              [
+                857.0,
+                282.0
+              ],
+              [
+                899.0,
+                282.0
+              ],
+              [
+                899.0,
+                300.0
+              ],
+              [
+                857.0,
+                300.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99988,
+            "box": [
+              [
+                944.0,
+                281.0
+              ],
+              [
+                1010.0,
+                283.0
+              ],
+              [
+                1010.0,
+                300.0
+              ],
+              [
+                944.0,
+                298.0
+              ]
+            ]
+          },
+          {
+            "text": "198",
+            "score": 0.99961,
+            "box": [
+              [
+                952.0,
+                295.0
+              ],
+              [
+                1008.0,
+                295.0
+              ],
+              [
+                1008.0,
+                313.0
+              ],
+              [
+                952.0,
+                313.0
+              ]
+            ]
+          },
+          {
+            "text": "白绮的裁决",
+            "score": 0.99697,
+            "box": [
+              [
+                857.0,
+                314.0
+              ],
+              [
+                915.0,
+                314.0
+              ],
+              [
+                915.0,
+                332.0
+              ],
+              [
+                857.0,
+                332.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99995,
+            "box": [
+              [
+                945.0,
+                314.0
+              ],
+              [
+                1010.0,
+                314.0
+              ],
+              [
+                1010.0,
+                331.0
+              ],
+              [
+                945.0,
+                331.0
+              ]
+            ]
+          },
+          {
+            "text": "Debug",
+            "score": 0.99928,
+            "box": [
+              [
+                41.0,
+                339.0
+              ],
+              [
+                90.0,
+                339.0
+              ],
+              [
+                90.0,
+                356.0
+              ],
+              [
+                41.0,
+                356.0
+              ]
+            ]
+          },
+          {
+            "text": "JL",
+            "score": 0.93876,
+            "box": [
+              [
+                44.0,
+                325.0
+              ],
+              [
+                64.0,
+                325.0
+              ],
+              [
+                64.0,
+                340.0
+              ],
+              [
+                44.0,
+                340.0
+              ]
+            ]
+          },
+          {
+            "text": "View",
+            "score": 0.99922,
+            "box": [
+              [
+                81.0,
+                339.0
+              ],
+              [
+                122.0,
+                339.0
+              ],
+              [
+                122.0,
+                356.0
+              ],
+              [
+                81.0,
+                356.0
+              ]
+            ]
+          },
+          {
+            "text": "×",
+            "score": 0.76253,
+            "box": [
+              [
+                533.0,
+                340.0
+              ],
+              [
+                546.0,
+                340.0
+              ],
+              [
+                546.0,
+                354.0
+              ],
+              [
+                533.0,
+                354.0
+              ]
+            ]
+          },
+          {
+            "text": "通用舰船",
+            "score": 0.99988,
+            "box": [
+              [
+                837.0,
+                348.0
+              ],
+              [
+                904.0,
+                348.0
+              ],
+              [
+                904.0,
+                369.0
+              ],
+              [
+                837.0,
+                369.0
+              ]
+            ]
+          },
+          {
+            "text": "2",
+            "score": 0.65662,
+            "box": [
+              [
+                840.0,
+                330.0
+              ],
+              [
+                854.0,
+                330.0
+              ],
+              [
+                854.0,
+                338.0
+              ],
+              [
+                840.0,
+                338.0
+              ]
+            ]
+          },
+          {
+            "text": "100",
+            "score": 0.99982,
+            "box": [
+              [
+                857.0,
+                327.0
+              ],
+              [
+                898.0,
+                327.0
+              ],
+              [
+                898.0,
+                344.0
+              ],
+              [
+                857.0,
+                344.0
+              ]
+            ]
+          },
+          {
+            "text": "165.....",
+            "score": 0.87176,
+            "box": [
+              [
+                971.0,
+                327.0
+              ],
+              [
+                1019.0,
+                327.0
+              ],
+              [
+                1019.0,
+                344.0
+              ],
+              [
+                971.0,
+                344.0
+              ]
+            ]
+          },
+          {
+            "text": "Debug Controls",
+            "score": 0.99976,
+            "box": [
+              [
+                29.0,
+                361.0
+              ],
+              [
+                135.0,
+                359.0
+              ],
+              [
+                135.0,
+                379.0
+              ],
+              [
+                29.0,
+                381.0
+              ]
+            ]
+          },
+          {
+            "text": "Debug Views",
+            "score": 0.99644,
+            "box": [
+              [
+                450.0,
+                361.0
+              ],
+              [
+                535.0,
+                361.0
+              ],
+              [
+                535.0,
+                381.0
+              ],
+              [
+                450.0,
+                381.0
+              ]
+            ]
+          },
+          {
+            "text": "Map",
+            "score": 0.99903,
+            "box": [
+              [
+                48.0,
+                420.0
+              ],
+              [
+                80.0,
+                423.0
+              ],
+              [
+                79.0,
+                441.0
+              ],
+              [
+                46.0,
+                438.0
+              ]
+            ]
+          },
+          {
+            "text": "Quick Access",
+            "score": 0.99928,
+            "box": [
+              [
+                52.0,
+                380.0
+              ],
+              [
+                142.0,
+                380.0
+              ],
+              [
+                142.0,
+                397.0
+              ],
+              [
+                52.0,
+                397.0
+              ]
+            ]
+          },
+          {
+            "text": "Resources",
+            "score": 0.99996,
+            "box": [
+              [
+                52.0,
+                401.0
+              ],
+              [
+                121.0,
+                401.0
+              ],
+              [
+                121.0,
+                418.0
+              ],
+              [
+                52.0,
+                418.0
+              ]
+            ]
+          },
+          {
+            "text": "Fleets",
+            "score": 0.99953,
+            "box": [
+              [
+                460.0,
+                411.0
+              ],
+              [
+                513.0,
+                411.0
+              ],
+              [
+                513.0,
+                432.0
+              ],
+              [
+                460.0,
+                432.0
+              ]
+            ]
+          },
+          {
+            "text": "Debug Stat:",
+            "score": 0.99736,
+            "box": [
+              [
+                461.0,
+                389.0
+              ],
+              [
+                543.0,
+                389.0
+              ],
+              [
+                543.0,
+                409.0
+              ],
+              [
+                461.0,
+                409.0
+              ]
+            ]
+          },
+          {
+            "text": "食物划定疆界。",
+            "score": 0.99998,
+            "box": [
+              [
+                547.0,
+                413.0
+              ],
+              [
+                627.0,
+                413.0
+              ],
+              [
+                627.0,
+                430.0
+              ],
+              [
+                547.0,
+                430.0
+              ]
+            ]
+          },
+          {
+            "text": "Co",
+            "score": 0.69293,
+            "box": [
+              [
+                836.0,
+                377.0
+              ],
+              [
+                855.0,
+                377.0
+              ],
+              [
+                855.0,
+                388.0
+              ],
+              [
+                836.0,
+                388.0
+              ]
+            ]
+          },
+          {
+            "text": "工程船",
+            "score": 0.99987,
+            "box": [
+              [
+                854.0,
+                384.0
+              ],
+              [
+                895.0,
+                384.0
+              ],
+              [
+                895.0,
+                402.0
+              ],
+              [
+                854.0,
+                402.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP印度",
+            "score": 0.9998,
+            "box": [
+              [
+                856.0,
+                373.0
+              ],
+              [
+                903.0,
+                373.0
+              ],
+              [
+                903.0,
+                390.0
+              ],
+              [
+                856.0,
+                390.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP斥候",
+            "score": 0.99469,
+            "box": [
+              [
+                856.0,
+                404.0
+              ],
+              [
+                903.0,
+                404.0
+              ],
+              [
+                903.0,
+                422.0
+              ],
+              [
+                856.0,
+                422.0
+              ]
+            ]
+          },
+          {
+            "text": "科研船",
+            "score": 0.99979,
+            "box": [
+              [
+                856.0,
+                416.0
+              ],
+              [
+                896.0,
+                416.0
+              ],
+              [
+                896.0,
+                433.0
+              ],
+              [
+                856.0,
+                433.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99996,
+            "box": [
+              [
+                946.0,
+                402.0
+              ],
+              [
+                1011.0,
+                404.0
+              ],
+              [
+                1011.0,
+                422.0
+              ],
+              [
+                946.0,
+                420.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99994,
+            "box": [
+              [
+                947.0,
+                373.0
+              ],
+              [
+                1011.0,
+                373.0
+              ],
+              [
+                1011.0,
+                390.0
+              ],
+              [
+                947.0,
+                390.0
+              ]
+            ]
+          },
+          {
+            "text": "Time",
+            "score": 0.99997,
+            "box": [
+              [
+                51.0,
+                442.0
+              ],
+              [
+                87.0,
+                442.0
+              ],
+              [
+                87.0,
+                460.0
+              ],
+              [
+                51.0,
+                460.0
+              ]
+            ]
+          },
+          {
+            "text": "Paragons",
+            "score": 0.99993,
+            "box": [
+              [
+                462.0,
+                437.0
+              ],
+              [
+                526.0,
+                437.0
+              ],
+              [
+                526.0,
+                454.0
+              ],
+              [
+                462.0,
+                454.0
+              ]
+            ]
+          },
+          {
+            "text": "船坞",
+            "score": 0.99954,
+            "box": [
+              [
+                837.0,
+                437.0
+              ],
+              [
+                875.0,
+                437.0
+              ],
+              [
+                875.0,
+                459.0
+              ],
+              [
+                837.0,
+                459.0
+              ]
+            ]
+          },
+          {
+            "text": "f",
+            "score": 0.81833,
+            "box": [
+              [
+                1.0,
+                461.0
+              ],
+              [
+                15.0,
+                461.0
+              ],
+              [
+                15.0,
+                475.0
+              ],
+              [
+                1.0,
+                475.0
+              ]
+            ]
+          },
+          {
+            "text": "Research",
+            "score": 0.99996,
+            "box": [
+              [
+                51.0,
+                462.0
+              ],
+              [
+                115.0,
+                462.0
+              ],
+              [
+                115.0,
+                482.0
+              ],
+              [
+                51.0,
+                482.0
+              ]
+            ]
+          },
+          {
+            "text": "Event Graph",
+            "score": 0.97551,
+            "box": [
+              [
+                460.0,
+                457.0
+              ],
+              [
+                543.0,
+                459.0
+              ],
+              [
+                543.0,
+                479.0
+              ],
+              [
+                460.0,
+                477.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne空间站 EEP-Th.",
+            "score": 0.98426,
+            "box": [
+              [
+                860.0,
+                462.0
+              ],
+              [
+                1009.0,
+                463.0
+              ],
+              [
+                1009.0,
+                480.0
+              ],
+              [
+                860.0,
+                479.0
+              ]
+            ]
+          },
+          {
+            "text": "Leaders",
+            "score": 0.99997,
+            "box": [
+              [
+                51.0,
+                484.0
+              ],
+              [
+                107.0,
+                484.0
+              ],
+              [
+                107.0,
+                501.0
+              ],
+              [
+                51.0,
+                501.0
+              ]
+            ]
+          },
+          {
+            "text": "Cosmic",
+            "score": 0.99973,
+            "box": [
+              [
+                463.0,
+                482.0
+              ],
+              [
+                512.0,
+                482.0
+              ],
+              [
+                512.0,
+                499.0
+              ],
+              [
+                463.0,
+                499.0
+              ]
+            ]
+          },
+          {
+            "text": "Stor",
+            "score": 0.99815,
+            "box": [
+              [
+                511.0,
+                483.0
+              ],
+              [
+                542.0,
+                483.0
+              ],
+              [
+                542.0,
+                498.0
+              ],
+              [
+                511.0,
+                498.0
+              ]
+            ]
+          },
+          {
+            "text": "而女王不会为其中任何",
+            "score": 0.99985,
+            "box": [
+              [
+                564.0,
+                473.0
+              ],
+              [
+                675.0,
+                473.0
+              ],
+              [
+                675.0,
+                490.0
+              ],
+              [
+                564.0,
+                490.0
+              ]
+            ]
+          },
+          {
+            "text": "船坞",
+            "score": 0.99972,
+            "box": [
+              [
+                860.0,
+                474.0
+              ],
+              [
+                889.0,
+                474.0
+              ],
+              [
+                889.0,
+                493.0
+              ],
+              [
+                860.0,
+                493.0
+              ]
+            ]
+          },
+          {
+            "text": "790",
+            "score": 0.99993,
+            "box": [
+              [
+                976.0,
+                476.0
+              ],
+              [
+                1010.0,
+                476.0
+              ],
+              [
+                1010.0,
+                491.0
+              ],
+              [
+                976.0,
+                491.0
+              ]
+            ]
+          },
+          {
+            "text": "Traits",
+            "score": 0.99996,
+            "box": [
+              [
+                463.0,
+                505.0
+              ],
+              [
+                512.0,
+                505.0
+              ],
+              [
+                512.0,
+                523.0
+              ],
+              [
+                463.0,
+                523.0
+              ]
+            ]
+          },
+          {
+            "text": "暂停",
+            "score": 0.99984,
+            "box": [
+              [
+                484.0,
+                697.0
+              ],
+              [
+                537.0,
+                697.0
+              ],
+              [
+                537.0,
+                727.0
+              ],
+              [
+                484.0,
+                727.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99994,
+            "box": [
+              [
+                460.0,
+                724.0
+              ],
+              [
+                561.0,
+                726.0
+              ],
+              [
+                561.0,
+                749.0
+              ],
+              [
+                460.0,
+                747.0
+              ]
+            ]
+          },
+          {
+            "text": "2",
+            "score": 0.99999,
+            "box": [
+              [
+                54.0,
+                747.0
+              ],
+              [
+                63.0,
+                747.0
+              ],
+              [
+                63.0,
+                758.0
+              ],
+              [
+                54.0,
+                758.0
+              ]
+            ]
+          },
+          {
+            "text": "灸",
+            "score": 0.78438,
+            "box": [
+              [
+                65.0,
+                745.0
+              ],
+              [
+                83.0,
+                745.0
+              ],
+              [
+                83.0,
+                765.0
+              ],
+              [
+                65.0,
+                765.0
+              ]
+            ]
+          },
+          {
+            "text": "3",
+            "score": 0.99998,
+            "box": [
+              [
+                101.0,
+                746.0
+              ],
+              [
+                114.0,
+                746.0
+              ],
+              [
+                114.0,
+                759.0
+              ],
+              [
+                101.0,
+                759.0
+              ]
+            ]
+          },
+          {
+            "text": "帝国母星",
+            "score": 0.99996,
+            "box": [
+              [
+                486.0,
+                743.0
+              ],
+              [
+                535.0,
+                743.0
+              ],
+              [
+                535.0,
+                761.0
+              ],
+              [
+                486.0,
+                761.0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2-effect-after.ocr.json",
+        "sha256": "115bedadb973fa2056c3a25b260af1500a6ef3c1fb8f2f93e89df46c26d08f37",
+        "metadata": {
+          "stage": "r6mcinit2-effect-after",
+          "captured_at_utc": "2026-10-19T16:07:48.736639+00:00",
+          "pid": 30812,
+          "window_title": "Stellaris",
+          "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2-effect-after.jpg",
+          "image_sha256": "651cdafa9c764f2f3461698f658a918f6fecd37bd634760ea91fb4d72cd47a3b",
+          "capture": "fresh Steam F12 GPU backbuffer",
+          "resolution": [
+            1024,
+            768
+          ],
+          "client_origin": [
+            768,
+            336
+          ],
+          "client_rect": [
+            0,
+            0,
+            1024,
+            768
+          ]
+        },
+        "image_byte_sha256": "651cdafa9c764f2f3461698f658a918f6fecd37bd634760ea91fb4d72cd47a3b",
+        "rows": [
+          {
+            "text": "267+8",
+            "score": 0.99986,
+            "box": [
+              [
+                48.0,
+                10.0
+              ],
+              [
+                87.0,
+                8.0
+              ],
+              [
+                88.0,
+                26.0
+              ],
+              [
+                49.0,
+                28.0
+              ]
+            ]
+          },
+          {
+            "text": "737+44",
+            "score": 0.99946,
+            "box": [
+              [
+                100.0,
+                11.0
+              ],
+              [
+                142.0,
+                11.0
+              ],
+              [
+                142.0,
+                25.0
+              ],
+              [
+                100.0,
+                25.0
+              ]
+            ]
+          },
+          {
+            "text": "0+0",
+            "score": 0.99965,
+            "box": [
+              [
+                161.0,
+                11.0
+              ],
+              [
+                186.0,
+                11.0
+              ],
+              [
+                186.0,
+                26.0
+              ],
+              [
+                161.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "0+0",
+            "score": 0.99857,
+            "box": [
+              [
+                217.0,
+                11.0
+              ],
+              [
+                241.0,
+                11.0
+              ],
+              [
+                241.0,
+                26.0
+              ],
+              [
+                217.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "814+51",
+            "score": 0.9999,
+            "box": [
+              [
+                260.0,
+                10.0
+              ],
+              [
+                303.0,
+                10.0
+              ],
+              [
+                303.0,
+                27.0
+              ],
+              [
+                260.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "523+26",
+            "score": 0.9999,
+            "box": [
+              [
+                312.0,
+                10.0
+              ],
+              [
+                357.0,
+                10.0
+              ],
+              [
+                357.0,
+                27.0
+              ],
+              [
+                312.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "0+0",
+            "score": 0.99911,
+            "box": [
+              [
+                374.0,
+                10.0
+              ],
+              [
+                399.0,
+                10.0
+              ],
+              [
+                399.0,
+                26.0
+              ],
+              [
+                374.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "163+5",
+            "score": 0.99979,
+            "box": [
+              [
+                425.0,
+                11.0
+              ],
+              [
+                460.0,
+                11.0
+              ],
+              [
+                460.0,
+                26.0
+              ],
+              [
+                425.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "2",
+            "score": 0.50982,
+            "box": [
+              [
+                434.0,
+                0.0
+              ],
+              [
+                449.0,
+                0.0
+              ],
+              [
+                449.0,
+                14.0
+              ],
+              [
+                434.0,
+                14.0
+              ]
+            ]
+          },
+          {
+            "text": "409+29",
+            "score": 0.99994,
+            "box": [
+              [
+                474.0,
+                10.0
+              ],
+              [
+                517.0,
+                10.0
+              ],
+              [
+                517.0,
+                27.0
+              ],
+              [
+                474.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "e",
+            "score": 0.80215,
+            "box": [
+              [
+                486.0,
+                1.0
+              ],
+              [
+                501.0,
+                1.0
+              ],
+              [
+                501.0,
+                14.0
+              ],
+              [
+                486.0,
+                14.0
+              ]
+            ]
+          },
+          {
+            "text": "+57",
+            "score": 0.99982,
+            "box": [
+              [
+                536.0,
+                10.0
+              ],
+              [
+                558.0,
+                10.0
+              ],
+              [
+                558.0,
+                26.0
+              ],
+              [
+                536.0,
+                26.0
+              ]
+            ]
+          },
+          {
+            "text": "5",
+            "score": 0.83372,
+            "box": [
+              [
+                541.0,
+                2.0
+              ],
+              [
+                554.0,
+                2.0
+              ],
+              [
+                554.0,
+                15.0
+              ],
+              [
+                541.0,
+                15.0
+              ]
+            ]
+          },
+          {
+            "text": "5",
+            "score": 0.54905,
+            "box": [
+              [
+                591.0,
+                0.0
+              ],
+              [
+                615.0,
+                0.0
+              ],
+              [
+                615.0,
+                28.0
+              ],
+              [
+                591.0,
+                28.0
+              ]
+            ]
+          },
+          {
+            "text": "1/3",
+            "score": 0.99961,
+            "box": [
+              [
+                693.0,
+                9.0
+              ],
+              [
+                723.0,
+                9.0
+              ],
+              [
+                723.0,
+                28.0
+              ],
+              [
+                693.0,
+                28.0
+              ]
+            ]
+          },
+          {
+            "text": "115/66",
+            "score": 0.99968,
+            "box": [
+              [
+                745.0,
+                9.0
+              ],
+              [
+                791.0,
+                9.0
+              ],
+              [
+                791.0,
+                27.0
+              ],
+              [
+                745.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "2201.01.01",
+            "score": 0.99997,
+            "box": [
+              [
+                915.0,
+                0.0
+              ],
+              [
+                976.0,
+                0.0
+              ],
+              [
+                976.0,
+                16.0
+              ],
+              [
+                915.0,
+                16.0
+              ]
+            ]
+          },
+          {
+            "text": "暂停",
+            "score": 0.99805,
+            "box": [
+              [
+                932.0,
+                12.0
+              ],
+              [
+                957.0,
+                12.0
+              ],
+              [
+                957.0,
+                27.0
+              ],
+              [
+                932.0,
+                27.0
+              ]
+            ]
+          },
+          {
+            "text": "血",
+            "score": 0.60399,
+            "box": [
+              [
+                835.0,
+                121.0
+              ],
+              [
+                854.0,
+                121.0
+              ],
+              [
+                854.0,
+                138.0
+              ],
+              [
+                835.0,
+                138.0
+              ]
+            ]
+          },
+          {
+            "text": "概览",
+            "score": 1.0,
+            "box": [
+              [
+                836.0,
+                141.0
+              ],
+              [
+                872.0,
+                141.0
+              ],
+              [
+                872.0,
+                165.0
+              ],
+              [
+                836.0,
+                165.0
+              ]
+            ]
+          },
+          {
+            "text": "星域",
+            "score": 0.99939,
+            "box": [
+              [
+                838.0,
+                170.0
+              ],
+              [
+                875.0,
+                170.0
+              ],
+              [
+                875.0,
+                193.0
+              ],
+              [
+                838.0,
+                193.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Core",
+            "score": 0.99994,
+            "box": [
+              [
+                852.0,
+                199.0
+              ],
+              [
+                927.0,
+                199.0
+              ],
+              [
+                927.0,
+                219.0
+              ],
+              [
+                852.0,
+                219.0
+              ]
+            ]
+          },
+          {
+            "text": "ONA-426",
+            "score": 0.9999,
+            "box": [
+              [
+                149.0,
+                222.0
+              ],
+              [
+                199.0,
+                222.0
+              ],
+              [
+                199.0,
+                239.0
+              ],
+              [
+                149.0,
+                239.0
+              ]
+            ]
+          },
+          {
+            "text": "唯一的王座",
+            "score": 0.99991,
+            "box": [
+              [
+                336.0,
+                215.0
+              ],
+              [
+                417.0,
+                215.0
+              ],
+              [
+                417.0,
+                236.0
+              ],
+              [
+                336.0,
+                236.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Core",
+            "score": 0.99853,
+            "box": [
+              [
+                862.0,
+                223.0
+              ],
+              [
+                923.0,
+                223.0
+              ],
+              [
+                923.0,
+                240.0
+              ],
+              [
+                862.0,
+                240.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Th",
+            "score": 0.99964,
+            "box": [
+              [
+                959.0,
+                222.0
+              ],
+              [
+                1000.0,
+                222.0
+              ],
+              [
+                1000.0,
+                239.0
+              ],
+              [
+                959.0,
+                239.0
+              ]
+            ]
+          },
+          {
+            "text": "198",
+            "score": 0.99998,
+            "box": [
+              [
+                72.0,
+                233.0
+              ],
+              [
+                104.0,
+                233.0
+              ],
+              [
+                104.0,
+                247.0
+              ],
+              [
+                72.0,
+                247.0
+              ]
+            ]
+          },
+          {
+            "text": "机械首都",
+            "score": 0.99994,
+            "box": [
+              [
+                860.0,
+                235.0
+              ],
+              [
+                908.0,
+                235.0
+              ],
+              [
+                908.0,
+                253.0
+              ],
+              [
+                860.0,
+                253.0
+              ]
+            ]
+          },
+          {
+            "text": "军用舰队",
+            "score": 0.99991,
+            "box": [
+              [
+                838.0,
+                258.0
+              ],
+              [
+                903.0,
+                258.0
+              ],
+              [
+                903.0,
+                279.0
+              ],
+              [
+                838.0,
+                279.0
+              ]
+            ]
+          },
+          {
+            "text": "790",
+            "score": 0.99997,
+            "box": [
+              [
+                71.0,
+                269.0
+              ],
+              [
+                104.0,
+                269.0
+              ],
+              [
+                104.0,
+                283.0
+              ],
+              [
+                71.0,
+                283.0
+              ]
+            ]
+          },
+          {
+            "text": "第1舰队",
+            "score": 0.99993,
+            "box": [
+              [
+                857.0,
+                282.0
+              ],
+              [
+                899.0,
+                282.0
+              ],
+              [
+                899.0,
+                300.0
+              ],
+              [
+                857.0,
+                300.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99988,
+            "box": [
+              [
+                944.0,
+                281.0
+              ],
+              [
+                1010.0,
+                283.0
+              ],
+              [
+                1010.0,
+                300.0
+              ],
+              [
+                944.0,
+                298.0
+              ]
+            ]
+          },
+          {
+            "text": "15/50 (15)",
+            "score": 0.98457,
+            "box": [
+              [
+                857.0,
+                296.0
+              ],
+              [
+                917.0,
+                296.0
+              ],
+              [
+                917.0,
+                313.0
+              ],
+              [
+                857.0,
+                313.0
+              ]
+            ]
+          },
+          {
+            "text": "198",
+            "score": 0.99974,
+            "box": [
+              [
+                953.0,
+                295.0
+              ],
+              [
+                1008.0,
+                295.0
+              ],
+              [
+                1008.0,
+                312.0
+              ],
+              [
+                953.0,
+                312.0
+              ]
+            ]
+          },
+          {
+            "text": "A",
+            "score": 0.77796,
+            "box": [
+              [
+                2.0,
+                309.0
+              ],
+              [
+                16.0,
+                309.0
+              ],
+              [
+                16.0,
+                323.0
+              ],
+              [
+                2.0,
+                323.0
+              ]
+            ]
+          },
+          {
+            "text": "白绮的裁决",
+            "score": 0.99697,
+            "box": [
+              [
+                857.0,
+                314.0
+              ],
+              [
+                915.0,
+                314.0
+              ],
+              [
+                915.0,
+                332.0
+              ],
+              [
+                857.0,
+                332.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99995,
+            "box": [
+              [
+                945.0,
+                314.0
+              ],
+              [
+                1010.0,
+                314.0
+              ],
+              [
+                1010.0,
+                331.0
+              ],
+              [
+                945.0,
+                331.0
+              ]
+            ]
+          },
+          {
+            "text": "100",
+            "score": 0.99982,
+            "box": [
+              [
+                857.0,
+                327.0
+              ],
+              [
+                898.0,
+                327.0
+              ],
+              [
+                898.0,
+                344.0
+              ],
+              [
+                857.0,
+                344.0
+              ]
+            ]
+          },
+          {
+            "text": "165.....",
+            "score": 0.87396,
+            "box": [
+              [
+                971.0,
+                327.0
+              ],
+              [
+                1019.0,
+                327.0
+              ],
+              [
+                1019.0,
+                344.0
+              ],
+              [
+                971.0,
+                344.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99994,
+            "box": [
+              [
+                157.0,
+                347.0
+              ],
+              [
+                222.0,
+                347.0
+              ],
+              [
+                222.0,
+                364.0
+              ],
+              [
+                157.0,
+                364.0
+              ]
+            ]
+          },
+          {
+            "text": "通用舰船",
+            "score": 0.99988,
+            "box": [
+              [
+                837.0,
+                348.0
+              ],
+              [
+                904.0,
+                348.0
+              ],
+              [
+                904.0,
+                369.0
+              ],
+              [
+                837.0,
+                369.0
+              ]
+            ]
+          },
+          {
+            "text": "F型恒星",
+            "score": 0.99974,
+            "box": [
+              [
+                157.0,
+                362.0
+              ],
+              [
+                201.0,
+                362.0
+              ],
+              [
+                201.0,
+                380.0
+              ],
+              [
+                157.0,
+                380.0
+              ]
+            ]
+          },
+          {
+            "text": "白绮立于母星的黑曜石王庭，垂眼望着星图。",
+            "score": 0.99774,
+            "box": [
+              [
+                345.0,
+                383.0
+              ],
+              [
+                552.0,
+                383.0
+              ],
+              [
+                552.0,
+                400.0
+              ],
+              [
+                345.0,
+                400.0
+              ]
+            ]
+          },
+          {
+            "text": "Co",
+            "score": 0.65625,
+            "box": [
+              [
+                836.0,
+                377.0
+              ],
+              [
+                856.0,
+                377.0
+              ],
+              [
+                856.0,
+                388.0
+              ],
+              [
+                836.0,
+                388.0
+              ]
+            ]
+          },
+          {
+            "text": "工程船",
+            "score": 0.99994,
+            "box": [
+              [
+                854.0,
+                384.0
+              ],
+              [
+                895.0,
+                384.0
+              ],
+              [
+                895.0,
+                401.0
+              ],
+              [
+                854.0,
+                401.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP印度",
+            "score": 0.99978,
+            "box": [
+              [
+                856.0,
+                373.0
+              ],
+              [
+                902.0,
+                373.0
+              ],
+              [
+                902.0,
+                390.0
+              ],
+              [
+                856.0,
+                390.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99994,
+            "box": [
+              [
+                947.0,
+                373.0
+              ],
+              [
+                1011.0,
+                373.0
+              ],
+              [
+                1011.0,
+                390.0
+              ],
+              [
+                947.0,
+                390.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99992,
+            "box": [
+              [
+                137.0,
+                424.0
+              ],
+              [
+                203.0,
+                424.0
+              ],
+              [
+                203.0,
+                441.0
+              ],
+              [
+                137.0,
+                441.0
+              ]
+            ]
+          },
+          {
+            "text": "没有对异族的许诺，没有怜悯，更没有退路。",
+            "score": 0.99197,
+            "box": [
+              [
+                345.0,
+                443.0
+              ],
+              [
+                551.0,
+                443.0
+              ],
+              [
+                551.0,
+                460.0
+              ],
+              [
+                345.0,
+                460.0
+              ]
+            ]
+          },
+          {
+            "text": "“疆界？’她的声音毫无温度。",
+            "score": 0.94229,
+            "box": [
+              [
+                353.0,
+                413.0
+              ],
+              [
+                490.0,
+                413.0
+              ],
+              [
+                490.0,
+                430.0
+              ],
+              [
+                353.0,
+                430.0
+              ]
+            ]
+          },
+          {
+            "text": "我不需要为食物划定疆界。",
+            "score": 0.99973,
+            "box": [
+              [
+                499.0,
+                414.0
+              ],
+              [
+                627.0,
+                414.0
+              ],
+              [
+                627.0,
+                430.0
+              ],
+              [
+                499.0,
+                430.0
+              ]
+            ]
+          },
+          {
+            "text": "船坞",
+            "score": 0.99953,
+            "box": [
+              [
+                837.0,
+                437.0
+              ],
+              [
+                875.0,
+                437.0
+              ],
+              [
+                875.0,
+                459.0
+              ],
+              [
+                837.0,
+                459.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP斥候",
+            "score": 0.9947,
+            "box": [
+              [
+                856.0,
+                404.0
+              ],
+              [
+                903.0,
+                404.0
+              ],
+              [
+                903.0,
+                422.0
+              ],
+              [
+                856.0,
+                422.0
+              ]
+            ]
+          },
+          {
+            "text": "科研船",
+            "score": 0.99967,
+            "box": [
+              [
+                856.0,
+                416.0
+              ],
+              [
+                895.0,
+                416.0
+              ],
+              [
+                895.0,
+                433.0
+              ],
+              [
+                856.0,
+                433.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99997,
+            "box": [
+              [
+                948.0,
+                406.0
+              ],
+              [
+                1010.0,
+                406.0
+              ],
+              [
+                1010.0,
+                420.0
+              ],
+              [
+                948.0,
+                420.0
+              ]
+            ]
+          },
+          {
+            "text": "族群的一切必须供养这颗心脏。",
+            "score": 0.99811,
+            "box": [
+              [
+                345.0,
+                458.0
+              ],
+              [
+                489.0,
+                458.0
+              ],
+              [
+                489.0,
+                475.0
+              ],
+              [
+                345.0,
+                475.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne空间站 EEP-Th.",
+            "score": 0.98531,
+            "box": [
+              [
+                860.0,
+                462.0
+              ],
+              [
+                1009.0,
+                463.0
+              ],
+              [
+                1009.0,
+                480.0
+              ],
+              [
+                860.0,
+                479.0
+              ]
+            ]
+          },
+          {
+            "text": "被征服的世界将交出自己的生命、地壳与核心，而女王不会为其中任何",
+            "score": 0.99975,
+            "box": [
+              [
+                344.0,
+                474.0
+              ],
+              [
+                674.0,
+                474.0
+              ],
+              [
+                674.0,
+                490.0
+              ],
+              [
+                344.0,
+                490.0
+              ]
+            ]
+          },
+          {
+            "text": "船坞",
+            "score": 0.99912,
+            "box": [
+              [
+                861.0,
+                474.0
+              ],
+              [
+                889.0,
+                474.0
+              ],
+              [
+                889.0,
+                493.0
+              ],
+              [
+                861.0,
+                493.0
+              ]
+            ]
+          },
+          {
+            "text": "790",
+            "score": 0.99993,
+            "box": [
+              [
+                976.0,
+                476.0
+              ],
+              [
+                1010.0,
+                476.0
+              ],
+              [
+                1010.0,
+                491.0
+              ],
+              [
+                976.0,
+                491.0
+              ]
+            ]
+          },
+          {
+            "text": "一样感到惋惜。",
+            "score": 0.96663,
+            "box": [
+              [
+                352.0,
+                487.0
+              ],
+              [
+                418.0,
+                487.0
+              ],
+              [
+                418.0,
+                507.0
+              ],
+              [
+                352.0,
+                507.0
+              ]
+            ]
+          },
+          {
+            "text": "王座之外，皆可吞噬。",
+            "score": 0.9991,
+            "box": [
+              [
+                455.0,
+                527.0
+              ],
+              [
+                559.0,
+                527.0
+              ],
+              [
+                559.0,
+                547.0
+              ],
+              [
+                455.0,
+                547.0
+              ]
+            ]
+          },
+          {
+            "text": "暂停",
+            "score": 0.99986,
+            "box": [
+              [
+                484.0,
+                697.0
+              ],
+              [
+                537.0,
+                697.0
+              ],
+              [
+                537.0,
+                727.0
+              ],
+              [
+                484.0,
+                727.0
+              ]
+            ]
+          },
+          {
+            "text": "EEP-Throne",
+            "score": 0.99996,
+            "box": [
+              [
+                460.0,
+                725.0
+              ],
+              [
+                561.0,
+                727.0
+              ],
+              [
+                561.0,
+                748.0
+              ],
+              [
+                460.0,
+                746.0
+              ]
+            ]
+          },
+          {
+            "text": "O",
+            "score": 0.6328,
+            "box": [
+              [
+                946.0,
+                719.0
+              ],
+              [
+                960.0,
+                719.0
+              ],
+              [
+                960.0,
+                733.0
+              ],
+              [
+                946.0,
+                733.0
+              ]
+            ]
+          },
+          {
+            "text": "2",
+            "score": 0.99992,
+            "box": [
+              [
+                53.0,
+                745.0
+              ],
+              [
+                64.0,
+                745.0
+              ],
+              [
+                64.0,
+                760.0
+              ],
+              [
+                53.0,
+                760.0
+              ]
+            ]
+          },
+          {
+            "text": "灸",
+            "score": 0.71307,
+            "box": [
+              [
+                66.0,
+                744.0
+              ],
+              [
+                82.0,
+                744.0
+              ],
+              [
+                82.0,
+                766.0
+              ],
+              [
+                66.0,
+                766.0
+              ]
+            ]
+          },
+          {
+            "text": "3",
+            "score": 0.99998,
+            "box": [
+              [
+                101.0,
+                745.0
+              ],
+              [
+                112.0,
+                745.0
+              ],
+              [
+                112.0,
+                760.0
+              ],
+              [
+                101.0,
+                760.0
+              ]
+            ]
+          },
+          {
+            "text": "承",
+            "score": 0.62765,
+            "box": [
+              [
+                109.0,
+                744.0
+              ],
+              [
+                135.0,
+                744.0
+              ],
+              [
+                135.0,
+                766.0
+              ],
+              [
+                109.0,
+                766.0
+              ]
+            ]
+          },
+          {
+            "text": "帝国母星",
+            "score": 0.99996,
+            "box": [
+              [
+                486.0,
+                743.0
+              ],
+              [
+                535.0,
+                743.0
+              ],
+              [
+                535.0,
+                761.0
+              ],
+              [
+                486.0,
+                761.0
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "final_publish_payload_ready": false,
+  "remaining_integration": [
+    "Reference an actually created project-relative native evidence archive and verified source/input closure; no project-relative SAV path is invented here."
+  ],
+  "whole_native_zip_byte_identical": true,
+  "native_zip_sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+  "gamestate_sha256": "b0bc4531e932436e423071c3815455ba7d3d9c4845caccef3aa7dad1f3908a56",
+  "full_raw_country_and_army_and_construction_equal": true,
+  "unchanged_readings": {
+    "date": "2201.01.01",
+    "core_id": "4",
+    "core_actual_pop_sum": 4854,
+    "owned_colonies": [
+      0
+    ],
+    "stockpile": {
+      "energy": 267.27279,
+      "minerals": 737.76579,
+      "physics_research": 217.14301,
+      "society_research": 253.14301,
+      "engineering_research": 217.14301,
+      "influence": 163.6,
+      "unity": 409.2175,
+      "trade": 523.81014,
+      "alloys": 814.66294
+    },
+    "native_research_stockpile": {
+      "physics_research": 228.62247,
+      "society_research": 266.42247,
+      "engineering_research": 228.62247
+    },
+    "effective_stockpile": {
+      "energy": 267.27279,
+      "minerals": 737.76579,
+      "physics_research": 228.62247,
+      "society_research": 266.42247,
+      "engineering_research": 228.62247,
+      "influence": 163.6,
+      "unity": 409.2175,
+      "trade": 523.81014,
+      "alloys": 814.66294
+    },
+    "country_eep_variables": {
+      "eep_c": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_entitled": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_pending": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_snapshot_state": 0,
+      "eep_component_tracking_level": 0,
+      "eep_d": 2,
+      "eep_fleet_stage": 0,
+      "eep_g": 0,
+      "eep_last_capacity": 0,
+      "eep_last_manufactured": 0,
+      "eep_last_return": 0,
+      "eep_made": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10,
+      "eep_stage": 0,
+      "eep_worlds": 0
+    },
+    "country_all_variables": {
+      "astral_threads_scripted_rewards_mult": 1,
+      "conquest_subjects": 0,
+      "eep_c": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_entitled": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_pending": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_snapshot_state": 0,
+      "eep_component_tracking_level": 0,
+      "eep_d": 2,
+      "eep_fleet_stage": 0,
+      "eep_g": 0,
+      "eep_last_capacity": 0,
+      "eep_last_manufactured": 0,
+      "eep_last_return": 0,
+      "eep_made": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10,
+      "eep_stage": 0,
+      "eep_worlds": 0,
+      "focus_agendas_completed": 0,
+      "focus_built_armies": 0,
+      "focus_built_battleship": 0,
+      "focus_built_corvettes": 0,
+      "focus_built_destroyers": 0,
+      "focus_built_juggernaut": 0,
+      "focus_built_platforms": 0,
+      "focus_built_titans": 0,
+      "focus_conquered_worlds": 0,
+      "focus_terraformed_worlds": 0,
+      "level_5_commander": 0,
+      "level_5_official": 0,
+      "level_5_scientist": 0,
+      "paragon_chance_negative": 0,
+      "years_passed": 1
+    },
+    "country_flags": {
+      "eep_initialized": 62808000,
+      "eep_startup_granted": 62808000,
+      "eep_crisis_startup_granted": 62808000,
+      "eep_parallel_construction_granted": 62808000,
+      "eep_mothership_granted": 62808000,
+      "eep_component_snapshot_available": 62816640
+    },
+    "mother_fleet_variables": {
+      "eep_applied_level": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_tracking_level": 0
+    },
+    "mother_snapshot": {
+      "fleet_id": "125",
+      "ship_id": "809",
+      "starbase_id": "15",
+      "ship_name": {
+        "key": "NAME_EEP_Baiqi_Mothership"
+      },
+      "fleet_name": "NAME_EEP_Baiqi_Mothership",
+      "ship_coordinate": {
+        "x": -80.9373,
+        "y": 17.0556,
+        "origin": 0
+      },
+      "ship_target_coordinate": {
+        "x": -80.9373,
+        "y": 17.0556,
+        "origin": 0
+      },
+      "movement_coordinate": {
+        "x": -80.9373,
+        "y": 17.0556,
+        "origin": 0
+      },
+      "movement_target_coordinate": {
+        "x": 0,
+        "y": 0,
+        "origin": 4294967295
+      },
+      "orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+      "design_name": "NAME_EEP_Baiqi_Mothership_1019",
+      "design_id": "1527",
+      "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+      "design_shape": [
+        {
+          "ship_size": "juggernaut",
+          "sections": [
+            {
+              "template": "eep_mothership_section_1019",
+              "slot": "core",
+              "components": [
+                {
+                  "slot": "AUX_UTILITY_1",
+                  "template": "SHIELD_BOOSTER"
+                },
+                {
+                  "slot": "AUX_UTILITY_10",
+                  "template": "EEP_ADAPTIVE_TRACKING_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_11",
+                  "template": "EEP_ADAPTIVE_REGEN_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_2",
+                  "template": "SHIELD_BOOSTER"
+                },
+                {
+                  "slot": "AUX_UTILITY_3",
+                  "template": "SHIELD_BOOSTER"
+                },
+                {
+                  "slot": "AUX_UTILITY_4",
+                  "template": "AUTO_REPAIR"
+                },
+                {
+                  "slot": "AUX_UTILITY_5",
+                  "template": "AUTO_REPAIR"
+                },
+                {
+                  "slot": "AUX_UTILITY_6",
+                  "template": "EEP_ADAPTIVE_SHIELD_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_7",
+                  "template": "EEP_ADAPTIVE_ARMOR_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_8",
+                  "template": "EEP_ADAPTIVE_HULL_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_9",
+                  "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+                },
+                {
+                  "slot": "EXTRA_LARGE_01",
+                  "template": "TITAN_LASER"
+                },
+                {
+                  "slot": "LARGE_GUN_01",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_02",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_03",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_04",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_05",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_06",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_07",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_UTILITY_1",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_10",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_11",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_12",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_13",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_14",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_15",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_16",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_17",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_18",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_19",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_2",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_20",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_21",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_22",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_3",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_4",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_5",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_6",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_7",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_8",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_9",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "PD_08",
+                  "template": "POINT_DEFENCE_3"
+                },
+                {
+                  "slot": "PD_09",
+                  "template": "POINT_DEFENCE_3"
+                },
+                {
+                  "slot": "PD_10",
+                  "template": "POINT_DEFENCE_3"
+                },
+                {
+                  "slot": "PLANET_KILLER_GUN_01",
+                  "template": "EEP_PLANET_KILLER_DEVOURER"
+                },
+                {
+                  "slot": "SMALL_GUN_01",
+                  "template": "SMALL_DISRUPTOR_3"
+                },
+                {
+                  "slot": "SMALL_GUN_02",
+                  "template": "SMALL_DISRUPTOR_3"
+                },
+                {
+                  "slot": "SMALL_GUN_03",
+                  "template": "SMALL_PLASMA_3"
+                },
+                {
+                  "slot": "SMALL_GUN_04",
+                  "template": "SMALL_PLASMA_3"
+                },
+                {
+                  "slot": "SMALL_GUN_05",
+                  "template": "SMALL_PLASMA_3"
+                }
+              ]
+            }
+          ],
+          "required_components": [
+            "COLOSSUS_SHIP_THRUSTER_5",
+            "COMBAT_COMPUTER_LINE_SAPIENT",
+            "JUGGERNAUT_DARK_MATTER_REACTOR",
+            "JUMP_DRIVE_1",
+            "SENSOR_4",
+            "SHIP_AURA_INSPIRING_PRESENCE"
+          ]
+        }
+      ],
+      "damage": {
+        "hull": {
+          "current_absolute": 93960,
+          "maximum": 93960,
+          "lost_absolute": 0,
+          "fraction": 1.0
+        },
+        "armor": {
+          "current_absolute": 44787.6,
+          "maximum": 44787.6,
+          "lost_absolute": 0.0,
+          "fraction": 1.0
+        },
+        "shield": {
+          "current_absolute": 167310,
+          "maximum": 167310,
+          "lost_absolute": 0,
+          "fraction": 1.0
+        }
+      },
+      "build_queue_id": "47",
+      "shipyard_queue_id": "48",
+      "all_owned_queues": {
+        "0": {
+          "owner": 0,
+          "simultaneous": 2,
+          "type": "planet",
+          "location": {
+            "type": 2,
+            "id": 4
+          },
+          "items": []
+        },
+        "2": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "starbase",
+          "location": {
+            "type": 0,
+            "id": 0
+          },
+          "items": []
+        },
+        "3": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "ships",
+          "location": {
+            "type": 0,
+            "id": 0
+          },
+          "items": []
+        },
+        "47": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "starbase",
+          "location": {
+            "type": 0,
+            "id": 809
+          },
+          "items": []
+        },
+        "48": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships",
+          "location": {
+            "type": 0,
+            "id": 809
+          },
+          "items": []
+        }
+      },
+      "all_owned_queue_items": {},
+      "world_layout": {
+        "4": {
+          "planet": {
+            "planet_class": "pc_machine",
+            "planet_size": 19,
+            "colony": 0,
+            "owner": 0
+          },
+          "districts": {
+            "1": {
+              "type": "district_nexus",
+              "level": 3,
+              "zones": [
+                0,
+                2,
+                3
+              ]
+            },
+            "24": {
+              "type": "district_nexus_2",
+              "level": 2,
+              "zones": [
+                22
+              ]
+            },
+            "25": {
+              "type": "district_nexus_1",
+              "level": 3,
+              "zones": [
+                21
+              ]
+            }
+          },
+          "buildings": []
+        }
+      },
+      "owned_ship_inventory": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "804",
+        "805",
+        "806",
+        "807",
+        "808",
+        "809"
+      ]
+    },
+    "owned_ship_ids": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "804",
+      "805",
+      "806",
+      "807",
+      "808",
+      "809"
+    ],
+    "fleet_ids": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "120",
+      "121",
+      "122",
+      "123",
+      "124",
+      "125"
+    ],
+    "queues": {
+      "0": {
+        "owner": 0,
+        "simultaneous": 2,
+        "type": "planet",
+        "location": {
+          "type": 2,
+          "id": 4
+        },
+        "items": [],
+        "raw": "\n\t\t\t\towner=0\n\t\t\t\tlocation=\n\t\t\t\t{\n\t\t\t\t\ttype=2\n\t\t\t\t\tid=4\n\t\t\t\t}\n\t\t\t\tsimultaneous=2\n\t\t\t\ttype=planet\n\t\t\t"
+      },
+      "2": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": [],
+        "raw": "\n\t\t\t\towner=0\n\t\t\t\tlocation=\n\t\t\t\t{\n\t\t\t\t\ttype=0\n\t\t\t\t\tid=0\n\t\t\t\t}\n\t\t\t\tsimultaneous=1\n\t\t\t\ttype=starbase\n\t\t\t"
+      },
+      "3": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": [],
+        "raw": "\n\t\t\t\towner=0\n\t\t\t\tlocation=\n\t\t\t\t{\n\t\t\t\t\ttype=0\n\t\t\t\t\tid=0\n\t\t\t\t}\n\t\t\t\tsimultaneous=1\n\t\t\t\ttype=ships\n\t\t\t"
+      },
+      "47": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 809
+        },
+        "items": [],
+        "raw": "\n\t\t\t\towner=0\n\t\t\t\tlocation=\n\t\t\t\t{\n\t\t\t\t\ttype=0\n\t\t\t\t\tid=809\n\t\t\t\t}\n\t\t\t\tsimultaneous=1\n\t\t\t\ttype=starbase\n\t\t\t"
+      },
+      "48": {
+        "owner": 0,
+        "simultaneous": 10,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 809
+        },
+        "items": [],
+        "raw": "\n\t\t\t\towner=0\n\t\t\t\tlocation=\n\t\t\t\t{\n\t\t\t\t\ttype=0\n\t\t\t\t\tid=809\n\t\t\t\t}\n\t\t\t\tsimultaneous=10\n\t\t\t\ttype=ships\n\t\t\t"
+      }
+    },
+    "construction_items": {}
+  },
+  "limitations": [
+    "This initialized C0 case does not certify high-level growth, absent-Mother respawn behavior, settlement deduplication, layout-only old-save migration or process restart.",
+    "The effect-before capture label is before console closure, but its actual UTC capture occurs after command/Enter; execution evidence uses timestamps and actual text.",
+    "Native console effect descriptions include conditional possibilities; actual SAV variables, not description branches, are the observed persisted values.",
+    "The original pre-input government_raw KeyError occurred before command submission; preserve its original root evidence separately. No existing checker or policy changed."
+  ],
+  "created_at_utc": "2026-10-19T16:16:19.210198+00:00"
+}

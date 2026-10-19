@@ -1,0 +1,56 @@
+{
+  "schema": "eep.1019.repeat-initialization-intake.v1",
+  "status": "PENDING_ACTUAL_RECEIPTS",
+  "scope": "Actual Machine year UI -> two full production initialize/startup/sync rounds, same day; distinct from layout-only and Mother-death cases.",
+  "expected_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "expected_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "expected_roles": {
+    "before_prefix": "r6mcyearui",
+    "after_prefix": "r6mcinit2"
+  },
+  "actual_before_native_receipt": null,
+  "actual_after_native_receipt": null,
+  "actual_before_save": null,
+  "actual_after_save": null,
+  "actual_run_id": null,
+  "actual_dates": null,
+  "actual_identity": null,
+  "actual_command_actions": [],
+  "actual_gpu_ocr": [],
+  "checks": null,
+  "raw_zip_byte_identical": null,
+  "gamestate_byte_identical": null,
+  "strict_comparison": null,
+  "final_case_proposal": {
+    "group": "repeat_initialization",
+    "status": "PENDING",
+    "checks": {
+      "no_extra_world": null,
+      "no_extra_ship": null,
+      "no_extra_reward": null,
+      "no_extra_civilian_queue": null
+    },
+    "evidence": [],
+    "run_ids": [],
+    "production_tree_sha256": null
+  },
+  "source_contracts": [
+    {
+      "path": "eat_everything_origin/docs/rc6-repeat-initialization-analysis-1019.md",
+      "sha256": "0935d1907da9f0d76c03ea566b3715c5291d20112f7ca9804af57b9249bc11ba"
+    },
+    {
+      "path": "eat_everything_origin/docs/rc6-repeat-initialization-execution-1019.md",
+      "sha256": "5995ee469bfe9bc88e33efd0ece81fbc8a3a43e7586b8dfb75ef66f7f7d8b1e6"
+    },
+    {
+      "path": "eat_everything_origin/tools/check_1019.py",
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+    },
+    {
+      "path": "eat_everything_origin/testing/inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92"
+    }
+  ],
+  "prepared_at_utc": "2026-10-19T16:07:35.738374+00:00"
+}

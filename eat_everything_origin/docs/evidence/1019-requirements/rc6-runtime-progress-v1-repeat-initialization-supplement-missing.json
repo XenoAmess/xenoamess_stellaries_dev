@@ -1,0 +1,321 @@
+{
+  "status": "PENDING",
+  "component_rewards": "PENDING",
+  "cases": {
+    "hive_startup": {
+      "missing_or_failed_checks": [],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "machine_startup": {
+      "missing_or_failed_checks": [],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "purifier_startup": {
+      "missing_or_failed_checks": [],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "hive_economy": {
+      "missing_or_failed_checks": [
+        "no_job_closure",
+        "no_resource_injection",
+        "no_ship_disband",
+        "no_trade_subsidy"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "machine_economy": {
+      "missing_or_failed_checks": [
+        "no_job_closure",
+        "no_resource_injection",
+        "no_ship_disband",
+        "no_trade_subsidy"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "purifier_economy": {
+      "missing_or_failed_checks": [
+        "no_job_closure",
+        "no_resource_injection",
+        "no_ship_disband",
+        "no_trade_subsidy"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "lithoid_hive_first_month": {
+      "missing_or_failed_checks": [
+        "auto_devour_off",
+        "correct_homeworld_type",
+        "first_month_energy_nonnegative",
+        "first_month_generator_jobs",
+        "initial_energy_200",
+        "normal_upkeep",
+        "population_preserved",
+        "single_homeworld"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "mothership_configuration": {
+      "missing_or_failed_checks": [
+        "actual_jump",
+        "existing_advantages_preserved",
+        "five_relic_auxiliary_components_preserved",
+        "native_design_matches",
+        "no_empire_technology_grant",
+        "other_juggernauts_unchanged",
+        "reference_stats_observed",
+        "same_country_same_date_relic_reference",
+        "ten_mobile_shipyards"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "unlimited_growth": {
+      "missing_or_failed_checks": [
+        "count_level_samples",
+        "daily_regeneration",
+        "destroyed_mother_not_respawned",
+        "four_stats_five_percent_per_level",
+        "invalid_or_cancelled_no_growth",
+        "jump_and_shipyards_preserved",
+        "repeated_sync_idempotent",
+        "report_level_count_remainder",
+        "same_day_reload_idempotent",
+        "single_scaled_modifier"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "colossus_enemy_fire": {
+      "missing_or_failed_checks": [
+        "beneficiary_is_core_owner",
+        "enemy_colony_destroyed",
+        "native_charge_and_fire",
+        "no_army",
+        "owned_noncore_colony_fire",
+        "war_target"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "colossus_guards": {
+      "missing_or_failed_checks": [
+        "all_core_worlds_rejected",
+        "artificial_rejected",
+        "colonizing_rejected",
+        "completion_revalidates_core_owner",
+        "completion_revalidates_target",
+        "devouring_rejected",
+        "ground_combat_rejected",
+        "neutral_friendly_rejected",
+        "settled_rejected",
+        "uncolonized_rejected"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "colossus_cancel_idempotence": {
+      "missing_or_failed_checks": [
+        "cancel_no_reward",
+        "crisis_objective_once",
+        "queue_no_reward",
+        "reload_no_reward",
+        "repeat_event_no_reward"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "common_settlement": {
+      "missing_or_failed_checks": [
+        "core_capacity_matches",
+        "enemy_population_not_returned",
+        "lithoid_native_branch",
+        "native_devour_loss_deducted",
+        "owned_main_species_return",
+        "population_matches",
+        "q_c_g_d_match",
+        "settlement_and_destruction_once"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "normal_dismantle_regression": {
+      "missing_or_failed_checks": [
+        "normal_completion",
+        "normal_duration_preserved",
+        "normal_reload_idempotent",
+        "normal_seed_preserved"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "old_save_migration": {
+      "missing_or_failed_checks": [
+        "civilian_queue_preserved",
+        "damage_preserved",
+        "extra_world_preserved",
+        "identity_preserved",
+        "layout_preserved",
+        "migration_once",
+        "name_preserved",
+        "native_design_migration",
+        "no_startup_reward",
+        "original_031_save",
+        "position_preserved",
+        "queue_preserved"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "candidate_reload": {
+      "missing_or_failed_checks": [
+        "ledger_preserved",
+        "native_reload",
+        "native_restart",
+        "no_duplicate_reward"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    },
+    "repeat_initialization": {
+      "missing_or_failed_checks": [],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T150008Z"
+      ]
+    },
+    "random_components": {
+      "missing_or_failed_checks": [
+        "component_owns_dynamic_bonus",
+        "cross_threshold_catchup",
+        "equipped_component_present_in_native_design",
+        "every_five_levels",
+        "growth_component_contributions_separated",
+        "native_component_effects_source_attributed",
+        "no_external_reward_modifier",
+        "other_fleets_unchanged",
+        "positive_effect_observed",
+        "random_pool",
+        "real_component",
+        "reload_persistent",
+        "threshold_idempotent"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "analysis",
+        "log",
+        "native_save",
+        "screenshot"
+      ],
+      "run_ids": []
+    }
+  },
+  "months": {
+    "hive": {
+      "baseline": 12,
+      "candidate": 12
+    },
+    "machine": {
+      "baseline": 12,
+      "candidate": 12
+    },
+    "purifier": {
+      "baseline": 12,
+      "candidate": 12
+    }
+  },
+  "negative_candidate_months": {
+    "hive": [],
+    "machine": [],
+    "purifier": []
+  },
+  "growth_observations": 0
+}
