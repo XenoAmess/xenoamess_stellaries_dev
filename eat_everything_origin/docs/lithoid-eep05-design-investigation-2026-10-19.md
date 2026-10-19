@@ -33,3 +33,17 @@
 `main_3:3174–3175` 的保存／下一步通用红字同时写“设计包含错误”与“禁用／未激活 DLC”，不能用于二选一归因。实际精确原因尚未取证前，不修 fixture、不声称 EEP05 设计已通过。后续若只修改 ruler 性别作受控夹具验证，应另先记录单字段修改、原生选择／保存与前后字节差异的验收方案。
 
 `nomads.94` 因果仍未解释，相关最终日志保持原字节，未过滤。
+
+## 后续原生 UI 结论与候选夹具修复
+
+主线程在旧 public031 run `20261019T130448Z`／PID5216 对未改设计进入编辑器并悬停保存，`eep05-error-tooltip` 的真实 Steam F12 图与 OCR（UTC `2026-10-19T13:31:41.469198+00:00`）明确显示“统治者外观：统治者性别未选定。”。本线程只读查看该图片并核对 OCR 行，确认是该 EEP05 当前报出的具体原因；不能把同一通用说明里的 DLC 字样解释为 DLC 缺失。
+
+主线程另在候选测试夹具中单字段修复 `eep_probe_05_lithoid_hive.ruler.gender` 从 not_set 到 female。before／after 原文与 [fixture-gender-repair-v1.json](evidence/1019-eep05-design/fixture-gender-repair-v1.json) 已保存；before SHA `b3cee1d3c3475ea6fa9b54cc09eb0f75e848f565a02326bf70c59db0c9ed0e90`，after SHA `4ce9d9217a7ed804776a41e8ac73410bd70d5073bc3379aa55c2c46181938646`。旧 run 实际 userdir 预设仍为 before hash，因此旧 tooltip 证据没有被事后改输入；修复候选的新 RC4 原生选择／开局验证仍待后续独立运行。
+
+上述 root 原生 UI／修复证据纳入 [旧 run 停止后归档方案](legacy-damage-run-archive-plan-2026-10-19.md) 所指定的完整运行归档；此前37来源静态报告保留为当时调查记录，不覆盖历史候选结论或原字节。
+
+## Conditional single-field fixture repair plan before the next RC4 run
+
+After old damaged fixtures are safely saved, root may use the old isolated public031 main menu and EEP05 editor solely to capture its actual disabled completion tooltip. If it specifically confirms missing ruler gender, change only EEP05 ruler.gender from not_set to female in the repository test-empires fixture, preserving species.gender and every other field/byte; female has the official lith11 ruler precedent. Record old/new SHA and exact one-field diff before prepare copies it into a fresh RC4 userdir. No production Mod file or currently loaded design is replaced. Native validation is the subsequent fresh RC4 picker/editor and successful Lithoid-Hive newgame plus first-month audit; if other errors appear retain and resolve their actual cause before claiming fixture validity. Do not infer legal design or DLC ownership from scripts alone.
+
+Actual old-profile native editor eep05-error-tooltip confirms the precise reason: ruler gender is unset. The unmodified editor/hover OCR and action basis are retained in run130448Z. Proceed only with the already designed EEP05 ruler gender not_set to female single-field fixture repair; native validation remains pending in fresh RC4.

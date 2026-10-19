@@ -1,0 +1,20 @@
+# Source Carrier scope. Aborting pays nothing and preserves real prior costs.
+eep_cancel_task = {
+    if = {
+        limit = {
+            has_planet_flag = eep_active
+            exists = owner
+            owner = { has_origin = origin_heart_of_devouring }
+        }
+        set_planet_flag = eep_auto_devour_excluded
+        every_targeting_situation = {
+            limit = {
+                is_situation_type = situation_eep_devouring
+                owner = { is_same_value = prevprev.owner }
+            }
+            abort_situation = this
+        }
+        # Also repair an orphaned active marker without creating any reward.
+        eep_clear_task = yes
+    }
+}

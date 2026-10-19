@@ -1,0 +1,93 @@
+{
+  "schema": "eep.1019.legacy-damage-native-command-plan.v1",
+  "status": "PENDING_NATIVE_EXECUTION",
+  "scope": "Root-only future old-profile native setup; no UI commands executed by this task",
+  "profile": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\public031-profile.json",
+    "sha256": "6dff682ae7634e3a7bc0030a38aaf01721757e76f97ed9dac67c2356b3451d9e"
+  },
+  "inputs": [
+    {
+      "label": "public031_machine_empty_queue",
+      "path": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/single-homeworld-20261019/runs/20261019T053917Z/bmm00.sav",
+      "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8"
+    },
+    {
+      "label": "old_j13ten_11_paid_queue",
+      "path": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/1015-implementation/runs/20261014T223819Z/j13ten.sav",
+      "sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e"
+    }
+  ],
+  "old_profile_damage_command": "effect root={event_target:eep_mothership@this={every_owned_ship={reduce_hp=1000 reduce_shield=500 damage_ship=120}}}",
+  "old_profile_optional_negative_repair_probe": "effect root={event_target:eep_mothership@this={every_owned_ship={repair_armor_amount=-120}}}",
+  "negative_repair_sign_semantics": "UNVERIFIED_NATIVE_PROBE_ONLY",
+  "damage_scope": "Native every_owned_ship inside bound Mother fleet inside explicit player-country ROOT",
+  "new_profile_sync_command": "effect root={eep_sync_mothership=yes}",
+  "stages": [
+    "Old public031 source native load original bmm00 or j13ten; paused clean native save",
+    "Three native damage effects; same-date genuine old-source damaged native save and verify H/A/S",
+    "Restore frozen RC4 and load that old-source damaged SAV; native loaded save before manual synchronization",
+    "Explicit country sync; same-date after native save",
+    "Actual native reload and same-date final native save"
+  ],
+  "queue_modes": {
+    "bmm00": {
+      "queue_mode": "empty",
+      "expected_queued_items": 0
+    },
+    "j13ten": {
+      "queue_mode": "paid",
+      "expected_queued_items": 11
+    }
+  },
+  "comparison_policy": "Declare fraction/lost_absolute and tolerance before after-save inspection; preserve oldhurt->RC4load->sync->reload complete chain. No fully healed layer may pass damaged-layer retention.",
+  "native_sources": {
+    "native_effects": {
+      "evidence": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\logs\\script_documentation\\effects.log",
+        "sha256": "d2125f7356eccbb5c1a175cc7cebaad3f87cfcad211e908448eec73764d9df09"
+      },
+      "lines": {
+        "490": "reduce_hp - Reduces the hull points of the scoped ship by a specific amount",
+        "491": "reduce_hp = 120",
+        "492": "Supported Scopes: ship",
+        "493": "",
+        "494": "reduce_hp_percent - Reduces the hull points of the scoped ship by a relative amount",
+        "495": "reduce_hp_percent = 0.25",
+        "496": "Supported Scopes: ship",
+        "497": "",
+        "498": "reduce_shield - Reduces the shield points of the scoped ship by a specific amount",
+        "499": "reduce_shield = 120",
+        "500": "Supported Scopes: ship",
+        "501": "",
+        "502": "damage_ship - Damages ship (or all ships in scoped fleet) by a specific amount",
+        "503": "damage_ship = 120",
+        "504": "Can also specify attacker (ship or country) for on-action attribution:",
+        "505": "damage_ship = { amount = 120 attacker = <ATTACKER SHIP OR COUNTRY> }",
+        "506": "Supported Scopes: ship fleet",
+        "507": "",
+        "2820": "repair_armor_amount - Restores a certain amount of armor points to the scoped ship or fleet",
+        "2821": "repair_armor_amount = 10.0",
+        "2822": "Supported Scopes: ship fleet"
+      }
+    },
+    "native_on_actions": {
+      "evidence": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\00_on_actions.txt",
+        "sha256": "7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306"
+      },
+      "lines": {
+        "1": "# Triggers when the game starts",
+        "2": "on_game_start = {",
+        "31": "on_game_start_country = {",
+        "80": "# No scope, like on_game_start",
+        "81": "# Does not run when loading MP saves due to OOS concerns",
+        "82": "on_single_player_save_game_load = {",
+        "83": "}"
+      }
+    }
+  },
+  "on_game_start_country_load_status": "NOT_RUNTIME_CERTIFIED",
+  "native_separate_load_hook": "on_single_player_save_game_load; native file explicitly says unscoped and not MP-load due OOS",
+  "no_automatic_country_hook_load_assumption": true
+}

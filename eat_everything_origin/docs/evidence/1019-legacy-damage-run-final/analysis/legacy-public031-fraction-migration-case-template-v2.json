@@ -1,0 +1,58 @@
+{
+  "schema": "eep.1019.migration-case.v1",
+  "status": "PENDING_RC4_LOAD_SYNC_RELOAD",
+  "scope": "Genuine damaged save produced by public0.3.1 source to future frozenRC4 load/sync/reload; original queue fixture provenance separately bound",
+  "before": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\p031before.sav",
+  "loaded_before_sync": null,
+  "after": null,
+  "reload": null,
+  "require_damaged_before": true,
+  "damage_mode": "fraction",
+  "damage_metrics": [
+    "hull",
+    "armor",
+    "shield"
+  ],
+  "damage_tolerance": 1e-06,
+  "relative_tolerance": 0,
+  "expected_before_version": "0.3.1",
+  "expected_before_run": "20261019T130448Z",
+  "notes": [
+    "before must be actual old-source hurt; do not replace with RC4-after-load damage",
+    "PENDING paths are null until immutable native receipts exist",
+    "original paid fixture0.3.0-rc.1 does not make ldpaidhurt a0.3.0 runtime save",
+    "preserve all strict differences and native initial UI failures"
+  ],
+  "fixture_source": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/single-homeworld-20261019/runs/20261019T053917Z/bmm00.sav",
+  "fixture_sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+  "expected_fleet_id": 128,
+  "expected_ship_id": 1008,
+  "expected_starbase_id": 15,
+  "expected_shipyard_queue_id": 50,
+  "queue_mode": "empty",
+  "expected_queued_items": 0,
+  "before_sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+  "before_production_tree_sha256": "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8",
+  "before_defense": {
+    "hull": {
+      "current_absolute": 92960,
+      "maximum": 93960,
+      "lost_absolute": 1000,
+      "fraction": 0.9893571732652192
+    },
+    "armor": {
+      "current_absolute": 24309.6,
+      "maximum": 24429.6,
+      "lost_absolute": 120.0,
+      "fraction": 0.9950879261224089
+    },
+    "shield": {
+      "current_absolute": 20000,
+      "maximum": 48370.608,
+      "lost_absolute": 28370.608,
+      "fraction": 0.4134742321204646
+    }
+  },
+  "fixture_qualification_report": "eat_everything_origin\\docs\\evidence\\1019-analysis\\legacy-p031before-partial-fixture-report-v1.json",
+  "fixture_qualification_sha256": "5717450af2ca81b7cf109f974b6c5b3cbb8518e7feb00578df6259bd8336716d"
+}
