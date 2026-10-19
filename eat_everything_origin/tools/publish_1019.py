@@ -70,9 +70,15 @@ COMPONENT_SOURCE_MODELS = (
     "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
     "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8",
     "942b98c2aea0022ff7ffa017944abbf873d36331fd26c89862f83a37e31e4dd2",
-    "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f")
-COMPONENT_SOURCE_TREE = "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a"
-MIGRATION_V2_CHECKER = "08b57969060c037c4e03829f0075f8e7314f262527215e991595bd4778456d38"
+    "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f",
+    "b761caa8b5e31cd2981588cc307e9d1da8840b69a4d3ab403454cd3a197c6f28")
+COMPONENT_SOURCE_TREE = "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0"
+MIGRATION_V2_CHECKER = "8a8cf5a52d0c4dfbdfeaa0506a0d8728539d80ca72b56ab875b081a94b8ee0aa"
+MIGRATION_V2_LEGACY_CHECKER = "08b57969060c037c4e03829f0075f8e7314f262527215e991595bd4778456d38"
+MIGRATION_SOURCE_CERTIFICATE = "29742bf394cf83d0b1fd3b9f8221bf06f0c359b40668afea30e3aaa82a946046"
+MIGRATION_SOURCE_VERSIONS = {
+    "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a": "0.4.0-rc.6",
+    "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0": "0.4.0-rc.7"}
 MIGRATION_V1_CHECKER = "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
 MIGRATION_V2_POLICY = {"step_signed_ratio_min": -.000021, "step_signed_ratio_max": .000001,
     "v1_absolute_tolerance": .000001, "relative_tolerance": 0}
@@ -549,19 +555,47 @@ def _validate_migration_contract(case, tree, root, run_proofs):
                         for k, v in MIGRATION_V2_POLICY.items()), "exact predeclared asymmetric policy")
 
     scope = case.get("migration_contract")
+    version = MIGRATION_SOURCE_VERSIONS.get(tree)
     require(isinstance(scope, dict) and scope.get("schema") == "eep.1019.migration-release-scope.v2"
-            and scope.get("execution_mode") == migration.MODE and tree == migration.TREE,
-            "explicit RC6 single-player v2 scope")
+            and scope.get("execution_mode") == migration.MODE and version is not None,
+            "explicit known-revision single-player v2 scope")
     require(scope.get("limitations") == MIGRATION_V2_LIMITS
             and scope.get("classification") == MIGRATION_V2_CLASSIFICATION
             and case["checks"].get("damage_preserved") is False
             and case["checks"].get("damage_within_predeclared_v2_budget") is True,
             "strict failure retained and v2 budget declared separately")
     policy(scope.get("policy"))
-    checker = reference(scope.get("checker"), "analysis")
-    require(scope["checker"]["sha256"] == MIGRATION_V2_CHECKER
+    reference(scope.get("checker"), "analysis")
+    producer = scope["checker"]["sha256"]
+    allowed_producers = {MIGRATION_V2_CHECKER}
+    if tree == migration.TREE:
+        allowed_producers.add(MIGRATION_V2_LEGACY_CHECKER)
+    require(producer in allowed_producers
             and update.digest(Path(migration.__file__).read_bytes()) == MIGRATION_V2_CHECKER,
             "reviewed v2 checker bytes")
+    certificate = None
+    if producer == MIGRATION_V2_CHECKER:
+        certificate = read_json(reference(scope.get("source_certificate"), "analysis"))
+        require(scope["source_certificate"]["sha256"] == MIGRATION_SOURCE_CERTIFICATE
+                and certificate.get("schema") == "eep.migration.reviewed_source_revisions.v1"
+                and set(certificate.get("revisions", {})) == set(MIGRATION_SOURCE_VERSIONS)
+                and certificate["revisions"][tree]["version"] == version, "exact reviewed source certificate")
+
+    def identity(value):
+        expected = certificate["revisions"][tree]
+        require(isinstance(value, dict)
+                and value.get("schema") == "eep.migration.candidate_source_identity.v1"
+                and value.get("tree_sha256") == tree and value.get("version") == version
+                and type(value.get("file_count")) is int and value["file_count"] == 59
+                and value.get("files") == expected["files"]
+                and len(value["files"]) == 59
+                and all(type(row.get("bytes")) is int for row in value["files"])
+                and value.get("shared_migration_sources") == certificate["shared_migration_sources"]
+                and value.get("source_certificate", {}).get("sha256") == MIGRATION_SOURCE_CERTIFICATE
+                and isinstance(value.get("source_certificate", {}).get("path"), str)
+                and value["source_certificate"]["path"]
+                and isinstance(value.get("copied_mod"), str) and value["copied_mod"],
+                "all 59 candidate source bytes and exact revision")
     reference(scope.get("contract_document"), "analysis")
     bundles = scope.get("fixtures")
     require(isinstance(bundles, dict) and set(bundles) == set(MIGRATION_V2_CHECKSETS), "both independent genuine fixtures")
@@ -574,10 +608,13 @@ def _validate_migration_contract(case, tree, root, run_proofs):
         report = read_json(reference(bundle.get("report"), "analysis"))
         source_case = read_json(reference(bundle.get("case"), "analysis"))
         require(report.get("schema") == "eep.1019.migration-report.v2" and report.get("status") == "PASS_SCOPED"
-                and report.get("checker_sha256") == MIGRATION_V2_CHECKER
+                and report.get("checker_sha256") == producer
                 and report.get("v1_checker_sha256") == MIGRATION_V1_CHECKER
                 and report.get("case") == source_case and report.get("case_sha256") == bundle["case"]["sha256"],
                 "original v2 report, case and checker binding")
+        require(source_case.get("candidate_tree_sha256") == tree, "case revision equals the requested source")
+        if certificate is not None:
+            identity(report.get("candidate_source_identity"))
         try:
             known = migration.validate_case(source_case)
         except (ValueError, KeyError, TypeError) as error:
@@ -633,8 +670,10 @@ def _validate_migration_contract(case, tree, root, run_proofs):
             if role in candidate:
                 require(proof.get("run_id") in case["run_ids"] and proof["run_id"] in run_proofs
                         and proof.get("manifest_sha256") == run_proofs[proof["run_id"]]
-                        and proof.get("production_tree_sha256") == tree and proof.get("version") == "0.4.0-rc.6",
+                        and proof.get("production_tree_sha256") == tree and proof.get("version") == version,
                         "current candidate run and manifest")
+                if certificate is not None:
+                    identity(native.get("candidate_source_identity"))
                 snapshot, before = snapshots[role], snapshots["before"]
                 require(native.get("definition", {}).get("sha256") == update.digest(design_file.read_bytes())
                         and native.get("expected_design_shape") == expected_shape

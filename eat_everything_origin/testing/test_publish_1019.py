@@ -378,6 +378,8 @@ class Release1019Guards(unittest.TestCase):
             "unknown RC5 model": lambda r: r.update(source_models_sha256=[*release.COMPONENT_SOURCE_MODELS[:2], "0" * 64]),
             "missing RC6 model": lambda r: r.update(source_models_sha256=list(release.COMPONENT_SOURCE_MODELS[:3])),
             "unknown RC6 model": lambda r: r.update(source_models_sha256=[*release.COMPONENT_SOURCE_MODELS[:3], "0" * 64]),
+            "missing RC7 model": lambda r: r.update(source_models_sha256=list(release.COMPONENT_SOURCE_MODELS[:4])),
+            "unknown RC7 model": lambda r: r.update(source_models_sha256=[*release.COMPONENT_SOURCE_MODELS[:4], "0" * 64]),
             "relaxed tolerance": lambda r: r.update(absolute_tolerance=.1),
             "not actual baseline": lambda r: r["C0_baseline"].update(actual_native_intercept=False),
             "nonzero baseline": lambda r: r["C0_baseline"].update(C=50),
@@ -472,16 +474,40 @@ class Release1019Guards(unittest.TestCase):
         import check_growth_1019 as growth
         folder = release.ROOT / "docs/evidence/1019-analysis"
         self.assertEqual(release.COMPONENT_SOURCE_MODELS, growth.MODEL_HASHES)
-        self.assertEqual(release.COMPONENT_SOURCE_TREE, growth.SOURCE_TREE)
-        version, frozen_key = growth.SOURCE_REVISIONS[growth.SOURCE_TREE]
+        self.assertNotEqual(release.COMPONENT_SOURCE_TREE, growth.SOURCE_TREE)  # historical RC6 default remains intact
+        version, frozen_key = growth.SOURCE_REVISIONS[release.COMPONENT_SOURCE_TREE]
+        self.assertEqual((version, frozen_key), (5, "frozen_rc7"))
         model = json.loads((folder / f"six-core-source-expectations-v{version}.json").read_text(encoding="utf-8"))
         self.assertEqual(model[frozen_key]["production_tree_sha256"], release.COMPONENT_SOURCE_TREE)
+        self.assertEqual(model[frozen_key]["file_count"], 59)
+        self.assertEqual(growth.SOURCE_REVISIONS[growth.SOURCE_TREE], (4, "frozen_rc6"))
         self.assertEqual(tuple(release.update.digest((folder / f"six-core-source-expectations-v{i}.json").read_bytes())
                                for i in range(1, len(growth.MODEL_HASHES) + 1)), growth.MODEL_HASHES)
         runtime, _ = self.implemented_components()
         with patch.object(release, "COMPONENT_SOURCE_TREE", "0" * 64):
             with self.assertRaisesRegex(RuntimeError, "random_components"):
                 self.validate(runtime)
+
+    def test_rc7_final_component_scope_rejects_rc6_and_unknown_actual_bytes(self):
+        final_tree = release.COMPONENT_SOURCE_TREE
+        runtime, report = self.implemented_components()
+        case = runtime["cases"]["random_components"]
+        with patch.object(release, "COMPONENT_SOURCE_TREE", final_tree):
+            for tree in ("cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a", "0" * 64):
+                old = copy.deepcopy(report)
+                old["production_tree_sha256"] = tree
+                self.attribution_report(runtime, old)
+                with self.subTest(tree=tree), self.assertRaisesRegex(RuntimeError, "current candidate run and source"):
+                    release.validate_component_attribution(case, tree, self.root)
+            # Correct-looking headers cannot turn this synthetic package's
+            # different actual bytes into the pinned RC7 production tree.
+            bad = copy.deepcopy(runtime)
+            bad["production_tree_sha256"] = final_tree
+            with self.assertRaisesRegex(RuntimeError, "candidate production tree differs"):
+                self.validate(bad)
+        self.write("mod/events/synthetic.txt", b"# unexpected candidate source bytes\n")
+        with self.assertRaises(RuntimeError):
+            self.validate(runtime)
 
     def test_conditional_alternative_authorization_does_not_select_fallback(self):
         runtime = copy.deepcopy(self.runtime)
@@ -907,14 +933,17 @@ class MigrationV2ReleaseGuards(unittest.TestCase):
         self.case = {"checks": {"damage_preserved": False,
             "damage_within_predeclared_v2_budget": True}, "evidence": [], "run_ids": ["synthetic-rc6"]}
         self.run_proofs = {"synthetic-rc6": "e" * 64}
+        self.target_tree = migration.TREE
         scope = self.case["migration_contract"] = {
             "schema": "eep.1019.migration-release-scope.v2", "execution_mode": migration.MODE,
             "classification": release.MIGRATION_V2_CLASSIFICATION,
             "policy": dict(release.MIGRATION_V2_POLICY), "limitations": list(release.MIGRATION_V2_LIMITS),
             "fixtures": {}}
-        for field, name in (("checker", "tools/check_migration_1019.py"),
-                            ("contract_document", "docs/native-migration-roundoff-contract-1019.md")):
-            scope[field] = self.bind(name, (self.project / name).read_bytes(), "analysis")
+        archived = self.project / "docs/evidence/1019-rc6-migration-checkpoint-v1/source-tools/eat_everything_origin/tools/check_migration_1019.py"
+        self.assertEqual(release.update.digest(archived.read_bytes()), release.MIGRATION_V2_LEGACY_CHECKER)
+        scope["checker"] = self.bind("proofs/legacy-migration-checker.py", archived.read_bytes(), "analysis")
+        name = "docs/native-migration-roundoff-contract-1019.md"
+        scope["contract_document"] = self.bind(name, (self.project / name).read_bytes(), "analysis")
         name = "mod/common/global_ship_designs/eep_mothership.txt"
         self.write(name, (self.project / name).read_bytes())
         self.reports, self.sources = {}, {}
@@ -986,7 +1015,39 @@ class MigrationV2ReleaseGuards(unittest.TestCase):
         bundle["report"] = self.bind_json("synthetic/" + kind + "-report.json", self.reports[kind], "analysis")
 
     def validate(self):
-        release.validate_migration_contract(self.case, self.migration.TREE, self.root, self.run_proofs)
+        release.validate_migration_contract(self.case, self.target_tree, self.root, self.run_proofs)
+
+    def use_current_producer(self, tree):
+        """Change only synthetic report shapes, never archived native evidence."""
+        self.target_tree = tree
+        scope = self.case["migration_contract"]
+        name = "tools/check_migration_1019.py"
+        scope["checker"] = self.bind(name, (self.project / name).read_bytes(), "analysis")
+        name = "docs/evidence/1020-migration-rc7-source/source-certificate-v1.json"
+        raw = (self.project / name).read_bytes()
+        scope["source_certificate"] = self.bind(name, raw, "analysis")
+        certificate = json.loads(raw)
+        revision = certificate["revisions"][tree]
+        identity = {"schema": "eep.migration.candidate_source_identity.v1", "tree_sha256": tree,
+            "version": revision["version"], "file_count": 59, "files": revision["files"],
+            "copied_mod": str(self.root / "synthetic-not-native"),
+            "source_certificate": {"path": str((self.project / name).resolve()),
+                                   "sha256": release.MIGRATION_SOURCE_CERTIFICATE},
+            "shared_migration_sources": certificate["shared_migration_sources"]}
+        for kind, report in self.reports.items():
+            self.sources[kind]["candidate_tree_sha256"] = tree
+            report.update(checker_sha256=release.MIGRATION_V2_CHECKER,
+                          candidate_source_identity=copy.deepcopy(identity))
+            roles = {key: report["provenance"][key] for key in ("after", "reload")}
+            roles.update({"repeat_" + key: row["provenance"]
+                          for key, row in report["repeat_native_sources"].items()})
+            natives = {key: report["native_sources"][key] for key in ("after", "reload")}
+            natives.update({"repeat_" + key: row["native"]
+                            for key, row in report["repeat_native_sources"].items()})
+            for role, proof in roles.items():
+                proof.update(production_tree_sha256=tree, version=revision["version"])
+                natives[role]["candidate_source_identity"] = copy.deepcopy(identity)
+            self.refresh(kind)
 
     def test_separate_v2_scope_accepts_report_shapes_and_keeps_real_v1_failure(self):
         self.validate()
@@ -1088,8 +1149,73 @@ class MigrationV2ReleaseGuards(unittest.TestCase):
             self.validate()
         self.sources["public031"]["expected_queued_items"] = 0
         self.refresh("public031")
-        with self.assertRaisesRegex(RuntimeError, "explicit RC6"):
+        with self.assertRaisesRegex(RuntimeError, "explicit known-revision"):
             release.validate_migration_contract(self.case, "0" * 64, self.root, self.run_proofs)
+
+    def test_current_producer_accepts_exact_registered_rc6_and_rc7_shapes(self):
+        self.assertEqual(release.MIGRATION_SOURCE_VERSIONS, {
+            self.migration.TREE: "0.4.0-rc.6", self.migration.RC7_TREE: "0.4.0-rc.7"})
+        self.assertEqual(release.MIGRATION_V2_CHECKER,
+                         release.update.digest(Path(self.migration.__file__).read_bytes()))
+        for tree in (self.migration.TREE, self.migration.RC7_TREE):
+            with self.subTest(tree=tree):
+                self.use_current_producer(tree)
+                self.validate()
+                for report in self.reports.values():
+                    self.assertEqual(report["v1_original_diagnostic"]["status"], "FAIL")
+                    self.assertIs(report["v1_original_diagnostic"]["checks"]["damage_preserved_in_declared_mode"], False)
+
+    def test_rc7_rejects_mixed_candidate_roles_and_source_identity(self):
+        self.use_current_producer(self.migration.RC7_TREE)
+        original = copy.deepcopy(self.reports["public031"])
+        edits = {
+            "old_role_tree": lambda r: r["provenance"]["after"].update(production_tree_sha256=self.migration.TREE),
+            "old_role_version": lambda r: r["provenance"]["reload"].update(version="0.4.0-rc.6"),
+            "old_repeat_tree": lambda r: r["repeat_native_sources"]["after"]["provenance"].update(production_tree_sha256=self.migration.TREE),
+            "missing_report_identity": lambda r: r.pop("candidate_source_identity"),
+            "missing_native_identity": lambda r: r["native_sources"]["after"].pop("candidate_source_identity"),
+            "mixed_native_identity": lambda r: r["repeat_native_sources"]["before"]["native"]["candidate_source_identity"].update(tree_sha256=self.migration.TREE),
+            "unknown_file_bytes": lambda r: r["candidate_source_identity"]["files"][0].update(sha256="0" * 64),
+            "missing_file": lambda r: r["candidate_source_identity"]["files"].pop(),
+            "boolean_file_count": lambda r: r["candidate_source_identity"].update(file_count=True),
+            "unknown_shared_source": lambda r: r["candidate_source_identity"]["shared_migration_sources"]["design"].update(sha256="0" * 64),
+            "unknown_certificate": lambda r: r["native_sources"]["reload"]["candidate_source_identity"]["source_certificate"].update(sha256="0" * 64),
+            "legacy_producer_claim": lambda r: r.update(checker_sha256=release.MIGRATION_V2_LEGACY_CHECKER),
+        }
+        for label, edit in edits.items():
+            self.reports["public031"] = copy.deepcopy(original)
+            edit(self.reports["public031"])
+            self.refresh("public031")
+            with self.subTest(label=label), self.assertRaises(RuntimeError):
+                self.validate()
+
+    def test_rc7_rejects_unknown_producer_or_certificate_and_old_case_revision(self):
+        self.use_current_producer(self.migration.RC7_TREE)
+        scope = self.case["migration_contract"]
+        certificate_ref = scope.pop("source_certificate")
+        with self.assertRaises(RuntimeError):
+            self.validate()
+        scope["source_certificate"] = certificate_ref
+        checker = scope["checker"]
+        scope["checker"] = self.bind("proofs/unknown-checker.py", b"synthetic unknown checker", "analysis")
+        with self.assertRaisesRegex(RuntimeError, "reviewed v2 checker bytes"):
+            self.validate()
+        scope["checker"] = self.bind("proofs/legacy-migration-checker.py",
+            (self.root / "proofs/legacy-migration-checker.py").read_bytes(), "analysis")
+        with self.assertRaisesRegex(RuntimeError, "reviewed v2 checker bytes"):
+            self.validate()
+        scope["checker"] = checker
+        self.sources["public031"]["candidate_tree_sha256"] = self.migration.TREE
+        self.refresh("public031")
+        with self.assertRaisesRegex(RuntimeError, "case revision"):
+            self.validate()
+        self.sources["public031"]["candidate_tree_sha256"] = self.migration.RC7_TREE
+        self.refresh("public031")
+        modified = json.loads((self.root / certificate_ref["path"]).read_bytes())
+        modified["revisions"][self.migration.RC7_TREE]["files"][0]["sha256"] = "0" * 64
+        scope["source_certificate"] = self.bind_json(certificate_ref["path"], modified, "analysis")
+        with self.assertRaisesRegex(RuntimeError, "exact reviewed source certificate"):
+            self.validate()
 
 
 if __name__ == "__main__":
