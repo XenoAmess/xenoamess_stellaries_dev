@@ -1,0 +1,170 @@
+{
+  "schema": "eep.1020.rc7-growth-minimal-native-probes.v1",
+  "status": "PENDING_NATIVE_EXECUTION",
+  "created_at_utc": "2026-10-19T17:47:58.114077+00:00",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "version": "0.4.0-rc.7",
+  "source_refs": [
+    {
+      "path": "tools/runtime_growth_1019.py",
+      "sha256": "cab98ce18119f27838456dd6118001cc7fee5254b3150c5e5c8fcf5365f7e747"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7ganchor.sav",
+      "sha256": "aec53eeed736d23abb856b7a1c1696657ce55517124097f1ad6c69921f1d8385"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-high-level-ui-v1/raw/r7evreport.sav",
+      "sha256": "0d64de5652563ebbc2a453e47c7298ceecabe0392b95562cd5ed967060d42b97"
+    },
+    {
+      "path": "docs/evidence/1019-legacy-damage-run-final/run/ldpaid-armor-damage-command.action.json",
+      "sha256": "c39f095e568f68e2bf6756724fdbdf315f0a1a1ea680ea1d4e4fc99b98e3d906"
+    },
+    {
+      "path": "docs/evidence/1019-legacy-damage-run-final/analysis/legacy-ldpaid-hurt-armor-report-v1.json",
+      "sha256": "fa187ccc538186fa4654e6017ed5988cfd11e9851eccd9fe23688632b2e6bbb0"
+    },
+    {
+      "path": "docs/evidence/1019-rc6-final-logs-v1/logs/script_documentation/effects.log",
+      "sha256": "985c95672f491f0458fcd34232743e2c2a1b9e1862743e2b156eea7e9ca5a773"
+    },
+    {
+      "path": "docs/evidence/1019-rc6-final-logs-v1/logs/script_documentation/triggers.log",
+      "sha256": "6bc54e7bddab6e990d9caaa137bcd9f94a95cf03afc6f11544cd18a7406ff97c"
+    },
+    {
+      "path": "docs/evidence/1019-rc6-final-logs-v1/logs/script_documentation/modifiers.log",
+      "sha256": "4bc7b700c2bbb8005a0b95f2a4a138082741fb5734db74058ebf1abcb8a9b4a3"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/component_templates/eep_evolution_components.txt",
+      "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/static_modifiers/eep_modifiers.txt",
+      "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d"
+    }
+  ],
+  "command_derivation": {
+    "collector_AST_only_no_desktop_imports": true,
+    "ten_getters_and_variable_names_unchanged": true,
+    "scope_change_only_for_ordinary": true,
+    "extra_regen_channels": "Four keys exist in the archived native modifier registry: two add_perc and two regen_mult. No invented getter."
+  },
+  "commands": [
+    {
+      "name": "ordinary-ten-modifiers",
+      "command": "effect event_target:eep_mothership0.owner={every_owned_ship={limit={NOT={is_ship_size=juggernaut}} export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static}}}",
+      "command_utf8_no_newline_sha256": "b1dc9e5f73d388af4172f55f394fc1a2599201c2b30316d064762e161e8d3ccc",
+      "command_file": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/ordinary-ten-modifiers.command.txt",
+        "sha256": "90f6c0e9c7f07b0862a2c9a665e0fd18b5483d430f7446f38a34e5d209ba39b0"
+      },
+      "P_syntax_wrapper": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/ordinary-ten-modifiers.p.txt",
+        "sha256": "6c52961cd89dc22e09ffab27e8b833fe358d2c3e0e11745acfbbc0b9652dec04"
+      },
+      "kaishek_result": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/ordinary-ten-modifiers.kaishek.json",
+        "sha256": "b0daa331bf353b456ad20bc3556bbc47e95ce722e95aa8952e15068ac27e791d"
+      }
+    },
+    {
+      "name": "mother-fourteen-modifiers",
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_modifier_to_variable={modifier=ship_hull_regen_add_perc variable=eep_probe_ship_hull_regen_add_perc} export_modifier_to_variable={modifier=ship_armor_regen_add_perc variable=eep_probe_ship_armor_regen_add_perc} export_modifier_to_variable={modifier=ship_hull_regen_mult variable=eep_probe_ship_hull_regen_mult} export_modifier_to_variable={modifier=ship_armor_regen_mult variable=eep_probe_ship_armor_regen_mult}}}",
+      "command_utf8_no_newline_sha256": "a6104e9831da971111278c09712efeb26c5e15ce7f608c523079fc3cf66c62d8",
+      "command_file": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/mother-fourteen-modifiers.command.txt",
+        "sha256": "837a5834bde0ad31a66a1d57d2cecb1d48e6139488a93dae5316594b289608a1"
+      },
+      "P_syntax_wrapper": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/mother-fourteen-modifiers.p.txt",
+        "sha256": "4ae069a559758a4de59a33a883347fc0fd29f6d3d63291c6d5ffc082acadf874"
+      },
+      "kaishek_result": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/mother-fourteen-modifiers.kaishek.json",
+        "sha256": "918a89cffa0f7d3b97eedc2021765da7ba8661345e3047788bebaadcaf6f6ecc"
+      }
+    },
+    {
+      "name": "mother-positive-damage",
+      "command": "effect event_target:eep_mothership0={every_owned_ship={reduce_shield=10000000 damage_ship=100000 reduce_hp=100000}}",
+      "command_utf8_no_newline_sha256": "a51ade77d1b45589909dadfb677ac071ede6dd1dfa95c295f5f95a1d361e0f61",
+      "command_file": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/mother-positive-damage.command.txt",
+        "sha256": "f5b0fdedcf09dea153a0e1a666d0f2ef200a3e7c24b57d51e2b13b3283b98379"
+      },
+      "P_syntax_wrapper": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/mother-positive-damage.p.txt",
+        "sha256": "f8227b7c17b6514657e63140ab99e66f6336285743ef4cc2f6f08c2d19faf9cb"
+      },
+      "kaishek_result": {
+        "path": "docs/evidence/1020-rc7-growth-minimal-probes-v1/mother-positive-damage.kaishek.json",
+        "sha256": "304d30a370da254b4e56554ab71ac3dbbc028c9331b53afffba214855987cb97"
+      }
+    }
+  ],
+  "ordinary_control": {
+    "before": "r7ganchor C0",
+    "after": "r7evreport C20500/L2050/R410/P0",
+    "expected_ship_ids": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "804",
+      "805",
+      "806",
+      "807",
+      "808"
+    ],
+    "id_policy": "Read actual source saves and actual new native outputs. Require these eleven IDs owned by Mother owner and not juggernauts, and matching design bodies. Additional or absent objects must be reported, not hidden.",
+    "comparison": "All ten actual getter exports must be identical per same native ship ID. Native maximum H/A/S and original government/design/owner also checked. Only diagnostic variables may be newly written.",
+    "no_forward_needed": true
+  },
+  "natural_recovery": {
+    "entry": "Same actual high-state native output used by ordinary control, after refreshing fourteen Mother modifier exports and saving.",
+    "expected_full_maximums_source_only": {
+      "hull": 3396960,
+      "armor": 2873613.6,
+      "shield": 4718142
+    },
+    "safety_precondition": "Actual native single Mother alive, hull/armor each >200000, shield <10000000; fixed same high-L/tier ledger; no combat or repair order. Abort if not met.",
+    "damage_observation": "Positive reduce_shield clears shield before damage_ship attempts armor; reduce_hp separately reduces hull. Save same date and verify actual armor/hull decrease, actual maxima/design/tiers/ledgers unchanged and Mother alive. Omitted current shield must not be invented as an explicit serialized zero.",
+    "first_forward": "fast_forward 1",
+    "first_observation": "Save next actual day; independently read current/max hull and armor, time, modifiers, ongoing combat and repair/order/dock context. Require actual current increases below/equal unchanged max and unchanged C/L/R/P/tiers.",
+    "if_first_day_no_recovery": "Retain original result; use actual timer/state to decide a small additional native-day window. Archive any zero/partial result. Station10 and starbase30 day self-repair delays are potential native context, not proven Mother triggered-regeneration delays. Do not call no day-one change a Mod failure or advance a month automatically.",
+    "not_claimed": "No repair effects, combat spawn, tier changes, SAV edits, exact closed-engine regen stacking formula, or healed observation yet."
+  },
+  "minimum_extra_actions": {
+    "native_loads": 2,
+    "effect_commands": 4,
+    "native_saves": 4,
+    "fast_forward_1": 1,
+    "details": "C0 load -> ordinary ten export -> save; high-state load -> ordinary ten export + Mother fourteen export -> save; positive damage -> same-day save; FF1 -> day-one save. If fresh load or helper needs extra acknowledge/close frames those physical inputs remain required. No repeat of the eighteen-node matrix."
+  },
+  "static_scope": "Three P wrappers parse with zero diagnostics and roundTrip true via existing Kaishek CLI. This is syntax and source support only, not opcode scope evaluation, effect execution or native acceptance.",
+  "native_executed": false,
+  "Mod_tools_SAV_modified": false,
+  "final_case_checks_changed": false,
+  "kaishek": {
+    "jar": {
+      "path": "D:/workspace/open_kaishek/kaishek-cli/target/kaishek-cli-0.1.0-SNAPSHOT.jar",
+      "sha256": "6ac143ebf03f3e1a041dff01b2d808e60de8e289d18cebf9855682f0a80b6d82"
+    },
+    "tool_repo_commit": "9a286b9321a4d1ecacc0680a8bb0d914e0679b99"
+  },
+  "game_sources": [
+    {
+      "path": "C:/SteamLibrary/steamapps/common/Stellaris/common/defines/00_defines.txt",
+      "sha256": "82eebd807eb54af347025b061af2991fc40a1b1059e39c2cb8ee135dca02b7cc"
+    },
+    {
+      "path": "C:/SteamLibrary/steamapps/common/Stellaris/events/infernals_crisis_events.txt",
+      "sha256": "da6d18c2642d2a0fd3357adff8e247ade87ab3f712b21daa1ef152d695017dfd"
+    }
+  ]
+}
