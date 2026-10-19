@@ -1,0 +1,25 @@
+{
+  "schema": "eep.1020.rc7-high-level-ui-independent-verify.v1",
+  "status": "PASS_BYTES_SCOPED_UI_ONLY",
+  "verified_at_utc": "2026-10-19T17:36:14.179112+00:00",
+  "method": "Separate fresh Python process independently re-read all indexed destination/source bytes, reference targets, original report pins, raw ZIPs and OCR bindings; no prior computed archive payload reused.",
+  "index_sha256": "bc901c3dc8a0ca82fec94d7a0e34ab59b11aa4c89264a3fa7579b601e1b9c497",
+  "checks": {
+    "111_payload_file_set_source_bytes_sizes_SHA_exact": true,
+    "19_canonical_references_match": true,
+    "21_unchanged_absolute_references_have_project_copy_mappings": true,
+    "25_original_GPU_OCR_image_SHA_bindings": true,
+    "two_unedited_native_SAV_ZIP_CRCs": true,
+    "actual_run_manifest_exact_tree_and_Chinese": true,
+    "v1_FAIL_v2_SCOPED_and_identical_full_strict_21_FAIL_preserved": true,
+    "post_click_frame_precedes_later_Escape": true,
+    "one_partial_check_only_full_case_PENDING_no_final_result": true
+  },
+  "payload_files_rechecked": 111,
+  "canonical_references_rechecked": 19,
+  "absolute_reference_mappings_rechecked": 21,
+  "full_strict_status": "FAIL",
+  "full_strict_difference_count": 21,
+  "case_status": "PENDING",
+  "UI_Git_Mod_tools_or_logs_operations": false
+}

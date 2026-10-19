@@ -21,11 +21,171 @@ h.PROFILE_ID = "eep-0.3.2-single-homeworld"
 original_focus = h.focus_pid
 
 
+def _focus_titlebar_info(hwnd):
+    """Query real nonclient geometry; pywin32 has no GetTitleBarInfo wrapper."""
+    import ctypes
+    from ctypes import wintypes
+
+    class TitlebarInfo(ctypes.Structure):
+        _fields_ = [("cbSize", wintypes.DWORD), ("rcTitleBar", wintypes.RECT),
+                    ("rgstate", wintypes.DWORD * 6)]
+
+    query = ctypes.WinDLL("user32", use_last_error=True).GetTitleBarInfo
+    query.argtypes = [wintypes.HWND, ctypes.POINTER(TitlebarInfo)]
+    query.restype = wintypes.BOOL
+    info = TitlebarInfo()
+    info.cbSize = ctypes.sizeof(info)
+    if not query(hwnd, ctypes.byref(info)):
+        raise ctypes.WinError(ctypes.get_last_error())
+    rect = info.rcTitleBar
+    return {"rect": [rect.left, rect.top, rect.right, rect.bottom],
+            "states": list(info.rgstate)}
+
+
+def _focus_caption_hit(hwnd, point):
+    """Ask only the validated window; never wait indefinitely on a hung UI."""
+    import ctypes
+    from ctypes import wintypes
+
+    query = ctypes.WinDLL("user32", use_last_error=True).SendMessageTimeoutW
+    query.argtypes = [wintypes.HWND, wintypes.UINT, wintypes.WPARAM,
+                      wintypes.LPARAM, wintypes.UINT, wintypes.UINT,
+                      ctypes.POINTER(ctypes.c_size_t)]
+    query.restype = wintypes.LPARAM
+    result = ctypes.c_size_t()
+    x, y = point
+    if not (-32768 <= x <= 32767 and -32768 <= y <= 32767):
+        raise RuntimeError("titlebar point cannot be represented by WM_NCHITTEST")
+    packed = (x & 0xffff) | ((y & 0xffff) << 16)
+    ctypes.set_last_error(0)
+    if not query(hwnd, h.win32con.WM_NCHITTEST, 0, packed,
+                 0x2 | 0x20, 2000, ctypes.byref(result)):
+        raise RuntimeError("titlebar hit-test failed or timed out")
+    return result.value
+
+
+def _focus_verified_target(pid, artifacts, observed):
+    observed["pid"] = pid
+    if int(h.process_record(artifacts)["pid"]) != pid:
+        raise RuntimeError("focus recovery PID is not the current run")
+    if h.psutil.Process(pid).name().casefold() != "stellaris.exe":
+        raise RuntimeError("focus recovery target is not stellaris.exe")
+    cursor = list(h.win32gui.GetCursorPos())
+    foreground = h.win32gui.GetForegroundWindow()
+    observed.update(cursor=cursor, foreground=foreground)
+    if foreground:
+        _, owner = h.win32process.GetWindowThreadProcessId(foreground)
+        if h.psutil.Process(owner).name().casefold() == "lockapp.exe":
+            raise RuntimeError("the Windows desktop is locked")
+    windows = h.windows_for_pid(pid)
+    if len(windows) != 1:
+        raise RuntimeError("focus recovery requires one unique current-run window")
+    hwnd = windows[0]
+    observed["hwnd"] = hwnd
+    if (not h.win32gui.IsWindow(hwnd) or not h.win32gui.IsWindowVisible(hwnd)
+            or not h.win32gui.IsWindowEnabled(hwnd) or h.win32gui.IsIconic(hwnd)):
+        raise RuntimeError("focus recovery window is invalid, hidden, disabled or minimized")
+    _, owner = h.win32process.GetWindowThreadProcessId(hwnd)
+    title = h.win32gui.GetWindowText(hwnd)
+    observed.update(window_pid=owner, title=title)
+    if owner != pid or title != "Stellaris":
+        raise RuntimeError("focus recovery window PID or title differs")
+    client = list(h.win32gui.GetClientRect(hwnd))
+    origin = list(h.win32gui.ClientToScreen(hwnd, (0, 0)))
+    window = list(h.win32gui.GetWindowRect(hwnd))
+    style = h.win32gui.GetWindowLong(hwnd, h.win32con.GWL_STYLE)
+    observed.update(client_rect=client, client_origin=origin, window_rect=window, style=style)
+    if client != [0, 0, 1024, 768] or style & h.win32con.WS_CAPTION != h.win32con.WS_CAPTION:
+        raise RuntimeError("focus recovery requires the verified client size and native caption")
+    titlebar = _focus_titlebar_info(hwnd)
+    observed["titlebar"] = titlebar
+    left, top, right, bottom = titlebar["rect"]
+    states = titlebar["states"]
+    if (len(states) != 6 or states[0] & (0x1 | 0x8000 | 0x10000)
+            or not window[0] <= left < right <= window[2]
+            or not window[1] <= top < bottom <= origin[1]):
+        raise RuntimeError("real titlebar is unavailable or outside the nonclient window")
+    point = [(left + right) // 2, (top + bottom) // 2]
+    hit = _focus_caption_hit(hwnd, point)
+    observed.update(point=point, hit_test=hit)
+    if hit != h.win32con.HTCAPTION:
+        raise RuntimeError("verified titlebar point is not HTCAPTION")
+    return observed
+
+
+def _focus_recover_titlebar(pid, original_error):
+    from datetime import datetime, timezone
+    from uuid import uuid4
+
+    artifacts, _, _ = h.load_run()
+    action = {"schema": "eep-titlebar-focus-recovery-v1", "pid": pid,
+              "started_at_utc": datetime.now(timezone.utc).isoformat(),
+              "original_error": {"type": type(original_error).__name__,
+                                 "args": list(original_error.args)},
+              "status": "FAILED", "phase": "failsafe_before_validation"}
+    path = artifacts / ("focus-titlebar-recovery-" + uuid4().hex + ".action.json")
+    # Open before any action, exclusively: even a rejected recovery is new evidence.
+    with path.open("x", encoding="utf-8", newline="\n") as output:
+        try:
+            h.pyautogui.failSafeCheck()
+            action["phase"] = "validate_before"
+            before = action["before"] = {}
+            _focus_verified_target(pid, artifacts, before)
+            hwnd = before["hwnd"]
+            flags = h.win32con.SWP_NOMOVE | h.win32con.SWP_NOSIZE | h.win32con.SWP_NOACTIVATE
+            action.update(phase="raise_without_activation", insert_after=h.win32con.HWND_TOP,
+                          set_window_pos_flags=flags)
+            h.pyautogui.failSafeCheck()
+            h.win32gui.SetWindowPos(hwnd, h.win32con.HWND_TOP, 0, 0, 0, 0, flags)
+            action["phase"] = "validate_after_raise"
+            after = action["after_raise"] = {}
+            _focus_verified_target(pid, artifacts, after)
+            stable = ("pid", "hwnd", "title", "client_rect", "client_origin",
+                      "window_rect", "style", "point")
+            if (any(before[key] != after[key] for key in stable)
+                    or before["titlebar"]["rect"] != after["titlebar"]["rect"]):
+                raise RuntimeError("focus recovery target or geometry changed")
+            point = after["point"]
+            covered = h.win32gui.WindowFromPoint(tuple(point))
+            root = h.win32gui.GetAncestor(covered, h.win32con.GA_ROOT)
+            action.update(point_window=covered, point_root=root)
+            if covered != hwnd or root != hwnd:
+                raise RuntimeError("verified titlebar point is covered by another window")
+            # Recheck after point ownership; no input is sent to the client viewport.
+            action["last_hit_test"] = _focus_caption_hit(hwnd, point)
+            if action["last_hit_test"] != h.win32con.HTCAPTION:
+                raise RuntimeError("titlebar hit-test changed before click")
+            action.update(phase="physical_titlebar_click", clicked_point=point)
+            h.pyautogui.failSafeCheck()
+            h.pyautogui.click(*point)
+            time.sleep(.2)
+            action["phase"] = "verify_foreground"
+            final = action["after_click"] = {}
+            _focus_verified_target(pid, artifacts, final)
+            if final["hwnd"] != hwnd or final["foreground"] != hwnd:
+                raise RuntimeError("titlebar click did not establish the verified foreground")
+            action.update(status="FOREGROUND_VERIFIED", phase="complete")
+            return hwnd
+        except Exception as failure:
+            action["failure"] = {"type": type(failure).__name__, "message": str(failure)}
+            raise
+        finally:
+            action["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
+            json.dump(action, output, ensure_ascii=False, indent=2)
+            output.write("\n")
+
+
 def focus_current_window(pid):
     foreground = h.win32gui.GetForegroundWindow()
     if foreground in h.windows_for_pid(pid):
         return foreground
-    return original_focus(pid)
+    import pywintypes
+    try:
+        return original_focus(pid)
+    except pywintypes.error as error:
+        if getattr(error, "funcname", None) != "SetForegroundWindow":
+            raise
+        return _focus_recover_titlebar(pid, error)
 
 
 h.focus_pid = focus_current_window
