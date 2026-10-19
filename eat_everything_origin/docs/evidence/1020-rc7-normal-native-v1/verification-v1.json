@@ -1,0 +1,35 @@
+{
+  "schema": "eep.rc7.normal-safe-close.independent-verification.v1",
+  "status": "PASS_BYTES_AND_PARTIAL_SEED_ONLY_NORMAL_PENDING",
+  "archive_index_sha256": "fdb5237491352774df16a085b01e6d0360c6b4acd179ae0a59dea7f8c0fd7fb6",
+  "checks": {
+    "all_payload_hash_sizes_and_set_match": true,
+    "all_raw_original_bytes_preserved": true,
+    "all_canonical_references_match": true,
+    "all_typed_SHA_references_resolve": true,
+    "eight_exact_role_paths_receipts_audits_and_caches": true,
+    "nine_native_ZIPs_CRC_valid": true,
+    "all_GPU_OCR_image_hashes_bind": true,
+    "seed_only_true_other_three_null_case_PENDING": true,
+    "original18case138checks_remain_PENDING_null": true,
+    "Oct27_completed_candidate_rejected_not_role": true,
+    "control2_killed_but_no_natural_completion_inferred": true,
+    "pre3_no_controlflag_restore_anchor_retained": true,
+    "raw_gitattributes": true
+  },
+  "payload_count": 450,
+  "raw_count": 406,
+  "canonical_count": 49,
+  "typed_references_checked": 649,
+  "GPU_OCR_pairs": 84,
+  "native_roles": 8,
+  "native_ZIPs": 9,
+  "supported_original_check_count": 1,
+  "case_status": "PENDING",
+  "prior_private_verification_attempt": {
+    "status": "ABORTED_BEFORE_RESULT_WRITE",
+    "exception": "KeyError: save_sha256",
+    "cause": "Private check expected wrong native receipt field name; actual existing receipt schema uses sha256.",
+    "resolution": "Corrected only private invocation field access to receipt.sha256; original receipts, checker, receiver, production and archive payload unchanged."
+  }
+}

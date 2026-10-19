@@ -1,0 +1,201 @@
+{
+  "schema": "eep.rc7.normal-native-decision.seed-start-summary.v1",
+  "status": "PASS_SCOPED_NATIVE_DECISION_AND_SEED_ONLY",
+  "scope": "Actual same-day UI decision, target Situation start and seed transfer; no duration/completion/reload certification.",
+  "checks": {
+    "actual_same_day_ready_and_start": true,
+    "actual_native_decision_menu_and_one_click790_175": true,
+    "source50_to100": true,
+    "core5177_to5127_delta_minus50": true,
+    "source_core_total_population_conserved": true,
+    "actual_seed_existing100_need0_move50": true,
+    "actual_frozen_q2_months5_progress0": true,
+    "actual_unique_Situation16777231_target_physical1": true,
+    "actual_Situation_initial_progress0": true,
+    "source_eep_active_not_settled": true,
+    "source_and_core_same_actual_owner0": true,
+    "complete_EEP_country_variables_unchanged": true,
+    "crisis_progress_unchanged": true,
+    "original_receiver_only_ready_start_no_false_no_settlement": true
+  },
+  "roles": {
+    "normal_ready50": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7normalready2.sav",
+      "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7normalready2.native-save.json",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7normalready2.audit.json",
+      "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+      "run_id": "20261019T164112Z",
+      "date": "2201.05.28",
+      "save_sha256": "b3644338f5f4f82522fe2d52cb7f939bdee59458b81440e649e8a1475ea2427b",
+      "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+    },
+    "normal_decision_start": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7normalstart.sav",
+      "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7normalstart.native-save.json",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7normalstart.audit.json",
+      "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+      "run_id": "20261019T164112Z",
+      "date": "2201.05.28",
+      "save_sha256": "66f231751fe16a400c0f3a4952532768f1d9db7ba29dd1431835e1423af7dda5",
+      "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86"
+    }
+  },
+  "actual_Situation16777231": {
+    "country": 0,
+    "type": "situation_eep_devouring",
+    "progress": 0,
+    "last_month_progress": 0,
+    "approach": "eep_devour_approach",
+    "stage": 0,
+    "target": {
+      "type": "planet",
+      "id": 1,
+      "opener_id": 4294967295
+    },
+    "variables": {}
+  },
+  "source_variables": {
+    "eep_block_state": 0,
+    "eep_months": 5,
+    "eep_old_damage": 0,
+    "eep_progress": 0,
+    "eep_q": 2,
+    "eep_seed_existing": 100,
+    "eep_seed_move": 50,
+    "eep_seed_need": 0
+  },
+  "source_flags": [
+    "eep_guard_reserved",
+    "3_year_owner_change_flag",
+    "superior_colonies_can_be_boosted",
+    "eep_active",
+    "eep_owned_colony_event",
+    "colony_event"
+  ],
+  "actual_populations": {
+    "before_source": 50,
+    "after_source": 100,
+    "before_core": 5177,
+    "after_core": 5127
+  },
+  "original_receiver": {
+    "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v2.json",
+    "sha256": "1190d8a1543f3e05798edcc2f1454dec56e7261a14e95d13661780fdb15695f2",
+    "kind": "analysis"
+  },
+  "actual_click": {
+    "reference": {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-select-devour-decision.action.json",
+      "sha256": "7b0dce1743a87f3e07d0a2cd44ccff19cee1fc165b583b72ed86aafef27338af",
+      "kind": "actions"
+    },
+    "content": {
+      "stage": "r7normal-ui-select-devour-decision",
+      "client_point": [
+        790,
+        175
+      ],
+      "desktop_point": [
+        1558,
+        511
+      ],
+      "hold_seconds": 0.15
+    }
+  },
+  "UI_observations": [
+    {
+      "image": {
+        "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decisions.jpg",
+        "sha256": "21946baa726b562ab5c75b1e71c28614d626cfcf021b11e98cfd5877df4fd230",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decisions.ocr.json",
+        "sha256": "f30e4fb4a59244e79fb4f0753b357cbb8fd501cfd88ff17c61b825e1ee890fef",
+        "kind": "analysis"
+      },
+      "pid": 37300,
+      "captured_at_utc": "2026-10-19T19:43:57.837918+00:00",
+      "visually_inspected": true,
+      "scope": "Actual pre-click native devour decision, source50."
+    },
+    {
+      "image": {
+        "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decision-details.jpg",
+        "sha256": "2aaf5569c3890a8e2fc850849a749374a1dab8a44c7edace257af08472841ca3",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decision-details.ocr.json",
+        "sha256": "cb8ae9820578762d9580b590ff0308de8644256a419059501214f3437f269798",
+        "kind": "analysis"
+      },
+      "pid": 37300,
+      "captured_at_utc": "2026-10-19T19:44:16.025692+00:00",
+      "visually_inspected": true,
+      "scope": "After same click list refresh, source100 and cancel-dismantle decision. Stop-production text is only cursor hover over refreshed list, not another click."
+    }
+  ],
+  "all_EEP_before": {
+    "eep_c": 21,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_entitled": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_pending": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_snapshot_state": 0,
+    "eep_component_tracking_level": 0,
+    "eep_d": 7,
+    "eep_delta": 300,
+    "eep_entitled": 300,
+    "eep_fleet_stage": 0,
+    "eep_g": 21,
+    "eep_last_capacity": 5,
+    "eep_last_manufactured": 300,
+    "eep_last_return": 0,
+    "eep_made": 300,
+    "eep_mothership_level": 2,
+    "eep_mothership_next": 9,
+    "eep_previous_capacity": 2,
+    "eep_stage": 0,
+    "eep_worlds": 1
+  },
+  "all_EEP_after": {
+    "eep_c": 21,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_entitled": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_pending": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_snapshot_state": 0,
+    "eep_component_tracking_level": 0,
+    "eep_d": 7,
+    "eep_delta": 300,
+    "eep_entitled": 300,
+    "eep_fleet_stage": 0,
+    "eep_g": 21,
+    "eep_last_capacity": 5,
+    "eep_last_manufactured": 300,
+    "eep_last_return": 0,
+    "eep_made": 300,
+    "eep_mothership_level": 2,
+    "eep_mothership_next": 9,
+    "eep_previous_capacity": 2,
+    "eep_stage": 0,
+    "eep_worlds": 1
+  },
+  "final_checks_supported": {},
+  "case_status": "PENDING",
+  "limitations": [
+    "Native no-settlement is not run on intended seed population transfer.",
+    "No m01/m04 or later active raw/logs read.",
+    "No eep_begin console shortcut is used by this observed input chain.",
+    "Duration and natural final day are not inferred from months5 alone."
+  ]
+}

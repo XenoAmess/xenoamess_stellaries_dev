@@ -1,0 +1,97 @@
+{
+  "schema": "eep.rc7.normal-population-control.static-contract.v1",
+  "status": "PASS_SCOPED_STATIC_COMMAND_AND_SOURCE_ISOLATION",
+  "scope": "One-flag control branch source analysis and Kaishek syntax/package; actual population behavior remains separately native-observed.",
+  "sources": [
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\scripted_effects\\eep_settlement_effects.txt",
+      "relative_production_path": "common/scripted_effects/eep_settlement_effects.txt",
+      "sha256": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+      "bytes": 6441
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\scripted_effects\\eep_effects.txt",
+      "relative_production_path": "common/scripted_effects/eep_effects.txt",
+      "sha256": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6",
+      "bytes": 16330
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\scripted_triggers\\eep_triggers.txt",
+      "relative_production_path": "common/scripted_triggers/eep_triggers.txt",
+      "sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "bytes": 3071
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\scripted_triggers\\eep_planet_killer.txt",
+      "relative_production_path": "common/scripted_triggers/eep_planet_killer.txt",
+      "sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "bytes": 1034
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\situations\\eep_situation.txt",
+      "relative_production_path": "common/situations/eep_situation.txt",
+      "sha256": "f6f9b034949e1d24da7d598a4de9ca0a483fe99526b1ff7489eb3db1a6cbd29d",
+      "bytes": 2377
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\events\\eep_events.txt",
+      "relative_production_path": "events/eep_events.txt",
+      "sha256": "bee663bdf8e794999502aa52376166dd94b2c3129e5053f6b43d3a4dd4e85a02",
+      "bytes": 9502
+    }
+  ],
+  "canonical_inputs": [
+    {
+      "path": "testing/normal_population_control_1020/VERSION",
+      "sha256": "e8f91976854f4ce9d6655905c0d7da6d722d198f2aa85d0cab9d9a9033279a1d",
+      "bytes": 14
+    },
+    {
+      "path": "testing/normal_population_control_1020/descriptor.mod",
+      "sha256": "4d64ade1f733c8fbc0fb695218f6f0258c006695f7d27bd91f2f0e53ae33f7ab",
+      "bytes": 99
+    },
+    {
+      "path": "testing/normal_population_control_1020/command.json",
+      "sha256": "03417a97c25f1b92e6aa2664944010f23041f62b967ee3d8f644bf5584f78cb2",
+      "bytes": 1463
+    },
+    {
+      "path": "testing/normal_population_control_1020/common/scripted_effects/eep_normal_population_control.txt",
+      "sha256": "a9b7467de932a6e469216f82813b88310ef398a69a5bb42782764253eeb28dbd",
+      "bytes": 117
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc7-normal-population-control-open-kaishek-1020.json",
+      "sha256": "95e679e0b447436441648c4dcac173387bd3b1fdae092e9e3a22d9e42566db5d",
+      "bytes": 2073
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc7-normal-population-control-open-kaishek-1020-v2.json",
+      "sha256": "912613768f10d5fcacddc36c79620ff83b9e10923305fafeee10d8d8fe7b4b7c",
+      "bytes": 1940
+    }
+  ],
+  "checks": {
+    "command_exact81_under1000": true,
+    "single_set_planet_flag_body_matches_command": true,
+    "shared_settlement_outer_guard_requires_no_destroy_done": true,
+    "credit_done_only_guards_inner_credit_section": true,
+    "task_operational_and_ready_do_not_read_destroy_done": true,
+    "registered_growth_jobs_modifier_source_no_destroy_flag_reference": true,
+    "Kaishek_v2_explicit_actual_EXE_PASS": true
+  },
+  "reject_credit_done_as_whole_settlement_control": true,
+  "outer_situation_side_effects": [
+    "eep_notice_pending",
+    "eep_sync_mothership",
+    "destroy_situation"
+  ],
+  "strict_whole_save_unchanged_required": false,
+  "not_a_guard_matrix_result": true,
+  "initial_static_identity_failure_preserved": true,
+  "limitations": [
+    "Native month/day scheduling and within-day growth order are not certified by parser or source inspection.",
+    "Oct1 control still has Situation raw5, so source alive at Oct1 alone does not prove blocked completion."
+  ]
+}

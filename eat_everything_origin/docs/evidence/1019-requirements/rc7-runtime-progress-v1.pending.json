@@ -11919,14 +11919,2272 @@
     "normal_dismantle_regression": {
       "status": "PENDING",
       "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
-      "run_ids": [],
+      "run_ids": [
+        "20261019T164112Z"
+      ],
       "checks": {
         "normal_completion": null,
         "normal_duration_preserved": null,
         "normal_reload_idempotent": null,
-        "normal_seed_preserved": null
+        "normal_seed_preserved": true
       },
-      "evidence": []
+      "evidence": [
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/normal-safe-close-report-v1.json",
+          "sha256": "8027b33cbb8a27ee9053a646190ec58f5fbafa2608cd8d9ac6ed89ee876d0389",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/decision-start-seed-summary-v1.json",
+          "sha256": "bfbaf625eb4b7429712c67269e96ec838e5fdcba37aa3607674314ac27722e95",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v7.json",
+          "sha256": "e84984d9ad1a90dd9ebe9d67d8e2e3bed9dcc692068b88b71d7954af7a4215f9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2.sav",
+          "sha256": "b3644338f5f4f82522fe2d52cb7f939bdee59458b81440e649e8a1475ea2427b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart.sav",
+          "sha256": "66f231751fe16a400c0f3a4952532768f1d9db7ba29dd1431835e1423af7dda5",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-select-devour-decision.action.json",
+          "sha256": "7b0dce1743a87f3e07d0a2cd44ccff19cee1fc165b583b72ed86aafef27338af",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/actual-v2-setup-input-binding-v1.json",
+          "sha256": "63147148fae64c826473c98f296d5a2a84c8158c7df980146ea932088cd34703",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/control-Oct1-native-summary-v1.json",
+          "sha256": "e745029d8c9907b2252ea509c12b202fac7ccc4eed569b360cada7182d848110",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/control-static-source-contract-v1.json",
+          "sha256": "0c508fc7d4cebd5a44aadf1c16cbde314f1a45753c34e8601a1ce20b3ac53fb3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/failed-oct27-candidate-summary-v1.json",
+          "sha256": "e19ebc5b60b4e8c00b798e5c0bc2fc0864d6757bee359cc1587412378d26d908",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/final-control-resume-boundaries-v1.json",
+          "sha256": "df807deb78972f8e6161bdfe61fab935cb40e1279b154c49a8a14ebdf6d10f81",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/intake-v1.json",
+          "sha256": "b15e9e9cf8a564c1baa8d264dc45a3759f818dcff433f1a3072627a69db01ecc",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/intake-v2.json",
+          "sha256": "00320c68dd9363674d202def466feb15409b7fdcda373d73fd5e7eeff0c092af",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/intake-v3.json",
+          "sha256": "6f9e5e3361695e2bfd566f4a52e9c49dab1d5382a18292ecf46153f068390ace",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/intake-v4.json",
+          "sha256": "1825f1f657c3b6838c9b8337902b9dfe34fcf5b500fbd01ba3f03eb22a79c88a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/intake-v5.json",
+          "sha256": "d33dfc34e49694f1020ecd6c5a7a14f6912d8039105baedb88d253a9eb001609",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/intake-v6.json",
+          "sha256": "7cccea93e4bd6e4e65ab7d733f66178d149876a880a35f3ae952dd1eb07a16fc",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/intake-v7.json",
+          "sha256": "efed857d25f1ad3c600573f52a88fa5c8c362cdf05143511f0894d36382b0bc7",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/m01-native-summary-v1.json",
+          "sha256": "bce294ca380695e02c42d5fa75346aa8024c2d77832c4d22fb326b357d1a5160",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/m04-native-process-chain-summary-v1.json",
+          "sha256": "88c6c0f7ac66440c0501f45ea128c7104885d1eb90cd3a7871eed20c08278d7e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/precomplete2-native-summary-v1.json",
+          "sha256": "7de928e975cb002a5bd569c164498180d544e23aa4a214e217df4de8b9a74efa",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v1.json",
+          "sha256": "22cba3accac20b6930536b7c280a002fc3b805f48b28bf8be5ed8c0e0ed5c738",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v2.json",
+          "sha256": "a8d8a49b55fbf175e5c3a861c0d830e8d9d538c38209b12cb021591825402ae6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v3.json",
+          "sha256": "818c8ec191c4a2972e41f4921604560abcb085a2f2a231c35633a836beb6ecb1",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v4.json",
+          "sha256": "e7d892aebc8dc23851f81748007bec59575edf0f75293d059931b1949ed5d08e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v5.json",
+          "sha256": "2c16573427712c0f350cd49695369a585bd3c39db86fd6c0b62ca035196b0dc9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v6.json",
+          "sha256": "eb7825ffb737429be4bfa0f8ee5204a2fc19dc17367b23c9a58ee8207db6e963",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v7.json",
+          "sha256": "cfd4ea54105ba8b306aa66d2f41f6fdf14c7b6b285afd33b767439adf62aa310",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/raw-copy-receipt-v8.json",
+          "sha256": "bb12bdd37566102e13e81f8cc4ebbd482a9e7debcd4204aedde80fff3d267bf6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/ready2-native-summary-v1.json",
+          "sha256": "5f0a2cbef1af87152e8da97d6b73ddd87487b209aca1dafea370d59c5a38d905",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v1.json",
+          "sha256": "3cd65258ec46daea043c70c088b8cc31d86e0be20d45de54dd9f00a6f550b3fb",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v2.json",
+          "sha256": "1190d8a1543f3e05798edcc2f1454dec56e7261a14e95d13661780fdb15695f2",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v3.json",
+          "sha256": "18f58c660dd2e452d4f7882157207f6a12afa3f876587be5ae303b681a347978",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v4.json",
+          "sha256": "a9c03e9733d446cd468853a7544197bef576b8ec1ae8a1d2cdd02ea7bf6326fa",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v5.json",
+          "sha256": "05d1d24424c17c0ec92a853d18b5be63d913210ce60aa0615efb53e2bfefcb9d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v6.json",
+          "sha256": "41a3259b5312a29cff8702a5bf18646d8b7aaa458fd4e1ffdc9e8dd7ed4ba719",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/3096176ec8780f44499364d5ce201daf6df9a4cca409b15a2b09205bb5103d05.json",
+          "sha256": "f6ab4ef0c611a4ff27cbab0f2aeb58953139caaf3d4d7d4d00093edf6ada20b3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/5234d126dd324d608a2f0aee99f02f12b12898a858bb64e0e8ebaadf5e1ec998.json",
+          "sha256": "6762ff52ef93fac972bdc6afa193bf52d66e71159fea22842e64d3672d8d7687",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/5c44c62b30863892a9bf0b3061610e79305c5980d760c44ba1d48b9e860dae51.json",
+          "sha256": "3563efbda1282a76c92aa4c5ae174fdc9586078e9b22084ae63ffc567d9a0b10",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/5d5fecedc04304e5499d20418b26c5fb0c50c8190a3e08d8a6b9016def9a9916.json",
+          "sha256": "c14db914cf21deb91b7965e696bd0520a0886f73fe2586fdc4aefeb64c2d2a7e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/99c8321d91bc1a06a0935d46ef6736896eec10f817a7be0ef09d4513aaec6cd3.json",
+          "sha256": "ff6726558cb2de22b8cd1fa08c8acc9b838277474e2eb85debf6b41b84d8c5e8",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/99cb4ebd2b811e5e0f0b0dabd6e3307f887f38a28e4d4692d71e06a9a0d49dc9.json",
+          "sha256": "7a8db605c582557acdedeb5f1be55d07befaeb4e7d8c6da8d272fbb7bf9f2217",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/dc39c9c19288cb73fa8ab1fe8ad01b38bf3084543584054354503556bc8c21a1.json",
+          "sha256": "114999c5f024c15843aa26d014d2e652fb4e0dd44d4de38a460799be45d03c65",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/cache/e49e3bf148342b3ee397db09d7659aaae4fd20a7b4e0ef156f63038dbeae5383.json",
+          "sha256": "9e99ee4d5242e4572fda5cf11cb9f91ca987d880ec127a283795b7e41da3018e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/partial-normal-seed-v1.json",
+          "sha256": "3b1fa0f28a81955586896e2b1f4983cd00c1a53fa5275ddb588dad3974061e56",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/README.md",
+          "sha256": "5a0b9b96b628574e5183fd2049555243b067d430066af69b02e70abf78d8a753",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-console-close.action.json",
+          "sha256": "c6122f9585ca0e80f7332ac121fab751c484387fa43e79c22b21b404db59ce9e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-date-0-f12.action.json",
+          "sha256": "724e2d24e507a6b5530fda3922d9dccea30a37af4a20b41861b8ab8a0a5e5deb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-date-0.jpg",
+          "sha256": "954d3c8b47adf23d984c2d6aa833ca30d048070122648b3e7ebeb90025b00f51",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-date-0.ocr.json",
+          "sha256": "8814972bf5001131029e4c90d0ef8297af5f094c2a60512283ed6c1afb615e80",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-date-1-f12.action.json",
+          "sha256": "77b3759ab42d1d8d07f36af84ed3103c45c4d01f9be2f397913c386f0f53caa4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-date-1.jpg",
+          "sha256": "05f2d3ad374beefe2b59c8fba8b024854dbf5502438d8da0978bcca735580a23",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-date-1.ocr.json",
+          "sha256": "d495b8aa686e5f1d5e629681216d1ece4b44eb790eb3b46bbc0604fa593cf27f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-date.wait.json",
+          "sha256": "b258b06fe34a3cf4f83d376d4898c3aa699b3653e36f42d5fd5543d9ba811667",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-debug-f12.action.json",
+          "sha256": "ae255e5bb8917b8be507e2d0c2958edcfd7486132395048c40626b0e94410f67",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-debug.jpg",
+          "sha256": "50f77d515bdb3c0d8637283690b7a8ab721cbb2b40454daf1d3c73e3acb56326",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-debug.ocr.json",
+          "sha256": "147e047c3ece0f8c1aca471b42a2ceb96f094197ca6eacc93866ce5b9968ece2",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-command-enter.action.json",
+          "sha256": "2d88f59ef57577f94be4be400ad634297c643fa982c23f52e5ed706a36c870da",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-command.action.json",
+          "sha256": "b0e1bcfde3e6bca90dd80cc1f84ab008e4ae57987de45744e41230e70d40e441",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-console-ready-f12.action.json",
+          "sha256": "fefc663ea81c7ebed9b510ec4983affb8b32ab9336a24d98b46e81aa4d83ed68",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-console-ready.jpg",
+          "sha256": "19b964bf68ddf0053f05f4364d7597e2f07fbf0187c12a37a246d8ebf89bc271",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-console-ready.ocr.json",
+          "sha256": "a1be3f97eb1cfaf137f78e259a73a8b3ddb674325a1c2f2912f71fd7bc848f10",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-console-state-f12.action.json",
+          "sha256": "6da3af14608225905f6b28de6f75038f912ed86bbb83170593a8b3fbf0f3866b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-console-state.jpg",
+          "sha256": "b81c677931a0fbeea02b3e3dcc225b940e3552a429a4c3ba3b7359ca462240a2",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-console-state.ocr.json",
+          "sha256": "6d7ccb60f0c3dcbb1af83dd213d9796b8ec1c7ea158c683fee1f0b16daec0228",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-focus-console-input.action.json",
+          "sha256": "9bd93e432650ad2173a9a9872195fdf38d4ce98cb4d08895693259ded395203d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-ff2-open.action.json",
+          "sha256": "5a25412dcf1cbec7b08d4ca1cf002598768b84661739b3e23f5fd087573dc2e7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-esc-0.action.json",
+          "sha256": "46681a4f391e6bfe9cd1a45922004f51e0bc58b9a94e6c53127bad120b8e3b48",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-load-window-f12.action.json",
+          "sha256": "6132be07d7671bdee80396569501cdb060c14d844d45741f23032fbf979cf82d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-load-window.jpg",
+          "sha256": "8b803b138ead0746cedcb6637c2b3fa83f7b53cce76989c6dd168fbd54dd2084",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-load-window.ocr.json",
+          "sha256": "f8fc3ea3ee26e5fefc69a45d9497ec2a9864680046d0a5953bb1b964dbb9b3ae",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-load.action.json",
+          "sha256": "b7d12d22de263528e5c0696f3827a96af945340096cdf40f8ea270ea87d9d6b6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-loaded-f12.action.json",
+          "sha256": "131765bd96e70ab5c211f8432bafadf22f946e37b4e2fc4bab1e4d4218e42c09",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-loaded.jpg",
+          "sha256": "62a0c4f3360d4461dc4525727d4da5f173d1ee16f2c88bc6855652c41804cc88",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-loaded.ocr.json",
+          "sha256": "99db8e22df1af3d63a65e354a32ea8888e9721c1737459fac1bdd32fe3bcf14f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-menu-0-f12.action.json",
+          "sha256": "13a5573d946eef9bc3a901890bf1a553134467a12b7a7c957456a88b451398ae",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-menu-0.jpg",
+          "sha256": "bb9812e76f183f90a1c8c90a95cbb67830501ce2e0bb53357bd6f00cabfce8f9",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-menu-0.ocr.json",
+          "sha256": "ec823f5ed14a32daa81a9d50854cdea05855e4fce76e30be32e43770a647ac01",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-menu-1-f12.action.json",
+          "sha256": "658c84a624a91b560173f6741272d7af025f47c322e6fd7951ccc588b9c060e9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-menu-1.jpg",
+          "sha256": "9c2a1c47c37072ddb419750deea4f554a82085db6cc41bcf9d4f7a9635a5e4f4",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-menu-1.ocr.json",
+          "sha256": "e1ef043a4213f20ad3c988abce66ad124f792d15ac4fac561f1ce61a4bdde571",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-open.action.json",
+          "sha256": "c687ba609efb5d72d447f865b8212a0809386341d4a22684b5e3cd60ebd1d698",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04-row.action.json",
+          "sha256": "e2a54477d68ac76644bc2c19cda812d40ed4c2b52f2790d901933ab0c383565e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-boundary-restore-m04.load.json",
+          "sha256": "eb7f0ec1e20a9d67e283568f76d0a904bc40c7ee24c407fea4f8dd20a25a93d4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-console-close.action.json",
+          "sha256": "a496c5a8259490ed73bd392bc30ab2e6dcd34195f14dcaa37f36798ab7ffa44a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-date-0-f12.action.json",
+          "sha256": "3c3d775f432bab99178211d33524888f177a2f6e938d895e54c21d17b45eb321",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-date-0.jpg",
+          "sha256": "dc066a2982ee990508087c5aeb86d977ba28ce269d2993e78c57fa0acac3e76f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-date-0.ocr.json",
+          "sha256": "5ce8db8648dd794d4c87b5c1c3d45f6739c023a69d7cc4be65fcf7c1b6a73c5f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-date-1-f12.action.json",
+          "sha256": "1145500abdff0ea4868df8b0d9243bb0ce74c9bcf66840eb566f3edb6fb25ac6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-date-1.jpg",
+          "sha256": "761074bfe7885365a250258ce214bfcf0df4f8a0479d3bf82fc2cf99998b9e23",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-date-1.ocr.json",
+          "sha256": "3b68022ae4dcad4262deed79cbad04dbe63917898ad93929f743a72a85cb81a0",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-date.wait.json",
+          "sha256": "3ce189500ffb73ea0c84184c03b5125b231138bd10e50dea10a5f5b2ce119ee0",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-debug-f12.action.json",
+          "sha256": "f32f26af2c937f520c819fec17c0055697305b2e05279bf09c8228170683e4a4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-debug.jpg",
+          "sha256": "f182a737e59abb9575bc487bcbfd7c83618322a2ecaa6ce674c1705d3db764f4",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-debug.ocr.json",
+          "sha256": "57f6b65bb4bb66e1abc40d93afe2bd6db3ad0187ae55bfe072d170410a821cda",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-command-enter.action.json",
+          "sha256": "3d6da77e70662854c9b570be3ff2b1738a236b47e286170d7bcf2159adfc848e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-command.action.json",
+          "sha256": "fb2d90c6f70df7e822875a7421d0a691ad8529e92df99e9d7eba2f0b3565e54b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-console-ready-f12.action.json",
+          "sha256": "8e863f50c3ab13d82a26b120da5f1dcc2d3404efd0888634c8899ff076b9bdea",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-console-ready.jpg",
+          "sha256": "e295f412e65b94691289b660302c9cb7b407f81f45949a72eb0a5c0bc3ab9935",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-console-ready.ocr.json",
+          "sha256": "32bcdb8ed76f9460254429aeeb9243b74b442246967dce9c5d9d9659b1a5ebd4",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-console-state-f12.action.json",
+          "sha256": "55c01b8d64152ae3189119b5b26c61332fab6be3b55999b265326a223671b28c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-console-state.jpg",
+          "sha256": "ee9080e72c033f7f611792e0964ced1ae83534d6513dca13db06da67aaf370c3",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-console-state.ocr.json",
+          "sha256": "2d35650019afcedce71e57ca588ce0a62d3c6c361fa802aca29a82637b86ce3e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-focus-console-input.action.json",
+          "sha256": "5fe649543d8525eed19fd66cba9cad02313a915f071a4898bc756ce7fab3bdb5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-destroy-flag-open.action.json",
+          "sha256": "4826d64d0e547d3f718324299de4321ec70527b779073f32e0486cd953923b13",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-command-enter.action.json",
+          "sha256": "a9c937896fd2c8347b026608cc7c8d0d3b9d06c356b859204ad2252219811447",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-command.action.json",
+          "sha256": "2f8508762e42d5754501ffe53cc7cd7002546e90363a8109d1df93135af52ac7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-console-ready-f12.action.json",
+          "sha256": "1cedadc4e9fd92543ef3795581febf12d2353f86d5c09d900e02ef0cfc023cf2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-console-ready.jpg",
+          "sha256": "7a15cf4ddb4ba33b084e4fd523d60e75534457218007ffb95a79bc57c2472c00",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-console-ready.ocr.json",
+          "sha256": "cd8c100b8b9c7e0ae5a6c8bc98cea545adda7180fdd80f7ed3650ca098a41e2b",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-console-state-f12.action.json",
+          "sha256": "c9da668195295806a8f67bfe52b27f9e1144a2f1f1b3b486b23935efc055a15b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-console-state.jpg",
+          "sha256": "d45f11e820225907c8c54bc6bf868ecdcd44b0b6d5ecfd079cc203c34bc353b2",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-console-state.ocr.json",
+          "sha256": "830a1eaa36eac3b9c8f69b5078a7716b1058b4a3cb16ae9c7240ee4e9b00d403",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-focus-console-input.action.json",
+          "sha256": "272ce4c7878473a65e5abdb4eec373544388c6b7ef2e6f4c6a9af3c720ee9a5e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-ff1-open.action.json",
+          "sha256": "9754a64734f02cb806a99c1c2324da5c1780d4faae7d501b46514b029bab9245",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-flag-console-close.action.json",
+          "sha256": "bbe1fdc9cd7c0bf442c739cd9de2fa1d3f28180ae409a1487203026178f42488",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-esc-0.action.json",
+          "sha256": "bdd11278f02638dfb483c00268a3387bbd4cefe873306289bb0505605942ec96",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-load-window-f12.action.json",
+          "sha256": "383b2642016856fb46fe76281c15f68bbdc4c0a2fa7a24b9a9559d105bdf49f1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-load-window.jpg",
+          "sha256": "87b3f04552471fb017ca6cca1cd4b145c7bf4f9c3fbe2cd850050161cc1ea2f7",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-load-window.ocr.json",
+          "sha256": "ddeffcca72f6080d041b0e2ab4db1b994dddb02a7d8ef3164be151a03223b54d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-load.action.json",
+          "sha256": "6c099616378921c3aa1933b24233cca7d2767622eba23f4d4c1cdf451a8b476a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-loaded-f12.action.json",
+          "sha256": "7fcb1143bc98d30b1bd0f57c9f8e33bcde31c9c39fa9b9ddc0a0f1de632d2a02",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-loaded.jpg",
+          "sha256": "c59f3236a6b5a0a664e47174f155100692a6e8258d815a17c3a399ec85ba336e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-loaded.ocr.json",
+          "sha256": "ade9f6cd2d4fb9a078716e5bbe1fbcbd200396a36b253a9e4cac0506439b6f55",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-menu-0-f12.action.json",
+          "sha256": "14cb58e6b3e931944b91e71a3ce305e93d3bb86f9f8c70691451e9bebff4e172",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-menu-0.jpg",
+          "sha256": "3c98a51ad0444f16790c3a1d5c6766051db944e4452d1cd18211d6f2d5472702",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-menu-0.ocr.json",
+          "sha256": "91e503a3e20d9a6ddb9c87b7ceb64a9635607bbf955b0e1502aa28912d321ea3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-menu-1-f12.action.json",
+          "sha256": "1036bdf6acae7304353af87cc409cf87be052c1a0bba7767d34ff300a7ae72d8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-menu-1.jpg",
+          "sha256": "21a8dced31fa8d541ad182ac8e5efbc9405bfc0643d6b9c229585624663aa19b",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-menu-1.ocr.json",
+          "sha256": "e9f29b1f7887ad9cf61788665aeaba6110965bcff591910b833739e7394bc73a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-open.action.json",
+          "sha256": "502b10f30696d3cb04078e07f2aff2d27128ea494864423847716d3f939d5df0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2-row.action.json",
+          "sha256": "780ccad9320d9cd73b80e9f3a5e49d6f9412596a9597775d8c960b48e1bed94e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-load-pre2.load.json",
+          "sha256": "96f7d3f3dbe86a375c2cd489b9106ca2131e20b6d12df3c8400a519bae0da352",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-console-close.action.json",
+          "sha256": "439b53088021d9bf520ad1a240c58db83471cfbd05b807224f34146ac1c807c4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-date-0-f12.action.json",
+          "sha256": "d0ae28266f48b15f697a65d74d4784687b05a335917544d62de75bc1ed731cd2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-date-0.jpg",
+          "sha256": "789e6986f2495b2e0e96e77db61c9427d3ace9edda5a8470f31529b9fc4d276e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-date-0.ocr.json",
+          "sha256": "659e3a641240ed9881ee06416dd32aae1d2dbc7af7c31946561e02530a17d495",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-date-1-f12.action.json",
+          "sha256": "c7139ee82510676e05649a6af5bc16107ffc523d054b475ea488e4afafe029e1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-date-1.jpg",
+          "sha256": "d6cf9ac57a77a489909565f82550fd7f4fca08e62cbbd988ca8651489815ba6b",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-date-1.ocr.json",
+          "sha256": "57bf565247f93166625f40389f982b09af552e7c38ce06911da95786142b0e84",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-date.wait.json",
+          "sha256": "d4d9cc67385604f3baa7f377b2ebd2fd829aaa9ad37b425e49e4645ad032c605",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-debug-f12.action.json",
+          "sha256": "866e436633fe4a041d5548e5540c1c38a89f64d58dacb473bd1fa6dfeb8320f1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-debug.jpg",
+          "sha256": "65d340003d1e0553a1e8d39750254247635d863efe0280e950b4c7c8f945d207",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-debug.ocr.json",
+          "sha256": "8113ae128a5bd710ed99c385c9bfca15acd19fcab89727ace2abe2ea849f4a3f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-command-enter.action.json",
+          "sha256": "0dacdb2c76718097a36ee0fa199ea390296819425e9d7ce59b42ca785640764c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-command.action.json",
+          "sha256": "9a50ab591a8e25113d4e0f0aed739352ac80ddad8282f9605530fe4fccd3c81f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-console-ready-f12.action.json",
+          "sha256": "90d2389f5e0b4e394fa836e6f54b7245ba543148eaf8b4acb2b75b0490457a74",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-console-ready.jpg",
+          "sha256": "f86a74911c8bdfd221afc8df1f4f70dc5ff6ea9719872608d89fae391e12b030",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-console-ready.ocr.json",
+          "sha256": "70c766d8ea3122350c12d2ce69c78c72a621e64d8f5e40db4cd159c3b2892408",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-console-state-f12.action.json",
+          "sha256": "1458e63431d0e17ec4ee8482925d9c78f4cba9e9ad6257e05aec82a3d3ce8d6b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-console-state.jpg",
+          "sha256": "cc7a662106268cbb43eccf8eaf3c7e5e8b30c5134a162bc1256e802a4aa5c315",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-console-state.ocr.json",
+          "sha256": "367be2e8b48378e3189d44b59f95dbc20eb070cf053d42b4660b3d36beadc629",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-focus-console-input.action.json",
+          "sha256": "cba9bc9abe58494962aa8997a24b951f2d6523edb4c2fb6e46bbd2d58e40b675",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-control-nextday-ff1-open.action.json",
+          "sha256": "6ee70d7806cd61453df5e9ba4ccc9f30f8194794fcb619a374b98bb63805a292",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-console-close.action.json",
+          "sha256": "12d0b2568d7d9f7e87d8f1f7ac2e85f44ee18b73c53e0bc7e9af5ac1fb7b1dd3",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-date-0-f12.action.json",
+          "sha256": "0d60816e7ced314b17331bcf6f3d9b22b5a8e648713f0a316267ce4eaf0f1204",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-date-0.jpg",
+          "sha256": "4afae02a0917f6817a2a35ff57f298d0c4dd8680df41b7de7b9fa39d30db3060",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-date-0.ocr.json",
+          "sha256": "e0f036adf9325e5af95c209ab1aaadad937548bcb4c50d97df109c05c572e44f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-date-1-f12.action.json",
+          "sha256": "1da6c8f96e7e3cda2612d15351cc0cfe85206a5d13c42ce7bf47353270a4489b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-date-1.jpg",
+          "sha256": "e7a2085adcebe36c50075805bcdb8f5ef7dc7b4d5dcfffca71624b46f70b7a74",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-date-1.ocr.json",
+          "sha256": "cabbed6e28c84b3c7b8f4c49ad634c34d30f2cb1d8810def20a44fec2b83cd3e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-date.wait.json",
+          "sha256": "463261df3c3b3ae6457b4f72774e550d57e8fdfaf6d3fabc78d0f683f4725f05",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-debug-f12.action.json",
+          "sha256": "806dc90e0fe82dbd74a2f89fdc03c3e8302fd136a1c464815e87f3561d3342d5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-debug.jpg",
+          "sha256": "ac10599cb693727cc10e9ab5699ae22f4f7ebd8350e933f3b75a02868820a08b",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-debug.ocr.json",
+          "sha256": "d59d2f64d8378dad117ffc99841df6e1eaadd619f839aa163af1fe492f850909",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-command-enter.action.json",
+          "sha256": "c696f6233ed8be966dcb42086cbf753b45b1907e1deafb146c88ec2abaf97778",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-command.action.json",
+          "sha256": "dc4c540f14b3653f680b5f078f59de77c4d37f79d935c1ff867443b226f9fcdb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-console-ready-f12.action.json",
+          "sha256": "4e7237324d267196bb88d6133f6f941598fe7b876dda60cf610828914ee1c9ef",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-console-ready.jpg",
+          "sha256": "6c5547041513051355e1bcb101e57b60ff8ab2709f9ff93639f6efdb48324d1b",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-console-ready.ocr.json",
+          "sha256": "13a8919926b189b563a4e024966f96088d93f90710c61bf73d96a92fae0b45e6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-console-state-f12.action.json",
+          "sha256": "68494be931d36518480b42e779c3c27ea5cbc71bf4935f92c1fc0e8b629a662f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-console-state.jpg",
+          "sha256": "21066a5d5fee918025cdeaa30c97747e4a629fd38b861fa9e69107b39ae3b1c5",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-console-state.ocr.json",
+          "sha256": "7b989aae17a5676075e548016199e27462f85f3992e9167e390de2be9eda225e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-focus-console-input.action.json",
+          "sha256": "65b52380e4f4e9bb28cc3dbce054bbb966abcae3fe32b8d31f974693b4220bae",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m01-ff30-open.action.json",
+          "sha256": "92e30d28afc516b1cbd5ebf5c85b1ae843df3a78442860840173837c3c2a27a8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-console-close.action.json",
+          "sha256": "7d867ce1144e07248c9802db9a149090ea80e58f1d8bd72bab7f7ec67c079ce1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-0-f12.action.json",
+          "sha256": "0f5a693469b15bad0344e878213ee38d6c860f9be4acfe4fe3d732d396fad71e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-0.jpg",
+          "sha256": "cf71610564452e958905b991ca9db4daac6348428577c38be0a956d3729635ba",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-0.ocr.json",
+          "sha256": "28a126f09491c96ab64d7218022173eaeac0a3fdab0722badd50aed775740105",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-1-f12.action.json",
+          "sha256": "6bb65518c504ead4217315abbc702230958668f65f7d27ec12b065a353b21862",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-1.jpg",
+          "sha256": "5a2409f69cd4998aa23e11be3496e2e298b79e0a162e5825ce8bb0f2ec7d0e2a",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-1.ocr.json",
+          "sha256": "96bce40cc21520a121c6a31dbaafb48d7d86a3e9872944a2d62ab04e93a36116",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-2-f12.action.json",
+          "sha256": "95adf4d60764ced5a9d96964c89239bce702611967c3c06a022cff6f6a8d3a75",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-2.jpg",
+          "sha256": "28deec9279795985ae1bcb2092883e3dc498d2cf7cec356b356e1dc7787cb996",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-2.ocr.json",
+          "sha256": "382e3b8059710fe740d85b7760fa1c7c47da3b7453b44fc5df3d8cf1fbc59873",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-3-f12.action.json",
+          "sha256": "0e3eb6bae4080d1103cafe8444f67b0f00ca525365590a811fa8c67a1d593f1a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-3.jpg",
+          "sha256": "d1b95951a7f311e7f191f52f67b820967fb9ac348298d3b52828680da2347fe6",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date-3.ocr.json",
+          "sha256": "097ae5bbf348dade78bb2319797d9a472e9946118cc5b40f33503d4d621f878f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-date.wait.json",
+          "sha256": "d22b19b5e9fc685728764946038a6c668395b3e57c94741fb5a74702a0fe7069",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-debug-f12.action.json",
+          "sha256": "e39c88b96a487ff08de32f882abf0471f685796e0dec85c4bc2b84cdc953cdf8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-debug.jpg",
+          "sha256": "9b42b56bbc60180ad14027eed5dde3452d0465d6bbfaca7819174c6a50069624",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-debug.ocr.json",
+          "sha256": "e4d9351b5f3ff4ac57797e486d107d04c2f0df6258b9d68b38c41039a03d889e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-command-enter.action.json",
+          "sha256": "769d4e5a56a8151039daf3bc90f0fd9a73ce48bbcdd102b5a41bec4b9fd2799a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-command.action.json",
+          "sha256": "08a488cb4c83db25e61954991088e0d277a8e7a5b530207c7864270ac01fb6db",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-console-ready-f12.action.json",
+          "sha256": "4894f77aef40c99c6bd0f7a19f040b9ddebce02519e7a3a8d816244ea309b27b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-console-ready.jpg",
+          "sha256": "90fa6bcbfedf542012d1d589c2b390d070a32f8fb1d37a903186c96d4021c019",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-console-ready.ocr.json",
+          "sha256": "cc96b411408e286c907df008e8cc0c3b172b3c46d10997c15ad357bddb221238",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-console-state-f12.action.json",
+          "sha256": "3ab352173ff80b5aa6125ea036e473db21f75a13e406004cb1e79203f1347979",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-console-state.jpg",
+          "sha256": "37b4da2dd41ea561c05ab4e751d2186699e3c246ec662551218b9a6f67e22a0c",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-console-state.ocr.json",
+          "sha256": "497ba51e80efd5bfb849cb404d3b90448eff0d04cbf8af2a644fc6d9138c8b60",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-focus-console-input.action.json",
+          "sha256": "82efbd5b040e77ddc6607a358adc64dbf6a0c8d328f91f67c16dc999adc80043",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-m04-ff90-open.action.json",
+          "sha256": "29aad3c1820d57936d1c00ecbef23a51dc1cdb5f0775171789e73657d03865e5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-esc-0.action.json",
+          "sha256": "a99aec29dcdcf34e54041e371bd4f3c25dca7ce3ba4ef035686aa3175350426f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-load-window-f12.action.json",
+          "sha256": "4607164c3bb89607a90b594a4b5fe4c00916ffba78feb1fcb7ca25592db51444",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-load-window.jpg",
+          "sha256": "d728390c68aaf99716e2ba023335c9b4126789c6026e35bdcd6099daf563c696",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-load-window.ocr.json",
+          "sha256": "d66d49f37a01578ef345d8849068b2d8b6352b45d39f283934c1a185adc9b48e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-load.action.json",
+          "sha256": "0e118ba1c6a6ca19cf73b69112b6c9e36dae87bfeef69366062211d4b2aa087d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-loaded-f12.action.json",
+          "sha256": "7384e54ad8dc3cc0d92193e307888264bdf33ecc4e9de45c6e003aa6ee013863",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-loaded.jpg",
+          "sha256": "94a5affd27503a613bf5855a45aa475809578a107b1224689990aed0270404bb",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-loaded.ocr.json",
+          "sha256": "38a6e01e92a4c82b8faa7d2b6c89382671f1705ae0f726ec8ce8d5481999eb5e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-menu-0-f12.action.json",
+          "sha256": "a181498ea32a24ad0a30c63705f7918cfff3025f225baac2a30a0a4bf45ab8ef",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-menu-0.jpg",
+          "sha256": "a24f82d784f830104c623da413ae0b45f83c3ead7ee303fb79ab7a0a40f42b75",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-menu-0.ocr.json",
+          "sha256": "f835627b704fa367098096233c397862c6b4b084a7f81e3e419e194e538c8c1f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-menu-1-f12.action.json",
+          "sha256": "d29b3ac8d166330745a7f697d0f8da2a8606849c25f6704c573a4f06468d7e44",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-menu-1.jpg",
+          "sha256": "2331adff01f5c465e2757b4e4614716ba66fdac2faa216efbb3ce7829ae538dc",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-menu-1.ocr.json",
+          "sha256": "c0399e3f426ce7febda82bf1d6462801b96366bbe7b4cfe86552e12de3e8d2f7",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-open.action.json",
+          "sha256": "65e79dfbaa34c21b6653452a95824f39109f5a3db4f6c8bfd6f5e1c892d47d34",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2-row.action.json",
+          "sha256": "53bbb19fbda27d6c545d71339753d1f003159a17e41bf84929b45ca1522677d2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-load-pre2.load.json",
+          "sha256": "118b08466e6851a85f43d1b7461e67106831d2ec3fbe04b5321fc914f6e51bac",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-console-close.action.json",
+          "sha256": "cd5359151f7f2a25ec3be666e9bba9a8ca93cfce6a8c8a8ca48cb4ee19b23944",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-date-0-f12.action.json",
+          "sha256": "3e625ec3d8f611056f3fbb97b20f2f5285db1f44badcb4866436bd413212c7e8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-date-0.jpg",
+          "sha256": "8689a9dd76c72676229c9a333c9453648e5123fad017a2e072eede7ad240d20e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-date-0.ocr.json",
+          "sha256": "436ae8ea92eb03a7c6d58d4daa37e99d375b1a8fb2d765f3b8684f62609ed748",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-date.wait.json",
+          "sha256": "dd7026dd9ad083d5c58b4ff788db4e88457994039c3365a73c8b89516f19d0ac",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-debug-f12.action.json",
+          "sha256": "7bb619e2756d1d850199c092e6310da13ed1797aa8a21f8a0a287be4d96f84e1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-debug.jpg",
+          "sha256": "e1c06337cce6c6f21f86ebfc7ed4b02049a52377919caa3a88b55a9cc4eb4922",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-debug.ocr.json",
+          "sha256": "71b3d2783dacd3b0c75cb59626c8f65d2ad2a81db6661f9dac6087da70d3ad53",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-command-enter.action.json",
+          "sha256": "60517d74bd1c9f1cc073b78c10ed2f1a6792c3e48e89057dfbf12070b7937939",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-command.action.json",
+          "sha256": "02177cf319a9c4a51256a86abd6bd24bf1d3d2651462045117bbc9de571f0a58",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-console-ready-f12.action.json",
+          "sha256": "fc023ed837522fcfad51430f36e1357eab291dd82173c2a996adff678c618e95",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-console-ready.jpg",
+          "sha256": "ee4d09b1973231c9a891939878b9cecb548767d2edc504c4fd44da98147a32c1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-console-ready.ocr.json",
+          "sha256": "91dcf0514508ef0a564264de6f90bd30d264ea2d56a97861ff53301e6862b5a9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-console-state-f12.action.json",
+          "sha256": "f42e3112b8cdb3efc1ca3dff61abad526f31412b18bb3c372373963835906c9f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-console-state.jpg",
+          "sha256": "f19839b4821e7a7ad35f3e00a64c7ba004b765d20ab5200e59829fdc6c5ada32",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-console-state.ocr.json",
+          "sha256": "6d3d82cf94ee3b463e5ee2032f6b171a7cfa9ca93ed70818e42f54818a195b0e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-focus-console-input.action.json",
+          "sha256": "95160f9e88eb6b54654194f6b60e55ad7291dfba8e60d71a62489c47b6435c54",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-natural-oct1-ff1-open.action.json",
+          "sha256": "c2ee4009299d0390362e618119595df20c89edf1d38022bab2272f1b8b3f5ab8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-console-close.action.json",
+          "sha256": "a74a8a13d4cc0d3bbb14b0b12ba3d5eb0012b85c9e30a8ec8d75b2d0a74fadae",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-date-0-f12.action.json",
+          "sha256": "8c044517d9408ea663fb508c65640f692c8e69300e9a1e0d683136eebd507db4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-date-0.jpg",
+          "sha256": "dcd47150812d4c53f130b7afcecc66653c65e5fdad9450e1c875e1510f5f6b02",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-date-0.ocr.json",
+          "sha256": "c9370d55e899c35b64e232819e56dd99551fd98a89461934bfba7e9b8d5fc72e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-date-1-f12.action.json",
+          "sha256": "e16af9900a5f1d8e719ed021cb9ed35cb7677bea673df115284d46a1f0330123",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-date-1.jpg",
+          "sha256": "6457d7fb9a986884fe990d8bfa153f19256f3b58c7966e76261cc97b01e053ad",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-date-1.ocr.json",
+          "sha256": "df40b373a33144ebe9edb424f0637344630e496e75cfa35280caac523f1b1df8",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-date.wait.json",
+          "sha256": "c516ea7295298eae42154f520d2bc4fe9fa059c8bb2211576e435940877ea441",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-debug-f12.action.json",
+          "sha256": "e206a33f6511fb5ba148952b84950eb26f1e77b364fa5124b20821bb3ad844d0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-debug.jpg",
+          "sha256": "c8a337e922b79086c35e8662a63b493e34dd61aaaffd43c6ea1838c89907efc9",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-debug.ocr.json",
+          "sha256": "e7a451e25142e32dda8951877eb0867e1b3e8e2d2805c22a2dbdd89d0323341d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-command-enter.action.json",
+          "sha256": "404c4340ca90f748df7aa32c4d5bfea659e98ed8545b8741cfe8e4a6f82bde9d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-command.action.json",
+          "sha256": "40d97392821c3eb20956eabceac5dd6fa143939afa12179137d8edac6a05e37c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-console-ready-f12.action.json",
+          "sha256": "5d855ceb668b357f20b38be5e2c617b734d10182cbe774a1e286840e77a4d906",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-console-ready.jpg",
+          "sha256": "22bad69eba7608a4f2dad68c09105dc023d3f4d343de4fada1bfc2bbf23fd33a",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-console-ready.ocr.json",
+          "sha256": "c312b1cd73c5e8fbeaea52129f2589e64b7dea12c3fdf7e9520bfff46763aeef",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-console-state-f12.action.json",
+          "sha256": "b8d7d42fcb4e4b6efd1ec61a9493c13d2224505ec63bfdb00491e83dea5cd9b6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-console-state.jpg",
+          "sha256": "57d6135091dfe45763df33ec3f9e8e09eb8d32028751011ca34088540bb35f38",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-console-state.ocr.json",
+          "sha256": "8dc5fbec9be640e39e7f2dacab2dbde9c01977422004f527e2c7ee77f443e5b0",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-focus-console-input.action.json",
+          "sha256": "b67199df7c2174c3120831939c22ccd9153e9b1639ee1e5024eed73737b56928",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-prefinal-ff29-open.action.json",
+          "sha256": "6549db95ef2b760b9c3c3e889566a804198b86f2bd7cde3e5c169c635d5bcb09",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-close-decisions.action.json",
+          "sha256": "a59ba3dd872853c4a44a2ecbe8a01227c8fbf0612e7b6629fa99a9ae0385f495",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-close-source.action.json",
+          "sha256": "9e427b76f3ed28e5e873ac033f3cd4643724133ab09a06eb86ac5420533f0d39",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decision-details-f12.action.json",
+          "sha256": "76e5fd43f78ebfeea2a50ac12ab67ad86073381bc7c9126d0fa30d3fdcc6f5f7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decision-details.jpg",
+          "sha256": "2aaf5569c3890a8e2fc850849a749374a1dab8a44c7edace257af08472841ca3",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decision-details.ocr.json",
+          "sha256": "cb8ae9820578762d9580b590ff0308de8644256a419059501214f3437f269798",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decisions-f12.action.json",
+          "sha256": "184b31ec8bbff67983d80f5ad43fd314302bff1770d42f0e0a327bcdb1ff8f46",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decisions-open.action.json",
+          "sha256": "6a836c827bc19012357225a48239e03f86282ec18ba8803f849f12a3d1cb3585",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decisions.jpg",
+          "sha256": "21946baa726b562ab5c75b1e71c28614d626cfcf021b11e98cfd5877df4fd230",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-decisions.ocr.json",
+          "sha256": "f30e4fb4a59244e79fb4f0753b357cbb8fd501cfd88ff17c61b825e1ee890fef",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-next-colony.action.json",
+          "sha256": "4e19e540b5b3d487319475b25e2825317f8855449a154c0ed1921621548708ca",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-open-source-outliner.action.json",
+          "sha256": "67e59415e3d8b18746c7ee2579fe0f61011462b5b9dc9093350ed83678712293",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-planet-open-f12.action.json",
+          "sha256": "bf9bf507b10d2606f70101cc8386c98e8b286859bf78bff8c0d4a3e55d41996b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-planet-open.jpg",
+          "sha256": "b3a02ef04734c7ddd96df5e6e12a9b9c68b6032519119e8a526f8f6969e66cdf",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-planet-open.ocr.json",
+          "sha256": "452aa195eeb0bc801f74f3a740a55c7e4893220a3d016a96aa953a25fdb35f76",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-source-planet-f12.action.json",
+          "sha256": "f824e11efe9ce3a93e93bea27c95549b8ec77fdff316d31e591e4251401ad7c7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-source-planet.jpg",
+          "sha256": "d8be6c9e6b3418a40158113081a2f7aa5a0de3db000556f171dc3414e7c9edb1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-source-planet.ocr.json",
+          "sha256": "4babf253f9cdf03bb566772362c3275fc97aaea9020af1f7d8c7d5d9ec1952a0",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-close.action.json",
+          "sha256": "dc60cd48d47c182d83f00d8ae622c3589aa9d3338beaea129a99dfe8cf07bfa1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-command-enter.action.json",
+          "sha256": "3e24dcaef36a0f562fa3779f8244d57919b2f14716cf0c5604d085890b7137d1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-command.action.json",
+          "sha256": "7f6610936d2c26bc76c62cadff9492a64c745ff25eea1f15c15168d1792188c1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-console-ready-f12.action.json",
+          "sha256": "69a7439433e9e5097da4203262c819624a61ff9fca6dbb271a9194e8eb672a02",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-console-ready.jpg",
+          "sha256": "958d325d26e39a9f37f715ac5fbb512453f622d8923f3908fdfecdbf6f8f6f92",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-console-ready.ocr.json",
+          "sha256": "9be6c0ac5df8590671e6f3a8d3d2d6fc56ea517cdbc8f7d7ef55edb66095e876",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-console-state-f12.action.json",
+          "sha256": "d30728b79ee7a52e02433749c1c3aab5e8d8a95afb435321876d7c4ee74aa924",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-console-state.jpg",
+          "sha256": "88fd4ba4d670d45b2abfa2ff635e85d8fe52ac899c12b38e90a091b46b72329b",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-console-state.ocr.json",
+          "sha256": "dc489347459dcd186be5081a0870098960ac1f3470b7439820e8cdf6460303ed",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-debug-f12.action.json",
+          "sha256": "3dafc6c56b1f4c6a789403c8a85a4182f195f4e1275a76be65609412a938eceb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-debug.jpg",
+          "sha256": "b9c3074fda16e11cac743eb7825c3213d0edc2430a0485dc6ad654b62df53559",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-debug.ocr.json",
+          "sha256": "2b2e032584bb31446205a62a637a58d3bfe269a91f5082b344b9288d470d790b",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-focus-console-input.action.json",
+          "sha256": "dd30c3c12c7b7efb708ccb13406030591d5d76c22031db5ee45302e3a0c20208",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-open.action.json",
+          "sha256": "8a5152db29427a6fa55eed9ac69012a9471a70af6a513069e252ff6e58b513d8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-close-menu.action.json",
+          "sha256": "6f8698e8b1ff555c87620f8bfba25fea818cad15c55653a66ac7fcb44acb4451",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-esc-0.action.json",
+          "sha256": "4cf496a1e2f5848e75f4641e7ef2ad907050a489972780e6eddec7b99a2cd9f3",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-menu-0-f12.action.json",
+          "sha256": "8d9d6a64704dc9d8a1c83c519e2cd57825979771ce99c52fc38c7162ffdbbc56",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-menu-0.jpg",
+          "sha256": "7de6bc7de8896b23097548aaa5c2a097d8fa6de534ec62c8bde22970eb8b8498",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-menu-0.ocr.json",
+          "sha256": "467a1aa89af51cb62d33b534cc8c7cebdcc44c1ad0d2f3378ffbe9f957d4180a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-menu-1-f12.action.json",
+          "sha256": "734675537c2641fc8ff2538fe8a0b4ef65ee1adcd9d3ce865d58bcdc2f0801a5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-menu-1.jpg",
+          "sha256": "0adad4f4b0eca4faba26d032e9056dbadd355f19d151adeedce32bcb5cfcaf88",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-menu-1.ocr.json",
+          "sha256": "1343afaed93025e874e61d01819eb13300f470038a6ec3588042826c4e2e670c",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-name-field.action.json",
+          "sha256": "4c9669e623acc84f375e6994514ab2f054766221fa5c69d74924c8a0b581b7b9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-name.action.json",
+          "sha256": "66151b18ae02fc3e7b46d8a5d1f146cbdb20fbc48478033d9ec3216ee4ce4ffb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-open-save.action.json",
+          "sha256": "df5569ab6a7eebb42fc3a18f5ae6bc2218469933f58e07b3527a5fa4c69b400f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-save-click.action.json",
+          "sha256": "029fbbe78ac40cd3f148998a5ea50b93f3f16f7121066c76a83d02beae7b24c8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-save-dialog-f12.action.json",
+          "sha256": "c187d3ea55627efa4898e93a3ba354ae8b6f7412e3dec08181e59654ba18d07f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-save-dialog.jpg",
+          "sha256": "09800b5aae7f441d41c6c1683b8df73a59a2ca345859b6d6ad34d71c30bfe76f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol-save-dialog.ocr.json",
+          "sha256": "d5071ab04d25e2ddad9b90eb50a6ea727401496c4e233d038ec8ec018a01de05",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol.audit.json",
+          "sha256": "fe1a661367d301f728b584cab9d2dbe313bada4399727aba82505db1b7010643",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol.native-save.json",
+          "sha256": "1de13c0de223349d76179391c6cf2d93da741b64be104b67e0d3758b8e253c23",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol.sav",
+          "sha256": "a7106e91515e3b552ae5fe2d7c6ab265fdbbbb15c47b7ab8670b7da251b067ce",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-close-menu.action.json",
+          "sha256": "f1bcb513091dd766c2887f7d6ad0672e3b027c821a5051ee42e6bbaf974047b2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-esc-0.action.json",
+          "sha256": "eb67a17f1164e83c9e4ff4a1a58e28828806ee03a3b4b8a3161550ace04f0283",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-menu-0-f12.action.json",
+          "sha256": "0b7420327dc52aefb2db3c347d993c88f270d6b21ece78f9cd1e9635e35b95ce",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-menu-0.jpg",
+          "sha256": "e9c2ee4da04966e7ad2940f20741c501b07d7438544e29639e7f30db859e2815",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-menu-0.ocr.json",
+          "sha256": "034b341c0970252a4c9b9bd9d2c93726a706d3d12d037c81a0cba03ffee47606",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-menu-1-f12.action.json",
+          "sha256": "8dd7a7d784fea5d2f350fc51b98e0f323ec63605288e73033eba2475b66bca0c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-menu-1.jpg",
+          "sha256": "9017cb0d0efa349051b47cdda10f691775af168c5443f84a171e87f913c920d7",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-menu-1.ocr.json",
+          "sha256": "79685d04669fd3845e93bd00be8737908a612230190eaade2d642caf8b8a8393",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-name-field.action.json",
+          "sha256": "987fecc1a583e5d1e82df31e3c6563cff8a9bde9391b1426a922cfd74dec28bf",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-name.action.json",
+          "sha256": "2a063b9886f7bfd3c438a1e101ce27a121370896b22f22ebce04f3f8de08832c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-open-save.action.json",
+          "sha256": "bee00d1d5d77ed7d3be77c60a1f5dca874b0523cde420300c74cf1af6db091d9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-save-click.action.json",
+          "sha256": "1fd315283d41ded80c635de564458d69c805bd1fe92c6ee493485212855a8d96",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-save-dialog-f12.action.json",
+          "sha256": "fc6c240a72d434374955f9047638aa2cf2126a1b26859d53bdfe6a591dc5d8ff",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-save-dialog.jpg",
+          "sha256": "2b1095fd0b85f8981aa0fdcf96524e10c5188dc44c059d330aa20ebd8517e364",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2-save-dialog.ocr.json",
+          "sha256": "3016d83fb37bf8fe1c6efd4f7453f7428945d5e54ec1c087f779983c2dbfa4e8",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2.audit.json",
+          "sha256": "1a5d857bb852ee379508d8075e1c7b72182793237abba1f63b1b8a1ba86b716c",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2.native-save.json",
+          "sha256": "2c340b4ebed3e41d2a307a805ff425d4660bc5f0fe5d84d373dbd7a1755b7078",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalcontrol2.sav",
+          "sha256": "66c0ad74de664da133eb8ebfa538cd02a1f5dcae9cc361050fe7e97fd75bb1a8",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-close-menu.action.json",
+          "sha256": "9390776a218013421998c1a1ed8567bec70c15c4599045ab5b8164410ebdcd02",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-esc-0.action.json",
+          "sha256": "15e2210ff0585272f50a943440b8c51b59ffdaae47217b127fd327944a0d3da4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-menu-0-f12.action.json",
+          "sha256": "1b3c4cb1d2edcc552f6f33f67ee4ef2d0a17791352ef1e21540204f6ffff8c2e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-menu-0.jpg",
+          "sha256": "57352dd83a2142543c39508522869a2e00fb91a071067335b6b60275d4c4c24f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-menu-0.ocr.json",
+          "sha256": "351f0d775d3b36edf97080e0fbb9610ff2d78c749a6b1d28b419103f609603e0",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-menu-1-f12.action.json",
+          "sha256": "d1af7f3ce06cbe85a13811f33e0bb1701cb91216567a22c664a2e8e62ed60aa9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-menu-1.jpg",
+          "sha256": "6e4b822e581a0a4aa610955091c76aee9ff715153eab08b19bfb94867aefce51",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-menu-1.ocr.json",
+          "sha256": "1f36a04c4fccbc93c29bd98bef8e1ba56d694ca10174f06164515d121daaf6e3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-name-field.action.json",
+          "sha256": "4c99f1717060e1d8e5bcbec77e1eef6938138274109b5da1c6688803c76b9ffe",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-name.action.json",
+          "sha256": "a2933acd9d667459e9fd752050d75a8e5e5cf76262eaa7a061722e6dcebb2523",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-open-save.action.json",
+          "sha256": "8cf39e2b80c7660a528748410e0817ba4f49dd44f50b300afafe4aa7c4cf1825",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-save-click.action.json",
+          "sha256": "2bf01cc3a08e3ceded77cc0143cee334cdea8ecf1f888dd76e934193a922f072",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-save-dialog-f12.action.json",
+          "sha256": "df3e12422b9d11f720871fef27fc603b8553a0603886e54cb896b68e562ca303",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-save-dialog.jpg",
+          "sha256": "193f9e356f12b553b4431b866ece517d4fd66ae3f3f7001c6a90cebe20f22326",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01-save-dialog.ocr.json",
+          "sha256": "6dcae2389b87741f08869429805b726582a8d470219885689e319b9d138f0cac",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01.audit.json",
+          "sha256": "abacbb1d610b32ad99393afde0f1d482578c714c0800504731581c8056038f4d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01.native-save.json",
+          "sha256": "cc30b7c827a887fc931f1b5bbbd9c7f7d00dccffe06b7cfba86619b3fe7422d0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm01.sav",
+          "sha256": "61a1ab2670b233b4d91fc9f151a754db3dfd7a164a9c0dca4e38af4d76e9ebd8",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-close-menu.action.json",
+          "sha256": "f337abd01195cdb6513448fbf14b64f50a8b1b14c5f51f150a1ae972ec0b8736",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-esc-0.action.json",
+          "sha256": "2b21476ecafdfb23dcf3f0d4aff4c1835730b745459d638760da2ade19511e7d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-menu-0-f12.action.json",
+          "sha256": "86a91a77b0a65a7afca8c6da168d79aa179b3fabc706ea0c102d2b854aa2e2c1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-menu-0.jpg",
+          "sha256": "5f6f3770e3cdefef02d3abc964283bcfa3f9c46bbb5dea14da0e2de77d81c8b7",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-menu-0.ocr.json",
+          "sha256": "8d595cb724295c10a0edc189b8bf25f7b6e06ee7b350c72f9b253f3b6d23a2bf",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-menu-1-f12.action.json",
+          "sha256": "774f4572e3ef1adae00af35071826567bcefa06858778ec97aa039b7f045220c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-menu-1.jpg",
+          "sha256": "f1404fd033f772ba6c378811a084e7d76721161b7f12cda87a2c7832e1ae0bca",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-menu-1.ocr.json",
+          "sha256": "f2cd6ee9c157299dac1b19748caff13d5f5b39411f788aa65e4c2a3a13627343",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-name-field.action.json",
+          "sha256": "bd57923e9b90ed640e1568c2a215bfc8fe3dddf929321e7148e0425cdfbdc680",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-name.action.json",
+          "sha256": "5b6283b3e40bbe3996291e346bb60dd1229bb1ebcd066887513e0c88b7504728",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-open-save.action.json",
+          "sha256": "a9175a7061ee08d6ce66ea39bcbfe2f8017b46b28037844509c92344d77cdad2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-save-click.action.json",
+          "sha256": "d5614c33cfe26668243490f65ee661fa0aa36c6b5f81cbf56c3a077f4fac59e2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-save-dialog-f12.action.json",
+          "sha256": "03101a3cf96b40cd4001f13e810e6a8ad42bac2a66b511799f2681f11c827d05",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-save-dialog.jpg",
+          "sha256": "2e3a083c92195003984de14d28966384207d45fae06105760d7f6c6749827857",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04-save-dialog.ocr.json",
+          "sha256": "6df11ff27247452993777efae59522a9db223f8142c1895cf7e8aee50233dfe1",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04.audit.json",
+          "sha256": "e5cf77f4d38b148ddb08475fa9d2e5131a50e54e1fa98c28411d3e14f980c108",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04.native-save.json",
+          "sha256": "2b2f6624ffaee01d32f65b2d1fac737cfb647461cfbe545c96c922a254a45401",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalm04.sav",
+          "sha256": "a1a381f732c7332978a2cdd31b4e52ebe41935527e8391ba702d4f4ff466249b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-close-menu.action.json",
+          "sha256": "386b5cee72e000298b3833b40ede760c68f248dda8912b2db61ec2f4cfe57fe7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-esc-0.action.json",
+          "sha256": "60c27bbc63e23cd17592e87c6af4c7c50e85f236f21db1e3240082d0607c8159",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-menu-0-f12.action.json",
+          "sha256": "58269cd6fd567298bbf9635fbe7e9fc6c194ad13f94d0a99af0c44eb6bb58152",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-menu-0.jpg",
+          "sha256": "c4b23e47c18aca755b55af00dbe472688094d5fe9f683882eb08172020bcadbf",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-menu-0.ocr.json",
+          "sha256": "b618fac2edabbeaf983fb65097ea6bed3109d777dd6e5c7807454f998561ec2a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-menu-1-f12.action.json",
+          "sha256": "4b5e9d06a7f05d158f6c516d280a97ab1d211a130c32b94fa15650ad4a84ca96",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-menu-1.jpg",
+          "sha256": "7939f20bf16af58768fbcfd6068d94e4b047de1773f69bb090d5e78f9651dbab",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-menu-1.ocr.json",
+          "sha256": "9f20575c33d47f5ae54efebd40ceea9daf96b5b65e883391eec5dbc57bc53ba1",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-name-field.action.json",
+          "sha256": "c1a8e280e4cd6ac30fff63cb8947699fa4eb7c3d981c71457d328cc1ecafcf7d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-name.action.json",
+          "sha256": "5ac5bb109fa5a9a74b6896a036740abce49a2c077440f679ae7b39974f2d67dd",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-open-save.action.json",
+          "sha256": "94a909f3699e29035222b265162efca1525aa6125e0c1f578686ec8ea9251775",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-save-click.action.json",
+          "sha256": "a478e40411200ebe802729e24cb9e7442788f884797d061410d194ed914991a2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-save-dialog-f12.action.json",
+          "sha256": "3012642c8bc039577097b414236be74a1889edb7af53d7fc5962a43780884895",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-save-dialog.jpg",
+          "sha256": "1a5678e621b2d09e30cb5b4e65c3ddb50e2be177088e3df010afdc94ffef2c2e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete-save-dialog.ocr.json",
+          "sha256": "91c0a609fb8701359ed66f707a7114877b26f79e1496a1a1f35cc82ff5f1951a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete.audit.json",
+          "sha256": "a9c8d9c08081493fcee3da3243aefa87154e4d6a5ccd8982cc7aacbdd39acefe",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete.native-save.json",
+          "sha256": "9cc308919df421586b842062dbd2351b93a72f7d17fe8792f5565c8c338af158",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete.sav",
+          "sha256": "796eb00c6c7fbb84c6863923c9b3979d45dd506d2dd48dd3f9710b15f2d41dfb",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-close-menu.action.json",
+          "sha256": "778698cd5b7f21148e51a97744d24010f9eb202c5b8790d1c866de3d8672acde",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-esc-0.action.json",
+          "sha256": "1aaec70171f7d18d93aa08359a485bff2281dd40e2b0a02e0c82bc9ffc4b1d1f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-menu-0-f12.action.json",
+          "sha256": "f7ce8250841dc5995483f1bbf483662ec5f9d3c2fd1422d617a504c0ae46936f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-menu-0.jpg",
+          "sha256": "c1985a4a21388046399c3cafc34ffbded9aa0cb330f7fcfc39447389b884f743",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-menu-0.ocr.json",
+          "sha256": "42ebb38b7ba0ab9057709bef34a3aa6f202e8c1b2bff1ea44209674fd89b1661",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-menu-1-f12.action.json",
+          "sha256": "e026cfd25c625ceddd39030713e7a4eb267a7ada6385aae591970cc9cf111814",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-menu-1.jpg",
+          "sha256": "117a8825bd76d11aeeb25bfb4377ee421a37a1e14ed29b8af587244754eb8281",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-menu-1.ocr.json",
+          "sha256": "4eb7d97e1ac59d613bb60c89cead3caf6d337ed9df17831816c21541ebde077e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-name-field.action.json",
+          "sha256": "c64d1d1302b64616a4a196e74cc4f199f91f9aaeb51845244b665c6bdfa30388",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-name.action.json",
+          "sha256": "3b3e5c4af11c8814800a1de090572c111b44b02c3cea39f66d4da4444d5d8045",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-open-save.action.json",
+          "sha256": "0396cdd66bf184972a987c2291ad994eb27a5407969c39c750053025dc619fe9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-save-click.action.json",
+          "sha256": "8460ad0142cd8b25de6a2aa41c9ca4a9206a2976eb6e95c7ccfe64129087da66",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-save-dialog-f12.action.json",
+          "sha256": "4dbadf3f2eb02c16a7f696198ad7f447811d9f7bb739b06506e7ccd02c5c3af1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-save-dialog.jpg",
+          "sha256": "5e46aa7342f1f9381f1573862c01c2fbfe8c686142ce206ace4649beab5d625a",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2-save-dialog.ocr.json",
+          "sha256": "894d750a302167f52dec7b0497eff44f0f2950a8e3025b369a12546611b8ceb4",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2.audit.json",
+          "sha256": "28b0b1227ded1b28cb5103a3faaee6b3b22f52a249adaf1851fae4380b85808d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2.native-save.json",
+          "sha256": "543044213b12a3c40332e7543875ff2e2095fb68acdc0afffe48afae31a8f3ba",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete2.sav",
+          "sha256": "640ac4bfbed583ccf895471beb737bc68c4bde1e27a47f0a346d52bb2428af5c",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-close-menu.action.json",
+          "sha256": "3fe783fa146bdad19aeae57e1892d68971d47484fd956b2fcf9e0bb79c55d424",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-esc-0.action.json",
+          "sha256": "deeeee9119417c1c07c902040a41e72cb1d1644d808f23902578a1335b244de7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-menu-0-f12.action.json",
+          "sha256": "0338f0c64d567c02def2f5873395f2f8b3fa8c1eb5300d1638adf7aea7025c6e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-menu-0.jpg",
+          "sha256": "d862a3d771a1fa21346022bd4cec2c6d67a692b3945dda388937e0f61edc4e0b",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-menu-0.ocr.json",
+          "sha256": "3013e9e5b57be534797fc7dd5926e7a9b6c02565c48093026802e29a5f63e161",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-menu-1-f12.action.json",
+          "sha256": "66bad218b26fc10991b189643a2774cc133e9f63f070a6ef878fb0302b0f672c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-menu-1.jpg",
+          "sha256": "53088012f420d86ea6c668a7fb76703ef003ca5ed371dfec3a9347399c2bbb03",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-menu-1.ocr.json",
+          "sha256": "8b12621b25b44130e6067c4d9e5e74077d8f2d77c114819230b824ec91308a95",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-name-field.action.json",
+          "sha256": "931913cb08cf003467b095821fe51d338fd8513f7421ee751a0d3316a5dc8f03",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-name.action.json",
+          "sha256": "592e4d95f4124b340561d9c9d3370ecf53c4f9cd0de05e6eafa6b93defec941a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-open-save.action.json",
+          "sha256": "66359097ea733930acf2bb1d81ff1e845e10a055680a1f71acf449ee6033e38a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-save-click.action.json",
+          "sha256": "f4645c9fea5c5334c66663999d4197ba58b089984f5cb1af3836f1c2485d7eb3",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-save-dialog-f12.action.json",
+          "sha256": "3da0b518e4e845df45949969c09ba95c48220442bb22a0933492dda256c2795f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-save-dialog.jpg",
+          "sha256": "ce6c1b300d7064f28fe4c6d164f718fa8c7cbc1b436d9af8b7d13081518067a1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3-save-dialog.ocr.json",
+          "sha256": "f887ed411e82eb15e15ceb3ff2b123e1a0b98cd4c96cce27a011899ac4baed1f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3.audit.json",
+          "sha256": "69d7624ec1cf2c7c55e3b3e20b105b173ff057a41995c22dde2a33be7b6103ac",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3.native-save.json",
+          "sha256": "13d47827281edc493fcac388eea903bf2ad3bc457cf2bcae2ccd3199af984e32",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalprecomplete3.sav",
+          "sha256": "0c872e2efdd2329ae021466955cc0fe1ab4813bf0b0c8233f011706bf8615772",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-close-menu.action.json",
+          "sha256": "b7163c884ac20968b528a8bf73aec5152dfbe130e02fdab5ab373c81d4d80eec",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-esc-0.action.json",
+          "sha256": "def87ffd2a487753d48e80be8992cc2d3a1bdd7462664ad7632999aeb7cceb07",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-menu-0-f12.action.json",
+          "sha256": "5cfc43ce65812eed745ce72c146defa35dea824c50085f870a8e445cb31e8585",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-menu-0.jpg",
+          "sha256": "70ec007e22d52621f9fece768afc6bff89213fcf6b49f8fb87f4650987c04f5f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-menu-0.ocr.json",
+          "sha256": "636ac3c0b434b81fbf761eb2bc9de610f7fc3cd8d65c7b437477d1e5f5cb047a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-menu-1-f12.action.json",
+          "sha256": "641632a2e5bdcf39dbe918e5eb4da3938844169e3a247df6be62c1883fa43458",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-menu-1.jpg",
+          "sha256": "5a5615737aef8ad56ebaea77d5ff62d6e1cf39903ec309aee300a3eb9c775188",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-menu-1.ocr.json",
+          "sha256": "57b973453d556e156e8d8a994cc5c1ccb6de8013fd6e7262fe2b2eeb3b810e76",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-name-field.action.json",
+          "sha256": "5a9c31303600a3f05b58bec993c155e21f128458ba7352623fd6eda91e6bc5a0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-name.action.json",
+          "sha256": "8042476e55a745baba1d650f1237b3fd98abd7059736b6371ff9b867a88c0927",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-open-save.action.json",
+          "sha256": "33ef891c8400996630b3160badd5af9e641e344efe30bf705e8245ea72edf7b4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-save-click.action.json",
+          "sha256": "8729ba6d66e31f0f333bd0694e3b1be8c49fc9455a9c0fd797282cb317a1682e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-save-dialog-f12.action.json",
+          "sha256": "3e889de4fadeb286892334b6443efa726710c75fa17b01146e375c1638b93049",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-save-dialog.jpg",
+          "sha256": "78edce0cf7bb82f83b622b5486a17dcf6a12205adee596dfb0874d2eb22482e0",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2-save-dialog.ocr.json",
+          "sha256": "6cc6ca30f3e6696a1abb03049605b2e1f47ba5f43cea6caa78e5683e5889af42",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2.audit.json",
+          "sha256": "88a8957042d06ef8cef41f82552c90d59e090d04a09938b2a39d730c5c610269",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2.native-save.json",
+          "sha256": "fd6235e71053f7527fbc32d7fb7105c9b792b8e3b140a3efe37948c1b24a2290",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-close-menu.action.json",
+          "sha256": "4579fa9dc18d5d82517ca2fd6c6c19fd76c305539faaf95e86a748b2fbbe023f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-esc-0.action.json",
+          "sha256": "e1c50a1db92f6490d8e5ce0cc7db051430d880df3289caf4afcc75f74b028ea5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-menu-0-f12.action.json",
+          "sha256": "d34da71839725daa799fe2b656e309f8ee2b70583b1c151f07b9a5bed27c64c1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-menu-0.jpg",
+          "sha256": "9a1f17e69204bcf832f84a5f06e83d81e4085851d91464c0bff50bb1621214bc",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-menu-0.ocr.json",
+          "sha256": "2f13ec4ee9cd1f0e421db1a16418a94aa8479521351e799a90cbaa1384985794",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-menu-1-f12.action.json",
+          "sha256": "7c3ea129260b5b38c7f1bc9557b8462012655faa3e0540d1990a07bc71f3236a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-menu-1.jpg",
+          "sha256": "0d00e1a9b86cb07a4ffff91188690da180bfb4ff3b7d67daff7b0a036a669c8e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-menu-1.ocr.json",
+          "sha256": "ad7ed5736d20070521bd3daa58b99c87327e88f022ecded3fece7462764ad89e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-name-field.action.json",
+          "sha256": "02c8d783b14784eb1de9a23a676eb0c847a06b91969579ecabb842e13951d8fd",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-name.action.json",
+          "sha256": "076ede3879f96ea2a587a8667640786f4367dbd64ed9c6c28c565e81d3ecb029",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-open-save.action.json",
+          "sha256": "d7a0dba0a27046d566a8dd0266ee102b369af2957af2e1db4773ad1bb413e6f7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-save-click.action.json",
+          "sha256": "7258f8539c2980dfd10274dc8d9be27670190f16cf497d892c2013e64c5ca1fb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-save-dialog-f12.action.json",
+          "sha256": "9d16a8b7348bd3bb73bdb123720d8bf79618cf65ce02193b1a28bcd3fbd08414",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-save-dialog.jpg",
+          "sha256": "8857ea081e7f0f4b2cf01f0d140e5f1c6e6e0082e008fa603c14e1de4bd8f760",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart-save-dialog.ocr.json",
+          "sha256": "2bfcc52cd08385fcc9c19033638a7844a02a388eacd7cf1a9a0bddbff5571816",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart.audit.json",
+          "sha256": "cf859f674394a2642bb3ccc76cdfdf3257a73815bb5eea363c06a809b2b43089",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart.native-save.json",
+          "sha256": "7bbcac3546d7327cf2d145dc36ebc8f23020d006b24726fd17349c276eeadad4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/archive-index.json",
+          "sha256": "fdb5237491352774df16a085b01e6d0360c6b4acd179ae0a59dea7f8c0fd7fb6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/verification-v1.json",
+          "sha256": "005ca2a9e1cde7defc543c0115c7553395af9afd98b875c56c98207ee110c85c",
+          "kind": "analysis"
+        }
+      ]
     },
     "old_save_migration": {
       "status": "PENDING",
@@ -16222,6 +18480,22 @@
     {
       "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/enemy-native-shot-completion-report-v1.json",
       "sha256": "cdb5b45d704d4d98ac102dee7ea6aa9cd9918bba5c9dd3590ecd990e6824b0e0"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/archive-index.json",
+      "sha256": "fdb5237491352774df16a085b01e6d0360c6b4acd179ae0a59dea7f8c0fd7fb6"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/verification-v1.json",
+      "sha256": "005ca2a9e1cde7defc543c0115c7553395af9afd98b875c56c98207ee110c85c"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/partial-normal-seed-v1.json",
+      "sha256": "3b1fa0f28a81955586896e2b1f4983cd00c1a53fa5275ddb588dad3974061e56"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/authored/normal-safe-close-report-v1.json",
+      "sha256": "8027b33cbb8a27ee9053a646190ec58f5fbafa2608cd8d9ac6ed89ee876d0389"
     }
   ],
   "_scaffold": {
@@ -16268,7 +18542,7 @@
     "required_months_per_budget": 12,
     "reference_plan": {
       "path": "docs/evidence/1019-requirements/rc7-reference-plan-v1.json",
-      "sha256": "5a23f2e2095c23e5df727715e22cb7e26aa9e57e1c2f9f1f03c8fde37e21491a"
+      "sha256": "503b4e7bbe7854e1affa41509317931cb02640da8d73130080695fa55b65608e"
     }
   },
   "_progress": {
@@ -16570,6 +18844,21 @@
           "existing_reload_true_additional_basis": true,
           "other_paths_inferred": false,
           "missing": "final stopped logs and dispatch markers; final common review"
+        }
+      },
+      {
+        "previous_index_sha256": "38044f38ac7af4a182b010b02d3c6cfda86c6167b3892ebf2621c2a03be1a1fd",
+        "operation": {
+          "command": "observe-final-sealed-normal-seed-only",
+          "source_proposal": {
+            "path": "docs/evidence/1020-rc7-normal-native-v1/partial-normal-seed-v1.json",
+            "sha256": "3b1fa0f28a81955586896e2b1f4983cd00c1a53fa5275ddb588dad3974061e56"
+          },
+          "case": "normal_dismantle_regression",
+          "check": "normal_seed_preserved",
+          "supported_true_checks": 1,
+          "other_normal_checks": "null retained",
+          "scope": "safe-close handoff only; no new runtime acceptance, log-review or publishing"
         }
       }
     ],
@@ -17593,6 +19882,17 @@
         "analysis": {
           "path": "docs/evidence/1020-rc7-pk-enemy-completion-v1/authored/enemy-native-shot-completion-report-v1.json",
           "sha256": "cdb5b45d704d4d98ac102dee7ea6aa9cd9918bba5c9dd3590ecd990e6824b0e0",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "normal_dismantle_regression",
+        "check": "normal_seed_preserved",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-normal-native-v1/partial-normal-seed-v1.json",
+          "sha256": "3b1fa0f28a81955586896e2b1f4983cd00c1a53fa5275ddb588dad3974061e56",
           "kind": "analysis"
         },
         "scope": "explicit individual observation; case remains PENDING"

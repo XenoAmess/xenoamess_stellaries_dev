@@ -1,0 +1,22 @@
+{
+  "schema": "eep.rc7.normal-independent-population-control-command.v1",
+  "status": "STATIC_SYNTAX_PACKAGE_PASS_RUNTIME_PENDING",
+  "normal_population_control": {
+    "id": "normal_population_control_destroy_receipt",
+    "command": "effect event_target:eep_reg_owned_source = { set_planet_flag = eep_destroy_done }",
+    "command_chars": 81,
+    "command_sha256": "5ec564a08cbf2fc83ec84d3e0e77d0a835b5a6ded19bdd700ad17cb0efb98627",
+    "console_under1000": true,
+    "only_script_mutation": "source planet flag eep_destroy_done set",
+    "required_before": "Root-closed actual Sep30 precomplete2, alias revalidated typeplanet id1, source alive, Situation16777231 progress4, q2/T5, flag absent",
+    "control_scope": "Independent population-growth control only; never production guard acceptance",
+    "runtime_result": null
+  },
+  "plan": "docs/rc7-normal-independent-population-control-1020.md",
+  "static_acceptance": {
+    "path": "docs/evidence/1019-analysis/rc7-normal-population-control-open-kaishek-1020-v2.json",
+    "sha256": "912613768f10d5fcacddc36c79620ff83b9e10923305fafeee10d8d8fe7b4b7c",
+    "status": "PASS",
+    "scope": "syntax/package including supported fixed weapon CSV paths, literal planet-killer numeric sources and callback existence plus explicitly registered finite population scopes and referenced script-value shapes only; native loading, phase timing, runtime, recursive expansion and other opcodes require Stellaris tests"
+  }
+}

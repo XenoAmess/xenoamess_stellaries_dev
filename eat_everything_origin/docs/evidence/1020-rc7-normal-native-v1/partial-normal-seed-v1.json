@@ -1,0 +1,66 @@
+{
+  "schema": "eep.rc7.normal.partial-case-proposal.v1",
+  "status": "PARTIAL_EVIDENCE_ONLY",
+  "case_id": "normal_dismantle_regression",
+  "case_status": "PENDING",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "run_ids": [
+    "20261019T164112Z"
+  ],
+  "supported_checks": {
+    "normal_seed_preserved": true
+  },
+  "checks_not_inferred_here": {
+    "normal_duration_preserved": null,
+    "normal_completion": null,
+    "normal_reload_idempotent": null
+  },
+  "analysis_report": {
+    "path": "docs/evidence/1020-rc7-normal-native-v1/authored/normal-safe-close-report-v1.json",
+    "sha256": "8027b33cbb8a27ee9053a646190ec58f5fbafa2608cd8d9ac6ed89ee876d0389",
+    "kind": "analysis"
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/authored/normal-safe-close-report-v1.json",
+      "sha256": "8027b33cbb8a27ee9053a646190ec58f5fbafa2608cd8d9ac6ed89ee876d0389",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/authored/decision-start-seed-summary-v1.json",
+      "sha256": "bfbaf625eb4b7429712c67269e96ec838e5fdcba37aa3607674314ac27722e95",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/authored/receiver-report-v7.json",
+      "sha256": "e84984d9ad1a90dd9ebe9d67d8e2e3bed9dcc692068b88b71d7954af7a4215f9",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalready2.sav",
+      "sha256": "b3644338f5f4f82522fe2d52cb7f939bdee59458b81440e649e8a1475ea2427b",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normalstart.sav",
+      "sha256": "66f231751fe16a400c0f3a4952532768f1d9db7ba29dd1431835e1423af7dda5",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-ui-select-devour-decision.action.json",
+      "sha256": "7b0dce1743a87f3e07d0a2cd44ccff19cee1fc165b583b72ed86aafef27338af",
+      "kind": "actions"
+    }
+  ],
+  "missing": [
+    "No no-testflag natural final day completion.",
+    "No original normal settlement26 result.",
+    "No same-day duplicate and actual completion reload.",
+    "Stopped complete native logs final review pending elsewhere."
+  ],
+  "limitations": [
+    "Only actual seed relocation and population conservation are supported; rest remain null.",
+    "Control2 cannot substitute natural completion.",
+    "Case remains PENDING at user-requested safe closure."
+  ]
+}

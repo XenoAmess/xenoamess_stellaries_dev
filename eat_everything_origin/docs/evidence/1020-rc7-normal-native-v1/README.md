@@ -1,0 +1,11 @@
+# RC7普通吞噬安全收尾证据
+
+本包只封存当前run已交接的真实决议、seed、m01／m04过程、失效Oct27候选、Sep30原始锚点、独立人口控制Oct1／Oct2和无控制旗Oct1恢复锚点。版本0.4.0-rc.7，生产树61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0，简中单Mod，run20261019T164112Z。
+
+可用部分提案只有normal_seed_preserved=true。normal_duration_preserved、normal_completion、normal_reload_idempotent均null，整组PENDING。用户要求平稳收尾后没有执行无旗Oct2自然完成、原settlement、duplicate或完成后actualreload；没有发布。
+
+恢复锚点是run/r7normalprecomplete3.sav，Oct1，SHA0c872e2efdd2329ae021466955cc0fe1ab4813bf0b0c8233f011706bf8615772；source物理1／colony18／主体112、core物理2／colony0／5150，Situation16777231原生progress5且未killed、源无destroy_done／pending。必须从实际load后重核，控制SAV不得当正式完成。
+
+源缓存eep_progress在m04之后仍1，与真实Situation4／5分开保存。Oct27候选已碎，拒作before；root预期生成在KeyError后、写文件前中止事实单列。独立控制只设destroy_done；credit_done不能阻止返回／摧毁。两支均实际load同Sep30原始checkpoint，Oct1月增2／5、控制Oct1→Oct2日增0／0。交接R112／other0为独立预期，未从旧Oct27或正式完成after拟合。
+
+archive-index.json列payload和canonical原字节引用，verification-v1.json独立核字节／角色绑定／部分提案。所有旧已封包只引用。日志最终封存由root指定线程处理，本线程没有读取活动或停机日志；生产告警的root摘录与归因保留待独立审核。

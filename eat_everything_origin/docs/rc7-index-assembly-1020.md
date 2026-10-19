@@ -414,3 +414,45 @@ pending SHA：
 
 18 组、组件及全局仍 PENDING，原失败与边界诊断不变；成长 invalid／cancel、
 normal／Lithoid／候选重启等没有根据本敌方分支推断，也未建立最终结果。
+
+## 第九轮平稳收尾：普通拆解仅种子单项
+
+用户要求停止继续验收／发布、平稳归档交接。主线程授权最后接收已封口 normal
+片段中的唯一已证检查；本节先于 JSON 修改，不启动游戏或新的验收场景。
+提案为 `docs/evidence/1020-rc7-normal-native-v1/partial-normal-seed-v1.json`，
+SHA `3b1fa0f28a81955586896e2b1f4983cd00c1a53fa5275ddb588dad3974061e56`；
+独立归档验算 13／13、450 payload／406 raw、49 canonical／649 typed refs 已封口。
+
+通过既有 helper 只记录 normal_dismantle_regression 的 `normal_seed_preserved=true`，
+其余 duration／completion／reload 三项继续 null。没有无测试旗标的自然末日完成，
+不得从被排除的 Oct27 候选或已清理 control2 外推完成结果。实际角色、诊断和
+原始报告按封口字节附加，不改原件，不继续验收或发布。
+
+全索引预期 93 项 true／45 项 null、所有组和组件 PENDING。冻结日志即使随后
+归档，也只记录归档事实；本次不读取日志、不附为已审查的 case 日志证据、不
+填统一日志门槛。只改原三文件，不操作 Git／UI，不创建最终结果。
+
+### 第九轮最终收尾结果
+
+原 helper 已记录 `normal_seed_preserved=true`，普通拆解组附加 451 个归档引用。
+duration／completion／reload 三项继续 null；没有新游戏操作、自然完成或重载验收。
+全索引最终为 **93 项 true／45 项 null**、94 条单项来源观测；18 组、组件和全局
+状态全部 PENDING，原唯一 canonical run 与其它组、三分支 72 月数据不变。
+
+reference-plan SHA：
+`503b4e7bbe7854e1affa41509317931cb02640da8d73130080695fa55b65608e`；
+pending SHA：
+`0d997179f052e7d956449e1530882f7e45308122d4389c2e8e71f7daa867bf9e`。
+全部 3,549 处索引引用／2,169 个唯一文件 SHA、各 case 原 typed 引用、原 loader／
+完整组件归因及三分支原观察月份一致性通过。本次三文件 UTF-8／LF／行尾空白通过，
+没有任何 Git 或 UI 操作。
+
+normal 包 49 个 canonical 元数据保留了原绝对路径；首次直接传给仅接受项目相对
+路径的 publish 引用函数被按合同拒绝。随后逐项映射到唯一已归档 manifest（1）、
+normal 包 originals 的原样副本（24）、冻结 RC7 Mod（6）、同 SHA 已归档工具（3），
+以及项目内明确 canonical 来源（10）／既有相对路径（5），全部 49 项 SHA 一致。
+没有读取绝对路径指向的活动 artifact 或日志，也没有修改原包、放宽工具或验收标准。
+
+停机／冻结日志由主线程独立交接；本次没有给任何 case 添加 log 证据，也没有把
+日志归档当作已审查通过。没有创建 `final-result.json`，没有继续验收或发布。
+后续仅在用户恢复工作后按 `missing` 清单补证与独立日志审核，不能自动 promote。

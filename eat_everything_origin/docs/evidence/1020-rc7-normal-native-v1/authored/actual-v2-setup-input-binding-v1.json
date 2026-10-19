@@ -1,0 +1,55 @@
+{
+  "schema": "eep.rc7.normal.actual-v2-setup-input.v1",
+  "status": "INPUT_BINDING_ONLY",
+  "static_normal_command": {
+    "path": "testing/empty_planet_selector_v2_1020/normal-command-v2.json",
+    "sha256": "2e8835c8c5262e525b0e1578993ef0bef39b9a19d296e714a4dd9938d2a26057",
+    "kind": "analysis"
+  },
+  "probe_static_index": {
+    "path": "docs/evidence/1019-rc7-empty-selector-probe-v1/index.json",
+    "sha256": "e9531c43507c2a4674e73ce4f2c82ebcdb971ae09297b705d32810a1497fa49a",
+    "kind": "analysis"
+  },
+  "probe_static_verify": {
+    "path": "docs/evidence/1019-rc7-empty-selector-probe-v1/verify.json",
+    "sha256": "07c011d264b3278476a7e2afef9518c41463c928d04ac2bfe67d8e2485e3a61c",
+    "kind": "analysis"
+  },
+  "actual_command_characters": 683,
+  "actual_command": {
+    "reference": {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-command.action.json",
+      "sha256": "7f6610936d2c26bc76c62cadff9492a64c745ff25eea1f15c15168d1792188c1",
+      "kind": "actions"
+    },
+    "content": {
+      "action": "type_text",
+      "stage": "r7normal-v2-setup-command",
+      "text": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_reg_owned_source change_pc = pc_machine set_planet_size = 2 clear_deposits = yes create_colony = { owner = event_target:eep_mothership0.owner species = event_target:eep_mothership0.owner_main_species } create_pop_group = { species = event_target:eep_mothership0.owner_main_species size = 50 } set_name = \"EEP_REG_Q2_50\" log = \"EEP_REG_Q2_CREATED\" } } }",
+      "submitted": true,
+      "typed_at_utc": "2026-10-19T19:42:07.603573+00:00",
+      "key_interval_seconds": 0.04,
+      "submit_input": "physical scan code 0x1c"
+    }
+  },
+  "actual_Enter": {
+    "reference": {
+      "path": "docs/evidence/1020-rc7-normal-native-v1/run/r7normal-v2-setup-command-enter.action.json",
+      "sha256": "3e24dcaef36a0f562fa3779f8244d57919b2f14716cf0c5604d085890b7137d1",
+      "kind": "actions"
+    },
+    "content": {
+      "action": "press_scan_code",
+      "stage": "r7normal-v2-setup-command-enter",
+      "scan_code": 28,
+      "repeat": 1,
+      "at_utc": "2026-10-19T19:42:07.687229+00:00"
+    }
+  },
+  "exact_v2_command_match": true,
+  "limitations": [
+    "Actual ready2 native state is checked separately; not a normal decision/duration/completion result.",
+    "No future normal-ui/start or logs read."
+  ]
+}
