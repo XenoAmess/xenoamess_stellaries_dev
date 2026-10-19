@@ -1,0 +1,330 @@
+{
+  "schema": "eep.rc6.startup_economy_payload_proposal.v1",
+  "status": "PENDING_CASE_EVIDENCE_ASSEMBLY",
+  "cases": {
+    "purifier_startup": {
+      "status": "PENDING",
+      "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+      "run_ids": [
+        "20261019T150008Z"
+      ],
+      "checks": {
+        "single_homeworld": true,
+        "correct_homeworld_type": true,
+        "initial_energy_200": true,
+        "first_month_generator_jobs": true,
+        "auto_devour_off": true,
+        "population_preserved": true,
+        "normal_upkeep": true
+      },
+      "evidence": [
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/native-branch-report-v2.json",
+          "sha256": "546d9c557a47601bb6d28b56c6f54a18aeaf4fe789648e74ea3001a8a78ce9df",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pum00.sav",
+          "sha256": "b1f70804fb2093ee00c41ff675abf4344964e79fdeed55631cadc437f16a107b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pum01.sav",
+          "sha256": "f7b35d4dbcd0699ae14d297e328b88065799f03ac2e74f0954523ef3908c42dc",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pum12.sav",
+          "sha256": "79c49aaae6660f341c7f3e08751a415405e44c4d139d465367a8b07870b393b0",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6puyearui.sav",
+          "sha256": "79c49aaae6660f341c7f3e08751a415405e44c4d139d465367a8b07870b393b0",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pu-economy-receipt.json",
+          "sha256": "f67c9c66245fdd2ab3f3d2e41d6f9a21c6551eb89832a4ad5c6966a17816190f",
+          "kind": "analysis"
+        }
+      ]
+    },
+    "purifier_economy": {
+      "status": "PENDING",
+      "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+      "run_ids": [
+        "20261019T150008Z"
+      ],
+      "checks": {
+        "baseline_12_months": true,
+        "candidate_12_months": true,
+        "all_net_energy_nonnegative": true,
+        "no_resource_injection": null,
+        "no_trade_subsidy": null,
+        "no_job_closure": null,
+        "no_ship_disband": null
+      },
+      "evidence": [
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/native-branch-report-v2.json",
+          "sha256": "546d9c557a47601bb6d28b56c6f54a18aeaf4fe789648e74ea3001a8a78ce9df",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pum00.sav",
+          "sha256": "b1f70804fb2093ee00c41ff675abf4344964e79fdeed55631cadc437f16a107b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pum01.sav",
+          "sha256": "f7b35d4dbcd0699ae14d297e328b88065799f03ac2e74f0954523ef3908c42dc",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pum12.sav",
+          "sha256": "79c49aaae6660f341c7f3e08751a415405e44c4d139d465367a8b07870b393b0",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6puyearui.sav",
+          "sha256": "79c49aaae6660f341c7f3e08751a415405e44c4d139d465367a8b07870b393b0",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-economy/purifier/r6pu-economy-receipt.json",
+          "sha256": "f67c9c66245fdd2ab3f3d2e41d6f9a21c6551eb89832a4ad5c6966a17816190f",
+          "kind": "analysis"
+        }
+      ]
+    }
+  },
+  "economy": {
+    "purifier": {
+      "baseline_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": 32.64322,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm01.sav",
+            "sha256": "d59f6cba24fe4b392edf71fa98a73dc6674cf9214f69c98fa92113c2a99b8964",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": 31.48304,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm02.sav",
+            "sha256": "20eb7b59edca1b9e4dbd20c09f18c668015c1dc04e26e0aeebcff2bd30cd84fc",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": 31.49537,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm03.sav",
+            "sha256": "622e0cfce9183840d129570316aa4942faaf49b68e57654baf3aff034ff904d2",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": 31.44077,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm04.sav",
+            "sha256": "65e15c5242f2060013698fbe1ca6a33d2f81b639ca881f5dc92bdc60e6feb26f",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": 31.38781,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm05.sav",
+            "sha256": "5e1ebd1c9a1fef3b3421c1504bb0cfef318332ef48837a9e208a5424a3444900",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": 31.31747,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm06.sav",
+            "sha256": "97a0276c04202791a73c22d2c3662588f2259241a3c0340116592cd5f992edcc",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": 31.17895,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm07.sav",
+            "sha256": "ffc68212ae44e001a8ecc6bf0b38488817968c9ca2fc5ceaa5a8339e3af9baac",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": 31.26183,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm08.sav",
+            "sha256": "dd931fc0942ca4b4e59b0c54d774da5b74cfc4f23efa1273402c8f0e4401153f",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": 31.20021,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm09.sav",
+            "sha256": "e349fb52f0c6503c6e2a0885931ddd3d5cf7fd756a41b745213cebe68c21edc8",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": 31.14202,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm10.sav",
+            "sha256": "536ed6b40a4ad29233caf2731a9e49e4f9419ac9460016897382e3c4d8d9dbea",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": 31.08944,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm11.sav",
+            "sha256": "8c58956e52761d2d3ec221aa73956cf4c7b4ef0d9083229df194a2b9bb118deb",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": 31.03125,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm12.sav",
+            "sha256": "09e76c524ea329c0ae6715ba3a5a976d7574b3837018477e1a5a1011df8383c3",
+            "kind": "native_save"
+          }
+        }
+      ],
+      "candidate_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": 40.63438,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum01.sav",
+            "sha256": "f7b35d4dbcd0699ae14d297e328b88065799f03ac2e74f0954523ef3908c42dc",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": 40.67788,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum02.sav",
+            "sha256": "d7d44dececc2eb78833bfb7226e98c0e2d432b8899c8a99f107f1f0e726c3601",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": 40.73001,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum03.sav",
+            "sha256": "b8a56f602bca55a7ca54a9616b07baa75317e5603b8ae02e84f97ac03a2a1aa9",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": 40.77352,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum04.sav",
+            "sha256": "367f17e05bd342a8a75d4212265b9e1bcf207acf0be686da7f0fc76b369631d3",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": 40.81703,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum05.sav",
+            "sha256": "e2cdc42c64385eeb0f05feab133b7d631ac6c5ba45604236de082f67de5b909d",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": 40.86954,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum06.sav",
+            "sha256": "28968e6129bd690bbcb2c151121e091853e1044e4c6fc7d64d256d17a2bcf99d",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": 40.92169,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum07.sav",
+            "sha256": "8c79442704e78d81ed100f4f79df2888afd4a1b04a6d8a570772be4c4effb543",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": 40.96485,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum08.sav",
+            "sha256": "622d1f872f8702e10fb0aee6d35c643a54b502d51b49ff3a92cb14692b154b90",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": 41.00837,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum09.sav",
+            "sha256": "1638085bdc5971463a65594dcf91f84d3168e8edec33d31037571762c1e1f434",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": 41.06053,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum10.sav",
+            "sha256": "40fc7cd315aa68f2cfa07b377913b46de9f9f16bf89460310bfe0b1573688a86",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": 41.10406,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum11.sav",
+            "sha256": "260bce94580835f4f35472e647e67600a0c5771f2ca0bfc37345eebd3e2a7c1a",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": 41.1566,
+          "evidence": {
+            "path": "docs/evidence/1019-rc6-economy/purifier/r6pum12.sav",
+            "sha256": "79c49aaae6660f341c7f3e08751a415405e44c4d139d465367a8b07870b393b0",
+            "kind": "native_save"
+          }
+        }
+      ]
+    }
+  },
+  "assembly_gaps": [
+    "startup/economy screenshot, action-chain and final-log evidence must be assembled by root",
+    "four operational economy flags remain null"
+  ]
+}

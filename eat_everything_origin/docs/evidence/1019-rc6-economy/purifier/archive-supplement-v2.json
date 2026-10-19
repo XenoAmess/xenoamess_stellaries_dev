@@ -1,0 +1,46 @@
+{
+  "schema": "eep.rc6.purifier_upkeep_category_correction.v1",
+  "status": "PASS_SCOPED_CORRECTION_ONLY",
+  "original_index": {
+    "path": "docs/evidence/1019-rc6-economy/purifier/archive-index.json",
+    "sha256": "5023b02908b313b6352d3be9cf6441f7fa5d761f4e744486f89011ec7f2a3029",
+    "kind": "analysis"
+  },
+  "original_FAIL": {
+    "path": "docs/evidence/1019-rc6-economy/purifier/native-branch-report.json",
+    "sha256": "ded9e3d1981be029663bd9fa1aae45d2ac460e5a699a97c18696a4a5869fa9b4",
+    "kind": "analysis"
+  },
+  "corrected_report": {
+    "path": "docs/evidence/1019-rc6-economy/purifier/native-branch-report-v2.json",
+    "sha256": "546d9c557a47601bb6d28b56c6f54a18aeaf4fe789648e74ea3001a8a78ce9df",
+    "kind": "analysis"
+  },
+  "corrected_payload": {
+    "path": "docs/evidence/1019-rc6-economy/purifier/payload-proposal-v2.json",
+    "sha256": "9b1b8a74a8507c4194524e232cd604cfea8fb09d8d37751d0827456d9192a246",
+    "kind": "analysis"
+  },
+  "primary": {
+    "path": "docs/evidence/1019-rc6-economy/purifier/native-economic-categories-primary.txt",
+    "sha256": "b3da494d1889bf79a361840f4e9705995e8cd2bbee09d65629d7e182cf46f01b",
+    "kind": "analysis"
+  },
+  "source_primary": {
+    "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\economic_categories\\00_common_categories.txt",
+    "sha256": "b3da494d1889bf79a361840f4e9705995e8cd2bbee09d65629d7e182cf46f01b",
+    "kind": "analysis"
+  },
+  "collector": {
+    "path": "docs/evidence/1019-analysis/rc6-purifier-upkeep-correction-v1.py",
+    "sha256": "27e886ecff626d473d8393d304bec43618cd478b2786e084481c12f9dae3ebd0",
+    "kind": "analysis"
+  },
+  "checks": {
+    "all_original_payload_bytes_unchanged": true,
+    "native_parent_family_has_positive_costs_every_month": true,
+    "only_normal_upkeep_check_corrected": true,
+    "all_other_native_and_budget_data_unchanged": true,
+    "case_statuses_remain_PENDING": true
+  }
+}
