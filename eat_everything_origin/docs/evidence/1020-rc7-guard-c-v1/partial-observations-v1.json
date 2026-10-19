@@ -1,0 +1,22 @@
+{
+  "schema": "eep.1020.guard-c-partial-observations.v1",
+  "status": "PASS_SCOPED_GUARD_C_ONLY",
+  "supported_checks": {
+    "all_core_worlds_rejected": true
+  },
+  "checks": {
+    "original_C_task_pass": true,
+    "all_three_C_native_prerequisites_pass": true,
+    "C_growth_no_change": true
+  },
+  "combined_basis": [
+    "A actual current bound core and own secondary core callbacks",
+    "B real foreign secondary core callback while own bound core available",
+    "C actual native migrated bound core callback"
+  ],
+  "limitations": [
+    "Core-owner revalidation awaits D.",
+    "All-invalid no-growth awaits D and separate cancellation proof.",
+    "Final stopped logs and final case acceptance pending."
+  ]
+}

@@ -125,3 +125,47 @@ B已完成：R为2201.01.22，I/F为2201.01.23；原receiver三任务全通过�
 
 B三项已实际合入，当前105 true／33 null；5,256处引用／3,300唯一文件已复核
 SHA，历史plan指纹不改，当前_scaffold同步。整组和组件保持PENDING。
+
+C原生行星已确认为EEP_REG_Q2_50、50人口、May28。首次迁移选项点击被原精确
+OCR保护在输入前拒绝；去掉悬停提示后确认迁移条目不在当前可见段，故只滚动
+原生决议列表查找，不用console直接调用迁移效果。该次未执行迁移的截图和
+异常原样保留，尚未创建C-R或给core拒绝计通过。
+
+滚至底部后已目视确认迁移条目及“将母星绑定、帝国首都、王座岗位加成、累积
+区划容量与已授予的额外并行建造队列转移至此；不搬建筑人口”等说明。该小字
+未形成可用完整OCR标签。根据已观察1024×768原图，以原生条目标题位置
+(800,430)物理点击，前后新GPU截图保留；仍须原migration_inspect与新SAV实际
+确认才判迁移成功，不以点击本身代替结论。
+
+C-R原生验证全部成立：May28，新绑定物理1/colony18，人口50；旧物理2仍属
+本国、人口5177且无EEP core标记，实际capital等于新colony18。C/G21、D7、
+made300、worlds1未变。后续I/F采用wait/fire语义名，避开已确认容易被OCR
+混淆的单独大写I及尾数1；R仍用已保存r9gcR。按原卡自然一天、真实R重载、
+原migrated callback、同量一天，C-I/F预计同为May29，实际仍以native日期为准。
+D延续迁移成功后的同一状态，预计R May29、I/F May30；不跨六月月脉冲。
+每次派发后等待限定日志写盘窗口核实际marker，不把即时读空再当作未派发。
+
+C已完成原同日负例和增长检查：R May28，wait/fire均May29，实际迁移后核心
+回调marker闭合。三档new core均只有d_eep_core，并有capacity/court/parallel
+三个实际修正；旧core对应三修正与核心deposit均已移除，人口始终50/5177。
+现准备1020-rc7-guard-c-v1，只归档已完成r9gc前缀及原receiver三档缓存，排除
+活动D与日志全文。经原receiver和SHA/ZIP/receipt/audit/截图OCR核验后，只合入
+all_core_worlds_rejected；其依据明确组合A当前/本国secondary、B外国secondary
+和C迁移后bound core。失主与全invalid无成长仍等D，整组仍PENDING。
+
+D转交原段已实际记录成功，但长inspect再次出现控制台`Invalid scripted effect:
+og/l`且没有状态marker，自动链在保存前停止。保留原错误，不重复转交；现在
+直接原生保存r9gdready并解析实际受益core owner、绑定、活receiver、old core
+本国人口、initialized与Mother。只有实际前提全成立才继续I/F。原dispatch仍
+优先；若同样解析失败，无实际marker，则在同一R加载且未推进的状态，用短段
+作用于已核old core别名，log专属marker并以Mother为FROM调用原生产on_action。
+短段只去掉重复的测试前提文字，独立R/I/F原生前提和原checker不省略；失败原件
+全部归档，未派发不能计通过。
+
+另在05:53:07记录同一原生nomads.94无效FROM错误，发生于C的真实May28→29；
+最终完整日志审计须同时复核该旧结算输入的war清理链，不称零错误或直接当噪声。
+
+C包286份原件、64对GPU/OCR、三档ZIP/audit/receipt校验及原receiver均通过，
+all_core单项已合入，索引106 true／32 null。D-R实际receiver16777218、core
+人口50、old core5177；原生capital已自动为colony0，但EEP绑定仍物理1，未重绑。
+全部D原生前提已建立，后续wait/fire均预计May30，仍待实际原checker。

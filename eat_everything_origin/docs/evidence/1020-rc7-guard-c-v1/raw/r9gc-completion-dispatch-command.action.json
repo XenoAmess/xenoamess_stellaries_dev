@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gc-completion-dispatch-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_reg_new_core } event_target:eep_reg_new_core = { if = { limit = { has_carrier_flag = eep_core is_colony = yes is_owned_by = event_target:eep_mothership0.owner is_same_value = event_target:eep_core0 } log = \"MIGRATED_BOUND_CORE_REJECT_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"MIGRATED_BOUND_CORE_REJECT_NOT_READY_NOT_DISPATCHED\" } } } else = { log = \"MIGRATED_BOUND_CORE_REJECT_BASE_OR_TARGET_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:52:56.397795+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

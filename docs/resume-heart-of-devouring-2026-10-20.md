@@ -158,3 +158,12 @@ B已由原receiver复算三任务通过，所有前提、EEP变量／Mother层�
 105 true／33 null，仍为全部PENDING。当前5,256处引用／3,300唯一文件SHA
 重新核验通过。C输入已真实载入May28，old/new refs实际日志marker闭合，下一步
 原生UI迁移，无手工调用迁移效果。
+
+C已实际完成：原生决议迁移到物理1/colony18，三档新core50人口／旧core5177
+人口保持；核心deposit和capacity/court/parallel三修正实际转移，原同日负例与
+growth均通过。286原件／16,325,481字节、64对GPU/OCR已核并归档。
+all_core单项与A/B合并后，当前106 true／32 null；整组仍PENDING。
+
+D转交后原生ready已确认receiver16777218活国、新core仍foreign绑定，旧core
+仍本国5177人口，原生capital自动选回colony0，EEP绑定仍为物理1。长状态探针
+解析失败原件保留，继续以真实R/I/F验证，而非把该输入失败当生产guard失败。

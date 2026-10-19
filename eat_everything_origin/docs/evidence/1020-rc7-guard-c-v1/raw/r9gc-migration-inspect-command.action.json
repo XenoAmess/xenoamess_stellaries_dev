@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gc-migration-inspect-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_reg_old_core exists = event_target:eep_reg_new_core event_target:eep_core0 = { is_same_value = event_target:eep_reg_new_core has_carrier_flag = eep_core is_owned_by = event_target:eep_mothership0.owner is_colony = yes } event_target:eep_reg_old_core = { is_colony = yes is_owned_by = event_target:eep_mothership0.owner NOT = { has_carrier_flag = eep_core } } event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes } } log = \"EEP_REG_MIGRATED_CORE_BOUND_OLD_CORE_ORDINARY\" } else = { log = \"EEP_REG_MIGRATION_STATE_NOT_ESTABLISHED\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:46:48.520011+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

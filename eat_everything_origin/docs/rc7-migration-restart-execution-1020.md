@@ -151,6 +151,17 @@ typed `checker`引用当前8a8工具；`source_certificate`必须引用`docs/evi
 
 最后停止这个新进程、冻结其实际完整日志/stop/process，给两run唯一manifest和完整新load/save/actions/screenshots/analysis五类证据建最终索引。新迁移分支若已在旧RC7进程完成无需再重复跑一遍；跨进程pending与稳定结算档承担真正restart证明。此清单没有新增验收矩阵或宣称任何实机结果。
 
+## 1020恢复执行的命名与输入准备
+
+实际继续run为20261019T204055Z／PID24520，先前两个候选进程都已正常退出；
+跨进程的非零普通结算与月界幂等已有独立新档和日志marker，仍须补高C pending。
+旧档迁移继续同一冻结RC7来源和原v2政策，不另建源桥、不重造伤情。
+恢复时先在当前artifact生成r9migration-public031-template-v1.json与paid11模板，
+由原template函数显式传RC7_TREE，所有未来角色继续null/PENDING。真实导入在
+当前C/D保护条件的UI载入链结束后进行，避免操作期间新文件改变存档列表顺序。
+新UI角色采用r9前缀和易识别字母名；实际native输出齐备后再填写独立complete
+case并运行原checker，不改模板、旧FAIL、before或政策。
+
 ## 离线准备结果
 
 已独立核实四个旧输入角色的原SAV/audit/native-save/manifest全部存在，四份canonical旧三件套逐byte匹配原件；原pending三件套及其canonical副本也匹配，15项已记录原生变量符合上述值。checker、完整源证书、静态gate/report固定SHA均匹配。只形成`BYTES_AND_EXISTING_ROLES_ONLY`输入清单，未执行任何新load/save/checker实机报告/stop/prepare/launch/Steam/Git，也未读取活动日志或r7puc。后续实机执行结果须另建实际报告和不可变归档，不能修改这个事前清单为PASS。
