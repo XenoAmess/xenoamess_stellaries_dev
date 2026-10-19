@@ -1,0 +1,223 @@
+{
+  "schema": "eep.rc6-growth-cache-while-diagnosis.v1",
+  "status": "OBSERVATION_ONLY_REAL_EXPORT_FAILURE_PRESERVED",
+  "created_at_utc": "2026-10-19T16:33:36.765252+00:00",
+  "scope": "Existing immutable C0/C200/C10000 observation JSON only; native primary source review; no SAV reparse, UI, tool, production, model, tolerance or historical evidence mutation.",
+  "run_id": "20261019T150008Z",
+  "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "source_models_sha256": [
+    "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
+    "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8",
+    "942b98c2aea0022ff7ffa017944abbf873d36331fd26c89862f83a37e31e4dd2",
+    "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f"
+  ],
+  "references": {
+    "c0": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc6-growth-pair-n00-c0-observation-v1.json",
+      "sha256": "8073d947e1901ab28a21f0c9d49944656c7455864ef72c2b820114bd535a6021"
+    },
+    "c200": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc6-growth-pair-n07-c200-observation-v1.json",
+      "sha256": "6331577631532bff6cb9e94aa050aa227a5612aeac2ed0b259e1636f83cc555d"
+    },
+    "c10000": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc6-growth-pair-n08-c10000-observation-v1.json",
+      "sha256": "177c8b96cb32152ce2fcc818eba417a9b75bf72bddb21a1ca68cf76bd086a37c"
+    },
+    "while_primary": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1020-native-while-primary-evidence-v1.json",
+      "sha256": "0058ad7333e0c5b594eb06117d856ef3130b064912295523cac4681ecc69112c"
+    }
+  },
+  "actual_ledger": {
+    "previous_C": 200,
+    "previous_R": 4,
+    "C": 10000,
+    "L": 1000,
+    "refresh_date": "2202.06.01",
+    "refresh_R": 200,
+    "final_date": "2202.07.01",
+    "final_R": 200,
+    "six_native_tiers_at_both_samples": {
+      "eep_component_shield_level": 34,
+      "eep_component_armor_level": 37,
+      "eep_component_hull_level": 39,
+      "eep_component_damage_level": 22,
+      "eep_component_tracking_level": 41,
+      "eep_component_regen_level": 27
+    },
+    "sum_native_tiers": 200,
+    "native_R104_ledger_observed": false
+  },
+  "stored_export_diagnosis": [
+    {
+      "channel": "hull",
+      "modifier": "ship_hull_mult",
+      "actual_stored_export": 54.532,
+      "baseline_actual_c0": 2.132,
+      "L": 1000,
+      "level_coefficient": 0.05,
+      "core_coefficient": 0.1,
+      "actual_native_tier_at_both_samples": 39,
+      "expected_for_actual_tier": 56.032,
+      "raw_delta": -1.5,
+      "implied_cached_tier": 24.0,
+      "inference_status": "DERIVED_FROM_FIXED_SOURCE_COEFFICIENTS_NOT_A_NATIVE_LEDGER_OBSERVATION"
+    },
+    {
+      "channel": "armor",
+      "modifier": "ship_armor_mult",
+      "actual_stored_export": 52.54,
+      "baseline_actual_c0": 0.74,
+      "L": 1000,
+      "level_coefficient": 0.05,
+      "core_coefficient": 0.1,
+      "actual_native_tier_at_both_samples": 37,
+      "expected_for_actual_tier": 54.44,
+      "raw_delta": -1.9,
+      "implied_cached_tier": 18.0,
+      "inference_status": "DERIVED_FROM_FIXED_SOURCE_COEFFICIENTS_NOT_A_NATIVE_LEDGER_OBSERVATION"
+    },
+    {
+      "channel": "shield",
+      "modifier": "ship_shield_mult",
+      "actual_stored_export": 54.4,
+      "baseline_actual_c0": 3.0,
+      "L": 1000,
+      "level_coefficient": 0.05,
+      "core_coefficient": 0.1,
+      "actual_native_tier_at_both_samples": 34,
+      "expected_for_actual_tier": 56.4,
+      "raw_delta": -2.0,
+      "implied_cached_tier": 14.0,
+      "inference_status": "DERIVED_FROM_FIXED_SOURCE_COEFFICIENTS_NOT_A_NATIVE_LEDGER_OBSERVATION"
+    },
+    {
+      "channel": "damage",
+      "modifier": "ship_weapon_damage",
+      "actual_stored_export": 54.75,
+      "baseline_actual_c0": 4.1,
+      "L": 1000,
+      "level_coefficient": 0.05,
+      "core_coefficient": 0.05,
+      "actual_native_tier_at_both_samples": 22,
+      "expected_for_actual_tier": 55.2,
+      "raw_delta": -0.45,
+      "implied_cached_tier": 13.0,
+      "inference_status": "DERIVED_FROM_FIXED_SOURCE_COEFFICIENTS_NOT_A_NATIVE_LEDGER_OBSERVATION"
+    },
+    {
+      "channel": "tracking",
+      "modifier": "ship_tracking_add",
+      "actual_stored_export": 81.0,
+      "baseline_actual_c0": 15.0,
+      "L": 1000,
+      "level_coefficient": 0.0,
+      "core_coefficient": 3.0,
+      "actual_native_tier_at_both_samples": 41,
+      "expected_for_actual_tier": 138.0,
+      "raw_delta": -57.0,
+      "implied_cached_tier": 22.0,
+      "inference_status": "DERIVED_FROM_FIXED_SOURCE_COEFFICIENTS_NOT_A_NATIVE_LEDGER_OBSERVATION"
+    },
+    {
+      "channel": "regen_hull",
+      "modifier": "ship_hull_regen_add_static",
+      "actual_stored_export": 103.992,
+      "baseline_actual_c0": 1.392,
+      "L": 1000,
+      "level_coefficient": 0.1,
+      "core_coefficient": 0.2,
+      "actual_native_tier_at_both_samples": 27,
+      "expected_for_actual_tier": 106.792,
+      "raw_delta": -2.8,
+      "implied_cached_tier": 13.0,
+      "inference_status": "DERIVED_FROM_FIXED_SOURCE_COEFFICIENTS_NOT_A_NATIVE_LEDGER_OBSERVATION"
+    },
+    {
+      "channel": "regen_armor",
+      "modifier": "ship_armor_regen_add_static",
+      "actual_stored_export": 104.688,
+      "baseline_actual_c0": 2.088,
+      "L": 1000,
+      "level_coefficient": 0.1,
+      "core_coefficient": 0.2,
+      "actual_native_tier_at_both_samples": 27,
+      "expected_for_actual_tier": 107.488,
+      "raw_delta": -2.8,
+      "implied_cached_tier": 13.0,
+      "inference_status": "DERIVED_FROM_FIXED_SOURCE_COEFFICIENTS_NOT_A_NATIVE_LEDGER_OBSERVATION"
+    }
+  ],
+  "native_max_diagnosis": [
+    {
+      "channel": "hull",
+      "native_max_field": "max_hitpoints",
+      "baseline_actual_c0": 93960.0,
+      "L": 1000,
+      "level_coefficient": 1500.0,
+      "core_coefficient": 3000.0,
+      "actual_refresh_max": 1665960.0,
+      "implied_refresh_cached_tier": 24.0,
+      "actual_final_max": 1710960.0,
+      "actual_final_native_tier": 39,
+      "expected_final_max": 1710960.0,
+      "inference_status": "DERIVED_CACHE_DIAGNOSIS_ONLY"
+    },
+    {
+      "channel": "armor",
+      "native_max_field": "max_armor_hitpoints",
+      "baseline_actual_c0": 44787.6,
+      "L": 1000,
+      "level_coefficient": 1287.0,
+      "core_coefficient": 2574.0,
+      "actual_refresh_max": 1378119.6,
+      "implied_refresh_cached_tier": 18.0,
+      "actual_final_max": 1427025.6,
+      "actual_final_native_tier": 37,
+      "expected_final_max": 1427025.6,
+      "inference_status": "DERIVED_CACHE_DIAGNOSIS_ONLY"
+    },
+    {
+      "channel": "shield",
+      "native_max_field": "max_shield_hitpoints",
+      "baseline_actual_c0": 167310.0,
+      "L": 1000,
+      "level_coefficient": 2091.375,
+      "core_coefficient": 4182.75,
+      "actual_refresh_max": 2317243.5,
+      "implied_refresh_cached_tier": 14.0,
+      "actual_final_max": 2400898.5,
+      "actual_final_native_tier": 34,
+      "expected_final_max": 2400898.5,
+      "inference_status": "DERIVED_CACHE_DIAGNOSIS_ONLY"
+    }
+  ],
+  "inferred_cache_tiers": {
+    "hull": 24,
+    "armor": 18,
+    "shield": 14,
+    "damage": 13,
+    "tracking": 22,
+    "regen": 13
+  },
+  "inferred_cache_tiers_sum": 104,
+  "inferred_cache_sum_minus_previous_actual_R": 100,
+  "hypothesis": {
+    "description": "Unspecified while count may apply native default safety bound100; first same-day C10000 call fromR4 would endR104, subsequent monthly call reachesR200 after cached component aggregation; immediate month-start exports can retain earlier aggregate. Stored exported variables then remain unchanged while later native health refreshes.",
+    "classification": "CONSISTENT_WITH_EXISTING_OBSERVATIONS_NOT_EXECUTION_TRACE_PROOF",
+    "missing_evidence": [
+      "No same-day native save between C10000 setter/sync and first30day advance in original18samples.",
+      "No direct native ledgerR104 has yet been observed by this analysis.",
+      "Exact engine scheduling/caching implementation is not proved by values or diagnostic strings."
+    ],
+    "required_independent_followups": [
+      "Owner-operated same-day controlled count probe establishes one invocation reward delta.",
+      "Re-export current10modifiers after sufficient refresh with no tier/C changes and save separately.",
+      "Any explicit-count production fix requires new frozen package, static gate and native single-call budget/reload checks."
+    ]
+  },
+  "original_n08_report_status": "FAIL_OBSERVATION",
+  "original_n08_failure_count": 9,
+  "numeric_policy": "Unchanged: sourcev4 formulas; fixed modifierabs.01/rel0; HP max(.01,8ULP32)/rel0; integer counts and tiers exact. No corrected PASS."
+}
