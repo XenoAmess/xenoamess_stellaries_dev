@@ -1,0 +1,608 @@
+{
+  "schema": "eep.1019.migration-release-payload.v2",
+  "status": "PENDING",
+  "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "run_id": "20261019T150008Z",
+  "runs": [
+    {
+      "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/manifest.json",
+      "sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9"
+    }
+  ],
+  "cases": {
+    "old_save_migration": {
+      "status": "PENDING",
+      "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+      "checks": {
+        "civilian_queue_preserved": null,
+        "damage_preserved": false,
+        "extra_world_preserved": null,
+        "identity_preserved": null,
+        "layout_preserved": null,
+        "migration_once": null,
+        "name_preserved": null,
+        "native_design_migration": null,
+        "no_startup_reward": null,
+        "original_031_save": null,
+        "position_preserved": null,
+        "queue_preserved": null,
+        "damage_within_predeclared_v2_budget": true
+      },
+      "run_ids": [
+        "20261019T150008Z"
+      ],
+      "migration_contract": {
+        "schema": "eep.1019.migration-release-scope.v2",
+        "execution_mode": "single_player_postload_layout_repair",
+        "classification": "predeclared_engineering_allowance_not_engine_storage_proof",
+        "policy": {
+          "step_signed_ratio_min": -2.1e-05,
+          "step_signed_ratio_max": 1e-06,
+          "v1_absolute_tolerance": 1e-06,
+          "relative_tolerance": 0
+        },
+        "limitations": [
+          "single_player_postload_only",
+          "mobile_starbase_cache_not_repaired",
+          "original_v1_failure_retained"
+        ],
+        "checker": {
+          "path": "tools/check_migration_1019.py",
+          "sha256": "08b57969060c037c4e03829f0075f8e7314f262527215e991595bd4778456d38",
+          "kind": "analysis"
+        },
+        "contract_document": {
+          "path": "docs/native-migration-roundoff-contract-1019.md",
+          "sha256": "55767fe4155b2707531976bd9f02effa2a3772a2726d5ba012cfe586644faa62",
+          "kind": "analysis"
+        },
+        "fixtures": {
+          "public031": {
+            "report": {
+              "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-public031-migration-v2-complete-report-v1.json",
+              "sha256": "bff7b26f3ebc089f1f863aca341f94fc5688a5bb0c9ea145ab504832a6d33c7e",
+              "kind": "analysis"
+            },
+            "case": {
+              "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-public031-migration-v2-complete-case-v1.json",
+              "sha256": "7aa16358bf0adb6e1b158c044b5a3e050346e7b97b35f818f5d183f267043421",
+              "kind": "analysis"
+            },
+            "native_saves": {
+              "fixture": {
+                "path": "docs/evidence/1019-baseline/bmm00.sav",
+                "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+                "kind": "native_save"
+              },
+              "before": {
+                "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.sav",
+                "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+                "kind": "native_save"
+              },
+              "after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload.sav",
+                "sha256": "1a2de9477f96a36b705e3174d320866b4c844771ff8e31ef98fbca658efe1882",
+                "kind": "native_save"
+              },
+              "reload": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1.sav",
+                "sha256": "6a911fd26fc5603f5fc29745218a92d6754c4108920ec79beee912e8c5453f4b",
+                "kind": "native_save"
+              },
+              "repeat_before": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.sav",
+                "sha256": "edcd11a54b2926254206bd86e920b6f9af9af9b45ef0ca94c947b5fec0dcb09e",
+                "kind": "native_save"
+              },
+              "repeat_after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.sav",
+                "sha256": "edcd11a54b2926254206bd86e920b6f9af9af9b45ef0ca94c947b5fec0dcb09e",
+                "kind": "native_save"
+              }
+            },
+            "audits": {
+              "fixture": {
+                "path": "docs/evidence/1019-baseline/bmm00.audit.json",
+                "sha256": "0cf5ab1fcf16c5dc1fae1f4474974b2c10fc08ea8bde8e777f3319f2a969faaf",
+                "kind": "analysis"
+              },
+              "before": {
+                "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.audit.json",
+                "sha256": "a3a86d0a65b390eacf394d7994a6ed30668cee9bd578f48bedfbffb0cfd3bd8f",
+                "kind": "analysis"
+              },
+              "after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload.audit.json",
+                "sha256": "6b8eb93db072e0b8b131763adf1c1dafe609a6878211aeca4e3c7da238d59779",
+                "kind": "analysis"
+              },
+              "reload": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1.audit.json",
+                "sha256": "4b017bab34332e7d4dd104574cea43eebfe5d1ef250d6ddef5f456949fcfffc3",
+                "kind": "analysis"
+              },
+              "repeat_before": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeatbase.audit.json",
+                "sha256": "f707d2dee9469e09d393d3089af5594fbacdab31fceabdab69c29e9f59ee22c3",
+                "kind": "analysis"
+              },
+              "repeat_after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.audit.json",
+                "sha256": "b2830d7d8ff8ed59c08d725d215fcce2b9a7a9216f68cfe97411fc9ed4d5b69a",
+                "kind": "analysis"
+              }
+            },
+            "save_receipts": {
+              "fixture": [
+                {
+                  "path": "docs/evidence/1019-baseline/bmm00.native-save.json",
+                  "sha256": "59b16503e02f2ca0174b9f91e0b74a1212ce442eac3645bd2acc0a57209ff8af",
+                  "kind": "actions"
+                }
+              ],
+              "before": [
+                {
+                  "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.native-save.json",
+                  "sha256": "3c0ffcce7073660f65fafc3749f6c41f2aebab931ccd6e14f29b5396938c0c0e",
+                  "kind": "actions"
+                }
+              ],
+              "after": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload.native-save.json",
+                  "sha256": "b15ce41830b90ad0aaefa7a25e852fce6edff771f945e833358298ca5df051d9",
+                  "kind": "actions"
+                }
+              ],
+              "reload": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1.native-save.json",
+                  "sha256": "f054a1592ae2c1c4c2b80739e86a2db7046456d0e40cc788c25c49e39609a0b2",
+                  "kind": "actions"
+                }
+              ],
+              "repeat_before": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.native-save.json",
+                  "sha256": "a531159bcc5e56f1ee03758f1af3777ba324b948608aee3b3c6b4790bafe8a2e",
+                  "kind": "actions"
+                },
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeatbase.native-save.json",
+                  "sha256": "df8eedfa83fce0e7eccf76db3c9f34f0e0c16c9e5f53fed21e90e859317a193b",
+                  "kind": "actions"
+                }
+              ],
+              "repeat_after": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.native-save.json",
+                  "sha256": "a531159bcc5e56f1ee03758f1af3777ba324b948608aee3b3c6b4790bafe8a2e",
+                  "kind": "actions"
+                },
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeatbase.native-save.json",
+                  "sha256": "df8eedfa83fce0e7eccf76db3c9f34f0e0c16c9e5f53fed21e90e859317a193b",
+                  "kind": "actions"
+                }
+              ]
+            },
+            "load_receipts": {
+              "after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload-native-load2.load.json",
+                "sha256": "888ea2f1d32de3cebc43236ef14c335f525780e6a5be1193a502fcc16e15245b",
+                "kind": "actions"
+              },
+              "reload": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1-native-load2.load.json",
+                "sha256": "54f1c5dd1aa070c54819a29fee3f1766baa8151f67dea1954e5dba8acb16c8d6",
+                "kind": "actions"
+              },
+              "repeat_before": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6-public-repeat-load.load.json",
+                "sha256": "784b2223436d81133b2419b09e80d3be5bf09f49b7c97acbbd40d1818c62c790",
+                "kind": "actions"
+              }
+            },
+            "repeat_action": {
+              "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat-effect-command.action.json",
+              "sha256": "130ce1419cf3a2221845b1ab1593eb2cab8757efffa87b2971d416ec6d987ff6",
+              "kind": "actions"
+            }
+          },
+          "paid11": {
+            "report": {
+              "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-paid11-migration-v2-cli-report-v1.json",
+              "sha256": "d85667777cdd77940067baa0fcf3ffe55d357a6d6fd040660f9ff023bf315ec7",
+              "kind": "analysis"
+            },
+            "case": {
+              "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-paid11-migration-v2-complete-case-v1.json",
+              "sha256": "74fc72031694e5bb746fed40cafa8ef8701c5cad83a1094e5d11dc636dbd1618",
+              "kind": "analysis"
+            },
+            "native_saves": {
+              "fixture": {
+                "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.sav",
+                "sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e",
+                "kind": "native_save"
+              },
+              "before": {
+                "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.sav",
+                "sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+                "kind": "native_save"
+              },
+              "after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto.sav",
+                "sha256": "cc1191c9d0f8c3fc83810bab1b1ccf1b39f13ed4485ee642cb7c215a71d0a2b9",
+                "kind": "native_save"
+              },
+              "reload": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.sav",
+                "sha256": "bedebd4ad6911f16b4fb57a1ead239afc650d3dedd730833c10c902a7466e5d7",
+                "kind": "native_save"
+              },
+              "repeat_before": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.sav",
+                "sha256": "bedebd4ad6911f16b4fb57a1ead239afc650d3dedd730833c10c902a7466e5d7",
+                "kind": "native_save"
+              },
+              "repeat_after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.sav",
+                "sha256": "bedebd4ad6911f16b4fb57a1ead239afc650d3dedd730833c10c902a7466e5d7",
+                "kind": "native_save"
+              }
+            },
+            "audits": {
+              "fixture": {
+                "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.audit.json",
+                "sha256": "49e0637da026e529021d71e34324794cf7f91607490142537b1db76338583826",
+                "kind": "analysis"
+              },
+              "before": {
+                "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.audit.json",
+                "sha256": "d9ff5a25f76f85ea28655ba0e7a07f371b0e4754155c059668ea8e50d9f95966",
+                "kind": "analysis"
+              },
+              "after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto.audit.json",
+                "sha256": "2b4dc5244a2480696392ac86d8ccfd0ed40756299ca0e5ca631a2eb397601c5a",
+                "kind": "analysis"
+              },
+              "reload": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.audit.json",
+                "sha256": "a09cd8426db84f3fa6efa52dc22b20ccd81b80d6f6f83ca0cab5459df8346dd8",
+                "kind": "analysis"
+              },
+              "repeat_before": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.audit.json",
+                "sha256": "a09cd8426db84f3fa6efa52dc22b20ccd81b80d6f6f83ca0cab5459df8346dd8",
+                "kind": "analysis"
+              },
+              "repeat_after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat.audit.json",
+                "sha256": "fc0e81f0dd44ebeb5792035bc58c434905daef8f5ff22a667f0af0b10594bc71",
+                "kind": "analysis"
+              }
+            },
+            "save_receipts": {
+              "fixture": [
+                {
+                  "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.native-save.json",
+                  "sha256": "6fe71618fa64eb9d9a7a1d77024876852575b8b48d6869f66ed2532ddf62a96b",
+                  "kind": "actions"
+                }
+              ],
+              "before": [
+                {
+                  "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.native-save.json",
+                  "sha256": "f9fc9888a69951035c4965f15c7a6349e143862951e7b4483fe472166438f654",
+                  "kind": "actions"
+                }
+              ],
+              "after": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto.native-save.json",
+                  "sha256": "056afb1969d720fdb50de74970d13a79739c6dedc70a636e3afe7f83e7151384",
+                  "kind": "actions"
+                }
+              ],
+              "reload": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.native-save.json",
+                  "sha256": "e6a7a3b7d87e3e6386c78d6f0b607266e898fc37245f29e195ff44ff3364e7be",
+                  "kind": "actions"
+                },
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat.native-save.json",
+                  "sha256": "bec3cde4e80f788ec8e46e2a0480f051ec3a3f499ce4091ba379a7916bb19b7e",
+                  "kind": "actions"
+                }
+              ],
+              "repeat_before": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.native-save.json",
+                  "sha256": "e6a7a3b7d87e3e6386c78d6f0b607266e898fc37245f29e195ff44ff3364e7be",
+                  "kind": "actions"
+                },
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat.native-save.json",
+                  "sha256": "bec3cde4e80f788ec8e46e2a0480f051ec3a3f499ce4091ba379a7916bb19b7e",
+                  "kind": "actions"
+                }
+              ],
+              "repeat_after": [
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.native-save.json",
+                  "sha256": "e6a7a3b7d87e3e6386c78d6f0b607266e898fc37245f29e195ff44ff3364e7be",
+                  "kind": "actions"
+                },
+                {
+                  "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat.native-save.json",
+                  "sha256": "bec3cde4e80f788ec8e46e2a0480f051ec3a3f499ce4091ba379a7916bb19b7e",
+                  "kind": "actions"
+                }
+              ]
+            },
+            "load_receipts": {
+              "after": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto-native-load2.load.json",
+                "sha256": "ebb7f280a5ae1404adc58d15d45b4a64c8f744a833601afd725de6040dc58a25",
+                "kind": "actions"
+              },
+              "reload": {
+                "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1-native-load2.load.json",
+                "sha256": "d0a4add4329858d8cbae9c4e4279a02e233a2e37cba23bb0733a42d7c1dd9c5c",
+                "kind": "actions"
+              }
+            },
+            "repeat_action": {
+              "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat-effect-command.action.json",
+              "sha256": "2914fbf2c22c1742d6e8ecab8eb0d699bbe2b54240353c9fbb265754db448333",
+              "kind": "actions"
+            }
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "tools/check_migration_1019.py",
+          "sha256": "08b57969060c037c4e03829f0075f8e7314f262527215e991595bd4778456d38",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/native-migration-roundoff-contract-1019.md",
+          "sha256": "55767fe4155b2707531976bd9f02effa2a3772a2726d5ba012cfe586644faa62",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-public031-migration-v2-complete-report-v1.json",
+          "sha256": "bff7b26f3ebc089f1f863aca341f94fc5688a5bb0c9ea145ab504832a6d33c7e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-public031-migration-v2-complete-case-v1.json",
+          "sha256": "7aa16358bf0adb6e1b158c044b5a3e050346e7b97b35f818f5d183f267043421",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-baseline/bmm00.sav",
+          "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-baseline/bmm00.audit.json",
+          "sha256": "0cf5ab1fcf16c5dc1fae1f4474974b2c10fc08ea8bde8e777f3319f2a969faaf",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-baseline/bmm00.native-save.json",
+          "sha256": "59b16503e02f2ca0174b9f91e0b74a1212ce442eac3645bd2acc0a57209ff8af",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.sav",
+          "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.audit.json",
+          "sha256": "a3a86d0a65b390eacf394d7994a6ed30668cee9bd578f48bedfbffb0cfd3bd8f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.native-save.json",
+          "sha256": "3c0ffcce7073660f65fafc3749f6c41f2aebab931ccd6e14f29b5396938c0c0e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload.sav",
+          "sha256": "1a2de9477f96a36b705e3174d320866b4c844771ff8e31ef98fbca658efe1882",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload.audit.json",
+          "sha256": "6b8eb93db072e0b8b131763adf1c1dafe609a6878211aeca4e3c7da238d59779",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload.native-save.json",
+          "sha256": "b15ce41830b90ad0aaefa7a25e852fce6edff771f945e833358298ca5df051d9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1.sav",
+          "sha256": "6a911fd26fc5603f5fc29745218a92d6754c4108920ec79beee912e8c5453f4b",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1.audit.json",
+          "sha256": "4b017bab34332e7d4dd104574cea43eebfe5d1ef250d6ddef5f456949fcfffc3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1.native-save.json",
+          "sha256": "f054a1592ae2c1c4c2b80739e86a2db7046456d0e40cc788c25c49e39609a0b2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.sav",
+          "sha256": "edcd11a54b2926254206bd86e920b6f9af9af9b45ef0ca94c947b5fec0dcb09e",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeatbase.audit.json",
+          "sha256": "f707d2dee9469e09d393d3089af5594fbacdab31fceabdab69c29e9f59ee22c3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.native-save.json",
+          "sha256": "a531159bcc5e56f1ee03758f1af3777ba324b948608aee3b3c6b4790bafe8a2e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeatbase.native-save.json",
+          "sha256": "df8eedfa83fce0e7eccf76db3c9f34f0e0c16c9e5f53fed21e90e859317a193b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat.audit.json",
+          "sha256": "b2830d7d8ff8ed59c08d725d215fcce2b9a7a9216f68cfe97411fc9ed4d5b69a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6pautoload-native-load2.load.json",
+          "sha256": "888ea2f1d32de3cebc43236ef14c335f525780e6a5be1193a502fcc16e15245b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6preload1-native-load2.load.json",
+          "sha256": "54f1c5dd1aa070c54819a29fee3f1766baa8151f67dea1954e5dba8acb16c8d6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6-public-repeat-load.load.json",
+          "sha256": "784b2223436d81133b2419b09e80d3be5bf09f49b7c97acbbd40d1818c62c790",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6prepeat-effect-command.action.json",
+          "sha256": "130ce1419cf3a2221845b1ab1593eb2cab8757efffa87b2971d416ec6d987ff6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-paid11-migration-v2-cli-report-v1.json",
+          "sha256": "d85667777cdd77940067baa0fcf3ffe55d357a6d6fd040660f9ff023bf315ec7",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/analysis/rc6-paid11-migration-v2-complete-case-v1.json",
+          "sha256": "74fc72031694e5bb746fed40cafa8ef8701c5cad83a1094e5d11dc636dbd1618",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.sav",
+          "sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.audit.json",
+          "sha256": "49e0637da026e529021d71e34324794cf7f91607490142537b1db76338583826",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.native-save.json",
+          "sha256": "6fe71618fa64eb9d9a7a1d77024876852575b8b48d6869f66ed2532ddf62a96b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.sav",
+          "sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.audit.json",
+          "sha256": "d9ff5a25f76f85ea28655ba0e7a07f371b0e4754155c059668ea8e50d9f95966",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.native-save.json",
+          "sha256": "f9fc9888a69951035c4965f15c7a6349e143862951e7b4483fe472166438f654",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto.sav",
+          "sha256": "cc1191c9d0f8c3fc83810bab1b1ccf1b39f13ed4485ee642cb7c215a71d0a2b9",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto.audit.json",
+          "sha256": "2b4dc5244a2480696392ac86d8ccfd0ed40756299ca0e5ca631a2eb397601c5a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto.native-save.json",
+          "sha256": "056afb1969d720fdb50de74970d13a79739c6dedc70a636e3afe7f83e7151384",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.sav",
+          "sha256": "bedebd4ad6911f16b4fb57a1ead239afc650d3dedd730833c10c902a7466e5d7",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.audit.json",
+          "sha256": "a09cd8426db84f3fa6efa52dc22b20ccd81b80d6f6f83ca0cab5459df8346dd8",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1.native-save.json",
+          "sha256": "e6a7a3b7d87e3e6386c78d6f0b607266e898fc37245f29e195ff44ff3364e7be",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat.native-save.json",
+          "sha256": "bec3cde4e80f788ec8e46e2a0480f051ec3a3f499ce4091ba379a7916bb19b7e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat.audit.json",
+          "sha256": "fc0e81f0dd44ebeb5792035bc58c434905daef8f5ff22a667f0af0b10594bc71",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidauto-native-load2.load.json",
+          "sha256": "ebb7f280a5ae1404adc58d15d45b4a64c8f744a833601afd725de6040dc58a25",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidreload1-native-load2.load.json",
+          "sha256": "d0a4add4329858d8cbae9c4e4279a02e233a2e37cba23bb0733a42d7c1dd9c5c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/run/r6paidrepeat-effect-command.action.json",
+          "sha256": "2914fbf2c22c1742d6e8ecab8eb0d699bbe2b54240353c9fbb265754db448333",
+          "kind": "actions"
+        }
+      ]
+    }
+  },
+  "archives": [
+    {
+      "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/index.json",
+      "sha256": "9bd49ca3bfdf1e13da6175833390384ac90a430ad67a4d9a38ef9a97eaf7438d"
+    },
+    {
+      "path": "docs/evidence/1019-rc6-migration-checkpoint-v1/verify.json",
+      "sha256": "6de924841b76c247c4cc73a199fd1e40fd72e8caf0a4a911f6ab34ec4a7a4171"
+    },
+    {
+      "path": "docs/rc6-migration-v2-evidence-mapping-1019.md",
+      "sha256": "3b986430de4070c8493725e85fa9dd03ac85223ef56f1ce8b30545a258aa8330"
+    }
+  ],
+  "validation_scope": "Only typed migration-v2 source binding was validated; no case, full matrix, restart, active log or release acceptance is implied.",
+  "original_v1_status": "FAIL",
+  "case_status_promoted": false,
+  "final_result_written": false
+}

@@ -1,0 +1,330 @@
+{
+  "schema": "eep.1019.functional-native-analysis-intake.v1",
+  "status": "PENDING_ACTUAL_PREFIX",
+  "scope": "Analysis interface only. Root owns UI/runtime; colossus_review owns execution map. No functional SAV full parse, future result, old-gate change, active-log access or final index here.",
+  "expected_production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "expected_game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "existing_checker_sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc",
+  "actual_runs": [],
+  "actual_actor_country_id": null,
+  "actual_mother_fleet_id": null,
+  "actual_mother_ship_id": null,
+  "actual_core_physical_id": null,
+  "actual_source_physical_id": null,
+  "branches": {
+    "enemy_pk": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "base": null,
+        "calibration_after": null,
+        "ready": null,
+        "queued": null,
+        "windup_sample": null,
+        "fire_start": null,
+        "last_fire_day": null,
+        "immediate_completed": null,
+        "stable_completed": null
+      },
+      "actual_results": null
+    },
+    "cancel": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "charged": null,
+        "cancelled_same_day": null,
+        "cancelled_actual_reload": null
+      },
+      "actual_results": null
+    },
+    "duplicate": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "stable_completed": null,
+        "valid_callback_twice_after": null,
+        "actual_reload_callback_after": null
+      },
+      "actual_results": null
+    },
+    "normal_q2": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "owned_ready_50": null,
+        "same_day_decision_started": null,
+        "monthly_progress": null,
+        "precomplete": null,
+        "immediate_completed": null,
+        "stable_completed": null,
+        "repeat_after": null,
+        "actual_reload_after": null
+      },
+      "actual_results": null
+    },
+    "lithoid_owned_q2": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "functional_ready": null,
+        "calibration_after": null,
+        "restored_ready": null,
+        "queued": null,
+        "windup_sample": null,
+        "fire_start": null,
+        "last_fire_day": null,
+        "immediate_completed": null,
+        "stable_completed": null,
+        "repeat_after": null,
+        "actual_reload_after": null
+      },
+      "actual_results": null
+    },
+    "persistent_guards": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "ready": null,
+        "idle_next_day": null,
+        "fired_same_date_as_idle": null
+      },
+      "actual_results": null
+    },
+    "native_colonizing_ground": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "ready": null,
+        "idle_next_day": null,
+        "fired_same_date_as_idle": null
+      },
+      "actual_results": null
+    },
+    "core_migration_ownerloss": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "migration_ready": null,
+        "actual_decision_newcore": null,
+        "newcore_guard_before": null,
+        "newcore_guard_after": null,
+        "owner_loss_before": null,
+        "owner_loss_after": null,
+        "owner_loss_idle": null,
+        "owner_loss_callback_after": null
+      },
+      "actual_results": null
+    },
+    "mother_death": {
+      "status": "PENDING",
+      "actual_prefix": null,
+      "actual_run_id": null,
+      "roles": {
+        "live_before": null,
+        "destroyed_cleanup": null,
+        "full_three_effects_after": null,
+        "monthly_after": null,
+        "actual_reload_after": null
+      },
+      "actual_results": null
+    }
+  },
+  "per_native_role_required": [
+    "actual_native_save_path",
+    "native_save_sha256",
+    "native_date",
+    "immutable_receipt_path",
+    "receipt_sha256",
+    "audit_path",
+    "audit_sha256",
+    "manifest_path",
+    "manifest_sha256",
+    "production_tree_sha256",
+    "role_semantics"
+  ],
+  "actual_ui_evidence": {
+    "load_receipts": [],
+    "input_actions": [],
+    "gpu_images": [],
+    "ocr": []
+  },
+  "settlement_case": {
+    "schema": "eep.1019.settlement-case.v1",
+    "required_fields": [
+      "schema",
+      "path",
+      "before",
+      "after",
+      "source_world",
+      "core_world",
+      "expected_q",
+      "native",
+      "expected_return",
+      "expected_other_core_pop_delta",
+      "expected_crisis_progress_delta",
+      "crisis_calibration_evidence",
+      "expected_crisis_empires_progress_delta"
+    ],
+    "conditional_fields": {
+      "reload": "Only actual immutable native reload save",
+      "crisis_empires_calibration_evidence": "Required for nonzero expected empires reward"
+    },
+    "path_values": [
+      "normal",
+      "colossus"
+    ],
+    "independent_expectation_basis": {
+      "expected_q": null,
+      "native_branch": null,
+      "expected_return": null,
+      "expected_other_core_pop_delta": null,
+      "worlds_reward_unit": null,
+      "empires_reward_unit_and_last_colony_premise": null
+    },
+    "future_case": null
+  },
+  "analysis_rules": {
+    "parse_only_root_confirmed_immutable_prefixes": true,
+    "full_parse_once_per_native_save": true,
+    "reuse_verified_observations_for_old_checker_functions": true,
+    "strict_comparator_ignored_paths": [],
+    "expected_values_from_after_residuals": false,
+    "actual_orders_do_not_replace_ui_inputs": true,
+    "settlement_checker_does_not_prove_firing": true,
+    "same_day_no_settlement_requires_idle_fired_matching_dates": true,
+    "native_missing_values_remain_missing": true,
+    "immediate_failures_preserved_before_later_stable_reports": true,
+    "no_prior_RC4_ID_date_q_reward_import": true,
+    "lithoid_native_pop_category_requires_independent_message_or_native_UI": true,
+    "unchanged_old_checker_and_policies": true
+  },
+  "final_case_proposals": {
+    "colossus_enemy_fire": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    },
+    "colossus_cancel_idempotence": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    },
+    "common_settlement": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    },
+    "normal_dismantle_regression": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    },
+    "colossus_guards": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    },
+    "unlimited_growth_destroyed_mother_subset": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    },
+    "candidate_reload_functional_subset": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    },
+    "repeat_initialization_functional_subset": {
+      "status": "PENDING",
+      "checks": null,
+      "evidence": [],
+      "run_ids": [],
+      "production_tree_sha256": null
+    }
+  },
+  "preparation_source_bindings": [
+    {
+      "path": "eat_everything_origin/tools/check_1019.py",
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/testing/inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/tools/runtime_1019.py",
+      "sha256": "003b04d9046088107ada8359d2189f16c70cbf99833990765574d217e9ac7c87",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/tools/runtime_single_homeworld.py",
+      "sha256": "cb0d2d2469c47183eac3211148bbf6c9e51b263bc719c35bfb9981e18326ea34",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/docs/rc6-functional-native-execution-map-1019.md",
+      "sha256": "0182379f98237a5f95df39a46a2c7a35420b0baaa514be957b6a775ae4eab646",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/testing/colossus_1019_rc6_execution_map.json",
+      "sha256": "29b07e97c2503b809957195eb8a137b425ab879c5b945bf32172687000d2ee91",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/docs/colossus-postfire-regression-1019.md",
+      "sha256": "6f578f35faad62be77bf49c647e4fc5ae3c7f10960aa3299b837e4f480bed76b",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/testing/colossus_1019_postfire_plan.json",
+      "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/docs/colossus-native-guard-batch-1019.md",
+      "sha256": "9a8dcb318e564c1b63a9e6e99618e452bf273ba2447330d8adda2900cf8de87f",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/docs/colossus-native-state-negative-fixtures-1019.md",
+      "sha256": "2c7cbb0a88be847ada035f3b20205f91f157e14c99a9e54d2f0ba5591ec3b815",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    },
+    {
+      "path": "eat_everything_origin/docs/colossus-pk-duration-loader-1019.md",
+      "sha256": "4cb84e1635d2c5033b24b3604bef058e47ac99cb69e1109e14e49c963e2f65d8",
+      "scope": "Read-only preparation snapshot; command map may be separately sealed by its owner."
+    }
+  ],
+  "analysis_contract": {
+    "path": "eat_everything_origin/docs/rc6-functional-native-analysis-contract-1019.md",
+    "sha256": "4bdaf52c5a20d5fd1ac4e95a79dcaf2ade21ab929f9408ae446e67b9e23c4e72"
+  },
+  "prepared_at_utc": "2026-10-19T15:44:27.848247+00:00"
+}

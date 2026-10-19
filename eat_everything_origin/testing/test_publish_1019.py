@@ -226,6 +226,23 @@ class Release1019Guards(unittest.TestCase):
                 with self.subTest(case=name, mode=mode), self.assertRaises(RuntimeError):
                     self.validate(bad)
 
+    def test_migration_v2_routes_only_its_explicit_strict_damage_failure(self):
+        case = self.runtime["cases"]["old_save_migration"]
+        case["checks"]["damage_preserved"] = False
+        with self.assertRaisesRegex(RuntimeError, "old_save_migration"):
+            self.validate()
+        case["migration_contract"] = {"schema": "synthetic routing only"}
+        case["checks"]["damage_within_predeclared_v2_budget"] = True
+        with patch.object(release, "validate_migration_contract") as typed:
+            self.validate()
+            typed.assert_called_once()
+            case["checks"]["identity_preserved"] = False
+            with self.assertRaisesRegex(RuntimeError, "old_save_migration"):
+                self.validate()
+        case["checks"]["identity_preserved"] = True
+        with self.assertRaises(RuntimeError):
+            self.validate()  # The real typed validator rejects an unknown scope.
+
     def test_case_requires_all_native_evidence_kinds(self):
         for kind in release.EVIDENCE_KINDS:
             bad = copy.deepcopy(self.runtime)
@@ -869,6 +886,210 @@ class Release1019Guards(unittest.TestCase):
             self.write("download/synthetic.bin", b"changed synthetic download")
             with self.assertRaisesRegex(RuntimeError, "downloaded bytes changed"):
                 release.tag_check()
+
+
+class MigrationV2ReleaseGuards(unittest.TestCase):
+    """Report-shape fixtures with synthetic bytes; no native results are created."""
+
+    originals = {
+        "public031": ("rc6-public031-migration-v2-complete-report-v1.json",
+            "bff7b26f3ebc089f1f863aca341f94fc5688a5bb0c9ea145ab504832a6d33c7e"),
+        "paid11": ("rc6-paid11-migration-v2-cli-report-v1.json",
+            "d85667777cdd77940067baa0fcf3ffe55d357a6d6fd040660f9ff023bf315ec7")}
+
+    def setUp(self):
+        import check_migration_1019 as migration
+        self.migration = migration
+        self.project = Path(__file__).resolve().parents[1]
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.case = {"checks": {"damage_preserved": False,
+            "damage_within_predeclared_v2_budget": True}, "evidence": [], "run_ids": ["synthetic-rc6"]}
+        self.run_proofs = {"synthetic-rc6": "e" * 64}
+        scope = self.case["migration_contract"] = {
+            "schema": "eep.1019.migration-release-scope.v2", "execution_mode": migration.MODE,
+            "classification": release.MIGRATION_V2_CLASSIFICATION,
+            "policy": dict(release.MIGRATION_V2_POLICY), "limitations": list(release.MIGRATION_V2_LIMITS),
+            "fixtures": {}}
+        for field, name in (("checker", "tools/check_migration_1019.py"),
+                            ("contract_document", "docs/native-migration-roundoff-contract-1019.md")):
+            scope[field] = self.bind(name, (self.project / name).read_bytes(), "analysis")
+        name = "mod/common/global_ship_designs/eep_mothership.txt"
+        self.write(name, (self.project / name).read_bytes())
+        self.reports, self.sources = {}, {}
+        known = copy.deepcopy(migration.FIXTURES)
+        for kind, (filename, original_sha) in self.originals.items():
+            raw = (self.project / "docs/evidence/1019-analysis" / filename).read_bytes()
+            self.assertEqual(release.update.digest(raw), original_sha)
+            report = json.loads(raw)
+            source = copy.deepcopy(report["case"])
+            bundle = scope["fixtures"][kind] = {"native_saves": {}, "audits": {},
+                "save_receipts": {}, "load_receipts": {}}
+            roles = {**report["provenance"], **{"repeat_" + k: v["provenance"]
+                     for k, v in report["repeat_native_sources"].items()}}
+            natives = {**report["native_sources"], **{"repeat_" + k: v["native"]
+                       for k, v in report["repeat_native_sources"].items()}}
+            for role, proof in roles.items():
+                prefix = "synthetic/" + kind + "-" + role
+                save = self.bind(prefix + ".sav", ("SYNTHETIC NOT NATIVE: " + prefix).encode(), "native_save")
+                audit = self.bind(prefix + ".audit.json", b'{"synthetic":true}\n', "analysis")
+                receipt = self.bind_json(prefix + ".receipt.json", {"synthetic": True,
+                    "sha256": save["sha256"]}, "actions")
+                bundle["native_saves"][role] = save
+                bundle["audits"][role] = audit
+                bundle["save_receipts"][role] = [receipt]
+                proof.update(save_sha256=save["sha256"], audit_sha256=audit["sha256"],
+                             receipts=[{"sha256": receipt["sha256"]}])
+                if role not in ("fixture", "before"):
+                    proof.update(run_id="synthetic-rc6", manifest_sha256="e" * 64)
+            for role in ("fixture", "before"):
+                known[kind][role + "_sha256"] = roles[role]["save_sha256"]
+                source[role + "_sha256"] = roles[role]["save_sha256"]
+            for role, input_role in (("after", "before"), ("reload", "after"),
+                                    *(([("repeat_before", "after")]) if source.get("repeat_load_source") else [])):
+                proof = natives[role]["load_evidence"]
+                raw = copy.deepcopy(proof["raw"])
+                raw["source_sha256"] = roles[input_role]["save_sha256"]
+                ref = self.bind_json("synthetic/" + kind + "-" + role + ".load.json", raw, "actions")
+                proof.update(sha256=ref["sha256"], raw=raw,
+                    source_byte_sha256=raw["source_sha256"], expected_source_sha256=raw["source_sha256"])
+                bundle["load_receipts"][role] = ref
+            bundle["repeat_action"] = self.bind_json("synthetic/" + kind + "-repeat.action.json", {
+                "text": "effect root={eep_repair_existing_mothership_design=yes eep_repair_existing_mothership_design=yes}",
+                "submitted": True, "submit_input": "physical scan code 0x1c"}, "actions")
+            self.sources[kind], self.reports[kind] = source, report
+            self.refresh(kind)
+        self.fixture_patch = patch.object(migration, "FIXTURES", known)
+        self.fixture_patch.start()
+        self.addCleanup(self.fixture_patch.stop)
+
+    def write(self, name, raw):
+        path = self.root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(raw)
+        return path
+
+    def bind(self, name, raw, kind):
+        self.write(name, raw)
+        ref = {"path": name, "sha256": release.update.digest(raw), "kind": kind}
+        self.case["evidence"] = [row for row in self.case["evidence"] if row["path"] != name] + [ref]
+        return ref
+
+    def bind_json(self, name, data, kind):
+        return self.bind(name, (json.dumps(data, ensure_ascii=False) + "\n").encode(), kind)
+
+    def refresh(self, kind):
+        bundle = self.case["migration_contract"]["fixtures"][kind]
+        bundle["case"] = self.bind_json("synthetic/" + kind + "-case.json", self.sources[kind], "analysis")
+        self.reports[kind].update(case=copy.deepcopy(self.sources[kind]), case_sha256=bundle["case"]["sha256"])
+        bundle["report"] = self.bind_json("synthetic/" + kind + "-report.json", self.reports[kind], "analysis")
+
+    def validate(self):
+        release.validate_migration_contract(self.case, self.migration.TREE, self.root, self.run_proofs)
+
+    def test_separate_v2_scope_accepts_report_shapes_and_keeps_real_v1_failure(self):
+        self.validate()
+        self.assertIs(self.case["checks"]["damage_preserved"], False)
+        for filename, sha in self.originals.values():
+            raw = (self.project / "docs/evidence/1019-analysis" / filename).read_bytes()
+            self.assertEqual(release.update.digest(raw), sha)
+            self.assertEqual(json.loads(raw)["v1_original_diagnostic"]["status"], "FAIL")
+            self.assertIs(json.loads(raw)["v1_original_diagnostic"]["checks"]["damage_preserved_in_declared_mode"], False)
+
+    def test_unknown_scope_policy_or_missing_independent_fixture_rejected(self):
+        scope = self.case["migration_contract"]
+        for key, value in (("schema", "unknown"), ("execution_mode", "multiplayer"),
+                           ("classification", "lossless"),
+                           ("policy", {**scope["policy"], "step_signed_ratio_min": -.000022}),
+                           ("limitations", []), ("fixtures", {"public031": scope["fixtures"]["public031"]})):
+            old = scope[key]
+            scope[key] = value
+            with self.subTest(key=key), self.assertRaises(RuntimeError):
+                self.validate()
+            scope[key] = old
+        for field in ("damage_preserved", "damage_within_predeclared_v2_budget"):
+            old = self.case["checks"][field]
+            self.case["checks"][field] = not old
+            with self.subTest(check=field), self.assertRaises(RuntimeError):
+                self.validate()
+            self.case["checks"][field] = old
+
+    def test_report_forgery_missing_raw_source_or_nonprecision_failure_rejected(self):
+        original = copy.deepcopy(self.reports["public031"])
+        edits = {
+            "claimed_v1_pass": lambda r: r["v1_original_diagnostic"].update(status="PASS_SCOPED"),
+            "strict_damage_true": lambda r: r["v1_original_diagnostic"]["checks"].update(damage_preserved_in_declared_mode=True),
+            "missing_check": lambda r: r["checks"].pop(next(iter(r["checks"]))),
+            "failed_check": lambda r: r["checks"].update({next(iter(r["checks"])): False}),
+            "wrong_checker": lambda r: r.update(checker_sha256="0" * 64),
+            "wrong_run": lambda r: r["provenance"]["after"].update(run_id="historical-run"),
+            "wrong_manifest": lambda r: r["provenance"]["after"].update(manifest_sha256="0" * 64),
+            "wrong_tree": lambda r: r["provenance"]["after"].update(production_tree_sha256="0" * 64),
+            "wrong_exe": lambda r: r["native_sources"]["after"].update(actual_game_exe_sha256="0" * 64),
+            "multiplayer": lambda r: r["native_sources"]["after"].update(players=[{"country": 0}, {"country": 1}]),
+            "wrong_actual_design": lambda r: r["snapshots"]["after"].update(design_shape={}),
+            "queue_changed": lambda r: r["snapshots"]["after"].update(all_owned_queue_items={"synthetic": "changed"}),
+            "wrong_maximum": lambda r: r["snapshots"]["after"]["damage"]["shield"].update(maximum=167311),
+            "missing_readings": lambda r: r["steps"]["old_to_after"].pop("raw_readings"),
+            "fabricated_delta": lambda r: r["steps"]["old_to_after"]["signed_ratio_deltas_decimal"].update(armor="0"),
+            "lost_strict_diagnostic": lambda r: r["steps"]["old_to_after"]["original_1e_6_diagnostic"].update(armor=True),
+            "larger_step_budget": lambda r: r["steps"]["old_to_after"].update(minimum_delta=-.000022),
+            "nonidempotent_repeat": lambda r: r["repeat_sync_strict_comparison"].update(differences=[{"synthetic": True}]),
+            "no_actual_mobilebase_record": lambda r: r["native_sources"]["after"].pop("attached_starbase_raw"),
+        }
+        for label, edit in edits.items():
+            self.reports["public031"] = copy.deepcopy(original)
+            edit(self.reports["public031"])
+            self.refresh("public031")
+            with self.subTest(label=label), self.assertRaises(RuntimeError):
+                self.validate()
+
+    def test_native_roles_receipts_and_case_bound_evidence_required(self):
+        bundle = self.case["migration_contract"]["fixtures"]["paid11"]
+        for field, key in (("native_saves", "reload"), ("audits", "before"),
+                           ("save_receipts", "after"), ("load_receipts", "reload")):
+            old = bundle[field].pop(key)
+            with self.subTest(field=field), self.assertRaises(RuntimeError):
+                self.validate()
+            bundle[field][key] = old
+        evidence = self.case["evidence"]
+        self.case["evidence"] = [r for r in evidence if r != bundle["native_saves"]["after"]]
+        with self.assertRaises(RuntimeError):
+            self.validate()
+        self.case["evidence"] = evidence
+        self.write(bundle["repeat_action"]["path"], b'{"submitted":false}')
+        with self.assertRaises(RuntimeError):
+            self.validate()
+
+    def test_recomputed_raw_loss_or_gain_cannot_exceed_predeclared_step_budget(self):
+        from decimal import Decimal
+        original = copy.deepcopy(self.reports["public031"])
+        for shift in (Decimal("-.001"), Decimal(".001")):
+            report = self.reports["public031"] = copy.deepcopy(original)
+            step = report["steps"]["old_to_after"]
+            before = step["raw_readings"]["before"]["armor"]
+            after = step["raw_readings"]["after"]["armor"]
+            old_ratio = Decimal(str(before["current"])) / Decimal(str(before["maximum"]))
+            current = (old_ratio + shift) * Decimal(str(after["maximum"]))
+            ratio = current / Decimal(str(after["maximum"]))
+            after.update(current=str(current), fraction_decimal=str(ratio))
+            report["snapshots"]["after"]["damage"]["armor"]["current_absolute"] = str(current)
+            step["signed_ratio_deltas_decimal"]["armor"] = str(ratio - old_ratio)
+            step["original_1e_6_diagnostic"]["armor"] = False
+            self.refresh("public031")
+            with self.subTest(shift=str(shift)), self.assertRaisesRegex(RuntimeError, "recomputed per-step budget"):
+                self.validate()
+
+    def test_boolean_native_count_and_wrong_candidate_tree_rejected(self):
+        self.sources["public031"]["expected_queued_items"] = False
+        self.refresh("public031")
+        with self.assertRaisesRegex(RuntimeError, "nonboolean"):
+            self.validate()
+        self.sources["public031"]["expected_queued_items"] = 0
+        self.refresh("public031")
+        with self.assertRaisesRegex(RuntimeError, "explicit RC6"):
+            release.validate_migration_contract(self.case, "0" * 64, self.root, self.run_proofs)
 
 
 if __name__ == "__main__":

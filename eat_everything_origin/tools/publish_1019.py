@@ -1,6 +1,7 @@
 """0.4.0 adapter. No PASS evidence is synthesized by this release gate."""
 import argparse
 from contextlib import contextmanager
+from decimal import Decimal, InvalidOperation
 import hashlib
 import json
 import math
@@ -71,6 +72,16 @@ COMPONENT_SOURCE_MODELS = (
     "942b98c2aea0022ff7ffa017944abbf873d36331fd26c89862f83a37e31e4dd2",
     "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f")
 COMPONENT_SOURCE_TREE = "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a"
+MIGRATION_V2_CHECKER = "08b57969060c037c4e03829f0075f8e7314f262527215e991595bd4778456d38"
+MIGRATION_V1_CHECKER = "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+MIGRATION_V2_POLICY = {"step_signed_ratio_min": -.000021, "step_signed_ratio_max": .000001,
+    "v1_absolute_tolerance": .000001, "relative_tolerance": 0}
+MIGRATION_V2_CHECKSETS = {
+    "public031": "7d7ab93fc25d7d52766665d1e38a77a454d13f1719d51c950cc69e08ca4e540f",
+    "paid11": "3190475a5e01b37e73fb177fa8abff6bf95617f6ada57205219fb8231413925f"}
+MIGRATION_V2_LIMITS = ["single_player_postload_only", "mobile_starbase_cache_not_repaired",
+                       "original_v1_failure_retained"]
+MIGRATION_V2_CLASSIFICATION = "predeclared_engineering_allowance_not_engine_storage_proof"
 COMPONENT_ATTRIBUTION_CONTRACT = "source_separated_native_rng_v1"
 COMPONENT_HP_TOLERANCE_CONTRACT = "max_0p01_or_8_binary32_ulp_expected_v1"
 COMPONENT_HP_TOLERANCE = {"absolute_floor": .01, "binary32_ulps": 8, "relative_tolerance": 0,
@@ -501,6 +512,190 @@ def validate_component_attribution(case, tree, root):
             and baseline.get("save_sha256") == observed_shas[1], "distinct raw SAVs and actual C0 binding")
 
 
+def validate_migration_contract(case, tree, root, run_proofs):
+    """Accept only the separately declared v2 scope; never rewrite strict v1."""
+    try:
+        _validate_migration_contract(case, tree, root, run_proofs)
+    except (KeyError, TypeError, ValueError, AttributeError, IndexError, OSError) as error:
+        raise RuntimeError("old_save_migration v2: incomplete or malformed bound evidence") from error
+
+
+def _validate_migration_contract(case, tree, root, run_proofs):
+    """Accept an independent v2 scope while retaining the original strict failure."""
+    import check_migration_1019 as migration
+
+    def require(value, reason):
+        if not value:
+            raise RuntimeError("old_save_migration v2: " + reason)
+
+    def reference(entry, kind):
+        path = reference_path(entry, root)
+        require(any(row.get("path") == entry["path"] and row.get("sha256") == entry["sha256"]
+                    and row.get("kind") == kind for row in case["evidence"]), "case-bound " + kind)
+        return path
+
+    def decimal(value):
+        require(type(value) in (int, float, str) and not isinstance(value, bool), "finite numeric policy/reading")
+        try:
+            result = Decimal(str(value))
+        except InvalidOperation:
+            require(False, "numeric policy/reading")
+        require(result.is_finite(), "finite numeric policy/reading")
+        return result
+
+    def policy(value):
+        require(isinstance(value, dict) and set(value) == set(MIGRATION_V2_POLICY)
+                and all(type(value[k]) in (int, float) and decimal(value[k]) == decimal(v)
+                        for k, v in MIGRATION_V2_POLICY.items()), "exact predeclared asymmetric policy")
+
+    scope = case.get("migration_contract")
+    require(isinstance(scope, dict) and scope.get("schema") == "eep.1019.migration-release-scope.v2"
+            and scope.get("execution_mode") == migration.MODE and tree == migration.TREE,
+            "explicit RC6 single-player v2 scope")
+    require(scope.get("limitations") == MIGRATION_V2_LIMITS
+            and scope.get("classification") == MIGRATION_V2_CLASSIFICATION
+            and case["checks"].get("damage_preserved") is False
+            and case["checks"].get("damage_within_predeclared_v2_budget") is True,
+            "strict failure retained and v2 budget declared separately")
+    policy(scope.get("policy"))
+    checker = reference(scope.get("checker"), "analysis")
+    require(scope["checker"]["sha256"] == MIGRATION_V2_CHECKER
+            and update.digest(Path(migration.__file__).read_bytes()) == MIGRATION_V2_CHECKER,
+            "reviewed v2 checker bytes")
+    reference(scope.get("contract_document"), "analysis")
+    bundles = scope.get("fixtures")
+    require(isinstance(bundles, dict) and set(bundles) == set(MIGRATION_V2_CHECKSETS), "both independent genuine fixtures")
+    design_file = root / "mod/common/global_ship_designs/eep_mothership.txt"
+    definitions = [body for name, body, block in migration.v1.a.fields(design_file.read_text(encoding="utf-8-sig"))
+                   if name == "ship_design" and block and migration.v1.a.scalars(body).get("name") == migration.v1.DESIGN_NAME]
+    require(len(definitions) == 1, "unique frozen expected actual design")
+    expected_shape = migration.v1.design_shape(migration.v1.n.design(definitions[0]))
+    for kind, bundle in bundles.items():
+        report = read_json(reference(bundle.get("report"), "analysis"))
+        source_case = read_json(reference(bundle.get("case"), "analysis"))
+        require(report.get("schema") == "eep.1019.migration-report.v2" and report.get("status") == "PASS_SCOPED"
+                and report.get("checker_sha256") == MIGRATION_V2_CHECKER
+                and report.get("v1_checker_sha256") == MIGRATION_V1_CHECKER
+                and report.get("case") == source_case and report.get("case_sha256") == bundle["case"]["sha256"],
+                "original v2 report, case and checker binding")
+        try:
+            known = migration.validate_case(source_case)
+        except (ValueError, KeyError, TypeError) as error:
+            raise RuntimeError("old_save_migration v2: fixed case binding") from error
+        require(source_case.get("fixture_kind") == kind, "distinct fixture kinds")
+        require(all(type(source_case.get(key)) is int for key in (
+            "expected_fleet_id", "expected_ship_id", "expected_starbase_id",
+            "expected_shipyard_queue_id", "expected_queued_items")), "nonboolean native identity/count fields")
+        policy(report.get("policy")); policy(source_case.get("policy"))
+        checks = report.get("checks")
+        require(isinstance(checks, dict) and all(value is True for value in checks.values())
+                and update.digest(json.dumps(sorted(checks), separators=(",", ":")).encode()) == MIGRATION_V2_CHECKSETS[kind],
+                "complete reviewed checks, including all nonprecision invariants")
+        old = report.get("v1_original_diagnostic", {})
+        require(old.get("status") == "FAIL" and old.get("checks", {}).get("damage_preserved_in_declared_mode") is False
+                and old.get("damage_tolerance") == .000001
+                and all(value is True for key, value in old.get("checks", {}).items()
+                        if key not in {"damage_preserved_in_declared_mode", "reload_migration_snapshot_preserved"})
+                and isinstance(old.get("all_differences"), list)
+                and isinstance(report.get("strict_comparisons"), dict), "unmodified original strict FAIL and differences")
+        repeat = report.get("repeat_sync_strict_comparison", {})
+        require(repeat.get("status") == "PASS_SCOPED" and repeat.get("differences") == []
+                and repeat.get("checks") and all(value is True for value in repeat["checks"].values()),
+                "exact repeated helper comparison")
+        provenance = report["provenance"]
+        candidate = {key: provenance[key] for key in ("after", "reload")}
+        candidate.update({"repeat_" + key: row["provenance"] for key, row in report["repeat_native_sources"].items()})
+        roles = {"fixture": provenance["fixture"], "before": provenance["before"], **candidate}
+        snapshots = {**report["snapshots"], **{"repeat_" + key: row["snapshot"]
+                     for key, row in report["repeat_native_sources"].items()}}
+        natives = {**report["native_sources"], **{"repeat_" + key: row["native"]
+                   for key, row in report["repeat_native_sources"].items()}}
+        saves = bundle.get("native_saves")
+        require(isinstance(saves, dict) and set(saves) == set(roles), "six original native save roles")
+        for role, proof in roles.items():
+            reference(saves[role], "native_save")
+            require(saves[role]["sha256"] == proof.get("save_sha256"), "native save/provenance bytes")
+            reference(bundle["audits"][role], "analysis")
+            require(bundle["audits"][role]["sha256"] == proof["audit_sha256"], "original audit bytes")
+            receipts = proof.get("receipts", [])
+            require(receipts and any(row["sha256"] in {ref["sha256"] for ref in bundle["save_receipts"].get(role, [])}
+                                     for row in receipts), "original native save receipt")
+            for receipt in bundle["save_receipts"].get(role, []):
+                reference(receipt, "actions")
+            native = natives[role]
+            require(native.get("manifest_game_exe_sha256") == update.EXE_SHA
+                    and native.get("actual_game_exe_sha256") == update.EXE_SHA
+                    and isinstance(native.get("players"), list) and len(native["players"]) == 1
+                    and type(native["players"][0].get("country")) is int and native["players"][0]["country"] == 0
+                    and isinstance(native.get("attached_starbase_raw"), str) and native["attached_starbase_raw"]
+                    and type(native.get("attached_starbase_implementation", {}).get("design")) is int,
+                    "exact executable, single root player and recorded mobilebase cache")
+            if role in candidate:
+                require(proof.get("run_id") in case["run_ids"] and proof["run_id"] in run_proofs
+                        and proof.get("manifest_sha256") == run_proofs[proof["run_id"]]
+                        and proof.get("production_tree_sha256") == tree and proof.get("version") == "0.4.0-rc.6",
+                        "current candidate run and manifest")
+                snapshot, before = snapshots[role], snapshots["before"]
+                require(native.get("definition", {}).get("sha256") == update.digest(design_file.read_bytes())
+                        and native.get("expected_design_shape") == expected_shape
+                        and snapshot.get("design_shape") == expected_shape
+                        and snapshot.get("design_name") == migration.v1.DESIGN_NAME,
+                        "actual referenced design equals frozen full layout")
+                preserved = ("fleet_id", "ship_id", "starbase_id", "ship_name", "fleet_name",
+                    "ship_coordinate", "ship_target_coordinate", "movement_coordinate", "movement_target_coordinate",
+                    "orbit_raw", "build_queue_id", "shipyard_queue_id", "all_owned_queues", "all_owned_queue_items", "world_layout")
+                require(all(snapshot[key] == before[key] for key in preserved), "identity, names, position, queues and old worlds")
+                require(snapshot["damage"]["hull"]["maximum"] == before["damage"]["hull"]["maximum"]
+                        and snapshot["damage"]["armor"]["maximum"] == 44787.6
+                        and snapshot["damage"]["shield"]["maximum"] == 167310,
+                        "source-bound actual maximum defenses")
+        require(provenance["fixture"]["save_sha256"] == known["fixture_sha256"]
+                and provenance["before"]["save_sha256"] == known["before_sha256"]
+                and provenance["before"]["version"] == "0.3.1"
+                and provenance["before"]["production_tree_sha256"] == migration.OLD_TREE,
+                "genuine historical source, not a relabelled candidate")
+        load_roles = {"after": report["native_sources"]["after"]["load_evidence"],
+                      "reload": report["native_sources"]["reload"]["load_evidence"]}
+        if source_case.get("repeat_load_source"):
+            load_roles["repeat_before"] = report["repeat_native_sources"]["before"]["native"]["load_evidence"]
+        require(set(bundle.get("load_receipts", {})) == set(load_roles), "all actual native load receipts")
+        for role, proof in load_roles.items():
+            ref = bundle["load_receipts"][role]
+            raw = read_json(reference(ref, "actions"))
+            require(ref["sha256"] == proof.get("sha256") and raw == proof.get("raw")
+                    and raw.get("ui_date_verified") is True and proof.get("source_byte_sha256") == raw.get("source_sha256")
+                    and proof.get("expected_source_sha256") == raw.get("source_sha256"), "actual load source/date proof")
+        action = read_json(reference(bundle.get("repeat_action"), "actions"))
+        require(action.get("text") == "effect root={eep_repair_existing_mothership_design=yes eep_repair_existing_mothership_design=yes}"
+                and action.get("submitted") is True and action.get("submit_input") == "physical scan code 0x1c",
+                "actual layout-only repeated helper action")
+        for name, step in report["steps"].items():
+            require(name in {"old_to_after", "after_to_reload", "extra_native_load_before_repeat"}
+                    and decimal(step.get("minimum_delta")) == Decimal("-.000021")
+                    and decimal(step.get("maximum_delta")) == Decimal(".000001"), "step-local fixed budget")
+            for layer in ("hull", "armor", "shield"):
+                ratios = []
+                pair = {"old_to_after": ("before", "after"), "after_to_reload": ("after", "reload"),
+                        "extra_native_load_before_repeat": (source_case.get("repeat_load_source"), "repeat_before")}[name]
+                for side in ("before", "after"):
+                    row = step["raw_readings"][side][layer]
+                    current, maximum = decimal(row["current"]), decimal(row["maximum"])
+                    require(maximum > 0 and 0 <= current <= maximum, "legal raw current/max defenses")
+                    snapshot = snapshots[pair[0 if side == "before" else 1]]["damage"][layer]
+                    require(current == decimal(snapshot["current_absolute"]) and maximum == decimal(snapshot["maximum"]),
+                            "step readings equal the original native snapshot")
+                    ratios.append(current / maximum)
+                    require(decimal(row["fraction_decimal"]) == ratios[-1], "raw native ratio retained")
+                delta = ratios[1] - ratios[0]
+                require(Decimal("-.000021") <= delta <= Decimal(".000001")
+                        and decimal(step["signed_ratio_deltas_decimal"][layer]) == delta
+                        and step["checks"].get(layer + "_signed_ratio_in_predeclared_budget") is True
+                        and step["original_1e_6_diagnostic"].get(layer) is (abs(delta) <= Decimal(".000001")),
+                        "recomputed per-step budget and original strict diagnostic")
+        require(set(report["steps"]) == ({"old_to_after", "after_to_reload", "extra_native_load_before_repeat"}
+                if source_case.get("repeat_load_source") else {"old_to_after", "after_to_reload"}), "all observed load steps")
+
+
 def validate_runtime_index(runtime, root):
     candidate_version(runtime)
     if (runtime.get("schema") != "eep-1019-acceptance-v1" or runtime.get("status") != "PASS_SCOPED"
@@ -519,7 +714,7 @@ def validate_runtime_index(runtime, root):
         raise RuntimeError("candidate static gate source differs")
     validate_static_report(read_json(static_path), root)
     manifests = verify_references(runtime.get("runs"), root)
-    run_ids = set()
+    run_ids, run_proofs = set(), {}
     for path in manifests:
         run = read_json(path)
         source = run.get("repository_mod_files", [])
@@ -535,6 +730,7 @@ def validate_runtime_index(runtime, root):
                 or not run.get("run_id") or run["run_id"] in run_ids):
             raise RuntimeError("native run does not bind the accepted final candidate: " + str(path))
         run_ids.add(run["run_id"])
+        run_proofs[run["run_id"]] = update.digest(path.read_bytes())
     components = runtime.get("component_rewards", {})
     if (components.get("status") not in {"IMPLEMENTED", "DEFERRED"}
             or components.get("interval_levels") != 5 or not components.get("reason", "").strip()):
@@ -553,13 +749,17 @@ def validate_runtime_index(runtime, root):
         raise RuntimeError("required 1019 runtime case groups differ")
     for name, required in checks.items():
         case = cases[name]
+        migration_v2 = name == "old_save_migration" and "migration_contract" in case
         if (case.get("status") != "PASS_SCOPED" or case.get("production_tree_sha256") != tree
                 or not isinstance(case.get("checks"), dict)
                 or not required.issubset(case["checks"])
-                or any(value is not True for value in case["checks"].values())
+                or any(value is not (False if migration_v2 and key == "damage_preserved" else True)
+                       for key, value in case["checks"].items())
                 or not case.get("run_ids") or not set(case["run_ids"]).issubset(run_ids)):
             raise RuntimeError("required runtime case incomplete: " + name)
         verify_references(case.get("evidence"), root, EVIDENCE_KINDS)
+        if migration_v2:
+            validate_migration_contract(case, tree, root, run_proofs)
     if components["status"] == "IMPLEMENTED":
         validate_component_attribution(cases["random_components"], tree, root)
     for branch in ("hive", "machine", "purifier"):
