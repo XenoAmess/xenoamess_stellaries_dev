@@ -1,0 +1,23 @@
+# Machine经济操作约束补证设计
+
+本轮只读核查干净加载fmm00至fmm00reload、12次独立30日推进、年末通知与fmyearui保存的实际操作链，目标为四项限定声明：无控制台／菜单资源注入或交易补贴、无手工关闭岗位、无拆除现有舰船。逐一列出全部实际action，绑定对应截图、OCR与执行器源码；12条提交的控制台文本必须全部精确为`fast_forward 30`。原生保存的名称输入与Ctrl+A编辑必须单列，不能遗漏无fm前缀的底层press记录。当前已发现两份Ctrl+A原始记录需要追加归档；保留v1全部文件与索引，另建v2补充索引。
+
+通过原生SAV初始锚点、12个月末及年末UI存档，独立核对所有库存资源逐月差值与原生当月income减expenses，保留预算完整分类；正常logistics岗位产生的trade收入属于原生经济，不能把它写成交易补贴。提取岗位的全部直接字段、显式workforce限制及可能的手工关闭标记；有限岗位应保持可用，`-1`无限岗位哨兵不能误判为禁用。核对普通ship1～5与Mother997身份、归属及存在，并记录所有已拥有舰船，不把月末身份保持外推成连续输入监控。
+
+同时补证startup的两项限定声明：同preset原生母星与RC3母星人口原始基数均4800，取消额外赠品星球人口不算原母星损失；原生预算确有非零正常维护成本，冻结源码没有扩大原Mother优惠或新增全局免维护。需引用旧原生基线、冻结源码与实际SAV，不凭UI印象填写。
+
+验收标准：每个声明有明确证据路径、SHA、实际字段／动作及范围；记录链不能证明任意未记录外部操作不存在，库存闭合也不能排除同月恰好抵消的未记录收支。报告仅在记录路径、已保存原生预算与检查点身份的范围内标PASS_SCOPED；具体缺口必须列出。旧报告、严格FAIL、归档v1保持原字节。Hive新数据及当前Machine PK分支均不纳入本经济归档。
+
+调查中校正：country并非没有任何timed modifier，真实原生`game_start`从3600日自然递减至3240日；不存在EEP母舰优惠的country应用。新采集脚本把country modifier空列表写成前置断言时正确中止、尚未生成PASS，现改成只核对未在country应用`eep_mothership`，同时完整保留原生`game_start`及其源定义。原生开局modifier与原有Mother优惠不能被误写为本候选新增的全局免维护。
+
+## 已完成的限定结果
+
+`rc3-machine-operational-constraints-report-v1.json` 为六项`PASS_SCOPED`，SHA256 `6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62`。归档原有136份action中，经济范围109份加两份底层Ctrl+A，共111条实际输入记录；其余27份是本次干净加载前的创建／初始保存。14次文本输入只有12次提交且全部为`fast_forward 30`，另两次为保存文件名。22次点击完整匹配实际OCR行中心或经源码校验的控制台／保存名称栏几何，且绑定图像SHA。截图残留硬件阶段控制台历史并不表示新执行了历史命令；干净锚点及月度SAV的C／L／R、六tier和probe状态另有原生证明。
+
+九种资源逐月库存差值均与当月原生income减expenses一致，浮点残差小于1e-12。原生`logistics_drone`在`04_gestalt_jobs.txt:1975`使用`category=planet_traders`、产出`trade=6`，机器upkeep为energy2；这是正常岗位收益。预算保留`planet_traders`及`trade_policy`全部原始分类，没有把正常贸易资源收入误称补贴。无人工资源注入／市场／交易补贴的结论限定于所归档执行路径及库存净账本。
+
+14个原生检查点全部10种有限岗位的`workforce_limit=max_workforce`且workforce均正；`automated_workforce_limit=max_workforce-1`保持原生初值，无限类字段`-1`原样保留。所有12个初始owned ship ID、fleet ID和舰名全程检查点保持，包含普通1～5与Mother997；对应操作链没有岗位管理或拆船动作。原生数据不提供一个经本项目独立校准的通用“从未临时关闭”标记，因此报告保留全部岗位原始体及明确观察边界。
+
+人口比较为旧版同preset原生bmm00母星2700复杂子个体＋2100简单子个体，与RC3母星4800一致；旧赠品星球100不计作母星损失。该证据是旧Mod原生基线，并非另跑无Mod原版控制组。实际每月`ships`、`ship_components`、星球建筑与区划维护均非零。旧／新`eep_mothership`的`ships_upkeep_mult=-1`及`starbases_upkeep_mult=-1`完全相同，仅应用Mother舰队159；冻结36份P源所有upkeep赋值仅这两处。原生country `game_start`定义仅减派系产出，不免维护。故normal_upkeep的范围为保留既有Mother特惠且普通成本正常存在，不宣称Mother自身没有原有优惠。
+
+同日年末auto/UI十类原生数据相等仍是独立已有证据。当前结果不改变旧严格FAIL、不认证完整发布、不纳入后来Hive及PK分支。补充归档v2只追加两份Ctrl+A、实际执行器与原版源、本文／采集器／报告，并引用v1，绝不覆盖v1原始索引。

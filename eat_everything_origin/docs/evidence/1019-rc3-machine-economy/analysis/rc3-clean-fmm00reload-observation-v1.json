@@ -1,0 +1,1605 @@
+{
+  "schema": "eep.1019.clean-economic-reload-observation.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Clean native Jan1 ledger/core-tier/stock/layout/population reload snapshot; no UI reload or full raw equality assertion",
+  "checks": {
+    "same_native_jan1": true,
+    "no_native_probe_variables": true,
+    "all_six_fleet_tiers_zero": true,
+    "all_six_country_tiers_zero": true,
+    "c_l_r_zero": true,
+    "ledger_matches_clean_initial": true,
+    "energy_200": true,
+    "all_stocks_preserved": true,
+    "one_owned_colony": true,
+    "original_world_layout_preserved": true,
+    "original_population_preserved": true,
+    "mother_maxima_preserved": true,
+    "six_core_state_zero_preserved": true
+  },
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.sav",
+    "save_sha256": "18cae5e75b189ee8739cdadd3fc63d5c2929fad7a1d892e5382d0750d36c33d9",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.audit.json",
+    "audit_sha256": "87b722348e8dcfe07745584129d54689cd7487568a6ccc9250f0e16ed2de543d",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.native-save.json",
+        "sha256": "f454a1b968121aa5cc142b0f796a1124b7de42f276921ec0859cd7d8940afa2a",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep03_-1033273808\\fmm00.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\fmm00.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.sav",
+          "sha256": "18cae5e75b189ee8739cdadd3fc63d5c2929fad7a1d892e5382d0750d36c33d9",
+          "date": "2200.01.01"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.sav",
+    "save_sha256": "5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.audit.json",
+    "audit_sha256": "48575f88d4fc0ee79ad4e39f437b905822c8c79b00cdcf9ba70fabc1bfbe8752",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.native-save.json",
+        "sha256": "a76689c8205d205e12b2b81e4ca047436994466914409f37072d0f1db3f9e86c",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\fmm00reload.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\fmm00reload.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.sav",
+          "sha256": "5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc",
+          "date": "2200.01.01"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "before_snapshot": {
+    "fleet_id": "159",
+    "ship_id": "997",
+    "native_design_name": "NAME_EEP_Baiqi_Mothership_1019",
+    "design_shape": [
+      {
+        "ship_size": "juggernaut",
+        "sections": [
+          {
+            "template": "eep_mothership_section_1019",
+            "slot": "core",
+            "components": [
+              {
+                "slot": "AUX_UTILITY_1",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_10",
+                "template": "EEP_ADAPTIVE_TRACKING_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_11",
+                "template": "EEP_ADAPTIVE_REGEN_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_2",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_3",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_4",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_5",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_6",
+                "template": "EEP_ADAPTIVE_SHIELD_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_7",
+                "template": "EEP_ADAPTIVE_ARMOR_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_8",
+                "template": "EEP_ADAPTIVE_HULL_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_9",
+                "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+              },
+              {
+                "slot": "EXTRA_LARGE_01",
+                "template": "TITAN_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_01",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_02",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_03",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_04",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_05",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_06",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_07",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_UTILITY_1",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_10",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_11",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_12",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_13",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_14",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_15",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_16",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_17",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_18",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_19",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_2",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_20",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_21",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_22",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_3",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_4",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_5",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_6",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_7",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_8",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_9",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "PD_08",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_09",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_10",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PLANET_KILLER_GUN_01",
+                "template": "EEP_PLANET_KILLER_DEVOURER"
+              },
+              {
+                "slot": "SMALL_GUN_01",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_02",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_03",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_04",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_05",
+                "template": "SMALL_PLASMA_3"
+              }
+            ]
+          }
+        ],
+        "required_components": [
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "JUMP_DRIVE_1",
+          "SENSOR_4",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      }
+    ],
+    "components": [
+      {
+        "slot": "AUX_UTILITY_1",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_10",
+        "template": "EEP_ADAPTIVE_TRACKING_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_11",
+        "template": "EEP_ADAPTIVE_REGEN_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_2",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_3",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_4",
+        "template": "AUTO_REPAIR"
+      },
+      {
+        "slot": "AUX_UTILITY_5",
+        "template": "AUTO_REPAIR"
+      },
+      {
+        "slot": "AUX_UTILITY_6",
+        "template": "EEP_ADAPTIVE_SHIELD_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_7",
+        "template": "EEP_ADAPTIVE_ARMOR_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_8",
+        "template": "EEP_ADAPTIVE_HULL_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_9",
+        "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+      },
+      {
+        "slot": "EXTRA_LARGE_01",
+        "template": "TITAN_LASER"
+      },
+      {
+        "slot": "LARGE_GUN_01",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_02",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_03",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_04",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_05",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_06",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_07",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_UTILITY_1",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_10",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_11",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_12",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_13",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_14",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_15",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_16",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_17",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_18",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_19",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_2",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_20",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_21",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_22",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_3",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_4",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_5",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_6",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_7",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_8",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_9",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "PD_08",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_09",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_10",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PLANET_KILLER_GUN_01",
+        "template": "EEP_PLANET_KILLER_DEVOURER"
+      },
+      {
+        "slot": "SMALL_GUN_01",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_02",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_03",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_04",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_05",
+        "template": "SMALL_PLASMA_3"
+      }
+    ],
+    "maximum_defenses": {
+      "max_hitpoints": 93960,
+      "max_armor_hitpoints": 44787.6,
+      "max_shield_hitpoints": 167310
+    },
+    "fleet_tiers": {
+      "eep_component_shield_level": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_tracking_level": 0,
+      "eep_component_regen_level": 0
+    },
+    "country_tiers": {
+      "eep_component_shield_level": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_tracking_level": 0,
+      "eep_component_regen_level": 0
+    },
+    "fleet_rewards": 0,
+    "country_component_state": {
+      "eep_component_rewards": 0,
+      "eep_component_entitled": 0,
+      "eep_component_pending": 0,
+      "eep_component_snapshot_state": 0
+    },
+    "ledger_and_growth": {
+      "eep_c": 0,
+      "eep_g": 0,
+      "eep_d": 2,
+      "eep_made": 0,
+      "eep_worlds": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10
+    },
+    "fleet_applied_level": 0,
+    "timed_modifiers": {
+      "country": [
+        {
+          "modifier": "game_start"
+        }
+      ],
+      "fleet": [
+        {
+          "modifier": "eep_mothership"
+        }
+      ],
+      "ship": []
+    },
+    "country_completed_technologies": [
+      "tech_assault_armies",
+      "tech_basic_industry",
+      "tech_basic_science_lab_1",
+      "tech_colonization_1",
+      "tech_corvettes",
+      "tech_fission_power",
+      "tech_flak_batteries_1",
+      "tech_hydroponics",
+      "tech_hyper_drive_1",
+      "tech_industrial_farming",
+      "tech_lasers_1",
+      "tech_mass_drivers_1",
+      "tech_mechanized_mining",
+      "tech_missiles_1",
+      "tech_pd_tracking_1",
+      "tech_planetary_defenses",
+      "tech_planetary_government",
+      "tech_power_plant_1",
+      "tech_reactor_boosters_1",
+      "tech_shields_1",
+      "tech_ship_armor_1",
+      "tech_solar_panel_network",
+      "tech_space_construction",
+      "tech_space_defense_station_1",
+      "tech_space_exploration",
+      "tech_starbase_1",
+      "tech_starbase_2",
+      "tech_thrusters_1"
+    ],
+    "country_ascension_perks": [
+      "ap_become_the_crisis"
+    ],
+    "attached_starbase_standalone_components": [
+      []
+    ],
+    "controls": {
+      "1": {
+        "fleet_id": "1",
+        "maximum_defenses": {
+          "max_hitpoints": 300,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      },
+      "2": {
+        "fleet_id": "2",
+        "maximum_defenses": {
+          "max_hitpoints": 300,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 200
+        },
+        "installed_adaptive_cores": []
+      },
+      "3": {
+        "fleet_id": "3",
+        "maximum_defenses": {
+          "max_hitpoints": 200,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      },
+      "4": {
+        "fleet_id": "3",
+        "maximum_defenses": {
+          "max_hitpoints": 200,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      },
+      "5": {
+        "fleet_id": "3",
+        "maximum_defenses": {
+          "max_hitpoints": 200,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      }
+    }
+  },
+  "after_snapshot": {
+    "fleet_id": "159",
+    "ship_id": "997",
+    "native_design_name": "NAME_EEP_Baiqi_Mothership_1019",
+    "design_shape": [
+      {
+        "ship_size": "juggernaut",
+        "sections": [
+          {
+            "template": "eep_mothership_section_1019",
+            "slot": "core",
+            "components": [
+              {
+                "slot": "AUX_UTILITY_1",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_10",
+                "template": "EEP_ADAPTIVE_TRACKING_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_11",
+                "template": "EEP_ADAPTIVE_REGEN_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_2",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_3",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_4",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_5",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_6",
+                "template": "EEP_ADAPTIVE_SHIELD_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_7",
+                "template": "EEP_ADAPTIVE_ARMOR_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_8",
+                "template": "EEP_ADAPTIVE_HULL_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_9",
+                "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+              },
+              {
+                "slot": "EXTRA_LARGE_01",
+                "template": "TITAN_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_01",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_02",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_03",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_04",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_05",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_06",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_07",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_UTILITY_1",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_10",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_11",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_12",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_13",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_14",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_15",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_16",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_17",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_18",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_19",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_2",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_20",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_21",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_22",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_3",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_4",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_5",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_6",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_7",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_8",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_9",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "PD_08",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_09",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_10",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PLANET_KILLER_GUN_01",
+                "template": "EEP_PLANET_KILLER_DEVOURER"
+              },
+              {
+                "slot": "SMALL_GUN_01",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_02",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_03",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_04",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_05",
+                "template": "SMALL_PLASMA_3"
+              }
+            ]
+          }
+        ],
+        "required_components": [
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "JUMP_DRIVE_1",
+          "SENSOR_4",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      }
+    ],
+    "components": [
+      {
+        "slot": "AUX_UTILITY_1",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_10",
+        "template": "EEP_ADAPTIVE_TRACKING_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_11",
+        "template": "EEP_ADAPTIVE_REGEN_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_2",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_3",
+        "template": "SHIELD_BOOSTER"
+      },
+      {
+        "slot": "AUX_UTILITY_4",
+        "template": "AUTO_REPAIR"
+      },
+      {
+        "slot": "AUX_UTILITY_5",
+        "template": "AUTO_REPAIR"
+      },
+      {
+        "slot": "AUX_UTILITY_6",
+        "template": "EEP_ADAPTIVE_SHIELD_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_7",
+        "template": "EEP_ADAPTIVE_ARMOR_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_8",
+        "template": "EEP_ADAPTIVE_HULL_CORE"
+      },
+      {
+        "slot": "AUX_UTILITY_9",
+        "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+      },
+      {
+        "slot": "EXTRA_LARGE_01",
+        "template": "TITAN_LASER"
+      },
+      {
+        "slot": "LARGE_GUN_01",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_02",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_03",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_04",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_05",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_06",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_GUN_07",
+        "template": "LARGE_PLASMA_3"
+      },
+      {
+        "slot": "LARGE_UTILITY_1",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_10",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_11",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_12",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_13",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_14",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_15",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_16",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_17",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_18",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_19",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_2",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_20",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_21",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_22",
+        "template": "LARGE_DARK_MATTER_DEFLECTOR"
+      },
+      {
+        "slot": "LARGE_UTILITY_3",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_4",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_5",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_6",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_7",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_8",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "LARGE_UTILITY_9",
+        "template": "LARGE_ARMOR_5"
+      },
+      {
+        "slot": "PD_08",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_09",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PD_10",
+        "template": "POINT_DEFENCE_3"
+      },
+      {
+        "slot": "PLANET_KILLER_GUN_01",
+        "template": "EEP_PLANET_KILLER_DEVOURER"
+      },
+      {
+        "slot": "SMALL_GUN_01",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_02",
+        "template": "SMALL_DISRUPTOR_3"
+      },
+      {
+        "slot": "SMALL_GUN_03",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_04",
+        "template": "SMALL_PLASMA_3"
+      },
+      {
+        "slot": "SMALL_GUN_05",
+        "template": "SMALL_PLASMA_3"
+      }
+    ],
+    "maximum_defenses": {
+      "max_hitpoints": 93960,
+      "max_armor_hitpoints": 44787.6,
+      "max_shield_hitpoints": 167310
+    },
+    "fleet_tiers": {
+      "eep_component_shield_level": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_tracking_level": 0,
+      "eep_component_regen_level": 0
+    },
+    "country_tiers": {
+      "eep_component_shield_level": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_tracking_level": 0,
+      "eep_component_regen_level": 0
+    },
+    "fleet_rewards": 0,
+    "country_component_state": {
+      "eep_component_rewards": 0,
+      "eep_component_entitled": 0,
+      "eep_component_pending": 0,
+      "eep_component_snapshot_state": 0
+    },
+    "ledger_and_growth": {
+      "eep_c": 0,
+      "eep_g": 0,
+      "eep_d": 2,
+      "eep_made": 0,
+      "eep_worlds": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10
+    },
+    "fleet_applied_level": 0,
+    "timed_modifiers": {
+      "country": [
+        {
+          "modifier": "game_start"
+        }
+      ],
+      "fleet": [
+        {
+          "modifier": "eep_mothership"
+        }
+      ],
+      "ship": []
+    },
+    "country_completed_technologies": [
+      "tech_assault_armies",
+      "tech_basic_industry",
+      "tech_basic_science_lab_1",
+      "tech_colonization_1",
+      "tech_corvettes",
+      "tech_fission_power",
+      "tech_flak_batteries_1",
+      "tech_hydroponics",
+      "tech_hyper_drive_1",
+      "tech_industrial_farming",
+      "tech_lasers_1",
+      "tech_mass_drivers_1",
+      "tech_mechanized_mining",
+      "tech_missiles_1",
+      "tech_pd_tracking_1",
+      "tech_planetary_defenses",
+      "tech_planetary_government",
+      "tech_power_plant_1",
+      "tech_reactor_boosters_1",
+      "tech_shields_1",
+      "tech_ship_armor_1",
+      "tech_solar_panel_network",
+      "tech_space_construction",
+      "tech_space_defense_station_1",
+      "tech_space_exploration",
+      "tech_starbase_1",
+      "tech_starbase_2",
+      "tech_thrusters_1"
+    ],
+    "country_ascension_perks": [
+      "ap_become_the_crisis"
+    ],
+    "attached_starbase_standalone_components": [
+      []
+    ],
+    "controls": {
+      "1": {
+        "fleet_id": "1",
+        "maximum_defenses": {
+          "max_hitpoints": 300,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      },
+      "2": {
+        "fleet_id": "2",
+        "maximum_defenses": {
+          "max_hitpoints": 300,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 200
+        },
+        "installed_adaptive_cores": []
+      },
+      "3": {
+        "fleet_id": "3",
+        "maximum_defenses": {
+          "max_hitpoints": 200,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      },
+      "4": {
+        "fleet_id": "3",
+        "maximum_defenses": {
+          "max_hitpoints": 200,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      },
+      "5": {
+        "fleet_id": "3",
+        "maximum_defenses": {
+          "max_hitpoints": 200,
+          "max_armor_hitpoints": 200,
+          "max_shield_hitpoints": 100
+        },
+        "installed_adaptive_cores": []
+      }
+    }
+  },
+  "probe_variables": {
+    "before": {
+      "country": {},
+      "fleets": {},
+      "ships": {}
+    },
+    "after": {
+      "country": {},
+      "fleets": {},
+      "ships": {}
+    }
+  },
+  "stockpile": {
+    "energy": 200,
+    "minerals": 200,
+    "influence": 100,
+    "unity": 50,
+    "trade": 200,
+    "alloys": 200
+  },
+  "world_layout": {
+    "2": {
+      "planet": {
+        "planet_class": "pc_machine",
+        "planet_size": 21,
+        "colony": 0,
+        "owner": 0
+      },
+      "districts": {
+        "1": {
+          "type": "district_nexus",
+          "level": 3,
+          "zones": [
+            0,
+            2,
+            3
+          ]
+        },
+        "27": {
+          "type": "district_nexus_2",
+          "level": 2,
+          "zones": [
+            26
+          ]
+        },
+        "28": {
+          "type": "district_nexus_1",
+          "level": 3,
+          "zones": [
+            25
+          ]
+        }
+      },
+      "buildings": []
+    }
+  },
+  "population": {
+    "2": {
+      "total": 4800,
+      "groups": [
+        {
+          "key": {
+            "species": 3321888769,
+            "category": "complex_drone"
+          },
+          "size": 2700
+        },
+        {
+          "key": {
+            "species": 3321888769,
+            "category": "simple_drone"
+          },
+          "size": 2100
+        }
+      ]
+    }
+  },
+  "strict_comparison": {
+    "status": "FAIL",
+    "scope": "strict comparison of all old gameplay fields plus all 1019 observations; no ignored paths",
+    "checks": {
+      "no_gameplay_differences": false,
+      "same_native_date": true
+    },
+    "before": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.sav",
+      "save_sha256": "18cae5e75b189ee8739cdadd3fc63d5c2929fad7a1d892e5382d0750d36c33d9",
+      "run_id": "20261019T092935Z",
+      "version": "0.4.0-rc.3",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.audit.json",
+      "audit_sha256": "87b722348e8dcfe07745584129d54689cd7487568a6ccc9250f0e16ed2de543d",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.native-save.json",
+          "sha256": "f454a1b968121aa5cc142b0f796a1124b7de42f276921ec0859cd7d8940afa2a",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep03_-1033273808\\fmm00.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\fmm00.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00.sav",
+            "sha256": "18cae5e75b189ee8739cdadd3fc63d5c2929fad7a1d892e5382d0750d36c33d9",
+            "date": "2200.01.01"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    },
+    "after": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.sav",
+      "save_sha256": "5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc",
+      "run_id": "20261019T092935Z",
+      "version": "0.4.0-rc.3",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.audit.json",
+      "audit_sha256": "48575f88d4fc0ee79ad4e39f437b905822c8c79b00cdcf9ba70fabc1bfbe8752",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.native-save.json",
+          "sha256": "a76689c8205d205e12b2b81e4ca047436994466914409f37072d0f1db3f9e86c",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\fmm00reload.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\fmm00reload.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\fmm00reload.sav",
+            "sha256": "5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc",
+            "date": "2200.01.01"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    },
+    "before_date": "2200.01.01",
+    "after_date": "2200.01.01",
+    "differences": [
+      {
+        "path": "$.fleets.159.ships.997.design_id",
+        "before": 1379,
+        "after": 1446
+      },
+      {
+        "path": "$.fleets.159.ships.997.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.0.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=0.78519\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.61\n\t\t\t\ty=-20.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=0.78519\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.61\n\t\t\t\ty=-20.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=0\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.0.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_starbase_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t0 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=0.78519\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.61\n\t\t\t\ty=-20.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=10000.00000\n\t\tmilitary_power=785.75781\n\t\tdiplomacy_weight=785.75781\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_starbase_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t0 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=0.78519\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.61\n\t\t\t\ty=-20.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=0\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=10000.00000\n\t\tmilitary_power=785.75781\n\t\tdiplomacy_weight=785.75781\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.0.ships.0.design_id",
+        "before": "17",
+        "after": "1431"
+      },
+      {
+        "path": "$.fleets_1019.0.ships.0.implementation.design",
+        "before": 17,
+        "after": 1431
+      },
+      {
+        "path": "$.fleets_1019.0.ships.0.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.0.ships.0.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=0\n\t\tname=\n\t\t{\n\t\t\tkey=\"STARBASE_STATION_NAME_FORMAT_NON_PRIMARY\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=17\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"STARPORT_STARBASE_SECTION\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"ASSEMBLYYARD_STARBASE_SECTION\"\n\t\t\tslot=\"1\"\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"SCIENCE_STARBASE_SECTION\"\n\t\t\tslot=\"2\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.61\n\t\t\ty=-20.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.61\n\t\t\ty=-20.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=0.78519\n\t\thitpoints=10000\n\t\tshield_hitpoints=1800\n\t\tarmor_hitpoints=5800\n\t\tmax_hitpoints=10000\n\t\tmax_shield_hitpoints=1800\n\t\tmax_armor_hitpoints=5800\n\t\trotation=0.78519\n\t\tforward_x=-0.70696\n\t\tforward_y=0.70726\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=21\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tdisable_at_health=0\n\t\tenable_at_health=0.05\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=0\n\t\tname=\n\t\t{\n\t\t\tkey=\"STARBASE_STATION_NAME_FORMAT_NON_PRIMARY\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1431\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"STARPORT_STARBASE_SECTION\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"ASSEMBLYYARD_STARBASE_SECTION\"\n\t\t\tslot=\"1\"\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"SCIENCE_STARBASE_SECTION\"\n\t\t\tslot=\"2\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.61\n\t\t\ty=-20.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.61\n\t\t\ty=-20.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=0.78519\n\t\thitpoints=10000\n\t\tshield_hitpoints=1800\n\t\tarmor_hitpoints=5800\n\t\tmax_hitpoints=10000\n\t\tmax_shield_hitpoints=1800\n\t\tmax_armor_hitpoints=5800\n\t\trotation=0.78519\n\t\tforward_x=-0.70696\n\t\tforward_y=0.70726\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=21\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tdisable_at_health=0\n\t\tenable_at_health=0.05\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.1.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-21.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-21.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=1\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.1.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_WalterRaleigh\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t1 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tfleet_stance=evasive\n\t\tship_class=shipclass_science_ship\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-21.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tcivilian=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=300.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_WalterRaleigh\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t1 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tfleet_stance=evasive\n\t\tship_class=shipclass_science_ship\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-21.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=1\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tcivilian=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=300.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.1.ships.1.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.1.ships.1.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=1\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_WalterRaleigh\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1369\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tis_original_design=no\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_SCIENCESHIP_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-21.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-21.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=300\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=300\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\tleader=150994969\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=1\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_WalterRaleigh\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1369\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tis_original_design=no\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_SCIENCESHIP_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-21.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-21.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=300\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=300\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\tleader=150994969\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.154.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-11.61\n\t\t\t\ty=-11.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-11.61\n\t\t\t\ty=-11.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=154\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.154.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t992 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-11.61\n\t\t\t\ty=-11.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t992 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-11.61\n\t\t\t\ty=-11.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=0\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=154\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.154.ships.992.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.154.ships.992.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=154\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-11.61\n\t\t\ty=-11.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-11.61\n\t\t\ty=-11.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=154\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_1\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-11.61\n\t\t\ty=-11.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-11.61\n\t\t\ty=-11.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.155.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=100.29795\n\t\t\t\ty=-149.1795\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=7\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=100.29795\n\t\t\t\ty=-149.1795\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=7\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=155\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.155.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_NewJamestown\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t993 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=100.29795\n\t\t\t\ty=-149.1795\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=7\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_NewJamestown\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t993 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=100.29795\n\t\t\t\ty=-149.1795\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=7\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=155\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.155.ships.993.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.155.ships.993.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=155\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_NewJamestown\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=100.29795\n\t\t\ty=-149.1795\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=100.29795\n\t\t\ty=-149.1795\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=155\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_NewJamestown\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=100.29795\n\t\t\ty=-149.1795\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=100.29795\n\t\t\ty=-149.1795\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.156.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=81.9747\n\t\t\t\ty=-147.32415\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=6\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=81.9747\n\t\t\t\ty=-147.32415\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=6\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=156\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.156.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_PuertoGonzalez\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t994 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=81.9747\n\t\t\t\ty=-147.32415\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=6\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_PuertoGonzalez\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t994 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=81.9747\n\t\t\t\ty=-147.32415\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=6\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=156\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.156.ships.994.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.156.ships.994.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=156\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_PuertoGonzalez\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=81.9747\n\t\t\ty=-147.32415\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=81.9747\n\t\t\ty=-147.32415\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=156\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_PuertoGonzalez\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=81.9747\n\t\t\ty=-147.32415\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=81.9747\n\t\t\ty=-147.32415\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.157.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-69.89125\n\t\t\t\ty=63.9856\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=3\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-69.89125\n\t\t\t\ty=63.9856\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=3\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=157\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.157.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Xianyang\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t995 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-69.89125\n\t\t\t\ty=63.9856\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=3\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Xianyang\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t995 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_mining_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-69.89125\n\t\t\t\ty=63.9856\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=3\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=157\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.157.ships.995.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.157.ships.995.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=157\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Xianyang\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-69.89125\n\t\t\ty=63.9856\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-69.89125\n\t\t\ty=63.9856\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=157\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_mining_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Xianyang\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=8\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_MINING_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-69.89125\n\t\t\ty=63.9856\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-69.89125\n\t\t\ty=63.9856\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.158.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-60.7584\n\t\t\t\ty=-114.318\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-60.7584\n\t\t\t\ty=-114.318\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=158\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.158.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_research_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Salaam\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t996 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_research_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-60.7584\n\t\t\t\ty=-114.318\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_research_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Salaam\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t996 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_research_station\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.78561\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-60.7584\n\t\t\t\ty=-114.318\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=-1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=158\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tvalid_for_combat=yes\n\t\t\torbital_station=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=2000.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.158.ships.996.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.158.ships.996.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=158\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_research_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Salaam\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=9\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_RESEARCH_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-60.7584\n\t\t\ty=-114.318\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-60.7584\n\t\t\ty=-114.318\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=158\n\t\tname=\n\t\t{\n\t\t\tkey=\"shipclass_research_station_name\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANET_Salaam\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=9\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_RESEARCH_STATION_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-60.7584\n\t\t\ty=-114.318\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-60.7584\n\t\t\ty=-114.318\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=2000\n\t\tarmor_hitpoints=1000\n\t\tmax_hitpoints=2000\n\t\tmax_armor_hitpoints=1000\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.159.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-39.8943\n\t\t\t\ty=-39.846\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=2\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-39.8943\n\t\t\t\ty=-39.846\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=2\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.159.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-39.8943\n\t\t\t\ty=-39.846\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=2\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=93960.00000\n\t\tmilitary_power=259577.19531\n\t\tdiplomacy_weight=259577.19531\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-39.8943\n\t\t\t\ty=-39.846\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=2\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=93960.00000\n\t\tmilitary_power=259577.19531\n\t\tdiplomacy_weight=259577.19531\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.159.ships.997.design_id",
+        "before": "1379",
+        "after": "1446"
+      },
+      {
+        "path": "$.fleets_1019.159.ships.997.implementation.design",
+        "before": 1379,
+        "after": 1446
+      },
+      {
+        "path": "$.fleets_1019.159.ships.997.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.159.ships.997.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"friendly_inspiring_presence\"\n\t\t\t\t\tpriority=20\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"aura_inspiring_presence\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=159\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1379\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section_1019\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=17\n\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\tcomponent_slot=\"EXTRA_LARGE_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=21\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=22\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=23\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=24\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_07\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=25\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=26\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=27\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=28\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=29\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=30\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_08\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=31\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_09\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=32\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_10\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=33\n\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\tcomponent_slot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-39.8943\n\t\t\ty=-39.846\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-39.8943\n\t\t\ty=-39.846\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=2.35681\n\t\thitpoints=93960\n\t\tshield_hitpoints=167310\n\t\tarmor_hitpoints=44787.6\n\t\tmax_hitpoints=93960\n\t\tmax_shield_hitpoints=167310\n\t\tmax_armor_hitpoints=44787.6\n\t\trotation=2.35681\n\t\tforward_x=-0.70667\n\t\tforward_y=-0.70754\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=34\n\t\tflags=\n\t\t{\n\t\t\teep_mothership_design_1019=62808000\n\t\t}\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tship_fire_rate_mult=0.05\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"friendly_inspiring_presence\"\n\t\t\t\t\tpriority=20\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"aura_inspiring_presence\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=159\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1446\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section_1019\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=17\n\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\tcomponent_slot=\"EXTRA_LARGE_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=21\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=22\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=23\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=24\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_07\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=25\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=26\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=27\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=28\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=29\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=30\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_08\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=31\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_09\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=32\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_10\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=33\n\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\tcomponent_slot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=-39.8943\n\t\t\ty=-39.846\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=-39.8943\n\t\t\ty=-39.846\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=2.35681\n\t\thitpoints=93960\n\t\tshield_hitpoints=167310\n\t\tarmor_hitpoints=44787.6\n\t\tmax_hitpoints=93960\n\t\tmax_shield_hitpoints=167310\n\t\tmax_armor_hitpoints=44787.6\n\t\trotation=2.35681\n\t\tforward_x=-0.70667\n\t\tforward_y=-0.70754\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=34\n\t\tflags=\n\t\t{\n\t\t\teep_mothership_design_1019=62808000\n\t\t}\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tship_fire_rate_mult=0.05\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.2.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.35639\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-19.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.35639\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-19.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=2\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.2.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Atlantic\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t2 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tfleet_stance=evasive\n\t\tship_class=shipclass_constructor\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.35639\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-19.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tcivilian=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tcan_construct_megastructures=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=300.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Atlantic\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t2 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tfleet_stance=evasive\n\t\tship_class=shipclass_constructor\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.35639\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-19.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=1\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=2\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tcivilian=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tcan_construct_megastructures=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=300.00000\n\t\tmilitary_power=0.00000\n\t\tdiplomacy_weight=0.00000\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.2.ships.2.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.2.ships.2.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=2\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Atlantic\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1367\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tis_original_design=no\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"BULWARK_BATTLEWRIGHT_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-19.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-19.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.35639\n\t\thitpoints=300\n\t\tshield_hitpoints=200\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=300\n\t\tmax_shield_hitpoints=200\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.35639\n\t\tforward_x=0.70697\n\t\tforward_y=-0.70724\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=2\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Atlantic\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1367\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tis_original_design=no\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"BULWARK_BATTLEWRIGHT_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-19.61\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=19.61\n\t\t\ty=-19.61\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.35639\n\t\thitpoints=300\n\t\tshield_hitpoints=200\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=300\n\t\tmax_shield_hitpoints=200\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.35639\n\t\tforward_x=0.70697\n\t\tforward_y=-0.70724\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.3.movement.raw",
+        "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.74908\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-17.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=2\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+        "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.74908\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-17.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=2\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=3\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+      },
+      {
+        "path": "$.fleets_1019.3.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"%SEQ%\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"fmt\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_FLEET\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"num\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"1\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tfleet_template=0\n\t\tships=\n\t\t{\n\t\t\t3 4 5 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_military\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.74908\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-17.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=2\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=600.00000\n\t\tmilitary_power=211.85156\n\t\tdiplomacy_weight=211.85156\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"%SEQ%\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"fmt\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_FLEET\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"num\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"1\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tfleet_template=0\n\t\tships=\n\t\t{\n\t\t\t3 4 5 \n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_military\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-2.74908\n\t\t\t\ttype=wedge\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=19.61\n\t\t\t\ty=-17.61\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tstarbase=0\n\t\t\t\t}\n\t\t\t\tindex=2\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=3\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\thit_points=600.00000\n\t\tmilitary_power=211.85156\n\t\tdiplomacy_weight=211.85156\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      },
+      {
+        "path": "$.fleets_1019.3.ships.3.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.3.ships.3.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Vandal\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=42\n\t\t\tupgrade=1366\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S3\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.75756\n\t\t\ty=-20.38368\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.75756\n\t\t\ty=-20.38368\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\tleader=150994968\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Vandal\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=42\n\t\t\tupgrade=1366\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S3\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.75756\n\t\t\ty=-20.38368\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.75756\n\t\t\ty=-20.38368\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\tleader=150994968\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.3.ships.4.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.3.ships.4.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Hartmann\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=1\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=42\n\t\t\tupgrade=1366\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S3\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.99684\n\t\t\ty=-17.03622\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.99684\n\t\t\ty=-17.03622\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Hartmann\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=1\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=42\n\t\t\tupgrade=1366\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S3\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.99684\n\t\t\ty=-17.03622\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.99684\n\t\t\ty=-17.03622\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.fleets_1019.3.ships.5.native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.fleets_1019.3.ships.5.raw",
+        "before": "\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Hoplite\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=2\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=42\n\t\t\tupgrade=1366\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S3\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=18.22316\n\t\t\ty=-18.18378\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=18.22316\n\t\t\ty=-18.18378\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+        "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Hoplite\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=2\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=42\n\t\t\tupgrade=1366\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S3\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=18.22316\n\t\t\ty=-18.18378\n\t\t\torigin=13\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=18.22316\n\t\t\ty=-18.18378\n\t\t\torigin=13\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+      },
+      {
+        "path": "$.starbases.0.station_native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.starbases.15.station_native.original_owner",
+        "before": null,
+        "after": 0
+      },
+      {
+        "path": "$.starbases_1019.0.raw",
+        "before": "\n\t\t\tlevel=\"starbase_level_starport\"\n\t\t\ttype=\"sshipyard\"\n\t\t\tmodules=\n\t\t\t{\n\t\t\t\t0=shipyard\t\t\t\t1=solar_panel_network\t\t\t}\n\t\t\tbuildings=\n\t\t\t{\n\t\t\t\t0=crew_quarters\t\t\t}\n\t\t\tupdate_flag=4096\n\t\t\tbuild_queue=2\n\t\t\tshipyard_build_queue=3\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=17\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=0\n\t\t\torbitals=\n\t\t\t{\n\t\t\t\t0=1\n\t\t\t\t1=2\n\t\t\t\t2=3\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t",
+        "after": "\n\t\t\tlevel=\"starbase_level_starport\"\n\t\t\ttype=\"sshipyard\"\n\t\t\tmodules=\n\t\t\t{\n\t\t\t\t0=shipyard\t\t\t\t1=solar_panel_network\t\t\t}\n\t\t\tbuildings=\n\t\t\t{\n\t\t\t\t0=crew_quarters\t\t\t}\n\t\t\tupdate_flag=4096\n\t\t\tbuild_queue=2\n\t\t\tshipyard_build_queue=3\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1431\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=0\n\t\t\torbitals=\n\t\t\t{\n\t\t\t\t0=1\n\t\t\t\t1=2\n\t\t\t\t2=3\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t"
+      },
+      {
+        "path": "$.starbases_1019.15.raw",
+        "before": "\n\t\t\tlevel=\"starbase_level_juggernaut\"\n\t\t\tbuild_queue=51\n\t\t\tshipyard_build_queue=52\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1379\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=997\n\t\t\torbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t",
+        "after": "\n\t\t\tlevel=\"starbase_level_juggernaut\"\n\t\t\tbuild_queue=51\n\t\t\tshipyard_build_queue=52\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1446\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=997\n\t\t\torbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t"
+      }
+    ]
+  },
+  "checker_sha256": "c2ec4162a87db939dc5396199c54ca381efcde19047dd0541f4a531f9230c562",
+  "inspector_sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92"
+}

@@ -255,3 +255,51 @@ RC3分批归档范围拟为 `evidence/1019-rc3-hardware/`：每阶段完成通�
 建议校准为两份真实同日SAV：calbefore后在Mother实际owner country依次原生complete worlds／empires，保存calafter，独立读取两个目标差值作为单位奖励；该校准与真实发射／拆除结算另行进行。此改动只加强尚待实测的结算检查，不修改Mod、原SAV、硬件报告或旧FAIL；旧硬件报告的对应工具字节已归档可复现。
 
 补充已实现并通过Python编译。两份真实历史原生SAV独立验证读取结果：世界目标1500／帝国目标无记录0，以及世界2250／帝国550，均与此前独立观察一致，重复外层objective未被字典覆盖。证据 `crisis-objectives-real-native-readings-v1.json` 为OBSERVATION_ONLY，SHA256 `3025e8532b90d875074591be953b3e6c1086a1e7fa0429592d5ffb14a5ca5fdc`；只证明实际同版本SAV的解析，不声明这些历史档的EXE来源或RC3结算通过。当前加强后的checker SHA256 `ba17847049d050b2b76dc382e7e3e0a1796dc4976a80c77b16fef243bc612047`；硬件报告原对应版本c2ec仍保持原字节归档，未覆盖。
+
+### Machine全年经济子集归档设计（先于实施）
+
+主线程已完成fmm01～12及2201.01.01年末原生UI存档fmyearui，随后在相同run开始fh Hive新游戏。经济归档仅选择已经完成的 `fm*` 文件，以稳定 `fm-auto-ui-comparison-m12.json` 为截止点，明确排除全部fh、hw及活动日志，目标为 `evidence/1019-rc3-machine-economy/`。保存13个初始／月度SAV、实际干净anchor fmm00reload、年末fmyearui及各自audit／receipt、12份真实30日命令／HUD／OCR、原首月错误anchor的命令和日期HUD、`fm-first-autosave-recovery.json` 与更正后的完整月receipt。冻结Mod／静态门禁复用已校验的RC3硬件归档，旧机器基线复用 `1019-baseline` 中13份原字节SAV和索引，按SHA建立引用，避免重写旧证据。
+
+只读初检已得到旧economy原门禁5项全true：12个月实际净能量均正且库存逐月不降，Feb1净+2.6589／stock202.6589，年末净+8.51705／stock267.60783。候选13份SAV与旧基线13份SAV的manifest／copied_mod、匹配原生receipt、SAV SHA及gamestate audit SHA已独立复核。旧0.3.1机器基线首月-161.26091、年末-153.60543及缺失energy键等原始结果不更改，不把它包装为旧版经济通过。
+
+生成startup／完整12月经济报告时保留旧检查器的所有原始月度预算数据，增加实际anchor、12个提交动作均为 `fast_forward 30`、无probe变量、C／L／R与六tier0的原生读取和两侧来源证明。年末原生UI对照只重核预算、库存、变量、flags、殖民地、区划、岗位、人口组、星球、殖民地体十类字段；不能据十类一致宣称全量gamestate零差异。新报告限定Machine新局／首月与12月经济，不外推Hive／Lithoid／Purifier、自然RNG或完整发布。
+
+项目gitattributes现已由主线程增加tools／testing Python原字节保护；旧硬件报告对应c2ec源码在 `1019-rc3-hardware/analysis_tools/check_1019.py` 已复核SHA256完全一致。经济归档同样使用 `* -text`、逐源双读哈希及独立验证索引，不修改原run／原SAV／原receipt，不捕获新Hive资料，不把仍活跃的run称为完整freeze。
+
+### Machine全年完成结果
+
+三份最终限定报告已完成：`rc3-machine-startup-report-v1.json` 为23项PASS_SCOPED，SHA256 `b4870b0459a8dfa0e438e6c0ae0e60438a339d5d08292176bde40c0b5c72be22`；`rc3-machine-economy-12months-report-v1.json` 为14项PASS_SCOPED，SHA256 `7e6722da9e9f0b2d0ea0dd3e21ad1f7d98c2e998a3b2b027dada542a89008ed5`；`rc3-machine-year-ui-comparison-report-v1.json` 为十类字段PASS_SCOPED，SHA256 `395d308ef3584c6bea60f9cb4d6d3924d1188f02c217874a35c71b3dc8846b4c`。原末月SAV SHA256 `676d996da685c01a2cd8e006b8567ba48f33774bf46de0dda2a30477f35fdcc6`，年末UI原生SAV SHA256 `f9633c53cb2be74841f9ac3e6ecb426d2bce357b86ab1031d770bbd1717b19d7`。
+
+14项经济检查保留旧5项原门禁，并独立补证26份旧基线／候选原生SAV来源、实际干净anchor、12个逐月receipt和12次真实fast_forward30动作、实际anchor初始预算及stock与原fmm00一致、所有初始／月度SAV无eep_probe且C／L／R／六tier0、首月恢复没有二次推进、年末十类字段一致。人口保留只证明原fmm00与干净Jan1重载的4800相等；不能将其映射成全年人口恒定。正常全额upkeep、无任何资源注入／贸易补贴／岗位关闭／拆船等更广条件未由本报告穷尽，不能自动填true。
+
+`evidence/1019-rc3-machine-economy/` 已归档344个源文件／21,084,334字节，28项字节／来源验证全true。索引SHA256 `9fdd9cf4893eb70ab138964c7d047fcf07c554c683223e556825100999a51104`，验证文件SHA256 `65012eaa9eea67e91f5730f1457cb276822bfe07afba22c98863aa0869e3bfbc`。其中334份fm阶段原始资料含首月失败命令、两次日期HUD／OCR、恢复记录、更正anchor及原生UI保存动作，另外包含manifest、5份对应工具源码及4份只读分析。没有fh或任何日志文件；旧基线和冻结Mod通过哈希引用连接已有归档，原字节未重写。先完成源复制时的历史receipt保留当时状态，最终索引另行生成，不覆盖任何历史文件。
+
+### Machine操作约束与startup补证
+
+设计先记录于 [machine-operational-constraints-1019.md](evidence/1019-analysis/machine-operational-constraints-1019.md)，复现采集器只导入既有只读解析器，没有导入运行时UI驱动。结果 `rc3-machine-operational-constraints-report-v1.json` 为六项限定PASS_SCOPED，SHA256 `6479fecf564ad78ad738b11f91fd22ebebd2d7b2aeef8fd41741a1d10ee64a62`。四经济操作约束均有实际依据：109份action与另两份底层Ctrl+A共111输入，12提交全为fast_forward30；22点击全部绑定实际截图SHA、OCR与源码；九资源逐月库存差值等于原生预算净额；14检查点10有限岗位限额保持最大值且均有人，全部12初始owned ship ID、fleet ID、舰名保持。结论限定已记录执行路径和检查点，不声称连续监控任意外部输入，也不把正常原生logistics贸易收益排除。
+
+人口保留补证使用同preset旧0.3.1原生bmm00：原母星复杂2700＋简单2100＝4800，与RC3母星相同；旧赠品星球100单列，不当作母星损失。它不是另跑的无Mod原版夹具。normal_upkeep补证为实际普通ships／ship_components／建筑／区划维护逐月非零，既有Mother两项-1优惠值不变且仅在舰队159，冻结所有P源没有新增全局免维护；并不宣称原Mother特惠被取消。country确有原生game_start，源定义仅减少派系产出，不能将其误写为空modifier列表或新增免维护。
+
+年末唯一通知点击匹配`eep.10.a`，冻结`events/eep_events.txt:166`仅有`option={name=eep.10.a}`、无effect，源SHA256 `e4be49df425db8dd4c4919a788c38ef2d4075466a9da946e6dc35a6c47cf55a1`；简中键源SHA256 `b1add578c1f81db6e558485c1f8d96a7e780d1c4c932f2016a34f2a0e2c9fe66`。二者已在既有硬件冻结包逐字节归档。年末十类auto/UI一致另证实际点击没有改变这些账本／人口字段。
+
+追加经济归档v2：358源文件＝原344不变＋14补充（两Ctrl+A、五执行器源、三原版源、旧Mother源、采集器／设计文档／报告）。`archive-index-v2.json` SHA256 `350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f`，`archive-verification-v2.json` SHA256 `3ad46788ffce352ae4d2b8c41f29f728c073b00f731b587656707ac8d2647a5b`，九项全true。v1索引和payload原字节、所有旧FAIL保持；没有活动日志、Hive或PK分支，完整发布仍待其余实机门禁。
+
+### Hive首月独立只读复核
+
+同一RC3冻结树／run的`fhcm00`、`fhcm01`、`fhcm01ui`均通过原生receipt、SAV SHA、manifest／copied_mod来源与gamestate audit SHA核对；SAV SHA依次为`0297ff12409b944373caa07996eb8a5d34ff16ba6ffcc723c40a361276aefa7f`、`32225a7809d6c9c07252216429aa795da5a77977f1f498e3daa8c987f77edf9d`、`e4ef976d8ac33626281f65b9c2f6a126f96957c069205ca17bd34e8fd7234b51`。既有startup(hive)23项全部true；同日首月auto/UI十类字段独立复核全相等。
+
+单母星planet5为pc_hive，区划为主区3、食品2、矿2、电2；发电workforce508／1200，原生首月人口5308，能源80.98098收入－62.47047支出＝18.51051，库存218.51051。结果`rc3-hive-startup-report-v1.json`为限定PASS_SCOPED，SHA256 `1a525a12422911513abea8f024afaaf28d801149a8ec9ba0a17a50bd78fb142f`。没有复制仍活动的整个run，也没有把Hive首月外推全年经济、其他政体或完整Mod通过；Machine经济包保持独立。
+
+### 真实PK路径发射前只读基线
+
+`pk1base`为2200.01.02，SAV SHA256 `dccb1e17d6f76c915e3f0a916e627f068c559d381e7a6962becc21c77093b38a`，已核原生receipt／audit／manifest来源。摘要`rc3-pk1base-summary-v1.json` SHA256 `a962580db7fdd3c6487e0e09b8464de7acd0d45a7535f8f07a712038783f7a27`，完整观察另存`rc3-pk1base-observation-v1.json`，两者仅OBSERVATION_ONLY。真实war0的攻击方country0、守方country1，目标wg_cleansing actor0／target1；Mother fleet159／ship997属于actor，global victim1／target planet17／core2绑定均在原生SAV。
+
+发射前账本C／G／made／worlds／L／R及last三收据均0、D2；core2人口4800／capacity2。敌方源planet17是pc_alpine、size19、owner1、colony1人口5200，原生d_lithoid_devastation数量0，新鲜有效q为19；两危机objective尚无记录，按present=false／progress0保留。Mother三防93960／44787.6／167310，当前没有完成巨像订单或结算证据。
+
+no_army的准确范围为目标没有actor入侵军队，而非整个帝国不存在守军：自有army0～4全是machine_defense、colony0／spawning_colony0，在home母星；目标colony1只有enemy守军，自有transport fleet数量0。ship992～995是采矿站、996是研究站，不能称为运输军队。Mother被测试准备命令teleport至目标星系origin8；此事实不构成主动jump验收。危机目标手工complete校准将另存同日SAV，绝不当作原生发射或事件收益。
+
+同日校准设计：`pk1base`对`pk1calafter`只读比较，要求实际动作在Mother.owner范围内分别仅调用一次worlds／empires complete；读取两个内层objective各自progress差值，不使用总menace。独立校准JSON必须包含before／after原生SAV与receipt／audit／manifest证明、实际命令及SHA、同日检查、EEP所有账本变量／核心人口与容量／源星完整体保持检查。两目标奖励各为明确正值后，结算case方可按对应独立差值引用；校准本身始终不表示发射通过。最小证据子集追加于`evidence/1019-analysis/pk1-objective-calibration-v1/`，仅复制已完成白名单文件，逐源双读哈希，不冻结当前活动run。
+
+校准已完成：`pk1calafter`同日Jan2，SAV SHA256 `6d736fd34099cadc449121180fb372029d65dc3a344a1465c16b0c86ab70037f`。实际命令在global Mother的owner块内对两目标各complete一次；worlds的progress由无记录0变为750，empires由无记录0变为600。EEP全部country变量／flags、core2与source17完整原生快照、所有pop_groups／pop_jobs均相等；core人口4800／capacity2，source人口5200／size19保持。stock唯一差异为原先缺失的menace写入1350，报告没有用该总量校准任意objective。
+
+独立`rc3-pk1-objective-calibration-v1.json`为17项PASS_SCOPED，SHA256 `58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a`；两种case校准evidence字段可按SHA分别引用同一报告，对应奖励750／600。非灭国结算的expected_crisis_empires_progress_delta仍需显式为0，不能把600无条件写入所有case。严格比较保持FAIL及三项真实差异，原报告未覆盖。最小包53个源文件／3,206,832字节，八项字节／来源检查全true；其`archive-index-v1.json` SHA256 `f96198b616a731f37e563a9d29513f12c7f13e95dd750c4f9e9e02a25de3b891`。没有活动日志，整体运行仍非freeze。主线程恢复pk1base后才下实际巨像命令，校准不作为发射通过或自然收益证据。

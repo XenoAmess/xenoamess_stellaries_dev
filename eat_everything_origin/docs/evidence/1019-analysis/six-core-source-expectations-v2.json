@@ -1,0 +1,188 @@
+{
+  "status": "SOURCE_ONLY_APPLICABILITY_ADDENDUM_NO_FUTURE_SAV_FITTING",
+  "schema_version": 2,
+  "game_version": "Stellaris 4.5.2",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "frozen_production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+  "preserved_v1": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\six-core-source-expectations-v1.json",
+    "sha256": "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
+    "unchanged": true,
+    "interpretation": "Its 3.8 damage number is the exclusive mothership contribution without external terms, not an unconditional prediction for the Machine preset aggregate."
+  },
+  "scope": [
+    "No production Mod changes",
+    "No natural-growth C0 or later damage aggregate read by this agent",
+    "Known country sources added before actual aggregate observation",
+    "Existing H/A/S source bases and controlled hardware evidence retained; not every civic shares the same absolute baseline"
+  ],
+  "known_country_sources": [
+    {
+      "civic": "civic_machine_terminator",
+      "applicability": "Current Machine preset as identified by the main task; verify the actual native government still contains the civic.",
+      "relevant_fields": {
+        "ship_weapon_damage": 0.25
+      },
+      "source": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\governments\\civics\\02_gestalt_civics.txt",
+        "sha256": "5678e1d1fa16682662d3ac4ef9bef54c37d5e62e388b7f3915732b2c779b7a82",
+        "line": 1554,
+        "text": "civic_machine_terminator = {"
+      },
+      "modifier_source_line": 1593
+    },
+    {
+      "civic": "civic_hive_devouring_swarm",
+      "applicability": "Only when this base civic is active; not assumed for Machine. Swapped display names are not separate simultaneously stacking bonuses.",
+      "relevant_fields": {
+        "ship_hull_mult": 0.25,
+        "ship_hull_regen_add_perc": 0.05,
+        "ship_armor_regen_add_perc": 0.05
+      },
+      "source": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\governments\\civics\\02_gestalt_civics.txt",
+        "sha256": "5678e1d1fa16682662d3ac4ef9bef54c37d5e62e388b7f3915732b2c779b7a82",
+        "line": 227,
+        "text": "civic_hive_devouring_swarm = {"
+      },
+      "modifier_source_lines": [
+        266,
+        267,
+        268
+      ]
+    },
+    {
+      "civic": "civic_fanatic_purifiers",
+      "applicability": "Only when active; distinct fire-rate channel, not +0.33 damage. Not assumed for Machine.",
+      "relevant_fields": {
+        "ship_fire_rate_mult": 0.33
+      },
+      "source": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\governments\\civics\\00_civics.txt",
+        "sha256": "3b7869afcf0a9c3fbdf3da062cd8009d551645487a0f0c36462498d6926269c7",
+        "line": 1658,
+        "text": "civic_fanatic_purifiers = {"
+      },
+      "modifier_source_line": 1720
+    }
+  ],
+  "machine_damage_source_accounting": {
+    "exclusive_mothership": 3.8,
+    "known_country_civic": 0.25,
+    "known_sum_before_other_sources": 4.05,
+    "formula_before_power_visibility_decision": "ship damage aggregate = 4.05 + 0.05*L + 0.05*Nd + other included sources. The engine-generated excess-power contribution may be one of these sources; do not double-count it.",
+    "not_claimed": "No claim that the native C0 aggregate is exactly 4.05, and no native C0 damage value has been obtained by this agent."
+  },
+  "excess_power": {
+    "native_static_modifier_key": "ship_excess_power",
+    "payload": {
+      "ship_evasion_mult": 0.1,
+      "ship_speed_mult": 0.1,
+      "ship_weapon_damage": 0.1
+    },
+    "payload_source": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\static_modifiers\\02_static_modifiers.txt",
+      "sha256": "2a2021c7bf503eeacf8a2e12ed78d325bc06e8d121cd8dd101d12d97bce6f17e",
+      "line": 985,
+      "text": "ship_excess_power = {"
+    },
+    "thresholds": {
+      "EXCESS_POWER_BONUS_THRESHOLD_MAX": 1.0,
+      "EXCESS_POWER_BONUS_THRESHOLD_MIN": 0.05
+    },
+    "threshold_source": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\defines\\00_defines.txt",
+      "sha256": "82eebd807eb54af347025b061af2991fc40a1b1059e39c2cb8ee135dca02b7cc",
+      "line": 1838,
+      "text": "EXCESS_POWER_BONUS_THRESHOLD_MAX"
+    },
+    "native_comment": "0.5 means 0-50% excess power linearly scales ship_excess_power modifier between 0-1.",
+    "what_source_proves": [
+      "There is a distinct engine-scaled named source with a ship_weapon_damage payload of 0.1 at full scaling.",
+      "Its companion fields are ship_evasion_mult and ship_speed_mult, both 0.1.",
+      "This is not the core tier or the exclusive mothership static modifier."
+    ],
+    "what_source_does_not_prove": [
+      "No public engine function is present here proving which modifier holder receives this scaled source.",
+      "Distinct named source does not establish a separate multiplicative damage stage.",
+      "Source alone does not prove whether export_modifier_to_variable on the actual ship includes the entire power contribution.",
+      "The native comment and thresholds do not establish a complete formula for every threshold edge; do not import an unverified wiki formula."
+    ],
+    "safe_symbolic_payload": "0.1*P_excess where the engine scaling factor is between 0 and 1; placement in exported aggregate versus other damage-calculation stages remains to be observed.",
+    "frozen_zero_power_cores": [
+      {
+        "key": "EEP_ADAPTIVE_SHIELD_CORE",
+        "power": 0
+      },
+      {
+        "key": "EEP_ADAPTIVE_ARMOR_CORE",
+        "power": 0
+      },
+      {
+        "key": "EEP_ADAPTIVE_HULL_CORE",
+        "power": 0
+      },
+      {
+        "key": "EEP_ADAPTIVE_DAMAGE_CORE",
+        "power": 0
+      },
+      {
+        "key": "EEP_ADAPTIVE_TRACKING_CORE",
+        "power": 0
+      },
+      {
+        "key": "EEP_ADAPTIVE_REGEN_CORE",
+        "power": 0
+      }
+    ],
+    "differential_expectation": "With the same actual design and reactor, six zero-power cores, unchanged country/leader/technology/temporary sources and no power-related external changes, changing L or the persistent core ranks does not change the declared power supply or component consumption. Treat the excess-power term as fixed for the C/L/N comparison, rather than inferring it from a later tier result."
+  },
+  "preferred_C0_baseline_plan": {
+    "timing": "Obtain on the clean same-fixture C0 baseline before changing C or core ranks, after at least five days of triggered-modifier refresh.",
+    "record": [
+      "actual government/civics and technology/leader state",
+      "actual installed design including reactor and all six cores",
+      "all ten v1 core modifier exports on the actual Mother ship",
+      "native H/A/S current and max",
+      "L and six saved ranks; initial values should be independently checked",
+      "optional power budget UI/source values and ship_speed_mult/ship_evasion_mult exports if investigating power visibility"
+    ],
+    "procedure": [
+      "Save the paused C0 native baseline and its diagnostic exports.",
+      "Use these actual aggregates as fixed comparison intercepts only; retain their provenance and do not tune source coefficients.",
+      "Read each later saved L and N independently, then evaluate the pre-fixed delta formulas below.",
+      "When an external modifier, design, power supply/consumption or ownership changes, establish a new independent baseline or explicitly account for the changed source before comparing."
+    ],
+    "do_not_do": [
+      "Do not backsolve core tiers from measured damage.",
+      "Do not call an unattributed C0 residual an excess-power measurement.",
+      "Do not treat a panel DPS ratio as a ship_weapon_damage export.",
+      "Do not read a later core result and retroactively select a C0 constant that makes it pass."
+    ]
+  },
+  "delta_model_from_actual_baseline": {
+    "notation": "Deltas are current minus independently captured baseline. The baseline can have nonzero L0 and N0, but the intended clean fixture is C0/L0/all tiers0.",
+    "max_hull": "H0 + 1500*(L-L0) + 3000*(Nh-Nh0)",
+    "max_armor": "A0 + 1287*(L-L0) + 2574*(Na-Na0)",
+    "max_shield": "S0 + 2091.375*(L-L0) + 4182.75*(Ns-Ns0)",
+    "ship_weapon_damage": "damage_export0 + 0.05*(L-L0) + 0.05*(Nd-Nd0)",
+    "ship_tracking_add": "tracking_export0 + 3*(Nt-Nt0)",
+    "ship_hull_regen_add_static": "hull_fixed_regen_export0 + 0.1*(L-L0) + 0.2*(Nr-Nr0)",
+    "ship_armor_regen_add_static": "armor_fixed_regen_export0 + 0.1*(L-L0) + 0.2*(Nr-Nr0)",
+    "conditions": [
+      "The same RC3 equipment and design basis remain fixed.",
+      "No additional flat hull/armor/shield terms change the effective 30000/25740/41827.5 source bases.",
+      "All other applicable country, leader, technology, aura, temporary and power sources remain fixed or are separately accounted.",
+      "At least five days pass after changing relevant ranks or L before judging triggered modifier refresh.",
+      "These fixed source coefficients remain hypotheses for native engine evaluation in channels not yet proved; no six-channel runtime PASS is implied."
+    ]
+  },
+  "absolute_model_boundaries": {
+    "H_A_S": "The v1 no-external-terms max formulas retain their source meaning. Existing Machine hardware baselines support them in that controlled fixture; a Hive +0.25 hull country term changes the intercept. Do not apply one civic-specific baseline universally.",
+    "damage": "3.8 is one source, 4.05 is the known Machine source subtotal; neither is automatically the full native aggregate.",
+    "tracking": "15 is the frozen Sensor4 source contribution, plus other real tracking sources if present. Prefer the actual C0 aggregate intercept.",
+    "fixed_regen": "1.392 and 2.088 are exclusive mothership fixed sources. AUTO_REPAIR, Hive civic and orbit repair use separate percentage fields; do not mix them with fixed regeneration.",
+    "panel_DPS": "Not predicted here; firing rate, accuracy, weapon tags, power handling and other engine stages can affect it."
+  },
+  "runtime_status": "PENDING_INDEPENDENT_C0_AGGREGATE_AND_NATURAL_GROWTH_DELTA_TESTS"
+}

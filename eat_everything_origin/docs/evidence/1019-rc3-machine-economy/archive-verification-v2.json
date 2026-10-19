@@ -1,0 +1,22 @@
+{
+  "schema": "eep.1019.rc3-machine-economy-byte-verification.v2",
+  "status": "PASS_SCOPED",
+  "scope": "Byte identity, prior-v1 preservation and supplemental recorded-path binding only",
+  "archive_index": {
+    "path": "archive-index-v2.json",
+    "sha256": "350a6e3a8d04f71d00dfc7e8891ef09eb28fa1a79384dc93e22d5eb658feac6f"
+  },
+  "checks": {
+    "v1_index_unchanged": true,
+    "all_v1_payload_hashes_unchanged": true,
+    "all_v2_payload_hashes_match": true,
+    "all_new_sources_still_match": true,
+    "two_ctrl_a_records_only": true,
+    "six_claims_explicit_scopes": true,
+    "all_22_clicks_bound": true,
+    "no_active_logs_copied": true,
+    "no_hive_or_pk_branch": true
+  },
+  "file_count": 358,
+  "supplement_count": 14
+}

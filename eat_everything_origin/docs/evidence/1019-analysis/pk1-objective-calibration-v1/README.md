@@ -1,0 +1,7 @@
+# 原生危机目标独立校准
+
+本子集仅包含20261019T092935Z运行的同日Jan2校准前后原生存档、审计／receipt、实际执行动作、截图／OCR、独立观察和校准结论。它不证明巨像发射或结算成功，不包含活动日志及后续PK订单。
+
+实际命令在Mother.owner范围内，对`crisobj_destroy_worlds`和`crisobj_destroy_empires`各complete一次。必须分别使用各objective.progress差值；menace库存总变化只是额外观察。EEP账本、人口、核心容量、源星及原生日期应保持。
+
+原始存档与原run只读，逐源双读SHA及复制后SHA一致；完整冻结Mod与静态工具门禁按已有RC3硬件归档索引引用。结算case可以按SHA引用独立校准JSON，不得将两目标的数值理解为世界／帝国数量。

@@ -1,0 +1,86 @@
+{
+  "status": "FAIL",
+  "scope": "strict comparison of all old gameplay fields plus all 1019 observations; no ignored paths",
+  "checks": {
+    "no_gameplay_differences": false,
+    "same_native_date": true
+  },
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.sav",
+    "save_sha256": "dccb1e17d6f76c915e3f0a916e627f068c559d381e7a6962becc21c77093b38a",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.audit.json",
+    "audit_sha256": "5f6867cc587b7189470fac8285c7de38f45ce50c84d8513bd73557b429da4f6e",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.native-save.json",
+        "sha256": "fe564b5885ec0855b582e652aa0d4c8e5d71690bce63b7d45bd18be6d18854cd",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1base.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1base.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.sav",
+          "sha256": "dccb1e17d6f76c915e3f0a916e627f068c559d381e7a6962becc21c77093b38a",
+          "date": "2200.01.02"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.sav",
+    "save_sha256": "6d736fd34099cadc449121180fb372029d65dc3a344a1465c16b0c86ab70037f",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.audit.json",
+    "audit_sha256": "388a24f7fdaf7de5706730bcc4d9cb954a69e5ddb60394e747ed2c71a105e1da",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.native-save.json",
+        "sha256": "f27060af0ee551a5edbb2f02587b264fac9d61bfc216bb9bfdb3d9deddbe4d56",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1calafter.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1calafter.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.sav",
+          "sha256": "6d736fd34099cadc449121180fb372029d65dc3a344a1465c16b0c86ab70037f",
+          "date": "2200.01.02"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "before_date": "2200.01.02",
+  "after_date": "2200.01.02",
+  "differences": [
+    {
+      "path": "$.country.stockpile.menace",
+      "before": null,
+      "after": 1350
+    },
+    {
+      "path": "$.crisis_objectives",
+      "before": [],
+      "after": [
+        {
+          "objective": "crisobj_destroy_worlds",
+          "progress": 750
+        },
+        {
+          "objective": "crisobj_destroy_empires",
+          "progress": 600
+        }
+      ]
+    },
+    {
+      "path": "$.crisis_progression_raw",
+      "before": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t",
+      "after": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_worlds\"\n\t\t\t\tprogress=750\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_empires\"\n\t\t\t\tprogress=600\n\t\t\t}\n\t\t"
+    }
+  ]
+}
