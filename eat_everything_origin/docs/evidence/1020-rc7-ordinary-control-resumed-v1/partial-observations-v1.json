@@ -1,0 +1,19 @@
+{
+  "schema": "eep.1020.ordinary-fleet-negative-control.v1",
+  "status": "PASS_SCOPED_ORDINARY_FLEET_CONTROL_ONLY",
+  "supported_checks": {
+    "random_components.other_fleets_unchanged": true
+  },
+  "checks": {
+    "original_control_report_pass": true,
+    "all_11_control_checks_pass": true,
+    "all_110_getters_and_native_max_projections_equal": true,
+    "fresh_high_mother_source_prediction_pass": true
+  },
+  "scope": "Same 11 actor-owned actual ships, native design body and ten finite exported modifiers; no growth effect on ordinary fleets.",
+  "limitations": [
+    "Damage/day/death evidence archived separately after completion.",
+    "Original source attribution report, model chain and numeric policy unchanged.",
+    "Complete stopped logs, final group acceptance and component_rewards acceptance pending."
+  ]
+}

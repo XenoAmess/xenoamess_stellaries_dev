@@ -1,0 +1,41 @@
+{
+  "status": "PREDECLARED_FROM_EXISTING_NATIVE_SOURCES_NOT_NEW_AFTER",
+  "baseline": {
+    "path": "docs/evidence/1019-rc7-growth-v1/run/r7mx-n00-c0-final.sav",
+    "sha256": "481724067359f10ecb899a56434dd829565c59bad061a6c618976de391abd10c"
+  },
+  "high_input": {
+    "path": "docs/evidence/1020-rc7-high-level-ui-v1/raw/r7evreport.sav",
+    "sha256": "0d64de5652563ebbc2a453e47c7298ceecabe0392b95562cd5ed967060d42b97"
+  },
+  "prediction_source": {
+    "path": "tools/check_growth_1019.py",
+    "sha256": "a8d70f1015b6f1f4026ae811c38653997fd41a55bbca9b9b8fba391fb4070bf5"
+  },
+  "expected": {
+    "max_hitpoints": 3396960,
+    "max_armor_hitpoints": 2873613.6,
+    "max_shield_hitpoints": 4718142.0,
+    "eep_probe_ship_hull_add": -70000,
+    "eep_probe_ship_hull_mult": 112.232,
+    "eep_probe_ship_armor_add": 0,
+    "eep_probe_ship_armor_mult": 110.64,
+    "eep_probe_ship_shield_add": 0,
+    "eep_probe_ship_shield_mult": 111.8,
+    "eep_probe_ship_weapon_damage": 109.75,
+    "eep_probe_ship_tracking_add": 183,
+    "eep_probe_ship_hull_regen_add_static": 221.992,
+    "eep_probe_ship_armor_regen_add_static": 222.688
+  },
+  "original_numeric_policy": {
+    "tolerance": 0.01,
+    "hp_ulps": 8
+  },
+  "extra_four_required_getters": [
+    "eep_probe_ship_hull_regen_add_perc",
+    "eep_probe_ship_armor_regen_add_perc",
+    "eep_probe_ship_hull_regen_mult",
+    "eep_probe_ship_armor_regen_mult"
+  ],
+  "new_after_status": "NOT_SAVED_AT_EXPECTATION_RECORDING"
+}

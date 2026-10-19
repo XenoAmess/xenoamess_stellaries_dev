@@ -70,6 +70,12 @@ S<10000000、核心可用、无战斗与维修订单，事前记录后才输入�
 新伤档先核真实H/A下降且max和账本不变，再仅FF1检验自然恢复；不能从满血、
 命令输入或静态恢复系数推断已恢复。后续死亡严格沿本页月脉冲及已毁档重载。
 
+新高档Mother十getter另用原check_growth_1019.prediction固定来源公式复算，
+基线取已封矩阵r7mx-n00-c0-final（原anchor尚未导出getter），不从after面板拟合。
+数值比较继续原numeric_comparison及原HP工程政策；额外四regen percent/mult
+只要求实际完整导出并独立记录，不据其拟合闭源逐日恢复公式。若残留旧C10000
+缓存，原L2050和六tier来源预期必须使此补充检查失败，不以键存在冒充已刷新。
+
 已存在Mother时，可用 `check_growth_1019.read_save(save_path, expected_sha)` 读取CRC/实际date、owner、fleet/ship、country_variables、fleet_variables、ship_variables、health、layout和三防控制舰max；`receipt_save(receipt_path)`另核receipt SHA/date。但**该函数要求唯一真实活Mother，死亡after不可用它**；其ordinary_ships也只投影三防max，不能拿它证明普通舰十个getter。
 
 普通舰十getter和死亡after沿现有 `testing/inspect_1019.py:288` 的 `observe(save_path)`：必须对真正已保存、receipt/audit/manifest齐备且属于当前RC7运行的源artifact路径调用，再按既有归档规则冻结输出；不要直接把canonical只读包目录当原active-run新输出，也不要用其可能扫描的receipt metadata推断未来SAV。本页不调用observe或读取活动metadata。
