@@ -1,0 +1,20 @@
+{
+  "schema": "eep.1019.rc3-hardware-archive-verification.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Byte preservation, source/static/copy binding and native receipt hashes only; not full Mod acceptance",
+  "checks": {
+    "all_payload_copies_match_double_read_source": true,
+    "copied_mod_matches_manifest": true,
+    "snapshot_mod_matches_manifest": true,
+    "static_report_hash_matches_manifest": true,
+    "no_log_payloads": true,
+    "historical_prediction_fail_preserved": true,
+    "hardware_case_scoped_only": true,
+    "fmm00_native_hash_binding": true,
+    "hw0_native_hash_binding": true,
+    "hw1_native_hash_binding": true,
+    "hw2_native_hash_binding": true,
+    "hw2reload_native_hash_binding": true,
+    "all_payload_git_text_unset": true
+  }
+}

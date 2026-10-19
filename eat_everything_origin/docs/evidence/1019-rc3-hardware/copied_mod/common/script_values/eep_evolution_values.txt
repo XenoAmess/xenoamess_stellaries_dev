@@ -1,0 +1,55 @@
+# Ship scope: each installed core reads its own fleet's persistent rank.
+# An absent fleet or unset rank contributes nothing; no artificial rank cap.
+eep_component_shield_level_value = {
+    base = 0
+    modifier = {
+        exists = fleet
+        fleet = { is_variable_set = eep_component_shield_level }
+        add = fleet.eep_component_shield_level
+    }
+}
+
+eep_component_armor_level_value = {
+    base = 0
+    modifier = {
+        exists = fleet
+        fleet = { is_variable_set = eep_component_armor_level }
+        add = fleet.eep_component_armor_level
+    }
+}
+
+eep_component_hull_level_value = {
+    base = 0
+    modifier = {
+        exists = fleet
+        fleet = { is_variable_set = eep_component_hull_level }
+        add = fleet.eep_component_hull_level
+    }
+}
+
+eep_component_damage_level_value = {
+    base = 0
+    modifier = {
+        exists = fleet
+        fleet = { is_variable_set = eep_component_damage_level }
+        add = fleet.eep_component_damage_level
+    }
+}
+
+eep_component_tracking_level_value = {
+    base = 0
+    modifier = {
+        exists = fleet
+        fleet = { is_variable_set = eep_component_tracking_level }
+        add = fleet.eep_component_tracking_level
+    }
+}
+
+eep_component_regen_level_value = {
+    base = 0
+    modifier = {
+        exists = fleet
+        fleet = { is_variable_set = eep_component_regen_level }
+        add = fleet.eep_component_regen_level
+    }
+}

@@ -77,6 +77,7 @@ mother 配置对照按槽位身份及 required-component 的完整重数核对�
   "expected_return": 100,
   "expected_other_core_pop_delta": 0,
   "expected_crisis_progress_delta": 700,
+  "expected_crisis_empires_progress_delta": 0,
   "crisis_calibration_evidence": {
     "path": "D:/absolute/independent-one-objective-calibration.json",
     "sha256": "实际校准文件SHA256"
@@ -206,3 +207,51 @@ section源记录使用 `ship_section_template={key=...}`，与ship_size的顶层
 硬件case要求四个独立原生checkpoint路径与严格唯一的Mother全局目标，避免把tier2同一路径再次读取冒充重载快照。即使存在独立同日reload SAV，检查器仍只证明其字段保持；实际载入动作由原始actions／截图／OCR另证，不由本报告推断。
 
 实现验证已完成：Python编译及CLI注册通过；PENDING空模板按预期FAIL（`hardware-pending-template-negative-v1.json`），真实旧rc1b无六核档作为四阶段输入也按预期FAIL（`hardware-real-rc1b-no-six-core-negative-v1.json`，SHA256 `c1ddc7d6668dc57bc92f83b5f186501b837abd4c762c910e0d4fd35df22ce104`），不是新候选故障。真实pmm00严格来源加源解析得到11×2925=32175，实际最大盾167310，完整required／ship_size／section盾上下文与变量来源SHA在 `native-base-shield-source-calculation-v1.json`（SHA256 `5e2d40b4803b2d4fbe579228e8f9dde738bc1c263090f4dcb8e819ff6339031c`）。这些结果不代替RC3 tier0／1／2及reload实测；模板仍PENDING。
+
+### RC3 原生一级实测与盾值分层修正（先于工具修订）
+
+RC3冻结树 `178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116`、run `20261019T092935Z` 的Machine新局已取得真实原生SAV：fmm00（Jan1，SHA256 `18cae5e75b189ee8739cdadd3fc63d5c2929fad7a1d892e5382d0750d36c33d9`）、hw0（Jan7，`815aa75e10b3629b42750347f5f30c765e339d01d67637ccfe21cd5e1691a655`）、hw1（Jan13，`b342199c7212594db5eb63746835e9670cc41c737eb694e8e6e8773585c76983`）。严格来源门禁均通过。Mother fleet159／ship997／design1379，真实50件槽组件与6件required完整，六核实装AUX6～11。零级最大三防93960／44787.6／167310；hw1只把shield fleet tier及country镜像改为1，C／L／R仍0、其他五tier0，普通ship1～5最大三防及全部timed_modifier保持。
+
+hw1实际最大盾为171492.75，即较hw0增加4182.75；原生诊断变量 `eep_probe_value=1`、`eep_probe_shield_mod=3.1`。因此初版仅按raw盾32175乘核心+.1预测3217.5的公式必须记为FAIL，不能覆盖或事后改写。修订前先保存完整旧checker／inspector字节、版本SHA、hw0→hw1的原生差异及 `hardware-hw0-hw1-raw-basis-prediction-fail-v1.json`，后续修正另出新报告。
+
+独立层级依据来自本机原版 `common/component_templates/000_documentation.txt`：第12行说明 `modifier` 作用于设计器显示的数值，第18行明确 `triggered_ship_modifier` 使用Ship scope，第24行另列Design scope的 `triggered_ship_design_modifier`。该文件SHA256 `f9c0edfee06c59422609c04030e890afeb824055deeee18507315d8acb875286`。原版 `00_utilities_aux.txt` 的SHIELD_BOOSTER使用设计层 `modifier={ship_shield_mult=0.1}`，真实已装三件；源文件SHA256 `2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699`。冻结 `eep_mothership` 的ship层静态修正为3，新核心使用Ship scope的triggered修正+.1×tier。required／ship_size／section没有其他基础盾add；它们的全部盾上下文继续保留。
+
+据这些已知层级，先由raw盾32175乘设计层 `(1+3×0.1)` 得设计盾41827.5，再乘ship层 `(1+3+0.1×tier)`。在尚未读取hw2前独立得到预测：tier0为167310，tier1为171492.75，tier2为175675.5，每级增量4182.75。这是根据原版层级定义的推导；hw0／hw1与原生export是对照验证，后续hw2趋势只能补证，不能替代层级来源。原先3217.5仅是遗漏设计层的失败预测，不是原生组件配置事实。
+
+工具修订范围：保留 `base_shield=32175` 表示原始add之和，新增设计层mult贡献、设计层倍率与进入ship修正前的盾值41827.5；hardware增量按该设计盾乘冻结核心系数计算。条件性Design scope的盾mult、未知非零ship_size／section设计倍率等未实现情况明确FAIL，不猜测条件。可选诊断变量全部按原始 `eep_probe_*` 记录，缺失继续为缺失。旧FAIL与旧工具源码均不覆盖，旧严格差异门禁完全不动。
+
+hw0最后一次诊断命令误用 `every_ship`，原始error.log第26行记录17:43:36 Invalid scripted effect；hw0所有ship probe变量确实不存在。此为诊断命令失败，与此前真实快进、SAV最大三防及Mod业务分开归类。hw1改用 `every_owned_ship` 后诊断值存在，不能反填hw0。
+
+RC3分批归档范围拟为 `evidence/1019-rc3-hardware/`：每阶段完成通知后复制原生SAV／receipt／audit、不可变manifest／copied_mod／静态报告／源snapshot绑定及对应已完成actions／截图／OCR，逐文件SHA索引并设 `* -text`。不复制或冻结仍在写入的动态日志；当前阶段日志若有必要仅单次读取并注明UTC，停止后才另作完整freeze。本节及先前文档不把人工硬件探针等同自然RNG、12月经济或完整发布验收。
+
+旧预测FAIL已落盘，SHA256 `e5b32f8cd125314e71135fc6c9c4c02fc891145e0ad826c265fe19829537d947`；旧checker／inspector原始字节保存在 `evidence/1019-analysis/hardware-formula-v1/`，并以 `* -text` 防止Git归一化。hw0→hw1的24项严格差异原样保留。另保存了两份完整只读原生观察，未改SAV或原始receipt。
+
+原版同一 `00_utilities_aux.txt` 还提供独立管道对照：SHIELD_BOOSTER在第99～100行把同名盾倍率放进 `modifier`，CRADLE_MARK在第439～441行放进 `ship_modifier`。这与原版文档的设计／舰船scope区分一致。完整引擎数值函数为闭源；这里的乘法模型是源参数、scope定义与独立原生读数共同校验的推导，不能表述为已经读取引擎实现。hw2只验证此前已明确的175675.5预测，不用于反拟合系数。
+
+### RC3 护盾硬件四阶段结果与归档
+
+完整 `rc3-hardware-case-report-v2.json` 为 `PASS_SCOPED`，56项限定检查全true，报告SHA256 `318604b2a58f6181a030a2c7daf2d563edb92b9e7f27d2ae051e786a17a7134a`。实际最大盾依次为hw0 Jan7的167310、hw1 Jan13的171492.75、hw2 Jan19的175675.5、hw2reload同日的175675.5。两次各6日刷新、六核真实装配、同日重载硬件快照、C／L／R0及其他五tier0、普通ship1～5最大三防、modifier均符合case。原生value／shield modifier导出依次为缺失／缺失、1／3.1、2／3.2、2／3.2，没有给hw0补值。hw2与reload SAV SHA分别为 `50d4c00dc4dbbe9422401d138b750295f9dbc633b9c2b1a342cc75a23e3ea3ad`、`aef3706cd833d7799f67c654cc3ca3abc630d319086b9ea23fffbb00cb20d186`。
+
+最终硬件工具Python编译通过；checker SHA256 `c2ec4162a87db939dc5396199c54ca381efcde19047dd0541f4a531f9230c562`，inspector SHA256 `1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92`。`hardware-report.v2` 同时保留raw base32175、设计层1.3、设计盾41827.5和原生导出，所有期望仍从源定义得到，未硬编码实测盾值。
+
+严格比较完全保留FAIL：hw0→hw1为24项，hw1→hw2为24项，hw2→reload为57项。前两组包含受控tier／实际盾／诊断变量、战力缓存、snapshot旗标时间及原生计时器变化。重载Mother设计索引1379→1446、普通站ship0索引17→1431，但设计内容保持；原先缺失的original_owner写0；10个己方舰队的last_ftl_jump补写to与fleet，其他movement直接字段原始文本相同；核心planet2的carrier_binary_flags从1→3，含义未校准。以上原生差异均没有称为无害或忽略。分类报告 `rc3-hardware-difference-classification-v1.json` 为OBSERVATION_ONLY，SHA256 `713ff5b6a1911d7e43b2a81db9471f3cc45bad791c05e4daf79c3e41e19c8dd2`，指回完整严格报告。
+
+本批 `evidence/1019-rc3-hardware/` 已完成430个源文件／22,500,921字节的逐源双读字节归档，13项字节／来源绑定检查全true，未复制任何活动日志。索引 `archive-index-v1.json` SHA256 `eded63efe29b20e1f99223fa1bf9bef9787ad94e7b09a2a33a7e761498d70722`；归档manifest SHA256 `4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c`，静态工具原始报告SHA256 `a5054bd863896d2cf842402c544ebde7f5a823d01f6a1589c5b0c0d5b709d96f`。实际截止于hw2reload原始receipt，后续自然经济阶段尚未归档；索引明确整个发布仍PENDING。
+
+### 干净Machine基线与首月只读事实
+
+主线程原生重载fmm00后重存 `fmm00reload`（Jan1，SHA256 `5119586edead4b55f06b6adde5df76ef057c4d1dcc378961c22e4b08eccebccc`）。与真实初始档的13项限定事实均一致：country／fleet／所有己方ship没有eep_probe变量，六fleet／country tier0，C／L／R0，能量200且全部stock一致，单殖民地0／core planet2、原layout不变，人口原始总量4800（complex_drone2700、simple_drone2100），Mother最大三防93960／44787.6／167310。观察报告 `rc3-clean-fmm00reload-observation-v1.json` SHA256 `eeb4aafbf0d0752a38f85affabe287082a7bafd97d31f8e3d119e7c3bbab3d98` 为OBSERVATION_ONLY，完整严格比较仍FAIL54。这里只认证干净经济基线字段，不能称全量重载零差异。
+
+真实首月 `fmm01` 为Feb1，SHA256 `c2d8c0b912b3cead2cb57b442152c1fc588c7f8d9eff4b99e8b2c7c4f141de9b`。来源匹配fm-monthly-autosave-receipt中真正 `eep-test-history/autosave_2200.02.01.sav` 与audit。旧startup(machine)原样运行23项全true，结果仅为新局及首月PASS_SCOPED：单pc_machine母星、矿区2／发电区3、2并行星球队列、10移动船坞等。原生首月收入165.6228、支出162.9639、净+2.6589、energy stock202.6589；人口原始总量4805。原生岗位workforce为矿工1200/1200、发电905/1800、复制300/300、协调560/560、三科研各180/180、合金900/900、巡逻100/100、后勤300/300。C／G0、D2、L0／next10、R／B／P0、state0、六tier0。
+
+第一次monthly命令误用加载前的anchor目录，真实autosave已经存在；主线程按原字节恢复首月并记录 `fm-first-autosave-recovery.json`，没有重复推进。该操作故障与Mod经济结果分开保存。12月自然经济仍在运行，只读首月事实先记录本页，全年完成后再统一核对和归档，不复制仍在变化的整个run。
+
+### 世界与帝国危机目标分别验收（先于工具补充）
+
+原版的世界毁灭与帝国毁灭使用不同 `objective.progress` 累计奖励点，最后一个殖民地可能额外涉及灭国回调。现有settlement初版只检查destroy_worlds，不能据此宣称两目标都没有重复奖励。补充case必填 `expected_crisis_empires_progress_delta`：普通非灭国场景显式为0；灭国场景必须填同一银河设置下独立原生校准的正奖励点，并提供 `crisis_empires_calibration_evidence={path,sha256}`。原字段 `expected_crisis_progress_delta` 仍专指destroy_worlds，旧接口字段不混用。
+
+只读工具分别按内层objective键抽取 `crisobj_destroy_worlds`、`crisobj_destroy_empires` 的before／after／delta，重复同名记录继续拒绝；原生没有记录时明确按未得分0处理，并保留present状态。两个目标都必须与各自显式期望相符才可输出settlement限定PASS。不能把progress写成次数+1，也不能把潜在两次灭国奖励假定为严格2倍；实际毁国后参与奖励公式的国家计数可能变化。
+
+建议校准为两份真实同日SAV：calbefore后在Mother实际owner country依次原生complete worlds／empires，保存calafter，独立读取两个目标差值作为单位奖励；该校准与真实发射／拆除结算另行进行。此改动只加强尚待实测的结算检查，不修改Mod、原SAV、硬件报告或旧FAIL；旧硬件报告的对应工具字节已归档可复现。
+
+补充已实现并通过Python编译。两份真实历史原生SAV独立验证读取结果：世界目标1500／帝国目标无记录0，以及世界2250／帝国550，均与此前独立观察一致，重复外层objective未被字典覆盖。证据 `crisis-objectives-real-native-readings-v1.json` 为OBSERVATION_ONLY，SHA256 `3025e8532b90d875074591be953b3e6c1086a1e7fa0429592d5ffb14a5ca5fdc`；只证明实际同版本SAV的解析，不声明这些历史档的EXE来源或RC3结算通过。当前加强后的checker SHA256 `ba17847049d050b2b76dc382e7e3e0a1796dc4976a80c77b16fef243bc612047`；硬件报告原对应版本c2ec仍保持原字节归档，未覆盖。

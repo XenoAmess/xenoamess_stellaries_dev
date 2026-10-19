@@ -174,6 +174,16 @@ def capacity(world):
     return items[0].get("multiplier", 1)
 
 
+def objective_progress(observation, key):
+    records = [item for item in observation["crisis_objectives"] if item.get("objective") == key]
+    if len(records) > 1:
+        raise ValueError("duplicate native objective records require investigation: " + key)
+    value = records[0]["progress"] if records else 0
+    if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+        raise ValueError("invalid native crisis objective progress: " + key)
+    return {"present": bool(records), "progress": value}
+
+
 def settlement(case, before, after, reload_observation=None):
     if case.get("schema") != "eep.1019.settlement-case.v1" or case.get("path") not in ("normal", "colossus"):
         raise ValueError("explicit valid settlement schema and normal/colossus path required")
@@ -235,17 +245,26 @@ def settlement(case, before, after, reload_observation=None):
     calibration = case.get("crisis_calibration_evidence")
     if not calibration or n.digest(Path(calibration["path"])) != calibration["sha256"]:
         raise ValueError("independent crisis reward calibration evidence missing or SHA changed")
-    crisis_values = []
+    expected_empires = case.get("expected_crisis_empires_progress_delta")
+    if (not isinstance(expected_empires, (int, float)) or isinstance(expected_empires, bool)
+            or not math.isfinite(expected_empires) or expected_empires < 0):
+        raise ValueError("explicit nonnegative expected_crisis_empires_progress_delta is required")
+    if expected_empires:
+        empire_calibration = case.get("crisis_empires_calibration_evidence")
+        if not empire_calibration or n.digest(Path(empire_calibration["path"])) != empire_calibration["sha256"]:
+            raise ValueError("independent empire crisis reward calibration missing or SHA changed")
     for observation in (before, after):
         if observation["crisis_progression_native"].get("path") != "nemesis_path":
             raise ValueError("expected native Nemesis crisis progression path")
-        objectives = [item for item in observation["crisis_objectives"]
-                      if item.get("objective") == "crisobj_destroy_worlds"]
-        if len(objectives) > 1:
-            raise ValueError("duplicate native destroy-worlds objective records require investigation")
-        crisis_values.append(objectives[0]["progress"] if objectives else 0)
+    crisis_objectives = {}
+    for key, expected_delta in (("crisobj_destroy_worlds", expected_crisis), ("crisobj_destroy_empires", expected_empires)):
+        bprogress, aprogress = objective_progress(before, key), objective_progress(after, key)
+        crisis_objectives[key] = {"before": bprogress, "after": aprogress,
+            "delta": aprogress["progress"] - bprogress["progress"], "expected_delta": expected_delta}
+    crisis_values = [crisis_objectives["crisobj_destroy_worlds"][stage]["progress"] for stage in ("before", "after")]
     crisis_delta = crisis_values[1] - crisis_values[0]
     checks["one_calibrated_crisis_objective_reward"] = crisis_delta == expected_crisis
+    checks["separate_empire_crisis_reward_matches_explicit_expectation"] = crisis_objectives["crisobj_destroy_empires"]["delta"] == expected_empires
     strict_differences = old.differences(gameplay(before), gameplay(after))
     reload_check = no_settlement(case, after, reload_observation) if reload_observation else None
     if reload_check:
@@ -255,6 +274,7 @@ def settlement(case, before, after, reload_observation=None):
                   actual={"q": c_delta, "g_delta": g_delta, "made_delta": made_delta,
                           "core_pop_delta": pop_delta, "capacity_delta": district_delta,
                           "crisis_progress_before_after": crisis_values, "crisis_progress_delta": crisis_delta,
+                          "crisis_objectives_independent": crisis_objectives,
                           "galaxy_system_count": before["galaxy_system_count"],
                           "native_habitability_setting": before["galaxy_native"].get("habitability")},
                   all_differences=strict_differences, reload_check=reload_check,
@@ -576,28 +596,47 @@ def hardware(case, observations):
     if not isinstance(base_max, (int, float)):
         raise ValueError("native maximum shield missing")
     readings = {}
+    design_shield = basis["design_shield_before_ship_modifiers"]
+    if not isinstance(design_shield, (int, float)) or not math.isfinite(design_shield) or design_shield <= 0:
+        raise ValueError("positive finite source-derived design shield required")
+    baseline_implied_ship_modifier = base_max / design_shield - 1
+    frozen_ship_modifier = mod_definition(bobs, "common/static_modifiers/eep_modifiers.txt", "eep_mothership")
     for stage, tier in (("tier0", 0), ("tier1", 1), ("tier2", 2), ("reload", 2)):
         snap, obs = snapshots[stage], observations[stage]
         actual = snap["maximum_defenses"]["max_shield_hitpoints"]
         if not isinstance(actual, (int, float)):
             raise ValueError("native maximum shield missing: " + stage)
-        expected_delta = basis["base_shield"] * coefficient * tier
+        expected_delta = design_shield * coefficient * tier
         checks[stage + "_source_predicted_actual_shield_delta"] = math.isclose(actual - base_max, expected_delta, rel_tol=0, abs_tol=tolerance)
         mother_ship = mother_records(obs)[snap["fleet_id"]]["ships"][snap["ship_id"]]
         variable = "eep_probe_shield_mod"
+        value_variable = "eep_probe_value"
+        export = mother_ship["variables"].get(variable)
+        exported_value = mother_ship["variables"].get(value_variable)
+        checks[stage + "_optional_native_modifier_export_consistent"] = variable not in mother_ship["variables"] or (
+            isinstance(export, (int, float)) and math.isclose(export, baseline_implied_ship_modifier + coefficient * tier,
+                                                           rel_tol=0, abs_tol=tolerance))
+        checks[stage + "_optional_native_value_export_consistent"] = value_variable not in mother_ship["variables"] or exported_value == tier
         readings[stage] = {"date": obs["date"], "actual_maximum_shield": actual, "actual_delta_from_tier0": actual - base_max,
             "source_expected_delta": expected_delta, "source_expected_maximum_shield": base_max + expected_delta,
             "optional_native_modifier_export": {"present": variable in mother_ship["variables"],
-                "value": mother_ship["variables"].get(variable)}, "provenance": obs["provenance_1019"]}
+                "value": export}, "optional_native_value_export": {"present": value_variable in mother_ship["variables"],
+                "value": exported_value}, "all_native_probe_variables": {key: value for key, value in mother_ship["variables"].items()
+                    if key.startswith("eep_probe_")}, "provenance": obs["provenance_1019"]}
     comparisons = {"tier0_to_tier1": compare(observations["tier0"], observations["tier1"], False),
                    "tier1_to_tier2": compare(observations["tier1"], observations["tier2"], False),
                    "tier2_to_reload": compare(observations["tier2"], observations["reload"])}
     return result(checks, "controlled six-core shield hardware 0/1/2 refresh, ordinary controls and same-day reload only",
-        schema="eep.1019.hardware-report.v1", case=case, snapshots=snapshots, readings=readings,
+        schema="eep.1019.hardware-report.v2", case=case, snapshots=snapshots, readings=readings,
         frozen_shield_core={"path": frozen["path"], "sha256": frozen["sha256"], "body": core_body},
         frozen_script_value=script_value, frozen_design=frozen_design, native_shield_basis=basis,
+        frozen_mother_ship_modifier=frozen_ship_modifier,
         baseline_implied_total_shield_multiplier=base_max / basis["base_shield"] if basis["base_shield"] else None,
-        source_expected_increment_per_tier=basis["base_shield"] * coefficient, strict_comparisons=comparisons,
+        baseline_implied_ship_shield_modifier=baseline_implied_ship_modifier,
+        source_expected_increment_per_tier=design_shield * coefficient,
+        source_delta_formula="raw_shield_add_sum * (1 + component_design_shield_mult_sum) * frozen_ship_core_coefficient * tier_delta",
+        formula_classification="Source-scope layered inference, independently checked by native maximum values and optional exports; not an engine implementation claim.",
+        strict_comparisons=comparisons,
         limitations=["This artificial C0/R0 probe does not certify natural RNG selection, reward accounting or other five core effects.",
                      "Optional native modifier export is recorded as absent when missing; no value is synthesized.",
                      "Distinct same-day reload snapshots certify field retention; native reload actions require their original UI/action evidence.",

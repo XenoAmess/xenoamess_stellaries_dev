@@ -1,0 +1,773 @@
+{
+  "status": "SOURCE_ONLY_EXPECTATIONS_FIXED_BEFORE_NATURAL_GROWTH_SAV_READS",
+  "game_version": "Stellaris 4.5.2",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "frozen_rc3": {
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "snapshot": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod",
+    "manifest": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-requirements\\rc3-run-20261019T092935Z.manifest.json",
+      "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+    },
+    "source_copy": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-requirements\\rc3-source-copy.json",
+      "sha256": "d1a2b49e2f31c7ebaf54e2a99a89ab594f570ec1c675e4d2af2db30247ba6fd4"
+    },
+    "selected_frozen_files_verified_against_manifest": [
+      {
+        "path": "common/global_ship_designs/eep_mothership.txt",
+        "bytes": 4570,
+        "sha256": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123"
+      },
+      {
+        "path": "common/static_modifiers/eep_modifiers.txt",
+        "bytes": 1276,
+        "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d"
+      },
+      {
+        "path": "common/component_templates/eep_evolution_components.txt",
+        "bytes": 3426,
+        "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+      },
+      {
+        "path": "common/script_values/eep_evolution_values.txt",
+        "bytes": 1409,
+        "sha256": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09"
+      },
+      {
+        "path": "common/scripted_effects/eep_mothership_effects.txt",
+        "bytes": 8271,
+        "sha256": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5"
+      },
+      {
+        "path": "common/section_templates/eep_mothership.txt",
+        "bytes": 2162,
+        "sha256": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493"
+      }
+    ]
+  },
+  "scope": [
+    "independent source basis and native diagnostic modifier keys",
+    "no runtime/UI actions and no production Mod edits",
+    "no new natural-C SAV read or result fitting",
+    "does not declare six-core runtime acceptance"
+  ],
+  "notation": {
+    "L": "floor(C/10)",
+    "Nh": "fleet.eep_component_hull_level",
+    "Na": "fleet.eep_component_armor_level",
+    "Ns": "fleet.eep_component_shield_level",
+    "Nd": "fleet.eep_component_damage_level",
+    "Nt": "fleet.eep_component_tracking_level",
+    "Nr": "fleet.eep_component_regen_level",
+    "external_terms": "Additional real country, leader, aura, technology, timed or ship-class effects; hold stable or export and account separately. Nonzero unexpected additive HP terms invalidate the simple fixed-basis prediction."
+  },
+  "source_evidence": {
+    "native_references": [
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\03_scripted_variables_ships.txt",
+        "sha256": "44ce49d52ad1d5d127149ed61b6c5ee497eca873f5836c7787946e75e11d97dc",
+        "line": 187,
+        "text": "@juggernaut_hp = 100000"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\02_scripted_variables_component_cost.txt",
+        "sha256": "d2b035df63e70f0ae970f03c06c70ee6b6f52ef372e049b6c69a50517d183d07",
+        "line": 269,
+        "text": "@armor_L5 = 2340"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\02_scripted_variables_component_cost.txt",
+        "sha256": "d2b035df63e70f0ae970f03c06c70ee6b6f52ef372e049b6c69a50517d183d07",
+        "line": 389,
+        "text": "@shield_L6 = 2925"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_variables\\02_scripted_variables_component_cost.txt",
+        "sha256": "d2b035df63e70f0ae970f03c06c70ee6b6f52ef372e049b6c69a50517d183d07",
+        "line": 393,
+        "text": "@regen_L6 = 8.125"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_sensors.txt",
+        "sha256": "fd08a1e7a5263691538cbdf6d4a63ee6a1e889a9cb23343c3ea5b0ff06972b99",
+        "line": 3,
+        "text": "@hit4 = 15"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\18_juggernauts.txt",
+        "sha256": "3402b13978de2bbcc36c6d4eedab9e4a9ac7f5160183fa2b908029f10842f11f",
+        "line": 7,
+        "text": "max_hitpoints = @juggernaut_hp"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+        "sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699",
+        "line": 100,
+        "text": "ship_shield_mult = 0.1"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+        "sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699",
+        "line": 132,
+        "text": "ship_hull_regen_add_perc = 0.05"
+      },
+      {
+        "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+        "sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699",
+        "line": 133,
+        "text": "ship_armor_regen_add_perc = 0.1"
+      }
+    ],
+    "native_component_documentation": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\000_documentation.txt",
+      "sha256": "f9c0edfee06c59422609c04030e890afeb824055deeee18507315d8acb875286"
+    },
+    "native_export_effect": {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T072723Z\\logs\\script_documentation\\effects.log",
+      "sha256": "f7fe1e0b3e5567597db5d39a3f36b847b36cbc2a45fd68935540f9e8bca552df",
+      "line": 549,
+      "text": "export_modifier_to_variable - Exports the value of a specified modifier in the current scope to a specified variable."
+    },
+    "native_modifier_registry": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T072723Z\\logs\\script_documentation\\modifiers.log",
+      "sha256": "66af607c23081a97229ead080dd02c9348d10bb9930f9e2302ad2dfead7bdae8"
+    },
+    "fixed_design_component_count_including_required": 56,
+    "fixed_design_component_counts": {
+      "AUTO_REPAIR": 2,
+      "COLOSSUS_SHIP_THRUSTER_5": 1,
+      "COMBAT_COMPUTER_LINE_SAPIENT": 1,
+      "EEP_ADAPTIVE_ARMOR_CORE": 1,
+      "EEP_ADAPTIVE_DAMAGE_CORE": 1,
+      "EEP_ADAPTIVE_HULL_CORE": 1,
+      "EEP_ADAPTIVE_REGEN_CORE": 1,
+      "EEP_ADAPTIVE_SHIELD_CORE": 1,
+      "EEP_ADAPTIVE_TRACKING_CORE": 1,
+      "EEP_PLANET_KILLER_DEVOURER": 1,
+      "JUGGERNAUT_DARK_MATTER_REACTOR": 1,
+      "JUMP_DRIVE_1": 1,
+      "LARGE_ARMOR_5": 11,
+      "LARGE_DARK_MATTER_DEFLECTOR": 11,
+      "LARGE_PLASMA_3": 7,
+      "POINT_DEFENCE_3": 3,
+      "SENSOR_4": 1,
+      "SHIELD_BOOSTER": 3,
+      "SHIP_AURA_INSPIRING_PRESENCE": 1,
+      "SMALL_DISRUPTOR_3": 2,
+      "SMALL_PLASMA_3": 3,
+      "TITAN_LASER": 1
+    },
+    "selected_component_contributors": [
+      {
+        "key": "AUTO_REPAIR",
+        "count": 2,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+          "sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699"
+        },
+        "definition_key_line": 119,
+        "relevant_modifier_contexts": [
+          {
+            "context": "modifier",
+            "fields": {
+              "ship_hull_regen_add_perc": 0.05,
+              "ship_armor_regen_add_perc": 0.1
+            }
+          }
+        ]
+      },
+      {
+        "key": "COLOSSUS_SHIP_THRUSTER_5",
+        "count": 1,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_thrusters.txt",
+          "sha256": "c743cd84aab451b8d43259c46249c3a476f28819b417e9bf99aaadbc0721448c"
+        },
+        "definition_key_line": 1070,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "COMBAT_COMPUTER_LINE_SAPIENT",
+        "count": 1,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_roles.txt",
+          "sha256": "e3cf0c8f74da5b7d8e5a031f25fc37e43c3047c9e1b792b0383c36bfd36846fe"
+        },
+        "definition_key_line": 1059,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "EEP_ADAPTIVE_ARMOR_CORE",
+        "count": 1,
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod\\common\\component_templates\\eep_evolution_components.txt",
+          "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+        },
+        "definition_key_line": 25,
+        "relevant_modifier_contexts": [
+          {
+            "context": "triggered_ship_modifier",
+            "fields": {
+              "ship_armor_mult": 0.1,
+              "mult": "value:eep_component_armor_level_value"
+            }
+          }
+        ]
+      },
+      {
+        "key": "EEP_ADAPTIVE_DAMAGE_CORE",
+        "count": 1,
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod\\common\\component_templates\\eep_evolution_components.txt",
+          "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+        },
+        "definition_key_line": 65,
+        "relevant_modifier_contexts": [
+          {
+            "context": "triggered_ship_modifier",
+            "fields": {
+              "ship_weapon_damage": 0.05,
+              "mult": "value:eep_component_damage_level_value"
+            }
+          }
+        ]
+      },
+      {
+        "key": "EEP_ADAPTIVE_HULL_CORE",
+        "count": 1,
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod\\common\\component_templates\\eep_evolution_components.txt",
+          "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+        },
+        "definition_key_line": 45,
+        "relevant_modifier_contexts": [
+          {
+            "context": "triggered_ship_modifier",
+            "fields": {
+              "ship_hull_mult": 0.1,
+              "mult": "value:eep_component_hull_level_value"
+            }
+          }
+        ]
+      },
+      {
+        "key": "EEP_ADAPTIVE_REGEN_CORE",
+        "count": 1,
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod\\common\\component_templates\\eep_evolution_components.txt",
+          "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+        },
+        "definition_key_line": 105,
+        "relevant_modifier_contexts": [
+          {
+            "context": "triggered_ship_modifier",
+            "fields": {
+              "ship_hull_regen_add_static": 0.2,
+              "ship_armor_regen_add_static": 0.2,
+              "mult": "value:eep_component_regen_level_value"
+            }
+          }
+        ]
+      },
+      {
+        "key": "EEP_ADAPTIVE_SHIELD_CORE",
+        "count": 1,
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod\\common\\component_templates\\eep_evolution_components.txt",
+          "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+        },
+        "definition_key_line": 5,
+        "relevant_modifier_contexts": [
+          {
+            "context": "triggered_ship_modifier",
+            "fields": {
+              "ship_shield_mult": 0.1,
+              "mult": "value:eep_component_shield_level_value"
+            }
+          }
+        ]
+      },
+      {
+        "key": "EEP_ADAPTIVE_TRACKING_CORE",
+        "count": 1,
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod\\common\\component_templates\\eep_evolution_components.txt",
+          "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+        },
+        "definition_key_line": 85,
+        "relevant_modifier_contexts": [
+          {
+            "context": "triggered_ship_modifier",
+            "fields": {
+              "ship_tracking_add": 3,
+              "mult": "value:eep_component_tracking_level_value"
+            }
+          }
+        ]
+      },
+      {
+        "key": "EEP_PLANET_KILLER_DEVOURER",
+        "count": 1,
+        "source": {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc3\\mod\\common\\component_templates\\eep_planet_killer.txt",
+          "sha256": "1e7d1f65e38c7bcfe370315b301ffbe680dad7571646c1a1e54f35cb96200cd0"
+        },
+        "definition_key_line": 2,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "JUGGERNAUT_DARK_MATTER_REACTOR",
+        "count": 1,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_reactors.txt",
+          "sha256": "934821c1e8e05e71e1d2a142a9628e029a1b43636347f0bed34a74cd0cc2f333"
+        },
+        "definition_key_line": 1863,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "JUMP_DRIVE_1",
+        "count": 1,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_drives.txt",
+          "sha256": "7db6b11cc78d37e6c16eab98b0c8960e336a1f860c8aca2b1c4033d3b5475889"
+        },
+        "definition_key_line": 219,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "LARGE_ARMOR_5",
+        "count": 11,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities.txt",
+          "sha256": "cd8a9a20f856d6abb6fdb98636cfb5dcda471f25d4ed757d46a668f95d0fa254"
+        },
+        "definition_key_line": 690,
+        "relevant_modifier_contexts": [
+          {
+            "context": "modifier",
+            "fields": {
+              "ship_armor_add": "@armor_L5"
+            }
+          }
+        ]
+      },
+      {
+        "key": "LARGE_DARK_MATTER_DEFLECTOR",
+        "count": 11,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_shields.txt",
+          "sha256": "54ab3bdfa086ca2e50829641087eff44728c52d5295a44fe42fe9ec2f69e7293"
+        },
+        "definition_key_line": 890,
+        "relevant_modifier_contexts": [
+          {
+            "context": "modifier",
+            "fields": {
+              "ship_shield_add": "@shield_L6"
+            }
+          }
+        ]
+      },
+      {
+        "key": "LARGE_PLASMA_3",
+        "count": 7,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_energy.txt",
+          "sha256": "01ff71cab87c210eb06a739d3177d7b158fb2478fecd29f3b787d44e3c3201a7"
+        },
+        "definition_key_line": 1182,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "POINT_DEFENCE_3",
+        "count": 3,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_pointdefence.txt",
+          "sha256": "7464d8a915a6e25132bd653d37bd634336956cc94d77c28bf55bb79e542e6352"
+        },
+        "definition_key_line": 103,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "SENSOR_4",
+        "count": 1,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_sensors.txt",
+          "sha256": "fd08a1e7a5263691538cbdf6d4a63ee6a1e889a9cb23343c3ea5b0ff06972b99"
+        },
+        "definition_key_line": 152,
+        "relevant_modifier_contexts": [
+          {
+            "context": "ship_modifier",
+            "fields": {
+              "ship_tracking_add": "@hit4"
+            }
+          }
+        ]
+      },
+      {
+        "key": "SHIELD_BOOSTER",
+        "count": 3,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_aux.txt",
+          "sha256": "2f6ee0210a8cbd3f3e4b42b1884a6b365224e6b92b937a52e2d204eb0f8b3699"
+        },
+        "definition_key_line": 83,
+        "relevant_modifier_contexts": [
+          {
+            "context": "modifier",
+            "fields": {
+              "ship_shield_mult": 0.1
+            }
+          }
+        ]
+      },
+      {
+        "key": "SHIP_AURA_INSPIRING_PRESENCE",
+        "count": 1,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_utilities_auras.txt",
+          "sha256": "a24cf59265ece6167e89e3c57176df4d1d7eb50833bb749590c5450d808f1995"
+        },
+        "definition_key_line": 193,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "SMALL_DISRUPTOR_3",
+        "count": 2,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_energy.txt",
+          "sha256": "01ff71cab87c210eb06a739d3177d7b158fb2478fecd29f3b787d44e3c3201a7"
+        },
+        "definition_key_line": 1523,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "SMALL_PLASMA_3",
+        "count": 3,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_energy.txt",
+          "sha256": "01ff71cab87c210eb06a739d3177d7b158fb2478fecd29f3b787d44e3c3201a7"
+        },
+        "definition_key_line": 1074,
+        "relevant_modifier_contexts": []
+      },
+      {
+        "key": "TITAN_LASER",
+        "count": 1,
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\component_templates\\00_weapons_extra_large.txt",
+          "sha256": "55852d2fa0c12f8101b90b562678108a58078a4f31e29b7629c3f047509b3b61"
+        },
+        "definition_key_line": 599,
+        "relevant_modifier_contexts": []
+      }
+    ],
+    "base_mothership_modifier": {
+      "ship_hull_add": -70000,
+      "ship_evasion_add": 20,
+      "ships_upkeep_mult": -1,
+      "starbases_upkeep_mult": -1,
+      "ship_shield_mult": 3,
+      "ship_weapon_damage": 3.8,
+      "ship_fire_rate_mult": 0.8,
+      "ship_hull_mult": 2.132,
+      "ship_armor_mult": 0.74,
+      "ship_speed_mult": 0.8,
+      "ship_hull_regen_add_static": 1.392,
+      "ship_armor_regen_add_static": 2.088
+    },
+    "per_level_growth_modifier": {
+      "ship_weapon_damage": 0.05,
+      "ship_hull_mult": 0.05,
+      "ship_armor_mult": 0.05,
+      "ship_shield_mult": 0.05,
+      "ship_hull_regen_add_static": 0.1,
+      "ship_armor_regen_add_static": 0.1
+    }
+  },
+  "fixed_design_basis": {
+    "hull_native_chassis": 100000,
+    "hull_ship_add_from_eep_baseline": -70000,
+    "hull_basis_after_retained_flat_adjustment": 30000,
+    "armor_count": 11,
+    "armor_each": 2340,
+    "armor_design_total": 25740,
+    "shield_count": 11,
+    "shield_each": 2925,
+    "shield_raw_design_total": 32175,
+    "shield_design_mult_from_three_boosters": 0.3,
+    "shield_design_basis_after_boosters": 41827.5,
+    "tracking_from_sensor4_ship_modifier": 15,
+    "auto_repair_count": 2,
+    "separate_design_percentage_regen_fields": {
+      "ship_hull_regen_add_perc": 0.1,
+      "ship_armor_regen_add_perc": 0.2
+    }
+  },
+  "expected_ship_modifier_exports_without_external_terms": {
+    "ship_hull_add": "-70000",
+    "ship_hull_mult": "2.132 + 0.05*L + 0.10*Nh",
+    "ship_armor_add": "0 expected in ship-only correction channel; source component adds reside in the design channel",
+    "ship_armor_mult": "0.74 + 0.05*L + 0.10*Na",
+    "ship_shield_add": "0 expected in ship-only correction channel; source component adds reside in the design channel",
+    "ship_shield_mult": "3 + 0.05*L + 0.10*Ns",
+    "ship_weapon_damage": "3.8 + 0.05*L + 0.05*Nd",
+    "ship_tracking_add": "15 + 3*Nt",
+    "ship_hull_regen_add_static": "1.392 + 0.10*L + 0.20*Nr",
+    "ship_armor_regen_add_static": "2.088 + 0.10*L + 0.20*Nr"
+  },
+  "max_stat_model_without_external_terms": {
+    "max_hull": "30000 * (3.132 + 0.05*L + 0.10*Nh)",
+    "max_armor": "25740 * (1.74 + 0.05*L + 0.10*Na)",
+    "max_shield": "41827.5 * (4 + 0.05*L + 0.10*Ns)",
+    "confidence_boundary": "Native sources fix fields, coefficients, equipment counts and design/ship scope separation. Closed-source arithmetic is a model to test against native SAV, not a claim that the engine calculation function was available. Shield layering already has independent controlled evidence; other channels remain future tests."
+  },
+  "independent_per_level_deltas_with_fixed_external_terms": {
+    "max_hull": 1500,
+    "max_armor": 1287,
+    "max_shield": 2091.375,
+    "ship_weapon_damage": 0.05,
+    "ship_tracking_add": 0,
+    "ship_hull_regen_add_static": 0.1,
+    "ship_armor_regen_add_static": 0.1
+  },
+  "independent_per_core_rank_deltas_with_fixed_external_terms": {
+    "Nh": {
+      "max_hull": 3000,
+      "ship_hull_mult": 0.1
+    },
+    "Na": {
+      "max_armor": 2574,
+      "ship_armor_mult": 0.1
+    },
+    "Ns": {
+      "max_shield": 4182.75,
+      "ship_shield_mult": 0.1
+    },
+    "Nd": {
+      "ship_weapon_damage": 0.05
+    },
+    "Nt": {
+      "ship_tracking_add": 3
+    },
+    "Nr": {
+      "ship_hull_regen_add_static": 0.2,
+      "ship_armor_regen_add_static": 0.2
+    }
+  },
+  "reference_rows": [
+    {
+      "C": 0,
+      "L": 0,
+      "B": 0,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 93960.0,
+        "max_armor": 44787.6,
+        "max_shield": 167310.0,
+        "ship_weapon_damage": 3.8,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 1.392,
+        "ship_armor_regen_add_static": 2.088
+      }
+    },
+    {
+      "C": 9,
+      "L": 0,
+      "B": 0,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 93960.0,
+        "max_armor": 44787.6,
+        "max_shield": 167310.0,
+        "ship_weapon_damage": 3.8,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 1.392,
+        "ship_armor_regen_add_static": 2.088
+      }
+    },
+    {
+      "C": 10,
+      "L": 1,
+      "B": 0,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 95460.0,
+        "max_armor": 46074.6,
+        "max_shield": 169401.375,
+        "ship_weapon_damage": 3.85,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 1.492,
+        "ship_armor_regen_add_static": 2.188
+      }
+    },
+    {
+      "C": 19,
+      "L": 1,
+      "B": 0,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 95460.0,
+        "max_armor": 46074.6,
+        "max_shield": 169401.375,
+        "ship_weapon_damage": 3.85,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 1.492,
+        "ship_armor_regen_add_static": 2.188
+      }
+    },
+    {
+      "C": 20,
+      "L": 2,
+      "B": 0,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 96960.0,
+        "max_armor": 47361.6,
+        "max_shield": 171492.75,
+        "ship_weapon_damage": 3.9,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 1.592,
+        "ship_armor_regen_add_static": 2.288
+      }
+    },
+    {
+      "C": 49,
+      "L": 4,
+      "B": 0,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 99960.0,
+        "max_armor": 49935.6,
+        "max_shield": 175675.5,
+        "ship_weapon_damage": 4.0,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 1.792,
+        "ship_armor_regen_add_static": 2.488
+      }
+    },
+    {
+      "C": 50,
+      "L": 5,
+      "B": 1,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 101460.0,
+        "max_armor": 51222.6,
+        "max_shield": 177766.875,
+        "ship_weapon_damage": 4.05,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 1.892,
+        "ship_armor_regen_add_static": 2.588
+      }
+    },
+    {
+      "C": 200,
+      "L": 20,
+      "B": 4,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 123960.0,
+        "max_armor": 70527.6,
+        "max_shield": 209137.5,
+        "ship_weapon_damage": 4.8,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 3.392,
+        "ship_armor_regen_add_static": 4.088
+      }
+    },
+    {
+      "C": 10000,
+      "L": 1000,
+      "B": 200,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 1593960.0,
+        "max_armor": 1331787.6,
+        "max_shield": 2258685.0,
+        "ship_weapon_damage": 53.8,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 101.392,
+        "ship_armor_regen_add_static": 102.088
+      }
+    },
+    {
+      "C": 20500,
+      "L": 2050,
+      "B": 410,
+      "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+      "without_core_rank_terms": {
+        "max_hull": 3168960.0,
+        "max_armor": 2683137.6,
+        "max_shield": 4454628.75,
+        "ship_weapon_damage": 106.3,
+        "ship_tracking_add": 15,
+        "ship_hull_regen_add_static": 206.392,
+        "ship_armor_regen_add_static": 207.088
+      }
+    }
+  ],
+  "native_export_plan": {
+    "entry_scope": "country whose indexed Mother target is valid",
+    "iteration": "Mother fleet every_owned_ship; not every_ship",
+    "core_modifier_keys": [
+      "ship_hull_add",
+      "ship_hull_mult",
+      "ship_armor_add",
+      "ship_armor_mult",
+      "ship_shield_add",
+      "ship_shield_mult",
+      "ship_weapon_damage",
+      "ship_tracking_add",
+      "ship_hull_regen_add_static",
+      "ship_armor_regen_add_static"
+    ],
+    "optional_separation_keys": [
+      "ship_hull_regen_add_perc",
+      "ship_armor_regen_add_perc",
+      "ship_hull_regen_mult",
+      "ship_armor_regen_mult",
+      "ship_tracking_mult"
+    ],
+    "effect_fragment_all_core_keys": "event_target:eep_mothership@this = { every_owned_ship = { export_modifier_to_variable = { modifier = ship_hull_add variable = eep_probe_ship_hull_add } export_modifier_to_variable = { modifier = ship_hull_mult variable = eep_probe_ship_hull_mult } export_modifier_to_variable = { modifier = ship_armor_add variable = eep_probe_ship_armor_add } export_modifier_to_variable = { modifier = ship_armor_mult variable = eep_probe_ship_armor_mult } export_modifier_to_variable = { modifier = ship_shield_add variable = eep_probe_ship_shield_add } export_modifier_to_variable = { modifier = ship_shield_mult variable = eep_probe_ship_shield_mult } export_modifier_to_variable = { modifier = ship_weapon_damage variable = eep_probe_ship_weapon_damage } export_modifier_to_variable = { modifier = ship_tracking_add variable = eep_probe_ship_tracking_add } export_modifier_to_variable = { modifier = ship_hull_regen_add_static variable = eep_probe_ship_hull_regen_add_static } export_modifier_to_variable = { modifier = ship_armor_regen_add_static variable = eep_probe_ship_armor_regen_add_static } } }",
+    "effect_fragment_optional_keys": "event_target:eep_mothership@this = { every_owned_ship = { export_modifier_to_variable = { modifier = ship_hull_regen_add_perc variable = eep_probe_ship_hull_regen_add_perc } export_modifier_to_variable = { modifier = ship_armor_regen_add_perc variable = eep_probe_ship_armor_regen_add_perc } export_modifier_to_variable = { modifier = ship_hull_regen_mult variable = eep_probe_ship_hull_regen_mult } export_modifier_to_variable = { modifier = ship_armor_regen_mult variable = eep_probe_ship_armor_regen_mult } export_modifier_to_variable = { modifier = ship_tracking_mult variable = eep_probe_ship_tracking_mult } } }",
+    "variable_names": "eep_probe_<exact native modifier key> on the actual ship",
+    "core_script_value_diagnostics": {
+      "shield": "value:eep_component_shield_level_value",
+      "armor": "value:eep_component_armor_level_value",
+      "hull": "value:eep_component_hull_level_value",
+      "damage": "value:eep_component_damage_level_value",
+      "tracking": "value:eep_component_tracking_level_value",
+      "regen": "value:eep_component_regen_level_value"
+    },
+    "minimum_post_change_days": 5,
+    "planned_probe_interval_days": 6,
+    "read_max_stats_from": "native ship max_health/max_armor/max_shield fields, checked against the actual design and modifier exports"
+  },
+  "interpretation_limits": [
+    "Fixed static regeneration exports are not total healed HP per day. Two AUTO_REPAIR parts supply separate percentage regeneration; combat, delay, full-health clamps and regen multipliers also affect actual repair.",
+    "ship_weapon_damage is an additive damage modifier aggregate, not panel DPS, accuracy, firing rate, weapon-tag bonus, penetration or combat outcome.",
+    "ship_tracking_add is measured in percentage points, not a 0.03 fraction. Weapon intrinsic tracking and separate tracking multiplier/clamping are outside this aggregate.",
+    "R=sum(six ranks) applies to natural RNG fixtures; the earlier C0 manual shield hardware fixture is deliberately exempt.",
+    "Do not reconstruct unknown future random tiers from expected values. Read actual saved ranks independently, then evaluate the fixed formula."
+  ],
+  "rng_expectations": {
+    "entitlement": "B=floor(C/50)",
+    "normal_invariant": "R=sum(Nh,Na,Ns,Nd,Nt,Nr)",
+    "per_call_awards": "min(max(B-R_before,0),200)",
+    "pending": "max(B-R_after,0)",
+    "20500_transition_if_start_R200": {
+      "B": 410,
+      "awards_first_call": 200,
+      "R_after_first": 400,
+      "pending_after_first": 10,
+      "awards_next_call": 10,
+      "R_after_next": 410,
+      "pending_after_next": 0
+    },
+    "no_total_cap": true
+  }
+}

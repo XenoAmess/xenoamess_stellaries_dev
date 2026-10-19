@@ -156,7 +156,7 @@ def shield_basis(observation, ship):
                 counts[key] = counts.get(key, 0) + 1
         for key in stage["required_components"]:
             counts[key] = counts.get(key, 0) + 1
-    records, total = [], 0
+    records, total, design_mult_contributions = [], 0, []
     for key, count in sorted(counts.items()):
         found = library.get(key, [])
         if len(found) != 1:
@@ -169,6 +169,14 @@ def shield_basis(observation, ship):
                 if entry["scope"] != "modifier":
                     raise ValueError("unsupported non-design additive shield source: " + key)
                 additive += entry["fields"]["ship_shield_add"]["resolved"]
+            if "ship_shield_mult" in entry["fields"]:
+                if entry["scope"] == "modifier":
+                    each = entry["fields"]["ship_shield_mult"]["resolved"]
+                    design_mult_contributions.append({"component": key, "count": count,
+                        "scope": "component.modifier", "per_component": each, "total": count * each,
+                        "path": str(path), "sha256": source(path)["sha256"]})
+                elif entry["scope"] == "triggered_ship_design_modifier":
+                    raise ValueError("conditional design shield multiplier requires explicit evaluation: " + key)
         total += count * additive
         records.append({"key": key, "count": count, "kind": kind, "source": str(path),
                         "source_sha256": source(path)["sha256"], "base_shield_each": additive,
@@ -186,7 +194,8 @@ def shield_basis(observation, ship):
     size_native = a.scalars(body)
     native_shield = {k: {"raw": v, "resolved": number(v, path)}
                      for k, v in size_native.items() if "shield" in k}
-    if native_shield or any("ship_shield_add" in item["fields"] for item in size_context):
+    if native_shield or any(any(key in item["fields"] for key in ("ship_shield_add", "ship_shield_mult"))
+                            for item in size_context):
         raise ValueError("ship-size additive shield requires explicit supported derivation")
     section_context = []
     for stage in ship["design"]["stages"]:
@@ -203,11 +212,24 @@ def shield_basis(observation, ship):
                 raise ValueError("expected one effective source for installed section: " + key)
             section_path, section_body = found[0]
             contexts = context(section_body, section_path)
-            if any("ship_shield_add" in item["fields"] for item in contexts):
+            if any(any(field in item["fields"] for field in ("ship_shield_add", "ship_shield_mult"))
+                   for item in contexts):
                 raise ValueError("section additive shield requires explicit supported derivation")
             section_context.append({"key": key, "path": str(section_path),
                                     "sha256": source(section_path)["sha256"], "shield_context": contexts})
-    return {"base_shield": total, "installed_components_including_required": records,
+    design_mult = sum(item["total"] for item in design_mult_contributions)
+    if 1 + design_mult <= 0:
+        raise ValueError("nonpositive native design shield multiplier")
+    documentation = native / "common/component_templates/000_documentation.txt"
+    return {"base_shield": total,
+            "design_shield_multiplier_add": design_mult,
+            "design_shield_multiplier_factor": 1 + design_mult,
+            "design_shield_multiplier_contributions": design_mult_contributions,
+            "design_shield_before_ship_modifiers": total * (1 + design_mult),
+            "source_layer_documentation": {"path": str(documentation), "sha256": digest(documentation),
+                "design_modifier_line": 12, "triggered_ship_scope_line": 18, "triggered_design_scope_line": 24,
+                "interpretation": "Design modifier and ship modifier are separate source scopes; the layered numerical model is checked against native readings, not claimed as closed-source engine code."},
+            "installed_components_including_required": records,
             "ship_size": {"key": ship_size, "path": str(path), "sha256": source(path)["sha256"],
                           "native_shield_fields": native_shield, "shield_context": size_context,
                           "definition_raw": body}, "sections": section_context,

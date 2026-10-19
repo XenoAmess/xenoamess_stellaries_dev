@@ -117,6 +117,18 @@ python eat_everything_origin/tools/publish_1019.py scaffold-index --reference-pl
 6. `growth_samples` 必须准确为 C/L 的 `0/0,9/0,10/1,19/1,20/2,200/20,10000/1000` 字典列表，每项用 `C`、`L` 两字段；对应原生分析仍列入 unlimited_growth 的证据。`component_rewards={status,interval_levels:5,reason:实际结论,evidence:[引用...]}`；若 IMPLEMENTED，再加入由 `COMPONENT_CHECKS` 定义的 random_components case。DEFERRED 的公开披露必须明确包含“每5级随机组件未实现”，且须另有 `release_scope_authorization={decision:"USER_APPROVED_SCOPE_CHANGE",evidence:[明确用户授权的归档引用]}`；主线程须先向用户如实报告方案选择，不得把门禁允许披露等同用户接受未完成。
 7. `archives` 是其余完整归档／索引引用列表。执行 `python eat_everything_origin/tools/publish_1019.py check-runtime` 只读校验；失败就补实际证据或修复实现并重测，不能为越过门禁填造 true。
 
+### rc3 PENDING进度副本与低误填更新器（实施前）
+
+在已推送检查点 `2e020d137` 基础上建立 `docs/evidence/1019-requirements/rc3-runtime-progress-v1.json`，绑定冻结rc3树 `178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116`、已通过三回调合同的静态报告与source-copy，以及真实run `20261019T092935Z` 的不可变manifest原字节副本。基线从已提交 `1019-baseline` 的三分支各12份原生SAV及economy观察报告读取，保留原有负值和旧profile；不是候选经济通过证据。所有case、组件奖励和顶层状态仍为PENDING，所有未经评审的check为null，成长观测留空；硬件完整报告由验收线程另行完成，不提前引用不存在文件。
+
+新增 `tools/runtime_index_1019.py` 仅更新PENDING副本，避免主线程手工维护SHA、case名和月度字段。命令负责添加真实run、按类型挂证据、从原始economy观察报告导入日期／真实净电及对应SAV SHA、记录明确的单项观察结论、列出缺项。导入负电时保留负值，不改成零或通过。每次更新保留前一副本SHA与操作记录；同一证据路径若已绑定不同字节就拒绝覆盖，真实报告应另起版本。单项结论必须绑定分析报告，更新器不推断该分析是否足以证明整个组。
+
+副本及 [逐组填写步骤](evidence/1019-requirements/rc3-runtime-progress-fill-v1.md) 已生成。它复用验收线程稳定的 `1019-rc3-hardware/manifest.json` 与归档索引，记录硬件v2报告的真实 `PASS_SCOPED` 和限定scope，但没有映射任何check为true、没有把受控护盾探针升为完整随机组件通过。三组基线各12条已按聚合观察中的实际save SHA导入；候选均0月，18组全部PENDING，成长观察仍为空。原始预测FAIL在archives和限定观察中留痕。
+
+辅助更新器8项合成测试通过（2.465秒），覆盖不晋升、冻结源绑定不改、证据幂等／篡改、旧run及错误静态gate拒绝、负预算原值保留、最终路径和非PENDING文件保护。实际副本89次引用／49个唯一文件已递归校验；基线重复导入返回 `changed=false`，没有改写副本或制造候选观察。该验证不属于实机验收。
+
+更新器不能写 `final-result.json`，不能把顶层、case或组件状态改成PASS，不能写入生产目录，也不能改非PENDING索引。报告齐备后仍需人工审查真实适用范围，再另建正式索引并通过严格发布门禁。补充测试覆盖状态不晋升、无证据／未知key／旧run拒绝、预算来源哈希与负值保留、重复添加幂等、证据字节篡改拒绝和最终路径保护。
+
 ## 验收标准
 
 - 离线单元测试覆盖完整合成输入以及缺组、失败状态、错误语言／EXE／生产树、证据篡改／路径逃逸、预算不足／负值、组件范围含糊、候选内容漂移、动态脚本与本地化数量、正式报告绑定及 WS-06 旧图拒绝。合成输入不得写入生产证据目录。

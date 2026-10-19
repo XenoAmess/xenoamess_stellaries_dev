@@ -1,0 +1,864 @@
+{
+  "schema": "eep.1019.hardware-difference-classification.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Classification only; original strict FAIL statuses and all source differences remain unchanged",
+  "source_report": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-hardware-case-report-v2.json",
+  "source_report_sha256": "318604b2a58f6181a030a2c7daf2d563edb92b9e7f27d2ae051e786a17a7134a",
+  "groups": {
+    "tier0_to_tier1": {
+      "original_status": "FAIL",
+      "original_difference_count": 24,
+      "category_counts": {
+        "native_snapshot_flag_timestamp_refresh": 1,
+        "native_cached_power_or_weight_change": 5,
+        "controlled_shield_tier_change": 3,
+        "elapsed_native_game_start_timer": 1,
+        "composite_raw_container_full_values_retained_in_source": 5,
+        "actual_native_hardware_shield_values": 6,
+        "actual_native_diagnostic_variables": 2,
+        "elapsed_native_owner_change_timer": 1
+      },
+      "differences": [
+        {
+          "source_difference_index": 0,
+          "path": "$.country.flags.eep_component_snapshot_available",
+          "category": "native_snapshot_flag_timestamp_refresh",
+          "before": 62808000,
+          "after": 62808144
+        },
+        {
+          "source_difference_index": 1,
+          "path": "$.country.native.military_power",
+          "category": "native_cached_power_or_weight_change",
+          "before": 259789.04687,
+          "after": 262440.47656
+        },
+        {
+          "source_difference_index": 2,
+          "path": "$.country.variables.eep_component_shield_level",
+          "category": "controlled_shield_tier_change",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_difference_index": 3,
+          "path": "$.country_timed_modifier.items",
+          "category": "elapsed_native_game_start_timer",
+          "before": [
+            {
+              "modifier": "game_start",
+              "days": 3594
+            }
+          ],
+          "after": [
+            {
+              "modifier": "game_start",
+              "days": 3588
+            }
+          ]
+        },
+        {
+          "source_difference_index": 4,
+          "path": "$.country_timed_modifier.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 5,
+          "path": "$.country_variables_all.eep_component_shield_level",
+          "category": "controlled_shield_tier_change",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_difference_index": 6,
+          "path": "$.fleets.159.native.diplomacy_weight",
+          "category": "native_cached_power_or_weight_change",
+          "before": 259577.19531,
+          "after": 262228.625
+        },
+        {
+          "source_difference_index": 7,
+          "path": "$.fleets.159.native.military_power",
+          "category": "native_cached_power_or_weight_change",
+          "before": 259577.19531,
+          "after": 262228.625
+        },
+        {
+          "source_difference_index": 8,
+          "path": "$.fleets.159.ships.997.native.max_shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 167310,
+          "after": 171492.75
+        },
+        {
+          "source_difference_index": 9,
+          "path": "$.fleets.159.ships.997.native.shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 167310,
+          "after": 171492.75
+        },
+        {
+          "source_difference_index": 10,
+          "path": "$.fleets_1019.159.native.diplomacy_weight",
+          "category": "native_cached_power_or_weight_change",
+          "before": 259577.19531,
+          "after": 262228.625
+        },
+        {
+          "source_difference_index": 11,
+          "path": "$.fleets_1019.159.native.military_power",
+          "category": "native_cached_power_or_weight_change",
+          "before": 259577.19531,
+          "after": 262228.625
+        },
+        {
+          "source_difference_index": 12,
+          "path": "$.fleets_1019.159.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 13,
+          "path": "$.fleets_1019.159.ships.997.native.max_shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 167310,
+          "after": 171492.75
+        },
+        {
+          "source_difference_index": 14,
+          "path": "$.fleets_1019.159.ships.997.native.shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 167310,
+          "after": 171492.75
+        },
+        {
+          "source_difference_index": 15,
+          "path": "$.fleets_1019.159.ships.997.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 16,
+          "path": "$.fleets_1019.159.ships.997.variables.eep_probe_shield_mod",
+          "category": "actual_native_diagnostic_variables",
+          "before": null,
+          "after": 3.1
+        },
+        {
+          "source_difference_index": 17,
+          "path": "$.fleets_1019.159.ships.997.variables.eep_probe_value",
+          "category": "actual_native_diagnostic_variables",
+          "before": null,
+          "after": 1
+        },
+        {
+          "source_difference_index": 18,
+          "path": "$.fleets_1019.159.variables.eep_component_shield_level",
+          "category": "controlled_shield_tier_change",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_difference_index": 19,
+          "path": "$.starbases.15.station_native.max_shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 167310,
+          "after": 171492.75
+        },
+        {
+          "source_difference_index": 20,
+          "path": "$.starbases.15.station_native.shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 167310,
+          "after": 171492.75
+        },
+        {
+          "source_difference_index": 21,
+          "path": "$.worlds.2.flags.3_year_owner_change_flag.flag_days",
+          "category": "elapsed_native_owner_change_timer",
+          "before": 1074,
+          "after": 1068
+        },
+        {
+          "source_difference_index": 22,
+          "path": "$.worlds_1019.2.flags_raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 23,
+          "path": "$.worlds_1019.2.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        }
+      ]
+    },
+    "tier1_to_tier2": {
+      "original_status": "FAIL",
+      "original_difference_count": 24,
+      "category_counts": {
+        "native_snapshot_flag_timestamp_refresh": 1,
+        "native_cached_power_or_weight_change": 5,
+        "controlled_shield_tier_change": 3,
+        "elapsed_native_game_start_timer": 1,
+        "composite_raw_container_full_values_retained_in_source": 5,
+        "actual_native_hardware_shield_values": 6,
+        "actual_native_diagnostic_variables": 2,
+        "elapsed_native_owner_change_timer": 1
+      },
+      "differences": [
+        {
+          "source_difference_index": 0,
+          "path": "$.country.flags.eep_component_snapshot_available",
+          "category": "native_snapshot_flag_timestamp_refresh",
+          "before": 62808144,
+          "after": 62808288
+        },
+        {
+          "source_difference_index": 1,
+          "path": "$.country.native.military_power",
+          "category": "native_cached_power_or_weight_change",
+          "before": 262440.47656,
+          "after": 263033.625
+        },
+        {
+          "source_difference_index": 2,
+          "path": "$.country.variables.eep_component_shield_level",
+          "category": "controlled_shield_tier_change",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "source_difference_index": 3,
+          "path": "$.country_timed_modifier.items",
+          "category": "elapsed_native_game_start_timer",
+          "before": [
+            {
+              "modifier": "game_start",
+              "days": 3588
+            }
+          ],
+          "after": [
+            {
+              "modifier": "game_start",
+              "days": 3582
+            }
+          ]
+        },
+        {
+          "source_difference_index": 4,
+          "path": "$.country_timed_modifier.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 5,
+          "path": "$.country_variables_all.eep_component_shield_level",
+          "category": "controlled_shield_tier_change",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "source_difference_index": 6,
+          "path": "$.fleets.159.native.diplomacy_weight",
+          "category": "native_cached_power_or_weight_change",
+          "before": 262228.625,
+          "after": 262821.77343
+        },
+        {
+          "source_difference_index": 7,
+          "path": "$.fleets.159.native.military_power",
+          "category": "native_cached_power_or_weight_change",
+          "before": 262228.625,
+          "after": 262821.77343
+        },
+        {
+          "source_difference_index": 8,
+          "path": "$.fleets.159.ships.997.native.max_shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 171492.75,
+          "after": 175675.5
+        },
+        {
+          "source_difference_index": 9,
+          "path": "$.fleets.159.ships.997.native.shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 171492.75,
+          "after": 175675.5
+        },
+        {
+          "source_difference_index": 10,
+          "path": "$.fleets_1019.159.native.diplomacy_weight",
+          "category": "native_cached_power_or_weight_change",
+          "before": 262228.625,
+          "after": 262821.77343
+        },
+        {
+          "source_difference_index": 11,
+          "path": "$.fleets_1019.159.native.military_power",
+          "category": "native_cached_power_or_weight_change",
+          "before": 262228.625,
+          "after": 262821.77343
+        },
+        {
+          "source_difference_index": 12,
+          "path": "$.fleets_1019.159.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 13,
+          "path": "$.fleets_1019.159.ships.997.native.max_shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 171492.75,
+          "after": 175675.5
+        },
+        {
+          "source_difference_index": 14,
+          "path": "$.fleets_1019.159.ships.997.native.shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 171492.75,
+          "after": 175675.5
+        },
+        {
+          "source_difference_index": 15,
+          "path": "$.fleets_1019.159.ships.997.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 16,
+          "path": "$.fleets_1019.159.ships.997.variables.eep_probe_shield_mod",
+          "category": "actual_native_diagnostic_variables",
+          "before": 3.1,
+          "after": 3.2
+        },
+        {
+          "source_difference_index": 17,
+          "path": "$.fleets_1019.159.ships.997.variables.eep_probe_value",
+          "category": "actual_native_diagnostic_variables",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "source_difference_index": 18,
+          "path": "$.fleets_1019.159.variables.eep_component_shield_level",
+          "category": "controlled_shield_tier_change",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "source_difference_index": 19,
+          "path": "$.starbases.15.station_native.max_shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 171492.75,
+          "after": 175675.5
+        },
+        {
+          "source_difference_index": 20,
+          "path": "$.starbases.15.station_native.shield_hitpoints",
+          "category": "actual_native_hardware_shield_values",
+          "before": 171492.75,
+          "after": 175675.5
+        },
+        {
+          "source_difference_index": 21,
+          "path": "$.worlds.2.flags.3_year_owner_change_flag.flag_days",
+          "category": "elapsed_native_owner_change_timer",
+          "before": 1068,
+          "after": 1062
+        },
+        {
+          "source_difference_index": 22,
+          "path": "$.worlds_1019.2.flags_raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 23,
+          "path": "$.worlds_1019.2.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        }
+      ]
+    },
+    "tier2_to_reload": {
+      "original_status": "FAIL",
+      "original_difference_count": 57,
+      "category_counts": {
+        "native_design_index_reassignment": 5,
+        "native_original_owner_default_materialized": 15,
+        "native_last_ftl_jump_changes_retained": 10,
+        "composite_raw_container_full_values_retained_in_source": 25,
+        "unexplained_native_carrier_binary_flags_change": 2
+      },
+      "differences": [
+        {
+          "source_difference_index": 0,
+          "path": "$.fleets.159.ships.997.design_id",
+          "category": "native_design_index_reassignment",
+          "before": 1379,
+          "after": 1446
+        },
+        {
+          "source_difference_index": 1,
+          "path": "$.fleets.159.ships.997.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 2,
+          "path": "$.fleets_1019.0.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 0,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 3,
+          "path": "$.fleets_1019.0.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 4,
+          "path": "$.fleets_1019.0.ships.0.design_id",
+          "category": "native_design_index_reassignment",
+          "before": "17",
+          "after": "1431"
+        },
+        {
+          "source_difference_index": 5,
+          "path": "$.fleets_1019.0.ships.0.implementation.design",
+          "category": "native_design_index_reassignment",
+          "before": 17,
+          "after": 1431
+        },
+        {
+          "source_difference_index": 6,
+          "path": "$.fleets_1019.0.ships.0.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 7,
+          "path": "$.fleets_1019.0.ships.0.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 8,
+          "path": "$.fleets_1019.1.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 1,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 9,
+          "path": "$.fleets_1019.1.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 10,
+          "path": "$.fleets_1019.1.ships.1.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 11,
+          "path": "$.fleets_1019.1.ships.1.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 12,
+          "path": "$.fleets_1019.154.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 154,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 13,
+          "path": "$.fleets_1019.154.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 14,
+          "path": "$.fleets_1019.154.ships.992.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 15,
+          "path": "$.fleets_1019.154.ships.992.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 16,
+          "path": "$.fleets_1019.155.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 155,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 17,
+          "path": "$.fleets_1019.155.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 18,
+          "path": "$.fleets_1019.155.ships.993.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 19,
+          "path": "$.fleets_1019.155.ships.993.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 20,
+          "path": "$.fleets_1019.156.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 156,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 21,
+          "path": "$.fleets_1019.156.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 22,
+          "path": "$.fleets_1019.156.ships.994.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 23,
+          "path": "$.fleets_1019.156.ships.994.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 24,
+          "path": "$.fleets_1019.157.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 157,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 25,
+          "path": "$.fleets_1019.157.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 26,
+          "path": "$.fleets_1019.157.ships.995.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 27,
+          "path": "$.fleets_1019.157.ships.995.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 28,
+          "path": "$.fleets_1019.158.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 158,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 29,
+          "path": "$.fleets_1019.158.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 30,
+          "path": "$.fleets_1019.158.ships.996.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 31,
+          "path": "$.fleets_1019.158.ships.996.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 32,
+          "path": "$.fleets_1019.159.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 159,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 33,
+          "path": "$.fleets_1019.159.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 34,
+          "path": "$.fleets_1019.159.ships.997.design_id",
+          "category": "native_design_index_reassignment",
+          "before": "1379",
+          "after": "1446"
+        },
+        {
+          "source_difference_index": 35,
+          "path": "$.fleets_1019.159.ships.997.implementation.design",
+          "category": "native_design_index_reassignment",
+          "before": 1379,
+          "after": 1446
+        },
+        {
+          "source_difference_index": 36,
+          "path": "$.fleets_1019.159.ships.997.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 37,
+          "path": "$.fleets_1019.159.ships.997.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 38,
+          "path": "$.fleets_1019.2.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 2,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 39,
+          "path": "$.fleets_1019.2.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 40,
+          "path": "$.fleets_1019.2.ships.2.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 41,
+          "path": "$.fleets_1019.2.ships.2.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 42,
+          "path": "$.fleets_1019.3.movement.raw",
+          "category": "native_last_ftl_jump_changes_retained",
+          "before_last_ftl_jump": {
+            "fleet": 4294967295,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "after_last_ftl_jump": {
+            "to": 13,
+            "fleet": 3,
+            "jump_method": "jump_count",
+            "bypass_from": 4294967295,
+            "bypass_to": 4294967295
+          },
+          "all_other_direct_movement_fields_exact_equal": true
+        },
+        {
+          "source_difference_index": 43,
+          "path": "$.fleets_1019.3.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 44,
+          "path": "$.fleets_1019.3.ships.3.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 45,
+          "path": "$.fleets_1019.3.ships.3.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 46,
+          "path": "$.fleets_1019.3.ships.4.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 47,
+          "path": "$.fleets_1019.3.ships.4.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 48,
+          "path": "$.fleets_1019.3.ships.5.native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 49,
+          "path": "$.fleets_1019.3.ships.5.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 50,
+          "path": "$.starbases.0.station_native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 51,
+          "path": "$.starbases.15.station_native.original_owner",
+          "category": "native_original_owner_default_materialized",
+          "before": null,
+          "after": 0
+        },
+        {
+          "source_difference_index": 52,
+          "path": "$.starbases_1019.0.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 53,
+          "path": "$.starbases_1019.15.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        },
+        {
+          "source_difference_index": 54,
+          "path": "$.worlds.2.carrier_binary_flags",
+          "category": "unexplained_native_carrier_binary_flags_change",
+          "before": 1,
+          "after": 3
+        },
+        {
+          "source_difference_index": 55,
+          "path": "$.worlds_1019.2.native.carrier_binary_flags",
+          "category": "unexplained_native_carrier_binary_flags_change",
+          "before": 1,
+          "after": 3
+        },
+        {
+          "source_difference_index": 56,
+          "path": "$.worlds_1019.2.raw",
+          "category": "composite_raw_container_full_values_retained_in_source"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Carrier binary flag semantics are not calibrated.",
+    "Native last_ftl_jump writes are recorded as actual differences, not declared harmless.",
+    "The scoped hardware result does not certify full raw reload equality."
+  ]
+}

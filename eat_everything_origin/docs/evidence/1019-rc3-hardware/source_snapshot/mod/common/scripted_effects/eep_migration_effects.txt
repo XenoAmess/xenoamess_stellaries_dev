@@ -1,0 +1,50 @@
+# Target Carrier scope. Recheck the same contract used by the native decision.
+eep_migrate_core = {
+    if = {
+        limit = { eep_migration_target_valid = yes }
+        planet = { save_event_target_as = eep_new_core }
+        owner = {
+            event_target:eep_core@this = { save_event_target_as = eep_old_core }
+        }
+        event_target:eep_old_core = {
+            remove_modifier = eep_capacity
+            remove_modifier = eep_court
+            remove_modifier = eep_parallel_construction
+            remove_deposit = d_eep_core
+            remove_carrier_flag = eep_core
+            clear_global_event_target = eep_core_actor@this
+            eep_release_resource_limits = yes
+        }
+        event_target:eep_new_core = {
+            save_global_event_target_as = eep_core@owner
+            set_carrier_flag = eep_core
+            owner = {
+                save_global_event_target_as = eep_core_actor@prev
+                remove_country_flag = eep_core_lost
+            }
+            set_capital = yes
+            eep_repair_core_deposit = yes
+            eep_update_capacity = yes
+            eep_sync_court = yes
+        }
+    }
+}
+
+# Old physical core scope. Legacy untracked flags are deliberately retained.
+eep_release_resource_limits = {
+    if = {
+        limit = { has_carrier_flag = eep_owned_uncapped_generator }
+        remove_carrier_flag = uncapped_generator_districts
+        remove_carrier_flag = eep_owned_uncapped_generator
+    }
+    if = {
+        limit = { has_carrier_flag = eep_owned_uncapped_mining }
+        remove_carrier_flag = uncapped_mining_districts
+        remove_carrier_flag = eep_owned_uncapped_mining
+    }
+    if = {
+        limit = { has_carrier_flag = eep_owned_uncapped_farming }
+        remove_carrier_flag = uncapped_farming_districts
+        remove_carrier_flag = eep_owned_uncapped_farming
+    }
+}

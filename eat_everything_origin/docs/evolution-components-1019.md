@@ -265,7 +265,7 @@ Mother fleet 保存六层数和 `eep_component_rewards`（R）；仅在变量未
 
 ### 原生刷新与验收
 
-本机 Stellaris 4.5.2 `common/defines/00_defines.txt:574` 明确 `TRIGGERED_MODIFIER_UPDATE_DELAY = 5`，即每个对象的 triggered modifier 每五日更新。安装后与每次变量变更后至少等五日再判断，主任务计划各步等 30 日；一天无增益不足以否定本路线。组件文档明确 triggered_ship_modifier 不在设计器展示，因此 tooltip 缺失也不是失败；必须核对真实 slot 装备、原生 ship 总修正及实际属性。
+本机 Stellaris 4.5.2 `common/defines/00_defines.txt:574` 明确 `TRIGGERED_MODIFIER_UPDATE_DELAY = 5`，即每个对象的 triggered modifier 每五日更新。安装后与每次变量变更后至少等五日再判断；RC3实际采用六日步长（hw0 2200.01.07、hw1 01.13，后续hw2再六日），取代早期30日组合夹具计划。一天无增益不足以否定本路线。组件文档明确 triggered_ship_modifier 不在设计器展示，因此 tooltip 缺失也不是失败；必须核对真实 slot 装备、原生 ship 总修正及实际属性。
 
 先在 C0（B0，无随机发放）保持另外五核心零层，按 shield0→1→2→reload 检验实际盾增量，保存原生档和 SHA；负面对照为其它舰队，以及拆件／回退层数。通过后再从自然计数档覆盖 C49→50、99→100、C10000（200次），同日重复、保存重载不重复；另用大于200待补值确认分批兑现、无总上限，以及母舰消失不发奖。所有 P 候选先 open_kaishek 解析和整包门禁，本子任务仅提交静态证据，原生结论仍由主任务采集后回写。
 
@@ -276,3 +276,36 @@ Mother fleet 保存六层数和 `eep_component_rewards`（R）；仅在变量未
 独立作者 JSON 已更新简中／英／德各19键（六组件各名称／描述／别名，加只读报告）；三语键集与受保护引用 token 一致，英德未发现简中占位。其余七语和所有 YML 由本地化线程集成；非中文运行时不在范围内。该结果只证明源结构与静态语法，不证明实际装备、随机引擎语义或动态属性生效；整包门禁与简中原生硬件／RNG测试仍由主任务执行。
 
 主任务审查要求在最终冻结前把产品文案与开发状态分开：游戏中六核心描述只介绍目标机制、每层数值与不额外消耗供能／维护，不出现“实验／原生／待实机确认”；报告保留 B/R/P 与六层数，称大量积压“分批补发”，不暴露200次工作预算和同步实现。母舰不可用保留历史且停止升级的说明保留。此为候选机制文案，不是测试通过声明；开发待验状态仍以本文和静态证据为准，不降低发布门禁。
+
+## RC3动态硬件一级原生成功（后续仍待验）
+
+RC3生产树冻结 SHA `178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116`，先通过open_kaishek 36P／131键／独立CSV／3派生回调门禁。开发检查点为 `2e020d137`；本节更新不修改冻结生产树，也不改写历史观察JSON。
+
+主线程在机器开局的受控C0／L0／R0夹具中，保持其它五核心为0。零级基线hw0（2200.01.07）最大盾167310；一级hw1（01.13，经过六日）最大盾171492.75，增加4182.75。ship scope导出的核心script value为1、`ship_shield_mult`为3.1，未增加普通奖励modifier，普通控制舰没有同期变化。此证据支持实际装备核心的tier0→1动态属性已生效；hw2与同日重载仍待主线程完成，不能写六类核心／随机发放全部通过。
+
+早期诊断误用 `every_ship` 没有获得有效ship导出，之后改为本机原生支持的 `every_owned_ship`，在Mother fleet内进入真正ship scope导出。诊断命令失败不能被归因为组件倍率失败；无导出值也不等于导出值为0。
+
+### 设计层与舰船层的独立原始依据
+
+以下事实直接来自本机4.5.2原版文件，而非按hw1结果倒推参数：
+
+- `common/component_templates/000_documentation.txt:12-18` 分开说明 `modifier` 影响设计器数值、`ship_modifier` 影响实际舰船、`triggered_ship_modifier` 在ship scope；:24进一步把 `triggered_ship_design_modifier` 明确区分为design scope。
+- `00_utilities_shields.txt:906-907` 的 `LARGE_DARK_MATTER_DEFLECTOR` 在 `modifier` 中给出 `ship_shield_add=@shield_L6`；`common/scripted_variables/02_scripted_variables_component_cost.txt:389` 定义 `@shield_L6=2925`。11件原始盾合计32175。
+- `00_utilities_aux.txt:99-100` 的 `SHIELD_BOOSTER` 把 `ship_shield_mult=0.1` 放在设计层 `modifier`；本设计真实装备三份。
+- 同一原版文件:439-441的 `CRADLE_MARK` 把相同 `ship_shield_mult=0.10` 放在 `ship_modifier`。这是原版自身使用同一属性的两条不同修正管道，独立支持分层理解；无需用第三方讨论冒充引擎公式。
+
+原始文件证明了字段、数值和修正层归属，但没有公开闭源引擎的完整计算函数。因此乘法顺序作为“源分层推导，并由原生导出／实际值验证”的模型，而非声称读到引擎实现：本设计盾值为 `32175 × (1+3×0.1) × (1+ship层总修正)`。hw0的ship层3.0给出167310，hw1的3.1给出171492.75，均一致；在查看hw2前该模型预测tier2／ship层3.2为175675.5。实际hw2和reload必须独立核对，不硬凑预测。每层组件声明的+10%是该层修正增量，不是相对当前面板总值+10%。
+
+## 六频道源数据预期（生成证据前范围）
+
+下一阶段从干净fmm00做自然成长边界，拟覆盖C=0／9／10／19／20／49／50／200／10000，必要时20500验证200次工作预算的补差。本子任务在读取这些未来成长SAV前固定原版及RC3源码的独立预期，新增 `evidence/1019-analysis/six-core-source-expectations-v1.json`，不改生产Mod或其它验收报告。
+
+预期范围包括舰体／装甲／护盾的设计层基值与ship层修正、武器伤害、索敌、舰体／装甲固定日恢复；逐项记录实际原始文件、行号、SHA、RC3固定装备对来源的贡献，以及可在一次Mother fleet的 `every_owned_ship` 内导出的确切modifier键。等级贡献用L=floor(C/10)，随机核心贡献用实际持久六层数N表示，不能预先猜测随机分布；外部科技、领袖、帝国或临时修正明确作为额外项，避免把特定新局的未知来源当成固定常数。源参数与已知层次支持的预测和仍待原生确认的计算部分分开标注，不按未来SAV调参。
+
+预期证据现已生成：[六核心源预期](evidence/1019-analysis/six-core-source-expectations-v1.json)。直接读取RC3不可变snapshot，六份Mod源SHA与manifest逐项一致；固定设计56件（含required）／22种实际组件定义均已追溯，未来自然C档未读取。无外部加成时，三个最大值模型为 `H=30000×(3.132+0.05L+0.10Nh)`、`A=25740×(1.74+0.05L+0.10Na)`、`S=41827.5×(4+0.05L+0.10Ns)`。每级增量为H1500／A1287／S2091.375；相应核心每层增量为H3000／A2574／S4182.75。这些是源固定参数的可检验预测，其余频道仍须原生验证。
+
+伤害修正预期 `3.8+0.05L+0.05Nd`，索敌修正 `15+3Nt`（SENSOR4的本地原版 `@hit4=15`），固定日恢复为舰体 `1.392+0.1L+0.2Nr`、装甲 `2.088+0.1L+0.2Nr`，均另加真实外部项。两个AUTO_REPAIR只在设计层提供独立的百分比恢复字段，合计hull `ship_hull_regen_add_perc=0.10`、armor `ship_armor_regen_add_perc=0.20`；不能把这些百分比填进固定恢复预期，也不能以满血时实际恢复0否定固定字段生效。伤害修正不是面板DPS，索敌修正也不是每门武器的最终有效索敌。
+
+JSON包含一次country→绑定Mother fleet→`every_owned_ship` 导出十个关键字段的完整effect片段，另给五个百分比／恢复倍率／索敌倍率的可选分离字段；所有键均核对原生modifiers.log，export effect支持ship scope。超额C20500从R200开始时，B410，第一调用最多发200至R400／P10，后续调用再发10至R410／P0；这证明设计没有总200上限，原生结果仍需保存验证。
+
+硬件后续状态：验收线程已完成hw2与同日reload限定检查，最大盾依次167310→171492.75→175675.5→175675.5，实际script value和ship盾倍率为1／3.1、2／3.2、重载后2／3.2；见 [RC3硬件v2报告](evidence/1019-analysis/rc3-hardware-case-report-v2.json)。这仅是硬件限定范围PASS_SCOPED；严格整档重载差异仍保留FAIL，不将其写成全量字节／业务字段完全一致，也不代替自然RNG或其它五核心验收。

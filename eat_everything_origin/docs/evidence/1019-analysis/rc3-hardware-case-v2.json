@@ -1,0 +1,31 @@
+{
+  "schema": "eep.1019.hardware-case.v1",
+  "status": "READY_NATIVE_INPUTS",
+  "case_kind": "controlled_hardware_probe",
+  "tier0": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\hw0.sav",
+  "tier1": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\hw1.sav",
+  "tier2": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\hw2.sav",
+  "reload": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\hw2reload.sav",
+  "control_ship_ids": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "minimum_refresh_days": 5,
+  "absolute_tolerance": 0.001,
+  "require_reload": true,
+  "notes": [
+    "Only original native SAV paths with matching manifests, receipts and audits are valid inputs.",
+    "C0/R0 with manually controlled shield tiers is intentionally separate from natural RNG reward invariants.",
+    "Native base shield and expected increments are resolved from component definitions, never from hard-coded panel results.",
+    "This pending template contains no runtime result and must not be published as PASS."
+  ],
+  "native_sha256_preflight": {
+    "tier0": "815aa75e10b3629b42750347f5f30c765e339d01d67637ccfe21cd5e1691a655",
+    "tier1": "b342199c7212594db5eb63746835e9670cc41c737eb694e8e6e8773585c76983",
+    "tier2": "50d4c00dc4dbbe9422401d138b750295f9dbc633b9c2b1a342cc75a23e3ea3ad",
+    "reload": "aef3706cd833d7799f67c654cc3ca3abc630d319086b9ea23fffbb00cb20d186"
+  }
+}
