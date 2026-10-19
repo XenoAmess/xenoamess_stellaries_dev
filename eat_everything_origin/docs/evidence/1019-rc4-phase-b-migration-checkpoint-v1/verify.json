@@ -1,0 +1,341 @@
+{
+  "schema": "eep.rc4.phase-b.raw-checkpoint-verification.v1",
+  "status": "PASS_BYTE_SOURCE_BINDING_ONLY",
+  "verified_at_utc": "2026-10-19T14:21:02.845170+00:00",
+  "index_sha256": "772e1c775525dd27af475c532dad96674c3f2ba8c167020595cfc7829e944ed0",
+  "payload_files_rechecked": 462,
+  "payload_bytes": 28649242,
+  "canonical_refs_rechecked": 9,
+  "canonical_mod_files_rechecked_not_copied": 59,
+  "native_saves": [
+    {
+      "stage": "m031load",
+      "date": "2200.01.01",
+      "sha256": "5c6fd6b0f36eca37c63963c6af5ca56e86638864ac172bf6f08827a29adb091e",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "m031sync",
+      "date": "2200.01.01",
+      "sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "m031reload",
+      "date": "2200.01.01",
+      "sha256": "dddc4a2f300c4d14e5bc4326d97da3d85d3629f041f229104fef925cfccf8a17",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "mpaidload",
+      "date": "2200.01.12",
+      "sha256": "52a6cff2ee681bfab7ea2eefd142525c571b6fac9b8a728bd8bd6759487f6839",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "mpaidsync",
+      "date": "2200.01.12",
+      "sha256": "e41db7f200fd6074bce40685fda29db5d80f53a0fea6bd032d137b6d4c787948",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "mpaidreload",
+      "date": "2200.01.12",
+      "sha256": "5d1ca99d708c60c18cf273bb83aa583efbbf715214cd5b9d0b155e0253f0b070",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "rdesignsync",
+      "date": "2200.01.12",
+      "sha256": "c223bdb5ea8cacbb51a75af9b1358d6497add923b6e3b61a04ee2a0358f901f4",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "rdesignreload",
+      "date": "2200.01.12",
+      "sha256": "d679d4b4bf2d66a2af9f9daa8e7b6a84f65db1d112b9df2c0e59f0c8e1a5788c",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "rnamesync",
+      "date": "2200.01.12",
+      "sha256": "503c50053cea010b43eca3b23536479d9b78f49fb383af5c703bae6bc623a56d",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "rnameload",
+      "date": "2200.01.12",
+      "sha256": "c1c9b452a07c7d3f2b9da6d06a7f44dc5ca66ee7e219bf049b6e17b45831c21f",
+      "receipt_audit_observer_gamestate_match": true
+    },
+    {
+      "stage": "rfleetsync",
+      "date": "2200.01.12",
+      "sha256": "df1c501844f00823b979c0a064251fa091cab4716cbc0205034ae3cccb1e28c6",
+      "receipt_audit_observer_gamestate_match": true
+    }
+  ],
+  "import_aliases_verified": 4,
+  "gpu_image_ocr_bindings": 86,
+  "startup_NOT_READY_failure_preserved": {
+    "status": "NOT_READY",
+    "error": "Steam F12 did not produce a fresh GPU screenshot"
+  },
+  "reports_preserved": [
+    {
+      "name": "rc4-design-name-binding-probe-report-v1.json",
+      "status": "FAIL",
+      "scope": "Controlled ship internal-name alias binding probe and actual reload only; original raw name intentionally changes and original fraction failures remain",
+      "failed_checks": [
+        "ten_localized_alias_pairs_equal_static",
+        "reload_full_frozen_50slot_6required_design_preserved",
+        "reload_six_real_cores_preserved",
+        "reload_new_design_body_and_name_preserved",
+        "reload_implementation_reference_preserved",
+        "sync_ship_starbase_design_references_agree",
+        "reload_starbase_references_new_design"
+      ],
+      "sha256": "978b5e413f9cb6845f1d196dec964bdbcb9a1d688ca3ffd877e0540861c3b95f"
+    },
+    {
+      "name": "rc4-design-name-binding-probe-report-v2.json",
+      "status": "FAIL",
+      "scope": "Controlled ship internal-name alias binding probe and actual reload only; original raw name intentionally changes and original fraction failures remain",
+      "failed_checks": [
+        "reload_full_frozen_50slot_6required_design_preserved",
+        "reload_six_real_cores_preserved",
+        "reload_new_design_body_and_name_preserved",
+        "reload_implementation_reference_preserved",
+        "sync_ship_starbase_design_references_agree",
+        "reload_starbase_references_new_design"
+      ],
+      "sha256": "796acbab8f97cc29cf150a739102b1f94a716d62997986a5618372ff2bfbadfb"
+    },
+    {
+      "name": "rc4-design-registration-probe-report-v1.json",
+      "status": "FAIL",
+      "scope": "Controlled create/add/set native registration and actual reload persistence only; original damage fraction1e-6 policy is not relaxed or certified",
+      "failed_checks": [
+        "reload_implementation_references_registered_added_design",
+        "reload_50_slots_and_6_required",
+        "reload_six_core_AUX6_to11_exact",
+        "reload_complete_design_matches_frozen_source",
+        "reload_design_body_preserved",
+        "reload_new_design_name_preserved"
+      ],
+      "sha256": "2f81ae837730b462e4f02911b8ebb369c2217ee822719dcf050701d415556533"
+    },
+    {
+      "name": "rc4-fleet-scope-design-probe-report-v1.json",
+      "status": "FAIL",
+      "scope": "Controlled fleet-scope set_ship_design single-stage dual-implementation check; failure requires no reload and leaves original fraction policy unchanged",
+      "failed_checks": [
+        "actual_ship_and_mobile_starbase_implementations_agree",
+        "mobile_starbase_implementation_updates_to_new_design"
+      ],
+      "sha256": "a82b0df361d464f37e5f6df3f72f999acab2874d9c00b319d443cf977da36532"
+    },
+    {
+      "name": "rc4-m031-native-health-raw-source-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": "Independently extracted complete native ship blocks and exact scalar source context; no engine-internal representation inference",
+      "failed_checks": [],
+      "sha256": "c75748c7d762458e8cf798cf782f748b1e4cf351062345cd1694e7207dd41b53"
+    },
+    {
+      "name": "rc4-m031-old-before-to-load-report-v1.json",
+      "status": "FAIL",
+      "scope": "Genuine old public0.3.1 partial-damage save to native RC4 load before manual sync; original declared fraction tolerance",
+      "failed_checks": [
+        "shield_fraction_preserved_predeclared_1e_6"
+      ],
+      "sha256": "447cd5d3b4b39bfe96ec226b12ee95014532049829328a028d48435d84cd7109"
+    },
+    {
+      "name": "rc4-m031-reload-persistence-raw-source-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": "Native design reference, entity section, flags, registry and actual recorded reload selection; no production fix or engine-cause inference",
+      "failed_checks": [],
+      "sha256": "ddf29ee79886fc1ea4c68c4c8cfc99cacec4501b152a14d00ffd01beb2080c67"
+    },
+    {
+      "name": "rc4-m031load-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "db337c8a8c19bd148fc26be4ff2808b64ccd1e9c42ed85d0d45943c2cec01012"
+    },
+    {
+      "name": "rc4-m031reload-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "e474839dc51270043eb5aa2bb09b237833820caf6f5fb7fc85401cbe76832ec0"
+    },
+    {
+      "name": "rc4-m031sync-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "0c758aa977333ccc10dae2d70b2d1cb062e8ccd62434a4806077801bcd2419e6"
+    },
+    {
+      "name": "rc4-mobile-starbase-design-pointer-source-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": "Exact independent mobile-starbase implementation, station record and native default inputs across original-policy and registration probes",
+      "failed_checks": [],
+      "sha256": "4503e508573becf57bdd4a4d4a71269abd4f987ac37ac5bfd6b93c837ccf33ee"
+    },
+    {
+      "name": "rc4-mpaid-reload-persistence-raw-source-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": "Independent paid-queue native design reference/entity section/flags/registry persistence; no engine-cause inference",
+      "failed_checks": [],
+      "sha256": "256751429658210215afa49d0f4695d627a37322d1f350f6eddcac1fe71baeda"
+    },
+    {
+      "name": "rc4-mpaidload-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "cc7b28715560ec2954021c3d13b1a498b4e3f10a6ea6310642885a5d8f18d6aa"
+    },
+    {
+      "name": "rc4-mpaidreload-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "883c0d1a5b92a5748eb8402df3adaaf393724b0a7c123acc778d6a76be4c0ff3"
+    },
+    {
+      "name": "rc4-mpaidsync-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "3d42633103a073bd7016195471cdffbcd343bba328a18d95f42d8e0c319f5907"
+    },
+    {
+      "name": "rc4-paid-fraction-migration-complete-case-v1.json",
+      "status": "OBSERVED_WITH_FAILURES",
+      "scope": "Genuine damaged save produced by public0.3.1 source to future frozenRC4 load/sync/reload; original queue fixture provenance separately bound",
+      "failed_checks": [],
+      "sha256": "adc83591cb33b4d724fbbc5f3b7a95befc631d7547a9c2158a2dbcc3c31e3a16"
+    },
+    {
+      "name": "rc4-paid-fraction-migration-complete-check-v1.json",
+      "status": "FAIL",
+      "scope": "damaged Mother identity, declared damage, layout and native paid-queue records only",
+      "failed_checks": [
+        "damage_preserved_in_declared_mode",
+        "reload_migration_snapshot_preserved"
+      ],
+      "sha256": "8b960ca6ecea881641ae2e1f6e549ff0d2e6360ad36e0721ddc9db28cd9c0cd3"
+    },
+    {
+      "name": "rc4-paid-fraction-migration-series-report-v1.json",
+      "status": "FAIL",
+      "scope": "Complete genuine public0.3.1 damaged paid-queue before to RC4 load/manual-sync/native-reload under original fraction1e-6 policy; no engine-cause or fix conclusion",
+      "failed_checks": [
+        "rc4_load.shield_fraction_preserved_1e_6",
+        "rc4_sync.armor_fraction_preserved_1e_6",
+        "rc4_sync.shield_fraction_preserved_1e_6",
+        "rc4_reload.armor_fraction_preserved_1e_6",
+        "rc4_reload.shield_fraction_preserved_1e_6",
+        "reload_new_design_reference_preserved"
+      ],
+      "sha256": "2fe8e297a9ed5925604fd26fbcb0c352cbee30f1c822b718e54a643e291d25bc"
+    },
+    {
+      "name": "rc4-public031-fraction-migration-complete-case-v1.json",
+      "status": "OBSERVED_WITH_FAILURES",
+      "scope": "Genuine damaged save produced by public0.3.1 source to future frozenRC4 load/sync/reload; original queue fixture provenance separately bound",
+      "failed_checks": [],
+      "sha256": "20f63b6c10cb15575944912ae72debe15e253e92691b1dee987e840b2cebe40f"
+    },
+    {
+      "name": "rc4-public031-fraction-migration-complete-check-v1.json",
+      "status": "FAIL",
+      "scope": "damaged Mother identity, declared damage, layout and empty native Mother shipyard queue only",
+      "failed_checks": [
+        "damage_preserved_in_declared_mode",
+        "reload_migration_snapshot_preserved"
+      ],
+      "sha256": "7541f5a8e4d07c8078f6b2da081a2ceeb17b324415f33f92321b6285a52822e9"
+    },
+    {
+      "name": "rc4-public031-fraction-migration-series-report-v1.json",
+      "status": "FAIL",
+      "scope": "Complete genuine public0.3.1 damaged before to RC4 load/manual-sync/native-reload under original fraction1e-6 policy; no engine-cause or production-fix conclusion",
+      "failed_checks": [
+        "rc4_load.shield_fraction_preserved_1e_6",
+        "rc4_sync.armor_fraction_preserved_1e_6",
+        "rc4_sync.shield_fraction_preserved_1e_6",
+        "rc4_reload.armor_fraction_preserved_1e_6",
+        "rc4_reload.shield_fraction_preserved_1e_6",
+        "reload_new_design_reference_preserved"
+      ],
+      "sha256": "a558ed74c66d17a1a8dade1da2c9952c67c8b6dd9041a1db6e5e5e264254118c"
+    },
+    {
+      "name": "rc4-public031-fraction-migration-sync-case-v1.json",
+      "status": "OBSERVED_SYNC_RELOAD_PENDING",
+      "scope": "Genuine damaged save produced by public0.3.1 source to future frozenRC4 load/sync/reload; original queue fixture provenance separately bound",
+      "failed_checks": [],
+      "sha256": "4ca7df4cd50ddf143cc2eb3722da75f709ca93e17eef4bfb5fe3b3ad39e78214"
+    },
+    {
+      "name": "rc4-public031-fraction-migration-sync-check-v1.json",
+      "status": "FAIL",
+      "scope": "damaged Mother identity, declared damage, layout and empty native Mother shipyard queue only",
+      "failed_checks": [
+        "damage_preserved_in_declared_mode"
+      ],
+      "sha256": "e8cb94e5de795f70c8891f1cded8cc7828aae56a6a82ac252ab7176c9073b686"
+    },
+    {
+      "name": "rc4-rdesignreload-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "c4949165cd6441d924d3bf180b206ee7e252be461251aa9b6e5525a6f5cc1618"
+    },
+    {
+      "name": "rc4-rdesignsync-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "f5a0eea79ac67cd00d3f1851aee71ad06800280b350c2f6466c8d2a97de911dd"
+    },
+    {
+      "name": "rc4-rfleetsync-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "621ba68ba432fb7f422ec64853e32ece83f2b109b073df90b39ff2b7d64e2b0c"
+    },
+    {
+      "name": "rc4-rnameload-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "389cb39922552a86a6f486650033c6391e55aa05a23d8b8f6f0fb1f7a7adce33"
+    },
+    {
+      "name": "rc4-rnamesync-observation-v1.json",
+      "status": "OBSERVATION_ONLY",
+      "scope": null,
+      "failed_checks": [],
+      "sha256": "8b6d7a74192156c81d5de0a0c0d8ffde140d1b787a01f4dfe259771dcdc5b44d"
+    }
+  ],
+  "report_status_counts": {
+    "FAIL": 10,
+    "OBSERVATION_ONLY": 15,
+    "OBSERVED_WITH_FAILURES": 2,
+    "OBSERVED_SYNC_RELOAD_PENDING": 1
+  },
+  "rsizeonly_included": false,
+  "live_logs_read_or_copied": false,
+  "final_run_freeze": false,
+  "migration_acceptance": "FAILURES_PRESERVED_NOT_COMPLETE"
+}

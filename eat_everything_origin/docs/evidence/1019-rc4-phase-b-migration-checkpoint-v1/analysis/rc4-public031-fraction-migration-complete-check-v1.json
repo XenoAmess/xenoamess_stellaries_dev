@@ -1,0 +1,2951 @@
+{
+  "status": "FAIL",
+  "scope": "damaged Mother identity, declared damage, layout and empty native Mother shipyard queue only",
+  "checks": {
+    "same_native_date": true,
+    "after_candidate_0_4": true,
+    "expected_old_ship": true,
+    "expected_old_fleet": true,
+    "expected_old_starbase": true,
+    "expected_old_shipyard_queue": true,
+    "original_fixture_identity_binding": true,
+    "original_fixture_queue_members_binding": true,
+    "ship_identity_preserved": true,
+    "fleet_identity_preserved": true,
+    "starbase_identity_preserved": true,
+    "all_owned_ships_preserved_without_duplication": true,
+    "names_preserved": true,
+    "position_and_orbit_preserved": true,
+    "new_native_design": true,
+    "real_design_transition": true,
+    "genuinely_damaged_before": true,
+    "damaged_layers_remain_damaged": true,
+    "damage_preserved_in_declared_mode": false,
+    "queue_identifiers_preserved": true,
+    "all_owned_queues_preserved": true,
+    "all_queue_costs_progress_designs_orbitables_preserved": true,
+    "expected_mother_queue_count": true,
+    "no_additional_charge_or_refund": true,
+    "existing_layout_preserved": true,
+    "existing_colonies_preserved": true,
+    "ledger_not_awarded_again": true,
+    "startup_flags_preserved": true,
+    "original_mother_shipyard_queue_empty": true,
+    "before_mother_shipyard_queue_empty": true,
+    "after_mother_shipyard_queue_empty": true,
+    "reload_migration_snapshot_preserved": false
+  },
+  "case": {
+    "schema": "eep.1019.migration-case.v1",
+    "status": "OBSERVED_WITH_FAILURES",
+    "scope": "Genuine damaged save produced by public0.3.1 source to future frozenRC4 load/sync/reload; original queue fixture provenance separately bound",
+    "before": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\p031before.sav",
+    "loaded_before_sync": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031load.sav",
+    "after": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.sav",
+    "reload": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.sav",
+    "require_damaged_before": true,
+    "damage_mode": "fraction",
+    "damage_metrics": [
+      "hull",
+      "armor",
+      "shield"
+    ],
+    "damage_tolerance": 1e-06,
+    "relative_tolerance": 0,
+    "expected_before_version": "0.3.1",
+    "expected_before_run": "20261019T130448Z",
+    "notes": [
+      "before must be actual old-source hurt; do not replace with RC4-after-load damage",
+      "PENDING paths are null until immutable native receipts exist",
+      "original paid fixture0.3.0-rc.1 does not make ldpaidhurt a0.3.0 runtime save",
+      "preserve all strict differences and native initial UI failures"
+    ],
+    "fixture_source": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/single-homeworld-20261019/runs/20261019T053917Z/bmm00.sav",
+    "fixture_sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+    "expected_fleet_id": 128,
+    "expected_ship_id": 1008,
+    "expected_starbase_id": 15,
+    "expected_shipyard_queue_id": 50,
+    "queue_mode": "empty",
+    "expected_queued_items": 0,
+    "before_sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+    "before_production_tree_sha256": "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8",
+    "before_defense": {
+      "hull": {
+        "current_absolute": 92960,
+        "maximum": 93960,
+        "lost_absolute": 1000,
+        "fraction": 0.9893571732652192
+      },
+      "armor": {
+        "current_absolute": 24309.6,
+        "maximum": 24429.6,
+        "lost_absolute": 120.0,
+        "fraction": 0.9950879261224089
+      },
+      "shield": {
+        "current_absolute": 20000,
+        "maximum": 48370.608,
+        "lost_absolute": 28370.608,
+        "fraction": 0.4134742321204646
+      }
+    },
+    "fixture_qualification_report": "eat_everything_origin\\docs\\evidence\\1019-analysis\\legacy-p031before-partial-fixture-report-v1.json",
+    "fixture_qualification_sha256": "5717450af2ca81b7cf109f974b6c5b3cbb8518e7feb00578df6259bd8336716d",
+    "loaded_before_sync_sha256": "5c6fd6b0f36eca37c63963c6af5ca56e86638864ac172bf6f08827a29adb091e",
+    "after_sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+    "expected_candidate_run": "20261019T133314Z",
+    "expected_candidate_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "reload_sha256": "dddc4a2f300c4d14e5bc4326d97da3d85d3629f041f229104fef925cfccf8a17"
+  },
+  "queue_mode": "empty",
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\p031before.sav",
+    "save_sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+    "run_id": "20261019T130448Z",
+    "version": "0.3.1",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8",
+    "manifest_sha256": "6e004fb14f81fd0b1f3708c7298241f864b492b5bd2f48216960b2f6c6d5dedd",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\p031before.audit.json",
+    "audit_sha256": "a3a86d0a65b390eacf394d7994a6ed30668cee9bd578f48bedfbffb0cfd3bd8f",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\p031before.native-save.json",
+        "sha256": "3c0ffcce7073660f65fafc3749f6c41f2aebab931ccd6e14f29b5396938c0c0e",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\save games\\eep-test-history\\p031before.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\save games\\eep-test-history\\p031before.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\p031before.sav",
+          "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+          "date": "2200.01.01"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.sav",
+    "save_sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+    "run_id": "20261019T133314Z",
+    "version": "0.4.0-rc.4",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.audit.json",
+    "audit_sha256": "691f36de2986f8433aac2901669a5a23eb0239a984dfc6306b6686058a09ff58",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.native-save.json",
+        "sha256": "0733bbb3ec3544e3c5ceb818d366dfb89601f1d7322ccbf441de98d56d892aa0",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\acceptance-fixtures\\m031sync.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031sync.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.sav",
+          "sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+          "date": "2200.01.01"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "original_fixture": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.sav",
+    "save_sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+    "run_id": "20261019T053917Z",
+    "version": "0.3.1",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8",
+    "manifest_sha256": "bf540076292d39f95a711aed0aeb2e145356d667241da80f9de2e811c8a19095",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.audit.json",
+    "audit_sha256": "0cf5ab1fcf16c5dc1fae1f4474974b2c10fc08ea8bde8e777f3319f2a969faaf",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.native-save.json",
+        "sha256": "59b16503e02f2ca0174b9f91e0b74a1212ce442eac3645bd2acc0a57209ff8af",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep03_-1033273808\\bmm00.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm00.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.sav",
+          "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+          "date": "2200.01.01"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bm-autosave-receipt.json",
+        "sha256": "39cd84e12c55fd7a3d7ad406621b0282ffa9fa4387b88d39c3da81f789b61d79",
+        "snapshots_shape": "dict"
+      }
+    ]
+  },
+  "original_fixture_snapshot": {
+    "fleet_id": "128",
+    "ship_id": "1008",
+    "starbase_id": "15",
+    "ship_name": {
+      "key": "NAME_EEP_Baiqi_Mothership"
+    },
+    "fleet_name": "NAME_EEP_Baiqi_Mothership",
+    "ship_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "ship_target_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "movement_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "movement_target_coordinate": {
+      "x": 0,
+      "y": 0,
+      "origin": 4294967295
+    },
+    "orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+    "design_name": "NAME_EEP_Baiqi_Mothership",
+    "design_id": "1493",
+    "design_body_sha256": "2e2b4a1f0e9d1d990334152808d280abad6175b9ab7ed1997549773ccfffabb0",
+    "design_shape": [
+      {
+        "ship_size": "juggernaut",
+        "sections": [
+          {
+            "template": "eep_mothership_section",
+            "slot": "core",
+            "components": [
+              {
+                "slot": "AUX_UTILITY_1",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_2",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "LARGE_GUN_01",
+                "template": "LARGE_GAMMA_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_02",
+                "template": "LARGE_GAMMA_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_03",
+                "template": "LARGE_MASS_DRIVER_5"
+              },
+              {
+                "slot": "LARGE_GUN_04",
+                "template": "LARGE_MASS_DRIVER_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_1",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_10",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_11",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_12",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_2",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_3",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_4",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_5",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_6",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_7",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_8",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_9",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "MEDIUM_GUN_01",
+                "template": "MEDIUM_GAMMA_LASER"
+              },
+              {
+                "slot": "MEDIUM_GUN_02",
+                "template": "MEDIUM_GAMMA_LASER"
+              },
+              {
+                "slot": "MEDIUM_GUN_03",
+                "template": "MEDIUM_GAMMA_LASER"
+              },
+              {
+                "slot": "MEDIUM_GUN_04",
+                "template": "MEDIUM_MASS_DRIVER_5"
+              },
+              {
+                "slot": "MEDIUM_GUN_05",
+                "template": "MEDIUM_MASS_DRIVER_5"
+              },
+              {
+                "slot": "MEDIUM_GUN_06",
+                "template": "MEDIUM_MASS_DRIVER_5"
+              },
+              {
+                "slot": "TITAN_01",
+                "template": "GG_BEAM_STATIC"
+              },
+              {
+                "slot": "TORPEDO_01",
+                "template": "GG_ENERGY_MISSILE"
+              },
+              {
+                "slot": "TORPEDO_02",
+                "template": "GG_ENERGY_MISSILE"
+              },
+              {
+                "slot": "TORPEDO_03",
+                "template": "GG_ENERGY_MISSILE"
+              },
+              {
+                "slot": "TORPEDO_04",
+                "template": "GG_ENERGY_MISSILE"
+              }
+            ]
+          }
+        ],
+        "required_components": [
+          "COMBAT_COMPUTER_ARTILLERY_ADVANCED",
+          "HYPER_DRIVE_1",
+          "SENSOR_2",
+          "SHIP_THRUSTER_3",
+          "TITAN_COLD_FUSION_REACTOR"
+        ]
+      }
+    ],
+    "damage": {
+      "hull": {
+        "current_absolute": 93960,
+        "maximum": 93960,
+        "lost_absolute": 0,
+        "fraction": 1.0
+      },
+      "armor": {
+        "current_absolute": 24429.6,
+        "maximum": 24429.6,
+        "lost_absolute": 0.0,
+        "fraction": 1.0
+      },
+      "shield": {
+        "current_absolute": 48370.608,
+        "maximum": 48370.608,
+        "lost_absolute": 0.0,
+        "fraction": 1.0
+      }
+    },
+    "build_queue_id": "49",
+    "shipyard_queue_id": "50",
+    "all_owned_queues": {
+      "0": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "planet",
+        "location": {
+          "type": 2,
+          "id": 14
+        },
+        "items": []
+      },
+      "2": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": []
+      },
+      "3": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": []
+      },
+      "49": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 1008
+        },
+        "items": []
+      },
+      "50": {
+        "owner": 0,
+        "simultaneous": 10,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 1008
+        },
+        "items": []
+      },
+      "51": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "planet",
+        "location": {
+          "type": 2,
+          "id": 2001
+        },
+        "items": []
+      }
+    },
+    "all_owned_queue_items": {},
+    "world_layout": {
+      "14": {
+        "planet": {
+          "planet_class": "pc_machine",
+          "planet_size": 18,
+          "colony": 0,
+          "owner": 0
+        },
+        "districts": {
+          "1": {
+            "type": "district_nexus",
+            "level": 3,
+            "zones": [
+              0,
+              2,
+              3
+            ]
+          },
+          "26": {
+            "type": "district_nexus_2",
+            "level": 4,
+            "zones": [
+              25
+            ]
+          },
+          "27": {
+            "type": "district_nexus_1",
+            "level": 3,
+            "zones": [
+              24
+            ]
+          }
+        },
+        "buildings": []
+      },
+      "2001": {
+        "planet": {
+          "planet_class": "pc_machine",
+          "planet_size": 20,
+          "colony": 13,
+          "owner": 0
+        },
+        "districts": {
+          "29": {
+            "type": "district_nexus",
+            "level": 3,
+            "zones": [
+              26,
+              28,
+              29
+            ]
+          },
+          "30": {
+            "type": "district_nexus_1",
+            "level": 3,
+            "zones": [
+              30
+            ]
+          },
+          "31": {
+            "type": "district_nexus_2",
+            "level": 4,
+            "zones": [
+              31
+            ]
+          }
+        },
+        "buildings": []
+      }
+    },
+    "owned_ship_inventory": [
+      "0",
+      "1",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  "before_snapshot": {
+    "fleet_id": "128",
+    "ship_id": "1008",
+    "starbase_id": "15",
+    "ship_name": {
+      "key": "NAME_EEP_Baiqi_Mothership"
+    },
+    "fleet_name": "NAME_EEP_Baiqi_Mothership",
+    "ship_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "ship_target_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "movement_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "movement_target_coordinate": {
+      "x": 0,
+      "y": 0,
+      "origin": 4294967295
+    },
+    "orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+    "design_name": "NAME_EEP_Baiqi_Mothership",
+    "design_id": "1575",
+    "design_body_sha256": "2e2b4a1f0e9d1d990334152808d280abad6175b9ab7ed1997549773ccfffabb0",
+    "design_shape": [
+      {
+        "ship_size": "juggernaut",
+        "sections": [
+          {
+            "template": "eep_mothership_section",
+            "slot": "core",
+            "components": [
+              {
+                "slot": "AUX_UTILITY_1",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_2",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "LARGE_GUN_01",
+                "template": "LARGE_GAMMA_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_02",
+                "template": "LARGE_GAMMA_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_03",
+                "template": "LARGE_MASS_DRIVER_5"
+              },
+              {
+                "slot": "LARGE_GUN_04",
+                "template": "LARGE_MASS_DRIVER_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_1",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_10",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_11",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_12",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_2",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_3",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_4",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_5",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_6",
+                "template": "LARGE_SHIELD_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_7",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_8",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_9",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "MEDIUM_GUN_01",
+                "template": "MEDIUM_GAMMA_LASER"
+              },
+              {
+                "slot": "MEDIUM_GUN_02",
+                "template": "MEDIUM_GAMMA_LASER"
+              },
+              {
+                "slot": "MEDIUM_GUN_03",
+                "template": "MEDIUM_GAMMA_LASER"
+              },
+              {
+                "slot": "MEDIUM_GUN_04",
+                "template": "MEDIUM_MASS_DRIVER_5"
+              },
+              {
+                "slot": "MEDIUM_GUN_05",
+                "template": "MEDIUM_MASS_DRIVER_5"
+              },
+              {
+                "slot": "MEDIUM_GUN_06",
+                "template": "MEDIUM_MASS_DRIVER_5"
+              },
+              {
+                "slot": "TITAN_01",
+                "template": "GG_BEAM_STATIC"
+              },
+              {
+                "slot": "TORPEDO_01",
+                "template": "GG_ENERGY_MISSILE"
+              },
+              {
+                "slot": "TORPEDO_02",
+                "template": "GG_ENERGY_MISSILE"
+              },
+              {
+                "slot": "TORPEDO_03",
+                "template": "GG_ENERGY_MISSILE"
+              },
+              {
+                "slot": "TORPEDO_04",
+                "template": "GG_ENERGY_MISSILE"
+              }
+            ]
+          }
+        ],
+        "required_components": [
+          "COMBAT_COMPUTER_ARTILLERY_ADVANCED",
+          "HYPER_DRIVE_1",
+          "SENSOR_2",
+          "SHIP_THRUSTER_3",
+          "TITAN_COLD_FUSION_REACTOR"
+        ]
+      }
+    ],
+    "damage": {
+      "hull": {
+        "current_absolute": 92960,
+        "maximum": 93960,
+        "lost_absolute": 1000,
+        "fraction": 0.9893571732652192
+      },
+      "armor": {
+        "current_absolute": 24309.6,
+        "maximum": 24429.6,
+        "lost_absolute": 120.0,
+        "fraction": 0.9950879261224089
+      },
+      "shield": {
+        "current_absolute": 20000,
+        "maximum": 48370.608,
+        "lost_absolute": 28370.608,
+        "fraction": 0.4134742321204646
+      }
+    },
+    "build_queue_id": "49",
+    "shipyard_queue_id": "50",
+    "all_owned_queues": {
+      "0": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "planet",
+        "location": {
+          "type": 2,
+          "id": 14
+        },
+        "items": []
+      },
+      "2": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": []
+      },
+      "3": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": []
+      },
+      "49": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 1008
+        },
+        "items": []
+      },
+      "50": {
+        "owner": 0,
+        "simultaneous": 10,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 1008
+        },
+        "items": []
+      },
+      "51": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "planet",
+        "location": {
+          "type": 2,
+          "id": 2001
+        },
+        "items": []
+      }
+    },
+    "all_owned_queue_items": {},
+    "world_layout": {
+      "14": {
+        "planet": {
+          "planet_class": "pc_machine",
+          "planet_size": 18,
+          "colony": 0,
+          "owner": 0
+        },
+        "districts": {
+          "1": {
+            "type": "district_nexus",
+            "level": 3,
+            "zones": [
+              0,
+              2,
+              3
+            ]
+          },
+          "26": {
+            "type": "district_nexus_2",
+            "level": 4,
+            "zones": [
+              25
+            ]
+          },
+          "27": {
+            "type": "district_nexus_1",
+            "level": 3,
+            "zones": [
+              24
+            ]
+          }
+        },
+        "buildings": []
+      },
+      "2001": {
+        "planet": {
+          "planet_class": "pc_machine",
+          "planet_size": 20,
+          "colony": 13,
+          "owner": 0
+        },
+        "districts": {
+          "29": {
+            "type": "district_nexus",
+            "level": 3,
+            "zones": [
+              26,
+              28,
+              29
+            ]
+          },
+          "30": {
+            "type": "district_nexus_1",
+            "level": 3,
+            "zones": [
+              30
+            ]
+          },
+          "31": {
+            "type": "district_nexus_2",
+            "level": 4,
+            "zones": [
+              31
+            ]
+          }
+        },
+        "buildings": []
+      }
+    },
+    "owned_ship_inventory": [
+      "0",
+      "1",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  "after_snapshot": {
+    "fleet_id": "128",
+    "ship_id": "1008",
+    "starbase_id": "15",
+    "ship_name": {
+      "key": "NAME_EEP_Baiqi_Mothership"
+    },
+    "fleet_name": "NAME_EEP_Baiqi_Mothership",
+    "ship_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "ship_target_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "movement_coordinate": {
+      "x": 72.62405,
+      "y": 20.75015,
+      "origin": 0
+    },
+    "movement_target_coordinate": {
+      "x": 0,
+      "y": 0,
+      "origin": 4294967295
+    },
+    "orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+    "design_name": "NAME_EEP_Baiqi_Mothership_1019",
+    "design_id": "1592",
+    "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+    "design_shape": [
+      {
+        "ship_size": "juggernaut",
+        "sections": [
+          {
+            "template": "eep_mothership_section_1019",
+            "slot": "core",
+            "components": [
+              {
+                "slot": "AUX_UTILITY_1",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_10",
+                "template": "EEP_ADAPTIVE_TRACKING_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_11",
+                "template": "EEP_ADAPTIVE_REGEN_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_2",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_3",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_4",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_5",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_6",
+                "template": "EEP_ADAPTIVE_SHIELD_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_7",
+                "template": "EEP_ADAPTIVE_ARMOR_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_8",
+                "template": "EEP_ADAPTIVE_HULL_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_9",
+                "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+              },
+              {
+                "slot": "EXTRA_LARGE_01",
+                "template": "TITAN_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_01",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_02",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_03",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_04",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_05",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_06",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_07",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_UTILITY_1",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_10",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_11",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_12",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_13",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_14",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_15",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_16",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_17",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_18",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_19",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_2",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_20",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_21",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_22",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_3",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_4",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_5",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_6",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_7",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_8",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_9",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "PD_08",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_09",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_10",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PLANET_KILLER_GUN_01",
+                "template": "EEP_PLANET_KILLER_DEVOURER"
+              },
+              {
+                "slot": "SMALL_GUN_01",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_02",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_03",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_04",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_05",
+                "template": "SMALL_PLASMA_3"
+              }
+            ]
+          }
+        ],
+        "required_components": [
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "JUMP_DRIVE_1",
+          "SENSOR_4",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      }
+    ],
+    "damage": {
+      "hull": {
+        "current_absolute": 92960,
+        "maximum": 93960,
+        "lost_absolute": 1000,
+        "fraction": 0.9893571732652192
+      },
+      "armor": {
+        "current_absolute": 44567.245,
+        "maximum": 44787.6,
+        "lost_absolute": 220.35499999999593,
+        "fraction": 0.9950799998213792
+      },
+      "shield": {
+        "current_absolute": 69177.6657,
+        "maximum": 167310,
+        "lost_absolute": 98132.3343,
+        "fraction": 0.41347
+      }
+    },
+    "build_queue_id": "49",
+    "shipyard_queue_id": "50",
+    "all_owned_queues": {
+      "0": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "planet",
+        "location": {
+          "type": 2,
+          "id": 14
+        },
+        "items": []
+      },
+      "2": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": []
+      },
+      "3": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 0
+        },
+        "items": []
+      },
+      "49": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "starbase",
+        "location": {
+          "type": 0,
+          "id": 1008
+        },
+        "items": []
+      },
+      "50": {
+        "owner": 0,
+        "simultaneous": 10,
+        "type": "ships",
+        "location": {
+          "type": 0,
+          "id": 1008
+        },
+        "items": []
+      },
+      "51": {
+        "owner": 0,
+        "simultaneous": 1,
+        "type": "planet",
+        "location": {
+          "type": 2,
+          "id": 2001
+        },
+        "items": []
+      }
+    },
+    "all_owned_queue_items": {},
+    "world_layout": {
+      "14": {
+        "planet": {
+          "planet_class": "pc_machine",
+          "planet_size": 18,
+          "colony": 0,
+          "owner": 0
+        },
+        "districts": {
+          "1": {
+            "type": "district_nexus",
+            "level": 3,
+            "zones": [
+              0,
+              2,
+              3
+            ]
+          },
+          "26": {
+            "type": "district_nexus_2",
+            "level": 4,
+            "zones": [
+              25
+            ]
+          },
+          "27": {
+            "type": "district_nexus_1",
+            "level": 3,
+            "zones": [
+              24
+            ]
+          }
+        },
+        "buildings": []
+      },
+      "2001": {
+        "planet": {
+          "planet_class": "pc_machine",
+          "planet_size": 20,
+          "colony": 13,
+          "owner": 0
+        },
+        "districts": {
+          "29": {
+            "type": "district_nexus",
+            "level": 3,
+            "zones": [
+              26,
+              28,
+              29
+            ]
+          },
+          "30": {
+            "type": "district_nexus_1",
+            "level": 3,
+            "zones": [
+              30
+            ]
+          },
+          "31": {
+            "type": "district_nexus_2",
+            "level": 4,
+            "zones": [
+              31
+            ]
+          }
+        },
+        "buildings": []
+      }
+    },
+    "owned_ship_inventory": [
+      "0",
+      "1",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  "damage_mode": "fraction",
+  "damage_metrics": [
+    "hull",
+    "armor",
+    "shield"
+  ],
+  "damage_tolerance": 1e-06,
+  "all_differences": [
+    {
+      "path": "$.country.flags.eep_component_snapshot_available",
+      "before": null,
+      "after": 62808000
+    },
+    {
+      "path": "$.country.native.military_power",
+      "before": 124557.72656,
+      "after": 189306.78125
+    },
+    {
+      "path": "$.country.variables.eep_component_armor_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_damage_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_entitled",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_hull_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_pending",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_regen_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_rewards",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_shield_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_snapshot_state",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_component_tracking_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_mothership_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country.variables.eep_mothership_next",
+      "before": null,
+      "after": 10
+    },
+    {
+      "path": "$.country_variables_all.eep_component_armor_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_damage_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_entitled",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_hull_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_pending",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_regen_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_rewards",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_shield_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_snapshot_state",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_component_tracking_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_mothership_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.country_variables_all.eep_mothership_next",
+      "before": null,
+      "after": 10
+    },
+    {
+      "path": "$.fleets.128.native.diplomacy_weight",
+      "before": 124355.85937,
+      "after": 157537.09375
+    },
+    {
+      "path": "$.fleets.128.native.military_power",
+      "before": 124355.85937,
+      "after": 157537.09375
+    },
+    {
+      "path": "$.fleets.128.ships.1008.design_id",
+      "before": 1575,
+      "after": 1592
+    },
+    {
+      "path": "$.fleets.128.ships.1008.design_name",
+      "before": "NAME_EEP_Baiqi_Mothership",
+      "after": "NAME_EEP_Baiqi_Mothership_1019"
+    },
+    {
+      "path": "$.fleets.128.ships.1008.native.armor_hitpoints",
+      "before": 24309.6,
+      "after": 44567.245
+    },
+    {
+      "path": "$.fleets.128.ships.1008.native.max_armor_hitpoints",
+      "before": 24429.6,
+      "after": 44787.6
+    },
+    {
+      "path": "$.fleets.128.ships.1008.native.max_shield_hitpoints",
+      "before": 48370.608,
+      "after": 167310
+    },
+    {
+      "path": "$.fleets.128.ships.1008.native.next_weapon_index",
+      "before": 30,
+      "after": 47
+    },
+    {
+      "path": "$.fleets.128.ships.1008.native.shield_hitpoints",
+      "before": 20000,
+      "after": 69177.6657
+    },
+    {
+      "path": "$.fleets_1019.0.ships.0.design_id",
+      "before": "1560",
+      "after": "1576"
+    },
+    {
+      "path": "$.fleets_1019.0.ships.0.implementation.design",
+      "before": 1560,
+      "after": 1576
+    },
+    {
+      "path": "$.fleets_1019.0.ships.0.raw",
+      "before": "\n\t\toriginal_owner=0\n\t\tfleet=0\n\t\tname=\n\t\t{\n\t\t\tkey=\"STARBASE_STATION_NAME_FORMAT_NON_PRIMARY\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_3\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1560\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"STARPORT_STARBASE_SECTION\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"ASSEMBLYYARD_STARBASE_SECTION\"\n\t\t\tslot=\"1\"\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"SCIENCE_STARBASE_SECTION\"\n\t\t\tslot=\"2\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=0.78519\n\t\thitpoints=10000\n\t\tshield_hitpoints=1800\n\t\tarmor_hitpoints=5800\n\t\tmax_hitpoints=10000\n\t\tmax_shield_hitpoints=1800\n\t\tmax_armor_hitpoints=5800\n\t\trotation=0.78519\n\t\tforward_x=-0.70696\n\t\tforward_y=0.70726\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=21\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tdisable_at_health=0\n\t\tenable_at_health=0.05\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "after": "\n\t\toriginal_owner=0\n\t\tfleet=0\n\t\tname=\n\t\t{\n\t\t\tkey=\"STARBASE_STATION_NAME_FORMAT_NON_PRIMARY\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_3\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1576\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"STARPORT_STARBASE_SECTION\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"ASSEMBLYYARD_STARBASE_SECTION\"\n\t\t\tslot=\"1\"\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"SCIENCE_STARBASE_SECTION\"\n\t\t\tslot=\"2\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=0.78519\n\t\thitpoints=10000\n\t\tshield_hitpoints=1800\n\t\tarmor_hitpoints=5800\n\t\tmax_hitpoints=10000\n\t\tmax_shield_hitpoints=1800\n\t\tmax_armor_hitpoints=5800\n\t\trotation=0.78519\n\t\tforward_x=-0.70696\n\t\tforward_y=0.70726\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=21\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tdisable_at_health=0\n\t\tenable_at_health=0.05\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+    },
+    {
+      "path": "$.fleets_1019.128.native.diplomacy_weight",
+      "before": 124355.85937,
+      "after": 157537.09375
+    },
+    {
+      "path": "$.fleets_1019.128.native.military_power",
+      "before": 124355.85937,
+      "after": 157537.09375
+    },
+    {
+      "path": "$.fleets_1019.128.raw",
+      "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t1008 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=72.62405\n\t\t\t\ty=20.75015\n\t\t\t\torigin=0\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=0\n\t\t\t\tfleet=128\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=92960.00000\n\t\tmilitary_power=124355.85937\n\t\tdiplomacy_weight=124355.85937\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+      "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t1008 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=72.62405\n\t\t\t\ty=20.75015\n\t\t\t\torigin=0\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=0\n\t\t\t\tfleet=128\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=92960.00000\n\t\tmilitary_power=157537.09375\n\t\tdiplomacy_weight=157537.09375\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.design.body_sha256",
+      "before": "2e2b4a1f0e9d1d990334152808d280abad6175b9ab7ed1997549773ccfffabb0",
+      "after": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9"
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.design.name",
+      "before": "NAME_EEP_Baiqi_Mothership",
+      "after": "NAME_EEP_Baiqi_Mothership_1019"
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.design.raw",
+      "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tis_event_design=yes\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TITAN_01\"\n\t\t\t\t\t\ttemplate=\"GG_BEAM_STATIC\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_01\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_02\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_03\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_04\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_01\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_02\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_03\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_04\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_05\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_06\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SENSOR_2\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_3\"\n\t\t\t\trequired_component=\"TITAN_COLD_FUSION_REACTOR\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_ARTILLERY_ADVANCED\"\n\t\t\t}\n\t\t}\n\t",
+      "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership_1019\"\n\t\t}\n\t\tis_event_design=yes\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section_1019\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"EXTRA_LARGE_01\"\n\t\t\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_05\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_06\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_07\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_04\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_05\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_08\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_09\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_10\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_13\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_14\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_15\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_16\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_17\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_18\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_19\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_20\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_21\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_22\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_SHIELD_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_ARMOR_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_HULL_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_DAMAGE_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_TRACKING_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_REGEN_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"JUGGERNAUT_DARK_MATTER_REACTOR\"\n\t\t\t\trequired_component=\"SENSOR_4\"\n\t\t\t\trequired_component=\"JUMP_DRIVE_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_LINE_SAPIENT\"\n\t\t\t\trequired_component=\"COLOSSUS_SHIP_THRUSTER_5\"\n\t\t\t\trequired_component=\"SHIP_AURA_INSPIRING_PRESENCE\"\n\t\t\t}\n\t\t}\n\t"
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.design.stages",
+      "before": [
+        {
+          "native": {
+            "ship_size": "juggernaut",
+            "required_component": "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+          },
+          "sections": [
+            {
+              "native": {
+                "template": "eep_mothership_section",
+                "slot": "core"
+              },
+              "components": [
+                {
+                  "slot": "TITAN_01",
+                  "template": "GG_BEAM_STATIC"
+                },
+                {
+                  "slot": "TORPEDO_01",
+                  "template": "GG_ENERGY_MISSILE"
+                },
+                {
+                  "slot": "TORPEDO_02",
+                  "template": "GG_ENERGY_MISSILE"
+                },
+                {
+                  "slot": "TORPEDO_03",
+                  "template": "GG_ENERGY_MISSILE"
+                },
+                {
+                  "slot": "TORPEDO_04",
+                  "template": "GG_ENERGY_MISSILE"
+                },
+                {
+                  "slot": "MEDIUM_GUN_01",
+                  "template": "MEDIUM_GAMMA_LASER"
+                },
+                {
+                  "slot": "MEDIUM_GUN_02",
+                  "template": "MEDIUM_GAMMA_LASER"
+                },
+                {
+                  "slot": "MEDIUM_GUN_03",
+                  "template": "MEDIUM_GAMMA_LASER"
+                },
+                {
+                  "slot": "MEDIUM_GUN_04",
+                  "template": "MEDIUM_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "MEDIUM_GUN_05",
+                  "template": "MEDIUM_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "MEDIUM_GUN_06",
+                  "template": "MEDIUM_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "LARGE_GUN_01",
+                  "template": "LARGE_GAMMA_LASER"
+                },
+                {
+                  "slot": "LARGE_GUN_02",
+                  "template": "LARGE_GAMMA_LASER"
+                },
+                {
+                  "slot": "LARGE_GUN_03",
+                  "template": "LARGE_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "LARGE_GUN_04",
+                  "template": "LARGE_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_1",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_2",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_3",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_4",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_5",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_6",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_7",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_8",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_9",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_10",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_11",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_12",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "AUX_UTILITY_1",
+                  "template": "AUTO_REPAIR"
+                },
+                {
+                  "slot": "AUX_UTILITY_2",
+                  "template": "SHIELD_BOOSTER"
+                }
+              ],
+              "raw": "\n\t\t\t\t\ttemplate=\"eep_mothership_section\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TITAN_01\"\n\t\t\t\t\t\ttemplate=\"GG_BEAM_STATIC\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_01\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_02\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_03\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_04\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_01\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_02\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_03\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_04\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_05\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_06\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t"
+            }
+          ],
+          "required_components": [
+            "HYPER_DRIVE_1",
+            "SENSOR_2",
+            "SHIP_THRUSTER_3",
+            "TITAN_COLD_FUSION_REACTOR",
+            "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+          ],
+          "raw": "\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TITAN_01\"\n\t\t\t\t\t\ttemplate=\"GG_BEAM_STATIC\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_01\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_02\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_03\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_04\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_01\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_02\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_03\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_04\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_05\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_06\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SENSOR_2\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_3\"\n\t\t\t\trequired_component=\"TITAN_COLD_FUSION_REACTOR\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_ARTILLERY_ADVANCED\"\n\t\t\t"
+        }
+      ],
+      "after": [
+        {
+          "native": {
+            "ship_size": "juggernaut",
+            "required_component": "SHIP_AURA_INSPIRING_PRESENCE"
+          },
+          "sections": [
+            {
+              "native": {
+                "template": "eep_mothership_section_1019",
+                "slot": "core"
+              },
+              "components": [
+                {
+                  "slot": "EXTRA_LARGE_01",
+                  "template": "TITAN_LASER"
+                },
+                {
+                  "slot": "LARGE_GUN_01",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_02",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_03",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_04",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_05",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_06",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "LARGE_GUN_07",
+                  "template": "LARGE_PLASMA_3"
+                },
+                {
+                  "slot": "SMALL_GUN_01",
+                  "template": "SMALL_DISRUPTOR_3"
+                },
+                {
+                  "slot": "SMALL_GUN_02",
+                  "template": "SMALL_DISRUPTOR_3"
+                },
+                {
+                  "slot": "SMALL_GUN_03",
+                  "template": "SMALL_PLASMA_3"
+                },
+                {
+                  "slot": "SMALL_GUN_04",
+                  "template": "SMALL_PLASMA_3"
+                },
+                {
+                  "slot": "SMALL_GUN_05",
+                  "template": "SMALL_PLASMA_3"
+                },
+                {
+                  "slot": "PD_08",
+                  "template": "POINT_DEFENCE_3"
+                },
+                {
+                  "slot": "PD_09",
+                  "template": "POINT_DEFENCE_3"
+                },
+                {
+                  "slot": "PD_10",
+                  "template": "POINT_DEFENCE_3"
+                },
+                {
+                  "slot": "LARGE_UTILITY_1",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_2",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_3",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_4",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_5",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_6",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_7",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_8",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_9",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_10",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_11",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_12",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_13",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_14",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_15",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_16",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_17",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_18",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_19",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_20",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_21",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "LARGE_UTILITY_22",
+                  "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                },
+                {
+                  "slot": "AUX_UTILITY_1",
+                  "template": "SHIELD_BOOSTER"
+                },
+                {
+                  "slot": "AUX_UTILITY_2",
+                  "template": "SHIELD_BOOSTER"
+                },
+                {
+                  "slot": "AUX_UTILITY_3",
+                  "template": "SHIELD_BOOSTER"
+                },
+                {
+                  "slot": "AUX_UTILITY_4",
+                  "template": "AUTO_REPAIR"
+                },
+                {
+                  "slot": "AUX_UTILITY_5",
+                  "template": "AUTO_REPAIR"
+                },
+                {
+                  "slot": "AUX_UTILITY_6",
+                  "template": "EEP_ADAPTIVE_SHIELD_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_7",
+                  "template": "EEP_ADAPTIVE_ARMOR_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_8",
+                  "template": "EEP_ADAPTIVE_HULL_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_9",
+                  "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_10",
+                  "template": "EEP_ADAPTIVE_TRACKING_CORE"
+                },
+                {
+                  "slot": "AUX_UTILITY_11",
+                  "template": "EEP_ADAPTIVE_REGEN_CORE"
+                },
+                {
+                  "slot": "PLANET_KILLER_GUN_01",
+                  "template": "EEP_PLANET_KILLER_DEVOURER"
+                }
+              ],
+              "raw": "\n\t\t\t\t\ttemplate=\"eep_mothership_section_1019\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"EXTRA_LARGE_01\"\n\t\t\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_05\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_06\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_07\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_04\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_05\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_08\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_09\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_10\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_13\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_14\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_15\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_16\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_17\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_18\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_19\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_20\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_21\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_22\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_SHIELD_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_ARMOR_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_HULL_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_DAMAGE_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_TRACKING_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_REGEN_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\t\t}\n\t\t\t\t"
+            }
+          ],
+          "required_components": [
+            "JUGGERNAUT_DARK_MATTER_REACTOR",
+            "SENSOR_4",
+            "JUMP_DRIVE_1",
+            "COMBAT_COMPUTER_LINE_SAPIENT",
+            "COLOSSUS_SHIP_THRUSTER_5",
+            "SHIP_AURA_INSPIRING_PRESENCE"
+          ],
+          "raw": "\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section_1019\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"EXTRA_LARGE_01\"\n\t\t\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_05\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_06\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_07\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_04\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_05\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_08\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_09\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_10\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_13\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_14\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_15\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_16\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_17\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_18\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_19\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_20\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_21\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_22\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_SHIELD_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_ARMOR_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_HULL_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_DAMAGE_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_TRACKING_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_REGEN_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"JUGGERNAUT_DARK_MATTER_REACTOR\"\n\t\t\t\trequired_component=\"SENSOR_4\"\n\t\t\t\trequired_component=\"JUMP_DRIVE_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_LINE_SAPIENT\"\n\t\t\t\trequired_component=\"COLOSSUS_SHIP_THRUSTER_5\"\n\t\t\t\trequired_component=\"SHIP_AURA_INSPIRING_PRESENCE\"\n\t\t\t"
+        }
+      ]
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.design_id",
+      "before": "1575",
+      "after": "1592"
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.flags.eep_mothership_design_1019",
+      "before": null,
+      "after": 62808000
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.implementation.design",
+      "before": 1575,
+      "after": 1592
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.native.armor_hitpoints",
+      "before": 24309.6,
+      "after": 44567.245
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.native.max_armor_hitpoints",
+      "before": 24429.6,
+      "after": 44787.6
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.native.max_shield_hitpoints",
+      "before": 48370.608,
+      "after": 167310
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.native.next_weapon_index",
+      "before": 30,
+      "after": 47
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.native.shield_hitpoints",
+      "before": 20000,
+      "after": 69177.6657
+    },
+    {
+      "path": "$.fleets_1019.128.ships.1008.raw",
+      "before": "\n\t\toriginal_owner=0\n\t\tfleet=128\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1575\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=15\n\t\t\t\ttemplate=\"GG_BEAM_STATIC\"\n\t\t\t\tcomponent_slot=\"TITAN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=16\n\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\tcomponent_slot=\"TORPEDO_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=17\n\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\tcomponent_slot=\"TORPEDO_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\tcomponent_slot=\"TORPEDO_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\tcomponent_slot=\"TORPEDO_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=21\n\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=22\n\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=23\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=24\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=25\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=26\n\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=27\n\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=28\n\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=29\n\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=2.35681\n\t\thitpoints=92960\n\t\tshield_hitpoints=20000\n\t\tarmor_hitpoints=24309.6\n\t\tmax_hitpoints=93960\n\t\tmax_shield_hitpoints=48370.608\n\t\tmax_armor_hitpoints=24429.6\n\t\trotation=2.35681\n\t\tforward_x=-0.70667\n\t\tforward_y=-0.70754\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=30\n\t\tlast_damage=\t\t\"2200.01.01\"\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tshield_recharge_time=20\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "after": "\n\t\toriginal_owner=0\n\t\tfleet=128\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1592\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section_1019\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=30\n\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\tcomponent_slot=\"EXTRA_LARGE_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=31\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=32\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=33\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=34\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=35\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=36\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=37\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_07\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=38\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=39\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=40\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=41\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=42\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=43\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_08\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=44\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_09\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=45\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_10\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=46\n\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\tcomponent_slot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=2.35681\n\t\thitpoints=92960\n\t\tshield_hitpoints=69177.6657\n\t\tarmor_hitpoints=44567.245\n\t\tmax_hitpoints=93960\n\t\tmax_shield_hitpoints=167310\n\t\tmax_armor_hitpoints=44787.6\n\t\trotation=2.35681\n\t\tforward_x=-0.70667\n\t\tforward_y=-0.70754\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=47\n\t\tflags=\n\t\t{\n\t\t\teep_mothership_design_1019=62808000\n\t\t}\n\t\tlast_damage=\t\t\"2200.01.01\"\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tshield_recharge_time=20\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_applied_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_component_armor_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_component_damage_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_component_hull_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_component_regen_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_component_rewards",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_component_shield_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.fleets_1019.128.variables.eep_component_tracking_level",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.starbases.15.station_native.armor_hitpoints",
+      "before": 24309.6,
+      "after": 44567.245
+    },
+    {
+      "path": "$.starbases.15.station_native.max_armor_hitpoints",
+      "before": 24429.6,
+      "after": 44787.6
+    },
+    {
+      "path": "$.starbases.15.station_native.max_shield_hitpoints",
+      "before": 48370.608,
+      "after": 167310
+    },
+    {
+      "path": "$.starbases.15.station_native.next_weapon_index",
+      "before": 30,
+      "after": 47
+    },
+    {
+      "path": "$.starbases.15.station_native.shield_hitpoints",
+      "before": 20000,
+      "after": 69177.6657
+    },
+    {
+      "path": "$.starbases_1019.0.raw",
+      "before": "\n\t\t\tlevel=\"starbase_level_starport\"\n\t\t\ttype=\"sshipyard\"\n\t\t\tmodules=\n\t\t\t{\n\t\t\t\t0=shipyard\t\t\t\t1=solar_panel_network\t\t\t}\n\t\t\tbuildings=\n\t\t\t{\n\t\t\t\t0=crew_quarters\t\t\t}\n\t\t\tupdate_flag=4096\n\t\t\tbuild_queue=2\n\t\t\tshipyard_build_queue=3\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1560\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=0\n\t\t\torbitals=\n\t\t\t{\n\t\t\t\t0=1\n\t\t\t\t1=2\n\t\t\t\t2=3\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t",
+      "after": "\n\t\t\tlevel=\"starbase_level_starport\"\n\t\t\ttype=\"sshipyard\"\n\t\t\tmodules=\n\t\t\t{\n\t\t\t\t0=shipyard\t\t\t\t1=solar_panel_network\t\t\t}\n\t\t\tbuildings=\n\t\t\t{\n\t\t\t\t0=crew_quarters\t\t\t}\n\t\t\tupdate_flag=4096\n\t\t\tbuild_queue=2\n\t\t\tshipyard_build_queue=3\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1576\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=0\n\t\t\torbitals=\n\t\t\t{\n\t\t\t\t0=1\n\t\t\t\t1=2\n\t\t\t\t2=3\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t"
+    },
+    {
+      "path": "$.starbases_1019.15.raw",
+      "before": "\n\t\t\tlevel=\"starbase_level_juggernaut\"\n\t\t\tbuild_queue=49\n\t\t\tshipyard_build_queue=50\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1575\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=1008\n\t\t\torbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t",
+      "after": "\n\t\t\tlevel=\"starbase_level_juggernaut\"\n\t\t\tbuild_queue=49\n\t\t\tshipyard_build_queue=50\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1591\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=1008\n\t\t\torbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t"
+    }
+  ],
+  "reload_check": {
+    "status": "FAIL",
+    "scope": "same-day native migration snapshot and ledger only",
+    "checks": {
+      "same_native_date": true,
+      "same_candidate_tree": true,
+      "migration_snapshot_preserved": false,
+      "ledger_preserved": true,
+      "stockpile_preserved": true
+    },
+    "snapshot": {
+      "fleet_id": "128",
+      "ship_id": "1008",
+      "starbase_id": "15",
+      "ship_name": {
+        "key": "NAME_EEP_Baiqi_Mothership"
+      },
+      "fleet_name": "NAME_EEP_Baiqi_Mothership",
+      "ship_coordinate": {
+        "x": 72.62405,
+        "y": 20.75015,
+        "origin": 0
+      },
+      "ship_target_coordinate": {
+        "x": 72.62405,
+        "y": 20.75015,
+        "origin": 0
+      },
+      "movement_coordinate": {
+        "x": 72.62405,
+        "y": 20.75015,
+        "origin": 0
+      },
+      "movement_target_coordinate": {
+        "x": 0,
+        "y": 0,
+        "origin": 4294967295
+      },
+      "orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+      "design_name": "NAME_EEP_Baiqi_Mothership",
+      "design_id": "1608",
+      "design_body_sha256": "2e2b4a1f0e9d1d990334152808d280abad6175b9ab7ed1997549773ccfffabb0",
+      "design_shape": [
+        {
+          "ship_size": "juggernaut",
+          "sections": [
+            {
+              "template": "eep_mothership_section",
+              "slot": "core",
+              "components": [
+                {
+                  "slot": "AUX_UTILITY_1",
+                  "template": "AUTO_REPAIR"
+                },
+                {
+                  "slot": "AUX_UTILITY_2",
+                  "template": "SHIELD_BOOSTER"
+                },
+                {
+                  "slot": "LARGE_GUN_01",
+                  "template": "LARGE_GAMMA_LASER"
+                },
+                {
+                  "slot": "LARGE_GUN_02",
+                  "template": "LARGE_GAMMA_LASER"
+                },
+                {
+                  "slot": "LARGE_GUN_03",
+                  "template": "LARGE_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "LARGE_GUN_04",
+                  "template": "LARGE_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_1",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_10",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_11",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_12",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_2",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_3",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_4",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_5",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_6",
+                  "template": "LARGE_SHIELD_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_7",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_8",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "LARGE_UTILITY_9",
+                  "template": "LARGE_ARMOR_5"
+                },
+                {
+                  "slot": "MEDIUM_GUN_01",
+                  "template": "MEDIUM_GAMMA_LASER"
+                },
+                {
+                  "slot": "MEDIUM_GUN_02",
+                  "template": "MEDIUM_GAMMA_LASER"
+                },
+                {
+                  "slot": "MEDIUM_GUN_03",
+                  "template": "MEDIUM_GAMMA_LASER"
+                },
+                {
+                  "slot": "MEDIUM_GUN_04",
+                  "template": "MEDIUM_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "MEDIUM_GUN_05",
+                  "template": "MEDIUM_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "MEDIUM_GUN_06",
+                  "template": "MEDIUM_MASS_DRIVER_5"
+                },
+                {
+                  "slot": "TITAN_01",
+                  "template": "GG_BEAM_STATIC"
+                },
+                {
+                  "slot": "TORPEDO_01",
+                  "template": "GG_ENERGY_MISSILE"
+                },
+                {
+                  "slot": "TORPEDO_02",
+                  "template": "GG_ENERGY_MISSILE"
+                },
+                {
+                  "slot": "TORPEDO_03",
+                  "template": "GG_ENERGY_MISSILE"
+                },
+                {
+                  "slot": "TORPEDO_04",
+                  "template": "GG_ENERGY_MISSILE"
+                }
+              ]
+            }
+          ],
+          "required_components": [
+            "COMBAT_COMPUTER_ARTILLERY_ADVANCED",
+            "HYPER_DRIVE_1",
+            "SENSOR_2",
+            "SHIP_THRUSTER_3",
+            "TITAN_COLD_FUSION_REACTOR"
+          ]
+        }
+      ],
+      "damage": {
+        "hull": {
+          "current_absolute": 92960,
+          "maximum": 93960,
+          "lost_absolute": 1000,
+          "fraction": 0.9893571732652192
+        },
+        "armor": {
+          "current_absolute": 24309.16207,
+          "maximum": 24429.6,
+          "lost_absolute": 120.43793000000005,
+          "fraction": 0.995069999918132
+        },
+        "shield": {
+          "current_absolute": 25542.52272,
+          "maximum": 61776,
+          "lost_absolute": 36233.47728,
+          "fraction": 0.41347
+        }
+      },
+      "build_queue_id": "49",
+      "shipyard_queue_id": "50",
+      "all_owned_queues": {
+        "0": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "planet",
+          "location": {
+            "type": 2,
+            "id": 14
+          },
+          "items": []
+        },
+        "2": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "starbase",
+          "location": {
+            "type": 0,
+            "id": 0
+          },
+          "items": []
+        },
+        "3": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "ships",
+          "location": {
+            "type": 0,
+            "id": 0
+          },
+          "items": []
+        },
+        "49": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "starbase",
+          "location": {
+            "type": 0,
+            "id": 1008
+          },
+          "items": []
+        },
+        "50": {
+          "owner": 0,
+          "simultaneous": 10,
+          "type": "ships",
+          "location": {
+            "type": 0,
+            "id": 1008
+          },
+          "items": []
+        },
+        "51": {
+          "owner": 0,
+          "simultaneous": 1,
+          "type": "planet",
+          "location": {
+            "type": 2,
+            "id": 2001
+          },
+          "items": []
+        }
+      },
+      "all_owned_queue_items": {},
+      "world_layout": {
+        "14": {
+          "planet": {
+            "planet_class": "pc_machine",
+            "planet_size": 18,
+            "colony": 0,
+            "owner": 0
+          },
+          "districts": {
+            "1": {
+              "type": "district_nexus",
+              "level": 3,
+              "zones": [
+                0,
+                2,
+                3
+              ]
+            },
+            "26": {
+              "type": "district_nexus_2",
+              "level": 4,
+              "zones": [
+                25
+              ]
+            },
+            "27": {
+              "type": "district_nexus_1",
+              "level": 3,
+              "zones": [
+                24
+              ]
+            }
+          },
+          "buildings": []
+        },
+        "2001": {
+          "planet": {
+            "planet_class": "pc_machine",
+            "planet_size": 20,
+            "colony": 13,
+            "owner": 0
+          },
+          "districts": {
+            "29": {
+              "type": "district_nexus",
+              "level": 3,
+              "zones": [
+                26,
+                28,
+                29
+              ]
+            },
+            "30": {
+              "type": "district_nexus_1",
+              "level": 3,
+              "zones": [
+                30
+              ]
+            },
+            "31": {
+              "type": "district_nexus_2",
+              "level": 4,
+              "zones": [
+                31
+              ]
+            }
+          },
+          "buildings": []
+        }
+      },
+      "owned_ship_inventory": [
+        "0",
+        "1",
+        "1003",
+        "1004",
+        "1005",
+        "1006",
+        "1007",
+        "1008",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    "strict_comparison": {
+      "status": "FAIL",
+      "scope": "strict comparison of all old gameplay fields plus all 1019 observations; no ignored paths",
+      "checks": {
+        "no_gameplay_differences": false,
+        "same_native_date": true
+      },
+      "before": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.sav",
+        "save_sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.audit.json",
+        "audit_sha256": "691f36de2986f8433aac2901669a5a23eb0239a984dfc6306b6686058a09ff58",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.native-save.json",
+            "sha256": "0733bbb3ec3544e3c5ceb818d366dfb89601f1d7322ccbf441de98d56d892aa0",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\acceptance-fixtures\\m031sync.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031sync.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.sav",
+              "sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+              "date": "2200.01.01"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "after": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.sav",
+        "save_sha256": "dddc4a2f300c4d14e5bc4326d97da3d85d3629f041f229104fef925cfccf8a17",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.audit.json",
+        "audit_sha256": "64ec703d1f9fdb7ca64aee2252b094f9cbc22b4f1361fc0914f2b5adf219ecb8",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.native-save.json",
+            "sha256": "dd942fd07662499ddbba07a9a6f7bfa52d395cc5df8ea1bf16a3454340d6d154",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031reload.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031reload.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.sav",
+              "sha256": "dddc4a2f300c4d14e5bc4326d97da3d85d3629f041f229104fef925cfccf8a17",
+              "date": "2200.01.01"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "before_date": "2200.01.01",
+      "after_date": "2200.01.01",
+      "differences": [
+        {
+          "path": "$.fleets.128.native.diplomacy_weight",
+          "before": 157537.09375,
+          "after": 189104.91406
+        },
+        {
+          "path": "$.fleets.128.native.military_power",
+          "before": 157537.09375,
+          "after": 189104.91406
+        },
+        {
+          "path": "$.fleets.128.ships.1008.design_id",
+          "before": 1592,
+          "after": 1608
+        },
+        {
+          "path": "$.fleets.128.ships.1008.design_name",
+          "before": "NAME_EEP_Baiqi_Mothership_1019",
+          "after": "NAME_EEP_Baiqi_Mothership"
+        },
+        {
+          "path": "$.fleets.128.ships.1008.native.armor_hitpoints",
+          "before": 44567.245,
+          "after": 24309.16207
+        },
+        {
+          "path": "$.fleets.128.ships.1008.native.max_armor_hitpoints",
+          "before": 44787.6,
+          "after": 24429.6
+        },
+        {
+          "path": "$.fleets.128.ships.1008.native.max_shield_hitpoints",
+          "before": 167310,
+          "after": 61776
+        },
+        {
+          "path": "$.fleets.128.ships.1008.native.shield_hitpoints",
+          "before": 69177.6657,
+          "after": 25542.52272
+        },
+        {
+          "path": "$.fleets_1019.0.ships.0.design_id",
+          "before": "1576",
+          "after": "1593"
+        },
+        {
+          "path": "$.fleets_1019.0.ships.0.implementation.design",
+          "before": 1576,
+          "after": 1593
+        },
+        {
+          "path": "$.fleets_1019.0.ships.0.raw",
+          "before": "\n\t\toriginal_owner=0\n\t\tfleet=0\n\t\tname=\n\t\t{\n\t\t\tkey=\"STARBASE_STATION_NAME_FORMAT_NON_PRIMARY\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_3\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1576\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"STARPORT_STARBASE_SECTION\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"ASSEMBLYYARD_STARBASE_SECTION\"\n\t\t\tslot=\"1\"\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"SCIENCE_STARBASE_SECTION\"\n\t\t\tslot=\"2\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=0.78519\n\t\thitpoints=10000\n\t\tshield_hitpoints=1800\n\t\tarmor_hitpoints=5800\n\t\tmax_hitpoints=10000\n\t\tmax_shield_hitpoints=1800\n\t\tmax_armor_hitpoints=5800\n\t\trotation=0.78519\n\t\tforward_x=-0.70696\n\t\tforward_y=0.70726\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=21\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tdisable_at_health=0\n\t\tenable_at_health=0.05\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+          "after": "\n\t\toriginal_owner=0\n\t\tfleet=0\n\t\tname=\n\t\t{\n\t\t\tkey=\"STARBASE_STATION_NAME_FORMAT_NON_PRIMARY\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"PLANET\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"STAR_NAME_1_OF_3\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"EEP-Throne\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1593\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"STARPORT_STARBASE_SECTION\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_1\"\n\t\t\t\tcomponent_slot=\"MEDIUM_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"ASSEMBLYYARD_STARBASE_SECTION\"\n\t\t\tslot=\"1\"\n\t\t}\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"SCIENCE_STARBASE_SECTION\"\n\t\t\tslot=\"2\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=21.6\n\t\t\ty=-21.6\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=0.78519\n\t\thitpoints=10000\n\t\tshield_hitpoints=1800\n\t\tarmor_hitpoints=5800\n\t\tmax_hitpoints=10000\n\t\tmax_shield_hitpoints=1800\n\t\tmax_armor_hitpoints=5800\n\t\trotation=0.78519\n\t\tforward_x=-0.70696\n\t\tforward_y=0.70726\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=21\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tdisable_at_health=0\n\t\tenable_at_health=0.05\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+        },
+        {
+          "path": "$.fleets_1019.128.native.diplomacy_weight",
+          "before": 157537.09375,
+          "after": 189104.91406
+        },
+        {
+          "path": "$.fleets_1019.128.native.military_power",
+          "before": 157537.09375,
+          "after": 189104.91406
+        },
+        {
+          "path": "$.fleets_1019.128.raw",
+          "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t1008 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=72.62405\n\t\t\t\ty=20.75015\n\t\t\t\torigin=0\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=0\n\t\t\t\tfleet=128\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=92960.00000\n\t\tmilitary_power=157537.09375\n\t\tdiplomacy_weight=157537.09375\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+          "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t1008 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\tspeed=0\n\t\t\t\trotation=0\n\t\t\t\tforward_x=0\n\t\t\t\tforward_y=0\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=-1\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=72.62405\n\t\t\t\ty=20.75015\n\t\t\t\torigin=0\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=14\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=0\n\t\t\t\tfleet=128\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t\tdirty_cloaking_strength=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=92960.00000\n\t\tmilitary_power=189104.91406\n\t\tdiplomacy_weight=189104.91406\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.design.body_sha256",
+          "before": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+          "after": "2e2b4a1f0e9d1d990334152808d280abad6175b9ab7ed1997549773ccfffabb0"
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.design.name",
+          "before": "NAME_EEP_Baiqi_Mothership_1019",
+          "after": "NAME_EEP_Baiqi_Mothership"
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.design.raw",
+          "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership_1019\"\n\t\t}\n\t\tis_event_design=yes\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section_1019\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"EXTRA_LARGE_01\"\n\t\t\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_05\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_06\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_07\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_04\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_05\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_08\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_09\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_10\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_13\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_14\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_15\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_16\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_17\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_18\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_19\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_20\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_21\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_22\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_SHIELD_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_ARMOR_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_HULL_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_DAMAGE_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_TRACKING_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_REGEN_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"JUGGERNAUT_DARK_MATTER_REACTOR\"\n\t\t\t\trequired_component=\"SENSOR_4\"\n\t\t\t\trequired_component=\"JUMP_DRIVE_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_LINE_SAPIENT\"\n\t\t\t\trequired_component=\"COLOSSUS_SHIP_THRUSTER_5\"\n\t\t\t\trequired_component=\"SHIP_AURA_INSPIRING_PRESENCE\"\n\t\t\t}\n\t\t}\n\t",
+          "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tis_event_design=yes\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TITAN_01\"\n\t\t\t\t\t\ttemplate=\"GG_BEAM_STATIC\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_01\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_02\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_03\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_04\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_01\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_02\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_03\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_04\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_05\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_06\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SENSOR_2\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_3\"\n\t\t\t\trequired_component=\"TITAN_COLD_FUSION_REACTOR\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_ARTILLERY_ADVANCED\"\n\t\t\t}\n\t\t}\n\t"
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.design.stages",
+          "before": [
+            {
+              "native": {
+                "ship_size": "juggernaut",
+                "required_component": "SHIP_AURA_INSPIRING_PRESENCE"
+              },
+              "sections": [
+                {
+                  "native": {
+                    "template": "eep_mothership_section_1019",
+                    "slot": "core"
+                  },
+                  "components": [
+                    {
+                      "slot": "EXTRA_LARGE_01",
+                      "template": "TITAN_LASER"
+                    },
+                    {
+                      "slot": "LARGE_GUN_01",
+                      "template": "LARGE_PLASMA_3"
+                    },
+                    {
+                      "slot": "LARGE_GUN_02",
+                      "template": "LARGE_PLASMA_3"
+                    },
+                    {
+                      "slot": "LARGE_GUN_03",
+                      "template": "LARGE_PLASMA_3"
+                    },
+                    {
+                      "slot": "LARGE_GUN_04",
+                      "template": "LARGE_PLASMA_3"
+                    },
+                    {
+                      "slot": "LARGE_GUN_05",
+                      "template": "LARGE_PLASMA_3"
+                    },
+                    {
+                      "slot": "LARGE_GUN_06",
+                      "template": "LARGE_PLASMA_3"
+                    },
+                    {
+                      "slot": "LARGE_GUN_07",
+                      "template": "LARGE_PLASMA_3"
+                    },
+                    {
+                      "slot": "SMALL_GUN_01",
+                      "template": "SMALL_DISRUPTOR_3"
+                    },
+                    {
+                      "slot": "SMALL_GUN_02",
+                      "template": "SMALL_DISRUPTOR_3"
+                    },
+                    {
+                      "slot": "SMALL_GUN_03",
+                      "template": "SMALL_PLASMA_3"
+                    },
+                    {
+                      "slot": "SMALL_GUN_04",
+                      "template": "SMALL_PLASMA_3"
+                    },
+                    {
+                      "slot": "SMALL_GUN_05",
+                      "template": "SMALL_PLASMA_3"
+                    },
+                    {
+                      "slot": "PD_08",
+                      "template": "POINT_DEFENCE_3"
+                    },
+                    {
+                      "slot": "PD_09",
+                      "template": "POINT_DEFENCE_3"
+                    },
+                    {
+                      "slot": "PD_10",
+                      "template": "POINT_DEFENCE_3"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_1",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_2",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_3",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_4",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_5",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_6",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_7",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_8",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_9",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_10",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_11",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_12",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_13",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_14",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_15",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_16",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_17",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_18",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_19",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_20",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_21",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_22",
+                      "template": "LARGE_DARK_MATTER_DEFLECTOR"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_1",
+                      "template": "SHIELD_BOOSTER"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_2",
+                      "template": "SHIELD_BOOSTER"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_3",
+                      "template": "SHIELD_BOOSTER"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_4",
+                      "template": "AUTO_REPAIR"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_5",
+                      "template": "AUTO_REPAIR"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_6",
+                      "template": "EEP_ADAPTIVE_SHIELD_CORE"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_7",
+                      "template": "EEP_ADAPTIVE_ARMOR_CORE"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_8",
+                      "template": "EEP_ADAPTIVE_HULL_CORE"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_9",
+                      "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_10",
+                      "template": "EEP_ADAPTIVE_TRACKING_CORE"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_11",
+                      "template": "EEP_ADAPTIVE_REGEN_CORE"
+                    },
+                    {
+                      "slot": "PLANET_KILLER_GUN_01",
+                      "template": "EEP_PLANET_KILLER_DEVOURER"
+                    }
+                  ],
+                  "raw": "\n\t\t\t\t\ttemplate=\"eep_mothership_section_1019\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"EXTRA_LARGE_01\"\n\t\t\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_05\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_06\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_07\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_04\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_05\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_08\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_09\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_10\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_13\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_14\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_15\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_16\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_17\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_18\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_19\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_20\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_21\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_22\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_SHIELD_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_ARMOR_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_HULL_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_DAMAGE_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_TRACKING_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_REGEN_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\t\t}\n\t\t\t\t"
+                }
+              ],
+              "required_components": [
+                "JUGGERNAUT_DARK_MATTER_REACTOR",
+                "SENSOR_4",
+                "JUMP_DRIVE_1",
+                "COMBAT_COMPUTER_LINE_SAPIENT",
+                "COLOSSUS_SHIP_THRUSTER_5",
+                "SHIP_AURA_INSPIRING_PRESENCE"
+              ],
+              "raw": "\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section_1019\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"EXTRA_LARGE_01\"\n\t\t\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_05\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_06\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_07\"\n\t\t\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_04\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_05\"\n\t\t\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_08\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_09\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PD_10\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_13\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_14\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_15\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_16\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_17\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_18\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_19\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_20\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_21\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_22\"\n\t\t\t\t\t\ttemplate=\"LARGE_DARK_MATTER_DEFLECTOR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_SHIELD_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_ARMOR_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_HULL_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_DAMAGE_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_TRACKING_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"EEP_ADAPTIVE_REGEN_CORE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"JUGGERNAUT_DARK_MATTER_REACTOR\"\n\t\t\t\trequired_component=\"SENSOR_4\"\n\t\t\t\trequired_component=\"JUMP_DRIVE_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_LINE_SAPIENT\"\n\t\t\t\trequired_component=\"COLOSSUS_SHIP_THRUSTER_5\"\n\t\t\t\trequired_component=\"SHIP_AURA_INSPIRING_PRESENCE\"\n\t\t\t"
+            }
+          ],
+          "after": [
+            {
+              "native": {
+                "ship_size": "juggernaut",
+                "required_component": "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+              },
+              "sections": [
+                {
+                  "native": {
+                    "template": "eep_mothership_section",
+                    "slot": "core"
+                  },
+                  "components": [
+                    {
+                      "slot": "TITAN_01",
+                      "template": "GG_BEAM_STATIC"
+                    },
+                    {
+                      "slot": "TORPEDO_01",
+                      "template": "GG_ENERGY_MISSILE"
+                    },
+                    {
+                      "slot": "TORPEDO_02",
+                      "template": "GG_ENERGY_MISSILE"
+                    },
+                    {
+                      "slot": "TORPEDO_03",
+                      "template": "GG_ENERGY_MISSILE"
+                    },
+                    {
+                      "slot": "TORPEDO_04",
+                      "template": "GG_ENERGY_MISSILE"
+                    },
+                    {
+                      "slot": "MEDIUM_GUN_01",
+                      "template": "MEDIUM_GAMMA_LASER"
+                    },
+                    {
+                      "slot": "MEDIUM_GUN_02",
+                      "template": "MEDIUM_GAMMA_LASER"
+                    },
+                    {
+                      "slot": "MEDIUM_GUN_03",
+                      "template": "MEDIUM_GAMMA_LASER"
+                    },
+                    {
+                      "slot": "MEDIUM_GUN_04",
+                      "template": "MEDIUM_MASS_DRIVER_5"
+                    },
+                    {
+                      "slot": "MEDIUM_GUN_05",
+                      "template": "MEDIUM_MASS_DRIVER_5"
+                    },
+                    {
+                      "slot": "MEDIUM_GUN_06",
+                      "template": "MEDIUM_MASS_DRIVER_5"
+                    },
+                    {
+                      "slot": "LARGE_GUN_01",
+                      "template": "LARGE_GAMMA_LASER"
+                    },
+                    {
+                      "slot": "LARGE_GUN_02",
+                      "template": "LARGE_GAMMA_LASER"
+                    },
+                    {
+                      "slot": "LARGE_GUN_03",
+                      "template": "LARGE_MASS_DRIVER_5"
+                    },
+                    {
+                      "slot": "LARGE_GUN_04",
+                      "template": "LARGE_MASS_DRIVER_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_1",
+                      "template": "LARGE_SHIELD_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_2",
+                      "template": "LARGE_SHIELD_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_3",
+                      "template": "LARGE_SHIELD_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_4",
+                      "template": "LARGE_SHIELD_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_5",
+                      "template": "LARGE_SHIELD_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_6",
+                      "template": "LARGE_SHIELD_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_7",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_8",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_9",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_10",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_11",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "LARGE_UTILITY_12",
+                      "template": "LARGE_ARMOR_5"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_1",
+                      "template": "AUTO_REPAIR"
+                    },
+                    {
+                      "slot": "AUX_UTILITY_2",
+                      "template": "SHIELD_BOOSTER"
+                    }
+                  ],
+                  "raw": "\n\t\t\t\t\ttemplate=\"eep_mothership_section\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TITAN_01\"\n\t\t\t\t\t\ttemplate=\"GG_BEAM_STATIC\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_01\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_02\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_03\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_04\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_01\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_02\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_03\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_04\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_05\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_06\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t"
+                }
+              ],
+              "required_components": [
+                "HYPER_DRIVE_1",
+                "SENSOR_2",
+                "SHIP_THRUSTER_3",
+                "TITAN_COLD_FUSION_REACTOR",
+                "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+              ],
+              "raw": "\n\t\t\t\tship_size=\"juggernaut\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"eep_mothership_section\"\n\t\t\t\t\tslot=\"core\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TITAN_01\"\n\t\t\t\t\t\ttemplate=\"GG_BEAM_STATIC\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_01\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_02\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_03\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"TORPEDO_04\"\n\t\t\t\t\t\ttemplate=\"GG_ENERGY_MISSILE\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_01\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_02\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_03\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_04\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_05\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"MEDIUM_GUN_06\"\n\t\t\t\t\t\ttemplate=\"MEDIUM_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_01\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_02\"\n\t\t\t\t\t\ttemplate=\"LARGE_GAMMA_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_03\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_GUN_04\"\n\t\t\t\t\t\ttemplate=\"LARGE_MASS_DRIVER_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_5\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_6\"\n\t\t\t\t\t\ttemplate=\"LARGE_SHIELD_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_7\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_8\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_9\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_10\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_11\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"LARGE_UTILITY_12\"\n\t\t\t\t\t\ttemplate=\"LARGE_ARMOR_5\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"AUTO_REPAIR\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SHIELD_BOOSTER\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SENSOR_2\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_3\"\n\t\t\t\trequired_component=\"TITAN_COLD_FUSION_REACTOR\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_ARTILLERY_ADVANCED\"\n\t\t\t"
+            }
+          ]
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.design_id",
+          "before": "1592",
+          "after": "1608"
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.implementation.design",
+          "before": 1592,
+          "after": 1608
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.native.armor_hitpoints",
+          "before": 44567.245,
+          "after": 24309.16207
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.native.max_armor_hitpoints",
+          "before": 44787.6,
+          "after": 24429.6
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.native.max_shield_hitpoints",
+          "before": 167310,
+          "after": 61776
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.native.shield_hitpoints",
+          "before": 69177.6657,
+          "after": 25542.52272
+        },
+        {
+          "path": "$.fleets_1019.128.ships.1008.raw",
+          "before": "\n\t\toriginal_owner=0\n\t\tfleet=128\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1592\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section_1019\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=30\n\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\tcomponent_slot=\"EXTRA_LARGE_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=31\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=32\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=33\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=34\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=35\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=36\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=37\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_07\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=38\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=39\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=40\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=41\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=42\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=43\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_08\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=44\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_09\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=45\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_10\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=46\n\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\tcomponent_slot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=2.35681\n\t\thitpoints=92960\n\t\tshield_hitpoints=69177.6657\n\t\tarmor_hitpoints=44567.245\n\t\tmax_hitpoints=93960\n\t\tmax_shield_hitpoints=167310\n\t\tmax_armor_hitpoints=44787.6\n\t\trotation=2.35681\n\t\tforward_x=-0.70667\n\t\tforward_y=-0.70754\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=47\n\t\tflags=\n\t\t{\n\t\t\teep_mothership_design_1019=62808000\n\t\t}\n\t\tlast_damage=\t\t\"2200.01.01\"\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tshield_recharge_time=20\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+          "after": "\n\t\toriginal_owner=0\n\t\tfleet=128\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1608\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section_1019\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=30\n\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\tcomponent_slot=\"EXTRA_LARGE_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=31\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=32\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=33\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=34\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=35\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=36\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=37\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_07\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=38\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=39\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=40\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=41\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=42\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=43\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_08\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=44\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_09\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=45\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_10\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=46\n\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\tcomponent_slot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=72.62405\n\t\t\ty=20.75015\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=2.35681\n\t\thitpoints=92960\n\t\tshield_hitpoints=25542.52272\n\t\tarmor_hitpoints=24309.16207\n\t\tmax_hitpoints=93960\n\t\tmax_shield_hitpoints=61776\n\t\tmax_armor_hitpoints=24429.6\n\t\trotation=2.35681\n\t\tforward_x=-0.70667\n\t\tforward_y=-0.70754\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=47\n\t\tflags=\n\t\t{\n\t\t\teep_mothership_design_1019=62808000\n\t\t}\n\t\tlast_damage=\t\t\"2200.01.01\"\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tshield_recharge_time=20\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+        },
+        {
+          "path": "$.starbases.15.station_native.armor_hitpoints",
+          "before": 44567.245,
+          "after": 24309.16207
+        },
+        {
+          "path": "$.starbases.15.station_native.max_armor_hitpoints",
+          "before": 44787.6,
+          "after": 24429.6
+        },
+        {
+          "path": "$.starbases.15.station_native.max_shield_hitpoints",
+          "before": 167310,
+          "after": 61776
+        },
+        {
+          "path": "$.starbases.15.station_native.shield_hitpoints",
+          "before": 69177.6657,
+          "after": 25542.52272
+        },
+        {
+          "path": "$.starbases_1019.0.raw",
+          "before": "\n\t\t\tlevel=\"starbase_level_starport\"\n\t\t\ttype=\"sshipyard\"\n\t\t\tmodules=\n\t\t\t{\n\t\t\t\t0=shipyard\t\t\t\t1=solar_panel_network\t\t\t}\n\t\t\tbuildings=\n\t\t\t{\n\t\t\t\t0=crew_quarters\t\t\t}\n\t\t\tupdate_flag=4096\n\t\t\tbuild_queue=2\n\t\t\tshipyard_build_queue=3\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1576\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=0\n\t\t\torbitals=\n\t\t\t{\n\t\t\t\t0=1\n\t\t\t\t1=2\n\t\t\t\t2=3\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t",
+          "after": "\n\t\t\tlevel=\"starbase_level_starport\"\n\t\t\ttype=\"sshipyard\"\n\t\t\tmodules=\n\t\t\t{\n\t\t\t\t0=shipyard\t\t\t\t1=solar_panel_network\t\t\t}\n\t\t\tbuildings=\n\t\t\t{\n\t\t\t\t0=crew_quarters\t\t\t}\n\t\t\tupdate_flag=4096\n\t\t\tbuild_queue=2\n\t\t\tshipyard_build_queue=3\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1593\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=0\n\t\t\torbitals=\n\t\t\t{\n\t\t\t\t0=1\n\t\t\t\t1=2\n\t\t\t\t2=3\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t"
+        },
+        {
+          "path": "$.starbases_1019.15.raw",
+          "before": "\n\t\t\tlevel=\"starbase_level_juggernaut\"\n\t\t\tbuild_queue=49\n\t\t\tshipyard_build_queue=50\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1591\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=1008\n\t\t\torbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t",
+          "after": "\n\t\t\tlevel=\"starbase_level_juggernaut\"\n\t\t\tbuild_queue=49\n\t\t\tshipyard_build_queue=50\n\t\t\tship_design_implementation=\n\t\t\t{\n\t\t\t\tdesign=1608\n\t\t\t\tupgrade=4294967295\n\t\t\t\tgrowth_stage=0\n\t\t\t}\n\t\t\tstation=1008\n\t\t\torbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tconstruction_type=starbase_shipyard\n\t\t"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "An originally empty Mother shipyard queue remained empty; no paid-queue preservation is claimed.",
+    "An old 0.3.0-rc.1 queue fixture does not certify released 0.3.1 migration.",
+    "Scoped snapshot equality does not replace or overwrite strict raw comparison results."
+  ],
+  "execution": {
+    "mode": "unchanged existing migration function using provenance-verified cached native SAV observations",
+    "case_path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-public031-fraction-migration-complete-case-v1.json",
+    "case_sha256": "20f63b6c10cb15575944912ae72debe15e253e92691b1dee987e840b2cebe40f",
+    "checker_sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+  }
+}

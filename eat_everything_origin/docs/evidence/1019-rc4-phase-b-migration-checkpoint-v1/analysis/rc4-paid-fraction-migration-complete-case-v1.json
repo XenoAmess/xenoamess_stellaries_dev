@@ -1,0 +1,63 @@
+{
+  "schema": "eep.1019.migration-case.v1",
+  "status": "OBSERVED_WITH_FAILURES",
+  "scope": "Genuine damaged save produced by public0.3.1 source to future frozenRC4 load/sync/reload; original queue fixture provenance separately bound",
+  "before": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\runs\\20261019T130448Z\\ppaidbefore.sav",
+  "loaded_before_sync": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidload.sav",
+  "after": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidsync.sav",
+  "reload": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidreload.sav",
+  "require_damaged_before": true,
+  "damage_mode": "fraction",
+  "damage_metrics": [
+    "hull",
+    "armor",
+    "shield"
+  ],
+  "damage_tolerance": 1e-06,
+  "relative_tolerance": 0,
+  "expected_before_version": "0.3.1",
+  "expected_before_run": "20261019T130448Z",
+  "notes": [
+    "before must be actual old-source hurt; do not replace with RC4-after-load damage",
+    "PENDING paths are null until immutable native receipts exist",
+    "original paid fixture0.3.0-rc.1 does not make ldpaidhurt a0.3.0 runtime save",
+    "preserve all strict differences and native initial UI failures"
+  ],
+  "fixture_source": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/1015-implementation/runs/20261014T223819Z/j13ten.sav",
+  "fixture_sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e",
+  "expected_fleet_id": 146,
+  "expected_ship_id": 822,
+  "expected_starbase_id": 13,
+  "expected_shipyard_queue_id": 54,
+  "queue_mode": "paid",
+  "expected_queued_items": 11,
+  "before_sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+  "before_production_tree_sha256": "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8",
+  "before_defense": {
+    "hull": {
+      "current_absolute": 100460,
+      "maximum": 101460,
+      "lost_absolute": 1000,
+      "fraction": 0.9901438990735265
+    },
+    "armor": {
+      "current_absolute": 24309.6,
+      "maximum": 24429.6,
+      "lost_absolute": 120.0,
+      "fraction": 0.9950879261224089
+    },
+    "shield": {
+      "current_absolute": 20000,
+      "maximum": 48370.608,
+      "lost_absolute": 28370.608,
+      "fraction": 0.4134742321204646
+    }
+  },
+  "fixture_qualification_report": "eat_everything_origin\\docs\\evidence\\1019-analysis\\legacy-ppaidbefore-partial-fixture-report-v1.json",
+  "fixture_qualification_sha256": "c9cce79af4c051bb5655a2a0b931f9f27223dea70f717abc5d66c4f180291c5e",
+  "loaded_before_sync_sha256": "52a6cff2ee681bfab7ea2eefd142525c571b6fac9b8a728bd8bd6759487f6839",
+  "after_sha256": "e41db7f200fd6074bce40685fda29db5d80f53a0fea6bd032d137b6d4c787948",
+  "reload_sha256": "5d1ca99d708c60c18cf273bb83aa583efbbf715214cd5b9d0b155e0253f0b070",
+  "expected_candidate_run": "20261019T133314Z",
+  "expected_candidate_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468"
+}
