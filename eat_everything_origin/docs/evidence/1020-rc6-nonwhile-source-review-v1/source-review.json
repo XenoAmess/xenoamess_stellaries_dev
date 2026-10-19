@@ -1,0 +1,642 @@
+{
+  "schema": "eep.1020.rc6-nonwhile-log-source-review.v1",
+  "status": "SOURCE_CLASSIFICATION_WITH_REMAINING_ENVIRONMENT_AND_UI_IMPACT_LIMITS",
+  "reviewed_at_utc": "2026-10-19T16:47:15.073460+00:00",
+  "inputs": {
+    "rc6_error": {
+      "path": "docs/evidence/1019-rc6-final-logs-v1/logs/error.log",
+      "sha256": "b8a0cc17158bf05ebde64f42ed71ec17bd12687d5488fb8d6e7d462ceaf740f6",
+      "bytes": 3195
+    },
+    "baseline_error": {
+      "path": "docs/evidence/1019-baseline/logs-final/error.log",
+      "sha256": "f467f81b914d803795eb328ce56464c72d9b320cc25b7c6edf216a367173eb56",
+      "bytes": 3751
+    },
+    "rc6_manifest": {
+      "path": "docs/evidence/1019-rc6-final-logs-v1/run/manifest.json",
+      "sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9",
+      "bytes": 24012
+    },
+    "baseline_manifest": {
+      "path": "docs/evidence/1019-baseline/manifest.json",
+      "sha256": "bf540076292d39f95a711aed0aeb2e145356d667241da80f9de2e811c8a19095",
+      "bytes": 19475
+    },
+    "baseline_archive_index": {
+      "path": "docs/evidence/1019-baseline/archive-index.json",
+      "sha256": "43d2a295dd7e26ea7dbd09995f3e0d6caabc04442e63666b7a67dbcf971773a5",
+      "bytes": 89387
+    },
+    "rc6_stop": {
+      "path": "docs/evidence/1019-rc6-final-logs-v1/run/stop.json",
+      "sha256": "ece90ef969ae3d8858b504f7b4327b5e6895e7117da24c1df8024a17698791be",
+      "bytes": 120
+    }
+  },
+  "binding": {
+    "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+    "baseline_same_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+    "rc6_mod_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+    "rc6_mod_file_count": 59,
+    "rc6_mod_hash_mismatches": [],
+    "rc6_enabled_mods": [
+      "mod/ugc_eep-1019.mod"
+    ],
+    "baseline_enabled_mods": [
+      "mod/ugc_eep-single-homeworld.mod"
+    ],
+    "rc6_language": "l_simp_chinese",
+    "baseline_language": "l_simp_chinese"
+  },
+  "exact_baseline_correspondence": [
+    {
+      "rc6_line": 1,
+      "baseline_line": 1,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3797257579",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3797257579",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3797257579",
+      "normalized_record_sha256": "42b41927b4543ce1d5fd376d097da5fc91801559fc738840c2eb4d1809d24e6c",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 2,
+      "baseline_line": 2,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3710613857",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3710613857",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3710613857",
+      "normalized_record_sha256": "d9c1370542f4a2afe05435c46b37d3dfe58aeebd2d382750c919d626a202c4e9",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 3,
+      "baseline_line": 3,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2660548454",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2660548454",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2660548454",
+      "normalized_record_sha256": "fc0e2deecdd5ccf8cad111a75307be3a46b31701ce3b55b102b6b943ade382e9",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 4,
+      "baseline_line": 4,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2411818376",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2411818376",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2411818376",
+      "normalized_record_sha256": "c1a90afdb37fe02a1b41b7a6d5b55d14c418e0c3620193503b5840a092d80204",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 5,
+      "baseline_line": 5,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2409044128",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2409044128",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2409044128",
+      "normalized_record_sha256": "202ed96386b421a65e0b98723c569df242928e769b617e0e9a6d3d70f32d3269",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 6,
+      "baseline_line": 6,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3484461951",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3484461951",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3484461951",
+      "normalized_record_sha256": "610369fedd1eeca95b4d74f02abc617c6c05bc2cde3629895c6ab6a663d7cfb0",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 7,
+      "baseline_line": 7,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1199002146",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1199002146",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1199002146",
+      "normalized_record_sha256": "1c087bafb1b99589ece4e56d7ab7699218fe458ed36f937405c39974497d034d",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 8,
+      "baseline_line": 8,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2946000546",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2946000546",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2946000546",
+      "normalized_record_sha256": "6d1a1b628ab0d470931d39b626bd16abe2234279b26820f47dbe122a53016fa4",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 9,
+      "baseline_line": 9,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3053655313",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3053655313",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3053655313",
+      "normalized_record_sha256": "818e23ca42467e4871ba1a95d93a01982c4013713e8a8134fd7ad376f576c3f0",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 10,
+      "baseline_line": 10,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2956750257",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2956750257",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2956750257",
+      "normalized_record_sha256": "87f84d4f2bf153cc7faf7132aeefa647cd19871187cf4650928b03cb6e979625",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 11,
+      "baseline_line": 11,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1539624733",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1539624733",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1539624733",
+      "normalized_record_sha256": "b0d6a2c42baa6691bb776831b0051e4726c7ad7eb0fa7320f2f3e0247fce77b8",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 12,
+      "baseline_line": 12,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1890399946",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1890399946",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1890399946",
+      "normalized_record_sha256": "8ae90ef2feabaddd2748b992b4c91551c55ff1bf95d25c9dba7c7d187709c00d",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 13,
+      "baseline_line": 13,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3357143726",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3357143726",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3357143726",
+      "normalized_record_sha256": "c34ca4a26447b1a62f3a261783d871314a983451baaef686c8b2c184180842f6",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 14,
+      "baseline_line": 14,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3415581160",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3415581160",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3415581160",
+      "normalized_record_sha256": "e2b8b2db7b67a5576328d7730e9ccd233f6518f48100f1e3edfedbdacced31f2",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 15,
+      "baseline_line": 15,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2438313459",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2438313459",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2438313459",
+      "normalized_record_sha256": "0b782b6fdf6367cf08cb246d7640d6c187dc051cc3c878ce4d0feba842d0b21d",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 16,
+      "baseline_line": 16,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2407436476",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2407436476",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2407436476",
+      "normalized_record_sha256": "8ad85fc66bbc420da9b80cbdfb8113525bcd7c9b1bbf1753254043d24aba690f",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 17,
+      "baseline_line": 17,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1623423360",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1623423360",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1623423360",
+      "normalized_record_sha256": "cb418fb22294253ef5e0375ccd7875cc139d398e0e6757d648582234eeb26982",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 18,
+      "baseline_line": 18,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3339549399",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3339549399",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3339549399",
+      "normalized_record_sha256": "60993a5c3d9aff420062ae3b4407c709a95e3a50a4742b65ab8c2e3e560560b2",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 19,
+      "baseline_line": 19,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3090328185",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3090328185",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3090328185",
+      "normalized_record_sha256": "4f8c05c80a4c2474220079e23583b5ac8bd8184157346a89a7691062aeb70f60",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 20,
+      "baseline_line": 20,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2948301103",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2948301103",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2948301103",
+      "normalized_record_sha256": "8984acc4a675d2573163c72a6644ab85e294ccbc689a9d545eb4d7c9e3f98088",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 21,
+      "baseline_line": 21,
+      "rc6_raw": "[23:00:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2976454692",
+      "baseline_raw": "[13:47:58][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2976454692",
+      "normalized_full_record": "[TIME][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2976454692",
+      "normalized_record_sha256": "0074562c01fdabcc5dcdd24a80789f8f634824ff050b8b16d40286928d526753",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 22,
+      "baseline_line": 22,
+      "rc6_raw": "[23:01:37][game_singleobjectdatabase.h:170]: Object with key: decision_lithoid_swarm_consume_world already exists, using the one at  file: common/decisions/zz_eep_native_decision.txt line: 2",
+      "baseline_raw": "[13:50:16][game_singleobjectdatabase.h:170]: Object with key: decision_lithoid_swarm_consume_world already exists, using the one at  file: common/decisions/zz_eep_native_decision.txt line: 2",
+      "normalized_full_record": "[TIME][game_singleobjectdatabase.h:170]: Object with key: decision_lithoid_swarm_consume_world already exists, using the one at  file: common/decisions/zz_eep_native_decision.txt line: 2",
+      "normalized_record_sha256": "839c0835670e7d954e93e8e16c3d01dedb5598863a7d1299e5695247329901a9",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    },
+    {
+      "rc6_line": 23,
+      "baseline_line": 23,
+      "rc6_raw": "[23:22:25][containerwindow.h:88]: interface/select_empire_design.gui: Could not find containerWindowType \"portrait_container\" in window \"user_empire_design_entry_narrow\".",
+      "baseline_raw": "[13:52:26][containerwindow.h:88]: interface/select_empire_design.gui: Could not find containerWindowType \"portrait_container\" in window \"user_empire_design_entry_narrow\".",
+      "normalized_full_record": "[TIME][containerwindow.h:88]: interface/select_empire_design.gui: Could not find containerWindowType \"portrait_container\" in window \"user_empire_design_entry_narrow\".",
+      "normalized_record_sha256": "a8624d1fa32399e69a7fceccc13376d3c44ca197b4217082e616b709128c8775",
+      "difference_allowed": "Only leading HH:MM:SS timestamp"
+    }
+  ],
+  "classes": {
+    "workshop_discovery": {
+      "rc6_lines": [
+        1,
+        21
+      ],
+      "count": 21,
+      "source_class": "NATIVE_DLC_DISCOVERY_OF_STEAM_REGISTERED_ITEMS",
+      "impact_status": "UNRESOLVED_ENGINE_DISCOVERY_FAILURE_CONDITION",
+      "native_origin": "dlc.cpp:1847 in exact sealed raw logs; 21 complete records match same-EXE public 0.3.1 baseline after timestamp-only normalization",
+      "workshop_ids_in_log_order": [
+        "3797257579",
+        "3710613857",
+        "2660548454",
+        "2411818376",
+        "2409044128",
+        "3484461951",
+        "1199002146",
+        "2946000546",
+        "3053655313",
+        "2956750257",
+        "1539624733",
+        "1890399946",
+        "3357143726",
+        "3415581160",
+        "2438313459",
+        "2407436476",
+        "1623423360",
+        "3339549399",
+        "3090328185",
+        "2948301103",
+        "2976454692"
+      ],
+      "registry_installed_ids": [
+        "1199002146",
+        "1539624733",
+        "1623423360",
+        "1890399946",
+        "2407436476",
+        "2409044128",
+        "2411818376",
+        "2438313459",
+        "2660548454",
+        "2946000546",
+        "2948301103",
+        "2956750257",
+        "2976454692",
+        "3053655313",
+        "3090328185",
+        "3339549399",
+        "3357143726",
+        "3415581160",
+        "3484461951",
+        "3710613857",
+        "3797257579",
+        "3815707212"
+      ],
+      "registry_details_ids": [
+        "1199002146",
+        "1539624733",
+        "1623423360",
+        "1890399946",
+        "2407436476",
+        "2409044128",
+        "2411818376",
+        "2438313459",
+        "2660548454",
+        "2946000546",
+        "2948301103",
+        "2956750257",
+        "2976454692",
+        "3053655313",
+        "3090328185",
+        "3339549399",
+        "3357143726",
+        "3415581160",
+        "3484461951",
+        "3710613857",
+        "3797257579",
+        "3815707212"
+      ],
+      "registered_id_not_in_these_errors": "3815707212",
+      "current_filesystem_observations": [
+        {
+          "workshop_id": "3797257579",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3797257579",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "3710613857",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3710613857",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2660548454",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2660548454",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2411818376",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2411818376",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2409044128",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2409044128",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "3484461951",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3484461951",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "1199002146",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/1199002146",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2946000546",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2946000546",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "3053655313",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3053655313",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2956750257",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2956750257",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "1539624733",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/1539624733",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "1890399946",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/1890399946",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "3357143726",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3357143726",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "3415581160",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3415581160",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2438313459",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2438313459",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2407436476",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2407436476",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "1623423360",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/1623423360",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "3339549399",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3339549399",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "3090328185",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/3090328185",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2948301103",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2948301103",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        },
+        {
+          "workshop_id": "2976454692",
+          "path": "C:/SteamLibrary/steamapps/workshop/content/281990/2976454692",
+          "directory_exists_at_review": true,
+          "descriptor_exists_at_review": true
+        }
+      ],
+      "observation_limit": "Steam registry and path states are current source observations after RC6, not a reconstruction of files at RC6 startup. All 21 current directories exist; do not label these nonexistent directories or prove the engine error harmless. Why dlc.cpp rejects/finds no files internally is not proven.",
+      "active_package_boundary": "Both sealed manifests enable exactly one local EEP descriptor. RC6 payload has no logged discovery path string; those 21 items are not enabled_mods entries. Registry discovery is not proof of their gameplay activation."
+    },
+    "decision_override": {
+      "rc6_line": 22,
+      "count": 1,
+      "source_class": "INTENTIONAL_SINGLE_NATIVE_KEY_OVERRIDE",
+      "impact_status": "SOURCE_EXPLAINED_COMPATIBILITY_BOUNDARY_REMAINS",
+      "key": "decision_lithoid_swarm_consume_world",
+      "native_definition_line": 1704,
+      "rc6_adapter_line": 2,
+      "engine_selected_source": "common/decisions/zz_eep_native_decision.txt:2 as stated in raw log",
+      "single_root_key_in_adapter": [
+        "decision_lithoid_swarm_consume_world"
+      ],
+      "shared_metadata_fields_token_equal": [
+        "icon",
+        "sound",
+        "important",
+        "resources",
+        "owned_planets_only"
+      ],
+      "non_EEP_else_token_count": 95,
+      "native_effect_normalized_token_sha256": "629c43c41eb709cc87c47d887b2a7fae87f694a815dd6628adb45e9ffff6ac7f",
+      "rc6_non_EEP_else_normalized_token_sha256": "629c43c41eb709cc87c47d887b2a7fae87f694a815dd6628adb45e9ffff6ac7f",
+      "AI_weight_normalized_token_sha256": "916fea79c54d1c54b5372acfbe63272b16bd6b3f46d4efdc49d7a87b61b504b9",
+      "non_EEP_potential_reduction": "For owner without origin_heart_of_devouring: first added OR reduces to native can_have_habitable_deposits=yes; second OR reduces to native is_capital=no; native owner/being_devoured/designation predicates are retained. New allow if is inactive; effect uses exact native else.",
+      "limitation": "This explains the intentional override log and its static non-EEP branch. It is not a non-EEP native gameplay test. Other Mods redefining this same key need separate compatibility/load-order verification."
+    },
+    "portrait_container": {
+      "rc6_line": 23,
+      "count": 1,
+      "source_class": "NATIVE_GUI_NARROW_ENTRY_MISSING_REQUESTED_CONTAINER",
+      "impact_status": "SOURCE_EXPLAINED_UI_MISMATCH_IMPACT_NOT_FULLY_TESTED",
+      "native_GUI_file": "interface/select_empire_design.gui",
+      "actual_GUI_definitions": [
+        {
+          "name": "prescripted_empire_design_entry",
+          "name_line": 318,
+          "direct_children": [
+            {
+              "kind": "containerWindowType",
+              "name": "selected_overlay"
+            },
+            {
+              "kind": "containerWindowType",
+              "name": "portrait_container"
+            }
+          ],
+          "portrait_container_count": 1
+        },
+        {
+          "name": "user_empire_design_entry",
+          "name_line": 408,
+          "direct_children": [
+            {
+              "kind": "containerWindowType",
+              "name": "selected_overlay"
+            },
+            {
+              "kind": "containerWindowType",
+              "name": "portrait_container"
+            }
+          ],
+          "portrait_container_count": 1
+        },
+        {
+          "name": "user_empire_design_entry_narrow",
+          "name_line": 501,
+          "direct_children": [
+            {
+              "kind": "containerWindowType",
+              "name": "selected_overlay"
+            },
+            {
+              "kind": "iconType",
+              "name": "portrait"
+            }
+          ],
+          "portrait_container_count": 0
+        }
+      ],
+      "rc6_GUI_files": [],
+      "rc6_related_GUI_or_discovery_strings": [],
+      "native_entry_detail": "Narrow user entry has direct iconType portrait at line556 and no containerWindowType portrait_container; native user and prescripted entries have that container at lines464 and339. Engine raw error requests exactly the missing child of the narrow entry.",
+      "limitation": "The package does not replace this native GUI or define either requested name. Same-EXE public baseline has the exact same record. No zero-Mod control or full portrait-subfeature UI test was performed, so do not claim every native setup always emits it, no UI impact, or global harmlessness."
+    }
+  },
+  "while_excluded": {
+    "rc6_line": 24,
+    "raw": "[00:24:35][effect_impl.cpp:2139]: while effect limit never reached, aborting after 100 repetitions. Set a higher max count if needed.  common/scripted_effects/eep_mothership_effects.txt:35 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:195 @ scripted effect eep_sync_mothership at file:  line: 1",
+    "status": "REAL_EEP_FAILURE_NOT_WHITELISTED",
+    "scope": "Already independently confirmed default100 and fixed in a new RC7 candidate by root. This source review neither edits it nor changes RC6 failure status."
+  },
+  "release_rules": [
+    "RC7 stopped complete logs must be reviewed independently; counts or timestamp patterns alone never inherit acceptance.",
+    "Decision record may be classified as intentional only if actual log names the same adapter and current frozen key/body binding still matches.",
+    "Portrait record may be source-classified only if exact file/window/container names remain and package still does not override them; leave UI-impact limitation visible.",
+    "Discovery records remain an environment issue with an unproven engine failure condition, even with exact Steam registry/baseline correspondence; do not promise a zero-error environment.",
+    "Any new EEP runtime error, changed object/path/scope, or unmatched record stays unresolved; while failure cannot enter baseline class.",
+    "No old baseline nomads localization failures are imported as a blanket allowance for future logs."
+  ],
+  "sources": {
+    "native_select_gui": {
+      "original": "C:/SteamLibrary/steamapps/common/Stellaris/interface/select_empire_design.gui",
+      "archived": {
+        "path": "docs/evidence/1020-rc6-nonwhile-source-review-v1/source/native/select_empire_design.gui.txt",
+        "sha256": "cae19bbf01d126b6ec317861eeae2b9bd4ab268ac46246fb6d51137d696d4b18",
+        "bytes": 12172
+      }
+    },
+    "native_special_decisions": {
+      "original": "C:/SteamLibrary/steamapps/common/Stellaris/common/decisions/02_special_decisions.txt",
+      "archived": {
+        "path": "docs/evidence/1020-rc6-nonwhile-source-review-v1/source/native/02_special_decisions.txt",
+        "sha256": "4f3c79276393854943b0c386a69dbff8cae9146537475309b0a48bfbe1ab77cf",
+        "bytes": 61123
+      }
+    },
+    "rc6_native_adapter": {
+      "original": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/1019-implementation/candidate-rc6/mod/common/decisions/zz_eep_native_decision.txt",
+      "archived": {
+        "path": "docs/evidence/1020-rc6-nonwhile-source-review-v1/source/rc6/zz_eep_native_decision.txt",
+        "sha256": "afb47a2cf28b88cfc80e8b46fc81860178aaf544b6f7bffba785cd8ab37fad9c",
+        "bytes": 2654
+      }
+    },
+    "rc6_descriptor": {
+      "original": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/1019-implementation/candidate-rc6/mod/descriptor.mod",
+      "archived": {
+        "path": "docs/evidence/1020-rc6-nonwhile-source-review-v1/source/rc6/descriptor.mod.txt",
+        "sha256": "075f6887a1287b20d189b63afaee6d1a84b32c71b9c296e136fecc3cffe3c260",
+        "bytes": 130
+      }
+    },
+    "rc6_interface_sprites": {
+      "original": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/1019-implementation/candidate-rc6/mod/interface/eep.gfx",
+      "archived": {
+        "path": "docs/evidence/1020-rc6-nonwhile-source-review-v1/source/rc6/eep.gfx.txt",
+        "sha256": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92",
+        "bytes": 855
+      }
+    },
+    "steam_registry_current_observation": {
+      "original": "C:/SteamLibrary/steamapps/workshop/appworkshop_281990.acf",
+      "archived": {
+        "path": "docs/evidence/1020-rc6-nonwhile-source-review-v1/source/environment/appworkshop_281990.acf.txt",
+        "sha256": "073a3ad2f0b123d0cbe8764fa389009fa20cde7ce0b29476850acfbed0aa1792",
+        "bytes": 7897
+      }
+    },
+    "baseline_descriptor": {
+      "archived": {
+        "path": "docs/evidence/1019-baseline-reference-map/source/baseline-descriptor.mod.txt",
+        "sha256": "9cd3c378615773f0178d67b5f98de265a5fae316545acd6d836457bbd05e203f",
+        "bytes": 125
+      }
+    },
+    "baseline_version": {
+      "archived": {
+        "path": "docs/evidence/1019-baseline-reference-map/source/baseline-VERSION.txt",
+        "sha256": "79e3f22ca37c7fdf4c29ae3648d6b008c3cb6547260a453409275470919dc674",
+        "bytes": 6
+      }
+    }
+  },
+  "production_modified": false,
+  "original_logs_modified": false,
+  "UI_executed": false,
+  "Git_executed": false,
+  "candidate_acceptance_assigned": false
+}
