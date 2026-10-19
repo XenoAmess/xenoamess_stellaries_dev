@@ -340,3 +340,38 @@ pending SHA：
 2,061 处引用／1,258 个唯一文件 SHA、原 loader／完整组件归因、三分支 72 月
 原观察一致性及只读 `git diff --check` 均通过。未写 Git、未操作 UI、未读取活动
 PK 或日志，未创建最终结果。
+
+## 第七轮原生巨像取消片段合并设计
+
+主线程授权接收已提交封口的 `1019-rc7-pk-native-cancel-v1`。按实际 SHA 定位的
+提案路径为 `authored/partial-native-cancel-proposal-v1.json`（并非包根目录同名），
+SHA `8f3492119b7a25f3520b0148da4384ab02e9b3a27060f287a142ef7a8b213149`；
+归档实际使用 `index.json` 和 `verify.json`，独立归档检查 14／14。
+本节先于本轮 JSON 修改。
+
+只通过既有 helper 合入 colossus_cancel_idempotence 原名 `queue_no_reward`、
+`cancel_no_reward`、`reload_no_reward` 三项 true。`repeat_event_no_reward` 与
+`crisis_objective_once` 继续 null；取消分支不能单独证明 invalid guards，故成长
+`invalid_or_cancelled_no_growth` 继续 null。提案、受控原生角色、GPU／OCR／输入
+及报告按真实已归档字节引用，原 strict FAIL1／FAIL25、最初 18 文件接收边界错误
+与后续正式交接说明均保留，不推成全状态相等或最初已授权。
+
+不接收生成中的 requeue／fire 正例或提前保存失败诊断，不读活动 `r7pkfire`
+与日志。仍唯一 canonical run、18 组与组件 PENDING、最终日志列缺；不改其它组、
+已有样本、报告、工具／Mod，不操作 UI 或 Git 写入，不创建最终结果。
+
+### 第七轮封口结果
+
+原 helper 已附加该取消包 179 个真实引用并登记三项明确 true。取消组仍有
+`repeat_event_no_reward`、`crisis_objective_once` 两个 null 和最终 log 缺口；
+成长的 invalid／cancel 整项仍 null。全索引现为 80 项 true／58 项 null，18 组、
+组件与全局状态均 PENDING，唯一 run、三分支月份及其它 case 保持。
+
+reference-plan SHA：
+`776c8d21565d2b626eb6ccb350637712cce2ce7611265dd413a350dd7b44ca31`；
+pending SHA：
+`22728f55ee3c1f32ac488889f7b4d64ecda39481c1a8b8a9f9b76fb950fc6f20`。
+2,244 处引用／1,437 个唯一文件 SHA、各 case 原 typed 引用校验、取消包 37 个
+canonical 引用、原 pending loader／完整组件归因、72 个月份原观察和只读
+`git diff --check` 均通过。原 strict FAIL1／FAIL25、边界诊断和 receiver 自身
+138 null 的历史记录没有被改写；未创建最终结果，未读活动 fire／日志。
