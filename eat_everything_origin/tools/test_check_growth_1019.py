@@ -368,14 +368,32 @@ class SourceRevisionTests(unittest.TestCase):
                 self.validate(actual=rows)
 
     def test_changed_or_missing_revision_certificate_fails(self):
+        tree = max(c.SOURCE_REVISIONS, key=lambda item: c.SOURCE_REVISIONS[item][0])
         path = self.folder / f"six-core-source-expectations-v{len(self.hashes)}.json"
         raw = path.read_bytes()
         path.write_bytes(raw + b"\n")
         with self.assertRaisesRegex(ValueError, "models changed"):
-            self.validate()
+            self.validate(tree)
         path.unlink()
         with self.assertRaises(FileNotFoundError):
-            self.validate()
+            self.validate(tree)
+
+    def test_rc7_identity_uses_all_five_models_and_keeps_legacy_prefixes(self):
+        tree = "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0"
+        self.assertEqual(c.SOURCE_REVISIONS[tree], (5, "frozen_rc7"))
+        self.validate(tree)
+        self.assertEqual(c.applicable_model_hashes(tree), self.hashes)
+        self.assertEqual(c.applicable_model_hashes(c.SOURCE_TREE), self.hashes[:4])
+        with self.assertRaisesRegex(ValueError, "no predeclared"):
+            self.validate("f" * 64)
+
+    def test_rc7_selected_and_last_unselected_file_mutations_are_rejected(self):
+        tree = "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0"
+        for index in (0, 58):
+            actual = copy.deepcopy(self.packages[tree][1])
+            actual[index]["sha256"] = "0" * 64
+            with self.subTest(index=index), self.assertRaisesRegex(ValueError, "exact predeclared"):
+                self.validate(tree, actual)
 
     def test_historical_index_and_native_source_remain_byte_bound(self):
         self.source_copy.write_bytes(self.source_copy.read_bytes() + b"\n")

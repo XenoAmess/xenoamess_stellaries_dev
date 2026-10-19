@@ -1,0 +1,151 @@
+{
+  "schema": "eep.growth.native_while_primary_evidence.v1",
+  "status": "READ_ONLY_SOURCE_FINDINGS_NOT_RUNTIME_VERDICT",
+  "run_id": "20261019T150008Z",
+  "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "manifest": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\manifest.json",
+    "sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9"
+  },
+  "frozen_mod": [
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_effects\\eep_mothership_effects.txt",
+      "sha256": "4e2d25004b917cd4b7c46bc13efe32765ba58fbd10aaa92a2728034a035da2cc",
+      "kind": "frozen_run_mod",
+      "lines": {
+        "first": 33,
+        "last": 63
+      },
+      "excerpt": "    # Work budget, not a progression cap. Unpaid rewards remain for later syncs.\n    set_variable = { which = eep_component_work_budget value = 200 }\n    while = {\n        limit = {\n            check_variable = { which = eep_component_rewards value < owner.eep_component_entitled }\n            check_variable = { which = eep_component_work_budget value > 0 }\n        }\n        random_list = {\n            1 = { change_variable = { which = eep_component_shield_level value = 1 } }\n            1 = { change_variable = { which = eep_component_armor_level value = 1 } }\n            1 = { change_variable = { which = eep_component_hull_level value = 1 } }\n            1 = { change_variable = { which = eep_component_damage_level value = 1 } }\n            1 = { change_variable = { which = eep_component_tracking_level value = 1 } }\n            1 = { change_variable = { which = eep_component_regen_level value = 1 } }\n        }\n        change_variable = { which = eep_component_rewards value = 1 }\n        change_variable = { which = eep_component_work_budget value = -1 }\n    }\n    clear_variable = eep_component_work_budget\n    owner = {\n        set_variable = { which = eep_component_shield_level value = prev.eep_component_shield_level }\n        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }\n        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }\n        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }\n        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }\n        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }\n        set_variable = { which = eep_component_rewards value = prev.eep_component_rewards }\n        set_variable = { which = eep_component_snapshot_state value = 0 }\n        set_country_flag = eep_component_snapshot_available\n    }\n}\n"
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\events\\eep_events.txt",
+      "sha256": "bee663bdf8e794999502aa52376166dd94b2c3129e5053f6b43d3a4dd4e85a02",
+      "kind": "frozen_run_mod",
+      "lines": {
+        "first": 46,
+        "last": 57
+      },
+      "excerpt": "country_event = {\n    id = eep.2\n    hide_window = yes\n    is_triggered_only = yes\n    trigger = { has_origin = origin_heart_of_devouring }\n    immediate = {\n        if = {\n            limit = { has_origin = origin_heart_of_devouring }\n            eep_initialize = yes\n            eep_sync_mothership = yes\n            eep_auto_devour_scan = yes\n            if = {\n"
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\on_actions\\eep_on_actions.txt",
+      "sha256": "93be7df47f32895beadb5ce1f27d7abeb4e2f299e814ac959d1cf84bcafaeb6d",
+      "kind": "frozen_run_mod",
+      "lines": {
+        "first": 1,
+        "last": 3
+      },
+      "excerpt": "on_game_start_country = { events = { eep.1 } }\non_single_player_save_game_load = { events = { eep.60 } }\non_monthly_pulse_country = { events = { eep.2 } }\n"
+    }
+  ],
+  "native_sources": [
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\logs\\script_documentation\\effects.log",
+      "sha256": "985c95672f491f0458fcd34232743e2c2a1b9e1862743e2b156eea7e9ca5a773",
+      "kind": "generated_native_effect_documentation",
+      "lines": {
+        "first": 3343,
+        "last": 3346
+      },
+      "excerpt": "while - Repeats enclosed effects while limit criteria are met or until set iteration count is reached\r\nwhile = { limit = { <triggers> } <effects> }\r\n while = { count = [3|Variable] <effects> }\r\nSupported Scopes: all\r\n"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\solar_system_initializers\\federations_initializers.txt",
+      "sha256": "16b8cf994c5b46b8e08a56f2741f93cffd0b2979702d9a1e53914ae9c5356bfd",
+      "kind": "native_count_115_planet_pop_creation",
+      "lines": {
+        "first": 1703,
+        "last": 1708
+      },
+      "excerpt": "\t\t\twhile = {\n\t\t\t\tcount = 115\n\t\t\t\tcreate_pop_group = {\n\t\t\t\t\tspecies = owner_main_species\n\t\t\t\t}\n\t\t\t}\n"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\solar_system_initializers\\fallen_empire_initializers.txt",
+      "sha256": "804c01dd8b168e349ab71b989844d0fb4144cac3a680a56381d2c0369af18cc7",
+      "kind": "native_count_115_planet_pop_creation",
+      "lines": {
+        "first": 475,
+        "last": 480
+      },
+      "excerpt": "\t\t\twhile = {\n\t\t\t\tcount = 115\n\t\t\t\tcreate_pop_group = {\n\t\t\t\t\tspecies = owner_main_species\n\t\t\t\t}\n\t\t\t}\n"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\origin_events_machine_age.txt",
+      "sha256": "bd42f473f2f43c59f6aa1e3d89fc1c0eb89ad4caff4f9a08f271db17cf3a6176",
+      "kind": "native_variable_count_with_limit",
+      "lines": {
+        "first": 1936,
+        "last": 1958
+      },
+      "excerpt": "\t\t\t\twhile = {\n\t\t\t\t\tlimit = {\n\t\t\t\t\t\tany_owned_pop_group = {\n\t\t\t\t\t\t\tNOT = { is_same_species = owner.species }\n\t\t\t\t\t\t\tis_robot_pop_group = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tcount = num_dead_identities\n\t\t\t\t\tweighted_random_owned_pop_group = {\n\t\t\t\t\t\tlimit = {\n\t\t\t\t\t\t\tNOT = { is_same_species = owner.species }\n\t\t\t\t\t\t\tis_robot_pop_group = yes\n\t\t\t\t\t\t}\n\t\t\t\t\t\tchange_species = event_target:synthspecies@root.owner\n\t\t\t\t\t}\n\t\t\t\t\tchange_variable = {\n\t\t\t\t\t\twhich = num_dead_identities\n\t\t\t\t\t\tvalue = -1\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\twhile = {\n\t\t\t\t\tcount = num_dead_identities\n\t\t\t\t\tcapital_scope = {\n"
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\synthetic_dawn_events.txt",
+      "sha256": "22e6427938729ba5d218ceb0c73eab3388d95c4cfb81965a61f1fa5a005f8f89",
+      "kind": "native_literal_count_with_limit",
+      "lines": {
+        "first": 2022,
+        "last": 2034
+      },
+      "excerpt": "\t\t\twhile = {\n\t\t\t\tcount = 100\n\t\t\t\tlimit = {\n\t\t\t\t\tany_system = {\n\t\t\t\t\t\thas_star_flag = machup_system_flip\n\t\t\t\t\t\texists = starbase\n\t\t\t\t\t\tstarbase = {\n\t\t\t\t\t\t\towner = { is_same_value = event_target:current_uprising_originator }\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trandom_system = {\n\t\t\t\t\tlimit = {\n"
+    }
+  ],
+  "exe_string": {
+    "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\stellaris.exe",
+    "exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+    "ascii_offset_decimal": 38214336,
+    "ascii_text": "while effect limit never reached, aborting after 100 repetitions. Set a higher max count if needed. %s",
+    "classification": "Released executable data string; not disassembly or proof this runtime invoked the branch"
+  },
+  "original_reports": [
+    {
+      "path": "docs/evidence/1019-analysis/rc6-growth-pair-n07-c200-observation-v1.json",
+      "sha256": "6331577631532bff6cb9e94aa050aa227a5612aeac2ed0b259e1636f83cc555d"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc6-growth-pair-n08-c10000-observation-v1.json",
+      "sha256": "177c8b96cb32152ce2fcc818eba417a9b75bf72bddb21a1ca68cf76bd086a37c"
+    }
+  ],
+  "observed_counts": {
+    "node_C200_R": 4,
+    "C10000_refresh_and_final_R": 200,
+    "C10000_final_tiers": {
+      "shield": 34,
+      "armor": 37,
+      "hull": 39,
+      "damage": 22,
+      "tracking": 41,
+      "regen": 27
+    }
+  },
+  "inferred_intermediate": {
+    "R": 104,
+    "tiers": {
+      "shield": 14,
+      "armor": 18,
+      "hull": 24,
+      "damage": 13,
+      "tracking": 22,
+      "regen": 13
+    },
+    "classification": "Inferred from fixed-source modifier exports and refresh HP; no saved R104 ledger observed"
+  },
+  "finding": "RC6 work budget is 200 but its while has no explicit count; released EXE contains abort-after-100 diagnostic, and native source explicitly uses count 115. Await independent same-day counts probe before concluding actual default behavior.",
+  "web_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/cwtools/cwtools-stellaris-config/99147efe8072b331005b50536762dcc0b8573224/config/effects.cwt",
+      "scope": "Validator author schema corroborates count and limit, no engine-default proof"
+    },
+    {
+      "url": "https://steamcommunity.com/workshop/filedetails/discussion/2008059495/4203492762826532607/?ctp=9",
+      "scope": "Historical 2021 firsthand user error log with 100-repetition diagnostic; not current 4.5.2 behavior proof"
+    }
+  ],
+  "unresolved": [
+    "This run actual no-count maximum before monthly auto compensation",
+    "Whether corrected export after original 18 samples matches all current R200 modifiers",
+    "Whether explicit literal count=200 with limit reaches200 in independent native probe"
+  ]
+}

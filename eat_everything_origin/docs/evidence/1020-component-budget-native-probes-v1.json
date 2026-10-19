@@ -1,0 +1,518 @@
+{
+  "schema": "eep.growth.single_sync_budget_bug_observation.v1",
+  "status": "CONFIRMED_200_BUDGET_DESIGN_NOT_MET_IN_RC6",
+  "run_id": "20261019T150008Z",
+  "date": "2202.07.01",
+  "source_binding": {
+    "checker": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_growth_1019.py",
+      "sha256": "0c31f76491c39aff56fb054088d2a8fa4b592eb7f0ad186c5f1ec0c6625832bd"
+    },
+    "source_models_sha256": [
+      "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
+      "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8",
+      "942b98c2aea0022ff7ffa017944abbf873d36331fd26c89862f83a37e31e4dd2",
+      "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f"
+    ],
+    "sources": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6gexport1.native-save.json",
+        "sha256": "618ac66346f18d557b494536542bd26698b5ed22156de189769975ca75dcbc24"
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6gexport1.sav",
+        "sha256": "93e3f5826f10873f28a983f0660a446bdfba881d9dd6e82f8231085d5f0f4850"
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6gexport1.sav",
+        "sha256": "93e3f5826f10873f28a983f0660a446bdfba881d9dd6e82f8231085d5f0f4850"
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6gexport1.audit.json",
+        "sha256": "5b39540633bb99984d051fd64d9109231a36e016ecbeab254e26eb59107891b9"
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6gbudget1.native-save.json",
+        "sha256": "811a6ebf09b7862f14cacdbf9a36832f84a3971f0cf0ad2534863eb38aad8aee"
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6gbudget1.sav",
+        "sha256": "983e06cd8af63e4b5e35b02d1fe8d639e321ea62ebb8ef0c02eaca263ecf3925"
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6gbudget1.sav",
+        "sha256": "983e06cd8af63e4b5e35b02d1fe8d639e321ea62ebb8ef0c02eaca263ecf3925"
+      },
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6gbudget1.audit.json",
+        "sha256": "03f58262222a614799dd16fad691b2c1fd3128d2da983958e8163029ff326ec0"
+      }
+    ]
+  },
+  "immediate_export_C10000": {
+    "R": 200,
+    "tiers": [
+      34,
+      37,
+      39,
+      22,
+      41,
+      27
+    ],
+    "source_predicted_channels": [
+      {
+        "check": "max_hitpoints",
+        "passed": true,
+        "actual": 1710960,
+        "observed": 1710960,
+        "expected": 1710960,
+        "raw_delta": 0,
+        "applied_tolerance": 1.0,
+        "ulp32_expected": 0.125,
+        "ulp_error": 0.0,
+        "tolerance_kind": "hp_binary32_ulp_engineering",
+        "absolute_tolerance": 1.0,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "max_armor_hitpoints",
+        "passed": true,
+        "actual": 1427025.6,
+        "observed": 1427025.6,
+        "expected": 1427025.6,
+        "raw_delta": 0.0,
+        "applied_tolerance": 1.0,
+        "ulp32_expected": 0.125,
+        "ulp_error": 0.0,
+        "tolerance_kind": "hp_binary32_ulp_engineering",
+        "absolute_tolerance": 1.0,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "max_shield_hitpoints",
+        "passed": true,
+        "actual": 2400898.5,
+        "observed": 2400898.5,
+        "expected": 2400898.5,
+        "raw_delta": 0.0,
+        "applied_tolerance": 2.0,
+        "ulp32_expected": 0.25,
+        "ulp_error": 0.0,
+        "tolerance_kind": "hp_binary32_ulp_engineering",
+        "absolute_tolerance": 2.0,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_hull_add",
+        "passed": true,
+        "actual": -70000,
+        "observed": -70000,
+        "expected": -70000,
+        "raw_delta": 0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 0.0078125,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_hull_mult",
+        "passed": true,
+        "actual": 56.032,
+        "observed": 56.032,
+        "expected": 56.032,
+        "raw_delta": 0.0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 3.814697265625e-06,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_armor_add",
+        "passed": true,
+        "actual": 0,
+        "observed": 0,
+        "expected": 0,
+        "raw_delta": 0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 1.401298464324817e-45,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_armor_mult",
+        "passed": true,
+        "actual": 54.44,
+        "observed": 54.44,
+        "expected": 54.440000000000005,
+        "raw_delta": -7.105427357601002e-15,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 3.814697265625e-06,
+        "ulp_error": 1.862645149230957e-09,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_shield_add",
+        "passed": true,
+        "actual": 0,
+        "observed": 0,
+        "expected": 0,
+        "raw_delta": 0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 1.401298464324817e-45,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_shield_mult",
+        "passed": true,
+        "actual": 56.4,
+        "observed": 56.4,
+        "expected": 56.4,
+        "raw_delta": 0.0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 3.814697265625e-06,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_weapon_damage",
+        "passed": true,
+        "actual": 55.2,
+        "observed": 55.2,
+        "expected": 55.2,
+        "raw_delta": 0.0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 3.814697265625e-06,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_tracking_add",
+        "passed": true,
+        "actual": 138,
+        "observed": 138,
+        "expected": 138,
+        "raw_delta": 0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 1.52587890625e-05,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_hull_regen_add_static",
+        "passed": true,
+        "actual": 106.792,
+        "observed": 106.792,
+        "expected": 106.792,
+        "raw_delta": 0.0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 7.62939453125e-06,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      },
+      {
+        "check": "eep_probe_ship_armor_regen_add_static",
+        "passed": true,
+        "actual": 107.488,
+        "observed": 107.488,
+        "expected": 107.488,
+        "raw_delta": 0.0,
+        "applied_tolerance": 0.01,
+        "ulp32_expected": 7.62939453125e-06,
+        "ulp_error": 0.0,
+        "tolerance_kind": "fixed_absolute",
+        "absolute_tolerance": 0.01,
+        "relative_tolerance": 0
+      }
+    ],
+    "full_native_source_prediction_passed": true
+  },
+  "single_sync_C20500": {
+    "R_before": 200,
+    "R_after": 300,
+    "reward_gain": 100,
+    "entitled": 410,
+    "pending": 110,
+    "tiers": [
+      46,
+      57,
+      57,
+      36,
+      62,
+      42
+    ],
+    "actual_ledger_identity_checks": [
+      {
+        "check": "eep_c",
+        "passed": true,
+        "actual": 20500,
+        "expected": 20500
+      },
+      {
+        "check": "eep_mothership_level",
+        "passed": true,
+        "actual": 2050,
+        "expected": 2050
+      },
+      {
+        "check": "eep_mothership_next",
+        "passed": true,
+        "actual": 10,
+        "expected": 10
+      },
+      {
+        "check": "eep_component_entitled",
+        "passed": true,
+        "actual": 410,
+        "expected": 410
+      },
+      {
+        "check": "eep_component_rewards",
+        "passed": true,
+        "actual": 300,
+        "expected": 300
+      },
+      {
+        "check": "eep_component_pending",
+        "passed": true,
+        "actual": 110,
+        "expected": 110
+      },
+      {
+        "check": "eep_component_snapshot_state",
+        "passed": true,
+        "actual": 0,
+        "expected": 0
+      },
+      {
+        "check": "fleet applied level",
+        "passed": true,
+        "actual": 2050,
+        "expected": 2050
+      },
+      {
+        "check": "fleet rewards",
+        "passed": true,
+        "actual": 300,
+        "expected": 300
+      },
+      {
+        "check": "six nonnegative integral ranks",
+        "passed": true,
+        "actual": true,
+        "expected": true
+      },
+      {
+        "check": "R equals sum ranks",
+        "passed": true,
+        "actual": 300,
+        "expected": 300
+      },
+      {
+        "check": "country mirrors eep_component_shield_level",
+        "passed": true,
+        "actual": 46,
+        "expected": 46
+      },
+      {
+        "check": "country mirrors eep_component_armor_level",
+        "passed": true,
+        "actual": 57,
+        "expected": 57
+      },
+      {
+        "check": "country mirrors eep_component_hull_level",
+        "passed": true,
+        "actual": 57,
+        "expected": 57
+      },
+      {
+        "check": "country mirrors eep_component_damage_level",
+        "passed": true,
+        "actual": 36,
+        "expected": 36
+      },
+      {
+        "check": "country mirrors eep_component_tracking_level",
+        "passed": true,
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "check": "country mirrors eep_component_regen_level",
+        "passed": true,
+        "actual": 42,
+        "expected": 42
+      },
+      {
+        "check": "temporary component budget cleared",
+        "passed": true,
+        "actual": [],
+        "expected": []
+      },
+      {
+        "check": "one fleet growth modifier",
+        "passed": true,
+        "actual": 1,
+        "expected": 1
+      },
+      {
+        "check": "growth multiplier",
+        "passed": true,
+        "actual": 2050,
+        "expected": 2050
+      },
+      {
+        "check": "growth is permanent",
+        "passed": true,
+        "actual": -1,
+        "expected": -1
+      },
+      {
+        "check": "fleet has only base and growth modifiers",
+        "passed": true,
+        "actual": [
+          "eep_mothership",
+          "eep_mothership_evolution"
+        ],
+        "expected": [
+          "eep_mothership",
+          "eep_mothership_evolution"
+        ]
+      },
+      {
+        "check": "no ship reward modifiers",
+        "passed": true,
+        "actual": [],
+        "expected": []
+      },
+      {
+        "check": "EEP_ADAPTIVE_SHIELD_CORE actual slot",
+        "passed": true,
+        "actual": [
+          [
+            "AUX_UTILITY_6",
+            "EEP_ADAPTIVE_SHIELD_CORE"
+          ]
+        ],
+        "expected": [
+          [
+            "AUX_UTILITY_6",
+            "EEP_ADAPTIVE_SHIELD_CORE"
+          ]
+        ]
+      },
+      {
+        "check": "EEP_ADAPTIVE_ARMOR_CORE actual slot",
+        "passed": true,
+        "actual": [
+          [
+            "AUX_UTILITY_7",
+            "EEP_ADAPTIVE_ARMOR_CORE"
+          ]
+        ],
+        "expected": [
+          [
+            "AUX_UTILITY_7",
+            "EEP_ADAPTIVE_ARMOR_CORE"
+          ]
+        ]
+      },
+      {
+        "check": "EEP_ADAPTIVE_HULL_CORE actual slot",
+        "passed": true,
+        "actual": [
+          [
+            "AUX_UTILITY_8",
+            "EEP_ADAPTIVE_HULL_CORE"
+          ]
+        ],
+        "expected": [
+          [
+            "AUX_UTILITY_8",
+            "EEP_ADAPTIVE_HULL_CORE"
+          ]
+        ]
+      },
+      {
+        "check": "EEP_ADAPTIVE_DAMAGE_CORE actual slot",
+        "passed": true,
+        "actual": [
+          [
+            "AUX_UTILITY_9",
+            "EEP_ADAPTIVE_DAMAGE_CORE"
+          ]
+        ],
+        "expected": [
+          [
+            "AUX_UTILITY_9",
+            "EEP_ADAPTIVE_DAMAGE_CORE"
+          ]
+        ]
+      },
+      {
+        "check": "EEP_ADAPTIVE_TRACKING_CORE actual slot",
+        "passed": true,
+        "actual": [
+          [
+            "AUX_UTILITY_10",
+            "EEP_ADAPTIVE_TRACKING_CORE"
+          ]
+        ],
+        "expected": [
+          [
+            "AUX_UTILITY_10",
+            "EEP_ADAPTIVE_TRACKING_CORE"
+          ]
+        ]
+      },
+      {
+        "check": "EEP_ADAPTIVE_REGEN_CORE actual slot",
+        "passed": true,
+        "actual": [
+          [
+            "AUX_UTILITY_11",
+            "EEP_ADAPTIVE_REGEN_CORE"
+          ]
+        ],
+        "expected": [
+          [
+            "AUX_UTILITY_11",
+            "EEP_ADAPTIVE_REGEN_CORE"
+          ]
+        ]
+      }
+    ],
+    "intended_single_sync_R": 400,
+    "intended_single_sync_pending": 10,
+    "intended_200_reward_budget_met": false
+  },
+  "identity": {
+    "fleet": 125,
+    "ship": 809,
+    "owners": [
+      0
+    ]
+  },
+  "raw_government_equal": true,
+  "scope": "Read-only original native SAV and history/archived/receipt SHA; no desktop/action review. Command count and no intervening monthly are root collection scope; both native dates independently equal.",
+  "limits": "Confirms observed +100 versus declared +200 intent, consistent with released EXE diagnostic; does not test future explicit-count candidate."
+}
