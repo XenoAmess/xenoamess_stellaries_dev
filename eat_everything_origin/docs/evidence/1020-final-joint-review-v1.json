@@ -1,0 +1,346 @@
+{
+  "schema": "eep.1020.final-joint-review.v1",
+  "status": "PASS_SCOPED",
+  "source_pending_index": {
+    "path": "docs/evidence/1019-requirements/rc7-runtime-progress-v1.pending.json",
+    "sha256": "8c81e32a63502265a6a9c30d740bffdaa0a257f994945a9f9b8d8ffd23b5ae64"
+  },
+  "case_review": {
+    "hive_startup": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "auto_devour_off": true,
+        "correct_homeworld_type": true,
+        "first_month_generator_jobs": true,
+        "initial_energy_200": true,
+        "normal_upkeep": true,
+        "population_preserved": true,
+        "single_homeworld": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "machine_startup": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "auto_devour_off": true,
+        "correct_homeworld_type": true,
+        "first_month_generator_jobs": true,
+        "initial_energy_200": true,
+        "normal_upkeep": true,
+        "population_preserved": true,
+        "single_homeworld": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "purifier_startup": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "auto_devour_off": true,
+        "correct_homeworld_type": true,
+        "first_month_generator_jobs": true,
+        "initial_energy_200": true,
+        "normal_upkeep": true,
+        "population_preserved": true,
+        "single_homeworld": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "hive_economy": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "all_net_energy_nonnegative": true,
+        "baseline_12_months": true,
+        "candidate_12_months": true,
+        "no_job_closure": true,
+        "no_resource_injection": true,
+        "no_ship_disband": true,
+        "no_trade_subsidy": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "machine_economy": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "all_net_energy_nonnegative": true,
+        "baseline_12_months": true,
+        "candidate_12_months": true,
+        "no_job_closure": true,
+        "no_resource_injection": true,
+        "no_ship_disband": true,
+        "no_trade_subsidy": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "purifier_economy": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "all_net_energy_nonnegative": true,
+        "baseline_12_months": true,
+        "candidate_12_months": true,
+        "no_job_closure": true,
+        "no_resource_injection": true,
+        "no_ship_disband": true,
+        "no_trade_subsidy": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "lithoid_hive_first_month": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "auto_devour_off": true,
+        "correct_homeworld_type": true,
+        "first_month_energy_nonnegative": true,
+        "first_month_generator_jobs": true,
+        "initial_energy_200": true,
+        "normal_upkeep": true,
+        "population_preserved": true,
+        "single_homeworld": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "mothership_configuration": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "actual_jump": true,
+        "existing_advantages_preserved": true,
+        "five_relic_auxiliary_components_preserved": true,
+        "native_design_matches": true,
+        "no_empire_technology_grant": true,
+        "other_juggernauts_unchanged": true,
+        "power_nonnegative": true,
+        "reference_stats_observed": true,
+        "same_country_same_date_relic_reference": true,
+        "ten_mobile_shipyards": true,
+        "twenty_two_large_defense_slots": true,
+        "upkeep_observed": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "unlimited_growth": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z",
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "count_level_samples": true,
+        "daily_regeneration": true,
+        "destroyed_mother_not_respawned": true,
+        "four_stats_five_percent_per_level": true,
+        "invalid_or_cancelled_no_growth": true,
+        "jump_and_shipyards_preserved": true,
+        "repeated_sync_idempotent": true,
+        "report_level_count_remainder": true,
+        "same_day_reload_idempotent": true,
+        "single_scaled_modifier": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "colossus_enemy_fire": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z",
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "beneficiary_is_core_owner": true,
+        "enemy_colony_destroyed": true,
+        "native_charge_and_fire": true,
+        "no_army": true,
+        "owned_noncore_colony_fire": true,
+        "war_target": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "colossus_guards": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "all_core_worlds_rejected": true,
+        "artificial_rejected": true,
+        "colonizing_rejected": true,
+        "completion_revalidates_core_owner": true,
+        "completion_revalidates_target": true,
+        "devouring_rejected": true,
+        "ground_combat_rejected": true,
+        "neutral_friendly_rejected": true,
+        "settled_rejected": true,
+        "uncolonized_rejected": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "colossus_cancel_idempotence": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "cancel_no_reward": true,
+        "crisis_objective_once": true,
+        "queue_no_reward": true,
+        "reload_no_reward": true,
+        "repeat_event_no_reward": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "common_settlement": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z",
+        "20261019T201325Z",
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "core_capacity_matches": true,
+        "enemy_population_not_returned": true,
+        "lithoid_native_branch": true,
+        "native_devour_loss_deducted": true,
+        "owned_main_species_return": true,
+        "population_matches": true,
+        "q_c_g_d_match": true,
+        "settlement_and_destruction_once": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "normal_dismantle_regression": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z",
+        "20261019T201325Z",
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "normal_completion": true,
+        "normal_duration_preserved": true,
+        "normal_reload_idempotent": true,
+        "normal_seed_preserved": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "old_save_migration": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "civilian_queue_preserved": true,
+        "damage_preserved": false,
+        "extra_world_preserved": true,
+        "identity_preserved": true,
+        "layout_preserved": true,
+        "migration_once": true,
+        "name_preserved": true,
+        "native_design_migration": true,
+        "no_startup_reward": true,
+        "original_031_save": true,
+        "position_preserved": true,
+        "queue_preserved": true,
+        "damage_within_predeclared_v2_budget": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "candidate_reload": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z",
+        "20261019T201325Z",
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "ledger_preserved": true,
+        "native_reload": true,
+        "native_restart": true,
+        "no_duplicate_reward": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "repeat_initialization": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z"
+      ],
+      "checks": {
+        "no_extra_civilian_queue": true,
+        "no_extra_reward": true,
+        "no_extra_ship": true,
+        "no_extra_world": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    },
+    "random_components": {
+      "decision": "PASS_SCOPED",
+      "run_ids": [
+        "20261019T164112Z",
+        "20261019T204055Z"
+      ],
+      "checks": {
+        "component_owns_dynamic_bonus": true,
+        "cross_threshold_catchup": true,
+        "equipped_component_present_in_native_design": true,
+        "every_five_levels": true,
+        "growth_component_contributions_separated": true,
+        "native_component_effects_source_attributed": true,
+        "no_external_reward_modifier": true,
+        "other_fleets_unchanged": true,
+        "positive_effect_observed": true,
+        "random_pool": true,
+        "real_component": true,
+        "reload_persistent": true,
+        "threshold_idempotent": true
+      },
+      "scope": "Original case contract; original failures retained with explicit migration v2 or global liveness supplement as applicable."
+    }
+  },
+  "component_decision": "IMPLEMENTED: six real equipped AUX cores, every5 levels; original18-phase source attribution, ten-getter ordinary controls, budget200, pending/restart, daily restoration/death evidence and stopped logs reviewed.",
+  "notification_patch": {
+    "source_certificate": {
+      "path": "docs/evidence/1020-notification-localization-patch-v1/source-certificate-v1.json",
+      "sha256": "7a3c237354fef7b65ab7c9f8e8d93219c2b4a40a5632d65bb66e6587d2e4ad40",
+      "kind": "analysis"
+    },
+    "runtime_report": {
+      "path": "docs/evidence/1020-rc8-notification-runtime-v1/notification-localization-runtime-proof-v1.json",
+      "sha256": "2323f24af13a7cd831a0c1c573b8435107fcbae876df09d9eced7af56cea9e67",
+      "kind": "analysis"
+    }
+  },
+  "log_review": {
+    "path": "docs/evidence/1020-rc7-final-log-review-v1/rc7-final-log-review-v3.json",
+    "sha256": "4f09a61c31d5be69f899aa725eba5c8b91c7339b04c41af4937aeac7bb6f4461"
+  },
+  "limits": [
+    "single-player postload layout repair only; old mobile-starbase design cache is not certified repaired",
+    "original migration damage_preserved=false remains; separately accepted fixed asymmetric v2 engineering budget",
+    "multiplayer immediate load and monthly correction not runtime validated",
+    "nine non-Chinese languages static only",
+    "no all-civic/all-DLC/full-campaign claim; old natural Terravore campaign stays stopped",
+    "vanilla nomads94 dead-defender cleanup inference is bounded, engine dispatch stack not instrumented; full diagnostics retained",
+    "historical raw-key failure corrected by exact RC8 localization patch and fresh native proof; old reports never relabelled"
+  ]
+}

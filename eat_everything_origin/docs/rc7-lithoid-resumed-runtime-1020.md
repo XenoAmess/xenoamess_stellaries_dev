@@ -1,5 +1,12 @@
 # RC7 石质蜂巢剩余验收执行记录
 
+最终补充：同EEP05、同EXE及同预设字节的真实0.3.1新局已正常保存/退出；新旧
+母星本族人口均5300，物种/portrait/traits/政府/起源/国策相同。旧版另有赠星，
+不混入母星人口比较。原生档、19份停机日志、CRC/receipt/GPU原件已归档至
+evidence/1020-lithoid-population-baseline-v1，最后population_preserved检查通过。
+首个离线比较误用另一inspector的nested结构而KeyError，未写报告/索引；改按
+实际flat结构读取，原SAV不改。RC8实机通知修正及两段幂等另有独立限定证明。
+
 本局Feb4已经实际windup0/90。首个操作断言失败是读取层级错误：计数在
 destroy_planet_order.sub_order.planet_killer_weapon_windup_order内，外层order_id
 本局为0，旧敌星多次排队后为2；该值不是充能/发射阶段号，不能照搬为2。
