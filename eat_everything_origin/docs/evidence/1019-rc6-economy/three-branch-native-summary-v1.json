@@ -1,0 +1,205 @@
+{
+  "schema": "eep.rc6.three_branch_startup_economy_summary.v1",
+  "status": "PASS_SCOPED_NATIVE_FACTS_ONLY",
+  "branches": {
+    "purifier": {
+      "prefix": "r6pu",
+      "initial_energy": 200,
+      "final_energy": 690.71846,
+      "first_month_net": 40.63438,
+      "last_month_net": 41.1566,
+      "minimum_monthly_net": 40.63438,
+      "baseline_delta_min": 7.99116,
+      "baseline_delta_max": 10.12535,
+      "initial_core_population": 4800,
+      "first_month_generator_jobs": [
+        {
+          "type": "technician",
+          "automated_workforce": 0,
+          "workforce": 400,
+          "max_workforce": 400,
+          "bonus_workforce": 40,
+          "workforce_limit": 400,
+          "automated_workforce_limit": 399,
+          "planet": 0,
+          "pop_group": 4294967295
+        }
+      ],
+      "startup_checks": {
+        "single_homeworld": true,
+        "correct_homeworld_type": true,
+        "initial_energy_200": true,
+        "first_month_generator_jobs": true,
+        "auto_devour_off": true,
+        "population_preserved": true,
+        "normal_upkeep": true
+      },
+      "native_constraints": {
+        "all_stocked_resources_close": true,
+        "native_finite_job_limits_at_max": true,
+        "initial_owned_ship_ids_names_fleets_preserved": true,
+        "receipt_commands_exactly12_FF30": true
+      },
+      "auto_ui_fields_equal": true
+    },
+    "hive": {
+      "prefix": "r6hvc",
+      "initial_energy": 200,
+      "final_energy": 464.85573,
+      "first_month_net": 18.28253,
+      "last_month_net": 25.81228,
+      "minimum_monthly_net": 18.28253,
+      "baseline_delta_min": 57.18918,
+      "baseline_delta_max": 61.86929,
+      "initial_core_population": 5300,
+      "first_month_generator_jobs": [
+        {
+          "type": "technician_drone",
+          "automated_workforce": 0,
+          "workforce": 508,
+          "max_workforce": 1200,
+          "bonus_workforce": 50.8,
+          "workforce_limit": 1200,
+          "automated_workforce_limit": 1199,
+          "planet": 0,
+          "pop_group": 4294967295
+        }
+      ],
+      "startup_checks": {
+        "single_homeworld": true,
+        "correct_homeworld_type": true,
+        "initial_energy_200": true,
+        "first_month_generator_jobs": true,
+        "auto_devour_off": true,
+        "population_preserved": true,
+        "normal_upkeep": true
+      },
+      "native_constraints": {
+        "all_stocked_resources_close": true,
+        "native_finite_job_limits_at_max": true,
+        "initial_owned_ship_ids_names_fleets_preserved": true,
+        "receipt_commands_exactly12_FF30": true
+      },
+      "auto_ui_fields_equal": true
+    },
+    "machine": {
+      "prefix": "r6mc",
+      "initial_energy": 200,
+      "final_energy": 267.27279,
+      "first_month_net": 2.85755,
+      "last_month_net": 8.22547,
+      "minimum_monthly_net": 2.85755,
+      "baseline_delta_min": 161.20939,
+      "baseline_delta_max": 167.99876,
+      "initial_core_population": 4800,
+      "first_month_generator_jobs": [
+        {
+          "type": "technician_drone",
+          "automated_workforce": 0,
+          "workforce": 904,
+          "max_workforce": 1800,
+          "bonus_workforce": 90.4,
+          "workforce_limit": 1800,
+          "automated_workforce_limit": 1799,
+          "planet": 0,
+          "pop_group": 4294967295
+        }
+      ],
+      "startup_checks": {
+        "single_homeworld": true,
+        "correct_homeworld_type": true,
+        "initial_energy_200": true,
+        "first_month_generator_jobs": true,
+        "auto_devour_off": true,
+        "population_preserved": true,
+        "normal_upkeep": true
+      },
+      "native_constraints": {
+        "all_stocked_resources_close": true,
+        "native_finite_job_limits_at_max": true,
+        "initial_owned_ship_ids_names_fleets_preserved": true,
+        "receipt_commands_exactly12_FF30": true
+      },
+      "auto_ui_fields_equal": true
+    }
+  },
+  "evidence": {
+    "purifier": {
+      "report": {
+        "path": "docs/evidence/1019-rc6-economy/purifier/native-branch-report-v2.json",
+        "sha256": "546d9c557a47601bb6d28b56c6f54a18aeaf4fe789648e74ea3001a8a78ce9df",
+        "kind": "analysis"
+      },
+      "payload": {
+        "path": "docs/evidence/1019-rc6-economy/purifier/payload-proposal-v2.json",
+        "sha256": "9b1b8a74a8507c4194524e232cd604cfea8fb09d8d37751d0827456d9192a246",
+        "kind": "analysis"
+      },
+      "original_archive_index": {
+        "path": "docs/evidence/1019-rc6-economy/purifier/archive-index.json",
+        "sha256": "5023b02908b313b6352d3be9cf6441f7fa5d761f4e744486f89011ec7f2a3029",
+        "kind": "analysis"
+      },
+      "byte_verification": {
+        "path": "docs/evidence/1019-rc6-economy/purifier/byte-verification-v1.json",
+        "sha256": "a45a9628941c7f7da3b1d2b3c2477e4fa073e414b9e5754ca5e0b7e3e64fc587",
+        "kind": "analysis"
+      }
+    },
+    "hive": {
+      "report": {
+        "path": "docs/evidence/1019-rc6-economy/hive/native-branch-report.json",
+        "sha256": "001acb4c75a14ee00519cf09f3d42467b55eb0900a08f1d4d98ba322705521b3",
+        "kind": "analysis"
+      },
+      "payload": {
+        "path": "docs/evidence/1019-rc6-economy/hive/payload-proposal.json",
+        "sha256": "a284624c193edb08bf8405c3913cd58cd204a095482f2e7e139764a61fd9367e",
+        "kind": "analysis"
+      },
+      "original_archive_index": {
+        "path": "docs/evidence/1019-rc6-economy/hive/archive-index.json",
+        "sha256": "5f77acbf76944172d8e023438b93b6c3f7484313b8027028bb6faf39bd52b6ac",
+        "kind": "analysis"
+      },
+      "byte_verification": {
+        "path": "docs/evidence/1019-rc6-economy/hive/byte-verification-v1.json",
+        "sha256": "bc79cab8d3c51fb8c82878bd47ade56869d8b51e93a6faa0c300a89e7c5848c2",
+        "kind": "analysis"
+      }
+    },
+    "machine": {
+      "report": {
+        "path": "docs/evidence/1019-rc6-economy/machine/native-branch-report.json",
+        "sha256": "55cb53915a82c7b5be9df50c482040a6f3dee2a6c4fc5d171d45e937f86ec330",
+        "kind": "analysis"
+      },
+      "payload": {
+        "path": "docs/evidence/1019-rc6-economy/machine/payload-proposal.json",
+        "sha256": "eabf39768bf373d1b99dd8a14f41ba238966d10e3a3b5a13af23e84965494994",
+        "kind": "analysis"
+      },
+      "original_archive_index": {
+        "path": "docs/evidence/1019-rc6-economy/machine/archive-index.json",
+        "sha256": "05932fabbacd14a54f0b5bc154dad7115de770d64e4e173db6ade09fbca977fb",
+        "kind": "analysis"
+      },
+      "byte_verification": {
+        "path": "docs/evidence/1019-rc6-economy/machine/byte-verification-v1.json",
+        "sha256": "f1c2e7369d3b6d446d62c8bc466ac71fe8f2ea9a444a4ea48fabf6c10775c1b5",
+        "kind": "analysis"
+      }
+    }
+  },
+  "combined_payload": {
+    "path": "docs/evidence/1019-rc6-economy/three-branch-payload-proposal-v1.json",
+    "sha256": "801796231981aa1fbef7230877374edef817eb7ed3f10508808d4bc06296d358",
+    "kind": "analysis"
+  },
+  "collector": {
+    "path": "docs/evidence/1019-analysis/rc6-economy-three-branch-proposal-v1.py",
+    "sha256": "11f43dc307eeb175fb5862e7609ca7c7dfcef050e479f41ec4b60104d15128f2",
+    "kind": "analysis"
+  },
+  "complete_cases": "PENDING"
+}
