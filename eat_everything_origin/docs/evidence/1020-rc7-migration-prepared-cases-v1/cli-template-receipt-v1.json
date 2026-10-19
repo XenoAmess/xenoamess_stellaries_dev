@@ -1,0 +1,26 @@
+{
+  "schema": "eep.rc7.migration_prepared.cli_template_receipt.v1",
+  "status": "TEMPLATE_CREATION_ONLY",
+  "calls": [
+    {
+      "command": ".venv/Scripts/python.exe -B eat_everything_origin/tools/check_migration_1019.py --output eat_everything_origin/docs/evidence/1020-rc7-migration-prepared-cases-v1/public031.template.json template public031 --candidate-tree 61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PENDING\", \"output\": \"eat_everything_origin\\\\docs\\\\evidence\\\\1020-rc7-migration-prepared-cases-v1\\\\public031.template.json\", \"error\": null}\r\n",
+      "tool_chunk_id": "74264a"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -B eat_everything_origin/tools/check_migration_1019.py --output eat_everything_origin/docs/evidence/1020-rc7-migration-prepared-cases-v1/paid11.template.json template paid11 --candidate-tree 61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PENDING\", \"output\": \"eat_everything_origin\\\\docs\\\\evidence\\\\1020-rc7-migration-prepared-cases-v1\\\\paid11.template.json\", \"error\": null}\r\n",
+      "tool_chunk_id": "97067e"
+    }
+  ],
+  "not_executed": [
+    "check",
+    "native_load",
+    "native_save",
+    "UI",
+    "Steam",
+    "Git"
+  ]
+}
