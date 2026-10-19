@@ -63,6 +63,7 @@ def load(save_name, stage):
     record = {"schema": "eep.1020.native-title-load-workflow.v1",
               "status": "TITLE_AND_UI_DATE_VERIFIED_STATE_REQUIRES_NEW_NATIVE_SAVE",
               "source_name": save_name,
+              "workflow_source": {"path": str(Path(__file__).resolve()), "sha256": h.sha256(Path(__file__))},
               "title_frame": {"path": frame["image"], "sha256": frame["image_sha256"]},
               "original_load_receipt": {"path": str(original), "sha256": h.sha256(original)},
               "native_load": result,

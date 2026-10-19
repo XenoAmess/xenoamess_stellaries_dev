@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9ga-setup-r6_uncolonized_bind-command",
+  "text": "effect clear_global_event_target = eep_r6_uncolonized random_galaxy_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no eep_digestible_world = yes NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } solar_system = { NOT = { is_same_value = event_target:eep_core0.solar_system } } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_r6_uncolonized log = \"EEP_R6_UNCOLONIZED_BOUND\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T20:56:47.539260+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

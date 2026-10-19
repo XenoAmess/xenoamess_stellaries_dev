@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9ga-setup-r6_neutral_bind-command",
+  "text": "effect clear_global_event_target = eep_r6_neutral random_country = { limit = { is_country_type = default exists = capital_scope NOT = { is_same_value = event_target:eep_mothership0.owner } NOT = { is_at_war_with = event_target:eep_mothership0.owner } NOT = { has_origin = origin_heart_of_devouring } capital_scope = { is_colony = yes is_artificial = no is_under_colonization = no has_ground_combat = no eep_digestible_world = yes planet_size > value:eep_damage_count NOT = { has_carrier_flag = eep_core } NOT = { has_planet_flag = eep_active } NOT = { has_planet_flag = being_devoured } NOT = { has_planet_flag = eep_credit_done } NOT = { has_planet_flag = eep_destroy_done } } } capital_scope = { planet = { save_global_event_target_as = eep_r6_neutral } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T20:57:27.617043+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}
