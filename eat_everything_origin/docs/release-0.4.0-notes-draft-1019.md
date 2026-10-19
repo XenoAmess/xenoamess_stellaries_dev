@@ -8,7 +8,7 @@
 
 ## 设计与验收标准
 
-六类必含新增、变更、修复、兼容范围、验收情况和已知限制；note从同草案条目提炼并以`[v0.4.0]`开头；description不提出额外承诺。核对单人加载校正、旧mobile-base缓存、多人月度补正未实机、旧伤舍入v2预算及strict旧FAIL保留。明确自有Workshop与只读上游边界，媒体6槽／4条历史inline保持，WS06等待最终Purifier实机新图。草案所有待决／未验证内容必须保留占位，不可当作正式发布完成证据。
+六类必含新增、变更、修复、兼容范围、验收情况和已知限制；note从同草案条目提炼并以`[v0.4.0]`开头；description不提出额外承诺。核对单人加载校正、旧mobile-base缓存、多人月度补正未实机、旧伤舍入v2预算及strict旧FAIL保留。明确自有Workshop与只读上游边界，媒体6槽／4条历史inline保持；WS06新RC7实机图已限定封存，WS03参考图仍待补。草案所有待决／未验证内容必须保留占位，不可当作正式发布完成证据。
 
 ## 草案内容
 
@@ -112,22 +112,24 @@ v0.3.1修复图库失效，保留历史失败记录。v0.3.0引入原生决议�
 ### 媒体与最终填写清单
 
 - 图库保留WS-01～06六槽与WS-00封面；对旧图先核公开字节，可保留同位置图，变化项用原位替换。禁止全删图库后重新引用旧图片，避免复现0.3.0失效事故。
-- 正式manifest的WS-06现仍引用旧`images/06-purifier-opening.jpg`，含旧赠品星；此前采用并准备的RC6 `images/06-purifier-single-homeworld-0.4.0-2201.jpg`只是历史素材。按[最终索引规则](rc7-final-index-closeout-20261020.md)，WS-06必须换成真实RC7 Purifier首年后原帧及同日SAV，并引用已审查的`purifier_startup`原生证据；**当前PENDING_NATIVE_SOURCE**。不借RC6素材满足RC7 gate，不裁剪旧图去掉额外星冒充，也不预填未来日期、run或SHA。
-- [逐槽审阅](release-media-review-0.4.0-1019.md)确定WS-03～05旧装备／赠品世界会误导；主线程已采用换为本轮native Relic参考、成长后Mother面板、新六核心成长报告的方向。WS-04／05现已有[sealed高等级UI限定证据](rc7-high-level-growth-ui-binding-1020.md)，只待最终素材冻结与矩阵审查，不必为图库另造战役；WS-03仍**PENDING_NATIVE_SOURCE**。WS-01／02保留原字节并明确1015历史参考标签。旧proposed manifest v1保持原字节，来源齐备时另建后继版本，正式manifest当前不改。
+- 正式manifest的WS-06现仍引用旧`images/06-purifier-opening.jpg`，含旧赠品星；此前准备的RC6 `images/06-purifier-single-homeworld-0.4.0-2201.jpg`保留为历史素材。新的RC7 `r7pucmedia-single-colony-clean.jpg`已原字节封存，并复制为`images/06-purifier-single-homeworld-0.4.0-rc7-2201.jpg`。按[最终索引规则](rc7-final-index-closeout-20261020.md)，最终仍须把该图及同日媒体SAV实际加入已接受的`purifier_startup`证据；**LOCAL_READY_PENDING_CASE_REVIEW，不是整组已通过**。不借RC6素材满足RC7 gate，也不裁剪旧图去掉额外星冒充。
+- [逐槽审阅](release-media-review-0.4.0-1019.md)确定WS-03～05旧装备／赠品世界会误导；主线程已采用换为本轮native Relic参考、成长后Mother面板、新六核心成长报告的方向。WS-04／05已有[sealed高等级UI限定证据](rc7-high-level-growth-ui-binding-1020.md)且已复制为新候选文件，WS-03仍**PENDING_NATIVE_SOURCE**。WS-01／02保留原字节并明确1015历史参考标签。旧proposed manifest v1保持原字节，新[v2候选manifest](evidence/1019-requirements/images-manifest-0.4.0-proposed-20261020-v2.json)已绑定三张新图但仍PROPOSED／final_release_selection=false，正式manifest当前不改。
 - 四条正文图保留上述完整62e273…commit URL，均已经是HTTPS。媒体审阅另轮实际GET四inline及六旧gallery，十图HTTP200且旧SHA全匹配；正式prepare／发布后verify仍须重新核验。历史图片明确标注历史，不声明新配置／新开局已在图中展示。
 - 最终只替换真实结果：正式发布日期、最终candidate／static／18组case审查与各范围；非中文只能写“静态校验通过”并注明“运行时不在范围内”。PENDING、未解决日志和未覆盖范围不能被删除成无条件通过或“无错误”。迁移v2通过时也保留strict v1 FAIL与mobilebase／多人限制。
 - 根据最后核定条目同时更新description与由同条目生成的note，不保留rc.3／rc.4旧候选标题；正式内容提交与metadata-only核对、公开图／远端包核验、tag及Steam离线恢复由主线程执行。本文仍为draft，不是这些步骤的完成回执。
 
-可直接用于后继proposed manifest的标题与字段候选如下；这是文案提案，不执行复制或正式manifest写入。
+以下三图已按主线程授权原字节复制至本地候选文件，字段记录在独立proposed v2；仅正式manifest与最终发布仍未实施。
 
 | 槽位 | 真实来源与建议标题 | 最终字段处理 |
 | --- | --- | --- |
 | WS-03 | **PENDING_NATIVE_SOURCE**；计划标题“遗迹级原生参考：同国同日配置对照”。 | 待主线程实际取得参考图／同日SAV后填写全部来源，不复用压力图或历史旧母舰图。 |
-| WS-04 | `../docs/evidence/1020-rc7-high-level-ui-v1/raw/r7ev-mother-details-clean.jpg`；建议标题“成长压力测试：L2050母舰实际属性面板（人为构造，非开局数值）”。 | 建议新`file=images/04-mothership-growth-pressure-0.4.0-c20500.jpg`；191431 bytes，JPEG1024×768，SHA `3a976a78c078417f0074703f762c085fe606721b318b3cad10c3839d20963025`；真实run `20261019T164112Z`，日期`2202.08.07`，native_save为同包`raw/r7evready.sav`且日期相同。 |
-| WS-05 | `../docs/evidence/1020-rc7-high-level-ui-v1/raw/r7ev-report-top.jpg`；建议标题“成长压力测试：C20500／L2050，六核心累计410次随机升级，待补0”。 | 建议新`file=images/05-evolution-report-growth-pressure-0.4.0-c20500.jpg`；196870 bytes，JPEG1024×768，SHA `f38882b9c4eaa37ad8906dc17a450d06cc3df19a3d9c5276013b2b12f9d8f736`；同run／同日，同包`raw/r7evreport.sav`。说明六级数按护盾／装甲／舰体／火力／索敌／再生为63／74／76／63／56／78，来自实际报告。 |
-| WS-06 | **PENDING_NATIVE_SOURCE**；计划标题“种族洁癖单母星首年后：无额外赠品殖民地”。 | 只用新的RC7真实图／同日SAV；其`run_id/source/native_save`须属于最终已接受的`purifier_startup`证据。日期以实际为准，不能先写成2200年开局。 |
+| WS-04 | `../docs/evidence/1020-rc7-high-level-ui-v1/raw/r7ev-mother-details-clean.jpg`；标题“成长压力测试：L2050母舰实际属性面板（人为构造，非开局数值）”。 | 新`file=images/04-mothership-growth-stress-0.4.0.jpg`；191431 bytes，JPEG1024×768，SHA `3a976a78c078417f0074703f762c085fe606721b318b3cad10c3839d20963025`；真实run `20261019T164112Z`，日期`2202.08.07`，native_save为同包`raw/r7evready.sav`且日期相同。 |
+| WS-05 | `../docs/evidence/1020-rc7-high-level-ui-v1/raw/r7ev-report-top.jpg`；标题“成长压力测试：C20500／L2050，六核心累计410次随机升级，待补0”。 | 新`file=images/05-growth-report-stress-0.4.0.jpg`；196870 bytes，JPEG1024×768，SHA `f38882b9c4eaa37ad8906dc17a450d06cc3df19a3d9c5276013b2b12f9d8f736`；同run／同日，同包`raw/r7evreport.sav`。说明六级数按护盾／装甲／舰体／火力／索敌／再生为63／74／76／63／56／78，来自实际报告。 |
+| WS-06 | `../docs/evidence/1020-rc7-purifier-gallery-v1/raw/r7pucmedia-single-colony-clean.jpg`；标题“实机验收预设：种族洁癖单母星，首年12个月净电均为正；2201.01.01，殖民地1”。 | 新`file=images/06-purifier-single-homeworld-0.4.0-rc7-2201.jpg`；181465 bytes，JPEG1024×768，SHA `86bbe9b5e435fae8667e44a3cca349c2e9eef97c8c3f8c7c932b9d416de3fa6e`；run `20261019T164112Z`，日期`2201.01.01`，同包`raw/r7pucmedia.sav` SHA `d170383d77f516a21da859e606a4061e6b0ffcc245b69c61ed267ee346263574`。最终case引用仍待共同审查。 |
 
 WS-04／05的notes都应写明：人为设置C20500的成长压力分支，已按单次预算补齐随机奖励并等待原生缓存刷新；不是自然战役累积，也不是新开局属性或首年经济。WS-04面板damage是游戏显示值，不能称作战斗实测DPS。原图不裁剪、不重绘；正式file只原字节复制对应source，OCR／audit相邻来源仍保留。两张不同原帧不在其它槽重复使用。
+
+WS-06画面独立可见遗落母星、殖民地1、空建造队列和约+46电。全年正电引用独立[纯经济原生报告](evidence/1019-rc7-economy/purifier/native-branch-report.json)，十二月净电为46.23969～46.75291；四项输入操作约束仍由主线程单独审查，不能用截图补成true。媒体段在经济封口后确认原生弹窗，实际增加矿物2、物理／社会研究各3.0899、工程研究3.8099，并产生原生危机特殊项目及教程状态变化；完整23项原生差异保留于[媒体小包](evidence/1020-rc7-purifier-gallery-v1/native-differences.json)。媒体SAV不等于yearUI，父脚本在媒体保存后的跟进断言退出，不宣称整个父脚本exit0；独立媒体角色真实保存不受影响。
 
 ### 最终主线程需落地的具体输入
 
