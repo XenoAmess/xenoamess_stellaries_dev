@@ -1,0 +1,343 @@
+{
+  "schema": "eep.rc7.empty-selector.engine-probe-and-v2-analysis.v1",
+  "status": "ROOT_CAUSE_CONFIRMED_FOR_ORIGINAL_EMPTY_LIMIT_V2_RUNTIME_PENDING",
+  "created_at_utc": "2026-10-19T19:42:30.602934+00:00",
+  "excerpt": {
+    "path": "run/r7normalprobe-native-log-excerpt-v2.json",
+    "sha256": "dac9f928f045c61d98f2abf1f3c63c56e2a3b8d1150c9437fc5fa9de5fe6260f",
+    "scope": "Root diagnostic excerpt from active native log; final stopped log review still pending",
+    "is_final_stopped_log": false,
+    "old_excerpt_is_unchanged_prefix": true
+  },
+  "actual_inputs": [
+    {
+      "probe": "A",
+      "actual_action": {
+        "action": "type_text",
+        "stage": "r7normalprobe-a-command",
+        "text": "effect log = \"R7NP_A_ROOT\" if = { limit = { exists = event_target:eep_core0 } log = \"R7NP_A_CORE_EXISTS\" } event_target:eep_core0 = { log = \"R7NP_A_CORE [This.GetName]\" solar_system = { log = \"R7NP_A_SYSTEM [This.GetName]\" every_system_planet = { log = \"R7NP_A_EACH [This.GetName]\" } random_system_planet = { log = \"R7NP_A_RANDOM [This.GetName]\" } } } log = \"R7NP_A_END\"",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T19:38:40.527920+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "actual_enter": {
+        "action": "press_scan_code",
+        "stage": "r7normalprobe-a-command-enter",
+        "scan_code": 28,
+        "repeat": 1,
+        "at_utc": "2026-10-19T19:38:40.611228+00:00"
+      }
+    },
+    {
+      "probe": "B",
+      "actual_action": {
+        "action": "type_text",
+        "stage": "r7normalprobe-b-command",
+        "text": "effect event_target:eep_core0 = { solar_system = { every_system_planet = { if = { limit = { is_colony = no } log = \"R7NP_B_C0 [This.GetName]\" } if = { limit = { NOT = { is_colony = yes } } log = \"R7NP_B_CN [This.GetName]\" } if = { limit = { is_under_colonization = no } log = \"R7NP_B_U0 [This.GetName]\" } if = { limit = { NOT = { is_under_colonization = yes } } log = \"R7NP_B_UN [This.GetName]\" } if = { limit = { is_star = no } log = \"R7NP_B_S0 [This.GetName]\" } if = { limit = { is_artificial = no } log = \"R7NP_B_A0 [This.GetName]\" } } } }",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T19:39:35.070782+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "actual_enter": {
+        "action": "press_scan_code",
+        "stage": "r7normalprobe-b-command-enter",
+        "scan_code": 28,
+        "repeat": 1,
+        "at_utc": "2026-10-19T19:39:35.154118+00:00"
+      }
+    },
+    {
+      "probe": "C",
+      "actual_action": {
+        "action": "type_text",
+        "stage": "r7normalprobe-c-command",
+        "text": "effect event_target:eep_core0 = { solar_system = { every_system_planet = { if = { limit = { NOT = { has_carrier_flag = eep_core } } log = \"R7NP_C_K0 [This.GetName]\" } if = { limit = { NOT = { has_carrier_flag = eep_guard_reserved } } log = \"R7NP_C_R0 [This.GetName]\" } if = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } log = \"R7NP_C_PASS [This.GetName]\" } } random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } log = \"R7NP_C_RANDOM_PASS [This.GetName]\" } } }",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T19:40:14.181779+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "actual_enter": {
+        "action": "press_scan_code",
+        "stage": "r7normalprobe-c-command-enter",
+        "scan_code": 28,
+        "repeat": 1,
+        "at_utc": "2026-10-19T19:40:14.265191+00:00"
+      }
+    }
+  ],
+  "marker_counts": {
+    "R7NP_A_ROOT": 1,
+    "R7NP_A_CORE_EXISTS": 1,
+    "R7NP_A_CORE": 1,
+    "R7NP_A_SYSTEM": 1,
+    "R7NP_A_EACH": 10,
+    "R7NP_A_RANDOM": 1,
+    "R7NP_A_END": 1,
+    "R7NP_B_C0": 9,
+    "R7NP_B_CN": 9,
+    "R7NP_B_UN": 10,
+    "R7NP_B_A0": 10,
+    "R7NP_B_S0": 9,
+    "R7NP_B_U0": 1,
+    "R7NP_C_K0": 9,
+    "R7NP_C_R0": 10
+  },
+  "missing_marker_counts": {
+    "R7NP_C_PASS": 0,
+    "R7NP_C_RANDOM_PASS": 0
+  },
+  "under_no_names": [
+    "EEP-Core"
+  ],
+  "under_not_yes_names": [
+    "EEP-Core",
+    "EEP-Throne",
+    "卡拉克",
+    "吉萨",
+    "托斯卡纳",
+    "拉斯维达斯",
+    "新罗阿诺克",
+    "春天",
+    "望",
+    "马达因"
+  ],
+  "original_full_limit_candidate_names_derived": [],
+  "single_replacement_limit_candidate_names_derived": [
+    "卡拉克",
+    "吉萨",
+    "托斯卡纳",
+    "拉斯维达斯",
+    "新罗阿诺克",
+    "春天",
+    "望",
+    "马达因"
+  ],
+  "replacement_candidate_count": 8,
+  "derivation_scope": "Independent per-predicate sets from same physical every_system_planet. Original full C also0. v2 actual creation not yet observed.",
+  "variants": [
+    {
+      "id": "owned_q2_setup",
+      "original_sha256": "cd86555b21bf7f2ab625bacf18502a9bbdf720cec9de9fe31c469d9cb53a591d",
+      "new_sha256": "abc83f3f0082d843a238de17f5a479dc5ded5f1a3dc43e0e8bdb9d9c8b4dd42d",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 683,
+      "current_route": true
+    },
+    {
+      "id": "batch_split_bind",
+      "original_sha256": "80ffa2da7812fcd24bafe9cf655aaf3ab41e17078bb4254eda5eba3cab2280b7",
+      "new_sha256": "033bbfd94f6249035e8d4851e7dc04ed27b1b5d59993e179553cef25362490d8",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 791,
+      "current_route": true
+    },
+    {
+      "id": "batch_setup_active",
+      "original_sha256": "c53ff8c427effaf657010806d166c01e6a1af38afee709b1dfcaa95f9b2f593c",
+      "new_sha256": "d7383b7d7d6a11507c89f7415d9aeefb4a54013efac9a3d8f539a4ac62e35bbd",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 702,
+      "current_route": true
+    },
+    {
+      "id": "batch_setup_devouring",
+      "original_sha256": "e4262c4964416fb582cbddf6f53f367f40b2238642e02ff9e6c9db9cedb4f671",
+      "new_sha256": "586680ac4921612a236d563cce57f017f9a885d7383edf746be87a921d5ad4c3",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 715,
+      "current_route": true
+    },
+    {
+      "id": "batch_setup_credit",
+      "original_sha256": "2a22311759e836716205e41a3680ed28ed41eec32ae448f5d478f465400a35fd",
+      "new_sha256": "cc2437703683528431029b9ca599b8e0ca00b79e6a7159aec2f0df8e2313d34b",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 707,
+      "current_route": true
+    },
+    {
+      "id": "batch_setup_destroy",
+      "original_sha256": "c5ddddfe87f776721c1552166a9672b6931c76d995c952d06f35eb3d751b9e6b",
+      "new_sha256": "bbfc357ded53614e9ee6bb478b404bdae6659fab989f1eda2693310bf1942d3d",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 711,
+      "current_route": true
+    },
+    {
+      "id": "batch_setup_secondary_core",
+      "original_sha256": "841f6dfab0cc48e497d66f9c37764edc41d2168d92138990ed7412b2ad81bd26",
+      "new_sha256": "1e6cc0b20d09cb2bab4fdf1fe064c5fac07b43ae5da4afbe2adceaed1b04d4d9",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 724,
+      "current_route": true
+    },
+    {
+      "id": "batch_setup_artificial",
+      "original_sha256": "f1c2c587b3ed609ce15f10da3de3e2baf99d00ce910c9e7bd2f10095fe6b1307",
+      "new_sha256": "319deb6f05c45077b2f3a3ac88fb6dd6059ea54626f52a177d38c97f05850ee3",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 729,
+      "current_route": true
+    },
+    {
+      "id": "batch_setup_qzero",
+      "original_sha256": "22bd57f430778b936c8c294bdccf5914793543c368910fef54e63d91b1cacf7f",
+      "new_sha256": "90751be63435025142726541ab22df493ca6f0a32aa93e3a742f178bd95d604c",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 801,
+      "current_route": true
+    },
+    {
+      "id": "colonizing_setup",
+      "original_sha256": "05457591fe5f888dd39dea0a1013c49c35ec5f5f08b91e7bda6f74e768e563ee",
+      "new_sha256": "469e63dd21ec2f1d123c82992f4a8e3e8c0b437df364c0880299c29d639605d7",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 1290,
+      "current_route": false
+    },
+    {
+      "id": "colonizing_reserve_split",
+      "original_sha256": "46dd00914fcc7b33adb8b3f4a80d863943866835d0245e693b8d7a3226a5ba90",
+      "new_sha256": "d97ad3629707f0aed0db0e32414b2d17c64dd0652800f6310e7f4dedd86174e5",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 485,
+      "current_route": true
+    },
+    {
+      "id": "colonizing_start_split",
+      "original_sha256": "febc350418308e8b5b8bd0fc70c205e87adc195d03d298ed26babc4fde44a256",
+      "new_sha256": "6235f28a896c924f7ee3edfbc52b1cb68660459277cb86fa762fba5843f4c715",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 629,
+      "current_route": true
+    },
+    {
+      "id": "lithoid_q2_setup",
+      "original_sha256": "03c1963dad45744155fa40445672f4e670071982e618a08ab252846fabfc8c95",
+      "new_sha256": "95caa443f33f4b0767326bc580ee7994536216b59f86c1b3b5215b8f27a06119",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 684,
+      "current_route": false
+    },
+    {
+      "id": "r6_uncolonized_bind",
+      "original_sha256": "f20ec936c8a772485a4f30ae69a6a46987372fe8d5a62c77d4bba85f8cb1b830",
+      "new_sha256": "0e8f8348622166768abd203c41132abc23c61e2841841605f1e0809c776acf61",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 491,
+      "current_route": true
+    },
+    {
+      "id": "r6_uncolonized_dispatch",
+      "original_sha256": "fee7d21443996c41e87756ddd383ed26aa9a1518a6ce165ff0b850622eb81834",
+      "new_sha256": "51cab51e725b73b3561812b1bd8a4e5e0ea5cb4c100d8677472c7534c8044902",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 480,
+      "current_route": true
+    },
+    {
+      "id": "r6_lithoid_loss_setup",
+      "original_sha256": "2e9f5f465af8b49c7ccd3bdc79c6461bb321140b2c4eeeeaef7d8236044b2d7d",
+      "new_sha256": "ddaa4ca7d4ff42b019ffd7c9ed5413637fbc05fbddc81d141ebe14dba822c588",
+      "only_exact_single_fragment_replaced": true,
+      "chars": 725,
+      "current_route": true
+    }
+  ],
+  "source_files_unchanged": [
+    {
+      "path": "testing/colossus_1019_postfire_plan.json",
+      "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8"
+    },
+    {
+      "path": "testing/colossus_1019_rc6_execution_map.json",
+      "sha256": "c9b81e616bc3bc2b79c240f8889fe668d296e5035c80b4cbcb7a9ba18f935650"
+    }
+  ],
+  "production_readonly": [
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc7\\mod\\common\\scripted_triggers\\eep_triggers.txt",
+      "sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "declaration": "eep_source_valid",
+      "explicit_colony_yes_precondition": true,
+      "empty_candidate_selector": false
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc7\\mod\\common\\scripted_triggers\\eep_planet_killer.txt",
+      "sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "declaration": "eep_colossus_target_valid",
+      "explicit_colony_yes_precondition": true,
+      "empty_candidate_selector": false
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\scripted_triggers\\eep_triggers.txt",
+      "sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "declaration": "eep_source_valid",
+      "explicit_colony_yes_precondition": true,
+      "empty_candidate_selector": false
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\mod\\eep-1019\\common\\scripted_triggers\\eep_planet_killer.txt",
+      "sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "declaration": "eep_colossus_target_valid",
+      "explicit_colony_yes_precondition": true,
+      "empty_candidate_selector": false
+    }
+  ],
+  "all59production_files_in_repository_and_loaded_copy_match_manifest": true,
+  "production_changes_required_by_this_empty_planet_defect": false,
+  "actual_Kaishek_run": {
+    "command": [
+      "python",
+      "-B",
+      "D:\\workspace\\open_kaishek\\tools\\accept_stellaris_mod.py",
+      "--mod",
+      "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\empty_planet_selector_v2_1020",
+      "--game",
+      "C:\\SteamLibrary\\steamapps\\common\\Stellaris",
+      "--expected-exe-sha256",
+      "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+      "--report",
+      "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc7-empty-planet-selector-v2-open-kaishek-1020.json"
+    ],
+    "exit_code": 0,
+    "input_files": [
+      {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\empty_planet_selector_v2_1020\\descriptor.mod",
+        "sha256": "da08082c82f35618e2ab27a928b580d61b7567f10402cc332a9d1eb61ff48598"
+      },
+      {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\empty_planet_selector_v2_1020\\VERSION",
+        "sha256": "bbb3aa2648f7941e958ec66bb2fa1935d24b7a5f6bd1be76c6f08d3eaf055f4f"
+      },
+      {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\empty_planet_selector_v2_1020\\common\\scripted_effects\\eep_empty_planet_selector_v2.txt",
+        "sha256": "e52421ef2b86a27edd61454f382d452fcc77116f596a56b40e5d4d0a9a4ce9dc"
+      }
+    ],
+    "tool": {
+      "path": "D:\\workspace\\open_kaishek\\tools\\accept_stellaris_mod.py",
+      "sha256": "5c98b4692a6731aee88348893e6d97ee56d852baa210348cc1684aae4e80db3f"
+    },
+    "cli": {
+      "path": "D:\\workspace\\open_kaishek\\kaishek-cli\\target\\kaishek-cli-0.1.0-SNAPSHOT.jar",
+      "sha256": "6ac143ebf03f3e1a041dff01b2d808e60de8e289d18cebf9855682f0a80b6d82"
+    },
+    "output_report": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc7-empty-planet-selector-v2-open-kaishek-1020.json",
+      "sha256": "912613768f10d5fcacddc36c79620ff83b9e10923305fafeee10d8d8fe7b4b7c"
+    },
+    "result": {
+      "status": "PASS",
+      "p_scripts": 2,
+      "p_parsed": 2,
+      "errors": []
+    },
+    "scope": "syntax/package including supported fixed weapon CSV paths, literal planet-killer numeric sources and callback existence plus explicitly registered finite population scopes and referenced script-value shapes only; native loading, phase timing, runtime, recursive expansion and other opcodes require Stellaris tests"
+  },
+  "UI_Git_production_Mod_original_fixture_or_tool_changes": false,
+  "subsequent_normal_new_stems_or_active_log_read": false
+}

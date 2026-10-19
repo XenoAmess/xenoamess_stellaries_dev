@@ -1,0 +1,33 @@
+{
+  "schema": "eep.rc7.normal-setup-empty-selector-v2",
+  "status": "STATIC_SYNTAX_PACKAGE_PASS_RUNTIME_PENDING",
+  "normal": {
+    "id": "owned_q2_setup",
+    "variant_id": "owned_q2_setup_empty_planet_v2",
+    "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_reg_owned_source change_pc = pc_machine set_planet_size = 2 clear_deposits = yes create_colony = { owner = event_target:eep_mothership0.owner species = event_target:eep_mothership0.owner_main_species } create_pop_group = { species = event_target:eep_mothership0.owner_main_species size = 50 } set_name = \"EEP_REG_Q2_50\" log = \"EEP_REG_Q2_CREATED\" } } }",
+    "command_chars": 683,
+    "command_sha256": "abc83f3f0082d843a238de17f5a479dc5ded5f1a3dc43e0e8bdb9d9c8b4dd42d",
+    "source": {
+      "path": "testing/colossus_1019_postfire_plan.json",
+      "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+      "id": "owned_q2_setup",
+      "original_command_sha256": "cd86555b21bf7f2ab625bacf18502a9bbdf720cec9de9fe31c469d9cb53a591d",
+      "original_command_chars": 672
+    },
+    "replacement_count": 1,
+    "only_change": {
+      "from": "is_under_colonization = no",
+      "to": "NOT = { is_under_colonization = yes }"
+    },
+    "console_under1000": true,
+    "execute_in_current_route": true,
+    "runtime_result": null
+  },
+  "scope": "Original setup plus exact single predicate replacement only; engine runtime still pending.",
+  "static_acceptance": {
+    "path": "docs/evidence/1019-analysis/rc7-empty-planet-selector-v2-open-kaishek-1020.json",
+    "sha256": "912613768f10d5fcacddc36c79620ff83b9e10923305fafeee10d8d8fe7b4b7c",
+    "status": "PASS",
+    "scope": "syntax/package including supported fixed weapon CSV paths, literal planet-killer numeric sources and callback existence plus explicitly registered finite population scopes and referenced script-value shapes only; native loading, phase timing, runtime, recursive expansion and other opcodes require Stellaris tests"
+  }
+}

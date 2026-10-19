@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r7normalprobe-a-command",
+  "text": "effect log = \"R7NP_A_ROOT\" if = { limit = { exists = event_target:eep_core0 } log = \"R7NP_A_CORE_EXISTS\" } event_target:eep_core0 = { log = \"R7NP_A_CORE [This.GetName]\" solar_system = { log = \"R7NP_A_SYSTEM [This.GetName]\" every_system_planet = { log = \"R7NP_A_EACH [This.GetName]\" } random_system_planet = { log = \"R7NP_A_RANDOM [This.GetName]\" } } } log = \"R7NP_A_END\"",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T19:38:40.527920+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

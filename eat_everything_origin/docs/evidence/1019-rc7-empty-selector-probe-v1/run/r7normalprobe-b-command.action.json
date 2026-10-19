@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r7normalprobe-b-command",
+  "text": "effect event_target:eep_core0 = { solar_system = { every_system_planet = { if = { limit = { is_colony = no } log = \"R7NP_B_C0 [This.GetName]\" } if = { limit = { NOT = { is_colony = yes } } log = \"R7NP_B_CN [This.GetName]\" } if = { limit = { is_under_colonization = no } log = \"R7NP_B_U0 [This.GetName]\" } if = { limit = { NOT = { is_under_colonization = yes } } log = \"R7NP_B_UN [This.GetName]\" } if = { limit = { is_star = no } log = \"R7NP_B_S0 [This.GetName]\" } if = { limit = { is_artificial = no } log = \"R7NP_B_A0 [This.GetName]\" } } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T19:39:35.070782+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

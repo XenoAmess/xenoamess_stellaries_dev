@@ -1,0 +1,394 @@
+{
+  "schema": "eep.rc7.empty-world-selector-command-variants.v2",
+  "status": "STATIC_SYNTAX_PACKAGE_PASS_RUNTIME_PENDING",
+  "game_version": "4.5.2",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "production_Mod_changed": false,
+  "original_command_sources_unchanged": true,
+  "sources": [
+    {
+      "path": "testing/colossus_1019_postfire_plan.json",
+      "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8"
+    },
+    {
+      "path": "testing/colossus_1019_rc6_execution_map.json",
+      "sha256": "c9b81e616bc3bc2b79c240f8889fe668d296e5035c80b4cbcb7a9ba18f935650"
+    }
+  ],
+  "replacement_scope": "Exactly one original empty-planet selector fragment per command; colonized predicates untouched.",
+  "commands": [
+    {
+      "id": "owned_q2_setup",
+      "variant_id": "owned_q2_setup_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_reg_owned_source change_pc = pc_machine set_planet_size = 2 clear_deposits = yes create_colony = { owner = event_target:eep_mothership0.owner species = event_target:eep_mothership0.owner_main_species } create_pop_group = { species = event_target:eep_mothership0.owner_main_species size = 50 } set_name = \"EEP_REG_Q2_50\" log = \"EEP_REG_Q2_CREATED\" } } }",
+      "command_chars": 683,
+      "command_sha256": "abc83f3f0082d843a238de17f5a479dc5ded5f1a3dc43e0e8bdb9d9c8b4dd42d",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "owned_q2_setup",
+        "original_command_sha256": "cd86555b21bf7f2ab625bacf18502a9bbdf720cec9de9fe31c469d9cb53a591d",
+        "original_command_chars": 672
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_split_bind",
+      "variant_id": "batch_split_bind_empty_planet_v2",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } event_target:eep_core0 = { solar_system = { count_system_planet = { count = 7 limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } } } } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } log = \"EEP_GUARD_SPLIT_BINDINGS_READY\" } else = { log = \"EEP_GUARD_SPLIT_BASE_INVALID_OR_ALREADY_PREPARED\" }",
+      "command_chars": 791,
+      "command_sha256": "033bbfd94f6249035e8d4851e7dc04ed27b1b5d59993e179553cef25362490d8",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_split_bind",
+        "original_command_sha256": "80ffa2da7812fcd24bafe9cf655aaf3ab41e17078bb4254eda5eba3cab2280b7",
+        "original_command_chars": 780
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_setup_active",
+      "variant_id": "batch_setup_active_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_active save_global_event_target_as = eep_guard_active change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_ACTIVE\" log = \"EEP_GUARD_SPLIT_ACTIVE_REQUESTED\" } } }",
+      "command_chars": 702,
+      "command_sha256": "d7383b7d7d6a11507c89f7415d9aeefb4a54013efac9a3d8f539a4ac62e35bbd",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_setup_active",
+        "original_command_sha256": "c53ff8c427effaf657010806d166c01e6a1af38afee709b1dfcaa95f9b2f593c",
+        "original_command_chars": 691
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_setup_devouring",
+      "variant_id": "batch_setup_devouring_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = being_devoured save_global_event_target_as = eep_guard_devouring change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_DEVOURING\" log = \"EEP_GUARD_SPLIT_DEVOURING_REQUESTED\" } } }",
+      "command_chars": 715,
+      "command_sha256": "586680ac4921612a236d563cce57f017f9a885d7383edf746be87a921d5ad4c3",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_setup_devouring",
+        "original_command_sha256": "e4262c4964416fb582cbddf6f53f367f40b2238642e02ff9e6c9db9cedb4f671",
+        "original_command_chars": 704
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_setup_credit",
+      "variant_id": "batch_setup_credit_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_credit_done save_global_event_target_as = eep_guard_credit change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_CREDIT\" log = \"EEP_GUARD_SPLIT_CREDIT_REQUESTED\" } } }",
+      "command_chars": 707,
+      "command_sha256": "cc2437703683528431029b9ca599b8e0ca00b79e6a7159aec2f0df8e2313d34b",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_setup_credit",
+        "original_command_sha256": "2a22311759e836716205e41a3680ed28ed41eec32ae448f5d478f465400a35fd",
+        "original_command_chars": 696
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_setup_destroy",
+      "variant_id": "batch_setup_destroy_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_destroy_done save_global_event_target_as = eep_guard_destroy change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_DESTROY\" log = \"EEP_GUARD_SPLIT_DESTROY_REQUESTED\" } } }",
+      "command_chars": 711,
+      "command_sha256": "bbfc357ded53614e9ee6bb478b404bdae6659fab989f1eda2693310bf1942d3d",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_setup_destroy",
+        "original_command_sha256": "c5ddddfe87f776721c1552166a9672b6931c76d995c952d06f35eb3d751b9e6b",
+        "original_command_chars": 700
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_setup_secondary_core",
+      "variant_id": "batch_setup_secondary_core_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_core save_global_event_target_as = eep_guard_secondary_core change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_SECONDARY_CORE\" log = \"EEP_GUARD_SPLIT_SECONDARY_CORE_REQUESTED\" } } }",
+      "command_chars": 724,
+      "command_sha256": "1e6cc0b20d09cb2bab4fdf1fe064c5fac07b43ae5da4afbe2adceaed1b04d4d9",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_setup_secondary_core",
+        "original_command_sha256": "841f6dfab0cc48e497d66f9c37764edc41d2168d92138990ed7412b2ad81bd26",
+        "original_command_chars": 713
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_setup_artificial",
+      "variant_id": "batch_setup_artificial_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_guard_case_artificial save_global_event_target_as = eep_guard_artificial change_pc = pc_habitat clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_ARTIFICIAL\" log = \"EEP_GUARD_SPLIT_ARTIFICIAL_REQUESTED\" } } }",
+      "command_chars": 729,
+      "command_sha256": "319deb6f05c45077b2f3a3ac88fb6dd6059ea54626f52a177d38c97f05850ee3",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_setup_artificial",
+        "original_command_sha256": "f1c2c587b3ed609ce15f10da3de3e2baf99d00ce910c9e7bd2f10095fe6b1307",
+        "original_command_chars": 718
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "batch_setup_qzero",
+      "variant_id": "batch_setup_qzero_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_guard_case_qzero save_global_event_target_as = eep_guard_qzero change_pc = pc_machine clear_deposits = yes set_planet_size = 2 add_deposit = d_lithoid_devastation add_deposit = d_lithoid_devastation create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_QZERO\" log = \"EEP_GUARD_SPLIT_QZERO_REQUESTED\" } } }",
+      "command_chars": 801,
+      "command_sha256": "90751be63435025142726541ab22df493ca6f0a32aa93e3a742f178bd95d604c",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "batch_setup_qzero",
+        "original_command_sha256": "22bd57f430778b936c8c294bdccf5914793543c368910fef54e63d91b1cacf7f",
+        "original_command_chars": 790
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "colonizing_setup",
+      "variant_id": "colonizing_setup_empty_planet_v2",
+      "command": "effect clear_global_event_target = eep_guard_colonizing if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } NOT = { has_carrier_flag = eep_guard_batch } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_guard_colonizing change_pc = pc_machine clear_deposits = yes if = { limit = { is_colonizable = yes can_colonize = { who = event_target:eep_guard_actor status = yes } } start_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } set_name = \"EEP_GUARD_COLONIZING\" log = \"EEP_GUARD_COLONIZATION_REQUESTED\" } else = { log = \"EEP_GUARD_COLONIZATION_NOT_ALLOWED\" } } } } } else = { log = \"EEP_GUARD_COLONIZING_BASE_INVALID\" }",
+      "command_chars": 1290,
+      "command_sha256": "469e63dd21ec2f1d123c82992f4a8e3e8c0b437df364c0880299c29d639605d7",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "colonizing_setup",
+        "original_command_sha256": "05457591fe5f888dd39dea0a1013c49c35ec5f5f08b91e7bda6f74e768e563ee",
+        "original_command_chars": 1279
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": false,
+      "execute_in_current_route": false,
+      "runtime_result": null
+    },
+    {
+      "id": "colonizing_reserve_split",
+      "variant_id": "colonizing_reserve_split_empty_planet_v2",
+      "command": "effect clear_global_event_target = eep_guard_colonizing event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_guard_colonizing change_pc = pc_machine clear_deposits = yes log = \"EEP_COLONIZING_OBJECT_RESERVED\" } } }",
+      "command_chars": 485,
+      "command_sha256": "d97ad3629707f0aed0db0e32414b2d17c64dd0652800f6310e7f4dedd86174e5",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "colonizing_reserve_split",
+        "original_command_sha256": "46dd00914fcc7b33adb8b3f4a80d863943866835d0245e693b8d7a3226a5ba90",
+        "original_command_chars": 474
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "colonizing_start_split",
+      "variant_id": "colonizing_start_split_empty_planet_v2",
+      "command": "effect if = { limit = { exists = event_target:eep_guard_actor exists = event_target:eep_guard_species exists = event_target:eep_guard_colonizing } event_target:eep_guard_colonizing = { if = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_colonizable = yes can_colonize = { who = event_target:eep_guard_actor status = yes } } start_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } set_name = \"EEP_GUARD_COLONIZING\" log = \"EEP_GUARD_COLONIZATION_REQUESTED\" } else = { log = \"EEP_GUARD_COLONIZATION_NOT_ALLOWED\" } } } else = { log = \"EEP_GUARD_COLONIZING_BIND_MISSING\" }",
+      "command_chars": 629,
+      "command_sha256": "6235f28a896c924f7ee3edfbc52b1cb68660459277cb86fa762fba5843f4c715",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "colonizing_start_split",
+        "original_command_sha256": "febc350418308e8b5b8bd0fc70c205e87adc195d03d298ed26babc4fde44a256",
+        "original_command_chars": 618
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "lithoid_q2_setup",
+      "variant_id": "lithoid_q2_setup_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_reg_owned_source change_pc = pc_hive set_planet_size = 2 clear_deposits = yes create_colony = { owner = event_target:eep_mothership0.owner species = event_target:eep_mothership0.owner_main_species } create_pop_group = { species = event_target:eep_mothership0.owner_main_species size = 300 } set_name = \"EEP_LITH_Q2_300\" log = \"EEP_LITH_Q2_CREATED\" } } }",
+      "command_chars": 684,
+      "command_sha256": "95caa443f33f4b0767326bc580ee7994536216b59f86c1b3b5215b8f27a06119",
+      "source": {
+        "path": "testing/colossus_1019_postfire_plan.json",
+        "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+        "id": "lithoid_q2_setup",
+        "original_command_sha256": "03c1963dad45744155fa40445672f4e670071982e618a08ab252846fabfc8c95",
+        "original_command_chars": 673
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": false,
+      "runtime_result": null
+    },
+    {
+      "id": "r6_uncolonized_bind",
+      "variant_id": "r6_uncolonized_bind_empty_planet_v2",
+      "command": "effect clear_global_event_target = eep_r6_uncolonized random_galaxy_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no eep_digestible_world = yes NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } solar_system = { NOT = { is_same_value = event_target:eep_core0.solar_system } } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_r6_uncolonized log = \"EEP_R6_UNCOLONIZED_BOUND\" }",
+      "command_chars": 491,
+      "command_sha256": "0e8f8348622166768abd203c41132abc23c61e2841841605f1e0809c776acf61",
+      "source": {
+        "path": "testing/colossus_1019_rc6_execution_map.json",
+        "sha256": "c9b81e616bc3bc2b79c240f8889fe668d296e5035c80b4cbcb7a9ba18f935650",
+        "id": "r6_uncolonized_bind",
+        "original_command_sha256": "f20ec936c8a772485a4f30ae69a6a46987372fe8d5a62c77d4bba85f8cb1b830",
+        "original_command_chars": 480
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "r6_uncolonized_dispatch",
+      "variant_id": "r6_uncolonized_dispatch_empty_planet_v2",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_r6_uncolonized } event_target:eep_r6_uncolonized = { if = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_artificial = no eep_digestible_world = yes } log = \"EEP_R6_UNCOLONIZED_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_R6_UNCOLONIZED_NOT_READY\" } } }",
+      "command_chars": 480,
+      "command_sha256": "51cab51e725b73b3561812b1bd8a4e5e0ea5cb4c100d8677472c7534c8044902",
+      "source": {
+        "path": "testing/colossus_1019_rc6_execution_map.json",
+        "sha256": "c9b81e616bc3bc2b79c240f8889fe668d296e5035c80b4cbcb7a9ba18f935650",
+        "id": "r6_uncolonized_dispatch",
+        "original_command_sha256": "fee7d21443996c41e87756ddd383ed26aa9a1518a6ce165ff0b850622eb81834",
+        "original_command_chars": 469
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    },
+    {
+      "id": "r6_lithoid_loss_setup",
+      "variant_id": "r6_lithoid_loss_setup_empty_planet_v2",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_reg_owned_source change_pc = pc_hive set_planet_size = 3 create_colony = { owner = event_target:eep_mothership0.owner species = event_target:eep_mothership0.owner_main_species } create_pop_group = { species = event_target:eep_mothership0.owner_main_species size = 300 } clear_deposits = yes add_deposit = d_lithoid_devastation set_name = \"EEP_R6_LITH_Q2_LOSS1\" log = \"EEP_LITH_Q2_CREATED\" } } }",
+      "command_chars": 725,
+      "command_sha256": "ddaa4ca7d4ff42b019ffd7c9ed5413637fbc05fbddc81d141ebe14dba822c588",
+      "source": {
+        "path": "testing/colossus_1019_rc6_execution_map.json",
+        "sha256": "c9b81e616bc3bc2b79c240f8889fe668d296e5035c80b4cbcb7a9ba18f935650",
+        "id": "r6_lithoid_loss_setup",
+        "original_command_sha256": "2e9f5f465af8b49c7ccd3bdc79c6461bb321140b2c4eeeeaef7d8236044b2d7d",
+        "original_command_chars": 714
+      },
+      "replacement_count": 1,
+      "only_change": {
+        "from": "is_under_colonization = no",
+        "to": "NOT = { is_under_colonization = yes }"
+      },
+      "console_under1000": true,
+      "execute_in_current_route": true,
+      "runtime_result": null
+    }
+  ],
+  "skipped_colonized_selectors": [
+    {
+      "id": "r6_enemy_bind",
+      "reason": "Existing colonized capital selector; not empty-world fix.",
+      "source": "testing/colossus_1019_rc6_execution_map.json"
+    },
+    {
+      "id": "r6_neutral_bind",
+      "reason": "Existing colonized capital selector; not empty-world fix.",
+      "source": "testing/colossus_1019_rc6_execution_map.json"
+    }
+  ],
+  "legacy_not_recommended": [
+    "colonizing_setup exceeds1000, use existing split route; lithoid_q2_setup lacks loss1, use r6_lithoid_loss_setup."
+  ],
+  "static_acceptance": {
+    "path": "docs/evidence/1019-analysis/rc7-empty-planet-selector-v2-open-kaishek-1020.json",
+    "sha256": "912613768f10d5fcacddc36c79620ff83b9e10923305fafeee10d8d8fe7b4b7c",
+    "status": "PASS",
+    "scope": "syntax/package including supported fixed weapon CSV paths, literal planet-killer numeric sources and callback existence plus explicitly registered finite population scopes and referenced script-value shapes only; native loading, phase timing, runtime, recursive expansion and other opcodes require Stellaris tests"
+  }
+}
