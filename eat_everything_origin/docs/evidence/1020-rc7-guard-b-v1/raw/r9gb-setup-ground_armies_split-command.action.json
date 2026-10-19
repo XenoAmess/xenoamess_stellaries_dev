@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gb-setup-ground_armies_split-command",
+  "text": "effect if = { limit = { exists = event_target:eep_guard_ground_target exists = event_target:eep_guard_defender exists = event_target:eep_guard_species event_target:eep_guard_actor = { has_technology = tech_assault_armies } event_target:eep_guard_ground_target = { is_owned_by = event_target:eep_guard_defender has_ground_combat = no } event_target:eep_guard_defender = { is_at_war_with = event_target:eep_guard_actor } } event_target:eep_guard_ground_target = { while = { count = 2 create_army = { name = \"EEP_GUARD_DEFENDER\" owner = event_target:eep_guard_defender species = event_target:eep_guard_defender.species type = defense_army } } create_army = { name = \"EEP_GUARD_ATTACKER\" owner = event_target:eep_guard_actor species = event_target:eep_guard_species type = machine_assault_1 } log = \"EEP_GUARD_GROUND_ARMIES_CREATED\" } } else = { log = \"EEP_GROUND_ARMIES_NOT_READY\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:21:11.316288+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

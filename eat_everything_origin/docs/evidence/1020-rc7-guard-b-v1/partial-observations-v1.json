@@ -1,0 +1,25 @@
+{
+  "schema": "eep.1020.guard-b-partial-observations.v1",
+  "status": "PASS_SCOPED_GUARD_B_ONLY",
+  "run_id": "20261019T204055Z",
+  "supported_checks": {
+    "colonizing_rejected": true,
+    "ground_combat_rejected": true,
+    "completion_revalidates_target": true
+  },
+  "checks": {
+    "three_original_tasks_pass": true,
+    "three_roles_actual_target_identity_and_states": true,
+    "growth_no_change": true,
+    "A_original_checks_pass": true
+  },
+  "completion_target_basis": [
+    "guard A ten actual callbacks",
+    "guard B colonizing and actual ground combat callbacks"
+  ],
+  "limitations": [
+    "All-core-world rejection requires actual migrated bound core C.",
+    "Owner revalidation and all-invalid no-growth require D.",
+    "Final stopped logs and final group acceptance pending."
+  ]
+}

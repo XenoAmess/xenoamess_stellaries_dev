@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gb-setup-colonizing_start_split-command",
+  "text": "effect if = { limit = { exists = event_target:eep_guard_actor exists = event_target:eep_guard_species exists = event_target:eep_guard_colonizing } event_target:eep_guard_colonizing = { if = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_colonizable = yes can_colonize = { who = event_target:eep_guard_actor status = yes } } start_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } set_name = \"EEP_GUARD_COLONIZING\" log = \"EEP_GUARD_COLONIZATION_REQUESTED\" } else = { log = \"EEP_GUARD_COLONIZATION_NOT_ALLOWED\" } } } else = { log = \"EEP_GUARD_COLONIZING_BIND_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:19:42.271320+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

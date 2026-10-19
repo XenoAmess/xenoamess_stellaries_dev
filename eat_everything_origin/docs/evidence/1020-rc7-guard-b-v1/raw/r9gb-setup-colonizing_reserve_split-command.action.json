@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gb-setup-colonizing_reserve_split-command",
+  "text": "effect clear_global_event_target = eep_guard_colonizing event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no NOT = { is_under_colonization = yes } is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_guard_colonizing change_pc = pc_machine clear_deposits = yes log = \"EEP_COLONIZING_OBJECT_RESERVED\" } } }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:19:07.360969+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

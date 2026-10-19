@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gb-setup-state_guard_bind-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } log = \"EEP_STATE_GUARD_BIND_READY\" } else = { log = \"EEP_STATE_GUARD_BIND_FAILED\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:18:38.558967+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

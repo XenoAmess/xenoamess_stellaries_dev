@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gb-fire-foreign_secondary_core_reject-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_secondary_core } event_target:eep_guard_secondary_core = { if = { limit = { is_colony = yes has_carrier_flag = eep_core exists = owner owner = { is_at_war_with = event_target:eep_mothership0.owner } event_target:eep_mothership0.owner = { eep_core_available = yes } } log = \"FOREIGN_SECONDARY_CORE_REJECT_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"FOREIGN_SECONDARY_CORE_REJECT_NOT_READY_NOT_DISPATCHED\" } } } else = { log = \"FOREIGN_SECONDARY_CORE_REJECT_BASE_OR_TARGET_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:36:33.246705+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

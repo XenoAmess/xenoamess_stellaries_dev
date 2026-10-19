@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gb-fire-colonizing_dispatch-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_colonizing } event_target:eep_guard_colonizing = { if = { limit = { is_under_colonization = yes } log = \"EEP_GUARD_COLONIZING_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_GUARD_COLONIZING_NOT_READY_NOT_DISPATCHED\" } } } else = { log = \"EEP_GUARD_COLONIZING_BASE_OR_TARGET_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:35:07.441824+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

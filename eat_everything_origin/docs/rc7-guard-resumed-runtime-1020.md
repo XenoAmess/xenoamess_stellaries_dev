@@ -59,3 +59,69 @@ A包已复制254份原件（16,627,112字节）、四份原生档及48对截图/
 SHA、ZIP CRC和图像绑定通过。原receiver十任务均PASS_SCOPED，原始前提与
 增长补充报告均保留。仅将上述五项记true，索引现102 true／36 null，全部
 18组与组件仍PENDING；未把活动日志附作final log。
+
+## B组构造中的诊断边界
+
+殖民探针已实际记录COLONIZING_TRUE及IS_COLONY_TRUE；外国secondary转交已实际
+记录。首次地战建军后虽有ARMIES_CREATED，紧邻另有控制台`Invalid scripted
+effect: e`；首次ground_inspect输出异常字面event_target并有`= effect`解析错误。
+这不能证明地战成立或不存在，typed action只证明意图输入，不冒充引擎完整接收。
+先按原卡自然推进一天，再检查真实ground_combat及army全表。如果原长探针仍
+不能解析，保存独立诊断SAV并使用只读短log探针分别检查has_ground_combat和
+双方owner，避免重建军队改变战场；必要时才使用原后备运输登陆。任何失败和
+原始输入保持，未建立的状态不得派发回调或计通过。该诊断不改生产Mod、
+原命令资产、checker或inspector。
+
+2201.01.22诊断原生档r9gbDiag1确认ground_combat0关联colony1（物理17），
+attacker73为owner0的machine_assault_1，defenders10～18实际owner1；双方均有
+真实ground_combat0关联，攻击军血量171.23561/200，已发生战斗。短探针也记录
+R9GB_GROUND_TRUE。原长探针为何异常仍未定，不能改称没有战斗。复用该未派发
+回调诊断档作B-R，不再另造同态R；I/F目标日期2201.01.23，F须真实载入
+r9gbDiag1。完整world17补充观察另存v2，原首次未请求world17的观察和诊断保留。
+
+B-F仍先用原三段dispatch。如果ground原段仍出现同样解析失败且无实际派发marker，
+则在同一次R加载、尚未推进时间的相同战场上，用短段显式作用于已核物理17的
+eep_guard_ground_target，先检查has_ground_combat，再log专属marker并传Mother
+作为FROM触发同一生产on_action。双方owner与真实combat的独立原生证据不省略，
+这只替换失效的测试输入，不修改生产保护条件。每次失败、补充短命令、实际
+marker及I/F完整原checker结果均归档；短段也失败则该项继续PENDING。
+
+B首次ready重载在存档选择阶段安全失败，未点击读取：右栏保留旧滚动位置，
+左栏最新r9gbI.sav被OCR成r9gbl.sav，原loader因此没选中组，向下扫描不能找到
+上方ready。保留原失败截图及调用栈；用已观察1024×768截图中的同组卡位置
+选择，再按原loader既有右栏滚顶动作重置，重新观察后用独占stage调用原load。
+该修正只改变原生列表位置，不改SAV或receipt；原主菜单退出/确认截图保留为
+本次载入的真实前置，最终新SAV仍必须确认身份。若原名OCR也失败，再考虑
+同SHA导入易识别别名并记录映射，不伪造新的原生保存。
+
+滚顶后文件名仍读成r9gbDiagl.sav；独立截图的原名标签正确，但紧接原loader
+新帧又将标签读成r9gbDiagl，未达到原loader的唯一识别条件。第二
+尝试也在读取前失败，未派发任何B回调。现已按前述方案将原r9gbDiag1原字节
+独占导入当前隔离acceptance-fixtures/r9gbR.sav，另有LOAD_ALIAS_BYTES_ONLY
+回执记录source、destination、共同SHA；ready角色仍是原生Diag1。重新从真实
+主菜单打开载入列表并滚顶，用独占新stage载入r9gbR。不得把别名副本算作新
+原生保存，不改第一次失败或原ready的audit/native-save。
+
+别名已实际载入且SHA等于ready；B三段原dispatch均已记录：05:35:07殖民中、
+05:35:52地战、05:36:33外国secondary。原ground_dispatch完整成功，备用短
+dispatch没有执行。输入后立即读取活动game.log的断言先失败，随后原日志可见
+最后marker；怀疑是提交与引擎日志写盘之间的时序，尚未证明根因。现三marker
+已实际闭合，继续当前同一ready派发支的FF1和F保存，不重复输入、不重置战场。
+原失败调用栈事实保留，诊断摘录另标而不冒充完整停机日志。
+
+B完成后沿同一原receiver三角色接收，包名1020-rc7-guard-b-v1。白名单为已
+完成r9gb前缀的操作／保存／失败诊断、ready别名导入回执与receiver缓存；
+不读后续r9gc/r9gd或活动日志全文。先核三档真实前提和同日原no-settlement、
+全部eep变量和Mother层数，再归档原字节、核ZIP/receipt/audit/图OCR/SHA。
+只在通过后合入colonizing、ground、completion_revalidates_target三项；所有
+core仍等C，owner复验等D。原短探针只读、备用短dispatch未执行须如实区分。
+
+B已完成：R为2201.01.22，I/F为2201.01.23；原receiver三任务全通过，三档真实
+前提持续，I/F所有eep变量和Mother层数一致，两支原growth通过。391份原件
+20,771,236字节、三份原生档和84对截图/OCR均已核SHA/ZIP/receipt/audit。
+所有失败与完整strict保留，未执行备用短dispatch。按前述限定三项合并设计
+继续更新索引；C实际来源r7normalready2现已从主菜单载入，正在绑定old/new
+物理别名，尚未执行迁移决议。
+
+B三项已实际合入，当前105 true／33 null；5,256处引用／3,300唯一文件已复核
+SHA，历史plan指纹不改，当前_scaffold同步。整组和组件保持PENDING。

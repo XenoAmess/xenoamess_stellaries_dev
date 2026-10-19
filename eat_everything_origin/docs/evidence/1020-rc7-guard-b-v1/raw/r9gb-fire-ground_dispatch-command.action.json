@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9gb-fire-ground_dispatch-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_ground_target exists = event_target:eep_guard_defender } event_target:eep_guard_ground_target = { if = { limit = { has_ground_combat = yes any_ground_combat_attacker = { owner = { is_same_value = event_target:eep_mothership0.owner } } any_ground_combat_defender = { owner = { is_same_value = event_target:eep_guard_defender } } owner = { is_same_value = event_target:eep_guard_defender } } log = \"EEP_GUARD_GROUND_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_GUARD_GROUND_NOT_READY_NOT_DISPATCHED\" } } } else = { log = \"EEP_GUARD_GROUND_TARGET_OR_DEFENDER_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T21:35:52.280876+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

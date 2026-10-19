@@ -136,3 +136,25 @@ common本国主体返还单项：**当前97true／41null，18组及组件均PEND
 流程。保护条件基线r9guardAbase真实日期2201.01.21、C/G0、core2／Mother151／
 敌源17正确；现执行A组九持久无效目标＋当前core。新增主菜单加载薄包装只用
 已观察中文UI，冻结原loader和回执不改，接下来用A组实际R/I/F验证该包装。
+
+## 保护条件 A 已封口，B 继续
+
+A的四份原生档、48对GPU/OCR和254份原件已归档，原receiver十任务全通过，
+五项单独检查已合入，现为102 true／36 null；全部整组仍PENDING。提交
+`0abe26472` 已推送。真实core可用及十目标前提在R/I/F持续，增长不变量一致。
+详见[保护条件恢复记录](../eat_everything_origin/docs/rc7-guard-resumed-runtime-1020.md)。
+
+B实际殖民中、foreign secondary及真实双方地战已经建立；长地战log探针两次
+解析异常保留，原生战斗对象和短探针另证实际状态。复用r9gbDiag1作ready，
+I为2201.01.23；重载列表OCR和滚动位置失败已安全停在读取前，选中同组滚顶后
+原名可见，现用新stage原loader继续，不改原存档和旧回执。
+
+Lithoid同预设人口基数缺少旧原生样本，已先记录
+[独立初始基线方案](../eat_everything_origin/docs/rc7-lithoid-resumed-runtime-1020.md)，
+将在候选功能分支全部保存、当前run停机后仅补一个0.3.1 Jan1隔离样本，不重跑全年。
+
+B已由原receiver复算三任务通过，所有前提、EEP变量／Mother层数及growth检查
+成立。391原件／20,771,236字节、84对截图OCR已原字节归档；新加三项后索引
+105 true／33 null，仍为全部PENDING。当前5,256处引用／3,300唯一文件SHA
+重新核验通过。C输入已真实载入May28，old/new refs实际日志marker闭合，下一步
+原生UI迁移，无手工调用迁移效果。
