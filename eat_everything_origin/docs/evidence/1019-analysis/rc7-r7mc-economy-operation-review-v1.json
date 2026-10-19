@@ -1,0 +1,504 @@
+{
+  "schema": "eep.rc7.r7mc.economy-controlled-operation-review.v1",
+  "status": "PASS_SCOPED_CONTROLLED_WORKER_INPUTS",
+  "created_at_utc": "2026-10-19T18:23:39.131277+00:00",
+  "run_id": "20261019T164112Z",
+  "prefix": "r7mc",
+  "scope": "Completed fresh Machine new_game through pure economy collect/cleanup only; root handover plus all recorded type_text/key/mouse files. Not whole-system input audit.",
+  "root_worker_reference": "session98202 EXIT0",
+  "root_statement": "Only b.new_game(EEP03 determined exterminator Machine,r7mc), e.make_plan(explicit RC7 tree/version), e.collect; no resource/trade/job closure/disband commands or menus.",
+  "execution_sources": {
+    "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/execution-source-closure-v1.json",
+    "sha256": "3991e5e08f5dec24cbf221eab790a71028826a733cc2ceeebde33e56dc057989",
+    "kind": "analysis"
+  },
+  "native_branch_report": {
+    "path": "docs/evidence/1019-rc7-economy/machine/native-branch-report.json",
+    "sha256": "d6a253ef67f8f98018fdc581eae4cafe8f5fd3a0fafd09d5982a8f45d92d3dd1",
+    "kind": "analysis"
+  },
+  "native_independent_verify": {
+    "path": "docs/evidence/1019-rc7-economy/machine/independent-verify-v1.json",
+    "sha256": "8ac0c752eaa9580da6796462df95efc8267f2d79f33755e9fe1db1fe5df82087",
+    "kind": "analysis"
+  },
+  "collector_receipt": {
+    "path": "docs/evidence/1019-rc7-economy/machine/r7mc-economy-receipt.json",
+    "sha256": "0a832e38bd1d158ec3876817446b80d0507b9d53427ee28c7bbab4027d04ea8a",
+    "kind": "actions"
+  },
+  "checks": {
+    "no_resource_injection": true,
+    "no_trade_subsidy": true,
+    "no_job_closure": true,
+    "no_ship_disband": true
+  },
+  "evidence_basis": {
+    "all_typed_actions": 14,
+    "submitted_console_commands": 12,
+    "submitted_console_texts": [
+      "fast_forward 30"
+    ],
+    "unsubmitted_texts": [
+      "r7mcm00",
+      "r7mcyearui"
+    ],
+    "all_recorded_actions": 111,
+    "mouse_actions": 26,
+    "physical_scan_code_counts": {
+      "88": 52,
+      "41": 2,
+      "1": 5,
+      "28": 12
+    },
+    "mouse_stage_roles": [
+      {
+        "stage": "r7mc-empire-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-empire-click.action.json",
+          "sha256": "1002ba00139a563298f5fe75705252745fb207dd2b39cd55b0fedced1900f0da",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mc-exit-confirm-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-exit-confirm-click.action.json",
+          "sha256": "38b2c0219581d7171e711160e49b3345d8097ea5f7dbe36cf18063f4e146d516",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mc-exit-menu-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-exit-menu-click.action.json",
+          "sha256": "b6d26665faa0a14e3ac3b6e7609d509d2b85459530299e4d9f4c7db2c60dffc9",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mc-intro-ack-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-intro-ack-click.action.json",
+          "sha256": "c48cdfc43043589e9541f7a47fa80b813367d41ababcfc71f8c0fd694be66686",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mc-newgame-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-newgame-click.action.json",
+          "sha256": "aee610663074e946843adbbd4ff171bf54b60c5b1d8f426390829bc83c7b5322",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mc-old-queen-0-ack",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-old-queen-0-ack.action.json",
+          "sha256": "da0de148832858f11fd605ed02d822a068fa6c4145b51c793fc02a1e78fafdd0",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mc-select-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-select-click.action.json",
+          "sha256": "720d467edaa7966bcb6b0eaa82ade00367afa84d1833fb43c802d428ed825b9f",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mc-start-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-start-click.action.json",
+          "sha256": "ab22455f67a9dcd3cbab586ee70b4c1dc2ed2c834daf1c86ab78f22cf98d1def",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm00-name-field",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm00-name-field.action.json",
+          "sha256": "0275d5165e60b9e36071541d95e5a08382edb44271b2a1f81223179c32947123",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm00-open-save",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm00-open-save.action.json",
+          "sha256": "a2ed86c1285396ccb7c771017b6154edc5f6e3b1cb64046b816ebe4f8e54bc4b",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm00-save-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm00-save-click.action.json",
+          "sha256": "6f9ff4748d0419a3804df0b48c9ef3328fccd020b4ff7438799ce07089333afb",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm01-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm01-advance-focus.action.json",
+          "sha256": "9b8f5827ae50f149eea5deaf1db3eadff6924808b7efa750cd3cff8c9bb2358d",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm02-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm02-advance-focus.action.json",
+          "sha256": "da4973d57f24e240822d908924591277d2c22a10f1aa769a94226460cbccfea8",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm03-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm03-advance-focus.action.json",
+          "sha256": "05a7989c64ea1ac0144ca8243b44bdbcca0ce1f68bbe157b8a6204a2026196c8",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm04-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm04-advance-focus.action.json",
+          "sha256": "ac3b6869325ee11787bc7a1eaedda1773f8f5d676f68b04fa6217788c8171696",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm05-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm05-advance-focus.action.json",
+          "sha256": "993bef4867853054481ee7fc9f51d817e298d91094ca02b413457ff7f0a0045b",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm06-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm06-advance-focus.action.json",
+          "sha256": "7952ecfc3f20b3b15ee69a2cf881ffbb9b79c4845cde0eea762c50ca258e87cf",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm07-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm07-advance-focus.action.json",
+          "sha256": "3a522cd125013181b60475b2624eb0d90b31003905bab289a952a7055e8c4935",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm08-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm08-advance-focus.action.json",
+          "sha256": "dba3b9e7fd7cd5278d5d1eeda0376ef0c02bd0214fc6bdceed30a64bd0969d4f",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm09-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm09-advance-focus.action.json",
+          "sha256": "6433857b6259c9d35f858bb46f2a5dd136bd9957faf64a966acce891e12e0c46",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm10-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm10-advance-focus.action.json",
+          "sha256": "70925b4845d69079942d8f874dca7880d77b2c87bcef4cc1360e950ef0db3ecb",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm11-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm11-advance-focus.action.json",
+          "sha256": "62723a70aca014105c7f2f0b15f0d4d16e0b6bb0354ce4cd8d5a2b1ec66a861f",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcm12-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm12-advance-focus.action.json",
+          "sha256": "22dee9595cbae11931df6a569ebd01651137c981dcce534a98482a90a24767d3",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcyearui-name-field",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcyearui-name-field.action.json",
+          "sha256": "184dd6d1b0fd27664f2ce07fd1bace725eaaf3aabf7a4121c4134f7aa8c68721",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcyearui-open-save",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcyearui-open-save.action.json",
+          "sha256": "a1c3fffddc2acf46d93af12e0a314b222e38bb25ed3399eafcd5699ae98e27dc",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7mcyearui-save-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcyearui-save-click.action.json",
+          "sha256": "4b77a611f14142e95809b226da10785924e9a11b3926cba96a8330b497f837c2",
+          "kind": "actions"
+        }
+      }
+    ],
+    "native_observations": {
+      "all_stocked_resources_close": true,
+      "native_finite_job_limits_at_max": true,
+      "initial_owned_ship_ids_names_fleets_preserved": true,
+      "receipt_commands_exactly12_FF30": true
+    },
+    "four_original_report_values_still_null": true
+  },
+  "12_actual_console_inputs_and_Enter": [
+    {
+      "month": 1,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm01-advance-command.action.json",
+        "sha256": "486a59de194e68675b5f5811c556fe5bd54ed5de0f9d9a40c446534b6f5021e1",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm01-advance-command-enter.action.json",
+        "sha256": "4742e655a90aaedfa664ee54153c085ed0e6ee5a7cb30d2ea29c7ad13b1c47ad",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 2,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm02-advance-command.action.json",
+        "sha256": "430f754cd96c90def25345ea8fff43bd6f15fe0d70f490ebc4520a455d7571d4",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm02-advance-command-enter.action.json",
+        "sha256": "096f25712fd44984289ab2087409cb78afdf2e0c1016589edb6e6eba7803e12f",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 3,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm03-advance-command.action.json",
+        "sha256": "042e23030fd33fc9301ed80d9f4d8fd7178efbf097e7ebfc6b8b8b024f854d26",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm03-advance-command-enter.action.json",
+        "sha256": "f329bb647f8188f72a1983529b6184336d50a5a4be9334699fba3589cd883354",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 4,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm04-advance-command.action.json",
+        "sha256": "dbb94992c5cdbd6b893c1722cc369335f89c0d2c190ee9767957d0c706b66409",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm04-advance-command-enter.action.json",
+        "sha256": "48c144a8f8173b33e0c31b0af41c1044f03eca2230e3b5f166a94557a99c3753",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 5,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm05-advance-command.action.json",
+        "sha256": "129a977bdaba3e8f4b4aebeb35ba5de86da1f86f6dbf662aeca93f316f443f28",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm05-advance-command-enter.action.json",
+        "sha256": "92b0ea478e0c1f54d939607b2d32dbd64ad6ec9db48c6276a4b2d2319064637f",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 6,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm06-advance-command.action.json",
+        "sha256": "6ead22084819b8f7c85fc192ef956d838b786c7d43c6eb04397a13775c79f13d",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm06-advance-command-enter.action.json",
+        "sha256": "d92a3a5dab4834f263e89087fd6025bb49a4ab5dea8040a85a255f882b45d871",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 7,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm07-advance-command.action.json",
+        "sha256": "2165adf239959284d3b9bfbb084393b4562e0c3b6724e9a01ac63fb43427c5f1",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm07-advance-command-enter.action.json",
+        "sha256": "a728bdd10c8fbc5fc305abf5ec71e766dcb97151e56e3cbc5dec519054eeba36",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 8,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm08-advance-command.action.json",
+        "sha256": "4fc9c7f03e974f0fd1b9a4030083a810cefc9c3d93d1bea5c72e459d5a662972",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm08-advance-command-enter.action.json",
+        "sha256": "37331b5b5c0f44de8f2b80893dfd42dfe976bb7fcce1ddfbf6a9a01336607929",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 9,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm09-advance-command.action.json",
+        "sha256": "77019620990246f767148f57b9d759f49c48c8618b2ab71c2645ffe326d8e71c",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm09-advance-command-enter.action.json",
+        "sha256": "72c39f91812d20cbbb21a2d39e37c9ed8b65a7b370ea0ecfd3bae6909385a65a",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 10,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm10-advance-command.action.json",
+        "sha256": "7b2d5263908e2ed90180d62e52361b2a1a04a880fbc9d3c7d8d91e5bdb985921",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm10-advance-command-enter.action.json",
+        "sha256": "e7328fc0928b555f1bacbfb835c5e8aa900b954410b57bab2d0b5a656dce684c",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 11,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm11-advance-command.action.json",
+        "sha256": "f354d37907c18a00010575f4f2ba52ee1769011b0dd5905e64b5b2f0ffc6bdf2",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm11-advance-command-enter.action.json",
+        "sha256": "474be2add49bf17cbc04744364efa6696928300d49467c04f7c883df7733b7c6",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 12,
+      "action": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm12-advance-command.action.json",
+        "sha256": "72e24c4a5a06853ca3672631a7498069bcbf78ff1aec8e69d6a89f5150214aad",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm12-advance-command-enter.action.json",
+        "sha256": "c300a58e70b164f940ffa87e54f6a67f8a6593aab89ce9260ff02704ae824cb0",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    }
+  ],
+  "save_name_inputs": [
+    {
+      "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm00-name.action.json",
+      "sha256": "53b3c1664dd7f5e7b6dc02ee1d15d1a5fd4489692e00eecc58042ef0328b5664",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcyearui-name.action.json",
+      "sha256": "66a81a5d883c985f43591e8c455f22b20af9343362dd3b3b4d394860225332cb",
+      "kind": "actions"
+    }
+  ],
+  "offline_images_independently_viewed": [
+    {
+      "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-select.jpg",
+      "sha256": "38f132f8bfa96c998aac17b734cca4d0613704365b1e4e8906bad9dd525d3987",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mc-start.jpg",
+      "sha256": "3175b1a503a1972e5314f540567735bb54f556ca4f064a7311dcbeb5452c57ba",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm01-hud-1.jpg",
+      "sha256": "1851e6625f4c45e063ea3a13b661c965581918e95a15bf2eb877521ec73f277b",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-machine-economy-worker-ui-v1/run/r7mcm12-hud-1.jpg",
+      "sha256": "f6a44c943efb544b28d957a9d2575431d566c132fcaadc7a5c7a0a5e4c4dabc3",
+      "kind": "screenshot"
+    }
+  ],
+  "image_observations": {
+    "selected_preset": "Actual select frame EEP03 determined exterminator Machine; native founder machine_unit and actual Machine government separately verified",
+    "galaxy_settings": "start frame shows200 stars,3AI,Ensign",
+    "actual_first_month_HUD": "2200.02.01,energy202,+2; native exact stock202.85755/net2.85755",
+    "actual_year_HUD": "2201.01.01,energy270,+8; native exact stock270.22994/net8.77273",
+    "initial_budget_boundary": "Jan1 native current net88.90835 is initial cache, not first actual income. Actual first stock200->202.85755.",
+    "popups_and_history": "Queen/contact/debug overlays and prior-game FF console history retained; obscured fields not claimed read; command evidence comes from actual type_text/Enter files.",
+    "preview_label": "start preview displays unknown government label; no claim of all UI strings being validated or leak-free. Actual initialized native Machine government and founder are independently verified."
+  },
+  "distinct_receipt_object_pins": {
+    "total_receipt_sha256": "0a832e38bd1d158ec3876817446b80d0507b9d53427ee28c7bbab4027d04ea8a",
+    "yearUI_native_receipt_sha256": "53537b73a903710631729ef8f77dc4573129d7845f37ad090c86c7e76e421bae",
+    "yearUI_SAV_sha256": "41a19510e73c8e92da7d0877dc29dfbcff6ccacda66457a6a34522a9d388d2db"
+  },
+  "excluded": [
+    "r7initrepeat*",
+    "r7cfg*",
+    "r7relic6*",
+    "other government prefixes",
+    "all media/functional branches",
+    "active logs"
+  ],
+  "case_status": "PENDING",
+  "missing_for_full_case": [
+    "final stopped-run logs",
+    "root final case assembly"
+  ],
+  "final_result_written": false
+}

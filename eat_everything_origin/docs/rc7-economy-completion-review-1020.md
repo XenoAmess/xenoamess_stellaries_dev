@@ -74,3 +74,11 @@ root 实际受控链仅为选择原生 EEP02 有机吞噬蜂群新局、显式 R
 root随后明确：42bf…来自 `collect.year_ui.receipt_sha256`，即 `r7hvcyearui.native-save.json`，不是总经济receipt；本线程独立读取该文件所得完整SHA也恰为42bf…。总receipt以双读01c3…为准，yearUI原SAV以9191…为准。这是交接“receiptSHA”省略yearUI前缀造成的对象辨析，不是源字节漂移；三对象各自按真实路径/SHA绑定，初次对象指纹错误事实保留。
 
 Hive原件白名单实际为277件 `r7hvc*`，108个actions、50对图/OCR、14个type_text（12条FF30与两次保存名），25个鼠标动作仅属新局/保存/控制台聚焦。完整原链将另封 `evidence/1019-rc7-hive-economy-worker-ui-v1`：薄包中已封的56件同前缀原件加manifest只作57个canonical原件引用，其余221件UI原件原字节复制；不重复复制已存在的20件源闭包、原生维护源或Mod。新source映射明确链接本Hive worker交接与这些相同源，不能把Pu的执行对象混用。完成薄包后独立原生复核，再生成四约束限定报告/PENDING提案及独立包verify。
+
+## r7mc 完结交接与实施范围（收件前）
+
+root明确交接新Machine session98202 EXIT0，固定run `20261019T164112Z`，总 `r7mc-economy-receipt.json` 为COLLECTED_NOT_ACCEPTED、12 snapshots、cleanup[]。yearUI原SAV SHA为 `41a19510e73c8e92da7d0877dc29dfbcff6ccacda66457a6a34522a9d388d2db`，与m12同原ZIP；yearUI native-save回执SHA为 `53537b73a903710631729ef8f77dc4573129d7845f37ad090c86c7e76e421bae`，明确不是总receipt SHA。现在按原v1 `--branch machine --prefix r7mc` 只接收这一不再写入的纯经济前缀，沿用两局模式生成薄包、独立原生verify、完整UI原链、20源复用映射、四约束限定审核与PENDING提案，不改已有包或原分析器。
+
+root实际新局参数为原生picker的EEP03铁心灭绝者，受控链仅new_game→显式RC7 make_plan→collect，无资源/交易/闭岗/拆船；仍须逐件核实际type_text/Enter/鼠标动作与原生岗位、人口、维护。首月交接净电2.85755、technician_drone905/max1800、core物理2、Mother151/1044，均待原生独立比对；m00缓存88.90835不能当实收首月。root已转 `r7initrepeat*`、`r7cfg*`、`r7relic6*` 新功能前缀，本接收严格不读这些、活动日志或UI，不纳入纯经济。未齐最终停机日志时两case继续PENDING。
+
+Machine初检总receipt实际SHA为 `0a832e38bd1d158ec3876817446b80d0507b9d53427ee28c7bbab4027d04ea8a`，与另两yearUI对象分别绑定，无字段混淆。实际284件固定前缀原件、111 actions、52对图/OCR、14个type_text（12 FF30与两次存档名）、26个新局/保存/聚焦鼠标动作。将新封 `evidence/1019-rc7-machine-economy-worker-ui-v1`：薄包56件前缀原件加manifest只canonical引用，其余228件UI原件原字节复制。20件当前执行来源已与Pu canonical逐件匹配，后续仅写本Machine worker交接/动作映射，源与Mod均不重复复制；保持既有包原样。
