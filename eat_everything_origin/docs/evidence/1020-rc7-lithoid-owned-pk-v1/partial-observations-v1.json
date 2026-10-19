@@ -1,0 +1,61 @@
+{
+  "schema": "eep.1020.owned-lithoid-native-shot-review.v1",
+  "status": "PASS_SCOPED_MECHANICS_NOTIFICATION_TRANSLATION_FIX_PENDING",
+  "supported_checks": {
+    "colossus_enemy_fire": [
+      "owned_noncore_colony_fire"
+    ],
+    "common_settlement": [
+      "lithoid_native_branch",
+      "native_devour_loss_deducted"
+    ]
+  },
+  "native_dates": {
+    "queue": "2200.02.02",
+    "moving": "2200.02.03",
+    "windup0": "2200.02.04",
+    "windup89": "2200.05.03",
+    "fire0": "2200.05.04",
+    "fire29": "2200.06.03",
+    "natural_completion": "2200.06.04"
+  },
+  "native_identity": {
+    "mother_fleet": 133,
+    "mother_ship": 790,
+    "core_physical": 1,
+    "owned_source_physical": 12,
+    "order_id": 0
+  },
+  "predeclared_expectation_sha256": "a7b19a28cd810ddeb35135f07889394d70719dd2ac37b25fc77d8a8700ee3c70",
+  "actual": {
+    "q": 2,
+    "size": 3,
+    "original_real_damage": 1,
+    "native_bites": 1,
+    "returned_founder_population": 302,
+    "core_before": 5329,
+    "core_after": 5631,
+    "native_reward": "MINERALS_TEXT",
+    "native_minerals_delta": 400,
+    "native_pop_delta": 0,
+    "manufactured_pop_delta": 0,
+    "C_after": 2,
+    "G_after": 0,
+    "D_after": 2,
+    "worlds_after": 1,
+    "crisis_world_delta": 750,
+    "crisis_empires_delta": 0
+  },
+  "checks": {
+    "real_native_owned_menu_and90_30_pipeline": true,
+    "no_manual_positive_completion": true,
+    "actual_founder_return_fixed_before_completion": true,
+    "native_minerals_notification_gpu_and_saved_message": true,
+    "original_math_all_non_liveness_checks_pass": true,
+    "original_liveness_false_preserved_and_global_supplement_pass": true,
+    "original_duplicate_and_actual_reload_nine_checks_each_pass": true,
+    "same_day_native_stockpiles_not_awarded_twice": true,
+    "both_actual_callback_markers_in_final_stopped_log": true
+  },
+  "known_release_blocker": "Destruction notification raw MESSAGE_DESC key in RC7; fixed source RC8 requires independent native proof, not covered by this mechanics review."
+}

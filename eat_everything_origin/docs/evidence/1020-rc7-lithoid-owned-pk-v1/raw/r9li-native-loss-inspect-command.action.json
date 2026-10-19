@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9li-native-loss-inspect-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_core0 exists = event_target:eep_reg_owned_source event_target:eep_mothership0.owner = { is_lithoid_devouring_swarm = yes eep_qualified = yes eep_core_available = yes } } event_target:eep_reg_owned_source = { if = { limit = { is_colony = yes is_owned_by = event_target:eep_mothership0.owner is_planet_class = pc_hive planet_size = 3 count_deposits = { type = d_lithoid_devastation count = 1 } pop_amount = 300 eep_source_valid = yes NOT = { has_carrier_flag = eep_core } NOT = { has_planet_flag = eep_credit_done } NOT = { has_planet_flag = eep_destroy_done } } log = \"EEP_R6_LITH_LOSS1_READY_300\" } else = { log = \"EEP_R6_LITH_LOSS1_NOT_READY_300\" } } } else = { log = \"EEP_R6_LITH_LOSS1_TARGET_OR_BINDING_MISSING\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T22:53:33.966415+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

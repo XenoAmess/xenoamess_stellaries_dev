@@ -1,0 +1,84 @@
+{
+  "schema": "eep.1020.lithoid-independent-crisis-calibration.v1",
+  "status": "PASS_SCOPED_INDEPENDENT_SCRATCH_BRANCH_ONLY",
+  "objectives": {
+    "crisobj_destroy_worlds": {
+      "before": {
+        "present": false,
+        "progress": 0
+      },
+      "after": {
+        "present": true,
+        "progress": 750
+      },
+      "delta": 750
+    },
+    "crisobj_destroy_empires": {
+      "before": {
+        "present": false,
+        "progress": 0
+      },
+      "after": {
+        "present": true,
+        "progress": 600
+      },
+      "delta": 600
+    }
+  },
+  "checks": {
+    "actual_same_date_scratch_input": true,
+    "no_eep_ledger_change": true,
+    "source_and_core_unchanged": true
+  },
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9liready.sav",
+    "save_sha256": "63b2f9e9636d61d147a5a17e7e60bf38e67fb6fb2c7cbbde1e4f2c951486cd29",
+    "run_id": "20261019T204055Z",
+    "version": "0.4.0-rc.7",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+    "manifest_sha256": "83b461e839a87186a9465315fd789793b286cdf0a8483058599ab1d2cbc9c18c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9liready.audit.json",
+    "audit_sha256": "d0c9088fe28f9d500cdd573294ca9ed21cfadd75a683831b0937fa37281165ef",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9liready.native-save.json",
+        "sha256": "f2564cd512299c868cd84fad60f038784e47e21d0e6174c48f74f3af89935804",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T204055Z\\save games\\eep05_-2017461442\\r9liready.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T204055Z\\save games\\eep-test-history\\r9liready.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9liready.sav",
+          "sha256": "63b2f9e9636d61d147a5a17e7e60bf38e67fb6fb2c7cbbde1e4f2c951486cd29",
+          "date": "2200.02.02"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9licalafter.sav",
+    "save_sha256": "e222b97cf7d519cfb4d7dc9b38200861f84c00b2dac3df6c786549fcdf4d5c8d",
+    "run_id": "20261019T204055Z",
+    "version": "0.4.0-rc.7",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+    "manifest_sha256": "83b461e839a87186a9465315fd789793b286cdf0a8483058599ab1d2cbc9c18c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9licalafter.audit.json",
+    "audit_sha256": "f1df7e2d6369c729915c6effa9a991e46cd4de4e151069646389218e3519bf77",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9licalafter.native-save.json",
+        "sha256": "7f2a053b850f493d75fdacbc15de0424df7138e6e214ac76dfc3c961e941fe46",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T204055Z\\save games\\eep05_-2017461442\\r9licalafter.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T204055Z\\save games\\eep-test-history\\r9licalafter.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T204055Z\\r9licalafter.sav",
+          "sha256": "e222b97cf7d519cfb4d7dc9b38200861f84c00b2dac3df6c786549fcdf4d5c8d",
+          "date": "2200.02.02"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "scope": "Scratch complete_crisis_objective calibration, never native weapon proof; actual ready must be reloaded before queue."
+}

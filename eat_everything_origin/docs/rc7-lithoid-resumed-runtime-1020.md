@@ -1,5 +1,16 @@
 # RC7 石质蜂巢剩余验收执行记录
 
+本局Feb4已经实际windup0/90。首个操作断言失败是读取层级错误：计数在
+destroy_planet_order.sub_order.planet_killer_weapon_windup_order内，外层order_id
+本局为0，旧敌星多次排队后为2；该值不是充能/发射阶段号，不能照搬为2。
+后续只按实际嵌套类型及windup/fire计数推进，外层order_id仅检查同一订单保持。
+此修正只影响临时操作读取，不修改原检查器或原失败记录；没有额外推进日期。
+
+己方菜单实际可用，Feb2原生queued明确destroy_planet_order/planet12；Feb3仍是
+move_to_system_point_order，native路径ETA为Feb4，不能把这一天算作充能。
+后继逐档核原生order_id/windup/fire后才推进：到达后0/90、89/90、90/90且fire0、
+fire29/30，在最后一天前停住写独立预期。若阶段不符即停，不盲目FF120。
+
 ## 本轮干净首月实际结果
 
 EEP05实际新局Jan1与Feb1已原生保存，原startup检查器23项全部PASS_SCOPED。
@@ -53,3 +64,21 @@ windup/fire计数和native日期计算，不预填射击开始或完成日期。
 本机已验证的月度人口规则独立事前声明自然核心人口增量0。若实际最后一步
 跨月，则另取独立自然人口对照，不能由after总人口残差反推或临时更改预期。
 原生随机人口必须另有通知／消息的实际证据，矿物／合金奖励也照实分列。
+
+若最后一次bite随机产生人口，事前期望采用显式分支表：每条原生POP奖励通知
+对应core额外100；矿物/合金通知对应core额外0，资源量由原生消息/源码与原档
+另列。prefire先固定bite数、R、自然增量和各分支允许值；完成后只按实际原生
+消息选择分支，不从core人口残差推算。原settlement的other_core_pop_delta包含
+这项独立原生奖励，EEP的manufactured仍必须0；完整期望在最终一天前封存。
+
+己方源完成后的重复派发可使用已验证原生on_action的短输入，源明确为
+eep_reg_owned_source、FROM为本局eep_mothership0，先核pc_shattered与五收据。
+这是功能夹具的源别名适配，不是执行正例完成；正例必须由实际90/30自然完成。
+重复前后同日及真实加载后的SAV交原no-settlement，不覆盖严格差异。
+
+校准实测world750/empires600；已真实重载准备档，两个objective恢复为0、全部EEP
+账本及两星实际人口保持，原no-settlement九项通过。先前离线脚本把完整world缓存
+也要求全等而AssertionError；差异实际是重载重算的housing/amenities与新colony的
+species_refs/job资格缓存，完整strict差异保留，不将这次过宽离线断言写成通过。
+首次UI准备因原生化身天灾介绍弹窗遮挡完整源标签而在右键前拒绝操作，没有派发
+射击；依实际中文按钮确认原生介绍后继续。两个失败尝试保留原件。
