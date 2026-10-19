@@ -27,7 +27,7 @@
 | 正式包级证据 | `docs/evidence/publication-0.4.0/open-kaishek.json`及`static-source-manifest.json`，另有acceptance／inline-images／publish-state／workshop-download／workshop-verification等真实回执；不能从草案生成PASS。 |
 | 唯一发布适配入口 | `tools/publish_1019.py`；本任务不执行prepare、upload、verify或tag相关步骤。prepare本身还会联网核四条正文图，不是纯离线检查。 |
 
-目标只能是自有Workshop **3815707212**（与本地item-id及0.3.1核验记录一致）；**3710613857为只读上游，禁止更新或上传**。本次0.4.0未公开发布，不得复用已有成功版本号，远端内容逐字节核验后才由主线程创建／推送v0.4.0标签，最后恢复Steam离线。本轮无网络可达性检查。
+目标只能是自有Workshop **3815707212**（与本地item-id及0.3.1核验记录一致）；**3710613857为只读上游，禁止更新或上传**。本次0.4.0未公开发布，不得复用已有成功版本号，远端内容逐字节核验后才由主线程创建／推送v0.4.0标签，最后恢复Steam离线。草案初稿未联网；后续独立[媒体审阅](release-media-review-0.4.0-1019.md)已完成公开图片原字节GET，此草案仍不是发布记录。
 
 ### 六类CHANGELOG草案
 
@@ -111,11 +111,12 @@ v0.3.1修复图库失效，保留历史失败记录。v0.3.0引入原生决议�
 ### 媒体与最终填写清单
 
 - 图库保留WS-01～06六槽与WS-00封面；对旧图先核公开字节，可保留同位置图，变化项用原位替换。禁止全删图库后重新引用旧图片，避免复现0.3.0失效事故。
-- WS-06现仍是旧`images/06-purifier-opening.jpg`，含旧赠品星；**PENDING：等待主线程最终候选fresh Purifier单母星开局图**。须新文件名、新SHA、真实简中GPU/OCR、原生SAV／audit与最终purifier_startup case/run绑定，不用历史图裁剪或去掉额外星冒充。
-- 四条正文图保留上述完整62e273…commit URL；当前只核对本地0.3.1真源一致，公开可达性／逐字节仍需正式发布前后实际联网核验。历史图片明确标注历史，不声明新配置／新开局已在图中展示。
+- 正式manifest的WS-06现仍引用旧`images/06-purifier-opening.jpg`，含旧赠品星。**2026-10-20主线程已采用**RC6 `r6pu-verified-designer-result.jpg`，已原字节准备本地新文件`images/06-purifier-single-homeworld-0.4.0-2201.jpg`，不再等待例行选图批准。真实日期是**2201.01.01首年后**，不可写2200年1月1日新开局；原帧／OCR／F12位于`1019-rc6-purifier-mothership-ui-v1/raw/`。**PENDING：最终purifier_startup截图／同日SAV与整case审查、正式manifest统一冻结**；不裁剪旧图去掉额外星冒充。
+- [逐槽审阅](release-media-review-0.4.0-1019.md)发现WS-03～05旧装备／赠品世界会误导；主线程已采用分别换为本轮native Relic参考、成长后Mother面板、新六核心成长报告的方向，三张不同原帧来自既定测试，当前仅来源未齐，不额外增加矩阵。WS-01／02保留原字节并明确1015历史参考标签。独立proposed manifest已在`docs/evidence/1019-requirements/`准备，当前正式manifest未改。
+- 四条正文图保留上述完整62e273…commit URL，均已经是HTTPS。媒体审阅另轮实际GET四inline及六旧gallery，十图HTTP200且旧SHA全匹配；正式prepare／发布后verify仍须重新核验。历史图片明确标注历史，不声明新配置／新开局已在图中展示。
 - 最终只替换真实结果：正式发布日期、最终candidate／static／18组case审查与各范围；非中文只能写“静态校验通过”并注明“运行时不在范围内”。PENDING、未解决日志和未覆盖范围不能被删除成无条件通过或“无错误”。迁移v2通过时也保留strict v1 FAIL与mobilebase／多人限制。
 - 根据最后核定条目同时更新description与由同条目生成的note，不保留rc.3／rc.4旧候选标题；正式内容提交与metadata-only核对、公开图／远端包核验、tag及Steam离线恢复由主线程执行。本文仍为draft，不是这些步骤的完成回执。
 
 本轮依据：[1019需求](requirements-2026-10-19.md)、[加载校正沿革（以末尾RC6为准）](native-load-design-repair-workaround-1019.md)、[独立旧伤v2合同](native-migration-roundoff-contract-1019.md)、[RC6成长源绑定与未验范围](rc5-growth-source-contract-1019.md)。未将旧RC4／RC5静态、原型或历史观察宣称为RC6／0.4.0通过。
 
-离线文案核对结果：六类完整；Note恰为`[v0.4.0]`加同一条目正文；BBCode配对完整，description建议UTF-8为5232字节（低于8000）；四个图URL及顺序与本地0.3.1核验记录完全相同。PENDING仍保留。定向diff空白检查通过；未联网、未运行发布命令，未修改任何正式输入文件。
+初稿离线文案核对结果：六类完整；Note恰为`[v0.4.0]`加同一条目正文；BBCode配对完整，description建议UTF-8为5232字节（低于8000）；四个图URL及顺序与本地0.3.1核验记录完全相同。PENDING仍保留。初稿定向diff空白检查通过；当时未联网，随后公开图片观察另见媒体审阅记录。尚未运行发布命令，未修改任何正式输入文件。
