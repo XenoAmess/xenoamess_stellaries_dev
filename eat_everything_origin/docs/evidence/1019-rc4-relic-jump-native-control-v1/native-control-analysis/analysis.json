@@ -1,0 +1,783 @@
+{
+  "schema": "eep.rc4.native-cracker-control-analysis.v1",
+  "status": "SCOPED_CALLBACK_OBSERVATION_WITH_NATIVE_ERROR_REPRODUCED",
+  "analyzed_at_utc": "2026-10-19T12:28:08.341337+00:00",
+  "run_id": "20261019T112808Z",
+  "source_scope": "Stable saved stage artifacts only; no current/live log read; not a final whole-run log freeze",
+  "checks": {
+    "all_B_P_Q_R_receipts_and_raw_bytes_hash_match": true,
+    "all_three_prefixes_and_delta_files_match_exact_offsets": true,
+    "base_native_target_planet17_and_mother_fleet159": true,
+    "explicit_original_callback_and_two_day_advance_submitted": true,
+    "native_dates_base_Mar7_post_Mar9": true,
+    "physical_planet17_remains_as_shattered_without_owner": true,
+    "country1_native_entry_none": true,
+    "historical_colony1_object_remains": true,
+    "country0_all_eep_variables_unchanged": true,
+    "EEP_C_and_worlds_still_zero": true,
+    "native_worlds_delta_750": true,
+    "native_empires_block_absent_before_and_after": true,
+    "one_new_nomads_error_in_P_Q_only": true,
+    "restore_load_action_and_ui_date_proven_only": true
+  },
+  "checks_all_true": true,
+  "snapshots": [
+    {
+      "stage": "B-before-load",
+      "utc": "2026-10-19T12:17:27.278958+00:00",
+      "source_receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-B-before-load-log-receipt.json",
+      "bytes": 3200,
+      "sha256": "c92f44f4b866edab8f69a8b2e1ce7a860e5487c407541f5b9a5f9298841deb98"
+    },
+    {
+      "stage": "P-before-dispatch",
+      "utc": "2026-10-19T12:19:13.444649+00:00",
+      "source_receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-P-before-dispatch-log-receipt.json",
+      "bytes": 3200,
+      "sha256": "c92f44f4b866edab8f69a8b2e1ce7a860e5487c407541f5b9a5f9298841deb98",
+      "range_start": 3200,
+      "range_end": 3200,
+      "delta_bytes": 0,
+      "delta_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "delta_records": []
+    },
+    {
+      "stage": "Q-after-settlement",
+      "utc": "2026-10-19T12:21:49.142635+00:00",
+      "source_receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-Q-after-settlement-log-receipt.json",
+      "bytes": 3575,
+      "sha256": "6546aa90e235446ceb64c213e238071cd237d10cc6172db62c31112ee4ac1192",
+      "range_start": 3200,
+      "range_end": 3575,
+      "delta_bytes": 375,
+      "delta_sha256": "b9979ba9c340db5e18766452a9c13284030b3306ddb1ff71464c18c5cf7f293a",
+      "delta_records": [
+        {
+          "line_start": 1,
+          "lines": [
+            "[20:20:06][trigger_impl.cpp:1218]: Script Error: Invalid context switch [from] from EEP 03 铁心灭绝者 [country], file: events/nomads_events_1.txt line: 2268, Scope: ",
+            "type=country",
+            "id=0",
+            "opener_id=4294967295",
+            "random={ 0 1764613238 }",
+            "random_allowed=yes",
+            "from=",
+            "{",
+            "\ttype=country",
+            "\tid=4294967295",
+            "\topener_id=4294967295",
+            "\trandom={ 0 1301345236 }",
+            "\trandom_allowed=yes",
+            "}",
+            ""
+          ],
+          "category": "nomads_94_invalid_from"
+        }
+      ]
+    },
+    {
+      "stage": "R-after-restore",
+      "utc": "2026-10-19T12:23:33.142501+00:00",
+      "source_receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-R-after-restore-log-receipt.json",
+      "bytes": 3575,
+      "sha256": "6546aa90e235446ceb64c213e238071cd237d10cc6172db62c31112ee4ac1192",
+      "range_start": 3575,
+      "range_end": 3575,
+      "delta_bytes": 0,
+      "delta_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "delta_records": []
+    }
+  ],
+  "baseline_records_retained": [
+    {
+      "line_start": 1,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3797257579"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 2,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3710613857"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 3,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2660548454"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 4,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2411818376"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 5,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2409044128"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 6,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3484461951"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 7,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1199002146"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 8,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2946000546"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 9,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3053655313"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 10,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2956750257"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 11,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1539624733"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 12,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1890399946"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 13,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3357143726"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 14,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3415581160"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 15,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2438313459"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 16,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2407436476"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 17,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1623423360"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 18,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3339549399"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 19,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3090328185"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 20,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2948301103"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 21,
+      "lines": [
+        "[19:28:11][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2976454692"
+      ],
+      "category": "preexisting_mod_discovery_warning"
+    },
+    {
+      "line_start": 22,
+      "lines": [
+        "[19:30:12][game_singleobjectdatabase.h:170]: Object with key: decision_lithoid_swarm_consume_world already exists, using the one at  file: common/decisions/zz_eep_native_decision.txt line: 2"
+      ],
+      "category": "preexisting_native_decision_override"
+    },
+    {
+      "line_start": 23,
+      "lines": [
+        "[20:05:42][effect_impl.cpp:1666]: fire_on_action effect: Could not find on action 'on_destroy_planet_with_EEP_PLANET_KILLER_DISMANTLE' at  file:  line: 1"
+      ],
+      "category": "preexisting_missing_dismantle_callback_origin_not_attributed_here"
+    },
+    {
+      "line_start": 24,
+      "lines": [
+        "[20:09:31][trigger_impl.cpp:1218]: Script Error: Invalid context switch [from] from EEP 03 铁心灭绝者 [country], file: events/nomads_events_1.txt line: 2268, Scope: ",
+        "type=country",
+        "id=0",
+        "opener_id=4294967295",
+        "random={ 0 2868315723 }",
+        "random_allowed=yes",
+        "from=",
+        "{",
+        "\ttype=country",
+        "\tid=4294967295",
+        "\topener_id=4294967295",
+        "\trandom={ 0 2892653608 }",
+        "\trandom_allowed=yes",
+        "}",
+        ""
+      ],
+      "category": "nomads_94_invalid_from"
+    }
+  ],
+  "baseline_categories": {
+    "preexisting_mod_discovery_warning": 21,
+    "preexisting_native_decision_override": 1,
+    "preexisting_missing_dismantle_callback_origin_not_attributed_here": 1,
+    "nomads_94_invalid_from": 1
+  },
+  "before": {
+    "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+    "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+    "native_date": "2200.03.07",
+    "native_receipt": {
+      "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\acceptance-fixtures\\pk2base.sav",
+      "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2base.sav",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+      "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+      "date": "2200.03.07"
+    },
+    "audit_matches_save_and_gamestate": true,
+    "event_targets": [
+      {
+        "type": "fleet",
+        "id": 159,
+        "opener_id": 4294967295,
+        "name": "eep_mothership0"
+      },
+      {
+        "type": "planet",
+        "id": 17,
+        "opener_id": 4294967295,
+        "name": "eep_colossus_probe_target"
+      }
+    ],
+    "country0_eep_variables": {
+      "eep_c": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_entitled": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_pending": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_snapshot_state": 0,
+      "eep_component_tracking_level": 0,
+      "eep_d": 2,
+      "eep_fleet_stage": 0,
+      "eep_g": 0,
+      "eep_last_capacity": 0,
+      "eep_last_manufactured": 0,
+      "eep_last_return": 0,
+      "eep_made": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10,
+      "eep_stage": 0,
+      "eep_worlds": 0
+    },
+    "country0_eep_flags_raw": {
+      "eep_initialized": "62808000",
+      "eep_startup_granted": "62808000",
+      "eep_crisis_startup_granted": "62808000",
+      "eep_parallel_construction_granted": "62808000",
+      "eep_mothership_granted": "62808000",
+      "eep_component_snapshot_available": "62809440"
+    },
+    "country0_crisis_progression_raw": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_enemy_ships\"\n\t\t\t\tprogress=75\n\t\t\t}\n\t\t",
+    "country0_crisis_path_and_level": {
+      "path": "nemesis_path",
+      "level": "crisis_level_1"
+    },
+    "native_objectives": [
+      {
+        "objective": "crisobj_destroy_enemy_ships",
+        "progress": 75
+      }
+    ],
+    "country1_is_object": true,
+    "country1_raw_scalar_if_not_object": null,
+    "colony1_is_object": true,
+    "colony1_scalars_if_object": {
+      "kill_pop": "0.01.01",
+      "army_build_queue": 5,
+      "governor": 85,
+      "pop_to_kill_from_devastation": 40,
+      "stability": 94.4406,
+      "crime": 0,
+      "amenities": 6813.125,
+      "amenities_usage": 3926.08,
+      "free_amenities": 2887.045,
+      "free_housing": 394,
+      "total_housing": 5600,
+      "housing_usage": 5206,
+      "employable_pops": 5206,
+      "civilian": 1710,
+      "num_sapient_pops": 5206,
+      "manual_designation_changed_date": "2200.01.01",
+      "final_designation": "col_capital",
+      "designation": "col_capital",
+      "ascension_tier": 0,
+      "binary_flags": 72
+    },
+    "colony1_raw_sha256": "2d787f2371527cf7131a52f345d3a6ffa9b75a9c79cf8e8afb0b0e30bb1f72fa",
+    "planet17_is_object": true,
+    "planet17_scalars": {
+      "colony": 1,
+      "planet_class": "pc_alpine",
+      "planet_size": 19,
+      "colonize_date": "2016.05.09",
+      "original_owner": 1,
+      "carrier_binary_flags": 3,
+      "build_queue": 4,
+      "binary_flags": 589,
+      "orbit": 24,
+      "last_bombardment": "0.01.01",
+      "owner": 1,
+      "controller": 1,
+      "moon_of": 15,
+      "bombardment_damage": 0,
+      "entity": 1
+    },
+    "planet17_deposits": [
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335
+    ],
+    "planet17_eep_variables": {},
+    "planet17_eep_flags_raw": {}
+  },
+  "after": {
+    "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol.sav",
+    "sha256": "49b3405d5265de6b9b471f778b67a573c521f2988499b6b7c7d4d45b7d6fe208",
+    "native_date": "2200.03.09",
+    "native_receipt": {
+      "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2nativecontrol.sav",
+      "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2nativecontrol.sav",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol.sav",
+      "sha256": "49b3405d5265de6b9b471f778b67a573c521f2988499b6b7c7d4d45b7d6fe208",
+      "date": "2200.03.09"
+    },
+    "audit_matches_save_and_gamestate": true,
+    "event_targets": [
+      {
+        "type": "fleet",
+        "id": 159,
+        "opener_id": 4294967295,
+        "name": "eep_mothership0"
+      },
+      {
+        "type": "planet",
+        "id": 17,
+        "opener_id": 4294967295,
+        "name": "eep_colossus_probe_target"
+      }
+    ],
+    "country0_eep_variables": {
+      "eep_c": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_entitled": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_pending": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_snapshot_state": 0,
+      "eep_component_tracking_level": 0,
+      "eep_d": 2,
+      "eep_fleet_stage": 0,
+      "eep_g": 0,
+      "eep_last_capacity": 0,
+      "eep_last_manufactured": 0,
+      "eep_last_return": 0,
+      "eep_made": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10,
+      "eep_stage": 0,
+      "eep_worlds": 0
+    },
+    "country0_eep_flags_raw": {
+      "eep_initialized": "62808000",
+      "eep_startup_granted": "62808000",
+      "eep_crisis_startup_granted": "62808000",
+      "eep_parallel_construction_granted": "62808000",
+      "eep_mothership_granted": "62808000",
+      "eep_component_snapshot_available": "62809440"
+    },
+    "country0_crisis_progression_raw": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_enemy_ships\"\n\t\t\t\tprogress=75\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_worlds\"\n\t\t\t\tprogress=750\n\t\t\t}\n\t\t",
+    "country0_crisis_path_and_level": {
+      "path": "nemesis_path",
+      "level": "crisis_level_1"
+    },
+    "native_objectives": [
+      {
+        "objective": "crisobj_destroy_enemy_ships",
+        "progress": 75
+      },
+      {
+        "objective": "crisobj_destroy_worlds",
+        "progress": 750
+      }
+    ],
+    "country1_is_object": false,
+    "country1_raw_scalar_if_not_object": "none",
+    "colony1_is_object": true,
+    "colony1_scalars_if_object": {
+      "kill_pop": "0.01.01",
+      "last_district_changed": "district_city",
+      "army_build_queue": 5,
+      "stability": 0,
+      "crime": 0,
+      "amenities": 0,
+      "amenities_usage": 0,
+      "free_amenities": 0,
+      "free_housing": 8400,
+      "total_housing": 8500,
+      "housing_usage": 100,
+      "employable_pops": 100,
+      "num_sapient_pops": 100,
+      "manual_designation_changed_date": "2200.01.01",
+      "final_designation": "col_capital",
+      "designation": "col_capital",
+      "ascension_tier": 0
+    },
+    "colony1_raw_sha256": "df370102ad502cc5790476dfc00fc10b1c845962e2a0115f63e714b3478c73f5",
+    "planet17_is_object": true,
+    "planet17_scalars": {
+      "save_on_death": 1,
+      "colony": 1,
+      "planet_class": "pc_shattered",
+      "planet_size": 19,
+      "original_owner": 1,
+      "carrier_binary_flags": 1,
+      "build_queue": 4,
+      "binary_flags": 589,
+      "orbit": 24,
+      "last_bombardment": "0.01.01",
+      "moon_of": 15,
+      "bombardment_damage": 0,
+      "entity": 0
+    },
+    "planet17_deposits": [
+      16777218,
+      16777219
+    ],
+    "planet17_eep_variables": {},
+    "planet17_eep_flags_raw": {}
+  },
+  "native_objectives": {
+    "worlds_before": {
+      "block_present": false,
+      "progress_if_present": null,
+      "scoped_value_absent_is_zero_on_confirmed_nemesis_path": 0
+    },
+    "worlds_after": {
+      "block_present": true,
+      "progress_if_present": 750,
+      "scoped_value_absent_is_zero_on_confirmed_nemesis_path": 750
+    },
+    "empires_before": {
+      "block_present": false,
+      "progress_if_present": null,
+      "scoped_value_absent_is_zero_on_confirmed_nemesis_path": 0
+    },
+    "empires_after": {
+      "block_present": false,
+      "progress_if_present": null,
+      "scoped_value_absent_is_zero_on_confirmed_nemesis_path": 0
+    },
+    "native_empires_delta": 0,
+    "note": "Observed empires block absent, interpreted as zero only on the confirmed Nemesis path. Do not invent or require 600 for this manual callback control."
+  },
+  "load_receipt": {
+    "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2base.sav",
+    "source_sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+    "date": "2200.03.07",
+    "ui_date_verified": true,
+    "state_verified": false,
+    "followup": "audit a newly saved native file",
+    "loaded_at_utc": "2026-10-19T12:19:13.443224+00:00"
+  },
+  "restore_receipt": {
+    "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2base.sav",
+    "source_sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+    "date": "2200.03.07",
+    "ui_date_verified": true,
+    "state_verified": false,
+    "followup": "audit a newly saved native file",
+    "loaded_at_utc": "2026-10-19T12:23:33.140890+00:00"
+  },
+  "command_receipt": {
+    "action": "type_text",
+    "stage": "pk2nativecontrol-original-cracker-command",
+    "text": "effect event_target:eep_colossus_probe_target={fire_on_action={on_action=on_destroy_planet_with_PLANET_KILLER_CRACKER scopes={from=event_target:eep_mothership0}}}",
+    "submitted": true,
+    "typed_at_utc": "2026-10-19T12:19:50.258786+00:00",
+    "key_interval_seconds": 0.04,
+    "submit_input": "physical scan code 0x1c"
+  },
+  "advance_receipt": {
+    "action": "type_text",
+    "stage": "pk2nativecontrol-settle-two-days-command",
+    "text": "fast_forward 2",
+    "submitted": true,
+    "typed_at_utc": "2026-10-19T12:20:05.875142+00:00",
+    "key_interval_seconds": 0.04,
+    "submit_input": "physical scan code 0x1c"
+  },
+  "causal_scope": [
+    "The same native nomads.94 invalid FROM diagnostic is newly present in the exact P-to-Q interval after the original CRACKER completion callback with explicit Mother fleet FROM plus two days.",
+    "The submitted command directly dispatches only the original CRACKER completion callback, not the EEP completion callback; all country0 EEP variables remain at base, including C0 and worlds0.",
+    "Therefore the diagnostic can occur on this native completed-callback path and is not uniquely attributable to the EEP settlement callback.",
+    "No claim about the precise engine hook/ROOT-FROM propagation, harmlessness, or absence of EEP bugs follows from this reproduction.",
+    "This is a manual completed callback, not an actual native weapon shot or 90-day charge test; native rewards/Carrier context/timing may differ. Observed worlds750/empires0 are retained.",
+    "Base restoration has an actual load receipt and verified UI date; state_verified=false remains false, without a new post-restore save audit no complete state-restoration PASS is claimed."
+  ],
+  "limitations": [
+    "Only error.log stage snapshots were collected; game.log offsets are not present in this control receipt.",
+    "The EEP Mod remains enabled in this run; this is a native-callback control inside the candidate game, not a Mod-free vanilla campaign or a no-callback two-day control.",
+    "Baseline already contains a missing DISMANTLE callback diagnostic and one nomads error; both are retained separately and excluded from the new-interval count only by proven byte offsets.",
+    "No all-fields strict save-difference PASS or zero native-side-effect claim; relevant native state is extracted directly and complete originals are referenced.",
+    "No inference from later r4relic or current log activity; original RC3 22-file payload is untouched."
+  ],
+  "sources": [
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-log-receipt.json",
+      "bytes": 3182,
+      "sha256": "91ca334725bace040f388d96ea4e43e5c1e686ff90c2b40f8c5e72197c9e3027"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-B-before-load-log-receipt.json",
+      "bytes": 517,
+      "sha256": "a4cfa7b5dad6a8c248212fae98d06e6aee82b8f6e9bb73564aef95dc3b06401c"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-B-before-load.error.log",
+      "bytes": 3200,
+      "sha256": "c92f44f4b866edab8f69a8b2e1ce7a860e5487c407541f5b9a5f9298841deb98"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-P-before-dispatch-log-receipt.json",
+      "bytes": 692,
+      "sha256": "bfa909dfa8fa770f3d34ae77a30d6511af883eb189b5d7b3cf24f0a3eee766ca"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-P-before-dispatch.error.log",
+      "bytes": 3200,
+      "sha256": "c92f44f4b866edab8f69a8b2e1ce7a860e5487c407541f5b9a5f9298841deb98"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-P-before-dispatch.delta.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-Q-after-settlement-log-receipt.json",
+      "bytes": 694,
+      "sha256": "307a2ce259e34384aed3be9a3078b148311c5d2d9422940472796cce20debd29"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-Q-after-settlement.error.log",
+      "bytes": 3575,
+      "sha256": "6546aa90e235446ceb64c213e238071cd237d10cc6172db62c31112ee4ac1192"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-Q-after-settlement.delta.log",
+      "bytes": 375,
+      "sha256": "b9979ba9c340db5e18766452a9c13284030b3306ddb1ff71464c18c5cf7f293a"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-R-after-restore-log-receipt.json",
+      "bytes": 688,
+      "sha256": "515c8b6fe1503800ae1b29f9079d0c952368bd0f8960bd72a843dc8d19050e93"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-R-after-restore.error.log",
+      "bytes": 3575,
+      "sha256": "6546aa90e235446ceb64c213e238071cd237d10cc6172db62c31112ee4ac1192"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-R-after-restore.delta.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+      "bytes": 528276,
+      "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.native-save.json",
+      "bytes": 530,
+      "sha256": "1c971f0fb1d0dc41dded7c119223bce37c1c20fa134b4f3ce21489089fddf2fd"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.audit.json",
+      "bytes": 122764,
+      "sha256": "98ddca3821f0a1d606d473edf46fe95e7e77c9cea2d576154427a42990a82834"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol.sav",
+      "bytes": 519888,
+      "sha256": "49b3405d5265de6b9b471f778b67a573c521f2988499b6b7c7d4d45b7d6fe208"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol.native-save.json",
+      "bytes": 554,
+      "sha256": "4d9fa0012957d3e58faaaf9a15ac760cc3d5d8b0984dc927478f23d792045cd9"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol.audit.json",
+      "bytes": 58773,
+      "sha256": "fa04832c55a66f5fbd801e2d3411981e031a97fc30f4053a9fba69619af4a035"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-load-base.load.json",
+      "bytes": 410,
+      "sha256": "7bc9905df2dfb9e7a8ed1d53296116ae0c19ed118e32abcf78b8733c1ee037a2"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-restore-base.load.json",
+      "bytes": 410,
+      "sha256": "a7ca38c8c21eb8f46bc75a6904c8b0e22f38efc0123f36874305225ba18b2c59"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-original-cracker-command.action.json",
+      "bytes": 412,
+      "sha256": "02e1ccaa5afc4873f08d990036ea697355c48856449331dfb4277da335303efb"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-settle-two-days-command.action.json",
+      "bytes": 263,
+      "sha256": "3cbc240e89d50801ee0654a38cfa597f28827d1e20e608fd52a2950e22c53a70"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-original-cracker-command-enter.action.json",
+      "bytes": 178,
+      "sha256": "af0fdea0f28943cb614764cfe020d7d46aa409cde2890d688d287935295b72e3"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-settle-two-days-command-enter.action.json",
+      "bytes": 177,
+      "sha256": "7e2a79b7826c2304b4bc467600b17780bbaf3d469f6a9364597f655e7d053c50"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-date.wait.json",
+      "bytes": 231,
+      "sha256": "92e60ff635e491ded797cd9a2dac23d2f4dd0f407f96ed91dafdda816bf3a323"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-load-base-loaded.ocr.json",
+      "bytes": 20346,
+      "sha256": "a1acf5e8057d766b27d33eaa15523a86a004bbc15419ea4162e690cbbc1dc20e"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2nativecontrol-restore-base-loaded.ocr.json",
+      "bytes": 20062,
+      "sha256": "33cedc86f0869d3203e3ebee2ed1485406d22ad4fd26132bc407e81f575ba6bf"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\manifest.json",
+      "bytes": 24737,
+      "sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\process.json",
+      "bytes": 870,
+      "sha256": "8a996dd61e949f3714e3c7fe955d8fc64fa386407801267ff6a25e40b1b33dd9"
+    },
+    {
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\audit_save.py",
+      "bytes": 13218,
+      "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\01_planet_destruction.txt",
+      "bytes": 5447,
+      "sha256": "6ba54afe8c56225641311aa64f3daa358097a0adbbdaad0328eb5d260822325c"
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\planet_destruction_events.txt",
+      "bytes": 70731,
+      "sha256": "b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87"
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\nemesis_crisis_menace_objective_events.txt",
+      "bytes": 5722,
+      "sha256": "f38d1c9291767ea4b1845214198fd2d84686db9e3a89d3e49180d6a6d2f2b261"
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\nomads_events_1.txt",
+      "bytes": 401534,
+      "sha256": "9706995838e51276c1348f5d0bb31e2a97b36e0a2c92a79de25b6065e091fb0a"
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\00_on_actions.txt",
+      "bytes": 182154,
+      "sha256": "7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306"
+    }
+  ]
+}
