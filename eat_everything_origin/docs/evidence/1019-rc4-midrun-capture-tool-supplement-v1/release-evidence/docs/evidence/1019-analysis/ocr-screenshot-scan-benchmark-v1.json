@@ -1,0 +1,59 @@
+{
+  "schema": "eep.ocr-screenshot-scan.offline.v1",
+  "status": "PASS_SCOPED",
+  "created_at_utc": "2026-10-19T14:24:43.944405+00:00",
+  "scope": "All current fixed Steam screenshot leaves, complete path/mtime mappings; no screenshot, focus or input operation.",
+  "runtime_tool_sha256": "84b7fdda9489392f5abab5fc71c9bd61bcc5933185a02f7c6c479d703b155ffc",
+  "benchmark_sha256": "b8e7a2ed3500596036565c4a1b329c534bba3ad1a829ea9077a5fadb7dccae90",
+  "python": "3.14.7",
+  "rounds": [
+    {
+      "round": 1,
+      "glob_path_stat_seconds": 2.276073700049892,
+      "scandir_seconds": 0.1921233998145908,
+      "reference_count": 15003,
+      "observed_count": 15003,
+      "all_path_mtimes_exactly_equal": true,
+      "reference_mapping_sha256": "ef647df66e6700d060180fb5cc7f183eff1ee167da14f938b07dd12c1bd05ba5",
+      "observed_mapping_sha256": "ef647df66e6700d060180fb5cc7f183eff1ee167da14f938b07dd12c1bd05ba5",
+      "missing_path_count": 0,
+      "extra_path_count": 0,
+      "changed_mtime_count": 0
+    },
+    {
+      "round": 2,
+      "glob_path_stat_seconds": 2.000574699835852,
+      "scandir_seconds": 0.21612730016931891,
+      "reference_count": 15003,
+      "observed_count": 15003,
+      "all_path_mtimes_exactly_equal": true,
+      "reference_mapping_sha256": "ef647df66e6700d060180fb5cc7f183eff1ee167da14f938b07dd12c1bd05ba5",
+      "observed_mapping_sha256": "ef647df66e6700d060180fb5cc7f183eff1ee167da14f938b07dd12c1bd05ba5",
+      "missing_path_count": 0,
+      "extra_path_count": 0,
+      "changed_mtime_count": 0
+    },
+    {
+      "round": 3,
+      "glob_path_stat_seconds": 2.127782199997455,
+      "scandir_seconds": 0.16321850009262562,
+      "reference_count": 15003,
+      "observed_count": 15003,
+      "all_path_mtimes_exactly_equal": true,
+      "reference_mapping_sha256": "ef647df66e6700d060180fb5cc7f183eff1ee167da14f938b07dd12c1bd05ba5",
+      "observed_mapping_sha256": "ef647df66e6700d060180fb5cc7f183eff1ee167da14f938b07dd12c1bd05ba5",
+      "missing_path_count": 0,
+      "extra_path_count": 0,
+      "changed_mtime_count": 0
+    }
+  ],
+  "all_rounds_file_mapping_stable": true,
+  "glob_path_stat_median_seconds": 2.127782199997455,
+  "scandir_median_seconds": 0.1921233998145908,
+  "median_speedup_ratio": 11.075080922213935,
+  "estimated_two_scan_seconds_saved": 3.871317600365728,
+  "limits": [
+    "Offline metadata speed only; full live F12/probe duration was not measured.",
+    "Images, OCR models/settings, full directory scope, before/fresh mtime test and failure contract are unchanged."
+  ]
+}

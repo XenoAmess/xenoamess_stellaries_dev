@@ -1,0 +1,58 @@
+{
+  "schema": "eep.economy_explicit_package_binding.v1",
+  "status": "PASS_OFFLINE_AND_PACKAGE_BINDING_ONLY",
+  "created_at_utc": "2026-10-19T14:45:27.284645+00:00",
+  "tests": {
+    "command": "python -m unittest discover -s eat_everything_origin/tools -p test_runtime_economy_1019.py -v",
+    "run": 19,
+    "failures": 0,
+    "errors": 0,
+    "scope": "offline synthetic file and native-block inputs; not live economics"
+  },
+  "actual_packages": [
+    {
+      "run": "20261019T112808Z",
+      "status": "PASS_PACKAGE_FILES_ONLY",
+      "expected_tree": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+      "expected_version": "0.4.0-rc.4",
+      "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\manifest.json",
+      "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+      "report_sha256": "2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d",
+      "files": 59
+    },
+    {
+      "run": "20261019T143452Z",
+      "status": "PASS_PACKAGE_FILES_ONLY",
+      "expected_tree": "1cc8b77c28f3d59b0d840982c7f039a209cb66f3e26d9c3280ad2dfa0f9dbd52",
+      "expected_version": "0.4.0-rc.5",
+      "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\manifest.json",
+      "manifest_sha256": "864b7e768c694193b646a5ed1c277c9b370b1a7654514e4f41166da962ea013a",
+      "report_sha256": "706f3b00d5b7447d3825bf7a2f7c7e55f7f20c28b530ce6a83f34b77b57bf7bf",
+      "files": 59
+    }
+  ],
+  "RC5_default_negative": {
+    "status": "EXPECTED_REJECT",
+    "error": "economy collection requires the explicit single-Mod Chinese package tree/version and full file binding"
+  },
+  "desktop_module_imported": false,
+  "collector_executed": false,
+  "sources": {
+    "runtime_economy_1019.py": {
+      "sha256": "d5f6a21fd2408779ae7b6494bacb21d83e5cb3245644af1c69673006749d56f0"
+    },
+    "test_runtime_economy_1019.py": {
+      "sha256": "359357906bae117088103f017ac4a2b1e38204239a236d314d841c55dc975e57"
+    }
+  },
+  "source_before": {
+    "runtime_economy_1019.py": "30029df9c21d4a851c9f02a473cc40d8e7fee3cfbd69df10290b9451402d2e2c",
+    "test_runtime_economy_1019.py": "6ed60f9388f4811fb37a352d15304b22141b4b039fe0774c0e64100b751ce5bd"
+  },
+  "limitations": [
+    "No UI, game execution, actual Jan1 anchor collection, or economy acceptance.",
+    "RC4 defaults retained; RC5 and future candidates require both explicit command-line expectations.",
+    "Historical reports and frozen tool bytes unchanged.",
+    "Growth source models are independent and are not called by economic package validation."
+  ]
+}

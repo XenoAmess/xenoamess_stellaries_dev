@@ -67,7 +67,10 @@ COMPONENT_MODIFIERS = {"ship_hull_add", "ship_hull_mult", "ship_armor_add", "shi
 # models, not inherited RC3 runtime acceptance or fitted future coefficients.
 COMPONENT_SOURCE_MODELS = (
     "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
-    "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8")
+    "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8",
+    "942b98c2aea0022ff7ffa017944abbf873d36331fd26c89862f83a37e31e4dd2",
+    "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f")
+COMPONENT_SOURCE_TREE = "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a"
 COMPONENT_ATTRIBUTION_CONTRACT = "source_separated_native_rng_v1"
 COMPONENT_HP_TOLERANCE_CONTRACT = "max_0p01_or_8_binary32_ulp_expected_v1"
 COMPONENT_HP_TOLERANCE = {"absolute_floor": .01, "binary32_ulps": 8, "relative_tolerance": 0,
@@ -441,7 +444,8 @@ def validate_component_attribution(case, tree, root):
             and report.get("status") == "PASS_SCOPED"
             and report.get("component_attribution_contract") == COMPONENT_ATTRIBUTION_CONTRACT,
             "native source-separated RNG contract")
-    require(report.get("run_id") in case["run_ids"] and report.get("production_tree_sha256") == tree,
+    require(tree == COMPONENT_SOURCE_TREE and report.get("run_id") in case["run_ids"]
+            and report.get("production_tree_sha256") == tree,
             "current candidate run and source")
     require(type(report.get("absolute_tolerance")) in (int, float)
             and report["absolute_tolerance"] == .01

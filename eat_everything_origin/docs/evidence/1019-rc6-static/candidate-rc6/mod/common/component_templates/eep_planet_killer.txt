@@ -1,0 +1,20 @@
+weapon_component_template = {
+    key = "EEP_PLANET_KILLER_DEVOURER"
+    size = planet_killer
+    type = planet_killer
+    # Keep custom statistics in the native TXT template, including fixed timing.
+    power = 0
+    damage = { min = 0 max = 0 }
+    windup = { min = 90 max = 90 }
+    total_fire_time = 30
+    range = 0
+    accuracy = 1
+    tracking = 0
+    use_ship_main_target = no
+    icon = GFX_ship_part_world_cracker
+    icon_frame = 1
+    component_set = "EEP_PLANET_KILLER_DEVOURER"
+    potential = { is_ship_size = juggernaut from = { has_origin = origin_heart_of_devouring } }
+    planet_destruction_gfx = "shatter_planet_gfx"
+    ai_weight = { factor = 0 }
+}

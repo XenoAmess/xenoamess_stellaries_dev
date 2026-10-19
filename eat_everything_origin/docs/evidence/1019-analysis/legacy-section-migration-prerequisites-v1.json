@@ -1,0 +1,466 @@
+{
+  "status": "PASS_SCOPED",
+  "scope": "Static legacy section/key/slot compatibility prerequisites only; not a native cross-version load or damage-preservation result",
+  "checks": {
+    "public_and_paid_legacy_section_keys_same": true,
+    "RC4_preserves_original_legacy_key": true,
+    "RC4_keeps_public_legacy_all_native_fields": true,
+    "RC4_keeps_public_legacy_all15_explicit_slot_definitions": true,
+    "RC4_keeps_paid_legacy_all15_explicit_slot_definitions": true,
+    "legacy12_large_2_aux_utility_counts": true,
+    "new_expanded_section_has_distinct1019_key": true,
+    "new22_large_11_aux_including6cores": true,
+    "legacy_hidden_prerequisite_present": true,
+    "original_public_design_uses_legacy_section": true,
+    "original_paid_design_uses_legacy_section": true
+  },
+  "schema": "eep.1019.legacy-section-migration-prerequisites.v1",
+  "public031_section": {
+    "source": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\public031\\mod\\common\\section_templates\\eep_mothership.txt",
+      "sha256": "fae0a4052fd8b67d732b365b82ddf70ec378672bdf1be71b5b62c449965b248d"
+    },
+    "native": {
+      "key": "eep_mothership_section",
+      "ship_size": "juggernaut",
+      "fits_on_slot": "core",
+      "entity": "eep_mothership_hull_entity",
+      "icon": "GFX_ship_part_core_mid",
+      "large_utility_slots": 12,
+      "aux_utility_slots": 2
+    },
+    "slots": [
+      {
+        "name": "TITAN_01",
+        "template": "invisible_titanic_fixed",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_01",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_02",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_03",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_04",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_01",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_02",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_03",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_04",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_05",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_06",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_01",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_02",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_03",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_04",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      }
+    ],
+    "prerequisites_raw": "",
+    "raw": "\n\tkey = \"eep_mothership_section\"\n\tship_size = juggernaut\n\tfits_on_slot = core\n\tentity = \"eep_mothership_hull_entity\"\n\ticon = \"GFX_ship_part_core_mid\"\n\n\tcomponent_slot = {\n\t\tname = \"TITAN_01\"\n\t\ttemplate = \"invisible_titanic_fixed\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_01\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_02\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_03\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_04\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_01\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_02\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_03\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_04\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_05\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_06\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_01\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_02\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_03\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_04\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\n\tlarge_utility_slots = 12\n\taux_utility_slots = 2\n"
+  },
+  "original_paid_section": {
+    "source": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261014T223819Z\\mod\\eep-1015\\common\\section_templates\\eep_mothership.txt",
+      "sha256": "fae0a4052fd8b67d732b365b82ddf70ec378672bdf1be71b5b62c449965b248d"
+    },
+    "native": {
+      "key": "eep_mothership_section",
+      "ship_size": "juggernaut",
+      "fits_on_slot": "core",
+      "entity": "eep_mothership_hull_entity",
+      "icon": "GFX_ship_part_core_mid",
+      "large_utility_slots": 12,
+      "aux_utility_slots": 2
+    },
+    "slots": [
+      {
+        "name": "TITAN_01",
+        "template": "invisible_titanic_fixed",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_01",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_02",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_03",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_04",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_01",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_02",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_03",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_04",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_05",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_06",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_01",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_02",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_03",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_04",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      }
+    ],
+    "prerequisites_raw": "",
+    "raw": "\n\tkey = \"eep_mothership_section\"\n\tship_size = juggernaut\n\tfits_on_slot = core\n\tentity = \"eep_mothership_hull_entity\"\n\ticon = \"GFX_ship_part_core_mid\"\n\n\tcomponent_slot = {\n\t\tname = \"TITAN_01\"\n\t\ttemplate = \"invisible_titanic_fixed\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_01\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_02\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_03\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_04\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_01\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_02\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_03\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_04\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_05\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_06\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_01\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_02\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_03\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_04\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\n\tlarge_utility_slots = 12\n\taux_utility_slots = 2\n"
+  },
+  "frozen_RC4_legacy_section": {
+    "source": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc4\\mod\\common\\section_templates\\eep_mothership_legacy.txt",
+      "sha256": "967e22c4b80091dab66d5d38878c97398cd347b560dc7d5f17903aea7fcdf9b3"
+    },
+    "native": {
+      "key": "eep_mothership_section",
+      "ship_size": "juggernaut",
+      "fits_on_slot": "core",
+      "entity": "eep_mothership_hull_entity",
+      "icon": "GFX_ship_part_core_mid",
+      "large_utility_slots": 12,
+      "aux_utility_slots": 2
+    },
+    "slots": [
+      {
+        "name": "TITAN_01",
+        "template": "invisible_titanic_fixed",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_01",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_02",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_03",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "TORPEDO_04",
+        "template": "invisible_missile_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_01",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_02",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_03",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_04",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_05",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "MEDIUM_GUN_06",
+        "template": "medium_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_01",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_02",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_03",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_04",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      }
+    ],
+    "prerequisites_raw": " \"eep_mothership\" ",
+    "raw": "\n\tkey = \"eep_mothership_section\"\n\tship_size = juggernaut\n\tfits_on_slot = core\n\tentity = \"eep_mothership_hull_entity\"\n\ticon = \"GFX_ship_part_core_mid\"\n\tprerequisites = { \"eep_mothership\" }\n\n\tcomponent_slot = {\n\t\tname = \"TITAN_01\"\n\t\ttemplate = \"invisible_titanic_fixed\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_01\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_02\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_03\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"TORPEDO_04\"\n\t\ttemplate = \"invisible_missile_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_01\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_02\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_03\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_04\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_05\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"MEDIUM_GUN_06\"\n\t\ttemplate = \"medium_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_01\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_02\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_03\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\tcomponent_slot = {\n\t\tname = \"LARGE_GUN_04\"\n\t\ttemplate = \"large_turret\"\n\t\tlocatorname = \"large_gun_01\"\n\t}\n\n\tlarge_utility_slots = 12\n\taux_utility_slots = 2\n"
+  },
+  "frozen_RC4_new_section": {
+    "source": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc4\\mod\\common\\section_templates\\eep_mothership.txt",
+      "sha256": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493"
+    },
+    "native": {
+      "key": "eep_mothership_section_1019",
+      "ship_size": "juggernaut",
+      "fits_on_slot": "core",
+      "entity": "eep_mothership_hull_entity",
+      "icon": "GFX_ship_part_core_mid",
+      "large_utility_slots": 22,
+      "aux_utility_slots": 11
+    },
+    "slots": [
+      {
+        "name": "EXTRA_LARGE_01",
+        "template": "extra_large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_01",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_02",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_03",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_04",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_05",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_06",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "LARGE_GUN_07",
+        "template": "large_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "SMALL_GUN_01",
+        "template": "small_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "SMALL_GUN_02",
+        "template": "small_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "SMALL_GUN_03",
+        "template": "small_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "SMALL_GUN_04",
+        "template": "small_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "SMALL_GUN_05",
+        "template": "small_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "PD_08",
+        "template": "point_defence_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "PD_09",
+        "template": "point_defence_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "PD_10",
+        "template": "point_defence_turret",
+        "locatorname": "large_gun_01"
+      },
+      {
+        "name": "PLANET_KILLER_GUN_01",
+        "template": "invisible_planet_killer_fixed",
+        "locatorname": "large_gun_01"
+      }
+    ],
+    "prerequisites_raw": " \"eep_mothership\" ",
+    "raw": "\n\tkey = \"eep_mothership_section_1019\"\n\tship_size = juggernaut\n\tfits_on_slot = core\n\tentity = \"eep_mothership_hull_entity\"\n\ticon = \"GFX_ship_part_core_mid\"\n\tprerequisites = { \"eep_mothership\" }\n\n\tcomponent_slot = { name = \"EXTRA_LARGE_01\" template = \"extra_large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"LARGE_GUN_01\" template = \"large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"LARGE_GUN_02\" template = \"large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"LARGE_GUN_03\" template = \"large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"LARGE_GUN_04\" template = \"large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"LARGE_GUN_05\" template = \"large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"LARGE_GUN_06\" template = \"large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"LARGE_GUN_07\" template = \"large_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"SMALL_GUN_01\" template = \"small_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"SMALL_GUN_02\" template = \"small_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"SMALL_GUN_03\" template = \"small_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"SMALL_GUN_04\" template = \"small_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"SMALL_GUN_05\" template = \"small_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"PD_08\" template = \"point_defence_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"PD_09\" template = \"point_defence_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"PD_10\" template = \"point_defence_turret\" locatorname = \"large_gun_01\" }\n\n\tcomponent_slot = { name = \"PLANET_KILLER_GUN_01\" template = \"invisible_planet_killer_fixed\" locatorname = \"large_gun_01\" }\n\n\tlarge_utility_slots = 22\n\t# Keep the five Relic utilities and six independently upgradable symbiotic cores.\n\taux_utility_slots = 11\n"
+  },
+  "originals": [
+    {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.sav",
+      "save_sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+      "run_id": "20261019T053917Z",
+      "version": "0.3.1",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8",
+      "manifest_sha256": "bf540076292d39f95a711aed0aeb2e145356d667241da80f9de2e811c8a19095",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.audit.json",
+      "audit_sha256": "0cf5ab1fcf16c5dc1fae1f4474974b2c10fc08ea8bde8e777f3319f2a969faaf",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.native-save.json",
+          "sha256": "59b16503e02f2ca0174b9f91e0b74a1212ce442eac3645bd2acc0a57209ff8af",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep03_-1033273808\\bmm00.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm00.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.sav",
+            "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+            "date": "2200.01.01"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bm-autosave-receipt.json",
+          "sha256": "39cd84e12c55fd7a3d7ad406621b0282ffa9fa4387b88d39c3da81f789b61d79",
+          "snapshots_shape": "dict"
+        }
+      ]
+    },
+    {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1015-implementation\\runs\\20261014T223819Z\\j13ten.sav",
+      "save_sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e",
+      "run_id": "20261014T223819Z",
+      "version": "0.3.0-rc.1",
+      "version_source": "verified_copied_descriptor_only",
+      "production_tree_sha256": "eafb0b26b4832c1c395ce3870cdf5dfb3ce74839b70d16e017cd9049d833ce53",
+      "manifest_sha256": "daef4a396b85056f091612d959c4a90f181c62ff078330afcafa12501d328703",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1015-implementation\\runs\\20261014T223819Z\\j13ten.audit.json",
+      "audit_sha256": "49e0637da026e529021d71e34324794cf7f91607490142537b1db76338583826",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1015-implementation\\runs\\20261014T223819Z\\j13ten.native-save.json",
+          "sha256": "6fe71618fa64eb9d9a7a1d77024876852575b8b48d6869f66ed2532ddf62a96b",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261014T223819Z\\save games\\eep02_-34926073\\j13ten.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261014T223819Z\\save games\\eep-test-history\\j13ten.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1015-implementation\\runs\\20261014T223819Z\\j13ten.sav",
+            "sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e",
+            "date": "2200.01.12"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Paid original source0.3.0-rc.1 and future ldpaidhurt runtime public0.3.1 remain distinct provenance.",
+    "No current/max/fraction retention is inferred from these static definitions.",
+    "Same-key modifiers may be reinterpreted at native load; actual oldhurt->RC4load comparison is required."
+  ]
+}

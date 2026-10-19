@@ -1,0 +1,205 @@
+# Fleet scope. Called only for the existing, owned, single-ship bound mothership.
+# Persistent ranks are never reset or inferred from the reward total: controlled
+# C0 hardware probes deliberately set a rank while leaving rewards at zero.
+eep_sync_mothership_components = {
+    if = {
+        limit = { NOT = { is_variable_set = eep_component_shield_level } }
+        set_variable = { which = eep_component_shield_level value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = eep_component_armor_level } }
+        set_variable = { which = eep_component_armor_level value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = eep_component_hull_level } }
+        set_variable = { which = eep_component_hull_level value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = eep_component_damage_level } }
+        set_variable = { which = eep_component_damage_level value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = eep_component_tracking_level } }
+        set_variable = { which = eep_component_tracking_level value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = eep_component_regen_level } }
+        set_variable = { which = eep_component_regen_level value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = eep_component_rewards } }
+        set_variable = { which = eep_component_rewards value = 0 }
+    }
+    # Work budget, not a progression cap. Unpaid rewards remain for later syncs.
+    set_variable = { which = eep_component_work_budget value = 200 }
+    while = {
+        limit = {
+            check_variable = { which = eep_component_rewards value < owner.eep_component_entitled }
+            check_variable = { which = eep_component_work_budget value > 0 }
+        }
+        random_list = {
+            1 = { change_variable = { which = eep_component_shield_level value = 1 } }
+            1 = { change_variable = { which = eep_component_armor_level value = 1 } }
+            1 = { change_variable = { which = eep_component_hull_level value = 1 } }
+            1 = { change_variable = { which = eep_component_damage_level value = 1 } }
+            1 = { change_variable = { which = eep_component_tracking_level value = 1 } }
+            1 = { change_variable = { which = eep_component_regen_level value = 1 } }
+        }
+        change_variable = { which = eep_component_rewards value = 1 }
+        change_variable = { which = eep_component_work_budget value = -1 }
+    }
+    clear_variable = eep_component_work_budget
+    owner = {
+        set_variable = { which = eep_component_shield_level value = prev.eep_component_shield_level }
+        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }
+        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }
+        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }
+        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }
+        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }
+        set_variable = { which = eep_component_rewards value = prev.eep_component_rewards }
+        set_variable = { which = eep_component_snapshot_state value = 0 }
+        set_country_flag = eep_component_snapshot_available
+    }
+}
+
+# Country scope. Restore only the existing bound station ship's actual layout.
+# The associated mobile starbase cache is separate and is not repaired here.
+# Never initialize, respawn, settle, or issue component rewards on this path.
+eep_repair_existing_mothership_design = {
+    if = {
+        limit = {
+            has_country_flag = eep_initialized
+            exists = event_target:eep_mothership@this
+            event_target:eep_mothership@this = {
+                owner = { is_same_value = prevprev }
+                num_ships = 1
+                is_ship_size = juggernaut
+            }
+        }
+        every_owned_ship = {
+            limit = {
+                fleet = { is_same_value = event_target:eep_mothership@owner }
+                NOT = {
+                    ship_growth_stage = {
+                        has_component = EEP_ADAPTIVE_SHIELD_CORE
+                        has_component = EEP_ADAPTIVE_ARMOR_CORE
+                        has_component = EEP_ADAPTIVE_HULL_CORE
+                        has_component = EEP_ADAPTIVE_DAMAGE_CORE
+                        has_component = EEP_ADAPTIVE_TRACKING_CORE
+                        has_component = EEP_ADAPTIVE_REGEN_CORE
+                    }
+                }
+            }
+            set_ship_design = { design = NAME_EEP_Baiqi_Mothership_1019 }
+            # Inspect the current implementation's stage, not entity sections:
+            # only a verified switch receives the historical ship marker.
+            if = {
+                limit = {
+                    ship_growth_stage = {
+                        has_component = EEP_ADAPTIVE_SHIELD_CORE
+                        has_component = EEP_ADAPTIVE_ARMOR_CORE
+                        has_component = EEP_ADAPTIVE_HULL_CORE
+                        has_component = EEP_ADAPTIVE_DAMAGE_CORE
+                        has_component = EEP_ADAPTIVE_TRACKING_CORE
+                        has_component = EEP_ADAPTIVE_REGEN_CORE
+                    }
+                }
+                # Historical compatibility marker; never used as layout truth.
+                set_ship_flag = eep_mothership_design_1019
+            }
+        }
+    }
+}
+
+# Country scope: derive progression from settled matter, never from an event count.
+eep_sync_mothership = {
+    if = {
+        limit = { has_country_flag = eep_initialized }
+        set_variable = { which = eep_mothership_level value = eep_c }
+        divide_variable = { which = eep_mothership_level value = 10 }
+        floor_variable = eep_mothership_level
+        set_variable = { which = eep_mothership_next value = eep_mothership_level }
+        change_variable = { which = eep_mothership_next value = 1 }
+        multiply_variable = { which = eep_mothership_next value = 10 }
+        subtract_variable = { which = eep_mothership_next value = eep_c }
+        set_variable = { which = eep_component_entitled value = eep_c }
+        divide_variable = { which = eep_component_entitled value = 50 }
+        floor_variable = eep_component_entitled
+        # These mirrors are last-confirmed records, not claims of surviving gear.
+        if = {
+            limit = { NOT = { is_variable_set = eep_component_shield_level } }
+            set_variable = { which = eep_component_shield_level value = 0 }
+        }
+        if = {
+            limit = { NOT = { is_variable_set = eep_component_armor_level } }
+            set_variable = { which = eep_component_armor_level value = 0 }
+        }
+        if = {
+            limit = { NOT = { is_variable_set = eep_component_hull_level } }
+            set_variable = { which = eep_component_hull_level value = 0 }
+        }
+        if = {
+            limit = { NOT = { is_variable_set = eep_component_damage_level } }
+            set_variable = { which = eep_component_damage_level value = 0 }
+        }
+        if = {
+            limit = { NOT = { is_variable_set = eep_component_tracking_level } }
+            set_variable = { which = eep_component_tracking_level value = 0 }
+        }
+        if = {
+            limit = { NOT = { is_variable_set = eep_component_regen_level } }
+            set_variable = { which = eep_component_regen_level value = 0 }
+        }
+        if = {
+            limit = { NOT = { is_variable_set = eep_component_rewards } }
+            set_variable = { which = eep_component_rewards value = 0 }
+        }
+        set_variable = { which = eep_component_snapshot_state value = 2 }
+        if = {
+            limit = { has_country_flag = eep_component_snapshot_available }
+            set_variable = { which = eep_component_snapshot_state value = 1 }
+        }
+        eep_repair_existing_mothership_design = yes
+        if = {
+            limit = {
+                exists = event_target:eep_mothership@this
+                event_target:eep_mothership@this = {
+                    owner = { is_same_value = prevprev }
+                    num_ships = 1
+                    is_ship_size = juggernaut
+                }
+            }
+            event_target:eep_mothership@this = {
+                if = {
+                    limit = {
+                        OR = {
+                            NOT = { is_variable_set = eep_applied_level }
+                            NOT = { check_variable = { which = eep_applied_level value = prev.eep_mothership_level } }
+                            AND = {
+                                prev = { check_variable = { which = eep_mothership_level value > 0 } }
+                                NOT = { has_modifier = eep_mothership_evolution }
+                            }
+                            AND = {
+                                prev = { check_variable = { which = eep_mothership_level value <= 0 } }
+                                has_modifier = eep_mothership_evolution
+                            }
+                        }
+                    }
+                    set_variable = { which = eep_applied_level value = prev.eep_mothership_level }
+                    remove_modifier = eep_mothership_evolution
+                    if = {
+                        limit = { check_variable = { which = eep_applied_level value > 0 } }
+                        add_modifier = { modifier = eep_mothership_evolution days = -1 multiplier = eep_applied_level }
+                    }
+                }
+                eep_sync_mothership_components = yes
+            }
+        }
+        set_variable = { which = eep_component_pending value = eep_component_entitled }
+        subtract_variable = { which = eep_component_pending value = eep_component_rewards }
+        if = {
+            limit = { check_variable = { which = eep_component_pending value < 0 } }
+            set_variable = { which = eep_component_pending value = 0 }
+        }
+    }
+}

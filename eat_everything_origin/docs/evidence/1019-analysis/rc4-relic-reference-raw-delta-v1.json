@@ -1,0 +1,374 @@
+{
+  "schema": "eep.1019.relic-reference-existing-raw-delta.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Review exact raw differences in existing ships; strict raw equality remains false and is not overwritten",
+  "strict_existing_ship_raw_equal": false,
+  "checks": {
+    "implementation_except_design_id_equal": true,
+    "design_body_bytes_equal": true,
+    "design_shape_equal": true,
+    "other_ship_fields_raw_equal": true
+  },
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+    "save_sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+    "run_id": "20261019T112808Z",
+    "version": "0.4.0-rc.4",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.audit.json",
+    "audit_sha256": "98ddca3821f0a1d606d473edf46fe95e7e77c9cea2d576154427a42990a82834",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.native-save.json",
+        "sha256": "1c971f0fb1d0dc41dded7c119223bce37c1c20fa134b4f3ce21489089fddf2fd",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\acceptance-fixtures\\pk2base.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2base.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+          "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+          "date": "2200.03.07"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.sav",
+    "save_sha256": "d29d0956d181198e87254e9c1c9d280f9f470576d479057c8621076a1a055201",
+    "run_id": "20261019T112808Z",
+    "version": "0.4.0-rc.4",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.audit.json",
+    "audit_sha256": "4d26e213bb342cc1afd7d7918900c6d967c5124dbd714b980735d771d7348d9e",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.native-save.json",
+        "sha256": "902f8bdc992f725f7b87e63fdcacb83e5fdaa4a3d4e276cad97ce2126ee76ac0",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\r4relic0.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\r4relic0.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.sav",
+          "sha256": "d29d0956d181198e87254e9c1c9d280f9f470576d479057c8621076a1a055201",
+          "date": "2200.03.07"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "reference_report_sha256": "52390e7e7fb5665c7645105e857cb02147ef8451f560545f88193c3b5b7799c0",
+  "rows": [
+    {
+      "ship_id": "0",
+      "before_implementation": {
+        "design": 1480,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1496,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "d5be0363adf168120df4c4ddd7d2f1b42c8f2b15c2e5b60cc746f6a5ae3de588",
+      "new_design_body_sha256": "d5be0363adf168120df4c4ddd7d2f1b42c8f2b15c2e5b60cc746f6a5ae3de588"
+    },
+    {
+      "ship_id": "115",
+      "before_implementation": {
+        "design": 1487,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1503,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "cca77d46b25a9d19f296aaa5892f9e426862bf7b6ed7ff86a7eff52a63be54e6",
+      "new_design_body_sha256": "cca77d46b25a9d19f296aaa5892f9e426862bf7b6ed7ff86a7eff52a63be54e6"
+    },
+    {
+      "ship_id": "116",
+      "before_implementation": {
+        "design": 1488,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1504,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "cca77d46b25a9d19f296aaa5892f9e426862bf7b6ed7ff86a7eff52a63be54e6",
+      "new_design_body_sha256": "cca77d46b25a9d19f296aaa5892f9e426862bf7b6ed7ff86a7eff52a63be54e6"
+    },
+    {
+      "ship_id": "117",
+      "before_implementation": {
+        "design": 1489,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1505,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "cca77d46b25a9d19f296aaa5892f9e426862bf7b6ed7ff86a7eff52a63be54e6",
+      "new_design_body_sha256": "cca77d46b25a9d19f296aaa5892f9e426862bf7b6ed7ff86a7eff52a63be54e6"
+    },
+    {
+      "ship_id": "12",
+      "before_implementation": {
+        "design": 1482,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1498,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "853801a23b49997b37991de1498021b3a0abec298811319b3b5df7979e23c6d7",
+      "new_design_body_sha256": "853801a23b49997b37991de1498021b3a0abec298811319b3b5df7979e23c6d7"
+    },
+    {
+      "ship_id": "18",
+      "before_implementation": {
+        "design": 1483,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1499,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "4c6fa13e241c6691818bb3e9fc2b3acb707ebde396b069fc7423abf8e4ce2452",
+      "new_design_body_sha256": "4c6fa13e241c6691818bb3e9fc2b3acb707ebde396b069fc7423abf8e4ce2452"
+    },
+    {
+      "ship_id": "200",
+      "before_implementation": {
+        "design": 1490,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1506,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "b0be2de0570f6a9a9068b361da4198e140b7eadc14e6bf21e622dce2f439737b",
+      "new_design_body_sha256": "b0be2de0570f6a9a9068b361da4198e140b7eadc14e6bf21e622dce2f439737b"
+    },
+    {
+      "ship_id": "248",
+      "before_implementation": {
+        "design": 1491,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1507,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "b0be2de0570f6a9a9068b361da4198e140b7eadc14e6bf21e622dce2f439737b",
+      "new_design_body_sha256": "b0be2de0570f6a9a9068b361da4198e140b7eadc14e6bf21e622dce2f439737b"
+    },
+    {
+      "ship_id": "25",
+      "before_implementation": {
+        "design": 1484,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1500,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "f34d7861018c55b19ba643b104a1de64c5cd02380f9a6a9935b06c3047203403",
+      "new_design_body_sha256": "f34d7861018c55b19ba643b104a1de64c5cd02380f9a6a9935b06c3047203403"
+    },
+    {
+      "ship_id": "300",
+      "before_implementation": {
+        "design": 1492,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1508,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "b0be2de0570f6a9a9068b361da4198e140b7eadc14e6bf21e622dce2f439737b",
+      "new_design_body_sha256": "b0be2de0570f6a9a9068b361da4198e140b7eadc14e6bf21e622dce2f439737b"
+    },
+    {
+      "ship_id": "302",
+      "before_implementation": {
+        "design": 1493,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1509,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "c5f5f0c420d6ab2add01e450d479cdbeed9fccbc7b0821bb8a88419e28dedcf1",
+      "new_design_body_sha256": "c5f5f0c420d6ab2add01e450d479cdbeed9fccbc7b0821bb8a88419e28dedcf1"
+    },
+    {
+      "ship_id": "303",
+      "before_implementation": {
+        "design": 1494,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1510,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "cf6bf5d4ed603df5e327e3901c00c201dc8d1f72a4ed9bea0e45b0f95f28f284",
+      "new_design_body_sha256": "cf6bf5d4ed603df5e327e3901c00c201dc8d1f72a4ed9bea0e45b0f95f28f284"
+    },
+    {
+      "ship_id": "6",
+      "before_implementation": {
+        "design": 1481,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1497,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "9a3656a72f1abb9ae8c3f8a2858ead2d295325610b1ed2298cd04749c9b53c73",
+      "new_design_body_sha256": "9a3656a72f1abb9ae8c3f8a2858ead2d295325610b1ed2298cd04749c9b53c73"
+    },
+    {
+      "ship_id": "60",
+      "before_implementation": {
+        "design": 1485,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1501,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "c58b73046d13f36ddbb294f9474fa85b7fff0315d400661ecdc56936780badb7",
+      "new_design_body_sha256": "c58b73046d13f36ddbb294f9474fa85b7fff0315d400661ecdc56936780badb7"
+    },
+    {
+      "ship_id": "93",
+      "before_implementation": {
+        "design": 1486,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1502,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "c5f5f0c420d6ab2add01e450d479cdbeed9fccbc7b0821bb8a88419e28dedcf1",
+      "new_design_body_sha256": "c5f5f0c420d6ab2add01e450d479cdbeed9fccbc7b0821bb8a88419e28dedcf1"
+    },
+    {
+      "ship_id": "997",
+      "before_implementation": {
+        "design": 1495,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "after_implementation": {
+        "design": 1511,
+        "upgrade": 4294967295,
+        "growth_stage": 0
+      },
+      "implementation_except_design_id_equal": true,
+      "design_body_bytes_equal": true,
+      "design_shape_equal": true,
+      "other_ship_fields_raw_equal": true,
+      "old_design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+      "new_design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9"
+    }
+  ],
+  "method": "All direct ship fields except ship_design_implementation compared as raw values in native field order; exact referenced design bodies and projected shapes compared independently",
+  "limitations": [
+    "This documents actual ID/value changes and does not certify the engine cause of any index reassignment.",
+    "It does not convert strict before/after equality to PASS."
+  ]
+}

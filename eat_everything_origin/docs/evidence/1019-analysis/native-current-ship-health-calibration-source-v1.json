@@ -1,0 +1,631 @@
+{
+  "schema": "eep.1019.native-current-ship-health-source.v1",
+  "status": "PENDING",
+  "scope": "Only existing native ship/source/API eligibility is observed; both new health samples and all getters remain unexecuted/pending.",
+  "source": {
+    "provenance": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard1.sav",
+      "save_sha256": "44ebd953fa66ffb2a891db6e24bbe7a38f57ccb8024699a8de116e6aa120562e",
+      "run_id": "20261019T143452Z",
+      "version": "0.4.0-rc.5",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "1cc8b77c28f3d59b0d840982c7f039a209cb66f3e26d9c3280ad2dfa0f9dbd52",
+      "manifest_sha256": "864b7e768c694193b646a5ed1c277c9b370b1a7654514e4f41166da962ea013a",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard1.audit.json",
+      "audit_sha256": "c0373b2219b86d81c55cb97ebec25f6d99bd067d9d147e4b75c470a7179a2183",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard1.native-save.json",
+          "sha256": "fc27fe7e89625d98f2e72b928eb99c0172a4578b053400265d9e85a0841c01b8",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\save games\\eep-test-history\\r5coreguard1.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\save games\\eep-test-history\\r5coreguard1.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard1.sav",
+            "sha256": "44ebd953fa66ffb2a891db6e24bbe7a38f57ccb8024699a8de116e6aa120562e",
+            "date": "2200.01.01"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    },
+    "observation_path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc5-r5coreguard1-observation-v1.json",
+    "observation_sha256": "09ff88cec089772ff546a434b6da5851910207115abe8ac654e8fcf86591d4a6"
+  },
+  "candidates": [
+    {
+      "fleet_id": "1",
+      "ship_id": "1",
+      "raw_ship": "\n\t\toriginal_owner=0\n\t\tfleet=1\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_LeifEricson\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1480\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tis_original_design=no\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"DEFAULT_SCIENCESHIP_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.6\n\t\t\ty=-22.6\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.6\n\t\t\ty=-22.6\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=-0.78561\n\t\thitpoints=300\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=300\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-0.78561\n\t\tforward_x=0.70726\n\t\tforward_y=0.70696\n\t\tupgrade_progress=0\n\t\tleader=150994969\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "design": {
+        "native": {
+          "auto_gen_design": "yes",
+          "upgrade_ship_components": "yes",
+          "graphical_culture": "mammalian_01"
+        },
+        "name": "HUMAN1_SHIP_Earhart",
+        "stages": [
+          {
+            "native": {
+              "ship_size": "science",
+              "required_component": "SCIENCE_CLOAKING_EMPTY"
+            },
+            "sections": [
+              {
+                "native": {
+                  "template": "DEFAULT_SCIENCESHIP_SECTION",
+                  "slot": "mid"
+                },
+                "components": [
+                  {
+                    "slot": "SMALL_UTILITY_1",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_2",
+                    "template": "SMALL_SHIELD_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_3",
+                    "template": "SMALL_ARMOR_1"
+                  }
+                ],
+                "raw": "\n\t\t\t\t\ttemplate=\"DEFAULT_SCIENCESHIP_SECTION\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t"
+              }
+            ],
+            "required_components": [
+              "CORVETTE_FISSION_REACTOR",
+              "HYPER_DRIVE_1",
+              "SHIP_THRUSTER_1",
+              "SENSOR_1",
+              "SCIENCE_CLOAKING_EMPTY"
+            ],
+            "raw": "\n\t\t\t\tship_size=\"science\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"DEFAULT_SCIENCESHIP_SECTION\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"SCIENCE_CLOAKING_EMPTY\"\n\t\t\t"
+          }
+        ],
+        "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"HUMAN1_SHIP_Earhart\"\n\t\t}\n\t\tauto_gen_design=yes\n\t\tupgrade_ship_components=yes\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"science\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"DEFAULT_SCIENCESHIP_SECTION\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"SCIENCE_CLOAKING_EMPTY\"\n\t\t\t}\n\t\t}\n\t",
+        "body_sha256": "0be42856ca4d8a2a1921d5ec808363da47bb3d17fd6c4c1e79541b15315b48a4"
+      },
+      "native": {
+        "original_owner": 0,
+        "fleet": 1,
+        "reserve": 0,
+        "is_original_design": "no",
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -0.78561,
+        "hitpoints": 300,
+        "shield_hitpoints": 100,
+        "armor_hitpoints": 200,
+        "max_hitpoints": 300,
+        "max_shield_hitpoints": 100,
+        "max_armor_hitpoints": 200,
+        "rotation": -0.78561,
+        "forward_x": 0.70726,
+        "forward_y": 0.70696,
+        "upgrade_progress": 0,
+        "leader": 150994969,
+        "combat_action": 1,
+        "construction_date": "2200.01.01",
+        "maturation_date": "0.01.01"
+      },
+      "variables": {},
+      "fleet_native": {
+        "ground_support_stance": "selective",
+        "fleet_stance": "evasive",
+        "ship_class": "shipclass_science_ship",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 300.0,
+        "military_power": 0.0,
+        "diplomacy_weight": 0.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "commanding_armada": "none"
+      }
+    },
+    {
+      "fleet_id": "2",
+      "ship_id": "2",
+      "raw_ship": "\n\t\toriginal_owner=0\n\t\tfleet=2\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Orinoco\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1488\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tis_original_design=no\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"BULWARK_BATTLEWRIGHT_SECTION\"\n\t\t\tslot=\"mid\"\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=20.6\n\t\t\ty=-20.6\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=20.6\n\t\t\ty=-20.6\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=-2.35639\n\t\thitpoints=300\n\t\tshield_hitpoints=200\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=300\n\t\tmax_shield_hitpoints=200\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.35639\n\t\tforward_x=0.70697\n\t\tforward_y=-0.70724\n\t\tupgrade_progress=0\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "design": {
+        "native": {
+          "auto_gen_design": "yes",
+          "upgrade_ship_components": "yes",
+          "graphical_culture": "mammalian_01"
+        },
+        "name": "HUMAN1_SHIP_Africa",
+        "stages": [
+          {
+            "native": {
+              "ship_size": "constructor",
+              "required_component": "SENSOR_1"
+            },
+            "sections": [
+              {
+                "native": {
+                  "template": "BULWARK_BATTLEWRIGHT_SECTION",
+                  "slot": "mid"
+                },
+                "components": [
+                  {
+                    "slot": "SMALL_UTILITY_1",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_2",
+                    "template": "SMALL_SHIELD_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_3",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_4",
+                    "template": "SMALL_SHIELD_1"
+                  }
+                ],
+                "raw": "\n\t\t\t\t\ttemplate=\"BULWARK_BATTLEWRIGHT_SECTION\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t"
+              }
+            ],
+            "required_components": [
+              "CORVETTE_FISSION_REACTOR",
+              "HYPER_DRIVE_1",
+              "SHIP_THRUSTER_1",
+              "SENSOR_1"
+            ],
+            "raw": "\n\t\t\t\tship_size=\"constructor\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"BULWARK_BATTLEWRIGHT_SECTION\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t"
+          }
+        ],
+        "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"HUMAN1_SHIP_Africa\"\n\t\t}\n\t\tauto_gen_design=yes\n\t\tupgrade_ship_components=yes\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"constructor\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"BULWARK_BATTLEWRIGHT_SECTION\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_4\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t}\n\t\t}\n\t",
+        "body_sha256": "a5ab04bdaafc807be95130c9292fb863fe05d32d4d8d71bfe11faf55fb072687"
+      },
+      "native": {
+        "original_owner": 0,
+        "fleet": 2,
+        "reserve": 0,
+        "is_original_design": "no",
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.35639,
+        "hitpoints": 300,
+        "shield_hitpoints": 200,
+        "armor_hitpoints": 200,
+        "max_hitpoints": 300,
+        "max_shield_hitpoints": 200,
+        "max_armor_hitpoints": 200,
+        "rotation": -2.35639,
+        "forward_x": 0.70697,
+        "forward_y": -0.70724,
+        "upgrade_progress": 0,
+        "combat_action": 1,
+        "construction_date": "2200.01.01",
+        "maturation_date": "0.01.01"
+      },
+      "variables": {},
+      "fleet_native": {
+        "ground_support_stance": "selective",
+        "fleet_stance": "evasive",
+        "ship_class": "shipclass_constructor",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 300.0,
+        "military_power": 0.0,
+        "diplomacy_weight": 0.0,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "commanding_armada": "none"
+      }
+    },
+    {
+      "fleet_id": "3",
+      "ship_id": "3",
+      "raw_ship": "\n\t\toriginal_owner=0\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Mohawk\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=45\n\t\t\tupgrade=1487\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S2PD1\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=21.74756\n\t\t\ty=-21.37368\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=21.74756\n\t\t\ty=-21.37368\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\tleader=150994968\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "design": {
+        "native": {
+          "role": "screen",
+          "auto_gen_design": "yes",
+          "upgrade_ship_components": "yes",
+          "graphical_culture": "mammalian_01"
+        },
+        "name": "HUMAN1_SHIP_Yongcheng",
+        "stages": [
+          {
+            "native": {
+              "ship_size": "corvette",
+              "required_component": "COMBAT_COMPUTER_DEFAULT"
+            },
+            "sections": [
+              {
+                "native": {
+                  "template": "CORVETTE_MID_S2PD1",
+                  "slot": "mid"
+                },
+                "components": [
+                  {
+                    "slot": "SMALL_GUN_01",
+                    "template": "POINT_DEFENCE_1"
+                  },
+                  {
+                    "slot": "SMALL_GUN_02",
+                    "template": "SMALL_RED_LASER"
+                  },
+                  {
+                    "slot": "SMALL_GUN_03",
+                    "template": "SMALL_RED_LASER"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_1",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_2",
+                    "template": "SMALL_SHIELD_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_3",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "AUX_UTILITY_1",
+                    "template": "REACTOR_BOOSTER_1"
+                  }
+                ],
+                "raw": "\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t"
+              }
+            ],
+            "required_components": [
+              "CORVETTE_FISSION_REACTOR",
+              "HYPER_DRIVE_1",
+              "SHIP_THRUSTER_1",
+              "SENSOR_1",
+              "COMBAT_COMPUTER_DEFAULT"
+            ],
+            "raw": "\n\t\t\t\tship_size=\"corvette\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_DEFAULT\"\n\t\t\t"
+          }
+        ],
+        "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"HUMAN1_SHIP_Yongcheng\"\n\t\t}\n\t\trole=\"screen\"\n\t\tauto_gen_design=yes\n\t\tupgrade_ship_components=yes\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"corvette\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_DEFAULT\"\n\t\t\t}\n\t\t}\n\t",
+        "body_sha256": "0aecd4ce4ba40211421ebd4d9138112753c918a83a06ac3bf35caf2c14d1b27b"
+      },
+      "native": {
+        "original_owner": 0,
+        "fleet": 3,
+        "reserve": 0,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.74908,
+        "hitpoints": 200,
+        "shield_hitpoints": 100,
+        "armor_hitpoints": 200,
+        "max_hitpoints": 200,
+        "max_shield_hitpoints": 100,
+        "max_armor_hitpoints": 200,
+        "rotation": -2.74908,
+        "forward_x": 0.3823,
+        "forward_y": -0.92404,
+        "upgrade_progress": 0,
+        "next_weapon_index": 3,
+        "leader": 150994968,
+        "combat_action": 1,
+        "construction_date": "2200.01.01",
+        "maturation_date": "0.01.01"
+      },
+      "variables": {},
+      "fleet_native": {
+        "fleet_template": 0,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 600.0,
+        "military_power": 201.86718,
+        "diplomacy_weight": 201.86718,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "commanding_armada": "none"
+      }
+    },
+    {
+      "fleet_id": "3",
+      "ship_id": "4",
+      "raw_ship": "\n\t\toriginal_owner=0\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_Macuahuitl\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=1\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=45\n\t\t\tupgrade=1487\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S2PD1\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=21.98684\n\t\t\ty=-18.02622\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=21.98684\n\t\t\ty=-18.02622\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "design": {
+        "native": {
+          "role": "screen",
+          "auto_gen_design": "yes",
+          "upgrade_ship_components": "yes",
+          "graphical_culture": "mammalian_01"
+        },
+        "name": "HUMAN1_SHIP_Yongcheng",
+        "stages": [
+          {
+            "native": {
+              "ship_size": "corvette",
+              "required_component": "COMBAT_COMPUTER_DEFAULT"
+            },
+            "sections": [
+              {
+                "native": {
+                  "template": "CORVETTE_MID_S2PD1",
+                  "slot": "mid"
+                },
+                "components": [
+                  {
+                    "slot": "SMALL_GUN_01",
+                    "template": "POINT_DEFENCE_1"
+                  },
+                  {
+                    "slot": "SMALL_GUN_02",
+                    "template": "SMALL_RED_LASER"
+                  },
+                  {
+                    "slot": "SMALL_GUN_03",
+                    "template": "SMALL_RED_LASER"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_1",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_2",
+                    "template": "SMALL_SHIELD_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_3",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "AUX_UTILITY_1",
+                    "template": "REACTOR_BOOSTER_1"
+                  }
+                ],
+                "raw": "\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t"
+              }
+            ],
+            "required_components": [
+              "CORVETTE_FISSION_REACTOR",
+              "HYPER_DRIVE_1",
+              "SHIP_THRUSTER_1",
+              "SENSOR_1",
+              "COMBAT_COMPUTER_DEFAULT"
+            ],
+            "raw": "\n\t\t\t\tship_size=\"corvette\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_DEFAULT\"\n\t\t\t"
+          }
+        ],
+        "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"HUMAN1_SHIP_Yongcheng\"\n\t\t}\n\t\trole=\"screen\"\n\t\tauto_gen_design=yes\n\t\tupgrade_ship_components=yes\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"corvette\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_DEFAULT\"\n\t\t\t}\n\t\t}\n\t",
+        "body_sha256": "0aecd4ce4ba40211421ebd4d9138112753c918a83a06ac3bf35caf2c14d1b27b"
+      },
+      "native": {
+        "original_owner": 0,
+        "fleet": 3,
+        "reserve": 1,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.74908,
+        "hitpoints": 200,
+        "shield_hitpoints": 100,
+        "armor_hitpoints": 200,
+        "max_hitpoints": 200,
+        "max_shield_hitpoints": 100,
+        "max_armor_hitpoints": 200,
+        "rotation": -2.74908,
+        "forward_x": 0.3823,
+        "forward_y": -0.92404,
+        "upgrade_progress": 0,
+        "next_weapon_index": 3,
+        "combat_action": 1,
+        "construction_date": "2200.01.01",
+        "maturation_date": "0.01.01"
+      },
+      "variables": {},
+      "fleet_native": {
+        "fleet_template": 0,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 600.0,
+        "military_power": 201.86718,
+        "diplomacy_weight": 201.86718,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "commanding_armada": "none"
+      }
+    },
+    {
+      "fleet_id": "3",
+      "ship_id": "5",
+      "raw_ship": "\n\t\toriginal_owner=0\n\t\tfleet=3\n\t\tname=\n\t\t{\n\t\t\tkey=\"PREFIX_NAME_FORMAT\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"NAME\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_SHIP_JeanneHachette\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"PREFIX\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\treserve=2\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=45\n\t\t\tupgrade=1487\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"CORVETTE_MID_S2PD1\"\n\t\t\tslot=\"mid\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=0\n\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=1\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=2\n\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=19.21316\n\t\t\ty=-19.17378\n\t\t\torigin=0\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=19.21316\n\t\t\ty=-19.17378\n\t\t\torigin=0\n\t\t}\n\t\tpost_move_angle=-2.74908\n\t\thitpoints=200\n\t\tshield_hitpoints=100\n\t\tarmor_hitpoints=200\n\t\tmax_hitpoints=200\n\t\tmax_shield_hitpoints=100\n\t\tmax_armor_hitpoints=200\n\t\trotation=-2.74908\n\t\tforward_x=0.3823\n\t\tforward_y=-0.92404\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=3\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\tcombat_action=1\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "design": {
+        "native": {
+          "role": "screen",
+          "auto_gen_design": "yes",
+          "upgrade_ship_components": "yes",
+          "graphical_culture": "mammalian_01"
+        },
+        "name": "HUMAN1_SHIP_Yongcheng",
+        "stages": [
+          {
+            "native": {
+              "ship_size": "corvette",
+              "required_component": "COMBAT_COMPUTER_DEFAULT"
+            },
+            "sections": [
+              {
+                "native": {
+                  "template": "CORVETTE_MID_S2PD1",
+                  "slot": "mid"
+                },
+                "components": [
+                  {
+                    "slot": "SMALL_GUN_01",
+                    "template": "POINT_DEFENCE_1"
+                  },
+                  {
+                    "slot": "SMALL_GUN_02",
+                    "template": "SMALL_RED_LASER"
+                  },
+                  {
+                    "slot": "SMALL_GUN_03",
+                    "template": "SMALL_RED_LASER"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_1",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_2",
+                    "template": "SMALL_SHIELD_1"
+                  },
+                  {
+                    "slot": "SMALL_UTILITY_3",
+                    "template": "SMALL_ARMOR_1"
+                  },
+                  {
+                    "slot": "AUX_UTILITY_1",
+                    "template": "REACTOR_BOOSTER_1"
+                  }
+                ],
+                "raw": "\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t"
+              }
+            ],
+            "required_components": [
+              "CORVETTE_FISSION_REACTOR",
+              "HYPER_DRIVE_1",
+              "SHIP_THRUSTER_1",
+              "SENSOR_1",
+              "COMBAT_COMPUTER_DEFAULT"
+            ],
+            "raw": "\n\t\t\t\tship_size=\"corvette\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_DEFAULT\"\n\t\t\t"
+          }
+        ],
+        "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"HUMAN1_SHIP_Yongcheng\"\n\t\t}\n\t\trole=\"screen\"\n\t\tauto_gen_design=yes\n\t\tupgrade_ship_components=yes\n\t\tgraphical_culture=\"mammalian_01\"\n\t\tgrowth_stages=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tship_size=\"corvette\"\n\t\t\t\tsection=\n\t\t\t\t{\n\t\t\t\t\ttemplate=\"CORVETTE_MID_S2PD1\"\n\t\t\t\t\tslot=\"mid\"\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_01\"\n\t\t\t\t\t\ttemplate=\"POINT_DEFENCE_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_02\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_GUN_03\"\n\t\t\t\t\t\ttemplate=\"SMALL_RED_LASER\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_2\"\n\t\t\t\t\t\ttemplate=\"SMALL_SHIELD_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"SMALL_UTILITY_3\"\n\t\t\t\t\t\ttemplate=\"SMALL_ARMOR_1\"\n\t\t\t\t\t}\n\t\t\t\t\tcomponent=\n\t\t\t\t\t{\n\t\t\t\t\t\tslot=\"AUX_UTILITY_1\"\n\t\t\t\t\t\ttemplate=\"REACTOR_BOOSTER_1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\trequired_component=\"CORVETTE_FISSION_REACTOR\"\n\t\t\t\trequired_component=\"HYPER_DRIVE_1\"\n\t\t\t\trequired_component=\"SHIP_THRUSTER_1\"\n\t\t\t\trequired_component=\"SENSOR_1\"\n\t\t\t\trequired_component=\"COMBAT_COMPUTER_DEFAULT\"\n\t\t\t}\n\t\t}\n\t",
+        "body_sha256": "0aecd4ce4ba40211421ebd4d9138112753c918a83a06ac3bf35caf2c14d1b27b"
+      },
+      "native": {
+        "original_owner": 0,
+        "fleet": 3,
+        "reserve": 2,
+        "graphical_culture": "mammalian_01",
+        "post_move_angle": -2.74908,
+        "hitpoints": 200,
+        "shield_hitpoints": 100,
+        "armor_hitpoints": 200,
+        "max_hitpoints": 200,
+        "max_shield_hitpoints": 100,
+        "max_armor_hitpoints": 200,
+        "rotation": -2.74908,
+        "forward_x": 0.3823,
+        "forward_y": -0.92404,
+        "upgrade_progress": 0,
+        "next_weapon_index": 3,
+        "combat_action": 1,
+        "construction_date": "2200.01.01",
+        "maturation_date": "0.01.01"
+      },
+      "variables": {},
+      "fleet_native": {
+        "fleet_template": 0,
+        "ground_support_stance": "selective",
+        "ship_class": "shipclass_military",
+        "space_fauna_growth_stance": "excessive",
+        "hit_points": 600.0,
+        "military_power": 201.86718,
+        "diplomacy_weight": 201.86718,
+        "cached_killed_ships": 0,
+        "cached_disabled_ships": 0,
+        "cached_disengaged_ships": 0,
+        "cached_combined_removed_ships": 0,
+        "commanding_armada": "none"
+      }
+    }
+  ],
+  "planned_single_corvette_target": {
+    "global_target": "eep_native_health_reference_1019",
+    "allowed_fleet_id": "3",
+    "allowed_ship_ids": [
+      "3",
+      "4",
+      "5"
+    ],
+    "actual_chosen_ship_id": null,
+    "mechanism": "documented random_owned_ship selects exactly one candidate and saves ship target in the same first command",
+    "target_absent_in_current_save": true,
+    "getter_variables_absent_on_all_candidates": true
+  },
+  "native_refs": [
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\logs\\script_documentation\\effects.log",
+      "sha256": "f09aff71fe404f3f32f14ec095484f15a0fd7c27aa9d47f0457eecb54e3d849f",
+      "excerpts": [
+        {
+          "line": 490,
+          "text": "reduce_hp - Reduces the hull points of the scoped ship by a specific amount\nreduce_hp = 120\nSupported Scopes: ship\n\nreduce_hp_percent - Reduces the hull points of the scoped ship by a relative amount\nreduce_hp_percent = 0.25\nSupported Scopes: ship\n\nreduce_shield - Reduces the shield points of the scoped ship by a specific amount\nreduce_shield = 120\nSupported Scopes: ship\n\ndamage_ship - Damages ship (or all ships in scoped fleet) by a specific amount\ndamage_ship = 120"
+        },
+        {
+          "line": 498,
+          "text": "reduce_shield - Reduces the shield points of the scoped ship by a specific amount\nreduce_shield = 120\nSupported Scopes: ship\n\ndamage_ship - Damages ship (or all ships in scoped fleet) by a specific amount\ndamage_ship = 120\nCan also specify attacker (ship or country) for on-action attribution:\ndamage_ship = { amount = 120 attacker = <ATTACKER SHIP OR COUNTRY> }\nSupported Scopes: ship fleet\n\ndamage_army - Damages scoped army by a specific amount\ndamage_army = 250\nSupported Scopes: army\n"
+        },
+        {
+          "line": 502,
+          "text": "damage_ship - Damages ship (or all ships in scoped fleet) by a specific amount\ndamage_ship = 120\nCan also specify attacker (ship or country) for on-action attribution:\ndamage_ship = { amount = 120 attacker = <ATTACKER SHIP OR COUNTRY> }\nSupported Scopes: ship fleet\n\ndamage_army - Damages scoped army by a specific amount\ndamage_army = 250\nSupported Scopes: army\n\nrepair_ship - Restores all hull points to the scoped ship\nrepair_ship = yes\nSupported Scopes: ship\n"
+        },
+        {
+          "line": 557,
+          "text": "export_trigger_value_to_variable - Exports the value of a trigger to a specified variable (so for num_pops, it'll export the number of pops).\nexport_trigger_value_to_variable = {\n\ttrigger = has_resource\n\tparameters = { resource = energy } (optional: specify extra parameters for triggers with { }\n\tvariable = <string> (this example will print the amount of energy the scoped object has to a variable)\n\trounded = yes (default: no)\n}\nSupported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage colony\n\nexport_resource_stockpile_to_variable - Exports the value of the current country's stockpile of the specified resource to a variable.\nexport_resource_stockpile_to_variable = { resource = energy variable = <string> }\nSupported Scopes: country\n\nexport_resource_income_to_variable - Exports the value of the current country's monthly income of the specified resource to a variable."
+        },
+        {
+          "line": 715,
+          "text": "save_global_event_target_as - Saves the current scope as an arbitrarily-named target to be referenced later, accessible globally until cleared\nsave_global_event_target_as = <string>/<string@scope>\nSupported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass design pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation debris astral_rift galactic_community exhibit pop job colony mission\n\nclear_global_event_target - Deletes the specified saved global target reference\nclear_global_event_target = <string>/<string@scope>\nSupported Scopes: all\n\nclear_global_event_targets - Deletes all saved global target references\nclear_global_event_targets = yes\nSupported Scopes: all\n\nstore_country_backup_data - Stores a copy of the specified data of the scoped country. The values default to 'no'.\nstore_country_backup_data = {"
+        },
+        {
+          "line": 2824,
+          "text": "repair_shield_amount - Restores a certain amount of shield points to the scoped ship or fleet\nrepair_shield_amount = 10.0\nSupported Scopes: ship fleet\n\ncomplete_deed - Gives the player the reward for the specified deed, if the player has it in its patron deeds selection.\ncomplete_deed = <deed>\nSupported Scopes: country\n\naccept_covenant - Accepts covenant proposition with Shroud Patron.\naccept_covenant = <patron_name>\nSupported Scopes: country\n\nrefuse_covenant - Refuses covenant proposition with Shroud Patron.\nrefuse_covenant = <patron_name>"
+        },
+        {
+          "line": 5818,
+          "text": "random_owned_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object randomly.\nrandom_owned_ship = {\n\tlimit = { <triggers> }\n\tweights = { (optional - adds weights to affect the chance a specific object is selected)\n\t\tbase = float\n\t\tmodifier = { <add/factor = float> <triggers> }\n\t}\n\t<effects>\n}\nSupported Scopes: country fleet\n\nordered_owned_ship - Iterate through each ship in the fleet or controlled by the country - executes the enclosed effects on one of them for which the limit triggers return true. Picks the specific object according to the order specified (position 0, order_by = trigger:num_pops would run the effects on the X with the most pops)\nordered_owned_ship = {\n\tlimit = { <triggers> }"
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\logs\\script_documentation\\triggers.log",
+      "sha256": "2349e45e10b8c4b3f2afcc472d731791a6b7921c4a290b3a651f8e44a9aca687",
+      "excerpts": [
+        {
+          "line": 1083,
+          "text": "is_ship_size - Checks if the ship/fleet/design is a specific ship size\nis_ship_size = mining_station\nSupported Scopes: ship fleet design starbase ship_growth_stage\n\nis_capital - Checks if the colony is its owner's capital\nis_capital = yes\nSupported Scopes: planet ship colony\n\nis_capital_system - Checks if the solar system has its owner's capital\nis_capital_system = yes\nSupported Scopes: galactic_object\n\nhas_ground_combat - Checks if ground combat is taking place on the colony\nhas_ground_combat = yes"
+        },
+        {
+          "line": 2201,
+          "text": "has_hp_percentage - Checks a fleet or ship's hit points percentage\nhas_hp_percentage > 0.5\nSupported Scopes: ship fleet\n\nhas_armor_percentage - Checks a fleet or ship's armor hit points percentage\nhas_armor_percentage > 0.5\nSupported Scopes: ship fleet\n\nhas_shield_percentage - Checks a fleet or ship's shield hit points percentage\nhas_shield_percentage > 0.5\nSupported Scopes: ship fleet\n\ncan_join_factions - Checks if scoped pop group can join a faction\nSupported Scopes: pop pop_group"
+        },
+        {
+          "line": 2205,
+          "text": "has_armor_percentage - Checks a fleet or ship's armor hit points percentage\nhas_armor_percentage > 0.5\nSupported Scopes: ship fleet\n\nhas_shield_percentage - Checks a fleet or ship's shield hit points percentage\nhas_shield_percentage > 0.5\nSupported Scopes: ship fleet\n\ncan_join_factions - Checks if scoped pop group can join a faction\nSupported Scopes: pop pop_group\n\nis_custodial_to - Checks if the country has a custodial attitude towards target country\nis_custodial_to = <target>\nSupported Scopes: country"
+        },
+        {
+          "line": 2209,
+          "text": "has_shield_percentage - Checks a fleet or ship's shield hit points percentage\nhas_shield_percentage > 0.5\nSupported Scopes: ship fleet\n\ncan_join_factions - Checks if scoped pop group can join a faction\nSupported Scopes: pop pop_group\n\nis_custodial_to - Checks if the country has a custodial attitude towards target country\nis_custodial_to = <target>\nSupported Scopes: country\n\nnum_pops_assigned_to_job - Checks the number of pops assigned to the job (in total or from a specific pop group)\nnum_pops_assigned_to_job = {\n\tpop_group = <target> (if not specified, check total number)"
+        }
+      ]
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\static_modifiers\\19_static_modifiers_paragon.txt",
+      "sha256": "5faf38001b606aa402643f3b7c9d87fd5cf813e15fe49a5032b334afaf8f02b0",
+      "lines8_to12": "talon_power = {\n\tship_hull_add = 5000\n\tship_armor_add = 5000\n\tship_shield_add = 2000\n}"
+    }
+  ],
+  "plan": {
+    "path": "eat_everything_origin\\docs\\native-current-ship-health-calibration-1019.md",
+    "sha256": "629b8ffda9c90dec31d15124bbbb89ac5f1ccf93a28262ff58b0940e18ab99eb",
+    "commands": [
+      "effect root={random_owned_ship={limit={is_ship_size=corvette} save_global_event_target_as=eep_native_health_reference_1019 reduce_hp=37 reduce_shield=1000 damage_ship=37 repair_shield_amount=41.34742 export_trigger_value_to_variable={trigger=has_hp_percentage variable=eep_test_health_h_before rounded=no} export_trigger_value_to_variable={trigger=has_armor_percentage variable=eep_test_health_a_before rounded=no} export_trigger_value_to_variable={trigger=has_shield_percentage variable=eep_test_health_s_before rounded=no}}}",
+      "effect root={event_target:eep_native_health_reference_1019={add_modifier={modifier=talon_power days=-1} export_trigger_value_to_variable={trigger=has_hp_percentage variable=eep_test_health_h_talon rounded=no} export_trigger_value_to_variable={trigger=has_armor_percentage variable=eep_test_health_a_talon rounded=no} export_trigger_value_to_variable={trigger=has_shield_percentage variable=eep_test_health_s_talon rounded=no}}}"
+    ]
+  },
+  "future_observations": {
+    "nchealthbefore": null,
+    "nchealthtalon": null
+  },
+  "original_mother_policy_unchanged": true
+}

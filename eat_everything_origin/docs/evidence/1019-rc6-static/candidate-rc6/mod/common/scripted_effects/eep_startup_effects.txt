@@ -1,0 +1,130 @@
+# Country scope. Invoked by on_game_start_country only, never monthly/load repair.
+eep_startup = {
+    if = {
+        limit = {
+            eep_qualified = yes
+            eep_core_available = yes
+            NOT = { has_country_flag = eep_startup_granted }
+        }
+        set_country_flag = eep_startup_granted
+        eep_startup_crisis = yes
+        set_country_flag = eep_parallel_construction_granted
+        event_target:eep_core@this = {
+            if = { limit = { owner = { is_hive_empire = yes } } change_pc = pc_hive }
+            else_if = { limit = { owner = { has_authority = auth_machine_intelligence } } change_pc = pc_machine }
+            else = { change_pc = pc_relic }
+            eep_startup_homeworld_layout = yes
+            eep_startup_resource_zones = yes
+            eep_repair_core_deposit = yes
+            eep_sync_court = yes
+        }
+        eep_startup_mothership = yes
+    }
+}
+
+# Planet scope; only called by the once-per-new-game startup grant.
+# Converted gestalt resource districts provide triple rural workforce.
+# Preserve enough minerals/food while leaving workers for energy jobs.
+eep_startup_homeworld_layout = {
+    if = {
+        limit = { is_planet_class = pc_hive }
+        while = {
+            limit = { num_districts = { type = district_hive_3 value > 2 } }
+            remove_district = district_hive_3
+        }
+        while = {
+            limit = { num_districts = { type = district_hive_2 value > 4 } }
+            remove_district = district_hive_2
+        }
+    }
+    else_if = {
+        limit = { is_planet_class = pc_machine }
+        while = {
+            limit = { num_districts = { type = district_nexus_2 value > 2 } }
+            remove_district = district_nexus_2
+        }
+    }
+}
+
+# New-game-only grant. The native perk's on_enabled activates nemesis_path.
+eep_startup_crisis = {
+    if = {
+        limit = {
+            has_nemesis = yes
+            NOT = { has_country_flag = eep_crisis_startup_granted }
+        }
+        set_country_flag = eep_crisis_startup_granted
+        if = {
+            limit = { NOT = { has_ascension_perk = ap_become_the_crisis } }
+            add_ascension_perk = ap_become_the_crisis
+        }
+    }
+}
+
+eep_startup_resource_zones = {
+    if = {
+        limit = { is_planet_class = pc_hive }
+        if = {
+            limit = { num_districts = { type = district_hive_1 value > 0 } }
+            add_zone = { district = district_hive_1 zone = zone_energy_hive }
+        }
+        if = {
+            limit = { num_districts = { type = district_hive_2 value > 0 } }
+            add_zone = { district = district_hive_2 zone = zone_minerals_hive }
+        }
+        if = {
+            limit = { num_districts = { type = district_hive_3 value > 0 } }
+            add_zone = { district = district_hive_3 zone = zone_food_hive }
+        }
+    }
+    else_if = {
+        limit = { is_planet_class = pc_machine }
+        if = {
+            limit = { num_districts = { type = district_nexus_1 value > 0 } }
+            add_zone = { district = district_nexus_1 zone = zone_energy_nexus }
+        }
+        if = {
+            limit = { num_districts = { type = district_nexus_2 value > 0 } }
+            add_zone = { district = district_nexus_2 zone = zone_minerals_nexus }
+        }
+        if = {
+            limit = { num_districts = { type = district_nexus_3 value > 0 } }
+            add_zone = { district = district_nexus_3 zone = zone_foundry_nexus }
+        }
+    }
+}
+
+eep_startup_mothership = {
+    if = {
+        limit = { NOT = { has_country_flag = eep_mothership_granted } }
+        set_country_flag = eep_mothership_granted
+        create_fleet = {
+            name = NAME_EEP_Baiqi_Mothership
+            settings = {
+                can_upgrade = no
+                can_change_composition = no
+                can_change_leader = no
+                uses_naval_capacity = no
+                spawn_debris = no
+            }
+            effect = {
+                set_owner = root
+                create_ship = {
+                    name = NAME_EEP_Baiqi_Mothership
+                    design = NAME_EEP_Baiqi_Mothership_1019
+                    graphical_culture = eep_dreadnought_01
+                    graphical_culture_fallback = npf_01
+                    prefix = no
+                    upgradable = no
+                    effect = {
+                        # The helper inspects this known new design's six cores.
+                        set_ship_flag = eep_mothership_design_1019
+                    }
+                }
+                set_location = event_target:eep_core@root
+                add_modifier = { modifier = eep_mothership days = -1 }
+                save_global_event_target_as = eep_mothership@root
+            }
+        }
+    }
+}

@@ -1,0 +1,828 @@
+{
+  "schema": "eep.six-core-source-expectations.v3",
+  "status": "SOURCE_ONLY_RC5_APPLICABILITY_FIXED_BEFORE_RC5_GROWTH_READS",
+  "game_version": "Stellaris 4.5.2",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "preserved_predecessors": [
+    {
+      "path": "docs/evidence/1019-analysis/six-core-source-expectations-v1.json",
+      "sha256": "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
+      "raw_bytes_unchanged": true
+    },
+    {
+      "path": "docs/evidence/1019-analysis/six-core-source-expectations-v2.json",
+      "sha256": "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8",
+      "raw_bytes_unchanged": true
+    }
+  ],
+  "frozen_rc5": {
+    "version": "0.4.0-rc.5",
+    "production_tree_sha256": "1cc8b77c28f3d59b0d840982c7f039a209cb66f3e26d9c3280ad2dfa0f9dbd52",
+    "file_count": 59,
+    "files": [
+      {
+        "path": "common/component_sets/eep_planet_killer.txt",
+        "bytes": 119,
+        "sha256": "1ca4ac77f4aaac3fe8235139ce58e980995b28d00790955fd84952b8821300a5"
+      },
+      {
+        "path": "common/component_templates/eep_evolution_components.txt",
+        "bytes": 3426,
+        "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26"
+      },
+      {
+        "path": "common/component_templates/eep_planet_killer.txt",
+        "bytes": 671,
+        "sha256": "0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92"
+      },
+      {
+        "path": "common/decisions/eep_decisions.txt",
+        "bytes": 4490,
+        "sha256": "ce9e68d9b0d425704d6b278ac5c1c6a010955600d30269dc5656c2eb70eca2e3"
+      },
+      {
+        "path": "common/decisions/zz_eep_native_decision.txt",
+        "bytes": 2654,
+        "sha256": "afb47a2cf28b88cfc80e8b46fc81860178aaf544b6f7bffba785cd8ab37fad9c"
+      },
+      {
+        "path": "common/deposits/eep_deposits.txt",
+        "bytes": 171,
+        "sha256": "85131e640143201ac5a20fc29419b8b95e0d2840d042de060602db33fa370965"
+      },
+      {
+        "path": "common/global_ship_designs/eep_mothership.txt",
+        "bytes": 4570,
+        "sha256": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123"
+      },
+      {
+        "path": "common/governments/civics/eep_origin.txt",
+        "bytes": 659,
+        "sha256": "6230a99d5338eaaf4c8b05b4e947e52a6e8bd2b987c88fe995f72a3beb77e5de"
+      },
+      {
+        "path": "common/graphical_culture/eep_mothership.txt",
+        "bytes": 696,
+        "sha256": "46e0498a85b09cf9d842f0eccda5b06666508107c0a846be2291ed5167c0970d"
+      },
+      {
+        "path": "common/on_actions/eep_on_actions.txt",
+        "bytes": 528,
+        "sha256": "93be7df47f32895beadb5ce1f27d7abeb4e2f299e814ac959d1cf84bcafaeb6d"
+      },
+      {
+        "path": "common/script_values/eep_evolution_values.txt",
+        "bytes": 1409,
+        "sha256": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09"
+      },
+      {
+        "path": "common/script_values/eep_values.txt",
+        "bytes": 451,
+        "sha256": "5d5e8201f8a145b66f0cfef99278de99976f4b0879935d60bcb9f95e7d1964ba"
+      },
+      {
+        "path": "common/scripted_effects/eep_auto_effects.txt",
+        "bytes": 689,
+        "sha256": "4cd1229cff5c07e7b0272cb8721e00e6f7d6d2b8e90bbffc9a912c11f60cfb10"
+      },
+      {
+        "path": "common/scripted_effects/eep_cancel_effects.txt",
+        "bytes": 671,
+        "sha256": "2739e609afb90d28fcd56c5db6c48668de655ac1315afb86907764098b77b36d"
+      },
+      {
+        "path": "common/scripted_effects/eep_colossus_native.txt",
+        "bytes": 3409,
+        "sha256": "148e0ff5b70113893d0ea75b4e3070448990b36d087a5eff0e636a24ed4b888f"
+      },
+      {
+        "path": "common/scripted_effects/eep_effects.txt",
+        "bytes": 16330,
+        "sha256": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6"
+      },
+      {
+        "path": "common/scripted_effects/eep_migration_effects.txt",
+        "bytes": 1862,
+        "sha256": "7519ed6f2f3502da5c1a1c84261353d5be851e0345ac6d50761c19cab5219cfe"
+      },
+      {
+        "path": "common/scripted_effects/eep_mothership_effects.txt",
+        "bytes": 9762,
+        "sha256": "347254f6c966c52350d1396aeedec9304e0a3c4abd1f4d87535f5639d506c0af"
+      },
+      {
+        "path": "common/scripted_effects/eep_native_consume.txt",
+        "bytes": 3524,
+        "sha256": "47ee1a78bd40c14f6893fd47177e1138f9f2003ad3ca5d550b0b0c20ca4bb12e"
+      },
+      {
+        "path": "common/scripted_effects/eep_planet_killer_effects.txt",
+        "bytes": 1382,
+        "sha256": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9"
+      },
+      {
+        "path": "common/scripted_effects/eep_settlement_effects.txt",
+        "bytes": 6441,
+        "sha256": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba"
+      },
+      {
+        "path": "common/scripted_effects/eep_startup_effects.txt",
+        "bytes": 4837,
+        "sha256": "6b3a3d6e876dd7b08878eba908671ddde3ed20c83a93d35ab9406e535d50c64d"
+      },
+      {
+        "path": "common/scripted_loc/eep_loc.txt",
+        "bytes": 842,
+        "sha256": "aece3efd0fa978438467ce16e4950fe9b8f7afc289be30af71d0e798408484af"
+      },
+      {
+        "path": "common/scripted_triggers/eep_planet_killer.txt",
+        "bytes": 1034,
+        "sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72"
+      },
+      {
+        "path": "common/scripted_triggers/eep_triggers.txt",
+        "bytes": 3071,
+        "sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb"
+      },
+      {
+        "path": "common/section_templates/eep_mothership.txt",
+        "bytes": 2162,
+        "sha256": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493"
+      },
+      {
+        "path": "common/section_templates/eep_mothership_legacy.txt",
+        "bytes": 2003,
+        "sha256": "967e22c4b80091dab66d5d38878c97398cd347b560dc7d5f17903aea7fcdf9b3"
+      },
+      {
+        "path": "common/situations/eep_situation.txt",
+        "bytes": 2377,
+        "sha256": "f6f9b034949e1d24da7d598a4de9ca0a483fe99526b1ff7489eb3db1a6cbd29d"
+      },
+      {
+        "path": "common/static_modifiers/eep_modifiers.txt",
+        "bytes": 1276,
+        "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d"
+      },
+      {
+        "path": "common/technology/eep_mothership.txt",
+        "bytes": 359,
+        "sha256": "c3d62e08c47b7634634ddcca8a018e2dfda3961c89c18d7f4e80f29990c585b9"
+      },
+      {
+        "path": "descriptor.mod",
+        "bytes": 135,
+        "sha256": "287a05983f0d1bc32c88ef9f402b838fe56b35b5ac457ec2806fcfdeec3e0da5"
+      },
+      {
+        "path": "events/eep_events.txt",
+        "bytes": 9502,
+        "sha256": "bee663bdf8e794999502aa52376166dd94b2c3129e5053f6b43d3a4dd4e85a02"
+      },
+      {
+        "path": "events/eep_planet_killer_events.txt",
+        "bytes": 270,
+        "sha256": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e"
+      },
+      {
+        "path": "gfx/event_pictures/eep_core.dds",
+        "bytes": 270128,
+        "sha256": "ccbf95e4f2058f563bbb20039b3c5bfbdafe56c3d3df5cbd7a7af73d53ed42a3"
+      },
+      {
+        "path": "gfx/event_pictures/eep_devouring.dds",
+        "bytes": 270128,
+        "sha256": "1dfaa5fbd583075b7955aaacf23320b298553a0345d6e7e4028221bc01ee0c21"
+      },
+      {
+        "path": "gfx/event_pictures/eep_fleet.dds",
+        "bytes": 270128,
+        "sha256": "89a59a46f265c29c039bbcb42946dc3d7e3db3d2885692e0f9cd9a84d96aca2b"
+      },
+      {
+        "path": "gfx/event_pictures/eep_growth.dds",
+        "bytes": 270128,
+        "sha256": "2c7068ff0ef7f3250ddb789ef1f30104896706a6c4f7ef6f6cc00cdc5c065940"
+      },
+      {
+        "path": "gfx/event_pictures/eep_psionic.dds",
+        "bytes": 270128,
+        "sha256": "068940d6e209d4e038c6aad6a4373fce8045d87ba43a30824267313e60344a50"
+      },
+      {
+        "path": "gfx/interface/icons/modifiers/eep_capacity.dds",
+        "bytes": 1728,
+        "sha256": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88"
+      },
+      {
+        "path": "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_add.dds",
+        "bytes": 1728,
+        "sha256": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88"
+      },
+      {
+        "path": "gfx/interface/icons/modifiers/mod_situation_eep_devouring_max_progress_mult.dds",
+        "bytes": 1728,
+        "sha256": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88"
+      },
+      {
+        "path": "gfx/interface/icons/origins/eep_heart.dds",
+        "bytes": 1728,
+        "sha256": "ed6940594ee5f4fcbb6d89422d86abdf92893e4399143852ccb1beeba0ec8e88"
+      },
+      {
+        "path": "gfx/interface/icons/origins/eep_origin.dds",
+        "bytes": 101328,
+        "sha256": "0b0efde9b1db8b9e528dd5f13095cd4d6ab40d6067775301ae8c1d7434a2d604"
+      },
+      {
+        "path": "gfx/models/portraits/eep/eep_baiqi.dds",
+        "bytes": 327808,
+        "sha256": "fee48048257e630fe432f2e1cd9a8ea04c95a3213d9e5bb7bb5e6a0ac934d918"
+      },
+      {
+        "path": "gfx/models/portraits/eep/eep_baiqi_full.dds",
+        "bytes": 884864,
+        "sha256": "31f854d06b16f1209f3d8257de89fb387f715a05ecbd12db21c099ce94db5235"
+      },
+      {
+        "path": "gfx/models/ships/zz_eep/eep_mothership.asset",
+        "bytes": 10790,
+        "sha256": "f299b6fb43effd03597af2d5a4c96577ce2323c9964916a09c68b71958fb2e91"
+      },
+      {
+        "path": "gfx/portraits/portraits/eep_portraits.txt",
+        "bytes": 91,
+        "sha256": "15e64490ae386c85806630aa0aed35a45374af64944795aecb7480137e0d1d09"
+      },
+      {
+        "path": "interface/eep.gfx",
+        "bytes": 855,
+        "sha256": "2a9259cf637cad4f3fc0b3a07ede8c36336f0451ac9e7738ed37b36f38fabd92"
+      },
+      {
+        "path": "localisation/braz_por/eep_l_braz_por.yml",
+        "bytes": 23708,
+        "sha256": "66711ed16c59303ca1ce7a9f8363a2db0f1ca2e055cffb16bbad4d4c38875a5b"
+      },
+      {
+        "path": "localisation/english/eep_l_english.yml",
+        "bytes": 21008,
+        "sha256": "76c2cd008c818c67009167d97311dc3bb87372619117f5e01ae93cc1704e094e"
+      },
+      {
+        "path": "localisation/french/eep_l_french.yml",
+        "bytes": 24893,
+        "sha256": "60ed9b2edc0763edaedefed9b605ff41bcf5208466c2c8011f6adeb5f1d88c64"
+      },
+      {
+        "path": "localisation/german/eep_l_german.yml",
+        "bytes": 23745,
+        "sha256": "921885d3b241905111aa992889e54fd6edff4c9a3e68c7f64a29c554898c7020"
+      },
+      {
+        "path": "localisation/japanese/eep_l_japanese.yml",
+        "bytes": 23588,
+        "sha256": "77ca1127f88bd27a54d9340bb8d373c7cdce7c6f533bd40c5e89858a1c46c515"
+      },
+      {
+        "path": "localisation/korean/eep_l_korean.yml",
+        "bytes": 24308,
+        "sha256": "886f9e01e9f335cb4c7ee3ee57727032a31831ddfd015474d3e0031ecc7a7ae6"
+      },
+      {
+        "path": "localisation/polish/eep_l_polish.yml",
+        "bytes": 23770,
+        "sha256": "6d6b18e7d44f13bc966297a579683d300e069ea44e2b5b80546bf74f7d19a787"
+      },
+      {
+        "path": "localisation/russian/eep_l_russian.yml",
+        "bytes": 36753,
+        "sha256": "7fd679ee7d3123f6e30c62e5cc0a88528d8e64ee2ed041eeca80edd7d6c21db6"
+      },
+      {
+        "path": "localisation/simp_chinese/eep_l_simp_chinese.yml",
+        "bytes": 18791,
+        "sha256": "b1add578c1f81db6e558485c1f8d96a7e780d1c4c932f2016a34f2a0e2c9fe66"
+      },
+      {
+        "path": "localisation/spanish/eep_l_spanish.yml",
+        "bytes": 24140,
+        "sha256": "5a31c680e65f45e8fffb0b34b032c4a120c684017c882a0728339d4aceeb6450"
+      },
+      {
+        "path": "thumbnail.png",
+        "bytes": 804053,
+        "sha256": "25c23dbb7aa5c6de0d5fb3051b52778aafbefe6ff9ba94b653b84bfcf1f7961c"
+      }
+    ],
+    "selected_frozen_files_verified_against_manifest": [
+      {
+        "path": "common/global_ship_designs/eep_mothership.txt",
+        "bytes": 4570,
+        "sha256": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123",
+        "predecessor_v1_sha256": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123",
+        "complete_file_unchanged": true
+      },
+      {
+        "path": "common/static_modifiers/eep_modifiers.txt",
+        "bytes": 1276,
+        "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+        "predecessor_v1_sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+        "complete_file_unchanged": true
+      },
+      {
+        "path": "common/component_templates/eep_evolution_components.txt",
+        "bytes": 3426,
+        "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+        "predecessor_v1_sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+        "complete_file_unchanged": true
+      },
+      {
+        "path": "common/script_values/eep_evolution_values.txt",
+        "bytes": 1409,
+        "sha256": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09",
+        "predecessor_v1_sha256": "7a43291ad188a1e3df9010cfa38a8c5d7531be4302f96da86b3fa2476f31ee09",
+        "complete_file_unchanged": true
+      },
+      {
+        "path": "common/scripted_effects/eep_mothership_effects.txt",
+        "bytes": 9762,
+        "sha256": "347254f6c966c52350d1396aeedec9304e0a3c4abd1f4d87535f5639d506c0af",
+        "predecessor_v1_sha256": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5",
+        "complete_file_unchanged": false
+      },
+      {
+        "path": "common/section_templates/eep_mothership.txt",
+        "bytes": 2162,
+        "sha256": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493",
+        "predecessor_v1_sha256": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493",
+        "complete_file_unchanged": true
+      }
+    ]
+  },
+  "source_equivalence": [
+    {
+      "claim": "complete_rng_effect",
+      "path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_region": "eep_sync_mothership_components",
+      "comparison": "exact raw source span bytes",
+      "predecessor_sha256": "36ee7d6046cf40411ee82ea3efaca06a26faac29a5033c931c2f4303cabae020",
+      "rc5_sha256": "36ee7d6046cf40411ee82ea3efaca06a26faac29a5033c931c2f4303cabae020",
+      "bytes": 3145,
+      "exactly_equal": true
+    },
+    {
+      "claim": "level_entitlement_snapshot_prefix",
+      "path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_region": "eep_sync_mothership prefix before design repair",
+      "comparison": "exact raw source span bytes",
+      "predecessor_sha256": "316c61b423313c178c404ff600f13430af656cde810b2940e214b31b72403df8",
+      "rc5_sha256": "316c61b423313c178c404ff600f13430af656cde810b2940e214b31b72403df8",
+      "bytes": 2346,
+      "exactly_equal": true
+    },
+    {
+      "claim": "scaled_modifier_rng_and_pending_suffix",
+      "path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_region": "eep_sync_mothership suffix after design repair",
+      "comparison": "exact raw source span bytes",
+      "predecessor_sha256": "da942e2273d009512d31c2f5c298610a5ac8de6feb2a3c69a705ad134232d3e5",
+      "rc5_sha256": "da942e2273d009512d31c2f5c298610a5ac8de6feb2a3c69a705ad134232d3e5",
+      "bytes": 1754,
+      "exactly_equal": true
+    }
+  ],
+  "retained_v1_expectations": {
+    "fixed_design_basis": {
+      "hull_native_chassis": 100000,
+      "hull_ship_add_from_eep_baseline": -70000,
+      "hull_basis_after_retained_flat_adjustment": 30000,
+      "armor_count": 11,
+      "armor_each": 2340,
+      "armor_design_total": 25740,
+      "shield_count": 11,
+      "shield_each": 2925,
+      "shield_raw_design_total": 32175,
+      "shield_design_mult_from_three_boosters": 0.3,
+      "shield_design_basis_after_boosters": 41827.5,
+      "tracking_from_sensor4_ship_modifier": 15,
+      "auto_repair_count": 2,
+      "separate_design_percentage_regen_fields": {
+        "ship_hull_regen_add_perc": 0.1,
+        "ship_armor_regen_add_perc": 0.2
+      }
+    },
+    "expected_ship_modifier_exports_without_external_terms": {
+      "ship_hull_add": "-70000",
+      "ship_hull_mult": "2.132 + 0.05*L + 0.10*Nh",
+      "ship_armor_add": "0 expected in ship-only correction channel; source component adds reside in the design channel",
+      "ship_armor_mult": "0.74 + 0.05*L + 0.10*Na",
+      "ship_shield_add": "0 expected in ship-only correction channel; source component adds reside in the design channel",
+      "ship_shield_mult": "3 + 0.05*L + 0.10*Ns",
+      "ship_weapon_damage": "3.8 + 0.05*L + 0.05*Nd",
+      "ship_tracking_add": "15 + 3*Nt",
+      "ship_hull_regen_add_static": "1.392 + 0.10*L + 0.20*Nr",
+      "ship_armor_regen_add_static": "2.088 + 0.10*L + 0.20*Nr"
+    },
+    "max_stat_model_without_external_terms": {
+      "max_hull": "30000 * (3.132 + 0.05*L + 0.10*Nh)",
+      "max_armor": "25740 * (1.74 + 0.05*L + 0.10*Na)",
+      "max_shield": "41827.5 * (4 + 0.05*L + 0.10*Ns)",
+      "confidence_boundary": "Native sources fix fields, coefficients, equipment counts and design/ship scope separation. Closed-source arithmetic is a model to test against native SAV, not a claim that the engine calculation function was available. Shield layering already has independent controlled evidence; other channels remain future tests."
+    },
+    "independent_per_level_deltas_with_fixed_external_terms": {
+      "max_hull": 1500,
+      "max_armor": 1287,
+      "max_shield": 2091.375,
+      "ship_weapon_damage": 0.05,
+      "ship_tracking_add": 0,
+      "ship_hull_regen_add_static": 0.1,
+      "ship_armor_regen_add_static": 0.1
+    },
+    "independent_per_core_rank_deltas_with_fixed_external_terms": {
+      "Nh": {
+        "max_hull": 3000,
+        "ship_hull_mult": 0.1
+      },
+      "Na": {
+        "max_armor": 2574,
+        "ship_armor_mult": 0.1
+      },
+      "Ns": {
+        "max_shield": 4182.75,
+        "ship_shield_mult": 0.1
+      },
+      "Nd": {
+        "ship_weapon_damage": 0.05
+      },
+      "Nt": {
+        "ship_tracking_add": 3
+      },
+      "Nr": {
+        "ship_hull_regen_add_static": 0.2,
+        "ship_armor_regen_add_static": 0.2
+      }
+    },
+    "reference_rows": [
+      {
+        "C": 0,
+        "L": 0,
+        "B": 0,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 93960.0,
+          "max_armor": 44787.6,
+          "max_shield": 167310.0,
+          "ship_weapon_damage": 3.8,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 1.392,
+          "ship_armor_regen_add_static": 2.088
+        }
+      },
+      {
+        "C": 9,
+        "L": 0,
+        "B": 0,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 93960.0,
+          "max_armor": 44787.6,
+          "max_shield": 167310.0,
+          "ship_weapon_damage": 3.8,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 1.392,
+          "ship_armor_regen_add_static": 2.088
+        }
+      },
+      {
+        "C": 10,
+        "L": 1,
+        "B": 0,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 95460.0,
+          "max_armor": 46074.6,
+          "max_shield": 169401.375,
+          "ship_weapon_damage": 3.85,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 1.492,
+          "ship_armor_regen_add_static": 2.188
+        }
+      },
+      {
+        "C": 19,
+        "L": 1,
+        "B": 0,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 95460.0,
+          "max_armor": 46074.6,
+          "max_shield": 169401.375,
+          "ship_weapon_damage": 3.85,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 1.492,
+          "ship_armor_regen_add_static": 2.188
+        }
+      },
+      {
+        "C": 20,
+        "L": 2,
+        "B": 0,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 96960.0,
+          "max_armor": 47361.6,
+          "max_shield": 171492.75,
+          "ship_weapon_damage": 3.9,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 1.592,
+          "ship_armor_regen_add_static": 2.288
+        }
+      },
+      {
+        "C": 49,
+        "L": 4,
+        "B": 0,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 99960.0,
+          "max_armor": 49935.6,
+          "max_shield": 175675.5,
+          "ship_weapon_damage": 4.0,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 1.792,
+          "ship_armor_regen_add_static": 2.488
+        }
+      },
+      {
+        "C": 50,
+        "L": 5,
+        "B": 1,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 101460.0,
+          "max_armor": 51222.6,
+          "max_shield": 177766.875,
+          "ship_weapon_damage": 4.05,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 1.892,
+          "ship_armor_regen_add_static": 2.588
+        }
+      },
+      {
+        "C": 200,
+        "L": 20,
+        "B": 4,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 123960.0,
+          "max_armor": 70527.6,
+          "max_shield": 209137.5,
+          "ship_weapon_damage": 4.8,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 3.392,
+          "ship_armor_regen_add_static": 4.088
+        }
+      },
+      {
+        "C": 10000,
+        "L": 1000,
+        "B": 200,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 1593960.0,
+          "max_armor": 1331787.6,
+          "max_shield": 2258685.0,
+          "ship_weapon_damage": 53.8,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 101.392,
+          "ship_armor_regen_add_static": 102.088
+        }
+      },
+      {
+        "C": 20500,
+        "L": 2050,
+        "B": 410,
+        "scope": "Zero-core-rank reference term only. For B>0 add each actual persistent core rank using the independent coefficients; this is not a prediction of the random distribution.",
+        "without_core_rank_terms": {
+          "max_hull": 3168960.0,
+          "max_armor": 2683137.6,
+          "max_shield": 4454628.75,
+          "ship_weapon_damage": 106.3,
+          "ship_tracking_add": 15,
+          "ship_hull_regen_add_static": 206.392,
+          "ship_armor_regen_add_static": 207.088
+        }
+      }
+    ],
+    "rng_expectations": {
+      "entitlement": "B=floor(C/50)",
+      "normal_invariant": "R=sum(Nh,Na,Ns,Nd,Nt,Nr)",
+      "per_call_awards": "min(max(B-R_before,0),200)",
+      "pending": "max(B-R_after,0)",
+      "20500_transition_if_start_R200": {
+        "B": 410,
+        "awards_first_call": 200,
+        "R_after_first": 400,
+        "pending_after_first": 10,
+        "awards_next_call": 10,
+        "R_after_next": 410,
+        "pending_after_next": 0
+      },
+      "no_total_cap": true
+    }
+  },
+  "retained_v2_expectations": {
+    "known_country_sources": [
+      {
+        "civic": "civic_machine_terminator",
+        "applicability": "Current Machine preset as identified by the main task; verify the actual native government still contains the civic.",
+        "relevant_fields": {
+          "ship_weapon_damage": 0.25
+        },
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\governments\\civics\\02_gestalt_civics.txt",
+          "sha256": "5678e1d1fa16682662d3ac4ef9bef54c37d5e62e388b7f3915732b2c779b7a82",
+          "line": 1554,
+          "text": "civic_machine_terminator = {"
+        },
+        "modifier_source_line": 1593
+      },
+      {
+        "civic": "civic_hive_devouring_swarm",
+        "applicability": "Only when this base civic is active; not assumed for Machine. Swapped display names are not separate simultaneously stacking bonuses.",
+        "relevant_fields": {
+          "ship_hull_mult": 0.25,
+          "ship_hull_regen_add_perc": 0.05,
+          "ship_armor_regen_add_perc": 0.05
+        },
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\governments\\civics\\02_gestalt_civics.txt",
+          "sha256": "5678e1d1fa16682662d3ac4ef9bef54c37d5e62e388b7f3915732b2c779b7a82",
+          "line": 227,
+          "text": "civic_hive_devouring_swarm = {"
+        },
+        "modifier_source_lines": [
+          266,
+          267,
+          268
+        ]
+      },
+      {
+        "civic": "civic_fanatic_purifiers",
+        "applicability": "Only when active; distinct fire-rate channel, not +0.33 damage. Not assumed for Machine.",
+        "relevant_fields": {
+          "ship_fire_rate_mult": 0.33
+        },
+        "source": {
+          "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\governments\\civics\\00_civics.txt",
+          "sha256": "3b7869afcf0a9c3fbdf3da062cd8009d551645487a0f0c36462498d6926269c7",
+          "line": 1658,
+          "text": "civic_fanatic_purifiers = {"
+        },
+        "modifier_source_line": 1720
+      }
+    ],
+    "machine_damage_source_accounting": {
+      "exclusive_mothership": 3.8,
+      "known_country_civic": 0.25,
+      "known_sum_before_other_sources": 4.05,
+      "formula_before_power_visibility_decision": "ship damage aggregate = 4.05 + 0.05*L + 0.05*Nd + other included sources. The engine-generated excess-power contribution may be one of these sources; do not double-count it.",
+      "not_claimed": "No claim that the native C0 aggregate is exactly 4.05, and no native C0 damage value has been obtained by this agent."
+    },
+    "excess_power": {
+      "native_static_modifier_key": "ship_excess_power",
+      "payload": {
+        "ship_evasion_mult": 0.1,
+        "ship_speed_mult": 0.1,
+        "ship_weapon_damage": 0.1
+      },
+      "payload_source": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\static_modifiers\\02_static_modifiers.txt",
+        "sha256": "2a2021c7bf503eeacf8a2e12ed78d325bc06e8d121cd8dd101d12d97bce6f17e",
+        "line": 985,
+        "text": "ship_excess_power = {"
+      },
+      "thresholds": {
+        "EXCESS_POWER_BONUS_THRESHOLD_MAX": 1.0,
+        "EXCESS_POWER_BONUS_THRESHOLD_MIN": 0.05
+      },
+      "threshold_source": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\defines\\00_defines.txt",
+        "sha256": "82eebd807eb54af347025b061af2991fc40a1b1059e39c2cb8ee135dca02b7cc",
+        "line": 1838,
+        "text": "EXCESS_POWER_BONUS_THRESHOLD_MAX"
+      },
+      "native_comment": "0.5 means 0-50% excess power linearly scales ship_excess_power modifier between 0-1.",
+      "what_source_proves": [
+        "There is a distinct engine-scaled named source with a ship_weapon_damage payload of 0.1 at full scaling.",
+        "Its companion fields are ship_evasion_mult and ship_speed_mult, both 0.1.",
+        "This is not the core tier or the exclusive mothership static modifier."
+      ],
+      "what_source_does_not_prove": [
+        "No public engine function is present here proving which modifier holder receives this scaled source.",
+        "Distinct named source does not establish a separate multiplicative damage stage.",
+        "Source alone does not prove whether export_modifier_to_variable on the actual ship includes the entire power contribution.",
+        "The native comment and thresholds do not establish a complete formula for every threshold edge; do not import an unverified wiki formula."
+      ],
+      "safe_symbolic_payload": "0.1*P_excess where the engine scaling factor is between 0 and 1; placement in exported aggregate versus other damage-calculation stages remains to be observed.",
+      "frozen_zero_power_cores": [
+        {
+          "key": "EEP_ADAPTIVE_SHIELD_CORE",
+          "power": 0
+        },
+        {
+          "key": "EEP_ADAPTIVE_ARMOR_CORE",
+          "power": 0
+        },
+        {
+          "key": "EEP_ADAPTIVE_HULL_CORE",
+          "power": 0
+        },
+        {
+          "key": "EEP_ADAPTIVE_DAMAGE_CORE",
+          "power": 0
+        },
+        {
+          "key": "EEP_ADAPTIVE_TRACKING_CORE",
+          "power": 0
+        },
+        {
+          "key": "EEP_ADAPTIVE_REGEN_CORE",
+          "power": 0
+        }
+      ],
+      "differential_expectation": "With the same actual design and reactor, six zero-power cores, unchanged country/leader/technology/temporary sources and no power-related external changes, changing L or the persistent core ranks does not change the declared power supply or component consumption. Treat the excess-power term as fixed for the C/L/N comparison, rather than inferring it from a later tier result."
+    },
+    "preferred_C0_baseline_plan": {
+      "timing": "Obtain on the clean same-fixture C0 baseline before changing C or core ranks, after at least five days of triggered-modifier refresh.",
+      "record": [
+        "actual government/civics and technology/leader state",
+        "actual installed design including reactor and all six cores",
+        "all ten v1 core modifier exports on the actual Mother ship",
+        "native H/A/S current and max",
+        "L and six saved ranks; initial values should be independently checked",
+        "optional power budget UI/source values and ship_speed_mult/ship_evasion_mult exports if investigating power visibility"
+      ],
+      "procedure": [
+        "Save the paused C0 native baseline and its diagnostic exports.",
+        "Use these actual aggregates as fixed comparison intercepts only; retain their provenance and do not tune source coefficients.",
+        "Read each later saved L and N independently, then evaluate the pre-fixed delta formulas below.",
+        "When an external modifier, design, power supply/consumption or ownership changes, establish a new independent baseline or explicitly account for the changed source before comparing."
+      ],
+      "do_not_do": [
+        "Do not backsolve core tiers from measured damage.",
+        "Do not call an unattributed C0 residual an excess-power measurement.",
+        "Do not treat a panel DPS ratio as a ship_weapon_damage export.",
+        "Do not read a later core result and retroactively select a C0 constant that makes it pass."
+      ]
+    },
+    "delta_model_from_actual_baseline": {
+      "notation": "Deltas are current minus independently captured baseline. The baseline can have nonzero L0 and N0, but the intended clean fixture is C0/L0/all tiers0.",
+      "max_hull": "H0 + 1500*(L-L0) + 3000*(Nh-Nh0)",
+      "max_armor": "A0 + 1287*(L-L0) + 2574*(Na-Na0)",
+      "max_shield": "S0 + 2091.375*(L-L0) + 4182.75*(Ns-Ns0)",
+      "ship_weapon_damage": "damage_export0 + 0.05*(L-L0) + 0.05*(Nd-Nd0)",
+      "ship_tracking_add": "tracking_export0 + 3*(Nt-Nt0)",
+      "ship_hull_regen_add_static": "hull_fixed_regen_export0 + 0.1*(L-L0) + 0.2*(Nr-Nr0)",
+      "ship_armor_regen_add_static": "armor_fixed_regen_export0 + 0.1*(L-L0) + 0.2*(Nr-Nr0)",
+      "conditions": [
+        "The same RC3 equipment and design basis remain fixed.",
+        "No additional flat hull/armor/shield terms change the effective 30000/25740/41827.5 source bases.",
+        "All other applicable country, leader, technology, aura, temporary and power sources remain fixed or are separately accounted.",
+        "At least five days pass after changing relevant ranks or L before judging triggered modifier refresh.",
+        "These fixed source coefficients remain hypotheses for native engine evaluation in channels not yet proved; no six-channel runtime PASS is implied."
+      ]
+    },
+    "absolute_model_boundaries": {
+      "H_A_S": "The v1 no-external-terms max formulas retain their source meaning. Existing Machine hardware baselines support them in that controlled fixture; a Hive +0.25 hull country term changes the intercept. Do not apply one civic-specific baseline universally.",
+      "damage": "3.8 is one source, 4.05 is the known Machine source subtotal; neither is automatically the full native aggregate.",
+      "tracking": "15 is the frozen Sensor4 source contribution, plus other real tracking sources if present. Prefer the actual C0 aggregate intercept.",
+      "fixed_regen": "1.392 and 2.088 are exclusive mothership fixed sources. AUTO_REPAIR, Hive civic and orbit repair use separate percentage fields; do not mix them with fixed regeneration.",
+      "panel_DPS": "Not predicted here; firing rate, accuracy, weapon tags, power handling and other engine stages can affect it."
+    }
+  },
+  "hp_policy_unchanged": {
+    "hp_tolerance_contract": "max_0p01_or_8_binary32_ulp_expected_v1",
+    "absolute_floor": 0.01,
+    "binary32_ulps": 8,
+    "relative_tolerance": 0,
+    "classification": "predeclared_engineering_allowance_not_engine_storage_proof",
+    "all_ten_modifier_exports_absolute_tolerance": 0.01,
+    "ledger_identity_slots": "exact"
+  },
+  "reviewed_changes_outside_equivalent_regions": [
+    "New eep_repair_existing_mothership_design helper uses actual design flags and checks six real equipped cores before marking the layout.",
+    "eep_sync_mothership now calls that helper instead of the former ship-flag-only inline design migration.",
+    "Native single-player load invokes generic eep.60 and only existing-design repair.",
+    "Fresh Mother creation marks the actual design flag.",
+    "Descriptor rc.5 metadata and its frozen line endings are exact-indexed, not normalized by this source contract."
+  ],
+  "applicability": [
+    "Only the exact frozen RC5 production tree and every file hash listed above; no arbitrary selected-source allowance.",
+    "Actual C0 native intercept and actual saved L/N remain mandatory; no new coefficient fitting or fixed absolute civic baseline is introduced.",
+    "RC5 actual design, component ownership, native attributes, RNG, repeat/reload and budget runtime evidence must be collected separately on RC5."
+  ],
+  "runtime_status": "PENDING_NO_RC5_GROWTH_DATA_READ_OR_RUNTIME_PASS_INHERITED"
+}

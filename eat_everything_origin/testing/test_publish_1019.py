@@ -119,6 +119,10 @@ class Release1019Guards(unittest.TestCase):
 
     def implemented_components(self, runtime=None):
         runtime = copy.deepcopy(self.runtime) if runtime is None else runtime
+        # This package is synthetic guard input, never the real RC5 source tree.
+        source_tree = patch.object(release, "COMPONENT_SOURCE_TREE", runtime["production_tree_sha256"])
+        source_tree.start()
+        self.addCleanup(source_tree.stop)
         runtime["component_rewards"].update(status="IMPLEMENTED", reason="Synthetic six-core guard input only")
         case = self.case(release.COMPONENT_CHECKS)
         runtime["cases"]["random_components"] = case
@@ -353,6 +357,10 @@ class Release1019Guards(unittest.TestCase):
             "incomplete": lambda r: r.update(status="INCOMPLETE"),
             "old contract": lambda r: r.update(component_attribution_contract="fixed_level_probe"),
             "fitted models": lambda r: r.update(source_models_sha256=["0" * 64, "1" * 64]),
+            "missing RC5 model": lambda r: r.update(source_models_sha256=list(release.COMPONENT_SOURCE_MODELS[:2])),
+            "unknown RC5 model": lambda r: r.update(source_models_sha256=[*release.COMPONENT_SOURCE_MODELS[:2], "0" * 64]),
+            "missing RC6 model": lambda r: r.update(source_models_sha256=list(release.COMPONENT_SOURCE_MODELS[:3])),
+            "unknown RC6 model": lambda r: r.update(source_models_sha256=[*release.COMPONENT_SOURCE_MODELS[:3], "0" * 64]),
             "relaxed tolerance": lambda r: r.update(absolute_tolerance=.1),
             "not actual baseline": lambda r: r["C0_baseline"].update(actual_native_intercept=False),
             "nonzero baseline": lambda r: r["C0_baseline"].update(C=50),
@@ -442,6 +450,21 @@ class Release1019Guards(unittest.TestCase):
             self.attribution_report(bad, claim)
             with self.subTest(label=label), self.assertRaisesRegex(RuntimeError, "random_components"):
                 self.validate(bad)
+
+    def test_component_source_models_and_final_tree_match_the_frozen_certificate(self):
+        import check_growth_1019 as growth
+        folder = release.ROOT / "docs/evidence/1019-analysis"
+        self.assertEqual(release.COMPONENT_SOURCE_MODELS, growth.MODEL_HASHES)
+        self.assertEqual(release.COMPONENT_SOURCE_TREE, growth.SOURCE_TREE)
+        version, frozen_key = growth.SOURCE_REVISIONS[growth.SOURCE_TREE]
+        model = json.loads((folder / f"six-core-source-expectations-v{version}.json").read_text(encoding="utf-8"))
+        self.assertEqual(model[frozen_key]["production_tree_sha256"], release.COMPONENT_SOURCE_TREE)
+        self.assertEqual(tuple(release.update.digest((folder / f"six-core-source-expectations-v{i}.json").read_bytes())
+                               for i in range(1, len(growth.MODEL_HASHES) + 1)), growth.MODEL_HASHES)
+        runtime, _ = self.implemented_components()
+        with patch.object(release, "COMPONENT_SOURCE_TREE", "0" * 64):
+            with self.assertRaisesRegex(RuntimeError, "random_components"):
+                self.validate(runtime)
 
     def test_conditional_alternative_authorization_does_not_select_fallback(self):
         runtime = copy.deepcopy(self.runtime)

@@ -1,0 +1,34 @@
+{
+  "schema": "eep.1019.migration-case.v1",
+  "status": "PENDING_GENUINE_OLD_HURT_AND_NEW_RC4_INPUTS",
+  "scope": "Genuine damaged save produced by public0.3.1 source to future frozenRC4 load/sync/reload; original queue fixture provenance separately bound",
+  "before": null,
+  "loaded_before_sync": null,
+  "after": null,
+  "reload": null,
+  "require_damaged_before": true,
+  "damage_mode": "fraction",
+  "damage_metrics": [
+    "hull",
+    "armor",
+    "shield"
+  ],
+  "damage_tolerance": 1e-06,
+  "relative_tolerance": 0,
+  "expected_before_version": "0.3.1",
+  "expected_before_run": "20261019T130448Z",
+  "notes": [
+    "before must be actual old-source hurt; do not replace with RC4-after-load damage",
+    "PENDING paths are null until immutable native receipts exist",
+    "original paid fixture0.3.0-rc.1 does not make ldpaidhurt a0.3.0 runtime save",
+    "preserve all strict differences and native initial UI failures"
+  ],
+  "fixture_source": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/single-homeworld-20261019/runs/20261019T053917Z/bmm00.sav",
+  "fixture_sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+  "expected_fleet_id": 128,
+  "expected_ship_id": 1008,
+  "expected_starbase_id": 15,
+  "expected_shipyard_queue_id": 50,
+  "queue_mode": "empty",
+  "expected_queued_items": 0
+}

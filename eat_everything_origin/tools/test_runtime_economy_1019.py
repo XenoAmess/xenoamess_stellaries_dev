@@ -122,8 +122,8 @@ class EconomyCollectorTests(unittest.TestCase):
         self.manifest_path = self.artifacts / "manifest.json"
         self.manifest_path.write_text(json.dumps(self.manifest), encoding="utf-8")
         # Actual RC4 package gates have separate tests; this suite isolates collection.
-        self.gate = mock.patch.object(e, "validate_package", side_effect=lambda path: load(path))
-        self.gate.start()
+        self.gate = mock.patch.object(e, "validate_package", side_effect=lambda path, *binding: load(path))
+        self.package_guard = self.gate.start()
         self.addCleanup(self.gate.stop)
         self.addCleanup(self.tmp.cleanup)
         self.set_anchor()
@@ -178,6 +178,7 @@ class EconomyCollectorTests(unittest.TestCase):
                 self.assertEqual(len(plan["months"]), 12)
                 self.assertEqual(plan["months"][0]["date"], "2200.02.01")
                 self.assertEqual(plan["months"][-1]["date"], "2201.01.01")
+                self.assertEqual((plan["expected_tree_sha256"], plan["expected_version"]), (TREE, "0.4.0-rc.4"))
         self.assertNotIn("runtime_1019", sys.modules)
         self.assertEqual(before, {path.name: path.read_bytes() for path in self.artifacts.iterdir()})
 
@@ -259,6 +260,175 @@ class EconomyCollectorTests(unittest.TestCase):
         self.assertEqual(len(backend.commands), 12)
         self.assertTrue((self.artifacts / (self.prefix + "yearui.sav")).is_file())
         self.assertEqual(load(self.artifacts / (self.prefix + "-economy-receipt.json"))["state"], "ABORTED")
+
+    def test_explicit_cli_binding_reaches_plan_and_execution_without_manifest_inference(self):
+        tree, version = "1" * 64, "0.4.0-rc.5"
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            e.main(["--anchor-receipt", str(self.receipt), "--prefix", self.prefix,
+                    "--government", "machine", "--expected-tree", tree,
+                    "--expected-version", version, "--dry-run"])
+        plan = json.loads(output.getvalue())
+        self.assertEqual((plan["expected_tree_sha256"], plan["expected_version"]), (tree, version))
+        self.package_guard.assert_called_with(self.manifest_path.resolve(), tree, version)
+        backend = FakeBackend(plan)
+        with contextlib.redirect_stdout(io.StringIO()):
+            e.collect(plan, lambda _: backend)
+        self.package_guard.assert_called_with(plan["manifest"], tree, version)
+        self.assertEqual(len(backend.commands), 12)
+
+    def test_live_entry_rechecks_explicit_binding_before_importing_parent_desktop(self):
+        plan = self.plan(expected_tree="1" * 64, expected_version="0.4.0-rc.5")
+        with mock.patch.object(e.common.LiveBackend, "__init__", return_value=None) as parent:
+            e.LiveBackend(plan)
+        self.package_guard.assert_called_with(plan["manifest"], "1" * 64, "0.4.0-rc.5")
+        parent.assert_called_once_with(plan)
+        with mock.patch.object(e, "validate_package", side_effect=ValueError("binding changed")), \
+                mock.patch.object(e.common.LiveBackend, "__init__", return_value=None) as parent:
+            with self.assertRaisesRegex(ValueError, "binding changed"):
+                e.LiveBackend(plan)
+        parent.assert_not_called()
+
+
+class PackageBindingTests(unittest.TestCase):
+    """Real file/tree/version/report binding; shared CSV/PK parsers have own tests."""
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(prefix="eep-economy-binding-")
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.mod = self.root / "mod"
+        self.mod.mkdir()
+        self.user = self.root / "user"
+        self.user.mkdir()
+        (self.user / "dlc_load.json").write_text(json.dumps({"enabled_mods": ["mod/ugc_eep-1019.mod"]}), encoding="utf-8")
+        (self.user / "settings.txt").write_text('language="l_simp_chinese"\nautosave=2\n', encoding="utf-8")
+        self.exe = self.root / "stellaris.exe"
+        self.exe.write_bytes(b"synthetic executable for filesystem binding")
+        self.exe_sha = hashlib.sha256(self.exe.read_bytes()).hexdigest()
+        self.version = "0.4.0-rc.5"
+        (self.mod / "descriptor.mod").write_text('version="' + self.version + '"\n', encoding="utf-8")
+        for index in range(58):
+            (self.mod / f"fixture{index:02}.txt").write_text("synthetic=yes\n", encoding="utf-8")
+        self.report = self.root / "report.json"
+        self.report.write_text(json.dumps({"status": "PASS", "game_exe_sha256": self.exe_sha}), encoding="utf-8")
+        files, tree = [], hashlib.sha256()
+        for path in sorted(self.mod.iterdir()):
+            raw = path.read_bytes()
+            files.append({"path": path.name, "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest()})
+            tree.update(path.name.encode() + b"\0" + raw)
+        self.tree = tree.hexdigest()
+        self.manifest = {"run_id": "synthetic", "copied_mod": str(self.mod), "userdir": str(self.user),
+                         "repository_mod_tree_sha256": self.tree, "copied_mod_tree_sha256": self.tree,
+                         "repository_mod_files": files, "language": "l_simp_chinese", "game_exe": str(self.exe),
+                         "game_exe_sha256": self.exe_sha, "enabled_mods": ["mod/ugc_eep-1019.mod"],
+                         "profile_id": "eep-0.4.0-single-production-mod", "static_gate": {"status": "PASS",
+                             "source_tree_sha256": self.tree, "version": self.version, "files": files.copy(),
+                             "report": str(self.report), "report_sha256": hashlib.sha256(self.report.read_bytes()).hexdigest()}}
+        self.path = self.root / "manifest.json"
+        self.save_manifest()
+        self.exe_patch = mock.patch.object(e.common, "EXE", self.exe_sha)
+        self.exe_patch.start()
+        self.addCleanup(self.exe_patch.stop)
+        import publish_1019 as gates
+        self.csv_patch = mock.patch.object(gates, "validate_weapon_csv_contract")
+        self.pk_patch = mock.patch.object(gates, "validate_planet_killer_contract")
+        self.csv, self.pk = self.csv_patch.start(), self.pk_patch.start()
+        self.addCleanup(self.csv_patch.stop)
+        self.addCleanup(self.pk_patch.stop)
+
+    def save_manifest(self):
+        self.path.write_text(json.dumps(self.manifest), encoding="utf-8")
+
+    def validate(self, **kwargs):
+        return e.validate_package(self.path, kwargs.get("tree", self.tree), kwargs.get("version", self.version))
+
+    def test_explicit_candidate_binds_real_files_descriptor_and_both_shared_contracts(self):
+        self.assertEqual(self.validate()["copied_mod_tree_sha256"], self.tree)
+        self.csv.assert_called_once_with(load(self.report), self.mod)
+        self.pk.assert_called_once_with(load(self.report), self.mod)
+
+    def test_economic_default_binding_is_independent_of_changing_growth_source_model(self):
+        with mock.patch.object(e, "TREE", self.tree), mock.patch.object(e, "VERSION", self.version), \
+                mock.patch.object(e.growth, "package", side_effect=ValueError("unrelated growth source changed")) as growth_gate:
+            self.validate()
+        growth_gate.assert_not_called()
+
+    def test_RC5_is_not_authorized_by_defaults_or_a_single_changed_argument(self):
+        for args in [(), (self.tree,), (TREE, self.version)]:
+            with self.subTest(args=args), self.assertRaises(ValueError):
+                e.validate_package(self.path, *args)
+
+    def test_tree_gate_version_and_full_file_table_mismatches_rejected(self):
+        original = json.loads(json.dumps(self.manifest))
+        for mutate in [lambda m: m.update(repository_mod_tree_sha256="0" * 64),
+                       lambda m: m["static_gate"].update(source_tree_sha256="0" * 64),
+                       lambda m: m["static_gate"].update(version="0.4.0-rc.4"),
+                       lambda m: m["static_gate"].update(files=m["static_gate"]["files"][:-1]),
+                       lambda m: m.update(repository_mod_files=m["repository_mod_files"][:-1])]:
+            self.manifest = json.loads(json.dumps(original))
+            mutate(self.manifest)
+            self.save_manifest()
+            with self.subTest(manifest=self.manifest), self.assertRaises(ValueError):
+                self.validate()
+
+    def test_actual_file_or_descriptor_change_cannot_use_original_report(self):
+        for name, replacement in [("fixture00.txt", b"changed=yes\n"),
+                                  ("descriptor.mod", b'version="0.4.0-rc.4"\n')]:
+            path = self.mod / name
+            old = path.read_bytes()
+            path.write_bytes(replacement)
+            with self.subTest(name=name), self.assertRaises(ValueError):
+                self.validate()
+            path.write_bytes(old)
+        # Even a consistently rebound file table/tree cannot change explicit version.
+        with self.assertRaisesRegex(ValueError, "version"):
+            self.validate(version="0.4.0-rc.4")
+
+    def test_descriptor_cannot_disagree_even_with_consistently_rebound_file_tables_and_tree(self):
+        (self.mod / "descriptor.mod").write_text('version="0.4.0-rc.4"\n', encoding="utf-8")
+        tree, files = hashlib.sha256(), []
+        for path in sorted(self.mod.iterdir()):
+            raw = path.read_bytes()
+            tree.update(path.name.encode() + b"\0" + raw)
+            files.append({"path": path.name, "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest()})
+        self.tree = tree.hexdigest()
+        self.manifest.update(repository_mod_tree_sha256=self.tree, copied_mod_tree_sha256=self.tree,
+                             repository_mod_files=files)
+        self.manifest["static_gate"].update(source_tree_sha256=self.tree, files=files)
+        self.save_manifest()
+        with self.assertRaisesRegex(ValueError, "descriptor version"):
+            self.validate()
+
+    def test_report_byte_change_or_shared_contract_failure_rejected(self):
+        self.report.write_text(self.report.read_text(encoding="utf-8") + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "report bytes"):
+            self.validate()
+        self.manifest["static_gate"]["report_sha256"] = hashlib.sha256(self.report.read_bytes()).hexdigest()
+        self.save_manifest()
+        self.pk.side_effect = RuntimeError("missing PK numeric source")
+        with self.assertRaisesRegex(RuntimeError, "PK numeric"):
+            self.validate()
+
+    def test_execution_rejects_changed_binding_before_backend_creation(self):
+        plan = {"artifacts": str(self.root), "prefix": "failed", "months": [], "manifest": str(self.path),
+                "manifest_sha256": hashlib.sha256(self.path.read_bytes()).hexdigest(),
+                "expected_tree_sha256": self.tree, "expected_version": "0.4.0-rc.4"}
+        backend = mock.Mock()
+        with self.assertRaises(ValueError):
+            e.collect(plan, backend)
+        backend.assert_not_called()
+        self.assertEqual(load(self.root / "failed-economy-receipt.json")["state"], "ABORTED")
+
+    def test_manifest_change_after_plan_is_rejected_before_backend_creation(self):
+        plan = {"artifacts": str(self.root), "prefix": "changed", "months": [], "manifest": str(self.path),
+                "manifest_sha256": hashlib.sha256(self.path.read_bytes()).hexdigest(),
+                "expected_tree_sha256": self.tree, "expected_version": self.version}
+        self.manifest["run_id"] = "another-run"
+        self.save_manifest()
+        backend = mock.Mock()
+        with self.assertRaisesRegex(ValueError, "manifest changed"):
+            e.collect(plan, backend)
+        backend.assert_not_called()
+        self.assertEqual(load(self.root / "changed-economy-receipt.json")["state"], "ABORTED")
 
 
 if __name__ == "__main__":

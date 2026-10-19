@@ -1,0 +1,1070 @@
+{
+  "schema": "eep.1019.native-relic-reference.v1",
+  "status": "PASS_SCOPED",
+  "scope": "same-day country0 entity/design/defense reference only; not UI DPS, maintenance or whole-Mod acceptance",
+  "checks": {
+    "original_before_sha": true,
+    "same_native_date": true,
+    "same_frozen_candidate": true,
+    "matter_C0_before_and_after": true,
+    "mother_identity_preserved": true,
+    "one_new_global_fleet_only": true,
+    "one_new_global_ship_only": true,
+    "one_new_country0_fleet_only": true,
+    "one_new_country0_ship_only": true,
+    "all_existing_country0_fleet_members_preserved": true,
+    "relic_reference_owned_by_country0": true,
+    "mother_50_components_six_required": true,
+    "relic_43_components_six_required": true,
+    "actual_mother_design_matches_frozen_source": true,
+    "actual_relic_design_matches_native_source": true,
+    "all_43_relic_slots_retained_on_mother": true,
+    "mother_native_maxima_at_least_relic": true
+  },
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+    "save_sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+    "run_id": "20261019T112808Z",
+    "version": "0.4.0-rc.4",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.audit.json",
+    "audit_sha256": "98ddca3821f0a1d606d473edf46fe95e7e77c9cea2d576154427a42990a82834",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.native-save.json",
+        "sha256": "1c971f0fb1d0dc41dded7c119223bce37c1c20fa134b4f3ce21489089fddf2fd",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\acceptance-fixtures\\pk2base.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\pk2base.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\pk2base.sav",
+          "sha256": "be5a344439dafe105d4959b4afa31143331b1daaaf915dba28bc70ee23f6f2e2",
+          "date": "2200.03.07"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.sav",
+    "save_sha256": "d29d0956d181198e87254e9c1c9d280f9f470576d479057c8621076a1a055201",
+    "run_id": "20261019T112808Z",
+    "version": "0.4.0-rc.4",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.audit.json",
+    "audit_sha256": "4d26e213bb342cc1afd7d7918900c6d967c5124dbd714b980735d771d7348d9e",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.native-save.json",
+        "sha256": "902f8bdc992f725f7b87e63fdcacb83e5fdaa4a3d4e276cad97ce2126ee76ac0",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\r4relic0.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\save games\\eep-test-history\\r4relic0.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\r4relic0.sav",
+          "sha256": "d29d0956d181198e87254e9c1c9d280f9f470576d479057c8621076a1a055201",
+          "date": "2200.03.07"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "before_gamestate_sha256": "bdd93739f77a45e70958ac75867d6dcfc60d03460b8a3511f7e3e049adaa16ba",
+  "after_gamestate_sha256": "1c06f2f928e783c22ff13e5b33e0c691eb1f61fb67991b8868e6fff53d62d907",
+  "mother": {
+    "fleet_id": "159",
+    "ship_id": "997",
+    "owned_by_country0": true,
+    "fleet_name": {
+      "key": "NAME_EEP_Baiqi_Mothership",
+      "variables": {},
+      "source_resolved_name": "白绮的裁决",
+      "ui_verified": false
+    },
+    "ship_name": {
+      "key": "NAME_EEP_Baiqi_Mothership",
+      "variables": {},
+      "source_resolved_name": "白绮的裁决",
+      "ui_verified": false
+    },
+    "ship_native": {
+      "original_owner": 0,
+      "fleet": 159,
+      "reserve": 0,
+      "graphical_culture": "eep_dreadnought_01",
+      "post_move_angle": -0.55433,
+      "hitpoints": 93960,
+      "shield_hitpoints": 167310,
+      "armor_hitpoints": 44787.6,
+      "max_hitpoints": 93960,
+      "max_shield_hitpoints": 167310,
+      "max_armor_hitpoints": 44787.6,
+      "rotation": -0.55433,
+      "forward_x": 0.52628,
+      "forward_y": 0.85031,
+      "upgrade_progress": 0,
+      "next_weapon_index": 34,
+      "created_this_update": "no",
+      "last_combat_activity": "2200.01.02",
+      "targeting": 1,
+      "combat_action": 1,
+      "upgradable": "no",
+      "construction_date": "2200.01.01",
+      "maturation_date": "0.01.01"
+    },
+    "fleet_native": {
+      "ground_support_stance": "selective",
+      "ship_class": "shipclass_starbase",
+      "space_fauna_growth_stance": "excessive",
+      "order_id": 1,
+      "hit_points": 93960.0,
+      "military_power": 163886.5625,
+      "diplomacy_weight": 163886.5625,
+      "cached_killed_ships": 0,
+      "cached_disabled_ships": 0,
+      "cached_disengaged_ships": 0,
+      "cached_combined_removed_ships": 0,
+      "commanding_armada": "none"
+    },
+    "design_name": "NAME_EEP_Baiqi_Mothership_1019",
+    "design_id": "1511",
+    "design_body_sha256": "be9562535dd559dbc4c74de4b8687d2075bbdd1b41b897e6b771ac98627129d9",
+    "design_shape": [
+      {
+        "ship_size": "juggernaut",
+        "sections": [
+          {
+            "template": "eep_mothership_section_1019",
+            "slot": "core",
+            "components": [
+              {
+                "slot": "AUX_UTILITY_1",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_10",
+                "template": "EEP_ADAPTIVE_TRACKING_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_11",
+                "template": "EEP_ADAPTIVE_REGEN_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_2",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_3",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_4",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_5",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_6",
+                "template": "EEP_ADAPTIVE_SHIELD_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_7",
+                "template": "EEP_ADAPTIVE_ARMOR_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_8",
+                "template": "EEP_ADAPTIVE_HULL_CORE"
+              },
+              {
+                "slot": "AUX_UTILITY_9",
+                "template": "EEP_ADAPTIVE_DAMAGE_CORE"
+              },
+              {
+                "slot": "EXTRA_LARGE_01",
+                "template": "TITAN_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_01",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_02",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_03",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_04",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_05",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_06",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_07",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_UTILITY_1",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_10",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_11",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_12",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_13",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_14",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_15",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_16",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_17",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_18",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_19",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_2",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_20",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_21",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_22",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_3",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_4",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_5",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_6",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_7",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_8",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_9",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "PD_08",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_09",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_10",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PLANET_KILLER_GUN_01",
+                "template": "EEP_PLANET_KILLER_DEVOURER"
+              },
+              {
+                "slot": "SMALL_GUN_01",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_02",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_03",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_04",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_05",
+                "template": "SMALL_PLASMA_3"
+              }
+            ]
+          }
+        ],
+        "required": [
+          "COLOSSUS_SHIP_THRUSTER_5",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "JUGGERNAUT_DARK_MATTER_REACTOR",
+          "JUMP_DRIVE_1",
+          "SENSOR_4",
+          "SHIP_AURA_INSPIRING_PRESENCE"
+        ]
+      }
+    ],
+    "slots": {
+      "EXTRA_LARGE_01": "TITAN_LASER",
+      "LARGE_GUN_01": "LARGE_PLASMA_3",
+      "LARGE_GUN_02": "LARGE_PLASMA_3",
+      "LARGE_GUN_03": "LARGE_PLASMA_3",
+      "LARGE_GUN_04": "LARGE_PLASMA_3",
+      "LARGE_GUN_05": "LARGE_PLASMA_3",
+      "LARGE_GUN_06": "LARGE_PLASMA_3",
+      "LARGE_GUN_07": "LARGE_PLASMA_3",
+      "SMALL_GUN_01": "SMALL_DISRUPTOR_3",
+      "SMALL_GUN_02": "SMALL_DISRUPTOR_3",
+      "SMALL_GUN_03": "SMALL_PLASMA_3",
+      "SMALL_GUN_04": "SMALL_PLASMA_3",
+      "SMALL_GUN_05": "SMALL_PLASMA_3",
+      "PD_08": "POINT_DEFENCE_3",
+      "PD_09": "POINT_DEFENCE_3",
+      "PD_10": "POINT_DEFENCE_3",
+      "LARGE_UTILITY_1": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_2": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_3": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_4": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_5": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_6": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_7": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_8": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_9": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_10": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_11": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_12": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_13": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_14": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_15": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_16": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_17": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_18": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_19": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_20": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_21": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_22": "LARGE_DARK_MATTER_DEFLECTOR",
+      "AUX_UTILITY_1": "SHIELD_BOOSTER",
+      "AUX_UTILITY_2": "SHIELD_BOOSTER",
+      "AUX_UTILITY_3": "SHIELD_BOOSTER",
+      "AUX_UTILITY_4": "AUTO_REPAIR",
+      "AUX_UTILITY_5": "AUTO_REPAIR",
+      "AUX_UTILITY_6": "EEP_ADAPTIVE_SHIELD_CORE",
+      "AUX_UTILITY_7": "EEP_ADAPTIVE_ARMOR_CORE",
+      "AUX_UTILITY_8": "EEP_ADAPTIVE_HULL_CORE",
+      "AUX_UTILITY_9": "EEP_ADAPTIVE_DAMAGE_CORE",
+      "AUX_UTILITY_10": "EEP_ADAPTIVE_TRACKING_CORE",
+      "AUX_UTILITY_11": "EEP_ADAPTIVE_REGEN_CORE",
+      "PLANET_KILLER_GUN_01": "EEP_PLANET_KILLER_DEVOURER"
+    },
+    "component_count": 50,
+    "required": [
+      "JUGGERNAUT_DARK_MATTER_REACTOR",
+      "SENSOR_4",
+      "JUMP_DRIVE_1",
+      "COMBAT_COMPUTER_LINE_SAPIENT",
+      "COLOSSUS_SHIP_THRUSTER_5",
+      "SHIP_AURA_INSPIRING_PRESENCE"
+    ],
+    "fleet_variables": {
+      "eep_applied_level": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_tracking_level": 0
+    },
+    "ship_variables": {},
+    "fleet_timed_modifiers": [
+      {
+        "modifier": "eep_mothership",
+        "days": -1
+      }
+    ],
+    "ship_timed_modifiers": [],
+    "ship_aura_modifier": {
+      "ship_fire_rate_mult": 0.05,
+      "ships_logistics_mult": -0.75
+    },
+    "ship_auras": [
+      {
+        "id": {
+          "id": "friendly_inspiring_presence",
+          "priority": 20
+        },
+        "source": {
+          "ship": 997,
+          "aura": "aura_inspiring_presence"
+        }
+      },
+      {
+        "id": {
+          "id": "juggernaut_logistics",
+          "priority": 1
+        },
+        "source": {
+          "ship": 997,
+          "aura": "juggernaut_logistics"
+        }
+      }
+    ],
+    "fleet_movement": {
+      "native": {
+        "time_since_last_path_update": 43,
+        "state": "move_idle"
+      },
+      "coordinate": {
+        "x": 40.65677,
+        "y": 161.7926,
+        "origin": 8
+      }
+    },
+    "ship_coordinate": {
+      "x": 40.65677,
+      "y": 161.7926,
+      "origin": 8
+    },
+    "direct_native_damage_or_upkeep_fields": {}
+  },
+  "relic": {
+    "fleet_id": "16777221",
+    "ship_id": "16777223",
+    "owned_by_country0": true,
+    "fleet_name": {
+      "key": "EEP_Native_Relic_1019",
+      "variables": {},
+      "source_resolved_name": "EEP_Native_Relic_1019",
+      "ui_verified": false
+    },
+    "ship_name": {
+      "key": "PREFIX_NAME_FORMAT",
+      "variables": {
+        "NAME": {
+          "key": "NAME_Relic",
+          "variables": {},
+          "source_resolved_name": "遗迹",
+          "ui_verified": false
+        },
+        "PREFIX": {
+          "key": "EEP",
+          "variables": {},
+          "source_resolved_name": "EEP",
+          "ui_verified": false
+        }
+      },
+      "source_resolved_name": "EEP遗迹",
+      "ui_verified": false
+    },
+    "ship_native": {
+      "fleet": 16777221,
+      "reserve": 0,
+      "graphical_culture": "npf_01",
+      "post_move_angle": 0,
+      "hitpoints": 20000,
+      "shield_hitpoints": 138352.5,
+      "armor_hitpoints": 30740,
+      "max_hitpoints": 20000,
+      "max_shield_hitpoints": 138352.5,
+      "max_armor_hitpoints": 30740,
+      "rotation": 0,
+      "forward_x": 0,
+      "forward_y": 1,
+      "upgrade_progress": 0,
+      "next_weapon_index": 16,
+      "combat_action": 1,
+      "construction_date": "2200.03.07",
+      "maturation_date": "0.01.01"
+    },
+    "fleet_native": {
+      "fleet_template": 82,
+      "ground_support_stance": "selective",
+      "ship_class": "shipclass_military",
+      "space_fauna_growth_stance": "excessive",
+      "hit_points": 20000.0,
+      "military_power": 33987.92187,
+      "diplomacy_weight": 33987.92187,
+      "cached_killed_ships": 0,
+      "cached_disabled_ships": 0,
+      "cached_disengaged_ships": 0,
+      "cached_combined_removed_ships": 0,
+      "commanding_armada": "none"
+    },
+    "design_name": "NAME_Relic",
+    "design_id": "1512",
+    "design_body_sha256": "068021fad8fa546808b7538935aae0a15882937493f1d7b658ffee720c3da599",
+    "design_shape": [
+      {
+        "ship_size": "npc_warship_01",
+        "sections": [
+          {
+            "template": "automated_dreadnought_key",
+            "slot": "mid",
+            "components": [
+              {
+                "slot": "AUX_UTILITY_1",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_2",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_3",
+                "template": "SHIELD_BOOSTER"
+              },
+              {
+                "slot": "AUX_UTILITY_4",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "AUX_UTILITY_5",
+                "template": "AUTO_REPAIR"
+              },
+              {
+                "slot": "EXTRA_LARGE_01",
+                "template": "TITAN_LASER"
+              },
+              {
+                "slot": "LARGE_GUN_01",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_02",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_03",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_04",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_05",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_06",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_GUN_07",
+                "template": "LARGE_PLASMA_3"
+              },
+              {
+                "slot": "LARGE_UTILITY_1",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_10",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_11",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_12",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_13",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_14",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_15",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_16",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_17",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_18",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_19",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_2",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_20",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_21",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_22",
+                "template": "LARGE_DARK_MATTER_DEFLECTOR"
+              },
+              {
+                "slot": "LARGE_UTILITY_3",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_4",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_5",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_6",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_7",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_8",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "LARGE_UTILITY_9",
+                "template": "LARGE_ARMOR_5"
+              },
+              {
+                "slot": "PD_08",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_09",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "PD_10",
+                "template": "POINT_DEFENCE_3"
+              },
+              {
+                "slot": "SMALL_GUN_01",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_02",
+                "template": "SMALL_DISRUPTOR_3"
+              },
+              {
+                "slot": "SMALL_GUN_03",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_04",
+                "template": "SMALL_PLASMA_3"
+              },
+              {
+                "slot": "SMALL_GUN_05",
+                "template": "SMALL_PLASMA_3"
+              }
+            ]
+          }
+        ],
+        "required": [
+          "BATTLESHIP_DARK_MATTER_REACTOR",
+          "COMBAT_COMPUTER_LINE_SAPIENT",
+          "JUMP_DRIVE_1",
+          "SENSOR_4",
+          "SHIP_AURA_INSPIRING_PRESENCE",
+          "SHIP_THRUSTER_5"
+        ]
+      }
+    ],
+    "slots": {
+      "EXTRA_LARGE_01": "TITAN_LASER",
+      "LARGE_GUN_01": "LARGE_PLASMA_3",
+      "LARGE_GUN_02": "LARGE_PLASMA_3",
+      "LARGE_GUN_03": "LARGE_PLASMA_3",
+      "LARGE_GUN_04": "LARGE_PLASMA_3",
+      "LARGE_GUN_05": "LARGE_PLASMA_3",
+      "LARGE_GUN_06": "LARGE_PLASMA_3",
+      "LARGE_GUN_07": "LARGE_PLASMA_3",
+      "SMALL_GUN_01": "SMALL_DISRUPTOR_3",
+      "SMALL_GUN_02": "SMALL_DISRUPTOR_3",
+      "SMALL_GUN_03": "SMALL_PLASMA_3",
+      "SMALL_GUN_04": "SMALL_PLASMA_3",
+      "SMALL_GUN_05": "SMALL_PLASMA_3",
+      "PD_08": "POINT_DEFENCE_3",
+      "PD_09": "POINT_DEFENCE_3",
+      "PD_10": "POINT_DEFENCE_3",
+      "LARGE_UTILITY_1": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_2": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_3": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_4": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_5": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_6": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_7": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_8": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_9": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_10": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_11": "LARGE_ARMOR_5",
+      "LARGE_UTILITY_12": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_13": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_14": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_15": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_16": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_17": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_18": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_19": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_20": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_21": "LARGE_DARK_MATTER_DEFLECTOR",
+      "LARGE_UTILITY_22": "LARGE_DARK_MATTER_DEFLECTOR",
+      "AUX_UTILITY_1": "SHIELD_BOOSTER",
+      "AUX_UTILITY_2": "SHIELD_BOOSTER",
+      "AUX_UTILITY_3": "SHIELD_BOOSTER",
+      "AUX_UTILITY_4": "AUTO_REPAIR",
+      "AUX_UTILITY_5": "AUTO_REPAIR"
+    },
+    "component_count": 43,
+    "required": [
+      "BATTLESHIP_DARK_MATTER_REACTOR",
+      "SENSOR_4",
+      "JUMP_DRIVE_1",
+      "COMBAT_COMPUTER_LINE_SAPIENT",
+      "SHIP_THRUSTER_5",
+      "SHIP_AURA_INSPIRING_PRESENCE"
+    ],
+    "fleet_variables": {},
+    "ship_variables": {},
+    "fleet_timed_modifiers": [],
+    "ship_timed_modifiers": [],
+    "ship_aura_modifier": {},
+    "ship_auras": [],
+    "fleet_movement": {
+      "native": {
+        "state": "move_idle"
+      },
+      "coordinate": {
+        "x": -30.1359,
+        "y": 0,
+        "origin": 8
+      }
+    },
+    "ship_coordinate": {
+      "x": -30.1359,
+      "y": 0,
+      "origin": 8
+    },
+    "direct_native_damage_or_upkeep_fields": {}
+  },
+  "defenses": {
+    "hull": {
+      "mother_current": 93960,
+      "mother_maximum": 93960,
+      "relic_current": 20000,
+      "relic_maximum": 20000
+    },
+    "armor": {
+      "mother_current": 44787.6,
+      "mother_maximum": 44787.6,
+      "relic_current": 30740,
+      "relic_maximum": 30740
+    },
+    "shield": {
+      "mother_current": 167310,
+      "mother_maximum": 167310,
+      "relic_current": 138352.5,
+      "relic_maximum": 138352.5
+    }
+  },
+  "extra_mother_slots": {
+    "AUX_UTILITY_6": "EEP_ADAPTIVE_SHIELD_CORE",
+    "AUX_UTILITY_7": "EEP_ADAPTIVE_ARMOR_CORE",
+    "AUX_UTILITY_8": "EEP_ADAPTIVE_HULL_CORE",
+    "AUX_UTILITY_9": "EEP_ADAPTIVE_DAMAGE_CORE",
+    "AUX_UTILITY_10": "EEP_ADAPTIVE_TRACKING_CORE",
+    "AUX_UTILITY_11": "EEP_ADAPTIVE_REGEN_CORE",
+    "PLANET_KILLER_GUN_01": "EEP_PLANET_KILLER_DEVOURER"
+  },
+  "shared_slot_differences": {},
+  "required_common": [
+    "COMBAT_COMPUTER_LINE_SAPIENT",
+    "JUMP_DRIVE_1",
+    "SENSOR_4",
+    "SHIP_AURA_INSPIRING_PRESENCE"
+  ],
+  "mother_only_required": [
+    "COLOSSUS_SHIP_THRUSTER_5",
+    "JUGGERNAUT_DARK_MATTER_REACTOR"
+  ],
+  "relic_only_required": [
+    "BATTLESHIP_DARK_MATTER_REACTOR",
+    "SHIP_THRUSTER_5"
+  ],
+  "entity_delta": {
+    "added_fleets": [
+      "16777221"
+    ],
+    "added_ships": [
+      "16777223"
+    ],
+    "removed_fleets": [],
+    "removed_ships": []
+  },
+  "existing_raw_changed_fleets": [],
+  "existing_raw_changed_ships": [
+    "0",
+    "115",
+    "116",
+    "117",
+    "12",
+    "18",
+    "200",
+    "248",
+    "25",
+    "300",
+    "302",
+    "303",
+    "6",
+    "60",
+    "93",
+    "997"
+  ],
+  "country_before": {
+    "native": {
+      "military_power": 164098.41406,
+      "economy_power": 527.60345,
+      "tech_power": 252.5,
+      "fleet_size": 15,
+      "used_naval_capacity": 115,
+      "empire_size": 50,
+      "num_sapient_pops": 4809,
+      "capital": 0,
+      "founder_species_ref": 3321888769,
+      "personality": "became_the_crisis",
+      "ruler": 167772189,
+      "type": "default",
+      "employable_pops": 4809
+    },
+    "stockpile": {
+      "energy": 205.75261,
+      "minerals": 291.06512,
+      "physics_research": 55.04048,
+      "society_research": 64.10048,
+      "engineering_research": 55.04048,
+      "influence": 150.6,
+      "unity": 109.43618,
+      "trade": 253.51742,
+      "alloys": 302.04642,
+      "menace": 75
+    },
+    "variables": {
+      "eep_c": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_entitled": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_pending": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_snapshot_state": 0,
+      "eep_component_tracking_level": 0,
+      "eep_d": 2,
+      "eep_fleet_stage": 0,
+      "eep_g": 0,
+      "eep_last_capacity": 0,
+      "eep_last_manufactured": 0,
+      "eep_last_return": 0,
+      "eep_made": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10,
+      "eep_stage": 0,
+      "eep_worlds": 0
+    }
+  },
+  "country_after": {
+    "native": {
+      "military_power": 164098.41406,
+      "economy_power": 527.60345,
+      "tech_power": 252.5,
+      "fleet_size": 15,
+      "used_naval_capacity": 115,
+      "empire_size": 50,
+      "num_sapient_pops": 4809,
+      "capital": 0,
+      "founder_species_ref": 3321888769,
+      "personality": "became_the_crisis",
+      "ruler": 167772189,
+      "type": "default",
+      "employable_pops": 4809
+    },
+    "stockpile": {
+      "energy": 205.75261,
+      "minerals": 291.06512,
+      "physics_research": 55.04048,
+      "society_research": 64.10048,
+      "engineering_research": 55.04048,
+      "influence": 150.6,
+      "unity": 109.43618,
+      "trade": 253.51742,
+      "alloys": 302.04642,
+      "menace": 75
+    },
+    "variables": {
+      "eep_c": 0,
+      "eep_component_armor_level": 0,
+      "eep_component_damage_level": 0,
+      "eep_component_entitled": 0,
+      "eep_component_hull_level": 0,
+      "eep_component_pending": 0,
+      "eep_component_regen_level": 0,
+      "eep_component_rewards": 0,
+      "eep_component_shield_level": 0,
+      "eep_component_snapshot_state": 0,
+      "eep_component_tracking_level": 0,
+      "eep_d": 2,
+      "eep_fleet_stage": 0,
+      "eep_g": 0,
+      "eep_last_capacity": 0,
+      "eep_last_manufactured": 0,
+      "eep_last_return": 0,
+      "eep_made": 0,
+      "eep_mothership_level": 0,
+      "eep_mothership_next": 10,
+      "eep_stage": 0,
+      "eep_worlds": 0
+    }
+  },
+  "source_chassis_modifiers_not_runtime_exports": {
+    "ship_evasion_add": 2,
+    "ships_upkeep_mult": -1,
+    "ship_weapon_damage": 2,
+    "ship_shield_mult": 3,
+    "ship_armor_add": 5000
+  },
+  "source_mother_fleet_modifier_not_runtime_export": {
+    "ship_hull_add": -70000,
+    "ship_evasion_add": 20,
+    "ships_upkeep_mult": -1,
+    "starbases_upkeep_mult": -1,
+    "ship_shield_mult": 3,
+    "ship_weapon_damage": 3.8,
+    "ship_fire_rate_mult": 0.8,
+    "ship_hull_mult": 2.132,
+    "ship_armor_mult": 0.74,
+    "ship_speed_mult": 0.8,
+    "ship_hull_regen_add_static": 1.392,
+    "ship_armor_regen_add_static": 2.088
+  },
+  "sources": {
+    "mother_design": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\mod\\eep-1019\\common\\global_ship_designs\\eep_mothership.txt",
+      "sha256": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123"
+    },
+    "relic_design": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\global_ship_designs\\leviathans_designs.txt",
+      "sha256": "b34a781443d03abbc9a5842ea9b6ec556b04e2cd380faa84c560a67bc8e5640e"
+    },
+    "mother_modifiers": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\mod\\eep-1019\\common\\static_modifiers\\eep_modifiers.txt",
+      "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d"
+    },
+    "relic_chassis": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\ship_sizes\\11_leviathans.txt",
+      "sha256": "a000ae956dec3b510084c78fe3268b864b91893bfb10e5a604eea9dc54c1da62"
+    },
+    "mother_names": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\mod\\eep-1019\\localisation\\simp_chinese\\eep_l_simp_chinese.yml",
+      "sha256": "b1add578c1f81db6e558485c1f8d96a7e780d1c4c932f2016a34f2a0e2c9fe66"
+    },
+    "relic_names": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\localisation\\simp_chinese\\name_lists\\ship_design_names_l_simp_chinese.yml",
+      "sha256": "6fcb9edc9a21efd8406d3495bbe901e08332b7eee1bb6c2d45c7cecdc101ad6e"
+    },
+    "name_format": {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\localisation\\simp_chinese\\name_system_l_simp_chinese.yml",
+      "sha256": "6b09e8f1eff6286b2ae799da49fafac76b63bb1412d1b9653ecb65e945c52a4a"
+    }
+  },
+  "tools": {
+    "audit_save.py": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\audit_save.py",
+      "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+    },
+    "inspect_1015.py": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1015.py",
+      "sha256": "24c66754024a7f35bcd314d378fc7129a76eebb67460a7f9211355d8d1e4e1d8"
+    },
+    "inspect_1019.py": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92"
+    },
+    "check_single_homeworld.py": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_single_homeworld.py",
+      "sha256": "cbbff12ee7fb5477d57f4dbb38d586ca4a2d663a424b788ab0ccb76b75a6a474"
+    }
+  },
+  "analysis_source_sha256": "1cb4964bea8c3516d523da336a26679a4c8fc278f05925a87660f646a161f658",
+  "limitations": [
+    "Name rendering is reconstructed from native name records and exact Chinese localization; UI was not inspected.",
+    "No direct native ship DPS/damage/upkeep amount fields were synthesized from military power or design values.",
+    "Stored native used_naval_capacity is reported as cached at this same-day save; no refresh or final monthly maintenance claim.",
+    "The reference was console-created for a separate feature fixture and cannot certify natural construction costs or startup economy.",
+    "Source modifier definitions are separated from actual stored timed/aura state and are not aggregate runtime modifier exports."
+  ]
+}

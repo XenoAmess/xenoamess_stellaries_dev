@@ -28,7 +28,15 @@ HP_ULPS = 8
 HP_TOLERANCE_CONTRACT = "max_0p01_or_8_binary32_ulp_expected_v1"
 MODEL_HASHES = (
     "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
-    "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8")
+    "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8",
+    "942b98c2aea0022ff7ffa017944abbf873d36331fd26c89862f83a37e31e4dd2",
+    "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f")
+SOURCE_TREE = "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a"
+SOURCE_REVISIONS = {
+    "1cc8b77c28f3d59b0d840982c7f039a209cb66f3e26d9c3280ad2dfa0f9dbd52": (3, "frozen_rc5"),
+    SOURCE_TREE: (4, "frozen_rc6")}
+HISTORICAL_RC4_TREE = "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468"
+HISTORICAL_RC4_SOURCE_COPY_SHA = "4d948c9782197108c2703b89a4e65d3fc1e4636a322a9497a5ba88ca408b6a2d"
 
 
 def sha(path):
@@ -159,6 +167,48 @@ def receipt_save(path):
     return state
 
 
+def applicable_model_hashes(tree):
+    if tree in SOURCE_REVISIONS:
+        return MODEL_HASHES[:SOURCE_REVISIONS[tree][0]]
+    if tree == HISTORICAL_RC4_TREE:
+        return MODEL_HASHES[:2]
+    raise ValueError("no predeclared six-core source model for this candidate tree")
+
+
+def validate_source_package(mod, actual, tree):
+    """Exact reviewed source revisions, plus the indexed historical RC4 API."""
+    expected_models = applicable_model_hashes(tree)
+    models = [ROOT / "docs/evidence/1019-analysis" / ("six-core-source-expectations-v" + str(i) + ".json")
+              for i in range(1, len(expected_models) + 1)]
+    if tuple(sha(path) for path in models) != expected_models:
+        raise ValueError("predeclared source models changed")
+    v1 = load(models[0])
+    if tree in SOURCE_REVISIONS:
+        model_version, frozen_key = SOURCE_REVISIONS[tree]
+        frozen = load(models[model_version - 1])[frozen_key]
+        expected_files = frozen["files"]
+        selected = frozen["selected_frozen_files_verified_against_manifest"]
+        if frozen["production_tree_sha256"] != tree or frozen["file_count"] != len(expected_files):
+            raise ValueError("predeclared source revision index differs")
+    else:
+        source_copy = ROOT / "docs/evidence/1019-requirements/rc4-source-copy.json"
+        if sha(source_copy) != HISTORICAL_RC4_SOURCE_COPY_SHA:
+            raise ValueError("historical RC4 source index changed")
+        frozen = load(source_copy)
+        if frozen["tree_sha256"] != tree:
+            raise ValueError("historical RC4 source tree differs")
+        expected_files = frozen["files"]
+        selected = v1["frozen_rc3"]["selected_frozen_files_verified_against_manifest"]
+    if sorted(actual, key=lambda item: item["path"]) != sorted(expected_files, key=lambda item: item["path"]):
+        raise ValueError("copied package differs from the exact predeclared source tree")
+    for source in selected:
+        if sha(mod / source["path"]) != source["sha256"]:
+            raise ValueError("fixed six-core source model no longer applies: " + source["path"])
+    for source in v1["source_evidence"]["native_references"]:
+        if sha(source["source"]) != source["sha256"]:
+            raise ValueError("native source model bytes changed")
+
+
 def package(manifest_path):
     """Verify the current copied bytes and the shared source-loading gate; no desktop imports."""
     import publish_1019 as gates
@@ -181,17 +231,7 @@ def package(manifest_path):
         raise ValueError("the original static report did not pass")
     gates.validate_weapon_csv_contract(report, mod)
     gates.validate_planet_killer_contract(report, mod)
-    models = [ROOT / "docs/evidence/1019-analysis" / ("six-core-source-expectations-v" + str(i) + ".json")
-              for i in (1, 2)]
-    if tuple(sha(path) for path in models) != MODEL_HASHES:
-        raise ValueError("predeclared source models changed")
-    v1 = load(models[0])
-    for source in v1["frozen_rc3"]["selected_frozen_files_verified_against_manifest"]:
-        if sha(mod / source["path"]) != source["sha256"]:
-            raise ValueError("fixed six-core source model no longer applies: " + source["path"])
-    for source in v1["source_evidence"]["native_references"]:
-        if sha(source["source"]) != source["sha256"]:
-            raise ValueError("native source model bytes changed")
+    validate_source_package(mod, actual, manifest["copied_mod_tree_sha256"])
     return manifest
 
 
@@ -483,7 +523,7 @@ def report(args):
             "C0_baseline": baseline_summary,
             "final_native_tiers": {kind: states[-1]["fleet_variables"].get(key) if states else None for kind, key in zip(KINDS, TIERS)},
             "receipt": {"path": str(Path(args.receipt).resolve()), "sha256": sha(args.receipt)},
-            "tool_sha256": sha(__file__), "source_models_sha256": MODEL_HASHES,
+            "tool_sha256": sha(__file__), "source_models_sha256": applicable_model_hashes(manifest["copied_mod_tree_sha256"]),
             "matrix": matrix, **supplements, "ordinary_controls": ordinary_controls,
             "startup_stability": startup, "native_evidence": evidence,
             "nonzero_tier_coverage": coverage,

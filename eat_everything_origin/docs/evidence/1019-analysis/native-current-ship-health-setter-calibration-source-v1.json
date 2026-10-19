@@ -1,0 +1,79 @@
+{
+  "schema": "eep.1019.native-current-ship-health-setter-source.v1",
+  "status": "PENDING",
+  "scope": "Pre-execution source/API/eligible current ships; cross-size native setter success and all health results remain pending.",
+  "plan": {
+    "path": "eat_everything_origin\\docs\\native-current-ship-health-setter-calibration-1019.md",
+    "sha256": "cf747ffa06272a134c2cb64a622a56c082a3610e55d34a89b8a2ca00562845b8",
+    "commands": [
+      "effect root={random_owned_ship={limit={is_ship_size=corvette} save_global_event_target_as=eep_native_health_reference_1019 reduce_hp=37.12345 reduce_shield=1000 damage_ship=37.12345 repair_shield_amount=41.34742 export_trigger_value_to_variable={trigger=has_hp_percentage variable=eep_test_health_h_before rounded=no} export_trigger_value_to_variable={trigger=has_armor_percentage variable=eep_test_health_a_before rounded=no} export_trigger_value_to_variable={trigger=has_shield_percentage variable=eep_test_health_s_before rounded=no}}}",
+      "effect root={event_target:eep_native_health_reference_1019={set_ship_design={design=NAME_Relic} export_trigger_value_to_variable={trigger=has_hp_percentage variable=eep_test_health_h_set rounded=no} export_trigger_value_to_variable={trigger=has_armor_percentage variable=eep_test_health_a_set rounded=no} export_trigger_value_to_variable={trigger=has_shield_percentage variable=eep_test_health_s_set rounded=no}}}",
+      "effect root={event_target:eep_native_health_reference_1019={export_trigger_value_to_variable={trigger=has_hp_percentage variable=eep_test_health_h_load rounded=no} export_trigger_value_to_variable={trigger=has_armor_percentage variable=eep_test_health_a_load rounded=no} export_trigger_value_to_variable={trigger=has_shield_percentage variable=eep_test_health_s_load rounded=no}}}"
+    ]
+  },
+  "actual_baseline": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc5-r5coreguard2-observation-v1.json",
+    "sha256": "cd97ca0d7d0020d843497562b4075ef75839d2326e43acedfb8a742a3b73bb85",
+    "provenance": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard2.sav",
+      "save_sha256": "44ebd953fa66ffb2a891db6e24bbe7a38f57ccb8024699a8de116e6aa120562e",
+      "run_id": "20261019T143452Z",
+      "version": "0.4.0-rc.5",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "1cc8b77c28f3d59b0d840982c7f039a209cb66f3e26d9c3280ad2dfa0f9dbd52",
+      "manifest_sha256": "864b7e768c694193b646a5ed1c277c9b370b1a7654514e4f41166da962ea013a",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard2.audit.json",
+      "audit_sha256": "fdb49bb17c88ecd18a1a2bcc0ef58429e3d1d13238ec46d09092be6a686a0bda",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard1.native-save.json",
+          "sha256": "fc27fe7e89625d98f2e72b928eb99c0172a4578b053400265d9e85a0841c01b8",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\save games\\eep-test-history\\r5coreguard1.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\save games\\eep-test-history\\r5coreguard1.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard1.sav",
+            "sha256": "44ebd953fa66ffb2a891db6e24bbe7a38f57ccb8024699a8de116e6aa120562e",
+            "date": "2200.01.01"
+          }
+        },
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard2.native-save.json",
+          "sha256": "693bce33bdb64465bba8270430a1c0cbaafdb18fe969a6dde737dece888b177d",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\save games\\eep-test-history\\r5coreguard2.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T143452Z\\save games\\eep-test-history\\r5coreguard2.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T143452Z\\r5coreguard2.sav",
+            "sha256": "44ebd953fa66ffb2a891db6e24bbe7a38f57ccb8024699a8de116e6aa120562e",
+            "date": "2200.01.01"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    }
+  },
+  "independent_prior_candidate_source": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\native-current-ship-health-calibration-source-v1.json",
+    "sha256": "c96da844ed4bc46b382673d485d7be77442a624723b7fbed2622f4431a8671e6",
+    "eligible_candidates_identical_baseline_save_sha256": true,
+    "candidate_fleet_id": "3",
+    "candidate_ship_ids": [
+      "3",
+      "4",
+      "5"
+    ],
+    "actual_chosen_ship_id": null
+  },
+  "native_relic_source": {
+    "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\global_ship_designs\\leviathans_designs.txt",
+    "sha256": "b34a781443d03abbc9a5842ea9b6ec556b04e2cd380faa84c560a67bc8e5640e"
+  },
+  "future_native_samples": {
+    "nchealthbefore": null,
+    "nchealthset": null,
+    "nchealthload": null
+  },
+  "cross_ship_size_supported": null,
+  "original_fraction_policy_and_all_historical_failures_unchanged": true,
+  "talon_branch_executed": false,
+  "old_relic_three_save_branch_executed": false
+}

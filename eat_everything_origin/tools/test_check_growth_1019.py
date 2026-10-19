@@ -9,6 +9,7 @@ import struct
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 import check_growth_1019 as c
@@ -194,6 +195,125 @@ class GrowthReportTests(unittest.TestCase):
         self.assertEqual(c.load(output)["status"], "FAIL")
         with self.assertRaises(FileExistsError):
             c.main(argv)
+
+    def test_revision_certificates_preserve_formula_objects_and_hp_policy(self):
+        folder = c.ROOT / "docs/evidence/1019-analysis"
+        models = [c.load(folder / f"six-core-source-expectations-v{i}.json")
+                  for i in range(1, len(c.MODEL_HASHES) + 1)]
+        self.assertEqual(tuple(c.sha(folder / f"six-core-source-expectations-v{i}.json")
+                               for i in range(1, len(c.MODEL_HASHES) + 1)), c.MODEL_HASHES)
+        for version, model in enumerate(models[2:], 3):
+            for name, value in model["retained_v1_expectations"].items():
+                self.assertEqual(value, models[0][name])
+            for name, value in model["retained_v2_expectations"].items():
+                self.assertEqual(value, models[1][name])
+            for region in model["source_equivalence"]:
+                self.assertIs(region["exactly_equal"], True)
+                self.assertEqual(region["predecessor_sha256"], region[f"rc{version + 2}_sha256"])
+            self.assertEqual(model["hp_policy_unchanged"], {
+                "hp_tolerance_contract": c.HP_TOLERANCE_CONTRACT,
+                "absolute_floor": c.TOLERANCE, "binary32_ulps": c.HP_ULPS, "relative_tolerance": 0,
+                "classification": "predeclared_engineering_allowance_not_engine_storage_proof",
+                "all_ten_modifier_exports_absolute_tolerance": .01, "ledger_identity_slots": "exact"})
+
+
+class SourceRevisionTests(unittest.TestCase):
+    """Temporary synthetic source indexes, never native Mod acceptance evidence."""
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix="eep-source-contract-")
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.folder = self.root / "docs/evidence/1019-analysis"
+        self.folder.mkdir(parents=True)
+        native = self.root / "synthetic-native.txt"
+        native.write_text("synthetic native source guard", encoding="utf-8")
+        self.native = native
+        self.packages = {}
+        def sources(label):
+            mod = self.root / label
+            for index in range(59):
+                path = mod / "sources" / (str(index) + ".txt")
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(label + " synthetic bytes " + str(index), encoding="utf-8")
+            actual = [{"path": path.relative_to(mod).as_posix(), "bytes": path.stat().st_size,
+                       "sha256": c.sha(path)} for path in sorted(mod.rglob("*")) if path.is_file()]
+            return mod, actual
+        historical = sources("historical")
+        self.packages[c.HISTORICAL_RC4_TREE] = historical
+        models = [{"frozen_rc3": {"selected_frozen_files_verified_against_manifest": historical[1][:6]},
+                   "source_evidence": {"native_references": [{"source": str(native), "sha256": c.sha(native)}]}},
+                  {"scope": "synthetic second model, no runtime claim"}]
+        for tree, (version, frozen_key) in sorted(c.SOURCE_REVISIONS.items(), key=lambda item: item[1][0]):
+            mod, actual = sources("revision" + str(version))
+            self.packages[tree] = (mod, actual)
+            models.append({frozen_key: {"production_tree_sha256": tree, "file_count": 59,
+                           "files": actual, "selected_frozen_files_verified_against_manifest": actual[:6]}})
+        for index, model in enumerate(models, 1):
+            (self.folder / f"six-core-source-expectations-v{index}.json").write_text(json.dumps(model), encoding="utf-8")
+        index_path = self.root / "docs/evidence/1019-requirements/rc4-source-copy.json"
+        index_path.parent.mkdir(parents=True)
+        index_path.write_text(json.dumps({"tree_sha256": c.HISTORICAL_RC4_TREE, "files": historical[1]}), encoding="utf-8")
+        self.source_copy = index_path
+        self.hashes = tuple(c.sha(self.folder / f"six-core-source-expectations-v{i}.json")
+                            for i in range(1, len(models) + 1))
+        for option, value in (("ROOT", self.root), ("MODEL_HASHES", self.hashes),
+                              ("HISTORICAL_RC4_SOURCE_COPY_SHA", c.sha(index_path))):
+            guard = patch.object(c, option, value)
+            guard.start()
+            self.addCleanup(guard.stop)
+
+    def validate(self, tree=None, actual=None):
+        tree = c.SOURCE_TREE if tree is None else tree
+        mod, rows = self.packages.get(tree, self.packages[c.SOURCE_TREE])
+        c.validate_source_package(mod, rows if actual is None else actual, tree)
+
+    def test_each_reviewed_tree_uses_its_exact_index_and_model_prefix(self):
+        for tree, (version, _) in c.SOURCE_REVISIONS.items():
+            self.validate(tree)
+            self.assertEqual(c.applicable_model_hashes(tree), self.hashes[:version])
+        self.validate(c.HISTORICAL_RC4_TREE)
+        self.assertEqual(c.applicable_model_hashes(c.HISTORICAL_RC4_TREE), self.hashes[:2])
+
+    def test_unknown_tree_cannot_register_itself_from_an_index(self):
+        with self.assertRaisesRegex(ValueError, "no predeclared"):
+            self.validate("0" * 64)
+
+    def test_selected_and_unselected_source_changes_both_fail(self):
+        for index in (0, 58):
+            actual = copy.deepcopy(self.packages[c.SOURCE_TREE][1])
+            actual[index]["sha256"] = "0" * 64
+            with self.subTest(index=index), self.assertRaisesRegex(ValueError, "exact predeclared"):
+                self.validate(actual=actual)
+
+    def test_changed_selected_disk_bytes_cannot_hide_behind_the_supplied_index(self):
+        mod, actual = self.packages[c.SOURCE_TREE]
+        (mod / actual[0]["path"]).write_text("unknown modified source", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "no longer applies"):
+            self.validate()
+
+    def test_missing_file_or_duplicate_index_fails(self):
+        actual = self.packages[c.SOURCE_TREE][1]
+        for rows in (actual[:-1], [*actual[:-1], actual[0]]):
+            with self.assertRaisesRegex(ValueError, "exact predeclared"):
+                self.validate(actual=rows)
+
+    def test_changed_or_missing_revision_certificate_fails(self):
+        path = self.folder / f"six-core-source-expectations-v{len(self.hashes)}.json"
+        raw = path.read_bytes()
+        path.write_bytes(raw + b"\n")
+        with self.assertRaisesRegex(ValueError, "models changed"):
+            self.validate()
+        path.unlink()
+        with self.assertRaises(FileNotFoundError):
+            self.validate()
+
+    def test_historical_index_and_native_source_remain_byte_bound(self):
+        self.source_copy.write_bytes(self.source_copy.read_bytes() + b"\n")
+        with self.assertRaisesRegex(ValueError, "historical RC4 source index changed"):
+            self.validate(c.HISTORICAL_RC4_TREE)
+        self.native.write_text("unknown native source", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "native source model bytes changed"):
+            self.validate()
 
 
 if __name__ == "__main__":

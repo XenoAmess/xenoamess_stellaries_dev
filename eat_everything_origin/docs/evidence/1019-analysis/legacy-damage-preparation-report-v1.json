@@ -1,0 +1,101 @@
+{
+  "schema": "eep.1019.legacy-damage-static-preparation.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Unchanged public0.3.1 source and current0PK static gate preparation, old native Mother damage inventory and explicit future native setup only",
+  "runtime_status": "NOT_PERFORMED_BY_THIS_TASK",
+  "checks": {
+    "unchanged_public031_tree": true,
+    "public031_version": true,
+    "static_report_PASS": true,
+    "zero_PK_callback_numeric_applicability": true,
+    "original_baseline_gate_bytes_unchanged": true,
+    "original_baseline_static_report_unchanged": true,
+    "all47_public_source_files_and_copy_match": true,
+    "all137_verified_old_mothers_healthy": true,
+    "public42_and_paid11_healthy": true,
+    "thirteen_gaps_explicit_and_no_audit_fabricated": true,
+    "separate_new_profile_no_current_RC4_pointer_write": true,
+    "no_future_damaged_fixture_claim": true,
+    "native_absolute_reduce_hp_documented": true,
+    "native_absolute_reduce_shield_documented": true,
+    "native_single_player_load_hook_separate": true,
+    "no_load_semantics_guessed": true
+  },
+  "gate": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\public031-gate.json",
+    "sha256": "9c7fb1f7937d5101d85cf84460a108fe3853cf3ae14b3a5175a045fcef53c7d3"
+  },
+  "profile": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\public031-profile.json",
+    "sha256": "6dff682ae7634e3a7bc0030a38aaf01721757e76f97ed9dac67c2356b3451d9e"
+  },
+  "static_report": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-legacy-damage\\public031-open-kaishek.json",
+    "sha256": "46b24c5320556463031e026f1535e529c794f29249ac7a0edbabfd3f34ca1681"
+  },
+  "old_inventory": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\legacy-native-mother-damage-inventory-v2.json",
+    "sha256": "5d0a92857963bdec89c54ad9a3fbfdde4f67d7b54aefc112c769bd5069198ad5"
+  },
+  "gaps": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\legacy-native-mother-damage-gap-review-v1.json",
+    "sha256": "73b2d3d439b822e329e8c82e33c5fcf7ec80e71400f3fefdd01347877d51c665"
+  },
+  "native_command_plan": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\legacy-damage-native-command-plan-v1.json",
+    "sha256": "58d37701035ec6c39d705cc1a251738dde4c40afc55a0c810bc7a105018c5d3f"
+  },
+  "native_sources": {
+    "native_effects": {
+      "evidence": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T112808Z\\logs\\script_documentation\\effects.log",
+        "sha256": "d2125f7356eccbb5c1a175cc7cebaad3f87cfcad211e908448eec73764d9df09"
+      },
+      "lines": {
+        "490": "reduce_hp - Reduces the hull points of the scoped ship by a specific amount",
+        "491": "reduce_hp = 120",
+        "492": "Supported Scopes: ship",
+        "493": "",
+        "494": "reduce_hp_percent - Reduces the hull points of the scoped ship by a relative amount",
+        "495": "reduce_hp_percent = 0.25",
+        "496": "Supported Scopes: ship",
+        "497": "",
+        "498": "reduce_shield - Reduces the shield points of the scoped ship by a specific amount",
+        "499": "reduce_shield = 120",
+        "500": "Supported Scopes: ship",
+        "501": "",
+        "502": "damage_ship - Damages ship (or all ships in scoped fleet) by a specific amount",
+        "503": "damage_ship = 120",
+        "504": "Can also specify attacker (ship or country) for on-action attribution:",
+        "505": "damage_ship = { amount = 120 attacker = <ATTACKER SHIP OR COUNTRY> }",
+        "506": "Supported Scopes: ship fleet",
+        "507": "",
+        "2820": "repair_armor_amount - Restores a certain amount of armor points to the scoped ship or fleet",
+        "2821": "repair_armor_amount = 10.0",
+        "2822": "Supported Scopes: ship fleet"
+      }
+    },
+    "native_on_actions": {
+      "evidence": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\00_on_actions.txt",
+        "sha256": "7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306"
+      },
+      "lines": {
+        "1": "# Triggers when the game starts",
+        "2": "on_game_start = {",
+        "31": "on_game_start_country = {",
+        "80": "# No scope, like on_game_start",
+        "81": "# Does not run when loading MP saves due to OOS concerns",
+        "82": "on_single_player_save_game_load = {",
+        "83": "}"
+      }
+    }
+  },
+  "limitations": [
+    "No game prepare/launch/stop/UI or native damaged save was performed.",
+    "on_game_start_country reload execution is not runtime-certified; use explicit country sync or independent native hook-marker test.",
+    "damage_ship armor channel and negative repair sign need real native H/A/S results.",
+    "New gate is static-only and does not overwrite or replace historical baseline acceptance.",
+    "j13ten original is0.3.0-rc.1; future load-and-damage under exact public031 creates a genuine0.3.1-source damaged fixture while preserving original source and queue binding."
+  ]
+}

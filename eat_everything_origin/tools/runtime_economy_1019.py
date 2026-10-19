@@ -1,6 +1,7 @@
 """Collect twelve separate native monthly observations; default is an offline plan."""
 import argparse
 from datetime import datetime, timezone
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -13,20 +14,55 @@ import check_growth_1019 as growth
 import runtime_growth_1019 as common
 
 TREE = "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468"
+VERSION = "0.4.0-rc.4"
 CIVICS = {"machine": "civic_machine_terminator", "hive": "civic_hive_devouring_swarm",
           "purifier": "civic_fanatic_purifiers"}
 
 
-def validate_package(manifest_path):
-    manifest = growth.package(manifest_path)
-    if (manifest["copied_mod_tree_sha256"] != TREE or len(manifest["repository_mod_files"]) != 59
+def validate_package(manifest_path, expected_tree=TREE, expected_version=VERSION):
+    if (not isinstance(expected_tree, str) or not re.fullmatch(r"[0-9a-f]{64}", expected_tree)
+            or not isinstance(expected_version, str)
+            or not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?(?:\+[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?", expected_version)):
+        raise ValueError("explicit expected tree/version must be a SHA256 and semantic version")
+    import publish_1019 as gates
+    manifest = common.read_json(Path(manifest_path))
+    mod = Path(manifest["copied_mod"])
+    actual, tree = [], hashlib.sha256()
+    for path in sorted(p for p in mod.rglob("*") if p.is_file()):
+        raw, name = path.read_bytes(), path.relative_to(mod).as_posix()
+        actual.append({"path": name, "bytes": len(raw), "sha256": common.digest(raw)})
+        tree.update(name.encode("utf-8"))
+        tree.update(b"\0")
+        tree.update(raw)
+    gate = manifest["static_gate"]
+    if (len(actual) != 59 or actual != sorted(manifest["repository_mod_files"], key=lambda x: x["path"])
+            or actual != sorted(gate["files"], key=lambda x: x["path"])
+            or tree.hexdigest() != expected_tree
+            or manifest["repository_mod_tree_sha256"] != expected_tree
+            or manifest["copied_mod_tree_sha256"] != expected_tree
             or manifest.get("profile_id") != "eep-0.4.0-single-production-mod"
             or manifest.get("enabled_mods") != ["mod/ugc_eep-1019.mod"]
-            or manifest["static_gate"].get("version") != "0.4.0-rc.4"):
-        raise ValueError("economy collection requires the exact single-Mod Chinese RC4 package")
+            or manifest.get("language") != "l_simp_chinese"
+            or manifest.get("game_exe_sha256") != common.EXE
+            or common.digest(Path(manifest["game_exe"]).read_bytes()) != common.EXE
+            or gate.get("source_tree_sha256") != expected_tree or gate.get("version") != expected_version
+            or gate.get("status") != "PASS"):
+        raise ValueError("economy collection requires the explicit single-Mod Chinese package tree/version and full file binding")
+    versions = [a.unquote(value) for key, value, block in a.fields((mod / "descriptor.mod").read_text(encoding="utf-8-sig"))
+                if key == "version" and not block]
+    if versions != [expected_version]:
+        raise ValueError("actual descriptor version differs from explicit expected version")
+    report_path = Path(gate["report"])
+    if common.digest(report_path.read_bytes()) != gate["report_sha256"]:
+        raise ValueError("original package report bytes differ from the bound static gate")
+    report = common.read_json(report_path)
+    if report.get("status") != "PASS" or report.get("game_exe_sha256") != common.EXE:
+        raise ValueError("the bound whole-package report did not pass for this executable")
+    gates.validate_weapon_csv_contract(report, mod)
+    gates.validate_planet_killer_contract(report, mod)
     user = Path(manifest["userdir"])
     if common.read_json(user / "dlc_load.json").get("enabled_mods") != ["mod/ugc_eep-1019.mod"]:
-        raise ValueError("actual enabled Mod list differs from the single RC4 candidate")
+        raise ValueError("actual enabled Mod list differs from the explicit single candidate")
     settings = (user / "settings.txt").read_text(encoding="utf-8-sig")
     if (not re.search(r'(?m)^language\s*=\s*"l_simp_chinese"\s*$', settings)
             or not re.search(r"(?m)^autosave\s*=\s*2\s*$", settings)):
@@ -71,12 +107,12 @@ def require_new_outputs(plan):
             raise FileExistsError("refusing to overwrite an economy receipt or comparison")
 
 
-def make_plan(anchor_receipt, prefix, government, autosave_dir=None):
+def make_plan(anchor_receipt, prefix, government, autosave_dir=None, expected_tree=TREE, expected_version=VERSION):
     if not re.fullmatch(r"[A-Za-z0-9_-]{1,20}", prefix):
         raise ValueError("prefix must be 1-20 safe ASCII characters")
     receipt_path = Path(anchor_receipt).resolve(strict=True)
     manifest_path = receipt_path.parent / "manifest.json"
-    manifest = validate_package(manifest_path)
+    manifest = validate_package(manifest_path, expected_tree, expected_version)
     receipt = common.read_json(receipt_path)
     state = growth.receipt_save(receipt_path)
     if state["date"] != "2200.01.01":
@@ -98,7 +134,8 @@ def make_plan(anchor_receipt, prefix, government, autosave_dir=None):
             "manifest": str(manifest_path), "manifest_sha256": common.digest(manifest_path.read_bytes()),
             "anchor_receipt": str(receipt_path), "anchor_receipt_sha256": common.digest(receipt_path.read_bytes()),
             "anchor_sha256": state["sha256"], "anchor_date": state["date"], "autosave_dir": str(folder),
-            "expected_tree_sha256": TREE, "country": 0, "fleet": state["fleet"], "ship": state["ship"],
+            "expected_tree_sha256": expected_tree, "expected_version": expected_version,
+            "country": 0, "fleet": state["fleet"], "ship": state["ship"],
             "months": months, "final_ui_stage": prefix + "yearui"}
     require_new_outputs(plan)
     return plan
@@ -126,6 +163,10 @@ def compare_economy(auto, ui):
 
 
 class LiveBackend(common.LiveBackend):
+    def __init__(self, plan):
+        validate_package(plan["manifest"], plan.get("expected_tree_sha256", TREE), plan.get("expected_version", VERSION))
+        super().__init__(plan)
+
     def final_save(self, stage, date):
         errors = self.cleanup()
         if errors:
@@ -141,7 +182,7 @@ def collect(plan, backend_factory=LiveBackend, autosave_timeout=25):
     backend = None
     try:
         # Revalidate package bytes when execution actually begins, not just during an earlier plan.
-        validate_package(plan["manifest"])
+        validate_package(plan["manifest"], plan.get("expected_tree_sha256", TREE), plan.get("expected_version", VERSION))
         if common.digest(Path(plan["manifest"]).read_bytes()) != plan["manifest_sha256"]:
             raise ValueError("native run manifest changed after economy planning")
         backend = backend_factory(plan)
@@ -226,11 +267,14 @@ def main(argv=None):
     parser.add_argument("--prefix", required=True)
     parser.add_argument("--government", choices=tuple(CIVICS), required=True)
     parser.add_argument("--autosave-dir", type=Path)
+    parser.add_argument("--expected-tree", default=TREE)
+    parser.add_argument("--expected-version", default=VERSION)
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--dry-run", action="store_true")
     modes.add_argument("--execute", action="store_true")
     args = parser.parse_args(argv)
-    plan = make_plan(args.anchor_receipt, args.prefix, args.government, args.autosave_dir)
+    plan = make_plan(args.anchor_receipt, args.prefix, args.government, args.autosave_dir,
+                     args.expected_tree, args.expected_version)
     output = collect(plan) if args.execute else plan
     print(json.dumps(output, ensure_ascii=False, indent=2), flush=True)
 

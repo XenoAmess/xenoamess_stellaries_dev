@@ -1,0 +1,1578 @@
+{
+  "schema": "eep.1019.native-unset-variable-observation.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Live-log single byte snapshot, exact source line/scope, raw serialized zero variables and observer no-default audit; not a final run freeze or causal diagnosis",
+  "snapshot_read_start_utc": "2026-10-19T14:01:32.152111+00:00",
+  "snapshot_read_end_utc": "2026-10-19T14:01:32.152334+00:00",
+  "snapshot_files": [
+    {
+      "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-migration-unset-variable-log-observation-v1\\.gitattributes",
+      "source": null,
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-migration-unset-variable-log-observation-v1\\error-log-observed.log",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\logs\\error.log",
+      "bytes": 7665,
+      "sha256": "33375065d206e53465609461b4be8f98b5bc556422efbc9b32bb1fc9e409a23f"
+    },
+    {
+      "path": "eat_everything_origin\\docs\\evidence\\1019-analysis\\rc4-migration-unset-variable-log-observation-v1\\eep_mothership_effects.frozen.txt",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\mod\\eep-1019\\common\\scripted_effects\\eep_mothership_effects.txt",
+      "bytes": 8271,
+      "sha256": "b4efb84032796adc1f87d0613a56e601926dca25ba645b7b2cd60dd13ea17ed5"
+    }
+  ],
+  "log_sha256": "33375065d206e53465609461b4be8f98b5bc556422efbc9b32bb1fc9e409a23f",
+  "log_bytes": 7665,
+  "complete_stopped_log_freeze": false,
+  "native_variable_warnings": [
+    {
+      "native_log_line": 23,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_mothership_level is not set for scoped country 'EEP 03 铁心灭绝者' at  common/scripted_effects/eep_mothership_effects.txt:72 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_mothership_level",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 03 铁心灭绝者",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 72,
+      "source_line_text": "        set_variable = { which = eep_mothership_next value = eep_mothership_level }",
+      "source_context": [
+        {
+          "line": 69,
+          "text": "        set_variable = { which = eep_mothership_level value = eep_c }"
+        },
+        {
+          "line": 70,
+          "text": "        divide_variable = { which = eep_mothership_level value = 10 }"
+        },
+        {
+          "line": 71,
+          "text": "        floor_variable = eep_mothership_level"
+        },
+        {
+          "line": 72,
+          "text": "        set_variable = { which = eep_mothership_next value = eep_mothership_level }"
+        },
+        {
+          "line": 73,
+          "text": "        change_variable = { which = eep_mothership_next value = 1 }"
+        },
+        {
+          "line": 74,
+          "text": "        multiply_variable = { which = eep_mothership_next value = 10 }"
+        },
+        {
+          "line": 75,
+          "text": "        subtract_variable = { which = eep_mothership_next value = eep_c }"
+        }
+      ],
+      "source_scope_review": "Country current scope; RHS local eep_mothership_level after set/divide/floor69-71",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 24,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_mothership_level is not set for scoped country 'EEP 03 铁心灭绝者' at  common/scripted_effects/eep_mothership_effects.txt:146 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_mothership_level",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 03 铁心灭绝者",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 146,
+      "source_line_text": "                    set_variable = { which = eep_applied_level value = prev.eep_mothership_level }",
+      "source_context": [
+        {
+          "line": 143,
+          "text": "                            }"
+        },
+        {
+          "line": 144,
+          "text": "                        }"
+        },
+        {
+          "line": 145,
+          "text": "                    }"
+        },
+        {
+          "line": 146,
+          "text": "                    set_variable = { which = eep_applied_level value = prev.eep_mothership_level }"
+        },
+        {
+          "line": 147,
+          "text": "                    remove_modifier = eep_mothership_evolution"
+        },
+        {
+          "line": 148,
+          "text": "                    if = {"
+        },
+        {
+          "line": 149,
+          "text": "                        limit = { check_variable = { which = eep_applied_level value > 0 } }"
+        }
+      ],
+      "source_scope_review": "Fleet current scope; RHS prev.eep_mothership_level accesses calling country",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 25,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_entitled is not set for scoped country 'EEP 03 铁心灭绝者' at  common/scripted_effects/eep_mothership_effects.txt:37 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_entitled",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 03 铁心灭绝者",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 37,
+      "source_line_text": "            check_variable = { which = eep_component_rewards value < owner.eep_component_entitled }",
+      "source_context": [
+        {
+          "line": 34,
+          "text": "    set_variable = { which = eep_component_work_budget value = 200 }"
+        },
+        {
+          "line": 35,
+          "text": "    while = {"
+        },
+        {
+          "line": 36,
+          "text": "        limit = {"
+        },
+        {
+          "line": 37,
+          "text": "            check_variable = { which = eep_component_rewards value < owner.eep_component_entitled }"
+        },
+        {
+          "line": 38,
+          "text": "            check_variable = { which = eep_component_work_budget value > 0 }"
+        },
+        {
+          "line": 39,
+          "text": "        }"
+        },
+        {
+          "line": 40,
+          "text": "        random_list = {"
+        }
+      ],
+      "source_scope_review": "Fleet while condition; RHS owner.eep_component_entitled accesses owning country",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 26,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_shield_level is not set for scoped fleet '白绮的裁决' at  common/scripted_effects/eep_mothership_effects.txt:53 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_shield_level",
+      "reported_scope_kind": "fleet",
+      "reported_scope_name": "白绮的裁决",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 53,
+      "source_line_text": "        set_variable = { which = eep_component_shield_level value = prev.eep_component_shield_level }",
+      "source_context": [
+        {
+          "line": 50,
+          "text": "    }"
+        },
+        {
+          "line": 51,
+          "text": "    clear_variable = eep_component_work_budget"
+        },
+        {
+          "line": 52,
+          "text": "    owner = {"
+        },
+        {
+          "line": 53,
+          "text": "        set_variable = { which = eep_component_shield_level value = prev.eep_component_shield_level }"
+        },
+        {
+          "line": 54,
+          "text": "        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }"
+        },
+        {
+          "line": 55,
+          "text": "        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }"
+        },
+        {
+          "line": 56,
+          "text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }"
+        }
+      ],
+      "source_scope_review": "Owner country current scope; RHS prev accesses fleet shield tier",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 27,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_armor_level is not set for scoped fleet '白绮的裁决' at  common/scripted_effects/eep_mothership_effects.txt:54 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_armor_level",
+      "reported_scope_kind": "fleet",
+      "reported_scope_name": "白绮的裁决",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 54,
+      "source_line_text": "        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }",
+      "source_context": [
+        {
+          "line": 51,
+          "text": "    clear_variable = eep_component_work_budget"
+        },
+        {
+          "line": 52,
+          "text": "    owner = {"
+        },
+        {
+          "line": 53,
+          "text": "        set_variable = { which = eep_component_shield_level value = prev.eep_component_shield_level }"
+        },
+        {
+          "line": 54,
+          "text": "        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }"
+        },
+        {
+          "line": 55,
+          "text": "        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }"
+        },
+        {
+          "line": 56,
+          "text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }"
+        },
+        {
+          "line": 57,
+          "text": "        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }"
+        }
+      ],
+      "source_scope_review": "Owner country current scope; RHS prev accesses fleet armor tier",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 28,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_hull_level is not set for scoped fleet '白绮的裁决' at  common/scripted_effects/eep_mothership_effects.txt:55 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_hull_level",
+      "reported_scope_kind": "fleet",
+      "reported_scope_name": "白绮的裁决",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 55,
+      "source_line_text": "        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }",
+      "source_context": [
+        {
+          "line": 52,
+          "text": "    owner = {"
+        },
+        {
+          "line": 53,
+          "text": "        set_variable = { which = eep_component_shield_level value = prev.eep_component_shield_level }"
+        },
+        {
+          "line": 54,
+          "text": "        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }"
+        },
+        {
+          "line": 55,
+          "text": "        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }"
+        },
+        {
+          "line": 56,
+          "text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }"
+        },
+        {
+          "line": 57,
+          "text": "        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }"
+        },
+        {
+          "line": 58,
+          "text": "        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }"
+        }
+      ],
+      "source_scope_review": "Owner country current scope; RHS prev accesses fleet hull tier",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 29,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_damage_level is not set for scoped fleet '白绮的裁决' at  common/scripted_effects/eep_mothership_effects.txt:56 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_damage_level",
+      "reported_scope_kind": "fleet",
+      "reported_scope_name": "白绮的裁决",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 56,
+      "source_line_text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }",
+      "source_context": [
+        {
+          "line": 53,
+          "text": "        set_variable = { which = eep_component_shield_level value = prev.eep_component_shield_level }"
+        },
+        {
+          "line": 54,
+          "text": "        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }"
+        },
+        {
+          "line": 55,
+          "text": "        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }"
+        },
+        {
+          "line": 56,
+          "text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }"
+        },
+        {
+          "line": 57,
+          "text": "        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }"
+        },
+        {
+          "line": 58,
+          "text": "        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }"
+        },
+        {
+          "line": 59,
+          "text": "        set_variable = { which = eep_component_rewards value = prev.eep_component_rewards }"
+        }
+      ],
+      "source_scope_review": "Owner country current scope; RHS prev accesses fleet damage tier",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 30,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_tracking_level is not set for scoped fleet '白绮的裁决' at  common/scripted_effects/eep_mothership_effects.txt:57 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_tracking_level",
+      "reported_scope_kind": "fleet",
+      "reported_scope_name": "白绮的裁决",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 57,
+      "source_line_text": "        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }",
+      "source_context": [
+        {
+          "line": 54,
+          "text": "        set_variable = { which = eep_component_armor_level value = prev.eep_component_armor_level }"
+        },
+        {
+          "line": 55,
+          "text": "        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }"
+        },
+        {
+          "line": 56,
+          "text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }"
+        },
+        {
+          "line": 57,
+          "text": "        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }"
+        },
+        {
+          "line": 58,
+          "text": "        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }"
+        },
+        {
+          "line": 59,
+          "text": "        set_variable = { which = eep_component_rewards value = prev.eep_component_rewards }"
+        },
+        {
+          "line": 60,
+          "text": "        set_variable = { which = eep_component_snapshot_state value = 0 }"
+        }
+      ],
+      "source_scope_review": "Owner country current scope; RHS prev accesses fleet tracking tier",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 31,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_regen_level is not set for scoped fleet '白绮的裁决' at  common/scripted_effects/eep_mothership_effects.txt:58 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_regen_level",
+      "reported_scope_kind": "fleet",
+      "reported_scope_name": "白绮的裁决",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 58,
+      "source_line_text": "        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }",
+      "source_context": [
+        {
+          "line": 55,
+          "text": "        set_variable = { which = eep_component_hull_level value = prev.eep_component_hull_level }"
+        },
+        {
+          "line": 56,
+          "text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }"
+        },
+        {
+          "line": 57,
+          "text": "        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }"
+        },
+        {
+          "line": 58,
+          "text": "        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }"
+        },
+        {
+          "line": 59,
+          "text": "        set_variable = { which = eep_component_rewards value = prev.eep_component_rewards }"
+        },
+        {
+          "line": 60,
+          "text": "        set_variable = { which = eep_component_snapshot_state value = 0 }"
+        },
+        {
+          "line": 61,
+          "text": "        set_country_flag = eep_component_snapshot_available"
+        }
+      ],
+      "source_scope_review": "Owner country current scope; RHS prev accesses fleet regen tier",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 32,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_rewards is not set for scoped fleet '白绮的裁决' at  common/scripted_effects/eep_mothership_effects.txt:59 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_rewards",
+      "reported_scope_kind": "fleet",
+      "reported_scope_name": "白绮的裁决",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 59,
+      "source_line_text": "        set_variable = { which = eep_component_rewards value = prev.eep_component_rewards }",
+      "source_context": [
+        {
+          "line": 56,
+          "text": "        set_variable = { which = eep_component_damage_level value = prev.eep_component_damage_level }"
+        },
+        {
+          "line": 57,
+          "text": "        set_variable = { which = eep_component_tracking_level value = prev.eep_component_tracking_level }"
+        },
+        {
+          "line": 58,
+          "text": "        set_variable = { which = eep_component_regen_level value = prev.eep_component_regen_level }"
+        },
+        {
+          "line": 59,
+          "text": "        set_variable = { which = eep_component_rewards value = prev.eep_component_rewards }"
+        },
+        {
+          "line": 60,
+          "text": "        set_variable = { which = eep_component_snapshot_state value = 0 }"
+        },
+        {
+          "line": 61,
+          "text": "        set_country_flag = eep_component_snapshot_available"
+        },
+        {
+          "line": 62,
+          "text": "    }"
+        }
+      ],
+      "source_scope_review": "Owner country current scope; RHS prev accesses fleet rewards",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 33,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_entitled is not set for scoped country 'EEP 03 铁心灭绝者' at  common/scripted_effects/eep_mothership_effects.txt:156 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_entitled",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 03 铁心灭绝者",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 156,
+      "source_line_text": "        set_variable = { which = eep_component_pending value = eep_component_entitled }",
+      "source_context": [
+        {
+          "line": 153,
+          "text": "                eep_sync_mothership_components = yes"
+        },
+        {
+          "line": 154,
+          "text": "            }"
+        },
+        {
+          "line": 155,
+          "text": "        }"
+        },
+        {
+          "line": 156,
+          "text": "        set_variable = { which = eep_component_pending value = eep_component_entitled }"
+        },
+        {
+          "line": 157,
+          "text": "        subtract_variable = { which = eep_component_pending value = eep_component_rewards }"
+        },
+        {
+          "line": 158,
+          "text": "        if = {"
+        },
+        {
+          "line": 159,
+          "text": "            limit = { check_variable = { which = eep_component_pending value < 0 } }"
+        }
+      ],
+      "source_scope_review": "Country current scope; RHS local eep_component_entitled",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 34,
+      "raw_line": "[21:37:54][variable_values.cpp:236]: Variable eep_component_rewards is not set for scoped country 'EEP 03 铁心灭绝者' at  common/scripted_effects/eep_mothership_effects.txt:157 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:37:54",
+      "variable": "eep_component_rewards",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 03 铁心灭绝者",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 157,
+      "source_line_text": "        subtract_variable = { which = eep_component_pending value = eep_component_rewards }",
+      "source_context": [
+        {
+          "line": 154,
+          "text": "            }"
+        },
+        {
+          "line": 155,
+          "text": "        }"
+        },
+        {
+          "line": 156,
+          "text": "        set_variable = { which = eep_component_pending value = eep_component_entitled }"
+        },
+        {
+          "line": 157,
+          "text": "        subtract_variable = { which = eep_component_pending value = eep_component_rewards }"
+        },
+        {
+          "line": 158,
+          "text": "        if = {"
+        },
+        {
+          "line": 159,
+          "text": "            limit = { check_variable = { which = eep_component_pending value < 0 } }"
+        },
+        {
+          "line": 160,
+          "text": "            set_variable = { which = eep_component_pending value = 0 }"
+        }
+      ],
+      "source_scope_review": "Country current scope; RHS local eep_component_rewards",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 35,
+      "raw_line": "[21:46:01][variable_values.cpp:236]: Variable eep_mothership_level is not set for scoped country 'EEP 02 有机吞噬蜂群' at  common/scripted_effects/eep_mothership_effects.txt:72 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:46:01",
+      "variable": "eep_mothership_level",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 02 有机吞噬蜂群",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 72,
+      "source_line_text": "        set_variable = { which = eep_mothership_next value = eep_mothership_level }",
+      "source_context": [
+        {
+          "line": 69,
+          "text": "        set_variable = { which = eep_mothership_level value = eep_c }"
+        },
+        {
+          "line": 70,
+          "text": "        divide_variable = { which = eep_mothership_level value = 10 }"
+        },
+        {
+          "line": 71,
+          "text": "        floor_variable = eep_mothership_level"
+        },
+        {
+          "line": 72,
+          "text": "        set_variable = { which = eep_mothership_next value = eep_mothership_level }"
+        },
+        {
+          "line": 73,
+          "text": "        change_variable = { which = eep_mothership_next value = 1 }"
+        },
+        {
+          "line": 74,
+          "text": "        multiply_variable = { which = eep_mothership_next value = 10 }"
+        },
+        {
+          "line": 75,
+          "text": "        subtract_variable = { which = eep_mothership_next value = eep_c }"
+        }
+      ],
+      "source_scope_review": "Country current scope; RHS local eep_mothership_level after set/divide/floor69-71",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 36,
+      "raw_line": "[21:46:01][variable_values.cpp:236]: Variable eep_mothership_level is not set for scoped country 'EEP 02 有机吞噬蜂群' at  common/scripted_effects/eep_mothership_effects.txt:146 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:46:01",
+      "variable": "eep_mothership_level",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 02 有机吞噬蜂群",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 146,
+      "source_line_text": "                    set_variable = { which = eep_applied_level value = prev.eep_mothership_level }",
+      "source_context": [
+        {
+          "line": 143,
+          "text": "                            }"
+        },
+        {
+          "line": 144,
+          "text": "                        }"
+        },
+        {
+          "line": 145,
+          "text": "                    }"
+        },
+        {
+          "line": 146,
+          "text": "                    set_variable = { which = eep_applied_level value = prev.eep_mothership_level }"
+        },
+        {
+          "line": 147,
+          "text": "                    remove_modifier = eep_mothership_evolution"
+        },
+        {
+          "line": 148,
+          "text": "                    if = {"
+        },
+        {
+          "line": 149,
+          "text": "                        limit = { check_variable = { which = eep_applied_level value > 0 } }"
+        }
+      ],
+      "source_scope_review": "Fleet current scope; RHS prev.eep_mothership_level accesses calling country",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 37,
+      "raw_line": "[21:46:01][variable_values.cpp:236]: Variable eep_component_entitled is not set for scoped country 'EEP 02 有机吞噬蜂群' at  common/scripted_effects/eep_mothership_effects.txt:37 @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:46:01",
+      "variable": "eep_component_entitled",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 02 有机吞噬蜂群",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 37,
+      "source_line_text": "            check_variable = { which = eep_component_rewards value < owner.eep_component_entitled }",
+      "source_context": [
+        {
+          "line": 34,
+          "text": "    set_variable = { which = eep_component_work_budget value = 200 }"
+        },
+        {
+          "line": 35,
+          "text": "    while = {"
+        },
+        {
+          "line": 36,
+          "text": "        limit = {"
+        },
+        {
+          "line": 37,
+          "text": "            check_variable = { which = eep_component_rewards value < owner.eep_component_entitled }"
+        },
+        {
+          "line": 38,
+          "text": "            check_variable = { which = eep_component_work_budget value > 0 }"
+        },
+        {
+          "line": 39,
+          "text": "        }"
+        },
+        {
+          "line": 40,
+          "text": "        random_list = {"
+        }
+      ],
+      "source_scope_review": "Fleet while condition; RHS owner.eep_component_entitled accesses owning country",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership_components at common/scripted_effects/eep_mothership_effects.txt:153 @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 38,
+      "raw_line": "[21:46:01][variable_values.cpp:236]: Variable eep_component_entitled is not set for scoped country 'EEP 02 有机吞噬蜂群' at  common/scripted_effects/eep_mothership_effects.txt:156 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:46:01",
+      "variable": "eep_component_entitled",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 02 有机吞噬蜂群",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 156,
+      "source_line_text": "        set_variable = { which = eep_component_pending value = eep_component_entitled }",
+      "source_context": [
+        {
+          "line": 153,
+          "text": "                eep_sync_mothership_components = yes"
+        },
+        {
+          "line": 154,
+          "text": "            }"
+        },
+        {
+          "line": 155,
+          "text": "        }"
+        },
+        {
+          "line": 156,
+          "text": "        set_variable = { which = eep_component_pending value = eep_component_entitled }"
+        },
+        {
+          "line": 157,
+          "text": "        subtract_variable = { which = eep_component_pending value = eep_component_rewards }"
+        },
+        {
+          "line": 158,
+          "text": "        if = {"
+        },
+        {
+          "line": 159,
+          "text": "            limit = { check_variable = { which = eep_component_pending value < 0 } }"
+        }
+      ],
+      "source_scope_review": "Country current scope; RHS local eep_component_entitled",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    },
+    {
+      "native_log_line": 39,
+      "raw_line": "[21:46:01][variable_values.cpp:236]: Variable eep_component_rewards is not set for scoped country 'EEP 02 有机吞噬蜂群' at  common/scripted_effects/eep_mothership_effects.txt:157 @ scripted effect eep_sync_mothership at file:  line: 1",
+      "clock_local": "21:46:01",
+      "variable": "eep_component_rewards",
+      "reported_scope_kind": "country",
+      "reported_scope_name": "EEP 02 有机吞噬蜂群",
+      "source_relative_path": "common/scripted_effects/eep_mothership_effects.txt",
+      "source_line": 157,
+      "source_line_text": "        subtract_variable = { which = eep_component_pending value = eep_component_rewards }",
+      "source_context": [
+        {
+          "line": 154,
+          "text": "            }"
+        },
+        {
+          "line": 155,
+          "text": "        }"
+        },
+        {
+          "line": 156,
+          "text": "        set_variable = { which = eep_component_pending value = eep_component_entitled }"
+        },
+        {
+          "line": 157,
+          "text": "        subtract_variable = { which = eep_component_pending value = eep_component_rewards }"
+        },
+        {
+          "line": 158,
+          "text": "        if = {"
+        },
+        {
+          "line": 159,
+          "text": "            limit = { check_variable = { which = eep_component_pending value < 0 } }"
+        },
+        {
+          "line": 160,
+          "text": "            set_variable = { which = eep_component_pending value = 0 }"
+        }
+      ],
+      "source_scope_review": "Country current scope; RHS local eep_component_rewards",
+      "native_stack_suffix": " @ scripted effect eep_sync_mothership at file:  line: 1"
+    }
+  ],
+  "warning_counts_by_clock": {
+    "21:37:54": 12,
+    "21:46:01": 5
+  },
+  "actual_native_variable_blocks": [
+    {
+      "sample": "m031load",
+      "provenance": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031load.sav",
+        "save_sha256": "5c6fd6b0f36eca37c63963c6af5ca56e86638864ac172bf6f08827a29adb091e",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031load.audit.json",
+        "audit_sha256": "c843e9c624740711080452f83a7da9ac54bc84fab9910a84062715250ec6f7da",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031load.native-save.json",
+            "sha256": "f1bdbf8f856865d1566e36b2a1b8752dc231b29dfbdfa444aa26b5f59c3f73de",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\acceptance-fixtures\\m031load.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031load.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031load.sav",
+              "sha256": "5c6fd6b0f36eca37c63963c6af5ca56e86638864ac172bf6f08827a29adb091e",
+              "date": "2200.01.01"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "gamestate_sha256": "6610154d813c8aea8ff7dfb2f42f2ba40297b9d05dbd965c7b23703702b460f4",
+      "raw_country0_variables": "\n\t\t\tastral_threads_scripted_rewards_mult=1\n\t\t\tconquest_subjects=0\n\t\t\teep_c=0\n\t\t\teep_d=2\n\t\t\teep_fleet_stage=0\n\t\t\teep_g=0\n\t\t\teep_last_capacity=0\n\t\t\teep_last_manufactured=0\n\t\t\teep_last_return=0\n\t\t\teep_made=0\n\t\t\teep_stage=0\n\t\t\teep_worlds=0\n\t\t\tfocus_agendas_completed=0\n\t\t\tfocus_built_armies=0\n\t\t\tfocus_built_battleship=0\n\t\t\tfocus_built_corvettes=0\n\t\t\tfocus_built_destroyers=0\n\t\t\tfocus_built_juggernaut=0\n\t\t\tfocus_built_platforms=0\n\t\t\tfocus_built_titans=0\n\t\t\tfocus_conquered_worlds=0\n\t\t\tfocus_terraformed_worlds=0\n\t\t\tlevel_5_commander=0\n\t\t\tlevel_5_official=0\n\t\t\tlevel_5_scientist=0\n\t\t\tparagon_chance_negative=0\n\t\t",
+      "raw_mother_fleet_variables": "",
+      "country_raw_parse_matches_observer_exact": true,
+      "fleet_raw_parse_matches_observer_exact": true,
+      "selected_country_variable_presence": {
+        "eep_mothership_level": {
+          "present": false,
+          "raw_numeric_value": null
+        },
+        "eep_component_entitled": {
+          "present": false,
+          "raw_numeric_value": null
+        },
+        "eep_component_rewards": {
+          "present": false,
+          "raw_numeric_value": null
+        }
+      },
+      "fleet_raw_variables": {}
+    },
+    {
+      "sample": "m031sync",
+      "provenance": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.sav",
+        "save_sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.audit.json",
+        "audit_sha256": "691f36de2986f8433aac2901669a5a23eb0239a984dfc6306b6686058a09ff58",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.native-save.json",
+            "sha256": "0733bbb3ec3544e3c5ceb818d366dfb89601f1d7322ccbf441de98d56d892aa0",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\acceptance-fixtures\\m031sync.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031sync.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031sync.sav",
+              "sha256": "2b62a53aaa8326ecc6b3a6d3c4a7e45dafa65e9ab48d182efabd77fb30a12ceb",
+              "date": "2200.01.01"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "gamestate_sha256": "0d98be465651df4d8c9435a22a35a0ade3712f80575132d6cf8053a1aefcdb25",
+      "raw_country0_variables": "\n\t\t\tastral_threads_scripted_rewards_mult=1\n\t\t\tconquest_subjects=0\n\t\t\teep_c=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_entitled=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_pending=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_snapshot_state=0\n\t\t\teep_component_tracking_level=0\n\t\t\teep_d=2\n\t\t\teep_fleet_stage=0\n\t\t\teep_g=0\n\t\t\teep_last_capacity=0\n\t\t\teep_last_manufactured=0\n\t\t\teep_last_return=0\n\t\t\teep_made=0\n\t\t\teep_mothership_level=0\n\t\t\teep_mothership_next=10\n\t\t\teep_stage=0\n\t\t\teep_worlds=0\n\t\t\tfocus_agendas_completed=0\n\t\t\tfocus_built_armies=0\n\t\t\tfocus_built_battleship=0\n\t\t\tfocus_built_corvettes=0\n\t\t\tfocus_built_destroyers=0\n\t\t\tfocus_built_juggernaut=0\n\t\t\tfocus_built_platforms=0\n\t\t\tfocus_built_titans=0\n\t\t\tfocus_conquered_worlds=0\n\t\t\tfocus_terraformed_worlds=0\n\t\t\tlevel_5_commander=0\n\t\t\tlevel_5_official=0\n\t\t\tlevel_5_scientist=0\n\t\t\tparagon_chance_negative=0\n\t\t",
+      "raw_mother_fleet_variables": "\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t",
+      "country_raw_parse_matches_observer_exact": true,
+      "fleet_raw_parse_matches_observer_exact": true,
+      "selected_country_variable_presence": {
+        "eep_mothership_level": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_entitled": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_rewards": {
+          "present": true,
+          "raw_numeric_value": 0
+        }
+      },
+      "fleet_raw_variables": {
+        "eep_applied_level": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_tracking_level": 0
+      }
+    },
+    {
+      "sample": "m031reload",
+      "provenance": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.sav",
+        "save_sha256": "dddc4a2f300c4d14e5bc4326d97da3d85d3629f041f229104fef925cfccf8a17",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.audit.json",
+        "audit_sha256": "64ec703d1f9fdb7ca64aee2252b094f9cbc22b4f1361fc0914f2b5adf219ecb8",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.native-save.json",
+            "sha256": "dd942fd07662499ddbba07a9a6f7bfa52d395cc5df8ea1bf16a3454340d6d154",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031reload.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\m031reload.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\m031reload.sav",
+              "sha256": "dddc4a2f300c4d14e5bc4326d97da3d85d3629f041f229104fef925cfccf8a17",
+              "date": "2200.01.01"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "gamestate_sha256": "9b977b03c8b1f51363b65188fee6b2c5cd4bfb30638e2f85b655173b1e9d6efb",
+      "raw_country0_variables": "\n\t\t\tastral_threads_scripted_rewards_mult=1\n\t\t\tconquest_subjects=0\n\t\t\teep_c=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_entitled=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_pending=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_snapshot_state=0\n\t\t\teep_component_tracking_level=0\n\t\t\teep_d=2\n\t\t\teep_fleet_stage=0\n\t\t\teep_g=0\n\t\t\teep_last_capacity=0\n\t\t\teep_last_manufactured=0\n\t\t\teep_last_return=0\n\t\t\teep_made=0\n\t\t\teep_mothership_level=0\n\t\t\teep_mothership_next=10\n\t\t\teep_stage=0\n\t\t\teep_worlds=0\n\t\t\tfocus_agendas_completed=0\n\t\t\tfocus_built_armies=0\n\t\t\tfocus_built_battleship=0\n\t\t\tfocus_built_corvettes=0\n\t\t\tfocus_built_destroyers=0\n\t\t\tfocus_built_juggernaut=0\n\t\t\tfocus_built_platforms=0\n\t\t\tfocus_built_titans=0\n\t\t\tfocus_conquered_worlds=0\n\t\t\tfocus_terraformed_worlds=0\n\t\t\tlevel_5_commander=0\n\t\t\tlevel_5_official=0\n\t\t\tlevel_5_scientist=0\n\t\t\tparagon_chance_negative=0\n\t\t",
+      "raw_mother_fleet_variables": "\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t",
+      "country_raw_parse_matches_observer_exact": true,
+      "fleet_raw_parse_matches_observer_exact": true,
+      "selected_country_variable_presence": {
+        "eep_mothership_level": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_entitled": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_rewards": {
+          "present": true,
+          "raw_numeric_value": 0
+        }
+      },
+      "fleet_raw_variables": {
+        "eep_applied_level": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_tracking_level": 0
+      }
+    },
+    {
+      "sample": "mpaidload",
+      "provenance": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidload.sav",
+        "save_sha256": "52a6cff2ee681bfab7ea2eefd142525c571b6fac9b8a728bd8bd6759487f6839",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidload.audit.json",
+        "audit_sha256": "0cfc6f291bf0e85d5c102af89be791623b90be85752d8ef9845b1f8a0e575acc",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidload.native-save.json",
+            "sha256": "fa408c89bfaf3a752888d3ee2b5d51595c4df18bd65284b09f31aae7d8f7ac7f",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\acceptance-fixtures\\mpaidload.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\mpaidload.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidload.sav",
+              "sha256": "52a6cff2ee681bfab7ea2eefd142525c571b6fac9b8a728bd8bd6759487f6839",
+              "date": "2200.01.12"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "gamestate_sha256": "0d3a8962774e2644b38928b145e7b9a7026044c92f5618203ae27cb3a1563ef2",
+      "raw_country0_variables": "\n\t\t\tastral_threads_scripted_rewards_mult=1\n\t\t\tconquest_subjects=0\n\t\t\teep_c=0\n\t\t\teep_d=2\n\t\t\teep_fleet_stage=0\n\t\t\teep_g=0\n\t\t\teep_last_capacity=0\n\t\t\teep_last_manufactured=0\n\t\t\teep_last_return=0\n\t\t\teep_made=0\n\t\t\teep_stage=0\n\t\t\teep_worlds=0\n\t\t\tfocus_agendas_completed=0\n\t\t\tfocus_built_armies=0\n\t\t\tfocus_built_battleship=0\n\t\t\tfocus_built_corvettes=0\n\t\t\tfocus_built_destroyers=0\n\t\t\tfocus_built_juggernaut=0\n\t\t\tfocus_built_platforms=0\n\t\t\tfocus_built_titans=0\n\t\t\tfocus_conquered_worlds=0\n\t\t\tfocus_terraformed_worlds=0\n\t\t\tlevel_5_commander=0\n\t\t\tlevel_5_official=0\n\t\t\tlevel_5_scientist=0\n\t\t\tparagon_chance_negative=0\n\t\t",
+      "raw_mother_fleet_variables": "",
+      "country_raw_parse_matches_observer_exact": true,
+      "fleet_raw_parse_matches_observer_exact": true,
+      "selected_country_variable_presence": {
+        "eep_mothership_level": {
+          "present": false,
+          "raw_numeric_value": null
+        },
+        "eep_component_entitled": {
+          "present": false,
+          "raw_numeric_value": null
+        },
+        "eep_component_rewards": {
+          "present": false,
+          "raw_numeric_value": null
+        }
+      },
+      "fleet_raw_variables": {}
+    },
+    {
+      "sample": "mpaidsync",
+      "provenance": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidsync.sav",
+        "save_sha256": "e41db7f200fd6074bce40685fda29db5d80f53a0fea6bd032d137b6d4c787948",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidsync.audit.json",
+        "audit_sha256": "5ec6e625c71d4c4ef65be42c626fdc65610cfa8d1c95789c84616d63cc144424",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidsync.native-save.json",
+            "sha256": "279bc4aafe2e7f5baf9ffc1a2607b00cfe0faedc76332779cbb193a16b6382fb",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\acceptance-fixtures\\mpaidsync.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\mpaidsync.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidsync.sav",
+              "sha256": "e41db7f200fd6074bce40685fda29db5d80f53a0fea6bd032d137b6d4c787948",
+              "date": "2200.01.12"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "gamestate_sha256": "b299da1427af67411ba833ff903f415ad8a77a38ef5a3beb85cbde35853bd43b",
+      "raw_country0_variables": "\n\t\t\tastral_threads_scripted_rewards_mult=1\n\t\t\tconquest_subjects=0\n\t\t\teep_c=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_entitled=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_pending=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_snapshot_state=0\n\t\t\teep_component_tracking_level=0\n\t\t\teep_d=2\n\t\t\teep_fleet_stage=0\n\t\t\teep_g=0\n\t\t\teep_last_capacity=0\n\t\t\teep_last_manufactured=0\n\t\t\teep_last_return=0\n\t\t\teep_made=0\n\t\t\teep_mothership_level=0\n\t\t\teep_mothership_next=10\n\t\t\teep_stage=0\n\t\t\teep_worlds=0\n\t\t\tfocus_agendas_completed=0\n\t\t\tfocus_built_armies=0\n\t\t\tfocus_built_battleship=0\n\t\t\tfocus_built_corvettes=0\n\t\t\tfocus_built_destroyers=0\n\t\t\tfocus_built_juggernaut=0\n\t\t\tfocus_built_platforms=0\n\t\t\tfocus_built_titans=0\n\t\t\tfocus_conquered_worlds=0\n\t\t\tfocus_terraformed_worlds=0\n\t\t\tlevel_5_commander=0\n\t\t\tlevel_5_official=0\n\t\t\tlevel_5_scientist=0\n\t\t\tparagon_chance_negative=0\n\t\t",
+      "raw_mother_fleet_variables": "\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t",
+      "country_raw_parse_matches_observer_exact": true,
+      "fleet_raw_parse_matches_observer_exact": true,
+      "selected_country_variable_presence": {
+        "eep_mothership_level": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_entitled": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_rewards": {
+          "present": true,
+          "raw_numeric_value": 0
+        }
+      },
+      "fleet_raw_variables": {
+        "eep_applied_level": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_tracking_level": 0
+      }
+    },
+    {
+      "sample": "mpaidreload",
+      "provenance": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidreload.sav",
+        "save_sha256": "5d1ca99d708c60c18cf273bb83aa583efbbf715214cd5b9d0b155e0253f0b070",
+        "run_id": "20261019T133314Z",
+        "version": "0.4.0-rc.4",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+        "manifest_sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidreload.audit.json",
+        "audit_sha256": "6b816db26aded04c3a0127c20e8aa37b0d515d6e3e8711e23da4b1508a8cc7a5",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidreload.native-save.json",
+            "sha256": "19a572e5245ccb3904df3bf9625cd086e4d99a6d2a68bf5bb54b05c1501ff270",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\mpaidreload.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\save games\\eep-test-history\\mpaidreload.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\mpaidreload.sav",
+              "sha256": "5d1ca99d708c60c18cf273bb83aa583efbbf715214cd5b9d0b155e0253f0b070",
+              "date": "2200.01.12"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "gamestate_sha256": "2bb2a6ff6a142bc04ee665491521f17f1f8be11d527cc9f63cbd3fd3c2f7aa8a",
+      "raw_country0_variables": "\n\t\t\tastral_threads_scripted_rewards_mult=1\n\t\t\tconquest_subjects=0\n\t\t\teep_c=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_entitled=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_pending=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_snapshot_state=0\n\t\t\teep_component_tracking_level=0\n\t\t\teep_d=2\n\t\t\teep_fleet_stage=0\n\t\t\teep_g=0\n\t\t\teep_last_capacity=0\n\t\t\teep_last_manufactured=0\n\t\t\teep_last_return=0\n\t\t\teep_made=0\n\t\t\teep_mothership_level=0\n\t\t\teep_mothership_next=10\n\t\t\teep_stage=0\n\t\t\teep_worlds=0\n\t\t\tfocus_agendas_completed=0\n\t\t\tfocus_built_armies=0\n\t\t\tfocus_built_battleship=0\n\t\t\tfocus_built_corvettes=0\n\t\t\tfocus_built_destroyers=0\n\t\t\tfocus_built_juggernaut=0\n\t\t\tfocus_built_platforms=0\n\t\t\tfocus_built_titans=0\n\t\t\tfocus_conquered_worlds=0\n\t\t\tfocus_terraformed_worlds=0\n\t\t\tlevel_5_commander=0\n\t\t\tlevel_5_official=0\n\t\t\tlevel_5_scientist=0\n\t\t\tparagon_chance_negative=0\n\t\t",
+      "raw_mother_fleet_variables": "\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t",
+      "country_raw_parse_matches_observer_exact": true,
+      "fleet_raw_parse_matches_observer_exact": true,
+      "selected_country_variable_presence": {
+        "eep_mothership_level": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_entitled": {
+          "present": true,
+          "raw_numeric_value": 0
+        },
+        "eep_component_rewards": {
+          "present": true,
+          "raw_numeric_value": 0
+        }
+      },
+      "fleet_raw_variables": {
+        "eep_applied_level": 0,
+        "eep_component_armor_level": 0,
+        "eep_component_damage_level": 0,
+        "eep_component_hull_level": 0,
+        "eep_component_regen_level": 0,
+        "eep_component_rewards": 0,
+        "eep_component_shield_level": 0,
+        "eep_component_tracking_level": 0
+      }
+    }
+  ],
+  "observer_source_audit": [
+    {
+      "path": "eat_everything_origin\\tools\\audit_save.py",
+      "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad",
+      "excerpt": [
+        {
+          "line": 65,
+          "text": "def scalars(text):"
+        },
+        {
+          "line": 66,
+          "text": "    return {key: unquote(value) for key, value, block in fields(text) if not block}"
+        },
+        {
+          "line": 67,
+          "text": ""
+        },
+        {
+          "line": 68,
+          "text": ""
+        },
+        {
+          "line": 69,
+          "text": "def block(text, key):"
+        },
+        {
+          "line": 70,
+          "text": "    return next((value for name, value, obj in fields(text) if name == key and obj), '')"
+        }
+      ]
+    },
+    {
+      "path": "eat_everything_origin\\testing\\inspect_1015.py",
+      "sha256": "24c66754024a7f35bcd314d378fc7129a76eebb67460a7f9211355d8d1e4e1d8",
+      "excerpt": [
+        {
+          "line": 18,
+          "text": "def observe(save, manifest):"
+        },
+        {
+          "line": 19,
+          "text": "    data = a.audit(save, (0,))"
+        },
+        {
+          "line": 20,
+          "text": "    with zipfile.ZipFile(save) as archive:"
+        },
+        {
+          "line": 21,
+          "text": "        text = archive.read(\"gamestate\").decode(\"utf-8-sig\")"
+        },
+        {
+          "line": 22,
+          "text": "    provenance = json.loads(manifest.read_text(encoding=\"utf-8\"))"
+        },
+        {
+          "line": 23,
+          "text": "    result = {"
+        },
+        {
+          "line": 24,
+          "text": "        \"status\": \"OBSERVATION_ONLY\","
+        },
+        {
+          "line": 25,
+          "text": "        \"save_sha256\": data[\"save_sha256\"], \"date\": data[\"date\"],"
+        },
+        {
+          "line": 26,
+          "text": "        \"manifest\": str(manifest.resolve()),"
+        },
+        {
+          "line": 27,
+          "text": "        \"manifest_sha256\": hashlib.sha256(manifest.read_bytes()).hexdigest(),"
+        },
+        {
+          "line": 28,
+          "text": "        \"production_tree_sha256\": provenance[\"repository_mod_tree_sha256\"],"
+        },
+        {
+          "line": 29,
+          "text": "        \"language\": provenance[\"language\"], \"enabled_mods\": provenance[\"enabled_mods\"],"
+        },
+        {
+          "line": 30,
+          "text": "        \"country\": data[\"countries\"][\"0\"],"
+        },
+        {
+          "line": 31,
+          "text": "        \"worlds\": data[\"planets\"], \"colonies\": data[\"colonies\"],"
+        }
+      ]
+    },
+    {
+      "path": "eat_everything_origin\\testing\\inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92",
+      "excerpt": [
+        {
+          "line": 318,
+          "text": "            implementation = a.scalars(a.block(ship_body, \"ship_design_implementation\"))"
+        },
+        {
+          "line": 319,
+          "text": "            design_id = str(implementation[\"design\"])"
+        },
+        {
+          "line": 320,
+          "text": "            record[\"ships\"][str(ship_id)] = {"
+        },
+        {
+          "line": 321,
+          "text": "                \"native\": a.scalars(ship_body), \"implementation\": implementation,"
+        },
+        {
+          "line": 322,
+          "text": "                \"design_id\": design_id, \"design\": design(designs[design_id]),"
+        },
+        {
+          "line": 323,
+          "text": "                \"timed_modifier\": modifiers(ship_body), \"variables\": a.scalars(a.block(ship_body, \"variables\")),"
+        },
+        {
+          "line": 324,
+          "text": "                \"flags\": a.scalars(a.block(ship_body, \"flags\")),"
+        },
+        {
+          "line": 325,
+          "text": "                \"name\": a.scalars(a.block(ship_body, \"name\")),"
+        },
+        {
+          "line": 326,
+          "text": "                \"coordinate\": a.scalars(a.block(ship_body, \"coordinate\")),"
+        },
+        {
+          "line": 327,
+          "text": "                \"target_coordinate\": a.scalars(a.block(ship_body, \"target_coordinate\")), \"raw\": ship_body}"
+        }
+      ]
+    },
+    {
+      "path": "eat_everything_origin\\testing\\inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92",
+      "excerpt": [
+        {
+          "line": 378,
+          "text": "    original_audit = json.loads(save.with_suffix(\".audit.json\").read_text(encoding=\"utf-8\"))"
+        },
+        {
+          "line": 379,
+          "text": "    if (original_audit.get(\"gamestate_sha256\") != result[\"gamestate_sha256\"]"
+        },
+        {
+          "line": 380,
+          "text": "            or original_audit[\"date\"] != result[\"date\"]):"
+        },
+        {
+          "line": 381,
+          "text": "        raise ValueError(\"audit gamestate SHA/date differs from native SAV\")"
+        },
+        {
+          "line": 382,
+          "text": "    result[\"country_variables_all\"] = a.scalars(a.block(country, \"variables\"))"
+        },
+        {
+          "line": 383,
+          "text": "    result[\"country_timed_modifier\"] = modifiers(country)"
+        }
+      ]
+    }
+  ],
+  "native_reference_syntax": [
+    {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T133314Z\\logs\\script_documentation\\effects.log",
+      "sha256": "79570f3609d8fd34666565df2e1582e96f2cfb87bc7559c7610e52ad350bc6f5",
+      "excerpt": [
+        {
+          "line": 528,
+          "text": "set_variable - Sets or creates an arbitrarily-named variable with a specific value in the current scope"
+        },
+        {
+          "line": 529,
+          "text": "(Note: Colony doesn't store variables. Using any of the variable effects/triggers in colony scope will access variables in the colony carrier instead.)"
+        },
+        {
+          "line": 530,
+          "text": "set_variable = { which = <string> value = <float>/<variable>/<scope.variable>/trigger:<trigger> }"
+        },
+        {
+          "line": 531,
+          "text": "Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage colony"
+        },
+        {
+          "line": 532,
+          "text": ""
+        },
+        {
+          "line": 533,
+          "text": "clear_variable - Clears a previously-set variable from the game."
+        },
+        {
+          "line": 534,
+          "text": "clear_variable = <string>"
+        },
+        {
+          "line": 535,
+          "text": "Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage colony"
+        },
+        {
+          "line": 536,
+          "text": ""
+        },
+        {
+          "line": 537,
+          "text": "round_variable - Rounds a previously-set variable to the closest integer."
+        },
+        {
+          "line": 538,
+          "text": "round_variable = <string>"
+        },
+        {
+          "line": 539,
+          "text": "Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage colony"
+        },
+        {
+          "line": 540,
+          "text": ""
+        },
+        {
+          "line": 541,
+          "text": "floor_variable - Rounds a previously-set variable down to the previous integer."
+        },
+        {
+          "line": 542,
+          "text": "floor_variable = <string>"
+        },
+        {
+          "line": 543,
+          "text": "Supported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage colony"
+        }
+      ]
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_effects\\overlord_effects.txt",
+      "sha256": "405d38f07817143c9df5310647a530470789418cade8b08bc7907f356add7d64",
+      "excerpt": [
+        {
+          "line": 297,
+          "text": "add_ethics_compatibility_modifier = {"
+        },
+        {
+          "line": 298,
+          "text": "\tset_variable = {"
+        },
+        {
+          "line": 299,
+          "text": "\t\twhich = ethics_compatibility_factor"
+        },
+        {
+          "line": 300,
+          "text": "\t\tvalue = 0"
+        },
+        {
+          "line": 301,
+          "text": "\t}"
+        },
+        {
+          "line": 302,
+          "text": "\tif = { limit = { is_pacifist = yes }\t\tcompare_and_modify_ethics_factor = { SAME = pacifist OPP = militarist } }"
+        },
+        {
+          "line": 303,
+          "text": "\tif = { limit = { is_militarist = yes }\t\tcompare_and_modify_ethics_factor = { SAME = militarist OPP = pacifist } }"
+        },
+        {
+          "line": 304,
+          "text": "\tif = { limit = { is_egalitarian = yes }\t\tcompare_and_modify_ethics_factor = { SAME = egalitarian OPP = authoritarian } }"
+        },
+        {
+          "line": 305,
+          "text": "\tif = { limit = { is_authoritarian = yes }\tcompare_and_modify_ethics_factor = { SAME = authoritarian OPP = egalitarian } }"
+        },
+        {
+          "line": 306,
+          "text": "\tif = { limit = { is_xenophile = yes }\t\tcompare_and_modify_ethics_factor = { SAME = xenophile OPP = xenophobe } }"
+        },
+        {
+          "line": 307,
+          "text": "\tif = { limit = { is_xenophobe = yes }\t\tcompare_and_modify_ethics_factor = { SAME = xenophobe OPP = xenophile } }"
+        },
+        {
+          "line": 308,
+          "text": "\tif = { limit = { is_materialist = yes }\t\tcompare_and_modify_ethics_factor = { SAME = materialist OPP = spiritualist } }"
+        },
+        {
+          "line": 309,
+          "text": "\tif = { limit = { is_spiritualist = yes }\tcompare_and_modify_ethics_factor = { SAME = spiritualist OPP = materialist } }"
+        },
+        {
+          "line": 310,
+          "text": "\tif = {"
+        },
+        {
+          "line": 311,
+          "text": "\t\tlimit = { NOT = { check_variable = { which = ethics_compatibility_factor value = 0 } } }"
+        },
+        {
+          "line": 312,
+          "text": "\t\tadd_modifier = {"
+        },
+        {
+          "line": 313,
+          "text": "\t\t\tmodifier = overlord_ethics_compatibility"
+        },
+        {
+          "line": 314,
+          "text": "\t\t\tmultiplier = ethics_compatibility_factor"
+        },
+        {
+          "line": 315,
+          "text": "\t\t}"
+        },
+        {
+          "line": 316,
+          "text": "\t}"
+        },
+        {
+          "line": 317,
+          "text": "\tclear_variable = ethics_compatibility_factor"
+        }
+      ]
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_effects\\psionic_auras_scripted_effects.txt",
+      "sha256": "5ab0907da2d5b1ddd71d16383ec4e6b73ac7589ad08100f3964a120fc393cbf7",
+      "excerpt": [
+        {
+          "line": 531,
+          "text": "\tset_variable = {"
+        },
+        {
+          "line": 532,
+          "text": "\t\twhich = ascensions_added"
+        },
+        {
+          "line": 533,
+          "text": "\t\tvalue = 0"
+        },
+        {
+          "line": 534,
+          "text": "\t}"
+        },
+        {
+          "line": 535,
+          "text": "\tevery_system_planet_colony = {"
+        },
+        {
+          "line": 536,
+          "text": "\t\tlimit = {"
+        },
+        {
+          "line": 537,
+          "text": "\t\t\thas_owner = yes"
+        },
+        {
+          "line": 538,
+          "text": "\t\t\tis_owned_by = root.aura_owner"
+        },
+        {
+          "line": 539,
+          "text": "\t\t\thas_planetary_ascension_tier < 10"
+        },
+        {
+          "line": 540,
+          "text": "\t\t\thas_ground_combat = no"
+        },
+        {
+          "line": 541,
+          "text": "\t\t\tis_occupied_flag = no"
+        },
+        {
+          "line": 542,
+          "text": "\t\t\tNOT = { has_carrier_flag = recent_colony_aura_effect_triggered }"
+        },
+        {
+          "line": 543,
+          "text": "\t\t}"
+        },
+        {
+          "line": 544,
+          "text": "\t\tset_timed_carrier_flag = {"
+        },
+        {
+          "line": 545,
+          "text": "\t\t\tflag = recent_colony_aura_effect_triggered"
+        },
+        {
+          "line": 546,
+          "text": "\t\t\tyears = 10"
+        },
+        {
+          "line": 547,
+          "text": "\t\t}"
+        },
+        {
+          "line": 548,
+          "text": "\t\tset_planetary_ascension_tier = value:add_planet_ascension_tier"
+        },
+        {
+          "line": 549,
+          "text": "\t\tprev = {"
+        },
+        {
+          "line": 550,
+          "text": "\t\t\tchange_variable = {"
+        },
+        {
+          "line": 551,
+          "text": "\t\t\t\twhich = ascensions_added"
+        },
+        {
+          "line": 552,
+          "text": "\t\t\t\tvalue = 1"
+        },
+        {
+          "line": 553,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 554,
+          "text": "\t\t}"
+        }
+      ]
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_effects\\nomads_effects.txt",
+      "sha256": "b42b9f72f341e1e1a6bb624cf5d438677893c1e47bc0f4040844f15ac5e7ba96",
+      "excerpt": [
+        {
+          "line": 308,
+          "text": "\t\tlast_created_country = {"
+        },
+        {
+          "line": 309,
+          "text": "\t\t\tsave_global_event_target_as = champions_forge_enclave_country"
+        },
+        {
+          "line": 310,
+          "text": "\t\t\tset_country_flag = champions_forge_enclave_country"
+        },
+        {
+          "line": 311,
+          "text": "\t\t\tset_variable = {"
+        },
+        {
+          "line": 312,
+          "text": "\t\t\t\twhich = cfl_tournament_count"
+        },
+        {
+          "line": 313,
+          "text": "\t\t\t\tvalue = 0"
+        },
+        {
+          "line": 314,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 315,
+          "text": "\t\t\tset_graphical_culture = nemesis_01"
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "observer_inserts_missing_EEP_zero_defaults": false,
+    "explicit_country_and_fleet_zeros_exist_in_saved_sync_and_reload": true,
+    "saved_zero_entries_always_removed_claim_supported": false,
+    "source_read_locations_all_OR_guard135": false,
+    "execution_time_variable_resolution_cause": "UNKNOWN",
+    "design_rebinding_cause_inferred_from_warnings": false
+  },
+  "limitations": [
+    "Raw final SAV zero entries do not expose execution-time resolution order or intermediate lifetimes.",
+    "Vanilla zero initialization is source syntax evidence, not a runtime proof that the investigated stack must be error-free.",
+    "Later native run log contents may grow; this snapshot is time-bounded and must not be labelled a complete freeze."
+  ]
+}

@@ -79,11 +79,20 @@ eep_repair_existing_mothership_design = {
         every_owned_ship = {
             limit = {
                 fleet = { is_same_value = event_target:eep_mothership@owner }
-                design = { NOT = { has_design_flag = eep_mothership_layout_1019 } }
+                NOT = {
+                    ship_growth_stage = {
+                        has_component = EEP_ADAPTIVE_SHIELD_CORE
+                        has_component = EEP_ADAPTIVE_ARMOR_CORE
+                        has_component = EEP_ADAPTIVE_HULL_CORE
+                        has_component = EEP_ADAPTIVE_DAMAGE_CORE
+                        has_component = EEP_ADAPTIVE_TRACKING_CORE
+                        has_component = EEP_ADAPTIVE_REGEN_CORE
+                    }
+                }
             }
             set_ship_design = { design = NAME_EEP_Baiqi_Mothership_1019 }
             # Inspect the current implementation's stage, not entity sections:
-            # a failed switch must not mark the old design as the new layout.
+            # only a verified switch receives the historical ship marker.
             if = {
                 limit = {
                     ship_growth_stage = {
@@ -95,7 +104,6 @@ eep_repair_existing_mothership_design = {
                         has_component = EEP_ADAPTIVE_REGEN_CORE
                     }
                 }
-                design = { set_design_flag = eep_mothership_layout_1019 }
                 # Historical compatibility marker; never used as layout truth.
                 set_ship_flag = eep_mothership_design_1019
             }

@@ -2,7 +2,7 @@
 
 ## 目标与范围
 
-在已证实的旧母舰重载问题下，研究使用原生单人加载回调恢复**现存、唯一、归属正确的母舰 station ship 实际设计**。这是候选 workaround；不修复、不伪称修复关联 starbase 的旧 `ship_design_implementation` 缓存，不删除旧设计或更改存档。本文先记录设计与验收，未改生产文件或工具，未操作 UI。
+在已证实的旧母舰重载问题下，使用原生单人加载回调恢复**现存、唯一、归属正确的母舰 station ship 实际设计**。这是候选 workaround；不修复、不伪称修复关联 starbase 的旧 `ship_design_implementation` 缓存，不删除旧设计或更改存档。本文保留先设计、授权实施、原生失败和修正过程；当前有效方案为末尾RC6直接六core判据，已移除RC5设计flag方案。只改授权生产文件，未改工具或操作UI。
 
 此前旧档迁移与登记、名称、fleet-scope 等失败原证据保持不变。尤其 ship/base 两份引用不同和原三防比例 `1e-6` 检查失败，不因增加加载后修复而改为通过。相关历史见 [native-design-persistence-research-1019.md](native-design-persistence-research-1019.md)。
 
@@ -111,7 +111,7 @@ event = {
 
 静态核阅须确认新事件ID唯一、四文件括号/AST可解析、load→helper没有startup/随机发放/资源写路径、已flag分支没有setter，并记录最终文件SHA。静态核阅不等于原生回调、六组件trigger组合或健康/队列通过。
 
-## 候选实现完成与源码核阅
+## RC5候选实现与源码核阅（历史，已由RC6修正）
 
 四文件已按上述固定命名完成：
 
@@ -126,6 +126,42 @@ event = {
 
 此结果记为 `SOURCE_REVIEW_ONLY_NOT_NATIVE_ACCEPTANCE`。字段读取器不是完整P语言或scope验收；open_kaishek、最终tree冻结、generic回调实际时机、growthstage组合、重复调用健康与付费队列仍由主线程执行，未预填通过。旧base指针/量化失败报告保持原值。
 
-## RC5??????????????
+## RC5原生失败与RC6修正设计（先于代码）
 
-VERSION?descriptor????0.4.0-rc.5?59?????`1cc8b77c28f3d59b0d840982c7f039a209cb66f3e26d9c3280ad2dfa0f9dbd52`?open_kaishek????PASS?36/36 P???12 DDS?131??10?????SHA`706f3b00d5b7447d3825bf7a2f7c7e55f7f20c28b530ce6a83f34b77b57bf7bf`?gate SHA`a313bbdd70d381f13030f62dccf58631df90b3a25cbb19eb0622ed672aa20b4e`??????gate???????????????[evidence/1019-rc5-static](evidence/1019-rc5-static/source-index.json)?????????????????????????loadhook???designflag?????????????????133314Z????RC4???????RC5????????
+主线程现有原生结果：`r5pautoload` 的实际ship已是新50slot/六core，六core后置条件实际进入；但 `eep_mothership_layout_1019` 在完整gamestate中唯一落点是根global flags，未在design块。再次原生load的 `r5preload1` implementation1608又为旧体、零core，最大装甲24429.6、盾61776，hook未恢复。独立原始报告由acceptance代理归档；本节不猜测闭源flag实现或共享原因，也不覆盖RC5 FAIL。
+
+主线程授权下一候选取消**所有**designflag读写。当前方案改为直接组件结构判据：
+
+```text
+NOT = {
+    ship_growth_stage = {
+        has_component = EEP_ADAPTIVE_SHIELD_CORE
+        has_component = EEP_ADAPTIVE_ARMOR_CORE
+        has_component = EEP_ADAPTIVE_HULL_CORE
+        has_component = EEP_ADAPTIVE_DAMAGE_CORE
+        has_component = EEP_ADAPTIVE_TRACKING_CORE
+        has_component = EEP_ADAPTIVE_REGEN_CORE
+    }
+}
+```
+
+该条件读取当前implementation所属growthstage，任一专属core缺失才set_design；切换后仍核同六core，成功时仅保留历史shipflag。新局create_ship.effect仅留旧shipflag，其实际新设计已具六core，后续helper应直接跳过setter。load事件/每国与唯一绑定guard不变，仍不初始化、奖励、改资源、操作基地或付费队列；不清理旧档global flag，该旧键不再被读取。
+
+修正只需在授权四文件中的mothership_effects和startup_effects改动；events/on_actions保持现有generic loadhook。VERSION/descriptor/冻结/open_kaishek/实机仍由主线程负责。源码核阅须确认生产中设计flag字符串及set/has_design_flag均为零、前置NOT六core与后置六core集合完全一致，新局与已正确ship不走setter。原生验收仍先首调用修正实际ship→同日重复调用完全跳过→至少两次真实load；每次记录ship/base两引用、组件、三防、C/L/R/tier、队列与资源。六core原生trigger合同及RC5第一次后置进入是候选依据，不能代替RC6完整验收；原损伤/缓存FAIL继续保留。
+
+RC6修正源码已完成，当前四文件SHA如下；没有版本/Git/UI操作：
+
+| 文件（相对mod） | SHA256 |
+| --- | --- |
+| `common/scripted_effects/eep_mothership_effects.txt` | `4e2d25004b917cd4b7c46bc13efe32765ba58fbd10aaa92a2728034a035da2cc` |
+| `common/scripted_effects/eep_startup_effects.txt` | `f3a0fb725b1ea7f9cb4f77a7225a30e7b83acb86bbd4ba496b91860ddbcbb697` |
+| `events/eep_events.txt` | `bee663bdf8e794999502aa52376166dd94b2c3129e5053f6b43d3a4dd4e85a02` |
+| `common/on_actions/eep_on_actions.txt` | `93be7df47f32895beadb5ce1f27d7abeb4e2f299e814ac959d1cf84bcafaeb6d` |
+
+现有token/字段读取器源码核阅通过：四文件括号平衡、root字段可读；前置NOT内和后置条件的六core集合完全相同且各恰六项；四文件设计flag字符串及set/has_design_flag为零；helper仍只有一处setter且不读shipflag，未引入新建/转移/变量/资源/奖励/基地改动调用。限定四文件 `git diff --check` 无错误。此仍是 `SOURCE_REVIEW_ONLY_NOT_NATIVE_ACCEPTANCE`，不是完整P验收或原生成功。
+
+## RC5 冻结与包级静态结果
+
+VERSION 及 descriptor 已同步为 `0.4.0-rc.5`，59 文件冻结树 `1cc8b77c28f3d59b0d840982c7f039a209cb66f3e26d9c3280ad2dfa0f9dbd52`。open_kaishek 实际返回 PASS：36/36 P 脚本、12 DDS、131 键 × 10 语言。报告 SHA `706f3b00d5b7447d3825bf7a2f7c7e55f7f20c28b530ce6a83f34b77b57bf7bf`，gate SHA `a313bbdd70d381f13030f62dccf58631df90b3a25cbb19eb0622ed672aa20b4e`。原始报告、gate、完整冻结包及逐文件索引见 [静态证据](evidence/1019-rc5-static/source-index.json)。非中文为静态校验通过，运行时不在范围内；真实 loadhook、designflag、损伤及队列仍待实测。
+
+旧进程 133314Z 始终运行 RC4 冻结包，工作区 RC5 没有热加载。旧进程已于 `2026-10-19T14:34:31.898945+00:00` 正常停止，无强杀。新 RC5 进程 143452Z / PID33260 于 `14:35:14.291302+00:00` 窗口就绪，冷加载后另行验证标题界面。此前主线程用 PowerShell 管道传 Python 中文字面量导致本节问号损坏，已按实际静态结果修正文档；后续内联 Python 使用 Unicode 转义，文件内容通过 UTF-8 写入。

@@ -39,3 +39,27 @@
 ## 原生来源
 
 本次核读`runs/20261019T130448Z/logs/script_documentation`，SHA：effects `064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489`，triggers `0f3ce1d0ad7b8fcce9ca654e57632683d996e579bdbb738d2cd56d91632e534f`，scopes `32f36a3584bdead0c83e4e7ece09b417be52a438518713e06b05d36240a0f352`。对应位置effects2374/2575/4414、triggers2488/3224、scopes62/378。原版on_actions文件SHA `7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306`；game_start SHA `8171b1806103ac96eb82cb5a8eca2712232764ea7712b1aa16049724268db528`。以上均本机Stellaris来源，未套用CK3方言。
+
+## RC6直接六核心判据：第二次独立只读审查
+
+本节追加新版本结论，不改写上述RC5源审为运行成功。主线程随后实际观察RC5：layout marker只落根global flags，二次load实际ship又回implementation1608/零core，相关FAIL保留。这说明原生文档的designflag scope声明没有证明该接口在本fixture中的实际存储/读取行为。RC6取消所有此类读写，改直接检查当前ship_growth_stage的六core；VERSION现为`0.4.0-rc.6`。主线程已冻结新树前缀`cc181`/59文件并报告包PASS，精确gate/manifest由其归档。
+
+独立对比`runs/20261019T143452Z/mod/eep-1019`的RC5原件：除descriptor版本外，RC6实际只有两个脚本有差异：
+
+| 文件 | RC6 SHA256 | 极小差异 |
+| --- | --- | --- |
+| `common/scripted_effects/eep_mothership_effects.txt` | `4e2d25004b917cd4b7c46bc13efe32765ba58fbd10aaa92a2728034a035da2cc` | 前置designflag改NOT当前stage六core；后置移除designflag setter，仅留历史shipflag |
+| `common/scripted_effects/eep_startup_effects.txt` | `f3a0fb725b1ea7f9cb4f77a7225a30e7b83acb86bbd4ba496b91860ddbcbb697` | 新建船不再写designflag，只留原历史shipflag |
+
+`events/eep_events.txt`与`common/on_actions/eep_on_actions.txt`分别保持RC5 SHA `bee663bdf8e794999502aa52376166dd94b2c3129e5053f6b43d3a4dd4e85a02`、`93be7df47f32895beadb5ce1f27d7abeb4e2f299e814ac959d1cf84bcafaeb6d`。前述六份PK文件仍各与RC5逐字节一致。
+
+**本次未发现确定的作用域或死亡隔离bug，仍是SOURCE_REVIEW_ONLY。** 核阅证据：
+
+- 前置`NOT = { ship_growth_stage = { A B C D E F } }`表示当前stage没有同时满足全部六core，任一缺失才进入setter；没有误写成“每个core都必须缺失”。前后集合顺序/名称完全相同，SHIELD/ARMOR/HULL/DAMAGE/TRACKING/REGEN各六项、总计12条has_component，helper仍只有一个set_ship_design。
+- 原生scopes378–380明确ship→当前design内的ship_growth_stage；triggers2488–2490明确has_component支持ship_growth_stage。当前条件正处于every_owned_ship内，无design→stage错误跳转。外层owner/prevprev、@this与@owner动态国家索引完全未改；新NOT块不引入任何ROOT依赖。
+- 整个生产P目录已无`eep_mothership_layout_1019`、set_design_flag、has_design_flag。旧档残留global marker不会再参与判据；历史`eep_mothership_design_1019`只在startup/成功后写，不被任何生产判断读取，所以它不能短路下一次修复。
+- 当前实际设计已含六core时，every_owned_ship的limit直接不成立，不执行setter，也不为幂等补写标记。新建固定设计同样靠真实六core直接跳过；是否含完整50slot/6required仍由原生SAV验收，六core判据本身不代替完整配置检查。
+- 不存在/错误owner/非独船/非juggernaut的绑定仍被原外层guard排除，未增加create_fleet/create_ship、转移或搜索替身。helper无healing/人口/资源/RNG/变量/完整sync路径；generic加载入口与fullsync调用方向未改。原生已死亡对象的exists/清理时序仍需真实死亡档证明，不能单凭原始表里有无record扩大静态结论。
+- PK完成/排队/取消入口、FROM/Carrier guards、共同结算与组件数据均未改变；本次改动没有进入巨像回调。
+
+主线程报告在RC5进程用完全相同的directguard原型执行两次原生保存：第一次实际新50slot/六core，第二次严格零差，两个SHA相同（前缀`44ebd`）。本线程未执行或另造该探针报告；该事实支持手动原型的结构判据与同会话跳过setter，不能当RC6冻结loadhook已运行的证据。RC6仍必须真实load至少两次，逐次核实际ship/base、损伤、队列及账本；RC5原FAIL、base缓存限制和原比例阈值不变。本轮只读源码/原生文档，未操作UI/Git/生产/项目工具。

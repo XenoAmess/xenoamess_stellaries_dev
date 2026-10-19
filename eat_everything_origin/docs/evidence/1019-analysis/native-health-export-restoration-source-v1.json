@@ -1,0 +1,109 @@
+{
+  "schema": "eep.1019.native-health-export-restoration-source.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Exact native source support and UNKNOWN boundaries; no runtime export/restoration test",
+  "sources": [
+    {
+      "evidence": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\triggers.log",
+        "sha256": "0f3ce1d0ad7b8fcce9ca654e57632683d996e579bdbb738d2cd56d91632e534f"
+      },
+      "ranges": [
+        {
+          "first": 1212,
+          "last": 1227,
+          "text": "has_hp - Checks the ship's hull points\nhas_hp > 200\nSupported Scopes: ship\n\nhas_shield_hp - Checks the ship's shield hit points\nhas_shield_hp > 200\nSupported Scopes: ship\n\nhas_max_hp - Checks the ship's max hull points\nhas_max_hp > 200\nSupported Scopes: ship\n\nhas_max_armor_hp - Checks the ship's max armor hit points\nhas_max_armor_hp > 200\nSupported Scopes: ship\n"
+        },
+        {
+          "first": 2201,
+          "last": 2212,
+          "text": "has_hp_percentage - Checks a fleet or ship's hit points percentage\nhas_hp_percentage > 0.5\nSupported Scopes: ship fleet\n\nhas_armor_percentage - Checks a fleet or ship's armor hit points percentage\nhas_armor_percentage > 0.5\nSupported Scopes: ship fleet\n\nhas_shield_percentage - Checks a fleet or ship's shield hit points percentage\nhas_shield_percentage > 0.5\nSupported Scopes: ship fleet\n"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+        "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+      },
+      "ranges": [
+        {
+          "first": 490,
+          "last": 507,
+          "text": "reduce_hp - Reduces the hull points of the scoped ship by a specific amount\nreduce_hp = 120\nSupported Scopes: ship\n\nreduce_hp_percent - Reduces the hull points of the scoped ship by a relative amount\nreduce_hp_percent = 0.25\nSupported Scopes: ship\n\nreduce_shield - Reduces the shield points of the scoped ship by a specific amount\nreduce_shield = 120\nSupported Scopes: ship\n\ndamage_ship - Damages ship (or all ships in scoped fleet) by a specific amount\ndamage_ship = 120\nCan also specify attacker (ship or country) for on-action attribution:\ndamage_ship = { amount = 120 attacker = <ATTACKER SHIP OR COUNTRY> }\nSupported Scopes: ship fleet\n"
+        },
+        {
+          "first": 557,
+          "last": 564,
+          "text": "export_trigger_value_to_variable - Exports the value of a trigger to a specified variable (so for num_pops, it'll export the number of pops).\nexport_trigger_value_to_variable = {\n\ttrigger = has_resource\n\tparameters = { resource = energy } (optional: specify extra parameters for triggers with { }\n\tvariable = <string> (this example will print the amount of energy the scoped object has to a variable)\n\trounded = yes (default: no)\n}\nSupported Scopes: megastructure planet country ship pop pop_group fleet galactic_object leader army ambient_object species bypass pop_faction war federation starbase deposit sector archaeological_site first_contact spy_network espionage_operation espionage_asset agreement situation astral_rift ship_growth_stage colony"
+        },
+        {
+          "first": 1488,
+          "last": 1495,
+          "text": "repair_percentage - Restores a certain percentage of hull points to the scoped ship or fleet\nrepair_percentage = 0.1\nSupported Scopes: ship fleet\n\nrepair_armor_percentage - Restores a certain percentage of armor points to the scoped ship or fleet\nrepair_armor_percentage = 0.1\nSupported Scopes: ship fleet\n"
+        },
+        {
+          "first": 2812,
+          "last": 2827,
+          "text": "repair_shield_percentage - Restores a certain percentage of shield points to the scoped ship or fleet\nrepair_shield_percentage = 0.1\nSupported Scopes: ship fleet\n\nrepair_amount - Restores a certain amount of hull points to the scoped ship or fleet\nrepair_amount = 10.0\nSupported Scopes: ship fleet\n\nrepair_armor_amount - Restores a certain amount of armor points to the scoped ship or fleet\nrepair_armor_amount = 10.0\nSupported Scopes: ship fleet\n\nrepair_shield_amount - Restores a certain amount of shield points to the scoped ship or fleet\nrepair_shield_amount = 10.0\nSupported Scopes: ship fleet\n"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\000_how_to_use_variables_in_script.txt",
+        "sha256": "3e5999f3d59b9c338f506726306112cd038355b9b2011930c225926b5b0b66c3"
+      },
+      "ranges": [
+        {
+          "first": 21,
+          "last": 28,
+          "text": "# Setting Variables #\n#####################\n\n# You can make a variable out of various numbers. The easiest is set_variable and change_variable, but you can also do:\n# - get_galaxy_setup_value: galaxy setup options\n# - export_trigger_value_to_variable: the value of a trigger (e.g. number of pops in the empire). Should work for all triggers that are comparing a single numerical value. For triggers with { }, you can specify parameters = { }\n# - export_modifier_to_variable: the sum of the specific modifier applying to this scope, e.g. the amount of pop_citizen_happiness that a pop is gaining from all sources (including any country and planet modifiers).\n# - export_resource_income_to_variable, export_resource_stockpile_to_variable: country's monthly income or current stockpile of a resource"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\grand_archive_events.txt",
+        "sha256": "1e3f769c1693d1cee3c137708f84eafebbbfedd726bc730eb41999b49f1c5ccf"
+      },
+      "ranges": [
+        {
+          "first": 7939,
+          "last": 7961,
+          "text": "\t\t\t\t\troot.fromfrom = {\n\t\t\t\t\t\texport_trigger_value_to_variable = {\n\t\t\t\t\t\t\ttrigger = has_max_hp\n\t\t\t\t\t\t\tvariable = local_max_hp\n\t\t\t\t\t\t}\n\t\t\t\t\t\texport_trigger_value_to_variable = {\n\t\t\t\t\t\t\ttrigger = has_max_armor_hp\n\t\t\t\t\t\t\tvariable = local_max_armor_hp\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tchange_variable = {\n\t\t\t\t\t\twhich = local_damage_value\n\t\t\t\t\t\tvalue = local_max_hp\n\t\t\t\t\t}\n\t\t\t\t\tchange_variable = {\n\t\t\t\t\t\twhich = local_damage_value\n\t\t\t\t\t\tvalue = local_max_armor_hp\n\t\t\t\t\t}\n\t\t\t\t\tmultiply_variable = {\n\t\t\t\t\t\twhich = local_damage_value\n\t\t\t\t\t\tvalue = local_damage_percentage\n\t\t\t\t\t}\n\t\t\t\t\tdamage_ship = local_damage_value"
+        }
+      ]
+    }
+  ],
+  "supported_numeric_trigger_candidates": [
+    "has_hp",
+    "has_shield_hp",
+    "has_max_hp",
+    "has_max_armor_hp",
+    "has_hp_percentage",
+    "has_armor_percentage",
+    "has_shield_percentage"
+  ],
+  "actual_native_export_examples": [
+    "has_max_hp",
+    "has_max_armor_hp"
+  ],
+  "not_found_in_catalog": [
+    "has_armor_hp",
+    "has_max_shield_hp",
+    "set_hp",
+    "set_armor",
+    "set_shield",
+    "reduce_armor"
+  ],
+  "unverified": [
+    "Current Mother seven exported values",
+    "Negative armor repair symbol semantics",
+    "Independent exact armor reduction",
+    "Percentage repair numerical basis",
+    "Reading original saved pre-load max/current through P API"
+  ],
+  "production_change": false,
+  "UI_operations": false
+}

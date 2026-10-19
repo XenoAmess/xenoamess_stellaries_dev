@@ -1,0 +1,593 @@
+{
+  "schema": "eep.rc4.midrun-tool-source-selection.v1",
+  "run_id": "20261019T133314Z",
+  "scope": "midrun UI-capture-tool supplement",
+  "created_at_utc": "2026-10-19T14:36:26.157119+00:00",
+  "source_closure_seed_mod_relative_paths": [
+    "tools/runtime.py",
+    "tools/runtime_single_homeworld.py",
+    "tools/runtime_1019.py",
+    "tools/runtime_1015.py",
+    "tools/runtime_growth_1019.py",
+    "tools/audit_save.py",
+    "tools/check_1019.py",
+    "tools/check_growth_1019.py",
+    "tools/check_single_homeworld.py",
+    "testing/inspect_1015.py",
+    "testing/inspect_1019.py"
+  ],
+  "source_closure_shared_seed": "tools/stellaris_acceptance.py",
+  "closure_method": "AST import and import-from; unique local module.py in mod/tools, mod/testing, repository/tools; never execute modules",
+  "closure_limit": "Static available local Python dependencies only; not proof every function/module executed by a worker; dynamic imports/third-party binary dependency closure is outside this supplement",
+  "local_import_edges": [
+    {
+      "from": "eat_everything_origin/testing/inspect_1015.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/testing/inspect_1019.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/testing/inspect_1019.py",
+      "module": "check_single_homeworld",
+      "to": "eat_everything_origin/tools/check_single_homeworld.py"
+    },
+    {
+      "from": "eat_everything_origin/testing/inspect_1019.py",
+      "module": "inspect_1015",
+      "to": "eat_everything_origin/testing/inspect_1015.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_1019.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_1019.py",
+      "module": "check_single_homeworld",
+      "to": "eat_everything_origin/tools/check_single_homeworld.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_1019.py",
+      "module": "inspect_1019",
+      "to": "eat_everything_origin/testing/inspect_1019.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_growth_1019.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_growth_1019.py",
+      "module": "inspect_1019",
+      "to": "eat_everything_origin/testing/inspect_1019.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_growth_1019.py",
+      "module": "publish_1019",
+      "to": "eat_everything_origin/tools/publish_1019.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_growth_1019.py",
+      "module": "runtime_growth_1019",
+      "to": "eat_everything_origin/tools/runtime_growth_1019.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_single_homeworld.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/check_single_homeworld.py",
+      "module": "inspect_1015",
+      "to": "eat_everything_origin/testing/inspect_1015.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/publish.py",
+      "module": "change_note_html",
+      "to": "eat_everything_origin/tools/change_note_html.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/publish.py",
+      "module": "release_acceptance",
+      "to": "eat_everything_origin/tools/release_acceptance.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/publish.py",
+      "module": "workshop_images",
+      "to": "eat_everything_origin/tools/workshop_images.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/publish_1019.py",
+      "module": "publish_update",
+      "to": "eat_everything_origin/tools/publish_update.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/publish_update.py",
+      "module": "publish",
+      "to": "eat_everything_origin/tools/publish.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/publish_update.py",
+      "module": "workshop_images",
+      "to": "eat_everything_origin/tools/workshop_images.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime.py",
+      "module": "stellaris_acceptance",
+      "to": "tools/stellaris_acceptance.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_1015.py",
+      "module": "runtime",
+      "to": "eat_everything_origin/tools/runtime.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_1019.py",
+      "module": "publish_1019",
+      "to": "eat_everything_origin/tools/publish_1019.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_1019.py",
+      "module": "runtime_single_homeworld",
+      "to": "eat_everything_origin/tools/runtime_single_homeworld.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_growth_1019.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_growth_1019.py",
+      "module": "runtime_1019",
+      "to": "eat_everything_origin/tools/runtime_1019.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_single_homeworld.py",
+      "module": "audit_save",
+      "to": "eat_everything_origin/tools/audit_save.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_single_homeworld.py",
+      "module": "inspect_1015",
+      "to": "eat_everything_origin/testing/inspect_1015.py"
+    },
+    {
+      "from": "eat_everything_origin/tools/runtime_single_homeworld.py",
+      "module": "runtime_1015",
+      "to": "eat_everything_origin/tools/runtime_1015.py"
+    }
+  ],
+  "nrel_fixed_filenames": [
+    "nrel-source-import-receipt.json",
+    "nrel-source-load-esc-0.action.json",
+    "nrel-source-load-open.action.json",
+    "nrel-source-load-row.action.json",
+    "nrel-source-load-load.action.json",
+    "nrel-source-load-menu-0.jpg",
+    "nrel-source-load-menu-0.ocr.json",
+    "nrel-source-load-menu-0-f12.action.json",
+    "nrel-source-load-menu-1.jpg",
+    "nrel-source-load-menu-1.ocr.json",
+    "nrel-source-load-menu-1-f12.action.json",
+    "nrel-source-load-load-window.jpg",
+    "nrel-source-load-load-window.ocr.json",
+    "nrel-source-load-load-window-f12.action.json",
+    "nrel-source-load-loaded.jpg",
+    "nrel-source-load-loaded.ocr.json",
+    "nrel-source-load-loaded-f12.action.json",
+    "nrel-load-hud-recheck.jpg",
+    "nrel-load-hud-recheck.ocr.json",
+    "nrel-load-hud-recheck-f12.action.json",
+    "nrel-play-country-zero-console-state.jpg",
+    "nrel-play-country-zero-console-state.ocr.json",
+    "nrel-play-country-zero-console-state-f12.action.json",
+    "nrel-play-country-zero-console-ready.jpg",
+    "nrel-play-country-zero-console-ready.ocr.json",
+    "nrel-play-country-zero-console-ready-f12.action.json",
+    "nrel-play-country-zero-retry-console-state.jpg",
+    "nrel-play-country-zero-retry-console-state.ocr.json",
+    "nrel-play-country-zero-retry-console-state-f12.action.json",
+    "nrel-play-country-zero-retry-console-ready.jpg",
+    "nrel-play-country-zero-retry-console-ready.ocr.json",
+    "nrel-play-country-zero-retry-console-ready-f12.action.json",
+    "nrel-play-country-zero-open.action.json",
+    "nrel-play-country-zero-retry-open.action.json"
+  ],
+  "files": [
+    {
+      "path": "current-source/eat_everything_origin/testing/inspect_1015.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1015.py",
+      "bytes": 5750,
+      "sha256": "24c66754024a7f35bcd314d378fc7129a76eebb67460a7f9211355d8d1e4e1d8"
+    },
+    {
+      "path": "current-source/eat_everything_origin/testing/inspect_1019.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1019.py",
+      "bytes": 21950,
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/audit_save.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\audit_save.py",
+      "bytes": 13218,
+      "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/change_note_html.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\change_note_html.py",
+      "bytes": 1051,
+      "sha256": "9b77131efcaf6d9596f506eb59e645080fd79a5e02e20a3e9ee326270c7fd6e5"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/check_1019.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py",
+      "bytes": 53761,
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/check_growth_1019.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_growth_1019.py",
+      "bytes": 32311,
+      "sha256": "12613e129fa4531fe777d03a3e00c5c4c9afc7745b8eb0f23042a23c5ffaba61"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/check_single_homeworld.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_single_homeworld.py",
+      "bytes": 15084,
+      "sha256": "cbbff12ee7fb5477d57f4dbb38d586ca4a2d663a424b788ab0ccb76b75a6a474"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/publish.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish.py",
+      "bytes": 16239,
+      "sha256": "b5dc4b6dfcc0ece8285be96e8cb2170f88a0c110055278342d1190146f9ec680"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/publish_1019.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_1019.py",
+      "bytes": 55183,
+      "sha256": "90263976081c1373bd28908165a7fc96cf19c1574a3f32dc07566876056c1968"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/publish_update.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_update.py",
+      "bytes": 16088,
+      "sha256": "f193b64a3dee21d8f7ef20c6daca4437e61d83fcdff0e73d2030b9dde90e4b3d"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/release_acceptance.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\release_acceptance.py",
+      "bytes": 5341,
+      "sha256": "df031ebbce22b56c5426497602f66c01aa0cfca6e018c403e8117fcdab1b294d"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/runtime.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\runtime.py",
+      "bytes": 19261,
+      "sha256": "84b7fdda9489392f5abab5fc71c9bd61bcc5933185a02f7c6c479d703b155ffc"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/runtime_1015.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\runtime_1015.py",
+      "bytes": 5702,
+      "sha256": "1651490dfda337294cf3acf7aea8e4aecaca638bd928c2a2b6f16f3bf0e3813f"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/runtime_1019.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\runtime_1019.py",
+      "bytes": 2804,
+      "sha256": "003b04d9046088107ada8359d2189f16c70cbf99833990765574d217e9ac7c87"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/runtime_growth_1019.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\runtime_growth_1019.py",
+      "bytes": 20424,
+      "sha256": "cab98ce18119f27838456dd6118001cc7fee5254b3150c5e5c8fcf5365f7e747"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/runtime_single_homeworld.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\runtime_single_homeworld.py",
+      "bytes": 19993,
+      "sha256": "cb0d2d2469c47183eac3211148bbf6c9e51b263bc719c35bfb9981e18326ea34"
+    },
+    {
+      "path": "current-source/eat_everything_origin/tools/workshop_images.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\workshop_images.py",
+      "bytes": 10794,
+      "sha256": "20564caf9739ce079611c7cdcd87de851a8ef5e69267993320a5d9d1a814a7c7"
+    },
+    {
+      "path": "current-source/tools/stellaris_acceptance.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\tools\\stellaris_acceptance.py",
+      "bytes": 35125,
+      "sha256": "fc4d3b01ed916a26337989becb8f33d9b930881466c42c9a69d8897e7eacec47"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-load-hud-recheck-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-load-hud-recheck-f12.action.json",
+      "bytes": 156,
+      "sha256": "d65f8a55cd082278a6351a3455c59c1e33506c43a4340314eef24655276449c8"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-load-hud-recheck.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-load-hud-recheck.jpg",
+      "bytes": 161150,
+      "sha256": "6090e633b6672c225d39abaf5e5a48e42a6ef0d0a1682b4fe0a19afce3f057cb"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-load-hud-recheck.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-load-hud-recheck.ocr.json",
+      "bytes": 17212,
+      "sha256": "c46c52cb3b93a21464cf1be54991bb79d0f6cd68235159aca09194686609b285"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-console-ready-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-console-ready-f12.action.json",
+      "bytes": 171,
+      "sha256": "4a52eba887afc174af87219844b0bbe0d0477338fbc9f3d626a3ff4bf71debce"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-console-ready.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-console-ready.jpg",
+      "bytes": 159082,
+      "sha256": "5ea814004bc2d575cb3b8d77e0c6cc3fc16cb960d0b486817fa6109081ec9a0d"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-console-ready.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-console-ready.ocr.json",
+      "bytes": 21681,
+      "sha256": "4599723a17d737b5c45809d4d1a05ad32e39eb152cbd46da54a663ebba5e1eed"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-console-state-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-console-state-f12.action.json",
+      "bytes": 171,
+      "sha256": "dea62ebf43419d8621869bbc4aa27c753e345f4bf7928b624ae6f5cff1ea0ad9"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-console-state.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-console-state.jpg",
+      "bytes": 161734,
+      "sha256": "fa85ace75d9bc9b697aeb47c4d444a93e1acd693b1ca111cb0863049e25372a0"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-console-state.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-console-state.ocr.json",
+      "bytes": 17241,
+      "sha256": "73774bcf50b20afa2976c52a7cb8014cafb8dfc752f22be278f44770b083330a"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-open.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-open.action.json",
+      "bytes": 158,
+      "sha256": "4fd0f54e59283e0aa6994fc6f1d5a6e6ea919ba769b0672212debe6e844f5a77"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-retry-console-ready-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-retry-console-ready-f12.action.json",
+      "bytes": 177,
+      "sha256": "e4ffcf622c62ffaba1f1dbd8b9f3672a7986c6fd70b33a2fa7f1b0e8f0427dfe"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-retry-console-ready.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-retry-console-ready.jpg",
+      "bytes": 161185,
+      "sha256": "f10ceee5c85a8d6f46852f4a6e6de6a08e649b5ee6b806ed1d7feaa1cc5fef48"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-retry-console-ready.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-retry-console-ready.ocr.json",
+      "bytes": 17549,
+      "sha256": "787f99ea7a22aa07f17d19fc79cb34b1a27071d3026f4a84bbd770c707c1dc1e"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-retry-console-state-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-retry-console-state-f12.action.json",
+      "bytes": 177,
+      "sha256": "b5f081416250a86342f454f7d5b2d419cff69115f936208ef7614cdd3975c362"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-retry-console-state.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-retry-console-state.jpg",
+      "bytes": 161732,
+      "sha256": "02c32c575db305f81278d54acfa441f9fa2ef66c29cf43a630b91611d80f6bd8"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-retry-console-state.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-retry-console-state.ocr.json",
+      "bytes": 17250,
+      "sha256": "5bf5aca0110d0f61a9cdd9496748dce7eff67cdfae1dd0b6c383fda8fe4d5ff1"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-play-country-zero-retry-open.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-play-country-zero-retry-open.action.json",
+      "bytes": 164,
+      "sha256": "600cbbcdd990c68ebec0f73657f22086b5929c7436f642ce469bee7afb056474"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-import-receipt.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-import-receipt.json",
+      "bytes": 16976,
+      "sha256": "7c3e1197261753e3378a9551e8499467f8bbcb1c6c97cb7ef4d877c56f95884b"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-esc-0.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-esc-0.action.json",
+      "bytes": 152,
+      "sha256": "7f6850c812fb876c84ee253e262e68f00fc7ab00fc9bb4bd7c7c6c0a16d3e5fd"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-load-window-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-load-window-f12.action.json",
+      "bytes": 163,
+      "sha256": "1069a1708ff68fad8186707a67318b6024b951ba2ee070ec185cde8e2695cbbf"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-load-window.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-load-window.jpg",
+      "bytes": 149068,
+      "sha256": "4cba83774ffc2d3fc9efcc9a32ad46d864ba0f5d9af8765658c4782e76f7fd07"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-load-window.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-load-window.ocr.json",
+      "bytes": 28317,
+      "sha256": "33c8b8590f533aa0c68d3d27c9291d7089b949619d39659ddcbc90f002faf29b"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-load.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-load.action.json",
+      "bytes": 149,
+      "sha256": "47b6459c665f04649c97a61c388158506839e19e8a2c06f71bfab70906911134"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-loaded-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-loaded-f12.action.json",
+      "bytes": 158,
+      "sha256": "abcb4f3543e968862f1d08ee57147f0eea1b0ddf7781562b7bb425fd3f8a1cdb"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-loaded.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-loaded.jpg",
+      "bytes": 161612,
+      "sha256": "4be968ba08f20374ba1d30af6e4f9b49e09dd32ef20fd8e6aee8443c14170e42"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-loaded.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-loaded.ocr.json",
+      "bytes": 17215,
+      "sha256": "fb5cc3a2e8509789b2d0e8e6f516b809c55875ef1e6240dbbb063702e5876472"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-menu-0-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-menu-0-f12.action.json",
+      "bytes": 158,
+      "sha256": "aa13404d1ba1aeabcf66479a761bd8ed29605fe1b63247ecde6003315295035b"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-menu-0.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-menu-0.jpg",
+      "bytes": 166955,
+      "sha256": "dbfd2769447a1d6f1c7269c7715b38e40a283312ae1730d3abae514bee2c52d8"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-menu-0.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-menu-0.ocr.json",
+      "bytes": 23895,
+      "sha256": "820b819046bb4125f1eafe30e66fc389ac7b22c8b3f616cefea74cf227c3fc93"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-menu-1-f12.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-menu-1-f12.action.json",
+      "bytes": 158,
+      "sha256": "f79e730304103c54485d43342743ee4f4f6855fb50d271fe9e240edada559a6d"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-menu-1.jpg",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-menu-1.jpg",
+      "bytes": 156426,
+      "sha256": "55128d9c21bfa446938a638e4c5494a02592502108f246da05f05bef43502c56"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-menu-1.ocr.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-menu-1.ocr.json",
+      "bytes": 23062,
+      "sha256": "52485c5b0caec1bb8220aeed98e0216a58b02704ce3d3fceb0b7796439b92c33"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-open.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-open.action.json",
+      "bytes": 149,
+      "sha256": "43b08c669386b91a247016147e033afa354549c29e4890dc368ab6569971d6a8"
+    },
+    {
+      "path": "nrel-failed-attempts/nrel-source-load-row.action.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\nrel-source-load-row.action.json",
+      "bytes": 148,
+      "sha256": "dd232153fc9692d7543b1e0d8aad01adfccdfd5dc1678b7fc8ba020b35e989db"
+    },
+    {
+      "path": "old-source/runtime.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc4-pk2-duration\\execution_sources\\runtime.py",
+      "bytes": 18596,
+      "sha256": "91b831241440a04ffa55d7226c7e2eb158907ebdc62054a906ff51e9f5e77adf"
+    },
+    {
+      "path": "original-run/manifest.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\manifest.json",
+      "bytes": 24165,
+      "sha256": "557a73280c6d263fbe7ce5723e15d19154e209acf57c81bc22bec275401ffa79"
+    },
+    {
+      "path": "original-run/process.json",
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T133314Z\\process.json",
+      "bytes": 870,
+      "sha256": "8cd9eca57575e42d304f182f989cad005689dd1e6e12a536b4151c7cff7f9a61"
+    },
+    {
+      "path": "plans/native-relic-health-calibration-1019.md",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\native-relic-health-calibration-1019.md",
+      "bytes": 8216,
+      "sha256": "c830ee8c2644c64067fcc02a37955ffeaae11d68412efca7db46b7f025340961"
+    },
+    {
+      "path": "release-evidence/docs/evidence/1019-analysis/ocr-capture-readonly-cost-v1.json",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\ocr-capture-readonly-cost-v1.json",
+      "bytes": 1738,
+      "sha256": "a3fe665689b6fa5fd48636475a582995c3daf16e9b02620c19f7b555834234d2"
+    },
+    {
+      "path": "release-evidence/docs/evidence/1019-analysis/ocr-screenshot-scan-benchmark-v1.json",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\ocr-screenshot-scan-benchmark-v1.json",
+      "bytes": 2542,
+      "sha256": "ca471a1ee5d2a4026af3a3ea4814179b1e1b42369d08e39d6fc5a1b10ae7dbaa"
+    },
+    {
+      "path": "release-evidence/docs/evidence/1019-analysis/ocr-screenshot-scan-benchmark-v1.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\ocr-screenshot-scan-benchmark-v1.py",
+      "bytes": 4105,
+      "sha256": "b8e7a2ed3500596036565c4a1b329c534bba3ad1a829ea9077a5fadb7dccae90"
+    },
+    {
+      "path": "release-evidence/docs/evidence/1019-analysis/ocr-session-reuse-benchmark-v1.json",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\ocr-session-reuse-benchmark-v1.json",
+      "bytes": 573869,
+      "sha256": "8b4b3cdf48dab252459f657d0ab5c8d68b5c52de4a275975e76b477960142698"
+    },
+    {
+      "path": "release-evidence/docs/evidence/1019-analysis/ocr-session-reuse-benchmark-v1.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\ocr-session-reuse-benchmark-v1.py",
+      "bytes": 6022,
+      "sha256": "0192eedfb55631b221af69e72a192ea99e9e00f8fb9cea3b26641da65ea6f990"
+    },
+    {
+      "path": "release-evidence/docs/ocr-session-reuse-1019.md",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\ocr-session-reuse-1019.md",
+      "bytes": 8372,
+      "sha256": "6ddd48a926b7c9ce146248f81245d59aeca307c0a84e4b5bf25e57cdf35b9770"
+    },
+    {
+      "path": "release-evidence/testing/test_runtime_screenshot_scan.py",
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\test_runtime_screenshot_scan.py",
+      "bytes": 5524,
+      "sha256": "7332e373389b588fcc665a9c2246df9cd546bb594935152fecd45a5192d8d5e8"
+    }
+  ],
+  "exclusions": [
+    "all active/final logs",
+    "Mod tree files",
+    "SAV copies",
+    "later direct probes",
+    "invented worker source file",
+    "invented successful load/failed-helper receipt"
+  ]
+}
