@@ -1,0 +1,1099 @@
+{
+  "schema": "eep.growth.government_identity_fix_supplement.v1",
+  "status": "PASS_SCOPED_GOVERNMENT_IDENTITY_ONLY",
+  "new_tool": {
+    "path": "tools/check_growth_1019.py",
+    "sha256": "0c31f76491c39aff56fb054088d2a8fa4b592eb7f0ad186c5f1ec0c6625832bd"
+  },
+  "old_tool": {
+    "path": "docs/evidence/1020-growth-government-identity/old-tool/check_growth_1019.py",
+    "sha256": "a66a949b3d967eb3a8739568ed2e53d8400fb244d86e3ced245c25f2db60e29b"
+  },
+  "original_reports_unchanged": true,
+  "source_models_sha256": [
+    "bd3b4d48eeb5de98b34a8ba104f55c23f17cb43a723a216934f2c2a1c4a2099f",
+    "a191eea40464ef3fde5f7ec64f33ac2d7012ef74d6b6cdea900d441a16371bc8",
+    "942b98c2aea0022ff7ffa017944abbf873d36331fd26c89862f83a37e31e4dd2",
+    "6eb5ef0ef58fb353edd6e3f31b932ddc4bbf6b8b42b3bb6eaf2881fe51bd4c7f"
+  ],
+  "government_identity_contract": "cross_date_direct_finite_agenda_progress_observation_v1",
+  "pairs": [
+    {
+      "C": 0,
+      "source_fail_report": {
+        "path": "docs/evidence/1019-analysis/rc6-growth-pair-n00-c0-observation-v1.json",
+        "sha256": "8073d947e1901ab28a21f0c9d49944656c7455864ef72c2b820114bd535a6021"
+      },
+      "original_status": "FAIL_OBSERVATION",
+      "original_failure_count": 1,
+      "unchanged_non_government_pass_count": 169,
+      "scope": "Re-evaluate only original government raw comparisons; no SAV reparse or full matrix acceptance",
+      "government_checks": [
+        {
+          "check": "refresh stable government",
+          "passed": true,
+          "actual": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ],
+          "expected": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ]
+        }
+      ],
+      "government_observations": [
+        {
+          "check": "refresh stable government",
+          "mode": "cross_date_structural_identity",
+          "before": {
+            "date": "2201.03.01",
+            "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6808.5\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+            "identity": [
+              {
+                "key": "type",
+                "raw": "\"gov_machine_terminator\"",
+                "object": false
+              },
+              {
+                "key": "authority",
+                "raw": "\"auth_machine_intelligence\"",
+                "object": false
+              },
+              {
+                "key": "civics",
+                "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "origin",
+                "raw": "\"origin_heart_of_devouring\"",
+                "object": false
+              },
+              {
+                "key": "council_positions",
+                "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "council_agenda",
+                "raw": "\"agenda_infinite_opportunities_gestalt\"",
+                "object": false
+              },
+              {
+                "key": "unlocked_civic_council_slots",
+                "raw": "0",
+                "object": false
+              },
+              {
+                "key": "picked_council_types",
+                "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+                "object": true
+              }
+            ],
+            "council_agenda_progress": {
+              "present": true,
+              "raw": "6808.5",
+              "value": 6808.5
+            }
+          },
+          "after": {
+            "date": "2201.02.01",
+            "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6750.75\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+            "identity": [
+              {
+                "key": "type",
+                "raw": "\"gov_machine_terminator\"",
+                "object": false
+              },
+              {
+                "key": "authority",
+                "raw": "\"auth_machine_intelligence\"",
+                "object": false
+              },
+              {
+                "key": "civics",
+                "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "origin",
+                "raw": "\"origin_heart_of_devouring\"",
+                "object": false
+              },
+              {
+                "key": "council_positions",
+                "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "council_agenda",
+                "raw": "\"agenda_infinite_opportunities_gestalt\"",
+                "object": false
+              },
+              {
+                "key": "unlocked_civic_council_slots",
+                "raw": "0",
+                "object": false
+              },
+              {
+                "key": "picked_council_types",
+                "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+                "object": true
+              }
+            ],
+            "council_agenda_progress": {
+              "present": true,
+              "raw": "6750.75",
+              "value": 6750.75
+            }
+          },
+          "raw_equal": false,
+          "raw_diff": [
+            "--- before_government\n",
+            "+++ after_government\n",
+            "@@ -12,7 +12,7 @@\n",
+            " \t\t\t\t251658243 251658242 251658241 251658240 \n",
+            " \t\t\t}\n",
+            " \t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n",
+            "-\t\t\tcouncil_agenda_progress=6808.5\n",
+            "+\t\t\tcouncil_agenda_progress=6750.75\n",
+            " \t\t\tunlocked_civic_council_slots=0\n",
+            " \t\t\tpicked_council_types=\n",
+            " \t\t\t{\n"
+          ],
+          "progress_delta": -57.75
+        }
+      ],
+      "pair_check": {
+        "check": "pair refresh-final structural identity",
+        "passed": true,
+        "actual": [
+          {
+            "key": "type",
+            "raw": "\"gov_machine_terminator\"",
+            "object": false
+          },
+          {
+            "key": "authority",
+            "raw": "\"auth_machine_intelligence\"",
+            "object": false
+          },
+          {
+            "key": "civics",
+            "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "origin",
+            "raw": "\"origin_heart_of_devouring\"",
+            "object": false
+          },
+          {
+            "key": "council_positions",
+            "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "council_agenda",
+            "raw": "\"agenda_infinite_opportunities_gestalt\"",
+            "object": false
+          },
+          {
+            "key": "unlocked_civic_council_slots",
+            "raw": "0",
+            "object": false
+          },
+          {
+            "key": "picked_council_types",
+            "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+            "object": true
+          }
+        ],
+        "expected": [
+          {
+            "key": "type",
+            "raw": "\"gov_machine_terminator\"",
+            "object": false
+          },
+          {
+            "key": "authority",
+            "raw": "\"auth_machine_intelligence\"",
+            "object": false
+          },
+          {
+            "key": "civics",
+            "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "origin",
+            "raw": "\"origin_heart_of_devouring\"",
+            "object": false
+          },
+          {
+            "key": "council_positions",
+            "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "council_agenda",
+            "raw": "\"agenda_infinite_opportunities_gestalt\"",
+            "object": false
+          },
+          {
+            "key": "unlocked_civic_council_slots",
+            "raw": "0",
+            "object": false
+          },
+          {
+            "key": "picked_council_types",
+            "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+            "object": true
+          }
+        ]
+      },
+      "pair_observation": {
+        "check": "pair refresh-final structural identity",
+        "mode": "cross_date_structural_identity",
+        "before": {
+          "date": "2201.02.01",
+          "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6750.75\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+          "identity": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ],
+          "council_agenda_progress": {
+            "present": true,
+            "raw": "6750.75",
+            "value": 6750.75
+          }
+        },
+        "after": {
+          "date": "2201.03.01",
+          "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6808.5\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+          "identity": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ],
+          "council_agenda_progress": {
+            "present": true,
+            "raw": "6808.5",
+            "value": 6808.5
+          }
+        },
+        "raw_equal": false,
+        "raw_diff": [
+          "--- before_government\n",
+          "+++ after_government\n",
+          "@@ -12,7 +12,7 @@\n",
+          " \t\t\t\t251658243 251658242 251658241 251658240 \n",
+          " \t\t\t}\n",
+          " \t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n",
+          "-\t\t\tcouncil_agenda_progress=6750.75\n",
+          "+\t\t\tcouncil_agenda_progress=6808.5\n",
+          " \t\t\tunlocked_civic_council_slots=0\n",
+          " \t\t\tpicked_council_types=\n",
+          " \t\t\t{\n"
+        ],
+        "progress_delta": 57.75
+      }
+    },
+    {
+      "C": 9,
+      "source_fail_report": {
+        "path": "docs/evidence/1019-analysis/rc6-growth-pair-n01-c9-observation-v1.json",
+        "sha256": "66f0e65be8e9ac8adcfc314155180f7f31e480f4fb05f5e58671ebfcb86ec3e2"
+      },
+      "original_status": "FAIL_OBSERVATION",
+      "original_failure_count": 2,
+      "unchanged_non_government_pass_count": 168,
+      "scope": "Re-evaluate only original government raw comparisons; no SAV reparse or full matrix acceptance",
+      "government_checks": [
+        {
+          "check": "refresh stable government",
+          "passed": true,
+          "actual": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ],
+          "expected": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ]
+        },
+        {
+          "check": "final stable government",
+          "passed": true,
+          "actual": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ],
+          "expected": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ]
+        }
+      ],
+      "government_observations": [
+        {
+          "check": "refresh stable government",
+          "mode": "cross_date_structural_identity",
+          "before": {
+            "date": "2201.03.01",
+            "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6808.5\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+            "identity": [
+              {
+                "key": "type",
+                "raw": "\"gov_machine_terminator\"",
+                "object": false
+              },
+              {
+                "key": "authority",
+                "raw": "\"auth_machine_intelligence\"",
+                "object": false
+              },
+              {
+                "key": "civics",
+                "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "origin",
+                "raw": "\"origin_heart_of_devouring\"",
+                "object": false
+              },
+              {
+                "key": "council_positions",
+                "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "council_agenda",
+                "raw": "\"agenda_infinite_opportunities_gestalt\"",
+                "object": false
+              },
+              {
+                "key": "unlocked_civic_council_slots",
+                "raw": "0",
+                "object": false
+              },
+              {
+                "key": "picked_council_types",
+                "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+                "object": true
+              }
+            ],
+            "council_agenda_progress": {
+              "present": true,
+              "raw": "6808.5",
+              "value": 6808.5
+            }
+          },
+          "after": {
+            "date": "2201.04.01",
+            "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6866.25\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+            "identity": [
+              {
+                "key": "type",
+                "raw": "\"gov_machine_terminator\"",
+                "object": false
+              },
+              {
+                "key": "authority",
+                "raw": "\"auth_machine_intelligence\"",
+                "object": false
+              },
+              {
+                "key": "civics",
+                "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "origin",
+                "raw": "\"origin_heart_of_devouring\"",
+                "object": false
+              },
+              {
+                "key": "council_positions",
+                "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "council_agenda",
+                "raw": "\"agenda_infinite_opportunities_gestalt\"",
+                "object": false
+              },
+              {
+                "key": "unlocked_civic_council_slots",
+                "raw": "0",
+                "object": false
+              },
+              {
+                "key": "picked_council_types",
+                "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+                "object": true
+              }
+            ],
+            "council_agenda_progress": {
+              "present": true,
+              "raw": "6866.25",
+              "value": 6866.25
+            }
+          },
+          "raw_equal": false,
+          "raw_diff": [
+            "--- before_government\n",
+            "+++ after_government\n",
+            "@@ -12,7 +12,7 @@\n",
+            " \t\t\t\t251658243 251658242 251658241 251658240 \n",
+            " \t\t\t}\n",
+            " \t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n",
+            "-\t\t\tcouncil_agenda_progress=6808.5\n",
+            "+\t\t\tcouncil_agenda_progress=6866.25\n",
+            " \t\t\tunlocked_civic_council_slots=0\n",
+            " \t\t\tpicked_council_types=\n",
+            " \t\t\t{\n"
+          ],
+          "progress_delta": 57.75
+        },
+        {
+          "check": "final stable government",
+          "mode": "cross_date_structural_identity",
+          "before": {
+            "date": "2201.03.01",
+            "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6808.5\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+            "identity": [
+              {
+                "key": "type",
+                "raw": "\"gov_machine_terminator\"",
+                "object": false
+              },
+              {
+                "key": "authority",
+                "raw": "\"auth_machine_intelligence\"",
+                "object": false
+              },
+              {
+                "key": "civics",
+                "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "origin",
+                "raw": "\"origin_heart_of_devouring\"",
+                "object": false
+              },
+              {
+                "key": "council_positions",
+                "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "council_agenda",
+                "raw": "\"agenda_infinite_opportunities_gestalt\"",
+                "object": false
+              },
+              {
+                "key": "unlocked_civic_council_slots",
+                "raw": "0",
+                "object": false
+              },
+              {
+                "key": "picked_council_types",
+                "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+                "object": true
+              }
+            ],
+            "council_agenda_progress": {
+              "present": true,
+              "raw": "6808.5",
+              "value": 6808.5
+            }
+          },
+          "after": {
+            "date": "2201.05.01",
+            "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6924\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+            "identity": [
+              {
+                "key": "type",
+                "raw": "\"gov_machine_terminator\"",
+                "object": false
+              },
+              {
+                "key": "authority",
+                "raw": "\"auth_machine_intelligence\"",
+                "object": false
+              },
+              {
+                "key": "civics",
+                "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "origin",
+                "raw": "\"origin_heart_of_devouring\"",
+                "object": false
+              },
+              {
+                "key": "council_positions",
+                "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+                "object": true
+              },
+              {
+                "key": "council_agenda",
+                "raw": "\"agenda_infinite_opportunities_gestalt\"",
+                "object": false
+              },
+              {
+                "key": "unlocked_civic_council_slots",
+                "raw": "0",
+                "object": false
+              },
+              {
+                "key": "picked_council_types",
+                "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+                "object": true
+              }
+            ],
+            "council_agenda_progress": {
+              "present": true,
+              "raw": "6924",
+              "value": 6924.0
+            }
+          },
+          "raw_equal": false,
+          "raw_diff": [
+            "--- before_government\n",
+            "+++ after_government\n",
+            "@@ -12,7 +12,7 @@\n",
+            " \t\t\t\t251658243 251658242 251658241 251658240 \n",
+            " \t\t\t}\n",
+            " \t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n",
+            "-\t\t\tcouncil_agenda_progress=6808.5\n",
+            "+\t\t\tcouncil_agenda_progress=6924\n",
+            " \t\t\tunlocked_civic_council_slots=0\n",
+            " \t\t\tpicked_council_types=\n",
+            " \t\t\t{\n"
+          ],
+          "progress_delta": 115.5
+        }
+      ],
+      "pair_check": {
+        "check": "pair refresh-final structural identity",
+        "passed": true,
+        "actual": [
+          {
+            "key": "type",
+            "raw": "\"gov_machine_terminator\"",
+            "object": false
+          },
+          {
+            "key": "authority",
+            "raw": "\"auth_machine_intelligence\"",
+            "object": false
+          },
+          {
+            "key": "civics",
+            "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "origin",
+            "raw": "\"origin_heart_of_devouring\"",
+            "object": false
+          },
+          {
+            "key": "council_positions",
+            "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "council_agenda",
+            "raw": "\"agenda_infinite_opportunities_gestalt\"",
+            "object": false
+          },
+          {
+            "key": "unlocked_civic_council_slots",
+            "raw": "0",
+            "object": false
+          },
+          {
+            "key": "picked_council_types",
+            "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+            "object": true
+          }
+        ],
+        "expected": [
+          {
+            "key": "type",
+            "raw": "\"gov_machine_terminator\"",
+            "object": false
+          },
+          {
+            "key": "authority",
+            "raw": "\"auth_machine_intelligence\"",
+            "object": false
+          },
+          {
+            "key": "civics",
+            "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "origin",
+            "raw": "\"origin_heart_of_devouring\"",
+            "object": false
+          },
+          {
+            "key": "council_positions",
+            "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+            "object": true
+          },
+          {
+            "key": "council_agenda",
+            "raw": "\"agenda_infinite_opportunities_gestalt\"",
+            "object": false
+          },
+          {
+            "key": "unlocked_civic_council_slots",
+            "raw": "0",
+            "object": false
+          },
+          {
+            "key": "picked_council_types",
+            "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+            "object": true
+          }
+        ]
+      },
+      "pair_observation": {
+        "check": "pair refresh-final structural identity",
+        "mode": "cross_date_structural_identity",
+        "before": {
+          "date": "2201.04.01",
+          "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6866.25\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+          "identity": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ],
+          "council_agenda_progress": {
+            "present": true,
+            "raw": "6866.25",
+            "value": 6866.25
+          }
+        },
+        "after": {
+          "date": "2201.05.01",
+          "raw": "\n\t\t\ttype=\"gov_machine_terminator\"\n\t\t\tauthority=\"auth_machine_intelligence\"\n\t\t\tcivics=\n\t\t\t{\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t}\n\t\t\torigin=\"origin_heart_of_devouring\"\n\t\t\tcouncil_positions=\n\t\t\t{\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t}\n\t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n\t\t\tcouncil_agenda_progress=6924\n\t\t\tunlocked_civic_council_slots=0\n\t\t\tpicked_council_types=\n\t\t\t{\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t}\n\t\t",
+          "identity": [
+            {
+              "key": "type",
+              "raw": "\"gov_machine_terminator\"",
+              "object": false
+            },
+            {
+              "key": "authority",
+              "raw": "\"auth_machine_intelligence\"",
+              "object": false
+            },
+            {
+              "key": "civics",
+              "raw": "\n\t\t\t\t\"civic_machine_terminator\"\n\t\t\t\t\"civic_machine_replication\"\n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "origin",
+              "raw": "\"origin_heart_of_devouring\"",
+              "object": false
+            },
+            {
+              "key": "council_positions",
+              "raw": "\n\t\t\t\t251658243 251658242 251658241 251658240 \n\t\t\t",
+              "object": true
+            },
+            {
+              "key": "council_agenda",
+              "raw": "\"agenda_infinite_opportunities_gestalt\"",
+              "object": false
+            },
+            {
+              "key": "unlocked_civic_council_slots",
+              "raw": "0",
+              "object": false
+            },
+            {
+              "key": "picked_council_types",
+              "raw": "\n\t\t\t\t\"councilor_gestalt_growth\"\n\t\t\t\t\"councilor_gestalt_cognitive\"\n\t\t\t\t\"councilor_gestalt_legion\"\n\t\t\t\t\"councilor_gestalt_regulatory\"\n\t\t\t",
+              "object": true
+            }
+          ],
+          "council_agenda_progress": {
+            "present": true,
+            "raw": "6924",
+            "value": 6924.0
+          }
+        },
+        "raw_equal": false,
+        "raw_diff": [
+          "--- before_government\n",
+          "+++ after_government\n",
+          "@@ -12,7 +12,7 @@\n",
+          " \t\t\t\t251658243 251658242 251658241 251658240 \n",
+          " \t\t\t}\n",
+          " \t\t\tcouncil_agenda=\"agenda_infinite_opportunities_gestalt\"\n",
+          "-\t\t\tcouncil_agenda_progress=6866.25\n",
+          "+\t\t\tcouncil_agenda_progress=6924\n",
+          " \t\t\tunlocked_civic_council_slots=0\n",
+          " \t\t\tpicked_council_types=\n",
+          " \t\t\t{\n"
+        ],
+        "progress_delta": 57.75
+      }
+    }
+  ],
+  "same_day_policy": "comparison/business government raw unchanged; progress differences still FAIL",
+  "full_growth_acceptance": "NOT_EVALUATED"
+}

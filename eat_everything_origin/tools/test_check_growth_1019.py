@@ -185,6 +185,17 @@ class GrowthReportTests(unittest.TestCase):
         after["fleet_variables"][c.TIERS[0]] = 1
         self.assertEqual(c.comparison(self.base, after, "reload")["status"], "FAIL")
 
+    def test_same_day_repeat_and_reload_keep_government_progress_raw_exact(self):
+        before, after = copy.deepcopy(self.base), copy.deepcopy(self.base)
+        before["government"] += '\n council_agenda_progress=6750.75\n'
+        after["government"] += '\n council_agenda_progress=6808.5\n'
+        for name in ("same-day repeated sync", "same-day reload"):
+            with self.subTest(name=name):
+                result = c.comparison(before, after, name)
+                self.assertEqual(result["status"], "FAIL")
+                self.assertFalse(next(row["passed"] for row in result["checks"]
+                                      if row["check"].endswith("discrete business signature")))
+
     def test_report_failure_is_preserved_and_never_overwritten(self):
         receipt = self.folder / "bad.json"
         receipt.write_text('{}', encoding="utf-8")
@@ -215,6 +226,65 @@ class GrowthReportTests(unittest.TestCase):
                 "absolute_floor": c.TOLERANCE, "binary32_ulps": c.HP_ULPS, "relative_tolerance": 0,
                 "classification": "predeclared_engineering_allowance_not_engine_storage_proof",
                 "all_ten_modifier_exports_absolute_tolerance": .01, "ledger_identity_slots": "exact"})
+
+
+class GovernmentIdentityTests(unittest.TestCase):
+    RAW = ('type="gov_machine_intelligence" authority="auth_machine_intelligence" '
+           'civics={"civic_machine_terminator"} origin="origin_eep" '
+           'unknown_scalar=7 unknown_object={value=8 council_agenda_progress=9} '
+           'council_agenda_progress=6750.75')
+
+    def compare(self, raw, same_date=False):
+        rows = []
+        observation = c.matrix_government_comparison(rows, "stable government", 
+            {"date": "2201.02.01", "government": self.RAW},
+            {"date": "2201.02.01" if same_date else "2201.03.01", "government": raw})
+        return rows[0], observation
+
+    def test_cross_month_progress_only_passes_and_raw_difference_is_retained(self):
+        row, observed = self.compare(self.RAW.replace("6750.75", "6808.5"))
+        self.assertTrue(row["passed"])
+        self.assertEqual(observed["mode"], "cross_date_structural_identity")
+        self.assertFalse(observed["raw_equal"])
+        self.assertTrue(observed["raw_diff"])
+        self.assertEqual(observed["progress_delta"], 57.75)
+        self.assertEqual(observed["before"]["raw"], self.RAW)
+        self.assertEqual(observed["before"]["council_agenda_progress"]["raw"], "6750.75")
+        self.assertEqual(observed["before"]["identity"], observed["after"]["identity"])
+
+    def test_real_government_civic_origin_authority_and_unknown_changes_fail(self):
+        for old, new in (("gov_machine_intelligence", "gov_hive_mind"),
+                         ("auth_machine_intelligence", "auth_hive_mind"),
+                         ("civic_machine_terminator", "civic_machine_servitor"),
+                         ("origin_eep", "origin_other"), ("unknown_scalar=7", "unknown_scalar=8"),
+                         ("value=8", "value=9")):
+            with self.subTest(field=old):
+                self.assertFalse(self.compare(self.RAW.replace(old, new))[0]["passed"])
+
+    def test_nested_same_named_progress_is_not_excluded(self):
+        self.assertFalse(self.compare(self.RAW.replace("council_agenda_progress=9}",
+                                                       "council_agenda_progress=10}"))[0]["passed"])
+
+    def test_duplicate_object_or_nonfinite_direct_progress_is_rejected(self):
+        for invalid in ("6750.75 council_agenda_progress=6808.5", "{value=6750.75}",
+                        "NaN", "inf", "-inf", "1e9999", '"6750.75"', "yes"):
+            with self.subTest(invalid=invalid), self.assertRaisesRegex(ValueError, "council_agenda_progress"):
+                self.compare(self.RAW.replace("6750.75", invalid))
+
+    def test_same_date_matrix_progress_change_still_fails(self):
+        row, observed = self.compare(self.RAW.replace("6750.75", "6808.5"), same_date=True)
+        self.assertFalse(row["passed"])
+        self.assertEqual(observed["mode"], "same_date_raw_exact")
+
+    def test_unknown_duplicate_fields_and_nested_raw_values_remain_verbatim(self):
+        raw = 'unknown=1 unknown=2 nested={ x = 1 council_agenda_progress={bad=yes} }'
+        parsed = c.government_identity(raw)
+        self.assertEqual(parsed["identity"], [
+            {"key": "unknown", "raw": "1", "object": False},
+            {"key": "unknown", "raw": "2", "object": False},
+            {"key": "nested", "raw": " x = 1 council_agenda_progress={bad=yes} ", "object": True}])
+        self.assertEqual(parsed["council_agenda_progress"], {"present": False, "raw": None, "value": None})
+        self.assertFalse(self.compare(self.RAW.replace("unknown_scalar=7", "unknown_scalar=7 unknown_scalar=7"))[0]["passed"])
 
 
 class SourceRevisionTests(unittest.TestCase):

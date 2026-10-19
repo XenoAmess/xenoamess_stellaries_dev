@@ -1,5 +1,6 @@
 """Prepare growth collection commands or check original native observations offline."""
 import argparse
+import difflib
 import hashlib
 import json
 import math
@@ -321,6 +322,41 @@ def comparison(before, after, name):
     return result
 
 
+def government_identity(raw):
+    """Keep direct native fields verbatim except one finite scalar time counter."""
+    identity, progress = [], {"present": False, "raw": None, "value": None}
+    for key, body, obj in a.fields(raw):
+        if key != "council_agenda_progress":
+            identity.append({"key": key, "raw": body, "object": obj})
+            continue
+        if progress["present"]:
+            raise ValueError("duplicate direct council_agenda_progress")
+        if obj or not re.fullmatch(r"-?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?", body):
+            raise ValueError("direct council_agenda_progress must be a finite numeric scalar")
+        value = float(body)
+        if not math.isfinite(value):
+            raise ValueError("direct council_agenda_progress must be a finite numeric scalar")
+        progress = {"present": True, "raw": body, "value": value}
+    return {"identity": identity, "council_agenda_progress": progress}
+
+
+def matrix_government_comparison(rows, name, before, after):
+    previous, current = government_identity(before["government"]), government_identity(after["government"])
+    same_date = before["date"] == after["date"]
+    check(rows, name, after["government"] if same_date else current["identity"],
+          before["government"] if same_date else previous["identity"])
+    old_progress, new_progress = previous["council_agenda_progress"], current["council_agenda_progress"]
+    return {"check": name, "mode": "same_date_raw_exact" if same_date else "cross_date_structural_identity",
+            "before": {"date": before["date"], "raw": before["government"], **previous},
+            "after": {"date": after["date"], "raw": after["government"], **current},
+            "raw_equal": before["government"] == after["government"],
+            "raw_diff": list(difflib.unified_diff(before["government"].splitlines(keepends=True),
+                                                  after["government"].splitlines(keepends=True),
+                                                  fromfile="before_government", tofile="after_government")),
+            "progress_delta": new_progress["value"] - old_progress["value"]
+                if old_progress["present"] and new_progress["present"] else None}
+
+
 def budget_comparison(before, first, second, mode):
     rows = counts(first, 20500, 400, 10) + counts(second, 20500, 410, 0)
     check(rows, "single budget source rewards", before["fleet_variables"].get("eep_component_rewards"), 200)
@@ -373,9 +409,11 @@ def report(args):
     check(rows, "original clean anchor SHA", anchor_state["sha256"], plan["anchor_sha256"])
     rows.extend(counts(anchor_state, 0))
     date_cursor = anchor_state["date"]
-    states, evidence = [], []
+    states, evidence, government_observations, government_comparisons = [], [], [], []
     for index, binding in enumerate(original["snapshots"]):
         state = read_save(binding["archived"], binding["sha256"])
+        government_observations.append({"snapshot": index, "date": state["date"],
+                                        "raw": state["government"], **government_identity(state["government"])})
         if index >= len(plan["phases"]):
             raise ValueError("more actual snapshots than declared phases")
         phase = plan["phases"][index]
@@ -410,7 +448,8 @@ def report(args):
         rows.extend(counts(state, phase["C"]))
         if states:
             check(rows, "stable equipment " + str(index), state["layout"], states[0]["layout"])
-            check(rows, "stable government " + str(index), state["government"], states[0]["government"])
+            government_comparisons.append(matrix_government_comparison(
+                rows, "stable government " + str(index), states[0], state))
             check(rows, "stable Mother identity " + str(index), [state["fleet"], state["ship"]],
                   [states[0]["fleet"], states[0]["ship"]])
             check(rows, "tiers never decrease " + str(index), all(state["fleet_variables"][key] >=
@@ -519,6 +558,8 @@ def report(args):
             "hp_tolerance": {"absolute_floor": TOLERANCE, "binary32_ulps": HP_ULPS, "relative_tolerance": 0,
                              "classification": "predeclared_engineering_allowance_not_engine_storage_proof"},
             "component_attribution_contract": "source_separated_native_rng_v1",
+            "government_identity_contract": "cross_date_direct_finite_agenda_progress_observation_v1",
+            "government_observations": government_observations, "government_comparisons": government_comparisons,
             "run_id": manifest["run_id"], "production_tree_sha256": manifest["copied_mod_tree_sha256"],
             "C0_baseline": baseline_summary,
             "final_native_tiers": {kind: states[-1]["fleet_variables"].get(key) if states else None for kind, key in zip(KINDS, TIERS)},

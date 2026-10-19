@@ -1,0 +1,61 @@
+{
+  "schema": "eep.growth.government_identity_fix_verification.v1",
+  "status": "PASS_SCOPED_TOOL_REPAIR",
+  "old_tool": {
+    "path": "docs/evidence/1020-growth-government-identity/old-tool/check_growth_1019.py",
+    "sha256": "a66a949b3d967eb3a8739568ed2e53d8400fb244d86e3ced245c25f2db60e29b"
+  },
+  "new_tool": {
+    "path": "tools/check_growth_1019.py",
+    "sha256": "0c31f76491c39aff56fb054088d2a8fa4b592eb7f0ad186c5f1ec0c6625832bd"
+  },
+  "test_file": {
+    "path": "tools/test_check_growth_1019.py",
+    "sha256": "7f45879fb95979e9ca2a8cc86b2343bf9c80bd59efa2f03cbe096ac0a3c42f57"
+  },
+  "source_guard": {
+    "unchanged_existing_functions": [
+      "sha",
+      "load",
+      "check",
+      "binary32_ulp",
+      "numeric_comparison",
+      "close",
+      "close_hp",
+      "scope",
+      "read_save",
+      "receipt_save",
+      "applicable_model_hashes",
+      "validate_source_package",
+      "package",
+      "counts",
+      "prediction",
+      "business",
+      "comparison",
+      "budget_comparison",
+      "entry",
+      "main"
+    ],
+    "changed_existing_functions": [
+      "report"
+    ],
+    "new_functions": [
+      "government_identity",
+      "matrix_government_comparison"
+    ],
+    "all_module_assignments_exact": true,
+    "HP_modifier_tolerances_source_models_counts_slots_collector_unchanged": true
+  },
+  "tests": {
+    "command": "python -m unittest test_check_growth_1019 test_runtime_growth_1019",
+    "working_directory": "eat_everything_origin/tools",
+    "test_count": 41,
+    "exit_code": 0,
+    "result": "OK"
+  },
+  "fixed_native_pair_supplement": {
+    "path": "docs/evidence/1020-growth-government-identity/fixed-native-pairs-supplement-v1.json",
+    "sha256": "9a4e721f22a32a7785df6dab64cb39bf9c323412e771b2c89989c7b4e2cd947f"
+  },
+  "limits": "Tool repair only; original FAILs retained; no full growth or Mod PASS"
+}
