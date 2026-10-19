@@ -236,7 +236,7 @@ class GovernmentIdentityTests(unittest.TestCase):
 
     def compare(self, raw, same_date=False):
         rows = []
-        observation = c.matrix_government_comparison(rows, "stable government", 
+        observation = c.matrix_government_comparison(rows, "stable government",
             {"date": "2201.02.01", "government": self.RAW},
             {"date": "2201.02.01" if same_date else "2201.03.01", "government": raw})
         return rows[0], observation

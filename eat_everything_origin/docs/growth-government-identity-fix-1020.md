@@ -81,3 +81,7 @@ root随后在正确`tools`目录独立运行`test_check_growth_1019.py`，29 tes
 通过；其先前在`testing`目录误discover得到的0 tests没有作为PASS。本线程41项
 为29个checker与12个collector测试合计。旧快照import产生的Python字节缓存不属
 证据；交接名单仅含明确列出的源码、JSON与文档，observer后续禁写bytecode。
+
+主线程提交检查发现新增测试调用行末多余空格，将仅清除此格式问题；参数、逻辑、
+检查器及验收政策不变，不为纯格式重复运行测试。原交付测试源码 SHA 仍描述原先
+实际执行版本，验证记录不回写；清理后的源码由后续 Git 提交记录。
