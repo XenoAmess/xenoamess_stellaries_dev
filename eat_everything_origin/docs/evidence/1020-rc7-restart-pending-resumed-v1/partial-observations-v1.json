@@ -1,0 +1,71 @@
+{
+  "schema": "eep.1020.native-restart-and-pending-scope.v1",
+  "status": "PASS_SCOPED_NATIVE_RELOAD_RESTART_LEDGER_AND_NO_DUPLICATE_REWARD",
+  "checks": {
+    "old_runs_really_normally_stopped": true,
+    "different_new_pid_started_after_old_stops": true,
+    "same_frozen_candidate_source": true,
+    "actual_pending_load_persists_no_sync": true,
+    "automatic_one_month_only_ten": true,
+    "normal_actual_fresh_process_load": true,
+    "normal_actual_callback_and_marker": true,
+    "normal_no_duplicate_reward_after_month": true
+  },
+  "supported_checks": {
+    "ledger_preserved": true,
+    "native_reload": true,
+    "native_restart": true,
+    "no_duplicate_reward": true
+  },
+  "normal_nonzero_restart_proof": {
+    "path": "docs/evidence/1020-rc7-normal-resumed-v1/authored/normal-resumed-native-report-v1.json",
+    "sha256": "04cfee79b3e2e4fe042d2a790f52e36559d7ecd2e9d2c45918b52f94d0261134"
+  },
+  "old_pending_canonical_roles": [
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7gbudget1.sav",
+      "sha256": "bf7eeee89794dcdec2fa88adfdcca2053abe30cfd5e26aab2489974980e5733f"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7gbudget1.audit.json",
+      "sha256": "866a77ff5a26c6b799ba5061de0e9edd6b93209d6c461e2e2bc5ea0937c4322f"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-growth-v1/run/r7gbudget1.native-save.json",
+      "sha256": "acd2b76ddc8656a45b637e193153cba3d70742201a9a323de62a623615acf9d1"
+    }
+  ],
+  "source_pids": {
+    "20261019T164112Z": 37300,
+    "20261019T201325Z": 32348
+  },
+  "actual_new_process": {
+    "pid": 24520,
+    "started_at_utc": "2026-10-19T20:40:58.803489+00:00"
+  },
+  "new_run_original_seed_not_rewritten": {
+    "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T201325Z\\r8normalreload.sav",
+    "copied": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T204055Z\\save games\\acceptance-fixtures\\r8normalreload.sav",
+    "bytes": 604079,
+    "sha256": "a90b3ad6579d064d91e12cadeeb6c3fcf27b53b5748ac892f5ba0281f782139c",
+    "zip_members": [
+      "gamestate",
+      "meta"
+    ],
+    "gamestate_bytes": 9785373,
+    "gamestate_sha256": "c75d4b4756ba8047c6676f4109d25758808d25726937f5e8ab46ad3d02a6a8ee"
+  },
+  "actual_new_tiers": {
+    "eep_component_shield_level": 60,
+    "eep_component_armor_level": 74,
+    "eep_component_hull_level": 77,
+    "eep_component_damage_level": 63,
+    "eep_component_tracking_level": 57,
+    "eep_component_regen_level": 79
+  },
+  "scope": "Genuine different PID boundaries plus actual native old pending load/save and natural month; nonzero settlement repeat proof uses prior-process completed normal input.",
+  "limits": [
+    "Current process final normal stop and complete log audit pending.",
+    "All original strict differences and failed warm-load boundaries remain."
+  ]
+}

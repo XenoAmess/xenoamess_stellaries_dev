@@ -1,0 +1,9 @@
+{
+  "action": "type_text",
+  "stage": "r9growth-native-destroy-command",
+  "text": "effect if = { limit = { exists = event_target:eep_mothership0 event_target:eep_mothership0 = { num_ships = 1 is_ship_size = juggernaut } event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes has_country_flag = eep_initialized has_country_flag = eep_startup_granted has_country_flag = eep_mothership_granted } } event_target:eep_mothership0.owner = { save_global_event_target_as = eep_destroy_probe_actor } destroy_fleet = { target = event_target:eep_mothership0 kill_leader = no destroy_template = no } log = \"EEP_MOTHER_NATIVE_DESTROY_REQUESTED\" } else = { log = \"EEP_MOTHER_DESTROY_NOT_READY\" }",
+  "submitted": true,
+  "typed_at_utc": "2026-10-19T22:22:45.654773+00:00",
+  "key_interval_seconds": 0.04,
+  "submit_input": "physical scan code 0x1c"
+}

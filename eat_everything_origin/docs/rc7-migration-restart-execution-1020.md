@@ -162,6 +162,15 @@ typed `checker`引用当前8a8工具；`source_certificate`必须引用`docs/evi
 新UI角色采用r9前缀和易识别字母名；实际native输出齐备后再填写独立complete
 case并运行原checker，不改模板、旧FAIL、before或政策。
 
+实际高C跨进程加载及自然月补10已完成，下一步在同一24520进程执行public031
+再paid11。为避免多个新输入卡同时改变原loader分组选择，只在本分支开始前
+导入该一份before的同SHA易识别别名（r9publicseed／r9paidseed），明确不是新
+原生保存。原case.before仍指固定旧原件，原load receipt用实际别名源SHA闭合。
+public输出r9publicauto/reload/base/repeat，保留第三次真实返回after加载；paid
+输出r9paidauto/reload/repeat，repeat_before复用reload。全程无FF、回血、完整
+初始化或手动sync，repeat只用原两次layout helper字面量。完整case在原生角色
+齐备后独占创建；先保留原v1严格FAIL，再按原v2政策验，不能为通过改预算。
+
 ## 离线准备结果
 
 已独立核实四个旧输入角色的原SAV/audit/native-save/manifest全部存在，四份canonical旧三件套逐byte匹配原件；原pending三件套及其canonical副本也匹配，15项已记录原生变量符合上述值。checker、完整源证书、静态gate/report固定SHA均匹配。只形成`BYTES_AND_EXISTING_ROLES_ONLY`输入清单，未执行任何新load/save/checker实机报告/stop/prepare/launch/Steam/Git，也未读取活动日志或r7puc。后续实机执行结果须另建实际报告和不可变归档，不能修改这个事前清单为PASS。

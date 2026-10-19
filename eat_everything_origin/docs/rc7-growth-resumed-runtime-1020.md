@@ -49,3 +49,16 @@ random_components.other_fleets_unchanged，整组与component_rewards仍PENDING�
 仅FF1至Aug8，实际舰体+18094.76、装甲+29849.576，同身份／max／账本，无修复
 订单及回血输入，原growth通过。原strict差异留证，不拟合闭源恢复公式。
 现执行原destroy/dead_sync及下一月、已毁档重载；待死亡链完成后独立封存。
+
+死亡链已实际完成：Aug8真实destroy后执行原完整initialize/startup/sync，FF24至
+Sep2（跨Sep1月脉冲及一日窗口），再真实title load该已毁Sep2档，重复同一完整
+初始化并FF1保存Sep3。两档均无命名Mother舰队、无本国或original_owner0的
+全局Mother式实际舰船，旧125/809不在所属表，绑定未指向新活舰；国家／core
+存活且grant flags齐备，C20500/L2050/R410/P0与六层数保留，snapshot_state=1。
+不使用要求活Mother的growth reader给死亡after造接口失败。
+
+现建立1020-rc7-restoration-death-resumed-v1，仅封已完成damage/hurt/day、destroy、
+deadmonth/deadload及相关操作和报告，before高档引用ordinary-control包，不重复
+复制。排除当前pending分支和活动日志全文。核4份SAV的ZIP/audit/receipt、
+图OCR/原字节稳定性后，仅合入daily_regeneration和destroyed_mother_not_respawned，
+原strict、护盾字段读取KeyError和v2边界保留，整组仍待最终日志。
