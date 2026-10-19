@@ -1,0 +1,73 @@
+{
+  "schema": "eep.migration.rc7_source_identity_verification.v1",
+  "status": "PASS_SOURCE_IDENTITY_ADAPTER_ONLY",
+  "old_checker": {
+    "path": "docs/evidence/1020-migration-rc7-source/old-tool/check_migration_1019.py",
+    "sha256": "08b57969060c037c4e03829f0075f8e7314f262527215e991595bd4778456d38"
+  },
+  "new_checker": {
+    "path": "tools/check_migration_1019.py",
+    "sha256": "8a8cf5a52d0c4dfbdfeaa0506a0d8728539d80ca72b56ab875b081a94b8ee0aa"
+  },
+  "test_file": {
+    "path": "testing/test_check_migration_1019.py",
+    "sha256": "1bda946c494f69ecade4c6e5c122c17b8e2973cca450f0c4d402bc03dbdc08c4"
+  },
+  "source_certificate": {
+    "path": "docs/evidence/1020-migration-rc7-source/source-certificate-v1.json",
+    "sha256": "29742bf394cf83d0b1fd3b9f8221bf06f0c359b40668afea30e3aaa82a946046"
+  },
+  "source_guard": {
+    "unchanged_functions": [
+      "number",
+      "load_receipt",
+      "native_players",
+      "mother_ship",
+      "defense",
+      "ratio_step",
+      "no_precision_snapshot",
+      "ordinary_ships",
+      "context_checks",
+      "layout_checks",
+      "receipt_checks"
+    ],
+    "all_original_module_assignments_exact": true,
+    "evaluate_after_removing_only_source_wiring_and_metadata_ast_exact": true,
+    "descriptor_change_only_version_bytes": true,
+    "while_change_only_literal_count200_line": true,
+    "policy_damage_budget_and_comparison_semantics_unchanged": true
+  },
+  "tests": {
+    "command": "python -B -m unittest discover -s eat_everything_origin/testing -p '*migration*.py' -q",
+    "count": 41,
+    "exit_code": 0,
+    "duration_seconds": 2.603,
+    "classification": "Offline synthetic contracts and frozen-source byte checks; no native migration PASS"
+  },
+  "actual_manifest_source_positive_checks": [
+    {
+      "run_id": "20261019T150008Z",
+      "tree": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+      "version": "0.4.0-rc.6",
+      "full_files": 59
+    },
+    {
+      "run_id": "20261019T164112Z",
+      "tree": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+      "version": "0.4.0-rc.7",
+      "full_files": 59
+    }
+  ],
+  "serialized_check_names": "Existing fixed_rc6_tree/version labels retained for historical checkset compatibility; actual expected revision comes only from the explicit case and pinned source registry.",
+  "historical_reports_unchanged": [
+    {
+      "path": "docs/evidence/1019-analysis/rc6-public031-migration-v2-complete-report-v1.json",
+      "sha256": "bff7b26f3ebc089f1f863aca341f94fc5688a5bb0c9ea145ab504832a6d33c7e"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc6-paid11-migration-v2-cli-report-v1.json",
+      "sha256": "d85667777cdd77940067baa0fcf3ffe55d357a6d6fd040660f9ff023bf315ec7"
+    }
+  ],
+  "scope": "RC6 historical default retained; explicit RC7 source extension only. No source model, Mod, publish, UI or Git mutation; original reports and v1 checker preserved."
+}

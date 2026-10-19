@@ -1,17 +1,22 @@
 """Synthetic contract tests only: these do not certify any native SAV."""
 import copy
+import json
 from pathlib import Path
+import shutil
+import subprocess
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 import check_migration_1019 as checker
 from test_check_1019_migration import observations
 
 
-def synthetic_case(paid=False):
+def synthetic_case(paid=False, candidate_tree=checker.TREE):
     kind = "paid11" if paid else "public031"
-    case = checker.template(kind)
+    case = checker.template(kind, candidate_tree)
     known = checker.FIXTURES[kind]
     fixture, before, after = observations(paid)
     if paid:
@@ -70,8 +75,15 @@ def synthetic_case(paid=False):
                           armor_hitpoints=44787.6 * .89999, max_armor_hitpoints=44787.6,
                           shield_hitpoints=167310 * .79999, max_shield_hitpoints=167310)
     after["save_sha256"] = "a" * 64
-    after["provenance_1019"].update(version="0.4.0-rc.6", save_sha256=after["save_sha256"])
-    after["production_tree_sha256"] = checker.TREE
+    after["provenance_1019"].update(version=checker.SOURCE_REVISIONS[candidate_tree], save_sha256=after["save_sha256"])
+    after["production_tree_sha256"] = candidate_tree
+    certificate = checker.source_certificate()
+    after["migration_v2_native"]["candidate_source_identity"] = {
+        "schema": "eep.migration.candidate_source_identity.v1", "tree_sha256": candidate_tree,
+        "version": checker.SOURCE_REVISIONS[candidate_tree], "file_count": 59,
+        "files": copy.deepcopy(certificate["revisions"][candidate_tree]["files"]),
+        "source_certificate": {"path": str(checker.SOURCE_CERT), "sha256": checker.SOURCE_CERT_SHA},
+        "shared_migration_sources": copy.deepcopy(certificate["shared_migration_sources"])}
     shape = checker.v1.design_shape(ship["design"])
     for obs in (fixture, before, after):
         obs["migration_v2_native"]["expected_design_shape"] = copy.deepcopy(shape)
@@ -243,6 +255,123 @@ class MigrationV2Contracts(unittest.TestCase):
         data = synthetic_case(); saved = copy.deepcopy(data); report = self.report(data)
         self.assertEqual(data, saved)
         self.assertFalse(report["v1_original_diagnostic"]["checks"]["damage_preserved_in_declared_mode"])
+
+    def test_rc7_uses_same_checks_and_policy_without_changing_rc6_template_default(self):
+        self.assertEqual(checker.template("public031")["candidate_tree_sha256"], checker.TREE)
+        for paid in (False, True):
+            rc6, rc7 = self.report(synthetic_case(paid)), self.report(synthetic_case(paid, checker.RC7_TREE))
+            self.assertEqual(rc6["status"], "PASS_SCOPED")
+            self.assertEqual(rc7["status"], "PASS_SCOPED")
+            self.assertEqual(rc6["checks"], rc7["checks"])
+            self.assertEqual(rc6["policy"], rc7["policy"])
+            self.assertEqual(rc7["candidate_source_identity"]["version"], "0.4.0-rc.7")
+            self.assertEqual(checker.validate_case(rc7["case"]), checker.FIXTURES[rc7["case"]["fixture_kind"]])
+
+    def test_candidate_revisions_cannot_be_swapped_or_source_identity_forged(self):
+        for mutation in ("case", "after", "certificate", "files", "missing"):
+            data = list(synthetic_case(candidate_tree=checker.RC7_TREE))
+            identity = data[3]["migration_v2_native"]["candidate_source_identity"]
+            if mutation == "case": data[0]["candidate_tree_sha256"] = checker.TREE
+            elif mutation == "after": data[3]["production_tree_sha256"] = checker.TREE
+            elif mutation == "certificate": identity["source_certificate"]["sha256"] = "0" * 64
+            elif mutation == "files": identity["files"][-1]["sha256"] = "0" * 64
+            else: del data[3]["migration_v2_native"]["candidate_source_identity"]
+            with self.subTest(mutation=mutation):
+                self.assertEqual(self.report(data)["status"], "FAIL")
+
+
+class MigrationSourceRevisionTests(unittest.TestCase):
+    """Frozen package bytes only; these checks do not certify any native SAV."""
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory(prefix="eep-migration-source-")
+        self.addCleanup(self.temporary.cleanup)
+        self.folder = Path(self.temporary.name)
+        self.root = Path(checker.__file__).resolve().parents[1]
+        self.certificate = checker.source_certificate()
+
+    def manifest(self, tree, copy_files=False):
+        version = checker.SOURCE_REVISIONS[tree]
+        folder = self.root / ("docs/evidence/1019-rc" + version.rsplit(".", 1)[1] + "-static")
+        mod = folder / ("candidate-rc" + version.rsplit(".", 1)[1]) / "mod"
+        if copy_files:
+            destination = self.folder / version / "mod"
+            shutil.copytree(mod, destination)
+            mod = destination
+        files = copy.deepcopy(self.certificate["revisions"][tree]["files"])
+        report = folder / ("candidate-rc" + version.rsplit(".", 1)[1] + "-open-kaishek.json")
+        return {"copied_mod": str(mod), "repository_mod_files": files,
+            "copied_mod_tree_sha256": tree, "repository_mod_tree_sha256": tree,
+            "static_gate": {"files": copy.deepcopy(files), "source_tree_sha256": tree,
+                "version": version, "status": "PASS", "report": str(report),
+                "report_sha256": checker.v1.n.digest(report)}}
+
+    def test_complete_frozen_rc6_and_rc7_source_packages_are_accepted(self):
+        for tree in checker.SOURCE_REVISIONS:
+            result = checker.validate_candidate_source(self.manifest(tree), tree)
+            self.assertEqual(result["tree_sha256"], tree)
+            self.assertEqual(result["file_count"], 59)
+            self.assertEqual(result["files"], self.certificate["revisions"][tree]["files"])
+
+    def test_cli_explicit_rc7_template_does_not_change_historical_default(self):
+        output = self.folder / "rc7-case.json"
+        result = subprocess.run([sys.executable, "-B", checker.__file__, "--output", str(output),
+            "template", "public031", "--candidate-tree", checker.RC7_TREE], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        case = json.loads(output.read_text(encoding="utf-8"))
+        self.assertEqual(case["status"], "PENDING")
+        self.assertEqual(case["candidate_tree_sha256"], checker.RC7_TREE)
+        self.assertEqual(case["policy"], checker.POLICY)
+        self.assertEqual(checker.template("public031")["candidate_tree_sha256"], checker.TREE)
+
+    def test_unknown_tree_cannot_authorize_itself(self):
+        manifest = self.manifest(checker.RC7_TREE)
+        for key in ("copied_mod_tree_sha256", "repository_mod_tree_sha256"):
+            manifest[key] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "unreviewed"):
+            checker.validate_candidate_source(manifest, "0" * 64)
+
+    def test_selected_and_unselected_mutations_fail_even_with_updated_manifest_rows(self):
+        manifest = self.manifest(checker.RC7_TREE, True)
+        original_rows = copy.deepcopy(manifest["repository_mod_files"])
+        for relative in ("common/scripted_effects/eep_mothership_effects.txt", "localisation/french/eep_l_french.yml"):
+            path = Path(manifest["copied_mod"]) / relative
+            raw = path.read_bytes()
+            path.write_bytes(raw + b"\n")
+            for rows in (manifest["repository_mod_files"], manifest["static_gate"]["files"]):
+                row = next(r for r in rows if r["path"] == relative)
+                row.update(bytes=path.stat().st_size, sha256=checker.v1.n.digest(path))
+            with self.subTest(relative=relative), self.assertRaisesRegex(ValueError, "complete reviewed"):
+                checker.validate_candidate_source(manifest, checker.RC7_TREE)
+            path.write_bytes(raw)
+            manifest["repository_mod_files"] = copy.deepcopy(original_rows)
+            manifest["static_gate"]["files"] = copy.deepcopy(original_rows)
+
+    def test_source_swapped_between_reviewed_trees_is_rejected(self):
+        rc6, rc7 = self.manifest(checker.TREE), self.manifest(checker.RC7_TREE)
+        for manifest, other, tree in ((rc6, rc7, checker.TREE), (rc7, rc6, checker.RC7_TREE)):
+            swapped = copy.deepcopy(manifest)
+            swapped["copied_mod"] = other["copied_mod"]
+            with self.subTest(tree=tree), self.assertRaisesRegex(ValueError, "complete reviewed"):
+                checker.validate_candidate_source(swapped, tree)
+
+    def test_missing_or_duplicate_file_index_and_wrong_version_are_rejected(self):
+        for mutation in ("missing", "duplicate", "version"):
+            manifest = self.manifest(checker.RC7_TREE)
+            if mutation == "missing": manifest["repository_mod_files"].pop()
+            elif mutation == "duplicate": manifest["static_gate"]["files"][-1] = manifest["static_gate"]["files"][0]
+            else: manifest["static_gate"]["version"] = "0.4.0-rc.6"
+            with self.subTest(mutation=mutation), self.assertRaisesRegex(ValueError, "complete reviewed"):
+                checker.validate_candidate_source(manifest, checker.RC7_TREE)
+
+    def test_changed_certificate_or_original_static_report_is_rejected(self):
+        certificate = self.folder / "certificate.json"
+        certificate.write_bytes(checker.SOURCE_CERT.read_bytes() + b"\n")
+        with patch.object(checker, "SOURCE_CERT", certificate), self.assertRaisesRegex(ValueError, "certificate changed"):
+            checker.validate_candidate_source(self.manifest(checker.RC7_TREE), checker.RC7_TREE)
+        manifest = self.manifest(checker.RC7_TREE)
+        manifest["static_gate"]["report_sha256"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "static report"):
+            checker.validate_candidate_source(manifest, checker.RC7_TREE)
 
 
 from decimal import Decimal as DecimalValue

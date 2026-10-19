@@ -1,7 +1,8 @@
-"""Read-only RC6 migration v2 contract; never rewrites v1 evidence or SAVs."""
+"""Read-only reviewed-source migration v2; never rewrites v1 evidence or SAVs."""
 import argparse
 import copy
 from decimal import Decimal, InvalidOperation
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -13,6 +14,10 @@ import check_1019 as v1
 SCHEMA = "eep.1019.migration-case.v2"
 EXE = "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83"
 TREE = "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a"
+RC7_TREE = "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0"
+SOURCE_REVISIONS = {TREE: "0.4.0-rc.6", RC7_TREE: "0.4.0-rc.7"}
+SOURCE_CERT = Path(__file__).resolve().parents[1] / "docs/evidence/1020-migration-rc7-source/source-certificate-v1.json"
+SOURCE_CERT_SHA = "29742bf394cf83d0b1fd3b9f8221bf06f0c359b40668afea30e3aaa82a946046"
 OLD_TOOL = "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
 OLD_TREE = "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8"
 MODE = "single_player_postload_layout_repair"
@@ -46,7 +51,9 @@ def number(value, label):
     return Decimal(str(value))
 
 
-def template(kind):
+def template(kind, candidate_tree=TREE):
+    if candidate_tree not in SOURCE_REVISIONS:
+        raise ValueError("unreviewed candidate source tree")
     known = FIXTURES[kind]
     return {"schema": SCHEMA, "status": "PENDING", "fixture_kind": kind,
             "execution_mode": MODE, "policy": dict(POLICY),
@@ -57,7 +64,7 @@ def template(kind):
             "reload_load_receipt": None, "repeat_before": None, "repeat_after": None,
             "repeat_load_source": None, "repeat_before_load_receipt": None,
             "contract": "native-migration-roundoff-contract-1019.md",
-            "candidate_tree_sha256": TREE, "game_exe_sha256": EXE}
+            "candidate_tree_sha256": candidate_tree, "game_exe_sha256": EXE}
 
 
 def validate_case(case):
@@ -73,9 +80,61 @@ def validate_case(case):
     for key, expected in FIXTURES[kind].items():
         if key not in ("before_name", "fixture_source") and case.get(key) != expected:
             raise ValueError("fixed fixture binding mismatch: " + key)
-    if case.get("candidate_tree_sha256") != TREE or case.get("game_exe_sha256") != EXE:
-        raise ValueError("fixed RC6 tree/EXE binding required")
+    if case.get("candidate_tree_sha256") not in SOURCE_REVISIONS or case.get("game_exe_sha256") != EXE:
+        raise ValueError("fixed reviewed tree/EXE binding required")
     return FIXTURES[kind]
+
+
+def source_certificate():
+    if v1.n.digest(SOURCE_CERT) != SOURCE_CERT_SHA:
+        raise ValueError("reviewed migration source certificate changed")
+    certificate = json.loads(SOURCE_CERT.read_text(encoding="utf-8"))
+    if (certificate.get("schema") != "eep.migration.reviewed_source_revisions.v1"
+            or set(certificate.get("revisions", {})) != set(SOURCE_REVISIONS)
+            or any(certificate["revisions"][tree].get("version") != version
+                   for tree, version in SOURCE_REVISIONS.items())):
+        raise ValueError("source certificate does not match the reviewed revision registry")
+    return certificate
+
+
+def validate_candidate_source(manifest, expected_tree):
+    """Bind all copied bytes to an independently pinned complete source index."""
+    if expected_tree not in SOURCE_REVISIONS:
+        raise ValueError("unreviewed candidate source tree")
+    certificate = source_certificate()
+    revision = certificate["revisions"][expected_tree]
+    mod, actual, tree = Path(manifest["copied_mod"]), [], hashlib.sha256()
+    for path in sorted(p for p in mod.rglob("*") if p.is_file()):
+        raw, relative = path.read_bytes(), path.relative_to(mod).as_posix()
+        actual.append({"path": relative, "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest()})
+        tree.update(relative.encode("utf-8")); tree.update(b"\0"); tree.update(raw)
+    gate = manifest["static_gate"]
+    if (len(actual) != 59 or actual != revision["files"] or tree.hexdigest() != expected_tree
+            or actual != sorted(manifest["repository_mod_files"], key=lambda row: row["path"])
+            or actual != sorted(gate["files"], key=lambda row: row["path"])
+            or manifest["copied_mod_tree_sha256"] != expected_tree
+            or manifest["repository_mod_tree_sha256"] != expected_tree
+            or gate.get("source_tree_sha256") != expected_tree
+            or gate.get("version") != revision["version"] or gate.get("status") != "PASS"):
+        raise ValueError("candidate bytes differ from the complete reviewed source revision")
+    versions = [v1.a.unquote(raw) for key, raw, obj in v1.a.fields(
+        (mod / "descriptor.mod").read_text(encoding="utf-8-sig")) if key == "version" and not obj]
+    if versions != [revision["version"]]:
+        raise ValueError("candidate descriptor differs from reviewed version")
+    report = Path(gate["report"])
+    if v1.n.digest(report) != gate["report_sha256"] or json.loads(report.read_text(encoding="utf-8")).get("status") != "PASS":
+        raise ValueError("original static report binding differs")
+    shared = certificate["shared_migration_sources"]
+    if v1.n.digest(mod / shared["design"]["path"]) != shared["design"]["sha256"]:
+        raise ValueError("shared migration design bytes changed")
+    helper = shared["layout_repair_helper"]
+    body = v1.a.block((mod / helper["path"]).read_text(encoding="utf-8-sig"), helper["key"])
+    if hashlib.sha256(body.encode("utf-8")).hexdigest() != helper["body_sha256"]:
+        raise ValueError("shared migration guard helper changed")
+    return {"schema": "eep.migration.candidate_source_identity.v1", "tree_sha256": expected_tree,
+            "version": revision["version"], "file_count": 59, "files": actual, "copied_mod": str(mod),
+            "source_certificate": {"path": str(SOURCE_CERT), "sha256": SOURCE_CERT_SHA},
+            "shared_migration_sources": shared}
 
 
 def load_receipt(path, source):
@@ -130,6 +189,8 @@ def load_native(path):
         "expected_design_shape": v1.design_shape(v1.n.design(definition["body"])),
         "attached_starbase_raw": base["raw"],
         "attached_starbase_implementation": v1.a.scalars(v1.a.block(base["raw"], "ship_design_implementation")),
+        "candidate_source_identity": validate_candidate_source(manifest, observation["production_tree_sha256"])
+            if observation["production_tree_sha256"] in SOURCE_REVISIONS else None,
     }
     return observation
 
@@ -201,7 +262,7 @@ def context_checks(before, after):
     }
 
 
-def source_checks(observation, candidate):
+def source_checks(observation, candidate, expected_tree=TREE):
     proof = observation["migration_v2_native"]
     players = proof["players"]
     checks = {"fixed_manifest_exe": proof["manifest_game_exe_sha256"] == EXE,
@@ -211,8 +272,19 @@ def source_checks(observation, candidate):
               "attached_starbase_raw_implementation_recorded": bool(proof["attached_starbase_raw"]) and
                   type(proof["attached_starbase_implementation"].get("design")) is int}
     if candidate:
-        checks["fixed_rc6_tree"] = observation["production_tree_sha256"] == TREE
-        checks["fixed_rc6_version"] = observation["provenance_1019"]["version"] == "0.4.0-rc.6"
+        certificate = source_certificate()
+        identity = proof.get("candidate_source_identity") or {}
+        revision = certificate["revisions"].get(expected_tree, {})
+        # Retain serialized v2 check names for the historical 174/158 checksets.
+        checks["fixed_rc6_tree"] = (expected_tree in SOURCE_REVISIONS
+            and observation["production_tree_sha256"] == expected_tree
+            and identity.get("schema") == "eep.migration.candidate_source_identity.v1"
+            and identity.get("tree_sha256") == expected_tree and identity.get("file_count") == 59
+            and identity.get("files") == revision.get("files")
+            and identity.get("source_certificate", {}).get("sha256") == SOURCE_CERT_SHA
+            and identity.get("shared_migration_sources") == certificate["shared_migration_sources"])
+        checks["fixed_rc6_version"] = (observation["provenance_1019"]["version"] == SOURCE_REVISIONS.get(expected_tree)
+            and identity.get("version") == SOURCE_REVISIONS.get(expected_tree))
     return checks
 
 
@@ -265,7 +337,8 @@ def evaluate(case, fixture, before, after, reload_observation, repeat_before=Non
         if key not in ("damage_preserved_in_declared_mode", "reload_migration_snapshot_preserved"):
             checks["v1_nonprecision." + key] = value
     for name, observation in observations.items():
-        checks.update({name + "." + k: v for k, v in source_checks(observation, name in ("after", "reload")).items()})
+        checks.update({name + "." + k: v for k, v in source_checks(
+            observation, name in ("after", "reload"), case["candidate_tree_sha256"]).items()})
     for name, observation, source in (("after", after, before), ("reload", reload_observation, after)):
         checks.update({name + "." + k: v for k, v in layout_checks(observation, before).items()})
         checks.update({name + "." + k: v for k, v in context_checks(before, observation).items()})
@@ -304,7 +377,8 @@ def evaluate(case, fixture, before, after, reload_observation, repeat_before=Non
         checks["repeat_sync_same_date_as_reload"] = repeat_before["date"] == reload_observation["date"]
         for name, observation in (("repeat_before", repeat_before), ("repeat_after", repeat_after)):
             defense(observation)
-            checks.update({name + "." + k: v for k, v in source_checks(observation, True).items()})
+            checks.update({name + "." + k: v for k, v in source_checks(
+                observation, True, case["candidate_tree_sha256"]).items()})
             checks.update({name + "." + k: v for k, v in layout_checks(observation, before).items()})
             for key in ("pop_groups", "pop_jobs", "colonies", "worlds"):
                 checks[name + "." + key + "_preserved"] = observation[key] == before[key]
@@ -317,7 +391,8 @@ def evaluate(case, fixture, before, after, reload_observation, repeat_before=Non
     required_ok = all(v for k, v in checks.items() if k != "repeat_sync_samples_present")
     status = "PASS_SCOPED" if required_ok and present else "PENDING" if required_ok else "FAIL"
     return {"schema": "eep.1019.migration-report.v2", "status": status,
-            "scope": "Exact EXE/RC6 single-player postload layout repair, fixed genuine damaged fixture, step-local asymmetric engineering budget, exact nonprecision invariants and exact repeated sync only.",
+            "scope": "Exact EXE/reviewed-source single-player postload layout repair, fixed genuine damaged fixture, step-local asymmetric engineering budget, exact nonprecision invariants and exact repeated sync only.",
+            "candidate_source_identity": after["migration_v2_native"].get("candidate_source_identity"),
             "checks": checks, "case": copy.deepcopy(case), "policy": dict(POLICY),
             "policy_classification": "Predeclared engineering budget, not a universal engine precision guarantee.",
             "steps": steps, "v1_original_diagnostic": legacy,
@@ -342,14 +417,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     sub = parser.add_subparsers(dest="command", required=True)
-    sub.add_parser("template").add_argument("fixture_kind", choices=FIXTURES)
+    prepare = sub.add_parser("template")
+    prepare.add_argument("fixture_kind", choices=FIXTURES)
+    prepare.add_argument("--candidate-tree", choices=SOURCE_REVISIONS, default=TREE)
     sub.add_parser("check").add_argument("case", type=Path)
     args = parser.parse_args()
     if args.output.exists():
         raise FileExistsError("refusing to overwrite existing evidence: " + str(args.output))
     try:
         if args.command == "template":
-            report = template(args.fixture_kind)
+            report = template(args.fixture_kind, args.candidate_tree)
         else:
             case = json.loads(args.case.read_text(encoding="utf-8"))
             validate_case(case)
