@@ -1,0 +1,843 @@
+{
+  "schema": "eep.colossus.rc6_execution_map.v1",
+  "status": "PENDING",
+  "runtime_execution_performed": false,
+  "production_mod_changed": false,
+  "native_save_edited": false,
+  "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "current_run_id": "20261019T150008Z",
+  "scope": "Root-only native functional plan; no candidate PASS; actual IDs/dates/rewards must come from final RC6 source-bound SAVs.",
+  "existing39": {
+    "path": "testing/colossus_1019_postfire_plan.json",
+    "sha256": "76adabaf82dc2c10894222bdb425ee1b994307233e1bccb2c251bdf2f07325c8",
+    "rule": "Reuse command text only with current bindings and state prerequisites; never reuse RC4 run/IDs/C19 or claims as RC6 evidence."
+  },
+  "physical_input_helper": "python tools/runtime_1019.py console-open <command> <unique-stage>; console help closes before real UI Save/Load.",
+  "stages": [
+    {
+      "id": "growth",
+      "command_ids": [
+        "r6_growth_repeat_sync",
+        "r6_growth_20500"
+      ],
+      "collector": "check_growth_1019.py entry auto-derives current identity/tree; then its dry/execute and final report with actual FF30 native-monthly budget supplement."
+    },
+    {
+      "id": "warbase_and_calibration",
+      "command_ids": [
+        "r6_enemy_bind",
+        "r6_enemy_declare",
+        "r6_enemy_place",
+        "r6_enemy_fixed_starbase_clear",
+        "r6_crisis_calibrate"
+      ],
+      "mandatory_save": "r6pkbase before calibration; calafter then actuallyreloadbase",
+      "optional_command_ids": [
+        "r6_enemy_place",
+        "r6_enemy_fixed_starbase_clear"
+      ]
+    },
+    {
+      "id": "real_enemy_cancel_and_fire",
+      "command_ids": [],
+      "existing39_ids": [
+        "duplicate_destroyed_enemy_twice",
+        "duplicate_destroyed_enemy_after_reload"
+      ],
+      "ui_only": "Native rightclick queue,windup90,Stop,actualreloadcancel,requeue,fire30,naturalfinish; explicitcallbacks only destroyedsource after stable cleanup."
+    },
+    {
+      "id": "ordinary_owned_q2",
+      "existing39_ids": [
+        "owned_q2_setup",
+        "owned_q2_inspect",
+        "normal_destroyed_source_repeat"
+      ],
+      "ui_only": "Real decision_eep_devour, seedsource50->100/core-50,actualT5, naturalprogresscompletion, returnactualR."
+    },
+    {
+      "id": "death_then_reload_migration",
+      "command_ids": [
+        "r6_destroy_mother",
+        "r6_destroy_sync"
+      ],
+      "existing39_ids": [
+        "migration_bind_physical_refs",
+        "migration_inspect",
+        "migrated_bound_core_reject",
+        "core_owner_loss_bind_receiver",
+        "core_owner_loss_apply",
+        "core_owner_loss_inspect",
+        "core_owner_loss_dispatch"
+      ],
+      "ui_only": "Deathbranch independent; actuallyreloadowned-ready for realmigrationdecision, keep oldcore populated before trueownershiploss."
+    },
+    {
+      "id": "nine_persistent_guards",
+      "command_ids": [
+        "r6_uncolonized_bind",
+        "r6_neutral_bind",
+        "r6_uncolonized_dispatch",
+        "r6_neutral_dispatch"
+      ],
+      "existing39_ids": [
+        "state_guard_bind",
+        "batch_setup_active",
+        "batch_setup_devouring",
+        "batch_setup_credit",
+        "batch_setup_destroy",
+        "batch_setup_secondary_core",
+        "batch_setup_artificial",
+        "batch_setup_qzero",
+        "batch_dispatch",
+        "current_bound_core_reject",
+        "foreign_secondary_core_transfer",
+        "foreign_secondary_core_reject"
+      ],
+      "saved_comparison": "guard-ready; idle+1day; actualreloadready; dispatchthen+1day; idle->fired same-date for all9 distinctsource IDs."
+    },
+    {
+      "id": "real_colonizing_and_ground",
+      "existing39_ids": [
+        "state_guard_bind",
+        "colonizing_reserve_split",
+        "colonizing_start_split",
+        "ground_bind_split",
+        "ground_armies_split",
+        "colonizing_inspect",
+        "ground_inspect",
+        "colonizing_dispatch",
+        "ground_dispatch"
+      ],
+      "saved_comparison": "Independent warbase; bothtrue ready and idle-day1, actualreload ready, twocallbacks, bothstilltrue fired-day1."
+    },
+    {
+      "id": "lithoid_owned_loss_q2",
+      "command_ids": [
+        "r6_lithoid_loss_setup",
+        "r6_lithoid_loss_inspect",
+        "r6_crisis_calibrate"
+      ],
+      "existing39_ids": [
+        "owned_pk_position"
+      ],
+      "ui_only": "Independent Li firstmonth thenfunctional; sourcepc_hive/size3/realdeposit1/pop300, actual own90/30, C2G0D2made0/L0, returnactualR; nativeRNGseparate."
+    },
+    {
+      "id": "restart_and_repeat",
+      "command_ids": [
+        "r6_repeat_initialize"
+      ],
+      "ui_only": "Actualprocessstop/newPID/sameRC6tree/nativeLoad previouslymeasuredRC6state; same-day ledger/design/rewards proof, no syntheticrestart."
+    }
+  ],
+  "commands": [
+    {
+      "id": "r6_enemy_bind",
+      "status": "PENDING",
+      "command": "effect clear_global_event_target = eep_colossus_probe_victim clear_global_event_target = eep_colossus_probe_target random_country = { limit = { is_country_type = default exists = capital_scope NOT = { is_same_value = event_target:eep_mothership0.owner } NOT = { has_origin = origin_heart_of_devouring } capital_scope = { is_colony = yes is_artificial = no is_under_colonization = no has_ground_combat = no eep_digestible_world = yes planet_size > value:eep_damage_count NOT = { has_carrier_flag = eep_core } NOT = { has_planet_flag = eep_active } NOT = { has_planet_flag = being_devoured } NOT = { has_planet_flag = eep_credit_done } NOT = { has_planet_flag = eep_destroy_done } } } save_global_event_target_as = eep_colossus_probe_victim capital_scope = { planet = { save_global_event_target_as = eep_colossus_probe_target set_name = \"EEP_R6_ENEMY\" } } }",
+      "command_chars": 855,
+      "command_sha256": "cb94ceed1b11897e0fcabce9ad26357486b568ae2ae0b5464f6f2bcc66ae58c4",
+      "prerequisites": [
+        "Fresh clean Machine functional branch; native Mother0/Core0 and actor0 qualifying/core available verified; no stale helper aliases assumed."
+      ],
+      "independent_invariants": [
+        "Inspect saved target country/physical ID, actual natural source/population/size/damage and government; no created colony/pop or reward.",
+        "No candidate qualifies means setupfailure, not guard PASS."
+      ],
+      "sources": [
+        "N_RANDOM_COUNTRY",
+        "N_TARGET",
+        "N_CAPITAL",
+        "M_PK"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_enemy_declare",
+      "status": "PENDING",
+      "command": "effect event_target:eep_mothership0.owner = { declare_war = { target = event_target:eep_colossus_probe_victim attacker_war_goal = wg_cleansing } }",
+      "command_chars": 146,
+      "command_sha256": "8409119804715cc866ee730fa4b4693dde615d8edacb9be1eb4704ed6bfad8cc",
+      "prerequisites": [
+        "Actual distinct live victim and legitimate genocidal actor verified after r6_enemy_bind."
+      ],
+      "independent_invariants": [
+        "Native war participants/goal exist and real source still enemy-owned; do not infer success from inputlog."
+      ],
+      "sources": [
+        "N_DECLARE",
+        "N_WAR_GOAL"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_enemy_place",
+      "status": "PENDING",
+      "command": "effect event_target:eep_mothership0 = { set_location = { target = event_target:eep_colossus_probe_target distance = 40 angle = 0 } }",
+      "command_chars": 132,
+      "command_sha256": "379cf541a8f4b313195a4977e575eb76e22832a1db8793afb58c941e8e01b2bd",
+      "prerequisites": [
+        "War already exists; no live PK order; explicit controlledplacement on a functional branch."
+      ],
+      "independent_invariants": [
+        "Same bound Mother identity/owner and native position, not MIA; this does not prove actualjump."
+      ],
+      "sources": [
+        "N_LOCATION"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_enemy_fixed_starbase_clear",
+      "status": "PENDING",
+      "command": "effect event_target:eep_colossus_probe_target = { solar_system = { starbase = { fleet = { if = { limit = { exists = owner owner = { is_at_war_with = event_target:eep_mothership0.owner } NOT = { is_same_value = event_target:eep_mothership0 } } destroy_fleet = { target = this kill_leader = no destroy_template = no } } } } } }",
+      "command_chars": 325,
+      "command_sha256": "ca416c776688e255eba15cbcc73d9d762736d6bebcfcfef4de616846fb7a95cc",
+      "prerequisites": [
+        "Only if target-system native fixed starbase actually traps Mother in combat; inspect its owner/fleet first."
+      ],
+      "independent_invariants": [
+        "Kill only that fixed enemy starbase; target colony/country alive, Mother intact, no EEP credit/world/empires before firing. Wait native combatcleanup and save a new clean baseline."
+      ],
+      "sources": [
+        "N_DESTROY",
+        "N_SCOPES",
+        "D_COMBAT"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_crisis_calibrate",
+      "status": "PENDING",
+      "command": "effect event_target:eep_mothership0.owner = { if = { limit = { has_ascension_perk = ap_become_the_crisis } complete_crisis_objective = crisobj_destroy_worlds complete_crisis_objective = crisobj_destroy_empires log = \"EEP_R6_CALIBRATION_ONLY\" } else = { log = \"EEP_R6_CRISIS_AP_ABSENT\" } }",
+      "command_chars": 288,
+      "command_sha256": "c582ec141c49cd32ba9593ad98701b9208ee1b11214cdcc7fe6862e6a236cc27",
+      "prerequisites": [
+        "Separate scratch calibration branch; save actual base before this, then actual calafter, then reload unchanged base before any positive test."
+      ],
+      "independent_invariants": [
+        "Native worlds/empires separate progress-point deltas are calibrated once; do not call this weaponfiring.",
+        "Retain missing/present before objectives; no C/G/D/made/source destruction, no copied RC4 reward numbers."
+      ],
+      "sources": [
+        "N_OBJECTIVE",
+        "D_CAL"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_uncolonized_bind",
+      "status": "PENDING",
+      "command": "effect clear_global_event_target = eep_r6_uncolonized random_galaxy_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no eep_digestible_world = yes NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } solar_system = { NOT = { is_same_value = event_target:eep_core0.solar_system } } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_r6_uncolonized log = \"EEP_R6_UNCOLONIZED_BOUND\" }",
+      "command_chars": 480,
+      "command_sha256": "f20ec936c8a772485a4f30ae69a6a46987372fe8d5a62c77d4bba85f8cb1b830",
+      "prerequisites": [
+        "Actual Machinecore/Mother bindings valid. Separate guard branch, no construction, worldoutsidehome avoids consuming7homecandidates."
+      ],
+      "independent_invariants": [
+        "Native actual uncolonized natural digestible physical world outside home; do not convert an owned colony or write fakeflag to represent colony state."
+      ],
+      "sources": [
+        "N_GALAXY",
+        "N_TARGET",
+        "N_FLAGS",
+        "M_DIGEST"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_uncolonized_dispatch",
+      "status": "PENDING",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_r6_uncolonized } event_target:eep_r6_uncolonized = { if = { limit = { is_colony = no is_under_colonization = no is_artificial = no eep_digestible_world = yes } log = \"EEP_R6_UNCOLONIZED_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_R6_UNCOLONIZED_NOT_READY\" } } }",
+      "command_chars": 469,
+      "command_sha256": "fee7d21443996c41e87756ddd383ed26aa9a1518a6ce165ff0b850622eb81834",
+      "prerequisites": [
+        "SAV proved natural uncolonized state in ready and idle; retain until callback and firedafter."
+      ],
+      "independent_invariants": [
+        "Source/class/receipts unchanged, actor reward/core population/capacity and both objectives match same-date idle; empty/missing target is not PASS."
+      ],
+      "sources": [
+        "N_CALLBACK",
+        "M_PK"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_neutral_bind",
+      "status": "PENDING",
+      "command": "effect clear_global_event_target = eep_r6_neutral random_country = { limit = { is_country_type = default exists = capital_scope NOT = { is_same_value = event_target:eep_mothership0.owner } NOT = { is_at_war_with = event_target:eep_mothership0.owner } NOT = { has_origin = origin_heart_of_devouring } capital_scope = { is_colony = yes is_artificial = no is_under_colonization = no has_ground_combat = no eep_digestible_world = yes planet_size > value:eep_damage_count NOT = { has_carrier_flag = eep_core } NOT = { has_planet_flag = eep_active } NOT = { has_planet_flag = being_devoured } NOT = { has_planet_flag = eep_credit_done } NOT = { has_planet_flag = eep_destroy_done } } } capital_scope = { planet = { save_global_event_target_as = eep_r6_neutral } } }",
+      "command_chars": 759,
+      "command_sha256": "491130098184ef4db44905759a4df299e93ed5741d28ba586db4f62e3f0c4506",
+      "prerequisites": [
+        "Actor/Mother/core available; at least one other real defaultcountry notatwar withactor and natural live capital."
+      ],
+      "independent_invariants": [
+        "Native foreign owner distinct fromactor, no war, actual colony/qpositive/no forbiddenflags; source/core availability persists."
+      ],
+      "sources": [
+        "N_RANDOM_COUNTRY",
+        "N_CAPITAL",
+        "N_TARGET",
+        "M_PK"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_neutral_dispatch",
+      "status": "PENDING",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_r6_neutral } event_target:eep_r6_neutral = { if = { limit = { is_colony = yes exists = owner NOT = { is_owned_by = event_target:eep_mothership0.owner } owner = { NOT = { is_at_war_with = event_target:eep_mothership0.owner } } } log = \"EEP_R6_NEUTRAL_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_R6_NEUTRAL_NOT_READY\" } } }",
+      "command_chars": 529,
+      "command_sha256": "910535477ae6f67ba938d706055ff0cd95c662fdb6454872520d43ce01aa3195",
+      "prerequisites": [
+        "Actual foreign neutral target ready and idle SAVs proven; no declaration/ownership change before callback+after."
+      ],
+      "independent_invariants": [
+        "Correct FROMMother yet zero settlement; source alive/neutral and actor coreavailable on after, compare same-date idle."
+      ],
+      "sources": [
+        "N_CALLBACK",
+        "M_PK"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_lithoid_loss_setup",
+      "status": "PENDING",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_reg_owned_source change_pc = pc_hive set_planet_size = 3 create_colony = { owner = event_target:eep_mothership0.owner species = event_target:eep_mothership0.owner_main_species } create_pop_group = { species = event_target:eep_mothership0.owner_main_species size = 300 } clear_deposits = yes add_deposit = d_lithoid_devastation set_name = \"EEP_R6_LITH_Q2_LOSS1\" log = \"EEP_LITH_Q2_CREATED\" } } }",
+      "command_chars": 714,
+      "command_sha256": "2e9f5f465af8b49c7ccd3bdc79c6461bb321140b2c4eeeeaef7d8236044b2d7d",
+      "prerequisites": [
+        "Independent actual RC6 Lithoid firstmonth frozen economy archived; functional branch C0G0D2made0, sourcehelper absent, actualMother/core verified."
+      ],
+      "independent_invariants": [
+        "Native source pc_hive/size3/pop300 founder; exactlyone real d_lithoid_devastation after creation; no new C/G/D/made by setup.",
+        "Physical3 minus real oldloss1=q2, not a written eep_q; candidate economic evidence remains separate."
+      ],
+      "sources": [
+        "N_COLONY",
+        "N_POP",
+        "N_DEPOSIT",
+        "N_BITE",
+        "M_Q",
+        "M_NATIVE"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_lithoid_loss_inspect",
+      "status": "PENDING",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_core0 exists = event_target:eep_reg_owned_source event_target:eep_mothership0.owner = { is_lithoid_devouring_swarm = yes eep_qualified = yes eep_core_available = yes } } event_target:eep_reg_owned_source = { if = { limit = { is_colony = yes is_owned_by = event_target:eep_mothership0.owner is_planet_class = pc_hive planet_size = 3 count_deposits = { type = d_lithoid_devastation count = 1 } pop_amount = 300 eep_source_valid = yes NOT = { has_carrier_flag = eep_core } NOT = { has_planet_flag = eep_credit_done } NOT = { has_planet_flag = eep_destroy_done } } log = \"EEP_R6_LITH_LOSS1_READY_300\" } else = { log = \"EEP_R6_LITH_LOSS1_NOT_READY_300\" } } } else = { log = \"EEP_R6_LITH_LOSS1_TARGET_OR_BINDING_MISSING\" }",
+      "command_chars": 804,
+      "command_sha256": "8a773defb757b93644ecfdf44518131ca5b3724218ef2baedca21b85a831cf1f",
+      "prerequisites": [
+        "Run variantsetup once, inspect actual nativeSAV before clicking true ownPK UI."
+      ],
+      "independent_invariants": [
+        "Need READY log and SAV physicalsize3/count1/pop300/owneractor/noncore/digestible, actual core available. qreceipt after natural firing2."
+      ],
+      "sources": [
+        "N_COUNT_DEPOSIT",
+        "M_Q",
+        "M_PK",
+        "M_NATIVE"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_repeat_initialize",
+      "status": "PENDING",
+      "command": "effect event_target:eep_mothership0.owner = { eep_initialize = yes eep_startup = yes eep_sync_mothership = yes }",
+      "command_chars": 112,
+      "command_sha256": "1b8343013f956e9f1cb83f633a9a3fb407907904101527fd170f1323fd55c6ad",
+      "prerequisites": [
+        "Live boundMother/core, initialized/granted flags present; no unpaid componentrewards when used as strictidempotencecase."
+      ],
+      "independent_invariants": [
+        "Same-day world/ship/layout/civilqueue/EEPledger/RNG rewards unchanged; full three effects actually called."
+      ],
+      "sources": [
+        "M_STARTUP",
+        "M_MOTHER",
+        "M_INIT"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_growth_repeat_sync",
+      "status": "PENDING",
+      "command": "effect root = { eep_sync_mothership = yes }",
+      "command_chars": 43,
+      "command_sha256": "6c6fe828f08754839e511155708d50550db36b4706fb8368a0b779c0ac9a673b",
+      "prerequisites": [
+        "Actual player.country0 and existing final collector state C10000/R200/P0 verified, explicit ROOT wraps country when shipselected."
+      ],
+      "independent_invariants": [
+        "Same-day fullsync plus actualreload preserve native maxstats/tier/R/one modifier under existing source-based checker."
+      ],
+      "sources": [
+        "M_MOTHER",
+        "T_GROWTH"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_growth_20500",
+      "status": "PENDING",
+      "command": "effect root = { set_variable = { which = eep_c value = 20500 } eep_sync_mothership = yes }",
+      "command_chars": 90,
+      "command_sha256": "3efed489090f0a89a72ad5f837c4e5d2522eea795d9e1a1f362b74e1831ec307",
+      "prerequisites": [
+        "Independent after C10000/R200; explicit controlled progressionfixture, not naturally settledmatter."
+      ],
+      "independent_invariants": [
+        "Firstsync L2050/entitled410/R400/P10 (budget200); second actual FF30 native monthly yieldsR410/P0, no cap. Record actual six randomtiers not chosen values."
+      ],
+      "sources": [
+        "M_MOTHER",
+        "T_GROWTH"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_destroy_mother",
+      "status": "PENDING",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 event_target:eep_mothership0 = { num_ships = 1 is_ship_size = juggernaut } event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes has_country_flag = eep_initialized has_country_flag = eep_startup_granted has_country_flag = eep_mothership_granted } } event_target:eep_mothership0.owner = { save_global_event_target_as = eep_destroy_probe_actor } destroy_fleet = { target = event_target:eep_mothership0 kill_leader = no destroy_template = no } log = \"EEP_MOTHER_NATIVE_DESTROY_REQUESTED\" } else = { log = \"EEP_MOTHER_DESTROY_NOT_READY\" }",
+      "command_chars": 626,
+      "command_sha256": "a39e896f8909000d7963e6f93af4f20d3b5833ea8fa2a2dac5101f59d855f6dd",
+      "prerequisites": [
+        "Dedicated functional branch after necessary Mother evidence; actualcore available and beforeSAV saved, no other correctMother ships to hide in count."
+      ],
+      "independent_invariants": [
+        "OriginalMother gone after nativecleanup, no newactorMother ID across actualmonthly/reload/full three-effect sync; grantflags and ledgers preserved."
+      ],
+      "sources": [
+        "N_DESTROY",
+        "M_STARTUP",
+        "M_MOTHER",
+        "D_DEATH"
+      ],
+      "runtime_result": null
+    },
+    {
+      "id": "r6_destroy_sync",
+      "status": "PENDING",
+      "command": "effect event_target:eep_destroy_probe_actor = { eep_initialize = yes eep_startup = yes eep_sync_mothership = yes }",
+      "command_chars": 114,
+      "command_sha256": "1c077f459dd2cf1c361113e7013719079690751a7123ec72bd8457520ec2f17d",
+      "prerequisites": [
+        "r6_destroy_mother saved actualactorhelper before destruction; do not deriveowner from deadMother."
+      ],
+      "independent_invariants": [
+        "Existing source-based monthly/init/startup/sync cannot create anotherMother; mirrors are history, not livehardware."
+      ],
+      "sources": [
+        "M_STARTUP",
+        "M_MOTHER",
+        "M_INIT"
+      ],
+      "runtime_result": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "N_RANDOM_COUNTRY",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 4393,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_GALAXY",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 5568,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_TARGET",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 715,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_FLAGS",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 188,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_CAPITAL",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\scopes.log",
+      "line": 82,
+      "sha256": "32f36a3584bdead0c83e4e7ece09b417be52a438518713e06b05d36240a0f352"
+    },
+    {
+      "id": "N_LOCATION",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 351,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_DESTROY",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 766,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_SCOPES",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\scopes.log",
+      "line": 58,
+      "sha256": "32f36a3584bdead0c83e4e7ece09b417be52a438518713e06b05d36240a0f352"
+    },
+    {
+      "id": "N_DECLARE",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 606,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_WAR_GOAL",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\war_goals\\00_war_goals.txt",
+      "line": 299,
+      "sha256": "64a1b3cf8a43ae68a0326c0c45f1f1389f1c3933e4f4cb0423329797f60f6a48"
+    },
+    {
+      "id": "N_CALLBACK",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 2317,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_OBJECTIVE",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 2382,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_COUNT_DEPOSIT",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\triggers.log",
+      "line": 1712,
+      "sha256": "0f3ce1d0ad7b8fcce9ca654e57632683d996e579bdbb738d2cd56d91632e534f"
+    },
+    {
+      "id": "N_COLONY",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 397,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_POP",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T130448Z\\logs\\script_documentation\\effects.log",
+      "line": 384,
+      "sha256": "064b281a6c3a97f4261dfd30c3f761d1373a8ed82390fdc0109be9a112f6f489"
+    },
+    {
+      "id": "N_DEPOSIT",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\deposits\\01_blocker_deposits.txt",
+      "line": 1538,
+      "sha256": "df9665890f54567b5988857e73baf752f690ad2fc8beb1ab7f543e184e43b11a"
+    },
+    {
+      "id": "N_BITE",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_effects\\00_scripted_effects.txt",
+      "line": 8545,
+      "sha256": "9ee428c3c3ad60e9aeaeca857ab31ec1a4e7ed86537333537435f5ddd7ffb459"
+    },
+    {
+      "id": "M_PK",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_triggers\\eep_planet_killer.txt",
+      "line": 2,
+      "sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72"
+    },
+    {
+      "id": "M_Q",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_effects\\eep_planet_killer_effects.txt",
+      "line": 8,
+      "sha256": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9"
+    },
+    {
+      "id": "M_NATIVE",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_effects\\eep_colossus_native.txt",
+      "line": 2,
+      "sha256": "148e0ff5b70113893d0ea75b4e3070448990b36d087a5eff0e636a24ed4b888f"
+    },
+    {
+      "id": "M_DIGEST",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_triggers\\eep_triggers.txt",
+      "line": 45,
+      "sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb"
+    },
+    {
+      "id": "M_STARTUP",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_effects\\eep_startup_effects.txt",
+      "line": 2,
+      "sha256": "f3a0fb725b1ea7f9cb4f77a7225a30e7b83acb86bbd4ba496b91860ddbcbb697"
+    },
+    {
+      "id": "M_MOTHER",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_effects\\eep_mothership_effects.txt",
+      "line": 68,
+      "sha256": "4e2d25004b917cd4b7c46bc13efe32765ba58fbd10aaa92a2728034a035da2cc"
+    },
+    {
+      "id": "M_INIT",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\mod\\eep-1019\\common\\scripted_effects\\eep_effects.txt",
+      "line": 2,
+      "sha256": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6"
+    },
+    {
+      "id": "T_GROWTH",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\runtime_growth_1019.py",
+      "line": 120,
+      "sha256": "cab98ce18119f27838456dd6118001cc7fee5254b3150c5e5c8fcf5365f7e747"
+    },
+    {
+      "id": "D_COMBAT",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\colossus-combat-preparation-1019.md",
+      "line": 35,
+      "sha256": "4a5f68e6452a9ebe480da686340086e3a99c068d71818116c89314f0aad248f8"
+    },
+    {
+      "id": "D_CAL",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\colossus-native-guard-calibration-1019.md",
+      "line": 1,
+      "sha256": "c1b0addd724675e8b12e33ae02cc140603067bfc0aa60e41dc621b400d9f8ccf"
+    },
+    {
+      "id": "D_DEATH",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\colossus-rc4-final-execution-order-1019.md",
+      "line": 24,
+      "sha256": "14841fa9ab6693bd55dbcd765643cc3d5f2c1781293b222385de5ecc2267e8c8"
+    }
+  ],
+  "runtime_results": null,
+  "static_validation": {
+    "scope": "Lossless P/ASCII/length/ref checks only, no nativeexecution.",
+    "parser_jar_sha256": "6ac143ebf03f3e1a041dff01b2d808e60de8e289d18cebf9855682f0a80b6d82",
+    "parser_exit_code": 0,
+    "commands_parsed": 16,
+    "results": [
+      {
+        "id": "r6_enemy_bind",
+        "line": 1,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 862,
+          "tokens": 270,
+          "blocks": 13,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_enemy_declare",
+        "line": 2,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 153,
+          "tokens": 44,
+          "blocks": 3,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_enemy_place",
+        "line": 3,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 139,
+          "tokens": 51,
+          "blocks": 3,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_enemy_fixed_starbase_clear",
+        "line": 4,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 332,
+          "tokens": 142,
+          "blocks": 10,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_crisis_calibrate",
+        "line": 5,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 295,
+          "tokens": 85,
+          "blocks": 5,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_uncolonized_bind",
+        "line": 6,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 487,
+          "tokens": 154,
+          "blocks": 7,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_uncolonized_dispatch",
+        "line": 7,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 476,
+          "tokens": 160,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_neutral_bind",
+        "line": 8,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 766,
+          "tokens": 266,
+          "blocks": 14,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_neutral_dispatch",
+        "line": 9,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 536,
+          "tokens": 190,
+          "blocks": 12,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_lithoid_loss_setup",
+        "line": 10,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 721,
+          "tokens": 216,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_lithoid_loss_inspect",
+        "line": 11,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 811,
+          "tokens": 270,
+          "blocks": 13,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_repeat_initialize",
+        "line": 12,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 119,
+          "tokens": 41,
+          "blocks": 2,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_growth_repeat_sync",
+        "line": 13,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 50,
+          "tokens": 27,
+          "blocks": 2,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_growth_20500",
+        "line": 14,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 97,
+          "tokens": 51,
+          "blocks": 3,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_destroy_mother",
+        "line": 15,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 633,
+          "tokens": 178,
+          "blocks": 8,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "r6_destroy_sync",
+        "line": 16,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 121,
+          "tokens": 41,
+          "blocks": 2,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      }
+    ]
+  },
+  "powershell_resolution": {
+    "old_plan": "eat_everything_origin/testing/colossus_1019_postfire_plan.json",
+    "new_map": "eat_everything_origin/testing/colossus_1019_rc6_execution_map.json",
+    "dispatch_rule": "Combine both commands arrays; resolve exactlyone matchingid; pass command as single argument to existing runtime_1019.py console-open with freshstage. Never eval or interpolatecommand into shell."
+  },
+  "stage_constraints": {
+    "normal_absolute_ledgers": "C/G/D/made are derived from actual freshRC6 enemyq;19->21 only if actual enemyq19, never reused RC4 number.",
+    "growth20500": "From actual C10000/R200/P0: firstsync budgets200 givesR400/P10; second actual FF30 native monthly givesR410/P0.",
+    "guard_candidate_count": "Prefer sourcehomecount>=7. state_guard_bind avoids old exactcount7restriction; if home<7 do not fire partialbatch or claimcomplete.",
+    "critical_same_day": "no-settlement compares idle and fired on sameactualdate, notready vsnextday.",
+    "calibration": "Separate scratchbranch before eachnewgalaxy shot; reload realbase after direct nativeobjectivecalibration.",
+    "power_upkeep": "No public documented actualship excesspower/upkeepgetter. colonyresourcecompare(typeupkeep) is not shipmaint; actualUI stillrequired."
+  }
+}
