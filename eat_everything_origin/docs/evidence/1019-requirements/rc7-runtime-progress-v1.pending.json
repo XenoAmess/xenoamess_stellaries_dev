@@ -1995,22 +1995,1880 @@
     "mothership_configuration": {
       "status": "PENDING",
       "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
-      "run_ids": [],
+      "run_ids": [
+        "20261019T164112Z"
+      ],
       "checks": {
-        "actual_jump": null,
-        "existing_advantages_preserved": null,
-        "five_relic_auxiliary_components_preserved": null,
-        "native_design_matches": null,
-        "no_empire_technology_grant": null,
-        "other_juggernauts_unchanged": null,
-        "power_nonnegative": null,
-        "reference_stats_observed": null,
-        "same_country_same_date_relic_reference": null,
-        "ten_mobile_shipyards": null,
-        "twenty_two_large_defense_slots": null,
-        "upkeep_observed": null
+        "actual_jump": true,
+        "existing_advantages_preserved": true,
+        "five_relic_auxiliary_components_preserved": true,
+        "native_design_matches": true,
+        "no_empire_technology_grant": true,
+        "other_juggernauts_unchanged": true,
+        "power_nonnegative": true,
+        "reference_stats_observed": true,
+        "same_country_same_date_relic_reference": true,
+        "ten_mobile_shipyards": true,
+        "twenty_two_large_defense_slots": true,
+        "upkeep_observed": true
       },
-      "evidence": []
+      "evidence": [
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/bounded-configuration-ui-report-v1.json",
+          "sha256": "f88c1387231c579f6170c59f596b32a0a892d7fa8760cc029c9934f2a04a9b46",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-report-v1.json",
+          "sha256": "5c022c1e1f95c728be74524b9e568d34713133b26f10584a26ce96df907a20cb",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/source-derived-power-report-v1.json",
+          "sha256": "aa4d9de70fa7f7ee14a1159e4405eebb8acef9940811589dc96ad0ab1a5f8802",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v2.json",
+          "sha256": "8b9748e243efbff359eec259f59ef1e0caf96ba9de0c58084b3e3e3b8144149a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/ui-same-day-strict-compare-v1.json",
+          "sha256": "49e0b3c2e8959b276dff065da70ecb26eded43f8c5c93d54dfa0f9547e7e3f98",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/ui-full-native-raw-differences-v1.json",
+          "sha256": "bb1accc0fd967b40a731ead9533dadf8656dff8ddfbc7608437208353bdb3451",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6.sav",
+          "sha256": "1181ebbae4c00a6affd66c579bebaf54280726274a514b6ed134ef73ee230eff",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui.sav",
+          "sha256": "c9d8907c2ebeee3380cc0668cd20e950ac73f48dd6646a3d8a83cd35b5a7caf5",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6.native-save.json",
+          "sha256": "7b047a5df72758ce196361b8ffc10cd5ebe54297f6cabc23ffb2fd8d89325edb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui.native-save.json",
+          "sha256": "7dc66cc789aabf5723f0dcb4cbb385b326aa607874e1bb8ad342c85ec7a92c2a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2.jpg",
+          "sha256": "05943ebe60152e07978eedaa8597c97a49fcebaf3152c81af251370de5da2f7f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2.ocr.json",
+          "sha256": "f733e4e3fd3be3301709cea7a3d8288ebad41274e2539d6c671c3a886d8d8402",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2-f12.action.json",
+          "sha256": "a068c306250c952b7719d797052cc61a0bf0cd19a9225d34253543f268774b64",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean.jpg",
+          "sha256": "c00d8d3f95126daf3ef8703f641fc04893684b6d36a874e9c81ea53c7175dc3c",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean.ocr.json",
+          "sha256": "5ac350521e59f5bd4bb732c8335aa63f4e98491084b20cfb5877fb440f145641",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean-f12.action.json",
+          "sha256": "7ae34b84c24a9943da01fc5ced850753635f82c5303221ee1fc6542813d35b8c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.jpg",
+          "sha256": "ddf04efb408446418d04d0f4d1dfb709eba6c9395cc599c1f5b1c69581df5986",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.ocr.json",
+          "sha256": "98cde105adaa1e7fb462cc897fd4d2a9588526400d7e67de41a306e024db8552",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover-f12.action.json",
+          "sha256": "50022faf3f10061e55ed58ae6eb31ae7632bc41c7997bc02e485a9da13d56443",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover.jpg",
+          "sha256": "a82fddc194d42517cfbbd3da360e5c7f20c1ffa070220ad272d66c7c7c774b78",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover.ocr.json",
+          "sha256": "295546619fbf72276ceeebda1e16e498ff2edbec259ee72bc859e94e50f4c97b",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover-f12.action.json",
+          "sha256": "0432bd891d9c55212f7feec54d31fafd9c4dc6eb9c2af05a07c64e967fa3f18b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1019-analysis/rc7-juggernaut-source-isolation-report-v1.json",
+          "sha256": "ac037a88b450ac1ccef012daa57cc62c9d814a9ab07f3d3050a6c317c1451e35",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/rc7-juggernaut-isolation-scope-1020.md",
+          "sha256": "d699daf3fced775c48bc617b5fc66657bbe38dc14f30467f5a999317f5cccfb1",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-economy/machine/manifest.json",
+          "sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc6-power-source/source/native/common/ship_sizes/18_juggernauts.txt",
+          "sha256": "3402b13978de2bbcc36c6d4eedab9e4a9ac7f5160183fa2b908029f10842f11f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/archive-index.json",
+          "sha256": "aaa439d71053b207d3b92801d27f462b5187e1a6207e80f3d25016300ec42523",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/verification-v1.json",
+          "sha256": "3f609b092447893a76762ccea7cb1bbb913d805208219fb333965c239aebce4e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/original-mother-check-v1.json",
+          "sha256": "9ee760706b1cada88ec1d22b18cc3d654ca1b47975ec166a39b73a203a80d197",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/scripted_effects/eep_mothership_effects.txt",
+          "sha256": "f704c30ea845d57dbad5bcb6c60ec657d5ae8d4ab6a55082055dccb38d7d5ec1",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/scripted_effects/eep_startup_effects.txt",
+          "sha256": "f3a0fb725b1ea7f9cb4f77a7225a30e7b83acb86bbd4ba496b91860ddbcbb697",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/component_templates/eep_evolution_components.txt",
+          "sha256": "490b9711e77709bfeb0bd7bccba6373b4385c0fff118cedc95def2362ac78b26",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/section_templates/eep_mothership.txt",
+          "sha256": "a45774b96c4dc8efd99d538b809a7c6f7152e4ab67852553926a7a6f2fb46493",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/global_ship_designs/eep_mothership.txt",
+          "sha256": "0e1bc46c7d1d534e0a9d3619cef1d93e366ddc7d5a4d2fde766b0ca111929123",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/common/static_modifiers/eep_modifiers.txt",
+          "sha256": "a5fd09db86cf418fb0a95f0d28fb8347003c9fd513e64d8d90ced067ddc2129d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-rc7-static/candidate-rc7/mod/descriptor.mod",
+          "sha256": "88d02ca3d6d8ba249a6a76a8ddec2a6033e86dc026cb7e58af9f9234206fd359",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/diagnostic-attempt-review-v1.json",
+          "sha256": "c5eb92d75cc1b63baeeb5a9b28f3335fd3dc1e2cfc6adb9dc8b6b8c997b96bb0",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v1.json",
+          "sha256": "3233f7622597b341bf13a301de8b2f8c9163c8297fe71c04407e4c0e46c1c6b9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-console-before-f12.action.json",
+          "sha256": "fe54137392a75085603d4f69f52eb95324cdc9995c9ecddfa3b4d4526b851921",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-console-before.jpg",
+          "sha256": "ded46d9c4e3f0c6af2f090fc46e19fe0aeb7c4438d82575a6b9a1aae1b34444f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-console-before.ocr.json",
+          "sha256": "c632b740c3a2a1213e6c00ee7b7b0e5866bc4ac74013954ec8803e203865edaf",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-command-enter.action.json",
+          "sha256": "a80b8b4ddaaafdcbfbcdd1fe8ae34f3efe5e4cdfe679a70cfe7f0a247cd09e3b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-command.action.json",
+          "sha256": "aaa69a0766baec6662852c808aa772e7cc558564e26ad910877281f4793c29a0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-console-ready-f12.action.json",
+          "sha256": "ad78a664e7aa35814f57a7bac58e16586eadbfdac26157e20ba07c3f1db02163",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-console-ready.jpg",
+          "sha256": "9ca86665b9f1698da615548633b09012fe8c7012186d063029cd2fcf88c4496d",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-console-ready.ocr.json",
+          "sha256": "ac52c0fc55f9267c2bd2efbeda3e9b1310997485767f73cd5fce15a6fe8c829c",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-console-state-f12.action.json",
+          "sha256": "ab39f1a6b1311f3f34a8c65b4dae70945e4bb75ae7ea9bc115118ecc5773fcf3",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-console-state.jpg",
+          "sha256": "64e6aaa31512e21c1574765f1b277031255f644603c6629a7c113f6bae652078",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-console-state.ocr.json",
+          "sha256": "c4552884f27750c1c6e146e22e974f3c7dc6205529938ff4b8baeb769d09475e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-focus-console-input.action.json",
+          "sha256": "030fe37cf54807051c5998bccf1b0740e6c905fa5e11171bc6d123276637d17c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-create-relic-open.action.json",
+          "sha256": "3c56252096bec4e54172d684c00d351b77f14abb04ecfeb72fbbc45c15c03189",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-debug-close.action.json",
+          "sha256": "03bfb74a87a91dc970fa56ca2b9fe37579635659cf573f7f3b6f2ba33c91ea13",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-debug-f12.action.json",
+          "sha256": "f34eb03f343a9ee6db7394ab5d7e19e5d661264f6a491e97ce1d22be088ab825",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-debug.jpg",
+          "sha256": "4e33ff6f9f0240d48805eb1702478db5b87187c5fd4ba87ed4e5099f5b93dff0",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-debug.ocr.json",
+          "sha256": "bf39574308b9e937acf34d1de0a3dbc9bdc0ecb8cea95aab381fb698e03f1b9e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-refresh-six-days-command-enter.action.json",
+          "sha256": "f70a9008ac89fea42d77f1dc6dd53970b5cc5fe6953d0ad7d31fc8e3bf8cf5c1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-refresh-six-days-command.action.json",
+          "sha256": "2a8acda3cfc8eb591acbca5f59b6f1c0bba90c68d1b2c90a27f90cefb385c5b2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-refresh-six-days-console-state-f12.action.json",
+          "sha256": "6261161df4a255a69310365b35375adc2bc20f3c4430ba3ede93fe0f48921c28",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-refresh-six-days-console-state.jpg",
+          "sha256": "bbea4c505ed448430adfce8252a367582b1834a5b78d284aefe1da4e783314ba",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-refresh-six-days-console-state.ocr.json",
+          "sha256": "258c3ba6f6063977febf4e8e67666517d5e0b533a05caae1e078e17913d6e8d2",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfg-refresh-six-days-focus-console-input.action.json",
+          "sha256": "ecade04ffd9bd2af7a7f23f6829065b44f7cbde03524ca36813302a0d60d245f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-first-contact-click.action.json",
+          "sha256": "99c8580f1a2a86107f47283a1ed44968c2b68f417686a42ef1896f1f1bfb0df0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-first-contact-f12.action.json",
+          "sha256": "0ee6bca02f647a4e160abae491742a27c73213145e79dca62d5c72bede978cd3",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-first-contact.jpg",
+          "sha256": "1fac8baf8f814c16e3f405c173cdcfe2988f3debadcb455118de39963ef5eb18",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-first-contact.ocr.json",
+          "sha256": "43499421adc2f0b342487396e8f4116f0b84d5dd4183fe20195ee7801a527c44",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-revealed-crisis-click.action.json",
+          "sha256": "6c03d6c41d1ac1b8004362c290a86a3ba52c590cd85a16046b46a660fd828448",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-revealed-crisis-f12.action.json",
+          "sha256": "95e3633adadb9d5df1c03f1a8c31efe43dc51474984325903742cb183d7f7ce7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-revealed-crisis.jpg",
+          "sha256": "21cddae5b352a77bcbc2fa6e01eda6ba3424c788f4df060359f0efee4099ae1c",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-ack-revealed-crisis.ocr.json",
+          "sha256": "ed6bb603c4ab1696cc92a8e753b1f723bc64bcf4c10e639c9c876ba2c023d171",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-after-ack-f12.action.json",
+          "sha256": "b7976144144f5c6c00e5d1d12e6822c1ca87453aed0b68ffda5f6144c2fad28e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-after-ack.jpg",
+          "sha256": "1948614ccb4feecc4a48a2e6054ae260826ea7c2a41996d3cc663bf60f4adfa5",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-after-ack.ocr.json",
+          "sha256": "85e9b2740758e434163795ee0a383f57908b1b89f51e59c6ee864cff558874af",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-console-after-f12.action.json",
+          "sha256": "0f3d8f4574f202c9e5421eecfef3fcb907bb4e86b37d87c9a042ed79fd02132d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-console-after.jpg",
+          "sha256": "30851a632dc3bca0efcb5c36a8f99f7e4d034e405d326f4fc3f49d3dce11cf5f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-console-after.ocr.json",
+          "sha256": "aa082554a664e3b6cca7ad55ced92b168b01730ad33f10e737a2e007dd26f41f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-console-before-f12.action.json",
+          "sha256": "bbd84c36893c9ff764d377e868fc63e341725e7bde38d4bba5aa662481ce8f66",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-console-before.jpg",
+          "sha256": "34ab5400fa240670b4e87f4ff6237762ff7fa7a60fefd25f156de59b57a8d583",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-console-before.ocr.json",
+          "sha256": "7b74cf72c3a41718669db54b2dfda7a1e2f1d3c675cee0923449fb0fe6bf4b5d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-console-close.action.json",
+          "sha256": "3a4d182485c4bc499ce6fcb889040f84bf2965ff11c63b24fd87b1597a982309",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-debug-f12.action.json",
+          "sha256": "9f33100a5af290f138bd9dfd565a135bdf092e08e1f64766c4bfdfeac94d98ee",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-debug.jpg",
+          "sha256": "aa86f7ba3bd9bd9ab93500154d9f2a7a24bb069484e4ab69150f195a4755ff44",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-debug.ocr.json",
+          "sha256": "3b12811803f6e21dca4b6f65b4e87e33ec5f87124ddf05a75670d16bf16692d3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-mother-detail-hover-v2.action.json",
+          "sha256": "3a5f89df14f44b30db6459e5bee2b9203c5204c46003d19a752ebf17d4cad90a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-relic-detail-hover.action.json",
+          "sha256": "c46aad16caabef3bf800a49f5e01be2c772abffb6a36c6dea638e03a775440de",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-clear-sidebar.action.json",
+          "sha256": "8c2d4f9982195646550aff20483c8856d1d5cb949785a820b7e7689800c1d042",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-close-menu.action.json",
+          "sha256": "52c45e32d768f950ab043b5dc6f209ef1113c443898c3d437bff14b2f9d7d57f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-close-mother-details.action.json",
+          "sha256": "e586ed511bff0cd5ba9fe50ccbbd01eed3e3d838965322506341cd2eca09addb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-close-mother-fleet.action.json",
+          "sha256": "fd522109c37e6b0dad63d4ae018234892b001688eae85e579bbe1507dadf243f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-close-relic-details.action.json",
+          "sha256": "258d558bc7aaf7154c2afeb0967511e24c396a006b2e7b8ed2a99e4e61b618a0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-close-relic-fleet.action.json",
+          "sha256": "f9d0b995d2745d6c4c2acbe56ef56a32fde0226145c4e2849c3cec869605b81b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-crisis-0-f12.action.json",
+          "sha256": "9d45e511b2739653a80d86d715415297f7f4476e82a494b95b0ba3d0fbc2a83e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-crisis-0.jpg",
+          "sha256": "2ce7a8726102269877086bc598670e5289cb1618615c4dda9009c81e43b078c7",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-crisis-0.ocr.json",
+          "sha256": "19f84e34e360b3e13d9176acfae7707287d41137f4938e65b17cb1692b5e590d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-esc-0.action.json",
+          "sha256": "0a1c11fe15877b79c029e0322fd67f1e8fb14fa20f33c5d420bd11827e2522e2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-menu-0-f12.action.json",
+          "sha256": "b03c65f726fd96c265284de28f2149750ecc76c0b0ee9add82a1362b4be219c8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-menu-0.jpg",
+          "sha256": "78ad6778a81703189a36ac029b68db06ee45d4b0df67543bf06ad5e6db4c9bc4",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-menu-0.ocr.json",
+          "sha256": "1b16d3f2d7bf5d85af54762543807304622a63a077689fb923aa7762c099d1b5",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-menu-1-f12.action.json",
+          "sha256": "ed5e414c351ca264fc37e67325fe3627aebfca53e802813e798eece7dbcd61a9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-menu-1.jpg",
+          "sha256": "a47d59cd515bda6fd8e0d160b332338ddfd98bd9aa8e6389b9fb48d699a339c6",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-menu-1.ocr.json",
+          "sha256": "d51eb7050b0ec9a945943b3b51016d5ebe3093ef54791f240792fc5cdcbd4560",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-modal-recheck-f12.action.json",
+          "sha256": "85ef19748f987fc66276834320aa9512fa1a2a98af8dc83d9254edd2ac4fa332",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-modal-recheck.jpg",
+          "sha256": "219b0c5b407ba848edaa69c5446c35f180a8f1e564c1d1a7b34a3eaf02e26dd4",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-modal-recheck.ocr.json",
+          "sha256": "9daa26a52f7fed98770dec4fa87217358a3051311015794133faa6600cad0f72",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-clear-hover.action.json",
+          "sha256": "18f60b124a1c30c60af77c6149e5d71ddc6a478a8c877fe61914f0d638ffa5f7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-f12.action.json",
+          "sha256": "1d32fc8f17116f9410b318b4cb683ba09f7ed1ac0db00143d097cdea64abe759",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean.jpg",
+          "sha256": "8deb325bbf54f4b4bf4fe69440359086d0aa8c7357eb10865228e6debafc6ab2",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean.ocr.json",
+          "sha256": "3414d0165125ea5873fe0845b76fff5fbc8f19340657c69898861b9854e06194",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-selected-f12.action.json",
+          "sha256": "a4e711365a04e925b82452d925a0395c0aee3e445a31ff30d6996d37ebe5f108",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-selected-v2-f12.action.json",
+          "sha256": "fb464fd6f728959883a1eb5af726adf7bd5e9b50983fcd9f2a64a7cc3859fd61",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-selected-v2.jpg",
+          "sha256": "a3114845df353f4a9615d56a994394bbbd8b5b3aa2aa7850ed2a51f63741b07e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-selected-v2.ocr.json",
+          "sha256": "be285b569a2521a7fbe8f9fd9ce7eaf1d8b3b906ab4f8afdea6a8262f7015dc5",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-selected.jpg",
+          "sha256": "4fb49c88c16dbf3d91f8fdb9dfbdba5166ec7fe76de41c200f9ecceaa1cce2c3",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-selected.ocr.json",
+          "sha256": "2cbe961f68bcf382572cce459298e14dd14e8f3588155d24411ad03dd85eb490",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.action.json",
+          "sha256": "0611b03ea8672c72e820f99f32a7d236545a128cfb2232b11e62292b65968857",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-name-field.action.json",
+          "sha256": "4b14c3b77bf9f436d5d01b39e03c0fe1925b490548a53e6201d7e0bb58f0315a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-name.action.json",
+          "sha256": "9c9994897e2f728ea8bc50becba51439cbeee77d4025c56f3e21f239051e67a9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-open-mother-details-v2.action.json",
+          "sha256": "07f95efc075f4185a8f5643d5a3270f6b8effe8335c759fc57c26db90d25eb69",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-open-mother-details.action.json",
+          "sha256": "55c2ec2b34b000517138bbf3826af34d5b18825d33ac5fbe4e2d61605657b41f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-open-relic-details.action.json",
+          "sha256": "2f20e4493b31f8f10815683ab973df0ce79cb75bab2c794913b58825761e8cb9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-open-save.action.json",
+          "sha256": "13a250b0ba69be139875004a7f733c895008383089cf428cc24c3c6ff092d109",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-pre-debug-f12.action.json",
+          "sha256": "d74867070d7caba411990b91fc79b3322a65569acda83257a7dfaaba056f189c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-pre-debug.jpg",
+          "sha256": "ca66f5cf24dbe0e9eb878ccd8f277123541e0f28e00211d00def66f5cc682860",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-pre-debug.ocr.json",
+          "sha256": "8bb2fbd39567bda6908a6b5428d69f96bb9b44ff2ce9b77189fd61843a48f994",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-queen-0-ack.action.json",
+          "sha256": "9962acd05d5cd18bddf8e88df126202565cf9826f6e500546ffb39fcef947b02",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-queen-0-f12.action.json",
+          "sha256": "7a0b43f1c94f77ef5f8f1ca820d70161bf001ba8827aca9fc35653427dd32c5d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-queen-0.jpg",
+          "sha256": "752086d49de1e78fd47c05bc273783dba0a36ca14bf8782fc1ad2115290aecde",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-queen-0.ocr.json",
+          "sha256": "1fceda5a944ed96a9e8cc8ecd17f4dba65631d0c8d2d2edc018544f75cb28555",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-queen-1-f12.action.json",
+          "sha256": "d4869712868d6ee8b0eebf3275d9d44d6f56c618ed8170515345c81e07b50f0a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-queen-1.jpg",
+          "sha256": "b4de0c580250480319dfbdb43f5a18daa3aa14175f9199cd298ddc82f16ea71f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-queen-1.ocr.json",
+          "sha256": "dfd45c85ea30926e83812096bbe89407d95b81216bf58ccd9edeb437e2860387",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-selected-f12.action.json",
+          "sha256": "69f6c7199a730f3af2b7cfbf9e1b29515b9e423f985750f465cdc83d8b37a8e0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-selected.jpg",
+          "sha256": "b88242d46ea4e4218e6706ab2d4e89fd89ec5cc53456cd9bf91efa379020f8ee",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-selected.ocr.json",
+          "sha256": "aea60b3e997ac318abcc3bf76e8cbf5babb5a5c48dae582feb3ad0cbd45c7730",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover.action.json",
+          "sha256": "3a5c140f8e73b5c4196f05e9b6ae1194a285a1f10d395e7c96def49a1c2fc559",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-save-click.action.json",
+          "sha256": "3755dfdc845e0bbf4fb00f8fa9afbd47c56ceb5a2e25a878e91f4d936799e3d4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-save-dialog-f12.action.json",
+          "sha256": "08c77bafab52b2146be2d1387bc69cb64c8fbc408cc56717cceb6da904741f7f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-save-dialog.jpg",
+          "sha256": "d33390ee3d5ae632863994b58633b43ce40de32781805043f8502d4c550359b9",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-save-dialog.ocr.json",
+          "sha256": "b5c9d4fa15ba1af496130c2355d78a49974f2a075ef987898248866c53f97174",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother-click.action.json",
+          "sha256": "1b25cc8d4cf0cce2b7c0cfe118283d473d3dae12d668e52e3dfde9cf28277ec5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother-f12.action.json",
+          "sha256": "97c10899eadf3193f55a4ae8ac0d1dc1a1fa26c267eb55abd662d33eda270f67",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother-v2-click.action.json",
+          "sha256": "e5a0b4f83bb28fea71ad301e30d03436bbe4293262f7a7c35629dc2774477e02",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother-v2-f12.action.json",
+          "sha256": "61730eaa86f14a3d29eda9bbee9b7812a090f8cfdf1af7bcf9f437e093ebc157",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother-v2.jpg",
+          "sha256": "0108a81035c34ff50c205130fe395f84011f0c1704637f359b4b55a9f57e3a55",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother-v2.ocr.json",
+          "sha256": "73d0819eaec83d51a878a2bb2326876925b037f5ddb38f33bab84054374beb6e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother.jpg",
+          "sha256": "0d726807466047e84a03424f24a45def43db5e4b861ba4c971065a57befa901d",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-mother.ocr.json",
+          "sha256": "74b3cdf0c92354d4dde7459007c04a6f09177bfe9ebf9bae07f425d7c1c6d497",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-select-relic.action.json",
+          "sha256": "689d8ae02e4287f1c8729341171e864564bdafff1b8691ae6ce4708b27bfe29c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-tutorial-0-f12.action.json",
+          "sha256": "b646d5bc71509ce64ecd684e4ce829ba567e2288cc09f52b0e72e9b02cfc9c50",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-tutorial-0.jpg",
+          "sha256": "7002b0a940964b7f5a6c7929120ec5fbdc6e2847d3962d4f06f2598dce90fc55",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-tutorial-0.ocr.json",
+          "sha256": "7f6e2b2c82e13a162c67dc3c3e5761ab7baf1874e26c893bd284d24dcd28a419",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-unobscured-f12.action.json",
+          "sha256": "cd84172b67868a82209eef43ecc242e83f8a0a0b6682c68823b633359524f577",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-unobscured.jpg",
+          "sha256": "43904a76eaac1fff05d32b63a4227bbd08ca6a8f97bba21c8cd3153e1a21f220",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-unobscured.ocr.json",
+          "sha256": "bea96ba1fd64732f029a25036756c2f43fe4b0a93d66405d5d56fc3698b67a8e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui.audit.json",
+          "sha256": "50d70619616da956c4c78d6f3d509d01aff4c2db5c2f87179abd228600d03bd9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-close-menu.action.json",
+          "sha256": "dd51f94cc47afb6fc1581483e5369f3e10d91af6d60d26730c375f59edee7c04",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-esc-0.action.json",
+          "sha256": "2d2c488d30e7021ebed6860d389d9c19cb4c70d6bcc72a4ef497d5e707dae2cd",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-menu-0-f12.action.json",
+          "sha256": "8bf6e85a9b06c210041e22d4805e9c17df3f8e466ad243616e0d506907d7302e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-menu-0.jpg",
+          "sha256": "d1723d18c4fec5ce54ce48b0ebd6cb1093ffb61cc0fa1024a45034aa58d44266",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-menu-0.ocr.json",
+          "sha256": "9f36b18f8792975b635ac730cdd4bdc5f4efdeee6d77ed014498a9604e7bbac6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-menu-1-f12.action.json",
+          "sha256": "e3c0cea9f2e1b80f9f75c7e2fa71d9bb121d8fc863127b546a87f823154049b9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-menu-1.jpg",
+          "sha256": "79f667ee054e04c2f123f371f4e16d1f0b451f0c9346d3d4fdbeaacb9872d865",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-menu-1.ocr.json",
+          "sha256": "bf24b1afee0c3c86fb9124d7f8902600623a42d648b7ae71198f1c46b562b36a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-name-field.action.json",
+          "sha256": "fbaa29048aec35bcaf09fa97f8f7509a1d7c42d7746e7056e9fe5145141b3de8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-name.action.json",
+          "sha256": "2e95c0bd347f2c08b7e6d8f99acb7534525e4853e8f724d604134fd9e9818a0d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-open-save.action.json",
+          "sha256": "a33f21a591861ffa38070377560cf1ca0b526227e5c51bdf56918a609d4df1fc",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-save-click.action.json",
+          "sha256": "03eb10b8cdf12cf76568b043ea7a664e318648e153d15a0c0e951158478ec7b3",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-save-dialog-f12.action.json",
+          "sha256": "7648003d99b09dfa1c1362f700182bb74a70bec32772f07cb44eb0f85d0fb5c7",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-save-dialog.jpg",
+          "sha256": "19d9a1852bda40bd1adef81249ef21b1194bdefed8da822912422b9c8e060067",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6-save-dialog.ocr.json",
+          "sha256": "a286eba96b522eee117c38f89ef50e307c9c155a6c1631829659e3d27a705c48",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6.audit.json",
+          "sha256": "4635040f0be57781b0da0ed1c8d710a2b1300228c2038ae1ca61e9ec6980dc82",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw-path-map-v1.json",
+          "sha256": "ea87e87d711e73983ab7a594c6d43c2337f3a264e809a79b09ac2d154ae3b960",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/README.md",
+          "sha256": "0bb6ff02ca23ca7a4a7f3fe3d52332444e8b3b42e83e4b919ed87f3c24a86b53",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/source/native/events/nemesis_crisis_events.txt",
+          "sha256": "7c037b46e8b6cb8e31dab8dd69bbd34d5902cf212a5fb5c206d175aa676e7d13",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/source/native/events/story_events.txt",
+          "sha256": "1ac49a4b66d1fb07192552e5af6d4d14dd0db7d1d6f0fb977cc6a2a9274b0055",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/source-and-path-map-v1.json",
+          "sha256": "e0381ce15c0193f8749ade6fce25bb0c4387a195c141386cc7300d2cba3b856f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1019-analysis/rc7-juggernaut-source-isolation-partial-proposal-v1.json",
+          "sha256": "baeb7f512ac15534f0480102db469ab45b2bd8101a307c6feb0daf009f54e5d8",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/actual-jump-report-v1.json",
+          "sha256": "76500a18a3bbca7bf3a44680cb005aff01836652ebe265a0c535aff265fdc046",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/native-jump-observation-v1.json",
+          "sha256": "0699bcdd0d8dd318b9f470b452fcfb57ff3ea0a7d8e3afb19b331693d2d36a10",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/original-arrived-mother-check-v1.json",
+          "sha256": "c0720b3b215f71072d947d22352a52f1211b6cacd0859959c8c71fe87ff281b2",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready.sav",
+          "sha256": "87b40d759d0da5340b117f1a917f34cf1f85834260b1b8e5f2d8767496f99c4c",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready.native-save.json",
+          "sha256": "0a742d55bb1ea1d48a4101956372f24af01492a1b40f79e4058360de3b49cf40",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready.audit.json",
+          "sha256": "02106289c97b47406b4df8d3bff10b9c8862d59c710bf6c515f23ec6187f4197",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1.sav",
+          "sha256": "5d26ee990b421c9eb4744040122b55bc345fcc4eca071f3837fd4ca00739f727",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1.native-save.json",
+          "sha256": "e67076f1202ebdbff5dc730000a1963132a700fbded8860212e5a99eaab40d66",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1.audit.json",
+          "sha256": "b9366865130057b4711227a224b74581bac30a499db67b4123e832259a77ca68",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2.sav",
+          "sha256": "325808af0d1efb9ae1f6c529dadcefb674aea5c818609efce2e5fc9e0ff8f25c",
+          "kind": "native_save"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2.native-save.json",
+          "sha256": "dc871ff30228f14d8c1af6b641fb74136a172173a7b3f0cc138f52fb8ea3870b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2.audit.json",
+          "sha256": "e2ceb4e422ae7bfef4f8191644895a4931ab2f36964c54227b1021b8f28c5791",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-destination-validity.jpg",
+          "sha256": "9b1cbcfac626315a42b28e9d1af1e4f44f8ce5019291d30f52ecd897b692338e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-destination-validity.ocr.json",
+          "sha256": "cc0bb907291d62232d42b0a23c5d9944c4ddaa3ec139c65970d7a4ce1a0c7492",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-destination-validity-f12.action.json",
+          "sha256": "a6551754656ae55b09eeb96f684763e5f4d16754492eef486fe27a3b362f5415",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-issued.jpg",
+          "sha256": "7f51aeca411a53c9d1b2f8413d560367cd5893528527eac9b53d37dfc90fe8c8",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-issued.ocr.json",
+          "sha256": "c3ebad74181f4f6fb44bc50c2e31daddb9934d692abb5e74a3c2f483756055c7",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-issued-f12.action.json",
+          "sha256": "4e65edb6cf2107df218d31443b65cf6e1d73460d54568a56db12b64404b750b6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-cooldown-hover.jpg",
+          "sha256": "d621f05f6a0bdbcbd29be703556185575e3afb7913b3f9a0c714c0cad7b21cf1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-cooldown-hover.ocr.json",
+          "sha256": "7fdb1deb9439ffd845132a8c24e0c81da7c5dff68f3db35d57489d0452d7f906",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-cooldown-hover-f12.action.json",
+          "sha256": "6d58d05a1edfbc8987dadea90e7fd000286541463345c7354e8a795d185608a6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-activate-native.action.json",
+          "sha256": "728bb668f62fbc5f0b05f2028a965475919da2efe380ff0f034f5cce14128bbd",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-order-real-destination.action.json",
+          "sha256": "6dcef4f4fa7727d40e470d39b0ee5d6a696f08474ad689f2293e022c07e7ad27",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-cooldown-pointer.action.json",
+          "sha256": "864d33035ffd4dc27530bd43e5333b841f0437e0dd6ccd1627cab9118180d367",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/partial-case-proposal-v1.json",
+          "sha256": "8ce2de79a060220775393a957220fbdb34a0ec0e7aa8777589fe137851903dac",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-console-before-f12.action.json",
+          "sha256": "15d9cadee889c20ceb5197adf790f65811ee42cf06bb0de5454dac74e7f1f7f5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-console-before.jpg",
+          "sha256": "0b2e4d21eddc7df6a0c03bd1c88d8059160af8ada48b5acfcdec67ad5b6fb7ec",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-console-before.ocr.json",
+          "sha256": "078ced011dcefdc634c751bde77ce5bb619a481244e144ae6b9edfca74bd8e63",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-debug-f12.action.json",
+          "sha256": "0c12fa870f6c3d0280b30b1aed0209046a6476c465d74e99b52b0acb51bad297",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-debug.jpg",
+          "sha256": "661385038770211cb0995e41ff800175a28c3bd8a6308c15f163c7301a92396e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-debug.ocr.json",
+          "sha256": "1fa919c9aba994e7b7f276695f8ac37635f8126e2f07e6a5ecb2cc3ad89e806e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-recover-console-toggle.action.json",
+          "sha256": "a0fab77ba7588bbcf98c59d2432963da797316f8153243dd8a7644a16ff2e94e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-recover-menu-escape.action.json",
+          "sha256": "2fcaf9c69e3f6e5c02f3e9af250aeb5fd7ed123deaa40068a7cc667ed65887f9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-recover-visible-f12.action.json",
+          "sha256": "e51f54429810a3302a1248b8c5a26de9140ffe5c19b0d6d5a5028105f1da6621",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-recover-visible.jpg",
+          "sha256": "5543b09535a794fa34b11c104ec05937dbf350ebf12067cc96bc21fbd1f7164a",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-recover-visible.ocr.json",
+          "sha256": "c69785ae72be6dfad3f7f6d0162aa940e39fe3a3098c662225ad5ed1dfc9e136",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-select-mother-click.action.json",
+          "sha256": "a3ed15d39d2c9d20eeb0024efaa4f40df3efd70c2325bbeb839bfd013dbdd054",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-select-mother-f12.action.json",
+          "sha256": "2400ab2fb415c2a85e61bcf4d27d929cd23ce6175967acfe59493591a60a835d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-select-mother.jpg",
+          "sha256": "1790019605d8e918619cf958cafd90be6779fa276aa1dcf3ddd2179b5d29f168",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-arrival-select-mother.ocr.json",
+          "sha256": "c8cc9b3ea81c3e2c88fc0951e1c2ea6a45947acbe14b9d226e2fdc6c8bd27fdd",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-command-enter.action.json",
+          "sha256": "2f94aabd98b10e9a5f5eec175d588b07254cd8ce468f717f4f5ddedd4286dc4a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-command.action.json",
+          "sha256": "e8308a5a1e88bfbf78605c6d5c29f5df18470b3a909853706787295d0be1b327",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-console-ready-f12.action.json",
+          "sha256": "977ba930ccc8aefd98c1fdf6c327ed2ec47bb5373f977566aa2c98717f5b9cb9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-console-ready.jpg",
+          "sha256": "544e3e8084b5cbbe56f5139a878aa29b535f9949b4cf18a58a17ecc4250efaad",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-console-ready.ocr.json",
+          "sha256": "ffc9ad2ed4184fdc6f172e95350863161373c0015369f2210e25c21a61ec5b97",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-console-state-f12.action.json",
+          "sha256": "874b48fcd78c760a4bdff9cac6c4f2054a7bde6c150ca5267216f9e9cea90e97",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-console-state.jpg",
+          "sha256": "73309ab20b6fc0285706144b55b355c66fdd008c9c654e6a98f4e41d8995a69a",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-console-state.ocr.json",
+          "sha256": "c9ad770c2f1a75b7ab5ad6fd47eaf8ee7c8850239e64a8555fc98ad6a07ab94c",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-focus-console-input.action.json",
+          "sha256": "fd89cceac69e7072b01be415ddda4f18667635a51a23de877e22ba22fefcfad4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-bind-neighbor-open.action.json",
+          "sha256": "83297c2c21279bcccf91429026521052951bf6b6f1a91eb979525262b40e01e9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-button-hover-f12.action.json",
+          "sha256": "944eb697626902147aee318ae7e3c10971ecd5e56acd4596da11c4cc5ded994c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-button-hover.action.json",
+          "sha256": "6901ecb8060c64b317629bb1017b1c42263ea959db4962a6696ba080c994533a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-button-hover.jpg",
+          "sha256": "ab1437341e1a84a4dc33375a61ec69a7d366619b0b8344e4507c71ea71aa46b1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-button-hover.ocr.json",
+          "sha256": "908b4b0b56456ab69257a54e2cc3f7e5d72c0efaf28ceec5328107fba446f385",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-close-search.action.json",
+          "sha256": "f9e5f0721d0e95d84907ee192acd708036649b52f4381707a5e6d588e8103185",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-console-before-f12.action.json",
+          "sha256": "57be32d8409b1713647fcee5e4add09da66c5e9e4c5f115bcd54296b10e13250",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-console-before.jpg",
+          "sha256": "3a2dd1bbfba734ac62f03edef0e765f56faca54365edcc38155ab5581d15f8b2",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-console-before.ocr.json",
+          "sha256": "2465adced398528d7758e2645ffd13a3d405a1888a12ab60092d0f149205dc8b",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-debug-f12.action.json",
+          "sha256": "1e0a615376a08dd73b36187d43ba97c39586e28da01fcd3083ec62286df463db",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-debug.jpg",
+          "sha256": "f9d417a9035d9e4c6003cafc1f0b059b2033c26d3015392e21f525b677598d3e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-debug.ocr.json",
+          "sha256": "1b97168467466327e6632b41a7a6eb69fe6ce9781208622617e02a05326bb5e3",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-open.action.json",
+          "sha256": "926683ec8bf452990d4f23239709ca17190a7b8ac3baeddf0a452493fe39c4fb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-window-f12.action.json",
+          "sha256": "3589b2cabe7342d5aa3bef366cbf8e335318c6fd602a276c3860e33af8bdf412",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-window.jpg",
+          "sha256": "65546cba6b6edd6bc8b08d9c36670a5d1c129c84e4ec4933865a00805bb189e7",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-find-window.ocr.json",
+          "sha256": "1aa6a29947c3ffbc8da4132fdc3197f4e3c7f2eb6f172c62bff49c85772ccdb2",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-focus-search.action.json",
+          "sha256": "724c0a62e23f9637b171507a69100c9e9092e32000dad88c1cf7740df83ba6f9",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-hover-real-destination.action.json",
+          "sha256": "ce9c50ba21a2f7bf1efc230528912fa26aaabe55bbd63559a6d071b53b73ac21",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-native-target-mode-f12.action.json",
+          "sha256": "54fcfcd9a9bfc21dfad7bf23126dc915c8f6c9b104a6366351a165e297360bfb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-native-target-mode.jpg",
+          "sha256": "409763216afd37f5ba8e2d5cceffe8517fc5fb1712428f0b76c8d8a190706eaf",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-native-target-mode.ocr.json",
+          "sha256": "3a69a0d42fa1f199c142cf09e5bbd5eaafc207de19d26135bdde37eba17500e4",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-console-after-f12.action.json",
+          "sha256": "2cb4b452a3fed6221349de6178de3bf879b3d0be6c6640d05c4da7e548a632cb",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-console-after.jpg",
+          "sha256": "16665be91f0f76e39982bdf1b7123926594810f94b6daf9198965c4cbeb46cc6",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-console-after.ocr.json",
+          "sha256": "e5d681df2dd24fc00f1f029cfdd24a27f76c9d9494885ac2f596adb2794b80e6",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-console-before-f12.action.json",
+          "sha256": "7b70f86003a71431f951f04bc650ccd8d04b6e2254fee374bef54bef277718b8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-console-before.jpg",
+          "sha256": "074f5c2e449b0b79869cd8c05e2ce5a17b4dbc18df76b72458db23197b706b87",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-console-before.ocr.json",
+          "sha256": "9456ee190728eea04c064f6cedc510bf581295d104d4c02fd822f32e04cfff7f",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-console-close.action.json",
+          "sha256": "76e77882e764a3776cee4c11cf98024210e542670ca26e25ad275e1d8e7b859b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-debug-f12.action.json",
+          "sha256": "3a5080287e003fda41f2fe10c9a03ce9797e8f6e3f6bb3b9c8efdb61a3ff0180",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-debug.jpg",
+          "sha256": "73d29e4e83aa546eac79b4400ccb65f76414628ce11db2267a1664db281c7b0f",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-ready-debug.ocr.json",
+          "sha256": "ae5627959bb3d454923bb673c8b2989a10d48943bb75f34be2d1412c2f0007fd",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-search-result-f12.action.json",
+          "sha256": "e00a98fad7390f77b58d5d55bb90be24be996564e870667dded26542dc73792e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-search-result.jpg",
+          "sha256": "7dddb393d5d80d33ce9e62f1af7ff7ff3ed036f0fed4f7ce387175d03de7646c",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-search-result.ocr.json",
+          "sha256": "c6b5437738df31beea27acff42d3e20e8467610b9a072e6c48deeae50a6e7a7a",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-select-mother-click.action.json",
+          "sha256": "3666ddc093a60af66d318f01568cc11ca8044832a842bc9ff6a6a2a6084cc36b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-select-mother-f12.action.json",
+          "sha256": "a9ff2aa18fa0dac372b6198d8898b57857e402c7332fb2c2f6b92988d3cbe18e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-select-mother.jpg",
+          "sha256": "180653f777132604b12d341d9536700642275b865e3d5e70e5b08568954ca2b2",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-select-mother.ocr.json",
+          "sha256": "d2d7ee11061f7a9f46bad596870771dd8243e914fbc9106a1cc491d1dc8ec9e9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-select-search-result.action.json",
+          "sha256": "5714e93ee4a541397372fa78d6a87a6d67fc2c89f5c74d9e29895790d3b25141",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-survey-command-enter.action.json",
+          "sha256": "a1dd2fd3f3d2b4067bbefcc3b553f0cbe607048bb0d38176141dd5d7e08483c0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-survey-command.action.json",
+          "sha256": "fbd04e302706b1ce9beb78974114c4bb68d3daeb6617862a2620d2543aaed34a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-survey-console-state-f12.action.json",
+          "sha256": "03d21c4425e2b45c8fbd35785b717323e9a7702ac0a550b830c019b59aa32baa",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-survey-console-state.jpg",
+          "sha256": "7aea0ef8c133d77923337e1bf36cc621b940d7bfdf603e59690e2ec6ba76a485",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-survey-console-state.ocr.json",
+          "sha256": "7bacfa917009542d530ea6c97af7ef3554c42b168f1ee6b7555bcf00e69b380b",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-survey-focus-console-input.action.json",
+          "sha256": "7d70bc7cc6a8746ec10b7f9d2b52523aa4681bb4010ecc8b1c9b66957d9a1c4f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-target-view-f12.action.json",
+          "sha256": "ea27325dc33261fd56b964281cb418c234fe814a7abaff308e6e053f3dbbdf65",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-target-view.jpg",
+          "sha256": "e91c01c93390d9476bfea0c329ee6ac217dd7f61fd86a857c792ee6d4c14ad06",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-target-view.ocr.json",
+          "sha256": "92d472d86c880ed1011eb29ecacd329c2235258cd9e60a9b65c0d0682708f905",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-command-enter.action.json",
+          "sha256": "f2aa941ff74dead6fa0b566d724a8357938719c1941e2d719fab3cbd5856ca07",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-command.action.json",
+          "sha256": "849a6c5ed2b69535e51f65bd33c0a6acbb90c4f4ccb97486bac9cdaed8ae09ed",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-console-ready-f12.action.json",
+          "sha256": "c84a53601cdf570d51a48e99ec9b6370fcad0c26ae7af0dc6810cc2a80413844",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-console-ready.jpg",
+          "sha256": "437bdc5f81d2e6d4003e8414ae080ca7c42e519255fcae7d73797193f9183807",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-console-ready.ocr.json",
+          "sha256": "badd60c93557afc83da9ece5a5bf6d9025c2b7b06ca3c02887c7f538b7f311db",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-console-state-f12.action.json",
+          "sha256": "33f7f2b231f118836e69143badfd5adc5ae195c0f76d561543df45d6058b2db6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-console-state.jpg",
+          "sha256": "ddb654459d3079448abb7eeb87afee8380b5f3881cc2c5f9620fcd3c47704325",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-console-state.ocr.json",
+          "sha256": "1f5cf5bd0566f6a4c5dd8d44467d9a1bff6c7364a64321cd1753fd213d20ca46",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-focus-console-input.action.json",
+          "sha256": "044760a9ce8d2e05b0ae4ddf1465cac2e3c91ab8a723c49698a0b3d469751e61",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-to-real-end-date-open.action.json",
+          "sha256": "56283f5c86ae1c16dbab800e2989e1eb21daefa07be7992091cc1f7f9394ae76",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-type-destination.action.json",
+          "sha256": "e9af7866f2266cda3192cbbf3aa81b575fc3653adc9082a6d7406e1f164b4f49",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-console-after-f12.action.json",
+          "sha256": "4a980345663cf4bef736cf2411da424274dedfe07141aa353e5beee78b7d11e4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-console-after.jpg",
+          "sha256": "48985023887ca79fcc55dff49184c0f93534c14dc0da875cca9da7a66a663708",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-console-after.ocr.json",
+          "sha256": "b21bb8597ed3def4b9cd34bb1c06dfb4393ed7a60db8aa10bf4428c162e4b770",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-console-before-f12.action.json",
+          "sha256": "026d09a4156116e7191bed40b7b968c9939507007d4c5e4b156088ff524a3100",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-console-before.jpg",
+          "sha256": "570a62da270f91f0aaaf7c4eaf29d6623798b81edd78ed7ed7dfac9af7e32257",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-console-before.ocr.json",
+          "sha256": "2cf77ea2b1db50d30ecd8e583dde5ac05f719c67af63724a67a5234955316232",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-console-close.action.json",
+          "sha256": "8369fa5dcdfb9ce54dcd4bfc5af7dcb98a8e0b88acd821b901063795a680a8ee",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-debug-f12.action.json",
+          "sha256": "e07788d0a3d406d3f1c27960c51c54d8bb712f6f676fc629060ec15f5564c04a",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-debug.jpg",
+          "sha256": "738c9f18d232bd860468a4a963f5235864f2422e91b0d271832df8a6e42ce5e8",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-debug.ocr.json",
+          "sha256": "fbd739ce284c3dbbb08f01b296d168a121c3f6f12da211ce6635810f35423178",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-command-enter.action.json",
+          "sha256": "daccea463b9bce1f0e659e35ee5430556cb1569ead918958ffce29f061aa68d0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-command.action.json",
+          "sha256": "2f917a2d4d724613ad199250f297d65142434623836ca13ae994a4803342e976",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-console-ready-f12.action.json",
+          "sha256": "b020269001e6acd5680775f24d9756a42bdca78b0d5ef74bb96813430c00377d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-console-ready.jpg",
+          "sha256": "31b9601305f1ffd383cfccf08cbe8b32810ac17bd80c29434e30ddaad9a5e77c",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-console-ready.ocr.json",
+          "sha256": "de74b09a7f85237836ee955550d2e48083bae4fee87f143dcf7d61d9dcfe03a2",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-console-state-f12.action.json",
+          "sha256": "80dbe9a4ad2f7bece217f99f7de74fc44ef57fbc214ce6b84cac1bf8ee37a017",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-console-state.jpg",
+          "sha256": "cd6e46ba3419e64b726e54b24f1d3b59c521704d2e146d04bb2740fb9a74abe1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-console-state.ocr.json",
+          "sha256": "93ef28e73f475fd6d1de2a07be7f27a2d5bbed2c18589d996a228b644f5e7ebf",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-focus-console-input.action.json",
+          "sha256": "5eca9571f6b026adf6fe3f83ec0a63bce432d76f6864c4561af442e21a6e950e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jump-windup-one-day-open.action.json",
+          "sha256": "9a5da4e1641b35194cfb217791495985a27ea766072bf523dcba5f76be60fd22",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-esc-0.action.json",
+          "sha256": "c537c84e5fb1354707a3b2cf122f5648f122685e9155212d60fbd6d6c679dca6",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-esc-1.action.json",
+          "sha256": "a3ac7ae155c2366c89b521b3b6a9dcddc14dd42e7c9aa0841cd0da02815c152b",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-esc-2.action.json",
+          "sha256": "f51e293bc5f630740c966f928450f520d34434e9d1e157c546696f8ce1e9e239",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-esc-3.action.json",
+          "sha256": "fdbdd6484f9044841b858f234a635aed671545c70655ded7e8aad54a575f05ea",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-0-f12.action.json",
+          "sha256": "51ddd4f56644939634aa161ec0543ce3c23a431664d45976da2a122d0cba3e43",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-0.jpg",
+          "sha256": "75d28471ed65e1f48fbe2d96d794104cdf39a02c71fdda60eae7eb4452a2f94e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-0.ocr.json",
+          "sha256": "f2b8abb0802aa25edbd6ef62c6e54e44caa5a8283816d0c1af7e1486bab5b3fd",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-1-f12.action.json",
+          "sha256": "89955590db48a8b3fa0a9a3fd770ce7151485e5cdd914ce600dce8c9d07a8502",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-1.jpg",
+          "sha256": "172e70558f9c71571f20d58189ce93ef4e62a55591acf7806a60d455d17c0e5c",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-1.ocr.json",
+          "sha256": "8c51599928aa8e0ee9fc08980be5d008611af6dbe2f5a16303c993f817ded308",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-2-f12.action.json",
+          "sha256": "166e46780f194164a8a025873e6c8a1eb26446056d97020884bd6e855138fbd1",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-2.jpg",
+          "sha256": "db9967f501385526dbb868fb8d87fee635fe9bc799a01c3dc7ba1b1a4235713e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-2.ocr.json",
+          "sha256": "cf47e2d5ac41d33da90e04172cb8c8ffa230d60d02b761301a0d656e3fea5234",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-3-f12.action.json",
+          "sha256": "bf3ab7539ee8c1778a6478b27e1b4ef4a27f55c003226c6be5d244c72d22b5c4",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-3.jpg",
+          "sha256": "53cc24b919be016e3caa0d1f9c12d59de66a91c8ec40623f18cc8ae9780246d8",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived-menu-3.ocr.json",
+          "sha256": "ad0678bc1cf419438b272df78adaeb712f16c1177f8e1c0ac526216871511fba",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-close-menu.action.json",
+          "sha256": "f1da1bedc854b95fcc3d21258dc0490db819d653273d786b51ed912da8ef43f2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-menu-0-f12.action.json",
+          "sha256": "6566c849793d8a2bea53dc67f241f7ab54cfcfd8654df8486ae24a841f05f65c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-menu-0.jpg",
+          "sha256": "0d28ef221562697d8e6b88f8377c0cee5503dcad2f54e91f04f3f8afd56a4a77",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-menu-0.ocr.json",
+          "sha256": "78b27583cc89b9bfa1bab37a474404c566411d3a5f886b38da2c4096bb33c722",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-name-field.action.json",
+          "sha256": "5a0a8be79d853d31b2a1e2719e6319a6dd90ab511b8584163af1587dfe9974fe",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-name.action.json",
+          "sha256": "745076c5aebb2be4608769cd141125069d20f5d034b4666feb62a9cc4c1a1ab0",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-open-save.action.json",
+          "sha256": "380116c4df5809fadacde412d750ef27a121c80ecba42439dfb14d6fee15b18f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-save-click.action.json",
+          "sha256": "2152df24ba09c2a3bd729bfc85d2f71397bbd73e78da188628faac0f268a9b44",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-save-dialog-f12.action.json",
+          "sha256": "0ccd9e320dec77b4e8fa5bc1180955c3354874454275f6a27738009c559bdd40",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-save-dialog.jpg",
+          "sha256": "e5250542dfa23874dbadd38424ff2d75dd65e084d0f1e4dce778552f4c3dd6f4",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumparrived2-save-dialog.ocr.json",
+          "sha256": "f09aba098d80cc9953e99204ad79998aa531dbce6315d725b99f40ab50885221",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-close-menu.action.json",
+          "sha256": "02c8909fc68ceb8fa0efa68be5952bffbfff9d1814dfcde4bdee1d7d8739b3c2",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-esc-0.action.json",
+          "sha256": "0f75b6dc924507e410c71bcd0c1cbec1e6ba511855d20e1e04fa6035a794494e",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-menu-0-f12.action.json",
+          "sha256": "d64411e36e652eb6b3c3b6bb6213229d6c4859600beb4d9a1cc1e4641347ab16",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-menu-0.jpg",
+          "sha256": "5d8db4814f12bb259f5f6539186801a442089b9aa433cbcabe7cc048d0b269de",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-menu-0.ocr.json",
+          "sha256": "be7da55b623f0b287d79ac6796eafbfbbd9f06e5e40ec08b149dce343e5fd5bc",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-menu-1-f12.action.json",
+          "sha256": "5c0cf3cbe2f9da8f961d45dc833bcae7bd0ecee6186665adc32effa8af8e3774",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-menu-1.jpg",
+          "sha256": "b1536930912899a8b88c9dc4670302b1e251cee9030cf22eb4f5a9ab6a9126fb",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-menu-1.ocr.json",
+          "sha256": "ef48d02646c186ae60b576bf8df0ea1d5fdb9b5f3f69a3a8a31fd0aae09a206d",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-name-field.action.json",
+          "sha256": "ed25ed13093d8bc3e84390329038b1abe0348e75097544c6102ee536ea566116",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-name.action.json",
+          "sha256": "6fe7882ba7faf6bc92686c07770d0b7c675289437db87ca286fee52911296180",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-open-save.action.json",
+          "sha256": "6ab27a50c8ae228579f91c30831d2edc7231b6d6febd0824c2e65acb51b6b424",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-save-click.action.json",
+          "sha256": "e023e49b4f5a204487a79af1aae9e37f80ed346380ec18fbbd852302d80750df",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-save-dialog-f12.action.json",
+          "sha256": "3320e362537cb5e79aaa39da747e374e0b23986bebded0f1222050b90155fa84",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-save-dialog.jpg",
+          "sha256": "a53fdc9ee74887f3e283d90dcfa6054a3a004d42454501846e89afbb19ddfabf",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpready-save-dialog.ocr.json",
+          "sha256": "25503b8684c3b1e299857c6f2d5d2bfca4c59cd12a2385eaf0bb0af2abcd3f72",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-close-menu.action.json",
+          "sha256": "4281fb42837c1901f8327532a92515402c0b40555b208f88b04afad8efd97b46",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-esc-0.action.json",
+          "sha256": "11f2db68da77b99f3d99644a9d7a4df59d1cf3117cae3ed30f39846f2fde544d",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-esc-1.action.json",
+          "sha256": "eb49152961d63537b1010b72fdb65ea7171f27a639ffbbb6a53362ff3998b128",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-0-f12.action.json",
+          "sha256": "2a2b2756c826eee388da4cf335bc84e1a2c36faffa968710fa33a78b858ec0ce",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-0.jpg",
+          "sha256": "4825dfcc0076307f38ca9d7a9254b1e2928cc69edd40369d08d5b3e296ff3c3e",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-0.ocr.json",
+          "sha256": "a5f843f6bd95a71b1cff9e5af330608f937e92bf6fe87d327813665e8df26c9e",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-1-f12.action.json",
+          "sha256": "f39102ee8c4934c1bbb1c8d42cbf58a59a1f99667ec3758aafabaf0fcb4965f8",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-1.jpg",
+          "sha256": "0a2b7d5adca71da6f652b2fb190e09f0f25c8aafe860e27eb15dd9d7c9ba5481",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-1.ocr.json",
+          "sha256": "3a2a8262272dd564831972ba0b3a7cfb10e015e92aeacc1538d5f82464852219",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-2-f12.action.json",
+          "sha256": "a5814d604f2edaa03591b84a6dbcd21d3fc9dbf7e49890f0d6e0ab2451f43840",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-2.jpg",
+          "sha256": "c24f34018a4fa7defd308af1d687f6b991d3e208ff8c4c4ff1818dc247a274bf",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-menu-2.ocr.json",
+          "sha256": "c482758308b031f1504b997636a77bcf08586db6d7b9485363285a35bc174152",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-name-field.action.json",
+          "sha256": "a7854dfab86f54af71aada7d38880e51799d2b66a7b457e9a4c6c37cf98690db",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-name.action.json",
+          "sha256": "16695c965080fde85a4ac504450241873ee70dd153bf4962aac7c56e475dec9f",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-open-save.action.json",
+          "sha256": "36f9878eb5709e26df677c034ecdb9ebc7cf55d775dd9f647f4e4ece77498d5c",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-save-click.action.json",
+          "sha256": "ab5665f55f3364b4329c920b51110fbff298adbf70715aad8f3f49ad2cf2ffb5",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-save-dialog-f12.action.json",
+          "sha256": "3bc07fba0c3cb2c26ec06dc88b14f4ab2f9ca294a01fd8636d7d5b8a78c78c91",
+          "kind": "actions"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-save-dialog.jpg",
+          "sha256": "4d75994a66d787d5fed18b41f3f28abf5bcfb22b76e19b90a670669749917ba1",
+          "kind": "screenshot"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw/r7jumpwind1-save-dialog.ocr.json",
+          "sha256": "b45604c2972156ba4c7dff0d107e13ef06d270a5d12ecc319df2272672e3b8ba",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/raw-path-map-v1.json",
+          "sha256": "e867dc9e02cb0f4049890c045608b4aa4517d7ae52218ce3e14ec260bc8ad1f9",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/README.md",
+          "sha256": "308193a5003910a724994cf2b4cb9a2f9e7ca6da2aa08dbb48235cc025c6f022",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/source-and-path-map-v1.json",
+          "sha256": "797969431e3118d9e82ce89dcd1d3312d157df1807344e649462e45e5297d201",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/archive-index.json",
+          "sha256": "2b0a727f7e8f4fd0868ecb7bc36449315e37d16db8bc0b66486523562a523c61",
+          "kind": "analysis"
+        },
+        {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/verification-v1.json",
+          "sha256": "232269e2060883cb3a7d0f89d634ed165def986dd930663f6184dfb79b7b89d3",
+          "kind": "analysis"
+        }
+      ]
     },
     "unlimited_growth": {
       "status": "PENDING",
@@ -9040,6 +10898,34 @@
     {
       "path": "docs/evidence/1020-rc7-repeat-initialization-v1/partial-case-proposal-v1.json",
       "sha256": "307617a875e188458ce013087cd981f5bfdd766022c26f6861e6bc4117b5aff2"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/archive-index.json",
+      "sha256": "aaa439d71053b207d3b92801d27f462b5187e1a6207e80f3d25016300ec42523"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/verification-v1.json",
+      "sha256": "3f609b092447893a76762ccea7cb1bbb913d805208219fb333965c239aebce4e"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc7-juggernaut-source-isolation-partial-proposal-v1.json",
+      "sha256": "baeb7f512ac15534f0480102db469ab45b2bd8101a307c6feb0daf009f54e5d8"
+    },
+    {
+      "path": "docs/evidence/1019-analysis/rc7-juggernaut-source-isolation-report-v1.json",
+      "sha256": "ac037a88b450ac1ccef012daa57cc62c9d814a9ab07f3d3050a6c317c1451e35"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/archive-index.json",
+      "sha256": "2b0a727f7e8f4fd0868ecb7bc36449315e37d16db8bc0b66486523562a523c61"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/verification-v1.json",
+      "sha256": "232269e2060883cb3a7d0f89d634ed165def986dd930663f6184dfb79b7b89d3"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-native-jump-v1/partial-case-proposal-v1.json",
+      "sha256": "8ce2de79a060220775393a957220fbdb34a0ec0e7aa8777589fe137851903dac"
     }
   ],
   "_scaffold": {
@@ -9086,7 +10972,7 @@
     "required_months_per_budget": 12,
     "reference_plan": {
       "path": "docs/evidence/1019-requirements/rc7-reference-plan-v1.json",
-      "sha256": "25b2ecb496ed9aaf09e9ff25a62ee7962904c3597070b713dc551f79117f3fcc"
+      "sha256": "bc49c11d530ce44204028b5c7099bbacc8ed184ff445b4999979499c78025055"
     }
   },
   "_progress": {
@@ -9302,6 +11188,42 @@
           },
           "supported_true_checks": 4,
           "scope": "same-day two complete initialize/startup/sync calls; no restart or reload promotion"
+        }
+      },
+      {
+        "previous_index_sha256": "57e49c1d4b714858086b197b2f7ca9c331fc6b048034d356f1d750ecc2f60ca3",
+        "operation": {
+          "command": "observe-sealed-configuration-and-source-scope",
+          "case": "mothership_configuration",
+          "configuration_proposal": {
+            "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+            "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9"
+          },
+          "source_scoped_proposal": {
+            "path": "docs/evidence/1019-analysis/rc7-juggernaut-source-isolation-partial-proposal-v1.json",
+            "sha256": "baeb7f512ac15534f0480102db469ab45b2bd8101a307c6feb0daf009f54e5d8"
+          },
+          "supported_true_checks": 11,
+          "source_scoped_check": "other_juggernauts_unchanged",
+          "scope": "10 sealed configuration observations plus independent SOURCE_SCOPED ordinary-juggernaut isolation; no actual jump or logs promotion"
+        }
+      },
+      {
+        "previous_index_sha256": "db6ed421172d8edbd2ad29c8f74a38a6220466f5420eefe7a4c41f7b33439931",
+        "operation": {
+          "command": "observe-sealed-native-jump",
+          "case": "mothership_configuration",
+          "source_proposal": {
+            "path": "docs/evidence/1020-rc7-native-jump-v1/partial-case-proposal-v1.json",
+            "sha256": "8ce2de79a060220775393a957220fbdb34a0ec0e7aa8777589fe137851903dac"
+          },
+          "archive_index": {
+            "path": "docs/evidence/1020-rc7-native-jump-v1/archive-index.json",
+            "sha256": "2b0a727f7e8f4fd0868ecb7bc36449315e37d16db8bc0b66486523562a523c61"
+          },
+          "supported_true_checks": 1,
+          "unlimited_growth_jump_check": "null retained",
+          "scope": "actual C0 native jump only; no growth-case or final-log promotion"
         }
       }
     ],
@@ -10006,6 +11928,138 @@
         "analysis": {
           "path": "docs/evidence/1020-rc7-repeat-initialization-v1/repeat-initialization-report-v1.json",
           "sha256": "6183f75af8ca68575e3a535b0817e275a97e45314943e9a8746e6701f79e47c3",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "same_country_same_date_relic_reference",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "native_design_matches",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "power_nonnegative",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "upkeep_observed",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "ten_mobile_shipyards",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "no_empire_technology_grant",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "twenty_two_large_defense_slots",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "five_relic_auxiliary_components_preserved",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "reference_stats_observed",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "existing_advantages_preserved",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/partial-case-proposal-v1.json",
+          "sha256": "6867f5e5561fc5b971359ec05f8d6a38aae24af594a7249d09c2a7cac10860f9",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "other_juggernauts_unchanged",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1019-analysis/rc7-juggernaut-source-isolation-report-v1.json",
+          "sha256": "ac037a88b450ac1ccef012daa57cc62c9d814a9ab07f3d3050a6c317c1451e35",
+          "kind": "analysis"
+        },
+        "scope": "explicit individual observation; case remains PENDING"
+      },
+      {
+        "case": "mothership_configuration",
+        "check": "actual_jump",
+        "result": true,
+        "analysis": {
+          "path": "docs/evidence/1020-rc7-native-jump-v1/actual-jump-report-v1.json",
+          "sha256": "76500a18a3bbca7bf3a44680cb005aff01836652ebe265a0c535aff265fdc046",
           "kind": "analysis"
         },
         "scope": "explicit individual observation; case remains PENDING"

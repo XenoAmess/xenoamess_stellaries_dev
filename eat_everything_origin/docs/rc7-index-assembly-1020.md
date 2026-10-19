@@ -246,3 +246,61 @@ pending SHA：
 1,656 处引用／880 个唯一文件逐字节 SHA、原 pending loader、完整 typed 组件归因、
 三分支 72 个基准／候选月份来源与连续性均通过；`git diff --check` 通过。
 没有读取活动配置／jump／日志，没有建立最终结果或执行发布。
+
+## 第五轮配置、来源隔离及已封口跳跃的合并设计
+
+主线程授权把已封 `1020-rc7-relic-configuration-v1` 的 10／12 项配置提案、
+独立 SOURCE_SCOPED 主宰隔离提案合入同一个 PENDING 配置组。本节先于本轮
+JSON 修改。来源隔离准确路径为
+`docs/evidence/1019-analysis/rc7-juggernaut-source-isolation-partial-proposal-v1.json`，
+SHA `baeb7f512ac15534f0480102db469ab45b2bd8101a307c6feb0daf009f54e5d8`；
+限定报告 SHA `ac037a88b450ac1ccef012daa57cc62c9d814a9ab07f3d3050a6c317c1451e35`。
+
+只通过既有 helper 登记原提案明确 true 的检查和已封字节。其它主宰一项仅表示
+原版定义未被全局覆盖、EEP 专属装配／基线／成长限定绑定 Mother；来源结论的
+SOURCE_SCOPED、没有普通主宰实舰样本、保留原生友军光环影响等边界随报告保留，
+不能外推“所有友舰属性绝无变化”。配置中实际维护与源推导供电各保留来源，不把
+正供电推算写为 UI 电力观察，不抹去早先失败诊断或十条原生 raw 差异。
+
+真实跳跃 raw 已由主线程停止该段收集，离线接收者尚在独立封口。只有收到该包
+真实提案／index／verify 后再合并 `actual_jump`，以及其它组经提案明确支持的原名
+检查；不读取尚未封的 jump raw 或活动日志。未有其提案前 actual_jump 仍 null。
+唯一 run、既有三分支月份、成长 typed、18 组与组件 PENDING、最终日志缺口保持。
+不创建 final-result、不修改 Mod／工具／报告、不执行 Git／UI。
+
+### 第五轮配置与来源隔离的阶段结果
+
+已通过原 helper 登记配置 10 项及隔离 1 项，原两份提案中的 null 没有被回写。
+配置组有 177 个真实引用，`actual_jump` 仍 null，日志仍列缺。当前全索引 75 项
+true／63 项 null，18 组及组件状态均 PENDING，三分支 72 个月份、成长 typed、
+候选重启四个 null 和唯一 canonical run 全部保持。
+
+阶段引用复核 1,837 处／1,056 个唯一文件 SHA 通过。其余主宰单项的来源明确
+指向独立 `evidence_mode=SOURCE_SCOPED` 报告，而非原 mother14 项自动通过。
+真实跳跃提案尚待离线接收者封口，未据未封材料填值。
+
+接收者现已明确封口 `1020-rc7-native-jump-v1`：实际提案
+`partial-case-proposal-v1.json` SHA
+`8ce2de79a060220775393a957220fbdb34a0ec0e7aa8777589fe137851903dac`，
+只支持配置 `actual_jump=true`；185 raw／193 payload、25 项观察及独立 18 项归档
+检查通过。按该原提案范围继续合并：C0 Mother 从 system5 到 system7、14 日蓄能、
+原生实际抵达／冷却记录及 UI 200 日读数。`unlimited_growth.jump_and_shipyards_preserved`
+仍 null，不从 C0 跳跃替代高成长状态的原定证据；原失败抵达尝试仍保留。
+
+### 第五轮最终封口
+
+已合入该实际跳跃提案，配置组现在原名 12／12 个检查均为 true，371 个真实
+引用具备 native_save／screenshot／actions／analysis，仍缺最终停止日志，整组
+继续 PENDING。其中其它主宰仅为 SOURCE_SCOPED 结论，jump 为独立实际原生观察；
+没有把二者混为普通主宰实舰对照，也没有覆盖旧提案历史 null。
+
+全索引现为 76 项 true／62 项 null；18 组及组件仍 PENDING、run 仍唯一。
+`unlimited_growth.jump_and_shipyards_preserved` 及候选重启四项继续 null，三分支
+72 个月份、完整成长归因／固定七 C/L 观测与其它组保持原样。
+reference-plan SHA：
+`bc49c11d530ce44204028b5c7099bbacc8ed184ff445b4999979499c78025055`；
+pending SHA：
+`50fbab133db3d462204f11eebef0e717bc69e8ae40704be8174d4023e06568c4`。
+封口复核 2,034 处引用／1,250 个唯一文件 SHA、原 pending loader、既有完整
+typed 组件归因、三分支原观察月份及 Git whitespace 均通过。未生成最终结果，
+未读取活动 PK／其它实机片段或日志，未执行 Git／UI。
