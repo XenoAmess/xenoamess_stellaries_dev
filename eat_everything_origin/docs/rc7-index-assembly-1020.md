@@ -304,3 +304,39 @@ pending SHA：
 封口复核 2,034 处引用／1,250 个唯一文件 SHA、原 pending loader、既有完整
 typed 组件归因、三分支原观察月份及 Git whitespace 均通过。未生成最终结果，
 未读取活动 PK／其它实机片段或日志，未执行 Git／UI。
+
+## 第六轮成长跳跃／船坞原合同组合证据
+
+主线程明确授权按原合同合并已封口的
+`docs/evidence/1019-analysis/rc7-growth-jump-yard-partial-case-proposal-v1.json`，
+SHA `eebdc0eae3f328934561eca949e3b8c5aec0b4267b170dafeff258f69c7ea9d4`；
+独立合同复核报告 SHA
+`1d5c2a875934d89ecb25744ef8dd6a97d2e345b0c7728fcbd2cfa69152fc517e`。
+本节先于本轮 JSON 改动，只追加原名 `jump_and_shipyards_preserved=true` 一项。
+
+依据是同一精确 RC7 装备的实际 C0 跳跃与成长样本中推进／船坞能力保持的组合，
+不新增高等级实跳或付费造舰要求。Mother 151／1044 的真实 14 日跃迁 5→7 和
+200 日 UI 冷却，与另一真实 Mother 125／809 的 18 个成长状态分别明确标注；
+后者 jump-drive 装备及 mobile starbase15／shipyard queue48／owner0／type ships／
+simultaneous10 在全部原生样本稳定，180／180 字段检查通过。
+
+只按提案通过既有 helper 附加封口引用、登记这一项。旧 partial 中的历史 null
+与此前阶段记录不回写；新记录说明当前原合同结论升级而非补造高等级实跳。
+受损恢复、毁母不重生、无效／取消不成长三项仍 null，组件 PENDING 与最终日志
+缺口保持，不读活动 PK／日志、不操作 UI 或 Git 写入、不创建最终结果。
+
+### 第六轮封口结果
+
+原 helper 已登记该单项 true，成长组原名 7／10 项已明确；剩余三个检查及最终
+日志仍列缺。旧成长／jump partial 的 null 保留；本轮组合依据和两艘实际 Mother
+身份通过新报告说明。提案中的四个活动工具／parser 路径只在索引改为成长归档内
+同 SHA 的 source 副本，原提案和报告均未修改。
+
+现为 77 项 true／61 项 null、18 组和组件 PENDING、唯一 run，候选重启四项仍 null。
+reference-plan SHA：
+`7998a38cd3e5260b587384d68ccaf4e2f55ceeb70021215cdc81a6039d2930da`；
+pending SHA：
+`dc2adbee3d090fccbd07750dce93b0189ec789ffe7a7572941917eadc526ebb9`。
+2,061 处引用／1,258 个唯一文件 SHA、原 loader／完整组件归因、三分支 72 月
+原观察一致性及只读 `git diff --check` 均通过。未写 Git、未操作 UI、未读取活动
+PK 或日志，未创建最终结果。
