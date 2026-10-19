@@ -116,7 +116,11 @@ eep_startup_mothership = {
                     graphical_culture_fallback = npf_01
                     prefix = no
                     upgradable = no
-                    effect = { set_ship_flag = eep_mothership_design_1019 }
+                    effect = {
+                        # This ship was created from the known new fixed design.
+                        design = { set_design_flag = eep_mothership_layout_1019 }
+                        set_ship_flag = eep_mothership_design_1019
+                    }
                 }
                 set_location = event_target:eep_core@root
                 add_modifier = { modifier = eep_mothership days = -1 }

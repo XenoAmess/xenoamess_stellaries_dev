@@ -62,6 +62,47 @@ eep_sync_mothership_components = {
     }
 }
 
+# Country scope. Restore only the existing bound station ship's actual layout.
+# The associated mobile starbase cache is separate and is not repaired here.
+# Never initialize, respawn, settle, or issue component rewards on this path.
+eep_repair_existing_mothership_design = {
+    if = {
+        limit = {
+            has_country_flag = eep_initialized
+            exists = event_target:eep_mothership@this
+            event_target:eep_mothership@this = {
+                owner = { is_same_value = prevprev }
+                num_ships = 1
+                is_ship_size = juggernaut
+            }
+        }
+        every_owned_ship = {
+            limit = {
+                fleet = { is_same_value = event_target:eep_mothership@owner }
+                design = { NOT = { has_design_flag = eep_mothership_layout_1019 } }
+            }
+            set_ship_design = { design = NAME_EEP_Baiqi_Mothership_1019 }
+            # Inspect the current implementation's stage, not entity sections:
+            # a failed switch must not mark the old design as the new layout.
+            if = {
+                limit = {
+                    ship_growth_stage = {
+                        has_component = EEP_ADAPTIVE_SHIELD_CORE
+                        has_component = EEP_ADAPTIVE_ARMOR_CORE
+                        has_component = EEP_ADAPTIVE_HULL_CORE
+                        has_component = EEP_ADAPTIVE_DAMAGE_CORE
+                        has_component = EEP_ADAPTIVE_TRACKING_CORE
+                        has_component = EEP_ADAPTIVE_REGEN_CORE
+                    }
+                }
+                design = { set_design_flag = eep_mothership_layout_1019 }
+                # Historical compatibility marker; never used as layout truth.
+                set_ship_flag = eep_mothership_design_1019
+            }
+        }
+    }
+}
+
 # Country scope: derive progression from settled matter, never from an event count.
 eep_sync_mothership = {
     if = {
@@ -110,6 +151,7 @@ eep_sync_mothership = {
             limit = { has_country_flag = eep_component_snapshot_available }
             set_variable = { which = eep_component_snapshot_state value = 1 }
         }
+        eep_repair_existing_mothership_design = yes
         if = {
             limit = {
                 exists = event_target:eep_mothership@this
@@ -118,14 +160,6 @@ eep_sync_mothership = {
                     num_ships = 1
                     is_ship_size = juggernaut
                 }
-            }
-            every_owned_ship = {
-                limit = {
-                    fleet = { is_same_value = event_target:eep_mothership@owner }
-                    NOT = { has_ship_flag = eep_mothership_design_1019 }
-                }
-                set_ship_design = { design = NAME_EEP_Baiqi_Mothership_1019 }
-                set_ship_flag = eep_mothership_design_1019
             }
             event_target:eep_mothership@this = {
                 if = {

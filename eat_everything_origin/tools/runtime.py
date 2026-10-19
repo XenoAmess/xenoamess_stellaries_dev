@@ -1,6 +1,7 @@
 """Chinese-only isolated runtime entry; reuses the repository's desktop harness."""
 import sys
 import json
+import os
 import time
 import shutil
 from datetime import datetime, timezone
@@ -36,18 +37,41 @@ harness.render_pdx_settings = windowed_settings
 # GDI/PrintWindow on this machine return an empty or stale desktop. Steam's
 # screenshot hook captures the actual D3D9 backbuffer. Require a fresh file.
 STEAM_SCREENSHOTS = Path(r"D:\program files (x86)\steam\userdata")
+def screenshot_mtimes():
+    """Preserve the full screenshot glob while reusing Windows directory metadata."""
+    def entries(path):
+        try:
+            with os.scandir(path) as scan:
+                return list(scan)
+        except OSError:
+            return []
+
+    result = {}
+    for account in entries(STEAM_SCREENSHOTS):
+        try:
+            directory = account.is_dir()
+        except OSError:
+            continue
+        if not directory:
+            continue
+        leaf = Path(account.path) / "760/remote/281990/screenshots"
+        for entry in entries(leaf):
+            if os.path.normcase(entry.name).endswith(os.path.normcase(".jpg")):
+                result[str(Path(entry.path))] = entry.stat().st_mtime_ns
+    return result
+
+
 def gpu_capture(stage):
     artifacts, _, _ = harness.load_run()
     pid = int(harness.process_record(artifacts)["pid"])
     hwnd = harness.focus_pid(pid)
-    pattern = "*/760/remote/281990/screenshots/*.jpg"
-    before = {str(p): p.stat().st_mtime_ns for p in STEAM_SCREENSHOTS.glob(pattern)}
+    before = screenshot_mtimes()
     harness.press_scan_code(0x58, stage + "-f12", 1)
     deadline = time.monotonic() + 12
     source = None
     while time.monotonic() < deadline:
-        fresh = [p for p in STEAM_SCREENSHOTS.glob(pattern)
-                 if p.stat().st_mtime_ns > before.get(str(p), 0)]
+        fresh = [Path(path) for path, modified in screenshot_mtimes().items()
+                 if modified > before.get(path, 0)]
         if fresh:
             source = max(fresh, key=lambda p: p.stat().st_mtime_ns)
             time.sleep(0.2)

@@ -1,0 +1,10 @@
+namespace = eep
+
+# Completion only: cancelling a queued or charging order pays nothing.
+carrier_event = {
+    id = eep.50
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { eep_colossus_target_valid = yes }
+    immediate = { eep_colossus_settle = yes }
+}

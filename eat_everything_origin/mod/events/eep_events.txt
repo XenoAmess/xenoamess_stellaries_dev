@@ -1,5 +1,23 @@
 namespace = eep
 
+# Native load callback has no scope and does not run for multiplayer saves.
+# Restore only an existing bound mothership; loading never grants progression.
+event = {
+    id = eep.60
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { is_multiplayer = no }
+    immediate = {
+        every_country = {
+            limit = {
+                has_origin = origin_heart_of_devouring
+                has_country_flag = eep_initialized
+            }
+            eep_repair_existing_mothership_design = yes
+        }
+    }
+}
+
 # Native on_terraforming_complete: THIS Planet, FROM terraforming country.
 carrier_event = {
     id = eep.4

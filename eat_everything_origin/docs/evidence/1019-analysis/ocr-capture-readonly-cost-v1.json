@@ -1,0 +1,59 @@
+{
+  "schema": "eep.ocr-capture-readonly-cost.v1",
+  "scope": "Only JSON reads and existing screenshot file metadata; no focus, input, screenshot or game operation invoked.",
+  "harness_sha256": "fc4d3b01ed916a26337989becb8f33d9b930881466c42c9a69d8897e7eacec47",
+  "run_id_observed": "20261019T133314Z",
+  "load_run_and_process_record_seconds": [
+    0.0015851999633014202,
+    0.0013055999297648668,
+    0.0012576999142765999,
+    0.0012809999752789736,
+    0.0012567001394927502
+  ],
+  "screenshot_glob_and_stat_seconds": [
+    2.452490200055763,
+    2.1295771000441164,
+    1.9298038000706583
+  ],
+  "screenshot_file_count": 15003,
+  "load_median_seconds": 0.0012809999752789736,
+  "glob_median_seconds": 2.1295771000441164,
+  "source_calls": {
+    "load_run": [
+      "(artifact_dir / 'manifest.json').read_text",
+      "CURRENT_RUN.is_file",
+      "CURRENT_RUN.read_text",
+      "Path",
+      "Path(pointer['artifact_dir']).resolve",
+      "Path(pointer['userdir']).resolve",
+      "RuntimeError",
+      "json.loads"
+    ],
+    "windows_for_pid": [
+      "found.append",
+      "win32gui.EnumWindows",
+      "win32gui.GetWindowText",
+      "win32gui.IsWindowVisible",
+      "win32process.GetWindowThreadProcessId"
+    ],
+    "focus_pid": [
+      "RuntimeError",
+      "psutil.Process",
+      "psutil.Process(foreground_pid).name",
+      "psutil.Process(foreground_pid).name().lower",
+      "pyautogui.press",
+      "time.sleep",
+      "win32gui.GetForegroundWindow",
+      "win32gui.SetForegroundWindow",
+      "win32gui.ShowWindow",
+      "win32process.GetWindowThreadProcessId",
+      "windows_for_pid"
+    ],
+    "process_record": [
+      "RuntimeError",
+      "json.loads",
+      "path.is_file",
+      "path.read_text"
+    ]
+  }
+}

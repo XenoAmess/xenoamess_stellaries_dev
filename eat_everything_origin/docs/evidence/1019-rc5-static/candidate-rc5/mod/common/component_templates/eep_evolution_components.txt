@@ -1,0 +1,123 @@
+# Six real components are installed in dedicated mothership AUX6..AUX11 slots.
+# Each equipped component owns its bonus; no reward add_modifier is used.
+# Native 0/1/2, refresh, negative controls and reload proof are still required.
+utility_component_template = {
+    key = "EEP_ADAPTIVE_SHIELD_CORE"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    hidden = yes
+    potential = { always = no }
+    triggered_ship_modifier = {
+        potential = {
+            exists = owner
+            exists = fleet
+            fleet = { is_same_value = event_target:eep_mothership@owner }
+        }
+        ship_shield_mult = 0.10
+        mult = value:eep_component_shield_level_value
+    }
+    ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+    key = "EEP_ADAPTIVE_ARMOR_CORE"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    hidden = yes
+    potential = { always = no }
+    triggered_ship_modifier = {
+        potential = {
+            exists = owner
+            exists = fleet
+            fleet = { is_same_value = event_target:eep_mothership@owner }
+        }
+        ship_armor_mult = 0.10
+        mult = value:eep_component_armor_level_value
+    }
+    ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+    key = "EEP_ADAPTIVE_HULL_CORE"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    hidden = yes
+    potential = { always = no }
+    triggered_ship_modifier = {
+        potential = {
+            exists = owner
+            exists = fleet
+            fleet = { is_same_value = event_target:eep_mothership@owner }
+        }
+        ship_hull_mult = 0.10
+        mult = value:eep_component_hull_level_value
+    }
+    ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+    key = "EEP_ADAPTIVE_DAMAGE_CORE"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    hidden = yes
+    potential = { always = no }
+    triggered_ship_modifier = {
+        potential = {
+            exists = owner
+            exists = fleet
+            fleet = { is_same_value = event_target:eep_mothership@owner }
+        }
+        ship_weapon_damage = 0.05
+        mult = value:eep_component_damage_level_value
+    }
+    ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+    key = "EEP_ADAPTIVE_TRACKING_CORE"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    hidden = yes
+    potential = { always = no }
+    triggered_ship_modifier = {
+        potential = {
+            exists = owner
+            exists = fleet
+            fleet = { is_same_value = event_target:eep_mothership@owner }
+        }
+        ship_tracking_add = 3
+        mult = value:eep_component_tracking_level_value
+    }
+    ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+    key = "EEP_ADAPTIVE_REGEN_CORE"
+    size = aux
+    icon = GFX_ship_part_shield_recharger
+    icon_frame = 1
+    power = 0
+    hidden = yes
+    potential = { always = no }
+    triggered_ship_modifier = {
+        potential = {
+            exists = owner
+            exists = fleet
+            fleet = { is_same_value = event_target:eep_mothership@owner }
+        }
+        ship_hull_regen_add_static = 0.2
+        ship_armor_regen_add_static = 0.2
+        mult = value:eep_component_regen_level_value
+    }
+    ai_weight = { weight = 0 }
+}
