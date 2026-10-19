@@ -62,3 +62,15 @@ root 同时交接实际受控 worker 仅执行 `new_game(EEP04, r7puc) → make_
 维护来源还需补齐两件小型原源文件：报告使用的原版 `00_common_categories.txt`（证明 district 子类别父链）和 0.3.1 基线 `eep_modifiers.txt`（证明母舰维护折扣保持）。它们在本轮只读确认没有可直接复用的同路径项目内副本，故原字节单独收进 source，记录绝对原来源与 SHA。RC7 当前 modifier 继续复用已封口 static canonical，不重复复制。此补充不修改游戏文件或维护规则。
 
 归档 index 预检曾把薄包 57 payload 的数量误当作图/OCR 组数，预设 57 组后主动断言失败；当时尚未输出 index，未产生通过报告。独立目录计数确认 UI 原件实际为 52 对图/OCR，原图与 OCR 均完整一一对应；最终按这 52 对及其实际 receipt/HUD 引用封口，不补造五组图。这是离线归档计数错误，不是游戏或 Mod 测试失败。
+
+## r7hvc 完结交接与实施范围（收件前）
+
+root 明确交接 Hive session7895 EXIT0，固定 run `20261019T164112Z`，提供“receiptSHA” `42bf7a730d70d4e78ba658f17159f36c74f1aabace85ecc472e0c23478c83a9d`（后经明确为yearUI native-save回执）；总经济状态为COLLECTED_NOT_ACCEPTED、12 snapshots、空 cleanup errors；yearUI SAV SHA `9191c0e4ca368d09564a3f42693015bf4deef616234dd0bbdadab5306cb5d60b`，与 m12 原 ZIP 相同。现在只接收固定 `r7hvc` 完成前缀，按既有 v1 `--branch hive --prefix r7hvc` 分析，再独立复核薄包、完整 UI/动作链和四约束。source 复用 Pu 已封口20件执行源与原生维护来源，逐件核当前 SHA 后另写本 worker 的交接映射，不把 Pu 执行事实改成 Hive。
+
+root 实际受控链仅为选择原生 EEP02 有机吞噬蜂群新局、显式 RC7 make_plan、collect，无资源/交易/闭岗/拆舰动作。首月预报数值为 workforce507/max1200、净电23.14466，年末净电30.45124/库存521.14698；这些只是交接值，仍须原生独立核实。Jan1缓存净电65.48168仅为m00观察，不能当实际首月收入。root 已开始其他政府，本接收不读 `r7mc`、活动日志或UI，不改 Pu 或旧 partial；缺最终停机日志的两组 case 继续 PENDING。
+
+收件初检捕获对象 SHA 不符：实际总 `r7hvc-economy-receipt.json` 两次原字节稳定 SHA 为 `01c3f9106ad52f77ceec1f33211f37779b9da2572cb76b0d867ca04cd7b161ea`，不是本线程最初误按总回执理解的42bf…。总 receipt 的实际状态/12月/cleanup及yearUI原ZIP与交接一致。保留初次指纹断言失败，已通知root核明42bf…对应哪个 receipt；不改原件、分析结果或放宽SHA。继续仅做授权的只读原生/输入核验，最终按确认的真实对象分别绑定。
+
+root随后明确：42bf…来自 `collect.year_ui.receipt_sha256`，即 `r7hvcyearui.native-save.json`，不是总经济receipt；本线程独立读取该文件所得完整SHA也恰为42bf…。总receipt以双读01c3…为准，yearUI原SAV以9191…为准。这是交接“receiptSHA”省略yearUI前缀造成的对象辨析，不是源字节漂移；三对象各自按真实路径/SHA绑定，初次对象指纹错误事实保留。
+
+Hive原件白名单实际为277件 `r7hvc*`，108个actions、50对图/OCR、14个type_text（12条FF30与两次保存名），25个鼠标动作仅属新局/保存/控制台聚焦。完整原链将另封 `evidence/1019-rc7-hive-economy-worker-ui-v1`：薄包中已封的56件同前缀原件加manifest只作57个canonical原件引用，其余221件UI原件原字节复制；不重复复制已存在的20件源闭包、原生维护源或Mod。新source映射明确链接本Hive worker交接与这些相同源，不能把Pu的执行对象混用。完成薄包后独立原生复核，再生成四约束限定报告/PENDING提案及独立包verify。

@@ -1,0 +1,493 @@
+{
+  "schema": "eep.rc7.r7hvc.economy-controlled-operation-review.v1",
+  "status": "PASS_SCOPED_CONTROLLED_WORKER_INPUTS",
+  "created_at_utc": "2026-10-19T18:11:57.394950+00:00",
+  "run_id": "20261019T164112Z",
+  "prefix": "r7hvc",
+  "scope": "Completed fresh organic Hive new_game through pure economy collect/cleanup only; root handover plus all recorded type_text/key/mouse files. Not whole-system input audit.",
+  "root_worker_reference": "session7895 EXIT0",
+  "root_statement": "Only b.new_game(EEP02 organic devouring Hive,r7hvc), e.make_plan(explicit RC7 tree/version), e.collect; no resource/trade/job closure/disband commands or menus.",
+  "execution_sources": {
+    "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/execution-source-closure-v1.json",
+    "sha256": "37bdaf0ad26556bce78fbd6a152df58b2460711df10f5a5c1653390a1eab6e04",
+    "kind": "analysis"
+  },
+  "native_branch_report": {
+    "path": "docs/evidence/1019-rc7-economy/hive/native-branch-report.json",
+    "sha256": "a2786764d961aee288746e5a1e2d38cf55a16fbd5051d738572540daf58d6d60",
+    "kind": "analysis"
+  },
+  "native_independent_verify": {
+    "path": "docs/evidence/1019-rc7-economy/hive/independent-verify-v1.json",
+    "sha256": "87ce27514aa800715d4982d0a88ce5c692a63de1dc02538d2c11c3d553ad1916",
+    "kind": "analysis"
+  },
+  "collector_receipt": {
+    "path": "docs/evidence/1019-rc7-economy/hive/r7hvc-economy-receipt.json",
+    "sha256": "01c3f9106ad52f77ceec1f33211f37779b9da2572cb76b0d867ca04cd7b161ea",
+    "kind": "actions"
+  },
+  "checks": {
+    "no_resource_injection": true,
+    "no_trade_subsidy": true,
+    "no_job_closure": true,
+    "no_ship_disband": true
+  },
+  "evidence_basis": {
+    "all_typed_actions": 14,
+    "submitted_console_commands": 12,
+    "submitted_console_texts": [
+      "fast_forward 30"
+    ],
+    "unsubmitted_texts": [
+      "r7hvcm00",
+      "r7hvcyearui"
+    ],
+    "all_recorded_actions": 108,
+    "mouse_actions": 25,
+    "physical_scan_code_counts": {
+      "88": 50,
+      "41": 2,
+      "1": 5,
+      "28": 12
+    },
+    "mouse_stage_roles": [
+      {
+        "stage": "r7hvc-empire-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-empire-click.action.json",
+          "sha256": "161858897c3afc4b1e3bb2740397d552b45ce4f41d334328710352ef73d7687d",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvc-exit-confirm-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-exit-confirm-click.action.json",
+          "sha256": "b1831bffac643c0517120a9f3f94a7b95799514cd55b9a5ad46f1a7e682aea66",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvc-exit-menu-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-exit-menu-click.action.json",
+          "sha256": "ff7af347c9954536d8ef5f190baaa8a85af13887b6b42e5d11d6deec3cfaa211",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvc-intro-ack-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-intro-ack-click.action.json",
+          "sha256": "2c165455f83c91f8146bb944fcc7606ce96ed581eaceda05a8f35763f5cb5d26",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvc-newgame-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-newgame-click.action.json",
+          "sha256": "a58b073b96a62f648425ad30c4f1c72228c9576f981d60fa6b9983452d23cf65",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvc-select-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-select-click.action.json",
+          "sha256": "fb58a3cf3f93bf1c4163ee07a0114c8402c657b2885b215cc1969576f80858f5",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvc-start-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-start-click.action.json",
+          "sha256": "6ef37ffef70942e27a3718f0e6fa23ef0dd4cce4dee0693b8172eb9701477fdf",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm00-name-field",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm00-name-field.action.json",
+          "sha256": "904ca56b7effa12e3f0ab663718fa47f581bee5375b6e1451249aa0c0e3f90e8",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm00-open-save",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm00-open-save.action.json",
+          "sha256": "1df63c431126b27897380dc87c4d051b658dd0ba6d1164bdd8dfc8fbacee03df",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm00-save-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm00-save-click.action.json",
+          "sha256": "97472ab8ae7c8fe3a8f7cb5774b8ef570fc80123419f152a4db5cd912cac0922",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm01-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm01-advance-focus.action.json",
+          "sha256": "6aae8dbc9ea68e8d2f333cd59c9ed5a3d8cb4a8c0b8457bb2a2351d842fef18b",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm02-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm02-advance-focus.action.json",
+          "sha256": "c1e8202c4ca06b66272c16f5769492fa4f4eed6873f6933dcffc837e42c401cd",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm03-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm03-advance-focus.action.json",
+          "sha256": "414e8e57f711be2b5f2c53e35e8e89e6d59d467844c40c66e0feb5be31cd5953",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm04-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm04-advance-focus.action.json",
+          "sha256": "60955184850289fe23c216d87e982a9c59a7ecbc70557981ba0fefea1b9341e4",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm05-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm05-advance-focus.action.json",
+          "sha256": "c6c0e795b8b7f4e9039e975d1dec3cc0fb73ea24a30bb07401b798b7b4b6f820",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm06-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm06-advance-focus.action.json",
+          "sha256": "e78f0ad9ee1109de002e4bde6f4d3c008be472eaad97937f41f398e6657ff959",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm07-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm07-advance-focus.action.json",
+          "sha256": "91eef2505a12b0dd28233652a569e76131192cc751cfb470e26c6cf0f2542883",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm08-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm08-advance-focus.action.json",
+          "sha256": "4fcf8b1541b1e45cb04cd323ba1e67fdce338e53b37b32ae2a6a69817ef6a622",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm09-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm09-advance-focus.action.json",
+          "sha256": "a80b8111065e4acd2dacac70b6dc11fe6e338ce187fb0befa2bb53f8a0f2c86c",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm10-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm10-advance-focus.action.json",
+          "sha256": "340d8c846bbce2b0f69fe7657e43a6e48e003e8da4959fabc6200397a9fe7772",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm11-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm11-advance-focus.action.json",
+          "sha256": "d48394090010768d3fac42f046a8c80918cd669c19438eecd38c4dc7feba32ef",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcm12-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm12-advance-focus.action.json",
+          "sha256": "9ede9aefa64d2d7ae5652eccd333e1a2ed2c66a0bad2b7c4fc9041007acad7d5",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcyearui-name-field",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcyearui-name-field.action.json",
+          "sha256": "6c08330a4ddef2d1b7fa2fd7f3bec466ca2b2c8585965555b37cc6c2202f4a9e",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcyearui-open-save",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcyearui-open-save.action.json",
+          "sha256": "2bdd08c04649fd755cbec4267ae736e18d07b471dbccddfa2ea2cb1f0083b654",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7hvcyearui-save-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcyearui-save-click.action.json",
+          "sha256": "7b66796509ba6b232ff0f52d3e5af42280ee7a987c04c8ae1e86c7159795940d",
+          "kind": "actions"
+        }
+      }
+    ],
+    "native_observations": {
+      "all_stocked_resources_close": true,
+      "native_finite_job_limits_at_max": true,
+      "initial_owned_ship_ids_names_fleets_preserved": true,
+      "receipt_commands_exactly12_FF30": true
+    },
+    "four_original_report_values_still_null": true
+  },
+  "12_actual_console_inputs_and_Enter": [
+    {
+      "month": 1,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm01-advance-command.action.json",
+        "sha256": "05912f94082a2c96cd38e5d1e2b37e06694d3dbfc10b9cb362d2af8c21c16665",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm01-advance-command-enter.action.json",
+        "sha256": "8f994db6d3100ac410add02cd0f70e45b68ed9dfa483ff43001b2230cfb3cbd3",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 2,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm02-advance-command.action.json",
+        "sha256": "1f56b5410fb73e6afa1199b540b04aa386e9a20c2b7b66f8469a61c6d2ac92bf",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm02-advance-command-enter.action.json",
+        "sha256": "289d9b52be60a53a01b23ee96ddb49301e68368d53114b17a1d7966dbcfa6cd5",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 3,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm03-advance-command.action.json",
+        "sha256": "b983717fe35c766c717b339420ad0f3f169fa9ff5630e04bd6e9635f5962c6cd",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm03-advance-command-enter.action.json",
+        "sha256": "9f5d1810565889e7ea08a820c93e2363b5cca46703a9a37e9fef636f391f182a",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 4,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm04-advance-command.action.json",
+        "sha256": "70ed07e833e929c13b4111e38172554abc0dc875ef7cf1a10f55b3b25eb18027",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm04-advance-command-enter.action.json",
+        "sha256": "486b551eff7cf81355bdd0b8992908ddf2f1b6d90f3e6b7b9677a8555ad84986",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 5,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm05-advance-command.action.json",
+        "sha256": "bbb745bed3f2bfe78afd6aba091adc1073910a0fff6c925b96e1db7663708cf2",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm05-advance-command-enter.action.json",
+        "sha256": "dd7d2ea6128185788b1401b4df9d50fe3fe3e2841d6381b96420173775c0dae6",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 6,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm06-advance-command.action.json",
+        "sha256": "9944cfecd59d40c1458e7320eb52fea44bf2ba8e3b1d7f1ba97d2bcdf634c7c4",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm06-advance-command-enter.action.json",
+        "sha256": "8a7cd4a22011a221816cfc7ec012b884b87a993f2a907494cf9b3fea77763344",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 7,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm07-advance-command.action.json",
+        "sha256": "7504e34b38062e52d81ecb9b9f2fd63b350c84c9e54050e26ec6e4f9dc7e62de",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm07-advance-command-enter.action.json",
+        "sha256": "8da07263ae5770f34eff9f09933501a95211a858f67cc04ed308c7d36ce31fd8",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 8,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm08-advance-command.action.json",
+        "sha256": "3366925100ac833b3a4e6507e9be9adca37b2c327235764338e704eb28b3a8e7",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm08-advance-command-enter.action.json",
+        "sha256": "3400bb0d2fda47529fc7b57fb49e94a54b72c08787641a3093d722b87701bc27",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 9,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm09-advance-command.action.json",
+        "sha256": "9919b97af069cd0211364e566632f8906309408c4223da174b5b514ce3ebc7ae",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm09-advance-command-enter.action.json",
+        "sha256": "bd137d8925b6fd6cfe52945c25beb83521b1b4ebf3ebdb408e3b7eb5e8361364",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 10,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm10-advance-command.action.json",
+        "sha256": "e6ed1f78ea2178ad2a69d28156686640abf0de9ff8c72b720be2edd0eabd1819",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm10-advance-command-enter.action.json",
+        "sha256": "6e8e902d5d404551ab7144979b30d5247ebd5e1423139e4bfdb3a9b323697adb",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 11,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm11-advance-command.action.json",
+        "sha256": "16fb43cd1ae2ed742d78d1318eb8f52e5797b7c901281640deee0697f6998ad9",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm11-advance-command-enter.action.json",
+        "sha256": "5236e3f63052c761555b9ae778600a14fdcdbfba44007348b6acb50d18f32011",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 12,
+      "action": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm12-advance-command.action.json",
+        "sha256": "faa2ba06048f269626c79dbdc7384e23998bf975afc5abf8f84863fa671af8ca",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm12-advance-command-enter.action.json",
+        "sha256": "ae72bbc9fb418d33c3a3d35ba452300db73b7beb0530b266e828575e501b3842",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    }
+  ],
+  "save_name_inputs": [
+    {
+      "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm00-name.action.json",
+      "sha256": "2cda48c12b8ef84763c80faf604e8f7edf4e38e410b6a84a4a6d7fd59cae2db4",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcyearui-name.action.json",
+      "sha256": "a0bd7f299a3e6d2453ba954c5a91dff3c7ecf63e54aae96841403d42b116d382",
+      "kind": "actions"
+    }
+  ],
+  "offline_images_independently_viewed": [
+    {
+      "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-select.jpg",
+      "sha256": "220f8a96952cec9e72471705d213c2fb8704b9cf52f693bb50eeba158b175c1b",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvc-start.jpg",
+      "sha256": "65d7741713688de4e87304f880190ff7864dc7eb92efce2048821ff44959c34c",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm01-hud-1.jpg",
+      "sha256": "c806316d12ed0c85ff40346b77b63fe881958374746b12c4420a9b5e52bae0d5",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-hive-economy-worker-ui-v1/run/r7hvcm12-hud-1.jpg",
+      "sha256": "f895e6087aa42eb1c105c11eccf53df781a077a345f122acd2097c3f67fd8aac",
+      "kind": "screenshot"
+    }
+  ],
+  "image_observations": {
+    "selected_preset": "EEP02 organic devouring Hive fully visible in actual select frame, organic founder/Hive traits; native founder independently rechecked, no Lithoid/Machine traits",
+    "galaxy_settings": "start frame shows200 stars,3AI,Ensign",
+    "actual_first_month_HUD": "2200.02.01,energy223,+23; native exact stock223.14466/net23.14466",
+    "actual_year_HUD": "2201.01.01,energy521,+30; native exact stock521.14698/net30.45124",
+    "initial_budget_boundary": "Jan1 native current net65.48168 is initial cache, not the first actual month income. Actual first stock200->223.14466.",
+    "popups_and_history": "Queen/contact/debug overlays and prior-game FF console history retained; obscured fields not claimed read; command evidence is actual type_text/Enter files."
+  },
+  "receipt_field_clarification": {
+    "total_receipt_sha256": "01c3f9106ad52f77ceec1f33211f37779b9da2572cb76b0d867ca04cd7b161ea",
+    "yearUI_native_receipt_sha256": "42bf7a730d70d4e78ba658f17159f36c74f1aabace85ecc472e0c23478c83a9d",
+    "yearUI_SAV_sha256": "9191c0e4ca368d09564a3f42693015bf4deef616234dd0bbdadab5306cb5d60b",
+    "scope": "Root clarified receiptSHA meant collect.year_ui.receipt_sha256. Independent actual reads match all three objects; no source drift."
+  },
+  "excluded": [
+    "other government prefixes",
+    "media/functional branches",
+    "active logs"
+  ],
+  "case_status": "PENDING",
+  "missing_for_full_case": [
+    "final stopped-run logs",
+    "root final case assembly"
+  ],
+  "final_result_written": false
+}
