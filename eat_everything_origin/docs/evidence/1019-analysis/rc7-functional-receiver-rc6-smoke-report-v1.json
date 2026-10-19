@@ -1,0 +1,724 @@
+{
+  "schema": "eep.1019.functional-receive-report.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Exact native roles and unchanged checker tasks only; no final case certification.",
+  "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+  "version": "0.4.0-rc.6",
+  "run_ids": [
+    "20261019T150008Z"
+  ],
+  "sources": {
+    "checker": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py",
+      "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+    },
+    "inspector": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\inspect_1019.py",
+      "sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92"
+    },
+    "publisher_interface": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\publish_1019.py",
+      "sha256": "50185608b9bb0bc60a57ce8bb10717c388c52119c2619fb9ef75114fbc5558f6"
+    }
+  },
+  "roles": {
+    "before": {
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\manifest.json",
+        "run_id": "20261019T150008Z",
+        "date": "2201.01.01",
+        "save_sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9"
+      },
+      "observation": {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc7-functional-receiver-smoke-cache-v1\\595de3efe90695fab59415ac73b1326c1b0bd25d4e8d8d4bdd8059cbd75e99af.json",
+        "sha256": "7104573f0dd71895eefb5276e998b5baeea481386071c9cbd353e446f3dae3b9",
+        "observation_sha256": "3761df7e924e1fdea9f48a05666e745087dd34649f889f40f8802f739ead641a",
+        "reused": false
+      },
+      "actual_date": "2201.01.01",
+      "mother_orders": [
+        {
+          "fleet_id": "125",
+          "native": {
+            "ground_support_stance": "selective",
+            "ship_class": "shipclass_starbase",
+            "space_fauna_growth_stance": "excessive",
+            "hit_points": 93960.0,
+            "military_power": 165063.79687,
+            "diplomacy_weight": 165063.79687,
+            "cached_killed_ships": 0,
+            "cached_disabled_ships": 0,
+            "cached_disengaged_ships": 0,
+            "cached_combined_removed_ships": 0,
+            "commanding_armada": "none"
+          },
+          "variables": {
+            "eep_applied_level": 0,
+            "eep_component_armor_level": 0,
+            "eep_component_damage_level": 0,
+            "eep_component_hull_level": 0,
+            "eep_component_regen_level": 0,
+            "eep_component_rewards": 0,
+            "eep_component_shield_level": 0,
+            "eep_component_tracking_level": 0
+          },
+          "movement": {
+            "native": {
+              "state": "move_idle"
+            },
+            "coordinate": {
+              "x": -80.9373,
+              "y": 17.0556,
+              "origin": 0
+            },
+            "target_coordinate": {
+              "x": 0,
+              "y": 0,
+              "origin": 4294967295
+            },
+            "orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+            "raw": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-80.9373\n\t\t\t\ty=17.0556\n\t\t\t\torigin=0\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+          },
+          "current_order_raw": "",
+          "ships": {
+            "809": {
+              "native": {
+                "fleet": 125,
+                "reserve": 0,
+                "graphical_culture": "eep_dreadnought_01",
+                "post_move_angle": 2.35681,
+                "hitpoints": 93960,
+                "shield_hitpoints": 167310,
+                "armor_hitpoints": 44787.6,
+                "max_hitpoints": 93960,
+                "max_shield_hitpoints": 167310,
+                "max_armor_hitpoints": 44787.6,
+                "rotation": 2.35681,
+                "forward_x": -0.70667,
+                "forward_y": -0.70754,
+                "upgrade_progress": 0,
+                "next_weapon_index": 34,
+                "created_this_update": "no",
+                "combat_action": 1,
+                "upgradable": "no",
+                "construction_date": "2200.01.01",
+                "maturation_date": "0.01.01"
+              },
+              "implementation": {
+                "design": 1527,
+                "upgrade": 4294967295,
+                "growth_stage": 0
+              },
+              "flags": {
+                "eep_mothership_design_1019": 62808000
+              },
+              "variables": {}
+            }
+          }
+        }
+      ]
+    },
+    "after": {
+      "binding": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.sav",
+        "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.native-save.json",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.audit.json",
+        "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\manifest.json",
+        "run_id": "20261019T150008Z",
+        "date": "2201.01.01",
+        "save_sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9"
+      },
+      "observation": {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc7-functional-receiver-smoke-cache-v1\\595de3efe90695fab59415ac73b1326c1b0bd25d4e8d8d4bdd8059cbd75e99af.json",
+        "sha256": "7104573f0dd71895eefb5276e998b5baeea481386071c9cbd353e446f3dae3b9",
+        "observation_sha256": "3761df7e924e1fdea9f48a05666e745087dd34649f889f40f8802f739ead641a",
+        "reused": true
+      },
+      "actual_date": "2201.01.01",
+      "mother_orders": [
+        {
+          "fleet_id": "125",
+          "native": {
+            "ground_support_stance": "selective",
+            "ship_class": "shipclass_starbase",
+            "space_fauna_growth_stance": "excessive",
+            "hit_points": 93960.0,
+            "military_power": 165063.79687,
+            "diplomacy_weight": 165063.79687,
+            "cached_killed_ships": 0,
+            "cached_disabled_ships": 0,
+            "cached_disengaged_ships": 0,
+            "cached_combined_removed_ships": 0,
+            "commanding_armada": "none"
+          },
+          "variables": {
+            "eep_applied_level": 0,
+            "eep_component_armor_level": 0,
+            "eep_component_damage_level": 0,
+            "eep_component_hull_level": 0,
+            "eep_component_regen_level": 0,
+            "eep_component_rewards": 0,
+            "eep_component_shield_level": 0,
+            "eep_component_tracking_level": 0
+          },
+          "movement": {
+            "native": {
+              "state": "move_idle"
+            },
+            "coordinate": {
+              "x": -80.9373,
+              "y": 17.0556,
+              "origin": 0
+            },
+            "target_coordinate": {
+              "x": 0,
+              "y": 0,
+              "origin": 4294967295
+            },
+            "orbit_raw": "\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t",
+            "raw": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.92719\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-80.9373\n\t\t\t\ty=17.0556\n\t\t\t\torigin=0\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t\torbitable=\n\t\t\t\t{\n\t\t\t\t\tplanet=4\n\t\t\t\t}\n\t\t\t\tindex=0\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tfleet=4294967295\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+          },
+          "current_order_raw": "",
+          "ships": {
+            "809": {
+              "native": {
+                "fleet": 125,
+                "reserve": 0,
+                "graphical_culture": "eep_dreadnought_01",
+                "post_move_angle": 2.35681,
+                "hitpoints": 93960,
+                "shield_hitpoints": 167310,
+                "armor_hitpoints": 44787.6,
+                "max_hitpoints": 93960,
+                "max_shield_hitpoints": 167310,
+                "max_armor_hitpoints": 44787.6,
+                "rotation": 2.35681,
+                "forward_x": -0.70667,
+                "forward_y": -0.70754,
+                "upgrade_progress": 0,
+                "next_weapon_index": 34,
+                "created_this_update": "no",
+                "combat_action": 1,
+                "upgradable": "no",
+                "construction_date": "2200.01.01",
+                "maturation_date": "0.01.01"
+              },
+              "implementation": {
+                "design": 1527,
+                "upgrade": 4294967295,
+                "growth_stage": 0
+              },
+              "flags": {
+                "eep_mothership_design_1019": 62808000
+              },
+              "variables": {}
+            }
+          }
+        }
+      ]
+    }
+  },
+  "tasks": {
+    "actual_fixed_pair_strict": {
+      "status": "PASS_SCOPED",
+      "scope": "strict comparison of all old gameplay fields plus all 1019 observations; no ignored paths",
+      "checks": {
+        "no_gameplay_differences": true,
+        "same_native_date": true
+      },
+      "before": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.sav",
+        "save_sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "run_id": "20261019T150008Z",
+        "version": "0.4.0-rc.6",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+        "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.audit.json",
+        "audit_sha256": "a0481afb322feb88b9b096bdf382e6f1752105fe88016f17a9d2b5fee3c96527",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mc-economy-receipt.json",
+            "sha256": "288b8d1ae6509096b8880f61ab02c241b285d42d823ec69198dfe700651ea14a",
+            "entry": {
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\autosave_2201.01.01.sav",
+              "source_prior_mtime_ns": 0,
+              "source_mtime_ns": 1792425865212988900,
+              "bytes": 513135,
+              "command_started_ns": 1792425853730125900,
+              "date": "2201.01.01",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12.sav",
+              "hud": {
+                "date": "2201.01.01",
+                "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.jpg",
+                "image_sha256": "9e82d90ca89673123d80359f89cc44885149bece9edcdf450534a29405a194e3",
+                "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.ocr.json"
+              },
+              "command": {
+                "command": "fast_forward 30",
+                "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm11-hud-1.jpg",
+                "console_frame_sha256": "0b78107224259c66a0aa9f078824c03acc590a3726da928af35d35124c95bad9",
+                "input_action": {
+                  "action": "type_text",
+                  "stage": "r6mcm12-advance-command",
+                  "text": "fast_forward 30",
+                  "submitted": true,
+                  "typed_at_utc": "2026-10-19T16:04:15.193024+00:00",
+                  "key_interval_seconds": 0.04,
+                  "submit_input": "physical scan code 0x1c"
+                },
+                "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+              },
+              "month": 12,
+              "government": "machine",
+              "observed_at_utc": "2026-10-19T16:04:42.657085+00:00",
+              "method": "separate native fast_forward 30 and monthly automatic save",
+              "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9",
+              "run_id": "20261019T150008Z",
+              "audit_sha256": "6c2ed34b5f55096a2e41c857dabec6481a019df96deb0b8f61637116f6b843ef",
+              "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-receipt.json",
+              "receipt_sha256": "6d76887d8661e1924c5bcb0c65a09e1f9e73e3291fcb1a1304b6c8c1490269c6"
+            }
+          },
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.native-save.json",
+            "sha256": "bd0aeb8756280f291e75a736bf8aa656f0f192dd3221584f1fb6292352b52815",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\r6mcinit2.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6mcinit2.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.sav",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "date": "2201.01.01"
+            }
+          },
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-receipt.json",
+            "sha256": "6d76887d8661e1924c5bcb0c65a09e1f9e73e3291fcb1a1304b6c8c1490269c6",
+            "entry": {
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\autosave_2201.01.01.sav",
+              "source_prior_mtime_ns": 0,
+              "source_mtime_ns": 1792425865212988900,
+              "bytes": 513135,
+              "command_started_ns": 1792425853730125900,
+              "date": "2201.01.01",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12.sav",
+              "hud": {
+                "date": "2201.01.01",
+                "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.jpg",
+                "image_sha256": "9e82d90ca89673123d80359f89cc44885149bece9edcdf450534a29405a194e3",
+                "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.ocr.json"
+              },
+              "command": {
+                "command": "fast_forward 30",
+                "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm11-hud-1.jpg",
+                "console_frame_sha256": "0b78107224259c66a0aa9f078824c03acc590a3726da928af35d35124c95bad9",
+                "input_action": {
+                  "action": "type_text",
+                  "stage": "r6mcm12-advance-command",
+                  "text": "fast_forward 30",
+                  "submitted": true,
+                  "typed_at_utc": "2026-10-19T16:04:15.193024+00:00",
+                  "key_interval_seconds": 0.04,
+                  "submit_input": "physical scan code 0x1c"
+                },
+                "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+              },
+              "month": 12,
+              "government": "machine",
+              "observed_at_utc": "2026-10-19T16:04:42.657085+00:00",
+              "method": "separate native fast_forward 30 and monthly automatic save",
+              "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9",
+              "run_id": "20261019T150008Z",
+              "audit_sha256": "6c2ed34b5f55096a2e41c857dabec6481a019df96deb0b8f61637116f6b843ef"
+            }
+          },
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.native-save.json",
+            "sha256": "9a6f69149f8020c4504ded84b50eae78e8d76777969773e321cc6133c5f49b88",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\r6mcyearui.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6mcyearui.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.sav",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "date": "2201.01.01"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "after": {
+        "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.sav",
+        "save_sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+        "run_id": "20261019T150008Z",
+        "version": "0.4.0-rc.6",
+        "version_source": "static_gate_and_copied_descriptor",
+        "production_tree_sha256": "cc181c8a27ede295e9fcebeffc5e10bb75e9cd643edec1d194b928993ffab33a",
+        "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9",
+        "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.audit.json",
+        "audit_sha256": "a0481afb322feb88b9b096bdf382e6f1752105fe88016f17a9d2b5fee3c96527",
+        "receipts": [
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mc-economy-receipt.json",
+            "sha256": "288b8d1ae6509096b8880f61ab02c241b285d42d823ec69198dfe700651ea14a",
+            "entry": {
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\autosave_2201.01.01.sav",
+              "source_prior_mtime_ns": 0,
+              "source_mtime_ns": 1792425865212988900,
+              "bytes": 513135,
+              "command_started_ns": 1792425853730125900,
+              "date": "2201.01.01",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12.sav",
+              "hud": {
+                "date": "2201.01.01",
+                "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.jpg",
+                "image_sha256": "9e82d90ca89673123d80359f89cc44885149bece9edcdf450534a29405a194e3",
+                "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.ocr.json"
+              },
+              "command": {
+                "command": "fast_forward 30",
+                "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm11-hud-1.jpg",
+                "console_frame_sha256": "0b78107224259c66a0aa9f078824c03acc590a3726da928af35d35124c95bad9",
+                "input_action": {
+                  "action": "type_text",
+                  "stage": "r6mcm12-advance-command",
+                  "text": "fast_forward 30",
+                  "submitted": true,
+                  "typed_at_utc": "2026-10-19T16:04:15.193024+00:00",
+                  "key_interval_seconds": 0.04,
+                  "submit_input": "physical scan code 0x1c"
+                },
+                "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+              },
+              "month": 12,
+              "government": "machine",
+              "observed_at_utc": "2026-10-19T16:04:42.657085+00:00",
+              "method": "separate native fast_forward 30 and monthly automatic save",
+              "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9",
+              "run_id": "20261019T150008Z",
+              "audit_sha256": "6c2ed34b5f55096a2e41c857dabec6481a019df96deb0b8f61637116f6b843ef",
+              "receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-receipt.json",
+              "receipt_sha256": "6d76887d8661e1924c5bcb0c65a09e1f9e73e3291fcb1a1304b6c8c1490269c6"
+            }
+          },
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.native-save.json",
+            "sha256": "bd0aeb8756280f291e75a736bf8aa656f0f192dd3221584f1fb6292352b52815",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\r6mcinit2.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6mcinit2.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcinit2.sav",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "date": "2201.01.01"
+            }
+          },
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-receipt.json",
+            "sha256": "6d76887d8661e1924c5bcb0c65a09e1f9e73e3291fcb1a1304b6c8c1490269c6",
+            "entry": {
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\autosave_2201.01.01.sav",
+              "source_prior_mtime_ns": 0,
+              "source_mtime_ns": 1792425865212988900,
+              "bytes": 513135,
+              "command_started_ns": 1792425853730125900,
+              "date": "2201.01.01",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12.sav",
+              "hud": {
+                "date": "2201.01.01",
+                "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.jpg",
+                "image_sha256": "9e82d90ca89673123d80359f89cc44885149bece9edcdf450534a29405a194e3",
+                "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm12-hud-1.ocr.json"
+              },
+              "command": {
+                "command": "fast_forward 30",
+                "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcm11-hud-1.jpg",
+                "console_frame_sha256": "0b78107224259c66a0aa9f078824c03acc590a3726da928af35d35124c95bad9",
+                "input_action": {
+                  "action": "type_text",
+                  "stage": "r6mcm12-advance-command",
+                  "text": "fast_forward 30",
+                  "submitted": true,
+                  "typed_at_utc": "2026-10-19T16:04:15.193024+00:00",
+                  "key_interval_seconds": 0.04,
+                  "submit_input": "physical scan code 0x1c"
+                },
+                "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+              },
+              "month": 12,
+              "government": "machine",
+              "observed_at_utc": "2026-10-19T16:04:42.657085+00:00",
+              "method": "separate native fast_forward 30 and monthly automatic save",
+              "manifest_sha256": "10f2ce0f5a699d8ad9f39769f46f919cf3e19f64f8cc24cc5d67ebf0347935f9",
+              "run_id": "20261019T150008Z",
+              "audit_sha256": "6c2ed34b5f55096a2e41c857dabec6481a019df96deb0b8f61637116f6b843ef"
+            }
+          },
+          {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.native-save.json",
+            "sha256": "9a6f69149f8020c4504ded84b50eae78e8d76777969773e321cc6133c5f49b88",
+            "entry": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep03_-1033273808\\r6mcyearui.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T150008Z\\save games\\eep-test-history\\r6mcyearui.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T150008Z\\r6mcyearui.sav",
+              "sha256": "bd4104dd2e31cfff0d2f76abf55e2eb303709ec86ca3118ec0d9fb6a59a3a696",
+              "date": "2201.01.01"
+            }
+          }
+        ],
+        "unsupported_receipt_shapes": []
+      },
+      "before_date": "2201.01.01",
+      "after_date": "2201.01.01",
+      "differences": []
+    }
+  },
+  "final_case_matrix": {
+    "hive_startup": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "machine_startup": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "purifier_startup": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "hive_economy": {
+      "status": "PENDING",
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      }
+    },
+    "machine_economy": {
+      "status": "PENDING",
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      }
+    },
+    "purifier_economy": {
+      "status": "PENDING",
+      "checks": {
+        "all_net_energy_nonnegative": null,
+        "baseline_12_months": null,
+        "candidate_12_months": null,
+        "no_job_closure": null,
+        "no_resource_injection": null,
+        "no_ship_disband": null,
+        "no_trade_subsidy": null
+      }
+    },
+    "lithoid_hive_first_month": {
+      "status": "PENDING",
+      "checks": {
+        "auto_devour_off": null,
+        "correct_homeworld_type": null,
+        "first_month_energy_nonnegative": null,
+        "first_month_generator_jobs": null,
+        "initial_energy_200": null,
+        "normal_upkeep": null,
+        "population_preserved": null,
+        "single_homeworld": null
+      }
+    },
+    "mothership_configuration": {
+      "status": "PENDING",
+      "checks": {
+        "actual_jump": null,
+        "existing_advantages_preserved": null,
+        "five_relic_auxiliary_components_preserved": null,
+        "native_design_matches": null,
+        "no_empire_technology_grant": null,
+        "other_juggernauts_unchanged": null,
+        "power_nonnegative": null,
+        "reference_stats_observed": null,
+        "same_country_same_date_relic_reference": null,
+        "ten_mobile_shipyards": null,
+        "twenty_two_large_defense_slots": null,
+        "upkeep_observed": null
+      }
+    },
+    "unlimited_growth": {
+      "status": "PENDING",
+      "checks": {
+        "count_level_samples": null,
+        "daily_regeneration": null,
+        "destroyed_mother_not_respawned": null,
+        "four_stats_five_percent_per_level": null,
+        "invalid_or_cancelled_no_growth": null,
+        "jump_and_shipyards_preserved": null,
+        "repeated_sync_idempotent": null,
+        "report_level_count_remainder": null,
+        "same_day_reload_idempotent": null,
+        "single_scaled_modifier": null
+      }
+    },
+    "colossus_enemy_fire": {
+      "status": "PENDING",
+      "checks": {
+        "beneficiary_is_core_owner": null,
+        "enemy_colony_destroyed": null,
+        "native_charge_and_fire": null,
+        "no_army": null,
+        "owned_noncore_colony_fire": null,
+        "war_target": null
+      }
+    },
+    "colossus_guards": {
+      "status": "PENDING",
+      "checks": {
+        "all_core_worlds_rejected": null,
+        "artificial_rejected": null,
+        "colonizing_rejected": null,
+        "completion_revalidates_core_owner": null,
+        "completion_revalidates_target": null,
+        "devouring_rejected": null,
+        "ground_combat_rejected": null,
+        "neutral_friendly_rejected": null,
+        "settled_rejected": null,
+        "uncolonized_rejected": null
+      }
+    },
+    "colossus_cancel_idempotence": {
+      "status": "PENDING",
+      "checks": {
+        "cancel_no_reward": null,
+        "crisis_objective_once": null,
+        "queue_no_reward": null,
+        "reload_no_reward": null,
+        "repeat_event_no_reward": null
+      }
+    },
+    "common_settlement": {
+      "status": "PENDING",
+      "checks": {
+        "core_capacity_matches": null,
+        "enemy_population_not_returned": null,
+        "lithoid_native_branch": null,
+        "native_devour_loss_deducted": null,
+        "owned_main_species_return": null,
+        "population_matches": null,
+        "q_c_g_d_match": null,
+        "settlement_and_destruction_once": null
+      }
+    },
+    "normal_dismantle_regression": {
+      "status": "PENDING",
+      "checks": {
+        "normal_completion": null,
+        "normal_duration_preserved": null,
+        "normal_reload_idempotent": null,
+        "normal_seed_preserved": null
+      }
+    },
+    "old_save_migration": {
+      "status": "PENDING",
+      "checks": {
+        "civilian_queue_preserved": null,
+        "damage_preserved": null,
+        "extra_world_preserved": null,
+        "identity_preserved": null,
+        "layout_preserved": null,
+        "migration_once": null,
+        "name_preserved": null,
+        "native_design_migration": null,
+        "no_startup_reward": null,
+        "original_031_save": null,
+        "position_preserved": null,
+        "queue_preserved": null
+      }
+    },
+    "candidate_reload": {
+      "status": "PENDING",
+      "checks": {
+        "ledger_preserved": null,
+        "native_reload": null,
+        "native_restart": null,
+        "no_duplicate_reward": null
+      }
+    },
+    "repeat_initialization": {
+      "status": "PENDING",
+      "checks": {
+        "no_extra_civilian_queue": null,
+        "no_extra_reward": null,
+        "no_extra_ship": null,
+        "no_extra_world": null
+      }
+    },
+    "random_components": {
+      "status": "PENDING",
+      "checks": {
+        "component_owns_dynamic_bonus": null,
+        "cross_threshold_catchup": null,
+        "equipped_component_present_in_native_design": null,
+        "every_five_levels": null,
+        "growth_component_contributions_separated": null,
+        "native_component_effects_source_attributed": null,
+        "no_external_reward_modifier": null,
+        "other_fleets_unchanged": null,
+        "positive_effect_observed": null,
+        "random_pool": null,
+        "real_component": null,
+        "reload_persistent": null,
+        "threshold_idempotent": null
+      }
+    }
+  },
+  "limitations": [
+    "Task PASS does not prove native input, war/no-army, guard prerequisites, population attribution, or restart.",
+    "Historical RC6 results are not promoted to the supplied candidate tree.",
+    "No UI, runtime, active logs, source SAV or old tools are modified."
+  ],
+  "created_at_utc": "2026-10-19T16:46:33.252155+00:00",
+  "intake": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc7-functional-receiver-rc6-smoke-input-v1.json",
+    "sha256": "f87ca398e89f65b9ce8abb7b9575b3c0d929704a4638e96f985774a0c44bef03"
+  },
+  "receiver_sha256": "d4daa66a575fa8c0ce5bba9796b6c6d4eef0b0573184ec9b6c4e5102fd033ca5"
+}
