@@ -48,3 +48,17 @@
 root 完结通知后才按具体完成前缀收件；原件先后两次字节/metadata 稳定检查，逐项原字节复制，列绝对来源、项目内相对路径、大小、SHA，独立复核完整集合、CRC、引用、图/OCR、输入/Enter。新薄包、完整 worker UI 原链、源闭包和操作约束补充审核分别建新索引，不修改先前 sealed 文件。预备空包不伪装已有原件，不预填未收到的文件路径或 hash。
 
 分析通过只表示 branch startup/12 月预算和同日 auto/UI 字段的限定通过；完整两组 case 还要汇集真实 UI、四项操作约束与最终真实 stop 后的日志证据。活动日志本轮不读不封，未齐项保持 PENDING，不写 final-result，不把非中文静态校验写成实机通过。
+
+## r7puc 完结交接与实施范围（收件前）
+
+root 明确交接：纯经济 worker session2001 已 EXIT0；`r7puc-economy-receipt.json` 为 COLLECTED_NOT_ACCEPTED、12 snapshots、空 cleanup errors；yearUI 日期 2201.01.01、原 SAV SHA `e036f3594d980c2e7797623d948fbd7f7be0cf042b120593504a4dd627c03eaf`，与 m12 逐字节相同。现按本页既定方案运行原 v1 的 `--branch purifier --prefix r7puc`，再独立封该固定前缀的 newgame、m00..12、yearUI、receipt 与 exit cleanup；排除后置 `r7pucmedia*`、已在焦点包中的 cursor-reset/recover 动作、其他新局与活动日志。
+
+root 同时交接实际受控 worker 仅执行 `new_game(EEP04, r7puc) → make_plan(显式 RC7 tree/version) → collect`，未操作资源、交易、闭岗或拆舰。本轮仍逐件核实际 type_text action 和原生观察，四项约束最终仅表述为该受控 worker 范围，不宣称全系统审计。旧高成长分支的控制台历史可能跨新局保留；OCR 的历史文字不等于本局实际输入，须以原 action 与原生 C/L/R/六 core 为准。原 `r7pu` 失败、原 v1 分析器及既有 sealed 证据不改。
+
+原 v1 已生成新的 `evidence/1019-rc7-economy/purifier` 薄包：57 原始 payload、8,923,328 B，报告为 PASS_SCOPED，四项操作约束仍 null，未改原报告。实际 12 月电力为 +46.23969 至 +46.75291，能量 200→757.88612；这仅陈述新银河实测，不能改写旧 RC6 或 `r7pu` 的不同数值。已看到的输入原件共 111 actions，其中 14 个 type_text 恰为 12 条 FF30 与两次保存命名，无其他文本输入。
+
+接下来独立验证薄包，并在新 `evidence/1019-rc7-purifier-economy-worker-ui-v2` 封完整受控动作原链。当前白名单为 284 个纯经济 `r7puc*` 文件；其 56 个已在薄包的同字节前缀原件仅作 canonical 映射，不重复复制；manifest 另外引用薄包。其余 UI 原件逐字节复制。源闭包复用原 growth 包内仍完全一致的 18 件本地执行来源，额外保存 collector 与新焦点 helper 两件；新 helper 只新增标准库/第三方 imports，没有新增本地模块。原文档的 worker-ui-v1 空包继续排除。另写独立四约束范围审核与 PENDING 提案，不把原分析报告中的 null 改为 true。索引封口后再独立核 payload、canonical 原件、图/OCR、12条实际输入/Enter及源映射；活动日志和后置 media 不入包。
+
+维护来源还需补齐两件小型原源文件：报告使用的原版 `00_common_categories.txt`（证明 district 子类别父链）和 0.3.1 基线 `eep_modifiers.txt`（证明母舰维护折扣保持）。它们在本轮只读确认没有可直接复用的同路径项目内副本，故原字节单独收进 source，记录绝对原来源与 SHA。RC7 当前 modifier 继续复用已封口 static canonical，不重复复制。此补充不修改游戏文件或维护规则。
+
+归档 index 预检曾把薄包 57 payload 的数量误当作图/OCR 组数，预设 57 组后主动断言失败；当时尚未输出 index，未产生通过报告。独立目录计数确认 UI 原件实际为 52 对图/OCR，原图与 OCR 均完整一一对应；最终按这 52 对及其实际 receipt/HUD 引用封口，不补造五组图。这是离线归档计数错误，不是游戏或 Mod 测试失败。

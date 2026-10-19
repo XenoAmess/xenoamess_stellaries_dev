@@ -1,0 +1,511 @@
+{
+  "schema": "eep.rc7.r7puc.economy-controlled-operation-review.v1",
+  "status": "PASS_SCOPED_CONTROLLED_WORKER_INPUTS",
+  "created_at_utc": "2026-10-19T17:58:08.435345+00:00",
+  "run_id": "20261019T164112Z",
+  "prefix": "r7puc",
+  "scope": "Completed new_game through pure economy collect/cleanup only; root handover plus all recorded type_text, key and mouse action files. Not a whole-system input audit.",
+  "root_worker_reference": "session2001 EXIT0",
+  "root_statement": "Only b.new_game(EEP04,r7puc), e.make_plan(explicit RC7 tree/version), e.collect; no resource/trade/job closure/disband command or menu.",
+  "execution_sources": {
+    "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/execution-source-closure-v1.json",
+    "sha256": "3c2206c67dfd19219900cd0a5c55e72a9927c7ef24d58c56f302175a910ca093",
+    "kind": "analysis"
+  },
+  "native_branch_report": {
+    "path": "docs/evidence/1019-rc7-economy/purifier/native-branch-report.json",
+    "sha256": "e78c1b2e84634bf4785e1eb855ad67e25210d77f2b68164d51872f1c25fe7a9f",
+    "kind": "analysis"
+  },
+  "native_independent_verify": {
+    "path": "docs/evidence/1019-rc7-economy/purifier/independent-verify-v1.json",
+    "sha256": "43be9962b343ee0cb12300b8aadeaefcc127f2d98a945cc84c87590cee495450",
+    "kind": "analysis"
+  },
+  "collector_receipt": {
+    "path": "docs/evidence/1019-rc7-economy/purifier/r7puc-economy-receipt.json",
+    "sha256": "904415c30ae52fe2c09c193b2b3f11b90861794d18caeec3ff6de8450aad5641",
+    "kind": "actions"
+  },
+  "checks": {
+    "no_resource_injection": true,
+    "no_trade_subsidy": true,
+    "no_job_closure": true,
+    "no_ship_disband": true
+  },
+  "evidence_basis": {
+    "all_typed_actions": 14,
+    "submitted_console_commands": 12,
+    "submitted_console_texts": [
+      "fast_forward 30"
+    ],
+    "unsubmitted_texts": [
+      "r7pucm00",
+      "r7pucyearui"
+    ],
+    "all_recorded_actions": 111,
+    "mouse_actions": 26,
+    "physical_scan_code_counts": {
+      "88": 52,
+      "41": 2,
+      "1": 5,
+      "28": 12
+    },
+    "mouse_stage_roles": [
+      {
+        "stage": "r7puc-empire-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-empire-click.action.json",
+          "sha256": "9b6ee8e28d5ea7635be978b134d57042eabb9734729c1caa5f3ef809b3d553e5",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7puc-exit-confirm-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-exit-confirm-click.action.json",
+          "sha256": "ca7db68a2e8511a0c44d724ec1e165f1cdef6ec9268d41d0d1f27ad4cbaaba9d",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7puc-exit-menu-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-exit-menu-click.action.json",
+          "sha256": "3feae03000f6afdf1ea37bb93a6eabfa53c76eea7437879edf04ce72b0051dc6",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7puc-intro-ack-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-intro-ack-click.action.json",
+          "sha256": "0c52709a42c39791db4571a03ff2662c067b7d16c967ffa1a574627605dd1fea",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7puc-newgame-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-newgame-click.action.json",
+          "sha256": "7997b1a4d5691f0d868069708c90ef0a71bdc1a585f0668738b5cee94ca9ae77",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7puc-old-queen-0-ack",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-old-queen-0-ack.action.json",
+          "sha256": "e6aed92322c7a6ea7c281199998f0c4000c651540b01f4d66ad9d80140931851",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7puc-select-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-select-click.action.json",
+          "sha256": "7bea0908ecd7f3621b98d5a097688d4ec8f53f6593edb3f1dc7e99a4c04faad2",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7puc-start-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-start-click.action.json",
+          "sha256": "b8c4b54b2a9be042326f28d961c4b12c276298cc0233bf061f51826927c717e9",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm00-name-field",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm00-name-field.action.json",
+          "sha256": "4815ecd0912cf9e6dbcfdfae4a485f313a6fca6a4db4c95c82be38a27502ab4c",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm00-open-save",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm00-open-save.action.json",
+          "sha256": "8bccca21b3d6b1693a03983d045720864413fa8b2f712a6704897cec36f36a9d",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm00-save-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm00-save-click.action.json",
+          "sha256": "fa3d6c4d63e65bda44a6a2d733f1ad28661ca9cc8edddcfa266a42bbe4e3ae9f",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm01-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm01-advance-focus.action.json",
+          "sha256": "470abd0e4a62d39a7dfb69615de5c6dc556ae524423d1d4674d2040a5c939ee3",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm02-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm02-advance-focus.action.json",
+          "sha256": "507aa0a924f61cc62fc307d19ce0261253ca8e09fc0f5734a2b2ae1009e0761c",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm03-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm03-advance-focus.action.json",
+          "sha256": "24a27eb024acffce681e857e986e2a95d080bfdfb80eaa218569d8b203e529d6",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm04-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm04-advance-focus.action.json",
+          "sha256": "25766c3a2480cad2c8781924ec21e64811221c5589173955d6e66cc4af1ba4be",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm05-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm05-advance-focus.action.json",
+          "sha256": "7f685a2df48fcb667599a72e89889eccfe5eba309092caef6cb286685ebad18b",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm06-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm06-advance-focus.action.json",
+          "sha256": "00d043cd35907f58e0cbea1173730cdc3044a980e9ed2e6c7a80fdf2a5327385",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm07-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm07-advance-focus.action.json",
+          "sha256": "680eabbdd5df9c6a3bd629d40a0ed846c8fc338c4cac76685a29035268e32232",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm08-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm08-advance-focus.action.json",
+          "sha256": "882a47ae762f6fbbfdc13542258fff9da3174e0865aaf97beda085b375677221",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm09-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm09-advance-focus.action.json",
+          "sha256": "d91b2317702f72f54439a680b85c29f728dd456a2338e6b6f9b06084cc3b0627",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm10-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm10-advance-focus.action.json",
+          "sha256": "46e05a2704235d0f730cf00d41f667162b3c78a1e7ec256df072cfcfb9833beb",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm11-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm11-advance-focus.action.json",
+          "sha256": "07294d7bc20255924b50d12837900845fd39a2156e267c55111b7d3d5f85792b",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucm12-advance-focus",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm12-advance-focus.action.json",
+          "sha256": "74c3f671b2c73676c6e7d76e96b17f654d226a1fcc003e9850c732be1db656b5",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucyearui-name-field",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucyearui-name-field.action.json",
+          "sha256": "94940f63dacf9d178bc0f0945fd92f40f0f7f160e79e474670f60422f5a49ea2",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucyearui-open-save",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucyearui-open-save.action.json",
+          "sha256": "9c130c3ab78a5b543fc936809c68fc4dfcc0b92da02fd76860321d323e2b156e",
+          "kind": "actions"
+        }
+      },
+      {
+        "stage": "r7pucyearui-save-click",
+        "action": {
+          "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucyearui-save-click.action.json",
+          "sha256": "1546df560249e986cabd1d26efc823fce6570d9e5bf44502e8f05ba83bc4413b",
+          "kind": "actions"
+        }
+      }
+    ],
+    "native_observations": {
+      "all_stocked_resources_close": true,
+      "native_finite_job_limits_at_max": true,
+      "initial_owned_ship_ids_names_fleets_preserved": true,
+      "receipt_commands_exactly12_FF30": true
+    },
+    "monthly_original_source_dates": [
+      "2200.01.01",
+      "2200.02.01",
+      "2200.03.01",
+      "2200.04.01",
+      "2200.05.01",
+      "2200.06.01",
+      "2200.07.01",
+      "2200.08.01",
+      "2200.09.01",
+      "2200.10.01",
+      "2200.11.01",
+      "2200.12.01",
+      "2201.01.01",
+      "2201.01.01"
+    ],
+    "four_original_report_values_still_null": true
+  },
+  "12_actual_console_inputs_and_Enter": [
+    {
+      "month": 1,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm01-advance-command.action.json",
+        "sha256": "445f3b8185986c8d8a919285c7b37580165ad341663a4bee5982e7e22c0ff4fe",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm01-advance-command-enter.action.json",
+        "sha256": "85eee9079fb7245ee667d6569b8f7ae080360a770ac6e1698e5015a69cccac2d",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 2,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm02-advance-command.action.json",
+        "sha256": "9316868e98ee5366147c40f00bfe0763f69dd3e2d96a6d3c4bcda2f6213353f6",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm02-advance-command-enter.action.json",
+        "sha256": "efbaa7794a15327be58546eb1cf25646aaddc56014072c045a163eb83cf199d7",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 3,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm03-advance-command.action.json",
+        "sha256": "f64751b0c3fec3cf495bf1d66a0ace0f802a1c20dd359eec241214e6f29dac07",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm03-advance-command-enter.action.json",
+        "sha256": "c9f8e08ecc46a981af1b0f4f7cb84c036d814288976ce0ded332b73d79690d01",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 4,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm04-advance-command.action.json",
+        "sha256": "369b3dd477fa249d68e6378512d99c4e5b43382859c4e436bea5ab3dd74c4c7f",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm04-advance-command-enter.action.json",
+        "sha256": "654ab33ad5a1afe4846bc5c3270e7e972727ad4c18424ee18ff59d3dafcf8435",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 5,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm05-advance-command.action.json",
+        "sha256": "1464eb4d1b57c987e26f5597a553aa2e52a1eb9d21ce0b203ec3ec1b73928be7",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm05-advance-command-enter.action.json",
+        "sha256": "868529f01c8fe2b5a969d0870b2fce57b367c7075561fc6113641c253f1c00d7",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 6,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm06-advance-command.action.json",
+        "sha256": "7d9a4c60599904c1ceb86a03f39933b704d0f2d0e3dfa13692bf208299f33ec6",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm06-advance-command-enter.action.json",
+        "sha256": "a80db03123ee983b716baba93533e9c59fe7176ef4aed1c29ab2a040540d47af",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 7,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm07-advance-command.action.json",
+        "sha256": "25c70b8c2c258c08f45a1145863b418fb3cfd6c3d762056aa208a435e84df6f8",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm07-advance-command-enter.action.json",
+        "sha256": "acfb07b9e2db2a6681d9ddbc7baeadc906828e8d5de8bb72c1bee1016ddd1bb8",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 8,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm08-advance-command.action.json",
+        "sha256": "5818052428249d8c61a303963689fe91598d7a9f85219526a0c1aa9088ab21b0",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm08-advance-command-enter.action.json",
+        "sha256": "a307174984b2bc699c64aaef7fdd3a1400e7ec656aabdceba4132c636d87cc40",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 9,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm09-advance-command.action.json",
+        "sha256": "d3e804773c1151026c5de7b9a83d8d6131df568cf15671e5d6d25144baf20af7",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm09-advance-command-enter.action.json",
+        "sha256": "8eba9788a792584bf7dc7e51c32cb22e706ee290477e6484821fa75a7693dc82",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 10,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm10-advance-command.action.json",
+        "sha256": "c48f16b5dca5bcc8d847036eba16df37a01ca17c07887e96ec09c1f340a08aa7",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm10-advance-command-enter.action.json",
+        "sha256": "a407694b6cbd931a061b8bbddae5dc987f012e0427bb49bbbe0b022cbcbbc95e",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 11,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm11-advance-command.action.json",
+        "sha256": "8adb57cce08f183b29898d69e5efcebf441aae3c907d92f6d942239ed595b475",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm11-advance-command-enter.action.json",
+        "sha256": "9ac74ed6b0375867b804176d39c9a68094cc8167623087e708b87ff43f7997db",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    },
+    {
+      "month": 12,
+      "action": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm12-advance-command.action.json",
+        "sha256": "7a0711d85d6b4d3486262ff3ac90698220bb68e74a5860ff0a97db5356d56ced",
+        "kind": "actions"
+      },
+      "Enter": {
+        "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm12-advance-command-enter.action.json",
+        "sha256": "7ee92ef847ba7403ed2abe725ef994444faf524853600970d9ef0a75235fe24b",
+        "kind": "actions"
+      },
+      "text": "fast_forward 30"
+    }
+  ],
+  "save_name_inputs": [
+    {
+      "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm00-name.action.json",
+      "sha256": "9e2c6b52047819e4b616b2b41444427602464eeded53008cbd901f8e2878841a",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucyearui-name.action.json",
+      "sha256": "559dcfe85f1400ebece85a54108b0b132f8e07d5a1d15e72b103ceacb9e77a18",
+      "kind": "actions"
+    }
+  ],
+  "offline_images_independently_viewed": [
+    {
+      "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-select.jpg",
+      "sha256": "b774c2d1421b72453da81eaeb829eeeed51fb67451cb7bfc2c7152518f630053",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7puc-start.jpg",
+      "sha256": "4bbe40a0a6cefdaa2731444d1c7fe506d65b023a9ba446d7eb627dd3360dff7d",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm01-hud-1.jpg",
+      "sha256": "1527a07f6de9d9f36d8c2790a81536094d8c3b215ebf0d653da5b1686e27e982",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-purifier-economy-worker-ui-v2/run/r7pucm12-hud-1.jpg",
+      "sha256": "d9454b0911bde6d550509e7c18015e7f299ae1bebd4e6ee950fb86c068cb5317",
+      "kind": "screenshot"
+    }
+  ],
+  "image_observations": {
+    "selected_preset": "EEP04 visible in r7puc-select; empire pre-click frame still EEP05 and is not selected-preset proof",
+    "galaxy_settings": "start frame shows EEP04,200 stars,3 AI,Ensign",
+    "actual_first_month_HUD": "2200.02.01,energy246,+46; native exact stock246.23969/net46.23969",
+    "actual_year_HUD": "2201.01.01,energy757,+46; native exact stock757.88612/net46.75291",
+    "popups_and_console": "Queen/tutorial/debug overlays remain in monthly frames; no claim they are cleared or that obscured UI values were read",
+    "old_console_history": "C-growth/pending200 text carried over from old game. Not this segment input; actual submitted action set is exactly12 FF30 and native C/L/R/tiers are0."
+  },
+  "excluded": [
+    "r7pucmedia*",
+    "r7puc cursor-reset/recover actions already in focus package",
+    "other government runs",
+    "live logs"
+  ],
+  "case_status": "PENDING",
+  "missing_for_full_case": [
+    "final stopped-run logs and root final case assembly"
+  ],
+  "final_result_written": false
+}
