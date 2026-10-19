@@ -193,3 +193,8 @@ THIS旧core2／FROM Mother151，marker与同日F闭合；没有收益或成长�
 两SAV、21对GPU/OCR、八进程metadata，结合前已封的32348→24520非零普通
 结算幂等链，candidate_reload四项已合入：当前115 true／23 null，仍全PENDING。
 现执行public031／paid11固定旧伤档原生迁移；未开始正式版本或Steam上传。
+
+两条迁移链已完成且原v2检查器174/174、158/158通过；原发布typed validator也通过。
+七SAV、336原件、71对GPU/OCR已封存，原v1严格伤害失败保留。当前127 true／
+11 null／1 false，false是合同明确保留的damage_preserved；另外v2预算项true。
+独立EEP05石质蜂巢已真实新局Jan1存档，正在采首月；未上传Steam。

@@ -1,0 +1,344 @@
+{
+  "schema": "eep.1020.migration-resumed-observations.v1",
+  "status": "PASS_SCOPED_WITH_ORIGINAL_STRICT_FAILURE_RETAINED",
+  "supported_checks": {
+    "damage_preserved": false,
+    "native_design_migration": true,
+    "original_031_save": true,
+    "identity_preserved": true,
+    "migration_once": true,
+    "position_preserved": true,
+    "queue_preserved": true,
+    "civilian_queue_preserved": true,
+    "name_preserved": true,
+    "no_startup_reward": true,
+    "extra_world_preserved": true,
+    "layout_preserved": true,
+    "damage_within_predeclared_v2_budget": true
+  },
+  "scope": "Both actual single-player postload migration chains, exact original 174/158 checksets; original v1 failure unchanged; no mobile cache/multiplayer claim.",
+  "reports": {
+    "public031": {
+      "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9migration-public031-complete-report-v1.json",
+      "sha256": "1e5813232f6244d549a011ce250a3c9c978e3f7e7691ca9968193938de3087dd",
+      "kind": "analysis"
+    },
+    "paid11": {
+      "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9migration-paid11-complete-report-v1.json",
+      "sha256": "ebd1843d6c74fc0465ca7f0baeef6c5f2b207f75a9e68e18aee9237ec5520170",
+      "kind": "analysis"
+    }
+  },
+  "migration_contract": {
+    "schema": "eep.1019.migration-release-scope.v2",
+    "execution_mode": "single_player_postload_layout_repair",
+    "classification": "predeclared_engineering_allowance_not_engine_storage_proof",
+    "policy": {
+      "step_signed_ratio_min": -2.1e-05,
+      "step_signed_ratio_max": 1e-06,
+      "v1_absolute_tolerance": 1e-06,
+      "relative_tolerance": 0
+    },
+    "limitations": [
+      "single_player_postload_only",
+      "mobile_starbase_cache_not_repaired",
+      "original_v1_failure_retained"
+    ],
+    "checker": {
+      "path": "tools/check_migration_1019.py",
+      "sha256": "8a8cf5a52d0c4dfbdfeaa0506a0d8728539d80ca72b56ab875b081a94b8ee0aa",
+      "kind": "analysis"
+    },
+    "source_certificate": {
+      "path": "docs/evidence/1020-migration-rc7-source/source-certificate-v1.json",
+      "sha256": "29742bf394cf83d0b1fd3b9f8221bf06f0c359b40668afea30e3aaa82a946046",
+      "kind": "analysis"
+    },
+    "contract_document": {
+      "path": "docs/native-migration-roundoff-contract-1019.md",
+      "sha256": "55767fe4155b2707531976bd9f02effa2a3772a2726d5ba012cfe586644faa62",
+      "kind": "analysis"
+    },
+    "fixtures": {
+      "public031": {
+        "report": {
+          "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9migration-public031-complete-report-v1.json",
+          "sha256": "1e5813232f6244d549a011ce250a3c9c978e3f7e7691ca9968193938de3087dd",
+          "kind": "analysis"
+        },
+        "case": {
+          "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9migration-public031-complete-case-v1.json",
+          "sha256": "3c9875a0be1ee5e85c05cfe78a12c8e84f7fe6e02b0d4bfaffd877e264e85885",
+          "kind": "analysis"
+        },
+        "native_saves": {
+          "fixture": {
+            "path": "docs/evidence/1019-baseline/bmm00.sav",
+            "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+            "kind": "native_save"
+          },
+          "before": {
+            "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.sav",
+            "sha256": "d5921823d723d4eb0dec5d912ae0e586aac5b903643472d44062229b66b0b1e2",
+            "kind": "native_save"
+          },
+          "after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicauto.sav",
+            "sha256": "fa22ee4b10f5c6a4c04839233a3aa42ebf2405029a72dcd6b58a79af57098963",
+            "kind": "native_save"
+          },
+          "reload": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicreload.sav",
+            "sha256": "2e5ab87a7cb2bca999158aa49efdcada97d64fc2b2b453ade22b46871dc9dba4",
+            "kind": "native_save"
+          },
+          "repeat_before": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicbase.sav",
+            "sha256": "98d45fd1c98e8f866bc8aae3ba86d07ca5e1483fae5e33e069fc7cd99544f49d",
+            "kind": "native_save"
+          },
+          "repeat_after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicrepeat.sav",
+            "sha256": "98d45fd1c98e8f866bc8aae3ba86d07ca5e1483fae5e33e069fc7cd99544f49d",
+            "kind": "native_save"
+          }
+        },
+        "audits": {
+          "fixture": {
+            "path": "docs/evidence/1019-baseline/bmm00.audit.json",
+            "sha256": "0cf5ab1fcf16c5dc1fae1f4474974b2c10fc08ea8bde8e777f3319f2a969faaf",
+            "kind": "analysis"
+          },
+          "before": {
+            "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.audit.json",
+            "sha256": "a3a86d0a65b390eacf394d7994a6ed30668cee9bd578f48bedfbffb0cfd3bd8f",
+            "kind": "analysis"
+          },
+          "after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicauto.audit.json",
+            "sha256": "3a95b50877e5fef048c160c88ae325eecd26d196a4dc1bfd87a69070775d7fff",
+            "kind": "analysis"
+          },
+          "reload": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicreload.audit.json",
+            "sha256": "b7cf3f91dc5efa01fd33ee4846207ecc113d06e3220d8449bf35ab2bc2c7a4f6",
+            "kind": "analysis"
+          },
+          "repeat_before": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicbase.audit.json",
+            "sha256": "9b24d90033ea3d9d33cb6bdaa9886aed45eab152ad34a16d97272fddd746ea0f",
+            "kind": "analysis"
+          },
+          "repeat_after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicrepeat.audit.json",
+            "sha256": "0efe47814c2a5fa9aa3ec5c6b6d089424ab3d85c5541ef1d925affb8358ac83f",
+            "kind": "analysis"
+          }
+        },
+        "save_receipts": {
+          "fixture": [
+            {
+              "path": "docs/evidence/1019-baseline/bmm00.native-save.json",
+              "sha256": "59b16503e02f2ca0174b9f91e0b74a1212ce442eac3645bd2acc0a57209ff8af",
+              "kind": "actions"
+            }
+          ],
+          "before": [
+            {
+              "path": "docs/evidence/1019-legacy-damage-run-final/run/p031before.native-save.json",
+              "sha256": "3c0ffcce7073660f65fafc3749f6c41f2aebab931ccd6e14f29b5396938c0c0e",
+              "kind": "actions"
+            }
+          ],
+          "after": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicauto.native-save.json",
+              "sha256": "2c16bbeae996a6435604e6e2fa03f8a480b1916eeded49e9209a918704408752",
+              "kind": "actions"
+            }
+          ],
+          "reload": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicreload.native-save.json",
+              "sha256": "5aa714428b230f094797b4e2bf3856881e4209cc9f13b177b3213332eb05740a",
+              "kind": "actions"
+            }
+          ],
+          "repeat_before": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicbase.native-save.json",
+              "sha256": "ad4796018a9609796b1d823f9cd4de1bcf4fc0ad7bc106476bb9041b23102585",
+              "kind": "actions"
+            }
+          ],
+          "repeat_after": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9publicrepeat.native-save.json",
+              "sha256": "82be2c79d8f4c9ef5ad1622f5d2f61719f0a69442e3e861b94d0fc8273f1d16e",
+              "kind": "actions"
+            }
+          ]
+        },
+        "load_receipts": {
+          "after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9public-auto-load.load.json",
+            "sha256": "707f2be817191e6524b9f8536fc67154f8abdf1b07e9de08a07c0066927b21e6",
+            "kind": "actions"
+          },
+          "reload": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9public-reload-load.load.json",
+            "sha256": "cb3951abbafd29451107716bb7a825fe26bfe6eb89304692aa09ac3bd5ee0fd8",
+            "kind": "actions"
+          },
+          "repeat_before": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9public-repeatbase-load.load.json",
+            "sha256": "ba46f4d386e82c5e6cba65990a73af304d10e630821683f6b423e8ad6f3850b3",
+            "kind": "actions"
+          }
+        },
+        "repeat_action": {
+          "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9public-repeat-repair-command.action.json",
+          "sha256": "bd4d0e859dd1948436c36ec8814799b6770163ab3bf8f1f88a2511bd9bb09db0",
+          "kind": "actions"
+        }
+      },
+      "paid11": {
+        "report": {
+          "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9migration-paid11-complete-report-v1.json",
+          "sha256": "ebd1843d6c74fc0465ca7f0baeef6c5f2b207f75a9e68e18aee9237ec5520170",
+          "kind": "analysis"
+        },
+        "case": {
+          "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9migration-paid11-complete-case-v1.json",
+          "sha256": "a2372d80dc943c01e957a78331fb1d64972d175ec46ae4e052aa7fc20ae00d72",
+          "kind": "analysis"
+        },
+        "native_saves": {
+          "fixture": {
+            "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.sav",
+            "sha256": "834ea5325f93e3d3e92a44aabccd87195564cd4f1292d4439ae865eba5af8d2e",
+            "kind": "native_save"
+          },
+          "before": {
+            "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.sav",
+            "sha256": "40c8f8dac9530594d501143132d55fef1205346d7f679f16c8858058ed392ff1",
+            "kind": "native_save"
+          },
+          "after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidauto.sav",
+            "sha256": "515a36d3dd14d8ae3e2b7fed11fa0818f71088094cce18db3564e89ea00f0dc8",
+            "kind": "native_save"
+          },
+          "reload": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidreload.sav",
+            "sha256": "c4908b9e409b7d47f6922f8a16bfa09a3626c8bda1e51f35643eda9448ac03d7",
+            "kind": "native_save"
+          },
+          "repeat_before": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidreload.sav",
+            "sha256": "c4908b9e409b7d47f6922f8a16bfa09a3626c8bda1e51f35643eda9448ac03d7",
+            "kind": "native_save"
+          },
+          "repeat_after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidrepeat.sav",
+            "sha256": "c4908b9e409b7d47f6922f8a16bfa09a3626c8bda1e51f35643eda9448ac03d7",
+            "kind": "native_save"
+          }
+        },
+        "audits": {
+          "fixture": {
+            "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.audit.json",
+            "sha256": "49e0637da026e529021d71e34324794cf7f91607490142537b1db76338583826",
+            "kind": "analysis"
+          },
+          "before": {
+            "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.audit.json",
+            "sha256": "d9ff5a25f76f85ea28655ba0e7a07f371b0e4754155c059668ea8e50d9f95966",
+            "kind": "analysis"
+          },
+          "after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidauto.audit.json",
+            "sha256": "958f1f6eb5337ecc9cc4b16eddf1702b096d876e75ee422a702a813967ed6c53",
+            "kind": "analysis"
+          },
+          "reload": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidreload.audit.json",
+            "sha256": "59aded123c6b557f201ed3edc35fee6c0ab5758e1286e93d7fe0cf35cbe7cf4e",
+            "kind": "analysis"
+          },
+          "repeat_before": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidreload.audit.json",
+            "sha256": "59aded123c6b557f201ed3edc35fee6c0ab5758e1286e93d7fe0cf35cbe7cf4e",
+            "kind": "analysis"
+          },
+          "repeat_after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidrepeat.audit.json",
+            "sha256": "0c35675b073c15099b43db59f1193cce706f0bd9149a43432636d5749d6dc534",
+            "kind": "analysis"
+          }
+        },
+        "save_receipts": {
+          "fixture": [
+            {
+              "path": "docs/evidence/1015-2026-10-15/v13-shipyard-runtime/j13ten.native-save.json",
+              "sha256": "6fe71618fa64eb9d9a7a1d77024876852575b8b48d6869f66ed2532ddf62a96b",
+              "kind": "actions"
+            }
+          ],
+          "before": [
+            {
+              "path": "docs/evidence/1019-legacy-damage-run-final/run/ppaidbefore.native-save.json",
+              "sha256": "f9fc9888a69951035c4965f15c7a6349e143862951e7b4483fe472166438f654",
+              "kind": "actions"
+            }
+          ],
+          "after": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidauto.native-save.json",
+              "sha256": "77494bf1984c90e54ad29b97f39fb98b882b7d8b25f3e2b2fb73ca48543fdb99",
+              "kind": "actions"
+            }
+          ],
+          "reload": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidreload.native-save.json",
+              "sha256": "45f50579e08631d7881fbe6044c0a1a5143311188cb9a1fdf148eaecf5e7bdfa",
+              "kind": "actions"
+            }
+          ],
+          "repeat_before": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidreload.native-save.json",
+              "sha256": "45f50579e08631d7881fbe6044c0a1a5143311188cb9a1fdf148eaecf5e7bdfa",
+              "kind": "actions"
+            }
+          ],
+          "repeat_after": [
+            {
+              "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paidrepeat.native-save.json",
+              "sha256": "d1c8258b2926fdc632510be1c136c4680f658a12084f44ddf79032e800b001b3",
+              "kind": "actions"
+            }
+          ]
+        },
+        "load_receipts": {
+          "after": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paid-auto-load.load.json",
+            "sha256": "41649284497ac27a0c09a8f097b32b29508c9e4015585fd4eacb3e5a8b95e767",
+            "kind": "actions"
+          },
+          "reload": {
+            "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paid-reload-load.load.json",
+            "sha256": "d472036500e0e1995e84df0579e1233d8cddd9bec5b739b736086350e72f6949",
+            "kind": "actions"
+          }
+        },
+        "repeat_action": {
+          "path": "docs/evidence/1020-rc7-migration-resumed-v1/raw/r9paid-repeat-repair-command.action.json",
+          "sha256": "2843874b42a9e9d04a1c73af4baeee353d040980cc713c3fbd3ebea82fa9ee63",
+          "kind": "actions"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,13 @@
 # RC7旧档迁移与真实进程重启的最短执行链
 
+## 2026-10-20 本轮实际执行与归档
+
+两报告现均完成：public174/174、paid158/158 PASS_SCOPED；原发布门禁 `validate_migration_contract` 对新六角色 typed 合同复核通过。归档共336原件、七个SAV、71对GPU/OCR；CRC、原件/副本SHA、audit/save receipt/history、实际PID24520和1024×768均通过。检查器正文、原v1 FAIL及全部strict差异保持原样。PENDING索引现在127 true、11 null、1 false；唯一false为必须保留的damage_preserved，另列damage_within_predeclared_v2_budget=true。整组与最终日志仍未提升通过。
+
+新 run 20261019T204055Z 已执行两条原生迁移链：public 的 auto/reload/第三次实际返回加载/repeat，以及 paid11 的 auto/reload/repeat；各步同日保存，只有两次 layout-only helper，没有推进时间或 full initialize/sync。public 原 v2 CLI 输出 PASS_SCOPED，174 项全部为 true，原 v1 FAIL 与完整 strict 差异保留；paid11 原 CLI 检查运行中，尚不提升该分支。
+
+原字节副本归档于 `evidence/1020-rc7-migration-resumed-v1/raw/`，首次复制 335 文件、17,494,350 字节，包含全部 UI/GPU/OCR、原生 SAV/audit/save receipt、原 load receipt、title workflow 及输入别名回执。付费报告完成后增量归档，不覆盖首次清单。组装脚本只建立六角色 typed 引用和逐项映射，先调用原发布 validator 验证，再写 PENDING 索引；不改冻结检查器、报告正文或原失败结果。最终完整日志仍待当前 run 正常停机后统一冻结审查。
+
 ## 目标、范围与验收标准（执行前）
 
 本清单供主线程独占桌面执行；本次准备仅做离线只读调查和文档记录，不操作游戏、Steam或Git，不读取活动日志及r7puc，不修改工具、Mod、旧SAV或旧报告。随后只在本文指定的新目录生成文件存在性、原字节SHA和既有角色清单。清单或路径核验通过不等于实机迁移或重启通过。
