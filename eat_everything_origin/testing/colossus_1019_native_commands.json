@@ -1,0 +1,1191 @@
+{
+  "schema": "eep.colossus.native_commands.v1",
+  "status": "PENDING",
+  "runtime_execution_performed": false,
+  "production_mod_changed": false,
+  "native_save_edited": false,
+  "scope": "Controlled rejection fixtures only; these commands never certify a real weapon firing or economics.",
+  "execution_owner": "root desktop operator only; this asset is never auto-executed.",
+  "baseline": {
+    "run": "20261019T092935Z",
+    "save": "pk1base.sav",
+    "save_sha256": "dccb1e17d6f76c915e3f0a916e627f068c559d381e7a6962becc21c77093b38a",
+    "exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+    "mother_fleet": 159,
+    "mother_ship": 997,
+    "core_physical_planet": 2,
+    "home_system": 13,
+    "empty_physical_planets": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "enemy_physical_planet": 17,
+    "enemy_country": 1
+  },
+  "documentation": [
+    "../docs/colossus-native-guard-batch-1019.md",
+    "../docs/colossus-native-state-negative-fixtures-1019.md",
+    "../docs/colossus-native-guard-calibration-1019.md"
+  ],
+  "shared_prerequisites": [
+    "Use the immutable single-Mod candidate after its required open_kaishek package gate; Simplified Chinese runtime only.",
+    "Actual reload between independent branches; never continue these fixture branches into economic acceptance.",
+    "Capture physical console input/actions, game/error logs, UI evidence and native SAV/audit/receipt hashes.",
+    "Do not clear guard flags or restore invalid state in the same effect as fire_on_action; state persists through callback+one day.",
+    "Source identity, native state and event dispatch must be demonstrated; no reward from a missing or malformed fixture is not acceptance."
+  ],
+  "same_day_control": [
+    "Finish setup, advance one day, inspect, save guard-ready.",
+    "No dispatch: advance one day and save guard-idle-day1.",
+    "Reload guard-ready, dispatch once, advance one day and save guard-fired-day1.",
+    "Compare fired and idle on the same date; retain all unrelated simulation differences and source native states."
+  ],
+  "branches": {
+    "seven_worlds": [
+      "batch_setup",
+      "batch_inspect",
+      "batch_dispatch"
+    ],
+    "colonizing": [
+      "colonizing_setup",
+      "colonizing_inspect",
+      "colonizing_dispatch"
+    ],
+    "ground_combat": [
+      "ground_setup",
+      "ground_inspect",
+      "ground_dispatch"
+    ],
+    "core_transfer": [
+      "core_backup_setup",
+      "core_transfer_bind",
+      "core_transfer_apply",
+      "core_transfer_inspect",
+      "core_transfer_dispatch"
+    ],
+    "seven_worlds_split": [
+      "batch_split_bind",
+      "batch_setup_active",
+      "batch_setup_devouring",
+      "batch_setup_credit",
+      "batch_setup_destroy",
+      "batch_setup_secondary_core",
+      "batch_setup_artificial",
+      "batch_setup_qzero",
+      "batch_inspect",
+      "batch_dispatch"
+    ]
+  },
+  "sources": [
+    {
+      "id": "E_COLONY",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 397,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "create_colony owner/species; no automatic population guarantee"
+    },
+    {
+      "id": "E_POP",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 384,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "create_pop_group with explicit species and size"
+    },
+    {
+      "id": "E_FLAGS",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 188,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "persistent physical carrier flags"
+    },
+    {
+      "id": "E_PLANET",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 409,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "change_pc; set_planet_size additionally at3599"
+    },
+    {
+      "id": "E_SELECT",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 5368,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "random_system_planet and every_system_planet"
+    },
+    {
+      "id": "E_LOG",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 3902,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "native log effect"
+    },
+    {
+      "id": "E_ON_ACTION",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 2317,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "fire_on_action scopes.from override"
+    },
+    {
+      "id": "E_START",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 1336,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "start_colony starts actual colonization"
+    },
+    {
+      "id": "E_ARMY",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 333,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "create_army in physical target scope"
+    },
+    {
+      "id": "E_TARGET",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 715,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "save_global_event_target_as preserves the scoped object"
+    },
+    {
+      "id": "E_OWNER",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\effects.log",
+      "line": 45,
+      "sha256": "206dbf28fb12ffa3e8a8222d1af48d4562ffd2d4b4fe8edc43fd14d1d4d537fb",
+      "claim": "set_owner on physical planet"
+    },
+    {
+      "id": "S_BIND",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\scopes.log",
+      "line": 86,
+      "sha256": "0ca542261993867fbb5860b806e85f0a445c2e934301cdbaf394f7b9998c3970",
+      "claim": "owner,owner_main_species,species,solar_system supported scopes"
+    },
+    {
+      "id": "T_COUNT",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\triggers.log",
+      "line": 4376,
+      "sha256": "a4a439ff44a3d0de7145b0db88ce18b1eec0c056a3454ea9d22d43f0afac2615",
+      "claim": "count_system_planet count+limit"
+    },
+    {
+      "id": "T_STATE",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\triggers.log",
+      "line": 1276,
+      "sha256": "a4a439ff44a3d0de7145b0db88ce18b1eec0c056a3454ea9d22d43f0afac2615",
+      "claim": "is_colony; is_under_colonization1923; pop_amount used by native colony.4"
+    },
+    {
+      "id": "T_COLONIZE",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\triggers.log",
+      "line": 308,
+      "sha256": "a4a439ff44a3d0de7145b0db88ce18b1eec0c056a3454ea9d22d43f0afac2615",
+      "claim": "can_colonize; is_colonizable1168"
+    },
+    {
+      "id": "T_GROUND",
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\logs\\script_documentation\\triggers.log",
+      "line": 1095,
+      "sha256": "a4a439ff44a3d0de7145b0db88ce18b1eec0c056a3454ea9d22d43f0afac2615",
+      "claim": "has_ground_combat; actual attackers3800/defenders3811"
+    },
+    {
+      "id": "N_COLONY",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\origin_events_3.txt",
+      "line": 335,
+      "sha256": "e1b2ba7ceb98127c5ce245c23daba88550d3fc63fbce414e5baba27a83b686a2",
+      "claim": "create_colony then actual100 create_pop_group"
+    },
+    {
+      "id": "N_ON_ACTION",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_effects\\nomads_effects.txt",
+      "line": 4724,
+      "sha256": "b42b9f72f341e1e1a6bb624cf5d438677893c1e47bc0f4040844f15ac5e7ba96",
+      "claim": "native Carrier planet-destruction callback explicit FROM"
+    },
+    {
+      "id": "N_START",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\origin_events_5.txt",
+      "line": 742,
+      "sha256": "6cec34a55027847068fac9c290196c4f664303eaaa3523c80cb54f984580c819",
+      "claim": "origin.7320 actual start_colony owner/species"
+    },
+    {
+      "id": "N_ARMY",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\colony_events_1.txt",
+      "line": 190,
+      "sha256": "9ec80a0a7c9dee50fce793946685d05f215fb884589c5d700bf94929fd94205b",
+      "claim": "colony.4 creates hostile armies directly on a colony"
+    },
+    {
+      "id": "A_MACHINE",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\armies\\01_assault_armies.txt",
+      "line": 785,
+      "sha256": "660864721b4cd7d78511e17dc03d0136c02954fb611fd664e49365992f079958",
+      "claim": "machine_assault_1 type, Machine/trait_machine_unit,tech_assault_armies"
+    },
+    {
+      "id": "A_DEFENSE",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\armies\\00_defense_armies.txt",
+      "line": 10,
+      "sha256": "414305d7435cb3c3a530ee58ddcf4c05950269ddf9e3a4bdab085cc5850bfc2f",
+      "claim": "organic defense_army type"
+    },
+    {
+      "id": "N_TRANSFER",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\00_on_actions.txt",
+      "line": 3369,
+      "sha256": "7693e64fbe974f37db0c68969d10f7bdeec585ce59ca497b5e27ecd69ff8f306",
+      "claim": "native on_colony_transfer new/old owners"
+    },
+    {
+      "id": "MOD_CORE",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\events\\eep_events.txt",
+      "line": 13,
+      "sha256": "e4be49df425db8dd4c4919a788c38ef2d4075466a9da946e6dc35a6c47cf55a1",
+      "claim": "eep.3 court sync only; eep_initialize guarded by initialized; only migration rebinds"
+    },
+    {
+      "id": "UI_CONSOLE",
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\interface\\console.gui",
+      "line": 22,
+      "sha256": "6775198bdb56f2d2ec09ab70cbffd295878bf7c9b6dc26d8346e2beb2b16647d",
+      "claim": "console_edit has no explicit max_characters/max_text_length; this does not prove an unlimited native engine input size"
+    },
+    {
+      "id": "MOD_INIT",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\scripted_effects\\eep_effects.txt",
+      "line": 2,
+      "sha256": "e86c5e40c01977b0e215408dee8fe6cfb419f9bad8d4bda08aed3155b1533bb6",
+      "claim": "Only NOT eep_initialized binds the initial capital as physical core"
+    },
+    {
+      "id": "MOD_MIGRATE",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\scripted_effects\\eep_migration_effects.txt",
+      "line": 2,
+      "sha256": "7519ed6f2f3502da5c1a1c84261353d5be851e0345ac6d50761c19cab5219cfe",
+      "claim": "Explicit migration is the production rebinding effect"
+    },
+    {
+      "id": "MOD_DECISION",
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\decisions\\eep_decisions.txt",
+      "line": 50,
+      "sha256": "ce9e68d9b0d425704d6b278ac5c1c6a010955600d30269dc5656c2eb70eca2e3",
+      "claim": "Explicit player decision is the only production call to eep_migrate_core"
+    }
+  ],
+  "static_validation": {
+    "scope": "JSON/ASCII/shape/source-reference and open_kaishek lossless P syntax only; runtime remains PENDING.",
+    "parser_jar": "D:\\workspace\\open_kaishek\\kaishek-cli\\target\\kaishek-cli-0.1.0-SNAPSHOT.jar",
+    "parser_jar_sha256": "6ac143ebf03f3e1a041dff01b2d808e60de8e289d18cebf9855682f0a80b6d82",
+    "parser_exit_code": 0,
+    "commands_parsed": 22,
+    "all_commands_ascii_single_line": true,
+    "no_implicit_root_prev": true,
+    "no_guard_cleanup_or_production_core_rebind": true,
+    "parser_results": [
+      {
+        "id": "batch_split_bind",
+        "line": 1,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 787,
+          "tokens": 259,
+          "blocks": 14,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup_active",
+        "line": 2,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 698,
+          "tokens": 216,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup_devouring",
+        "line": 3,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 711,
+          "tokens": 216,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup_credit",
+        "line": 4,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 703,
+          "tokens": 216,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup_destroy",
+        "line": 5,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 707,
+          "tokens": 216,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup_secondary_core",
+        "line": 6,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 720,
+          "tokens": 216,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup_artificial",
+        "line": 7,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 725,
+          "tokens": 216,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup_qzero",
+        "line": 8,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 797,
+          "tokens": 237,
+          "blocks": 9,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_setup",
+        "line": 9,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 4562,
+          "tokens": 1332,
+          "blocks": 66,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_inspect",
+        "line": 10,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 2546,
+          "tokens": 909,
+          "blocks": 51,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "batch_dispatch",
+        "line": 11,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 913,
+          "tokens": 293,
+          "blocks": 16,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "colonizing_setup",
+        "line": 12,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 1286,
+          "tokens": 403,
+          "blocks": 20,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "colonizing_inspect",
+        "line": 13,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 438,
+          "tokens": 166,
+          "blocks": 11,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "colonizing_dispatch",
+        "line": 14,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 578,
+          "tokens": 170,
+          "blocks": 10,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "ground_setup",
+        "line": 15,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 1551,
+          "tokens": 458,
+          "blocks": 22,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "ground_inspect",
+        "line": 16,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 673,
+          "tokens": 197,
+          "blocks": 12,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "ground_dispatch",
+        "line": 17,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 862,
+          "tokens": 248,
+          "blocks": 15,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "core_backup_setup",
+        "line": 18,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 1177,
+          "tokens": 359,
+          "blocks": 17,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "core_transfer_bind",
+        "line": 19,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 930,
+          "tokens": 253,
+          "blocks": 12,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "core_transfer_apply",
+        "line": 20,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 1013,
+          "tokens": 250,
+          "blocks": 11,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "core_transfer_inspect",
+        "line": 21,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 788,
+          "tokens": 192,
+          "blocks": 8,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      },
+      {
+        "id": "core_transfer_dispatch",
+        "line": 22,
+        "exitCode": 0,
+        "result": {
+          "status": "PARSED",
+          "bytes": 1133,
+          "tokens": 284,
+          "blocks": 13,
+          "diagnostics": [],
+          "roundTrip": true
+        }
+      }
+    ],
+    "all_seven_split_setups_less_than_1000": true
+  },
+  "commands": [
+    {
+      "id": "batch_split_bind",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } event_target:eep_core0 = { solar_system = { count_system_planet = { count = 7 limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } } } } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } log = \"EEP_GUARD_SPLIT_BINDINGS_READY\" } else = { log = \"EEP_GUARD_SPLIT_BASE_INVALID_OR_ALREADY_PREPARED\" }",
+      "prerequisites": [
+        "Actual reload to an unpolluted pre-fire base; choose this split route instead of batch_setup.",
+        "Mother0/Core0 still bind actor0 fleet159/core physical2 and actor is Machine with core_available=yes.",
+        "Seven natural empty unreserved candidates exist in system13 and all seven case aliases are absent."
+      ],
+      "acceptance": [
+        "READY marker, actual actor/species helper aliases match Mother.owner and Mother.owner_main_species.",
+        "This command creates no colony, changes no core binding and fires no callback.",
+        "For each subsequent split command pause and confirm the new unique target in a native SAV before proceeding."
+      ],
+      "sources": [
+        "S_BIND",
+        "T_COUNT",
+        "E_TARGET",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 780,
+      "command_sha256": "80ffa2da7812fcd24bafe9cf655aaf3ab41e17078bb4254eda5eba3cab2280b7"
+    },
+    {
+      "id": "batch_setup_active",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_active save_global_event_target_as = eep_guard_active change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_ACTIVE\" log = \"EEP_GUARD_SPLIT_ACTIVE_REQUESTED\" } } }",
+      "prerequisites": [
+        "batch_split_bind READY and actual saved helper aliases match the current Mother actor/species.",
+        "The active alias does not already exist; at least one eligible unreserved empty world remains.",
+        "Do not run batch_setup or repeat this command in the same branch; keep the actor/core bindings unchanged."
+      ],
+      "acceptance": [
+        "Exactly one new physical target eep_guard_active and populated actor-owned colony; it differs from every previously reserved target.",
+        "Dedicated active rejection state persists and original physical core2/binding is unchanged.",
+        "The complete submitted console input must be preserved; this command is 691 ASCII characters but native length handling still requires observation.",
+        "No callback is fired and no guard flag is cleared; only after all seven native targets are confirmed use batch_inspect/dispatch."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 691,
+      "command_sha256": "c53ff8c427effaf657010806d166c01e6a1af38afee709b1dfcaa95f9b2f593c"
+    },
+    {
+      "id": "batch_setup_devouring",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = being_devoured save_global_event_target_as = eep_guard_devouring change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_DEVOURING\" log = \"EEP_GUARD_SPLIT_DEVOURING_REQUESTED\" } } }",
+      "prerequisites": [
+        "batch_split_bind READY and actual saved helper aliases match the current Mother actor/species.",
+        "The devouring alias does not already exist; at least one eligible unreserved empty world remains.",
+        "Do not run batch_setup or repeat this command in the same branch; keep the actor/core bindings unchanged."
+      ],
+      "acceptance": [
+        "Exactly one new physical target eep_guard_devouring and populated actor-owned colony; it differs from every previously reserved target.",
+        "Dedicated devouring rejection state persists and original physical core2/binding is unchanged.",
+        "The complete submitted console input must be preserved; this command is 704 ASCII characters but native length handling still requires observation.",
+        "No callback is fired and no guard flag is cleared; only after all seven native targets are confirmed use batch_inspect/dispatch."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 704,
+      "command_sha256": "e4262c4964416fb582cbddf6f53f367f40b2238642e02ff9e6c9db9cedb4f671"
+    },
+    {
+      "id": "batch_setup_credit",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_credit_done save_global_event_target_as = eep_guard_credit change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_CREDIT\" log = \"EEP_GUARD_SPLIT_CREDIT_REQUESTED\" } } }",
+      "prerequisites": [
+        "batch_split_bind READY and actual saved helper aliases match the current Mother actor/species.",
+        "The credit alias does not already exist; at least one eligible unreserved empty world remains.",
+        "Do not run batch_setup or repeat this command in the same branch; keep the actor/core bindings unchanged."
+      ],
+      "acceptance": [
+        "Exactly one new physical target eep_guard_credit and populated actor-owned colony; it differs from every previously reserved target.",
+        "Dedicated credit rejection state persists and original physical core2/binding is unchanged.",
+        "The complete submitted console input must be preserved; this command is 696 ASCII characters but native length handling still requires observation.",
+        "No callback is fired and no guard flag is cleared; only after all seven native targets are confirmed use batch_inspect/dispatch."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 696,
+      "command_sha256": "2a22311759e836716205e41a3680ed28ed41eec32ae448f5d478f465400a35fd"
+    },
+    {
+      "id": "batch_setup_destroy",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_destroy_done save_global_event_target_as = eep_guard_destroy change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_DESTROY\" log = \"EEP_GUARD_SPLIT_DESTROY_REQUESTED\" } } }",
+      "prerequisites": [
+        "batch_split_bind READY and actual saved helper aliases match the current Mother actor/species.",
+        "The destroy alias does not already exist; at least one eligible unreserved empty world remains.",
+        "Do not run batch_setup or repeat this command in the same branch; keep the actor/core bindings unchanged."
+      ],
+      "acceptance": [
+        "Exactly one new physical target eep_guard_destroy and populated actor-owned colony; it differs from every previously reserved target.",
+        "Dedicated destroy rejection state persists and original physical core2/binding is unchanged.",
+        "The complete submitted console input must be preserved; this command is 700 ASCII characters but native length handling still requires observation.",
+        "No callback is fired and no guard flag is cleared; only after all seven native targets are confirmed use batch_inspect/dispatch."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 700,
+      "command_sha256": "c5ddddfe87f776721c1552166a9672b6931c76d995c952d06f35eb3d751b9e6b"
+    },
+    {
+      "id": "batch_setup_secondary_core",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_core save_global_event_target_as = eep_guard_secondary_core change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_SECONDARY_CORE\" log = \"EEP_GUARD_SPLIT_SECONDARY_CORE_REQUESTED\" } } }",
+      "prerequisites": [
+        "batch_split_bind READY and actual saved helper aliases match the current Mother actor/species.",
+        "The secondary_core alias does not already exist; at least one eligible unreserved empty world remains.",
+        "Do not run batch_setup or repeat this command in the same branch; keep the actor/core bindings unchanged."
+      ],
+      "acceptance": [
+        "Exactly one new physical target eep_guard_secondary_core and populated actor-owned colony; it differs from every previously reserved target.",
+        "Dedicated secondary_core rejection state persists and original physical core2/binding is unchanged.",
+        "The complete submitted console input must be preserved; this command is 713 ASCII characters but native length handling still requires observation.",
+        "No callback is fired and no guard flag is cleared; only after all seven native targets are confirmed use batch_inspect/dispatch."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 713,
+      "command_sha256": "841f6dfab0cc48e497d66f9c37764edc41d2168d92138990ed7412b2ad81bd26"
+    },
+    {
+      "id": "batch_setup_artificial",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_guard_case_artificial save_global_event_target_as = eep_guard_artificial change_pc = pc_habitat clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_ARTIFICIAL\" log = \"EEP_GUARD_SPLIT_ARTIFICIAL_REQUESTED\" } } }",
+      "prerequisites": [
+        "batch_split_bind READY and actual saved helper aliases match the current Mother actor/species.",
+        "The artificial alias does not already exist; at least one eligible unreserved empty world remains.",
+        "Do not run batch_setup or repeat this command in the same branch; keep the actor/core bindings unchanged."
+      ],
+      "acceptance": [
+        "Exactly one new physical target eep_guard_artificial and populated actor-owned colony; it differs from every previously reserved target.",
+        "Dedicated artificial rejection state persists and original physical core2/binding is unchanged.",
+        "The complete submitted console input must be preserved; this command is 718 ASCII characters but native length handling still requires observation.",
+        "No callback is fired and no guard flag is cleared; only after all seven native targets are confirmed use batch_inspect/dispatch."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 718,
+      "command_sha256": "f1c2c587b3ed609ce15f10da3de3e2baf99d00ce910c9e7bd2f10095fe6b1307"
+    },
+    {
+      "id": "batch_setup_qzero",
+      "status": "PENDING",
+      "branch": "seven_worlds_split",
+      "command": "effect event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_guard_case_qzero save_global_event_target_as = eep_guard_qzero change_pc = pc_machine clear_deposits = yes set_planet_size = 2 add_deposit = d_lithoid_devastation add_deposit = d_lithoid_devastation create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_QZERO\" log = \"EEP_GUARD_SPLIT_QZERO_REQUESTED\" } } }",
+      "prerequisites": [
+        "batch_split_bind READY and actual saved helper aliases match the current Mother actor/species.",
+        "The qzero alias does not already exist; at least one eligible unreserved empty world remains.",
+        "Do not run batch_setup or repeat this command in the same branch; keep the actor/core bindings unchanged."
+      ],
+      "acceptance": [
+        "Exactly one new physical target eep_guard_qzero and populated actor-owned colony; it differs from every previously reserved target.",
+        "Dedicated qzero rejection state persists and original physical core2/binding is unchanged.",
+        "The complete submitted console input must be preserved; this command is 790 ASCII characters but native length handling still requires observation.",
+        "No callback is fired and no guard flag is cleared; only after all seven native targets are confirmed use batch_inspect/dispatch."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "UI_CONSOLE"
+      ],
+      "runtime_result": null,
+      "command_chars": 790,
+      "command_sha256": "22bd57f430778b936c8c294bdccf5914793543c368910fef54e63d91b1cacf7f"
+    },
+    {
+      "id": "batch_setup",
+      "status": "PENDING",
+      "branch": "seven_worlds",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } NOT = { exists = event_target:eep_guard_active } NOT = { exists = event_target:eep_guard_devouring } NOT = { exists = event_target:eep_guard_credit } NOT = { exists = event_target:eep_guard_destroy } NOT = { exists = event_target:eep_guard_secondary_core } NOT = { exists = event_target:eep_guard_artificial } NOT = { exists = event_target:eep_guard_qzero } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } event_target:eep_core0 = { solar_system = { if = { limit = { count_system_planet = { count = 7 limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } NOT = { has_carrier_flag = eep_guard_batch } } } } every_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } NOT = { has_carrier_flag = eep_guard_batch } } set_carrier_flag = eep_guard_candidate } random_system_planet = { limit = { has_carrier_flag = eep_guard_candidate NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_active save_global_event_target_as = eep_guard_active } random_system_planet = { limit = { has_carrier_flag = eep_guard_candidate NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = being_devoured save_global_event_target_as = eep_guard_devouring } random_system_planet = { limit = { has_carrier_flag = eep_guard_candidate NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_credit_done save_global_event_target_as = eep_guard_credit } random_system_planet = { limit = { has_carrier_flag = eep_guard_candidate NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_destroy_done save_global_event_target_as = eep_guard_destroy } random_system_planet = { limit = { has_carrier_flag = eep_guard_candidate NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_core save_global_event_target_as = eep_guard_secondary_core } random_system_planet = { limit = { has_carrier_flag = eep_guard_candidate NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_guard_case_artificial save_global_event_target_as = eep_guard_artificial } random_system_planet = { limit = { has_carrier_flag = eep_guard_candidate NOT = { has_carrier_flag = eep_guard_reserved } } set_carrier_flag = eep_guard_reserved set_carrier_flag = eep_guard_batch set_carrier_flag = eep_guard_case_qzero save_global_event_target_as = eep_guard_qzero } every_system_planet = { limit = { has_carrier_flag = eep_guard_batch } change_pc = pc_machine clear_deposits = yes if = { limit = { has_carrier_flag = eep_guard_case_artificial } change_pc = pc_habitat } if = { limit = { has_carrier_flag = eep_guard_case_qzero } set_planet_size = 2 add_deposit = d_lithoid_devastation add_deposit = d_lithoid_devastation } create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } } event_target:eep_guard_active = { set_name = \"EEP_GUARD_ACTIVE\" } event_target:eep_guard_devouring = { set_name = \"EEP_GUARD_DEVOURING\" } event_target:eep_guard_credit = { set_name = \"EEP_GUARD_CREDIT\" } event_target:eep_guard_destroy = { set_name = \"EEP_GUARD_DESTROY\" } event_target:eep_guard_secondary_core = { set_name = \"EEP_GUARD_SECONDARY_CORE\" } event_target:eep_guard_artificial = { set_name = \"EEP_GUARD_ARTIFICIAL\" } event_target:eep_guard_qzero = { set_name = \"EEP_GUARD_QZERO\" } log = \"EEP_GUARD_SETUP_SEVEN_REQUESTED\" } else = { log = \"EEP_GUARD_SETUP_NOT_ENOUGH_EMPTY_WORLDS\" } } } } else = { log = \"EEP_GUARD_SETUP_BASE_INVALID_OR_ALREADY_PREPARED\" }",
+      "command_chars": 4555,
+      "prerequisites": [
+        "Load a fresh unpolluted base from run 20261019T092935Z, not an economic checkpoint to be continued.",
+        "Mother0 is country0 fleet159 and Core0 is physical planet2 in system13; no seven case aliases exist.",
+        "System13 has the seven empty natural objects 1/3/4/5/6/7/8; all are uncolonized and not reserved.",
+        "The actor is the qualified Machine empire with its original available core; keep paused throughout setup.",
+        "4555-character console input acceptance is NOT calibrated. Prefer seven_worlds_split until actual native length acceptance is demonstrated."
+      ],
+      "acceptance": [
+        "Exactly seven distinct physical planet targets and seven populated actor-owned colonies are established.",
+        "Each target retains its dedicated invalid condition; artificial is actually pc_habitat; qzero has size2 and two devastation deposit entities.",
+        "Actor/species aliases come directly from Mother.owner and Mother.owner_main_species; production core binding remains planet2.",
+        "Creation may alter mining stations, deposits, names and fixture economy; none of this certifies economic behavior.",
+        "Advance one day, inspect and save guard-ready; no callback is fired by this command."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND",
+        "T_COUNT",
+        "N_COLONY"
+      ],
+      "runtime_result": null,
+      "command_sha256": "e4f4142237ba958da3e1d046de983cfd2502264c1385229d41e28299e777ecad",
+      "native_console_length_calibrated": false
+    },
+    {
+      "id": "batch_inspect",
+      "status": "PENDING",
+      "branch": "seven_worlds",
+      "command": "effect if = { limit = { exists = event_target:eep_guard_active } event_target:eep_guard_active = { if = { limit = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner has_carrier_flag = eep_active } log = \"EEP_GUARD_READY_ACTIVE\" } else = { log = \"EEP_GUARD_INVALID_ACTIVE\" } } } else = { log = \"EEP_GUARD_MISSING_ACTIVE\" } if = { limit = { exists = event_target:eep_guard_devouring } event_target:eep_guard_devouring = { if = { limit = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner has_carrier_flag = being_devoured } log = \"EEP_GUARD_READY_DEVOURING\" } else = { log = \"EEP_GUARD_INVALID_DEVOURING\" } } } else = { log = \"EEP_GUARD_MISSING_DEVOURING\" } if = { limit = { exists = event_target:eep_guard_credit } event_target:eep_guard_credit = { if = { limit = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner has_carrier_flag = eep_credit_done } log = \"EEP_GUARD_READY_CREDIT\" } else = { log = \"EEP_GUARD_INVALID_CREDIT\" } } } else = { log = \"EEP_GUARD_MISSING_CREDIT\" } if = { limit = { exists = event_target:eep_guard_destroy } event_target:eep_guard_destroy = { if = { limit = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner has_carrier_flag = eep_destroy_done } log = \"EEP_GUARD_READY_DESTROY\" } else = { log = \"EEP_GUARD_INVALID_DESTROY\" } } } else = { log = \"EEP_GUARD_MISSING_DESTROY\" } if = { limit = { exists = event_target:eep_guard_secondary_core } event_target:eep_guard_secondary_core = { if = { limit = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner has_carrier_flag = eep_core } log = \"EEP_GUARD_READY_SECONDARY_CORE\" } else = { log = \"EEP_GUARD_INVALID_SECONDARY_CORE\" } } } else = { log = \"EEP_GUARD_MISSING_SECONDARY_CORE\" } if = { limit = { exists = event_target:eep_guard_artificial } event_target:eep_guard_artificial = { if = { limit = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner is_artificial = yes } log = \"EEP_GUARD_READY_ARTIFICIAL\" } else = { log = \"EEP_GUARD_INVALID_ARTIFICIAL\" } } } else = { log = \"EEP_GUARD_MISSING_ARTIFICIAL\" } if = { limit = { exists = event_target:eep_guard_qzero } event_target:eep_guard_qzero = { if = { limit = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner planet_size = 2 NOT = { planet_size > value:eep_damage_count } } log = \"EEP_GUARD_READY_QZERO\" } else = { log = \"EEP_GUARD_INVALID_QZERO\" } } } else = { log = \"EEP_GUARD_MISSING_QZERO\" }",
+      "command_chars": 2539,
+      "prerequisites": [
+        "Run batch_setup first and verify all seven persisted aliases, Mother and core in a native SAV."
+      ],
+      "acceptance": [
+        "Seven READY markers, no INVALID/MISSING markers; independently inspect actual planet, owner, population and deposit entities in the SAV.",
+        "Logging does not grant guard acceptance; preserve underlying states and source identities."
+      ],
+      "sources": [
+        "E_LOG",
+        "T_STATE",
+        "S_BIND"
+      ],
+      "runtime_result": null,
+      "command_sha256": "3b630126c968c1cac3918334025fc4e5951f5573350c988679673b54329d491b"
+    },
+    {
+      "id": "batch_dispatch",
+      "status": "PENDING",
+      "branch": "seven_worlds",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } } event_target:eep_core0 = { solar_system = { every_system_planet = { limit = { has_carrier_flag = eep_guard_batch } if = { limit = { OR = { has_carrier_flag = eep_active has_carrier_flag = being_devoured has_carrier_flag = eep_credit_done has_carrier_flag = eep_destroy_done has_carrier_flag = eep_core is_artificial = yes NOT = { planet_size > value:eep_damage_count } } } log = \"EEP_GUARD_BATCH_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_GUARD_STATE_MISSING_NOT_DISPATCHED\" } } } } } else = { log = \"EEP_GUARD_DISPATCH_BASE_INVALID\" }",
+      "command_chars": 906,
+      "prerequisites": [
+        "All seven invalid states persist in guard-ready; no state is cleared.",
+        "Save an idle +1-day branch, reload guard-ready, then execute this command while paused."
+      ],
+      "acceptance": [
+        "Seven dispatch markers, no STATE_MISSING/BASE_INVALID or scope/on-action errors.",
+        "Every callback receives THIS as its own physical planet and FROM exactly Mother0, not the selected ROOT.",
+        "Advance one day and save guard-fired-day1; inspect all seven states and compare against same-date guard-idle-day1.",
+        "EEP C/G/D/made/worlds and settlement totals do not increase.",
+        "Both native crisis objectives worlds/empires have zero reward delta.",
+        "No extra core population/capacity or hardware reward versus a same-date idle control.",
+        "No guard flag is cleared before evaluation; no source changes to pc_shattered."
+      ],
+      "sources": [
+        "E_ON_ACTION",
+        "N_ON_ACTION",
+        "E_SELECT",
+        "T_STATE"
+      ],
+      "runtime_result": null,
+      "command_sha256": "b1ce7fe6a82bc7c088c47ea8b5c8e56e4f4941dcb3a32bf35cb87c44573456c4"
+    },
+    {
+      "id": "colonizing_setup",
+      "status": "PENDING",
+      "branch": "colonizing",
+      "command": "effect clear_global_event_target = eep_guard_colonizing if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } NOT = { has_carrier_flag = eep_guard_batch } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_guard_colonizing change_pc = pc_machine clear_deposits = yes if = { limit = { is_colonizable = yes can_colonize = { who = event_target:eep_guard_actor status = yes } } start_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } set_name = \"EEP_GUARD_COLONIZING\" log = \"EEP_GUARD_COLONIZATION_REQUESTED\" } else = { log = \"EEP_GUARD_COLONIZATION_NOT_ALLOWED\" } } } } } else = { log = \"EEP_GUARD_COLONIZING_BASE_INVALID\" }",
+      "command_chars": 1279,
+      "prerequisites": [
+        "Reload an unpolluted base independently of the seven-world batch.",
+        "Actor is Machine; at least one natural empty unreserved nonstar object exists in Core0 system.",
+        "The selected converted pc_machine world must pass native is_colonizable/can_colonize before start_colony."
+      ],
+      "acceptance": [
+        "An actual colonization process, not a planet flag, is established and is_under_colonization=yes in the engine/SAV.",
+        "No create_colony, population injection or add_colony_progress=1 is used in this command.",
+        "Save the still-colonizing state before dispatch; if state is absent, the fixture is not established."
+      ],
+      "sources": [
+        "E_START",
+        "N_START",
+        "T_COLONIZE",
+        "E_PLANET",
+        "E_SELECT",
+        "S_BIND"
+      ],
+      "runtime_result": null,
+      "command_sha256": "05457591fe5f888dd39dea0a1013c49c35ec5f5f08b91e7bda6f74e768e563ee"
+    },
+    {
+      "id": "colonizing_inspect",
+      "status": "PENDING",
+      "branch": "colonizing",
+      "command": "effect if = { limit = { exists = event_target:eep_guard_colonizing } event_target:eep_guard_colonizing = { if = { limit = { is_under_colonization = yes } log = \"EEP_GUARD_COLONIZING_TRUE\" } else = { log = \"EEP_GUARD_COLONIZING_FALSE\" } if = { limit = { is_colony = yes } log = \"EEP_GUARD_COLONIZING_IS_COLONY_TRUE\" } else = { log = \"EEP_GUARD_COLONIZING_IS_COLONY_FALSE\" } } } else = { log = \"EEP_GUARD_COLONIZING_TARGET_MISSING\" }",
+      "command_chars": 431,
+      "prerequisites": [
+        "Run colonizing_setup; if needed allow one native tick then pause."
+      ],
+      "acceptance": [
+        "COLONIZING_TRUE and actual progress/owner must be recorded; IS_COLONY is separately recorded without assuming it is true.",
+        "If is_colony=no, this tests combined rejection of a genuine colonizing target, not isolation of only one predicate."
+      ],
+      "sources": [
+        "E_LOG",
+        "T_STATE"
+      ],
+      "runtime_result": null,
+      "command_sha256": "8a7be640baa9cb5cb665c6ae6a9774b2b62ad292b8e9c2793941c06289352f9f"
+    },
+    {
+      "id": "colonizing_dispatch",
+      "status": "PENDING",
+      "branch": "colonizing",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_colonizing } event_target:eep_guard_colonizing = { if = { limit = { is_under_colonization = yes } log = \"EEP_GUARD_COLONIZING_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_GUARD_COLONIZING_NOT_READY_NOT_DISPATCHED\" } } } else = { log = \"EEP_GUARD_COLONIZING_BASE_OR_TARGET_MISSING\" }",
+      "command_chars": 571,
+      "prerequisites": [
+        "Native is_under_colonization=yes has been observed and saved.",
+        "Keep the process ongoing until callback evaluation and after-save; do not complete it."
+      ],
+      "acceptance": [
+        "One dispatch marker with FROM Mother0; after one day target remains colonizing and no settlement markers appear.",
+        "EEP C/G/D/made/worlds and settlement totals do not increase.",
+        "Both native crisis objectives worlds/empires have zero reward delta.",
+        "No extra core population/capacity or hardware reward versus a same-date idle control.",
+        "No guard flag is cleared before evaluation; no source changes to pc_shattered."
+      ],
+      "sources": [
+        "E_ON_ACTION",
+        "N_ON_ACTION",
+        "T_STATE"
+      ],
+      "runtime_result": null,
+      "command_sha256": "19de0c8e961a2e00fac0702a3749594aef2651e1de3c8dc92632e904e4500a9f"
+    },
+    {
+      "id": "ground_setup",
+      "status": "PENDING",
+      "branch": "ground_combat",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } exists = event_target:eep_colossus_probe_target event_target:eep_mothership0.owner = { has_technology = tech_assault_armies } event_target:eep_colossus_probe_target = { is_colony = yes is_artificial = no has_ground_combat = no exists = owner owner = { NOT = { is_machine_empire = yes } is_at_war_with = event_target:eep_mothership0.owner } NOT = { has_carrier_flag = eep_core } NOT = { has_planet_flag = eep_active } NOT = { has_planet_flag = being_devoured } NOT = { has_planet_flag = eep_credit_done } NOT = { has_planet_flag = eep_destroy_done } } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } event_target:eep_colossus_probe_target = { save_global_event_target_as = eep_guard_ground_target owner = { save_global_event_target_as = eep_guard_defender } while = { count = 2 create_army = { name = \"EEP_GUARD_DEFENDER\" owner = event_target:eep_guard_defender species = event_target:eep_guard_defender.species type = defense_army } } create_army = { name = \"EEP_GUARD_ATTACKER\" owner = event_target:eep_guard_actor species = event_target:eep_guard_species type = machine_assault_1 } log = \"EEP_GUARD_GROUND_ARMIES_CREATED\" } } else = { log = \"EEP_GUARD_GROUND_BASE_INVALID\" }",
+      "command_chars": 1544,
+      "prerequisites": [
+        "Reload a fresh pre-fire base; source target17 still exists as an organic enemy colony at actual war with Mother.owner.",
+        "The qualified Machine actor has tech_assault_armies; target is natural, not a core, devouring or settled and has no ground combat before setup.",
+        "This branch is only a ground-combat rejection fixture; its armies do not satisfy or replace the separate no-army real-fire case."
+      ],
+      "acceptance": [
+        "Two actual organic defense_army units and one actor machine_assault_1 exist at the target; owner/species are explicitly bound.",
+        "The engine must establish real ground combat with matching attacking/defending owners. Army creation alone is not an accepted ground-combat state.",
+        "If not established at once, pause after one native tick and inspect; if still absent use separate real-UI landing fallback, not invented land_armies script."
+      ],
+      "sources": [
+        "E_ARMY",
+        "N_ARMY",
+        "A_MACHINE",
+        "A_DEFENSE",
+        "S_BIND"
+      ],
+      "runtime_result": null,
+      "command_sha256": "534760a9077aa1a0361bc5d7cc68d74b0e75d806ef661dd6974e455eacac4b82"
+    },
+    {
+      "id": "ground_inspect",
+      "status": "PENDING",
+      "branch": "ground_combat",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_ground_target exists = event_target:eep_guard_defender } event_target:eep_guard_ground_target = { if = { limit = { has_ground_combat = yes any_ground_combat_attacker = { owner = { is_same_value = event_target:eep_mothership0.owner } } any_ground_combat_defender = { owner = { is_same_value = event_target:eep_guard_defender } } } log = \"EEP_GUARD_GROUND_TRUE_WITH_BOTH_SIDES\" } else = { log = \"EEP_GUARD_GROUND_NOT_ESTABLISHED\" } } } else = { log = \"EEP_GUARD_GROUND_TARGET_OR_DEFENDER_MISSING\" }",
+      "command_chars": 666,
+      "prerequisites": [
+        "Run ground_setup and keep paused at a point before victory/occupation."
+      ],
+      "acceptance": [
+        "Engine has_ground_combat=yes and actual attacker/defender ownership match actor and saved defender.",
+        "Save a before at this real ongoing state; a missing battle or already completed occupation is a fixture failure."
+      ],
+      "sources": [
+        "E_LOG",
+        "T_GROUND",
+        "S_BIND"
+      ],
+      "runtime_result": null,
+      "command_sha256": "957d417db49bb7400a0adbeb759fcbb5402ff6cbe85345929399600374bf1d84"
+    },
+    {
+      "id": "ground_dispatch",
+      "status": "PENDING",
+      "branch": "ground_combat",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_ground_target exists = event_target:eep_guard_defender } event_target:eep_guard_ground_target = { if = { limit = { has_ground_combat = yes any_ground_combat_attacker = { owner = { is_same_value = event_target:eep_mothership0.owner } } any_ground_combat_defender = { owner = { is_same_value = event_target:eep_guard_defender } } owner = { is_same_value = event_target:eep_guard_defender } } log = \"EEP_GUARD_GROUND_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } else = { log = \"EEP_GUARD_GROUND_NOT_READY_NOT_DISPATCHED\" } } } else = { log = \"EEP_GUARD_GROUND_TARGET_OR_DEFENDER_MISSING\" }",
+      "command_chars": 855,
+      "prerequisites": [
+        "Real ground combat with both correct sides has been saved; enemy owner and battle remain valid.",
+        "Do not remove armies, end combat or transfer owner before callback evaluation."
+      ],
+      "acceptance": [
+        "One dispatch marker with FROM Mother0; no EEP settlement.",
+        "After one day battle must still be ongoing for the persistent-state case; any battle victory/reward/occupation must be separately recorded.",
+        "EEP C/G/D/made/worlds and settlement totals do not increase.",
+        "Both native crisis objectives worlds/empires have zero reward delta.",
+        "No extra core population/capacity or hardware reward versus a same-date idle control.",
+        "No guard flag is cleared before evaluation; no source changes to pc_shattered."
+      ],
+      "sources": [
+        "E_ON_ACTION",
+        "N_ON_ACTION",
+        "T_GROUND"
+      ],
+      "runtime_result": null,
+      "command_sha256": "5c486925d7e25a3e093c94b7ca3bc4446c9eaeb482a4ad576fb8e0c48f14901f"
+    },
+    {
+      "id": "core_backup_setup",
+      "status": "PENDING",
+      "branch": "core_transfer",
+      "command": "effect clear_global_event_target = eep_guard_backup if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } } event_target:eep_mothership0 = { owner = { save_global_event_target_as = eep_guard_actor } owner_main_species = { save_global_event_target_as = eep_guard_species } } event_target:eep_core0 = { solar_system = { random_system_planet = { limit = { is_colony = no is_under_colonization = no is_star = no is_artificial = no NOT = { has_carrier_flag = eep_core } NOT = { has_carrier_flag = eep_guard_reserved } NOT = { has_carrier_flag = eep_guard_batch } } set_carrier_flag = eep_guard_reserved save_global_event_target_as = eep_guard_backup change_pc = pc_machine clear_deposits = yes create_colony = { owner = event_target:eep_guard_actor species = event_target:eep_guard_species } create_pop_group = { species = event_target:eep_guard_species size = 100 } set_name = \"EEP_GUARD_BACKUP\" log = \"EEP_GUARD_BACKUP_REQUESTED\" } } } } else = { log = \"EEP_GUARD_BACKUP_BASE_INVALID\" }",
+      "command_chars": 1170,
+      "prerequisites": [
+        "Reload an unpolluted pre-fire base independently of the seven-world batch.",
+        "Mother and original core are still actor-owned and core_available=yes; at least one natural empty unreserved nonstar object exists."
+      ],
+      "acceptance": [
+        "Advance one day, save and verify actual backup colony with 100 created actor-main-species pops and owner actor.",
+        "Actor has at least the physical original core and a distinct populated backup; eep_initialized remains and no core alias is changed.",
+        "Do not transfer core if backup is absent/empty/dying or merely has owner without a real colony."
+      ],
+      "sources": [
+        "E_COLONY",
+        "E_POP",
+        "E_FLAGS",
+        "E_SELECT",
+        "S_BIND",
+        "N_COLONY",
+        "MOD_INIT",
+        "MOD_MIGRATE",
+        "MOD_DECISION"
+      ],
+      "runtime_result": null,
+      "command_sha256": "1f4b757abf1837828936cd1eedd7a1150cf5f95ca1e10a78afd34e3131959dc7"
+    },
+    {
+      "id": "core_transfer_bind",
+      "status": "PENDING",
+      "branch": "core_transfer",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } exists = event_target:eep_guard_backup event_target:eep_guard_backup = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner NOT = { is_same_value = event_target:eep_core0 } } exists = event_target:eep_colossus_probe_target event_target:eep_colossus_probe_target = { is_colony = yes exists = owner owner = { is_at_war_with = event_target:eep_mothership0.owner } } } event_target:eep_core0 = { save_global_event_target_as = eep_guard_original_core } event_target:eep_colossus_probe_target = { owner = { save_global_event_target_as = eep_guard_receiver } } log = \"EEP_GUARD_CORE_BINDINGS_SAVED\" } else = { log = \"EEP_GUARD_CORE_BINDINGS_NOT_READY\" }",
+      "command_chars": 923,
+      "prerequisites": [
+        "Backup survival precondition was verified in a native SAV.",
+        "Target is still a colony owned by a live enemy at war; load pre-fire base if the previous test destroyed country1."
+      ],
+      "acceptance": [
+        "original_core helper is physical planet2 and receiver is the live original enemy country; production eep_core0 remains unchanged.",
+        "No ownership changes occur in this binding step."
+      ],
+      "sources": [
+        "E_TARGET",
+        "S_BIND",
+        "MOD_CORE",
+        "MOD_INIT",
+        "MOD_MIGRATE",
+        "MOD_DECISION"
+      ],
+      "runtime_result": null,
+      "command_sha256": "f88760fcefbfff4213867e3e429cd89e56f326ff46bde18f7c94a95974ce6269"
+    },
+    {
+      "id": "core_transfer_apply",
+      "status": "PENDING",
+      "branch": "core_transfer",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 event_target:eep_mothership0.owner = { eep_qualified = yes eep_core_available = yes is_machine_empire = yes } exists = event_target:eep_guard_backup event_target:eep_guard_backup = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner NOT = { is_same_value = event_target:eep_core0 } } exists = event_target:eep_guard_original_core exists = event_target:eep_guard_receiver event_target:eep_core0 = { is_same_value = event_target:eep_guard_original_core is_owned_by = event_target:eep_mothership0.owner } event_target:eep_guard_receiver = { NOT = { is_same_value = event_target:eep_mothership0.owner } is_at_war_with = event_target:eep_mothership0.owner } } event_target:eep_guard_original_core = { set_owner = event_target:eep_guard_receiver } log = \"EEP_GUARD_CORE_TRANSFER_REQUESTED\" } else = { log = \"EEP_GUARD_CORE_TRANSFER_NOT_READY\" }",
+      "command_chars": 1006,
+      "prerequisites": [
+        "Bind step and real backup were saved; original physical core is still actor-owned and production-bound.",
+        "Receiver is a live distinct enemy; actor still has its populated noncore backup; eep_initialized has not been cleared."
+      ],
+      "acceptance": [
+        "Original physical core owner actually changes to receiver; actor survives on the backup; Mother remains actor-owned.",
+        "Native capital may move to backup. This is distinct from eep_core0 rebinding and is not a bug.",
+        "Do not invoke migration, clear initialized, remove flags or manually reset owner/bindings; leave state invalid through callback and after-save."
+      ],
+      "sources": [
+        "E_OWNER",
+        "N_TRANSFER",
+        "MOD_CORE",
+        "MOD_INIT",
+        "MOD_MIGRATE",
+        "MOD_DECISION"
+      ],
+      "runtime_result": null,
+      "command_sha256": "4d959623e472c44a6e95fb855a2bc1a4ad2cc63d5e3a5034382a6ce07978709d"
+    },
+    {
+      "id": "core_transfer_inspect",
+      "status": "PENDING",
+      "branch": "core_transfer",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_backup event_target:eep_guard_backup = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner NOT = { is_same_value = event_target:eep_core0 } } exists = event_target:eep_guard_original_core exists = event_target:eep_guard_receiver event_target:eep_core0 = { is_same_value = event_target:eep_guard_original_core is_owned_by = event_target:eep_guard_receiver } event_target:eep_mothership0.owner = { has_country_flag = eep_initialized eep_core_available = no } } log = \"EEP_GUARD_CORE_LOST_BINDING_STABLE_BACKUP_ALIVE\" } else = { log = \"EEP_GUARD_CORE_TRANSFER_STATE_NOT_ESTABLISHED\" }",
+      "command_chars": 781,
+      "prerequisites": [
+        "Run transfer and allow native ownership callbacks one tick/day if needed; preserve backup and original binding."
+      ],
+      "acceptance": [
+        "Native core0 still points to physical original_core while owner is receiver; actor core_available=no and backup remains populated actor colony.",
+        "Independently check actor capital, core global target, owner, initialized and Mother identity in SAV; eep.3 only synchronizes court and does not rebind.",
+        "If actual binding changes, check migration calls/initialized first; do not infer binding only from capital."
+      ],
+      "sources": [
+        "E_LOG",
+        "MOD_CORE",
+        "N_TRANSFER",
+        "MOD_INIT",
+        "MOD_MIGRATE",
+        "MOD_DECISION"
+      ],
+      "runtime_result": null,
+      "command_sha256": "1b07a95dcec7f0bf3a5c34c76d4a58714bdeee9a5e60df1e909b240b7bf1722a"
+    },
+    {
+      "id": "core_transfer_dispatch",
+      "status": "PENDING",
+      "branch": "core_transfer",
+      "command": "effect if = { limit = { exists = event_target:eep_mothership0 exists = event_target:eep_mothership0.owner exists = event_target:eep_core0 exists = event_target:eep_guard_backup event_target:eep_guard_backup = { is_colony = yes pop_amount > 0 is_owned_by = event_target:eep_mothership0.owner NOT = { is_same_value = event_target:eep_core0 } } exists = event_target:eep_guard_original_core exists = event_target:eep_guard_receiver event_target:eep_core0 = { is_same_value = event_target:eep_guard_original_core is_owned_by = event_target:eep_guard_receiver } event_target:eep_mothership0.owner = { has_country_flag = eep_initialized eep_core_available = no } exists = event_target:eep_colossus_probe_target event_target:eep_colossus_probe_target = { is_colony = yes exists = owner owner = { is_at_war_with = event_target:eep_mothership0.owner } } } event_target:eep_colossus_probe_target = { log = \"EEP_GUARD_CORE_LOST_DISPATCH\" fire_on_action = { on_action = on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER scopes = { from = event_target:eep_mothership0 } } } } else = { log = \"EEP_GUARD_CORE_LOST_NOT_READY_NOT_DISPATCHED\" }",
+      "command_chars": 1126,
+      "prerequisites": [
+        "Core-transfer invalid state was independently saved and remains through callback evaluation.",
+        "Actual source enemy colony still exists; Mother and backup survive, while actor core_available=no."
+      ],
+      "acceptance": [
+        "One explicit Mother FROM callback rejects; advance one day and save without restoring owner or flags.",
+        "If a real PK order already auto-cancelled on core loss, record that separately; this explicit negative callback covers the business completion guard.",
+        "EEP C/G/D/made/worlds and settlement totals do not increase.",
+        "Both native crisis objectives worlds/empires have zero reward delta.",
+        "No extra core population/capacity or hardware reward versus a same-date idle control.",
+        "No guard flag is cleared before evaluation; no source changes to pc_shattered."
+      ],
+      "sources": [
+        "E_ON_ACTION",
+        "N_ON_ACTION",
+        "MOD_CORE",
+        "MOD_INIT",
+        "MOD_MIGRATE",
+        "MOD_DECISION"
+      ],
+      "runtime_result": null,
+      "command_sha256": "708671c3eb572ad1ab6ac739103de3ad2603ff0d1c9644d6140bf25c49cca06a"
+    }
+  ],
+  "preferred_seven_world_route": "seven_worlds_split",
+  "console_length": {
+    "status": "PENDING",
+    "source": "UI_CONSOLE",
+    "explicit_limit_found": false,
+    "merged_setup_chars": 4555,
+    "merged_setup_native_accepted": null,
+    "preferred_route": "seven_worlds_split",
+    "split_setup_max_chars": 790,
+    "all_seven_split_setups_less_than_1000": true
+  }
+}

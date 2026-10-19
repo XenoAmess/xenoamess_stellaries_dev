@@ -48,7 +48,7 @@
 
 正式只允许根 `VERSION` 与 `mod/descriptor.mod` 的版本元数据变化。脚本、DDS、本地化键数量从当前生产树计算；不继承历史24脚本／101键常量。候选和正式均须 open_kaishek 整包 PASS；正式报告另以 `static-source-manifest.json` 绑定生产树与报告 SHA。其余九语言只静态检查，不列入实机矩阵。
 
-发现既有工具未验武器 CSV 后，暂停原型实机，先由工具仓库修复并提交推送。新适配器还要求工具报告包含 `weapon_csv_files`、`weapon_csv_keys`、`weapon_csv_applicability=checked`，与当前 `common/component_templates` 下实际 CSV 文件数及唯一组件键一致且均大于零；没有这些字段的旧 PASS 不可作为 0.4.0 前置。旧版本历史测试继续保留原有适用范围，不追改成新版本。
+早期发现既有工具未验武器 CSV 后，暂停原型实机，先由工具仓库修复并提交推送。当时适配器要求 `weapon_csv_files`、`weapon_csv_keys`、`weapon_csv_applicability=checked` 与实际CSV计数对应且大于零。该“必须有CSV”要求已被下方PK数值载入合同修订取代：0CSV的真实TXT数值来源合法，CSV语法PASS本身不证明引擎加载。旧版本历史测试保留原有适用范围，不追改历史证据。
 
 ### 原生巨像三回调合同（本轮实施前）
 
@@ -148,6 +148,38 @@ python eat_everything_origin/tools/publish_1019.py scaffold-index --reference-pl
 v3补证已完成，SHA `c6dd8394f34d530934894c00630040705552d64d7dc2aac5aeb6efe3b679b365`。358份payload／22,662,741字节与来源一致，旧344份未改；新索引231次引用／126唯一文件全部核对，六项scope及limitations原样携带。机器两组全部14项单项已记录true，仍缺最终冻结log与共同审查；18组、组件和顶层仍PENDING。其余16组、预算及候选源未改，v1／v2保持原SHA，最终门禁仍拒绝该PENDING副本。详细范围和复填步骤见[机器六项v3记录](evidence/1019-requirements/rc3-runtime-progress-machine-v3.md)。
 
 v4归档审查已完成：[设计及剩余硬门槛](evidence/1019-requirements/rc3-runtime-progress-v4-review.md)／[字节审核](evidence/1019-requirements/rc3-runtime-progress-v4-byte-audit.json)。发现v2／v3重复登记同一run_id的两份等字节manifest；仅在新v4保留canonical硬件manifest为唯一runs项，Machine副本留archives，历史副本不改。实际最终验收器的manifest AST条件已分别对v3／v4真实元数据求值，重复拒绝条件得到修正；最终PENDING门禁仍拒绝。v4 SHA `6f62ec128741ae936387d980d801ea22e91ff125be90c6dd80f5b4c4855b1116`，246次引用／133唯一文件均匹配。pk1的53份独立手工奖励校准仅入archives和限定观察，保留strict FAIL，不填巨像case。Hive首月23＋10及三份原生来源当前字节一致，但缺阶段归档，未挂v4。Machine358份及全部预算／检查／scope、18组PENDING不变；当前无正式final-result，也未进行发布操作。
+
+Hive独立首月归档完成后已生成v5：[范围及填写记录](evidence/1019-requirements/rc3-runtime-progress-hive-v5.md)／[字节审核](evidence/1019-requirements/rc3-runtime-progress-v5-byte-audit.json)。289份／16,250,350字节、三SAV及全部来源绑定独立通过；v5 SHA `6d648d959be464743ba981f1a7e59886952ef6069e27669927efd8e98294b21b`，291次引用／157唯一文件均匹配。增加5项Hive开局事实和首月1/12实际预算，全年checks仍null；18组、组件和顶层全PENDING。runs唯一canonical，v1—v4未改。并行migration修复使当前checker与归档ba178470旧快照不同，已单列源漂移，未改历史报告／工具字节，也没有将新工具行为冒充旧结果。仍缺Hive人口／维护专证、全年月份和完整日志；最终门禁继续拒绝PENDING。
+
+v5收口时主线程发现原生PK排队至完成时长与90／30设计不符，正在调查独立命名CSV及引擎载入合同；原因未确定，新的Mod验收已暂停，须先解决工具／合同再继续。v5只含既有Hive限定观察，没有导入本轮发射过程或晋升PK case。可能的新RC必须使用实际新源／新gate／新运行绑定；RC3历史原SHA不改，也不冒充最终候选通过。
+
+### PK数值载入合同门禁修订（实施前）
+
+真实原生时长异常说明“CSV语法可解析”不足以证明数值已被引擎载入。下一轮只接受open_kaishek新合同明确证明的PK数值来源；合同字段／枚举／计数以工具线程最终实现为准，未定字段前不推断为通过。RC4目标源形状为实际TXT顶层weapon组件内的 `windup={min=90 max=90}`、`total_fire_time=30`、`power=0`；任意命名CSV不得据语法PASS充当已载入来源。CSV本身可以为0，不再以“至少一个CSV／key”作为0.4运行前置。
+
+实现将抽出发布适配器中的数值载入合同校验，由 `runtime_1019.prepare_1019` 与发布静态门禁共用；保留实际顶层planet_killer组件计数和三个原生回调绑定，不固定总脚本／本地化／所有组件数量。CSV存在时仍按实际文件数／唯一key校验其语法覆盖报告，0CSV使用工具明确的无文件适用性；语法覆盖与数值载入是两个证据边界。旧RC3报告缺少新合同，必须在运行准备创建任何新用户目录／manifest前拒绝，也不能进入正式发布静态门禁。
+
+定向合成测试覆盖：真实TXT inline且0CSV通过、旧CSV-only报告拒绝、缺合同／错枚举／非整数或错误数量／未解析条目拒绝、源码实际数值或组件集合与报告不一致拒绝、多个PK及原有三回调继续按实际计数；若工具支持固定路径CSV来源，再按明确合同增加独立用例，不根据任意文件名自行认定加载。新增runtime prepare测试以fake base和临时目录验证拒绝发生于原prepare之前，绝不导入真实UI／启动游戏／改AppData。历史0.3.1／0.3.2适配器测试保持原行为，旧归档报告／工具字节／原型不修改。
+
+外部open_kaishek修复必须在其仓库测试通过、提交并推送后，才由主线程创建新候选和恢复实机；本工具修订及其单元测试不宣称当前原生发射、90／30时长或新RC验收通过。生产Mod由其专属线程修改，本线程只改运行／发布门禁及相应测试和文档，不操作UI／Steam／版本／提交。
+
+工具线程已确认稳定合同字段：`planet_killer_numeric_contract="native_csv_or_literal_txt_v1"`、`planet_killer_numeric_components=N`、`planet_killer_numeric_resolved=N`、`planet_killer_numeric_applicability="checked"`；N为本包真实PK独立键数，非bool整数，必须与三回调合同计数一致。`weapon_csv_loader_contract="native_fixed_paths_v1"`、`weapon_csv_unsupported_files=0`；仅Mod根相对路径 `common/component_templates/weapon_components.csv` 和 `.../mutation_weapon_components.csv` 受支持。0CSV要求实际0计数及 `not_applicable_no_weapon_csv_files`，有CSV仍要求checked和精确计数。
+
+`planet_killer_numeric_sources` 必须每个已解析PK键恰一项，key集合与本包一致，来源kind仅 `literal_component_txt`／`native_fixed_csv`／`mod_fixed_csv`，path为绝对原来源路径（允许不同构建／复制目录），line为正整数，SHA为64位小写。values恰含 `windup_min`、`windup_max`、`total_fire_time`、`power`，均有限非bool数值；前三非负，power可负，允许90／0哨兵且不检查max≥min。Mod来源通过实际包内对应文件SHA绑定，不强迫旧source报告路径等于copied目录；native来源独立校验原路径SHA及固定CSV路径，不假设它属于Mod。数值不在门禁硬编码成90／30，实际时长仍待后续原生验证。
+
+CSV中的键关联继续由open_kaishek的native＋Mod定义解析负责，根门禁不再要求所有native键在Mod TXT重声明。固定CSV的定向正例只覆盖原生直接定义的 `PLANET_KILLER_CRACKER` 与EEP键；不扩展完整原版表的宏／inline生成定义，已有有限解析限制继续明确FAIL，不为本轮RC4新增白名单或豁免。合成RC4形状夹具为59文件／0CSV／四实值90、90、30、0，59只属于测试夹具，不成为生产数量常量。
+
+本轮实现及离线验证已完成：发布适配器提供两个共享纯校验接口 `validate_weapon_csv_contract(report, mod_path)` 和 `validate_planet_killer_contract(report, mod_path)`，后者同时校验实际三回调与新数值合同；`runtime_1019.prepare_1019` 在原prepare创建运行目录之前调用二者。growth collector已由其线程接入相同接口。Source路径允许原构建／复制目录不同，通过包内实际对应源文件SHA绑定；native固定CSV允许位于Mod之外。根门禁不重新实现原生P数值解析、键语义关联或宏展开，工具报告SHA及原prepare的gate／tree校验继续保留。
+
+发布适配器及历史版本合计54项测试通过（51.392秒）；新增fake-base prepare4项通过（2.141秒），pending helper8项通过（3.589秒）。固定CSV正例按收窄范围改为原生直接定义key后，2项相关测试再次通过（1.044秒）。覆盖0CSV59文件、inline90／90／30／0、90／0哨兵与负power、多PK、缺合同／旧合同／bool及不完整计数、来源key／kind／path／SHA／finite形状、实际源漂移、Mod固定CSV含native未重声明行、原生CSV独立来源、任意CSV拒绝及原prepare前拒绝；所有合成夹具仅在临时目录，不是实机PASS。
+
+还对不可变RC3报告SHA `a5054bd863896d2cf842402c544ebde7f5a823d01f6a1589c5b0c0d5b709d96f` 与其原copied_mod执行两项只读拒绝检查，分别得到 `matching supported native weapon CSV loader contract required` 和 `matching checked planet-killer numeric loading contract required`，报告原字节保持不变。外部工具完整构建／提交／推送由其线程完成后，主线程才能重新gate并启动RC4；本记录未创建新正式PASS报告、未启动游戏、未修改Mod／原型／旧证据，也未提交或上传。
+
+外部工具实现 `2c8f8a9fe7e8a9d27c910a4c21adcfef840c76f2` 及证据提交 `9a286b9321a4d1ecacc0680a8bb0d914e0679b99` 已推送。根独立冻结报告 [rc4-open-kaishek.json](evidence/1019-requirements/rc4-open-kaishek.json) 的原工具字节SHA为 `2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d`；外部 `D:/workspace/open_kaishek/docs/evidence/stellaris-pk-numeric-source-2026-10-19/candidate-rc4-package-report.json` 后续统一LF后的canonical SHA为 `7c0c4ffcc48206d205083e6c52ad9fdd9d4bc1ca45e291c43dbd6f57c23113b1`。两者分别针对实际冻结candidate-rc4/mod通过根 `validate_static_report`：59文件／36P／131keys／0CSV／numeric1/1及literal90、90、30、0来源符合新共享静态合同，校验没有改任何报告字节。该核验不调用prepare或游戏，也不证明90／30原生时长或最终RC4实机通过；新gate／实机由主线程执行。
+
+主线程在外部证据统一LF前，已将原工具输出SHA `2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d` 独立冻结进本项目与artifact，运行 `20261019T112808Z` 的manifest／gate绑定的是该2e原字节副本。外部证据提交后的canonical SHA为 `7c0c4ffcc48206d205083e6c52ad9fdd9d4bc1ca45e291c43dbd6f57c23113b1`，不能据此改写既有root gate／报告／manifest。设计新增独立 `rc4-open-kaishek-report-link-v1.json`：只读比对root两份原字节、external canonical及run绑定，验证JSON语义相等且差异仅CRLF→LF，分别记录两个有效来源身份；不改任何被引用文件，不要求重启或重验相同Mod，也不把静态关联称作运行时通过。根证据继续由已有-text属性保留原字节。
+
+[独立报告关联](evidence/1019-requirements/rc4-open-kaishek-report-link-v1.json) 已生成，SHA `381cfe922135d8c5858a7bd2e5a9d211e811895c21d120e925ebf7ed60a25d14`，9项核对成立。root项目／artifact两份2e报告字节完全相同；2e共2386字节、含64处CRLF，转LF后恰等于external7c的2322字节，JSON语义完全相同，无其他差异。运行 `20261019T112808Z` 的manifest及gate仍绑定2e、rc4树06485dc…；未改gate／报告／manifest，未重启或重复实机。Git text属性为unset（-text），实际filtered／raw hash-object相同，根副本会按原字节入Git。外部格式规范化不改变既有run的静态证据身份；此关联本身仅为 `PASS_REPORT_LINK_ONLY`，运行时验收继续PENDING。
 
 ## 验收标准
 

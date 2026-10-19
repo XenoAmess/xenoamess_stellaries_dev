@@ -58,7 +58,7 @@ reduce_shield = @inf_conduit_ship_damage
 2. 在country控制台effect中仅对绑定Mother的实际ship执行下列片段，省略可选attacker以不引入额外攻击者归因：
 
 ```text
-event_target:eep_mothership@this = {
+event_target:eep_mothership0 = {
     every_owned_ship = {
         damage_ship = 120
     }
@@ -66,6 +66,8 @@ event_target:eep_mothership@this = {
 ```
 
 3. 同日、继续暂停，保存damage-only。只有实际current armor下降且Mother仍存活，才把该步骤作为有效装甲损伤夹具；若仅hull／shield下降或无变化，原样记录结果，不能称armor已伤。不清空护盾、不生成敌舰、不发动真实战斗，也不调用整个原版危机事件。
+
+控制台使用 `effect event_target:eep_mothership0={...}` 明确绑定玩家country0的保存target，不依赖会随选中对象变化的THIS。任何country级同步另用 `effect root={eep_sync_mothership=yes}`，不得把裸country效果打到选中planet上。
 4. 分别使用已证实的reduce_hp和reduce_shield取得其它两层的非致死损伤；另存同日pre-migration，确保队列、库存和日期未变。不要把多种施伤与迁移合成一个无法归因的命令。
 5. 只执行既有设计迁移，立刻保存post-migration，逐项比较身份／位置／current/max及归一化损伤比例、paid queue完整项、库存；再做同日reload检查。max变化时不能只比较current绝对值而忽略比例，也不能用自动修复到满血当作保伤成功。
 

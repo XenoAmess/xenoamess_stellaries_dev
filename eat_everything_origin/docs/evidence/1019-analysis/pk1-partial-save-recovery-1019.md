@@ -1,0 +1,9 @@
+# PK1部分保存恢复与殖民地活性检查修复设计
+
+`pk1charge`原生ZIP已写出，后续audit(country0,country1)因country1被真实毁灭而失败。原件保持没有原始audit／成功native-save receipt的状态。恢复只在独立`pk1-interrupted-save-v1/recovered/`复制同字节SAV、原字节manifest和另行生成的country0只读audit；新建明确命名的`pk1charge-recovery-receipt.json`，标明原helper未完成、原audit／receipt缺失、实际history／artifact路径与SHA、保存时间／输入／截图、重现异常、country0派生audit及ZIP完整性。它不是伪造原helper成功记录。现有inspector原本即读取`*-receipt.json`，无需改来源门禁或原始文件。
+
+先用冻结ba178旧checker实际运行完整settlement case，保存旧工具对`source_colony_destroyed`的FAIL及全部严格差异。期望worlds750、empires600来自独立同日单位校准，C19/G19/D6/made300/worlds1与三last4／300／0为q19预声明公式。自然人口预期0的独立边界为Mar7→Mar13不跨月，且已有硬件Jan7→Jan13等真实六日同月基线无人口增量；不从after总人口倒推该值。完成结果不能补足缺失的充能中间态，也不改变90／30天duration检查FAIL，完整巨像case仍不能PASS。
+
+最小代码变更仅在settlement函数：以source真实pc_shattered、无owner／controller、actual_pop_sum=0、实际pop_groups及colony pop_groups／pop_jobs列表空、直接num_sapient_pops／employable_pops为0或缺失，确认殖民地没有活性；允许已证实的colony整数／历史species经济增长cache保留。不能把cache中的civilian、species_information.num_pops或upkeep当作活人口，也不能只因保留colony整数认定尚活。严格comparator、旧历史FAIL及migration函数不改。
+
+定向测试使用真实恢复后原生观察作为正例，数据层复制后分别保留owner、controller、实际人口、实际group、直接活人口计数或实际job列表为负例，必须拒绝；这些只是假设输入的checker单元测试，不编辑SAV、更不伪造原生夹具。新增旧／新工具字节对照证明仅settlement函数变化；新旧同输入的报告分别保留。归档逐源SHA与`* -text`保护，所有恢复／测试文件均不冒充原始native成功receipt。

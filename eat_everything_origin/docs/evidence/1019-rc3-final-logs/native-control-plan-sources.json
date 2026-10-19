@@ -1,0 +1,525 @@
+{
+  "schema": "eep.rc4.native-control-plan-sources.v1",
+  "status": "PLAN_ONLY_NOT_EXECUTED",
+  "purpose": "Documented native completed callback with explicit Mother fleet FROM; scope catalog correction withdraws the former ship-only inference; outside the 22-file RC3 run payload",
+  "sources": [
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\on_actions\\01_planet_destruction.txt",
+      "bytes": 5447,
+      "sha256": "6ba54afe8c56225641311aa64f3daa358097a0adbbdaad0328eb5d260822325c",
+      "line_start": 1,
+      "line_end": 24,
+      "lines": [
+        {
+          "line": 1,
+          "text": "# Scope:"
+        },
+        {
+          "line": 2,
+          "text": "# this/root = planet that have been fired upon"
+        },
+        {
+          "line": 3,
+          "text": "# from = fleet that fired"
+        },
+        {
+          "line": 4,
+          "text": "#on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT = {"
+        },
+        {
+          "line": 5,
+          "text": "#\tevents = {"
+        },
+        {
+          "line": 6,
+          "text": "#\t\tplanet_destruction.1"
+        },
+        {
+          "line": 7,
+          "text": "#\t}"
+        },
+        {
+          "line": 8,
+          "text": "#}"
+        },
+        {
+          "line": 9,
+          "text": ""
+        },
+        {
+          "line": 10,
+          "text": "# Note: The _queued on_actions also fire when the command is made even if there is nothing else in the queue"
+        },
+        {
+          "line": 11,
+          "text": "# Similarly, the _unqueued on_actions fire even if you cancel the order while the weapon is on the wind-up to fire"
+        },
+        {
+          "line": 12,
+          "text": "# They use the same scopes as the standard events"
+        },
+        {
+          "line": 13,
+          "text": ""
+        },
+        {
+          "line": 14,
+          "text": "on_destroy_planet_with_PLANET_KILLER_CRACKER = {"
+        },
+        {
+          "line": 15,
+          "text": "\tevents = {"
+        },
+        {
+          "line": 16,
+          "text": "\t\ttoxoids.8016 #Destroyed knight Keep"
+        },
+        {
+          "line": 17,
+          "text": "\t\tcrisis.5015 # Menace Objective - Destroy World/Empire"
+        },
+        {
+          "line": 18,
+          "text": "\t\tplanet_destruction.110"
+        },
+        {
+          "line": 19,
+          "text": "\t\torigin.3245 # Glassing a Progenitors Nest"
+        },
+        {
+          "line": 20,
+          "text": "\t\tplanet_destruction.600 # frag holy world"
+        },
+        {
+          "line": 21,
+          "text": "\t\tplanet_destruction.100 # goes last because it can kill a country, making some trigger checks impossible"
+        },
+        {
+          "line": 22,
+          "text": "\t\tawareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness."
+        },
+        {
+          "line": 23,
+          "text": "\t\ttimeline.27         # Milestone First Destroyed Planet"
+        },
+        {
+          "line": 24,
+          "text": "\t}"
+        }
+      ]
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\planet_destruction_events.txt",
+      "bytes": 70731,
+      "sha256": "b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87",
+      "line_start": 20,
+      "line_end": 47,
+      "lines": [
+        {
+          "line": 20,
+          "text": "# Cracked"
+        },
+        {
+          "line": 21,
+          "text": "carrier_event = {"
+        },
+        {
+          "line": 22,
+          "text": "\tid = planet_destruction.100"
+        },
+        {
+          "line": 23,
+          "text": "\tis_triggered_only = yes"
+        },
+        {
+          "line": 24,
+          "text": "\thide_window = yes"
+        },
+        {
+          "line": 25,
+          "text": ""
+        },
+        {
+          "line": 26,
+          "text": "\timmediate = {"
+        },
+        {
+          "line": 27,
+          "text": "\t\t# Don't fire the colossus narrative events if the planet is destroyed by an arkship."
+        },
+        {
+          "line": 28,
+          "text": "\t\t# However we still use this event as it handles all of the relations and flags we need."
+        },
+        {
+          "line": 29,
+          "text": "\t\tif = {"
+        },
+        {
+          "line": 30,
+          "text": "\t\t\tlimit = {"
+        },
+        {
+          "line": 31,
+          "text": "\t\t\t\tfrom = {"
+        },
+        {
+          "line": 32,
+          "text": "\t\t\t\t\tis_arkship_ship = no"
+        },
+        {
+          "line": 33,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 34,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 35,
+          "text": "\t\t\tif = {"
+        },
+        {
+          "line": 36,
+          "text": "\t\t\t\tlimit = {"
+        },
+        {
+          "line": 37,
+          "text": "\t\t\t\t\tis_planet_class = pc_frozen"
+        },
+        {
+          "line": 38,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 39,
+          "text": "\t\t\t\tfrom.owner = { country_event = { id = planet_destruction.102 } }"
+        },
+        {
+          "line": 40,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 41,
+          "text": "\t\t\telse_if = {"
+        },
+        {
+          "line": 42,
+          "text": "\t\t\t\tlimit = {"
+        },
+        {
+          "line": 43,
+          "text": "\t\t\t\t\tNOT = { is_planet_class = pc_ai }"
+        },
+        {
+          "line": 44,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 45,
+          "text": "\t\t\t\tfrom.owner = { country_event = { id = planet_destruction.101 } }"
+        },
+        {
+          "line": 46,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 47,
+          "text": "\t\t}"
+        }
+      ]
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\planet_destruction_events.txt",
+      "bytes": 70731,
+      "sha256": "b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87",
+      "line_start": 264,
+      "line_end": 291,
+      "lines": [
+        {
+          "line": 264,
+          "text": "\t\t# Add war exhaustion to planet owner"
+        },
+        {
+          "line": 265,
+          "text": "\t\tif = {"
+        },
+        {
+          "line": 266,
+          "text": "\t\t\tlimit = {"
+        },
+        {
+          "line": 267,
+          "text": "\t\t\t\texists = owner"
+        },
+        {
+          "line": 268,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 269,
+          "text": "\t\t\towner = {"
+        },
+        {
+          "line": 270,
+          "text": "\t\t\t\tif = {"
+        },
+        {
+          "line": 271,
+          "text": "\t\t\t\t\tlimit = { #isn't the case when the crisis bombards planets, for instance"
+        },
+        {
+          "line": 272,
+          "text": "\t\t\t\t\t\tis_at_war_with = from.fleet.owner"
+        },
+        {
+          "line": 273,
+          "text": "\t\t\t\t\t}"
+        },
+        {
+          "line": 274,
+          "text": "\t\t\t\t\tadd_static_war_exhaustion = {"
+        },
+        {
+          "line": 275,
+          "text": "\t\t\t\t\t\tattacker = from.fleet.owner"
+        },
+        {
+          "line": 276,
+          "text": "\t\t\t\t\t\tlocation = root"
+        },
+        {
+          "line": 277,
+          "text": "\t\t\t\t\t\tvalue_for_planet_destruction = 1.0"
+        },
+        {
+          "line": 278,
+          "text": "\t\t\t\t\t}"
+        },
+        {
+          "line": 279,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 280,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 281,
+          "text": "\t\t}"
+        },
+        {
+          "line": 282,
+          "text": "\t\tevery_owned_pop_group = {"
+        },
+        {
+          "line": 283,
+          "text": "\t\t\tkill_all_pop = yes"
+        },
+        {
+          "line": 284,
+          "text": "\t\t}"
+        },
+        {
+          "line": 285,
+          "text": "\t\tif = {"
+        },
+        {
+          "line": 286,
+          "text": "\t\t\tlimit = {"
+        },
+        {
+          "line": 287,
+          "text": "\t\t\t\texists = orbital_defence"
+        },
+        {
+          "line": 288,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 289,
+          "text": "\t\t\tdestroy_fleet = orbital_defence"
+        },
+        {
+          "line": 290,
+          "text": "\t\t}"
+        },
+        {
+          "line": 291,
+          "text": "\t\tremove_all_buildings = yes"
+        }
+      ]
+    },
+    {
+      "source": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\planet_destruction_events.txt",
+      "bytes": 70731,
+      "sha256": "b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87",
+      "line_start": 313,
+      "line_end": 339,
+      "lines": [
+        {
+          "line": 313,
+          "text": "\t\telse_if = {"
+        },
+        {
+          "line": 314,
+          "text": "\t\t\tlimit = { habitable_planet = yes }"
+        },
+        {
+          "line": 315,
+          "text": "\t\t\tchange_pc = pc_shattered"
+        },
+        {
+          "line": 316,
+          "text": "\t\t\tclear_deposits = yes"
+        },
+        {
+          "line": 317,
+          "text": "\t\t\trandom_list = {"
+        },
+        {
+          "line": 318,
+          "text": "\t\t\t\t1 = {"
+        },
+        {
+          "line": 319,
+          "text": "\t\t\t\t\tadd_deposit = d_minerals_10"
+        },
+        {
+          "line": 320,
+          "text": "\t\t\t\t\tadd_deposit = d_minerals_6"
+        },
+        {
+          "line": 321,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 322,
+          "text": "\t\t\t\t1 = {"
+        },
+        {
+          "line": 323,
+          "text": "\t\t\t\t\tadd_deposit = d_minerals_10"
+        },
+        {
+          "line": 324,
+          "text": "\t\t\t\t\tadd_deposit = d_minerals_2"
+        },
+        {
+          "line": 325,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 326,
+          "text": "\t\t\t\t1 = {"
+        },
+        {
+          "line": 327,
+          "text": "\t\t\t\t\tadd_deposit = d_minerals_8"
+        },
+        {
+          "line": 328,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 329,
+          "text": "\t\t\t\t1 = {"
+        },
+        {
+          "line": 330,
+          "text": "\t\t\t\t\tadd_deposit = d_minerals_4"
+        },
+        {
+          "line": 331,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 332,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 333,
+          "text": "\t\t}"
+        },
+        {
+          "line": 334,
+          "text": "\t\telse = {"
+        },
+        {
+          "line": 335,
+          "text": "\t\t\tchange_pc = pc_shattered"
+        },
+        {
+          "line": 336,
+          "text": "\t\t\tclear_deposits = yes"
+        },
+        {
+          "line": 337,
+          "text": "\t\t}"
+        },
+        {
+          "line": 338,
+          "text": "\t}"
+        },
+        {
+          "line": 339,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc3-final-logs\\logs\\script_documentation\\scopes.log",
+      "bytes": 17656,
+      "sha256": "0ca542261993867fbb5860b806e85f0a445c2e934301cdbaf394f7b9998c3970",
+      "line_start": 58,
+      "line_end": 60,
+      "lines": [
+        {
+          "line": 58,
+          "text": "fleet - Scopes from an object to its fleet."
+        },
+        {
+          "line": 59,
+          "text": "Supported Scopes: ship fleet leader army starbase astral_rift colony"
+        },
+        {
+          "line": 60,
+          "text": "Output Scope: fleet"
+        }
+      ]
+    },
+    {
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-rc3-final-logs\\logs\\script_documentation\\triggers.log",
+      "bytes": 203232,
+      "sha256": "a4a439ff44a3d0de7145b0db88ce18b1eec0c056a3454ea9d22d43f0afac2615",
+      "line_start": 1083,
+      "line_end": 1085,
+      "lines": [
+        {
+          "line": 1083,
+          "text": "is_ship_size - Checks if the ship/fleet/design is a specific ship size"
+        },
+        {
+          "line": 1084,
+          "text": "is_ship_size = mining_station"
+        },
+        {
+          "line": 1085,
+          "text": "Supported Scopes: ship fleet design starbase ship_growth_stage"
+        }
+      ]
+    }
+  ],
+  "scope_interpretation": {
+    "status": "CORRECTED_PLAN_NOT_EXECUTED",
+    "preferred_from": "event_target:eep_mothership0",
+    "preferred_from_type": "fleet",
+    "native_comment": "01_planet_destruction.txt:1-3 explicitly documents FROM as the firing fleet.",
+    "fleet_scope_catalog": "scopes.log:58-60 accepts fleet input and outputs fleet; from.fleet.owner therefore does not require ship FROM.",
+    "ship_size_trigger_catalog": "triggers.log:1083-1085 supports fleet as well as ship; a ship-related trigger name does not imply ship-only input.",
+    "runtime_alignment": "Root reports the actual EEP FROM comparison against event_target:eep_mothership@owner passed. The planned control keeps the same Mother fleet scope.",
+    "withdrawn_inference": "The prior proposal to replace Mother fleet with Mother ship based on from.fleet.owner and is_arkship_ship is withdrawn; the full supported-scope catalogs were not considered.",
+    "precondition": "Verify event_target:eep_mothership0 resolves to the current Mother fleet after native pk1ready load.",
+    "execution_status": "RC4 native control not yet executed; original source excerpts and frozen payload remain unchanged."
+  }
+}

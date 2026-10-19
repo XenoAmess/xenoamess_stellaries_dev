@@ -1,0 +1,219 @@
+{
+  "schema": "eep.1019.crisis-objective-calibration.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Same-date native unit reward calibration for two individually completed objectives; EEP settlement state unchanged; no weapon firing certification",
+  "checks": {
+    "same_native_date": true,
+    "same_frozen_candidate_tree": true,
+    "two_native_sav_sha_and_receipts_verified": true,
+    "submitted_effect_uses_bound_mother_owner": true,
+    "exactly_one_complete_each": true,
+    "world_reward_positive": true,
+    "empire_reward_positive": true,
+    "all_eep_country_variables_unchanged": true,
+    "country_flags_unchanged": true,
+    "core_full_native_snapshot_unchanged": true,
+    "source_full_native_snapshot_unchanged": true,
+    "all_population_groups_unchanged": true,
+    "all_population_jobs_unchanged": true,
+    "native_crisis_path_level_unchanged": true,
+    "all_nonmenace_stockpile_unchanged": true,
+    "core_capacity_unchanged": true,
+    "beneficiary_core_owner_unchanged": true
+  },
+  "run_id": "20261019T092935Z",
+  "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+  "beneficiary_country": 0,
+  "mother_fleet": 159,
+  "mother_ship": 997,
+  "date": "2200.01.02",
+  "objectives": {
+    "crisobj_destroy_worlds": {
+      "before": {
+        "present": false,
+        "progress": 0
+      },
+      "after": {
+        "present": true,
+        "progress": 750
+      },
+      "delta": 750,
+      "actual_complete_calls": 1
+    },
+    "crisobj_destroy_empires": {
+      "before": {
+        "present": false,
+        "progress": 0
+      },
+      "after": {
+        "present": true,
+        "progress": 600
+      },
+      "delta": 600,
+      "actual_complete_calls": 1
+    }
+  },
+  "expected_crisis_progress_delta": 750,
+  "expected_crisis_empires_progress_delta": 600,
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.sav",
+    "save_sha256": "dccb1e17d6f76c915e3f0a916e627f068c559d381e7a6962becc21c77093b38a",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.audit.json",
+    "audit_sha256": "5f6867cc587b7189470fac8285c7de38f45ce50c84d8513bd73557b429da4f6e",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.native-save.json",
+        "sha256": "fe564b5885ec0855b582e652aa0d4c8e5d71690bce63b7d45bd18be6d18854cd",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1base.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1base.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1base.sav",
+          "sha256": "dccb1e17d6f76c915e3f0a916e627f068c559d381e7a6962becc21c77093b38a",
+          "date": "2200.01.02"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.sav",
+    "save_sha256": "6d736fd34099cadc449121180fb372029d65dc3a344a1465c16b0c86ab70037f",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.audit.json",
+    "audit_sha256": "388a24f7fdaf7de5706730bcc4d9cb954a69e5ddb60394e747ed2c71a105e1da",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.native-save.json",
+        "sha256": "f27060af0ee551a5edbb2f02587b264fac9d61bfc216bb9bfdb3d9deddbe4d56",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1calafter.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1calafter.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1calafter.sav",
+          "sha256": "6d736fd34099cadc449121180fb372029d65dc3a344a1465c16b0c86ab70037f",
+          "date": "2200.01.02"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "before_gamestate_sha256": "4e2444d2bac62f0c69fe1fc569d0f01085811c2eec91f68a19ab8535be5bf535",
+  "after_gamestate_sha256": "54a0914bb9526720bf1c2ff7b4cadcd412e0e7d2be9397343d54b2800b9ca747",
+  "actual_effect_action": {
+    "file": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-calibrate-objectives-command.action.json",
+      "sha256": "262cd0c6cb98fd4d4c178065686b519fd69dfb111284473a851459c801824ef2"
+    },
+    "record": {
+      "action": "type_text",
+      "stage": "pk1-calibrate-objectives-command",
+      "text": "effect root = { event_target:eep_mothership@this = { owner = { complete_crisis_objective = crisobj_destroy_worlds complete_crisis_objective = crisobj_destroy_empires } } }",
+      "submitted": true,
+      "typed_at_utc": "2026-10-19T10:37:18.365712+00:00",
+      "key_interval_seconds": 0.04,
+      "submit_input": "physical scan code 0x1c"
+    }
+  },
+  "actual_physical_enter": {
+    "file": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-calibrate-objectives-command-enter.action.json",
+      "sha256": "d7929e24de902383e341fdb78b974ecbef56acc6213f4962c3a9c3235e017cec"
+    },
+    "record": {
+      "action": "press_scan_code",
+      "stage": "pk1-calibrate-objectives-command-enter",
+      "scan_code": 28,
+      "repeat": 1,
+      "at_utc": "2026-10-19T10:37:18.448856+00:00"
+    }
+  },
+  "observations": [
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1base-observation-v1.json",
+      "sha256": "291f62e67bac0db9c64b8c9b12bbd8240a5fef33579636b3cb98e99f1ef95741"
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1calafter-observation-v1.json",
+      "sha256": "d3579822f1e4a8bbdc8995d14c42ac012021055d25d74d471cbfb9cf7aaced88"
+    }
+  ],
+  "eep_ledger_before": {
+    "eep_c": 0,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_entitled": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_pending": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_snapshot_state": 0,
+    "eep_component_tracking_level": 0,
+    "eep_d": 2,
+    "eep_fleet_stage": 0,
+    "eep_g": 0,
+    "eep_last_capacity": 0,
+    "eep_last_manufactured": 0,
+    "eep_last_return": 0,
+    "eep_made": 0,
+    "eep_mothership_level": 0,
+    "eep_mothership_next": 10,
+    "eep_stage": 0,
+    "eep_worlds": 0
+  },
+  "eep_ledger_after": {
+    "eep_c": 0,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_entitled": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_pending": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_snapshot_state": 0,
+    "eep_component_tracking_level": 0,
+    "eep_d": 2,
+    "eep_fleet_stage": 0,
+    "eep_g": 0,
+    "eep_last_capacity": 0,
+    "eep_last_manufactured": 0,
+    "eep_last_return": 0,
+    "eep_made": 0,
+    "eep_mothership_level": 0,
+    "eep_mothership_next": 10,
+    "eep_stage": 0,
+    "eep_worlds": 0
+  },
+  "core_population_before": 4800,
+  "core_population_after": 4800,
+  "source_population_before": 5200,
+  "source_population_after": 5200,
+  "source_planet_size_before": 19,
+  "source_planet_size_after": 19,
+  "menace_stockpile_observation_only": {
+    "before_present": false,
+    "before": 0,
+    "after": 1350,
+    "delta": 1350,
+    "used_to_calibrate_objective_progress": false
+  },
+  "strict_comparison": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1-objective-calibration-strict-comparison-v1.json",
+    "sha256": "4bfb0658b70d0431256bb4300921d9dd5e20fd4f722789098e5b23f9b67ba05c"
+  },
+  "limitations": [
+    "This is a deliberately injected native calibration effect, not a planet kill or natural objective completion.",
+    "Objective progress is reward points, not a count; worlds and empires remain separate.",
+    "Calibration belongs to this galaxy/state. Destroying a country can change the empire-unit reward context; do not assume a duplicate reward equals exactly twice600.",
+    "Main branch must restore pk1base before actual firing so manual calibration does not contaminate settlement observations."
+  ]
+}

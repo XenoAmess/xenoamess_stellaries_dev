@@ -1,0 +1,60 @@
+{
+  "schema": "eep.1019.migration-queue-mode-checker-verification.v1",
+  "status": "PASS_CHECKER_TESTS_ONLY",
+  "scope": "Synthetic migration checker regression and read-only original public queue evidence; no native migration execution",
+  "old_checker": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-rc3-machine-economy\\analysis_tools\\check_1019.py",
+    "sha256": "ba17847049d050b2b76dc382e7e3e0a1796dc4976a80c77b16fef243bc612047"
+  },
+  "new_checker": {
+    "path": "eat_everything_origin\\tools\\check_1019.py",
+    "sha256": "df147d247240c75bc0507cb1dda0bf88af299706841d3b72c140b083e96be777"
+  },
+  "only_migration_function_changed": true,
+  "old_empty_synthetic_status": "FAIL",
+  "old_empty_failed_checks": [
+    "nonempty_recorded_queue_costs_and_payer_before",
+    "real_queue_progress_before"
+  ],
+  "new_empty_synthetic_status": "PASS_SCOPED",
+  "default_paid_synthetic_status": "PASS_SCOPED",
+  "default_paid_check_values_unchanged": true,
+  "native_public_baseline": {
+    "save": "eat_everything_origin\\docs\\evidence\\1019-baseline\\bmm00.sav",
+    "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+    "fleet_id": "128",
+    "ship_ids": [
+      1008
+    ],
+    "starbase_id": "15",
+    "shipyard_queue_id": "50",
+    "items": [],
+    "native_queue_scalars": {
+      "owner": 0,
+      "simultaneous": 10,
+      "type": "ships"
+    }
+  },
+  "tests": {
+    "command": [
+      "C:\\Users\\1\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "eat_everything_origin/testing",
+      "-p",
+      "test_check_1019_migration.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "count": 17,
+    "log": "unit-tests.txt",
+    "sha256": "ad6b5c54c6aaad70b1b7d08a701a3dcfeca0f9d627414ac205cbe8d3e55422c8"
+  },
+  "historical_reports_or_archived_tools_modified": false,
+  "limitations": [
+    "Synthetic tests do not certify actual engine migration, damage retention, or paid queue retention.",
+    "Original paid enqueue actions and native damage/migration/reload probes remain required."
+  ]
+}

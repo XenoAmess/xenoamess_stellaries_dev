@@ -111,3 +111,23 @@ effects.log:45 的 set_owner 支持 planet/colony，原版 on_colony_transfer（
 可以在真实发射 fire29/30 的独立分支转手并推进至边界，记录原生订单是否取消或进入完成；两者必须零结算。若引擎先取消订单，这仅证明原生中止，尚未覆盖 eep.50 完成 trigger。随后在核心仍转手、备份仍保命的状态，显式 FROM=Mother 对仍有效敌星派发一次专属完成回调，推进一天核对零结算，才补齐业务完成重验负例。整个分支只验中断/拒绝，不计作有效武器完成。
 
 归档与报告必须区分：普通首都变化、原生订单取消、EEP core 全局绑定、业务回调拒绝。完成后重载原始 base，不在夹具里夺回核心或清旗后继续经济主线。
+
+## 原生命令 JSON 夹具生成设计（先于实施）
+
+主线程授权生成 `testing/colossus_1019_native_commands.json`，仅作为可审查、可复用的原生控制台文字资产，不自动执行、不修改生产包。顶层及每条命令均标记 PENDING，记录原生 EXE、基准 SAV、精确来源、前提与验收；所有 command 为 ASCII 单行 effect，命令中不使用 ROOT/PREV 隐式层级。
+
+资产包含一条七独立目标合并 setup、一条有持续负例检查且 FROM 严格为 Mother 的合并 dispatch；真正 start_colony 的 setup/inspect/dispatch；敌国天然殖民地创建原生地战双方的 setup/inspect/dispatch；独立备份殖民地创建、原核心物理引用和接收国绑定、转手、检查、负例派发。辅助目标采用 eep_guard_ 前缀；不清除生产核心绑定、EEP初始化标记或任一拒绝条件。所有世界创建选择器加 eep_guard_reserved 后立即排除已用目标，防止不同片段误用同一物理对象。
+
+殖民与地战的精确依据及构造边界沿用 [原生状态负例研究](colossus-native-state-negative-fixtures-1019.md)：start_colony 为 effects.log:1336、原版 origin.7320；create_army 为 :333，原版 colony.4 直接在殖民地生成敌方军队。当前 Machine actor 用 machine_assault_1，原版 `01_assault_armies.txt:785`；有机敌方守军用 defense_army。生成军队不等于已经 has_ground_combat，实际布尔、参战双方、持续状态必须另查，未成立不得调用负例或标通过。殖民中若同时 is_colony=no，报告联合拒绝，不声称隔离单条件。
+
+实施静态验收：JSON可解析；全部命令ASCII且无CR/LF；大括号/引号平衡；七setup目标与七持续状态互异；所有完成调用使用同一专属回调与显式 scopes.from；不存在移除拒绝flag、写生产核心绑定、清初始化标记、直接调用结算或武器完成效果；每条命令前提/验收/来源齐全。可用既有 open_kaishek Stellaris解析器检查提取的 effect 文本，报告仅语法范围，不能自发实机PASS。主线程确认前不在当前run中执行。
+
+### 控制台长度与分条优先路径（先于补充实施）
+
+本机原版 `interface/console.gui:22–30` 的console_edit没有max_characters或max_text_length配置；其它GUI中出现的100/1000限制属于其它控件，不能套给控制台。没有可靠原生控制台长度上限证据。原4555字符合并setup保留，但标注长度尚未校准，不优先物理输入。
+
+按主线程追加要求，资产增加一个显式Mother→actor/species绑定命令、七个分别小于1000 ASCII字符的独立setup。每条直接选择当前未殖民、非恒星、非人工、非核心且未reserved的物理对象，立即reserve并各存独立全局target，再建立带持续拒绝条件的殖民地；类型、人口、原核心绑定要求与合并版相同。优先按顺序分条输入，每条保存/核对新目标身份和对应状态，不把静态PARSED当作控制台已接收。分条路线与合并路线二选一，不在同一分支先后执行两套。
+
+此次只读pk1base还确认actor已有tech_assault_armies，country1为auth_dictatorial而非Machine，符合地战片段使用machine_assault_1攻方及defense_army守方的前提；更换运行或接收国后仍需重新核查。
+
+已生成22条全部PENDING的命令资产，文件SHA256 `7ec14b4fb1813e29441ce09063e4738fa5b10d3b9506745bbf563470014f0c79`。绑定命令780字符；分条active/devouring/credit/destroy/secondary_core/artificial/qzero分别691/704/696/700/713/718/790字符。合并setup4555、dispatch906字符。既有open_kaishek lossless parser以stdin batch解析22条、全部PARSED/diagnostics=[]/roundTrip=true；这些结果和工具JAR SHA存于JSON的static_validation，仅认证语法/ASCII/字段完整性。没有执行控制台、原生长度校准、建星或护栏实机，全部runtime_result仍为null。

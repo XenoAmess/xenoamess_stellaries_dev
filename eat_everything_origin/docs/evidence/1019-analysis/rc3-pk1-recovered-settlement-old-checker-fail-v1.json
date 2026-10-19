@@ -1,0 +1,1423 @@
+{
+  "status": "FAIL",
+  "scope": "explicit normal/colossus settlement math and persistent native result only; firing is separate",
+  "checks": {
+    "same_candidate_tree": true,
+    "candidate_0_4": true,
+    "c_effective_matter_delta": true,
+    "g_ordinary_material_delta": true,
+    "d_formula": true,
+    "one_world_credit": true,
+    "manufactured_population_formula": true,
+    "manufactured_population_receipt": true,
+    "return_population_receipt": true,
+    "core_population_delta": true,
+    "core_capacity_matches_d": true,
+    "capacity_delta_matches_d_delta": true,
+    "capacity_receipt": true,
+    "source_was_colonized": true,
+    "source_colony_destroyed": false,
+    "real_shattered_planet_class": true,
+    "no_previous_destroy_receipt": true,
+    "all_once_only_receipts": true,
+    "bound_core_keeps_owner": true,
+    "source_is_not_core": true,
+    "source_q_receipt": true,
+    "fresh_colossus_q_matches_live_size_less_damage": true,
+    "no_enemy_population_return": true,
+    "one_calibrated_crisis_objective_reward": true,
+    "separate_empire_crisis_reward_matches_explicit_expectation": true
+  },
+  "path": "colossus",
+  "case": {
+    "schema": "eep.1019.settlement-case.v1",
+    "path": "colossus",
+    "before": "C:/Users/1/AppData/Local/xenoamess_stellaries_dev/artifacts/1019-implementation/runs/20261019T092935Z/pk1queued.sav",
+    "after": "D:/workspace/xenoamess_stellaries_dev/eat_everything_origin/docs/evidence/1019-analysis/pk1-interrupted-save-v1/recovered/pk1charge.sav",
+    "source_world": 17,
+    "core_world": 2,
+    "expected_q": 19,
+    "native": false,
+    "expected_return": 0,
+    "expected_other_core_pop_delta": 0,
+    "expected_crisis_progress_delta": 750,
+    "crisis_calibration_evidence": {
+      "path": "D:/workspace/xenoamess_stellaries_dev/eat_everything_origin/docs/evidence/1019-analysis/rc3-pk1-objective-calibration-v1.json",
+      "sha256": "58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a"
+    },
+    "expected_crisis_empires_progress_delta": 600,
+    "crisis_empires_calibration_evidence": {
+      "path": "D:/workspace/xenoamess_stellaries_dev/eat_everything_origin/docs/evidence/1019-analysis/rc3-pk1-objective-calibration-v1.json",
+      "sha256": "58416a43891a899cc7ded7982760cd1dfbe93180e78123937842de011bbba87a"
+    },
+    "natural_population_evidence_scope": "Mar7 to Mar13 stays within March; separate real hardware Jan7 to Jan13 same-month six-day save pair has zero raw population growth. Not inferred from after settlement population.",
+    "partial_save_recovery_receipt": {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge-recovery-receipt.json",
+      "sha256": "057a94b2108e35fb9788c878da2966b13b4cc46024df25e5c029dd158ca134fa"
+    },
+    "native_duration_status": "FAIL_90_30_DAYS_NOT_OBSERVED",
+    "full_native_charge_and_fire_case_status": "PENDING_DURATION_FAILURE_AND_NO_INTERMEDIATE_CHARGING_EVIDENCE"
+  },
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.sav",
+    "save_sha256": "f97338d78b060ac6abd20ee3fd03f2b603a5bdf1a29f55a7ad9f1ff96a9e40c6",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.audit.json",
+    "audit_sha256": "074019bd60f3860dd00d7b3861cff70f36f2ccb4f9c97d36c69db75956481812",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.native-save.json",
+        "sha256": "e3ea3483d2ff18fca0e6151a6a698f0abcb4e919e31695898cb3ebe09007c8c3",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1queued.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1queued.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.sav",
+          "sha256": "f97338d78b060ac6abd20ee3fd03f2b603a5bdf1a29f55a7ad9f1ff96a9e40c6",
+          "date": "2200.03.07"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge.sav",
+    "save_sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge.audit.json",
+    "audit_sha256": "371a8f992e0094ea374af0b9ff526bcb2a963360feb6f0117f4c065f2edab1d6",
+    "receipts": [
+      {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge-recovery-receipt.json",
+        "sha256": "057a94b2108e35fb9788c878da2966b13b4cc46024df25e5c029dd158ca134fa",
+        "entry": {
+          "schema": "eep.1019.partial-native-save-recovery.v1",
+          "status": "RECOVERED_EXISTING_NATIVE_BYTES_AFTER_AUDIT_COUNTRY1_FAILURE",
+          "date": "2200.03.13",
+          "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77",
+          "original_helper_completed": false,
+          "original_native_save_receipt_exists": false,
+          "original_audit_exists": false,
+          "failure_stage": "native_save copied real native SAV, then audit(country0,country1) rejected missing country1; menu close/history/receipt steps not completed",
+          "reproduced_original_audit_exception": {
+            "type": "ValueError",
+            "message": "requested native country does not exist: 1",
+            "reproduced_at_utc": "2026-10-19T11:15:02.766399+00:00"
+          },
+          "original_native_source": {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1charge.sav",
+            "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77"
+          },
+          "original_native_source_mtime_ns": 1792408176182949500,
+          "original_artifact_copy": {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge.sav",
+            "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77"
+          },
+          "original_artifact_mtime_ns": 1792408177220421300,
+          "recovered_byte_copy": {
+            "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge.sav",
+            "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77"
+          },
+          "separately_derived_country0_audit": {
+            "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge.audit.json",
+            "sha256": "371a8f992e0094ea374af0b9ff526bcb2a963360feb6f0117f4c065f2edab1d6"
+          },
+          "actual_name_input": {
+            "file": {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-name.action.json",
+              "sha256": "c308553cd6a73ce72939b71a5e1b7fcef3b422929c2eeab031f5d688e9091ef9"
+            },
+            "record": {
+              "action": "type_text",
+              "stage": "pk1charge-name",
+              "text": "pk1charge",
+              "submitted": false,
+              "typed_at_utc": "2026-10-19T11:09:35.273550+00:00",
+              "key_interval_seconds": 0.04
+            }
+          },
+          "actual_name_edit_ctrl_a": {
+            "file": {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\press-1792408174801.json",
+              "sha256": "5cb20820e06a85a27b74a85f5fb3823d78150f27d08c50d1b742b3058af37772"
+            },
+            "record": {
+              "action": "press",
+              "keys": [
+                "ctrl",
+                "a"
+              ],
+              "repeat": 1,
+              "at_utc": "2026-10-19T11:09:34.801517+00:00"
+            }
+          },
+          "actual_native_save_click": {
+            "file": {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-save-click.action.json",
+              "sha256": "20de397d08f760c86bfcbdb2330aa3c5cde17c2709fd2372a17ba143c19c389e"
+            },
+            "record": {
+              "stage": "pk1charge-save-click",
+              "client_point": [
+                664,
+                240
+              ],
+              "desktop_point": [
+                1432,
+                576
+              ],
+              "hold_seconds": 0.15
+            }
+          },
+          "actual_save_dialog": {
+            "ocr": {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-save-dialog.ocr.json",
+              "sha256": "d1850de9688fd28a10e2a5469b2cd1ba26d3504f50a0dfea8443ae7725ad99e5"
+            },
+            "image": {
+              "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-save-dialog.jpg",
+              "sha256": "8b1a19f1ce10ed8171b8015a0d0a5e471b46efb0a9111f5204b6e6899ac9743a"
+            }
+          },
+          "original_manifest": {
+            "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\manifest.json",
+            "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+          },
+          "zip_crc_complete": true,
+          "created_at_utc": "2026-10-19T11:15:02.902837+00:00",
+          "limitations": [
+            "This explicitly records recovery of a partial real native save, not successful completion of the original helper.",
+            "Original run SAV/audit absence/receipt absence are preserved; only independent recovered directory has a derived audit and this recovery receipt.",
+            "No charging intermediate observation or 90/30-day duration PASS is implied."
+          ]
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "actual": {
+    "q": 19,
+    "g_delta": 19,
+    "made_delta": 300,
+    "core_pop_delta": 300,
+    "capacity_delta": 4,
+    "crisis_progress_before_after": [
+      0,
+      750
+    ],
+    "crisis_progress_delta": 750,
+    "crisis_objectives_independent": {
+      "crisobj_destroy_worlds": {
+        "before": {
+          "present": false,
+          "progress": 0
+        },
+        "after": {
+          "present": true,
+          "progress": 750
+        },
+        "delta": 750,
+        "expected_delta": 750
+      },
+      "crisobj_destroy_empires": {
+        "before": {
+          "present": false,
+          "progress": 0
+        },
+        "after": {
+          "present": true,
+          "progress": 600
+        },
+        "delta": 600,
+        "expected_delta": 600
+      }
+    },
+    "galaxy_system_count": 201,
+    "native_habitability_setting": 1
+  },
+  "all_differences": [
+    {
+      "path": "$.colonies.0.actual_pop_sum",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.colonies.0.amenities_usage",
+      "before": 5309,
+      "after": 5609
+    },
+    {
+      "path": "$.colonies.0.crime",
+      "before": 3.09,
+      "after": 6.09
+    },
+    {
+      "path": "$.colonies.0.employable_pops",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.colonies.0.free_amenities",
+      "before": 941,
+      "after": 641
+    },
+    {
+      "path": "$.colonies.0.free_housing",
+      "before": 5771.9,
+      "after": 5501.9
+    },
+    {
+      "path": "$.colonies.0.housing_usage",
+      "before": 4328.1,
+      "after": 4598.1
+    },
+    {
+      "path": "$.colonies.0.num_sapient_pops",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.colonies.0.pop_to_kill_from_devastation",
+      "before": 36,
+      "after": 65
+    },
+    {
+      "path": "$.colonies.0.stability",
+      "before": 58.5448,
+      "after": 57.2856
+    },
+    {
+      "path": "$.colonies.1",
+      "before": null,
+      "after": {
+        "kill_pop": "0.01.01",
+        "last_district_changed": "district_city",
+        "army_build_queue": 5,
+        "stability": 0,
+        "crime": 0,
+        "amenities": 0,
+        "amenities_usage": 0,
+        "free_amenities": 0,
+        "free_housing": 8500,
+        "total_housing": 8500,
+        "housing_usage": 0,
+        "civilian": 1710,
+        "manual_designation_changed_date": "2200.01.01",
+        "final_designation": "col_capital",
+        "designation": "col_capital",
+        "ascension_tier": 0,
+        "pop_groups": [],
+        "pop_jobs": [],
+        "districts": [
+          16777216
+        ],
+        "buildings": [],
+        "actual_pop_sum": 0
+      }
+    },
+    {
+      "path": "$.country.flags.eep_component_snapshot_available",
+      "before": 62809440,
+      "after": 62809656
+    },
+    {
+      "path": "$.country.flags.eep_notice_pending",
+      "before": null,
+      "after": 62809656
+    },
+    {
+      "path": "$.country.native.employable_pops",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.country.native.military_power",
+      "before": 259789.04687,
+      "after": 263033.625
+    },
+    {
+      "path": "$.country.native.num_sapient_pops",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.country.stockpile.engineering_research",
+      "before": 55.04048,
+      "after": 55.76157
+    },
+    {
+      "path": "$.country.stockpile.menace",
+      "before": 75,
+      "after": 1425
+    },
+    {
+      "path": "$.country.stockpile.physics_research",
+      "before": 55.04048,
+      "after": 55.76157
+    },
+    {
+      "path": "$.country.stockpile.society_research",
+      "before": 64.10048,
+      "after": 64.94157
+    },
+    {
+      "path": "$.country.variables.eep_c",
+      "before": 0,
+      "after": 19
+    },
+    {
+      "path": "$.country.variables.eep_d",
+      "before": 2,
+      "after": 6
+    },
+    {
+      "path": "$.country.variables.eep_delta",
+      "before": null,
+      "after": 300
+    },
+    {
+      "path": "$.country.variables.eep_entitled",
+      "before": null,
+      "after": 300
+    },
+    {
+      "path": "$.country.variables.eep_g",
+      "before": 0,
+      "after": 19
+    },
+    {
+      "path": "$.country.variables.eep_last_capacity",
+      "before": 0,
+      "after": 4
+    },
+    {
+      "path": "$.country.variables.eep_last_manufactured",
+      "before": 0,
+      "after": 300
+    },
+    {
+      "path": "$.country.variables.eep_made",
+      "before": 0,
+      "after": 300
+    },
+    {
+      "path": "$.country.variables.eep_mothership_level",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "$.country.variables.eep_mothership_next",
+      "before": 10,
+      "after": 1
+    },
+    {
+      "path": "$.country.variables.eep_previous_capacity",
+      "before": null,
+      "after": 2
+    },
+    {
+      "path": "$.country.variables.eep_worlds",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "$.country_timed_modifier.items",
+      "before": [
+        {
+          "modifier": "game_start",
+          "days": 3534
+        }
+      ],
+      "after": [
+        {
+          "modifier": "game_start",
+          "days": 3528
+        }
+      ]
+    },
+    {
+      "path": "$.country_timed_modifier.raw",
+      "before": "\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"game_start\"\n\t\t\t\t\tdays=3534\n\t\t\t\t}\n \n\t\t\t}\n\t\t",
+      "after": "\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"game_start\"\n\t\t\t\t\tdays=3528\n\t\t\t\t}\n \n\t\t\t}\n\t\t"
+    },
+    {
+      "path": "$.country_variables_all.eep_c",
+      "before": 0,
+      "after": 19
+    },
+    {
+      "path": "$.country_variables_all.eep_d",
+      "before": 2,
+      "after": 6
+    },
+    {
+      "path": "$.country_variables_all.eep_delta",
+      "before": null,
+      "after": 300
+    },
+    {
+      "path": "$.country_variables_all.eep_entitled",
+      "before": null,
+      "after": 300
+    },
+    {
+      "path": "$.country_variables_all.eep_g",
+      "before": 0,
+      "after": 19
+    },
+    {
+      "path": "$.country_variables_all.eep_last_capacity",
+      "before": 0,
+      "after": 4
+    },
+    {
+      "path": "$.country_variables_all.eep_last_manufactured",
+      "before": 0,
+      "after": 300
+    },
+    {
+      "path": "$.country_variables_all.eep_made",
+      "before": 0,
+      "after": 300
+    },
+    {
+      "path": "$.country_variables_all.eep_mothership_level",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "$.country_variables_all.eep_mothership_next",
+      "before": 10,
+      "after": 1
+    },
+    {
+      "path": "$.country_variables_all.eep_previous_capacity",
+      "before": null,
+      "after": 2
+    },
+    {
+      "path": "$.country_variables_all.eep_worlds",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "$.crisis_objectives",
+      "before": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 75
+        }
+      ],
+      "after": [
+        {
+          "objective": "crisobj_destroy_enemy_ships",
+          "progress": 75
+        },
+        {
+          "objective": "crisobj_destroy_worlds",
+          "progress": 750
+        },
+        {
+          "objective": "crisobj_destroy_empires",
+          "progress": 600
+        }
+      ]
+    },
+    {
+      "path": "$.crisis_progression_raw",
+      "before": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_enemy_ships\"\n\t\t\t\tprogress=75\n\t\t\t}\n\t\t",
+      "after": "\n\t\t\tpath=\"nemesis_path\"\n\t\t\tlevel=\"crisis_level_1\"\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_enemy_ships\"\n\t\t\t\tprogress=75\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_worlds\"\n\t\t\t\tprogress=750\n\t\t\t}\n\t\t\tobjective=\n\t\t\t{\n\t\t\t\tobjective=\"crisobj_destroy_empires\"\n\t\t\t\tprogress=600\n\t\t\t}\n\t\t"
+    },
+    {
+      "path": "$.districts.16777216",
+      "before": null,
+      "after": {
+        "type": "district_ark_city",
+        "level": 3,
+        "zones": [
+          4,
+          4294967295,
+          4294967295
+        ]
+      }
+    },
+    {
+      "path": "$.fleets.159.native.diplomacy_weight",
+      "before": 259577.19531,
+      "after": 262821.77343
+    },
+    {
+      "path": "$.fleets.159.native.hit_points",
+      "before": 93960.0,
+      "after": 95460.0
+    },
+    {
+      "path": "$.fleets.159.native.military_power",
+      "before": 259577.19531,
+      "after": 262821.77343
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.armor_hitpoints",
+      "before": 44787.6,
+      "after": 46074.6
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.forward_x",
+      "before": 0.52628,
+      "after": -0.61321
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.forward_y",
+      "before": 0.85031,
+      "after": -0.78991
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.hitpoints",
+      "before": 93960,
+      "after": 95460
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.max_armor_hitpoints",
+      "before": 44787.6,
+      "after": 46074.6
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.max_hitpoints",
+      "before": 93960,
+      "after": 95460
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.max_shield_hitpoints",
+      "before": 167310,
+      "after": 169401.375
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.post_move_angle",
+      "before": -0.55433,
+      "after": 2.41309
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.rotation",
+      "before": -0.55433,
+      "after": 2.48142
+    },
+    {
+      "path": "$.fleets.159.ships.997.native.shield_hitpoints",
+      "before": 167310,
+      "after": 169401.375
+    },
+    {
+      "path": "$.fleets_1019.159.movement.coordinate.visual_height",
+      "before": null,
+      "after": 10
+    },
+    {
+      "path": "$.fleets_1019.159.movement.coordinate.x",
+      "before": 40.65677,
+      "after": 32.63097
+    },
+    {
+      "path": "$.fleets_1019.159.movement.coordinate.y",
+      "before": 161.7926,
+      "after": 152.52768
+    },
+    {
+      "path": "$.fleets_1019.159.movement.native.time_since_last_path_update",
+      "before": 43,
+      "after": 1
+    },
+    {
+      "path": "$.fleets_1019.159.movement.raw",
+      "before": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.55433\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=40.65677\n\t\t\t\ty=161.7926\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=43\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.01.05\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t",
+      "after": "\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.87091\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=32.63097\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t\tvisual_height=10\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=1\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.03.07\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t"
+    },
+    {
+      "path": "$.fleets_1019.159.native.diplomacy_weight",
+      "before": 259577.19531,
+      "after": 262821.77343
+    },
+    {
+      "path": "$.fleets_1019.159.native.hit_points",
+      "before": 93960.0,
+      "after": 95460.0
+    },
+    {
+      "path": "$.fleets_1019.159.native.military_power",
+      "before": 259577.19531,
+      "after": 262821.77343
+    },
+    {
+      "path": "$.fleets_1019.159.raw",
+      "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.27332\n\t\t\t\ty=-20.93996\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=21.41182\n\t\t\t\ty=1.60072\n\t\t\t\tspeed=0.00141\n\t\t\t\trotation=-1.61935\n\t\t\t\tforward_x=0.01417\n\t\t\t\tforward_y=-0.00045\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=0\n\t\t\t\tships=\n\t\t\t\t{\n\t\t\t\t\t997 \n\t\t\t\t}\n\t\t\t\tparent=\n\t\t\t\t{\n\t\t\t\t\t-1 \n\t\t\t\t}\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=-7.55023\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.55433\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=40.65677\n\t\t\t\ty=161.7926\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=43\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.01.05\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\torder_id=2\n\t\tcurrent_order=\n\t\t{\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=17\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tmove_to_system_point_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tcoordinate=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tx=32.63097\n\t\t\t\t\t\t\ty=152.52768\n\t\t\t\t\t\t\torigin=8\n\t\t\t\t\t\t\tvisual_height=10\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=93960.00000\n\t\tmilitary_power=259577.19531\n\t\tdiplomacy_weight=259577.19531\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+      "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership_evolution\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.27332\n\t\t\t\ty=-20.93996\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=21.41182\n\t\t\t\ty=1.60072\n\t\t\t\tspeed=0.00141\n\t\t\t\trotation=-1.61935\n\t\t\t\tforward_x=0.01417\n\t\t\t\tforward_y=-0.00045\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=0\n\t\t\t\tships=\n\t\t\t\t{\n\t\t\t\t\t997 \n\t\t\t\t}\n\t\t\t\tparent=\n\t\t\t\t{\n\t\t\t\t\t-1 \n\t\t\t\t}\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=-7.55023\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=1\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-3.87091\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=32.63097\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t\tvisual_height=10\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=1\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.03.07\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\torder_id=2\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=95460.00000\n\t\tmilitary_power=262821.77343\n\t\tdiplomacy_weight=262821.77343\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.coordinate.visual_height",
+      "before": null,
+      "after": 10
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.coordinate.x",
+      "before": 40.65677,
+      "after": 32.63097
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.coordinate.y",
+      "before": 161.7926,
+      "after": 152.52768
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.armor_hitpoints",
+      "before": 44787.6,
+      "after": 46074.6
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.forward_x",
+      "before": 0.52628,
+      "after": -0.61321
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.forward_y",
+      "before": 0.85031,
+      "after": -0.78991
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.hitpoints",
+      "before": 93960,
+      "after": 95460
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.max_armor_hitpoints",
+      "before": 44787.6,
+      "after": 46074.6
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.max_hitpoints",
+      "before": 93960,
+      "after": 95460
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.max_shield_hitpoints",
+      "before": 167310,
+      "after": 169401.375
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.post_move_angle",
+      "before": -0.55433,
+      "after": 2.41309
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.rotation",
+      "before": -0.55433,
+      "after": 2.48142
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.native.shield_hitpoints",
+      "before": 167310,
+      "after": 169401.375
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.raw",
+      "before": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"friendly_inspiring_presence\"\n\t\t\t\t\tpriority=20\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"aura_inspiring_presence\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=159\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1478\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section_1019\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=17\n\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\tcomponent_slot=\"EXTRA_LARGE_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t\ttarget=\n\t\t\t\t\t{\n\t\t\t\t\t\ttype=0\n\t\t\t\t\t\tid=6\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcooldown=87.80487\n\t\t\t\tshots_fired=7920017\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=21\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=22\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=23\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=24\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_07\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=25\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=26\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=27\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=28\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=29\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=30\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_08\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=31\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_09\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=32\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_10\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=33\n\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\tcomponent_slot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=40.65677\n\t\t\ty=161.7926\n\t\t\torigin=8\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=40.65677\n\t\t\ty=161.7926\n\t\t\torigin=8\n\t\t}\n\t\tpost_move_angle=-0.55433\n\t\thitpoints=93960\n\t\tshield_hitpoints=167310\n\t\tarmor_hitpoints=44787.6\n\t\tmax_hitpoints=93960\n\t\tmax_shield_hitpoints=167310\n\t\tmax_armor_hitpoints=44787.6\n\t\trotation=-0.55433\n\t\tforward_x=0.52628\n\t\tforward_y=0.85031\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=34\n\t\tflags=\n\t\t{\n\t\t\teep_mothership_design_1019=62808000\n\t\t}\n\t\tcreated_this_update=no\n\t\tlast_combat_activity=\t\t\"2200.01.02\"\n\t\tformation_pos=\n\t\t{\n\t\t\tx=20.94\n\t\t\ty=-20.94\n\t\t\tspeed=0\n\t\t\trotation=0\n\t\t\tforward_x=0\n\t\t\tforward_y=0\n\t\t}\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\ttargeting=1\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tship_fire_rate_mult=0.05\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t",
+      "after": "\n\t\toriginal_owner=0\n\t\tauras=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"friendly_inspiring_presence\"\n\t\t\t\t\tpriority=20\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"aura_inspiring_presence\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t\t{\n\t\t\t\tid=\n\t\t\t\t{\n\t\t\t\t\tid=\"juggernaut_logistics\"\n\t\t\t\t\tpriority=1\n\t\t\t\t}\n\t\t\t\tsource=\n\t\t\t\t{\n\t\t\t\t\tship=997\n\t\t\t\t\taura=\"juggernaut_logistics\"\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t\tfleet=159\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\treserve=0\n\t\tship_design_implementation=\n\t\t{\n\t\t\tdesign=1478\n\t\t\tupgrade=4294967295\n\t\t\tgrowth_stage=0\n\t\t}\n\t\tgraphical_culture=\"eep_dreadnought_01\"\n\t\tsection=\n\t\t{\n\t\t\tdesign=\"eep_mothership_section_1019\"\n\t\t\tslot=\"core\"\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=17\n\t\t\t\ttemplate=\"TITAN_LASER\"\n\t\t\t\tcomponent_slot=\"EXTRA_LARGE_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t\ttarget=\n\t\t\t\t\t{\n\t\t\t\t\t\ttype=0\n\t\t\t\t\t\tid=6\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcooldown=87.80487\n\t\t\t\tshots_fired=7920017\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=18\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=19\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=20\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=21\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=22\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=23\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_06\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=24\n\t\t\t\ttemplate=\"LARGE_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"LARGE_GUN_07\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=25\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=26\n\t\t\t\ttemplate=\"SMALL_DISRUPTOR_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_02\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=27\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_03\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=28\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_04\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=29\n\t\t\t\ttemplate=\"SMALL_PLASMA_3\"\n\t\t\t\tcomponent_slot=\"SMALL_GUN_05\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=30\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_08\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=31\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_09\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=32\n\t\t\t\ttemplate=\"POINT_DEFENCE_3\"\n\t\t\t\tcomponent_slot=\"PD_10\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t\tweapon=\n\t\t\t{\n\t\t\t\tindex=33\n\t\t\t\ttemplate=\"EEP_PLANET_KILLER_DEVOURER\"\n\t\t\t\tcomponent_slot=\"PLANET_KILLER_GUN_01\"\n\t\t\t\ttargeting_module=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcoordinate=\n\t\t{\n\t\t\tx=32.63097\n\t\t\ty=152.52768\n\t\t\torigin=8\n\t\t\tvisual_height=10\n\t\t}\n\t\ttarget_coordinate=\n\t\t{\n\t\t\tx=32.63097\n\t\t\ty=152.52768\n\t\t\torigin=8\n\t\t\tvisual_height=10\n\t\t}\n\t\tpost_move_angle=2.41309\n\t\thitpoints=95460\n\t\tshield_hitpoints=169401.375\n\t\tarmor_hitpoints=46074.6\n\t\tmax_hitpoints=95460\n\t\tmax_shield_hitpoints=169401.375\n\t\tmax_armor_hitpoints=46074.6\n\t\trotation=2.48142\n\t\tforward_x=-0.61321\n\t\tforward_y=-0.78991\n\t\tupgrade_progress=0\n\t\tnext_weapon_index=34\n\t\tflags=\n\t\t{\n\t\t\teep_mothership_design_1019=62808000\n\t\t}\n\t\tcreated_this_update=no\n\t\tlast_combat_activity=\t\t\"2200.01.02\"\n\t\tformation_pos=\n\t\t{\n\t\t\tx=20.94\n\t\t\ty=-20.94\n\t\t\tspeed=0\n\t\t\trotation=0\n\t\t\tforward_x=0\n\t\t\tforward_y=0\n\t\t}\n\t\ttargeting_module=\n\t\t{\n\t\t}\n\t\ttargeting=1\n\t\tcombat_action=1\n\t\taura_modifier=\n\t\t{\n\t\t\tship_fire_rate_mult=0.05\n\t\t\tships_logistics_mult=-0.75\n\t\t}\n\t\tupgradable=no\n\t\tconstruction_date=\t\t\"2200.01.01\"\n\t\tmaturation_date=\t\t\"0.01.01\"\n\t"
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.target_coordinate.visual_height",
+      "before": null,
+      "after": 10
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.target_coordinate.x",
+      "before": 40.65677,
+      "after": 32.63097
+    },
+    {
+      "path": "$.fleets_1019.159.ships.997.target_coordinate.y",
+      "before": 161.7926,
+      "after": 152.52768
+    },
+    {
+      "path": "$.fleets_1019.159.timed_modifier.items",
+      "before": [
+        {
+          "modifier": "eep_mothership",
+          "days": -1
+        }
+      ],
+      "after": [
+        {
+          "modifier": "eep_mothership",
+          "days": -1
+        },
+        {
+          "modifier": "eep_mothership_evolution",
+          "days": -1
+        }
+      ]
+    },
+    {
+      "path": "$.fleets_1019.159.timed_modifier.raw",
+      "before": "\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t",
+      "after": "\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership_evolution\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t"
+    },
+    {
+      "path": "$.fleets_1019.159.variables.eep_applied_level",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "$.pop_groups.65.amenities_usage",
+      "before": 2109,
+      "after": 2409
+    },
+    {
+      "path": "$.pop_groups.65.crime",
+      "before": 21.09,
+      "after": 24.09
+    },
+    {
+      "path": "$.pop_groups.65.current_month_growth_details",
+      "before": "",
+      "after": "\n\t\t\tkey=\"GROWTH_CAT_OTHER\"\n\t\t\tvalue=300\n\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\tvalue=0\n\t\t"
+    },
+    {
+      "path": "$.pop_groups.65.housing_usage",
+      "before": 1898.1,
+      "after": 2168.1
+    },
+    {
+      "path": "$.pop_groups.65.power",
+      "before": 21.09,
+      "after": 24.09
+    },
+    {
+      "path": "$.pop_groups.65.size",
+      "before": 2109,
+      "after": 2409
+    },
+    {
+      "path": "$.pop_jobs.300.bonus_workforce",
+      "before": 90.9,
+      "after": 120.9
+    },
+    {
+      "path": "$.pop_jobs.300.workforce",
+      "before": 909,
+      "after": 1209
+    },
+    {
+      "path": "$.starbases.15.station_native.armor_hitpoints",
+      "before": 44787.6,
+      "after": 46074.6
+    },
+    {
+      "path": "$.starbases.15.station_native.forward_x",
+      "before": 0.52628,
+      "after": -0.61321
+    },
+    {
+      "path": "$.starbases.15.station_native.forward_y",
+      "before": 0.85031,
+      "after": -0.78991
+    },
+    {
+      "path": "$.starbases.15.station_native.hitpoints",
+      "before": 93960,
+      "after": 95460
+    },
+    {
+      "path": "$.starbases.15.station_native.max_armor_hitpoints",
+      "before": 44787.6,
+      "after": 46074.6
+    },
+    {
+      "path": "$.starbases.15.station_native.max_hitpoints",
+      "before": 93960,
+      "after": 95460
+    },
+    {
+      "path": "$.starbases.15.station_native.max_shield_hitpoints",
+      "before": 167310,
+      "after": 169401.375
+    },
+    {
+      "path": "$.starbases.15.station_native.post_move_angle",
+      "before": -0.55433,
+      "after": 2.41309
+    },
+    {
+      "path": "$.starbases.15.station_native.rotation",
+      "before": -0.55433,
+      "after": 2.48142
+    },
+    {
+      "path": "$.starbases.15.station_native.shield_hitpoints",
+      "before": 167310,
+      "after": 169401.375
+    },
+    {
+      "path": "$.worlds.17",
+      "before": null,
+      "after": {
+        "colony": 1,
+        "planet_class": "pc_shattered",
+        "planet_size": 19,
+        "original_owner": 1,
+        "carrier_binary_flags": 1,
+        "build_queue": 4,
+        "binary_flags": 589,
+        "orbit": 24,
+        "last_bombardment": "0.01.01",
+        "moon_of": 15,
+        "bombardment_damage": 0,
+        "entity": 0,
+        "name": "SPEC_Dabbax_planet",
+        "variables": {
+          "eep_old_damage": 0,
+          "eep_q": 19
+        },
+        "flags": {
+          "3_year_owner_change_flag": {
+            "flag_date": 62808000,
+            "flag_days": 1008
+          },
+          "eep_destroy_done": 62809656,
+          "eep_credit_done": 62809656,
+          "eep_return_done": 62809656,
+          "eep_population_done": 62809656,
+          "eep_crisis_done": 62809656
+        },
+        "modifiers": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"prosp_uni_mod\"\n\t\t\t\t\t\tdays=7128\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t",
+        "deposits": []
+      }
+    },
+    {
+      "path": "$.worlds.2.flags.3_year_owner_change_flag.flag_days",
+      "before": 1014,
+      "after": 1008
+    },
+    {
+      "path": "$.worlds.2.modifiers",
+      "before": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_parallel_construction\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t",
+      "after": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_parallel_construction\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=6\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t"
+    },
+    {
+      "path": "$.worlds.2.variables.eep_capacity_value",
+      "before": 2,
+      "after": 6
+    },
+    {
+      "path": "$.worlds_1019.17.actual_pop_sum",
+      "before": 5206,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.amenities",
+      "before": 6813.125,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.amenities_usage",
+      "before": 3926.08,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.binary_flags",
+      "before": 72,
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.employable_pops",
+      "before": 5206,
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.free_amenities",
+      "before": 2887.045,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.free_housing",
+      "before": 394,
+      "after": 8500
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.governor",
+      "before": 85,
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.housing_usage",
+      "before": 5206,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.last_district_changed",
+      "before": null,
+      "after": "district_city"
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.num_sapient_pops",
+      "before": 5206,
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.pop_to_kill_from_devastation",
+      "before": 40,
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.stability",
+      "before": 94.4394,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.colony_native.total_housing",
+      "before": 5600,
+      "after": 8500
+    },
+    {
+      "path": "$.worlds_1019.17.colony_raw",
+      "before": "\n\t\tautomation=\n\t\t{\n\t\t\tenabled=no\n\t\t\tsettings=\n\t\t\t{\n\t\t\t\t\"planet_automation_deficit_restriction\"\n\t\t\t\t\"planet_automation_designation_construction\"\n\t\t\t\t\"planet_automation_upgrade_buildings\"\n\t\t\t\t\"planet_automation_amenities\"\n\t\t\t\t\"planet_automation_rare_resources\"\n\t\t\t\t\"planet_automation_pop_assembly\"\n\t\t\t\t\"planet_automation_housing\"\n\t\t\t\t\"planet_automation_crime\"\n\t\t\t\t\"planet_automation_clear_blockers\"\n\t\t\t\t\"planet_automation_biotrophy_management\"\n\t\t\t\t\"planet_automation_worm\"\n\t\t\t\t\"planet_automation_permanent_employment_center\"\n\t\t\t\t\"planet_automation_psi_corps_building\"\n\t\t\t}\n\t\t}\n\t\tpop_groups=\n\t\t{\n\t\t\t40 3 38 39 \n\t\t}\n\t\tpop_jobs=\n\t\t{\n\t\t\t53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 \n\t\t}\n\t\tkill_pop=\t\t\"0.01.01\"\n\t\tdistricts=\n\t\t{\n\t\t\t4 5 6 7 \n\t\t}\n\t\tarmy_build_queue=5\n\t\tgovernor=85\n\t\tarmy=\n\t\t{\n\t\t\t5 6 7 8 9 10 11 \n\t\t}\n\t\tspawned_armies=\n\t\t{\n\t\t\t5 6 7 8 9 10 11 \n\t\t}\n\t\tpop_to_kill_from_devastation=40\n\t\tstability=94.4394\n\t\tcrime=0\n\t\tamenities=6813.125\n\t\tamenities_usage=3926.08\n\t\tfree_amenities=2887.045\n\t\tfree_housing=394\n\t\ttotal_housing=5600\n\t\thousing_usage=5206\n\t\temployable_pops=5206\n\t\tcivilian=1710\n\t\tnum_sapient_pops=5206\n\t\tmanual_designation_changed_date=\t\t\"2200.01.01\"\n\t\tfinal_designation=\"col_capital\"\n\t\tdesignation=\"col_capital\"\n\t\tascension_tier=0\n\t\tspecies_refs=\n\t\t{\n\t\t\t2 \n\t\t}\n\t\tspecies_information=\n\t\t{\n\t\t\t2=\n\t\t\t{\n\t\t\t\tnum_pops=5206\n\t\t\t}\n\t\t}\n\t\tupkeep=\n\t\t{\n\t\t\tenergy=27\n\t\t\tminerals=33\n\t\t\tfood=52.03\n\t\t\tconsumer_goods=36.9865\n\t\t\talloys=2.2\n\t\t}\n\t\tproduces=\n\t\t{\n\t\t\tenergy=50.94619\n\t\t\tminerals=22.64275\n\t\t\tfood=77.1912\n\t\t\tphysics_research=2.5077\n\t\t\tsociety_research=2.5077\n\t\t\tengineering_research=2.84967\n\t\t\tunity=37.59867\n\t\t\ttrade=36.45961\n\t\t\tconsumer_goods=29.71861\n\t\t\talloys=6.36827\n\t\t}\n\t\tprofits=\n\t\t{\n\t\t\tenergy=23.94619\n\t\t\tminerals=-10.35725\n\t\t\tfood=25.1612\n\t\t\tphysics_research=2.5077\n\t\t\tsociety_research=2.5077\n\t\t\tengineering_research=2.84967\n\t\t\tunity=37.59867\n\t\t\ttrade=36.45961\n\t\t\tconsumer_goods=-7.26789\n\t\t\talloys=4.16827\n\t\t}\n\t\tbuildings_cache=\n\t\t{\n\t\t\t3 5 6 7 4 \n\t\t}\n\t\tlast_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=5203\n\t\t\t\tgrowth=3\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=2\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=5203\n\t\t\t\t\t\tgrowth=3\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"civilian\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1705\n\t\t\t\t\t\t\tgrowth=4\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"ruler\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=200\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"specialist\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1298\n\t\t\t\t\t\t\tgrowth=-1\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"worker\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2000\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcurrent_month_growth_details=\n\t\t\t{\n\t\t\t\tkey=\"GROWTH_CAT_GROWTH\"\n\t\t\t\tvalue=3\n\t\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\t\tvalue=0\n\t\t\t}\n\t\t}\n\t\tcurrent_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=5206\n\t\t\t\tgrowth=0\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=2\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=5206\n\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"civilian\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1709\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"ruler\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=200\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"specialist\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1297\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"worker\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2000\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcurrent_month_growth_details=\n\t\t\t{\n\t\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\t\tvalue=0\n\t\t\t}\n\t\t}\n\t\tcarrier=\n\t\t{\n\t\t\ttype=planet\n\t\t\treference=17\n\t\t}\n\t\tbinary_flags=72\n\t",
+      "after": "\n\t\tautomation=\n\t\t{\n\t\t\tenabled=no\n\t\t}\n\t\tkill_pop=\t\t\"0.01.01\"\n\t\tdistricts=\n\t\t{\n\t\t\t16777216 \n\t\t}\n\t\tlast_district_changed=\"district_city\"\n\t\tarmy_build_queue=5\n\t\tstability=0\n\t\tcrime=0\n\t\tamenities=0\n\t\tamenities_usage=0\n\t\tfree_amenities=0\n\t\tfree_housing=8500\n\t\ttotal_housing=8500\n\t\thousing_usage=0\n\t\tcivilian=1710\n\t\tmanual_designation_changed_date=\t\t\"2200.01.01\"\n\t\tfinal_designation=\"col_capital\"\n\t\tdesignation=\"col_capital\"\n\t\tascension_tier=0\n\t\tspecies_information=\n\t\t{\n\t\t\t2=\n\t\t\t{\n\t\t\t\tnum_pops=5306\n\t\t\t}\n\t\t}\n\t\tupkeep=\n\t\t{\n\t\t\tenergy=27\n\t\t\tminerals=33\n\t\t\tfood=52.03\n\t\t\tconsumer_goods=36.9865\n\t\t\talloys=2.2\n\t\t}\n\t\tproduces=\n\t\t{\n\t\t\tenergy=50.94619\n\t\t\tminerals=22.64275\n\t\t\tfood=77.1912\n\t\t\tphysics_research=2.5077\n\t\t\tsociety_research=2.5077\n\t\t\tengineering_research=2.84967\n\t\t\tunity=37.59867\n\t\t\ttrade=36.45961\n\t\t\tconsumer_goods=29.71861\n\t\t\talloys=6.36827\n\t\t}\n\t\tprofits=\n\t\t{\n\t\t\tenergy=23.94619\n\t\t\tminerals=-10.35725\n\t\t\tfood=25.1612\n\t\t\tphysics_research=2.5077\n\t\t\tsociety_research=2.5077\n\t\t\tengineering_research=2.84967\n\t\t\tunity=37.59867\n\t\t\ttrade=36.45961\n\t\t\tconsumer_goods=-7.26789\n\t\t\talloys=4.16827\n\t\t}\n\t\tbuildings_cache=\n\t\t{\n\t\t\t6 7 \n\t\t}\n\t\tlast_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=5203\n\t\t\t\tgrowth=3\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=2\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=5203\n\t\t\t\t\t\tgrowth=3\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"civilian\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1705\n\t\t\t\t\t\t\tgrowth=4\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"ruler\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=200\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"specialist\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1298\n\t\t\t\t\t\t\tgrowth=-1\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"worker\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2000\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcurrent_month_growth_details=\n\t\t\t{\n\t\t\t\tkey=\"GROWTH_CAT_GROWTH\"\n\t\t\t\tvalue=3\n\t\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\t\tvalue=0\n\t\t\t}\n\t\t}\n\t\tcurrent_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=5206\n\t\t\t\tgrowth=0\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=2\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=5206\n\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"civilian\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1709\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"ruler\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=200\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"specialist\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=1297\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"worker\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2000\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcurrent_month_growth_details=\n\t\t\t{\n\t\t\t\tkey=\"GROWTH_CAT_OTHER\"\n\t\t\t\tvalue=100\n\t\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\t\tvalue=0\n\t\t\t}\n\t\t}\n\t\tcarrier=\n\t\t{\n\t\t\ttype=planet\n\t\t\treference=17\n\t\t}\n\t"
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.323",
+      "before": {
+        "type": "d_decrepit_dwellings"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.324",
+      "before": {
+        "type": "d_failing_infrastructure",
+        "swap_type": "d_ore_rich_caverns"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.325",
+      "before": {
+        "type": "d_failing_infrastructure",
+        "swap_type": "d_ore_rich_caverns"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.326",
+      "before": {
+        "type": "d_hot_springs"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.327",
+      "before": {
+        "type": "d_frozen_gas_lake"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.328",
+      "before": {
+        "type": "d_tempestous_mountain"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.329",
+      "before": {
+        "type": "d_veiny_cliffs"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.330",
+      "before": {
+        "type": "d_ore_rich_caverns"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.331",
+      "before": {
+        "type": "d_rich_mountain"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.332",
+      "before": {
+        "type": "d_forgiving_tundra"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.333",
+      "before": {
+        "type": "d_fungal_caves"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.334",
+      "before": {
+        "type": "d_forgiving_tundra"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.deposits.335",
+      "before": {
+        "type": "d_fungal_forest"
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.flags",
+      "before": [
+        "3_year_owner_change_flag"
+      ],
+      "after": [
+        "3_year_owner_change_flag",
+        "eep_destroy_done",
+        "eep_credit_done",
+        "eep_return_done",
+        "eep_population_done",
+        "eep_crisis_done"
+      ]
+    },
+    {
+      "path": "$.worlds_1019.17.flags_raw",
+      "before": "\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1014\n\t\t\t\t}\n\t\t\t",
+      "after": "\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1008\n\t\t\t\t}\n\t\t\t\teep_destroy_done=62809656\n\t\t\t\teep_credit_done=62809656\n\t\t\t\teep_return_done=62809656\n\t\t\t\teep_population_done=62809656\n\t\t\t\teep_crisis_done=62809656\n\t\t\t"
+    },
+    {
+      "path": "$.worlds_1019.17.native.colonize_date",
+      "before": "2016.05.09",
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.native.controller",
+      "before": 1,
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.native.entity",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.native.owner",
+      "before": 1,
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.native.planet_class",
+      "before": "pc_alpine",
+      "after": "pc_shattered"
+    },
+    {
+      "path": "$.worlds_1019.17.pop_groups.3",
+      "before": {
+        "native": {
+          "can_procreate": "yes",
+          "can_crossbreed": "yes",
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 1,
+          "size": 1710,
+          "last_month_growth": 4,
+          "month_start_size": 1709,
+          "total_attraction": 16.37,
+          "habitability": 1,
+          "happiness": 0.95463,
+          "power": 42.75,
+          "crime": 1.55302,
+          "housing_usage": 1710
+        },
+        "key": {
+          "species": 2,
+          "category": "civilian"
+        }
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.pop_groups.38",
+      "before": {
+        "native": {
+          "can_procreate": "yes",
+          "can_crossbreed": "yes",
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 1,
+          "size": 200,
+          "last_month_growth": 0,
+          "month_start_size": 200,
+          "total_attraction": 16.37,
+          "habitability": 1,
+          "power": 12,
+          "amenities_usage": 196,
+          "housing_usage": 200
+        },
+        "key": {
+          "species": 2,
+          "category": "ruler"
+        }
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.pop_groups.39",
+      "before": {
+        "native": {
+          "can_procreate": "yes",
+          "can_crossbreed": "yes",
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 1,
+          "size": 1296,
+          "last_month_growth": -1,
+          "month_start_size": 1297,
+          "total_attraction": 16.37,
+          "habitability": 1,
+          "power": 45.36,
+          "amenities_usage": 1270.08,
+          "housing_usage": 1296
+        },
+        "key": {
+          "species": 2,
+          "category": "specialist"
+        }
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.pop_groups.40",
+      "before": {
+        "native": {
+          "can_procreate": "yes",
+          "can_crossbreed": "yes",
+          "can_vote": "yes",
+          "can_fill_worker_job": "yes",
+          "can_fill_specialist_job": "yes",
+          "can_fill_ruler_job": "yes",
+          "planet": 1,
+          "size": 2000,
+          "last_month_growth": 0,
+          "month_start_size": 2000,
+          "total_attraction": 37.16,
+          "habitability": 1,
+          "happiness": 0.95463,
+          "power": 50,
+          "crime": 1.8164,
+          "amenities_usage": 1960,
+          "housing_usage": 2000
+        },
+        "key": {
+          "species": 2,
+          "category": "worker"
+        }
+      },
+      "after": null
+    },
+    {
+      "path": "$.worlds_1019.17.raw",
+      "before": "\n\t\t\tcolony=1\n\t\t\tplanet_class=\"pc_alpine\"\n\t\t\tplanet_size=19\n\t\t\tcolonize_date=\t\t\t\"2016.05.09\"\n\t\t\toriginal_owner=1\n\t\t\tcarrier_binary_flags=1\n\t\t\tbuild_queue=4\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"SPEC_Dabbax_planet\"\n\t\t\t}\n\t\t\tbinary_flags=589\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=32.63097\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\torbit=24\n\t\t\tlast_bombardment=\t\t\t\"0.01.01\"\n\t\t\towner=1\n\t\t\tcontroller=1\n\t\t\tmoon_of=15\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tbombardment_damage=0\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"prosp_uni_mod\"\n\t\t\t\t\t\tdays=7134\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1014\n\t\t\t\t}\n\t\t\t}\n\t\t\tentity=1\n\t\t\tdeposits=\n\t\t\t{\n\t\t\t\t323 324 325 326 327 328 329 330 331 332 333 334 335 \n\t\t\t}\n\t\t",
+      "after": "\n\t\t\tcolony=1\n\t\t\tplanet_class=\"pc_shattered\"\n\t\t\tplanet_size=19\n\t\t\toriginal_owner=1\n\t\t\tcarrier_binary_flags=1\n\t\t\tbuild_queue=4\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"SPEC_Dabbax_planet\"\n\t\t\t}\n\t\t\tbinary_flags=589\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=32.63097\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\torbit=24\n\t\t\tlast_bombardment=\t\t\t\"0.01.01\"\n\t\t\tmoon_of=15\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tbombardment_damage=0\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"prosp_uni_mod\"\n\t\t\t\t\t\tdays=7128\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1008\n\t\t\t\t}\n\t\t\t\teep_destroy_done=62809656\n\t\t\t\teep_credit_done=62809656\n\t\t\t\teep_return_done=62809656\n\t\t\t\teep_population_done=62809656\n\t\t\t\teep_crisis_done=62809656\n\t\t\t}\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\teep_old_damage=0\n\t\t\t\teep_q=19\n\t\t\t}\n\t\t\tentity=0\n\t\t"
+    },
+    {
+      "path": "$.worlds_1019.17.timed_modifier.items",
+      "before": [
+        {
+          "modifier": "prosp_uni_mod",
+          "days": 7134
+        }
+      ],
+      "after": [
+        {
+          "modifier": "prosp_uni_mod",
+          "days": 7128
+        }
+      ]
+    },
+    {
+      "path": "$.worlds_1019.17.timed_modifier.raw",
+      "before": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"prosp_uni_mod\"\n\t\t\t\t\t\tdays=7134\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t",
+      "after": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"prosp_uni_mod\"\n\t\t\t\t\t\tdays=7128\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t"
+    },
+    {
+      "path": "$.worlds_1019.17.variables.eep_old_damage",
+      "before": null,
+      "after": 0
+    },
+    {
+      "path": "$.worlds_1019.17.variables.eep_q",
+      "before": null,
+      "after": 19
+    },
+    {
+      "path": "$.worlds_1019.2.actual_pop_sum",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.amenities_usage",
+      "before": 5309,
+      "after": 5609
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.crime",
+      "before": 3.09,
+      "after": 6.09
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.employable_pops",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.free_amenities",
+      "before": 941,
+      "after": 641
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.free_housing",
+      "before": 5771.9,
+      "after": 5501.9
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.housing_usage",
+      "before": 4328.1,
+      "after": 4598.1
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.num_sapient_pops",
+      "before": 4809,
+      "after": 5109
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.pop_to_kill_from_devastation",
+      "before": 36,
+      "after": 65
+    },
+    {
+      "path": "$.worlds_1019.2.colony_native.stability",
+      "before": 58.5448,
+      "after": 57.2856
+    },
+    {
+      "path": "$.worlds_1019.2.colony_raw",
+      "before": "\n\t\tautomation=\n\t\t{\n\t\t\tenabled=no\n\t\t\tsettings=\n\t\t\t{\n\t\t\t\t\"planet_automation_deficit_restriction\"\n\t\t\t\t\"planet_automation_designation_construction\"\n\t\t\t\t\"planet_automation_upgrade_buildings\"\n\t\t\t\t\"planet_automation_amenities\"\n\t\t\t\t\"planet_automation_rare_resources\"\n\t\t\t\t\"planet_automation_pop_assembly\"\n\t\t\t\t\"planet_automation_housing\"\n\t\t\t\t\"planet_automation_crime\"\n\t\t\t\t\"planet_automation_clear_blockers\"\n\t\t\t\t\"planet_automation_biotrophy_management\"\n\t\t\t\t\"planet_automation_worm\"\n\t\t\t\t\"planet_automation_permanent_employment_center\"\n\t\t\t\t\"planet_automation_psi_corps_building\"\n\t\t\t}\n\t\t}\n\t\tpop_groups=\n\t\t{\n\t\t\t36 65 \n\t\t}\n\t\tpop_jobs=\n\t\t{\n\t\t\t23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 299 300 \n\t\t}\n\t\tkill_pop=\t\t\"0.01.01\"\n\t\tdistricts=\n\t\t{\n\t\t\t1 27 28 \n\t\t}\n\t\tlast_district_changed=\"district_nexus_2\"\n\t\tarmy_build_queue=1\n\t\tgovernor=78\n\t\tarmy=\n\t\t{\n\t\t\t0 1 2 3 4 \n\t\t}\n\t\tspawned_armies=\n\t\t{\n\t\t\t0 1 2 3 4 \n\t\t}\n\t\tpop_to_kill_from_devastation=36\n\t\tstability=58.5448\n\t\tcrime=3.09\n\t\tamenities=6250\n\t\tamenities_usage=5309\n\t\tfree_amenities=941\n\t\tfree_housing=5771.9\n\t\ttotal_housing=10100\n\t\thousing_usage=4328.1\n\t\temployable_pops=4809\n\t\tnum_sapient_pops=4809\n\t\tmanual_designation_changed_date=\t\t\"0.01.01\"\n\t\tfinal_designation=\"col_capital_machine\"\n\t\tascension_tier=0\n\t\tspecies_refs=\n\t\t{\n\t\t\t3321888769 \n\t\t}\n\t\tspecies_information=\n\t\t{\n\t\t\t3321888769=\n\t\t\t{\n\t\t\t\tnum_pops=4809\n\t\t\t}\n\t\t}\n\t\tupkeep=\n\t\t{\n\t\t\tenergy=137.1\n\t\t\tminerals=79.2\n\t\t\talloys=3.3\n\t\t}\n\t\tproduces=\n\t\t{\n\t\t\tenergy=109.09761\n\t\t\tminerals=73.72992\n\t\t\tphysics_research=8.02731\n\t\t\tsociety_research=8.02731\n\t\t\tengineering_research=8.02731\n\t\t\tunity=25.71714\n\t\t\ttrade=26.75772\n\t\t\talloys=54.30744\n\t\t}\n\t\tprofits=\n\t\t{\n\t\t\tenergy=-28.00239\n\t\t\tminerals=-5.47008\n\t\t\tphysics_research=8.02731\n\t\t\tsociety_research=8.02731\n\t\t\tengineering_research=8.02731\n\t\t\tunity=25.71714\n\t\t\ttrade=26.75772\n\t\t\talloys=51.00744\n\t\t}\n\t\tbuildings_cache=\n\t\t{\n\t\t\t0 1 2 \n\t\t}\n\t\tlast_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=4804\n\t\t\t\tgrowth=5\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=3321888769\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=4804\n\t\t\t\t\t\tgrowth=5\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"complex_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2700\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"simple_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2104\n\t\t\t\t\t\t\tgrowth=5\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcurrent_month_growth_details=\n\t\t\t{\n\t\t\t\tkey=\"GROWTH_CAT_ASSEMBLY\"\n\t\t\t\tvalue=5\n\t\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\t\tvalue=0\n\t\t\t}\n\t\t}\n\t\tcurrent_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=4809\n\t\t\t\tgrowth=0\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=3321888769\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=4809\n\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"complex_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2700\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"simple_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2109\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tcarrier=\n\t\t{\n\t\t\ttype=planet\n\t\t\treference=2\n\t\t}\n\t",
+      "after": "\n\t\tautomation=\n\t\t{\n\t\t\tenabled=no\n\t\t\tsettings=\n\t\t\t{\n\t\t\t\t\"planet_automation_deficit_restriction\"\n\t\t\t\t\"planet_automation_designation_construction\"\n\t\t\t\t\"planet_automation_upgrade_buildings\"\n\t\t\t\t\"planet_automation_amenities\"\n\t\t\t\t\"planet_automation_rare_resources\"\n\t\t\t\t\"planet_automation_pop_assembly\"\n\t\t\t\t\"planet_automation_housing\"\n\t\t\t\t\"planet_automation_crime\"\n\t\t\t\t\"planet_automation_clear_blockers\"\n\t\t\t\t\"planet_automation_biotrophy_management\"\n\t\t\t\t\"planet_automation_worm\"\n\t\t\t\t\"planet_automation_permanent_employment_center\"\n\t\t\t\t\"planet_automation_psi_corps_building\"\n\t\t\t}\n\t\t}\n\t\tpop_groups=\n\t\t{\n\t\t\t36 65 \n\t\t}\n\t\tpop_jobs=\n\t\t{\n\t\t\t23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 299 300 \n\t\t}\n\t\tkill_pop=\t\t\"0.01.01\"\n\t\tdistricts=\n\t\t{\n\t\t\t1 27 28 \n\t\t}\n\t\tlast_district_changed=\"district_nexus_2\"\n\t\tarmy_build_queue=1\n\t\tgovernor=78\n\t\tarmy=\n\t\t{\n\t\t\t0 1 2 3 4 \n\t\t}\n\t\tspawned_armies=\n\t\t{\n\t\t\t0 1 2 3 4 \n\t\t}\n\t\tpop_to_kill_from_devastation=65\n\t\tstability=57.2856\n\t\tcrime=6.09\n\t\tamenities=6250\n\t\tamenities_usage=5609\n\t\tfree_amenities=641\n\t\tfree_housing=5501.9\n\t\ttotal_housing=10100\n\t\thousing_usage=4598.1\n\t\temployable_pops=5109\n\t\tnum_sapient_pops=5109\n\t\tmanual_designation_changed_date=\t\t\"0.01.01\"\n\t\tfinal_designation=\"col_capital_machine\"\n\t\tascension_tier=0\n\t\tspecies_refs=\n\t\t{\n\t\t\t3321888769 \n\t\t}\n\t\tspecies_information=\n\t\t{\n\t\t\t3321888769=\n\t\t\t{\n\t\t\t\tnum_pops=5109\n\t\t\t}\n\t\t}\n\t\tupkeep=\n\t\t{\n\t\t\tenergy=137.1\n\t\t\tminerals=79.2\n\t\t\talloys=3.3\n\t\t}\n\t\tproduces=\n\t\t{\n\t\t\tenergy=109.09761\n\t\t\tminerals=73.72992\n\t\t\tphysics_research=8.02731\n\t\t\tsociety_research=8.02731\n\t\t\tengineering_research=8.02731\n\t\t\tunity=25.71714\n\t\t\ttrade=26.75772\n\t\t\talloys=54.30744\n\t\t}\n\t\tprofits=\n\t\t{\n\t\t\tenergy=-28.00239\n\t\t\tminerals=-5.47008\n\t\t\tphysics_research=8.02731\n\t\t\tsociety_research=8.02731\n\t\t\tengineering_research=8.02731\n\t\t\tunity=25.71714\n\t\t\ttrade=26.75772\n\t\t\talloys=51.00744\n\t\t}\n\t\tbuildings_cache=\n\t\t{\n\t\t\t0 1 2 \n\t\t}\n\t\tlast_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=4804\n\t\t\t\tgrowth=5\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=3321888769\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=4804\n\t\t\t\t\t\tgrowth=5\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"complex_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2700\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"simple_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2104\n\t\t\t\t\t\t\tgrowth=5\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcurrent_month_growth_details=\n\t\t\t{\n\t\t\t\tkey=\"GROWTH_CAT_ASSEMBLY\"\n\t\t\t\tvalue=5\n\t\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\t\tvalue=0\n\t\t\t}\n\t\t}\n\t\tcurrent_month_growth_data=\n\t\t{\n\t\t\tgrowth_and_size=\n\t\t\t{\n\t\t\t\tmonth_start_size=4809\n\t\t\t\tgrowth=0\n\t\t\t}\n\t\t\tspecies=\n\t\t\t{\n\t\t\t\tkey=3321888769\n\t\t\t\tvalue=\n\t\t\t\t{\n\t\t\t\t\tgrowth_and_size=\n\t\t\t\t\t{\n\t\t\t\t\t\tmonth_start_size=4809\n\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t}\n\t\t\t\t\tcategories=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"complex_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2700\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t\tkey=\"simple_drone\"\n\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmonth_start_size=2109\n\t\t\t\t\t\t\tgrowth=0\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tcurrent_month_growth_details=\n\t\t\t{\n\t\t\t\tkey=\"GROWTH_CAT_OTHER\"\n\t\t\t\tvalue=300\n\t\t\t\tkey=\"GROWTH_CAT_PROMOTION\"\n\t\t\t\tvalue=0\n\t\t\t}\n\t\t}\n\t\tcarrier=\n\t\t{\n\t\t\ttype=planet\n\t\t\treference=2\n\t\t}\n\t"
+    },
+    {
+      "path": "$.worlds_1019.2.flags_raw",
+      "before": "\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1014\n\t\t\t\t}\n\t\t\t\tuncapped_farming_districts=62808000\n\t\t\t\teep_core=62808000\n\t\t\t\teep_owned_uncapped_generator=62808000\n\t\t\t\tuncapped_generator_districts=62808000\n\t\t\t\teep_owned_uncapped_mining=62808000\n\t\t\t\tuncapped_mining_districts=62808000\n\t\t\t\teep_owned_uncapped_farming=62808000\n\t\t\t",
+      "after": "\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1008\n\t\t\t\t}\n\t\t\t\tuncapped_farming_districts=62808000\n\t\t\t\teep_core=62808000\n\t\t\t\teep_owned_uncapped_generator=62808000\n\t\t\t\tuncapped_generator_districts=62808000\n\t\t\t\teep_owned_uncapped_mining=62808000\n\t\t\t\tuncapped_mining_districts=62808000\n\t\t\t\teep_owned_uncapped_farming=62808000\n\t\t\t"
+    },
+    {
+      "path": "$.worlds_1019.2.pop_groups.65.native.amenities_usage",
+      "before": 2109,
+      "after": 2409
+    },
+    {
+      "path": "$.worlds_1019.2.pop_groups.65.native.crime",
+      "before": 21.09,
+      "after": 24.09
+    },
+    {
+      "path": "$.worlds_1019.2.pop_groups.65.native.housing_usage",
+      "before": 1898.1,
+      "after": 2168.1
+    },
+    {
+      "path": "$.worlds_1019.2.pop_groups.65.native.power",
+      "before": 21.09,
+      "after": 24.09
+    },
+    {
+      "path": "$.worlds_1019.2.pop_groups.65.native.size",
+      "before": 2109,
+      "after": 2409
+    },
+    {
+      "path": "$.worlds_1019.2.raw",
+      "before": "\n\t\t\tcolony=0\n\t\t\tplanet_class=\"pc_machine\"\n\t\t\tplanet_size=21\n\t\t\tcolonize_date=\t\t\t\"2016.05.09\"\n\t\t\toriginal_owner=0\n\t\t\tcarrier_binary_flags=1\n\t\t\tbuild_queue=0\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"EEP-Core\"\n\t\t\t}\n\t\t\tbinary_flags=77\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-49.5243\n\t\t\t\ty=-49.476\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\torbit=70\n\t\t\tlast_bombardment=\t\t\t\"0.01.01\"\n\t\t\towner=0\n\t\t\tcontroller=0\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tbombardment_damage=0\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_parallel_construction\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1014\n\t\t\t\t}\n\t\t\t\tuncapped_farming_districts=62808000\n\t\t\t\teep_core=62808000\n\t\t\t\teep_owned_uncapped_generator=62808000\n\t\t\t\tuncapped_generator_districts=62808000\n\t\t\t\teep_owned_uncapped_mining=62808000\n\t\t\t\tuncapped_mining_districts=62808000\n\t\t\t\teep_owned_uncapped_farming=62808000\n\t\t\t}\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\teep_capacity_value=2\n\t\t\t\teep_court_multiplier=2\n\t\t\t}\n\t\t\tentity=0\n\t\t\tsurveyed_by=0\n\t\t\tdeposits=\n\t\t\t{\n\t\t\t\t312 313 314 315 316 317 318 319 320 321 322 1502 \n\t\t\t}\n\t\t",
+      "after": "\n\t\t\tcolony=0\n\t\t\tplanet_class=\"pc_machine\"\n\t\t\tplanet_size=21\n\t\t\tcolonize_date=\t\t\t\"2016.05.09\"\n\t\t\toriginal_owner=0\n\t\t\tcarrier_binary_flags=1\n\t\t\tbuild_queue=0\n\t\t\tname=\n\t\t\t{\n\t\t\t\tkey=\"EEP-Core\"\n\t\t\t}\n\t\t\tbinary_flags=77\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=-49.5243\n\t\t\t\ty=-49.476\n\t\t\t\torigin=13\n\t\t\t}\n\t\t\torbit=70\n\t\t\tlast_bombardment=\t\t\t\"0.01.01\"\n\t\t\towner=0\n\t\t\tcontroller=0\n\t\t\tplanet_orbitals=\n\t\t\t{\n\t\t\t}\n\t\t\tbombardment_damage=0\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_parallel_construction\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=6\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tflags=\n\t\t\t{\n\t\t\t\t3_year_owner_change_flag=\n\t\t\t\t{\n\t\t\t\t\tflag_date=62808000\n\t\t\t\t\tflag_days=1008\n\t\t\t\t}\n\t\t\t\tuncapped_farming_districts=62808000\n\t\t\t\teep_core=62808000\n\t\t\t\teep_owned_uncapped_generator=62808000\n\t\t\t\tuncapped_generator_districts=62808000\n\t\t\t\teep_owned_uncapped_mining=62808000\n\t\t\t\tuncapped_mining_districts=62808000\n\t\t\t\teep_owned_uncapped_farming=62808000\n\t\t\t}\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\teep_capacity_value=6\n\t\t\t\teep_court_multiplier=2\n\t\t\t}\n\t\t\tentity=0\n\t\t\tsurveyed_by=0\n\t\t\tdeposits=\n\t\t\t{\n\t\t\t\t312 313 314 315 316 317 318 319 320 321 322 1502 \n\t\t\t}\n\t\t"
+    },
+    {
+      "path": "$.worlds_1019.2.timed_modifier.items",
+      "before": [
+        {
+          "multiplier": 2,
+          "modifier": "eep_capacity",
+          "days": -1
+        },
+        {
+          "modifier": "eep_parallel_construction",
+          "days": -1
+        },
+        {
+          "multiplier": 2,
+          "modifier": "eep_court",
+          "days": -1
+        }
+      ],
+      "after": [
+        {
+          "modifier": "eep_parallel_construction",
+          "days": -1
+        },
+        {
+          "multiplier": 2,
+          "modifier": "eep_court",
+          "days": -1
+        },
+        {
+          "multiplier": 6,
+          "modifier": "eep_capacity",
+          "days": -1
+        }
+      ]
+    },
+    {
+      "path": "$.worlds_1019.2.timed_modifier.raw",
+      "before": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_parallel_construction\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t",
+      "after": "\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"eep_parallel_construction\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=2\n\t\t\t\t\t\tmodifier=\"eep_court\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t\t{\n\t\t\t\t\t\tmultiplier=6\n\t\t\t\t\t\tmodifier=\"eep_capacity\"\n\t\t\t\t\t\tdays=-1\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t"
+    },
+    {
+      "path": "$.worlds_1019.2.variables.eep_capacity_value",
+      "before": 2,
+      "after": 6
+    },
+    {
+      "path": "$.zones.4",
+      "before": null,
+      "after": {
+        "type": "zone_default"
+      }
+    }
+  ],
+  "reload_check": null,
+  "limitations": [
+    "This report alone does not prove native charge/fire, war targeting or absence of army."
+  ],
+  "case_sha256": "e51e228329f65ece39907175df35f942d36c6ea5812b5cbdcbf7998e12baf60c",
+  "checker_sha256": "ba17847049d050b2b76dc382e7e3e0a1796dc4976a80c77b16fef243bc612047"
+}

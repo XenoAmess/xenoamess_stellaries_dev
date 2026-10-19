@@ -1,0 +1,28 @@
+{
+  "schema": "eep.1019.pk1-partial-save-byte-verification.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Byte identity and explicit partial-save recovery only; runtime duration remains FAIL",
+  "checks": {
+    "all_payload_sha_match": true,
+    "all_sources_still_match": true,
+    "original_artifact_preserved": true,
+    "original_native_history_same_sha": true,
+    "recovered_sav_exact_same_bytes": true,
+    "original_audit_still_absent": true,
+    "original_native_receipt_still_absent": true,
+    "recovery_receipt_explicit_partial_failure": true,
+    "derived_country0_audit_sha_matches": true,
+    "derived_audit_gamestate_crc_matches": true,
+    "old_checker_single_layout_fail_preserved": true,
+    "new_settlement_25_checks_scoped_pass": true,
+    "strict_179_differences_preserved": true,
+    "overall_duration_result_still_fail": true,
+    "no_dynamic_logs_copied": true,
+    "all_original_stage_ocr_images_sha_match": true
+  },
+  "file_count": 114,
+  "archive_index": {
+    "path": "archive-index-v1.json",
+    "sha256": "2d233ed0c2397ba7ea30897f4d485d6e398008a8ffe192b5f8cb9a23cf6408a7"
+  }
+}

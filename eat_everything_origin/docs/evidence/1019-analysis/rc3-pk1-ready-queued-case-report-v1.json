@@ -1,0 +1,417 @@
+{
+  "schema": "eep.1019.native-pk-queued-case.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Native order acceptance on physical17 and same-day absence of reward only; not charging/firing/callback completion",
+  "checks": {
+    "actual_native_destroy_planet_order_target17": true,
+    "actual_native_move_suborder_origin8": true,
+    "actual_native_suborder_matches_source_coordinate": true,
+    "native_orders_reachable": true,
+    "actual_menu_click_matches_native_ocr": true,
+    "all_eep_country_variables_unchanged": true,
+    "all_mother_variables_unchanged": true,
+    "all_mother_timed_modifiers_unchanged": true,
+    "source_q_unchanged": true,
+    "source_full_native_snapshot_unchanged": true,
+    "core_full_native_snapshot_unchanged": true,
+    "all_population_groups_unchanged": true,
+    "all_population_jobs_unchanged": true,
+    "all_stockpile_unchanged": true,
+    "all_independent_crisis_objectives_unchanged": true,
+    "all_actor_armies_remain_home": true,
+    "no_actor_army_on_target": true,
+    "no_actor_transport_fleet": true,
+    "existing_same_day_no_settlement_nine_pass": true
+  },
+  "before": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.sav",
+    "save_sha256": "11149f60e725625393adececf6481f1dffc9b9364cc1c6fb46e3f76f328eb0ba",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.audit.json",
+    "audit_sha256": "8ca2d1fa836f32cb0069410555837e633fb6220d070f6cbd06047e7b72ef01bb",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.native-save.json",
+        "sha256": "6a6c69d239f9a1b20fec74258d276478065a4197ec640554f4126c2d61291084",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1ready.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1ready.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.sav",
+          "sha256": "11149f60e725625393adececf6481f1dffc9b9364cc1c6fb46e3f76f328eb0ba",
+          "date": "2200.03.07"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "after": {
+    "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.sav",
+    "save_sha256": "f97338d78b060ac6abd20ee3fd03f2b603a5bdf1a29f55a7ad9f1ff96a9e40c6",
+    "run_id": "20261019T092935Z",
+    "version": "0.4.0-rc.3",
+    "version_source": "static_gate_and_copied_descriptor",
+    "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+    "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+    "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.audit.json",
+    "audit_sha256": "074019bd60f3860dd00d7b3861cff70f36f2ccb4f9c97d36c69db75956481812",
+    "receipts": [
+      {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.native-save.json",
+        "sha256": "e3ea3483d2ff18fca0e6151a6a698f0abcb4e919e31695898cb3ebe09007c8c3",
+        "entry": {
+          "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1queued.sav",
+          "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1queued.sav",
+          "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.sav",
+          "sha256": "f97338d78b060ac6abd20ee3fd03f2b603a5bdf1a29f55a7ad9f1ff96a9e40c6",
+          "date": "2200.03.07"
+        }
+      }
+    ],
+    "unsupported_receipt_shapes": []
+  },
+  "case": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-ready-queued-no-settlement-case-v1.json",
+    "sha256": "c92ce40e3d8a3dd47f9dc04fa96d8ab06ee1be9208a329e20b70e93b2c13079b"
+  },
+  "existing_no_settlement_report": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1-ready-queued-no-settlement-report-v1.json",
+    "sha256": "d7284d10b6919826d61646249a5c80f24d1c5fa3724b598da22d61f06c666fad"
+  },
+  "all_eep_variables_before": {
+    "eep_c": 0,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_entitled": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_pending": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_snapshot_state": 0,
+    "eep_component_tracking_level": 0,
+    "eep_d": 2,
+    "eep_fleet_stage": 0,
+    "eep_g": 0,
+    "eep_last_capacity": 0,
+    "eep_last_manufactured": 0,
+    "eep_last_return": 0,
+    "eep_made": 0,
+    "eep_mothership_level": 0,
+    "eep_mothership_next": 10,
+    "eep_stage": 0,
+    "eep_worlds": 0
+  },
+  "all_eep_variables_after": {
+    "eep_c": 0,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_entitled": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_pending": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_snapshot_state": 0,
+    "eep_component_tracking_level": 0,
+    "eep_d": 2,
+    "eep_fleet_stage": 0,
+    "eep_g": 0,
+    "eep_last_capacity": 0,
+    "eep_last_manufactured": 0,
+    "eep_last_return": 0,
+    "eep_made": 0,
+    "eep_mothership_level": 0,
+    "eep_mothership_next": 10,
+    "eep_stage": 0,
+    "eep_worlds": 0
+  },
+  "mother_variables_before": {
+    "eep_applied_level": 0,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_tracking_level": 0
+  },
+  "mother_variables_after": {
+    "eep_applied_level": 0,
+    "eep_component_armor_level": 0,
+    "eep_component_damage_level": 0,
+    "eep_component_hull_level": 0,
+    "eep_component_regen_level": 0,
+    "eep_component_rewards": 0,
+    "eep_component_shield_level": 0,
+    "eep_component_tracking_level": 0
+  },
+  "native_current_order_raw": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=17\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tmove_to_system_point_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tcoordinate=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tx=32.63097\n\t\t\t\t\t\t\ty=152.52768\n\t\t\t\t\t\t\torigin=8\n\t\t\t\t\t\t\tvisual_height=10\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t",
+  "native_destroy_order": {
+    "planet": 17,
+    "can_reach": "yes",
+    "order_id": 1,
+    "commissioner": 4294967295
+  },
+  "native_move_suborder": {
+    "native": {
+      "can_reach": "yes",
+      "commissioner": 4294967295
+    },
+    "coordinate": {
+      "x": 32.63097,
+      "y": 152.52768,
+      "origin": 8,
+      "visual_height": 10
+    }
+  },
+  "source_variables_before": {},
+  "source_variables_after": {},
+  "source_flags_before": [
+    "3_year_owner_change_flag"
+  ],
+  "source_flags_after": [
+    "3_year_owner_change_flag"
+  ],
+  "source_queue_callback_snapshot_present": false,
+  "source_q_present": false,
+  "core_population": 4809,
+  "source_population": 5206,
+  "native_war_raw": "\n\t0=\n\t{\n\t\tname=\n\t\t{\n\t\t\tkey=\"war_vs_adjectives\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"1\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"EEP\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"2\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"%ADJECTIVE%\"\n\t\t\t\t\t\tvariables=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tkey=\"adjective\"\n\t\t\t\t\t\t\t\tvalue=\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tkey=\"SPEC_Dabbax\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"3\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"Extermination_Campaign\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tstart_date=\t\t\"2200.01.01\"\n\t\tattackers=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tcall_type=primary\n\t\t\t\tcountry=0\n\t\t\t\tcaller=4294967295\n\t\t\t\tfleets_gone_mia=0\n\t\t\t}\n \n\t\t}\n\t\tdefenders=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tcall_type=primary\n\t\t\t\tcountry=1\n\t\t\t\tcaller=4294967295\n\t\t\t\tfleets_gone_mia=0\n\t\t\t}\n \n\t\t}\n\t\tbattles=\n\t\t{\n\t\t\t\n\t\t\t{\n\t\t\t\tdefenders=\n\t\t\t\t{\n\t\t\t\t\t0 \n\t\t\t\t}\n\t\t\t\tattackers=\n\t\t\t\t{\n\t\t\t\t\t1 \n\t\t\t\t}\n\t\t\t\tsystem=8\n\t\t\t\tcolony=4294967295\n\t\t\t\tattacker_war_exhaustion=0\n\t\t\t\tdefender_war_exhaustion=0.18101\n\t\t\t\tattacker_victory=yes\n\t\t\t\tdate=\t\t\t\t\"2200.01.02\"\n\t\t\t\tattacker_losses=0\n\t\t\t\tdefender_losses=3\n\t\t\t\ttype=ships\n\t\t\t}\n \n\t\t}\n\t\tattacker_war_goal=\n\t\t{\n\t\t\ttype=\"wg_cleansing\"\n\t\t\twar=0\n\t\t\tactor=0\n\t\t\ttarget=1\n\t\t\twin=yes\n\t\t}\n\t\tdefender_war_goal=\n\t\t{\n\t\t\ttype=\"wg_end_threat\"\n\t\t}\n\t\thave_defender_war_goal=yes\n\t\tpeak_participants=2\n\t\tattacker_war_exhaustion=0.0117\n\t\tdefender_war_exhaustion=0.01316\n\t}\n",
+  "actor_armies": {
+    "0": {
+      "native": {
+        "type": "machine_defense",
+        "health": 220,
+        "max_health": 220,
+        "jump_drive_cooldown": "0.01.01",
+        "owner": 0,
+        "species": 3321888769,
+        "colony": 0,
+        "spawning_colony": 0,
+        "morale": 200
+      },
+      "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"%SEQ%\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"fmt\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANETARYGUARD\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"num\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"1\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\ttype=\"machine_defense\"\n\t\thealth=220\n\t\tmax_health=220\n\t\tjump_drive_cooldown=\t\t\"0.01.01\"\n\t\towner=0\n\t\tspecies=3321888769\n\t\tcolony=0\n\t\tspawning_colony=0\n\t\tmorale=200\n\t"
+    },
+    "1": {
+      "native": {
+        "type": "machine_defense",
+        "health": 220,
+        "max_health": 220,
+        "jump_drive_cooldown": "0.01.01",
+        "owner": 0,
+        "species": 3321888769,
+        "colony": 0,
+        "spawning_colony": 0,
+        "morale": 200
+      },
+      "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"%SEQ%\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"fmt\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANETARYGUARD\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"num\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"2\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\ttype=\"machine_defense\"\n\t\thealth=220\n\t\tmax_health=220\n\t\tjump_drive_cooldown=\t\t\"0.01.01\"\n\t\towner=0\n\t\tspecies=3321888769\n\t\tcolony=0\n\t\tspawning_colony=0\n\t\tmorale=200\n\t"
+    },
+    "2": {
+      "native": {
+        "type": "machine_defense",
+        "health": 220,
+        "max_health": 220,
+        "jump_drive_cooldown": "0.01.01",
+        "owner": 0,
+        "species": 3321888769,
+        "colony": 0,
+        "spawning_colony": 0,
+        "morale": 200
+      },
+      "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"%SEQ%\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"fmt\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANETARYGUARD\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"num\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"3\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\ttype=\"machine_defense\"\n\t\thealth=220\n\t\tmax_health=220\n\t\tjump_drive_cooldown=\t\t\"0.01.01\"\n\t\towner=0\n\t\tspecies=3321888769\n\t\tcolony=0\n\t\tspawning_colony=0\n\t\tmorale=200\n\t"
+    },
+    "3": {
+      "native": {
+        "type": "machine_defense",
+        "health": 220,
+        "max_health": 220,
+        "jump_drive_cooldown": "0.01.01",
+        "owner": 0,
+        "species": 3321888769,
+        "colony": 0,
+        "spawning_colony": 0,
+        "morale": 200
+      },
+      "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"%SEQ%\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"fmt\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANETARYGUARD\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"num\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"4\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\ttype=\"machine_defense\"\n\t\thealth=220\n\t\tmax_health=220\n\t\tjump_drive_cooldown=\t\t\"0.01.01\"\n\t\towner=0\n\t\tspecies=3321888769\n\t\tcolony=0\n\t\tspawning_colony=0\n\t\tmorale=200\n\t"
+    },
+    "4": {
+      "native": {
+        "type": "machine_defense",
+        "health": 220,
+        "max_health": 220,
+        "jump_drive_cooldown": "0.01.01",
+        "owner": 0,
+        "species": 3321888769,
+        "colony": 0,
+        "spawning_colony": 0,
+        "morale": 200
+      },
+      "raw": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"%SEQ%\"\n\t\t\tvariables=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tkey=\"fmt\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"HUMAN1_PLANETARYGUARD\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t\t{\n\t\t\t\t\tkey=\"num\"\n\t\t\t\t\tvalue=\n\t\t\t\t\t{\n\t\t\t\t\t\tkey=\"5\"\n\t\t\t\t\t}\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\ttype=\"machine_defense\"\n\t\thealth=220\n\t\tmax_health=220\n\t\tjump_drive_cooldown=\t\t\"0.01.01\"\n\t\towner=0\n\t\tspecies=3321888769\n\t\tcolony=0\n\t\tspawning_colony=0\n\t\tmorale=200\n\t"
+    }
+  },
+  "screens": [
+    {
+      "ocr": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-source-context.ocr.json",
+        "sha256": "6e0d11e1e03d10ca4e784cd0186f943f739a437dc249227e73822391b70bfc76"
+      },
+      "image": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-source-context.jpg",
+        "sha256": "df898d71c8b0fc7762b8932662d212eb695672d392c97aaee96b143dbb0cad64"
+      }
+    },
+    {
+      "ocr": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-choose-dismantle.ocr.json",
+        "sha256": "be3fb9b6ecfcf6d4662b8d92c35e89878b121dde557e70b2a7ae35863726447e"
+      },
+      "image": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-choose-dismantle.jpg",
+        "sha256": "05f493ea05e340ce817970049358bbc3b65318a00a196ae37cf8e9067996d212"
+      }
+    },
+    {
+      "ocr": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-order-chosen.ocr.json",
+        "sha256": "a41bd5ed521bc4a4e7c3ff023a1266aacea1ffbdb81403d4814238a57e02c3dd"
+      },
+      "image": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-order-chosen.jpg",
+        "sha256": "c6ce113a50bb4ba31a52d10cc2036053d2649e6b6c98ce61c03c0bec863f00ec"
+      }
+    }
+  ],
+  "menu_click": {
+    "action": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-choose-dismantle-click.action.json",
+      "sha256": "1e3d4904aab772a568a67db5291c1bdb8c67d2c450ceb9c619b9fa92c41671b6"
+    },
+    "record": {
+      "stage": "pk1-choose-dismantle-click",
+      "client_point": [
+        518,
+        400
+      ],
+      "desktop_point": [
+        1286,
+        736
+      ],
+      "hold_seconds": 0.15
+    },
+    "matched_ocr_row": {
+      "text": "拆解星球戴巴纳仙",
+      "score": 0.99932,
+      "box": [
+        [
+          473.0,
+          392.0
+        ],
+        [
+          564.0,
+          392.0
+        ],
+        [
+          564.0,
+          409.0
+        ],
+        [
+          473.0,
+          409.0
+        ]
+      ]
+    }
+  },
+  "strict_comparison": {
+    "status": "FAIL",
+    "scope": "strict comparison of all old gameplay fields plus all 1019 observations; no ignored paths",
+    "checks": {
+      "no_gameplay_differences": false,
+      "same_native_date": true
+    },
+    "before": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.sav",
+      "save_sha256": "11149f60e725625393adececf6481f1dffc9b9364cc1c6fb46e3f76f328eb0ba",
+      "run_id": "20261019T092935Z",
+      "version": "0.4.0-rc.3",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.audit.json",
+      "audit_sha256": "8ca2d1fa836f32cb0069410555837e633fb6220d070f6cbd06047e7b72ef01bb",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.native-save.json",
+          "sha256": "6a6c69d239f9a1b20fec74258d276478065a4197ec640554f4126c2d61291084",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1ready.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1ready.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1ready.sav",
+            "sha256": "11149f60e725625393adececf6481f1dffc9b9364cc1c6fb46e3f76f328eb0ba",
+            "date": "2200.03.07"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    },
+    "after": {
+      "save": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.sav",
+      "save_sha256": "f97338d78b060ac6abd20ee3fd03f2b603a5bdf1a29f55a7ad9f1ff96a9e40c6",
+      "run_id": "20261019T092935Z",
+      "version": "0.4.0-rc.3",
+      "version_source": "static_gate_and_copied_descriptor",
+      "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+      "manifest_sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c",
+      "audit": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.audit.json",
+      "audit_sha256": "074019bd60f3860dd00d7b3861cff70f36f2ccb4f9c97d36c69db75956481812",
+      "receipts": [
+        {
+          "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.native-save.json",
+          "sha256": "e3ea3483d2ff18fca0e6151a6a698f0abcb4e919e31695898cb3ebe09007c8c3",
+          "entry": {
+            "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1queued.sav",
+            "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1queued.sav",
+            "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1queued.sav",
+            "sha256": "f97338d78b060ac6abd20ee3fd03f2b603a5bdf1a29f55a7ad9f1ff96a9e40c6",
+            "date": "2200.03.07"
+          }
+        }
+      ],
+      "unsupported_receipt_shapes": []
+    },
+    "before_date": "2200.03.07",
+    "after_date": "2200.03.07",
+    "differences": [
+      {
+        "path": "$.fleets.159.native.order_id",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "path": "$.fleets_1019.159.native.order_id",
+        "before": 1,
+        "after": 2
+      },
+      {
+        "path": "$.fleets_1019.159.raw",
+        "before": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.27332\n\t\t\t\ty=-20.93996\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=21.41182\n\t\t\t\ty=1.60072\n\t\t\t\tspeed=0.00141\n\t\t\t\trotation=-1.61935\n\t\t\t\tforward_x=0.01417\n\t\t\t\tforward_y=-0.00045\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=0\n\t\t\t\tships=\n\t\t\t\t{\n\t\t\t\t\t997 \n\t\t\t\t}\n\t\t\t\tparent=\n\t\t\t\t{\n\t\t\t\t\t-1 \n\t\t\t\t}\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=-7.55023\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.55433\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=40.65677\n\t\t\t\ty=161.7926\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=43\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.01.05\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\torder_id=1\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=93960.00000\n\t\tmilitary_power=259577.19531\n\t\tdiplomacy_weight=259577.19531\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t",
+        "after": "\n\t\tname=\n\t\t{\n\t\t\tkey=\"NAME_EEP_Baiqi_Mothership\"\n\t\t}\n\t\tships=\n\t\t{\n\t\t\t997 \n\t\t}\n\t\ttimed_modifier=\n\t\t{\n\t\t\titems=\n\t\t\t{\n\t\t\t\t\n\t\t\t\t{\n\t\t\t\t\tmodifier=\"eep_mothership\"\n\t\t\t\t\tdays=-1\n\t\t\t\t}\n \n\t\t\t}\n\t\t}\n\t\tcombat=\n\t\t{\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=20.27332\n\t\t\t\ty=-20.93996\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tformation_pos=\n\t\t\t{\n\t\t\t\tx=21.41182\n\t\t\t\ty=1.60072\n\t\t\t\tspeed=0.00141\n\t\t\t\trotation=-1.61935\n\t\t\t\tforward_x=0.01417\n\t\t\t\tforward_y=-0.00045\n\t\t\t}\n\t\t\tformation=\n\t\t\t{\n\t\t\t\troot=0\n\t\t\t\tships=\n\t\t\t\t{\n\t\t\t\t\t997 \n\t\t\t\t}\n\t\t\t\tparent=\n\t\t\t\t{\n\t\t\t\t\t-1 \n\t\t\t\t}\n\t\t\t}\n\t\t\tstart_coordinate=\n\t\t\t{\n\t\t\t\tx=-7.55023\n\t\t\t\ty=152.52768\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\tstart_date=\t\t\t\"0.01.01\"\n\t\t}\n\t\tfleet_stats=\n\t\t{\n\t\t\tcombat_stats=\n\t\t\t{\n\t\t\t\tfleet=\n\t\t\t\t{\n\t\t\t\t}\n\t\t\t\tdate=\t\t\t\t\"0.01.01\"\n\t\t\t}\n\t\t}\n\t\tground_support_stance=\"selective\"\n\t\tship_class=shipclass_starbase\n\t\tspace_fauna_growth_stance=excessive\n\t\tvariables=\n\t\t{\n\t\t\teep_applied_level=0\n\t\t\teep_component_armor_level=0\n\t\t\teep_component_damage_level=0\n\t\t\teep_component_hull_level=0\n\t\t\teep_component_regen_level=0\n\t\t\teep_component_rewards=0\n\t\t\teep_component_shield_level=0\n\t\t\teep_component_tracking_level=0\n\t\t}\n\t\tmia_from=\n\t\t{\n\t\t\tx=0\n\t\t\ty=0\n\t\t\torigin=4294967295\n\t\t}\n\t\tmovement_manager=\n\t\t{\n\t\t\tformation=\n\t\t\t{\n\t\t\t\tscale=1\n\t\t\t\tangle=-0.55433\n\t\t\t\ttype=circle\n\t\t\t}\n\t\t\tcoordinate=\n\t\t\t{\n\t\t\t\tx=40.65677\n\t\t\t\ty=161.7926\n\t\t\t\torigin=8\n\t\t\t}\n\t\t\ttarget=\n\t\t\t{\n\t\t\t\tcoordinate=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t}\n\t\t\ttarget_coordinate=\n\t\t\t{\n\t\t\t\tx=0\n\t\t\t\ty=0\n\t\t\t\torigin=4294967295\n\t\t\t}\n\t\t\ttime_since_last_path_update=43\n\t\t\tstate=move_idle\n\t\t\tpath=\n\t\t\t{\n\t\t\t\tdate=\t\t\t\t\"2200.01.05\"\n\t\t\t}\n\t\t\torbit=\n\t\t\t{\n\t\t\t}\n\t\t\tlast_ftl_jump=\n\t\t\t{\n\t\t\t\tfrom=\n\t\t\t\t{\n\t\t\t\t\tx=0\n\t\t\t\t\ty=0\n\t\t\t\t\torigin=4294967295\n\t\t\t\t}\n\t\t\t\tto=13\n\t\t\t\tfleet=159\n\t\t\t\tjump_method=jump_count\n\t\t\t\tbypass_from=4294967295\n\t\t\t\tbypass_to=4294967295\n\t\t\t}\n\t\t}\n\t\torder_id=2\n\t\tcurrent_order=\n\t\t{\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=17\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tmove_to_system_point_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tcoordinate=\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tx=32.63097\n\t\t\t\t\t\t\ty=152.52768\n\t\t\t\t\t\t\torigin=8\n\t\t\t\t\t\t\tvisual_height=10\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t}\n\t\tproperties=\n\t\t{\n\t\t\tstation=yes\n\t\t\tweapon=yes\n\t\t\tmobile=yes\n\t\t\tvalid_for_combat=yes\n\t\t}\n\t\tsettings=\n\t\t{\n\t\t\tcan_upgrade=no\n\t\t\tcan_change_composition=no\n\t\t\tcan_change_leader=no\n\t\t\tuses_naval_capacity=no\n\t\t\tspawn_debris=no\n\t\t}\n\t\thit_points=93960.00000\n\t\tmilitary_power=259577.19531\n\t\tdiplomacy_weight=259577.19531\n\t\tcached_killed_ships=0\n\t\tcached_disabled_ships=0\n\t\tcached_disengaged_ships=0\n\t\tcached_combined_removed_ships=0\n\t\tcommanding_armada=none\n\t"
+      }
+    ]
+  },
+  "toolchain_source_index": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-readonly-toolchain-v1\\source-index-v1.json",
+    "sha256": "b615b36411f7855fd2aef898a090ad2b3c844a06f6938cddd591fca17bdd7d88"
+  },
+  "checker_sha256": "ba17847049d050b2b76dc382e7e3e0a1796dc4976a80c77b16fef243bc612047",
+  "inspector_sha256": "1ec3ad71f877be5704959134b76e59be077b756a906f7297f278613ee8bfbf92",
+  "limitations": [
+    "The native queued destroy order still contains a move suborder; source q and eep_colossus_active are absent at this moment, so queued callback execution is not inferred.",
+    "Charge and fire remain pending later native SAV/actions; this report does not complete colossus_enemy_fire.",
+    "Strict differences remain unfiltered in the nested original FAIL comparison.",
+    "No army means no actor invasion army on target; five native home defense armies are retained."
+  ]
+}

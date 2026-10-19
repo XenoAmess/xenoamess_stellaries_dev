@@ -1,0 +1,71 @@
+{
+  "schema": "eep.1019.rc4-tool-report-identity-link.v1",
+  "status": "PASS_REPORT_LINK_ONLY",
+  "runtime_acceptance": "PENDING",
+  "scope": "Original frozen tool result and later canonical Git evidence identity only; no report/gate/manifest changes or runtime certification",
+  "created_at_utc": "2026-10-19T11:32:12.954636+00:00",
+  "original_root_project_report": {
+    "path": "docs/evidence/1019-requirements/rc4-open-kaishek.json",
+    "sha256": "2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d",
+    "bytes": 2386
+  },
+  "original_root_artifact_report": {
+    "artifact_path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc4\\open-kaishek.json",
+    "sha256": "2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d",
+    "bytes": 2386
+  },
+  "external_canonical_evidence": {
+    "external_path": "D:\\workspace\\open_kaishek\\docs\\evidence\\stellaris-pk-numeric-source-2026-10-19\\candidate-rc4-package-report.json",
+    "sha256": "7c0c4ffcc48206d205083e6c52ad9fdd9d4bc1ca45e291c43dbd6f57c23113b1",
+    "bytes": 2322,
+    "tool_evidence_commit": "9a286b9321a4d1ecacc0680a8bb0d914e0679b99",
+    "tool_implementation_commit": "2c8f8a9fe7e8a9d27c910a4c21adcfef840c76f2"
+  },
+  "semantic_equal": true,
+  "newline_only": true,
+  "normalization": "Replace CRLF with LF only; all other bytes preserved",
+  "line_endings": {
+    "original_crlf": 64,
+    "original_lone_lf": 0,
+    "canonical_crlf": 0,
+    "canonical_lf": 64
+  },
+  "root_run_binding": {
+    "run_id": "20261019T112808Z",
+    "manifest_artifact_path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T112808Z\\manifest.json",
+    "manifest_sha256": "a83c605727f30a1d68db0e076348d814824d8ca56020ca2ab8864db8194f44f1",
+    "gate_artifact_path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc4\\gate.json",
+    "gate_sha256": "731928624a2a9761f8e0754967db3b5e06c28bb7570f40921e966adb1a99fe0d",
+    "report_sha256": "2e249c08bb39a4e30ff9d2f3eea0983a5684b328bc5018b069002df38315f20d",
+    "report_artifact_path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\candidate-rc4\\open-kaishek.json",
+    "version": "0.4.0-rc.4",
+    "production_tree_sha256": "06485dc540a88b30cef15c27c323ff21cd88f04ad57b79e4f5bc0590937ef468",
+    "production_files": 59,
+    "tool_commit_recorded_in_gate": "2c8f8a9fe7e8a9d27c910a4c21adcfef840c76f2"
+  },
+  "git_byte_preservation": {
+    "text_attribute": "eat_everything_origin/docs/evidence/1019-requirements/rc4-open-kaishek.json: text: unset",
+    "filtered_blob_oid": "557cfc7ef569165606222db8e896d8479e1f6d1d",
+    "raw_blob_oid": "557cfc7ef569165606222db8e896d8479e1f6d1d",
+    "filter_preserves_original_bytes": true
+  },
+  "checks": {
+    "root_two_copies_byte_identical": true,
+    "both_source_sha_match_expected": true,
+    "json_semantically_equal": true,
+    "crlf_to_lf_is_only_difference": true,
+    "root_manifest_still_binds_original_frozen_report": true,
+    "root_gate_still_binds_original_frozen_report": true,
+    "source_and_copied_tree_remain_rc4": true,
+    "shared_static_contract_accepts_original_root_copy": true,
+    "text_filter_preserves_project_original_bytes": true
+  },
+  "actions": {
+    "changed_reports": false,
+    "changed_gate": false,
+    "changed_manifest": false,
+    "restarted_game": false,
+    "retested_native_mod": false
+  },
+  "conclusion": "Keep the active root run bound to its original 2e249c tool report. The 7c0c4f external canonical evidence is semantically equal and linked independently; it does not replace the frozen root copy."
+}

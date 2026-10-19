@@ -1,0 +1,79 @@
+{
+  "schema": "eep.1019.settlement-checker-verification.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Real native recovered settlement liveness plus in-memory negative tests; migration regression; no edited or synthetic SAV",
+  "runs": [
+    {
+      "command": "python -B -m unittest discover -s eat_everything_origin/testing -p test_check_1019_settlement.py -v",
+      "exit_code": 0,
+      "test_count": 13,
+      "tests": [
+        "test_real_native_retained_colony_cache_is_not_live",
+        "test_original_checker_retains_real_native_failure",
+        "test_reference_may_also_be_absent",
+        "test_owner_is_not_ignored",
+        "test_controller_is_not_ignored",
+        "test_actual_population_is_not_ignored",
+        "test_actual_population_group_is_not_ignored",
+        "test_colony_population_group_list_is_not_ignored",
+        "test_actual_job_list_is_not_ignored",
+        "test_live_population_counter_is_not_ignored",
+        "test_live_employable_counter_is_not_ignored",
+        "test_wrong_planet_class_is_not_ignored",
+        "test_only_settlement_function_source_changed"
+      ],
+      "source": {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\test_check_1019_settlement.py",
+        "sha256": "abbca73dd60e5042bff19d0e00567a539426bf56e6721d180f43cbafa238222c"
+      },
+      "result_basis": "Actual successful prior tool subprocess invocation in this session; this JSON records those observed results, not a reconstructed native game log."
+    },
+    {
+      "command": "python -B -m unittest discover -s eat_everything_origin/testing -p test_check_1019_migration.py -v",
+      "exit_code": 0,
+      "test_count": 17,
+      "tests": [
+        "test_existing_paid_case_without_new_parameter_still_passes",
+        "test_explicit_paid_and_waiting_item_are_preserved",
+        "test_public_empty_case_passes_without_claiming_paid_coverage",
+        "test_queue_mode_and_declared_count_must_agree",
+        "test_missing_count_is_rejected",
+        "test_empty_records_cannot_certify_default_or_explicit_paid_case",
+        "test_paid_records_cannot_certify_empty_case",
+        "test_removing_original_paid_queue_before_migration_does_not_make_empty_case",
+        "test_item_added_to_after_empty_queue_is_rejected",
+        "test_paid_case_requires_original_identity_and_expected_count",
+        "test_paid_before_requires_cost_payer_and_real_progress",
+        "test_paid_item_recreated_with_new_identity_is_rejected",
+        "test_any_paid_item_field_changed_after_is_rejected",
+        "test_empty_mother_does_not_exempt_other_owned_queues",
+        "test_neither_mode_allows_new_charge_refund_or_reward",
+        "test_healed_layer_is_rejected_in_both_queue_modes",
+        "test_same_day_reload_retains_each_queue_contract"
+      ],
+      "source": {
+        "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\testing\\test_check_1019_migration.py",
+        "sha256": "b9dde87d93acc26518dbe9f50553f02878af7b91283e06ab373de740814f47ff"
+      },
+      "result_basis": "Actual successful prior tool subprocess invocation in this session; this JSON records those observed results, not a reconstructed native game log."
+    }
+  ],
+  "checker_before": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\tools-before\\check_1019.py",
+    "sha256": "df147d247240c75bc0507cb1dda0bf88af299706841d3b72c140b083e96be777"
+  },
+  "checker_after": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py",
+    "sha256": "681836d2da9c6b28ee9bfd583c87e5ced96f06543901e71d3dc35fa226f3afdc"
+  },
+  "only_settlement_function_changed": true,
+  "old_checker_native_fail": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1-recovered-settlement-old-checker-fail-v1.json",
+    "sha256": "ee7a40f4d50851588eeccf29a3107e7a2d708c37e59c7a4951f36660b49e79de"
+  },
+  "new_checker_native_report": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1-recovered-settlement-report-v2.json",
+    "sha256": "a7462e3360ab52d2c4ecb711b5a727507d5eabdc63373880ba1d7c402fd994c5"
+  },
+  "strict_comparator_changed": false
+}

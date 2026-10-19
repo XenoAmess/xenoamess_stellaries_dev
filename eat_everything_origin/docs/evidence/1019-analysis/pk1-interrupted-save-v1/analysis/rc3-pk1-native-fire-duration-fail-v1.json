@@ -1,0 +1,78 @@
+{
+  "schema": "eep.1019.native-pk-duration-result.v1",
+  "status": "FAIL",
+  "scope": "Native PK requirement duration gate; retains actual order/destruction/once-only settlement positive observations without certifying whole case",
+  "production_tree_sha256": "178d3021fa53dd999b5537e1e58f7b59c7138232e7a7fe4fe53327b3dff8e116",
+  "run_id": "20261019T092935Z",
+  "checks": {
+    "real_native_order_target17": true,
+    "actual_menu_input_bound": true,
+    "war_target_before": true,
+    "beneficiary_core_owner0": true,
+    "source_actual_shattered_after": true,
+    "q19_credit_once": true,
+    "population300_and_capacity4_match": true,
+    "worlds750_and_empires600_match_calibration": true,
+    "no_actor_assault_army_in_before_after_snapshots": true,
+    "required_90_30_day_duration_observed": false,
+    "native_charging_intermediate_captured": false
+  },
+  "native_order_and_callback_result": "OBSERVED_POSITIVE_SCOPED",
+  "full_colossus_case_status": "FAIL_DURATION_REQUIREMENT",
+  "actual_window": {
+    "before_date": "2200.03.07",
+    "after_date": "2200.03.13",
+    "elapsed_days": 6,
+    "actual_advance_input": {
+      "file": {
+        "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1-charge-six-command.action.json",
+        "sha256": "a3a7e5b93a6d147c0f02f37af5c995d0c8da84f81b80d315f43229a6ad0e4558"
+      },
+      "record": {
+        "action": "type_text",
+        "stage": "pk1-charge-six-command",
+        "text": "fast_forward 6",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T11:07:58.294892+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      }
+    },
+    "completion_flag_date": {
+      "all_five_receipt_flag_raw_date": 62809656,
+      "native_jan1_raw_flag_date": 62808000,
+      "difference_hours": 1656,
+      "difference_days": 69,
+      "calendar_date_if_24_hours_per_native_day": "2200.03.10",
+      "not_proof_of_charge_duration_units": true
+    }
+  },
+  "duration_failure": "World destroyed and settlement finished within six days; cannot satisfy the intended90/30 game-day schedule. CSV min_windup/cooldown units and engine load contract remain under independent investigation.",
+  "positive_settlement_report": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1-recovered-settlement-report-v2.json",
+    "sha256": "a7462e3360ab52d2c4ecb711b5a727507d5eabdc63373880ba1d7c402fd994c5"
+  },
+  "old_layout_assumption_fail_preserved": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1-recovered-settlement-old-checker-fail-v1.json",
+    "sha256": "ee7a40f4d50851588eeccf29a3107e7a2d708c37e59c7a4951f36660b49e79de"
+  },
+  "ready_queued_order_report": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1-ready-queued-case-report-v1.json",
+    "sha256": "f4835d18e16d163c7296750a8f664cbfe4ffd9a81f27427caf8a6f0c9625050a"
+  },
+  "raw_interrupted_observation": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\rc3-pk1charge-interrupted-observation-v1.json",
+    "sha256": "7b03093ef96e78802af126926dcf4bd9f5d5b50ea0329b2c0f5c1abc42edce93"
+  },
+  "partial_save_recovery_receipt": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge-recovery-receipt.json",
+    "sha256": "057a94b2108e35fb9788c878da2966b13b4cc46024df25e5c029dd158ca134fa"
+  },
+  "strict_difference_count": 179,
+  "limitations": [
+    "Actual positive order/settlement scope does not override the duration FAIL or provide the missing charging intermediate.",
+    "No cancel/reload/repeated completion/owned-noncore/normal dismantle paths are certified here.",
+    "No active jump claim: initial positioning used explicit teleport setup.",
+    "The partial save is recovered with an explicit new recovery receipt; original helper did not complete."
+  ]
+}

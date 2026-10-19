@@ -60,3 +60,7 @@ effect event_target:eep_colossus_probe_target = { solar_system = { starbase = { 
 只读 `pk1calafter.sav` 对 `pk1base.sav`，country0.crisis_progression 的 native worlds 从缺项变为750、empires从缺项变为600。这是本轮独立complete_crisis_objective命令的单位奖励观察，不是武器完成。最终真实发射仍比较各自objective，不看总menace或战斗击杀目标。
 
 当前没有本分支执行的清场结果或普通速度/fast_forward等价测试；本文不宣称战斗模拟或清场验收已经通过。
+
+## 原生地图目标辨识
+
+Mar7 基线确认 source17 是 giant15 的卫星，当前缩放不显示其名称。主线程先用原生 `help survey` 核对勘探命令；若存在，再在独立功能分支勘探使目标可辨。必要时只给 source17／parent15 设置明确的夹具名称，然后重新保存同日下令前基线。地图可见性或名称变化不用于经济验收，不改变人口、q、星主、战争或 EEP 账本；下令后必须用真实订单中的 planet ID 再核对17，不能仅凭画面名称认定命中。

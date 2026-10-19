@@ -5,6 +5,7 @@ import re
 import sys
 
 import runtime_single_homeworld as base
+import publish_1019 as release_gate
 
 base.ARTIFACTS = (Path.home() / "AppData/Local/xenoamess_stellaries_dev"
                   / "artifacts/1019-implementation")
@@ -18,16 +19,9 @@ original_prepare = base.prepare
 def prepare_1019(role, seed=None):
     gate = json.loads((base.ARTIFACTS / (role + "-gate.json")).read_text(encoding="utf-8"))
     report = json.loads(Path(gate["report"]).read_text(encoding="utf-8"))
-    if (report.get("weapon_csv_applicability") != "checked"
-            or report.get("weapon_csv_files", 0) < 1 or report.get("weapon_csv_keys", 0) < 1):
-        raise RuntimeError("0.4.0 requires the repaired weapon CSV acceptance gate")
-    component_count = report.get("planet_killer_components", 0)
-    callback_count = report.get("planet_killer_callbacks_required", 0)
-    if (report.get("planet_killer_callback_contract") != "native_completed_queued_unqueued_v1"
-            or report.get("planet_killer_callback_applicability") != "checked"
-            or component_count < 1 or callback_count != component_count * 3
-            or report.get("planet_killer_callbacks_resolved") != callback_count):
-        raise RuntimeError("0.4.0 requires completed/queued/unqueued native callback checks")
+    mod = Path(gate["mod"])
+    release_gate.validate_weapon_csv_contract(report, mod)
+    release_gate.validate_planet_killer_contract(report, mod)
     result = original_prepare(role, seed)
     path = Path(result["artifact_dir"]) / "manifest.json"
     manifest = json.loads(path.read_text(encoding="utf-8"))

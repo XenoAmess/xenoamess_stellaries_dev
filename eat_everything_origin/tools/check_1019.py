@@ -208,6 +208,20 @@ def settlement(case, before, after, reload_observation=None):
     district_delta = capacity(ka) - capacity(kb)
     pop_delta = ka["actual_pop_sum"] - kb["actual_pop_sum"]
     damage = sum(deposit.get("type") == "d_lithoid_devastation" for deposit in wb["deposits"].values())
+    # Native destroy_colony can retain a colony ID and historical caches. Check
+    # current ownership, actual population/job lists and live counters instead.
+    source_colony_liveness = {
+        "shattered_planet": wa["native"].get("planet_class") == "pc_shattered",
+        "owner_absent": "owner" not in wa["native"],
+        "controller_absent": "controller" not in wa["native"],
+        "actual_population_empty": wa["actual_pop_sum"] == 0,
+        "actual_pop_groups_empty": not wa["pop_groups"],
+        "colony_pop_group_list_empty": not a.ids(a.block(wa["colony_raw"], "pop_groups")),
+        "colony_pop_job_list_empty": not a.ids(a.block(wa["colony_raw"], "pop_jobs")),
+        "live_population_counters_zero_or_absent": all(
+            wa["colony_native"].get(key, 0) == 0
+            for key in ("num_sapient_pops", "employable_pops")),
+    }
     checks = {"same_candidate_tree": before["production_tree_sha256"] == after["production_tree_sha256"],
               "candidate_0_4": str(after["provenance_1019"]["version"]).startswith("0.4."),
               "c_effective_matter_delta": c_delta == q,
@@ -222,7 +236,7 @@ def settlement(case, before, after, reload_observation=None):
               "capacity_delta_matches_d_delta": district_delta == value_delta(cb, ca, "eep_d"),
               "capacity_receipt": ca.get("eep_last_capacity") == district_delta,
               "source_was_colonized": "colony" in wb["native"],
-              "source_colony_destroyed": "colony" not in wa["native"],
+               "source_colony_destroyed": all(source_colony_liveness.values()),
               "real_shattered_planet_class": wa["native"].get("planet_class") == "pc_shattered",
               "no_previous_destroy_receipt": "eep_destroy_done" not in wb["flags"],
               "all_once_only_receipts": all(flag in wa["flags"] for flag in RECEIPT_FLAGS),
@@ -272,8 +286,10 @@ def settlement(case, before, after, reload_observation=None):
     return result(checks, "explicit normal/colossus settlement math and persistent native result only; firing is separate",
                   path=case["path"], case=case, before=before["provenance_1019"], after=after["provenance_1019"],
                   actual={"q": c_delta, "g_delta": g_delta, "made_delta": made_delta,
-                          "core_pop_delta": pop_delta, "capacity_delta": district_delta,
-                          "crisis_progress_before_after": crisis_values, "crisis_progress_delta": crisis_delta,
+                           "core_pop_delta": pop_delta, "capacity_delta": district_delta,
+                           "source_colony_liveness": source_colony_liveness,
+                           "retained_source_colony_reference": wa["native"].get("colony"),
+                           "crisis_progress_before_after": crisis_values, "crisis_progress_delta": crisis_delta,
                           "crisis_objectives_independent": crisis_objectives,
                           "galaxy_system_count": before["galaxy_system_count"],
                           "native_habitability_setting": before["galaxy_native"].get("habitability")},
@@ -363,6 +379,13 @@ def migration(case, before, after, reload_observation=None, fixture_observation=
         raise ValueError("explicit migration-case.v1 schema required")
     if case.get("require_damaged_before") is not True:
         raise ValueError("this migration check requires a genuinely damaged native before-save")
+    queue_mode = case.get("queue_mode", "paid")
+    expected_items = case.get("expected_queued_items")
+    if queue_mode not in ("paid", "empty"):
+        raise ValueError("queue_mode must be paid or empty")
+    if type(expected_items) is not int or (queue_mode == "paid" and expected_items <= 0) or (
+            queue_mode == "empty" and expected_items != 0):
+        raise ValueError("expected_queued_items must be positive for paid or zero for empty queue_mode")
     mode = case["damage_mode"]
     metrics = case["damage_metrics"]
     tolerance = case.get("damage_tolerance", .001)
@@ -403,11 +426,7 @@ def migration(case, before, after, reload_observation=None, fixture_observation=
               "queue_identifiers_preserved": b["build_queue_id"] == a_["build_queue_id"] and b["shipyard_queue_id"] == a_["shipyard_queue_id"],
               "all_owned_queues_preserved": b["all_owned_queues"] == a_["all_owned_queues"],
               "all_queue_costs_progress_designs_orbitables_preserved": b["all_owned_queue_items"] == a_["all_owned_queue_items"],
-              "expected_mother_queue_count": len(mother_items) == case["expected_queued_items"],
-              "nonempty_recorded_queue_costs_and_payer_before": bool(mother_items) and all(
-                  b["all_owned_queue_items"][str(i)]["resources"] and
-                  b["all_owned_queue_items"][str(i)]["native"].get("paying_country") == 0 for i in mother_items),
-              "real_queue_progress_before": any(b["all_owned_queue_items"][str(i)]["native"].get("progress", 0) > 0 for i in mother_items),
+              "expected_mother_queue_count": len(mother_items) == expected_items,
               "no_additional_charge_or_refund": cb["stockpile"] == ca["stockpile"],
               "existing_layout_preserved": b["world_layout"] == a_["world_layout"],
               "existing_colonies_preserved": sorted(cb["owned_colonies"]) == sorted(ca["owned_colonies"]),
@@ -415,6 +434,16 @@ def migration(case, before, after, reload_observation=None, fixture_observation=
                                              cb["variables"][key] == ca["variables"][key] for key in ECONOMIC_VARIABLES),
               "startup_flags_preserved": all((key in cb["flags"]) == (key in ca["flags"]) for key in (
                   "eep_initialized", "eep_startup_granted", "eep_mothership_granted", "eep_extra_world_granted", "eep_parallel_construction_granted"))}
+    if queue_mode == "paid":
+        checks["nonempty_recorded_queue_costs_and_payer_before"] = bool(mother_items) and all(
+            b["all_owned_queue_items"][str(i)]["resources"] and
+            b["all_owned_queue_items"][str(i)]["native"].get("paying_country") == 0 for i in mother_items)
+        checks["real_queue_progress_before"] = any(
+            b["all_owned_queue_items"][str(i)]["native"].get("progress", 0) > 0 for i in mother_items)
+    else:
+        checks["original_mother_shipyard_queue_empty"] = not fixture["all_owned_queues"][fixture["shipyard_queue_id"]]["items"]
+        checks["before_mother_shipyard_queue_empty"] = not mother_items
+        checks["after_mother_shipyard_queue_empty"] = not a_["all_owned_queues"][a_["shipyard_queue_id"]]["items"]
     reload_report = None
     if reload_observation is not None:
         r = migration_snapshot(reload_observation)
@@ -427,13 +456,17 @@ def migration(case, before, after, reload_observation=None, fixture_observation=
         reload_report = result(reload_checks, "same-day native migration snapshot and ledger only",
                                snapshot=r, strict_comparison=compare(after, reload_observation))
         checks["reload_migration_snapshot_preserved"] = reload_report["status"] == "PASS_SCOPED"
-    return result(checks, "damaged Mother identity, declared damage, layout and native paid-queue records only",
-                  case=case, before=before["provenance_1019"], after=after["provenance_1019"],
+    scope = ("damaged Mother identity, declared damage, layout and native paid-queue records only" if queue_mode == "paid" else
+             "damaged Mother identity, declared damage, layout and empty native Mother shipyard queue only")
+    return result(checks, scope,
+                  case=case, queue_mode=queue_mode, before=before["provenance_1019"], after=after["provenance_1019"],
                   original_fixture=fixture_observation["provenance_1019"], original_fixture_snapshot=fixture,
                   before_snapshot=b, after_snapshot=a_, damage_mode=mode, damage_metrics=metrics,
                   damage_tolerance=tolerance, all_differences=old.differences(gameplay(before), gameplay(after)),
                   reload_check=reload_report, limitations=[
-                      "Stored resource costs/payer and preserved stockpile show no migration charge; original enqueue payment needs its original actions/audits.",
+                      ("Stored resource costs/payer and preserved stockpile show no migration charge; original enqueue payment needs its original actions/audits."
+                       if queue_mode == "paid" else
+                       "An originally empty Mother shipyard queue remained empty; no paid-queue preservation is claimed."),
                       "An old 0.3.0-rc.1 queue fixture does not certify released 0.3.1 migration.",
                       "Scoped snapshot equality does not replace or overwrite strict raw comparison results."])
 

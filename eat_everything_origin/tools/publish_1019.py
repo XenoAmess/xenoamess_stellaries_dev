@@ -60,6 +60,11 @@ COMPONENT_CHECKS = {"real_component", "positive_effect_observed", "random_pool",
                     "cross_threshold_catchup"}
 GROWTH_SAMPLES = [(0, 0), (9, 0), (10, 1), (19, 1), (20, 2), (200, 20), (10000, 1000)]
 PLANET_KILLER_CALLBACK_CONTRACT = "native_completed_queued_unqueued_v1"
+PLANET_KILLER_NUMERIC_CONTRACT = "native_csv_or_literal_txt_v1"
+WEAPON_CSV_LOADER_CONTRACT = "native_fixed_paths_v1"
+WEAPON_CSV_PATHS = {"common/component_templates/weapon_components.csv",
+                    "common/component_templates/mutation_weapon_components.csv"}
+PLANET_KILLER_NUMERIC_FIELDS = {"windup_min", "windup_max", "total_fire_time", "power"}
 DECLARATION_TOKEN = re.compile(r'#[^\r\n]*|"(?:\\.|[^"\\])*"|[{}=]|[^\s{}="#]+')
 
 
@@ -196,8 +201,8 @@ def root_declaration_blocks(path):
                 name, start = None, None
 
 
-def planet_killer_component_keys(component_root):
-    keys = []
+def planet_killer_component_sources(component_root):
+    keys = {}
     for path in component_root.rglob("*"):
         if not path.is_file() or path.suffix.lower() != ".txt":
             continue
@@ -215,14 +220,67 @@ def planet_killer_component_keys(component_root):
             if "planet_killer" in fields["type"]:
                 if fields["type"] != ["planet_killer"] or len(fields["key"]) != 1 or not fields["key"][0]:
                     raise RuntimeError("literal planet-killer component key/type required")
-                keys.append(fields["key"][0])
-    if len(keys) != len(set(keys)):
-        raise RuntimeError("duplicate planet-killer component key")
-    return set(keys)
+                key = fields["key"][0]
+                if key in keys:
+                    raise RuntimeError("duplicate planet-killer component key")
+                keys[key] = path
+    return keys
+
+
+def planet_killer_component_keys(component_root):
+    return set(planet_killer_component_sources(component_root))
+
+
+def validate_planet_killer_numeric_contract(report, mod, components):
+    count = len(components)
+    applicability = "checked" if count else "not_applicable_no_planet_killer_components"
+    if (report.get("planet_killer_numeric_contract") != PLANET_KILLER_NUMERIC_CONTRACT
+            or any(type(report.get(field)) is not int for field in (
+                "planet_killer_numeric_components", "planet_killer_numeric_resolved"))
+            or report.get("planet_killer_numeric_components") != count
+            or report.get("planet_killer_numeric_resolved") != count
+            or report.get("planet_killer_components") != count
+            or report.get("planet_killer_numeric_applicability") != applicability):
+        raise RuntimeError("matching checked planet-killer numeric loading contract required")
+    sources = report.get("planet_killer_numeric_sources")
+    if not isinstance(sources, list) or len(sources) != count:
+        raise RuntimeError("planet-killer numeric sources must cover the actual component keys")
+    seen = set()
+    for row in sources:
+        if (not isinstance(row, dict) or not isinstance(row.get("key"), str)
+                or row.get("key") not in components or row["key"] in seen
+                or not isinstance(row.get("kind"), str)
+                or row.get("kind") not in {"literal_component_txt", "native_fixed_csv", "mod_fixed_csv"}
+                or type(row.get("line")) is not int or row["line"] < 1
+                or not isinstance(row.get("sha256"), str) or not re.fullmatch(r"[0-9a-f]{64}", row["sha256"])
+                or not isinstance(row.get("path"), str) or not Path(row["path"]).is_absolute()):
+            raise RuntimeError("planet-killer numeric source identity malformed")
+        values = row.get("values")
+        if (not isinstance(values, dict) or set(values) != PLANET_KILLER_NUMERIC_FIELDS
+                or any(type(value) not in (int, float) or not math.isfinite(value) for value in values.values())
+                or any(values[key] < 0 for key in PLANET_KILLER_NUMERIC_FIELDS - {"power"})):
+            raise RuntimeError("four finite literal planet-killer numeric values required")
+        source = Path(row["path"])
+        if row["kind"] == "literal_component_txt":
+            actual = components[row["key"]]
+            relative = actual.relative_to(mod)
+            if source.parts[-len(relative.parts):] != relative.parts:
+                raise RuntimeError("planet-killer TXT source path differs from its declaration")
+        else:
+            matches = [Path(name) for name in WEAPON_CSV_PATHS
+                       if source.parts[-len(Path(name).parts):] == Path(name).parts]
+            if len(matches) != 1:
+                raise RuntimeError("planet-killer numeric CSV source uses an unsupported loader path")
+            actual = mod / matches[0] if row["kind"] == "mod_fixed_csv" else source
+        if not actual.is_file() or update.digest(actual.read_bytes()) != row["sha256"]:
+            raise RuntimeError("planet-killer numeric source bytes differ from the checked source")
+        seen.add(row["key"])
+    if seen != set(components):
+        raise RuntimeError("planet-killer numeric sources must cover the actual component keys")
 
 
 def validate_planet_killer_contract(report, mod):
-    components = planet_killer_component_keys(mod / "common/component_templates")
+    components = planet_killer_component_sources(mod / "common/component_templates")
     expected = len(components) * 3
     if (not components or report.get("planet_killer_callback_contract") != PLANET_KILLER_CALLBACK_CONTRACT
             or any(type(report.get(field)) is not int for field in (
@@ -239,6 +297,32 @@ def validate_planet_killer_contract(report, mod):
     required = {f"on_destroy_planet_with_{key}{suffix}" for key in components for suffix in ("", "_queued", "_unqueued")}
     if not required.issubset(defined):
         raise RuntimeError("native planet-killer callback definitions missing from package: " + ", ".join(sorted(required - defined)))
+    validate_planet_killer_numeric_contract(report, mod, components)
+
+
+def validate_weapon_csv_contract(report, mod):
+    component_root = mod / "common/component_templates"
+    tables = sorted(path for path in component_root.rglob("*") if path.is_file() and path.suffix.lower() == ".csv")
+    unsupported = [path for path in tables if path.relative_to(mod).as_posix() not in WEAPON_CSV_PATHS]
+    if (report.get("weapon_csv_loader_contract") != WEAPON_CSV_LOADER_CONTRACT
+            or type(report.get("weapon_csv_unsupported_files")) is not int
+            or report.get("weapon_csv_unsupported_files") != len(unsupported) or unsupported):
+        raise RuntimeError("matching supported native weapon CSV loader contract required")
+    weapon_keys = []
+    for table in tables:
+        rows = [line.split(";") for line in table.read_text(encoding="utf-8-sig").splitlines()
+                if line.strip() and not line.startswith("#")]
+        if not rows or rows[0][0] != "key":
+            raise RuntimeError("weapon CSV key header missing")
+        weapon_keys.extend(row[0] for row in rows[1:])
+    applicability = "checked" if tables else "not_applicable_no_weapon_csv_files"
+    if (len(set(weapon_keys)) != len(weapon_keys) or any(not key for key in weapon_keys)
+            or (tables and not weapon_keys)
+            or any(type(report.get(field)) is not int for field in ("weapon_csv_files", "weapon_csv_keys"))
+            or report.get("weapon_csv_files") != len(tables)
+            or report.get("weapon_csv_keys") != len(set(weapon_keys))
+            or report.get("weapon_csv_applicability") != applicability):
+        raise RuntimeError("matching checked weapon CSV files and component keys required")
 
 
 def validate_static_report(report, root):
@@ -262,26 +346,7 @@ def validate_static_report(report, root):
         locales[language] = set(keys)
     if any(keys != locales["simp_chinese"] for keys in locales.values()):
         raise RuntimeError("localization key coverage differs")
-    component_root = mod / "common/component_templates"
-    tables = sorted(path for path in component_root.rglob("*") if path.is_file() and path.suffix.lower() == ".csv")
-    weapon_keys = []
-    for table in tables:
-        rows = [line.split(";") for line in table.read_text(encoding="utf-8-sig").splitlines()
-                if line.strip() and not line.startswith("#")]
-        if not rows or rows[0][0] != "key":
-            raise RuntimeError("weapon CSV key header missing")
-        weapon_keys.extend(row[0] for row in rows[1:])
-    # This only counts/binds declarations. Syntax, numeric values and native key
-    # associations remain the mandatory open_kaishek checker's responsibility.
-    declared = set()
-    for path in component_root.rglob("*.txt"):
-        declared.update(re.findall(r'\bkey\s*=\s*"([^"\r\n]+)"', path.read_text(encoding="utf-8-sig")))
-    if (not tables or not weapon_keys or len(set(weapon_keys)) != len(weapon_keys)
-            or any(not key for key in weapon_keys) or not set(weapon_keys).issubset(declared)
-            or report.get("weapon_csv_files") != len(tables)
-            or report.get("weapon_csv_keys") != len(set(weapon_keys))
-            or report.get("weapon_csv_applicability") != "checked"):
-        raise RuntimeError("matching checked weapon CSV files and component keys required")
+    validate_weapon_csv_contract(report, mod)
     validate_planet_killer_contract(report, mod)
     if (report.get("status") != "PASS" or report.get("game_exe_sha256") != update.EXE_SHA
             or not scripts or report.get("p_scripts") != len(scripts) or report.get("p_parsed") != len(scripts)

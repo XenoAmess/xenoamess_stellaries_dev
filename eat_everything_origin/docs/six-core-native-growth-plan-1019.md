@@ -16,16 +16,16 @@
 
 ## 每个C节点只需两条控制台命令
 
-第一条在country scope设置受控C并调用实际生产同步一次，将X替换为本节点整数：
+控制台THIS会随选中的planet／fleet变化，不能假定它是country。第一条明确进入玩家country0的ROOT设置受控C并调用实际生产同步一次，将X替换为本节点整数：
 
 ```text
-effect set_variable = { which = eep_c value = X } eep_sync_mothership = yes
+effect root = { set_variable = { which = eep_c value = X } eep_sync_mothership = yes }
 ```
 
 之后正常推进至少六个游戏日并重新暂停；不要把一天无变化判失败。第二条只做诊断导出，不再次sync，以免预算节点消化待发量：
 
 ```text
-effect event_target:eep_mothership@this = { every_owned_ship = { export_modifier_to_variable = { modifier = ship_hull_add variable = eep_probe_ship_hull_add } export_modifier_to_variable = { modifier = ship_hull_mult variable = eep_probe_ship_hull_mult } export_modifier_to_variable = { modifier = ship_armor_add variable = eep_probe_ship_armor_add } export_modifier_to_variable = { modifier = ship_armor_mult variable = eep_probe_ship_armor_mult } export_modifier_to_variable = { modifier = ship_shield_add variable = eep_probe_ship_shield_add } export_modifier_to_variable = { modifier = ship_shield_mult variable = eep_probe_ship_shield_mult } export_modifier_to_variable = { modifier = ship_weapon_damage variable = eep_probe_ship_weapon_damage } export_modifier_to_variable = { modifier = ship_tracking_add variable = eep_probe_ship_tracking_add } export_modifier_to_variable = { modifier = ship_hull_regen_add_static variable = eep_probe_ship_hull_regen_add_static } export_modifier_to_variable = { modifier = ship_armor_regen_add_static variable = eep_probe_ship_armor_regen_add_static } } }
+effect event_target:eep_mothership0 = { every_owned_ship = { export_modifier_to_variable = { modifier = ship_hull_add variable = eep_probe_ship_hull_add } export_modifier_to_variable = { modifier = ship_hull_mult variable = eep_probe_ship_hull_mult } export_modifier_to_variable = { modifier = ship_armor_add variable = eep_probe_ship_armor_add } export_modifier_to_variable = { modifier = ship_armor_mult variable = eep_probe_ship_armor_mult } export_modifier_to_variable = { modifier = ship_shield_add variable = eep_probe_ship_shield_add } export_modifier_to_variable = { modifier = ship_shield_mult variable = eep_probe_ship_shield_mult } export_modifier_to_variable = { modifier = ship_weapon_damage variable = eep_probe_ship_weapon_damage } export_modifier_to_variable = { modifier = ship_tracking_add variable = eep_probe_ship_tracking_add } export_modifier_to_variable = { modifier = ship_hull_regen_add_static variable = eep_probe_ship_hull_regen_add_static } export_modifier_to_variable = { modifier = ship_armor_regen_add_static variable = eep_probe_ship_armor_regen_add_static } } }
 ```
 
 立刻同日用原生UI保存，抽取ship997上述十变量、native最大三防和fleet159持久tier。保存本身不需要额外命令；不调用未经支持的console save。
@@ -83,7 +83,7 @@ AUTO_REPAIR的百分比regen不能填进两个固定regen字段；满血导致�
 
 ## 仅增加必要的幂等、预算和月度检查
 
-1. C50完成并导出保存后，暂停同日再执行 `effect eep_sync_mothership = yes`，重新导出保存；R、六tier、十字段、设计体、唯一成长modifier倍率均应保持。随后对该档同日原生重载、导出保存，限定业务字段仍应一致；严格全档差异单列，不能因已知设计ID重编号而写全量PASS。
+1. C50完成并导出保存后，暂停同日再执行 `effect root = { eep_sync_mothership = yes }`，重新导出保存；R、六tier、十字段、设计体、唯一成长modifier倍率均应保持。随后对该档同日原生重载、导出保存，限定业务字段仍应一致；严格全档差异单列，不能因已知设计ID重编号而写全量PASS。
 2. C20500第一次sync后先不等六日，立即保存一份计数快照，固定R400／P10。此刻核心触发修正可能尚未刷新，不用它判属性。必须在可能的月度自动sync前保留该快照，否则无法证明单次200预算。
 3. 最少自动路径是保留P10让既有下一次月度sync自然补完，记录补完时日期，之后再至少等六日导出保存；应R410／P0且六tier总增量10。若为减少等待改为同日手动sync第二次，也可证明可继续补差，但须明确这是手动路径，不能冒称月度补差已经实测。
 4. 待P0后重复sync／重载都不得新增tier。观察实际设计仍各装一个六核心，无六类普通奖励modifier；基础成长只保留唯一 `eep_mothership_evolution`（L0不挂，L>0倍率L）。Mother身份／归属、普通控制舰三防和有关修正同样检查。

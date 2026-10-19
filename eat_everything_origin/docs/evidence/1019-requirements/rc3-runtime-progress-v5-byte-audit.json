@@ -1,0 +1,139 @@
+{
+  "schema": "eep.1019.progress-v5-byte-audit.v1",
+  "status": "PASS_BYTE_AUDIT_SCOPED",
+  "runtime_acceptance": "PENDING",
+  "scope": "Hive archived startup/first-month bytes and explicit five-check mapping only",
+  "created_at_utc": "2026-10-19T11:11:06.856434+00:00",
+  "progress_v5": {
+    "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v5.json",
+    "sha256": "6d648d959be464743ba981f1a7e59886952ef6069e27669927efd8e98294b21b"
+  },
+  "parent_v4": {
+    "path": "docs/evidence/1019-requirements/rc3-runtime-progress-v4.json",
+    "sha256": "6f62ec128741ae936387d980d801ea22e91ff125be90c6dd80f5b4c4855b1116"
+  },
+  "archive_index": {
+    "path": "docs/evidence/1019-rc3-hive-startup/archive-index-v1.json",
+    "sha256": "f87ba1d0e428f603135d6b6d925e2c14680b3c5901da6d80572330cfcecbacde"
+  },
+  "archive_verification": {
+    "path": "docs/evidence/1019-rc3-hive-startup/archive-verification-v1.json",
+    "sha256": "83de22b0618f4f1e4002094ad42019ee96c27881ac59b4d71d65c954339b3d49"
+  },
+  "payload_files_verified": 289,
+  "payload_bytes_verified": 16250350,
+  "current_source_bytes_matching": 288,
+  "source_changes_since_copy": [
+    {
+      "source": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\tools\\check_1019.py",
+      "archived_path": "analysis_tools/check_1019.py",
+      "archived_sha256": "ba17847049d050b2b76dc382e7e3e0a1796dc4976a80c77b16fef243bc612047",
+      "current_source_sha256": "df147d247240c75bc0507cb1dda0bf88af299706841d3b72c140b083e96be777"
+    }
+  ],
+  "archive_check_count": 25,
+  "native_proofs": [
+    {
+      "save": {
+        "path": "docs/evidence/1019-rc3-hive-startup/fhcm00.sav",
+        "sha256": "0297ff12409b944373caa07996eb8a5d34ff16ba6ffcc723c40a361276aefa7f"
+      },
+      "audit": {
+        "path": "docs/evidence/1019-rc3-hive-startup/fhcm00.audit.json",
+        "sha256": "0f66a606954c9628d0a634592c3bca6eea9c803db779ee5501f59329537a39d1"
+      },
+      "gamestate_sha256": "ff8141caac1af0f46cf0fdaa3e87f74557aedc3e154ba5bfc0a13c621afd8950",
+      "receipts": [
+        {
+          "path": "docs/evidence/1019-rc3-hive-startup/fhcm00.native-save.json",
+          "sha256": "788246eeba807564253f634a113591e1203a14f34c06db11bf2e0463829df96d"
+        }
+      ]
+    },
+    {
+      "save": {
+        "path": "docs/evidence/1019-rc3-hive-startup/fhcm01.sav",
+        "sha256": "32225a7809d6c9c07252216429aa795da5a77977f1f498e3daa8c987f77edf9d"
+      },
+      "audit": {
+        "path": "docs/evidence/1019-rc3-hive-startup/fhcm01.audit.json",
+        "sha256": "01c92b4196690af907efab0c8752bae89b6768de96a02b718af04ed2294022ef"
+      },
+      "gamestate_sha256": "9db32986c0f46219347935e03f1dfbeba053a3f6552491299435d7ed41598f0f",
+      "receipts": [
+        {
+          "path": "docs/evidence/1019-rc3-hive-startup/fhc-monthly-autosave-receipt.json",
+          "sha256": "b9533d85bc45267828b5d25385771d5934aba8422a80c7d51dfb172ff1eb6021"
+        }
+      ]
+    },
+    {
+      "save": {
+        "path": "docs/evidence/1019-rc3-hive-startup/fhcm01ui.sav",
+        "sha256": "e4ef976d8ac33626281f65b9c2f6a126f96957c069205ca17bd34e8fd7234b51"
+      },
+      "audit": {
+        "path": "docs/evidence/1019-rc3-hive-startup/fhcm01ui.audit.json",
+        "sha256": "864ec1e7a2a790fc50cc5fd356120877840e12339ce209e8b236160f2dace360"
+      },
+      "gamestate_sha256": "e3157e3791ac80d322b44f89431c39f1c739bf14a1a6473745a861dae6a9c3d4",
+      "receipts": [
+        {
+          "path": "docs/evidence/1019-rc3-hive-startup/fhcm01ui.native-save.json",
+          "sha256": "65877e46198cacf7130437f3d1f8b631d668f610c1b4c56a677ff433bdba154f"
+        }
+      ]
+    }
+  ],
+  "single_canonical_run_preserved": true,
+  "source_production_files": 60,
+  "source_and_loaded_mod_match_frozen_manifest": true,
+  "startup_report_checks": 23,
+  "auto_ui_report_fields": 10,
+  "mapped_hive_startup_checks": 5,
+  "all_hive_full_year_checks_unchanged": true,
+  "candidate_hive_months_observed": 1,
+  "historical_v1_v4_unchanged": true,
+  "all_18_cases_pending": true,
+  "component_rewards_pending": true,
+  "true_case_checks": 19,
+  "v5_reference_occurrences_verified": 291,
+  "v5_unique_files_verified": 157,
+  "hive_case_missing": {
+    "hive_startup": {
+      "missing_or_failed_checks": [
+        "normal_upkeep",
+        "population_preserved"
+      ],
+      "missing_evidence_kinds": [
+        "log"
+      ],
+      "run_ids": [
+        "20261019T092935Z"
+      ]
+    },
+    "hive_economy": {
+      "missing_or_failed_checks": [
+        "all_net_energy_nonnegative",
+        "baseline_12_months",
+        "candidate_12_months",
+        "no_job_closure",
+        "no_resource_injection",
+        "no_ship_disband",
+        "no_trade_subsidy"
+      ],
+      "missing_evidence_kinds": [
+        "actions",
+        "log",
+        "screenshot"
+      ],
+      "run_ids": [
+        "20261019T092935Z"
+      ]
+    }
+  },
+  "expected_final_gate_rejection": "matching scoped Chinese single-production-mod acceptance required",
+  "active_logs_imported": false,
+  "old_reports_and_tool_snapshots_modified": false,
+  "parallel_checker_fix_note": "Current source changed during review; original archived ba178470 checker and its old scoped reports remain byte-identical."
+}

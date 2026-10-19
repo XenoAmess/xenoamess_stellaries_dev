@@ -19,22 +19,31 @@ class Release1019Guards(unittest.TestCase):
         self.write("mod/descriptor.mod", b'version="0.4.0-rc.2"\nname="synthetic guard input"\n')
         self.write("mod/events/synthetic.txt", b"# synthetic guard input\n")
         self.write("mod/common/component_templates/synthetic.txt",
-                   b'weapon_component_template = { key = "EEP_SYNTHETIC_GUARD" type = planet_killer }\n')
+                   self.weapon("EEP_SYNTHETIC_GUARD").encode())
         self.write("mod/common/on_actions/synthetic.txt", self.callbacks("EEP_SYNTHETIC_GUARD").encode())
-        self.write("mod/common/component_templates/synthetic.csv", b"key;cost;end\nEEP_SYNTHETIC_GUARD;0;\n")
         self.write("mod/gfx/synthetic.dds", b"synthetic guard bytes, not a DDS")
         for language in release.LANGUAGES:
             self.write(f"mod/localisation/{language}/synthetic_l_{language}.yml",
-                       f'l_{language}:\n synthetic_one:0 "one"\n synthetic_two:0 "two"\n'.encode("utf-8-sig"))
+                        f'l_{language}:\n synthetic_one:0 "one"\n synthetic_two:0 "two"\n'.encode("utf-8-sig"))
+        # A 59-file synthetic package exercises rc4's CSV-free shape without
+        # making production script/localization counts into acceptance constants.
+        for index in range(44):
+            self.write(f"mod/gfx/synthetic-{index:02}.png", b"synthetic image guard bytes")
         self.write("VERSION", b"0.4.0-rc.2\n")
         self.report = {"status": "PASS", "game_exe_sha256": release.update.EXE_SHA,
                        "p_scripts": 4, "p_parsed": 4, "dds": 1,
                        "languages": sorted(release.LANGUAGES), "localization_keys": 2,
-                       "localization_applicability": "checked", "weapon_csv_files": 1,
-                       "weapon_csv_keys": 1, "weapon_csv_applicability": "checked",
+                       "localization_applicability": "checked", "weapon_csv_files": 0,
+                       "weapon_csv_keys": 0, "weapon_csv_applicability": "not_applicable_no_weapon_csv_files",
+                       "weapon_csv_loader_contract": release.WEAPON_CSV_LOADER_CONTRACT,
+                       "weapon_csv_unsupported_files": 0,
                        "planet_killer_callback_contract": release.PLANET_KILLER_CALLBACK_CONTRACT,
                        "planet_killer_components": 1, "planet_killer_callbacks_required": 3,
                        "planet_killer_callbacks_resolved": 3, "planet_killer_callback_applicability": "checked",
+                       "planet_killer_numeric_contract": release.PLANET_KILLER_NUMERIC_CONTRACT,
+                       "planet_killer_numeric_components": 1, "planet_killer_numeric_resolved": 1,
+                       "planet_killer_numeric_applicability": "checked",
+                       "planet_killer_numeric_sources": self.numeric_sources(),
                        "errors": []}
         self.json("proofs/synthetic-static.json", self.report)
         self.evidence = []
@@ -110,6 +119,19 @@ class Release1019Guards(unittest.TestCase):
 
     def callbacks(self, key):
         return "\n".join(f"on_destroy_planet_with_{key}{suffix} = {{}}" for suffix in ("", "_queued", "_unqueued")) + "\n"
+
+    def weapon(self, key, quoted_type=False):
+        kind = '"planet_killer"' if quoted_type else "planet_killer"
+        return (f'weapon_component_template = {{ key = "{key}" type = {kind} '
+                'windup = { min = 90 max = 90 } total_fire_time = 30 power = 0 }\n')
+
+    def numeric_sources(self, keys=("EEP_SYNTHETIC_GUARD",),
+                        name="mod/common/component_templates/synthetic.txt", kind="literal_component_txt"):
+        path = self.root / name
+        return [{"key": key, "kind": kind, "path": str(path.resolve()), "line": 1,
+                 "sha256": release.update.digest(path.read_bytes()),
+                 "values": {"windup_min": 90.0, "windup_max": 90.0, "total_fire_time": 30.0, "power": 0.0}}
+                for key in keys]
 
     def validate(self, runtime=None):
         return release.validate_runtime_index(self.runtime if runtime is None else runtime, self.root)
@@ -409,20 +431,22 @@ class Release1019Guards(unittest.TestCase):
                     release.validate_static_report(self.report, self.root)
 
     def test_planet_killer_counts_only_real_weapon_blocks_and_scales_to_multiple_components(self):
-        component = 'weapon_component_template = { key = "EEP_SYNTHETIC_GUARD" type = planet_killer }\n'
+        component = self.weapon("EEP_SYNTHETIC_GUARD")
         ignored = ('utility_component_template = { key = "UTILITY" type = planet_killer }\n'
                    '# weapon_component_template = { key = "COMMENT" type = planet_killer }\n'
                    'wrapper = { weapon_component_template = { key = "NESTED" type = planet_killer } }\n'
                    'text = "weapon_component_template = { key = FAKE type = planet_killer }"\n')
         self.write("mod/common/component_templates/synthetic.txt", (component + ignored).encode())
         self.assertEqual(release.planet_killer_component_keys(self.root / "mod/common/component_templates"), {"EEP_SYNTHETIC_GUARD"})
-        release.validate_static_report(self.report, self.root)
+        report = {**self.report, "planet_killer_numeric_sources": self.numeric_sources()}
+        release.validate_static_report(report, self.root)
         self.write("mod/common/component_templates/synthetic.txt", (component + ignored +
-            'weapon_component_template = { key = "SECOND_SYNTHETIC" type = "planet_killer" }\n').encode())
-        self.write("mod/common/component_templates/synthetic.csv", b"key;cost;end\nEEP_SYNTHETIC_GUARD;0;\nSECOND_SYNTHETIC;0;\n")
+            self.weapon("SECOND_SYNTHETIC", quoted_type=True)).encode())
         self.write("mod/common/on_actions/synthetic.txt", (self.callbacks("EEP_SYNTHETIC_GUARD") + self.callbacks("SECOND_SYNTHETIC")).encode())
-        report = {**self.report, "weapon_csv_keys": 2, "planet_killer_components": 2,
-                  "planet_killer_callbacks_required": 6, "planet_killer_callbacks_resolved": 6}
+        report = {**self.report, "planet_killer_components": 2,
+                  "planet_killer_callbacks_required": 6, "planet_killer_callbacks_resolved": 6,
+                  "planet_killer_numeric_components": 2, "planet_killer_numeric_resolved": 2,
+                  "planet_killer_numeric_sources": self.numeric_sources(("EEP_SYNTHETIC_GUARD", "SECOND_SYNTHETIC"))}
         release.validate_static_report(report, self.root)
         for field, value in (("planet_killer_components", 1), ("planet_killer_callbacks_required", 3),
                              ("planet_killer_callbacks_resolved", 3)):
@@ -430,18 +454,110 @@ class Release1019Guards(unittest.TestCase):
                 release.validate_static_report({**report, field: value}, self.root)
 
     def test_weapon_csv_report_must_cover_actual_files_and_component_keys(self):
+        self.write("mod/common/component_templates/weapon_components.csv", b"key;cost;end\nEEP_SYNTHETIC_GUARD;0;\n")
+        report = {**self.report, "weapon_csv_files": 1, "weapon_csv_keys": 1, "weapon_csv_applicability": "checked"}
         for field, value in (("weapon_csv_files", 0), ("weapon_csv_keys", 0),
                              ("weapon_csv_files", 2), ("weapon_csv_keys", 2),
+                             ("weapon_csv_files", True), ("weapon_csv_keys", True),
                              ("weapon_csv_applicability", "not_applicable_no_weapon_csv_files")):
             with self.subTest(field=field, value=value), self.assertRaisesRegex(RuntimeError, "weapon CSV"):
-                release.validate_static_report({**self.report, field: value}, self.root)
+                release.validate_static_report({**report, field: value}, self.root)
         for field in ("weapon_csv_files", "weapon_csv_keys", "weapon_csv_applicability"):
-            missing = {key: value for key, value in self.report.items() if key != field}
+            missing = {key: value for key, value in report.items() if key != field}
             with self.subTest(missing=field), self.assertRaisesRegex(RuntimeError, "weapon CSV"):
                 release.validate_static_report(missing, self.root)
-        self.write("mod/common/component_templates/synthetic.csv", b"key;cost;end\nMISSING_COMPONENT;0;\n")
+        self.write("mod/common/component_templates/weapon_components.csv", b"key;cost;end\nEEP_SYNTHETIC_GUARD;0;\nEEP_SYNTHETIC_GUARD;0;\n")
         with self.assertRaisesRegex(RuntimeError, "component keys"):
-            release.validate_static_report(self.report, self.root)
+            release.validate_static_report(report, self.root)
+
+    def test_inline_numeric_contract_accepts_59_file_csv_free_package(self):
+        self.assertEqual(len(release.update.base.manifest(self.root / "mod")), 59)
+        self.assertEqual(self.report["weapon_csv_files"], 0)
+        self.assertEqual(self.report["planet_killer_numeric_sources"][0]["values"],
+                         {"windup_min": 90.0, "windup_max": 90.0, "total_fire_time": 30.0, "power": 0.0})
+        release.validate_static_report(self.report, self.root)
+
+    def test_numeric_contract_rejects_legacy_missing_wrong_or_unresolved_fields(self):
+        fields = ("planet_killer_numeric_contract", "planet_killer_numeric_components", "planet_killer_numeric_resolved",
+                  "planet_killer_numeric_applicability", "planet_killer_numeric_sources")
+        for field in fields:
+            bad = {key: value for key, value in self.report.items() if key != field}
+            with self.subTest(missing=field), self.assertRaisesRegex(RuntimeError, "numeric"):
+                release.validate_static_report(bad, self.root)
+        for field, value in (("planet_killer_numeric_contract", "csv_syntax_only_v0"),
+                             ("planet_killer_numeric_components", True), ("planet_killer_numeric_components", 0),
+                             ("planet_killer_numeric_components", 2), ("planet_killer_numeric_resolved", True),
+                             ("planet_killer_numeric_resolved", -1), ("planet_killer_numeric_resolved", 0),
+                             ("planet_killer_numeric_resolved", 1.0),
+                             ("planet_killer_numeric_applicability", "not_applicable_no_planet_killer_components"),
+                             ("planet_killer_numeric_sources", []), ("planet_killer_numeric_sources", None)):
+            with self.subTest(field=field, value=value), self.assertRaisesRegex(RuntimeError, "numeric"):
+                release.validate_static_report({**self.report, field: value}, self.root)
+
+    def test_numeric_sources_require_actual_keys_finite_values_and_source_identity(self):
+        for field, value in (("key", "UNKNOWN"), ("key", []), ("kind", "arbitrary_csv"), ("line", True),
+                             ("line", 0), ("sha256", "A" * 64), ("path", "relative/synthetic.txt"),
+                             ("path", str(self.root / "mod/common/component_templates/wrong.txt")),
+                             ("values", {}), ("values", {"windup_min": 90})):
+            bad = copy.deepcopy(self.report)
+            bad["planet_killer_numeric_sources"][0][field] = value
+            with self.subTest(field=field, value=value), self.assertRaisesRegex(RuntimeError, "numeric|TXT source"):
+                release.validate_static_report(bad, self.root)
+        for key, value in (("power", True), ("power", float("nan")), ("power", float("inf")),
+                           ("windup_min", -1), ("windup_max", -1), ("total_fire_time", -1)):
+            bad = copy.deepcopy(self.report)
+            bad["planet_killer_numeric_sources"][0]["values"][key] = value
+            with self.subTest(key=key, value=value), self.assertRaisesRegex(RuntimeError, "finite literal"):
+                release.validate_static_report(bad, self.root)
+
+    def test_numeric_sentinel_power_and_copied_source_directory_are_supported(self):
+        raw = self.weapon("EEP_SYNTHETIC_GUARD").replace("max = 90", "max = 0").replace("power = 0", "power = -1").encode()
+        self.write("mod/common/component_templates/synthetic.txt", raw)
+        sources = self.numeric_sources()
+        sources[0]["values"].update(windup_max=0.0, power=-1.0)
+        copied = self.write("prior-build/common/component_templates/synthetic.txt", raw)
+        sources[0]["path"] = str(copied.resolve())
+        report = {**self.report, "planet_killer_numeric_sources": sources}
+        release.validate_static_report(report, self.root)
+        self.write("mod/common/component_templates/synthetic.txt", raw + b"# changed after check\n")
+        with self.assertRaisesRegex(RuntimeError, "source bytes differ"):
+            release.validate_static_report(report, self.root)
+
+    def test_fixed_csv_can_include_native_keys_without_mod_txt_redeclarations(self):
+        name = "mod/common/component_templates/weapon_components.csv"
+        self.write(name, b"key;windup_min;windup_max;cooldown;power;end\nPLANET_KILLER_CRACKER;1;1;10;5;\nEEP_SYNTHETIC_GUARD;90;90;30;0;\n")
+        sources = self.numeric_sources(name=name, kind="mod_fixed_csv")
+        sources[0]["line"] = 3
+        report = {**self.report, "weapon_csv_files": 1, "weapon_csv_keys": 2,
+                  "weapon_csv_applicability": "checked", "planet_killer_numeric_sources": sources}
+        release.validate_static_report(report, self.root)
+        self.write(name, (self.root / name).read_bytes() + b"PLANET_KILLER_SHIELDER;1;1;10;5;\n")
+        with self.assertRaisesRegex(RuntimeError, "weapon CSV|source bytes"):
+            release.validate_static_report(report, self.root)
+
+    def test_native_fixed_csv_source_need_not_belong_to_mod(self):
+        name = "base/common/component_templates/mutation_weapon_components.csv"
+        self.write(name, b"key;windup_min;windup_max;cooldown;power;end\nEEP_SYNTHETIC_GUARD;90;90;30;0;\n")
+        report = {**self.report, "planet_killer_numeric_sources": self.numeric_sources(name=name, kind="native_fixed_csv")}
+        release.validate_static_report(report, self.root)
+        report["planet_killer_numeric_sources"][0]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(RuntimeError, "source bytes differ"):
+            release.validate_static_report(report, self.root)
+
+    def test_loader_contract_rejects_arbitrary_csv_and_legacy_reports(self):
+        for field in ("weapon_csv_loader_contract", "weapon_csv_unsupported_files"):
+            bad = {key: value for key, value in self.report.items() if key != field}
+            with self.subTest(missing=field), self.assertRaisesRegex(RuntimeError, "CSV loader contract"):
+                release.validate_static_report(bad, self.root)
+        for field, value in (("weapon_csv_loader_contract", "glob_any_csv_v0"),
+                             ("weapon_csv_unsupported_files", True), ("weapon_csv_unsupported_files", 1)):
+            with self.subTest(field=field, value=value), self.assertRaisesRegex(RuntimeError, "CSV loader contract"):
+                release.validate_static_report({**self.report, field: value}, self.root)
+        self.write("mod/common/component_templates/arbitrary.csv", b"key;cost;end\nEEP_SYNTHETIC_GUARD;0;\n")
+        for count in (0, 1):
+            with self.subTest(unsupported=count), self.assertRaisesRegex(RuntimeError, "CSV loader contract"):
+                release.validate_static_report({**self.report, "weapon_csv_files": 1, "weapon_csv_keys": 1,
+                    "weapon_csv_applicability": "checked", "weapon_csv_unsupported_files": count}, self.root)
 
     def test_static_report_requires_whole_package_pass(self):
         for field, value in (("status", "FAIL"), ("game_exe_sha256", "0" * 64),

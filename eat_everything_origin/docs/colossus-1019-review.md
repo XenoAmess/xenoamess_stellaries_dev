@@ -162,3 +162,7 @@ on_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER_unqueued
 设计：只有无后缀完成回调继续触发eep.50；两个派生回调均为空，不调用事件、共同结算或原生碎星奖励。验收：修复文件先过Kaishek语法检查，工具负责人补回调完整性合同后重新跑完整包；最终新候选真实下令/取消/重新下令/90+30完成分别查日志与C/G/D，确保排队/取消无收益、完成只支付一次。静态通过不能替代这些实机行为。
 
 已实施仅两个空派生定义和一行用途注释，原有完成事件及其它块保持。open_kaishek CLI对该文件返回exit0、PARSED、470 bytes、136 tokens、12 blocks、diagnostics=[]、roundTrip=true。完整包的新增回调合同由工具负责人先修复验证并提交推送，之后主线程再冻结执行；本分支没有把单文件解析或旧rc2包当修复后的实机通过。
+
+## RC3 实际时长失败与RC4最小数值修复
+
+RC3真实下令后仅6日目标已毁，不能通过90/30要求；详见 [时长与载入调查](colossus-pk-duration-loader-1019.md)。此前独立CSV格式正确的静态结论不证明该文件名被native载入。已按主线程授权把专属武器数值改为有现代作者真实PK原文支持的TXT内联：power0、零damage、windup90/90、total_fire_time30、range0/accuracy1/tracking0，并删除专属CSV，不覆盖任何原版表。只改专属组件的数值来源，结算/回调/目标规则不变。新TXT SHA256 `0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92`，单文件lossless解析通过；完整包新gate和RC4实际windup_time90/fire_time30及完整完成仍待验，原失败快照不改。

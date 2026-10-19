@@ -1,0 +1,101 @@
+{
+  "schema": "eep.1019.partial-native-save-recovery.v1",
+  "status": "RECOVERED_EXISTING_NATIVE_BYTES_AFTER_AUDIT_COUNTRY1_FAILURE",
+  "date": "2200.03.13",
+  "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77",
+  "original_helper_completed": false,
+  "original_native_save_receipt_exists": false,
+  "original_audit_exists": false,
+  "failure_stage": "native_save copied real native SAV, then audit(country0,country1) rejected missing country1; menu close/history/receipt steps not completed",
+  "reproduced_original_audit_exception": {
+    "type": "ValueError",
+    "message": "requested native country does not exist: 1",
+    "reproduced_at_utc": "2026-10-19T11:15:02.766399+00:00"
+  },
+  "original_native_source": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T092935Z\\save games\\eep-test-history\\pk1charge.sav",
+    "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77"
+  },
+  "original_native_source_mtime_ns": 1792408176182949500,
+  "original_artifact_copy": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge.sav",
+    "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77"
+  },
+  "original_artifact_mtime_ns": 1792408177220421300,
+  "recovered_byte_copy": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge.sav",
+    "sha256": "156ac651eb5d8d268355c2281ce347670232bd4ffe0f419795d58d4b94095b77"
+  },
+  "separately_derived_country0_audit": {
+    "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\docs\\evidence\\1019-analysis\\pk1-interrupted-save-v1\\recovered\\pk1charge.audit.json",
+    "sha256": "371a8f992e0094ea374af0b9ff526bcb2a963360feb6f0117f4c065f2edab1d6"
+  },
+  "actual_name_input": {
+    "file": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-name.action.json",
+      "sha256": "c308553cd6a73ce72939b71a5e1b7fcef3b422929c2eeab031f5d688e9091ef9"
+    },
+    "record": {
+      "action": "type_text",
+      "stage": "pk1charge-name",
+      "text": "pk1charge",
+      "submitted": false,
+      "typed_at_utc": "2026-10-19T11:09:35.273550+00:00",
+      "key_interval_seconds": 0.04
+    }
+  },
+  "actual_name_edit_ctrl_a": {
+    "file": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\press-1792408174801.json",
+      "sha256": "5cb20820e06a85a27b74a85f5fb3823d78150f27d08c50d1b742b3058af37772"
+    },
+    "record": {
+      "action": "press",
+      "keys": [
+        "ctrl",
+        "a"
+      ],
+      "repeat": 1,
+      "at_utc": "2026-10-19T11:09:34.801517+00:00"
+    }
+  },
+  "actual_native_save_click": {
+    "file": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-save-click.action.json",
+      "sha256": "20de397d08f760c86bfcbdb2330aa3c5cde17c2709fd2372a17ba143c19c389e"
+    },
+    "record": {
+      "stage": "pk1charge-save-click",
+      "client_point": [
+        664,
+        240
+      ],
+      "desktop_point": [
+        1432,
+        576
+      ],
+      "hold_seconds": 0.15
+    }
+  },
+  "actual_save_dialog": {
+    "ocr": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-save-dialog.ocr.json",
+      "sha256": "d1850de9688fd28a10e2a5469b2cd1ba26d3504f50a0dfea8443ae7725ad99e5"
+    },
+    "image": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\pk1charge-save-dialog.jpg",
+      "sha256": "8b1a19f1ce10ed8171b8015a0d0a5e471b46efb0a9111f5204b6e6899ac9743a"
+    }
+  },
+  "original_manifest": {
+    "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T092935Z\\manifest.json",
+    "sha256": "4fe88804769af4bc3e35bd14a5fcc918196491d79cc5db85cecc53cb3ab2ec4c"
+  },
+  "zip_crc_complete": true,
+  "created_at_utc": "2026-10-19T11:15:02.902837+00:00",
+  "limitations": [
+    "This explicitly records recovery of a partial real native save, not successful completion of the original helper.",
+    "Original run SAV/audit absence/receipt absence are preserved; only independent recovered directory has a derived audit and this recovery receipt.",
+    "No charging intermediate observation or 90/30-day duration PASS is implied."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "eep.1019.rc3-hive-startup-byte-verification.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Byte identity and named native startup/first-month evidence bindings only",
+  "archive_index": {
+    "path": "archive-index-v1.json",
+    "sha256": "f87ba1d0e428f603135d6b6d925e2c14680b3c5901da6d80572330cfcecbacde"
+  },
+  "checks": {
+    "all_archived_payload_sha_match": true,
+    "all_original_sources_still_match": true,
+    "loaded_mod_exact_manifest_files": true,
+    "source_mod_exact_manifest_files": true,
+    "source_copy_file_table_matches": true,
+    "gate_file_table_matches": true,
+    "source_gate_manifest_tree_matches": true,
+    "original_static_report_sha_matches": true,
+    "static_report_copy_and_source_match": true,
+    "native_exe_sha_matches_manifest": true,
+    "simplified_chinese_single_mod_no_scheduled_commands": true,
+    "all_three_sav_sha_gamestate_crc_verified": true,
+    "initial_ui_native_receipt_sha_matches": true,
+    "first_month_autosave_receipt_sha_matches": true,
+    "first_month_ui_native_receipt_sha_matches": true,
+    "monthly_anchor_correct": true,
+    "single_30day_command_recorded": true,
+    "all_ocr_gpu_image_sha_match": true,
+    "startup_23_checks_true": true,
+    "same_date_auto_ui_10_checks_true": true,
+    "first_selection_material_preserved": true,
+    "two_ctrl_a_name_edits_preserved": true,
+    "no_dynamic_log_files": true,
+    "no_machine_or_pk_stage": true,
+    "all_hive_stage_files_within_completed_cutoff": true
+  },
+  "file_count": 289,
+  "total_bytes": 16250350,
+  "sav_checks": {
+    "fhcm00": true,
+    "fhcm01": true,
+    "fhcm01ui": true
+  }
+}
