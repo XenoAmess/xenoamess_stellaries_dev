@@ -1,0 +1,48 @@
+{
+  "schema": "eep.rc6.final-logs-verification.v1",
+  "status": "PASS_BYTE_IDENTITY_AND_REVIEW_COMPLETENESS_ONLY",
+  "verified_at_utc": "2026-10-19T16:42:44.475994+00:00",
+  "index_sha256": "10df4d1aa1eb45ae1bd9554da46e7c298303a6d638f342ad33df18e5a61c9a2f",
+  "review_sha256": "b4875dd17e1a8b949e8fb99fcd670b6aec5770f3c3e891ff64b718ef75bd8756",
+  "verifier_sha256": "e0b30cb711872e9d92961eb18937eafbbbda952e01cd42ccaf72f252c76b0331",
+  "payload_files_rechecked": 22,
+  "payload_bytes": 5971299,
+  "complete_logs": 19,
+  "complete_script_documentation": 5,
+  "canonical_references_rechecked": 8,
+  "reviewed_physical_lines": 283,
+  "reviewed_records": 265,
+  "diagnostic_records_retained": 25,
+  "real_eep_while_abort_records": 1,
+  "historical_nomads_still_unresolved": true,
+  "checks": {
+    "index_selection_proof_and_scripts_bound": true,
+    "all_22_payloads_match_source_bytes_and_sha256": true,
+    "complete_19_logs_and_5_script_documentation_files": true,
+    "only_three_run_metadata_no_sav_mod_or_growth_payload": true,
+    "normal_stop_manifest_process_identity_and_time_order": true,
+    "independent_second_os_query_confirms_pid_absent": true,
+    "eight_canonical_references_and_checkpoint_metadata_match": true,
+    "fixed_rc6_tree_and_static_metadata_bound_no_mod_recopied": true,
+    "all_283_physical_lines_and_265_records_reviewed_without_omission": true,
+    "all_error_classes_and_real_eep_while_abort_retained": true,
+    "all_25_diagnostics_remain_unresolved_or_unknown_impact": true,
+    "historical_nomads_unresolved_status_preserved": true,
+    "no_filtered_errors_or_mod_acceptance_claim": true
+  },
+  "independent_process_query": {
+    "command": [
+      "powershell",
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      "ConvertTo-Json -InputObject @(Get-CimInstance Win32_Process -Filter 'ProcessId=30812' -ErrorAction Stop | Select-Object ProcessId,Name,ExecutablePath,CommandLine,CreationDate) -Depth 4 -Compress"
+    ],
+    "checked_at_utc": "2026-10-19T16:42:44.463262+00:00",
+    "exit_code": 0,
+    "matched_processes": []
+  },
+  "Mod_acceptance_pass": false,
+  "UI_invoked": false,
+  "Git_invoked": false
+}

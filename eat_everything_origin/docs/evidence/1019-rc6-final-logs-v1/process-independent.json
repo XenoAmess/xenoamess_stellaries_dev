@@ -1,0 +1,31 @@
+{
+  "schema": "eep.rc6.final-logs-independent-process-proof.v1",
+  "status": "ABSENT",
+  "run_id": "20261019T150008Z",
+  "expected_pid": 30812,
+  "query_started_at_utc": "2026-10-19T16:41:50.246081+00:00",
+  "checked_at_utc": "2026-10-19T16:41:50.747382+00:00",
+  "query": [
+    "powershell",
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "ConvertTo-Json -InputObject @(Get-CimInstance Win32_Process -Filter 'ProcessId=30812' -ErrorAction Stop | Select-Object ProcessId,ParentProcessId,Name,ExecutablePath,CommandLine,CreationDate) -Depth 4 -Compress"
+  ],
+  "query_exit_code": 0,
+  "query_stdout": "[]\r\n",
+  "query_stdout_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+  "query_stderr": "",
+  "matched_processes": [],
+  "process_receipt": {
+    "bytes": 870,
+    "sha256": "4c45f12c239eb38af6d1a9fa9685b9401c236ff1d1ad05f54308b1d0eaa45c9a"
+  },
+  "stop_receipt": {
+    "bytes": 120,
+    "sha256": "ece90ef969ae3d8858b504f7b4327b5e6895e7117da24c1df8024a17698791be"
+  },
+  "process_command_matches_manifest": true,
+  "stop_was_normal": true,
+  "limit": "Post-stop PID absence and existing identity receipts, not a new historical OS launch capture."
+}
