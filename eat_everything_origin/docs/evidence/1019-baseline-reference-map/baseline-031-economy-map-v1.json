@@ -1,0 +1,4373 @@
+{
+  "schema": "eep.historical_baseline.economy_reference_map.v1",
+  "status": "OBSERVATION_ONLY",
+  "scope": "Public0.3.1 historical native baseline mapping only; no final candidate data or acceptance.",
+  "run_id": "20261019T053917Z",
+  "export_usage": "For each branch, copy economy_baseline_payload[branch].baseline_months into runtime.economy[branch].baseline_months. Do not replace candidate rows.",
+  "schema_source": {
+    "path": "docs/evidence/1019-baseline-reference-map/source/publish_1019.py.txt",
+    "sha256": "b535a4c88f22bb75ee95548a1952071d50b40b4cb35fc25d79552fef22128354",
+    "kind": "analysis",
+    "original_project_path": "tools/publish_1019.py"
+  },
+  "parser_dependency": {
+    "path": "docs/evidence/1019-baseline-reference-map/source/audit_save.py.txt",
+    "sha256": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad",
+    "kind": "analysis",
+    "original_project_path": "tools/audit_save.py"
+  },
+  "historical_run": {
+    "manifest": {
+      "path": "docs/evidence/1019-baseline/manifest.json",
+      "sha256": "bf540076292d39f95a711aed0aeb2e145356d667241da80f9de2e811c8a19095",
+      "kind": "analysis"
+    },
+    "manifest_role": "baseline",
+    "profile_id": "eep-0.3.2-single-homeworld",
+    "manifest_scope": "0.3.2 startup and monthly economy only; stopped Terravore campaign untouched",
+    "mod_version": "0.3.1",
+    "original_version_file": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\baseline\\VERSION",
+      "sha256": "79e3f22ca37c7fdf4c29ae3648d6b008c3cb6547260a453409275470919dc674",
+      "value": "0.3.1",
+      "archive_reference": {
+        "path": "docs/evidence/1019-baseline-reference-map/source/baseline-VERSION.txt",
+        "sha256": "79e3f22ca37c7fdf4c29ae3648d6b008c3cb6547260a453409275470919dc674",
+        "kind": "analysis"
+      }
+    },
+    "original_descriptor": {
+      "path": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\baseline\\mod\\descriptor.mod",
+      "sha256": "9cd3c378615773f0178d67b5f98de265a5fae316545acd6d836457bbd05e203f",
+      "text": "version=\"0.3.1\"\ntags={ \"Origins\" \"Events\" \"Gameplay\" }\nname=\"吞噬之心\"\nsupported_version=\"4.5.2\"\npicture=\"thumbnail.png\"\n",
+      "archive_reference": {
+        "path": "docs/evidence/1019-baseline-reference-map/source/baseline-descriptor.mod.txt",
+        "sha256": "9cd3c378615773f0178d67b5f98de265a5fae316545acd6d836457bbd05e203f",
+        "kind": "analysis"
+      }
+    },
+    "mod_tree_sha256": "abca9b4195a991d98ca25336ed7807e0306d30e2c33021e4d307f78e1db864d8",
+    "mod_file_count": 47,
+    "tree_validation": "All original frozen baseline files exactly match historical manifest path/size/SHA and path-NUL-bytes tree.",
+    "game_exe": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\stellaris.exe",
+    "game_exe_sha256_at_recorded_run": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+    "language": "l_simp_chinese",
+    "enabled_mods": [
+      "mod/ugc_eep-single-homeworld.mod"
+    ],
+    "scope_note": "Historical0.3.2 profile/scope labels are preserved; actual baseline VERSION/descriptor/static_gate are0.3.1."
+  },
+  "source_bindings": [
+    {
+      "path": "docs/evidence/1019-baseline/manifest.json",
+      "sha256": "bf540076292d39f95a711aed0aeb2e145356d667241da80f9de2e811c8a19095",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/archive-index.json",
+      "sha256": "43d2a295dd7e26ea7dbd09995f3e0d6caabc04442e63666b7a67dbcf971773a5",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/baseline-economy-observations.json",
+      "sha256": "c9aca4b4aa60390df421b0f89e808590916c53cb7c6cabc07273a09e9eb61c87",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/process.json",
+      "sha256": "9df0ee547d9e8863c098fe2d425f6ef5321ad75b767da108d3b488e95588399a",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/stop.json",
+      "sha256": "c9e1be40341b7926b848dbab8089b9a20fc2d32ec5dd7ef1910c9deba89434ea",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/profile-final/settings.txt",
+      "sha256": "97e44672a04275e8fd2f562ae447efb73b73f0f296c6c11bcf8b320f50f84b16",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/profile-final/pdx_settings.txt",
+      "sha256": "f1c82bda0556e6d83b887667c18ffbd1d290e63f15d0d24c30e1160126c4149e",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-baseline/profile-final/dlc_load.json",
+      "sha256": "4fb88f9db71b1deb1f0b9f1c84c7a49a9ea5e979d38ed2ac453951a3599cbf83",
+      "kind": "analysis"
+    }
+  ],
+  "budget_definition": {
+    "native_path": "country[0].budget.current_month",
+    "net_energy": "Sum of energy in income categories minus sum of energy in expenses categories. Decimal strings preserve native saved scalar precision; numeric net_energy is the same result rendered as JSON number.",
+    "month00": "Startup cached budget retained only as anchor, excluded from twelve monthly reference rows.",
+    "stockpile": "country[0].modules.standard_economy_module.resources.energy; missing field remains missing/null, never filled as0.",
+    "historical_float_comparison": "Old observation numbers can contain binary64 rendering tails; compare their native five-decimal representation and retain exact old numbers/deltas in sample metadata."
+  },
+  "economy_baseline_payload": {
+    "hive": {
+      "baseline_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": -38.90665,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm01.sav",
+            "sha256": "d4e1e42fe38f1090ec41753e5be2bce10ddad952712b6ee7157e1692b6fbcaf2",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": -38.90665,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm02.sav",
+            "sha256": "941d289dc9a3458edcba70d729137c1e4e56afdcc024aea45aad2d1d32e7be6f",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": -38.18715,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm03.sav",
+            "sha256": "fd152e3d7726aaaca59d8dfb6eb6f0fe662dc43b60626b70711e08a5cc5255de",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": -38.18724,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm04.sav",
+            "sha256": "3b53fb5278d2cb64a9b84fd4e4e90ed9df667bd6dc9a0460f9110cd00de7bb1e",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": -38.18733,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm05.sav",
+            "sha256": "d3bbec66c1005ded46107abf46b7ee9f721da2a19908ed31600b0230c133b319",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": -37.46819,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm06.sav",
+            "sha256": "2ff9d95260d8000d615fdd01eacfc32f910cd495f39a97d064c9ab7b7983969a",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": -37.46835,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm07.sav",
+            "sha256": "1f2a7841e039dcd0d38c50bf16d9c048b105738c936537d2d1f72245154a1ab9",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": -37.46852,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm08.sav",
+            "sha256": "07b3c93a37b4389b70959665dc08e542adf5ede4306e61bd8a2bc6c8bc70b491",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": -36.74972,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm09.sav",
+            "sha256": "991392c30ffd128dd0b285bccdce1423a39eecfaf9451f32eb85f9354e2c7b1d",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": -36.75001,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm10.sav",
+            "sha256": "f9bb47ebe8f3b685ac140a8188d426292371da39bb8951edd2b63020a8d41126",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": -36.77329,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm11.sav",
+            "sha256": "adb7e684683c15a92d2bc353a61712da85c66678950ae20ffdf54a426672ed8b",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": -36.05486,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm12.sav",
+            "sha256": "4a4c8f50e8f078a1024bed442396fdf305221d086238597af02b7ea19b2bc046",
+            "kind": "native_save"
+          }
+        }
+      ]
+    },
+    "machine": {
+      "baseline_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": -161.26091,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm01.sav",
+            "sha256": "0b64c808029f87aaef87355efb85e84287cf04a1374844f377056240672b0626",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": -164.70218,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm02.sav",
+            "sha256": "c46df8e9a26f55994fed564169097e8604867b34222daf50acdcf2ceb1b9ea83",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": -159.50823,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm03.sav",
+            "sha256": "b19676e7dfd4506f564e6cbb60c1d71fa3ffcabf32b0253f6f21c0f9a0424326",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": -159.60427,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm04.sav",
+            "sha256": "0567222c9a2c7349b5cb5ea057fa5b7169c922de4e1b69a28f338edb4d44c533",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": -156.5097,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm05.sav",
+            "sha256": "2ff7d83356edba6cf09a28d706c17b8b73fbb9f9e5cbf8aa487b67e644b2434b",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": -156.54975,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm06.sav",
+            "sha256": "c7d0e0176836dad9cd3ad1aeaca9b78df98450b5dc213b1584481b205744035d",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": -156.64583,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm07.sav",
+            "sha256": "814865697c274d97a81beca87f79feeabe0bee1fcdd84b136c00d027b589282a",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": -156.25939,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm08.sav",
+            "sha256": "89f4c1b0eb1f7dd56e3e45951c04c00eb751ad434a854dacbe7e078b9ae91eca",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": -156.35551,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm09.sav",
+            "sha256": "21a870d84edaf348bd2315c8fa67eb7a100b8aa61030f9dc8803494a21e638b8",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": -153.85961,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm10.sav",
+            "sha256": "99b025007d125e09688422e455cd1e017aa2b057c97f8be3be50b334efca7239",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": -153.47334,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm11.sav",
+            "sha256": "b5a98361dc6bac30b06665468b52a252ed62a356174439d719e4632b93f491e2",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": -153.60543,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm12.sav",
+            "sha256": "d994618c3743a5e431f0d05b0ca41cfd8a8e8144f7f210e5d941d90b42d1a492",
+            "kind": "native_save"
+          }
+        }
+      ]
+    },
+    "purifier": {
+      "baseline_months": [
+        {
+          "date": "2200.02.01",
+          "net_energy": 32.64322,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm01.sav",
+            "sha256": "d59f6cba24fe4b392edf71fa98a73dc6674cf9214f69c98fa92113c2a99b8964",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.03.01",
+          "net_energy": 31.48304,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm02.sav",
+            "sha256": "20eb7b59edca1b9e4dbd20c09f18c668015c1dc04e26e0aeebcff2bd30cd84fc",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.04.01",
+          "net_energy": 31.49537,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm03.sav",
+            "sha256": "622e0cfce9183840d129570316aa4942faaf49b68e57654baf3aff034ff904d2",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.05.01",
+          "net_energy": 31.44077,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm04.sav",
+            "sha256": "65e15c5242f2060013698fbe1ca6a33d2f81b639ca881f5dc92bdc60e6feb26f",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.06.01",
+          "net_energy": 31.38781,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm05.sav",
+            "sha256": "5e1ebd1c9a1fef3b3421c1504bb0cfef318332ef48837a9e208a5424a3444900",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.07.01",
+          "net_energy": 31.31747,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm06.sav",
+            "sha256": "97a0276c04202791a73c22d2c3662588f2259241a3c0340116592cd5f992edcc",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.08.01",
+          "net_energy": 31.17895,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm07.sav",
+            "sha256": "ffc68212ae44e001a8ecc6bf0b38488817968c9ca2fc5ceaa5a8339e3af9baac",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.09.01",
+          "net_energy": 31.26183,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm08.sav",
+            "sha256": "dd931fc0942ca4b4e59b0c54d774da5b74cfc4f23efa1273402c8f0e4401153f",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.10.01",
+          "net_energy": 31.20021,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm09.sav",
+            "sha256": "e349fb52f0c6503c6e2a0885931ddd3d5cf7fd756a41b745213cebe68c21edc8",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.11.01",
+          "net_energy": 31.14202,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm10.sav",
+            "sha256": "536ed6b40a4ad29233caf2731a9e49e4f9419ac9460016897382e3c4d8d9dbea",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2200.12.01",
+          "net_energy": 31.08944,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm11.sav",
+            "sha256": "8c58956e52761d2d3ec221aa73956cf4c7b4ef0d9083229df194a2b9bb118deb",
+            "kind": "native_save"
+          }
+        },
+        {
+          "date": "2201.01.01",
+          "net_energy": 31.03125,
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm12.sav",
+            "sha256": "09e76c524ea329c0ae6715ba3a5a976d7574b3837018477e1a5a1011df8383c3",
+            "kind": "native_save"
+          }
+        }
+      ]
+    }
+  },
+  "branches": {
+    "hive": {
+      "prefix": "bhm",
+      "government": {
+        "type": "gov_devouring_swarm",
+        "authority": "auth_hive_mind",
+        "origin": "origin_heart_of_devouring",
+        "civics": [
+          "civic_hive_devouring_swarm",
+          "civic_hive_ascetic"
+        ]
+      },
+      "startup_anchors_excluded_from_payload": [
+        {
+          "sample": "bhm00",
+          "month_index": 0,
+          "date": "2200.01.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm00.sav",
+            "sha256": "4de9c40ec59d1f4601d9bf75793d9eae6e9237b4d2672d9f007ba47b0835ce5b",
+            "kind": "native_save"
+          },
+          "bytes": 423671,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7048071,
+              "crc32": "7ba24f67"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "9a4186fc"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "dc754fa441a27d5e67de51e2e7b1c1783a33b5eba14432ea34059d8cf826ac63",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "74.808",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-0.09865",
+            "net_energy": -0.09865,
+            "stored_balance_categories_sum_decimal": "-0.09865",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "38.808"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -0.09865000000000634,
+            "observed_minus_recomputed_decimal": "-6.34E-15",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 200.0
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm00.native-save.json",
+              "sha256": "9924ec79bd813eac82e5918e9d40f3f71aa5b6f286d0165fca7cbf0fed4ca74e",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm00.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm00.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm00.sav",
+              "sha256": "4de9c40ec59d1f4601d9bf75793d9eae6e9237b4d2672d9f007ba47b0835ce5b",
+              "date": "2200.01.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm00.sav",
+            "archived": "bhm00.sav",
+            "sha256": "4de9c40ec59d1f4601d9bf75793d9eae6e9237b4d2672d9f007ba47b0835ce5b",
+            "bytes": 423671
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm00.audit.json",
+            "sha256": "bc337a171835ccc483c0d9b20578a54c046ed119da34d1de5bd7a48c58139179",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        }
+      ],
+      "monthly_samples": [
+        {
+          "sample": "bhm01",
+          "month_index": 1,
+          "date": "2200.02.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm01.sav",
+            "sha256": "d4e1e42fe38f1090ec41753e5be2bce10ddad952712b6ee7157e1692b6fbcaf2",
+            "kind": "native_save"
+          },
+          "bytes": 476421,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7555215,
+              "crc32": "ae867fca"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "62a69d8a"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "b5f86e5a2a2842485ce07dd8ce9edd7e894e16451abdcafa25d3c8cb6bef6062",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "36",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-38.90665",
+            "net_energy": -38.90665,
+            "stored_balance_categories_sum_decimal": "-38.90665",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -38.90665,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 161.09335
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm01.native-save.json",
+              "sha256": "a26a3a44a339923190e2b1cb75b9fd65b10323d402a892a1eb5edc92dcb8b220",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm01.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm01.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm01.sav",
+              "sha256": "d4e1e42fe38f1090ec41753e5be2bce10ddad952712b6ee7157e1692b6fbcaf2",
+              "date": "2200.02.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm01.sav",
+            "archived": "bhm01.sav",
+            "sha256": "d4e1e42fe38f1090ec41753e5be2bce10ddad952712b6ee7157e1692b6fbcaf2",
+            "bytes": 476421
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm01.audit.json",
+            "sha256": "93fd9f2b1268fe280df984051486b1c5ffc9c28b8badc0e4fdb0659f6f626199",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm02",
+          "month_index": 2,
+          "date": "2200.03.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm02.sav",
+            "sha256": "941d289dc9a3458edcba70d729137c1e4e56afdcc024aea45aad2d1d32e7be6f",
+            "kind": "native_save"
+          },
+          "bytes": 478063,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7560228,
+              "crc32": "ecae1378"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "35046b58"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "ec67a3a59fe0a916e41a0db1617b44a10a5316f13b4c3117c62be5a8239249cf",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "36",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-38.90665",
+            "net_energy": -38.90665,
+            "stored_balance_categories_sum_decimal": "-38.90665",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -38.90665,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 122.1867
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm02.native-save.json",
+              "sha256": "4458c8d00a1bc4c03085f731231c9868534371a27858201dd9b7bec4e67dd9c0",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm02.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm02.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm02.sav",
+              "sha256": "941d289dc9a3458edcba70d729137c1e4e56afdcc024aea45aad2d1d32e7be6f",
+              "date": "2200.03.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm02.sav",
+            "archived": "bhm02.sav",
+            "sha256": "941d289dc9a3458edcba70d729137c1e4e56afdcc024aea45aad2d1d32e7be6f",
+            "bytes": 478063
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm02.audit.json",
+            "sha256": "1b481a06bc97a2ba910e0fab715547742c2729eefbfeddf1d601ac8ca10d92c0",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm03",
+          "month_index": 3,
+          "date": "2200.04.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm03.sav",
+            "sha256": "fd152e3d7726aaaca59d8dfb6eb6f0fe662dc43b60626b70711e08a5cc5255de",
+            "kind": "native_save"
+          },
+          "bytes": 478432,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7558850,
+              "crc32": "d52e0033"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "4819ad27"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "8e729db96b034ce4fb84ac45075c6bbd5b821a3767ef1cc6ba8fc72f3ba993e2",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "36.7195",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-38.18715",
+            "net_energy": -38.18715,
+            "stored_balance_categories_sum_decimal": "-38.18715",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "0.7195"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -38.18715,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 83.99955
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm03.native-save.json",
+              "sha256": "17015ef4ac5d977296d88a107f55bad0e7642cdd4b26bd7aa557b6dc55a7d5f2",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm03.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm03.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm03.sav",
+              "sha256": "fd152e3d7726aaaca59d8dfb6eb6f0fe662dc43b60626b70711e08a5cc5255de",
+              "date": "2200.04.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm03.sav",
+            "archived": "bhm03.sav",
+            "sha256": "fd152e3d7726aaaca59d8dfb6eb6f0fe662dc43b60626b70711e08a5cc5255de",
+            "bytes": 478432
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm03.audit.json",
+            "sha256": "eb4ee0c3e3aff8b2a505ea40e293ad79fb04e0abbd173fe800746d93d2c1ec46",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm04",
+          "month_index": 4,
+          "date": "2200.05.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm04.sav",
+            "sha256": "3b53fb5278d2cb64a9b84fd4e4e90ed9df667bd6dc9a0460f9110cd00de7bb1e",
+            "kind": "native_save"
+          },
+          "bytes": 479151,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7563477,
+              "crc32": "885e538c"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "1fbb5bf5"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "f61286cbd795931837812b6b055a68bdb751ff9479f047c5b88142b525c33152",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "36.71941",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-38.18724",
+            "net_energy": -38.18724,
+            "stored_balance_categories_sum_decimal": "-38.18724",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "0.71941"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -38.187239999999996,
+            "observed_minus_recomputed_decimal": "4E-15",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 45.81231
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm04.native-save.json",
+              "sha256": "f8967e95354d35f0465307978bf3265136e8ebc16fb80999f40884b53e6bdcfc",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm04.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm04.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm04.sav",
+              "sha256": "3b53fb5278d2cb64a9b84fd4e4e90ed9df667bd6dc9a0460f9110cd00de7bb1e",
+              "date": "2200.05.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm04.sav",
+            "archived": "bhm04.sav",
+            "sha256": "3b53fb5278d2cb64a9b84fd4e4e90ed9df667bd6dc9a0460f9110cd00de7bb1e",
+            "bytes": 479151
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm04.audit.json",
+            "sha256": "63578688d5a7d821ced98ff9d5707f82381dd81dec067462d88200731f33acbc",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm05",
+          "month_index": 5,
+          "date": "2200.06.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm05.sav",
+            "sha256": "d3bbec66c1005ded46107abf46b7ee9f721da2a19908ed31600b0230c133b319",
+            "kind": "native_save"
+          },
+          "bytes": 480953,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7585292,
+              "crc32": "bc5dc7fc"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "e75c4083"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "c25028b2f312b70058de4d8df1e81e9249eaceb885d97167bc1fcb5f4271708e",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "36.71932",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-38.18733",
+            "net_energy": -38.18733,
+            "stored_balance_categories_sum_decimal": "-38.18733",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "0.71932"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -38.187329999999996,
+            "observed_minus_recomputed_decimal": "4E-15",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 7.62498
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm05.native-save.json",
+              "sha256": "95a1d8ba994d9edbbc9ba0055fd4f62683ac0afcd5dc7d8d56525c3af5717805",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm05.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm05.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm05.sav",
+              "sha256": "d3bbec66c1005ded46107abf46b7ee9f721da2a19908ed31600b0230c133b319",
+              "date": "2200.06.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm05.sav",
+            "archived": "bhm05.sav",
+            "sha256": "d3bbec66c1005ded46107abf46b7ee9f721da2a19908ed31600b0230c133b319",
+            "bytes": 480953
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm05.audit.json",
+            "sha256": "b6c9389a6181f1a8fade3c5ccf38d2a3e4f36abb5f204b73bd2ea292dca3872f",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm06",
+          "month_index": 6,
+          "date": "2200.07.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm06.sav",
+            "sha256": "2ff9d95260d8000d615fdd01eacfc32f910cd495f39a97d064c9ab7b7983969a",
+            "kind": "native_save"
+          },
+          "bytes": 481615,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7587226,
+              "crc32": "4b2d2df0"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "b0feb651"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "9081afbab19ab94c0bdd0f21a212bafa806603e2814b95bdc15bbf62090bfb6a",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "37.43846",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-37.46819",
+            "net_energy": -37.46819,
+            "stored_balance_categories_sum_decimal": "-37.46819",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "1.43846"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -37.46819,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm06.native-save.json",
+              "sha256": "a149f32f1b25635497df64a33df6898f185cb3afa808fb0fbb8910286a4ef93d",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm06.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm06.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm06.sav",
+              "sha256": "2ff9d95260d8000d615fdd01eacfc32f910cd495f39a97d064c9ab7b7983969a",
+              "date": "2200.07.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm06.sav",
+            "archived": "bhm06.sav",
+            "sha256": "2ff9d95260d8000d615fdd01eacfc32f910cd495f39a97d064c9ab7b7983969a",
+            "bytes": 481615
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm06.audit.json",
+            "sha256": "4320cc9814a9f543ddfb21e95b51be04c5cb72f9549111d2fc034d978fa923fa",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm07",
+          "month_index": 7,
+          "date": "2200.08.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm07.sav",
+            "sha256": "1f2a7841e039dcd0d38c50bf16d9c048b105738c936537d2d1f72245154a1ab9",
+            "kind": "native_save"
+          },
+          "bytes": 481509,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7587427,
+              "crc32": "285c8ad2"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "1d67cc7d"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "90af26a1a1ced59ab7a074a9f6da91c48dabaf5a27e84e2f8ced5f65b89abc72",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "37.4383",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-37.46835",
+            "net_energy": -37.46835,
+            "stored_balance_categories_sum_decimal": "-37.46835",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "1.4383"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -37.46835,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm07.native-save.json",
+              "sha256": "93dd2ab2e6235690fdb1079f927ea020a9b46f09908484337ea809052d58bb99",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm07.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm07.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm07.sav",
+              "sha256": "1f2a7841e039dcd0d38c50bf16d9c048b105738c936537d2d1f72245154a1ab9",
+              "date": "2200.08.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm07.sav",
+            "archived": "bhm07.sav",
+            "sha256": "1f2a7841e039dcd0d38c50bf16d9c048b105738c936537d2d1f72245154a1ab9",
+            "bytes": 481509
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm07.audit.json",
+            "sha256": "02c088d9f53c90d4ddbb000b702f3e58d3533a20eff842c9162da31296faaedb",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm08",
+          "month_index": 8,
+          "date": "2200.09.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm08.sav",
+            "sha256": "07b3c93a37b4389b70959665dc08e542adf5ede4306e61bd8a2bc6c8bc70b491",
+            "kind": "native_save"
+          },
+          "bytes": 481720,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7587089,
+              "crc32": "a6999285"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "4ac53aaf"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "6a6dedd915e75cbc485833b690f782a59b0a7cbfb39d5e8d6596ebc3acdb8baf",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "37.43813",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-37.46852",
+            "net_energy": -37.46852,
+            "stored_balance_categories_sum_decimal": "-37.46852",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "1.43813"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -37.46852,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm08.native-save.json",
+              "sha256": "8a3c4018bc0ab2c9cae0da1ee1cd748b096d41c3a4b88051061d48e230a5f080",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm08.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm08.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm08.sav",
+              "sha256": "07b3c93a37b4389b70959665dc08e542adf5ede4306e61bd8a2bc6c8bc70b491",
+              "date": "2200.09.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm08.sav",
+            "archived": "bhm08.sav",
+            "sha256": "07b3c93a37b4389b70959665dc08e542adf5ede4306e61bd8a2bc6c8bc70b491",
+            "bytes": 481720
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm08.audit.json",
+            "sha256": "292ed61b1337a4c6974622bdb0e499451ec6f4aa0f23f497d6e10d0bbfaed710",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm09",
+          "month_index": 9,
+          "date": "2200.10.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm09.sav",
+            "sha256": "991392c30ffd128dd0b285bccdce1423a39eecfaf9451f32eb85f9354e2c7b1d",
+            "kind": "native_save"
+          },
+          "bytes": 481545,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7586565,
+              "crc32": "89179bec"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "a5696120"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "a0f23cec7b68244646b78affde383d18361729bd35fe8651d00e425fab3e90d6",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "38.15693",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-36.74972",
+            "net_energy": -36.74972,
+            "stored_balance_categories_sum_decimal": "-36.74972",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "2.15693"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -36.749719999999996,
+            "observed_minus_recomputed_decimal": "4E-15",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm09.native-save.json",
+              "sha256": "e59f68983e85385e5bea9389466aff4872e136b50a32f8ac257791576d79047c",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm09.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm09.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm09.sav",
+              "sha256": "991392c30ffd128dd0b285bccdce1423a39eecfaf9451f32eb85f9354e2c7b1d",
+              "date": "2200.10.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm09.sav",
+            "archived": "bhm09.sav",
+            "sha256": "991392c30ffd128dd0b285bccdce1423a39eecfaf9451f32eb85f9354e2c7b1d",
+            "bytes": 481545
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm09.audit.json",
+            "sha256": "62db161568c30467e84337536fa1978669e8e6c1ae360b10a60fa857a03f95b7",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm10",
+          "month_index": 10,
+          "date": "2200.11.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm10.sav",
+            "sha256": "f9bb47ebe8f3b685ac140a8188d426292371da39bb8951edd2b63020a8d41126",
+            "kind": "native_save"
+          },
+          "bytes": 481956,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7597657,
+              "crc32": "0bde383f"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "f2cb97f2"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "0b0772ec62b9584625be14f2888398a4f1dbcc78200148fcc4a6e3d9a3c3fb1a",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "38.15664",
+            "expenses_decimal": "74.90665",
+            "net_decimal": "-36.75001",
+            "net_energy": -36.75001,
+            "stored_balance_categories_sum_decimal": "-36.75001",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "2.15664"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.62"
+            },
+            "historical_observed_balance": -36.750009999999996,
+            "observed_minus_recomputed_decimal": "4E-15",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm10.native-save.json",
+              "sha256": "a4c55f307542b6c1a8d15c8fd8d13ed177d81420d1415024206413c9571c655d",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm10.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm10.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm10.sav",
+              "sha256": "f9bb47ebe8f3b685ac140a8188d426292371da39bb8951edd2b63020a8d41126",
+              "date": "2200.11.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm10.sav",
+            "archived": "bhm10.sav",
+            "sha256": "f9bb47ebe8f3b685ac140a8188d426292371da39bb8951edd2b63020a8d41126",
+            "bytes": 481956
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm10.audit.json",
+            "sha256": "5c8e066c488366f8fbfc12a2c474664c763b8395c4e713c81cffac1dddbb454f",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm11",
+          "month_index": 11,
+          "date": "2200.12.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm11.sav",
+            "sha256": "adb7e684683c15a92d2bc353a61712da85c66678950ae20ffdf54a426672ed8b",
+            "kind": "native_save"
+          },
+          "bytes": 483253,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7611815,
+              "crc32": "0db455bb"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "0a2c8c84"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "bd1abb1654f73afd56962201cbe368cedfbcde55f79dbf8a93e9ae195320516e",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "38.15636",
+            "expenses_decimal": "74.92965",
+            "net_decimal": "-36.77329",
+            "net_energy": -36.77329,
+            "stored_balance_categories_sum_decimal": "-36.77329",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "2.15636"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.643"
+            },
+            "historical_observed_balance": -36.773289999999996,
+            "observed_minus_recomputed_decimal": "4E-15",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm11.native-save.json",
+              "sha256": "87eaf2479fff354c326807a2e38a1d0ec09aa5788652903d71c0f3970cbec605",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm11.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm11.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm11.sav",
+              "sha256": "adb7e684683c15a92d2bc353a61712da85c66678950ae20ffdf54a426672ed8b",
+              "date": "2200.12.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm11.sav",
+            "archived": "bhm11.sav",
+            "sha256": "adb7e684683c15a92d2bc353a61712da85c66678950ae20ffdf54a426672ed8b",
+            "bytes": 483253
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm11.audit.json",
+            "sha256": "513268850fc1f10a3fb7f147372d210a69f12c81ff407231f49c1c916e9f64da",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bhm12",
+          "month_index": 12,
+          "date": "2201.01.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bhm12.sav",
+            "sha256": "4a4c8f50e8f078a1024bed442396fdf305221d086238597af02b7ea19b2bc046",
+            "kind": "native_save"
+          },
+          "bytes": 474993,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7310017,
+              "crc32": "a4377d74"
+            },
+            "meta": {
+              "bytes": 1033,
+              "crc32": "6e72e30a"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "8387e3f46f7a2cf12577d814780d5173792cf3092106210c99b8350064947d4c",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_devouring_swarm",
+            "authority": "auth_hive_mind",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_hive_devouring_swarm",
+              "civic_hive_ascetic"
+            ]
+          },
+          "energy": {
+            "income_decimal": "38.87479",
+            "expenses_decimal": "74.92965",
+            "net_decimal": "-36.05486",
+            "net_energy": -36.05486,
+            "stored_balance_categories_sum_decimal": "-36.05486",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "planet_technician": "2.87479"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.62043",
+              "ship_components": "4.66622",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "12",
+              "planet_districts_cities": "26",
+              "planet_bureaucrats": "14.643"
+            },
+            "historical_observed_balance": -36.05486,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bhm12.native-save.json",
+              "sha256": "8e7613603459890d96134238b9fb3e68498314f15ea0b82e92ff132d0298921d",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep02_-34926073\\bhm12.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bhm12.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm12.sav",
+              "sha256": "4a4c8f50e8f078a1024bed442396fdf305221d086238597af02b7ea19b2bc046",
+              "date": "2201.01.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bhm12.sav",
+            "archived": "bhm12.sav",
+            "sha256": "4a4c8f50e8f078a1024bed442396fdf305221d086238597af02b7ea19b2bc046",
+            "bytes": 474993
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bhm12.audit.json",
+            "sha256": "4f8261dde959e0472cb9eb18e8cd2227ee14b156a2f9ab1aa7f9e22e9e6b26e6",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        }
+      ],
+      "first_month_net_energy": -38.90665,
+      "last_month_net_energy": -36.05486,
+      "minimum_net_energy": -38.90665,
+      "negative_months": 12,
+      "native_capture_types": {
+        "individual_native_save_receipt": 12,
+        "native_monthly_autosave_collection": 0
+      }
+    },
+    "machine": {
+      "prefix": "bmm",
+      "government": {
+        "type": "gov_machine_terminator",
+        "authority": "auth_machine_intelligence",
+        "origin": "origin_heart_of_devouring",
+        "civics": [
+          "civic_machine_terminator",
+          "civic_machine_replication"
+        ]
+      },
+      "startup_anchors_excluded_from_payload": [
+        {
+          "sample": "bmm00",
+          "month_index": 0,
+          "date": "2200.01.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm00.sav",
+            "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+            "kind": "native_save"
+          },
+          "bytes": 465598,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 7967142,
+              "crc32": "918e9dbd"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "c0c0c864"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "5495cfa04b17eba655a3f0213d838db4cc20a214dfdb73695d62a7b3077211ac",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "134.616",
+            "expenses_decimal": "216.21491",
+            "net_decimal": "-81.59891",
+            "net_energy": -81.59891,
+            "stored_balance_categories_sum_decimal": "-81.59891",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "77.616"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "12",
+              "planet_bureaucrats": "25.33",
+              "planet_traders": "6.6",
+              "planet_physicists": "5.94",
+              "planet_biologists": "5.94",
+              "planet_engineers": "5.94",
+              "planet_pops_traits": "49"
+            },
+            "historical_observed_balance": -81.59891000000002,
+            "observed_minus_recomputed_decimal": "-2E-14",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 200.0
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bmm00.native-save.json",
+              "sha256": "59b16503e02f2ca0174b9f91e0b74a1212ce442eac3645bd2acc0a57209ff8af",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep03_-1033273808\\bmm00.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm00.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.sav",
+              "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+              "date": "2200.01.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm00.sav",
+            "archived": "bmm00.sav",
+            "sha256": "af5f64e2eaadb164e87796d2a9261ac97ef7d716cc3f8b3cec5f4a2f23f787f8",
+            "bytes": 465598
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm00.audit.json",
+            "sha256": "0cf5ab1fcf16c5dc1fae1f4474974b2c10fc08ea8bde8e777f3319f2a969faaf",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        }
+      ],
+      "monthly_samples": [
+        {
+          "sample": "bmm01",
+          "month_index": 1,
+          "date": "2200.02.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm01.sav",
+            "sha256": "0b64c808029f87aaef87355efb85e84287cf04a1374844f377056240672b0626",
+            "kind": "native_save"
+          },
+          "bytes": 528933,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8588946,
+              "crc32": "27f568a4"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "ff4ffaaa"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "23c4a5f9b926bcc555056539f8e0aac0ff5dbfda39b93cf251cbe9fc1a993aff",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "57",
+            "expenses_decimal": "218.26091",
+            "net_decimal": "-161.26091",
+            "net_energy": -161.26091,
+            "stored_balance_categories_sum_decimal": "-161.26091",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "25.376",
+              "planet_traders": "6.6",
+              "planet_physicists": "5.94",
+              "planet_biologists": "5.94",
+              "planet_engineers": "5.94",
+              "planet_pops_traits": "49"
+            },
+            "historical_observed_balance": -161.26091,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 38.73909
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bmm01.native-save.json",
+              "sha256": "3d91c7e6972199819ced86d9458162d46c8b1591660c8b25d92a2b54f060d46f",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm01.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm01.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm01.sav",
+              "sha256": "0b64c808029f87aaef87355efb85e84287cf04a1374844f377056240672b0626",
+              "date": "2200.02.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm01.sav",
+            "archived": "bmm01.sav",
+            "sha256": "0b64c808029f87aaef87355efb85e84287cf04a1374844f377056240672b0626",
+            "bytes": 528933
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm01.audit.json",
+            "sha256": "33f27706a532e80b3e6f9a58afd5a1c8528e024928e243a3a5178ad412e47e49",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm02",
+          "month_index": 2,
+          "date": "2200.03.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm02.sav",
+            "sha256": "c46df8e9a26f55994fed564169097e8604867b34222daf50acdcf2ceb1b9ea83",
+            "kind": "native_save"
+          },
+          "bytes": 530963,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8604372,
+              "crc32": "ddf0237b"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "5ce5e92f"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "6dbac3cf071f07bf139819c7539c4067e42e8583dee78e3460d1c87baecff90d",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "57.48273",
+            "expenses_decimal": "222.18491",
+            "net_decimal": "-164.70218",
+            "net_energy": -164.70218,
+            "stored_balance_categories_sum_decimal": "-164.70218",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "0.48273"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.24",
+              "planet_traders": "6.6",
+              "planet_physicists": "5.94",
+              "planet_biologists": "5.94",
+              "planet_engineers": "5.94",
+              "planet_pops_traits": "49.06"
+            },
+            "historical_observed_balance": -164.70218,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bmm02.native-save.json",
+              "sha256": "341d0f6ea8cafb8350bfb7a52a2678039d192fc0890bd7ec526079dd1e9dd023",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm02.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm02.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm02.sav",
+              "sha256": "c46df8e9a26f55994fed564169097e8604867b34222daf50acdcf2ceb1b9ea83",
+              "date": "2200.03.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm02.sav",
+            "archived": "bmm02.sav",
+            "sha256": "c46df8e9a26f55994fed564169097e8604867b34222daf50acdcf2ceb1b9ea83",
+            "bytes": 530963
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm02.audit.json",
+            "sha256": "9dc324a5a09351372060b5e54a01a8b64256df0b47e58626bbac098107382ca8",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm03",
+          "month_index": 3,
+          "date": "2200.04.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm03.sav",
+            "sha256": "b19676e7dfd4506f564e6cbb60c1d71fa3ffcabf32b0253f6f21c0f9a0424326",
+            "kind": "native_save"
+          },
+          "bytes": 530773,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8600864,
+              "crc32": "76700a64"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "80519f36"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "f40c1e176fcdb195994a6e8879fee6e9a3711bdcbcdb97e4b8f0513700e2f418",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "57.48268",
+            "expenses_decimal": "216.99091",
+            "net_decimal": "-159.50823",
+            "net_energy": -159.50823,
+            "stored_balance_categories_sum_decimal": "-159.50823",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "0.48268"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.332",
+              "planet_traders": "6.6",
+              "planet_physicists": "4.158",
+              "planet_biologists": "4.158",
+              "planet_engineers": "4.158",
+              "planet_pops_traits": "49.12"
+            },
+            "historical_observed_balance": -159.50822999999997,
+            "observed_minus_recomputed_decimal": "3E-14",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bmm03.native-save.json",
+              "sha256": "001c4968a43d9433baabb8e12be613dbadd107c025f6fe016e18ff48bc466028",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm03.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bmm03.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm03.sav",
+              "sha256": "b19676e7dfd4506f564e6cbb60c1d71fa3ffcabf32b0253f6f21c0f9a0424326",
+              "date": "2200.04.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm03.sav",
+            "archived": "bmm03.sav",
+            "sha256": "b19676e7dfd4506f564e6cbb60c1d71fa3ffcabf32b0253f6f21c0f9a0424326",
+            "bytes": 530773
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm03.audit.json",
+            "sha256": "e41a4d21edd6b3c0d9c8decbf13c87a86aeb677bf45f79ed28b6c2f4d31fae6a",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm04",
+          "month_index": 4,
+          "date": "2200.05.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm04.sav",
+            "sha256": "0567222c9a2c7349b5cb5ea057fa5b7169c922de4e1b69a28f338edb4d44c533",
+            "kind": "native_save"
+          },
+          "bytes": 531778,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8599657,
+              "crc32": "3832e009"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "23fb8cb3"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "f6b8949ffb23d7e5919e0014a3aa041578fb4e945cbe8793d8c6fdb96346ccc9",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "57.48264",
+            "expenses_decimal": "217.08691",
+            "net_decimal": "-159.60427",
+            "net_energy": -159.60427,
+            "stored_balance_categories_sum_decimal": "-159.60427",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "0.48264"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.378",
+              "planet_traders": "6.6",
+              "planet_physicists": "4.158",
+              "planet_biologists": "4.158",
+              "planet_engineers": "4.158",
+              "planet_pops_traits": "49.17"
+            },
+            "historical_observed_balance": -159.60426999999999,
+            "observed_minus_recomputed_decimal": "1E-14",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 0,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.05.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.05.01.sav",
+              "sha256": "0567222c9a2c7349b5cb5ea057fa5b7169c922de4e1b69a28f338edb4d44c533",
+              "source_mtime_ns": 1792392950816666400,
+              "bytes": 531778
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm04.sav",
+            "archived": "bmm04.sav",
+            "sha256": "0567222c9a2c7349b5cb5ea057fa5b7169c922de4e1b69a28f338edb4d44c533",
+            "bytes": 531778
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm04.audit.json",
+            "sha256": "8cbe64ecbf3f1a9933176b25aaa22ca07a39c1e873a08baea4a5dbce920caef2",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm05",
+          "month_index": 5,
+          "date": "2200.06.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm05.sav",
+            "sha256": "2ff7d83356edba6cf09a28d706c17b8b73fbb9f9e5cbf8aa487b67e644b2434b",
+            "kind": "native_save"
+          },
+          "bytes": 533644,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8621791,
+              "crc32": "0ecf2a1a"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "1c74be7d"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "06d1df16ad61b4862d7faaf73a4d9474150c53ac56a5b4a183d5b082d055956a",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "57.96521",
+            "expenses_decimal": "214.47491",
+            "net_decimal": "-156.50970",
+            "net_energy": -156.5097,
+            "stored_balance_categories_sum_decimal": "-156.50970",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "0.96521"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.47",
+              "planet_traders": "6.6",
+              "planet_physicists": "3.24",
+              "planet_biologists": "3.24",
+              "planet_engineers": "3.24",
+              "planet_pops_traits": "49.22"
+            },
+            "historical_observed_balance": -156.5097,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 1,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.06.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.06.01.sav",
+              "sha256": "2ff7d83356edba6cf09a28d706c17b8b73fbb9f9e5cbf8aa487b67e644b2434b",
+              "source_mtime_ns": 1792393006175264600,
+              "bytes": 533644
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm05.sav",
+            "archived": "bmm05.sav",
+            "sha256": "2ff7d83356edba6cf09a28d706c17b8b73fbb9f9e5cbf8aa487b67e644b2434b",
+            "bytes": 533644
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm05.audit.json",
+            "sha256": "8b450cb22471d0ce1ea202dce6b92a59210210ce8914466bdca4a7a7b10e24fd",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm06",
+          "month_index": 6,
+          "date": "2200.07.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm06.sav",
+            "sha256": "c7d0e0176836dad9cd3ad1aeaca9b78df98450b5dc213b1584481b205744035d",
+            "kind": "native_save"
+          },
+          "bytes": 534396,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8613536,
+              "crc32": "4de49f8c"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "bfdeadf8"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "2c2f601c87503ae3ae98f7e99b73decc3760480d31c81a914e05c7075bea5655",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "57.96516",
+            "expenses_decimal": "214.51491",
+            "net_decimal": "-156.54975",
+            "net_energy": -156.54975,
+            "stored_balance_categories_sum_decimal": "-156.54975",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "0.96516"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.47",
+              "planet_traders": "6.6",
+              "planet_physicists": "3.24",
+              "planet_biologists": "3.24",
+              "planet_engineers": "3.24",
+              "planet_pops_traits": "49.26"
+            },
+            "historical_observed_balance": -156.54975,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 2,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.07.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.07.01.sav",
+              "sha256": "c7d0e0176836dad9cd3ad1aeaca9b78df98450b5dc213b1584481b205744035d",
+              "source_mtime_ns": 1792393061464141400,
+              "bytes": 534396
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm06.sav",
+            "archived": "bmm06.sav",
+            "sha256": "c7d0e0176836dad9cd3ad1aeaca9b78df98450b5dc213b1584481b205744035d",
+            "bytes": 534396
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm06.audit.json",
+            "sha256": "5e208dbc961a4ffad354459f5e6442b0e2707a9b2f1abf99476184941cb40b77",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm07",
+          "month_index": 7,
+          "date": "2200.08.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm07.sav",
+            "sha256": "814865697c274d97a81beca87f79feeabe0bee1fcdd84b136c00d027b589282a",
+            "kind": "native_save"
+          },
+          "bytes": 533814,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8626328,
+              "crc32": "3a44ad29"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "7e6d540e"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "ff80cd857a4f1117a50eeca9a45069ac8547ec1e69fcb28470a70e75c78b1cb5",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "57.96508",
+            "expenses_decimal": "214.61091",
+            "net_decimal": "-156.64583",
+            "net_energy": -156.64583,
+            "stored_balance_categories_sum_decimal": "-156.64583",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "0.96508"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.516",
+              "planet_traders": "6.6",
+              "planet_physicists": "3.24",
+              "planet_biologists": "3.24",
+              "planet_engineers": "3.24",
+              "planet_pops_traits": "49.31"
+            },
+            "historical_observed_balance": -156.64583,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 3,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.08.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.08.01.sav",
+              "sha256": "814865697c274d97a81beca87f79feeabe0bee1fcdd84b136c00d027b589282a",
+              "source_mtime_ns": 1792393232895875800,
+              "bytes": 533814
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm07.sav",
+            "archived": "bmm07.sav",
+            "sha256": "814865697c274d97a81beca87f79feeabe0bee1fcdd84b136c00d027b589282a",
+            "bytes": 533814
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm07.audit.json",
+            "sha256": "73cad18f327d3ef72924a93cbbf9385951e060608cd81d86a130946f943b72a2",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm08",
+          "month_index": 8,
+          "date": "2200.09.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm08.sav",
+            "sha256": "89f4c1b0eb1f7dd56e3e45951c04c00eb751ad434a854dacbe7e078b9ae91eca",
+            "kind": "native_save"
+          },
+          "bytes": 533666,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8625821,
+              "crc32": "d172d1ee"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "ddc7478b"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "57819f99c41892285c9b288c31912fa9eab5ede087a10c925f2134d5b5f6bd18",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "58.44752",
+            "expenses_decimal": "214.70691",
+            "net_decimal": "-156.25939",
+            "net_energy": -156.25939,
+            "stored_balance_categories_sum_decimal": "-156.25939",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "1.44752"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.562",
+              "planet_traders": "6.6",
+              "planet_physicists": "3.24",
+              "planet_biologists": "3.24",
+              "planet_engineers": "3.24",
+              "planet_pops_traits": "49.36"
+            },
+            "historical_observed_balance": -156.25939,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 4,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.09.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.09.01.sav",
+              "sha256": "89f4c1b0eb1f7dd56e3e45951c04c00eb751ad434a854dacbe7e078b9ae91eca",
+              "source_mtime_ns": 1792393289012852100,
+              "bytes": 533666
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm08.sav",
+            "archived": "bmm08.sav",
+            "sha256": "89f4c1b0eb1f7dd56e3e45951c04c00eb751ad434a854dacbe7e078b9ae91eca",
+            "bytes": 533666
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm08.audit.json",
+            "sha256": "32fd76f0cefba1469d18297f0458c99b522bf7e905cdd7021db0d601445ca401",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm09",
+          "month_index": 9,
+          "date": "2200.10.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm09.sav",
+            "sha256": "21a870d84edaf348bd2315c8fa67eb7a100b8aa61030f9dc8803494a21e638b8",
+            "kind": "native_save"
+          },
+          "bytes": 533985,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8634311,
+              "crc32": "5c675b72"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "fe1b065d"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "f1a01c6e4c4899b23f9200b0e403405a31a4808444233dd4b8617c00f38bc1a4",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "58.4474",
+            "expenses_decimal": "214.80291",
+            "net_decimal": "-156.35551",
+            "net_energy": -156.35551,
+            "stored_balance_categories_sum_decimal": "-156.35551",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "1.4474"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.608",
+              "planet_traders": "6.6",
+              "planet_physicists": "3.24",
+              "planet_biologists": "3.24",
+              "planet_engineers": "3.24",
+              "planet_pops_traits": "49.41"
+            },
+            "historical_observed_balance": -156.35550999999998,
+            "observed_minus_recomputed_decimal": "2E-14",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 5,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.10.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.10.01.sav",
+              "sha256": "21a870d84edaf348bd2315c8fa67eb7a100b8aa61030f9dc8803494a21e638b8",
+              "source_mtime_ns": 1792393340726225200,
+              "bytes": 533985
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm09.sav",
+            "archived": "bmm09.sav",
+            "sha256": "21a870d84edaf348bd2315c8fa67eb7a100b8aa61030f9dc8803494a21e638b8",
+            "bytes": 533985
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm09.audit.json",
+            "sha256": "245173d9942a1bd045ca6567f367357c533ec8ae7008a3813afb1166b338bef1",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm10",
+          "month_index": 10,
+          "date": "2200.11.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm10.sav",
+            "sha256": "99b025007d125e09688422e455cd1e017aa2b057c97f8be3be50b334efca7239",
+            "kind": "native_save"
+          },
+          "bytes": 534953,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8640337,
+              "crc32": "f2b4fb78"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "5db115d8"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "f6b8b934efebd23be70969a26edae7a4e87979bd79e2819bea34ad4f3edecc22",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "58.4473",
+            "expenses_decimal": "212.30691",
+            "net_decimal": "-153.85961",
+            "net_energy": -153.85961,
+            "stored_balance_categories_sum_decimal": "-153.85961",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "1.4473"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.654",
+              "planet_traders": "6.6",
+              "planet_physicists": "2.376",
+              "planet_biologists": "2.376",
+              "planet_engineers": "2.376",
+              "planet_pops_traits": "49.46"
+            },
+            "historical_observed_balance": -153.85960999999998,
+            "observed_minus_recomputed_decimal": "2E-14",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 6,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.11.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.11.01.sav",
+              "sha256": "99b025007d125e09688422e455cd1e017aa2b057c97f8be3be50b334efca7239",
+              "source_mtime_ns": 1792393394298012200,
+              "bytes": 534953
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm10.sav",
+            "archived": "bmm10.sav",
+            "sha256": "99b025007d125e09688422e455cd1e017aa2b057c97f8be3be50b334efca7239",
+            "bytes": 534953
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm10.audit.json",
+            "sha256": "eeba7c37ab364490afd1b62aea8bd0f850112fe1575f377b5366e5c064ff211a",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm11",
+          "month_index": 11,
+          "date": "2200.12.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm11.sav",
+            "sha256": "b5a98361dc6bac30b06665468b52a252ed62a356174439d719e4632b93f491e2",
+            "kind": "native_save"
+          },
+          "bytes": 534871,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8643105,
+              "crc32": "3875e545"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "623e2716"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "fbc2253ecf6411d3d81a76a2d7c32188dbab82665d49f01abe6e3d5f6209d047",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "58.92957",
+            "expenses_decimal": "212.40291",
+            "net_decimal": "-153.47334",
+            "net_energy": -153.47334,
+            "stored_balance_categories_sum_decimal": "-153.47334",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "1.92957"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.7",
+              "planet_traders": "6.6",
+              "planet_physicists": "2.376",
+              "planet_biologists": "2.376",
+              "planet_engineers": "2.376",
+              "planet_pops_traits": "49.51"
+            },
+            "historical_observed_balance": -153.47334,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 7,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.12.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2200.12.01.sav",
+              "sha256": "b5a98361dc6bac30b06665468b52a252ed62a356174439d719e4632b93f491e2",
+              "source_mtime_ns": 1792393448205059100,
+              "bytes": 534871
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm11.sav",
+            "archived": "bmm11.sav",
+            "sha256": "b5a98361dc6bac30b06665468b52a252ed62a356174439d719e4632b93f491e2",
+            "bytes": 534871
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm11.audit.json",
+            "sha256": "d2f6395b0797eda35b366d32feb195a3cabf892771f363b55ab4c0af904cf4fe",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bmm12",
+          "month_index": 12,
+          "date": "2201.01.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bmm12.sav",
+            "sha256": "d994618c3743a5e431f0d05b0ca41cfd8a8e8144f7f210e5d941d90b42d1a492",
+            "kind": "native_save"
+          },
+          "bytes": 527470,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8339454,
+              "crc32": "d047da30"
+            },
+            "meta": {
+              "bytes": 1037,
+              "crc32": "70d21ac8"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "e5c082bc0219cc691710d53f58295410e2f7a832fec5c6daab28772eb12ebf74",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_machine_terminator",
+            "authority": "auth_machine_intelligence",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_machine_terminator",
+              "civic_machine_replication"
+            ]
+          },
+          "energy": {
+            "income_decimal": "58.92948",
+            "expenses_decimal": "212.53491",
+            "net_decimal": "-153.60543",
+            "net_energy": -153.60543,
+            "stored_balance_categories_sum_decimal": "-153.60543",
+            "income_categories_decimal": {
+              "country_base": "40",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "11",
+              "planet_technician": "1.92948"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.09998",
+              "ship_components": "4.36493",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "1",
+              "starbase_modules": "1",
+              "planet_buildings": "14",
+              "planet_districts": "70",
+              "planet_districts_cities": "14",
+              "planet_bureaucrats": "29.792",
+              "planet_traders": "6.6",
+              "planet_physicists": "2.376",
+              "planet_biologists": "2.376",
+              "planet_engineers": "2.376",
+              "planet_pops_traits": "49.55"
+            },
+            "historical_observed_balance": -153.60543,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "ABSENT",
+            "native_stock_energy_value": null
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bm-monthly-autosave-receipt.json",
+              "sha256": "6586dcae0eb92249a0c2525e10735ffa95fa723a25cdd27ada978d8599801b30",
+              "kind": "analysis"
+            },
+            "snapshot_index": 8,
+            "collection_anchor": "bmm03",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2201.01.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\autosave_2201.01.01.sav",
+              "sha256": "d994618c3743a5e431f0d05b0ca41cfd8a8e8144f7f210e5d941d90b42d1a492",
+              "source_mtime_ns": 1792393502486319800,
+              "bytes": 527470
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bmm12.sav",
+            "archived": "bmm12.sav",
+            "sha256": "d994618c3743a5e431f0d05b0ca41cfd8a8e8144f7f210e5d941d90b42d1a492",
+            "bytes": 527470
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bmm12.audit.json",
+            "sha256": "5ee0dffd889c3810a4962a968f8853ccc84f67f4d711a0cefb8e08c0448d3457",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        }
+      ],
+      "first_month_net_energy": -161.26091,
+      "last_month_net_energy": -153.60543,
+      "minimum_net_energy": -164.70218,
+      "negative_months": 12,
+      "native_capture_types": {
+        "individual_native_save_receipt": 3,
+        "native_monthly_autosave_collection": 9
+      }
+    },
+    "purifier": {
+      "prefix": "bpm",
+      "government": {
+        "type": "gov_purity_order",
+        "authority": "auth_dictatorial",
+        "origin": "origin_heart_of_devouring",
+        "civics": [
+          "civic_fanatic_purifiers",
+          "civic_efficient_bureaucracy"
+        ]
+      },
+      "startup_anchors_excluded_from_payload": [
+        {
+          "sample": "bpm00",
+          "month_index": 0,
+          "date": "2200.01.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm00.sav",
+            "sha256": "01b35132fd16f2b73dedff9938de0a17442775ccb0818caf7cf82892f7fe7827",
+            "kind": "native_save"
+          },
+          "bytes": 511417,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8652447,
+              "crc32": "4f96eda9"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "2c937ce4"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "ef37f678322e5ee23738dc392f74897cc28675f21676529f0325a7dc430f5fbc",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "92.42763",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "33.40946",
+            "net_energy": 33.40946,
+            "stored_balance_categories_sum_decimal": "33.40946",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "20.22479",
+              "planet_technician": "36.20284"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 33.409459999999996,
+            "observed_minus_recomputed_decimal": "-4E-15",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 200.0
+          },
+          "capture_provenance": {
+            "type": "individual_native_save_receipt",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bpm00.native-save.json",
+              "sha256": "0e29c4bff3d18d5ff1ad9620ca3b80c1c42a911643e2a9bfbca21c90bb275e40",
+              "kind": "analysis"
+            },
+            "original_fields": {
+              "written_at": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\bpm00.sav",
+              "history": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep-test-history\\bpm00.sav",
+              "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm00.sav",
+              "sha256": "01b35132fd16f2b73dedff9938de0a17442775ccb0818caf7cf82892f7fe7827",
+              "date": "2200.01.01"
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm00.sav",
+            "archived": "bpm00.sav",
+            "sha256": "01b35132fd16f2b73dedff9938de0a17442775ccb0818caf7cf82892f7fe7827",
+            "bytes": 511417
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm00.audit.json",
+            "sha256": "6bac55bc5e147735d5d4de5f8e7379b7c3fe1d67c703274b7ed8b411f3b3890e",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        }
+      ],
+      "monthly_samples": [
+        {
+          "sample": "bpm01",
+          "month_index": 1,
+          "date": "2200.02.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm01.sav",
+            "sha256": "d59f6cba24fe4b392edf71fa98a73dc6674cf9214f69c98fa92113c2a99b8964",
+            "kind": "native_save"
+          },
+          "bytes": 568483,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9174250,
+              "crc32": "34678e3c"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "d4746792"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "bcf07fe4eacb91a1189a72eaaf7469a52cca327b69ab67037496e731b8a5e1d0",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "91.66139",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "32.64322",
+            "net_energy": 32.64322,
+            "stored_balance_categories_sum_decimal": "32.64322",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "20.01215",
+              "planet_technician": "35.64924"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 32.64322,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 232.64322
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 0,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.02.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.02.01.sav",
+              "sha256": "d59f6cba24fe4b392edf71fa98a73dc6674cf9214f69c98fa92113c2a99b8964",
+              "source_mtime_ns": 1792394043836450800,
+              "bytes": 568483
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm01.sav",
+            "archived": "bpm01.sav",
+            "sha256": "d59f6cba24fe4b392edf71fa98a73dc6674cf9214f69c98fa92113c2a99b8964",
+            "bytes": 568483
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm01.audit.json",
+            "sha256": "09cdb7818c2b4c46ff684dd63c2ecf2656244be9ce7b1796c6b5e1348ac25b62",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm02",
+          "month_index": 2,
+          "date": "2200.03.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm02.sav",
+            "sha256": "20eb7b59edca1b9e4dbd20c09f18c668015c1dc04e26e0aeebcff2bd30cd84fc",
+            "kind": "native_save"
+          },
+          "bytes": 571264,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9189945,
+              "crc32": "a79aba17"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "83d69140"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "5c10770b9e33d3f109f91f5b76e1400760ac4a54d2972d0d4bacb0ee2d0132fb",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.50121",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.48304",
+            "net_energy": 31.48304,
+            "stored_balance_categories_sum_decimal": "31.48304",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.85303",
+              "planet_technician": "35.64818"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.483040000000017,
+            "observed_minus_recomputed_decimal": "1.7E-14",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 264.12626
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 1,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.03.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.03.01.sav",
+              "sha256": "20eb7b59edca1b9e4dbd20c09f18c668015c1dc04e26e0aeebcff2bd30cd84fc",
+              "source_mtime_ns": 1792394098519146300,
+              "bytes": 571264
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm02.sav",
+            "archived": "bpm02.sav",
+            "sha256": "20eb7b59edca1b9e4dbd20c09f18c668015c1dc04e26e0aeebcff2bd30cd84fc",
+            "bytes": 571264
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm02.audit.json",
+            "sha256": "e63612ecfb041060e781c7f29f96e602d05020a928661502176ecc3daa361a4f",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm03",
+          "month_index": 3,
+          "date": "2200.04.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm03.sav",
+            "sha256": "622e0cfce9183840d129570316aa4942faaf49b68e57654baf3aff034ff904d2",
+            "kind": "native_save"
+          },
+          "bytes": 571518,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9194667,
+              "crc32": "d5b46b5c"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "fecb573f"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "c2985d0459e17b6fdab5093b5b21907b8445a2b233038ee44f1d146578e63f0a",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.51354",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.49537",
+            "net_energy": 31.49537,
+            "stored_balance_categories_sum_decimal": "31.49537",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.86668",
+              "planet_technician": "35.64686"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.49537000000001,
+            "observed_minus_recomputed_decimal": "1E-14",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 295.62163
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 2,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.04.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.04.01.sav",
+              "sha256": "622e0cfce9183840d129570316aa4942faaf49b68e57654baf3aff034ff904d2",
+              "source_mtime_ns": 1792394153590205100,
+              "bytes": 571518
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm03.sav",
+            "archived": "bpm03.sav",
+            "sha256": "622e0cfce9183840d129570316aa4942faaf49b68e57654baf3aff034ff904d2",
+            "bytes": 571518
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm03.audit.json",
+            "sha256": "9cde527c8adcc40656a3c92727cf23de644a048f19c57b358ff382cb31ecd95b",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm04",
+          "month_index": 4,
+          "date": "2200.05.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm04.sav",
+            "sha256": "65e15c5242f2060013698fbe1ca6a33d2f81b639ca881f5dc92bdc60e6feb26f",
+            "kind": "native_save"
+          },
+          "bytes": 572788,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9195945,
+              "crc32": "6ede33a5"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "a969a1ed"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "1404319fae9021c6a6bff7fcb675085ac51b9cb9150cbf82428d2e652cf32339",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.45894",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.44077",
+            "net_energy": 31.44077,
+            "stored_balance_categories_sum_decimal": "31.44077",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.8134",
+              "planet_technician": "35.64554"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.44077,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 327.0624
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 3,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.05.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.05.01.sav",
+              "sha256": "65e15c5242f2060013698fbe1ca6a33d2f81b639ca881f5dc92bdc60e6feb26f",
+              "source_mtime_ns": 1792394209289909900,
+              "bytes": 572788
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm04.sav",
+            "archived": "bpm04.sav",
+            "sha256": "65e15c5242f2060013698fbe1ca6a33d2f81b639ca881f5dc92bdc60e6feb26f",
+            "bytes": 572788
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm04.audit.json",
+            "sha256": "69cd8602304d23a421ff5250841298e7c4bf3a0978591a968d10b42d47cf94b3",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm05",
+          "month_index": 5,
+          "date": "2200.06.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm05.sav",
+            "sha256": "5e1ebd1c9a1fef3b3421c1504bb0cfef318332ef48837a9e208a5424a3444900",
+            "kind": "native_save"
+          },
+          "bytes": 575409,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9221685,
+              "crc32": "075b9db6"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "518eba9b"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "cecb149402aaf42f517ae28ee16590e244fd00b64b790d1fb5da1adfc2096d2d",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.40598",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.38781",
+            "net_energy": 31.38781,
+            "stored_balance_categories_sum_decimal": "31.38781",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.76176",
+              "planet_technician": "35.64422"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.38781,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 358.45021
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 4,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.06.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.06.01.sav",
+              "sha256": "5e1ebd1c9a1fef3b3421c1504bb0cfef318332ef48837a9e208a5424a3444900",
+              "source_mtime_ns": 1792394264797172200,
+              "bytes": 575409
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm05.sav",
+            "archived": "bpm05.sav",
+            "sha256": "5e1ebd1c9a1fef3b3421c1504bb0cfef318332ef48837a9e208a5424a3444900",
+            "bytes": 575409
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm05.audit.json",
+            "sha256": "a4a5f9551819b27c9883a876c5d882bf6cff8d9477bcf9ba0bef12a5d7694a6d",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm06",
+          "month_index": 6,
+          "date": "2200.07.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm06.sav",
+            "sha256": "97a0276c04202791a73c22d2c3662588f2259241a3c0340116592cd5f992edcc",
+            "kind": "native_save"
+          },
+          "bytes": 577840,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9237064,
+              "crc32": "c29a454a"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "062c4c49"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "519814536dfe933b627de625fb8c26122c684765b7710ad34aa9210de7e11991",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.33564",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.31747",
+            "net_energy": 31.31747,
+            "stored_balance_categories_sum_decimal": "31.31747",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.69274",
+              "planet_technician": "35.6429"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.31747,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 389.76768
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 5,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.07.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.07.01.sav",
+              "sha256": "97a0276c04202791a73c22d2c3662588f2259241a3c0340116592cd5f992edcc",
+              "source_mtime_ns": 1792394318637419000,
+              "bytes": 577840
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm06.sav",
+            "archived": "bpm06.sav",
+            "sha256": "97a0276c04202791a73c22d2c3662588f2259241a3c0340116592cd5f992edcc",
+            "bytes": 577840
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm06.audit.json",
+            "sha256": "0c548a02f99d956a74cd2d02d11de5dde261938ae2e8501cce91a4cc552e645f",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm07",
+          "month_index": 7,
+          "date": "2200.08.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm07.sav",
+            "sha256": "ffc68212ae44e001a8ecc6bf0b38488817968c9ca2fc5ceaa5a8339e3af9baac",
+            "kind": "native_save"
+          },
+          "bytes": 576850,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9232014,
+              "crc32": "26a506d9"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "abb53665"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "39143e064a956535b7e04d884cf4750c6890ce5df81a50672dee91456a2a3fa4",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.19712",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.17895",
+            "net_energy": 31.17895,
+            "stored_balance_categories_sum_decimal": "31.17895",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.55554",
+              "planet_technician": "35.64158"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.17895,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 420.94663
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 6,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.08.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.08.01.sav",
+              "sha256": "ffc68212ae44e001a8ecc6bf0b38488817968c9ca2fc5ceaa5a8339e3af9baac",
+              "source_mtime_ns": 1792394374391260700,
+              "bytes": 576850
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm07.sav",
+            "archived": "bpm07.sav",
+            "sha256": "ffc68212ae44e001a8ecc6bf0b38488817968c9ca2fc5ceaa5a8339e3af9baac",
+            "bytes": 576850
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm07.audit.json",
+            "sha256": "f577c1b3f467e6fa2e2b22a4c351a7926ecd210884be1010df8813bf55322337",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm08",
+          "month_index": 8,
+          "date": "2200.09.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm08.sav",
+            "sha256": "dd931fc0942ca4b4e59b0c54d774da5b74cfc4f23efa1273402c8f0e4401153f",
+            "kind": "native_save"
+          },
+          "bytes": 577466,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9238675,
+              "crc32": "faf0dfe6"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "fc17c0b7"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "02d7388da810d874fd15b41716abd4b7a2b8c11b2195c49d88c5f919a3e7eee3",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.28000",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.26183",
+            "net_energy": 31.26183,
+            "stored_balance_categories_sum_decimal": "31.26183",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.63974",
+              "planet_technician": "35.64026"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.261830000000003,
+            "observed_minus_recomputed_decimal": "3E-15",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 452.20846
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 7,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.09.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.09.01.sav",
+              "sha256": "dd931fc0942ca4b4e59b0c54d774da5b74cfc4f23efa1273402c8f0e4401153f",
+              "source_mtime_ns": 1792394429014050800,
+              "bytes": 577466
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm08.sav",
+            "archived": "bpm08.sav",
+            "sha256": "dd931fc0942ca4b4e59b0c54d774da5b74cfc4f23efa1273402c8f0e4401153f",
+            "bytes": 577466
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm08.audit.json",
+            "sha256": "8415601f357fcee103162389e25aa53690939720344235d153589aca2b251fd4",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm09",
+          "month_index": 9,
+          "date": "2200.10.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm09.sav",
+            "sha256": "e349fb52f0c6503c6e2a0885931ddd3d5cf7fd756a41b745213cebe68c21edc8",
+            "kind": "native_save"
+          },
+          "bytes": 577651,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9244108,
+              "crc32": "e3ae0e16"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "13bb9b38"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "d53b29248170ef66224d3576873891be23cc57aa91d4bf8d7bd9754177e2d4c5",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.21838",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.20021",
+            "net_energy": 31.20021,
+            "stored_balance_categories_sum_decimal": "31.20021",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.5797",
+              "planet_technician": "35.63868"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.20021,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 483.40867
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 8,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.10.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.10.01.sav",
+              "sha256": "e349fb52f0c6503c6e2a0885931ddd3d5cf7fd756a41b745213cebe68c21edc8",
+              "source_mtime_ns": 1792394484370187500,
+              "bytes": 577651
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm09.sav",
+            "archived": "bpm09.sav",
+            "sha256": "e349fb52f0c6503c6e2a0885931ddd3d5cf7fd756a41b745213cebe68c21edc8",
+            "bytes": 577651
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm09.audit.json",
+            "sha256": "a983649467a1764895921f7ad1b9bb80ba21437166f9ee0e4961460fc56cd380",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm10",
+          "month_index": 10,
+          "date": "2200.11.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm10.sav",
+            "sha256": "536ed6b40a4ad29233caf2731a9e49e4f9419ac9460016897382e3c4d8d9dbea",
+            "kind": "native_save"
+          },
+          "bytes": 578711,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9254200,
+              "crc32": "425e8ecd"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "44196dea"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "087c34d3e676be06d8978d1cb3e1925a9e84bf63746caed1a72061e14cc36152",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.16019",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.14202",
+            "net_energy": 31.14202,
+            "stored_balance_categories_sum_decimal": "31.14202",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.52283",
+              "planet_technician": "35.63736"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.142020000000002,
+            "observed_minus_recomputed_decimal": "2E-15",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 514.55069
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 9,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.11.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.11.01.sav",
+              "sha256": "536ed6b40a4ad29233caf2731a9e49e4f9419ac9460016897382e3c4d8d9dbea",
+              "source_mtime_ns": 1792394539792903600,
+              "bytes": 578711
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm10.sav",
+            "archived": "bpm10.sav",
+            "sha256": "536ed6b40a4ad29233caf2731a9e49e4f9419ac9460016897382e3c4d8d9dbea",
+            "bytes": 578711
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm10.audit.json",
+            "sha256": "3814dd2d661b2bdd041fb632a75d2e3f726e7751baf3133d28d44c9e752931e5",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm11",
+          "month_index": 11,
+          "date": "2200.12.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm11.sav",
+            "sha256": "8c58956e52761d2d3ec221aa73956cf4c7b4ef0d9083229df194a2b9bb118deb",
+            "kind": "native_save"
+          },
+          "bytes": 579821,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 9263710,
+              "crc32": "ede3673e"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "bcfe769c"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "11874bddacbb970e412d94bcc6a0e67422d0b7f623f60ff397dfe41b2e9835ae",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.10761",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.08944",
+            "net_energy": 31.08944,
+            "stored_balance_categories_sum_decimal": "31.08944",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.47131",
+              "planet_technician": "35.6363"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.089439999999996,
+            "observed_minus_recomputed_decimal": "-4E-15",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 545.64013
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 10,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2200.12.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2200.12.01.sav",
+              "sha256": "8c58956e52761d2d3ec221aa73956cf4c7b4ef0d9083229df194a2b9bb118deb",
+              "source_mtime_ns": 1792394595550533300,
+              "bytes": 579821
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm11.sav",
+            "archived": "bpm11.sav",
+            "sha256": "8c58956e52761d2d3ec221aa73956cf4c7b4ef0d9083229df194a2b9bb118deb",
+            "bytes": 579821
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm11.audit.json",
+            "sha256": "f71b006b0da56a1c4bf7f5507f8752aa53f4a86ebaad887c52e9605a2146b5c5",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        },
+        {
+          "sample": "bpm12",
+          "month_index": 12,
+          "date": "2201.01.01",
+          "evidence": {
+            "path": "docs/evidence/1019-baseline/bpm12.sav",
+            "sha256": "09e76c524ea329c0ae6715ba3a5a976d7574b3837018477e1a5a1011df8383c3",
+            "kind": "native_save"
+          },
+          "bytes": 567090,
+          "zip_members": {
+            "gamestate": {
+              "bytes": 8813319,
+              "crc32": "b736e131"
+            },
+            "meta": {
+              "bytes": 1027,
+              "crc32": "d8a01912"
+            }
+          },
+          "zip_validation": "CRC_VERIFIED",
+          "native_gamestate_sha256": "9d0a83fe13edd6cd1ec418059fdfcb2a4c73767103fbd0bd29f06d9bd903abb5",
+          "native_meta_version": "Cygnus v4.5.2",
+          "native_meta_mods": [
+            "吞噬之心"
+          ],
+          "country_id": 0,
+          "country_government": {
+            "type": "gov_purity_order",
+            "authority": "auth_dictatorial",
+            "origin": "origin_heart_of_devouring",
+            "civics": [
+              "civic_fanatic_purifiers",
+              "civic_efficient_bureaucracy"
+            ]
+          },
+          "energy": {
+            "income_decimal": "90.04942",
+            "expenses_decimal": "59.01817",
+            "net_decimal": "31.03125",
+            "net_energy": 31.03125,
+            "stored_balance_categories_sum_decimal": "31.03125",
+            "income_categories_decimal": {
+              "country_base": "20",
+              "starbase_modules": "6",
+              "orbital_mining_deposits": "10",
+              "trade_policy": "18.41444",
+              "planet_technician": "35.63498"
+            },
+            "expense_categories_decimal": {
+              "ships": "8.51201",
+              "ship_components": "4.54616",
+              "station_gatherers": "4",
+              "station_researchers": "1",
+              "starbases": "2",
+              "starbase_buildings": "0.98",
+              "starbase_modules": "0.98",
+              "planet_buildings": "18",
+              "planet_districts_farming": "3",
+              "planet_districts_mining": "2",
+              "planet_districts_generator": "2",
+              "planet_districts_cities": "12"
+            },
+            "historical_observed_balance": 31.03125,
+            "observed_minus_recomputed_decimal": "0.00000",
+            "native_stock_energy_field": "PRESENT",
+            "native_stock_energy_value": 576.67138
+          },
+          "capture_provenance": {
+            "type": "native_monthly_autosave_collection",
+            "reference": {
+              "path": "docs/evidence/1019-baseline/bp-monthly-autosave-receipt.json",
+              "sha256": "582e375a75211c679719e23cc0cc02ef3978f3a38eabe572a3c38d761481ba0a",
+              "kind": "analysis"
+            },
+            "snapshot_index": 11,
+            "collection_anchor": "bpm00",
+            "method": "separate native fast_forward 30 per month",
+            "original_fields": {
+              "date": "2201.01.01",
+              "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T053917Z\\save games\\eep04_1300303793\\autosave_2201.01.01.sav",
+              "sha256": "09e76c524ea329c0ae6715ba3a5a976d7574b3837018477e1a5a1011df8383c3",
+              "source_mtime_ns": 1792394650533621000,
+              "bytes": 567090
+            }
+          },
+          "original_archive_index_entry": {
+            "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\single-homeworld-20261019\\runs\\20261019T053917Z\\bpm12.sav",
+            "archived": "bpm12.sav",
+            "sha256": "09e76c524ea329c0ae6715ba3a5a976d7574b3837018477e1a5a1011df8383c3",
+            "bytes": 567090
+          },
+          "original_archive_source_verification": "ORIGINAL_ARCHIVE_SOURCE_HASH_MATCH",
+          "audit_reference": {
+            "path": "docs/evidence/1019-baseline/bpm12.audit.json",
+            "sha256": "8207a2294ce6b602b965dd59422f8db0153680bec1bc85e47c0cf6f4fb60a2b7",
+            "kind": "analysis"
+          },
+          "audit_tool_sha256_at_original_audit": "1f298b76e88b605c2b5d1d5742429d5bcf463cd0435cb154432525034c2ea0ad"
+        }
+      ],
+      "first_month_net_energy": 32.64322,
+      "last_month_net_energy": 31.03125,
+      "minimum_net_energy": 31.03125,
+      "negative_months": 0,
+      "native_capture_types": {
+        "individual_native_save_receipt": 0,
+        "native_monthly_autosave_collection": 12
+      }
+    }
+  },
+  "verification_summary": {
+    "monthly_saves": 36,
+    "startup_anchors": 3,
+    "distinct_monthly_native_saves": 36,
+    "matched_capture_receipts": 39,
+    "zip_crc_verified": 39,
+    "original_archive_source_hash_matched": 39,
+    "discrepancies": []
+  }
+}
