@@ -12,6 +12,7 @@
 
 - [「吞噬之心」新独立 Mod：吞星供养母星的灭绝单球设计案（2026-10-06，未实现）](eat-everything-origin-design-2026-10-06.md)
 - [「吞噬之心」子项目：游戏代码研究与验收设计](../eat_everything_origin/docs/README.md)
+- [「吞噬之心」额外开局殖民地与负电反馈评估（2026-10-19，仅建议）](eat-everything-origin-startup-economy-feedback-2026-10-19.md)
 - [「吞噬之心」女王·白绮：原设调查、肖像／立绘审核与事件 CG 方案](../eat_everything_origin/docs/queen-baiqi-art-direction-2026-10-06.md)
 - [「吞噬之心」女王·白绮：玩法职责、王庭交互与事件合同](../eat_everything_origin/docs/queen-baiqi-gameplay-design-2026-10-06.md)
 
