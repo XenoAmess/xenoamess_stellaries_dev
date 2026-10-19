@@ -76,3 +76,89 @@ source 模型中的再生系数已经通过受损舰体实际恢复测试。
 原检查、三分支年度经济、真实重启及 typed 组件／迁移合同后另建最终结果。
 `missing` 将迁移原 strict `damage_preserved=false` 也列缺时，不得把该值改 true；
 应保留固定 v2 工程预算和 typed scope，由原最终门禁按合同判断。
+
+## 第二轮已封口提案的合并设计
+
+主线程另行授权把已封口的 `r7puc` 独立正常新局和完整首年记录、独立操作审查，
+以及两份成长 partial proposal 合入本 pending 索引。本节先于相应 JSON 改动。
+来源限于以下三份已经存在的提案及其归档引用；不读取仍活动的 Hive、媒体或日志：
+
+- `docs/evidence/1019-analysis/rc7-r7puc-startup-economy-partial-proposal-v1.json`
+- `docs/evidence/1019-analysis/rc7-unlimited-growth-partial-case-proposal-v1.json`
+- `docs/evidence/1019-analysis/rc7-random-components-partial-case-proposal-v1.json`
+
+既有 helper 的 `attach`、`add_budget`、`observe_check` 和 `update_progress` 将登记
+真实引用、原生观察月份和提案中明确为 true 的原名单项检查。Pu 七项 startup 与
+七项 economy 的来源分别区分原始 native report 和补充四项受控操作审查；原始报告
+中的四个 null 保持原样。成长仅登记原提案明确覆盖的 6／10 和 12／13 项，不把
+静态再生导出当作真实受损舰恢复，也不扩大普通舰负对照到未测的伤害／追踪／再生。
+
+Pu 历史 0.3.1 baseline 与本轮 RC7 candidate 各只导入 12 个真实月份；不导入
+Hive／Machine 候选月份。唯一 canonical run manifest 保持不变。参考计划只扩展
+证据库存，不携带状态、检查结果或月份，并同步其在 pending 内的真实 SHA 引用。
+
+如原提案中的 `component_attribution_report` 通过既有严格归因验证器，则登记该
+typed 引用。`growth_samples` 仅按最终门禁原定 7 个 C/L 形状，从原报告 18 个真实
+refresh/final 样本逐项核对后登记，不将 18 个阶段压成虚构样本、也不新增节点。
+所有整组状态和 component_rewards 均维持 PENDING，最终停止日志仍列缺；不建
+final-result、不改工具、Mod、报告、预算和迁移政策，也不执行 Git 或 UI。
+
+### 第二轮合并结果
+
+已通过既有 helper 的原方法合入 Pu 和成长三份提案。Pu startup 7／7、economy
+7／7，unlimited_growth 6／10、random_components 12／13 的明确单项 true 已记录；
+其余 106 项保持 null。Pu 历史 baseline 与 RC7 candidate 各 12 月，后者净电
+`46.23969` 至 `46.75291`，其它分支月份仍为零。baseline 的旧 OBSERVATION_ONLY
+JSON 保留原二进制浮点表示，如 `31.483040000000017`，不改写成提案显示的短小数。
+
+typed component_attribution_report 通过未修改的严格归因验证器，18 个原生阶段及
+五个来源模型全部匹配。最终门禁原定七个 C/L 观测已从对应 refresh/final 的真实
+country/fleet 观测核对后登记，额外的 C49／C50 仍留在完整 18 阶段归因证据内。
+所有 18 组和组件交付状态仍 PENDING；Pu 两组与成长两组仍缺停止日志。
+
+截至该合并点，reference-plan SHA 为
+`0035143fbf50ad554503fe7cbd8f45ea0b4ed41407e77c3c7ca2f6c5c3767a7d`，
+pending SHA 为
+`cdabc9ba64ef828b091f08555cc31e6e41b8daa852a4a10fa2bfd6f6805d1abb`。
+1,238 处引用／623 个唯一项目文件重新逐字节 SHA 校验通过。原活动 source 路径
+`tools/publish_1019.py` 在提案中保留原样；索引改引用成长归档中具有相同 SHA 的
+`source/eat_everything_origin/tools/publish_1019.py`，不依赖活动工具文件。
+
+## 已封口画廊来源的后续绑定设计
+
+主线程另行授权在发布文案任务封口 `1020-rc7-purifier-gallery-v1` 后，将其
+真实 clean screenshot、同日后置原生 SAV、receipt、audit、输入与 analysis
+引用只附到 `purifier_startup`，以供将来的 gallery.source 验证来源。
+该媒体记录位于纯经济 yearUI 之后；弹窗关闭可能产生矿物等实际结算差异，
+不得作为第 13 个月、替换原经济末月或表述为与 yearUI 严格相等。
+先确认归档和文档封口，再读取其实际字节；不读取活动媒体、日志或 Hive。
+整组 PENDING、唯一 canonical run 和原静态／月份／数值政策保持不变。
+
+本任务新增／维护的 authored JSON 使用 UTF-8 和 LF，避免 Windows 文本写入的
+CRLF 在 evidence 的 `-text` 规则下形成 Git whitespace 噪声。只规范本任务两个
+可变索引文件的换行；已有报告、SAV、action、原始证据及其 SHA 不变，更新索引
+中的 reference-plan SHA 后重新校验。
+
+### 画廊绑定与最终离线封口
+
+主线程确认媒体任务已封口并提交后，读取并校验归档 index
+`03f25af162663a14a172217921440d6423e4bb363ea8dda21ed8c66abf3670d4` 与
+verify `3d8a05ad96a04b2298b93882a0acb9fadae133ec36ff127a9a160d978f0a6db5`。
+已把固定 58 个媒体 raw、两份 authored analysis 和 index／verify，共 62 个引用，
+仅通过 helper 附到 `purifier_startup`。其中 clean 图 SHA
+`86bbe9b5e435fae8667e44a3cca349c2e9eef97c8c3f8c7c932b9d416de3fa6e`，
+后置媒体 SAV SHA `d170383d77f516a21da859e606a4061e6b0ffcc245b69c61ed267ee346263574`；
+实际 receipt、audit、GPU／OCR、输入和差异报告共同保留来源链。
+原 23 处 yearUI／media 差异及严格不等结论保留，没有增加 true 检查、月份或 run。
+
+本轮最终 reference-plan SHA：
+`47d2e06a19a982798bd9aa4d6425fc706512c970810a073d34e74ac1116c4ec7`。
+pending SHA：
+`72e805ae88a8151dead9066a5eae850144decd35bcc725f5d7ba0a9da62b440e`。
+Pu startup 当前 98 个证据引用、Pu economy 58 个，成长两组分别 544／527 个。
+四组均具备 native_save／screenshot／actions／analysis，仍缺停止日志；所有状态
+仍 PENDING、原 32 项 true／106 项 null 和 12＋12 Pu 月份保持不变。
+封口前重新校验 1,302 处引用／685 个唯一文件 SHA、既有 pending loader、完整
+typed 组件归因验证器及 UTF-8／LF，全部通过。`git diff --check` 通过。
+两份可变 JSON 原来已有的 CRLF 也一并规范为 LF，因此普通 diff 行数较大；
+使用 `git diff --ignore-space-at-eol` 可以查看本轮内容变化，未改动任何 raw 字节。
