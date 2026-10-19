@@ -1,0 +1,1141 @@
+{
+  "status": "OBSERVATION_ONLY",
+  "state": "COLLECTED_NOT_ACCEPTED",
+  "plan": {
+    "status": "OBSERVATION_ONLY",
+    "mode": "PLAN_ONLY",
+    "prefix": "r7mx",
+    "anchor_receipt": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7ganchor.native-save.json",
+    "anchor_receipt_sha256": "2c0dc892a9269508d1b7ae317e1631662943cf2a25a32b11c13480aa8dfaf6a3",
+    "anchor_sha256": "aec53eeed736d23abb856b7a1c1696657ce55517124097f1ad6c69921f1d8385",
+    "anchor_date": "2201.01.01",
+    "manifest": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\manifest.json",
+    "manifest_sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+    "run_id": "20261019T164112Z",
+    "artifacts": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z",
+    "userdir": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z",
+    "autosave_dir": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures",
+    "expected_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+    "country": 0,
+    "fleet": 125,
+    "ship": 809,
+    "phases": [
+      {
+        "node": 0,
+        "C": 0,
+        "phase": "refresh",
+        "stage": "r7mx-n00-c0-refresh",
+        "date": "2201.02.01",
+        "input_date": "2201.01.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=0} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 0,
+        "C": 0,
+        "phase": "final",
+        "stage": "r7mx-n00-c0-final",
+        "date": "2201.03.01",
+        "input_date": "2201.02.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 1,
+        "C": 9,
+        "phase": "refresh",
+        "stage": "r7mx-n01-c9-refresh",
+        "date": "2201.04.01",
+        "input_date": "2201.03.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=9} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 1,
+        "C": 9,
+        "phase": "final",
+        "stage": "r7mx-n01-c9-final",
+        "date": "2201.05.01",
+        "input_date": "2201.04.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 2,
+        "C": 10,
+        "phase": "refresh",
+        "stage": "r7mx-n02-c10-refresh",
+        "date": "2201.06.01",
+        "input_date": "2201.05.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=10} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 2,
+        "C": 10,
+        "phase": "final",
+        "stage": "r7mx-n02-c10-final",
+        "date": "2201.07.01",
+        "input_date": "2201.06.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 3,
+        "C": 19,
+        "phase": "refresh",
+        "stage": "r7mx-n03-c19-refresh",
+        "date": "2201.08.01",
+        "input_date": "2201.07.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=19} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 3,
+        "C": 19,
+        "phase": "final",
+        "stage": "r7mx-n03-c19-final",
+        "date": "2201.09.01",
+        "input_date": "2201.08.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 4,
+        "C": 20,
+        "phase": "refresh",
+        "stage": "r7mx-n04-c20-refresh",
+        "date": "2201.10.01",
+        "input_date": "2201.09.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=20} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 4,
+        "C": 20,
+        "phase": "final",
+        "stage": "r7mx-n04-c20-final",
+        "date": "2201.11.01",
+        "input_date": "2201.10.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 5,
+        "C": 49,
+        "phase": "refresh",
+        "stage": "r7mx-n05-c49-refresh",
+        "date": "2201.12.01",
+        "input_date": "2201.11.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=49} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 5,
+        "C": 49,
+        "phase": "final",
+        "stage": "r7mx-n05-c49-final",
+        "date": "2202.01.01",
+        "input_date": "2201.12.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 6,
+        "C": 50,
+        "phase": "refresh",
+        "stage": "r7mx-n06-c50-refresh",
+        "date": "2202.02.01",
+        "input_date": "2202.01.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=50} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 6,
+        "C": 50,
+        "phase": "final",
+        "stage": "r7mx-n06-c50-final",
+        "date": "2202.03.01",
+        "input_date": "2202.02.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 7,
+        "C": 200,
+        "phase": "refresh",
+        "stage": "r7mx-n07-c200-refresh",
+        "date": "2202.04.01",
+        "input_date": "2202.03.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=200} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 7,
+        "C": 200,
+        "phase": "final",
+        "stage": "r7mx-n07-c200-final",
+        "date": "2202.05.01",
+        "input_date": "2202.04.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      },
+      {
+        "node": 8,
+        "C": 10000,
+        "phase": "refresh",
+        "stage": "r7mx-n08-c10000-refresh",
+        "date": "2202.06.01",
+        "input_date": "2202.05.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect root={set_variable={which=eep_c value=10000} eep_sync_mothership=yes}"
+      },
+      {
+        "node": 8,
+        "C": 10000,
+        "phase": "final",
+        "stage": "r7mx-n08-c10000-final",
+        "date": "2202.07.01",
+        "input_date": "2202.06.01",
+        "fast_forward": "fast_forward 30",
+        "before_forward": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}"
+      }
+    ],
+    "nodes": [
+      0,
+      9,
+      10,
+      19,
+      20,
+      49,
+      50,
+      200,
+      10000
+    ],
+    "20500": "manual same-day counts-only branch"
+  },
+  "collector_sha256": "cab98ce18119f27838456dd6118001cc7fee5254b3150c5e5c8fcf5365f7e747",
+  "snapshots": [
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.02.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428351543884000,
+      "bytes": 518189,
+      "command_started_ns": 1792428339926896000,
+      "date": "2201.02.01",
+      "sha256": "cfe3e7043b4dbee17f61408c7421fba40e2dd325fef349f8a0f53501149d0c10",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-refresh.sav",
+      "phase": "refresh",
+      "C": 0,
+      "effect_input_hud_date": "2201.01.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2201.02.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-refresh-hud-1.jpg",
+        "image_sha256": "684e4af303574576471fd417c5b6b5fed9cdf26ed2c5f8d65ee09e6931efbc59",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:46:09.936596+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.03.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428434111415000,
+      "bytes": 518161,
+      "command_started_ns": 1792428422653565400,
+      "date": "2201.03.01",
+      "sha256": "481724067359f10ecb899a56434dd829565c59bad061a6c618976de391abd10c",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-final.sav",
+      "phase": "final",
+      "C": 0,
+      "effect_input_hud_date": "2201.02.01",
+      "diagnostics_from_date": "2201.02.01",
+      "hud": {
+        "date": "2201.03.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-final-hud-1.jpg",
+        "image_sha256": "703ecb86f17ad0845d9416961ccec4afb755f80e6235effff7ba69a1cb9742c8",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:47:29.823807+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.04.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428469051491800,
+      "bytes": 518706,
+      "command_started_ns": 1792428457525562000,
+      "date": "2201.04.01",
+      "sha256": "29d55cb8f0ba2630129258bd14bd479d3137bc94078482b6aa657df123f07c62",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-refresh.sav",
+      "phase": "refresh",
+      "C": 9,
+      "effect_input_hud_date": "2201.03.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2201.04.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-refresh-hud-1.jpg",
+        "image_sha256": "c4152259ec6689725d5ce11a4f43e049ccf0dddef4282de0ee58a9ff3aacbaba",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:48:04.800584+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.05.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428549391741300,
+      "bytes": 518980,
+      "command_started_ns": 1792428537807322500,
+      "date": "2201.05.01",
+      "sha256": "7fb82da54acde33edc5a18a7a625a51371576cd9075af59cbf5f911d749d1c1b",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-final.sav",
+      "phase": "final",
+      "C": 9,
+      "effect_input_hud_date": "2201.04.01",
+      "diagnostics_from_date": "2201.04.01",
+      "hud": {
+        "date": "2201.05.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-final-hud-1.jpg",
+        "image_sha256": "91ff45c0320aabc0686ecacfa00a93f03a6635a23d158bfa7b012acb9c8978b0",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:49:24.032624+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.06.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428583104935600,
+      "bytes": 518569,
+      "command_started_ns": 1792428571593995400,
+      "date": "2201.06.01",
+      "sha256": "51fa1c86689feb122f037ea58a14f9c3cfe1c0a6ee704ba8e9a3db4875af89d4",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-refresh.sav",
+      "phase": "refresh",
+      "C": 10,
+      "effect_input_hud_date": "2201.05.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2201.06.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-refresh-hud-1.jpg",
+        "image_sha256": "92961ebc10906b560b65a86a821f6c6b3f8d34f6bb46266df860834bf189aaed",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:49:57.606285+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.07.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428662273227200,
+      "bytes": 518924,
+      "command_started_ns": 1792428650727563300,
+      "date": "2201.07.01",
+      "sha256": "866222e3e1d07149396d9ab5d12e20613af15d5c4e929d7b2571401459aef5ca",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-final.sav",
+      "phase": "final",
+      "C": 10,
+      "effect_input_hud_date": "2201.06.01",
+      "diagnostics_from_date": "2201.06.01",
+      "hud": {
+        "date": "2201.07.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-final-hud-1.jpg",
+        "image_sha256": "08ef19638d7900a5f238b0567ad76506524d8cd8df21653091186cbc669e1f3e",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:51:17.120794+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.08.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428696261031100,
+      "bytes": 519998,
+      "command_started_ns": 1792428684740704500,
+      "date": "2201.08.01",
+      "sha256": "bda19e9550af1a1d614d9273f241d28c4886c7a6b1ee1461ee66c2067dd2be88",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-refresh.sav",
+      "phase": "refresh",
+      "C": 19,
+      "effect_input_hud_date": "2201.07.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2201.08.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-refresh-hud-1.jpg",
+        "image_sha256": "38b0badc77f22141d938fadebbb3cc13bc708d6766716c4519e1662f4543a6f2",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:51:50.763824+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.09.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428775032191900,
+      "bytes": 519663,
+      "command_started_ns": 1792428763529552600,
+      "date": "2201.09.01",
+      "sha256": "2857e4ada9b9c303d3db950b87d5f1d155b59b5e0e3bfbb3acdb28bd1227f6f2",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-final.sav",
+      "phase": "final",
+      "C": 19,
+      "effect_input_hud_date": "2201.08.01",
+      "diagnostics_from_date": "2201.08.01",
+      "hud": {
+        "date": "2201.09.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-final-hud-1.jpg",
+        "image_sha256": "74e82ba774bb390a038239449c4e0d107c03c02c31d3ffdee1756519aa1effd1",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:53:09.423010+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.10.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428808482091000,
+      "bytes": 518919,
+      "command_started_ns": 1792428797017427800,
+      "date": "2201.10.01",
+      "sha256": "a3e8a61da0d44da028eaf5e2164f530844a688cf940f4d10a871427f4c589edd",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-refresh.sav",
+      "phase": "refresh",
+      "C": 20,
+      "effect_input_hud_date": "2201.09.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2201.10.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-refresh-hud-1.jpg",
+        "image_sha256": "c88d7e585a4689f3a9e380b55b7b5fb08a06016ad7647d83fa7a436845fdde5c",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:53:42.437178+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.11.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428886534103100,
+      "bytes": 519766,
+      "command_started_ns": 1792428875069086800,
+      "date": "2201.11.01",
+      "sha256": "7cf2dd8f026696e8cb00c2d224943461a88096f20d605a015d10fa0fdde933fc",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-final.sav",
+      "phase": "final",
+      "C": 20,
+      "effect_input_hud_date": "2201.10.01",
+      "diagnostics_from_date": "2201.10.01",
+      "hud": {
+        "date": "2201.11.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-final-hud-1.jpg",
+        "image_sha256": "5de5155901f1550d1c9ca4ed95347f968f5433194352118b1e382cbd9d2785ba",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:55:01.575936+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2201.12.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428920470401000,
+      "bytes": 519715,
+      "command_started_ns": 1792428908970708800,
+      "date": "2201.12.01",
+      "sha256": "f889d67b3a6c3323589322b611daf2af56f3abe352b41f827de0a463d0723b47",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-refresh.sav",
+      "phase": "refresh",
+      "C": 49,
+      "effect_input_hud_date": "2201.11.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2201.12.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-refresh-hud-1.jpg",
+        "image_sha256": "4447ab1d495da3fcbc95d93e519c023aa680f883da8c6da02f18b03ab36824ed",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:55:34.624854+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2202.01.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792428999257797600,
+      "bytes": 518377,
+      "command_started_ns": 1792428987742851700,
+      "date": "2202.01.01",
+      "sha256": "a84cff8857b244fcd2e4a6836fd83f15658743bc0212b643269e8e3f11011929",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-final.sav",
+      "phase": "final",
+      "C": 49,
+      "effect_input_hud_date": "2201.12.01",
+      "diagnostics_from_date": "2201.12.01",
+      "hud": {
+        "date": "2202.01.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-final-hud-1.jpg",
+        "image_sha256": "856f5d9f71ec42fbf379353bbd15ee9445a3db816345abe3a5605456ecc67e15",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:56:53.737326+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2202.02.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792429032720976500,
+      "bytes": 519626,
+      "command_started_ns": 1792429021194459600,
+      "date": "2202.02.01",
+      "sha256": "63d9673ce48ca4461c21f523e5660c78eaf081352af4c36fc60dd2e13d61238f",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-refresh.sav",
+      "phase": "refresh",
+      "C": 50,
+      "effect_input_hud_date": "2202.01.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2202.02.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-refresh-hud-1.jpg",
+        "image_sha256": "e2b2ca80c863e8188a5c4e6c73c8adcc79468e6a16a9e6b2621493fbe1e35d13",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:57:27.804960+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2202.03.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792429112176048200,
+      "bytes": 520604,
+      "command_started_ns": 1792429100621845100,
+      "date": "2202.03.01",
+      "sha256": "1da5fed4cf1ad2ccae46950a05b3f88a8b581890dd8cbf06e44f7b97a7c290a4",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-final.sav",
+      "phase": "final",
+      "C": 50,
+      "effect_input_hud_date": "2202.02.01",
+      "diagnostics_from_date": "2202.02.01",
+      "hud": {
+        "date": "2202.03.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-final-hud-1.jpg",
+        "image_sha256": "14c267822631a0c80cb87c203cfb9cd806e4a875b4a411727534b6cccc109518",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:58:46.795788+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2202.04.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792429145972057200,
+      "bytes": 520437,
+      "command_started_ns": 1792429134373771800,
+      "date": "2202.04.01",
+      "sha256": "7be53a5ff078ce3996e28da26a35fafc7cb7bc28106ef8eba028ce7f7975235f",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-refresh.sav",
+      "phase": "refresh",
+      "C": 200,
+      "effect_input_hud_date": "2202.03.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2202.04.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-refresh-hud-1.jpg",
+        "image_sha256": "513861899d022716744976f9b6c60de4e46590d6fb344e2d449477006d459cec",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T16:59:20.647282+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2202.05.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792429224685955600,
+      "bytes": 519973,
+      "command_started_ns": 1792429213060330800,
+      "date": "2202.05.01",
+      "sha256": "43eda8cbaa4236ff0ab11af97e1c385ef5cbe4673fdd360c0664ea11977ee361",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-final.sav",
+      "phase": "final",
+      "C": 200,
+      "effect_input_hud_date": "2202.04.01",
+      "diagnostics_from_date": "2202.04.01",
+      "hud": {
+        "date": "2202.05.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-final-hud-1.jpg",
+        "image_sha256": "9d7503cea17c1ec67faf6d2b1c40c971c9f71466c253ec77307f3bf88115da72",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T17:00:39.779156+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2202.06.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792429259088085400,
+      "bytes": 520546,
+      "command_started_ns": 1792429247552777100,
+      "date": "2202.06.01",
+      "sha256": "5861ad0d282b314b5910b07027e56cd917bbc5c5fb428d27ae962e204c0803d3",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-refresh.sav",
+      "phase": "refresh",
+      "C": 10000,
+      "effect_input_hud_date": "2202.05.01",
+      "diagnostics_from_date": null,
+      "hud": {
+        "date": "2202.06.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-refresh-hud-1.jpg",
+        "image_sha256": "6d1722ad69707b25188f1cadaf8f41873d4d68e41800994097bbc60ab165ba6e",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-refresh-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T17:01:13.189804+00:00"
+    },
+    {
+      "source": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\runs\\20261019T164112Z\\save games\\acceptance-fixtures\\autosave_2202.07.01.sav",
+      "source_prior_mtime_ns": 0,
+      "source_mtime_ns": 1792429337489034500,
+      "bytes": 520607,
+      "command_started_ns": 1792429325938163400,
+      "date": "2202.07.01",
+      "sha256": "f733e79be5cb9cac7ad9101fc171d5bf4ddfe5fdc7adce479c3b8dae6bd2eb52",
+      "archived": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-final.sav",
+      "phase": "final",
+      "C": 10000,
+      "effect_input_hud_date": "2202.06.01",
+      "diagnostics_from_date": "2202.06.01",
+      "hud": {
+        "date": "2202.07.01",
+        "image": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-final-hud-1.jpg",
+        "image_sha256": "d293a0c3ab98920497d019eabdf4122f42275c9e4fc34c5ece36c7af8a6d38a7",
+        "ocr": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-final-hud-1.ocr.json"
+      },
+      "observed_at_utc": "2026-10-19T17:02:31.718702+00:00"
+    }
+  ],
+  "commands": [
+    {
+      "command": "effect root={set_variable={which=eep_c value=0} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-refresh-effect-console-ready.jpg",
+      "console_frame_sha256": "c6cbf75547932eeb510b3389e9ef76590b525617b0e4bb1a90b03dace782ecc6",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n00-c0-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=0} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:45:39.842042+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-refresh-effect-console-ready.jpg",
+      "console_frame_sha256": "c6cbf75547932eeb510b3389e9ef76590b525617b0e4bb1a90b03dace782ecc6",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n00-c0-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:45:41.401738+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-refresh-hud-1.jpg",
+      "console_frame_sha256": "684e4af303574576471fd417c5b6b5fed9cdf26ed2c5f8d65ee09e6931efbc59",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n00-c0-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:47:02.568492+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-refresh-hud-1.jpg",
+      "console_frame_sha256": "684e4af303574576471fd417c5b6b5fed9cdf26ed2c5f8d65ee09e6931efbc59",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n00-c0-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:47:04.126711+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=9} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-final-hud-1.jpg",
+      "console_frame_sha256": "703ecb86f17ad0845d9416961ccec4afb755f80e6235effff7ba69a1cb9742c8",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n01-c9-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=9} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:47:37.439782+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n00-c0-final-hud-1.jpg",
+      "console_frame_sha256": "703ecb86f17ad0845d9416961ccec4afb755f80e6235effff7ba69a1cb9742c8",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n01-c9-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:47:38.983907+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-refresh-hud-1.jpg",
+      "console_frame_sha256": "c4152259ec6689725d5ce11a4f43e049ccf0dddef4282de0ee58a9ff3aacbaba",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n01-c9-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:48:57.722248+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-refresh-hud-1.jpg",
+      "console_frame_sha256": "c4152259ec6689725d5ce11a4f43e049ccf0dddef4282de0ee58a9ff3aacbaba",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n01-c9-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:48:59.266568+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=10} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-final-hud-1.jpg",
+      "console_frame_sha256": "91ff45c0320aabc0686ecacfa00a93f03a6635a23d158bfa7b012acb9c8978b0",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n02-c10-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=10} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:49:31.509158+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n01-c9-final-hud-1.jpg",
+      "console_frame_sha256": "91ff45c0320aabc0686ecacfa00a93f03a6635a23d158bfa7b012acb9c8978b0",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n02-c10-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:49:33.074783+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-refresh-hud-1.jpg",
+      "console_frame_sha256": "92961ebc10906b560b65a86a821f6c6b3f8d34f6bb46266df860834bf189aaed",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n02-c10-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:50:50.641838+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-refresh-hud-1.jpg",
+      "console_frame_sha256": "92961ebc10906b560b65a86a821f6c6b3f8d34f6bb46266df860834bf189aaed",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n02-c10-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:50:52.203600+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=19} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-final-hud-1.jpg",
+      "console_frame_sha256": "08ef19638d7900a5f238b0567ad76506524d8cd8df21653091186cbc669e1f3e",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n03-c19-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=19} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:51:24.656029+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n02-c10-final-hud-1.jpg",
+      "console_frame_sha256": "08ef19638d7900a5f238b0567ad76506524d8cd8df21653091186cbc669e1f3e",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n03-c19-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:51:26.195934+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-refresh-hud-1.jpg",
+      "console_frame_sha256": "38b0badc77f22141d938fadebbb3cc13bc708d6766716c4519e1662f4543a6f2",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n03-c19-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:52:43.444814+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-refresh-hud-1.jpg",
+      "console_frame_sha256": "38b0badc77f22141d938fadebbb3cc13bc708d6766716c4519e1662f4543a6f2",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n03-c19-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:52:44.988434+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=20} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-final-hud-1.jpg",
+      "console_frame_sha256": "74e82ba774bb390a038239449c4e0d107c03c02c31d3ffdee1756519aa1effd1",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n04-c20-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=20} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:53:16.931915+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n03-c19-final-hud-1.jpg",
+      "console_frame_sha256": "74e82ba774bb390a038239449c4e0d107c03c02c31d3ffdee1756519aa1effd1",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n04-c20-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:53:18.487054+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-refresh-hud-1.jpg",
+      "console_frame_sha256": "c88d7e585a4689f3a9e380b55b7b5fb08a06016ad7647d83fa7a436845fdde5c",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n04-c20-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:54:34.983709+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-refresh-hud-1.jpg",
+      "console_frame_sha256": "c88d7e585a4689f3a9e380b55b7b5fb08a06016ad7647d83fa7a436845fdde5c",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n04-c20-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:54:36.541501+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=49} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-final-hud-1.jpg",
+      "console_frame_sha256": "5de5155901f1550d1c9ca4ed95347f968f5433194352118b1e382cbd9d2785ba",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n05-c49-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=49} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:55:08.884830+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n04-c20-final-hud-1.jpg",
+      "console_frame_sha256": "5de5155901f1550d1c9ca4ed95347f968f5433194352118b1e382cbd9d2785ba",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n05-c49-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:55:10.431968+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-refresh-hud-1.jpg",
+      "console_frame_sha256": "4447ab1d495da3fcbc95d93e519c023aa680f883da8c6da02f18b03ab36824ed",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n05-c49-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:56:27.657542+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-refresh-hud-1.jpg",
+      "console_frame_sha256": "4447ab1d495da3fcbc95d93e519c023aa680f883da8c6da02f18b03ab36824ed",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n05-c49-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:56:29.216362+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=50} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-final-hud-1.jpg",
+      "console_frame_sha256": "856f5d9f71ec42fbf379353bbd15ee9445a3db816345abe3a5605456ecc67e15",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n06-c50-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=50} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:57:01.108744+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n05-c49-final-hud-1.jpg",
+      "console_frame_sha256": "856f5d9f71ec42fbf379353bbd15ee9445a3db816345abe3a5605456ecc67e15",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n06-c50-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:57:02.651270+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-refresh-hud-1.jpg",
+      "console_frame_sha256": "e2b2ca80c863e8188a5c4e6c73c8adcc79468e6a16a9e6b2621493fbe1e35d13",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n06-c50-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:58:20.537474+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-refresh-hud-1.jpg",
+      "console_frame_sha256": "e2b2ca80c863e8188a5c4e6c73c8adcc79468e6a16a9e6b2621493fbe1e35d13",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n06-c50-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:58:22.103301+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=200} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-final-hud-1.jpg",
+      "console_frame_sha256": "14c267822631a0c80cb87c203cfb9cd806e4a875b4a411727534b6cccc109518",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n07-c200-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=200} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:58:54.288319+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n06-c50-final-hud-1.jpg",
+      "console_frame_sha256": "14c267822631a0c80cb87c203cfb9cd806e4a875b4a411727534b6cccc109518",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n07-c200-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T16:58:55.881893+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-refresh-hud-1.jpg",
+      "console_frame_sha256": "513861899d022716744976f9b6c60de4e46590d6fb344e2d449477006d459cec",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n07-c200-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T17:00:12.973902+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-refresh-hud-1.jpg",
+      "console_frame_sha256": "513861899d022716744976f9b6c60de4e46590d6fb344e2d449477006d459cec",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n07-c200-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T17:00:14.515952+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect root={set_variable={which=eep_c value=10000} eep_sync_mothership=yes}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-final-hud-1.jpg",
+      "console_frame_sha256": "9d7503cea17c1ec67faf6d2b1c40c971c9f71466c253ec77307f3bf88115da72",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n08-c10000-refresh-effect-command",
+        "text": "effect root={set_variable={which=eep_c value=10000} eep_sync_mothership=yes}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T17:00:47.467450+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n07-c200-final-hud-1.jpg",
+      "console_frame_sha256": "9d7503cea17c1ec67faf6d2b1c40c971c9f71466c253ec77307f3bf88115da72",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n08-c10000-refresh-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T17:00:49.038462+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-refresh-hud-1.jpg",
+      "console_frame_sha256": "6d1722ad69707b25188f1cadaf8f41873d4d68e41800994097bbc60ab165ba6e",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n08-c10000-final-effect-command",
+        "text": "effect event_target:eep_mothership0={every_owned_ship={export_modifier_to_variable={modifier=ship_hull_add variable=eep_probe_ship_hull_add} export_modifier_to_variable={modifier=ship_hull_mult variable=eep_probe_ship_hull_mult} export_modifier_to_variable={modifier=ship_armor_add variable=eep_probe_ship_armor_add} export_modifier_to_variable={modifier=ship_armor_mult variable=eep_probe_ship_armor_mult} export_modifier_to_variable={modifier=ship_shield_add variable=eep_probe_ship_shield_add} export_modifier_to_variable={modifier=ship_shield_mult variable=eep_probe_ship_shield_mult} export_modifier_to_variable={modifier=ship_weapon_damage variable=eep_probe_ship_weapon_damage} export_modifier_to_variable={modifier=ship_tracking_add variable=eep_probe_ship_tracking_add} export_modifier_to_variable={modifier=ship_hull_regen_add_static variable=eep_probe_ship_hull_regen_add_static} export_modifier_to_variable={modifier=ship_armor_regen_add_static variable=eep_probe_ship_armor_regen_add_static} export_trigger_value_to_variable={trigger=has_max_hp variable=eep_probe_max_hull} export_trigger_value_to_variable={trigger=has_max_armor_hp variable=eep_probe_max_armor}}}",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T17:02:05.852854+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    },
+    {
+      "command": "fast_forward 30",
+      "console_frame": "C:\\Users\\1\\AppData\\Local\\xenoamess_stellaries_dev\\artifacts\\1019-implementation\\runs\\20261019T164112Z\\r7mx-n08-c10000-refresh-hud-1.jpg",
+      "console_frame_sha256": "6d1722ad69707b25188f1cadaf8f41873d4d68e41800994097bbc60ab165ba6e",
+      "input_action": {
+        "action": "type_text",
+        "stage": "r7mx-n08-c10000-final-advance-command",
+        "text": "fast_forward 30",
+        "submitted": true,
+        "typed_at_utc": "2026-10-19T17:02:07.402212+00:00",
+        "key_interval_seconds": 0.04,
+        "submit_input": "physical scan code 0x1c"
+      },
+      "frame_reuse": "only known commands retaining the native console; refreshed at every HUD observation"
+    }
+  ],
+  "cleanup_errors": []
+}
