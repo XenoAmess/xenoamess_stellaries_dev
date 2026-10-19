@@ -1,0 +1,221 @@
+{
+  "schema": "eep.rc7.bounded-mothership-configuration-ui-report.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Actual same-country Jan7 Mother/Relic detail panels, actual Mother upkeep, native configuration and source-derived power; no actual jump or final-log certification.",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "version": "0.4.0-rc.7",
+  "run_id": "20261019T164112Z",
+  "date": "2201.01.07",
+  "checks": {
+    "all_native_configuration_checks": true,
+    "two_actual_detail_panels_visually_inspected": true,
+    "all_four_gpu_images_sha_ocr_bindings": true,
+    "all_four_same_native_date": true,
+    "same_actual_country_reference_identity": true,
+    "displayed_defenses_match_native_integer_truncation": true,
+    "actual_mother_speed_damage_evasion_observed": true,
+    "actual_reference_speed_damage_evasion_observed": true,
+    "mother_no_less_than_reference_six_panel_stats": true,
+    "actual_mother_upkeep_tooltip_observed": true,
+    "upkeep_is_positive_not_claimed_zero": true,
+    "source_power_balance_positive_non_ui": true,
+    "original_ui_strict_comparison_retained": true,
+    "full_native_raw_differences_retained": true,
+    "failed_obscured_and_unselected_attempts_retained": true
+  },
+  "native_configuration_report": {
+    "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-report-v1.json",
+    "sha256": "5c022c1e1f95c728be74524b9e568d34713133b26f10584a26ce96df907a20cb",
+    "kind": "analysis"
+  },
+  "native_observation": {
+    "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v2.json",
+    "sha256": "8b9748e243efbff359eec259f59ef1e0caf96ba9de0c58084b3e3e3b8144149a",
+    "kind": "analysis"
+  },
+  "source_power_report": {
+    "path": "docs/evidence/1020-rc7-relic-configuration-v1/source-derived-power-report-v1.json",
+    "sha256": "aa4d9de70fa7f7ee14a1159e4405eebb8acef9940811589dc96ad0ab1a5f8802",
+    "kind": "analysis"
+  },
+  "actual_panels": {
+    "mother": {
+      "hull": 93960,
+      "armor": 44787,
+      "shield": 167310,
+      "speed": 417,
+      "evasion_percent": 22.1,
+      "damage_per_day": 5598.57
+    },
+    "reference": {
+      "hull": 20000,
+      "armor": 30740,
+      "shield": 138352,
+      "speed": 225,
+      "evasion_percent": 22.0,
+      "damage_per_day": 2373.28
+    }
+  },
+  "actual_identity": {
+    "mother_fleet": 151,
+    "mother_ship": 1044,
+    "mother_design": 1844,
+    "reference_fleet": 175,
+    "reference_ship": 1068,
+    "reference_design": 16779116,
+    "country": 0,
+    "core_world": 2
+  },
+  "images": {
+    "r7cfgui-mother-details-clean-v2": {
+      "image": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2.jpg",
+        "sha256": "05943ebe60152e07978eedaa8597c97a49fcebaf3152c81af251370de5da2f7f",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2.ocr.json",
+        "sha256": "f733e4e3fd3be3301709cea7a3d8288ebad41274e2539d6c671c3a886d8d8402",
+        "kind": "analysis"
+      },
+      "f12_action": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2-f12.action.json",
+        "sha256": "a068c306250c952b7719d797052cc61a0bf0cd19a9225d34253543f268774b64",
+        "kind": "actions"
+      },
+      "pid": 37300,
+      "captured_at_utc": "2026-10-19T18:27:04.111947+00:00"
+    },
+    "r7cfgui-relic-details-clean": {
+      "image": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean.jpg",
+        "sha256": "c00d8d3f95126daf3ef8703f641fc04893684b6d36a874e9c81ea53c7175dc3c",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean.ocr.json",
+        "sha256": "5ac350521e59f5bd4bb732c8335aa63f4e98491084b20cfb5877fb440f145641",
+        "kind": "analysis"
+      },
+      "f12_action": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean-f12.action.json",
+        "sha256": "7ae34b84c24a9943da01fc5ced850753635f82c5303221ee1fc6542813d35b8c",
+        "kind": "actions"
+      },
+      "pid": 37300,
+      "captured_at_utc": "2026-10-19T18:28:39.427078+00:00"
+    },
+    "r7cfgui-mother-upkeep-hover": {
+      "image": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.jpg",
+        "sha256": "ddf04efb408446418d04d0f4d1dfb709eba6c9395cc599c1f5b1c69581df5986",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.ocr.json",
+        "sha256": "98cde105adaa1e7fb462cc897fd4d2a9588526400d7e67de41a306e024db8552",
+        "kind": "analysis"
+      },
+      "f12_action": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover-f12.action.json",
+        "sha256": "50022faf3f10061e55ed58ae6eb31ae7632bc41c7997bc02e485a9da13d56443",
+        "kind": "actions"
+      },
+      "pid": 37300,
+      "captured_at_utc": "2026-10-19T18:27:43.263798+00:00"
+    },
+    "r7cfgui-relic-upkeep-hover": {
+      "image": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover.jpg",
+        "sha256": "a82fddc194d42517cfbbd3da360e5c7f20c1ffa070220ad272d66c7c7c774b78",
+        "kind": "screenshot"
+      },
+      "ocr": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover.ocr.json",
+        "sha256": "295546619fbf72276ceeebda1e16e498ff2edbec259ee72bc859e94e50f4c97b",
+        "kind": "analysis"
+      },
+      "f12_action": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover-f12.action.json",
+        "sha256": "0432bd891d9c55212f7feec54d31fafd9c4dc6eb9c2af05a07c64e967fa3f18b",
+        "kind": "actions"
+      },
+      "pid": 37300,
+      "captured_at_utc": "2026-10-19T18:29:42.070115+00:00"
+    }
+  },
+  "maintenance": {
+    "ship_id": 1044,
+    "fleet_id": 151,
+    "energy_per_month_displayed": 10.07,
+    "alloys_per_month_displayed": 2.88,
+    "friendly_aura_ship_logistics_upkeep_modifier_displayed_percent": -75,
+    "naval_capacity_context": "365/66 includes added native reference250; post-economy functional branch only.",
+    "actual_hover_action": {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.action.json",
+      "sha256": "0611b03ea8672c72e820f99f32a7d236545a128cfb2232b11e62292b65968857",
+      "kind": "actions"
+    },
+    "scope": "Actual tooltip amounts; distinct from source ships_upkeep_mult=-1 and from component power. No zero/free upkeep claim.",
+    "reference_tooltip": "The reference tooltip was retained but showed no explicit maintenance amount; no reference upkeep=0 inference."
+  },
+  "native_ui_difference_boundary": {
+    "original_strict": {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/ui-same-day-strict-compare-v1.json",
+      "sha256": "49e0b3c2e8959b276dff065da70ecb26eded43f8c5c93d54dfa0f9547e7e3f98",
+      "kind": "analysis"
+    },
+    "full_raw_difference_report": {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/ui-full-native-raw-differences-v1.json",
+      "sha256": "bb1accc0fd967b40a731ead9533dadf8656dff8ddfbc7608437208353bdb3451",
+      "kind": "analysis"
+    },
+    "original_strict_status": "PASS_SCOPED",
+    "original_strict_difference_count": 0,
+    "full_native_equal": false,
+    "root_difference_count": 10,
+    "technology_effect": "story.7 native machine option added tech_alloys_1 progress165/available option and flags; completed technology/level list remains28 and unchanged.",
+    "crisis_effect": "Closing crisis.4140 enabled CRISIS_SPECIAL_PROJECT_MACH_1 and crisis_level_reached1 counter.",
+    "other_effects": "Event/message removals, actual selection history, random_count9882987->9882989. Full raw diffs are retained.",
+    "source_support": [
+      {
+        "original": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\story_events.txt",
+        "canonical": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/source/native/events/story_events.txt",
+          "sha256": "1ac49a4b66d1fb07192552e5af6d4d14dd0db7d1d6f0fb977cc6a2a9274b0055",
+          "kind": "analysis"
+        },
+        "bytes": 65360
+      },
+      {
+        "original": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\nemesis_crisis_events.txt",
+        "canonical": {
+          "path": "docs/evidence/1020-rc7-relic-configuration-v1/source/native/events/nemesis_crisis_events.txt",
+          "sha256": "7c037b46e8b6cb8e31dab8dd69bbd34d5902cf212a5fb5c206d175aa676e7d13",
+          "kind": "analysis"
+        },
+        "bytes": 25715
+      }
+    ],
+    "original_checker_scope": "Old selected gameplay fields plus 1019 fields; research per-tech progress and country.events are outside that original projection. The tool was not changed.",
+    "conclusion": "UI acknowledgement was not whole-native-state read-only. These native event effects are not attributed to Mother loadout creation or to the already sealed pure economy."
+  },
+  "retained_attempts": {
+    "mother_details_clean_v1": "Obscured by second crisis layer; excluded as a valid detail panel.",
+    "first_two_select_attempts": "Did not actually select the intended ship; retained raw frames/actions, excluded as proof.",
+    "valid_mother_details": "r7cfgui-mother-details-clean-v2 only",
+    "private_inspection_review": {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/diagnostic-attempt-review-v1.json",
+      "sha256": "c5eb92d75cc1b63baeeb5a9b28f3335fd3dc1e2cfc6adb9dc8b6b8c997b96bb0",
+      "kind": "analysis"
+    }
+  },
+  "limitations": [
+    "Actual jump order/arrival/cooldown still pending.",
+    "Only ship1044 is an actual juggernaut in this native save. Other ordinary-juggernaut behavior is not claimed as a runtime sample; no frozen Mod ship-size definition exists.",
+    "No active/stopped runtime logs were read; final configuration case remains PENDING.",
+    "Integer panel truncation is distinguished from native decimal maxima.",
+    "Source-derived positive power balance is not an observed UI power reading."
+  ],
+  "created_at_utc": "2026-10-19T18:35:04.087688+00:00"
+}

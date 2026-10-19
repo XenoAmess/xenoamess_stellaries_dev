@@ -1,0 +1,77 @@
+{
+  "schema": "eep.rc7.relic-configuration-scoped-report.v1",
+  "status": "PASS_SCOPED",
+  "scope": "Actual same-country same-date native inventories, frozen source matches, ten shipyards, completed-technology isolation and source-derived component power only.",
+  "run_id": "20261019T164112Z",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "date": "2201.01.07",
+  "checks": {
+    "actual_same_native_save_and_date": true,
+    "actual_same_country_0": true,
+    "actual_reference_global_target_unique": true,
+    "actual_reference_matches_native_NAME_Relic": true,
+    "actual_mother_matches_frozen_production_design": true,
+    "43_shared_slot_templates_equal": true,
+    "mother_50_reference_43_slot_components": true,
+    "both_six_required_components": true,
+    "twenty_two_large_defense_slots": true,
+    "five_relic_auxiliary_components_preserved": true,
+    "six_real_growth_auxiliary_components_equipped": true,
+    "native_planet_killer_equipped": true,
+    "ten_mobile_shipyards": true,
+    "no_empire_technology_grant": true,
+    "c0_growth_ledger_unchanged": true,
+    "mother_identity_and_design_unchanged": true,
+    "power_inventory_exactly_matches_bound_component_contract": true,
+    "source_power_balance_positive": true,
+    "no_applicable_public_reactor_power_modifier": true,
+    "no_mod_ship_size_definition_override": true
+  },
+  "observation": {
+    "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v2.json",
+    "sha256": "8b9748e243efbff359eec259f59ef1e0caf96ba9de0c58084b3e3e3b8144149a",
+    "kind": "analysis"
+  },
+  "retained_observation_v1": {
+    "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v1.json",
+    "sha256": "3233f7622597b341bf13a301de8b2f8c9163c8297fe71c04407e4c0e46c1c6b9",
+    "kind": "analysis"
+  },
+  "original_mother_check": {
+    "path": "docs/evidence/1020-rc7-relic-configuration-v1/original-mother-check-v1.json",
+    "sha256": "9ee760706b1cada88ec1d22b18cc3d654ca1b47975ec166a39b73a203a80d197",
+    "kind": "analysis"
+  },
+  "original_same_save_relic_fleets": {},
+  "original_reference_filter_limitation": "Unchanged original checker filters fleet name NAME_Relic; actual fleet EEP_Native_Relic_1019 is bound by its explicit global target.",
+  "source_derived_power": {
+    "path": "docs/evidence/1020-rc7-relic-configuration-v1/source-derived-power-report-v1.json",
+    "sha256": "aa4d9de70fa7f7ee14a1159e4405eebb8acef9940811589dc96ad0ab1a5f8802",
+    "kind": "analysis"
+  },
+  "actual_identity": {
+    "mother_fleet": 151,
+    "mother_ship": 1044,
+    "mother_design": 1844,
+    "reference_fleet": 175,
+    "reference_ship": 1068,
+    "reference_design": 16779116,
+    "country": 0,
+    "core_world": 2
+  },
+  "technology_boundary": {
+    "completed_technologies": 28,
+    "technology_and_level_entries_identical": true,
+    "full_tech_status_identical": false,
+    "full_difference_scope": "Only native stored_techpoints three-bank values changed across Jan1 to Jan7; full raw diff retained in observation. No comparator was loosened."
+  },
+  "missing_runtime": [
+    "Actual two-ship UI stats, to be bound in a separate report",
+    "Actual jump order/arrival/cooldown",
+    "Actual Mother upkeep UI, to be bound in a separate report",
+    "Stopped-run complete logs"
+  ],
+  "other_juggernaut_boundary": "Native growth-stage parser found only ship1044 juggernaut. No runtime ordinary-juggernaut sample is claimed. Frozen Mod payload has no ship-size definition.",
+  "case_status": "PENDING",
+  "created_at_utc": "2026-10-19T18:32:35.997207+00:00"
+}

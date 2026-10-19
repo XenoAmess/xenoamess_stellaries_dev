@@ -1,0 +1,32 @@
+{
+  "schema": "eep.rc7.configuration-private-diagnostic-review.v1",
+  "status": "RETAINED_AND_CORRECTED",
+  "scope": "Private read-only inspection mistakes, not Mod or external acceptance-tool defects.",
+  "attempts": [
+    {
+      "issue": "Diagnostic raw regex omitted quoted native ship_size and falsely listed no juggernauts.",
+      "retained": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v1.json",
+        "sha256": "3233f7622597b341bf13a301de8b2f8c9163c8297fe71c04407e4c0e46c1c6b9",
+        "kind": "analysis"
+      },
+      "correction": {
+        "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v2.json",
+        "sha256": "8b9748e243efbff359eec259f59ef1e0caf96ba9de0c58084b3e3e3b8144149a",
+        "kind": "analysis"
+      },
+      "actual_all_juggernaut_ship_ids": [
+        "1044"
+      ]
+    },
+    {
+      "issue": "An unpublished assertion required the ship_sizes directory not to exist; the copied package may contain an empty directory.",
+      "correction": "Check the exact frozen production file manifest for ship-size definitions, rather than folder existence.",
+      "frozen_payload_ship_size_files": []
+    },
+    {
+      "issue": "The full tech_status block was initially expected identical across six real days.",
+      "correction": "Retain its full original difference. Completed technology/level entries remain identical (28), while stored research banks changed. No original checker comparison was altered."
+    }
+  ]
+}

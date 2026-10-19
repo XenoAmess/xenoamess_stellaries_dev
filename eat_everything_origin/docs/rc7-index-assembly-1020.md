@@ -199,3 +199,50 @@ pending SHA：
 `e300c2709fff4d0040fe4887e8b6c9d9fb1aa0cc00eb3285a5fe0ef78fe6674a`。
 1,449 处引用／755 个唯一文件逐字节 SHA、原 pending loader、既有完整组件归因
 验证器、连续月份和原观察值一致性均通过；`git diff --check` 通过。未建立最终结果。
+
+## 第四轮 Machine 与重复初始化提案合并设计
+
+主线程已确认 Machine 原生／UI／独立操作包封口并提交推送，本轮仅读取
+`docs/evidence/1019-analysis/rc7-r7mc-startup-economy-partial-proposal-v1.json`
+及其既有真实归档。先按现有 helper 合并 Machine startup 与 economy 原名共
+14 个明确 true、0.3.1 baseline 12 月及 RC7 candidate 12 月。原始 report 中四个
+操作 null 不改，四项额外结论只取受控工作流独立审查。初始缓存净电 `88.90835`
+不混作首月；真实 m01 `2.85755` 至年末 `8.77273`，4800 人口、pc_machine、
+Mother 151／1044 以该局自身原生材料为准。未知政府预览原 UI 仍保留，不宣称
+所有画面均无原始 key。
+
+另获授权合并 `1020-rc7-repeat-initialization-v1` 内实际封口的 partial proposal
+及其四项明确检查。只有实际 index／verify／提案出现并核对后才登记；现存 raw
+和报告本身不提前视为完整封口。两次完整 initialize／startup／sync 的同日观察
+按其真实 ZIP／SAV／输入链证明幂等，不冒充重启、重载或其它成长分支测试。
+
+仍只修改本任务原三文件，引用同一 canonical run，所有整组与组件保持 PENDING、
+最终停止日志列缺。Pu、Hive、画廊和成长 typed 来源不改义；不读取活动 cfgui、
+jump 或日志，不执行 Git／UI，不修改工具、Mod、其它报告或数值合同。
+
+### 第四轮合并结果
+
+Machine 已合并 14 项 true、baseline 12 月与 candidate 12 月，两个组分别
+36／58 个证据引用。原报告四个操作 null、缓存净电与未知政府预览原 UI 均保留。
+三类政体现在都有原生 baseline 12 月及本轮候选 12 月，逐月值与各原始
+OBSERVATION_ONLY JSON 精确一致，没有对显示小数重新取整。
+
+重复初始化归档的实际文件名为 `archive-index.json`、`verification-v1.json` 和
+`partial-case-proposal-v1.json`，已据此核对实际 52 payload／54 总文件及独立
+9／9 检查。最初使用假定 basename `index.json`／`verify.json` 的查找未找到，
+并非实际缺包；已按主线程提供的真实名称纠正读取，没有重造或修改任何原件。
+
+已给 repeat_initialization 附加 57 个引用并记录原四项 true；两份原生 ZIP
+逐字节完全一致，SHA 均为
+`41a19510e73c8e92da7d0877dc29dfbcff6ccacda66457a6a34522a9d388d2db`。
+该观察仅证明同日两次完整初始化幂等，candidate_reload 四项仍全部 null。
+Machine 两组和 repeat_initialization 均只缺最终停止日志，整组状态仍 PENDING。
+
+当前 64 项 true／74 项 null、18 组与组件均 PENDING，仍唯一 canonical run。
+reference-plan SHA：
+`25b2ecb496ed9aaf09e9ff25a62ee7962904c3597070b713dc551f79117f3fcc`；
+pending SHA：
+`57e49c1d4b714858086b197b2f7ca9c331fc6b048034d356f1d750ecc2f60ca3`。
+1,656 处引用／880 个唯一文件逐字节 SHA、原 pending loader、完整 typed 组件归因、
+三分支 72 个基准／候选月份来源与连续性均通过；`git diff --check` 通过。
+没有读取活动配置／jump／日志，没有建立最终结果或执行发布。

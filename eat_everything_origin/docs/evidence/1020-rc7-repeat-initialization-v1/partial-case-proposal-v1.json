@@ -1,0 +1,107 @@
+{
+  "schema": "eep.rc7.repeat-initialization-partial-case-proposal.v1",
+  "status": "PARTIAL_EVIDENCE_ONLY",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "run_ids": [
+    "20261019T164112Z"
+  ],
+  "case_id": "repeat_initialization",
+  "case_status": "PENDING",
+  "supported_checks": {
+    "no_extra_world": true,
+    "no_extra_ship": true,
+    "no_extra_reward": true,
+    "no_extra_civilian_queue": true
+  },
+  "check_basis": {
+    "no_extra_world": "Exact whole native ZIP/gamestate equality and unchanged original full strict checker after two original physically submitted calls.",
+    "no_extra_ship": "Exact whole native ZIP/gamestate equality and unchanged original full strict checker after two original physically submitted calls.",
+    "no_extra_reward": "Exact whole native ZIP/gamestate equality and unchanged original full strict checker after two original physically submitted calls.",
+    "no_extra_civilian_queue": "Exact whole native ZIP/gamestate equality and unchanged original full strict checker after two original physically submitted calls."
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/1019-rc7-economy/machine/r7mcyearui.sav",
+      "sha256": "41a19510e73c8e92da7d0877dc29dfbcff6ccacda66457a6a34522a9d388d2db",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-economy/machine/r7mcyearui.audit.json",
+      "sha256": "1864057739bdf009ca2a46dd860ed536a35858200f329258af288cc572bf23cd",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-economy/machine/r7mcyearui.native-save.json",
+      "sha256": "53537b73a903710631729ef8f77dc4573129d7845f37ad090c86c7e76e421bae",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1019-rc7-economy/machine/manifest.json",
+      "sha256": "603236aeedc59d2f0a0308b500ca209f589fb89e2ea5d1928c8bc04d10fedd86",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat.sav",
+      "sha256": "41a19510e73c8e92da7d0877dc29dfbcff6ccacda66457a6a34522a9d388d2db",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat.native-save.json",
+      "sha256": "6bb2f464ff09dd8a8f5e1169d1b8a25c491b6809e62ada221d6b4b1477b47bee",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat.audit.json",
+      "sha256": "45244ea17d35e6c8effc9c7e814f11381fb022bc4c0f8f328a5202865a1cb064",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat-console-before.jpg",
+      "sha256": "0a2b4d14aaacdc0dfc6ee2f60134aa9c899bf0dc594b032e5e01be2109d16000",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat-console-after.jpg",
+      "sha256": "ec40cf98d6965fadf6bfb67d82f13657a9e70857fbc7181bf675732b1e00c711",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/strict-compare-v1.json",
+      "sha256": "5aaf6c23129b4b2845a16594f394fe68cd3bcc87de6b407d78167494aa854606",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/repeat-initialization-report-v1.json",
+      "sha256": "6183f75af8ca68575e3a535b0817e275a97e45314943e9a8746e6701f79e47c3",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat-effect1-command.action.json",
+      "sha256": "ef2d45762a6a5b347cfa9d41c0e3e32865356775706b202b71514d5832afe95d",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat-effect1-command-enter.action.json",
+      "sha256": "ee2516079dd1eb04a83cbd8b8615b67026eab7c5dc373e48b512a66ae51ff060",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat-effect2-command.action.json",
+      "sha256": "0d687eb76b4c8fd16918676a474d7244bb0d7537adb92d2df1d6d59cbf462497",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-repeat-initialization-v1/raw/r7initrepeat-effect2-command-enter.action.json",
+      "sha256": "f8f2f1a9c2d9d263718cfb00c5ffdc6f7fba0914d02e85b654a770efd172599e",
+      "kind": "actions"
+    }
+  ],
+  "missing": [
+    "Stopped-run complete log archive and final shared review."
+  ],
+  "limitations": [
+    "No active or stopped runtime logs were read; final repeat_initialization case remains PENDING.",
+    "Native end-state identity and strict checker cover all four named checks; no synthetic intermediate states or modified save.",
+    "No whole-Mod, Relic, UI stats, jump, power or maintenance certification in this report."
+  ]
+}

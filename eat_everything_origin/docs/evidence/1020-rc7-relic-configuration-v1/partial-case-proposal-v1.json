@@ -1,0 +1,154 @@
+{
+  "schema": "eep.rc7.configuration-partial-case-proposal.v1",
+  "status": "PARTIAL_EVIDENCE_ONLY",
+  "case_id": "mothership_configuration",
+  "case_status": "PENDING",
+  "production_tree_sha256": "61b34f6dbdc277c44364889d5f1e1cd2773a4624786bbf0d538079fc6ba4feb0",
+  "run_ids": [
+    "20261019T164112Z"
+  ],
+  "supported_checks": {
+    "same_country_same_date_relic_reference": true,
+    "native_design_matches": true,
+    "power_nonnegative": true,
+    "upkeep_observed": true,
+    "actual_jump": null,
+    "ten_mobile_shipyards": true,
+    "no_empire_technology_grant": true,
+    "other_juggernauts_unchanged": null,
+    "twenty_two_large_defense_slots": true,
+    "five_relic_auxiliary_components_preserved": true,
+    "reference_stats_observed": true,
+    "existing_advantages_preserved": true
+  },
+  "check_basis": {
+    "power_nonnegative": "Current actual56-component source-derived balance +9743, expressly not UI power measurement.",
+    "no_empire_technology_grant": "Mother/native Relic creation Jan1->7 kept28 completed technology/level entries identical; later story.7 UI native tech option165 is separately retained and not a loadout tech grant.",
+    "other_juggernauts_unchanged": "No other actual juggernaut sample exists. Exact Mod payload has no ship-size definitions; runtime disposition remains for root review.",
+    "existing_advantages_preserved": "Actual H/A/S minima, native ten shipyards,50-slot native equipment and same-day observed speed/damage/evasion preserved. No free-upkeep claim."
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/bounded-configuration-ui-report-v1.json",
+      "sha256": "f88c1387231c579f6170c59f596b32a0a892d7fa8760cc029c9934f2a04a9b46",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-report-v1.json",
+      "sha256": "5c022c1e1f95c728be74524b9e568d34713133b26f10584a26ce96df907a20cb",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/source-derived-power-report-v1.json",
+      "sha256": "aa4d9de70fa7f7ee14a1159e4405eebb8acef9940811589dc96ad0ab1a5f8802",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/native-configuration-observation-v2.json",
+      "sha256": "8b9748e243efbff359eec259f59ef1e0caf96ba9de0c58084b3e3e3b8144149a",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/ui-same-day-strict-compare-v1.json",
+      "sha256": "49e0b3c2e8959b276dff065da70ecb26eded43f8c5c93d54dfa0f9547e7e3f98",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/ui-full-native-raw-differences-v1.json",
+      "sha256": "bb1accc0fd967b40a731ead9533dadf8656dff8ddfbc7608437208353bdb3451",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6.sav",
+      "sha256": "1181ebbae4c00a6affd66c579bebaf54280726274a514b6ed134ef73ee230eff",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui.sav",
+      "sha256": "c9d8907c2ebeee3380cc0668cd20e950ac73f48dd6646a3d8a83cd35b5a7caf5",
+      "kind": "native_save"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7relic6.native-save.json",
+      "sha256": "7b047a5df72758ce196361b8ffc10cd5ebe54297f6cabc23ffb2fd8d89325edb",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui.native-save.json",
+      "sha256": "7dc66cc789aabf5723f0dcb4cbb385b326aa607874e1bb8ad342c85ec7a92c2a",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2.jpg",
+      "sha256": "05943ebe60152e07978eedaa8597c97a49fcebaf3152c81af251370de5da2f7f",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2.ocr.json",
+      "sha256": "f733e4e3fd3be3301709cea7a3d8288ebad41274e2539d6c671c3a886d8d8402",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-details-clean-v2-f12.action.json",
+      "sha256": "a068c306250c952b7719d797052cc61a0bf0cd19a9225d34253543f268774b64",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean.jpg",
+      "sha256": "c00d8d3f95126daf3ef8703f641fc04893684b6d36a874e9c81ea53c7175dc3c",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean.ocr.json",
+      "sha256": "5ac350521e59f5bd4bb732c8335aa63f4e98491084b20cfb5877fb440f145641",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-details-clean-f12.action.json",
+      "sha256": "7ae34b84c24a9943da01fc5ced850753635f82c5303221ee1fc6542813d35b8c",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.jpg",
+      "sha256": "ddf04efb408446418d04d0f4d1dfb709eba6c9395cc599c1f5b1c69581df5986",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover.ocr.json",
+      "sha256": "98cde105adaa1e7fb462cc897fd4d2a9588526400d7e67de41a306e024db8552",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-mother-upkeep-hover-f12.action.json",
+      "sha256": "50022faf3f10061e55ed58ae6eb31ae7632bc41c7997bc02e485a9da13d56443",
+      "kind": "actions"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover.jpg",
+      "sha256": "a82fddc194d42517cfbbd3da360e5c7f20c1ffa070220ad272d66c7c7c774b78",
+      "kind": "screenshot"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover.ocr.json",
+      "sha256": "295546619fbf72276ceeebda1e16e498ff2edbec259ee72bc859e94e50f4c97b",
+      "kind": "analysis"
+    },
+    {
+      "path": "docs/evidence/1020-rc7-relic-configuration-v1/raw/r7cfgui-relic-upkeep-hover-f12.action.json",
+      "sha256": "0432bd891d9c55212f7feec54d31fafd9c4dc6eb9c2af05a07c64e967fa3f18b",
+      "kind": "actions"
+    }
+  ],
+  "missing": [
+    "Actual jump proof",
+    "Disposition of ordinary-juggernaut negative control/source-only scope",
+    "Stopped-run complete logs and final common review."
+  ],
+  "limitations": [
+    "Actual jump order/arrival/cooldown still pending.",
+    "Only ship1044 is an actual juggernaut in this native save. Other ordinary-juggernaut behavior is not claimed as a runtime sample; no frozen Mod ship-size definition exists.",
+    "No active/stopped runtime logs were read; final configuration case remains PENDING.",
+    "Integer panel truncation is distinguished from native decimal maxima.",
+    "Source-derived positive power balance is not an observed UI power reading."
+  ]
+}
