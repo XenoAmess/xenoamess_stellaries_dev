@@ -33,6 +33,7 @@ eep_sync_mothership_components = {
     # Work budget, not a progression cap. Unpaid rewards remain for later syncs.
     set_variable = { which = eep_component_work_budget value = 200 }
     while = {
+        count = 200
         limit = {
             check_variable = { which = eep_component_rewards value < owner.eep_component_entitled }
             check_variable = { which = eep_component_work_budget value > 0 }
