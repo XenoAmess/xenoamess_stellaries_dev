@@ -53,3 +53,33 @@ v2固定微小伤害预算及原strict FAIL；非中文九语言只称静态校�
 继续只读校验并遵守冷却；必要时仅为urllib设置与既有changelog请求相同的浏览器
 User-Agent，再运行原verify流程。工具源码、比较条件、图片字节和发布输入均不变；
 不得用缓存或手造回执代替实际公开页面响应。验收要求仍为原verify全部通过。
+
+浏览器User-Agent单独重试仍429，响应无Retry-After。冷却后可尝试同一官方页面
+等价的query参数顺序（同id、同l=schinese），仅改变HTTP传输地址的参数排序；
+保留实际请求/响应URL、状态、正文hash及原验证入口，所有内容比较继续由原工具执行。
+
+等价query顺序仍429；实际Steam客户端已成功打开同一更新后的工坊页面。
+本机urllib默认经127.0.0.1代理，继续调查直连等传输差异，仅调整本次只读请求的
+opener，不修改用户系统代理设置，不读取或公开登录凭据，不改变原验收比较条件。
+
+直连超时；同一官方页面移除l参数，改用公开的`Steam_Language=schinese`语言偏好
+cookie与`Accept-Language: zh-CN`后实际返回HTTP200（80998字节）。这不使用登录
+凭据。接下来仅将原verify的这一条HTML请求转为同id的上述官方URL与中文偏好，
+其余网络请求及全部原校验保持；保留实际HTTP响应状态/URL和最终正文hash。
+
+全流程重试曾在封面CDN读流时发生ConnectionResetError，另一次在changelog的
+l=english请求429，均未写整体PASS。对changelog同样只用其原语言的公开偏好cookie
+替代l参数；同目标、同版本Change Note仍须原exact_change_note实际校验通过。
+
+## 远端完整核验通过
+
+实际重新执行原verify全流程成功：`PASS`，59个生产文件、公开元数据、正式
+Change Note、封面及六槽图库完全一致，公开HTML中四张inline图片均实际显示且
+下载原字节一致。`publication-0.4.0/workshop-verification.json`为正式成功回执；
+`public-page.json`记录正文hash与四张实际渲染图片URL；`public-page-transport-v1.json`
+记录两条官方HTML请求实际HTTP200的URL与公开语言偏好。没有使用登录凭据或缓存
+代替响应，原发布工具源码与所有内容比较条件未改。
+
+此前HTTP429、CDN读流重置、直连超时均属已保留的失败尝试，不是最终状态。
+上传仅成功执行一次，未重复提交0.4.0。接下来先提交推送这些回执，再运行tag-check、
+创建并推送正式v0.4.0标签，最后恢复Steam离线及本地exclude原字节。

@@ -21,8 +21,9 @@ RC8 PID31008和独立旧版基线PID21280均已正常退出、完整日志封存
 
 冻结提交6c2b185a3推送后，Steam已实际成功上传0.4.0至自有物品3815707212，
 独立下载59文件完全一致，公开元数据、Change Note、封面和六图库均已通过。
-公开正文HTML暂遇HTTP429，仍需完成四张inline的实际显示校验，再提交回执、推送
-v0.4.0标签并恢复Steam离线。详见[发布执行记录](../eat_everything_origin/docs/release-0.4.0-execution-1020.md)。
+公开正文HTML的HTTP429经等价语言偏好传输重试解决，原verify全流程实际PASS，
+四张inline实际渲染和图片原字节也已核验。接下来提交回执、推送v0.4.0标签并恢复
+Steam离线。详见[发布执行记录](../eat_everything_origin/docs/release-0.4.0-execution-1020.md)。
 
 以下为按时间追加的历史执行记录；其中“待完成”和PENDING只描述相应记录时点。
 
