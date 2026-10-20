@@ -1,5 +1,11 @@
 # 0.4.0正式发布执行记录
 
+最终状态（2026-10-20）：18组约定专项PASS_SCOPED，正式0.4.0已成功发布到
+[自有工坊3815707212](https://steamcommunity.com/sharedfiles/filedetails/?id=3815707212)。
+独立59文件、公开正文、Change Note、封面、六图库和四inline全部远端核验通过，
+v0.4.0已推送；Steam实时及持久离线状态已恢复，本地exclude原字节恢复。
+以下保留设计、冻结检查点、失败尝试与实际收尾的时间顺序。
+
 执行期间实机发现原生通知漏翻译，实际采用rc.8修正：在RC7基础上只追加十语言
 同一描述键与版本元数据。所有P脚本/组件/资源和原译文原字节保持。原冻结
 publish_1019.py不改；通过publish_1020_localization.py执行严格来源补丁合同及
@@ -83,3 +89,60 @@ Change Note、封面及六槽图库完全一致，公开HTML中四张inline图�
 此前HTTP429、CDN读流重置、直连超时均属已保留的失败尝试，不是最终状态。
 上传仅成功执行一次，未重复提交0.4.0。接下来先提交推送这些回执，再运行tag-check、
 创建并推送正式v0.4.0标签，最后恢复Steam离线及本地exclude原字节。
+
+## 标签与离线收尾
+
+核验回执提交`f6e7968280b72b7cd744b9fe7304684bca4516e3`已推送，原tag-check
+实际返回READY_TO_TAG；随后创建、推送v0.4.0，远端peeled提交与上述核验提交一致。
+Steam菜单多次点击“进入离线模式”未生效，SDK仍BLoggedOn=true、持久偏好仍0，
+因此尚不宣称已恢复。仓库10月15日建造UI调查已有同类菜单迟滞、正常重启后恢复的
+实际经验。先核无游戏运行，关闭本任务启动的Paradox launcher，再正常关闭并重启
+Steam客户端后重试菜单；不强杀客户端，不修改账号配置冒充实时离线。
+
+首次正常重启完成，但菜单尝试后UI一度显示“离线模式”而新鲜SDK及持久配置仍为
+在线/0；保留不一致，不能凭UI判通过。本机steamui.dll包含`-offlinemode`启动参数，
+接下来正常关闭客户端后用该参数启动，逐项验证实时BLoggedOn=false和持久偏好1。
+不修改快捷方式、系统代理、登录数据或客户端源码，不启用远程调试。
+
+上述启动参数也未使持久偏好变1。修订最后一条诊断边界：允许仅本次启动临时
+localhost CEF调试接口，以调用本机sp.js中菜单实际使用的
+`SteamClient.User.GoOffline()`。只查询该函数是否存在并执行这一次模式切换，
+不读取Auth、令牌或其它账号数据。完成后正常关闭该调试实例、以普通参数重新启动，
+必须确认本地调试端口关闭及最终实时离线/持久偏好均通过；不改启动快捷方式。
+
+该临时调试启动在执行前被自动审批拒绝，理由仅为`blocked by policy`，所以未执行，
+未启用调试端口、未调用该接口。放弃此诊断方案；以普通参数恢复Steam，通过标准
+Windows UI Automation/普通鼠标键盘继续操作原客户端，不申请绕过该拒绝。
+
+## 最终完成与恢复结果
+
+最终使用标准Win32鼠标消息，按实际WindowFromPoint命中的Chromium子窗口及
+ScreenToClient坐标，操作原Steam菜单“进入离线模式”成功。实际子窗口坐标为
+菜单按钮(35,13)、菜单项(64,82)，没有调用调试接口，没有改Steam账号数据。
+先前普通物理点击未可靠触发操作；不能仅凭发送成功或“离线模式”UI文本判通过。
+本次不把这一现象归因成已证实的Steam缺陷。
+
+2026-10-20T00:17:41Z新鲜SDK成功初始化且BLoggedOn=false；持久配置的已清理
+WantsOfflineMode值为["1"]；localhost:8080不可连接。全过程客户端正常退出/启动，
+没有强杀，游戏在本阶段始终未运行；本任务启动的Paradox Launcher已正常关闭。
+只保存已清理状态JSON，包含桌面/账号信息的截图留在仓库外，不提交。
+
+正式标签v0.4.0远端对象为`02de5a51da075fb4e03047867d72255dbe1fa209`，
+peeled提交为`f6e7968280b72b7cd744b9fe7304684bca4516e3`，与先推送的完整核验
+回执提交一致。原tag-check结果READY_TO_TAG、验证报告SHA及远端refs已归档。
+
+`.git/info/exclude`恢复后SHA256为
+`6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1`，
+与保存的原文件完全一致。恢复前核对临时版本SHA，避免覆盖并发用户修改。
+唯一原用户未跟踪目录重新出现在git status中，其内容未被本任务修改、删除或提交。
+项目README及两级知识库入口已同步实际0.4.0发布事实；原交接和历史PENDING保留。
+
+正式回执均位于`docs/evidence/publication-0.4.0/`：
+
+- `workshop-verification.json`、`public-page.json`及`public-page-transport-v1.json`：完整远端核验。
+- `release-tag-v1.json`：原打标门禁与远端标签核对。
+- `steam-offline-restoration-v1.json`：实时离线、持久偏好及调试端口关闭。
+- `local-exclude-restoration-v1.json`：本地忽略文件原字节恢复。
+
+open_kaishek修复提交d2a2627e3023310d96f1a2d1e63478f6a6ee7a57与其upstream一致，
+工具仓库工作树干净。没有新增Paradox共通语法结论，因此本次无需改CK3知识库。

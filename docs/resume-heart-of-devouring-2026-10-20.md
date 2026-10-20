@@ -1,6 +1,6 @@
 # 吞噬之心 RC7 恢复执行记录（2026-10-20）
 
-## 当前状态：验收完成，0.4.0已成功上传
+## 当前状态：验收、发布、标签及离线收尾全部完成
 
 最终18组为PASS_SCOPED，组件奖励IMPLEMENTED；138 true／0 null／1 false。
 false是合同要求保留的旧伤严格损伤项，另有预先固定v2微小数值预算通过，原FAIL不改。
@@ -22,8 +22,11 @@ RC8 PID31008和独立旧版基线PID21280均已正常退出、完整日志封存
 冻结提交6c2b185a3推送后，Steam已实际成功上传0.4.0至自有物品3815707212，
 独立下载59文件完全一致，公开元数据、Change Note、封面和六图库均已通过。
 公开正文HTML的HTTP429经等价语言偏好传输重试解决，原verify全流程实际PASS，
-四张inline实际渲染和图片原字节也已核验。接下来提交回执、推送v0.4.0标签并恢复
-Steam离线。详见[发布执行记录](../eat_everything_origin/docs/release-0.4.0-execution-1020.md)。
+四张inline实际渲染和图片原字节也已核验。核验回执、版本标签和Steam离线恢复现已
+全部完成：核验提交f6e796828已推送，v0.4.0远端peeled提交与其
+一致；实时BLoggedOn=false、持久WantsOfflineMode=1、localhost调试端口关闭。
+临时`.git/info/exclude`已恢复原字节，用户原未跟踪目录保留且不纳入提交。
+详见[发布执行记录](../eat_everything_origin/docs/release-0.4.0-execution-1020.md)。
 
 以下为按时间追加的历史执行记录；其中“待完成”和PENDING只描述相应记录时点。
 

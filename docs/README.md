@@ -10,7 +10,9 @@
 
 ## 文档索引
 
-- [「吞噬之心」0.4.0-rc.7假期交接：安全停机、已验证结果与恢复步骤（2026-10-20，未发布）](handoff-heart-of-devouring-2026-10-20.md)
+- [「吞噬之心」0.4.0恢复执行与限定专项验收结果（2026-10-20）](resume-heart-of-devouring-2026-10-20.md)
+- [「吞噬之心」0.4.0正式发布、远端核验与版本标签（2026-10-20）](../eat_everything_origin/docs/release-0.4.0-execution-1020.md)
+- [「吞噬之心」0.4.0-rc.7假期交接：安全停机与恢复步骤（历史时点未发布）](handoff-heart-of-devouring-2026-10-20.md)
 - [「吞噬之心」新独立 Mod：吞星供养母星的灭绝单球设计案（2026-10-06，未实现）](eat-everything-origin-design-2026-10-06.md)
 - [「吞噬之心」子项目：游戏代码研究与验收设计](../eat_everything_origin/docs/README.md)
 - [「吞噬之心」额外开局殖民地与负电反馈评估（2026-10-19，仅建议）](eat-everything-origin-startup-economy-feedback-2026-10-19.md)
