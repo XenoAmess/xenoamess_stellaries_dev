@@ -1,0 +1,47 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "native_windup_9_of_90_before_cancel": true,
+    "native_stop_tooltip_and_click_recorded": true,
+    "order_removed": true,
+    "ledger_unchanged": true,
+    "core_population_unchanged": true,
+    "source_survives": true,
+    "core_flag_present": true,
+    "core_menu_red_cross_visually_reviewed": true,
+    "core_tooltip_guard_present": true
+  },
+  "proofs": [
+    {
+      "file": "pkapproach.sav",
+      "sha256": "4399255d1a72fd10faba7ea46875959bc5d9465c0046a0b6229ed57408bf7ece"
+    },
+    {
+      "file": "pkshipcancel.sav",
+      "sha256": "0c253f9b5e8ac33453067bbfafa2a4b3c5b9533ffb21d8e8f27c59b558e447d7"
+    },
+    {
+      "file": "pk-stop-tooltip2.jpg",
+      "sha256": "b7ae2cd9d7dcb5dfe16f6d6d1cf56448107ca27d8fb090dfc18376cde11a6f4a"
+    },
+    {
+      "file": "pk-stop-native2.action.json",
+      "sha256": "fdbcf62b439c5f7f09599f1ad8468686f054d446f1e5f986216cff3b39f4867f"
+    },
+    {
+      "file": "pk-core-context.jpg",
+      "sha256": "788d70f6ac668e5c1693db9a3991e6d41d6913395140b1698e0d06d127c3c6f4"
+    },
+    {
+      "file": "pk-core-blocked-tooltip.jpg",
+      "sha256": "408b426d3b5f394cc47f47e8fe32156c5b7f51424ce86d0e891ef75a2112fd2c"
+    },
+    {
+      "file": "pk-core-blocked-tooltip.ocr.json",
+      "sha256": "850d7bbafa117011f9dec0236f69839dcecad63c7e75a7f153eb8b0a5dd6f52c"
+    }
+  ],
+  "scope": "Owned habitat charging cancellation and native core rejection only; neutral guard is pending a separate enemy-habitat case. Core menu red cross and tooltip reviewed, no disabled command submitted.",
+  "prior_report": "H05-own-cancel-core.json",
+  "tool_correction": "PowerShell pipe replaced the first inline Chinese predicate with question marks. Recheck the same original OCR using an explicit Unicode escape literal; original FAIL retained."
+}

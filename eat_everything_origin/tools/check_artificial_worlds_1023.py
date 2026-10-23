@@ -50,7 +50,7 @@ def snapshot(path):
                       variables=p.scalars(p.block(value, "variables")),
                       coordinate=p.scalars(p.block(value, "coordinate")))
         planets[key] = record
-    fleets = {key: {**p.scalars(v), "coordinate": p.scalars(p.block(v, "coordinate")),
+    fleets = {key: {**p.scalars(v), "coordinate": p.scalars(p.block(p.block(v, "movement_manager"), "coordinate")),
                     "current_order": p.block(v, "current_order"),
                     "variables": p.scalars(p.block(v, "variables"))}
               for key, v in table(objects.get("fleet", "")).items()}

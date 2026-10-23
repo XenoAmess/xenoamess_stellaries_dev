@@ -84,3 +84,24 @@
 
 ### rc.4 日志结果与 rc.5 文案修复
 rc.4在返还人口之前销毁局势仍出现相同两条Target.GetName错误，排除了“仅由物理删除或最后人口迁出顺序引起”的解释；不将上述推测沉淀为引擎事实。原生结束通知中的局势文案不具备有效Target本地化上下文。rc.5改为十语言固定局势标题，描述用“这颗天体”等对应译文替代Target.GetName，目标仍可在原生目标面板与殖民地列表识别；不再让结束通知依赖动态目标名称。保留先结束局势再返还/销毁的明确生命周期顺序。更新同一作者翻译叠加文件，重新完整静态校验及独立进程回放，要求该日志实际消失。
+
+### rc.5 普通完成与母舰夹具准备
+rc.5 run `20261023T063256Z`实际May1新保存后推进May2，H01十二项通过且Target本地化错误消失。第二个真实居住站物理16779253、major orbital16777220/锚点9、minor orbital6/锚点12，负对照gateway_ruined7/原废墟5均在system3；实际母舰fleet120/ship754，未下令。
+夹具读取本机原生triggers.log给出的`valid_planet_killer_target=<planet>`写法，但本机引擎实际要求块参数，产生日志Expected `{`与派生none错误；这些来自显式控制台夹具而非生产Mod，未取得guard通过。保留原始命令与失败日志，不以该探测当作准入证据。后续使用原生右键目标菜单/提示核验核心、中立保护，或先验证真实块参数再记录原生trigger结果，不能引用过时文档签名宣称成功。第二居住站与附属物实际生成已由原生pkready确认。
+本地化重建时，历史作者基线之后须最后应用`localization/artificial-worlds-1023-authored.json`的六个键/语言；`artificial-worlds-task-labels-1023.json`保留标题与代词的作者输入。
+
+### 母舰取消、核心保护与完整发射进度
+- RC5另一个居住站经原生决议手动启动/取消，新局势被标记killed、q6/15个月、100人口保留、豁免标记生效、母星/账本不增加；八项集成检查通过。rc.1自动扫描/重载/恢复证据按13文件差异合同限定复用：取消、自动、准入、决议和事件调度源码完全相同，改动仅完成清理/调用者、本地化任务标题描述及版本。
+- 第一次母舰原生命令May2排队、May3仍是接近目标移动，不能把文件名pkcharge0当成已充能。May13实际windup9/time90，再用原生停止按钮取消；订单清空、源和核心人口保留、C/G6、D3、made100、worlds1不变。菜单保存会取消舰队选中状态，第一次Stop hover未出现停止提示，断言在点击之前停止；重新选中同一母舰后取得真实Stop提示/点击和pkshipcancel原生SAV。
+- 对真实核心EEP-Core的原生右键菜单显示红叉，展开本Mod中文拒绝提示；核心flag/实际母舰绑定均核实。未提交禁用命令。首次派生检查因PowerShell管道丢失内嵌中文谓词而误报FAIL，原件保留；以显式Unicode转义重查相同原始OCR通过，不改变游戏或判断条件。
+- 第二次May13在目标位置重排；May14实际windup1/time90，Aug12实际windup89/time90，源仍在且无结算。下一步推进1日核实发射阶段，再观察30日边界与真实结算。首轮Git推送遇curl55连接重置，远端未变；使用单次HTTP/1.1及较大postBuffer重试后bdb3871bb已推送，未改全局Git配置。
+
+### 自有母舰完成瞬间观察
+May13下令→Aug13 fire0/time30→Sep12 fire29/time30→Sep13实际结算。C/G12、D5、made200、worlds2，核心5330=5123+107+100，回迁107/制造100/容量+2，母舰实际applied_level1；major/minor与两锚点关联清除，废墟已生成，无新日志错误。独立检查仍FAIL一项：物理16779253还在全局planet表及system3列表，已无colony/owner/controller，save_on_death从1变3、binary_flags从65变97。不能仅靠奖励正确或无人口宣告载体销毁通过。
+先保留Sep13原件与失败报告，额外推进一个原生日至Sep14观察原生延迟清理；事前预期C/G/D/made/worlds、核心5330、母舰level1全部保持且物理源消失。若仍存在，继续调查原生引用保留/销毁机制及实际UI，不直接放宽“物理源消失”检查或把bit值推测当引擎事实。
+
+Sep14稳定态原生SAV已实际删除物理16779253，原独立检查十三项全部通过，核心5330和账本均保持。故自有母舰完整90/30射击、结算与次日原生清理通过；保留完成瞬间FAIL，不修改检查器的物理删除要求。这里只确认本例需要再推进一个原生日才能观察到全局物理表清理，不推断save_on_death/bit的引擎语义。开始同进程中立/交战敌国居住站专项。
+
+敌方夹具已创建country1/system164/物理33556469/锚点23的真实居住站并把母舰放在其附近；没有宣战。控制台set_location不等于自然航行进入，原生星图仍标“未调查的星系”；推进1日后仍须补齐可见性准备。补充只读验证前置夹具：依原版`first_contact_dlc_effects.txt:297`的country `set_visited=<system>`及已验证set_surveyed，让actor访问并调查该系统天体，便于原生UI识别目标。此调查是功能夹具准备，不计作自然航行/探索或经营验收，不改源归属/战争/EEP收益。
+
+中立源原生菜单红叉与中文拒绝提示、Sep15原生SAV无war/无母舰订单、敌方owner/controller1及100人口同时核实；H05守卫专项通过。Sep15宣战后同一目标变为可用；war0实际attacker0/defender1、wg_cleansing、双方fleets_gone_mia0。母舰自然与敌舰队4/7发生太空战斗，Sep18原生战斗记录已无in_combat_with，随后自动接近目标；未手工清场或调用完成回调。Sep17/18命名含windup/charge的SAV实际仍为移动，未当作充能通过；Sep20首次实际取得windup0/time90，正在推进完整90日到发射边界。三项新原生布局核对：活殖民地的owner/controller读取其物理载体，不假设colony对象有owner；舰队坐标在movement_manager中；阶段读取真实current_order子块。以上均属本机Stellaris4.5.2，不外推其它Paradox游戏。

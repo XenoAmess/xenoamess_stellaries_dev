@@ -1,0 +1,34 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "owned_cancel_and_core": true,
+    "no_native_war_before_declaration": true,
+    "same_foreign_habitat": true,
+    "foreign_population_present": true,
+    "mother_same_system": true,
+    "no_order_on_neutral": true,
+    "no_neutral_reward": true,
+    "native_neutral_menu_red_cross_visually_reviewed": true,
+    "neutral_guard_tooltip_visible": true
+  },
+  "owned_report": "H05-own-cancel-core-v2.json",
+  "proofs": [
+    {
+      "file": "enemyneutralguard.sav",
+      "sha256": "e5c4ffd6b86d2a7467b91b480fda01b3f5ff773642465b828beaae6b19e16291"
+    },
+    {
+      "file": "enemy-neutral-context.jpg",
+      "sha256": "27a3dfa830c35cab3aa917077253d029338771afe33ce2399e3c97d1718e4808"
+    },
+    {
+      "file": "enemy-neutral-blocked-tooltip.jpg",
+      "sha256": "f83f4b3075e42cca2468ee5b410f80fb169c554d5ea06d95c1e6734717723e63"
+    },
+    {
+      "file": "enemy-neutral-blocked-tooltip.ocr.json",
+      "sha256": "ea2c4a68704c3424f9b2309caedc719a0ab8e14224daf83a53e7aa5d0e96e801"
+    }
+  ],
+  "scope": "Actual 9/90 charge cancellation, own EEP core and neutral foreign habitat blocked in native menu; no disabled command submitted. Other empire core protection also reviewed statically, not runtime-claimed."
+}

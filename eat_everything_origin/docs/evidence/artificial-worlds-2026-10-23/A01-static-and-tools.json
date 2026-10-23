@@ -1,0 +1,103 @@
+{
+  "status": "PASS_SCOPED",
+  "candidate_version": "0.5.0-rc.5",
+  "checks": {
+    "open_kaishek_pass": true,
+    "production_bytes_match_loaded_candidate": true,
+    "unit_tests_25_pass": true,
+    "all_fixtures_parse": true,
+    "artificial_admission_and_native_cleanup_source_review": true,
+    "ten_languages_static_validation_pass": true
+  },
+  "production_files": 59,
+  "static_report_sha256": "2477c8f3b9036d59804e104010357fda460588801d30b4dd7696d92d72d7f059",
+  "unit_report_sha256": "eea909e80cac976e042df6bc3545b70fb14ff6a007d31081c1e4a83f66f1a024",
+  "fixture_parser_jar_sha256": "6ac143ebf03f3e1a041dff01b2d808e60de8e289d18cebf9855682f0a80b6d82",
+  "fixtures": [
+    {
+      "file": "testing/artificial_worlds_1023/enemy_habitat.txt",
+      "sha256": "6b3700dd4770dd66bf4d59703e58ed1cfac02e6243158ee5b4b7cd31cd7a23cf",
+      "parser": {
+        "status": "PARSED",
+        "bytes": 2732,
+        "tokens": 611,
+        "blocks": 23,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    },
+    {
+      "file": "testing/artificial_worlds_1023/enemy_neutral_prepare.txt",
+      "sha256": "f3d540f9af95b0a8ae40a159e478b4e2550f1f4948b9b18749ab8b88553bf642",
+      "parser": {
+        "status": "PARSED",
+        "bytes": 352,
+        "tokens": 71,
+        "blocks": 3,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    },
+    {
+      "file": "testing/artificial_worlds_1023/enemy_war_prepare.txt",
+      "sha256": "766732a993b92f9234ec15ad67f8ac2b45667b5687561cdd51f57941373b1e3f",
+      "parser": {
+        "status": "PARSED",
+        "bytes": 498,
+        "tokens": 133,
+        "blocks": 6,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    },
+    {
+      "file": "testing/artificial_worlds_1023/own_habitat.txt",
+      "sha256": "7419bf43f2847ac268c98a26018f762f2cbe29fda3ee95f0eb366a2d946166e4",
+      "parser": {
+        "status": "PARSED",
+        "bytes": 2494,
+        "tokens": 523,
+        "blocks": 18,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    },
+    {
+      "file": "testing/artificial_worlds_1023/own_habitat_again.txt",
+      "sha256": "30c7b1d15a301317ae6e16b4e8c0125b6a7323c4fc9c9f1c754ef0017d0a37cc",
+      "parser": {
+        "status": "PARSED",
+        "bytes": 2687,
+        "tokens": 577,
+        "blocks": 21,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    },
+    {
+      "file": "testing/artificial_worlds_1023/own_habitat_pk.txt",
+      "sha256": "52afa27dcbbd923e3c3f1bac511fc380086d02e5f6a3029608a183d6546143b8",
+      "parser": {
+        "status": "PARSED",
+        "bytes": 3514,
+        "tokens": 821,
+        "blocks": 32,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    },
+    {
+      "file": "testing/artificial_worlds_1023/reveal_enemy_system.txt",
+      "sha256": "5dba118c7ebba44641dcd8fd7b9c386f5604f7044380ebb3ae518ed3c36bdb0c",
+      "parser": {
+        "status": "PARSED",
+        "bytes": 366,
+        "tokens": 75,
+        "blocks": 4,
+        "diagnostics": [],
+        "roundTrip": true
+      }
+    }
+  ],
+  "scope": "All 36 production P scripts, 12 DDS, 132 keys in ten languages. Nine non-Chinese languages static only; other artificial body classes static/source review only. Fixture parser results assert P syntax, not unsupported engine signatures."
+}

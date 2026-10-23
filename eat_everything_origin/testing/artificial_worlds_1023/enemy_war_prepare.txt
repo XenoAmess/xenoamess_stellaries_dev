@@ -10,8 +10,5 @@ event_target:eep_art_actor = {
 }
 event_target:eep_mothership0 = {
     set_location = { target = event_target:eep_art_enemy_hab distance = 40 angle = 0 }
-    if = {
-        limit = { valid_planet_killer_target = event_target:eep_art_enemy_hab }
-        log = "ART1023_ENEMY_NATIVE_VALID"
-    }
+    log = "ART1023_ENEMY_WAR_PREPARED"
 }

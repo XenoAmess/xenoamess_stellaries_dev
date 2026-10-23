@@ -1,0 +1,46 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "source_existed_as_habitat": true,
+    "source_colony_identity": true,
+    "source_had_live_population": true,
+    "physical_source_removed": true,
+    "source_colony_not_live": true,
+    "expected_ledger": true,
+    "no_live_situation_targeting_source": true,
+    "orbital_removed_4": true,
+    "anchor_link_existed": true,
+    "anchor_link_cleared": true,
+    "new_ruined_habitat_exists": true,
+    "actual_core_population": true
+  },
+  "before_sha256": "0163c0d0dd45b5e7e2896b47fc7378d853b46c8113a0863ce17d7a05e806666a",
+  "after_sha256": "2a5eed2230548fb62e4574bb154a16a5d1ca30663973fc247580f11c6c2853ba",
+  "before_date": "2201.05.01",
+  "after_date": "2201.05.02",
+  "contract": {
+    "actor": 0,
+    "source": 2037,
+    "colony": 10,
+    "anchor": 8,
+    "system": 3,
+    "core_colony": 0,
+    "removed_megastructures": [
+      4
+    ],
+    "expected_ledger": {
+      "eep_c": 6,
+      "eep_g": 6,
+      "eep_d": 3,
+      "eep_made": 100,
+      "eep_worlds": 1
+    },
+    "expected_core_population": 5104,
+    "population_before": {
+      "core": 4873,
+      "source": 131
+    },
+    "before_sha256": "0163c0d0dd45b5e7e2896b47fc7378d853b46c8113a0863ce17d7a05e806666a",
+    "scope": "RC5 native replay from the identical May1 seed; fixed expectation 4873+131+100=5104 declared before the May2 callback."
+  }
+}

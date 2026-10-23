@@ -1,0 +1,97 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "source_existed_as_habitat": true,
+    "source_colony_identity": true,
+    "source_had_live_population": true,
+    "physical_source_removed": true,
+    "source_colony_not_live": true,
+    "expected_ledger": true,
+    "no_live_situation_targeting_source": true,
+    "orbital_removed_16777220": true,
+    "orbital_removed_6": true,
+    "anchor_link_existed": true,
+    "anchor_link_cleared": true,
+    "new_ruined_habitat_exists": true,
+    "actual_core_population": true,
+    "native_start_day_visible": true,
+    "windup_1_of_90": true,
+    "windup_89_of_90": true,
+    "fire_0_of_30": true,
+    "fire_29_of_30": true,
+    "full_windup_90_days": true,
+    "full_fire_30_days": true,
+    "native_cleanup_next_day": true,
+    "no_early_reward": true,
+    "receipt_exact": true,
+    "mothership_country_level_1": true,
+    "mothership_actual_applied_level_1": true,
+    "actual_capacity_value_5": true,
+    "actual_capacity_modifier_5": true,
+    "major_flag_removed": true,
+    "minor_flag_removed": true,
+    "unrelated_gateway_preserved": true,
+    "old_ruin_preserved": true,
+    "settlement_not_duplicated_on_cleanup": true
+  },
+  "before_sha256": "f72351bb55d60263cd39ce3c84d45632a6581744727ca3ce38ede07b672d21d5",
+  "after_sha256": "b36b56b1a33a2b3b5628edfab7777aefcd96a5c78bb464701a88a79d7072ab33",
+  "before_date": "2201.09.12",
+  "after_date": "2201.09.14",
+  "contract": {
+    "actor": 0,
+    "source": 16779253,
+    "colony": 16777226,
+    "anchor": 9,
+    "system": 3,
+    "core_colony": 0,
+    "removed_megastructures": [
+      16777220,
+      6
+    ],
+    "expected_ledger": {
+      "eep_c": 12,
+      "eep_g": 12,
+      "eep_d": 5,
+      "eep_made": 200,
+      "eep_worlds": 2
+    },
+    "expected_core_population": 5330,
+    "expected_return": 107,
+    "expected_manufactured": 100,
+    "expected_mothership_level": 1
+  },
+  "scope": "One actual owned habitat shot, full native 90/30, population/ledger/evolution and following-day physical cleanup. Immediate native-retention FAIL is preserved.",
+  "phases": {
+    "pk2windup": {
+      "date": "2201.05.14",
+      "sha256": "cd2813e677ae0fcbb3e12cb0995b649c21b0de4a96c1d0528dacc07cce05755b",
+      "native_order": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=16779253\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_windup_order=\n\t\t\t\t\t{\n\t\t\t\t\t\twindup=1\n\t\t\t\t\t\twindup_time=90\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "pk2windup89": {
+      "date": "2201.08.12",
+      "sha256": "9b47b01388ef17e5112091914a416f1f4bc93bdd59ac9ad08cfcf5ebe2eee2cc",
+      "native_order": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=16779253\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_windup_order=\n\t\t\t\t\t{\n\t\t\t\t\t\twindup=89\n\t\t\t\t\t\twindup_time=90\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "pk2fire0": {
+      "date": "2201.08.13",
+      "sha256": "23d186c9d0e61244ba1e9b4da091e7fd9bc7cbe9d76dd456ea7a26f073c1b4b5",
+      "native_order": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=16779253\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_fire_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tfire=0\n\t\t\t\t\t\tfire_time=30\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "pk2fire29": {
+      "date": "2201.09.12",
+      "sha256": "f72351bb55d60263cd39ce3c84d45632a6581744727ca3ce38ede07b672d21d5",
+      "native_order": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=16779253\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_fire_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tfire=29\n\t\t\t\t\t\tfire_time=30\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=1\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "pk2done": {
+      "date": "2201.09.13",
+      "sha256": "7fdb8c94571818499f06897644955209870a63e9e0877be156f0908ebe8ea97d",
+      "native_order": ""
+    },
+    "pk2stable": {
+      "date": "2201.09.14",
+      "sha256": "b36b56b1a33a2b3b5628edfab7777aefcd96a5c78bb464701a88a79d7072ab33",
+      "native_order": ""
+    }
+  }
+}

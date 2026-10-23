@@ -1,0 +1,10 @@
+# Controlled visibility setup for native UI targeting, not travel acceptance.
+event_target:eep_art_actor = {
+    set_visited = event_target:eep_art_enemy_system
+}
+event_target:eep_art_enemy_system = {
+    every_system_planet = {
+        set_surveyed = { surveyed = yes surveyor = event_target:eep_art_actor }
+    }
+}
+log = "ART1023_ENEMY_SYSTEM_VISIBILITY_PREPARED"
