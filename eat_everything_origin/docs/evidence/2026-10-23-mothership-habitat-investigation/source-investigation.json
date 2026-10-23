@@ -1,0 +1,464 @@
+{
+  "recorded_at_utc": "2026-10-23T04:23:18.521032+00:00",
+  "scope": "Read-only source investigation and package static check; no game launch, UI reproduction, functional fix or publication.",
+  "repository_head": "c6147155752c68eafdadd9dd168e410bdc8664e6",
+  "formal_tag_commit": "f6e7968280b72b7cd744b9fe7304684bca4516e3",
+  "mod_version": "0.4.0",
+  "game_exe_sha256": "400df27c82ddc845aa9dce79bd468d81f18f060d299cd263e3afa93aef4f7a83",
+  "mod_sources": [
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\scripted_triggers\\eep_planet_killer.txt",
+      "sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "bytes": 1034,
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 28,
+          "lines": [
+            "# Native weapon targeting: THIS planet/Carrier, FROM firing fleet.",
+            "can_destroy_planet_with_EEP_PLANET_KILLER_DEVOURER = {",
+            "    custom_tooltip = { fail_text = eep_colossus_target_required eep_colossus_target_valid = yes }",
+            "}",
+            "",
+            "eep_colossus_target_valid = {",
+            "    exists = from.owner",
+            "    from.owner = { eep_qualified = yes eep_core_available = yes }",
+            "    from = { is_same_value = event_target:eep_mothership@owner }",
+            "    is_colony = yes",
+            "    exists = owner",
+            "    is_artificial = no",
+            "    is_under_colonization = no",
+            "    has_ground_combat = no",
+            "    NOT = { has_carrier_flag = eep_core }",
+            "    NOT = { has_planet_flag = eep_active }",
+            "    NOT = { has_planet_flag = being_devoured }",
+            "    NOT = { has_planet_flag = eep_credit_done }",
+            "    NOT = { has_planet_flag = eep_destroy_done }",
+            "    planet_size > value:eep_damage_count",
+            "    NOT = { has_designation = col_nanotech_world }",
+            "    NOT = { is_planet_class = pc_cosmogenesis_world }",
+            "    eep_digestible_world = yes",
+            "    OR = {",
+            "        is_owned_by = from.owner",
+            "        owner = { is_at_war_with = from.owner }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\scripted_triggers\\eep_triggers.txt",
+      "sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "bytes": 3071,
+      "excerpts": [
+        {
+          "start_line": 39,
+          "end_line": 47,
+          "lines": [
+            "",
+            "# Carrier scope. No resources or population are changed by these predicates.",
+            "eep_digestible_world = {",
+            "    OR = {",
+            "        can_have_habitable_deposits = yes",
+            "        is_planet_class = pc_hive",
+            "        is_planet_class = pc_machine",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\events\\eep_planet_killer_events.txt",
+      "sha256": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e",
+      "bytes": 270,
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 10,
+          "lines": [
+            "namespace = eep",
+            "",
+            "# Completion only: cancelling a queued or charging order pays nothing.",
+            "carrier_event = {",
+            "    id = eep.50",
+            "    hide_window = yes",
+            "    is_triggered_only = yes",
+            "    trigger = { eep_colossus_target_valid = yes }",
+            "    immediate = { eep_colossus_settle = yes }",
+            "}"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\scripted_effects\\eep_planet_killer_effects.txt",
+      "sha256": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9",
+      "bytes": 1382,
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 6,
+          "lines": [
+            "# Source Carrier scope. Called only after native weapon completion and revalidation.",
+            "eep_colossus_settle = {",
+            "    if = {",
+            "        limit = { eep_colossus_target_valid = yes }",
+            "        planet = { save_event_target_as = eep_source }",
+            "        from.owner = {"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\scripted_effects\\eep_settlement_effects.txt",
+      "sha256": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+      "bytes": 6441,
+      "excerpts": [
+        {
+          "start_line": 12,
+          "end_line": 18,
+          "lines": [
+            "            check_variable = { which = eep_q value > 0 }",
+            "            OR = {",
+            "                AND = {",
+            "                    has_planet_flag = eep_colossus_active",
+            "                    eep_colossus_target_valid = yes",
+            "                }",
+            "                AND = {"
+          ]
+        },
+        {
+          "start_line": 126,
+          "end_line": 136,
+          "lines": [
+            "        if = {",
+            "            limit = { NOT = { has_planet_flag = eep_destroy_done } }",
+            "            set_planet_flag = eep_destroy_done",
+            "            destroy_colony = yes",
+            "            change_pc = pc_shattered",
+            "            clear_deposits = yes",
+            "            eep_clear_task = yes",
+            "            remove_planet_flag = eep_colossus_active",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\localisation\\simp_chinese\\eep_l_simp_chinese.yml",
+      "sha256": "04e53ec34d6d2d0d40ba55746195fad62bb14872e1552c88c4dad8637ab4c96d",
+      "bytes": 18871,
+      "excerpts": [
+        {
+          "start_line": 104,
+          "end_line": 106,
+          "lines": [
+            " EEP_PLANET_KILLER_DEVOURER:0 \"饕餮解构光束\"",
+            " EEP_PLANET_KILLER_DEVOURER_DESC:0 \"将天然殖民星拆解并献于母星，无需陆军。只能用于自有非母星或交战敌国殖民星；完成发射时按有效规模结算容量、人口和母舰成长。普通拆解每6单位制造100本族人口，噬岩者保留原生随机收益。取消发射不发奖励。\"",
+            " eep_colossus_target_required:0 \"需要本国母舰、可用母星，以及有效物质大于0的自有非核心或交战敌国天然殖民星。不能攻击任何帝国的母星核心、人工天体、殖民中、地面战斗中、正在吞噬或已经结算的星球。\""
+          ]
+        }
+      ]
+    },
+    {
+      "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod\\common\\component_templates\\eep_planet_killer.txt",
+      "sha256": "0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92",
+      "bytes": 671,
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 22,
+          "lines": [
+            "weapon_component_template = {",
+            "    key = \"EEP_PLANET_KILLER_DEVOURER\"",
+            "    size = planet_killer",
+            "    type = planet_killer",
+            "    # Keep custom statistics in the native TXT template, including fixed timing.",
+            "    power = 0",
+            "    damage = { min = 0 max = 0 }",
+            "    windup = { min = 90 max = 90 }",
+            "    total_fire_time = 30",
+            "    range = 0",
+            "    accuracy = 1",
+            "    tracking = 0",
+            "    use_ship_main_target = no",
+            "    icon = GFX_ship_part_world_cracker",
+            "    icon_frame = 1",
+            "    component_set = \"EEP_PLANET_KILLER_DEVOURER\"",
+            "    potential = { is_ship_size = juggernaut from = { has_origin = origin_heart_of_devouring } }",
+            "    planet_destruction_gfx = \"shatter_planet_gfx\"",
+            "    ai_weight = { factor = 0 }",
+            "}"
+          ]
+        }
+      ]
+    }
+  ],
+  "native_sources": [
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\planet_classes\\00_planet_classes.txt",
+      "sha256": "24c5387795e22b3fa6ea5bc3f83b63b61d4990b77ec2ddb8e3e00483156672f5",
+      "bytes": 42487,
+      "excerpts": [
+        {
+          "start_line": 1584,
+          "end_line": 1586,
+          "lines": [
+            "pc_habitat = {",
+            "\thabitat = yes",
+            "\tentity = \"orbital_habitat\""
+          ]
+        },
+        {
+          "start_line": 1605,
+          "end_line": 1617,
+          "lines": [
+            "\tplanet_size = 6",
+            "\tmoon_size = 1",
+            "\tcolonizable = yes",
+            "\tdistrict_set = habitat",
+            "\tstarting_district = district_hab_housing",
+            "#\tideal = yes",
+            "\tstarting_planet = no",
+            "\torbit_lines = no",
+            "\thas_colonization_influence_cost = no\t\t\t# applies when within own borders",
+            "",
+            "\tclimate = \"artificial\"",
+            "\tis_artificial_planet = yes",
+            "\tdefault_planet_selection = yes"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_triggers\\00_scripted_triggers.txt",
+      "sha256": "57b23a9c3875c28b935020dd5c13bd49ed173c424afe2da6afd3bdc0a1757273",
+      "bytes": 130915,
+      "excerpts": [
+        {
+          "start_line": 579,
+          "end_line": 595,
+          "lines": [
+            "can_have_habitable_deposits = {",
+            "\tOR = {",
+            "\t\tis_planet_class = pc_nuked",
+            "\t\tis_planet_class = pc_desert",
+            "\t\tis_planet_class = pc_tropical",
+            "\t\tis_planet_class = pc_arid",
+            "\t\tis_planet_class = pc_continental",
+            "\t\tis_planet_class = pc_ocean",
+            "\t\tis_planet_class = pc_tundra",
+            "\t\tis_planet_class = pc_arctic",
+            "\t\tis_planet_class = pc_alpine",
+            "\t\tis_planet_class = pc_savannah",
+            "\t\tis_planet_class = pc_gaia",
+            "\t\tis_planet_class = pc_relic",
+            "\t\tis_planet_class = pc_volcanic",
+            "\t}",
+            "}"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\events\\planet_destruction_events.txt",
+      "sha256": "b0e7521d7ef7cc925e033c12c7fdb8e6d1c09aa624be1d45c8cad998e3c13e87",
+      "bytes": 70731,
+      "excerpts": [
+        {
+          "start_line": 292,
+          "end_line": 299,
+          "lines": [
+            "\t\t# destroy habitats and ringworlds",
+            "\t\tif = {",
+            "\t\t\tlimit = {",
+            "\t\t\t\tis_planet_class = pc_habitat",
+            "\t\t\t}",
+            "\t\t\tclear_consecration_effect = yes",
+            "\t\t\tspawn_habitat_cracker_effect = yes",
+            "\t\t}"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\common\\scripted_effects\\00_scripted_effects.txt",
+      "sha256": "9ee428c3c3ad60e9aeaeca857ab31ec1a4e7ed86537333537435f5ddd7ffb459",
+      "bytes": 199072,
+      "excerpts": [
+        {
+          "start_line": 1792,
+          "end_line": 1833,
+          "lines": [
+            "spawn_habitat_cracker_effect = {",
+            "\tcreate_ambient_object = {",
+            "\t\tlocation = this",
+            "\t\ttype = habitat_cracker_object",
+            "\t\tplay_animation_once = yes",
+            "\t\tduration = 5",
+            "",
+            "\t\tuse_3d_location = yes",
+            "\t\tbase_angle_towards = star",
+            "\t\tentity_face_object = star",
+            "",
+            "\t\tentity_offset = { min = 0 max = 0 }",
+            "",
+            "\t\tentity_scale_to_size = yes",
+            "\t\tscale = 0.10",
+            "\t}",
+            "\tsave_event_target_as = target_habitat",
+            "\tsolar_system = {",
+            "\t\tspawn_megastructure = {",
+            "\t\t\ttype = habitat_central_complex_ruined",
+            "\t\t\towner = this.owner",
+            "\t\t\tcoords_from = PREV",
+            "\t\t}",
+            "\t\trandom_system_planet = {",
+            "\t\t\tlimit = {",
+            "\t\t\t\thas_planet_flag = habitat@event_target:target_habitat",
+            "\t\t\t}",
+            "\t\t\tremove_planet_flag = habitat@event_target:target_habitat",
+            "\t\t\tset_planet_flag = habitat_build_site",
+            "\t\t}",
+            "\t\tevery_fleet_in_system = {",
+            "\t\t\tlimit = {",
+            "\t\t\t\tis_ship_class = shipclass_habitat_station",
+            "\t\t\t}",
+            "\t\t\torbit = {",
+            "\t\t\t\tremove_planet_flag = has_megastructure",
+            "\t\t\t}",
+            "\t\t\tdelete_fleet = this",
+            "\t\t}",
+            "\t}",
+            "\tremove_planet = yes",
+            "}"
+          ]
+        }
+      ]
+    }
+  ],
+  "formal_tag_comparison": [
+    {
+      "path": "eat_everything_origin/mod/common/scripted_triggers/eep_planet_killer.txt",
+      "head_git_blob_sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "v0.4.0_git_blob_sha256": "6fb090b9547c5153e0b6f5ae24394c6ed378f463c4ae885bd7090a7a10625a72",
+      "equal": true
+    },
+    {
+      "path": "eat_everything_origin/mod/common/scripted_triggers/eep_triggers.txt",
+      "head_git_blob_sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "v0.4.0_git_blob_sha256": "c90db1052dd8b56e86c5718b3c6815fc92ac9658cd2d4d53a719cc137ba7a7bb",
+      "equal": true
+    },
+    {
+      "path": "eat_everything_origin/mod/events/eep_planet_killer_events.txt",
+      "head_git_blob_sha256": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e",
+      "v0.4.0_git_blob_sha256": "40fde76aedcfb3142275efd06d5c23c9952a2d9405f40e85b9a09091982f124e",
+      "equal": true
+    },
+    {
+      "path": "eat_everything_origin/mod/common/scripted_effects/eep_planet_killer_effects.txt",
+      "head_git_blob_sha256": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9",
+      "v0.4.0_git_blob_sha256": "4586957e1a53a8683070712931992114980fc1d696123dc0fe992b991595edb9",
+      "equal": true
+    },
+    {
+      "path": "eat_everything_origin/mod/common/scripted_effects/eep_settlement_effects.txt",
+      "head_git_blob_sha256": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+      "v0.4.0_git_blob_sha256": "1eb2c9d27bb92167e89d8935b0ebc5421855be8c3ff857557e330569e535d1ba",
+      "equal": true
+    },
+    {
+      "path": "eat_everything_origin/mod/localisation/simp_chinese/eep_l_simp_chinese.yml",
+      "head_git_blob_sha256": "04e53ec34d6d2d0d40ba55746195fad62bb14872e1552c88c4dad8637ab4c96d",
+      "v0.4.0_git_blob_sha256": "04e53ec34d6d2d0d40ba55746195fad62bb14872e1552c88c4dad8637ab4c96d",
+      "equal": true
+    },
+    {
+      "path": "eat_everything_origin/mod/common/component_templates/eep_planet_killer.txt",
+      "head_git_blob_sha256": "0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92",
+      "v0.4.0_git_blob_sha256": "0bf1314f69f410ffcbf14875680d2689453295ee317b16d47ae219920b62dd92",
+      "equal": true
+    }
+  ],
+  "historical_acceptance_index": {
+    "path": "eat_everything_origin\\docs\\evidence\\1019-requirements\\final-result.json",
+    "sha256": "fa66c56f32a4a6cea353eb7e2ddef917b5e40649ae2ab821a293602326e394fb",
+    "status": "PASS_SCOPED",
+    "artificial_rejected_occurrences": [
+      {
+        "json_path": "$.cases.colossus_guards.checks.artificial_rejected",
+        "value": true
+      }
+    ],
+    "boundary": "Existing controlled artificial-target rejection; not a new real-habitat weapon firing test."
+  },
+  "web_lookup": {
+    "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3815707212",
+    "result": "Web tool could not access the page; online search did not yield this primary page. No current remote-page verification claimed."
+  },
+  "conclusion": "Vanilla pc_habitat fails both is_artificial=no and eep_digestible_world. This matches the documented 0.4.0 restriction. No fix implemented.",
+  "static_checks": {
+    "tool_repo_head": "d2a2627e3023310d96f1a2d1e63478f6a6ee7a57",
+    "reports": [
+      {
+        "path": "static-default-invocation-fail.json",
+        "sha256": "89b2228104cc43e96f1eee1c1ed9dda71bf660b0c9192f84f3941bd7f1cf9ff8",
+        "status": "FAIL",
+        "errors": [
+          {
+            "code": "GAME_EXE_IDENTITY",
+            "path": "C:\\SteamLibrary\\steamapps\\common\\Stellaris\\stellaris.exe"
+          },
+          {
+            "code": "MOD_METADATA_MISSING",
+            "path": "D:\\workspace\\xenoamess_stellaries_dev\\eat_everything_origin\\mod"
+          }
+        ],
+        "p_parsed": 36,
+        "p_scripts": 36,
+        "dds": 12,
+        "localization_keys": 132,
+        "languages": [
+          "braz_por",
+          "english",
+          "french",
+          "german",
+          "japanese",
+          "korean",
+          "polish",
+          "russian",
+          "simp_chinese",
+          "spanish"
+        ]
+      },
+      {
+        "path": "static-open-kaishek.json",
+        "sha256": "2477c8f3b9036d59804e104010357fda460588801d30b4dd7696d92d72d7f059",
+        "status": "PASS",
+        "errors": [],
+        "p_parsed": 36,
+        "p_scripts": 36,
+        "dds": 12,
+        "localization_keys": 132,
+        "languages": [
+          "braz_por",
+          "english",
+          "french",
+          "german",
+          "japanese",
+          "korean",
+          "polish",
+          "russian",
+          "simp_chinese",
+          "spanish"
+        ]
+      }
+    ],
+    "runtime": "Not run"
+  }
+}
