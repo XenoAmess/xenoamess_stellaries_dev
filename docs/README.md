@@ -10,7 +10,8 @@
 
 ## 文档索引
 
-- [「吞噬之心」人工天体吞噬：需求、居住站测试与0.5.0发布计划（2026-10-23）](../eat_everything_origin/docs/artificial-worlds-requirements-and-test-plan-2026-10-23.md)
+- [「吞噬之心」0.5.0正式发布与远端完整核验（2026-10-23）](../eat_everything_origin/docs/release-0.5.0-execution-1023.md)
+- [「吞噬之心」人工天体吞噬：需求与居住站专项通过记录（2026-10-23）](../eat_everything_origin/docs/artificial-worlds-requirements-and-test-plan-2026-10-23.md)
 - [「吞噬之心」0.4.0恢复执行与限定专项验收结果（2026-10-20）](resume-heart-of-devouring-2026-10-20.md)
 - [「吞噬之心」0.4.0正式发布、远端核验与版本标签（2026-10-20）](../eat_everything_origin/docs/release-0.4.0-execution-1020.md)
 - [「吞噬之心」0.4.0-rc.7假期交接：安全停机与恢复步骤（历史时点未发布）](handoff-heart-of-devouring-2026-10-20.md)

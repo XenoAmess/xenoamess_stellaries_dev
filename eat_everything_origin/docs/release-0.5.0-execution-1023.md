@@ -11,3 +11,15 @@ rc.1至rc.4的失败、过时原生trigger文档签名探测、两次母舰完�
 当前状态：实机完成，证据已冻结，正式open_kaishek复验PASS（36/36 P、12 DDS、132键×10），prepare的59文件与四张公开inline图片均通过，尚未执行Steam上传。v0.5.0远端标签已只读核实尚不存在。桌面已恢复原2560×1440、60Hz。成功上传后先核验远端59文件、正文、Change Note和媒体，再创建并推送同名标签，恢复Steam原先离线状态及本地exclude原字节。
 
 全仓clean门禁前，允许仅在`.git/info/exclude`临时追加唯一无关用户目录`/eat_everything_origin/docs/evidence/1019-rc7-purifier-economy-worker-ui-v1/`，备份原字节并记录SHA；最终按临时SHA核对后恢复原文件，不修改、提交或删除该目录。所有桌面及Steam截图留在仓库外，不作为公开证据提交。
+
+正式冻结提交`c928e58e9`已推送，原preflight返回PASS。首次Git推送遇curl55连接重置，查询远端确认仍是上一提交后再重试成功；未修改全局Git配置。Steam通过原生菜单“上线”临时联网，新鲜SDK确认在线。正式上传只执行一次，返回`UPLOADED`（0.5.0、3815707212、submit_result=1），未请求法律协议确认。正在独立下载和远端核验，完成前不打标签，也不重复上传此版本。
+
+独立Workshop目录下载完成，59生产文件逐字节一致。首轮原verify在公开Change Note HTML请求遇HTTP429，未形成整体PASS。沿用0.4.0已实证的只读传输回退：冷却后，对同一官方页面移除`l`参数，使用公开语言偏好`Steam_Language` cookie及Accept-Language；只调整本次请求，不使用登录凭据、不改系统代理、不更改原验证器的任何比较条件。保存真实响应URL、HTTP状态、字节hash及失败尝试；原verify全部通过后才记整体PASS。
+
+本次窄传输适配器只提供verify入口，调用原`publish_update.verify`，不调用上传。仅匹配物品3815707212的两条HTML路径；API、CDN及所有原比较代码不变。每次发起真实网络请求，记录实际响应hash与状态；失败回执也保留。以原完整verify产出PASS及59下载文件、六图库、四inline全部准确作为适配器验收，不把HTTP200单独当作内容通过。
+
+2026-10-23T08:20:53Z原完整verify已实际通过：59文件、公开元数据、Change Note、封面、六图库和四张渲染inline图片全部准确。两条官方HTML请求均HTTP200，传输回执记录实际URL、正文hash和原验证器源码未变；`workshop-verification.json`为最终PASS。此前HTTP429保留为失败尝试，未重复Submit。接下来恢复Steam离线，提交推送回执后创建v0.5.0标签，再补记远端标签实值。
+
+08:22:46Z新鲜SDK确认BLoggedOn=false，持久WantsOfflineMode清理值为["1"]，Steam原先离线状态已恢复；采用普通Win32菜单操作，无强杀、无调试接口、无账号配置编辑。桌面实测2560×1440、60Hz，PyAutoGUI FAILSAFE保持开启；游戏和本任务Launcher均无运行进程。
+
+打标前复用`publish_1019.tag_check`原完整只读门禁，仅在本次Python进程把VERSION/EVIDENCE及验收、说明输入函数映射到0.5.0适配器，原检查条件不变。须核对成功Submit、独立目录当前59文件、全媒体回执、本地生产与文案、工作树clean和HEAD已推送，再创建和推送唯一新标签。

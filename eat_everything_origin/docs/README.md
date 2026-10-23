@@ -1,10 +1,10 @@
 # 吞噬之心：设计与研究
 
-2026-10-23 当前任务：[人工天体吞噬需求、设计、测试与发布计划](artificial-worlds-requirements-and-test-plan-2026-10-23.md)。普通与母舰均开放人工天体，按用户要求以居住站完成本批简中专项后发布。
+2026-10-23 最新发布：正式0.5.0已发布工坊并核验59文件、公开说明、更新记录及全部媒体。普通与母舰均开放人工天体，已按用户要求完成居住站简中专项；见[需求、设计与测试记录](artificial-worlds-requirements-and-test-plan-2026-10-23.md)、[最终验收索引](evidence/artificial-worlds-2026-10-23/result.json)和[正式发布执行记录](release-0.5.0-execution-1023.md)。其它九语言静态校验通过，运行时不在范围内。
 
 2026-10-23 调查：[母舰不能摧毁居住站](mothership-habitat-investigation-2026-10-23.md)。0.4.0 的人工天体与可吞噬类型双重限制导致居住站被拒绝；本次仅调查，不修改功能。
 
-2026-10-20最新：[0.4.0正式发布执行记录](release-0.4.0-execution-1020.md)。恢复任务后已完成18组限定专项、RC8通知修复与独立实机证明，正式0.4.0已成功发布并核验远端59文件及全部媒体，v0.4.0标签已推送。详见[恢复执行记录](../../docs/resume-heart-of-devouring-2026-10-20.md)和[最终验收索引](evidence/1019-requirements/final-result.json)。
+2026-10-20历史发布：[0.4.0正式发布执行记录](release-0.4.0-execution-1020.md)。恢复任务后已完成18组限定专项、RC8通知修复与独立实机证明，正式0.4.0已成功发布并核验远端59文件及全部媒体，v0.4.0标签已推送。详见[恢复执行记录](../../docs/resume-heart-of-devouring-2026-10-20.md)和[最终验收索引](evidence/1019-requirements/final-result.json)。
 
 以下为历史任务入口，按各记录当时的状态保留。[RC7假期交接](../../docs/handoff-heart-of-devouring-2026-10-20.md)中的暂停指令已由用户本次恢复指令取代；不恢复已停止的噬岩者完整自然战役。
 

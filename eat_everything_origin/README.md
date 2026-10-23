@@ -1,6 +1,6 @@
 # 吞噬之心
 
-正式 `0.4.0` 已于2026-10-20发布至[Steam创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3815707212)，远端59文件、公开正文、更新记录及全部图片已核验，`v0.4.0`标签已推送。新开局只保留对应母星，取消额外赠品星球；旧档现有星球保持。母舰配置、无限成长和巨像吞星已完成[1019约定专项验收](docs/evidence/1019-requirements/final-result.json)，范围与限制见[发布记录](docs/release-0.4.0-execution-1020.md)。噬岩者完整自然战役仍保持[停止](docs/terravore-acceptance-stopped-2026-10-15.md)，专项通过不等于完整政体验收。
+正式 `0.5.0` 已于2026-10-23发布至[Steam创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3815707212)，普通与母舰吞噬均已开放固定人工天体。居住站完成七组简中限定检查，远端59文件、公开正文、更新记录及全部图片已核验，详见[发布记录](docs/release-0.5.0-execution-1023.md)及[验收索引](docs/evidence/artificial-worlds-2026-10-23/result.json)。新开局仍只保留对应母星，旧档现有星球保持；母舰配置、无限成长和巨像吞星的[1019专项结果](docs/evidence/1019-requirements/final-result.json)继续适用。噬岩者完整自然战役仍保持[停止](docs/terravore-acceptance-stopped-2026-10-15.md)，专项通过不等于完整政体验收。
 
 新开局需要 Nemesis，直接获得「化身天灾」，仍保留种族飞升准入。母星获得额外一条并行民用建造队列，以及一艘按遗迹级无畏舰配置加强、带10船坞的母舰；母舰占100海军容量。蜂巢、机械智能和其它合格灭绝帝国分别获得蜂巢、机械或遗落母星，新开局不再额外赠送世界、人口或设施。旧存档不追补开局资产与危机，也不会自动删除已有赠品星球。
 
