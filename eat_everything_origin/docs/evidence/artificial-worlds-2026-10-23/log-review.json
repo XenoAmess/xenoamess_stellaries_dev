@@ -1,0 +1,71 @@
+{
+  "status": "PASS_SCOPED",
+  "normal_native_exit": true,
+  "forced": false,
+  "all_five_complete_logs_reviewed": true,
+  "logs": {
+    "debug.log": {
+      "bytes": 170,
+      "sha256": "e61a0df1481c2b98a4b1efc138f0cd87b0df2e8d311133623486ea62fbbe5123"
+    },
+    "error.log": {
+      "bytes": 3332,
+      "sha256": "88fb5d02604227b4d724883d67e44c2b804f3dfa8ce04573d7ab16b422daff83"
+    },
+    "game.log": {
+      "bytes": 1089,
+      "sha256": "587484b7d1317b56432df781923d3f6da74e3891a62491cd1130e586b1a02a81"
+    },
+    "system.log": {
+      "bytes": 14319,
+      "sha256": "82e8d798faf4b3b073f2a98aa42758294b9dde4203a9e9aaff4e4fe7d15399bf"
+    },
+    "setup.log": {
+      "bytes": 1113784,
+      "sha256": "f3ad151ca0e292a2e4edbcd3d50b14232c5b532a36afe8bfdf32553817e23da6"
+    }
+  },
+  "error_log_categories": {
+    "missing_subscribed_files": [
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3797257579",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3710613857",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2660548454",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2411818376",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2409044128",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3484461951",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1199002146",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2946000546",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3053655313",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2956750257",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1539624733",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1890399946",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3357143726",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3415581160",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2438313459",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2407436476",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\1623423360",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3339549399",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\3090328185",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2948301103",
+      "[14:32:59][dlc.cpp:1847]: Could not find files for mod: C:\\SteamLibrary\\steamapps\\workshop\\content\\281990\\2976454692"
+    ],
+    "intentional_native_decision_override": [
+      "[14:34:18][game_singleobjectdatabase.h:170]: Object with key: decision_lithoid_swarm_consume_world already exists, using the one at  file: common/decisions/zz_eep_native_decision.txt line: 2"
+    ],
+    "invalid_fixture_signature_probe": [
+      "[14:39:00][trigger.cpp:338]: Expected \"valid_planet_killer_target = {\", but got \"valid_planet_killer_target = event_target:eep_art_hab\" at  file:  line: 1",
+      "[14:39:00][trigger.cpp:338]: Expected \"valid_planet_killer_target = {\", but got \"valid_planet_killer_target = event_target:eep_art_core\" at  file:  line: 1",
+      "[14:39:00][effect.cpp:237]: Empty if/else_if with no dependent else_ifs or elses at  file:  line: 1, no effects are executed",
+      "[14:39:01][trigger_impl.cpp:14857]: exists trigger at  file:  line: 1 is checking against an undefined scope",
+      "[14:39:01][eventscope.cpp:3345]: Script error, valid_planet_killer_target: 'none' is invalid at  file:  line: 1"
+    ],
+    "unexpected": []
+  },
+  "debug_warning": {
+    "text": "[14:34:03][building_type.cpp:262]: Failed to get any building category for this building, should only happen for special building types such as fallen empire buildings!",
+    "same_as_initial_rc1": true,
+    "assessment": "Existing startup building-category warning; this Mod defines no building files. Retained without claiming a warning-free log or attributing exact vanilla building identity."
+  },
+  "other_logs": "Setup matches are database names containing failed/exception, not runtime diagnostics; system initialization and game log reviewed. No unexplained production script/loading/scope/localization errors.",
+  "probe_explanation": "Exactly five 14:39 diagnostics from the archived explicit console fixture using the incorrect native documented scalar valid_planet_killer_target signature. No guard success inferred; subsequent guards verified through native UI and SAV, future fixture source corrected."
+}

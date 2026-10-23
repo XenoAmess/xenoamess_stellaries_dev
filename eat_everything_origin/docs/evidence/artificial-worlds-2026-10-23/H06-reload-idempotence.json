@@ -1,0 +1,34 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "ledger_unchanged": true,
+    "actual_population_5449": true,
+    "all_three_sources_removed": true,
+    "same_bound_mother": true,
+    "one_mother_only": true,
+    "applied_level_1": true,
+    "no_mother_order": true,
+    "capacity6": true,
+    "no_live_eep_situation_targeting_removed_sources": true,
+    "all_three_ruins_preserved": true,
+    "orbital_flags_cleared": true,
+    "title_load_source_matches_stable": true,
+    "fresh_reload_save_same_day": true,
+    "following_native_day_verified": true
+  },
+  "sources": {
+    "enemystable": {
+      "date": "2202.01.21",
+      "sha256": "44d5640d13fff00c14014f40496cde0950e80fb1dfc466eac33ce08768c0162e"
+    },
+    "artreload": {
+      "date": "2202.01.21",
+      "sha256": "253407f82ef0651e7c0cff6562c2d1106e63909d16f23a16f2b9a383d1d0c0fb"
+    },
+    "artreloadtick": {
+      "date": "2202.01.22",
+      "sha256": "705cc1c166b318735046e1865576e3ce5727db52c6cb45a106dbf943001f1826"
+    }
+  },
+  "scope": "Actual return to title/native load and fresh SAV, then one native day: no repeated rewards/population/capacity/evolution, all sources absent and ruins preserved. Deleted targets cannot be fired at again; no synthetic completion callback invoked."
+}

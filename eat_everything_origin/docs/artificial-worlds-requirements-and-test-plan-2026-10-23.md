@@ -105,3 +105,13 @@ Sep14稳定态原生SAV已实际删除物理16779253，原独立检查十三项�
 敌方夹具已创建country1/system164/物理33556469/锚点23的真实居住站并把母舰放在其附近；没有宣战。控制台set_location不等于自然航行进入，原生星图仍标“未调查的星系”；推进1日后仍须补齐可见性准备。补充只读验证前置夹具：依原版`first_contact_dlc_effects.txt:297`的country `set_visited=<system>`及已验证set_surveyed，让actor访问并调查该系统天体，便于原生UI识别目标。此调查是功能夹具准备，不计作自然航行/探索或经营验收，不改源归属/战争/EEP收益。
 
 中立源原生菜单红叉与中文拒绝提示、Sep15原生SAV无war/无母舰订单、敌方owner/controller1及100人口同时核实；H05守卫专项通过。Sep15宣战后同一目标变为可用；war0实际attacker0/defender1、wg_cleansing、双方fleets_gone_mia0。母舰自然与敌舰队4/7发生太空战斗，Sep18原生战斗记录已无in_combat_with，随后自动接近目标；未手工清场或调用完成回调。Sep17/18命名含windup/charge的SAV实际仍为移动，未当作充能通过；Sep20首次实际取得windup0/time90，正在推进完整90日到发射边界。三项新原生布局核对：活殖民地的owner/controller读取其物理载体，不假设colony对象有owner；舰队坐标在movement_manager中；阶段读取真实current_order子块。以上均属本机Stellaris4.5.2，不外推其它Paradox游戏。
+
+### 最终实机及正式包冻结
+
+敌方居住站实际完成90日充能、30日发射：2201Sep20 windup0、Dec20 fire0、2202Jan19 fire29、Jan20结算、Jan21原生清理。源始终归敌方，无陆军征服；核心5449=5349+制造100，敌方人口未返还。最终C/G18、D6、made300、worlds3，实际容量修正6、唯一母舰applied_level1；其它敌方殖民地保留。与自有母舰相同，完成瞬间物理记录尚在，下一原生日消失，原严格FAIL原样保留。
+
+实际返回标题并原生重载Jan21存档，再推进至Jan22：三处物理源均不存在，三座废墟保留，核心5449及账本不再增加，无活动吞噬局势或母舰指令。H04三十一项、H06十四项均通过。A01/H01–H06最终索引为[PASS_SCOPED](evidence/artificial-worlds-2026-10-23/result.json)，H01/H02候选复用范围及其源码差异合同已明确记录，不推广为完整自然战役。
+
+最终rc.5进程通过原生退出游戏确认正常停止。完整五类停机日志已分类审查：订阅缺文件、既有原生决议覆盖及显式控制台签名探测保留，没有未解释的本批生产错误；启动building-category告警与初始run相同。完整运行归档为`run-20261023T063256Z.zip`，SHA256 `e56eb56bb63069ccaeb9dcb708a50745cb0d33db501301a9e2874a02711b33b7`。
+
+正式0.5.0只提升VERSION及descriptor版本元数据，59生产文件的其它字节保持rc.5被测内容。正式open_kaishek再次PASS（36/36 P、12 DDS、132键×10），四张公开inline图片原字节核对通过，CHANGELOG六项及Change Note已先建立。非中文九语言静态校验通过、运行时不在范围内；其它人工天体仅静态检查。工坊上传及远端核验接续记录于[正式发布执行页](release-0.5.0-execution-1023.md)。

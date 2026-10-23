@@ -1,0 +1,91 @@
+{
+  "status": "PASS_SCOPED",
+  "checks": {
+    "source_existed_as_habitat": true,
+    "source_colony_identity": true,
+    "source_had_live_population": true,
+    "physical_source_removed": true,
+    "source_colony_not_live": true,
+    "expected_ledger": true,
+    "no_live_situation_targeting_source": true,
+    "orbital_removed_16777222": true,
+    "anchor_link_existed": true,
+    "anchor_link_cleared": true,
+    "new_ruined_habitat_exists": true,
+    "actual_core_population": true,
+    "other_country_not_rewarded": true,
+    "native_war_0_attacks_1": true,
+    "no_mia_on_war_setup": true,
+    "native_windup_0_of_90": true,
+    "native_fire_0_of_30": true,
+    "native_fire_29_of_30": true,
+    "full_windup_90_days": true,
+    "full_fire_30_days": true,
+    "cleanup_next_day": true,
+    "enemy_owner_and_controller_through_fire29": true,
+    "no_early_credit": true,
+    "zero_foreign_return_and_100_manufacture": true,
+    "actual_capacity_value_6": true,
+    "actual_capacity_modifier_6": true,
+    "country_level_1_preserved": true,
+    "actual_mother_applied_level_1": true,
+    "orbital_flag_cleared": true,
+    "no_repeat_credit_during_cleanup": true,
+    "unrelated_home_megastructures_preserved": true
+  },
+  "before_sha256": "5d5475d7de45b729a7753ecda270a7d8f76a128a7f77ae5ee918f9f43061ada0",
+  "after_sha256": "44d5640d13fff00c14014f40496cde0950e80fb1dfc466eac33ce08768c0162e",
+  "before_date": "2202.01.19",
+  "after_date": "2202.01.21",
+  "contract": {
+    "actor": 0,
+    "source": 33556469,
+    "colony": 33554442,
+    "anchor": 23,
+    "system": 164,
+    "core_colony": 0,
+    "removed_megastructures": [
+      16777222
+    ],
+    "other_country": 1,
+    "expected_ledger": {
+      "eep_c": 18,
+      "eep_g": 18,
+      "eep_d": 6,
+      "eep_made": 300,
+      "eep_worlds": 3
+    },
+    "expected_core_population": 5449,
+    "expected_return": 0,
+    "expected_manufactured": 100,
+    "expected_mothership_level": 1
+  },
+  "scope": "One actual wartime enemy habitat shot, full native 90/30, without ground conquest or army orders. Enemy ownership/control persisted through fire29; zero enemy population returned. Following-day native physical cleanup observed; immediate retention FAIL preserved.",
+  "phases": {
+    "enemystart0": {
+      "date": "2201.09.20",
+      "sha256": "69802ed83b5e6842ce8254d0522279782bcbc0b5c35002e62fe102d494326aa2",
+      "native_order": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=33556469\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_windup_order=\n\t\t\t\t\t{\n\t\t\t\t\t\twindup=0\n\t\t\t\t\t\twindup_time=90\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=2\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "enemyfire0": {
+      "date": "2201.12.20",
+      "sha256": "e4c42ba39b3502e4a894c52a2c0931a0ebac12dc105f0ca8325c0b99557621b7",
+      "native_order": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=33556469\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_fire_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tfire=0\n\t\t\t\t\t\tfire_time=30\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=2\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "enemyfire29": {
+      "date": "2202.01.19",
+      "sha256": "5d5475d7de45b729a7753ecda270a7d8f76a128a7f77ae5ee918f9f43061ada0",
+      "native_order": "\n\t\t\tdestroy_planet_order=\n\t\t\t{\n\t\t\t\tplanet=33556469\n\t\t\t\tsub_order=\n\t\t\t\t{\n\t\t\t\t\tplanet_killer_weapon_fire_order=\n\t\t\t\t\t{\n\t\t\t\t\t\tfire=29\n\t\t\t\t\t\tfire_time=30\n\t\t\t\t\t\tcan_reach=yes\n\t\t\t\t\t\tcommissioner=4294967295\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tcan_reach=yes\n\t\t\t\torder_id=2\n\t\t\t\tcommissioner=4294967295\n\t\t\t}\n\t\t"
+    },
+    "enemydone": {
+      "date": "2202.01.20",
+      "sha256": "f220c3d8665ba25ed588153420138576770276dac00f10ec0ea2746482a72a20",
+      "native_order": ""
+    },
+    "enemystable": {
+      "date": "2202.01.21",
+      "sha256": "44d5640d13fff00c14014f40496cde0950e80fb1dfc466eac33ce08768c0162e",
+      "native_order": ""
+    }
+  }
+}

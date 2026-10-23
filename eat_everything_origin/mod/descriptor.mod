@@ -1,4 +1,4 @@
-version="0.5.0-rc.5"
+version="0.5.0"
 tags={ "Origins" "Events" "Gameplay" }
 name="吞噬之心"
 supported_version="4.5.2"
