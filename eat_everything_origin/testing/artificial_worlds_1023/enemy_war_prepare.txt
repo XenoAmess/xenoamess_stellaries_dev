@@ -1,0 +1,17 @@
+# Leave foreign space before declaring war so the test does not create MIA.
+event_target:eep_mothership0 = {
+    set_location = { target = event_target:eep_art_core distance = 40 angle = 0 }
+}
+event_target:eep_art_actor = {
+    declare_war = {
+        target = event_target:eep_art_enemy
+        attacker_war_goal = wg_cleansing
+    }
+}
+event_target:eep_mothership0 = {
+    set_location = { target = event_target:eep_art_enemy_hab distance = 40 angle = 0 }
+    if = {
+        limit = { valid_planet_killer_target = event_target:eep_art_enemy_hab }
+        log = "ART1023_ENEMY_NATIVE_VALID"
+    }
+}

@@ -249,7 +249,7 @@ eep_settle = {
         }
         target = { eep_settle_source = yes }
         event_target:eep_actor = { set_country_flag = eep_notice_pending eep_sync_mothership = yes }
-        destroy_situation = this
+        if = { limit = { exists = this } destroy_situation = this }
     }
 }
 

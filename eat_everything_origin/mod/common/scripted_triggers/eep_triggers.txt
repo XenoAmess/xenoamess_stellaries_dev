@@ -39,10 +39,13 @@ eep_founder_pop = {
 
 # Carrier scope. No resources or population are changed by these predicates.
 eep_digestible_world = {
+    # Mobile ark colonies are ships rather than fixed celestial bodies.
+    NOT = { is_planet_class = pc_ark }
     OR = {
         can_have_habitable_deposits = yes
         is_planet_class = pc_hive
         is_planet_class = pc_machine
+        is_artificial = yes
     }
 }
 
@@ -50,21 +53,20 @@ eep_source_valid = {
     exists = owner
     owner = { eep_qualified = yes eep_core_available = yes }
     is_colony = yes
-    is_artificial = no
     is_under_colonization = no
     is_occupied_flag = no
     has_ground_combat = no
-    NOT = { planet = { is_same_value = event_target:eep_core@owner } }
+    NOT = { has_carrier_flag = eep_core }
     NOT = { has_planet_flag = eep_active }
     NOT = { has_planet_flag = being_devoured }
     NOT = { has_designation = col_nanotech_world }
-    NOT = { is_planet_class = pc_cosmogenesis_world }
     eep_digestible_world = yes
 }
 
 # Carrier scope. Never appropriate another empire's persistent physical core.
 eep_migration_target_valid = {
     eep_source_valid = yes
+    is_artificial = no
     NOT = { has_carrier_flag = eep_core }
 }
 

@@ -27,6 +27,12 @@ eep_settle_source = {
                 }
             }
         }
+        # Destroy the ready task while its populated Carrier still exists.
+        # Returning the last founder group can itself retire the source colony.
+        every_targeting_situation = {
+            limit = { is_situation_type = situation_eep_devouring }
+            destroy_situation = this
+        }
         if = {
             limit = { has_planet_flag = eep_native NOT = { has_planet_flag = eep_bites_done } }
             if = {
@@ -126,11 +132,49 @@ eep_settle_source = {
         if = {
             limit = { NOT = { has_planet_flag = eep_destroy_done } }
             set_planet_flag = eep_destroy_done
-            destroy_colony = yes
-            change_pc = pc_shattered
-            clear_deposits = yes
+            # Clean task state while this Carrier still exists. Native habitat
+            # and lathe destruction remove the physical planet entirely.
             eep_clear_task = yes
             remove_planet_flag = eep_colossus_active
+            destroy_colony = yes
+            if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_habitat
+                        is_planet_class = pc_crystal_habitat
+                        is_planet_class = pc_warden_guardian
+                    }
+                }
+                # 4.5 uses orbital megastructures; the native cracker still
+                # only removes legacy habitat-station fleets.
+                solar_system = {
+                    every_system_megastructure = {
+                        limit = {
+                            OR = {
+                                is_megastructure_type = habitat_major_orbital
+                                is_megastructure_type = habitat_minor_orbital
+                            }
+                        }
+                        planet = { remove_carrier_flag = has_orbital }
+                        remove_megastructure = this
+                    }
+                }
+                spawn_habitat_cracker_effect = yes
+            }
+            else_if = {
+                limit = { is_planet_class = pc_cosmogenesis_world }
+                spawn_lathe_cracker_effect = yes
+            }
+            else_if = {
+                limit = { is_ringworld = yes }
+                spawn_ringworld_cracker_effect = yes
+                change_pc = pc_ringworld_habitable_damaged
+                clear_deposits = yes
+            }
+            else = {
+                change_pc = pc_shattered
+                clear_deposits = yes
+            }
         }
     }
 }

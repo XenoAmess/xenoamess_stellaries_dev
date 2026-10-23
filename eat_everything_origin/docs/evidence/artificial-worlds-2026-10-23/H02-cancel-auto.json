@@ -1,0 +1,40 @@
+{
+  "case": "H02",
+  "status": "PASS_SCOPED",
+  "checks": {
+    "manual_native_decision_started": true,
+    "cancel_no_ledger_reward": true,
+    "cancel_source_survives": true,
+    "cancel_situation_not_live": true,
+    "cancel_auto_exclusion_set": true,
+    "reload_restores_original_day_and_population": true,
+    "auto_enabled_through_native_decision": true,
+    "resume_exclusion_removed": true,
+    "next_month_scan_starts_real_situation": true,
+    "auto_uses_same_q_and_duration": true,
+    "auto_start_pays_nothing": true
+  },
+  "sources": [
+    {
+      "file": "artnormalstart.sav",
+      "sha256": "a44e10bdf073b46ed68edb59ea04c003395b1b39589cc86571de09d076cfd9a3",
+      "date": "2200.01.03"
+    },
+    {
+      "file": "artcancelled.sav",
+      "sha256": "7cbe0e2af6dd3db9c95a8e44cd25b7290d59c9b028b4c80c92012f0619310fad",
+      "date": "2200.01.03"
+    },
+    {
+      "file": "artcancelreload3.sav",
+      "sha256": "a1b8ce2ab92a8cd6b307e7cef358e3c6c9e1720887f43a310768c053e0a66281",
+      "date": "2200.01.03"
+    },
+    {
+      "file": "artautostart.sav",
+      "sha256": "00f697eaa0078782962d412f068c0352df077e46ba86e4ca5e60873fe6a959f7",
+      "date": "2200.02.01"
+    }
+  ],
+  "scope": "Native manual start/cancel, actual reload confirmed by fresh native SAV, native resume/enable decisions and natural monthly auto scan. No direct completion dispatch."
+}

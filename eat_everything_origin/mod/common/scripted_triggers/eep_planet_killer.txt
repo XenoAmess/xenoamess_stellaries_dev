@@ -9,7 +9,6 @@ eep_colossus_target_valid = {
     from = { is_same_value = event_target:eep_mothership@owner }
     is_colony = yes
     exists = owner
-    is_artificial = no
     is_under_colonization = no
     has_ground_combat = no
     NOT = { has_carrier_flag = eep_core }
@@ -19,7 +18,6 @@ eep_colossus_target_valid = {
     NOT = { has_planet_flag = eep_destroy_done }
     planet_size > value:eep_damage_count
     NOT = { has_designation = col_nanotech_world }
-    NOT = { is_planet_class = pc_cosmogenesis_world }
     eep_digestible_world = yes
     OR = {
         is_owned_by = from.owner

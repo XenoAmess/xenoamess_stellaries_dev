@@ -1,0 +1,46 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "source_existed_as_habitat": true,
+    "source_colony_identity": true,
+    "source_had_live_population": true,
+    "physical_source_removed": true,
+    "source_colony_not_live": true,
+    "expected_ledger": true,
+    "no_live_situation_targeting_source": true,
+    "orbital_removed_4": false,
+    "anchor_link_existed": true,
+    "anchor_link_cleared": true,
+    "new_ruined_habitat_exists": true,
+    "actual_core_population": true
+  },
+  "before_sha256": "9e8adf95d95863a2d886bafa544398a48ab004681bb7bfee9121b0cbe7a1b7e9",
+  "after_sha256": "a2969f32fbc234feed1e2841cdc8c92f577bc924880ada5cb0a968bc8dd86263",
+  "before_date": "2201.05.01",
+  "after_date": "2201.05.02",
+  "contract": {
+    "actor": 0,
+    "source": 2037,
+    "colony": 10,
+    "anchor": 8,
+    "system": 3,
+    "core_colony": 0,
+    "removed_megastructures": [
+      4
+    ],
+    "expected_ledger": {
+      "eep_c": 6,
+      "eep_g": 6,
+      "eep_d": 3,
+      "eep_made": 100,
+      "eep_worlds": 1
+    },
+    "expected_core_population": 5104,
+    "population_before": {
+      "core": 4873,
+      "source": 131
+    },
+    "before_sha256": "9e8adf95d95863a2d886bafa544398a48ab004681bb7bfee9121b0cbe7a1b7e9",
+    "scope": "One native day after progress reaches 15 and the completion-pending flag is saved; outside the month boundary. Forecast fixed before May2 is run."
+  }
+}

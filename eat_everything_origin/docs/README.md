@@ -1,5 +1,7 @@
 # 吞噬之心：设计与研究
 
+2026-10-23 当前任务：[人工天体吞噬需求、设计、测试与发布计划](artificial-worlds-requirements-and-test-plan-2026-10-23.md)。普通与母舰均开放人工天体，按用户要求以居住站完成本批简中专项后发布。
+
 2026-10-23 调查：[母舰不能摧毁居住站](mothership-habitat-investigation-2026-10-23.md)。0.4.0 的人工天体与可吞噬类型双重限制导致居住站被拒绝；本次仅调查，不修改功能。
 
 2026-10-20最新：[0.4.0正式发布执行记录](release-0.4.0-execution-1020.md)。恢复任务后已完成18组限定专项、RC8通知修复与独立实机证明，正式0.4.0已成功发布并核验远端59文件及全部媒体，v0.4.0标签已推送。详见[恢复执行记录](../../docs/resume-heart-of-devouring-2026-10-20.md)和[最终验收索引](evidence/1019-requirements/final-result.json)。

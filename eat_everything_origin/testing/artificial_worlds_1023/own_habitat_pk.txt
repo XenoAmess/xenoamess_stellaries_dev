@@ -1,0 +1,80 @@
+# Native console run-file; isolated functional fixture, never production content.
+# Follows spawn_habitat_effect, with an explicit surveyor instead of its FROM.
+event_target:eep_mothership0.owner = {
+    save_global_event_target_as = eep_art_actor
+    capital_scope = {
+        planet = {
+            save_global_event_target_as = eep_art_core
+            solar_system = {
+                save_global_event_target_as = eep_art_system
+                random_system_planet = {
+                    limit = {
+                        is_star = no
+                        is_moon = no
+                        is_colony = no
+                        is_artificial = no
+                        NOT = { has_planet_flag = habitat }
+                        NOT = { has_carrier_flag = eep_core }
+                        NOT = { has_carrier_flag = has_orbital }
+                        NOT = { has_planet_flag = habitat_build_site }
+                        NOT = { exists = megastructure }
+                    }
+                    save_global_event_target_as = eep_art_anchor
+                }
+            }
+        }
+    }
+    event_target:eep_art_system = {
+        spawn_planet = {
+            class = pc_habitat
+            location = event_target:eep_art_anchor
+            orbit_location = yes
+            orbit_angle_offset = 135
+            orbit_distance_offset = 9.899
+            size = 6
+            has_ring = no
+            init_effect = {
+                set_name = "ART_OWN_HAB"
+                set_planet_entity = { entity = habitat_phase_03_entity graphical_culture = event_target:eep_art_actor }
+                set_surveyed = { surveyed = yes surveyor = event_target:eep_art_actor }
+                set_all_comms_surveyed = yes
+                clear_blockers = yes
+                set_planet_flag = megastructure
+                set_planet_flag = habitat
+                set_planet_flag = eep_art_target
+                set_carrier_flag = habitat_level_1
+                save_global_event_target_as = eep_art_hab
+                event_target:eep_art_anchor = { set_planet_flag = habitat@PREV }
+                create_colony = { owner = event_target:eep_art_actor species = event_target:eep_art_actor.owner_main_species }
+                create_pop_group = { species = event_target:eep_art_actor.owner_main_species size = 100 }
+                set_name = "ART_OWN_HAB"
+            }
+        }
+        spawn_orbital_effect = { TYPE = major HABITAT_OWNER = event_target:eep_art_actor TARGET_PLANET = event_target:eep_art_anchor }
+        set_star_flag = has_habitat
+    }
+    event_target:eep_art_anchor = { set_carrier_flag = has_orbital }
+    log = "ART1023_OWN_HABITAT_CREATED"
+}
+
+event_target:eep_art_system = {
+    random_system_planet = {
+        limit = {
+            is_star = no
+            is_colony = no
+            is_artificial = no
+            NOT = { has_carrier_flag = has_orbital }
+            NOT = { has_planet_flag = habitat_build_site }
+            NOT = { exists = megastructure }
+        }
+        save_global_event_target_as = eep_art_minor_anchor
+    }
+    spawn_orbital_effect = { TYPE = minor HABITAT_OWNER = event_target:eep_art_actor TARGET_PLANET = event_target:eep_art_minor_anchor }
+    spawn_megastructure = { type = gateway_ruined owner = event_target:eep_art_actor coords_from = star }
+}
+event_target:eep_art_minor_anchor = { set_carrier_flag = has_orbital }
+event_target:eep_mothership0 = {
+    set_location = { target = event_target:eep_art_hab distance = 40 angle = 0 }
+    if = { limit = { valid_planet_killer_target = event_target:eep_art_hab } log = "ART1023_OWN_NATIVE_VALID" }
+    if = { limit = { NOT = { valid_planet_killer_target = event_target:eep_art_core } } log = "ART1023_CORE_NATIVE_REJECTED" }
+}
